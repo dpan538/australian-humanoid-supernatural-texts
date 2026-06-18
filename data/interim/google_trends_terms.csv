@@ -1,0 +1,6 @@
+term,geo,date_start,date_end,metric_type,notes
+Yowie,AU,2004,present,google_trends_relative_interest,"Google Trends reports relative interest, not absolute search counts."
+Bunyip,AU,2004,present,google_trends_relative_interest,"Google Trends reports relative interest, not absolute search counts."
+Drop bear,AU,2004,present,google_trends_relative_interest,"Google Trends reports relative interest, not absolute search counts."
+Wandjina,AU,2004,present,google_trends_relative_interest,"Google Trends reports relative interest, not absolute search counts."
+Quinkan,AU,2004,present,google_trends_relative_interest,"Google Trends reports relative interest, not absolute search counts."

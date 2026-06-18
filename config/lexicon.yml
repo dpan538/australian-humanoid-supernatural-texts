@@ -1,0 +1,477 @@
+figures:
+  - canonical_name: Yowie
+    cluster: yowie_yahoo_hairy_man
+    tier: tier_1_core
+    include_status: include_v1
+    humanoid_degree: explicit_humanoid
+    ontology_default: cryptid_style_apeman
+    involves_indigenous_knowledge: false
+    sensitivity_notes: Modern public discourse often blends settler folklore, media, tourism, and Indigenous references; code mediation carefully.
+    description: Modern and historical public-text figure associated with humanoid or ape-like beings in Australian discourse.
+    aliases:
+      - alias: Yowie
+        alias_type: exact
+        search_priority: 100
+      - alias: Australian ape
+        alias_type: historical_descriptor
+        search_priority: 70
+      - alias: Australian gorilla
+        alias_type: historical_descriptor
+        search_priority: 70
+
+  - canonical_name: Yahoo
+    cluster: yowie_yahoo_hairy_man
+    tier: tier_1_core
+    include_status: include_v1
+    humanoid_degree: explicit_humanoid
+    ontology_default: cryptid_style_apeman
+    involves_indigenous_knowledge: false
+    sensitivity_notes: Very high noise because of the later internet company and news/mail products.
+    description: Historical public-text term often discussed near Yowie or hairy-man traditions; requires constrained searching.
+    aliases:
+      - alias: Yahoo
+        alias_type: noise_sensitive
+        search_priority: 30
+        notes: Never search bare; use constrained boolean forms only.
+      - alias: Yahoo-devil-devil
+        alias_type: exact
+        search_priority: 95
+
+  - canonical_name: Hairy Man
+    cluster: yowie_yahoo_hairy_man
+    tier: tier_1_core
+    include_status: include_v1
+    humanoid_degree: explicit_humanoid
+    ontology_default: cryptid_style_apeman
+    involves_indigenous_knowledge: false
+    sensitivity_notes: High noise as a generic descriptor; constrained searching required.
+    description: Humanoid-adjacent hairy-man descriptor in Australian public texts.
+    aliases:
+      - alias: Hairy Man
+        alias_type: noise_sensitive
+        search_priority: 40
+        notes: Never search bare; use constrained boolean forms only.
+      - alias: Hairy Man of the Wood
+        alias_type: phrase
+        search_priority: 90
+
+  - canonical_name: Yaroma
+    cluster: yowie_yahoo_hairy_man
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: explicit_humanoid
+    ontology_default: spirit_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Treat as public-text representation only; do not seek restricted knowledge.
+    description: Publicly attested humanoid or hairy-being term requiring careful source-voice coding.
+    aliases:
+      - alias: Yaroma
+        alias_type: exact
+        search_priority: 90
+
+  - canonical_name: Yara-ma-yha-who
+    cluster: broader_humanoid_spirit
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: humanoid_adjacent
+    ontology_default: cautionary_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Include only public published texts and code mediation/source voice.
+    description: Public textual figure often represented in folklore collections and retellings.
+    aliases:
+      - alias: Yara-ma-yha-who
+        alias_type: exact
+        search_priority: 100
+      - alias: Yara-ma-tha-who
+        alias_type: spelling_variant
+        search_priority: 85
+
+  - canonical_name: Mimih
+    cluster: broader_humanoid_spirit
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: spirit_person
+    ontology_default: spirit_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Mimi is high noise as a personal name and business/art context; use constrained queries.
+    description: Publicly represented spirit-person figure; source mediation must be coded.
+    aliases:
+      - alias: Mimih
+        alias_type: exact
+        search_priority: 100
+      - alias: Mimi
+        alias_type: noise_sensitive
+        search_priority: 35
+        notes: Never search bare; use constrained boolean forms only.
+
+  - canonical_name: Quinkan
+    cluster: broader_humanoid_spirit
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: spirit_person
+    ontology_default: spirit_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Restrict to public published representations and public heritage discourse.
+    description: Public textual representation of spirit beings associated with north Queensland rock art and public heritage discourse.
+    aliases:
+      - alias: Quinkan
+        alias_type: exact
+        search_priority: 100
+      - alias: Quinkin
+        alias_type: spelling_variant
+        search_priority: 85
+
+  - canonical_name: Wandjina
+    cluster: broader_humanoid_spirit
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: spirit_person
+    ontology_default: ancestral_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Culturally sensitive; public catalogue metadata is not permission to extract restricted cultural knowledge.
+    description: Public representations of Wandjina/Wanjina figures in published and public heritage texts.
+    aliases:
+      - alias: Wandjina
+        alias_type: exact
+        search_priority: 100
+      - alias: Wanjina
+        alias_type: spelling_variant
+        search_priority: 90
+
+  - canonical_name: Nargun
+    cluster: broader_humanoid_spirit
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: humanoid_adjacent
+    ontology_default: spirit_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Include only public published representations.
+    description: Public textual figure appearing in published accounts and later media.
+    aliases:
+      - alias: Nargun
+        alias_type: exact
+        search_priority: 95
+
+  - canonical_name: Garkain
+    cluster: broader_humanoid_spirit
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: humanoid_adjacent
+    ontology_default: spirit_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Include only public published representations.
+    description: Publicly represented humanoid-adjacent spirit figure.
+    aliases:
+      - alias: Garkain
+        alias_type: exact
+        search_priority: 95
+
+  - canonical_name: Mokoi
+    cluster: broader_humanoid_spirit
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: spirit_person
+    ontology_default: spirit_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Include only public published representations.
+    description: Publicly represented spirit figure requiring source voice and mediation coding.
+    aliases:
+      - alias: Mokoi
+        alias_type: exact
+        search_priority: 95
+
+  - canonical_name: Mamu
+    cluster: broader_humanoid_spirit
+    tier: tier_3_boundary
+    include_status: include_v1
+    humanoid_degree: spirit_person
+    ontology_default: spirit_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: High noise because of organisations and place/business names; constrained queries required.
+    description: Public-text spirit-being term; requires careful filtering from organisation names.
+    aliases:
+      - alias: Mamu
+        alias_type: noise_sensitive
+        search_priority: 35
+        notes: Never search bare; use constrained boolean forms only.
+
+  - canonical_name: Pangkarlangu
+    cluster: broader_humanoid_spirit
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: giant
+    ontology_default: giant
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Include only public published representations.
+    description: Publicly represented giant or humanoid figure in Australian textual sources.
+    aliases:
+      - alias: Pangkarlangu
+        alias_type: exact
+        search_priority: 95
+
+  - canonical_name: Puttikan
+    cluster: broader_humanoid_spirit
+    tier: tier_2_strong_candidate
+    include_status: include_v1
+    humanoid_degree: humanoid_adjacent
+    ontology_default: spirit_being
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Include only public published representations.
+    description: Publicly represented humanoid-adjacent figure.
+    aliases:
+      - alias: Puttikan
+        alias_type: exact
+        search_priority: 95
+
+  - canonical_name: Doolaga
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Doolaga
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Dooligah
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Dooligah
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Douligah
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Douligah
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Thoolagal
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Thoolagal
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Joogabinna
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Joogabinna
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Ghindaring
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Ghindaring
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Jurrawarra
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Jurrawarra
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Myngawin
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Myngawin
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Noocoonah
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Noocoonah
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Wawee
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Wawee
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Jimbra
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Jimbra
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Tjangara
+    cluster: validation_queue
+    tier: validation_queue
+    include_status: validate_before_include
+    humanoid_degree: unclear
+    ontology_default: unclear
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Validation only; do not ingest as a core term without human review.
+    description: Candidate term held for validation before inclusion.
+    aliases:
+      - alias: Tjangara
+        alias_type: exact
+        search_priority: 10
+
+  - canonical_name: Bunyip
+    cluster: excluded_control
+    tier: excluded_control
+    include_status: control_only
+    humanoid_degree: non_humanoid
+    ontology_default: non_humanoid_control
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Use only as a non-humanoid control, not a core humanoid figure.
+    description: Non-humanoid control term for comparison.
+    aliases:
+      - alias: Bunyip
+        alias_type: exact
+        search_priority: 80
+
+  - canonical_name: Drop bear
+    cluster: excluded_control
+    tier: excluded_control
+    include_status: control_only
+    humanoid_degree: non_humanoid
+    ontology_default: satire
+    involves_indigenous_knowledge: false
+    sensitivity_notes: Satirical modern folklore control, not a core humanoid figure.
+    description: Satirical non-humanoid control term.
+    aliases:
+      - alias: Drop bear
+        alias_type: exact
+        search_priority: 80
+
+  - canonical_name: Rainbow Serpent
+    cluster: excluded_control
+    tier: excluded_control
+    include_status: exclude_core
+    humanoid_degree: non_humanoid
+    ontology_default: non_humanoid_control
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Culturally central and non-humanoid; excluded from core searches.
+    description: Excluded from core scope.
+    aliases:
+      - alias: Rainbow Serpent
+        alias_type: exact
+        search_priority: 0
+
+  - canonical_name: Ngatyi
+    cluster: excluded_control
+    tier: excluded_control
+    include_status: exclude_core
+    humanoid_degree: non_humanoid
+    ontology_default: non_humanoid_control
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Culturally central and non-humanoid; excluded from core searches.
+    description: Excluded from core scope.
+    aliases:
+      - alias: Ngatyi
+        alias_type: exact
+        search_priority: 0
+
+  - canonical_name: Bula
+    cluster: excluded_control
+    tier: excluded_control
+    include_status: exclude_core
+    humanoid_degree: non_humanoid
+    ontology_default: non_humanoid_control
+    involves_indigenous_knowledge: true
+    sensitivity_notes: Culturally central and non-humanoid; excluded from core searches.
+    description: Excluded from core scope.
+    aliases:
+      - alias: Bula
+        alias_type: exact
+        search_priority: 0
+
+  - canonical_name: Min Min lights
+    cluster: excluded_control
+    tier: excluded_control
+    include_status: exclude_core
+    humanoid_degree: non_humanoid
+    ontology_default: non_humanoid_control
+    involves_indigenous_knowledge: false
+    sensitivity_notes: Phenomenon, not a figure; excluded from core.
+    description: Excluded phenomenon control.
+    aliases:
+      - alias: Min Min lights
+        alias_type: exact
+        search_priority: 0
+

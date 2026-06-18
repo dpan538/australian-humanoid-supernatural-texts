@@ -1,0 +1,5 @@
+Yowie
+Ape-like mythical creature from Australian folklore
+The Yowie is one of several names for an Australian folklore entity that is reputed to live in the Outback. The creature has origins in Aboriginal oral history.
+Revision: 1359939614
+Retrieved via Wikimedia summary API: https://en.wikipedia.org/api/rest_v1/page/summary/Yowie

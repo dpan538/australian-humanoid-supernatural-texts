@@ -1,0 +1,5 @@
+Bunyip
+Mythical creature from Aboriginal mythology
+The bunyip is a creature from the aboriginal mythology of southeastern Australia, said to lurk in swamps, billabongs, creeks, riverbeds and waterholes.
+Revision: 1358148447
+Retrieved via Wikimedia summary API: https://en.wikipedia.org/api/rest_v1/page/summary/Bunyip

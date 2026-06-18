@@ -1,0 +1,66 @@
+high_noise_terms:
+  - term: Yahoo
+    expected_noise_level: extreme
+    reason: Later internet company, mail, finance, and news noise.
+    constraints:
+      - '"Yahoo" AND ("hairy man" OR Yowie OR "devil-devil" OR Aboriginal OR Australia)'
+      - '"Yahoo-devil-devil"'
+
+  - term: Mimi
+    expected_noise_level: extreme
+    reason: Common personal name, art organisations, and unrelated uses.
+    constraints:
+      - '"Mimi" AND (spirit OR spirits OR Aboriginal OR Arnhem OR "rock art" OR Mimih)'
+      - '"Mimih"'
+
+  - term: Mamu
+    expected_noise_level: high
+    reason: Organisation, place, and public corporation names create repeated false positives.
+    constraints:
+      - '"Mamu" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)'
+
+  - term: Hairy Man
+    expected_noise_level: high
+    reason: Generic phrase outside the project scope.
+    constraints:
+      - '"Hairy Man" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)'
+      - '"Hairy Man of the Wood"'
+
+noise_patterns:
+  - class: yowie_place_product
+    patterns:
+      - Yowie Bay
+      - Cadbury Yowie
+      - Yowie chocolate
+      - Yowie toy
+      - Yowie toys
+
+  - class: yahoo_internet
+    patterns:
+      - Yahoo Mail
+      - Yahoo News
+      - Yahoo Finance
+      - yahoo.com
+
+  - class: mimi_person_or_organisation
+    patterns:
+      - Mimi Aboriginal Art and Craft
+      - Mimi as personal name
+
+  - class: mamu_organisation
+    patterns:
+      - Mamu Aboriginal Corporation
+      - Mamu Corporation
+
+  - class: wandjina_artwork_title_only
+    patterns:
+      - Wandjina artwork title only
+
+bare_query_policy:
+  forbidden:
+    - Yahoo
+    - Mimi
+    - Mamu
+    - Hairy Man
+  note: These terms may be queried only through constrained boolean strings or more specific variants.
+

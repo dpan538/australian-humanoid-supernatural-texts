@@ -1,0 +1,59 @@
+historical_source_types:
+  - trove_newspaper
+  - trove_magazine
+
+modern_source_types:
+  - nla_catalogue
+  - aiatsis_public_catalogue
+  - andc
+  - modern_web
+
+attention_sources:
+  google_trends: google_trends
+  wikimedia_pageviews: wikimedia_pageviews
+
+date_bands:
+  historical:
+    - name: backsearch_negative_control
+      label: Retrospective Trove backsearch window
+      date_start: "1803"
+      date_end: "1841"
+
+    - name: early_anchor_period
+      label: Early anchor period
+      date_start: "1842"
+      date_end: "1875"
+
+    - name: premodern_newspaper_publication_expansion
+      label: Pre-modern newspaper and publication expansion
+      date_start: "1876"
+      date_end: "1969"
+
+    - name: modern_yowie_heritage_tourism_media
+      label: Modern Yowie, heritage, tourism, and media period
+      date_start: "1970"
+      date_end: "present"
+
+  attention:
+    google_trends:
+      label: Google Trends attention series
+      date_start: "2004"
+      date_end: "present"
+
+    wikimedia_pageviews:
+      label: Wikimedia Pageviews attention series
+      date_start: "2015-07-01"
+      date_end: "present"
+
+attention_terms:
+  - term: Yowie
+    expected_noise_level: medium
+  - term: Bunyip
+    expected_noise_level: medium
+  - term: Drop bear
+    expected_noise_level: low
+  - term: Wandjina
+    expected_noise_level: medium
+  - term: Quinkan
+    expected_noise_level: low
+

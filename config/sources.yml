@@ -1,0 +1,64 @@
+sources:
+  - source_name: Trove Newspapers and Gazettes
+    source_type: trove_newspaper
+    base_url: https://trove.nla.gov.au/search/category/newspapers
+    access_method: manual_search_or_api_with_key
+    publicness_level: open_full_text
+    ethics_notes: Use only publicly available Trove pages and metadata. Respect rate limits and rights statements.
+
+  - source_name: Trove Magazines and Newsletters
+    source_type: trove_magazine
+    base_url: https://trove.nla.gov.au/search/category/magazines
+    access_method: manual_search_or_api_with_key
+    publicness_level: open_full_text
+    ethics_notes: Use only publicly available Trove pages and metadata. Respect rate limits and rights statements.
+
+  - source_name: National Library of Australia Catalogue
+    source_type: nla_catalogue
+    base_url: https://catalogue.nla.gov.au/
+    access_method: manual_public_catalogue
+    publicness_level: public_metadata
+    ethics_notes: Catalogue metadata can identify sources for later review; it is not permission to extract restricted content.
+
+  - source_name: AIATSIS Public Catalogue
+    source_type: aiatsis_public_catalogue
+    base_url: https://aiatsis.gov.au/collections
+    access_method: manual_public_catalogue
+    publicness_level: public_metadata
+    ethics_notes: Public metadata only. Exclude restricted, secret/sacred, unpublished, or community-controlled materials.
+
+  - source_name: Research Data Australia
+    source_type: andc
+    base_url: https://researchdata.edu.au/
+    access_method: manual_public_catalogue
+    publicness_level: public_metadata
+    ethics_notes: Public metadata only. Treat cultural material descriptions as leads, not extractable content.
+
+  - source_name: Google Trends
+    source_type: google_trends
+    base_url: https://trends.google.com/
+    access_method: planned_manual_or_future_api
+    publicness_level: public_page
+    ethics_notes: Attention signal only; relative interest is not a count of beliefs or communities.
+
+  - source_name: Wikimedia Pageviews
+    source_type: wikimedia_pageviews
+    base_url: https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews
+    access_method: planned_public_api
+    publicness_level: public_page
+    ethics_notes: Attention signal only; pageviews do not indicate endorsement, identity, or cultural authority.
+
+  - source_name: Modern Public Web
+    source_type: modern_web
+    base_url:
+    access_method: manual_public_web_review
+    publicness_level: public_page
+    ethics_notes: Use only openly discoverable public pages. Do not crawl restricted or community-controlled materials.
+
+  - source_name: Manual Import
+    source_type: manual
+    base_url:
+    access_method: csv_import
+    publicness_level: open_full_text
+    ethics_notes: Researcher must verify that each imported record is public and within scope.
+
