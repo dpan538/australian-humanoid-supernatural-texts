@@ -1,0 +1,13 @@
+{
+  "title": "Episode 82: Bigfoot Discovery Museum Show",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/bliptv-20131013-121553-BigfootMuseum-Episode82BigfootDiscoveryMuseumShow496",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2013",
+  "author": "",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "description": "Mike talks about the Yowie.",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

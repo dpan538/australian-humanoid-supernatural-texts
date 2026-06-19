@@ -1,0 +1,14 @@
+{
+  "title": "Ancient Art and Modern Australians: Continuity in the Laura Art System (Cape York Peninsula)",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.4000/palethnologie.4379",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2013-01-01",
+  "publication": "Palethnologie",
+  "author": "Noelene Cole",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "Two absolute dating methods have been used in the Laura / Quinkan region to date pre-Historic rock art -dating of excavated rock art materials by association with stratified deposits and AMS 14 C dating of rock surface accretions associated with rock art. The research indicates a long art sequence and the occasional survival of late Pleistocene art. This paper focuses on evidence for continuous art practice from the late Pleistocene to the modern period.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

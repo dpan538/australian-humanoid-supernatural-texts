@@ -1,0 +1,14 @@
+{
+  "title": "Batemans Bay yowie sighting an Australian first",
+  "source": "OpenAlex",
+  "url": "http://www.abc.net.au/local/stories/2014/12/09/4145054.htm",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2014-01-01",
+  "publication": "OpenAlex",
+  "author": "Ian Campbell",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "We uncover a little known piece of Australian history and in doing so rekindle a long running argument between an amateur and professional scientist.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

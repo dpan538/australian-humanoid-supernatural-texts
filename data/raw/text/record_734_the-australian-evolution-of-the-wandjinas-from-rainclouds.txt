@@ -1,0 +1,14 @@
+{
+  "title": "THE AUSTRALIAN EVOLUTION OF THE WANDJINAS FROM RAINCLOUDS",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1002/j.1834-4461.1964.tb00259.x",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "1964-03-01",
+  "publication": "Oceania",
+  "author": "Walter Arndt",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

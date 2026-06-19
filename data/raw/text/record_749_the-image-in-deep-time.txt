@@ -1,0 +1,14 @@
+{
+  "title": "The Image in Deep Time",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1163/18757405-03801005",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2026-03-12",
+  "publication": "Samuel Beckett Today / Aujourd’hui",
+  "author": "Mark Byron",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "Abstract The Indigenous rock art discussed in this essay is located on the lands and waterways of the Wandjina Wunggur: the ‘water people’ of the Ngarinyin, Wila Wila, Wororra and Wunambal language groups in the Kimberley region in the northern region of Western Australia. The deep antiquity of these cultural traditions surpasses any other rock art tradition globally. These artifacts are located in the region of the Australian continent with the longest record of human habitation, resting on some of the oldest extant rock formations on the planet. I acknowledge the custodians of this land, their cultural knowledge and custom, and their elders past and present. This material is considered in this essay as an embodiment of enduring cultural production and what its recognition might illuminate when brought into conversation with the work of Samuel Beckett. I draw on expert scholarly work in discussing Gwion Gwion and Wanjina rock art and refer readers to scholarly discussions of Indigenous Knowledge Systems and community-led Indigenous scholarship (see Jones 2021; Rawlings et al. 2021).",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

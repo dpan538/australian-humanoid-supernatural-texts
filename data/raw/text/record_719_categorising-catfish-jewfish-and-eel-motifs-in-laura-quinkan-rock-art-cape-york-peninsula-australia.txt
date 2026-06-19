@@ -1,0 +1,14 @@
+{
+  "title": "CATEGORISING CATFISH, JEWFISH AND EEL MOTIFS IN LAURA (QUINKAN) ROCK ART, CAPE YORK PENINSULA, AUSTRALIA",
+  "source": "OpenAlex",
+  "url": "http://dx.doi.org/10.56801/rar.v41i1.271",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2024-01-29",
+  "publication": "Rock Art Research",
+  "author": "Noelene Cole, Christine Musgrave, Roseanne George, Lynley A. Wallis",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "Fish motifs in Aboriginal rock art of the Laura area (Cape York Peninsula, Queensland, Australia) include a heterogenous group that has been imprecisely classified by rock art researchers. By analysing motif attributes, style and contexts (including natural populations), we characterised three categories: fork-tailed catfish (Neoarius paucus), eel-tailed catfish (Neosilurus spp.) and eel (Anguilla reinhardti). We label the categories with the local names ‘catfish’, ‘jewfish’ and ‘eel’. The catfish cohort has a relatively naturalistic style, while the eel exhibits anatomical trends of eels, distinctive arrangements, and stylistic overlaps with jewfish that may denote shared meanings. Ambiguity is confirmed as a cultural value and communication mode of the rock art system.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

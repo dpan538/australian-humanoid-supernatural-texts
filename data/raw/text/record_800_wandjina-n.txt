@@ -1,0 +1,14 @@
+{
+  "title": "Wandjina, n.",
+  "source": "Crossref",
+  "url": "https://doi.org/10.1093/oed/1186237953",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2024-2-6",
+  "publication": "Oxford English Dictionary",
+  "author": "",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

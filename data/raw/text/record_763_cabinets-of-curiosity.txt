@@ -1,0 +1,14 @@
+{
+  "title": "Cabinets of curiosity",
+  "source": "OpenAlex",
+  "url": "https://openalex.org/W160747767",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2003-01-01",
+  "publication": "USC Research Bank (University of the Sunshine Coast)",
+  "author": "Gary Crew, T.H. Flowers",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "History is about people, places and stuff that happens, What sort of stuff? Join some of Australia's best loved writers and illustrators, including Gary Crew, Tony Flowers, Jackie French, Morris Gleitzman, Wayne Harris, Libby Hathorn, Meme McDonald, Malcolm McGookin, Boori Monty Pryor, Sally Rippin, Elaine Russell, Alick Tipoti, and Tim the Yowie Man as they share their stories, poems and pictures inspired by the National Museum of Australia, where history is alive! [Book Synopsis]",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

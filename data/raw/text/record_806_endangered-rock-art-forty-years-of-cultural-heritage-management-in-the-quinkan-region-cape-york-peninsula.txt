@@ -1,0 +1,14 @@
+{
+  "title": "Endangered Rock Art: Forty years of cultural heritage management in the Quinkan region, Cape York Peninsula",
+  "source": "Crossref",
+  "url": "https://doi.org/10.1080/03122417.2012.11681951",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2012-12-1",
+  "publication": "Australian Archaeology",
+  "author": "Noelene Cole, Alice Buhrich",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

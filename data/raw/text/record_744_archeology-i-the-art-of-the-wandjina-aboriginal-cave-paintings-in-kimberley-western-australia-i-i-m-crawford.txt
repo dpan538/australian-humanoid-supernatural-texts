@@ -1,0 +1,14 @@
+{
+  "title": "Archeology: <i>The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia.</i> I. M. CRAWFORD",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1525/aa.1972.74.1-2.02a01000",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "1972-02-04",
+  "publication": "American Anthropologist",
+  "author": "Nancy D. Munn",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

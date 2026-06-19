@@ -1,0 +1,14 @@
+{
+  "title": "Images of Power: Aboriginal Art of the Kimberley",
+  "source": "OpenAlex",
+  "url": "http://ci.nii.ac.jp/ncid/BA28259126",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "1993-06-01",
+  "publication": "Medical Entomology and Zoology",
+  "author": "Judith Ryan, Kim Akerman",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "The extraordinarily creative and varied output of artists of Northwestern Australia express different ideas and use different techniques but are united in having a visual 'voice' that reinforces the Aboriginal's rights to the land. From the northwest and central Kimberly are representations of the ethereal Wandjina spirit being, on rock surfaces and canvas, along with engraved and painted artifacts, boab nuts, pendants, glass spear points and bar buckets. From the Turkey Creek area are spiritual interpretations of the land while works from Fitzroy Crossing employ vibrant color and gestural brushwork. Balgo painting has filigree patterning depicting the spare desert as if viewed from the sky. Elsewhere, artists produce geometrics and palettes of ochre. (National Gallery of Victoria)",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

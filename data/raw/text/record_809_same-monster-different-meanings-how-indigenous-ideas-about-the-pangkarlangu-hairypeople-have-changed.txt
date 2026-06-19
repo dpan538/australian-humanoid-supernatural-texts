@@ -1,0 +1,14 @@
+{
+  "title": "Same monster, different meanings: how Indigenous ideas about the Pangkarlangu Hairypeople have changed",
+  "source": "Crossref",
+  "url": "https://doi.org/10.64628/aa.xxw3yg6t7",
+  "matched_term": "Pangkarlangu",
+  "figure": "Pangkarlangu",
+  "date_published": "2021-7-5",
+  "publication": "The Conversation",
+  "author": "Yasmine Musharbash",
+  "region_signal": "Northern Territory",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

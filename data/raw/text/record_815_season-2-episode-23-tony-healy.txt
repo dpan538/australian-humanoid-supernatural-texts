@@ -1,0 +1,13 @@
+{
+  "title": "Season 2 Episode 23 Tony Healy",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/Season2Episode23TonyHealy",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2007-04-21T00:00:00Z",
+  "author": "Binnall of America",
+  "region_signal": "Australian Capital Territory",
+  "location_confidence": "medium",
+  "description": "Tony Healy joins Binnall all the way from Canberra, Australia. He is a co-author of ''Yowie: In Search of Australia's Bigfoot.''",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

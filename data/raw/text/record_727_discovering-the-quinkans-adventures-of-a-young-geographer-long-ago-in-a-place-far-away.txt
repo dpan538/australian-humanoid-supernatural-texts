@@ -1,0 +1,14 @@
+{
+  "title": "Discovering the Quinkans: Adventures of a Young Geographer, Long Ago, in a Place Far Away",
+  "source": "OpenAlex",
+  "url": "http://dx.doi.org/10.1353/pcg.2023.a913570",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2023-01-01",
+  "publication": "Yearbook - Association of Pacific Coast Geographers",
+  "author": "Ray Sumner",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "ABSTRACT: This paper is a recollection of and reflection on student participation in an expedition to discover and record a vast but previously unrecognized collection of Indigenous cave art created by ancient peoples in an extremely remote location in North Queensland. Now known as Quinkan Country, it was inscribed into the Australian National Heritage List in November 2018.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

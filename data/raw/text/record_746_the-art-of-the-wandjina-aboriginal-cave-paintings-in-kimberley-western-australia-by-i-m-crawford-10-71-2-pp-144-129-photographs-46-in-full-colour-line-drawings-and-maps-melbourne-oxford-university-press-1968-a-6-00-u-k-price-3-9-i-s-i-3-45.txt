@@ -1,0 +1,14 @@
+{
+  "title": "The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia. By I. M. Crawford. 10 × 7½. Pp. 144 + 129 photographs (46 in full colour), line drawings, and maps. Melbourne: Oxford University Press, 1968. $A. 6.00. U.K. price £3. 9<i>s</i>. (£3.45).",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1017/s0003581500032054",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "1970-09-01",
+  "publication": "The Antiquaries Journal",
+  "author": "J. V. S. Megaw",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia. By I. M. Crawford. 10 × 7½. Pp. 144 + 129 photographs (46 in full colour), line drawings, and maps. Melbourne: Oxford University Press, 1968. $A. 6.00. U.K. price £3. 9s. (£3.45). - Volume 50 Issue 2",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

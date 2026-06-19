@@ -1,0 +1,14 @@
+{
+  "title": "The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia.",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.2307/2798867",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "1970-03-01",
+  "publication": "Man",
+  "author": "C. P. Mountford, I. M. Crawford",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

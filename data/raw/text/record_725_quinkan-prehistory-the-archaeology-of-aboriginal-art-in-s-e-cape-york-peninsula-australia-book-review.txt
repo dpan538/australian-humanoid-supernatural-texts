@@ -1,0 +1,14 @@
+{
+  "title": "Quinkan Prehistory: The Archaeology of Aboriginal Art in S.E. Cape York Peninsula, Australia [Book Review]",
+  "source": "OpenAlex",
+  "url": "http://search.informit.com.au/fullText;dn=600914304690970;res=IELHSS",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "1995-12-01",
+  "publication": "Australian Archaeology",
+  "author": "Bruno David",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "Review(s) of: Quinkan Prehistory: The Archaeology of Aboriginal Art in S.E. Cape York Peninsula, Australia, by M.J. Morwood and D.R. Hobbs (eds), TEMPUS 3, Anthropology Museum, University of Queensland (1995), vi + 208 pages, ISBN 90961143 2. Includes references.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

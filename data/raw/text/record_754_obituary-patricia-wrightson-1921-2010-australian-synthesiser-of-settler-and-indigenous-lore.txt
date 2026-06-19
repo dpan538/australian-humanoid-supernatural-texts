@@ -1,0 +1,14 @@
+{
+  "title": "Obituary: Patricia Wrightson (1921-2010): Australian Synthesiser of Settler and Indigenous Lore",
+  "source": "OpenAlex",
+  "url": "https://hdl.handle.net/1959.11/8719",
+  "matched_term": "Nargun",
+  "figure": "Nargun",
+  "date_published": "2010-01-01",
+  "publication": "RUNE (Research UNE)",
+  "author": "Julie Hawkins",
+  "region_signal": "Victoria",
+  "location_confidence": "medium",
+  "abstract": "The late Patricia Wrightson (1921-2010) made a unique and highly significant contribution to the burgeoning discipline of speculative and deeply folklore-sensitive literature in Australia, notably by utilizing and making the most sensitive use of motifs, figures and characters from the Indigenous Australian traditions. For her nurture had placed her in early contact with the belief heritage of the people of the Northern Rivers and to the west of that region of Northern New South Wales. All of this she combined with motifs, figures and characters from the European Australian literature and from the complex mass of lore of her own family's diverse cultural background. Her speculative creations had a strong influence on our youth literature, including in particular, her 'Nargun and the Stars' (1973) and the 'Wirrun' series (1977-1981), with the result that she was a figure greatly loved by her numerous readers, her works having already brought inspiration and the sense of new possibilities for the mindsets of younger generations of innumerable creative Australians.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

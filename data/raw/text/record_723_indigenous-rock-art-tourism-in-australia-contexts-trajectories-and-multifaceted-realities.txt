@@ -1,0 +1,14 @@
+{
+  "title": "Indigenous Rock Art Tourism in Australia: Contexts, Trajectories, and Multifaceted Realities",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.3390/arts8040162",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2019-12-06",
+  "publication": "Arts",
+  "author": "Noelene Cole, Lynley A. Wallis",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "This paper focuses on Australian Indigenous rock art tourism, a field that has received limited research attention. Our aim is to identify aspects which are invisible in tourism promotions. We note trends in rock art tourism and related research, survey the Australian situation, and employ a case study approach to outline the development of Indigenous rock art tourism in Kakadu National Park (KNP) and parts of the Quinkan (Laura Cooktown) region. In both regions, Aboriginal communities inherited legacies of top down decision-making and bureaucratic methods. Although the Laura people transitioned to a community-based system and a successful ranger program, they face challenges in achieving their aspirations for sustainable rock art tourism. KNP communities, subsumed into an unwieldy joint management arrangement for the World Heritage listed National Park, are faced with competing values and perspectives of the dominant government system. A centerpiece of the Balnggarrawarra tourism initiative is the ranger/tour guide system of the type which operated for some years at Laura and was introduced briefly at KNP. The model incorporates key elements of sustainable Indigenous tourism–traditional owner control and jobs, land care, conservation, cultural preservation, partnerships, and public education. Notwithstanding contemporary challenges and realities, a unifying theme is caring for rock art.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

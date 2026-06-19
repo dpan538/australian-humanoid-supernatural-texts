@@ -87,7 +87,12 @@ def write_audit(db_path: str | Path, output_path: Path = DEFAULT_OUTPUT) -> Path
         state_rows = rows(
             conn,
             """
-            SELECT COALESCE(l.state_territory, 'UNKNOWN') AS state,
+            SELECT
+              CASE
+                WHEN l.state_territory IS NULL THEN 'UNKNOWN'
+                WHEN TRIM(l.state_territory) = '' THEN 'AU_UNSPECIFIED'
+                ELSE l.state_territory
+              END AS state,
                    COUNT(DISTINCT r.record_id) AS count
             FROM records r
             LEFT JOIN record_locations rl ON rl.record_id = r.record_id
@@ -204,9 +209,10 @@ def write_audit(db_path: str | Path, output_path: Path = DEFAULT_OUTPUT) -> Path
         [
             "",
             "## Audit Notes",
-            "- The 700 AYR additions are all card-ready display records, not search leads.",
+            "- AYR records are card-ready display records, not search leads.",
             "- Regional coverage is not even: NSW and QLD dominate because the public AYR archive is heavily weighted toward those states.",
-            "- The 6 UNKNOWN records are non-AYR attention/control records with display fields but no state/territory location.",
+            "- AU_UNSPECIFIED records have Australia-level or broad-region location signals rather than a state/territory.",
+            "- UNKNOWN records have display fields but no reliable state/territory location.",
             "- Early-period coverage improved through public historical/media pages, but the corpus remains modern-heavy.",
         ]
     )

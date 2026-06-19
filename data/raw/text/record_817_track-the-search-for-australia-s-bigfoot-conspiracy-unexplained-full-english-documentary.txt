@@ -1,0 +1,13 @@
+{
+  "title": "Track: The Search for Australia's Bigfoot | Conspiracy | Unexplained | Full English Documentary",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/youtube-U5ZiqEu1s2E",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2024-03-13T00:00:00Z",
+  "author": "Gravitas Documentaries",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "description": "After his own horrifying encounters, the producer returns to Australia’s Blue Mountains where he believes numerous habitats exist for what is commonly known as Bigfoot. Exploring an uncharted region, he discovers evidence that may suggest a possible hunting ground. A countdown begins to an organised expedition. The producer begins his initial inquiries by interviewing a researcher who claims to have not only recorded howls from a Bigfoot, but captured one on camera. To investigate this claim, a university lecturer is asked to assess the video and then visit the site where the recording took place. What are people actually seeing? To answer this fundamental question, we interview Cryptozoologists, researchers and a university associate professor in biodiversity. Weeks before the expedition, the producer and two other researchers visit a different area in the Blue Mountains as a preliminary exercise before the main event. What they uncover was something they did not expect. #documentary #fullmovie #bigfoot #sasquatch #paranormal #conspiracy #cryptids Directed by: Attila Kaldy Starring: Duo Ben, Robert Jinks, Yowie Dan, Gary Opit, Mathew Crowther, Michelle Damon, Neil Frost, Peter McAllum, Robert Venables, Jonathon Marsh, Tony Jinks WANT TO SEE MORE MOVIES LIKE THIS FOR FREE here on YouTube? Just visit our other channel for hundreds of free movies and documentaries! https://youtube.com/@gravitasventuresVOD | https://youtube.com/@gravitasadrenaline | https://youtube.com/@gravitasunexplained",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

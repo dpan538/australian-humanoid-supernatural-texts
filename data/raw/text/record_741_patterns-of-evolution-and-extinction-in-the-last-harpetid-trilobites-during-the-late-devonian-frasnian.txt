@@ -1,0 +1,14 @@
+{
+  "title": "PATTERNS OF EVOLUTION AND EXTINCTION IN THE LAST HARPETID TRILOBITES DURING THE LATE DEVONIAN (FRASNIAN)",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1111/j.1475-4983.2008.00832.x",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2008-12-31",
+  "publication": "Palaeontology",
+  "author": "Kenneth J. McNamara, Raimund Feist, Malte C. Ebach",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "Abstract: L ate Devonian (Frasnian) harpetid trilobites have hitherto only been described from the western side of the Protethys Ocean, in what is now Europe and North Africa, as well as from Gondwana‐derived northwestern Kazakhstan (Mugodjar). However, late Frasnian strata in the Canning Basin, Western Australia, that were deposited on the eastern side of this ocean, contain a rich harpetid fauna. Described herein are two new harpetids: Eskoharpes gen. nov. and Globoharpes gen. nov., within which are placed six species: E. palanasus sp. nov., E. wandjina sp. nov., E. boltoni sp. nov., E. guthae sp. nov., G. teicherti sp. nov. and G. friendi sp. nov. The ontogenetic development of E. palanasus, E. wandjina and G. teicherti are described, including the first unequivocal harpetid protaspis. Globoharpes exhibits evidence of sexual dimorphism in the development of a pronounced preglabellar boss in some specimens. This structure is thought to have functioned as a brood pouch. Such structures have previously only been described in Cambrian and Ordovician trilobites, and never before in harpetids. It is suggested that the characteristic harpetid fringe functioned as a secondary respiratory structure. The Eskoharpes lineage shows evolutionary trends that mirror changes seen in ontogenetic development of the youngest species, suggesting the operation of peramorphic processes. This is the first record of heterochrony in harpetids and the first documented example of peramorphosis in Devonian trilobites. These harpetids demonstrate a stepped pattern of extinction during the late Frasnian, probably related to the effects of the two Kellwasser biocrises that have been well documented in European Frasnian sections. Highly vaulted species of Eskoharpes and the strongly vaulted Globoharpes became extinct at the Lower Kellwasser Event. The flatter species of Eskoharpes became extinct at the base of the Upper Kellwasser Event shortly prior to the Frasnian/Famennian boundary. The extinction of these harpetids, along with contemporaneous forms from Europe, which are also discussed herein, marks the end of the trilobite order Harpetida worldwide.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

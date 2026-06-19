@@ -1,0 +1,14 @@
+{
+  "title": "Visiting Gonjorong’s Cave",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1093/oxfordhb/9780190607357.013.16",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2017-02-07",
+  "publication": "OpenAlex",
+  "author": "Valda Blundell, Donny Woolagoodja, Janet Oobagooma, Leah Umbagai",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "This chapter focuses on Gonjorong’s Cave, a rock shelter in the Kimberley region of northwest Australia. Gonjorong’s Cave contains paintings of anthropomorphic figures known as Wandjina, a distinctive feature of the Wandjina-Woongudd homeland. The Wandjina-Woongudd Community is a distinct society of Australian Aboriginal people that includes the Woddordda. This chapter first provides a background on Gonjorong’s Cave and the role of Wandjina paintings in creating the distinctive Wandjina-Woongudd cultural landscape. It then examines the meanings of Wandjina in the Woddordda’s present-day lives, with particular emphasis on why they consider it important to regularly visit sites such as Gonjorong’s Cave. It shows that rock art sites such as Gonjorong’s Cave provide evidence of the Woddordda’s deep history as the Traditional Owners of their homeland.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

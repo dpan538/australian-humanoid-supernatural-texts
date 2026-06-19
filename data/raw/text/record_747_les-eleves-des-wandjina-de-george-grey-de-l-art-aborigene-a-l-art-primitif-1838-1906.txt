@@ -1,0 +1,14 @@
+{
+  "title": "Les elevés des Wandjina de George Grey. De L’art Aborigène à L'art primitif (1838–1906)",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.4467/00786500.org.23.005.18782",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2023-12-12",
+  "publication": "ORGANON",
+  "author": "Maddalena Cataldi",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "George Grey’s Wandjina Copies. From Aboriginal Art to Primitive Art (1838–1906) The history of the recognition of Palaeolithic art has been written from the perspective of European discoveries in the last third of the 19th century. Through this case study of the publication of the Wandjina paintings (Australian Kimberley) by George Grey between 1838 and 1841 and through the contextualisation of the interpretations attributed to them the article investigates the intellectual and political space in which conceptions relating to the ability of Aborigines to produce this art emerged within the debates of contemporaries and, later, of English and French prehistorians. It also provides an insight into the different contexts that shaped the will to reconstruct the heritage of non–European cultures in a colonial context.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

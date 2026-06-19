@@ -1,0 +1,14 @@
+{
+  "title": "Evidence of ENSO mega‐drought triggered collapse of prehistory Aboriginal society in northwest Australia",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1029/2012gl053916",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2012-11-02",
+  "publication": "Geophysical Research Letters",
+  "author": "Hamish A. McGowan, Samuel K. Marx, Patrick Moss, Andrew Hammond",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "The Kimberley region of northwest Australia contains one of the World's largest collections of rock art characterised by two distinct art forms; the fine featured anthropomorphic figures of the Gwion Gwion or Bradshaw paintings, and broad stroke Wandjina figures. Luminescence dating of mud wasp nests overlying Gwion Gwion paintings has confirmed an age of at least 17,000 yrs B.P. with the most recent dates for these paintings from around the mid‐Holocene (5000 to 7000 yrs B.P.). Radiocarbon dating indicates that the Wandjina rock art then emerged around 3800 to 4000 yrs B.P. following a hiatus of at least 1200 yrs. Here we show that a mid‐Holocene ENSO forced collapse of the Australian summer monsoon and ensuing mega‐drought spanning approximately 1500 yrs was the likely catalyst of this change in rock art. The severity of the drought we believe was enhanced through positive feedbacks triggered by change in land surface condition and increased aerosol loading of the atmosphere leading to a weakening or failure of monsoon rains. This confirms that pre‐historic aboriginal cultures experienced catastrophic upheaval due to rapid natural climate variability and that current abundant seasonal water supplies may fail again if significant change in ENSO occurs.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

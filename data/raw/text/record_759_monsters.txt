@@ -1,0 +1,14 @@
+{
+  "title": "Monsters",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.3726/b14677",
+  "matched_term": "Pangkarlangu",
+  "figure": "Pangkarlangu",
+  "date_published": "2020-07-31",
+  "publication": "OpenAlex",
+  "author": "Musharbash, Yasmine",
+  "region_signal": "Northern Territory",
+  "location_confidence": "medium",
+  "abstract": "In this chapter, I attend Halberstam's notion that the traces or scars of old Monsters live on in contemporary examples and also move into the future, by analysing Hairies in the Australian two season series Cleverman (Griffen, 2016-2017) and Pangkarlangu in central Australia. I read both along the lines of the 'Indigenous Uncanny' as proposed by Faye Ginsburg (2018), proposing that Hairies are not 'just' monsters in the most general sense of the term but rather that they are 'for First Nations people' relatable others.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

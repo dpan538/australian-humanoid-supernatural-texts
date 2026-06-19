@@ -106,10 +106,26 @@ PLACE_STATE_HINTS: dict[str, tuple[str, str]] = {
     "sydney": ("NSW", "Sydney"),
     "illawarra": ("NSW", "Illawarra"),
     "queanbeyan": ("NSW", "Queanbeyan"),
+    "monaro": ("NSW", "Monaro"),
+    "manaro": ("NSW", "Monaro"),
     "goulburn": ("NSW", "Goulburn"),
     "lismore": ("NSW", "Lismore"),
     "richmond river": ("NSW", "Richmond River"),
     "blue mountains": ("NSW", "Blue Mountains"),
+    "kiama": ("NSW", "Kiama"),
+    "walla walla": ("NSW", "Walla Walla"),
+    "freemans journal": ("NSW", "Sydney"),
+    "australian town and country": ("NSW", "Sydney"),
+    "town and country": ("NSW", "Sydney"),
+    "daily telegraph": ("NSW", "Sydney"),
+    "sun herald": ("NSW", "Sydney"),
+    "manning river": ("NSW", "Manning River"),
+    "crescent head": ("NSW", "Crescent Head"),
+    "bay post": ("NSW", "Batemans Bay"),
+    "batemans bay": ("NSW", "Batemans Bay"),
+    "kempsey": ("NSW", "Kempsey"),
+    "armidale": ("NSW", "Armidale"),
+    "newcastle": ("NSW", "Newcastle"),
     "tenterfield": ("NSW", "Tenterfield"),
     "bega": ("NSW", "Bega"),
     "bombala": ("NSW", "Bombala"),
@@ -135,6 +151,17 @@ PLACE_STATE_HINTS: dict[str, tuple[str, str]] = {
     "nsw": ("NSW", "New South Wales"),
     "brisbane": ("QLD", "Brisbane"),
     "courier mail": ("QLD", "Brisbane"),
+    "sunday mail": ("QLD", "Brisbane"),
+    "western champion": ("QLD", "Barcaldine"),
+    "northern miner": ("QLD", "Charters Towers"),
+    "caboolture": ("QLD", "Caboolture"),
+    "pt douglas": ("QLD", "Port Douglas"),
+    "port douglas": ("QLD", "Port Douglas"),
+    "logan": ("QLD", "Logan"),
+    "sunshine valley": ("QLD", "Sunshine Coast"),
+    "toowoomba": ("QLD", "Toowoomba"),
+    "balonne": ("QLD", "Balonne Shire"),
+    "herbert river": ("QLD", "Herbert River"),
     "gold coast": ("QLD", "Gold Coast"),
     "nanango": ("QLD", "Nanango"),
     "kilkivan": ("QLD", "Kilkivan"),
@@ -153,17 +180,22 @@ PLACE_STATE_HINTS: dict[str, tuple[str, str]] = {
     "qld": ("QLD", "Queensland"),
     "melbourne": ("VIC", "Melbourne"),
     "argus": ("VIC", "Melbourne"),
+    "herald sun": ("VIC", "Melbourne"),
+    "bendigo": ("VIC", "Bendigo"),
+    "yarram": ("VIC", "Yarram"),
     "geelong": ("VIC", "Geelong"),
     "gippsland": ("VIC", "Gippsland"),
     "colac": ("VIC", "Colac"),
     "victoria": ("VIC", "Victoria"),
     "vic": ("VIC", "Victoria"),
     "launceston": ("TAS", "Launceston"),
+    "the advocate": ("TAS", "Tasmania"),
     "tasmania": ("TAS", "Tasmania"),
     "tas": ("TAS", "Tasmania"),
     "west australian": ("WA", "Western Australia"),
     "perth": ("WA", "Perth"),
     "shark bay": ("WA", "Shark Bay"),
+    "rabbit proof fence": ("WA", "Western Australia"),
     "western australia": ("WA", "Western Australia"),
     "wa": ("WA", "Western Australia"),
     "adelaide": ("SA", "Adelaide"),
@@ -214,6 +246,14 @@ def clean_space(value: str | None) -> str:
     if not value:
         return ""
     return " ".join(html.unescape(value).replace("\xa0", " ").split())
+
+
+def display_path(path: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return str(resolved.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(path)
 
 
 def strip_tags(fragment: str) -> str:
@@ -843,7 +883,7 @@ def write_report(
         f"- Ending record count: {end_count}",
         f"- Target new card-ready records: {target}",
         f"- Inserted new card-ready records: {len(inserted)}",
-        f"- Candidate/status CSV: `{candidates_output.relative_to(PROJECT_ROOT)}`",
+        f"- Candidate/status CSV: `{display_path(candidates_output)}`",
         "",
         "## Card-Ready Gate",
         "A page was inserted only when it supplied enough display data for the record card: year, title or Yowie figure, public source URL, Australian state/territory, and a concise objective summary. Search leads and pages missing those fields were skipped.",

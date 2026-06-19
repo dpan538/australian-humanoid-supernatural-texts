@@ -1,0 +1,14 @@
+{
+  "title": "Quinkan prehistory : the archaeology of aboriginal art in S.E. Cape York Peninsula, Australia",
+  "source": "OpenAlex",
+  "url": "http://ci.nii.ac.jp/ncid/BA62554377",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "1995-01-01",
+  "publication": "Medical Entomology and Zoology",
+  "author": "M.J. Morwood, D. R. Hobbs",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

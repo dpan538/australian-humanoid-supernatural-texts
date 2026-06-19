@@ -1,0 +1,14 @@
+{
+  "title": "Pangkarlangu, Wonder, Extinction",
+  "source": "Crossref",
+  "url": "https://doi.org/10.4324/9781003086130-4",
+  "matched_term": "Pangkarlangu",
+  "figure": "Pangkarlangu",
+  "date_published": "2020-6-3",
+  "publication": "Monster Anthropology",
+  "author": "Yasmine Musharbash",
+  "region_signal": "Northern Territory",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

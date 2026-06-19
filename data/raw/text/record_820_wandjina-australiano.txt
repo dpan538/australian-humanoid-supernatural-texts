@@ -1,0 +1,13 @@
+{
+  "title": "Wandjina Australiano",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/wandjina-australiano",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2024",
+  "author": "",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "description": "Wandjina australiano",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

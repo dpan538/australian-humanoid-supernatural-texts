@@ -1,0 +1,14 @@
+{
+  "title": "A revision of Australian Mesozoic and Cenozoic lungfish of the family Neoceratodontidae (Osteichthyes:Dipnoi), with a description of four new species",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1017/s0022336000040166",
+  "matched_term": "Nargun",
+  "figure": "Nargun",
+  "date_published": "1997-07-01",
+  "publication": "Journal of Paleontology",
+  "author": "Anne Kemp",
+  "region_signal": "Victoria",
+  "location_confidence": "medium",
+  "abstract": "The taxonomy of the predominantly Australian fossil dipnoan genus, Neoceratodus, is revised and the Recent Australian lungfish, Neoceratodus forsteri, and two fossil species, Neoceratodus eyrensis and Neoceratodus nargun, are redefined. Two new species of the related Tertiary genus, Mioceratodus, are described on the basis of tooth plates from central and northern localities in Australia. These are Mioceratodus diaphorus and Mioceratodus poastrus. A new genus, Archaeoceratodus, is erected to include three rare Tertiary species and one Mesozoic species. The Tertiary members of this genus are the type species, Archaeoceratodus djelleh, described originally as Neoceratodus djelleh, and two new species, Archaeoceratodus rowleyi and Archaeoceratodus theganus. The Mesozoic species is Archaeoceratodus avus from Triassic and Cretaceous deposits in southeastern Australia, described originally as Ceratodus avus. All three genera belong in the family Neoceratodontidae.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

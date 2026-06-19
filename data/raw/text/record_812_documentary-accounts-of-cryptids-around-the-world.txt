@@ -1,0 +1,13 @@
+{
+  "title": "Documentary Accounts Of Cryptids Around The World",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/documentary-accounts-of-cryptids-around-the-world",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2014-11-17T00:00:00Z",
+  "author": "Jan Lavrinovski",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "description": "A worldwide survey of cryptid encounters compiling historical records, indigenous legends, military reports, eyewitness testimonies, and modern investigations of creatures such as the Almas, Yeti, Bigfoot, Yowie, Skunk Ape, Nessie, Champ, Ogopogo, and other giants, lake monsters, sea serpents, and winged terrors.",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

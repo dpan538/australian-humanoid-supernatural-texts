@@ -1,0 +1,14 @@
+{
+  "title": "Wandjina Figure",
+  "source": "Crossref",
+  "url": "https://doi.org/10.1007/978-3-030-58292-0_230018",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2021",
+  "publication": "Encyclopedic Dictionary of Archaeology",
+  "author": "",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Specters of Reality: Mamu in the Eastern Western Desert of Australia",
+  "source": "Crossref",
+  "url": "https://doi.org/10.1057/9781137448651_4",
+  "matched_term": "Mamu",
+  "figure": "Mamu",
+  "date_published": "2014",
+  "publication": "Monster Anthropology in Australasia and Beyond",
+  "author": "Ute Eickelkamp",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

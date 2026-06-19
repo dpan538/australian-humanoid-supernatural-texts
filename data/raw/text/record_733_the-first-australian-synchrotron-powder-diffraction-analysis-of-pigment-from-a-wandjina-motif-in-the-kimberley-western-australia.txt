@@ -1,0 +1,14 @@
+{
+  "title": "The first Australian Synchrotron powder diffraction analysis of pigment from a Wandjina motif in the Kimberley, Western Australia",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1080/03122417.2014.11681996",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2014-06-01",
+  "publication": "Australian Archaeology",
+  "author": "Jillian Huntley, Helen E. A. Brand, Maxime Aubert, M.J. Morwood",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "We report the identification of minerals in stratified paint layers from a Wandjina motif in the central Kimberley region, Western Australia, via synchrotron powder diffraction. Interpreting our findings with reference to previous pigment characterisations of Wandjina motifs, we outline the potential of this method for rock art investigations. We particularly highlight the implications of successful major and minor phase identification in very small (~3 μg) pigment samples. The results of this pilot study show that crystallographic data is critical in helping to separate environmental/cultural signatures from post-depositional processes within anthropogenically applied pigments. In Wandjina rock art, crystallography facilitates the examination of the cultural context of rock art production within an assemblage ethnographically known to have undergone regular, ritual repainting.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

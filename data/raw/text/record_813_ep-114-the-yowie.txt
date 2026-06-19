@@ -1,0 +1,13 @@
+{
+  "title": "Ep 114 The Yowie",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/ep-114-the-yowie",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2024-07-17T00:00:00Z",
+  "author": "Michael Yon, Kuntarkis",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "description": "The Yowie, and its similar versions like the Bigfoot and Abominable Snowman took an amazing evoutionary turn from Neanderthals. Thier journey is real, yet like Sci-Fi. Kuntarkis shares how they came about and how truly amazing they are. Offering more than a glimpse into what has happened regarding other conscious beings here on earth. Kuntarkis also shares his reawakend vigour to dive into the amazing Quantum Jumping media of Burt Goldman. Visit us at EtcConsciousness.com and email Kuntarkis@gmail.com Imagination is your Greatest Gift - Kuntarkis",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

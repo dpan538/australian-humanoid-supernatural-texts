@@ -1,0 +1,14 @@
+{
+  "title": "Evaluating human responses to ENSO driven climate change during the Holocene in northwest Australia through macrobotanical analyses",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1177/0959683620950410",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2020-09-01",
+  "publication": "The Holocene",
+  "author": "India Ella Dilkes-Hall, Jane Balme, Sue O’Connor, Émilie Dotte-Sarout",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "The Holocene is recognised as a period through which a number of climatic fluctuations and environmental stresses occur—associated with intensifying El Niño–Southern Oscillation (ENSO) climatic conditions from c. 5000 years—contemporaneous with technological and social changes in Australian Aboriginal lifeways. In the Kimberley region of northwest Western Australia, human responses to ENSO driven climate change are most evident archaeologically in technological transformations observed in lithic records, with little research on changes in plant use during this time. Using nine archaeological sites across the Kimberley, this paper synthesises previously published macrobotanical data (Carpenter’s Gap 1, Moonggaroonggoo, Mount Behn, and Riwi), reports unpublished data (Brooking Gorge 1, Djuru, and Wandjina rockshelter), and presents results of sites reanalysed for this study (Widgingarri Shelters 1 and 2) to develop a picture of localised and regional patterns of plant use during the Holocene. We conclude that food plants associated with monsoon rainforest environments dominate both mid- and late Holocene macrobotanical records and, although monsoon rainforest likely retreated to some extent because of decreased precipitation during the late Holocene, no human responses associated with ENSO driven climate change occurred in relation to human uses of plants.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

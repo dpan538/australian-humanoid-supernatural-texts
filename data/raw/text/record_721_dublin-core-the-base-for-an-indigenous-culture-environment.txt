@@ -1,0 +1,14 @@
+{
+  "title": "Dublin Core: the base for an Indigenous culture environment?",
+  "source": "OpenAlex",
+  "url": "https://openalex.org/W319165098",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2003-01-01",
+  "publication": "ResearchOnline at James Cook University (James Cook University)",
+  "author": "Liddy Nevile, Sophie Lissonnet",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "A day in Cape York, in the far north east of Australia, can change the life of a modern Australian. In that time, one can see hundreds of examples of rock art that are up to 36,000 years old, sharply contrasting the history of Indigenous people and the immigration of Europeans. One such visit led to a proposed collaboration between the Quinkan Culture Elders and a team of metadata researchers. The researchers proposed a Qualified Dublin Core style catalogue to be used to identify and record examples of Quinkan Culture so Elders could at last gain access to information needed to manage the proliferation of unauthorised publications about Quinkan culture, and to 'bring back home' cultural representations. In addition, the catalogue would allow the Elders to make decisions about publishing their own representations. This paper describes the journey of members of the team developing 'Matchbox', a cataloguing system, as they have sought a way of using Qualified DC metadata (QDC) to describe, collect, and represent Quinkan Culture. Of interest in this paper is how developing a QDC representation has led to questions of cultural definition and, simultaneously, of the use of technologies such as HTML, XML and RDF.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

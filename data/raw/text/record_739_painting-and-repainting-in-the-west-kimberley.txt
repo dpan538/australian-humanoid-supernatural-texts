@@ -1,0 +1,14 @@
+{
+  "title": "Painting and Repainting in the West Kimberley",
+  "source": "OpenAlex",
+  "url": "http://hdl.handle.net/1885/31618",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2008-03-22",
+  "publication": "ANU Open Research (Australian National University)",
+  "author": "Sue O’Connor, Anthony Barham, Donny Woolagoodja",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "We take a fresh look at the practice of repainting, or retouching, rockart, with particular reference to the Kimberley region of Western Australia. We discuss the practice of repainting in the context of the debate arising from the 1987 Ngarinyin Cultural Continuity Project, which involved the repainting of rock-shelters in the Gibb River region of the western Kimberley. The 'repainting debate' is reviewed here in the context of contemporary art production in western Kimberley Indigenous communities, such as Mowanjum. At Mowanjum the past two decades have witnessed an artistic explosion in the form of paintings on canvas and board that incorporate Wandjina and other images inspired by those traditionally depicted on panels in rock-shelters. Wandjina also represents the key motif around which community desires to return to Country are articulated, around which Country is curated and maintained, and through which the younger generations now engage with their traditional lands and reach out to wider international communities. We suggest that painting in the new media represents a continuation or transference of traditional practice. Stories about the travels, battles and engagements of Wandjina and other Dreaming events are now retold and experienced in the communities with reference to the paintings, an activity that is central to maintaining and reinvigorating connection between identity and place. The transposition of painting activity from sites within Country to the new 'out-of-Country' settlements represents a social counterbalance to the social dislocation that arose from separation from traditional places and forced geographic moves out-of-Country to government and mission settlements in the twentieth century.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

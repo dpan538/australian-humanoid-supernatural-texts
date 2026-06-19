@@ -1,0 +1,14 @@
+{
+  "title": "The Abstracts of the 1st New South Wales APS State Conference",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1080/17429536.2003.12467206",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2003-12-01",
+  "publication": "Australian Journal of Psychology",
+  "author": "Kerry Chalmers",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "The first New South Wales APS State conference was held on May 23-25 2003 in Newcastle. The conference was sponsored by the APS, together with the University of ewcastle’s School of Behavioural Sciences and School of Education, and was attended by over 125 delegates. The theme of the conference was Psychology at the Coal face. This theme was chosen to emphasise that the conference would have a practical focus. The conference aimed to promote quality psychological practice and to foster lea rning and growth by bringing together members who work in a diverse range of employment settings and specialisations. The conference was held at the Newcastle City HaU. The first day of the conference was devoted to optional full-day and half-day pre-conference workshops. The conference proper began on Friday evening with a keynote add ress by Professor Matt Sanders, University of Queensland. Over the following two days, keynote addresses were presented by Professor Beryl Hesketh, University of Sydney and Professor Mike Startup, University of Newcastle. The program included presentation of oral papers, symposia a.nd posters. The Saturday night conference dinner featured ‘Tim the Yowie Man’ the world’s only Cryptonaturalist, speaking on unusual phenomena in the natural world from Big Foot to the Loch Ness monster. The conference was an opportunity for delegates to present up to the minute research on relevant community topics. Spea kers provided an exciting and informative program covering a wide range of issues from personality disorders and autism, to schizophrenia and problem gambling.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Repainting of images on rock in Australia and the maintenance of Aboriginal culture",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1017/s0003598x00075086",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "1988-12-01",
+  "publication": "Antiquity",
+  "author": "David Mowaljarlai, Patricia Vinnicombe, Graeme Ward, Christopher Chippindale",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "Sandra Bowdler reported in the last issue of A NTIQUITY (62: 517–23) on the controversy surrounding the recent repainting of Wandjina figures on the rocks of the western Kimberley, northwest Australia. Here is an Aboriginal Australian's view of the repainting project and its significance, along with an explication and further discussion of implications.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

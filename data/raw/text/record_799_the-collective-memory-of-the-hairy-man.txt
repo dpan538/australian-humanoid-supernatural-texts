@@ -1,0 +1,14 @@
+{
+  "title": "The Collective Memory of the Hairy Man",
+  "source": "OpenAlex",
+  "url": "http://dx.doi.org/10.60162/swamphen.10.18027",
+  "matched_term": "hairy man",
+  "figure": "Hairy Man",
+  "date_published": "2024-03-01",
+  "publication": "Swamphen a Journal of Cultural Ecology (ASLEC-ANZ)",
+  "author": "Fred Gesha",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "My work with the Hairy Man story aims to debunk the false narratives of colonialist invaders who sought to legitimate dominion over, and transform the identities of, Aboriginal and Torres Strait Islander people – who were often referred to as scarcely human – in order to seize land to declare ‘Terra Nullius’. I show how cultural knowledge of the Hairy Man is integral to how I identify with and connect to Country. I tell this story to make explicit my cultural sovereignty over an aspect of First Nations ‘intangible’ knowledge that the Western world has often labelled as myth or legend.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

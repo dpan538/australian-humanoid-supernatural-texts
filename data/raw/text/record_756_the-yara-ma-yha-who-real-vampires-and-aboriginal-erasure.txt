@@ -1,0 +1,14 @@
+{
+  "title": "The Yara-ma-yha-who, “Real” Vampires, and Aboriginal Erasure",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.5040/9781666991345-ch.004",
+  "matched_term": "Yara-ma-yha-who",
+  "figure": "Yara-ma-yha-who",
+  "date_published": "2022-01-01",
+  "publication": "OpenAlex",
+  "author": "McKenzie Lynn Tozan",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

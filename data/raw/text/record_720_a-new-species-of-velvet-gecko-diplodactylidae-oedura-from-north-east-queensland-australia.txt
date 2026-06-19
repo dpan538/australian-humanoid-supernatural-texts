@@ -1,0 +1,14 @@
+{
+  "title": "A new species of velvet gecko (Diplodactylidae: Oedura) from north-east Queensland, Australia",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.11646/zootaxa.1788.1.2",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2008-06-09",
+  "publication": "Zootaxa",
+  "author": "Conrad J. Hoskin, Megan Higgie",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "We describe a new species of velvet gecko (Diplodactylidae: Oedura) from north-east Queensland, Australia. Oedura jowalbinna sp. nov. is a robust, medium-sized (SVL 60–69 mm) gecko that is readily distinguished from its congeners by its distinctive dorsal colour pattern. The dorsum is grey with faint freckling and a pale, dark-edged band across the neck and another across the base of the tail. The combination of a yellow tail and a grey body is also distinctive. Oedura jowalbinna sp. nov. also differs significantly from the most similar congener, O. coggeri, in a multivariate analysis of morphology and scalation, primarily due to its smaller body size, higher interorbital, supralabial and infralabial scale counts, and lower subdigital lamellae scale count. These traits are generally non-overlapping between O. jowalbinna sp. nov. and O. coggeri, however, more individuals of O. jowalbinna sp. nov. need to be assessed to accurately determine variation within the new species. All O. jowalbinna sp. nov. were found at night on overhangs in dissected sandstone escarpment south-west of the town of Laura. Surveys are required to determine the distribution of O. jowalbinna sp. nov. across the sandstone escarpments of the Laura region. This species is the third reptile species (along with the skinks Ctenotus quinkan and C. nullum) described that has a highly localised range centred on the sandstone escarpments of the Laura region. Additionally, included herein is a comparison of O. coggeri and O. monilis. Typical dorsal colour pattern differs between these two species but the large amount of variation (particularly in O. coggeri) merges these differences. Oedura coggeri and O. monilis could not be distinguished in multivariate analyses of morphology and scalation. Genetic data and further analyses of colour pattern, morphology and scalation are required to resolve species boundaries within and between these two species.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

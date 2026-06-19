@@ -1,0 +1,14 @@
+{
+  "title": "New bee species from northern Queensland, Australia (Hymenoptera: Colletidae, Halictidae, Megachilidae)",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1111/aen.12572",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2021-11-01",
+  "publication": "Austral Entomology",
+  "author": "Remko Leijs, Katja Hogendoorn",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "Abstract Five new species of bees are described from the Quinkan region of Cape York Peninsula, Queensland, Australia: Austrothurgus nanus sp. nov. (Megachilidae), Nomia (Paulynomia ) eburata sp. nov. (Halictidae), Leioproctus (Protomorpha ) quinkanensis sp. nov. , Chrysocolletes loripes sp. nov. , C hrysocolletes aureus sp. nov. (Colletidae). A sixth species, Chrysocolletes doreyi sp. nov. (Colletidae), is described from Walker Creek, East of Karumba in the Gulf Country, Queensland. Most descriptions are associated with DNA‐barcodes. Modified identification keys and image plates with diagnostic characters are provided.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

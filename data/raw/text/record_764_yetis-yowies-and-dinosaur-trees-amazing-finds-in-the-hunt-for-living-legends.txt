@@ -1,0 +1,14 @@
+{
+  "title": "Yetis, Yowies and dinosaur trees: amazing finds in the hunt for living legends",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.64628/aa.vsw6entnc",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2013-10-21",
+  "publication": "OpenAlex",
+  "author": "Bill Laurance",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "[Extract] You might think the idea of a Yeti is far-fetched, but don't tell that to Oxford University Professor Bryan Sykes - or to the locals in Australian towns like Kilcoy and Woodenbong. Sykes created a global frenzy when he recently announced that the Yeti might well exist. His analyses were based on two hair samples collected 800 miles apart in the Himalayas. When he analysed the DNA in those hairs, he found they perfectly matched the DNA of an ancient polar bear. According to Sykes, this could mean the polar bear is alive and kicking in the high Himalayas today.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Review",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1002/j.1834-4453.1996.tb00347.x",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "1996-04-01",
+  "publication": "Archaeology in Oceania/Archæology & physical anthropology in Oceania",
+  "author": "Richard Fullagar",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "Quinkan Prehistory. The Archaeology of Aboriginal Art in S.E. Cape York Peninsula, Australia. Edited by M.J. Morwood and D.R. Hobbs Tempus, Volume 3. Anthropology Museum, University of Queensland, St Lucia, 1995. ISBN 909611 43 2. pp vi + 208. $35.50",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

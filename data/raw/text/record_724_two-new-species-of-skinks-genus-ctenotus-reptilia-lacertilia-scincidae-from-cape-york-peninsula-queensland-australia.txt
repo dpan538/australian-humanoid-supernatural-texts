@@ -1,0 +1,14 @@
+{
+  "title": "Two New Species of Skinks, Genus Ctenotus (Reptilia Lacertilia, Scincidae), from Cape York Peninsula, Queensland, Australia",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.2307/1563319",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "1979-07-30",
+  "publication": "Journal of Herpetology",
+  "author": "G J Ingram",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "Ctenotus quinkan sp. nov. is known only from the sandstone country between Laura and Cooktown, Queensland. Ctenotus rawlinsoni sp. nov. has been collected only from the coastal heaths between Cooktown and Cape Flattery, Queensland.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

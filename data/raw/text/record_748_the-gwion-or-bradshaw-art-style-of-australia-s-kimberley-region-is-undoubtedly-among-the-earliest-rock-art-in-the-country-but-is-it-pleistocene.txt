@@ -1,0 +1,14 @@
+{
+  "title": "The Gwion or Bradshaw Art Style of Australia’s Kimberley Region is undoubtedly among the Earliest Rock Art in the Country – but is it Pleistocene?",
+  "source": "OpenAlex",
+  "url": "http://dx.doi.org/10.4000/palethnologie.4337",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2013-01-01",
+  "publication": "Palethnologie",
+  "author": "Mike Donaldson",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "The Kimberley region of north-west Australia has many thousands of rock paintings that span a period of thousands of years. Four distinct periods are recognised, based on superposition of styles: Early naturalistic animals with irregular painted infill; Gwion or Bradshaw figures; Wandjinas; Post-European contact art. The post-European contact art dates from perhaps the mid 17th century, and Wandjina art has recently been confirmed to date from almost 4000 years ago. Reliable dates for the ear...",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

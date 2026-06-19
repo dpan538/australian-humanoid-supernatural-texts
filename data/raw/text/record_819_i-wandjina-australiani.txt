@@ -1,0 +1,13 @@
+{
+  "title": "I Wandjina Australiani",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/i-wandjina-australiani",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2024",
+  "author": "",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "description": "Wandjina australiani",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Universalising the particular? God and Indigenous spirit beings in East Kimberley",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1111/j.1757-6547.2010.00067.x",
+  "matched_term": "Mamu",
+  "figure": "Mamu",
+  "date_published": "2010-04-01",
+  "publication": "The Australian Journal of Anthropology",
+  "author": "Heather McDonald",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "Some Aboriginal discourses in East Kimberley appear to indicate that Indigenous particularities are being universalised by evangelical Christianity. The aim of evangelical Christianity is to bring all peoples under the domain of one God. But counter statements by people of all ages reveal that the Christian universalising project in East Kimberley is an unfinished (and possibly unfinishable) project. Although Indigenous particularities contribute to generational conflict they are not disappearing, while Aboriginal people remain on or near the lands in which their stories are embedded. Locative traditions emphasise genealogical continuities between the living and the dead. Evangelical missionaries, however, direct spirits of the living to heaven and condemn spirits of the dead to follow Satan. One Aboriginal woman has reached a kind of resolution between God and Indigenous spirits: mamu and juwarri (spirits of the dead) are not evil spirits but sinners who will be redeemed in the Last Days.11 In 1989–91, I conducted research in East Kimberley for my doctoral thesis at the Australian National University. During 2002–05, I conducted research in the same region while a research fellow at the Australian Institute for Aboriginal and Torres Strait Islander Studies.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

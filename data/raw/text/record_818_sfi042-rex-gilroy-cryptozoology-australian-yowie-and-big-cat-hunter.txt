@@ -1,0 +1,13 @@
+{
+  "title": "SFi042 - Rex Gilroy - Cryptozoology, Australian Yowie and Big Cat hunter",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/youtube-JETYTh5P5os",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2016-12-15T00:00:00Z",
+  "author": "StopFundingIsrael",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "description": "Fascinating interview with Australian Bigfoot, Yowie and Hidden creature researcher Rex Gilroy from 25th October 2016 on The People Speak Radio Show. Steve Johnson interviews the author and researcher of the Australian Yowie creature and talks about the evidence found, the sightings and the mysterious world of hidden ancient cultures in the Australian Outback overlooked by Mainstream Academia. Please do Share, Like, Comment and Donate to help this channel continue: (Paypal email: specialbrew@fastmail.fm ) Visit Rex websites here: http://www.mysteriousaustralia.com/ and http://www.rexgilroy.com/ Rex Gilroy, Steve Johnson, SFi, Yowie, Bigfoot, Sasquatch, Hidden creatures, Cryptozoology, Mysterious Australia, Burranjor, Ancient Australia, Hidden science, Mysteries, StopFundingisrael, Radio Interview, The People Speak, bbsradio, Source: https://www.youtube.com/watch?v=JETYTh5P5os Uploader: StopFundingIsrael",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

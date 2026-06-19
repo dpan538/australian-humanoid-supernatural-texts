@@ -1,0 +1,14 @@
+{
+  "title": "The Necessary Other, or 'When One Needs a Monster': The Return of the Australian Yowie",
+  "source": "OpenAlex",
+  "url": "https://hdl.handle.net/1959.11/1787",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2002-01-01",
+  "publication": "RUNE (Research UNE)",
+  "author": "Ryan, John Sprott",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "1907, 1937. As early as 1907, R.H. Mathews had reported the \"Yaruma\", a traditional belief from the south-east corner of New South Wales. On the north coast (W.J. Enright, 'Mankind', June 1937), the creature was the \"Jarra-Wahu\" or \"Yerri-Wahoo\", and around Mudgee and Maitland the \"Yahu\". Some of these names were said, like \"Yowie\", to mean \"hairyman\". --(Patricia and Peter Wrightson, 'The Wrightson List of Aboriginal Folk Figures', 1998, p. 51.) ...1975. The monster - the \"Yowie\" - currently causing trouble in the central west of N.S.W. --('The Bulletin', Sydney, 17 May, pp. 20-21.) ...1976. Forget the fairies at the bottom of your garden. There may be a Yowie lurking there... The Yowie is different from Britain's Nessie and the Yeti or Abominable Snowman of the Himalayas because our monster likes the trees and undergrowth of dry, warm land. --('It's huge, hairy and hides in the bush... the monster Yowie', 'The Australian Women's Weekly', December 15, 1976, pp. 32-33) ...1988. \"yowie\". [Aborig. Yuwaalaraay \"yuwi\", dream spirit.] An ape-like monster supposed to inhabit parts of eastern Australia. --(W.S. Ramson (ed.), 'The Australian National Dictionary', p. 761) ...1996. The responsibility for introducing the word into the Australian consciousness, and for the modern interest in the phenomenon, can be laid at the feet of one man: Rex Gilroy, the proprietor of a private museum... As long ago as 1978, his Australian Yowie Research Centre was said to have files on 3,000 sightings. --(Dr Malcolm Smith, 'Bunyips and Bigfoots: In Search of Australia's Mystery Animals', p. 150.) ... As these very select quotations from a now vast mass of passing observations will indicate, considerable parts of eastern Australia would seem to have recorded numerous sightings this century of some form of ape-like wild creature, especially in the last few decades and the word has now acquired a centrality of position in the vocabulary of the young and/or the credulous.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Paranoia and the Wandjina",
+  "source": "Crossref",
+  "url": "https://doi.org/10.1080/14434318.2008.11432790",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2008-1",
+  "publication": "Australian and New Zealand Journal of Art",
+  "author": "Darren Jorgensen",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

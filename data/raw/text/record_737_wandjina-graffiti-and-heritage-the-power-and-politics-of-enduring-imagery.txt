@@ -1,0 +1,14 @@
+{
+  "title": "Wandjina, graffiti and heritage: The power and politics of enduring imagery",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.22459/hr.xv.02.2009.10",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2009-09-01",
+  "publication": "Humanities Research",
+  "author": "Ursula and Frederick, Sue O’Connor",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

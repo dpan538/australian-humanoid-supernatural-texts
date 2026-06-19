@@ -1,0 +1,14 @@
+{
+  "title": "Monster Mash: What Happens When Aboriginal Monsters Are Co-opted into the Mainstream?",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.4324/9781003086130-6",
+  "matched_term": "Pangkarlangu",
+  "figure": "Pangkarlangu",
+  "date_published": "2020-06-03",
+  "publication": "OpenAlex",
+  "author": "Christine Nicholls",
+  "region_signal": "Northern Territory",
+  "location_confidence": "medium",
+  "abstract": "Growing up in the 1950s at Mannum on the Lower Murray in South Australia, where our family home overlooked the river, one knew of the Mulyewongk, an amphibious monster inhabiting the southeastern sector of the River Murray, including its tributaries, lakes, swamps, and caves. This chapter examines its status loss as a direct result of the British colonization of Australia. This discussion is contextualized by consideration of another monster that one learned about in adult life: the Pangkarlangu from Central Australia. It shows that the Bunyip, a behemoth with a considerably lengthier postcolonial history than that of the Pangkarlangu, has been all but entirely divested of its original standing as a respected ancestral being, to the extent that it is regarded by mainstream Australia as an imaginary, child-friendly fabrication. Without exception, classical Aboriginal monsters are inextricably connected to specific locations, territorial bases, or &quot;country,&quot; as it is known in Aboriginal English.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "From the Souks of Marrakech and the Wandjina Gods: How Travel Writing Transforms Our Visions of the Other",
+  "source": "Crossref",
+  "url": "https://doi.org/10.18848/1447-9532/cgp/v11i03/39015",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2012",
+  "publication": "The International Journal of Diversity in Organizations, Communities, and Nations: Annual Review",
+  "author": "Twila Yates Papay",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

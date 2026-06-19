@@ -1,0 +1,13 @@
+{
+  "title": "Dramatic Selections from Henry Lawson's Short Stories",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/dramaticselectionshenrylawsonstories_2201_librivox",
+  "matched_term": "hairy man",
+  "figure": "Hairy Man",
+  "date_published": "2022-01-30T00:00:00Z",
+  "author": "Henry Lawson",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "description": "LibriVox recording of Dramatic Selections from Henry Lawson's Short Stories by Henry Lawson. Read in English by LibriVox volunteers 01. That Pretty Girl in the Army The Salvation Army is having a hard time of things in the rough Outback town of Bourke. That is, until Sister Hannah arrives... - Summary by Son of the Exiles Coordinated by: Son of the Exiles Sister Hannah: Devorah Allen Jack Moonlight: Tomas Peter Billy Woods: Jim Locke Jake Boreham: Larry Wilson Reformed Drunkard: Wayne Cooke Bob Brothers: Algy Pug Mitchell: Alan Mapstone Donald Macdonald: Michele Eaton One-Eyed Bogan: lorda Female Testifier: Lauren-Emma Blake Blunderer: Therese Lindholm Black Testifier: Wayne Cooke Heckler: ToddHW Narrator: KHand 02. The Hairy Man It was the day after Australia's Anniversary Day and all the patriots wanted to do was nurse their hangovers out in the scrub of the isolated western spur of the Blue Mountains. But following close on the heels of their hair-of-the-dog comes The Hairy Man, Australia's own version of Bigfoot. - Summary by Son of the Exiles Coordinated by: Son of the Exiles Jack Jones: Alan Mapstone Andy Page: Larry Wilson Dave Regan: lorda Jim Bentley: ToddHW Mahoney: TJ Burns Foley: Algy Pug Narrator: Son of the Exiles 03. Macquarie's Mate Even \"the veriest wreck in the drink-fiend's clutch\" won't stand idly by and hear his mate slagged off. - Summary by Son of the Exiles Coordinated by: Son of the Exiles Awful Example: Alan Mapstone Box-o’-Tricks: ToddHW Barcoo: Algy Pug “Sally” Thompson: Michele Eaton Stiffner the Shanty-Keeper: April6090 Macquarie: lorda Somebody: Andrew Gaunce Narrator: Son of the Exiles 04. His Country After All \"Lives there a man with soul so dead...\" - Summary taken from text Coordinated by: Son of the Exiles Australian-born American: Wayne Cooke New Zealand bagman: Jim Locke Coach Driver: ToddHW Posh-sounding British voice: Alan Mapstone Australian rabbit-trapper: Algy Pug Narrator: KHand For further information, including links to online text, reader information, RSS feeds, CD cover or other formats (if available), please go to the LibriVox catalog page for this recording. For more free audio books or to become a volunteer reader, visit librivox.org . M4B Audiobook (42MB)",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Our experiences of researching with our mob on our country: Traditional custodians as researchers",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.3316/informit.692954533528776",
+  "matched_term": "Mamu",
+  "figure": "Mamu",
+  "date_published": "2022-06-01",
+  "publication": "Journal of Australian indigenous issues",
+  "author": "Joann Schmider, Samantha Cooms, Melinda Mann",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "Increasingly, Indigenous researchers are applying Indigenous ways of working within their research praxis.When research is concentrated in an Indigenousdefined land area (Country) and led by a researcher as traditional custodian belonging to the Country, this offers unique opportunities and challenges.As traditional custodian researchers, we have imperatives to protect, maintain and create knowledge and contribute to the overall Indigenous research agenda.We must also ensure such research is consistent with custodian worldviews and grounded in cultural experiences and knowledge.These responsibilities have implications for reviewing literature and establishing credible research designs to fulfil traditional custodian expectations as well as institutional standards.Throughout this paper, we share our experiences as traditional custodians undertaking research higher degree programs at a regional Australian university.This article presents reflections and future considerations from our regions as Noonukul Quandamooka, Mamu and Darumbal women living and researching with our people on our Countries.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

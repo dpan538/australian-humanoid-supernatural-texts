@@ -1,0 +1,14 @@
+{
+  "title": "Can't tell a yahoo from a yowie",
+  "source": "OpenAlex",
+  "url": "https://openalex.org/W1501775044",
+  "matched_term": "Yowie",
+  "figure": "Yowie",
+  "date_published": "2012-05-08",
+  "publication": "ResearchOnline at James Cook University (James Cook University)",
+  "author": "Claire Brennan",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "[Extract] Despite its title this book is not so much an examination of the 'Australian Gorilla' as a detailed description of the author's campaign to gain acceptance for the existence of the yahoo. The author has spent decades struggling to have the existence of a large, ape-like animal in the forested hills of eastern Australia recognised as scientific fact. Unfortunately this book chooses to examine the author's setbacks rather than to present the evidence that supports his beliefs. Even when dealing with reported incidents involving yahoos, Joyner examines scientific reaction to the yahoo rather than the context of the reports themselves.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

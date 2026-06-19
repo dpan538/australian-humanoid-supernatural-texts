@@ -1,0 +1,14 @@
+{
+  "title": "AMS RADIOCARBON AGES FOR BEESWAX AND CHARCOAL PIGMENTS IN NORTH KIMBERLEY ROCK ART",
+  "source": "OpenAlex",
+  "url": "https://ro.uow.edu.au/scipapers/3291",
+  "matched_term": "Wandjina",
+  "figure": "Wandjina",
+  "date_published": "2010-05-01",
+  "publication": "Research Online (University of Wollongong)",
+  "author": "M.J. Morwood, Grahame L Walsh, Alan Watchman",
+  "region_signal": "Western Australia",
+  "location_confidence": "medium",
+  "abstract": "Here we report AMS radiocarbon ages associated with rock art in the Kimberley, north-west Australia, from beeswax motifs (26), charcoal pigments (7), a fragment of ochred baler shell used for mixing pigments, and mineral deposits from the base of a pecked cupule. With one exception, these ages are for motifs or paraphernalia associated with the Wandjina painting tradition, which appears to have included a number of contemporaneous art 'styles'. The radiocarbon determinations range from -3800 BP to modern, a distribution very similar to that previously obtained for wax figures in Northern Territory rock art.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

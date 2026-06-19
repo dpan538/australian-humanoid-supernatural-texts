@@ -1,0 +1,14 @@
+{
+  "title": "Quinkan Galleries",
+  "source": "Crossref",
+  "url": "https://doi.org/10.1093/gao/9781884446054.article.t070422",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2003",
+  "publication": "Oxford Art Online",
+  "author": "Darrell Lewis",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Strange Lore: Yara Ma Yha Who",
+  "source": "Internet Archive",
+  "url": "https://archive.org/details/strange-lore-yarama-yhawho",
+  "matched_term": "Yara-ma-yha-who",
+  "figure": "Yara-ma-yha-who",
+  "date_published": "2023-10-25T00:00:00Z",
+  "author": "Javi Media/Iryiel Cochran/Jason Klarl",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "description": "The Yara Ma Yha Who is an Australian folktale told by parents in order to keep young children out of the brush and back country. He is a demon who swallows children whole by unhinging his large jaw after exsanguinating his victims with his claws. Short horror poetry inspired by the folktale written by Iryiel Cochran",
+  "note": "Internet Archive public metadata only; full text was not collected."
+}

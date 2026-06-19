@@ -1,0 +1,14 @@
+{
+  "title": "Quinkan, n.",
+  "source": "Crossref",
+  "url": "https://doi.org/10.1093/oed/4215682065",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2023-3-2",
+  "publication": "Oxford English Dictionary",
+  "author": "",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "",
+  "note": "Crossref public metadata only; full text was not collected."
+}

@@ -1,0 +1,30 @@
+status,skip_reason,record_id,figure,term,state_code,year,title,url
+skipped,duplicate_existing_record,,Wandjina,Wandjina,WA,1970,"The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia.",https://doi.org/10.2307/2798867
+inserted,,800,Wandjina,Wandjina,WA,2024,"Wandjina, n.",https://doi.org/10.1093/oed/1186237953
+skipped,duplicate_existing_record,,Wandjina,Wandjina,WA,1972,"Archeology: The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia. I. M. CRAWFORD",https://doi.org/10.1525/aa.1972.74.1-2.02a01000
+inserted,,801,Wandjina,Wandjina,WA,2021,Wandjina Figure,https://doi.org/10.1007/978-3-030-58292-0_230018
+skipped,duplicate_existing_record,,Wandjina,Wandjina,WA,2014,"The first Australian Synchrotron powder diffraction analysis of pigment from a Wandjina motif in the Kimberley, Western Australia",https://doi.org/10.1080/03122417.2014.11681996
+skipped,duplicate_existing_record,,Wandjina,Wandjina,WA,2023,Les elevés des Wandjina de George Grey. De L’art Aborigène à L'art primitif (1838–1906),https://doi.org/10.4467/00786500.org.23.005.18782
+skipped,duplicate_existing_record,,Wandjina,Wandjina,WA,2009,"Wandjina, graffiti and heritage: The power and politics of enduring imagery",https://doi.org/10.22459/hr.xv.02.2009.10
+skipped,duplicate_existing_record,,Wandjina,Wandjina,WA,1970,"The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia. By I. M. Crawford. 10 × 7½. Pp. 144 + 129 photographs (46 in full colour), line drawings, and maps. Melbourne: Oxford University Press, 1968. $A. 6.00. U.K. price £3. 9 s . (£3.45).",https://doi.org/10.1017/s0003581500032054
+inserted,,802,Wandjina,Wandjina,WA,2008,Paranoia and the Wandjina,https://doi.org/10.1080/14434318.2008.11432790
+inserted,,803,Wandjina,Wandjina,WA,2012,From the Souks of Marrakech and the Wandjina Gods: How Travel Writing Transforms Our Visions of the Other,https://doi.org/10.18848/1447-9532/cgp/v11i03/39015
+inserted,,804,Quinkan,Quinkan,QLD,2003,Quinkan Galleries,https://doi.org/10.1093/gao/9781884446054.article.t070422
+inserted,,805,Quinkan,Quinkan,QLD,2023,"Quinkan, n.",https://doi.org/10.1093/oed/4215682065
+skipped,duplicate_existing_record,,Quinkan,Quinkan,QLD,2024,"CATEGORISING CATFISH, JEWFISH AND EEL MOTIFS IN LAURA (QUINKAN) ROCK ART, CAPE YORK PENINSULA, AUSTRALIA",https://doi.org/10.56801/rar.v41i1.271
+skipped,duplicate_existing_record,,Quinkan,Quinkan,QLD,2023,"Glass beads in a Dillybag: a cached assemblage from a rockshelter in Quinkan Country, Cape York Peninsula, Queensland, Australia",https://doi.org/10.1080/00438243.2024.2425275
+skipped,noise:Ctenotus quinkan,,Quinkan,,,2017,"Ctenotus quinkan: Couper, P., Hoskin, C. & Amey, A.",https://doi.org/10.2305/iucn.uk.2018-1.rlts.t109464143a109464171.en
+inserted,,806,Quinkan,Quinkan,QLD,2012,"Endangered Rock Art: Forty years of cultural heritage management in the Quinkan region, Cape York Peninsula",https://doi.org/10.1080/03122417.2012.11681951
+inserted,,807,Nargun,Nargun,VIC,1997,Patricia Wrightson's Pastoral: The Nargun and the Stars,https://doi.org/10.1353/chq.0.1215
+inserted,,808,Pangkarlangu,Pangkarlangu,NT,2020,"Pangkarlangu, Wonder, Extinction",https://doi.org/10.4324/9781003086130-4
+skipped,duplicate_existing_record,,Pangkarlangu,Pangkarlangu,NT,2020,"Pangkarlangu, Wonder, Extinction",https://doi.org/10.5040/9781350096288.ch-004
+inserted,,809,Pangkarlangu,Pangkarlangu,NT,2021,"Same monster, different meanings: how Indigenous ideas about the Pangkarlangu Hairypeople have changed",https://doi.org/10.64628/aa.xxw3yg6t7
+skipped,duplicate_existing_record,,Yara-ma-yha-who,Yara-ma-yha-who,,2022,"The Yara-ma-yha-who, “Real” Vampires, and Aboriginal Erasure",https://doi.org/10.5040/9781666991345-ch.004
+skipped,missing_australia_context,,Hairy Man,,,1966,What Ever Happened to Hairy Man?,https://doi.org/10.1126/science.153.3734.362.b
+skipped,missing_australia_context,,Hairy Man,,,1966,What Ever Happened to Hairy Man?,https://doi.org/10.1126/science.153.3734.362-b
+skipped,missing_australia_context,,Hairy Man,,,2008,"""My Brother Esau Is a Hairy Man""",https://doi.org/10.1093/acprof:oso/9780195181142.001.0001
+skipped,missing_australia_context,,Hairy Man,,,1966,What Ever Happened to Hairy Man?,https://doi.org/10.1126/science.153.3734.364.b
+skipped,missing_australia_context,,Hairy Man,,,1966,What Ever Happened to Hairy Man?,https://doi.org/10.1126/science.153.3734.362-c
+inserted,,810,Mamu,Mamu,,2014,Specters of Reality: Mamu in the Eastern Western Desert of Australia,https://doi.org/10.1057/9781137448651_4
+skipped,noise:macaque,,Mamu,,,2013,"Identification of Mamu-DPA1, Mamu-DQA1, and Mamu-DRA alleles in a cohort of Chinese rhesus macaques",https://doi.org/10.1007/s00251-013-0736-3
+skipped,missing_australia_context,,Dooligah,,,2024,"dooligah, n.",https://doi.org/10.1093/oed/1073326679

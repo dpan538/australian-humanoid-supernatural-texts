@@ -1,0 +1,14 @@
+{
+  "title": "Glass beads in a Dillybag: a cached assemblage from a rockshelter in Quinkan Country, Cape York Peninsula, Queensland, Australia",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1080/00438243.2024.2425275",
+  "matched_term": "Quinkan",
+  "figure": "Quinkan",
+  "date_published": "2023-08-08",
+  "publication": "World Archaeology",
+  "author": "Gabriella McLay, Heather Burke, Lynley A. Wallis, Noelene Cole et al.",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "In the 1970s, a rare assemblage of trade beads was discovered inside a woven plant fibre bag in a rockshelter (the ‘Dillybag site’) near Laura, Cape York Peninsula, Queensland. Cached post-1895, the bag held more than 4000 glass beads strung on cotton, nylon and hand-spun (possibly human) hair twine. Seventy-eight percent of beads showed some degree of damage from bead-on-bead contact, suggesting that the assemblage accumulated gradually over time. All beads on hair twine were minute or small, and potentially reveal consumer choice in their selection, as does the large proportion of red, white and black beads, suggesting a preference for customary colours. This cache is not only the largest collection of glass beads recovered from an archaeological context in Australia, but also speaks to the dynamism, agency and persistence of the Indigenous people of southeast Cape York Peninsula following invasion.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}
