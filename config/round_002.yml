@@ -1,0 +1,149 @@
+round_id: public_round_002
+
+public_source_types:
+  - trove_newspaper
+  - trove_magazine
+  - nla_catalogue
+  - aiatsis_public_catalogue
+  - andc
+  - modern_web
+
+validation_source_types:
+  - trove_newspaper
+  - trove_magazine
+  - nla_catalogue
+  - aiatsis_public_catalogue
+  - andc
+
+allowed_publicness_levels:
+  - open_full_text
+  - public_metadata
+  - public_page
+  - open_access_publication
+
+planned_include_statuses:
+  - include_v1
+  - control_only
+  - validate_before_include
+
+historical_bands:
+  - band_name: backsearch_negative_control
+    date_start: "1803"
+    date_end: "1841"
+    label: Retrospective Trove backsearch / negative-control window
+
+  - band_name: early_anchor
+    date_start: "1842"
+    date_end: "1875"
+    label: Primary corpus early anchor period
+
+  - band_name: publication_expansion
+    date_start: "1876"
+    date_end: "1969"
+    label: Pre-modern newspaper and publication expansion
+
+  - band_name: modern_yowie_heritage_tourism_media
+    date_start: "1970"
+    date_end: present
+    label: Modern Yowie, heritage, tourism, and media period
+
+special_date_bands:
+  "2004": google_trends_attention
+  "2015-07-01": wikimedia_pageviews_attention
+
+source_band_support:
+  trove_newspaper:
+    enabled_bands:
+      - backsearch_negative_control
+      - early_anchor
+      - publication_expansion
+      - modern_yowie_heritage_tourism_media
+  trove_magazine:
+    enabled_bands:
+      - early_anchor
+      - publication_expansion
+      - modern_yowie_heritage_tourism_media
+  nla_catalogue:
+    enabled_bands:
+      - backsearch_negative_control
+      - early_anchor
+      - publication_expansion
+      - modern_yowie_heritage_tourism_media
+  aiatsis_public_catalogue:
+    enabled_bands:
+      - early_anchor
+      - publication_expansion
+      - modern_yowie_heritage_tourism_media
+  andc:
+    enabled_bands:
+      - publication_expansion
+      - modern_yowie_heritage_tourism_media
+  modern_web:
+    enabled_bands:
+      - modern_yowie_heritage_tourism_media
+
+search_url_templates:
+  trove_newspaper: "https://trove.nla.gov.au/search/category/newspapers?keyword={query}"
+  trove_magazine: "https://trove.nla.gov.au/search/category/magazines?keyword={query}"
+  nla_catalogue: "https://catalogue.nla.gov.au/catalog?search_field=all_fields&q={query}"
+  aiatsis_public_catalogue: "https://aiatsis.gov.au/search?keywords={query}"
+  andc: "https://researchdata.edu.au/search#!/q={query}"
+  modern_web: "https://www.google.com/search?q={query}+Australia+public+source"
+
+location_hints:
+  Yowie:
+    state: AU
+    region: ""
+    precision: Article-specific place/state required
+  Yahoo:
+    state: AU
+    region: ""
+    precision: Article-specific place/state required
+  Hairy Man:
+    state: AU
+    region: ""
+    precision: Article-specific place/state required
+  Yaroma:
+    state: AU
+    region: ""
+    precision: Public source must provide place or region; do not infer
+  Yara-ma-yha-who:
+    state: AU
+    region: ""
+    precision: Public source must provide place or region; do not infer
+  Mimih:
+    state: NT
+    region: Arnhem Land / Top End if source states it
+    precision: Public-source region only
+  Quinkan:
+    state: QLD
+    region: Cape York / Laura region if source states it
+    precision: Public-source region only
+  Wandjina:
+    state: WA
+    region: Kimberley if source states it
+    precision: Public-source region only
+  Nargun:
+    state: VIC
+    region: Gippsland / Mitchell River if source states it
+    precision: Public-source region only
+  Garkain:
+    state: NT
+    region: ""
+    precision: Public source must provide place or region; do not infer
+  Mokoi:
+    state: AU
+    region: ""
+    precision: Public source must provide place or region; do not infer
+  Mamu:
+    state: AU
+    region: ""
+    precision: High-noise term; verify organisation/place noise before geocoding
+  Pangkarlangu:
+    state: NT
+    region: ""
+    precision: Public source must provide place or region; do not infer
+  Puttikan:
+    state: AU
+    region: ""
+    precision: Public source must provide place or region; do not infer

@@ -533,6 +533,17 @@ a {
   border-color: rgba(196, 199, 196, 0.34);
 }
 
+.clickable-record {
+  cursor: pointer;
+}
+
+.clickable-record:hover,
+.clickable-record:focus-visible {
+  border-color: rgba(242, 242, 237, 0.5);
+  outline: none;
+  box-shadow: 0 0 18px rgba(242, 242, 237, 0.08);
+}
+
 .density-matrix {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -656,14 +667,24 @@ a {
 .rail-mark {
   min-height: 24px;
   padding: 5px 8px;
+  border: 0;
   background: rgba(242, 242, 237, 0.08);
   color: var(--muted);
   font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .rail-mark.strong {
   color: var(--bg);
   background: var(--ink);
+}
+
+.rail-mark:hover,
+.rail-mark:focus-visible {
+  color: var(--bg);
+  background: var(--blue);
+  outline: none;
 }
 
 .density-note {
@@ -781,6 +802,11 @@ a {
   align-items: center;
   gap: 6px;
   color: var(--ink);
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .track-row b {
@@ -797,6 +823,26 @@ a {
   font-size: clamp(0.76rem, 0.97vw, 1.03rem);
   font-style: normal;
   white-space: nowrap;
+}
+
+.track-row:hover i,
+.track-row:focus-visible i {
+  background: var(--blue);
+}
+
+.track-row:focus-visible {
+  outline: 1px solid rgba(242, 242, 237, 0.5);
+  outline-offset: 2px;
+}
+
+.network-record-target {
+  cursor: pointer;
+}
+
+.network-record-target:hover .network-slot,
+.network-record-target:focus-visible .network-slot {
+  fill: rgba(159, 224, 255, 0.18);
+  filter: drop-shadow(0 0 8px rgba(242, 242, 237, 0.35));
 }
 
 .track-row:nth-child(5n) i {
@@ -1407,6 +1453,223 @@ a {
   background:
     repeating-linear-gradient(-8deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.018) 5px, transparent 5px, transparent 9px),
     rgba(5, 6, 6, 0.72);
+}
+
+.record-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 5vw, 72px);
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.record-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, rgba(242, 242, 237, 0.028), rgba(242, 242, 237, 0.028) 1px, transparent 1px, transparent 5px),
+    radial-gradient(circle at 50% 50%, rgba(159, 224, 255, 0.08), transparent 42%);
+  opacity: 0.8;
+}
+
+.record-card {
+  --record-tone: #173935;
+  --record-paper: #f4f4ef;
+  --record-paper-2: #ffffff;
+  position: relative;
+  z-index: 1;
+  width: min(920px, calc(100vw - 70px));
+  min-height: min(590px, calc(100svh - 92px));
+  display: grid;
+  grid-template-rows: minmax(158px, auto) minmax(206px, 0.78fr) minmax(124px, auto);
+  overflow: hidden;
+  color: var(--bg);
+  background: var(--record-paper);
+  border: 1px solid rgba(242, 242, 237, 0.72);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.92), 0 22px 80px rgba(0, 0, 0, 0.72);
+}
+
+.record-card.source-tone-newspaper {
+  --record-tone: #173935;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-magazine {
+  --record-tone: #1b3147;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-web {
+  --record-tone: #26303a;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-catalogue,
+.record-card.source-tone-metadata {
+  --record-tone: #343536;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-attention {
+  --record-tone: #233a54;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-manual,
+.record-card.source-tone-default {
+  --record-tone: #263a2e;
+  --record-paper: #f4f4ef;
+}
+
+.record-card-table {
+  min-height: 158px;
+  padding: 19px 20px 20px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 24px;
+  color: var(--ink);
+  background:
+    repeating-linear-gradient(90deg, rgba(242, 242, 237, 0.055), rgba(242, 242, 237, 0.055) 1px, transparent 1px, transparent 22px),
+    var(--record-tone);
+}
+
+.record-card-table-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  color: rgba(242, 242, 237, 0.9);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.record-card-table-top button {
+  border: 0;
+  background: transparent;
+  color: rgba(242, 242, 237, 0.92);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.record-card-table-top button:hover,
+.record-card-table-top button:focus-visible {
+  color: var(--green);
+  outline: none;
+}
+
+.record-card-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1.25fr 0.68fr 0.9fr 0.9fr;
+  gap: 0;
+  border-top: 1px solid rgba(242, 242, 237, 0.18);
+  border-bottom: 1px solid rgba(242, 242, 237, 0.18);
+}
+
+.record-card-grid div {
+  min-height: 64px;
+  padding: 12px 14px 10px 0;
+  display: grid;
+  align-content: end;
+  gap: 5px;
+  border-right: 1px solid rgba(242, 242, 237, 0.18);
+}
+
+.record-card-grid div:last-child {
+  border-right: 0;
+}
+
+.record-card-grid span {
+  color: rgba(242, 242, 237, 0.72);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+}
+
+.record-card-grid b {
+  color: var(--ink);
+  font-size: 0.79rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.record-card-title-block {
+  padding: clamp(14px, 1.9vw, 24px) 20px clamp(16px, 2.1vw, 26px);
+  display: grid;
+  align-content: center;
+  background: var(--record-paper);
+  border-bottom: 1px solid rgba(5, 6, 6, 0.18);
+}
+
+.record-card-year {
+  color: #020303;
+  font-size: clamp(4rem, 8.6vw, 7.2rem);
+  font-weight: 700;
+  line-height: 0.86;
+  letter-spacing: 0;
+}
+
+.record-card-title-block h2 {
+  max-width: 100%;
+  margin: 12px 0 0;
+  color: #020303;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2.7rem, 6.2vw, 5.25rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.record-card-body {
+  min-height: 124px;
+  padding: 16px 22px 16px 28px;
+  display: grid;
+  grid-template-columns: minmax(104px, 0.2fr) minmax(380px, 1.36fr) minmax(218px, 0.58fr);
+  gap: 28px;
+  align-items: end;
+  background: #ffffff;
+  border-top: 1px solid rgba(5, 6, 6, 0.12);
+}
+
+.record-card-body p {
+  margin: 0;
+  color: #050606;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.16;
+}
+
+.record-card-body-mark {
+  color: #050606;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.record-card-body footer {
+  justify-self: end;
+  min-width: 218px;
+  display: grid;
+  gap: 6px;
+  color: #050606;
+  font-size: 0.77rem;
+  font-weight: 700;
+  line-height: 1.16;
+}
+
+.record-card-body footer::before {
+  content: "PUBLIC RECORD";
+  color: #050606;
+}
+
+.record-card-body a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .view-area-source {

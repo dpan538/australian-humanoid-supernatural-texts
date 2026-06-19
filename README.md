@@ -57,7 +57,7 @@ make init seed queries validate export test
 
 `make collect-public-round` runs a small public-only seed collection round. It retrieves Wikimedia public summaries, one verified ABC News public page, and public metadata leads for early NLA/Trove items. Trove/NLA leads are marked as metadata leads unless full text is manually/API-key verified.
 
-`make plan-public-round-002` writes a broader second-round public-source lead plan and location-review queue without making network requests or inserting records. It is the review step before any expanded live collection.
+`make plan-public-round-002` writes a broader second-round public-source lead plan and location-review queue without making network requests or inserting records. It is the review step before any expanded live collection. The planner is configured by `config/round_002.yml`, filters blocked high-noise or non-public source rows by default, preserves per-location evidence in `locations_json`, and can fail before writing outputs with `--fail-on-blocked`.
 
 `make locations` seeds a small reviewed gazetteer and attaches rule-based place/region matches to imported records. Location matches are evidence for human review, not final geocoding truth.
 

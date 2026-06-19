@@ -1,6 +1,6 @@
 "use client";
 
-import { CSSProperties, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import Link from "next/link";
 import type { DateBand, FrontendData, LocationItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
@@ -34,6 +34,18 @@ const STATE_NAMES: Record<string, string> = {
   ACT: "Australian Capital Territory",
 };
 
+const SOURCE_TONE: Record<string, { label: string; className: string }> = {
+  trove_newspaper: { label: "NEWSPAPER", className: "source-tone-newspaper" },
+  trove_magazine: { label: "MAGAZINE", className: "source-tone-magazine" },
+  nla_catalogue: { label: "CATALOGUE", className: "source-tone-catalogue" },
+  aiatsis_public_catalogue: { label: "CATALOGUE", className: "source-tone-catalogue" },
+  andc: { label: "METADATA", className: "source-tone-metadata" },
+  google_trends: { label: "ATTENTION", className: "source-tone-attention" },
+  wikimedia_pageviews: { label: "PAGEVIEWS", className: "source-tone-attention" },
+  modern_web: { label: "WEB", className: "source-tone-web" },
+  manual: { label: "MANUAL", className: "source-tone-manual" },
+};
+
 const DENSITY_CHARS = [" ", ".", ":", "+", "#"];
 const TERRAIN_SYMBOLS = {
   range: "+",
@@ -59,8 +71,9 @@ const TERRAIN_LABELS: Record<TerrainKind, string> = {
 };
 
 const STATE_LABEL_OVERRIDES: Partial<Record<keyof typeof STATE_NAMES, [number, number]>> = {
-  NSW: [718, 494],
-  VIC: [698, 552],
+  SA: [520, 417],
+  NSW: [733, 479],
+  VIC: [688, 552],
   TAS: [714, 654],
   ACT: [784, 512],
 };
@@ -120,6 +133,10 @@ function numberFormat(value: number | null | undefined) {
     return "--";
   }
   return new Intl.NumberFormat("en-AU").format(value);
+}
+
+function svgCoord(value: number) {
+  return Number(value.toFixed(3));
 }
 
 function truncate(value: string | null | undefined, length: number) {
@@ -204,15 +221,29 @@ function pointDisplayNudge(point: LocationItem) {
 
 export function ArchiveTerminal({ data, view }: { data: FrontendData; view: ViewMode }) {
   const nextView = getNextView(view);
+  const [selectedRecord, setSelectedRecord] = useState<RecordItem | null>(null);
+
+  useEffect(() => {
+    if (!selectedRecord) {
+      return;
+    }
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setSelectedRecord(null);
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selectedRecord]);
 
   return (
     <main className="terminal-shell">
       <div className="noise-layer" aria-hidden="true" />
       <div className="terminal-stage">
         <section className={`view-area view-area-${view}`} aria-label={`${view} data view`}>
-          {view === "map" ? <MapView data={data} /> : null}
-          {view === "density" ? <DensityView data={data} /> : null}
-          {view === "dashboard" ? <DashboardView data={data} /> : null}
+          {view === "map" ? <MapView data={data} onSelectRecord={setSelectedRecord} /> : null}
+          {view === "density" ? <DensityView data={data} onSelectRecord={setSelectedRecord} /> : null}
+          {view === "dashboard" ? <DashboardView data={data} onSelectRecord={setSelectedRecord} /> : null}
           {view === "source" ? <SourceView data={data} /> : null}
         </section>
 
@@ -234,6 +265,7 @@ export function ArchiveTerminal({ data, view }: { data: FrontendData; view: View
           </Link>
         </div>
       </div>
+      {selectedRecord ? <RecordCardOverlay record={selectedRecord} onClose={() => setSelectedRecord(null)} /> : null}
     </main>
   );
 }
@@ -246,7 +278,7 @@ function getNextView(view: ViewMode) {
   return VIEW_SEQUENCE[(index + 1) % VIEW_SEQUENCE.length];
 }
 
-function MapView({ data }: { data: FrontendData }) {
+function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
   const [hoverState, setHoverState] = useState<string | null>(null);
   const [hoverPoint, setHoverPoint] = useState<LocationItem | null>(null);
   const stateCounts = data.summary.state_record_counts;
@@ -300,19 +332,38 @@ function MapView({ data }: { data: FrontendData }) {
               const projected = projectPoint(point.latitude as number, point.longitude as number);
               const nudge = pointDisplayNudge(point);
               const clusterOffset = ((index % 3) - 1) * 6;
-              const x = projected.x + clusterOffset + nudge.x;
-              const y = projected.y + (index % 2 === 0 ? -2 : 5) + nudge.y;
+              const x = svgCoord(projected.x + clusterOffset + nudge.x);
+              const y = svgCoord(projected.y + (index % 2 === 0 ? -2 : 5) + nudge.y);
+              const stemX = svgCoord(x + nudge.stemDx);
+              const stemY = svgCoord(y + nudge.stemDy);
+              const labelX = svgCoord(Math.min(x + 12, MAP_VIEWBOX.width - 172));
+              const labelY = svgCoord(Math.max(y - 12, 28));
               const selected = hoverPoint?.record_id === point.record_id && hoverPoint.place_name === point.place_name;
+              const record = data.records.find((item) => item.record_id === point.record_id);
               return (
                 <g
                   key={`${point.record_id}-${point.place_name}-${index}`}
                   onMouseEnter={() => setHoverPoint(point)}
                   onMouseLeave={() => setHoverPoint(null)}
+                  onClick={() => {
+                    if (record) {
+                      onSelectRecord(record);
+                    }
+                  }}
+                  onKeyDown={(event) => {
+                    if (record && (event.key === "Enter" || event.key === " ")) {
+                      event.preventDefault();
+                      onSelectRecord(record);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={record ? 0 : -1}
+                  aria-label={`Open record ${record?.title ?? point.place_name}`}
                 >
-                  <line className="point-stem" x1={x} y1={y} x2={x + nudge.stemDx} y2={y + nudge.stemDy} />
+                  <line className="point-stem" x1={x} y1={y} x2={stemX} y2={stemY} />
                   <circle className={selected ? "map-point active" : "map-point"} cx={x} cy={y} r={selected ? 6 : 4.5} />
                   {selected ? (
-                    <text className="point-label" x={Math.min(x + 12, MAP_VIEWBOX.width - 172)} y={Math.max(y - 12, 28)}>
+                    <text className="point-label" x={labelX} y={labelY}>
                       {point.place_name}
                     </text>
                   ) : null}
@@ -446,7 +497,7 @@ function TerrainSurfaceLayer({ hoverState }: { hoverState: string | null }) {
   );
 }
 
-function DensityView({ data }: { data: FrontendData }) {
+function DensityView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
   const maxRecords = Math.max(...data.date_bands.map((band) => band.record_count), 1);
   const maxQueries = Math.max(...data.date_bands.map((band) => band.planned_query_count), 1);
   const queryTypes = data.queries.reduce<Record<string, number>>((acc, query) => {
@@ -464,13 +515,21 @@ function DensityView({ data }: { data: FrontendData }) {
       </header>
       <div className="density-bands">
         {data.date_bands.map((band, index) => (
-          <DensityBand key={band.id} band={band} index={index} maxRecords={maxRecords} maxQueries={maxQueries} />
+          <DensityBand
+            key={band.id}
+            band={band}
+            index={index}
+            maxRecords={maxRecords}
+            maxQueries={maxQueries}
+            records={data.records}
+            onSelectRecord={onSelectRecord}
+          />
         ))}
       </div>
       <div className="density-aux-grid">
         <DensitySignal title="SOURCE FIELD" values={data.summary.source_type_counts} />
         <DensitySignal title="QUERY TYPES" values={queryTypes} />
-        <DensityFigureRail records={data.records} />
+        <DensityFigureRail records={data.records} onSelectRecord={onSelectRecord} />
       </div>
       <div className="density-footer">
         <div className="density-note">
@@ -487,17 +546,38 @@ function DensityBand({
   index,
   maxRecords,
   maxQueries,
+  records,
+  onSelectRecord,
 }: {
   band: DateBand;
   index: number;
   maxRecords: number;
   maxQueries: number;
+  records: RecordItem[];
+  onSelectRecord: (record: RecordItem) => void;
 }) {
   const recordLevel = Math.ceil((band.record_count / maxRecords) * 28);
   const queryLevel = Math.ceil((band.planned_query_count / maxQueries) * 28);
   const char = DENSITY_CHARS[Math.min(DENSITY_CHARS.length - 1, index)];
+  const firstRecord = records.find((record) => record.date_band === band.id);
   return (
-    <section className="density-band">
+    <section
+      className={firstRecord ? "density-band clickable-record" : "density-band"}
+      onClick={() => {
+        if (firstRecord) {
+          onSelectRecord(firstRecord);
+        }
+      }}
+      onKeyDown={(event) => {
+        if (firstRecord && (event.key === "Enter" || event.key === " ")) {
+          event.preventDefault();
+          onSelectRecord(firstRecord);
+        }
+      }}
+      role={firstRecord ? "button" : undefined}
+      tabIndex={firstRecord ? 0 : undefined}
+      aria-label={firstRecord ? `Open sample record for ${band.label}` : undefined}
+    >
       <div className="density-matrix" aria-hidden="true">
         {Array.from({ length: 28 }).map((_, cellIndex) => (
           <span key={cellIndex} className={cellIndex < recordLevel ? "matrix-cell lit" : "matrix-cell"}>
@@ -534,7 +614,13 @@ function DensitySignal({ title, values }: { title: string; values: Record<string
   );
 }
 
-function DensityFigureRail({ records }: { records: RecordItem[] }) {
+function DensityFigureRail({
+  records,
+  onSelectRecord,
+}: {
+  records: RecordItem[];
+  onSelectRecord: (record: RecordItem) => void;
+}) {
   const figures = records.reduce<Record<string, number>>((acc, record) => {
     const key = record.canonical_figure_guess || record.canonical_figure || "uncoded";
     acc[key] = (acc[key] ?? 0) + 1;
@@ -547,25 +633,41 @@ function DensityFigureRail({ records }: { records: RecordItem[] }) {
       <span className="tiny-label">FIGURE SIGNAL</span>
       <div>
         {entries.map(([figure, value], index) => (
-          <span key={figure} className={index % 3 === 0 ? "rail-mark strong" : "rail-mark"}>
+          <button
+            key={figure}
+            type="button"
+            className={index % 3 === 0 ? "rail-mark strong" : "rail-mark"}
+            onClick={() => {
+              const record = records.find((item) => (item.canonical_figure_guess || item.canonical_figure || "uncoded") === figure);
+              if (record) {
+                onSelectRecord(record);
+              }
+            }}
+          >
             {truncate(figure, 10)}:{value}
-          </span>
+          </button>
         ))}
       </div>
     </section>
   );
 }
 
-function DashboardView({ data }: { data: FrontendData }) {
+function DashboardView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
   return (
     <div className="dashboard-view">
-      <DashboardTrackNetwork data={data} />
+      <DashboardTrackNetwork data={data} onSelectRecord={onSelectRecord} />
       <DashboardControlConsole data={data} />
     </div>
   );
 }
 
-function DashboardTrackNetwork({ data }: { data: FrontendData }) {
+function DashboardTrackNetwork({
+  data,
+  onSelectRecord,
+}: {
+  data: FrontendData;
+  onSelectRecord: (record: RecordItem) => void;
+}) {
   const tracks = [...data.records]
     .sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.record_id - b.record_id)
     .slice(0, 14);
@@ -612,7 +714,20 @@ function DashboardTrackNetwork({ data }: { data: FrontendData }) {
           </g>
         ))}
         {nodes.map((node) => (
-          <g key={node.record.record_id}>
+          <g
+            key={node.record.record_id}
+            className="network-record-target"
+            onClick={() => onSelectRecord(node.record)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                onSelectRecord(node.record);
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            aria-label={`Open record ${node.record.title ?? node.record.record_id}`}
+          >
             <rect className="network-slot" x={node.x} y={node.y} width="52" height="15" />
             <rect className="network-slot-fill" x={node.x + 8} y={node.y + 4} width="33" height="7" />
             <circle className="network-dot" cx={node.x - 8} cy={node.y + 8} r="3" />
@@ -628,10 +743,10 @@ function DashboardTrackNetwork({ data }: { data: FrontendData }) {
       <div className="track-list">
         <span>TRACKS</span>
         {tracks.map((record, index) => (
-          <div className="track-row" key={record.record_id}>
+          <button className="track-row" key={record.record_id} type="button" onClick={() => onSelectRecord(record)}>
             <b>{String(index + 1).padStart(2, "0")}.</b>
             <i>{truncate(record.canonical_figure_guess || record.canonical_figure || record.title, index > 10 ? 38 : 24)}</i>
-          </div>
+          </button>
         ))}
       </div>
       <div className="network-footer">
@@ -964,6 +1079,98 @@ function RecordLine({ record }: { record: RecordItem }) {
       <span>{record.year ?? "----"}</span>
       <b>{truncate(record.canonical_figure_guess || record.canonical_figure, 18)}</b>
       <em>{truncate(record.location_summary || record.publication, 32)}</em>
+    </div>
+  );
+}
+
+function sourceTone(record: RecordItem) {
+  return SOURCE_TONE[record.source_type ?? ""] ?? { label: "SOURCE", className: "source-tone-default" };
+}
+
+function recordDisplayTitle(record: RecordItem) {
+  return record.canonical_figure_guess || record.canonical_figure || record.title || "Uncoded public record";
+}
+
+function recordBody(record: RecordItem) {
+  if (record.snippet) {
+    return record.snippet;
+  }
+  const figure = recordDisplayTitle(record);
+  const source = record.publication || record.source_name || "a public source";
+  const date = record.date_published || (record.year ? String(record.year) : "an undated record");
+  return `Public metadata lead for ${figure}, recorded in ${source} (${date}). This card is a review surface: source voice, relevance, location, and publicness still require human checking before interpretation.`;
+}
+
+function RecordCardOverlay({ record, onClose }: { record: RecordItem; onClose: () => void }) {
+  const tone = sourceTone(record);
+  const location = record.location_summary || "location unverified";
+  const sourceName = record.source_name || record.publication || "public source";
+  const sourceClass = tone.className;
+  const year = record.year ?? "----";
+  const title = record.title || recordDisplayTitle(record);
+  const body = recordBody(record);
+
+  return (
+    <div className="record-overlay" role="presentation" onClick={onClose}>
+      <article
+        className={`record-card ${sourceClass}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label={`Record ${title}`}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <section className="record-card-table" aria-label="Record metadata">
+          <div className="record-card-table-top">
+            <span>aus humanoid record</span>
+            <button type="button" onClick={onClose} aria-label="Close record card">
+              CLOSE
+            </button>
+          </div>
+          <div className="record-card-grid">
+            <div>
+              <span>REGION</span>
+              <b>{truncate(location, 42)}</b>
+            </div>
+            <div>
+              <span>SOURCE</span>
+              <b>{truncate(sourceName, 36)}</b>
+            </div>
+            <div>
+              <span>TYPE</span>
+              <b>{tone.label}</b>
+            </div>
+            <div>
+              <span>PUBLICNESS</span>
+              <b>{record.publicness_code || record.publicness_level || "public review"}</b>
+            </div>
+            <div>
+              <span>STATUS</span>
+              <b>{record.relevance_code || "needs_review"}</b>
+            </div>
+          </div>
+        </section>
+
+        <section className="record-card-title-block">
+          <div className="record-card-year">{year}</div>
+          <h2>{recordDisplayTitle(record)}</h2>
+        </section>
+
+        <section className="record-card-body">
+          <span className="record-card-body-mark">RECORD NOTE</span>
+          <p>{body}</p>
+          <footer>
+            <span>{record.date_published || "date unknown"}</span>
+            <span>{record.genre || record.source_voice || "source voice pending"}</span>
+            {record.url ? (
+              <a href={record.url} target="_blank" rel="noreferrer">
+                OPEN SOURCE
+              </a>
+            ) : (
+              <span>NO PUBLIC URL</span>
+            )}
+          </footer>
+        </section>
+      </article>
     </div>
   );
 }
