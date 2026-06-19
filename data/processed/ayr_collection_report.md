@@ -40,4 +40,4 @@ Post-run SQL checks confirm that all 200 AYR records have the fields required by
 - none
 
 ## Coverage Note
-The AYR state pages are not evenly distributed. NSW, QLD, and VIC have many more public report pages than WA, SA, NT, and TAS, so this run exhausts low-availability states first and fills the 200-record target from higher-availability states. The imbalance should be addressed in the next round with source-specific searches rather than by fabricating regional symmetry.
+The AYR public archive is not evenly distributed. NSW, QLD, and VIC have many more public report pages than WA, SA, NT, and TAS. The imbalance is source evidence, not something to smooth artificially.

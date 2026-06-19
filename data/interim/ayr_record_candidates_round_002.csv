@@ -1,0 +1,622 @@
+status,record_id,skip_reason,state_code,year,title,url,place_name,date_band
+skipped,14,duplicate_existing_record,WA,1983,"Kalamundra, Western Australia 1983",https://www.yowiehunters.com.au/western-australia/1135-kalamundra-1983,,modern_1970_present
+skipped,15,duplicate_existing_record,WA,1991,"Australind, Western Australia 1991",https://www.yowiehunters.com.au/western-australia/1812-australind-western-australia-1991,,modern_1970_present
+skipped,16,duplicate_existing_record,WA,1993,"Exmouth, Western Australia 1993",https://www.yowiehunters.com.au/western-australia/2016-exmouth-western-australia-1993,,modern_1970_present
+skipped,17,duplicate_existing_record,WA,2000,"Coral Bay, Western Australia 2000",https://www.yowiehunters.com.au/western-australia/1146-coral-bay-2000,,modern_1970_present
+skipped,18,duplicate_existing_record,WA,2000,"Lancedin, Western Australia 2000",https://www.yowiehunters.com.au/western-australia/2297-lancedin-western-australia-2000,,modern_1970_present
+skipped,19,duplicate_existing_record,WA,2008,"Greenbushes, Western Australia 2008",https://www.yowiehunters.com.au/western-australia/2030-greenbushes-western-australia-2008,,modern_1970_present
+skipped,20,duplicate_existing_record,WA,2011,"Donnybrook, Western Australia 2011",https://www.yowiehunters.com.au/western-australia/1676-donnybrook-western-australia-2011,,modern_1970_present
+skipped,21,duplicate_existing_record,WA,2011,"Mandurah, Western Australia 2011",https://www.yowiehunters.com.au/western-australia/1831-mandurah-western-australia-2011,,modern_1970_present
+skipped,22,duplicate_existing_record,WA,2020,"Jarrahdale, Western Australia 2020",https://www.yowiehunters.com.au/western-australia/2250-jarrahdale-western-australia-2020,,modern_1970_present
+skipped,23,duplicate_existing_record,WA,2022,"Alcoa Wetlands, Western Australia 2022",https://www.yowiehunters.com.au/western-australia/2292-alcoa-wetlands-western-australia-2022,,modern_1970_present
+skipped,24,duplicate_existing_record,SA,1992,"Willunga, South Australia 1992",https://www.yowiehunters.com.au/south-australia/241-willungra-1992,,modern_1970_present
+skipped,25,duplicate_existing_record,SA,1993,"Yalata, South Australia 1993",https://www.yowiehunters.com.au/south-australia/1849-yalata-south-australia-1993,,modern_1970_present
+skipped,26,duplicate_existing_record,SA,1995,"Roxby Downs, South Australia 1995",https://www.yowiehunters.com.au/south-australia/1144-roxby-downs-1995,,modern_1970_present
+skipped,27,duplicate_existing_record,SA,2014,"Wilpena Pound, South Australia 2014",https://www.yowiehunters.com.au/south-australia/1805-wilpena-pound-south-australia-2014,,modern_1970_present
+skipped,28,duplicate_existing_record,SA,2015,"Sixth Creek - Adelaide Hills, South Australia 2015",https://www.yowiehunters.com.au/south-australia/1882-sixth-creek-adelaide-hills-south-australia-2015,,modern_1970_present
+skipped,29,duplicate_existing_record,SA,2016,"Loxton, South Australia 2016",https://www.yowiehunters.com.au/south-australia/1856-loxton-south-australia-2016,,modern_1970_present
+skipped,30,duplicate_existing_record,SA,2016,"Poochera, South Australia 2016",https://www.yowiehunters.com.au/south-australia/1969-poochera-south-australia-2016,,modern_1970_present
+skipped,31,duplicate_existing_record,NT,1979,"Darwin (Fannie Bay), Northern Territory 1979",https://www.yowiehunters.com.au/northern-territory/2138-darwin-fannie-bay-northern-territory-1979,,modern_1970_present
+skipped,32,duplicate_existing_record,NT,1987,"Yambah Station, Northern Territory 1987",https://www.yowiehunters.com.au/northern-territory/271-yambah-station-1987,,modern_1970_present
+skipped,33,duplicate_existing_record,NT,1995,"Berry Springs, Northern Territory 1995",https://www.yowiehunters.com.au/northern-territory/1912-berry-springs-northern-territory-1995,,modern_1970_present
+skipped,34,duplicate_existing_record,NT,1997,"Acacia Hills, Northern Territory 1997 (1)",https://www.yowiehunters.com.au/northern-territory/270-acacia-hills-1997-sp-8502,,modern_1970_present
+skipped,35,duplicate_existing_record,NT,1997,"Acacia Hills, Northern Territory 1997 (2)",https://www.yowiehunters.com.au/northern-territory/268-acacia-hills-1998,,modern_1970_present
+skipped,36,duplicate_existing_record,NT,1998,"Acacia Hills & Humpty Doo, Northern Territory 1998",https://www.yowiehunters.com.au/northern-territory/2291-acacia-ridge-humpty-doo-northern-territory-1998,,modern_1970_present
+skipped,37,duplicate_existing_record,NT,1998,"Adelaide River, Northern Territory 1998",https://www.yowiehunters.com.au/northern-territory/267-adelaide-river-1998,,modern_1970_present
+skipped,38,duplicate_existing_record,NT,1998,"Tanima Desert, Northern Territory 1998",https://www.yowiehunters.com.au/northern-territory/1242-tanima-desert-nt-1998,,modern_1970_present
+skipped,39,duplicate_existing_record,NT,2001,"Kings Canyon, Northern Territory 2001",https://www.yowiehunters.com.au/northern-territory/1552-kings-canyon-northern-territory-2001,,modern_1970_present
+skipped,40,duplicate_existing_record,TAS,1987,"Lake Dulverton, Tasmania 1987 (1)",https://www.yowiehunters.com.au/tasmania/273-lake-dulverton-jan-1987,,modern_1970_present
+skipped,41,duplicate_existing_record,TAS,1987,"Lake Dulverton, Tasmania 1987 (2)",https://www.yowiehunters.com.au/tasmania/1240-lake-dulverton-tas-1987-2,,modern_1970_present
+skipped,42,duplicate_existing_record,TAS,1992,"Smithton, Tasmania 1992",https://www.yowiehunters.com.au/tasmania/2028-smithton-tasmania-1992,,modern_1970_present
+skipped,43,duplicate_existing_record,TAS,2024,"Christmas Hills Reserve, Tasmania 2024",https://www.yowiehunters.com.au/tasmania/2274-christmas-hills-reserve-tasmania-2024,,modern_1970_present
+skipped,44,duplicate_existing_record,VIC,1849,"Phillip Island, Victoria 1849",https://www.yowiehunters.com.au/victoria/1259-phillip-island-vic-1849,,anchor_1842_1875
+skipped,45,duplicate_existing_record,VIC,1970,"Sherbrooke Forest, Victoria 1970",https://www.yowiehunters.com.au/victoria/2174-sherbrooke-forest-victoria-1970,,modern_1970_present
+skipped,46,duplicate_existing_record,VIC,1980,"Colac, Victoria 1980",https://www.yowiehunters.com.au/victoria/1593-colac-victoria-1980,,modern_1970_present
+skipped,47,duplicate_existing_record,VIC,1980,"Kinglake West & Eden Park, Victoria late 1980's",https://www.yowiehunters.com.au/victoria/2284-kinglake-west-eden-park-victoria-late-1980s,,modern_1970_present
+skipped,48,duplicate_existing_record,VIC,1982,"Cranbourne, Victoria 1982",https://www.yowiehunters.com.au/victoria/1244-cranbourne-vic-1982,,modern_1970_present
+skipped,49,duplicate_existing_record,VIC,1984,"Noojee, Victoria 1984",https://www.yowiehunters.com.au/victoria/1257-noojee-vic-1984,,modern_1970_present
+skipped,50,duplicate_existing_record,VIC,1984,"Toolangi, Victoria 1984",https://www.yowiehunters.com.au/victoria/1680-toolangi-victoria-1984,,modern_1970_present
+skipped,51,duplicate_existing_record,VIC,1985,"Avonsleigh, Victoria 1985",https://www.yowiehunters.com.au/victoria/1954-avonsleigh-victoria-1985,,modern_1970_present
+skipped,52,duplicate_existing_record,VIC,1985,"Darriman, Victoria 1985",https://www.yowiehunters.com.au/victoria/1246-darriman-vic-1985,,modern_1970_present
+skipped,53,duplicate_existing_record,VIC,1987,"Cranbourne, Victoria 1987",https://www.yowiehunters.com.au/victoria/1245-cranbourne-vic-1987,,modern_1970_present
+skipped,54,duplicate_existing_record,VIC,1987,"Lyndhurst, Victoria 1987",https://www.yowiehunters.com.au/victoria/1251-lyndhurst-vic-1987,,modern_1970_present
+skipped,55,duplicate_existing_record,VIC,1988,"Emerald, Victoria 1988",https://www.yowiehunters.com.au/victoria/1248-emerald-vic-1988,,modern_1970_present
+skipped,56,duplicate_existing_record,VIC,1990,"Dellicknora, Victoria 1990",https://www.yowiehunters.com.au/victoria/1247-dellicknora-vic-1990,,modern_1970_present
+skipped,57,duplicate_existing_record,VIC,1991,"Lake Buffalo, Victoria 1991",https://www.yowiehunters.com.au/victoria/1920-lake-buffalo-victoria-1991,,modern_1970_present
+skipped,58,duplicate_existing_record,VIC,1993,"Hepburn Springs, Victoria 1993",https://www.yowiehunters.com.au/victoria/2171-hepburn-springs-victoria-1993,,modern_1970_present
+skipped,59,duplicate_existing_record,VIC,1996,"Aberfeldy, Victoria 1996",https://www.yowiehunters.com.au/victoria/1243-aberfeldie-vic-1996,,modern_1970_present
+skipped,60,duplicate_existing_record,VIC,1997,"Warnambool, Victoria 1997",https://www.yowiehunters.com.au/victoria/1264-warnambool-vic-1997,,modern_1970_present
+skipped,61,duplicate_existing_record,VIC,1999,"Wilsons Promontory, Victoria 1999",https://www.yowiehunters.com.au/victoria/1265-wilsons-promontory-vic-1999,,modern_1970_present
+skipped,62,duplicate_existing_record,VIC,2002,"Licola, Victoria 2002",https://www.yowiehunters.com.au/victoria/1592-licola-victoria-2002,,modern_1970_present
+skipped,63,duplicate_existing_record,VIC,2004,"Robinvale, Victoria 2004",https://www.yowiehunters.com.au/victoria/1261-robinvale-vic-2004,,modern_1970_present
+skipped,64,duplicate_existing_record,VIC,2006,"Mansfield, Victoria 2006",https://www.yowiehunters.com.au/victoria/1835-mansfield-victoria-2006,,modern_1970_present
+skipped,65,duplicate_existing_record,VIC,2007,"Barmah Forest (Murray River), Victoria 2007",https://www.yowiehunters.com.au/victoria/2188-barmah-forest-murray-river-victoria-2007,,modern_1970_present
+skipped,66,duplicate_existing_record,VIC,2007,"Nowa Nowa, Victoria 2007",https://www.yowiehunters.com.au/victoria/1258-nowa-nowa-vic-2007,,modern_1970_present
+skipped,67,duplicate_existing_record,VIC,2008,"Redbank, Victoria 2008 (2)",https://www.yowiehunters.com.au/victoria/1971-redbank-victoria-2008-2,,modern_1970_present
+skipped,68,duplicate_existing_record,VIC,2008,"Robinvale, Victoria 2008",https://www.yowiehunters.com.au/victoria/1666-robinvale-victoria-2008,,modern_1970_present
+skipped,69,duplicate_existing_record,VIC,2010,"Aberfeldy, Victoria 2010",https://www.yowiehunters.com.au/victoria/1571-aberfeldie-victoria-2010,,modern_1970_present
+skipped,70,duplicate_existing_record,VIC,2010,"Briagolong, Victoria 2010",https://www.yowiehunters.com.au/victoria/1619-briagolong-victoria-2010-2,,modern_1970_present
+skipped,71,duplicate_existing_record,VIC,2011,"Bendigo (area), Victoria 2011",https://www.yowiehunters.com.au/victoria/1548-bendigo-area-victoria-2011,,modern_1970_present
+skipped,72,duplicate_existing_record,VIC,2011,"Falls Creek, Victoria 2011",https://www.yowiehunters.com.au/victoria/1585-falls-creek-victoria-2011,,modern_1970_present
+skipped,73,duplicate_existing_record,VIC,2011,"Yarra Valley, Victoria 2011",https://www.yowiehunters.com.au/victoria/1570-yarra-valley-victoria-2011,,modern_1970_present
+skipped,74,duplicate_existing_record,VIC,2013,"Bemm River, Victoria 2013",https://www.yowiehunters.com.au/victoria/2095-bemm-river-victoria-2013,,modern_1970_present
+skipped,75,duplicate_existing_record,VIC,2013,"Healesville, Victoria 2013",https://www.yowiehunters.com.au/victoria/1677-healesville-victoria-2013,,modern_1970_present
+skipped,76,duplicate_existing_record,VIC,2015,"Harrietville, Victoria 2015",https://www.yowiehunters.com.au/victoria/1889-harrietville-victoria-2015,,modern_1970_present
+skipped,77,duplicate_existing_record,VIC,2015,"Mount Hotham, Victoria 2015",https://www.yowiehunters.com.au/victoria/2219-mount-hotham-victoria-2015,,modern_1970_present
+skipped,78,duplicate_existing_record,VIC,2016,"Goongerah, Victoria 2016",https://www.yowiehunters.com.au/victoria/1890-goonerah-victoria-2016,,modern_1970_present
+skipped,79,duplicate_existing_record,VIC,2016,"Noojee, Victoria 2016",https://www.yowiehunters.com.au/victoria/1854-noojee-victoria-2016,,modern_1970_present
+skipped,80,duplicate_existing_record,VIC,2018,"Bunyip, Victoria 2018",https://www.yowiehunters.com.au/victoria/2004-bunyip-victoria-2018,,modern_1970_present
+skipped,81,duplicate_existing_record,VIC,2019,"Blackwood, Victoria 2019",https://www.yowiehunters.com.au/victoria/2142-blackwood-victoria-2019,,modern_1970_present
+skipped,82,duplicate_existing_record,VIC,2020,"Creswick, Victoria 2020",https://www.yowiehunters.com.au/victoria/2193-creswick-victoria-2020,,modern_1970_present
+skipped,83,duplicate_existing_record,VIC,2023,"Mitta Mitta, Victoria 2023",https://www.yowiehunters.com.au/victoria/2271-mitta-mitta-victoria-2023,,modern_1970_present
+skipped,84,duplicate_existing_record,NSW,1870,"Braidwood, New South Wales 1870",https://www.yowiehunters.com.au/new-south-wales/1361-braidwood-new-south-wales-1870,,anchor_1842_1875
+skipped,85,duplicate_existing_record,NSW,1923,"Charlton, New South Wales 1923",https://www.yowiehunters.com.au/new-south-wales/1369-charlton-new-south-wales-1923,,expansion_1876_1969
+skipped,86,duplicate_existing_record,NSW,1962,"Dungay Creek, New South Wales 1962",https://www.yowiehunters.com.au/new-south-wales/1669-dungay-new-south-wales-1963,,expansion_1876_1969
+skipped,87,duplicate_existing_record,NSW,1968,"Woy Woy, New South Wales 1968",https://www.yowiehunters.com.au/new-south-wales/1832-woy-woy-new-south-wales-1968,,expansion_1876_1969
+skipped,88,duplicate_existing_record,NSW,1973,"Middle Brother Mountain, New South Wales 1973",https://www.yowiehunters.com.au/new-south-wales/1942-little-brother-mountain-new-south-wales-1973,,modern_1970_present
+skipped,89,duplicate_existing_record,NSW,1975,"Katoomba, New South Wales 1975",https://www.yowiehunters.com.au/new-south-wales/1808-katoomba-new-south-wales-1975,,modern_1970_present
+skipped,90,duplicate_existing_record,NSW,1977,"Bateman's Bay, New South Wales 1977",https://www.yowiehunters.com.au/new-south-wales/1349-batemans-bay-new-south-wales-1977,,modern_1970_present
+skipped,91,duplicate_existing_record,NSW,1977,"Talingbo, New South Wales 1977",https://www.yowiehunters.com.au/new-south-wales/1449-talingbo-new-south-wales,,modern_1970_present
+skipped,92,duplicate_existing_record,NSW,1978,"Mogo, New South Wales 1978",https://www.yowiehunters.com.au/new-south-wales/2141-mogo-new-south-wales-1978,,modern_1970_present
+skipped,93,duplicate_existing_record,NSW,1979,"Bateman's Bay, New South Wales 1979",https://www.yowiehunters.com.au/new-south-wales/1350-batemans-bay-new-south-wales-1979,,modern_1970_present
+skipped,94,duplicate_existing_record,NSW,1979,"Wentworth Falls, New South Wales 1979",https://www.yowiehunters.com.au/new-south-wales/1468-wentworth-falls-new-south-wales-1979,,modern_1970_present
+skipped,95,duplicate_existing_record,NSW,1980,"Coffs Harbour, New South Wales 1980",https://www.yowiehunters.com.au/new-south-wales/1371-coffs-harbour-new-south-wales-1980,,modern_1970_present
+skipped,96,duplicate_existing_record,NSW,1980,"Wee Jasper & Uki, New South Wales 1980",https://www.yowiehunters.com.au/new-south-wales/1466-wee-jasper-new-south-wales-1980,,modern_1970_present
+skipped,97,duplicate_existing_record,NSW,1982,"Ophir, New South Wales 1982",https://www.yowiehunters.com.au/new-south-wales/1435-ophir-new-south-wales-1982,,modern_1970_present
+skipped,98,duplicate_existing_record,NSW,1983,"Evans Head, New South Wales 1983",https://www.yowiehunters.com.au/new-south-wales/1383-evans-head-new-south-wales-1983,,modern_1970_present
+skipped,99,duplicate_existing_record,NSW,1984,"Brooklyn, New South Wales 1984",https://www.yowiehunters.com.au/new-south-wales/1394-hawkesburry-river-new-south-wales-1984,,modern_1970_present
+skipped,100,duplicate_existing_record,NSW,1985,"Sunny Corner, New South Wales 1985",https://www.yowiehunters.com.au/new-south-wales/1910-sunny-corner-new-south-wales-1985,,modern_1970_present
+skipped,101,duplicate_existing_record,NSW,1987,"Border Ranges and Blue Knob, New South Wales 1987 & 2015",https://www.yowiehunters.com.au/new-south-wales/2283-border-ranges-and-blue-knob-new-south-wales-1987-2015,,modern_1970_present
+skipped,102,duplicate_existing_record,NSW,1988,"Mt. Kembla, New South Wales 1988",https://www.yowiehunters.com.au/new-south-wales/1421-mt-kembla-new-south-wales-1988,,modern_1970_present
+skipped,103,duplicate_existing_record,NSW,1990,"Bateman's Bay, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/1351-batemans-bay-new-south-wales-1990,,modern_1970_present
+skipped,104,duplicate_existing_record,NSW,1990,"Fingal Head, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/1386-fingal-head-new-south-wales-1990,,modern_1970_present
+skipped,105,duplicate_existing_record,NSW,1990,"Tallong, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/2027-tallong-new-south-wales-1990,,modern_1970_present
+skipped,106,duplicate_existing_record,NSW,1992,"Callala Bay, New South Wales 1992",https://www.yowiehunters.com.au/new-south-wales/2266-callala-bay-new-south-wales-1992,,modern_1970_present
+skipped,107,duplicate_existing_record,NSW,1993,"Leeville, New South Wales 1993",https://www.yowiehunters.com.au/new-south-wales/1408-leeville-new-south-wales-1993,,modern_1970_present
+skipped,108,duplicate_existing_record,NSW,1994,"Mulgoa, New South Wales 1994",https://www.yowiehunters.com.au/new-south-wales/1807-mulgoa-new-south-wales-1994,,modern_1970_present
+skipped,109,duplicate_existing_record,NSW,1995,"Kempsey, New Sout Wales 1995",https://www.yowiehunters.com.au/new-south-wales/2063-kempsey-new-sout-wales-1995,,modern_1970_present
+skipped,110,duplicate_existing_record,NSW,1996,"Cessnock, New South Wales 1996",https://www.yowiehunters.com.au/new-south-wales/2108-cessnock-new-south-wales-1996,,modern_1970_present
+skipped,111,duplicate_existing_record,NSW,1997,"Hawkesbury River, New South Wales 1997",https://www.yowiehunters.com.au/new-south-wales/1396-hawkesbury-river-new-south-wales-1997,,modern_1970_present
+skipped,112,duplicate_existing_record,NSW,1998,"Faulconbridge, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/1385-faulconbridge-new-south-wales-1998,,modern_1970_present
+skipped,113,duplicate_existing_record,NSW,1998,"Mudgee, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/1424-mudgee-new-south-wales-1998,,modern_1970_present
+skipped,114,duplicate_existing_record,NSW,1999,"Bourke, New South Wales 1999",https://www.yowiehunters.com.au/new-south-wales/1359-bourke-new-south-wales-1999,,modern_1970_present
+skipped,115,duplicate_existing_record,NSW,1999,"Mt. Kembla, New South Wales 1999",https://www.yowiehunters.com.au/new-south-wales/1423-mt-kembla-new-south-wales-1999,,modern_1970_present
+skipped,116,duplicate_existing_record,NSW,2000,"Leura, New South Wales 2000",https://www.yowiehunters.com.au/new-south-wales/1410-leura-new-south-wales-2000,,modern_1970_present
+skipped,117,duplicate_existing_record,NSW,2000,"Yowrie, New South Wales 2000",https://www.yowiehunters.com.au/new-south-wales/1477-yowrie-new-south-wales-2000,,modern_1970_present
+skipped,118,duplicate_existing_record,NSW,2001,"Lismore, New South Wales 2001",https://www.yowiehunters.com.au/new-south-wales/1456-lismore-new-south-wales-2001,,modern_1970_present
+skipped,119,duplicate_existing_record,NSW,2002,"Glossodia, New South Wales 2002",https://www.yowiehunters.com.au/new-south-wales/1389-glossodia-new-south-wales-2002,,modern_1970_present
+skipped,120,duplicate_existing_record,NSW,2002,"Wollemi National Park, New South Wales 2002",https://www.yowiehunters.com.au/new-south-wales/1869-wollemi-national-park-new-south-wales-2002,,modern_1970_present
+skipped,121,duplicate_existing_record,NSW,2003,"Gunnedah, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1815-gunnedah-new-south-wales-2003,,modern_1970_present
+skipped,122,duplicate_existing_record,NSW,2003,"Rosebank, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/2261-rosebank-new-south-wales-2003,,modern_1970_present
+skipped,123,duplicate_existing_record,NSW,2003,"Wentworth Falls, New South Falls 2003",https://www.yowiehunters.com.au/new-south-wales/1687-wentworth-falls-new-south-falls-2003,,modern_1970_present
+skipped,124,duplicate_existing_record,NSW,2005,"Blue Knob, New South Wales 2005",https://www.yowiehunters.com.au/new-south-wales/2192-blue-knob-new-south-wales-2005,,modern_1970_present
+skipped,125,duplicate_existing_record,NSW,2005,"Thredbo, New South Wales 2005",https://www.yowiehunters.com.au/new-south-wales/1603-thredbo-new-south-wales-2005,,modern_1970_present
+skipped,126,duplicate_existing_record,NSW,2006,"Colo Heights, New South Wales 2006",https://www.yowiehunters.com.au/new-south-wales/1683-colo-heights-new-south-wales-2006,,modern_1970_present
+skipped,127,duplicate_existing_record,NSW,2007,"Hartley, New South Wales 2007",https://www.yowiehunters.com.au/new-south-wales/1617-hartley-new-south-wales-2007,,modern_1970_present
+skipped,128,duplicate_existing_record,NSW,2008,"Bongil Bongil, New South Wales 2008",https://www.yowiehunters.com.au/new-south-wales/2010-bongil-bongil-new-south-wales-2008,,modern_1970_present
+skipped,129,duplicate_existing_record,NSW,2009,"Coonabarabran, New South Wales 2009",https://www.yowiehunters.com.au/new-south-wales/1375-coonabarabran-new-south-wales-2009,,modern_1970_present
+skipped,130,duplicate_existing_record,NSW,2010,"Broken Hill, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/1363-broken-hill-new-south-wales-2010,,modern_1970_present
+skipped,131,duplicate_existing_record,NSW,2010,"Macquarie Pass - Robertson, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/2183-macquarie-pass-new-south-wales-2010,,modern_1970_present
+skipped,132,duplicate_existing_record,NSW,2010,"Watagans, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/1610-watigans-new-south-wales-2010-sp-19461,,modern_1970_present
+skipped,133,duplicate_existing_record,NSW,2011,"Dorrigo, New South Wales 2011",https://www.yowiehunters.com.au/new-south-wales/1840-dorrigo-queensland-2011,,modern_1970_present
+skipped,134,duplicate_existing_record,NSW,2011,"Wentworth Falls, New South Wales 2011",https://www.yowiehunters.com.au/new-south-wales/1563-wentworth-falls-new-south-wales-2011,,modern_1970_present
+skipped,135,duplicate_existing_record,NSW,2012,"Munmorah, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/1827-munmorah-new-south-wales-2012,,modern_1970_present
+skipped,136,duplicate_existing_record,NSW,2012,"Wingello, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/1664-wingello-new-south-wales-2012,,modern_1970_present
+skipped,137,duplicate_existing_record,NSW,2013,"Hawkesburry River, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1622-hawkesburry-river-new-south-wales-2013,,modern_1970_present
+skipped,138,duplicate_existing_record,NSW,2013,"Parkes, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1618-central-new-south-wales-2013,,modern_1970_present
+skipped,139,duplicate_existing_record,NSW,2013,"Tucabia, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1867-tucabia-new-south-wales-2013,,modern_1970_present
+skipped,140,duplicate_existing_record,NSW,2014,"Nemingha, New South Wales 2014",https://www.yowiehunters.com.au/new-south-wales/1838-nemingha-new-south-wales-2014,,modern_1970_present
+skipped,141,duplicate_existing_record,NSW,2015,"Coramba, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/1999-coramba-new-south-wales-2015,,modern_1970_present
+skipped,142,duplicate_existing_record,NSW,2015,"Mt. Keira, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/1824-mt-keira-new-south-wales-2015,,modern_1970_present
+skipped,143,duplicate_existing_record,NSW,2016,"Kiah, New South Wales 2016",https://www.yowiehunters.com.au/new-south-wales/1996-kiah-new-south-wales,,modern_1970_present
+skipped,144,duplicate_existing_record,NSW,2017,"Lawrence, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/1957-lawrence-new-south-wales-2017,,modern_1970_present
+skipped,145,duplicate_existing_record,NSW,2017,"Wingello, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/1959-wingello-new-south-wales-2017,,modern_1970_present
+skipped,146,duplicate_existing_record,NSW,2018,"Grafton, New South Wales 2018",https://www.yowiehunters.com.au/new-south-wales/2029-grafton-new-south-wales-2018,,modern_1970_present
+skipped,147,duplicate_existing_record,NSW,2019,"Wingen, New South Wales 2019",https://www.yowiehunters.com.au/new-south-wales/2114-wingen-new-south-wales-2019,,modern_1970_present
+skipped,148,duplicate_existing_record,NSW,2022,"Nightcap NP, New South Wales 2022",https://www.yowiehunters.com.au/new-south-wales/2246-nightcap-np-new-south-wales-2022,,modern_1970_present
+skipped,149,duplicate_existing_record,QLD,1932,"Charters Towers, Queensland 1932",https://www.yowiehunters.com.au/queensland/1280-charters-towers-qld-1932,,expansion_1876_1969
+skipped,150,duplicate_existing_record,QLD,1950,"Aramara, Queensland 1950",https://www.yowiehunters.com.au/queensland/1267-aramara-qld-1950,,expansion_1876_1969
+skipped,151,duplicate_existing_record,QLD,1973,"Burleigh, Queensland 1973",https://www.yowiehunters.com.au/queensland/2051-burleigh-queensland-1973,,modern_1970_present
+skipped,152,duplicate_existing_record,QLD,1978,"Canungra, Queensland 1978",https://www.yowiehunters.com.au/queensland/1284-cunungra-qld-1978,,modern_1970_present
+skipped,153,duplicate_existing_record,QLD,1978,"Nerang, Queensland 1978",https://www.yowiehunters.com.au/queensland/2054-nerang-queensland-1978,,modern_1970_present
+skipped,154,duplicate_existing_record,QLD,1979,"Charters Towers, Queensland 1979 (2)",https://www.yowiehunters.com.au/queensland/1279-charters-towers-qld-1979-2,,modern_1970_present
+skipped,155,duplicate_existing_record,QLD,1979,"Mt. Isa, Queensland 1979",https://www.yowiehunters.com.au/queensland/1918-mt-isa-queensland-1979,,modern_1970_present
+skipped,156,duplicate_existing_record,QLD,1980,"Kilcoy, Queensland 1980",https://www.yowiehunters.com.au/queensland/1299-kilcoy-qld-1980,,modern_1970_present
+skipped,157,duplicate_existing_record,QLD,1980,"Springbrook, Queensland 1980",https://www.yowiehunters.com.au/queensland/1328-springbrook-qld-1980,,modern_1970_present
+skipped,158,duplicate_existing_record,QLD,1981,"Cunninghams Gap, Queensland 1981",https://www.yowiehunters.com.au/queensland/2055-cuninghams-gap-queensland-1981,,modern_1970_present
+skipped,159,duplicate_existing_record,QLD,1982,"Worongary, Queensland 1982",https://www.yowiehunters.com.au/queensland/2075-worongary-queensland-1982,,modern_1970_present
+skipped,160,duplicate_existing_record,QLD,1984,"Springbrook, Queensland 1984",https://www.yowiehunters.com.au/queensland/1330-springbrook-qld-1984,,modern_1970_present
+skipped,161,duplicate_existing_record,QLD,1985,"Gympie (East), Queensland 1985",https://www.yowiehunters.com.au/queensland/1862-gympie-east-queensland-1985,,modern_1970_present
+skipped,162,duplicate_existing_record,QLD,1985,"Worongary, Queensland 1985",https://www.yowiehunters.com.au/queensland/2185-worongary-queensland-1985,,modern_1970_present
+skipped,163,duplicate_existing_record,QLD,1986,"Mt. Superbus, Queensland 1986",https://www.yowiehunters.com.au/queensland/1310-mt-superus-qld-1986,,modern_1970_present
+skipped,164,duplicate_existing_record,QLD,1989,"Gympie (East), Queensland 1989",https://www.yowiehunters.com.au/queensland/1861-gympie-east-queensland-1989,,modern_1970_present
+skipped,165,duplicate_existing_record,QLD,1990,"Eudlo, Queensland 1990",https://www.yowiehunters.com.au/queensland/1287-eudlo-qld-1990,,modern_1970_present
+skipped,166,duplicate_existing_record,QLD,1991,"Canungra, Queensland 1991",https://www.yowiehunters.com.au/queensland/1943-canungra-queensland-1991,,modern_1970_present
+skipped,167,duplicate_existing_record,QLD,1992,"Tin Can Bay, Queensland 1992 (1)",https://www.yowiehunters.com.au/queensland/1336-tin-can-bay-qld-1992,,modern_1970_present
+skipped,168,duplicate_existing_record,QLD,1993,"Kilcoy, Queensland 1993",https://www.yowiehunters.com.au/queensland/1300-kilcoy-qld-1993,,modern_1970_present
+skipped,169,duplicate_existing_record,QLD,1995,"McPherson Ranges, Queensland 1995",https://www.yowiehunters.com.au/queensland/1576-mcpherson-ranges-queensland-1995,,modern_1970_present
+skipped,170,duplicate_existing_record,QLD,1995,"Rockhampton, Queensland 1995",https://www.yowiehunters.com.au/queensland/1323-rockhampton-qld-1995,,modern_1970_present
+skipped,171,duplicate_existing_record,QLD,1996,"Molendinar, Queensland 1996",https://www.yowiehunters.com.au/queensland/1307-molendinar-qld-1996,,modern_1970_present
+skipped,172,duplicate_existing_record,QLD,1997,"Camira, Queensland 1997",https://www.yowiehunters.com.au/queensland/1274-camira-qld-1997,,modern_1970_present
+skipped,173,duplicate_existing_record,QLD,1997,"Ormeau, Queensland 1997",https://www.yowiehunters.com.au/queensland/1317-ormeau-qld-1997,,modern_1970_present
+skipped,174,duplicate_existing_record,QLD,1998,"Bribie Island, Queensland 1998",https://www.yowiehunters.com.au/queensland/1272-bribie-island-qld-1998,,modern_1970_present
+skipped,175,duplicate_existing_record,QLD,1998,"Kenilworth, Queensland 1998",https://www.yowiehunters.com.au/queensland/1296-kenilworth-qld-1998,,modern_1970_present
+skipped,176,duplicate_existing_record,QLD,1998,"Scotchy Pocket, Queensland 1998",https://www.yowiehunters.com.au/queensland/1294-gunalda-qld-2000,,modern_1970_present
+skipped,177,duplicate_existing_record,QLD,1999,"Daisy Hill, Queensland 1999",https://www.yowiehunters.com.au/queensland/1659-daisy-hill-queensland-1999,,modern_1970_present
+skipped,178,duplicate_existing_record,QLD,2000,"Booreen Point, Queensland 2000",https://www.yowiehunters.com.au/queensland/1271-borren-point-qld-2000,,modern_1970_present
+skipped,179,duplicate_existing_record,QLD,2000,"Gayndah, Queensland 2000 (2)",https://www.yowiehunters.com.au/queensland/1289-gayndah-qld-2000-2,,modern_1970_present
+skipped,180,duplicate_existing_record,QLD,2000,"Kilcoy, Queensland 2000",https://www.yowiehunters.com.au/queensland/1879-kilcoy-queensland-2000,,modern_1970_present
+skipped,181,duplicate_existing_record,QLD,2000,"Tully, Queensland 2000",https://www.yowiehunters.com.au/queensland/1340-tully-qld-2000,,modern_1970_present
+skipped,182,duplicate_existing_record,QLD,2001,"Laidley, Queensland 2001 (2)",https://www.yowiehunters.com.au/queensland/1302-laidley-qld-2001,,modern_1970_present
+skipped,183,duplicate_existing_record,QLD,2002,"Beerwah, Queensland 2002",https://www.yowiehunters.com.au/queensland/1269-beerwah-qld-2002,,modern_1970_present
+skipped,184,duplicate_existing_record,QLD,2003,"Glasshouse Mtns, Queensland 2003",https://www.yowiehunters.com.au/queensland/1292-glasshouse-mtns-qld-2003,,modern_1970_present
+skipped,185,duplicate_existing_record,QLD,2003,"Tin Can Bay, Queensland 2003",https://www.yowiehunters.com.au/queensland/1337-tin-can-bay-qld-2003,,modern_1970_present
+skipped,186,duplicate_existing_record,QLD,2004,"Lamington NP, Queensland 2004",https://www.yowiehunters.com.au/queensland/2220-lamington-np-queensland-2004,,modern_1970_present
+skipped,187,duplicate_existing_record,QLD,2005,"Canarvon Gorge, Queensland 2005",https://www.yowiehunters.com.au/queensland/1277-canarvon-gorge-qld-1998,,modern_1970_present
+skipped,188,duplicate_existing_record,QLD,2005,"Ormeau, Queensland 2005",https://www.yowiehunters.com.au/queensland/2265-ormeau-queensland-2006,,modern_1970_present
+skipped,189,duplicate_existing_record,QLD,2006,"Mapleton, Queensland 2006",https://www.yowiehunters.com.au/queensland/2296-mapleton-queensland-2006,,modern_1970_present
+skipped,190,duplicate_existing_record,QLD,2007,"Alpha, Queensland 2007",https://www.yowiehunters.com.au/queensland/1594-alpha-queensland-2007,,modern_1970_present
+skipped,191,duplicate_existing_record,QLD,2007,Uki Qld 2007,https://www.yowiehunters.com.au/queensland/1342-uki-qld-2007,,modern_1970_present
+skipped,192,duplicate_existing_record,QLD,2008,"Leyburn, Queensland 2008",https://www.yowiehunters.com.au/queensland/1816-leyburn-queensland-2008,,modern_1970_present
+skipped,193,duplicate_existing_record,QLD,2009,"Kilkivan, Queensland 2009",https://www.yowiehunters.com.au/queensland/1847-kilkivan-queensland-2009,,modern_1970_present
+skipped,194,duplicate_existing_record,QLD,2010,"Eumundi - Yandina, Queensland 2010",https://www.yowiehunters.com.au/queensland/2221-eumundi-yandina-queensland-2010,,modern_1970_present
+skipped,195,duplicate_existing_record,QLD,2010,"Oak Beach, Queensland 2010",https://www.yowiehunters.com.au/queensland/2125-oak-beach-queensland-2010,,modern_1970_present
+skipped,196,duplicate_existing_record,QLD,2011,"Koumala Range, Queensland 2011",https://www.yowiehunters.com.au/queensland/1575-koumala-range-queensland-2011,,modern_1970_present
+skipped,197,duplicate_existing_record,QLD,2012,"Miriam Vale, Queensland 2012",https://www.yowiehunters.com.au/queensland/1591-miriam-vale-queensland-2012,,modern_1970_present
+skipped,198,duplicate_existing_record,QLD,2013,"Bribie Island, Queensland 2013",https://www.yowiehunters.com.au/queensland/1656-bribie-island-queensland-2013,,modern_1970_present
+skipped,199,duplicate_existing_record,QLD,2013,"Laidley, Queensland 2013",https://www.yowiehunters.com.au/queensland/1661-laidley-queensland-2013,,modern_1970_present
+skipped,200,duplicate_existing_record,QLD,2014,"Deepwater National Park, Queensland 2014",https://www.yowiehunters.com.au/queensland/1829-deepwater-national-park-queensland-2014,,modern_1970_present
+skipped,201,duplicate_existing_record,QLD,2015,"Nanango, Queensland 2015",https://www.yowiehunters.com.au/queensland/2072-nanango-queensland-2015,,modern_1970_present
+skipped,202,duplicate_existing_record,QLD,2016,"Glenbar, Queensland 2016",https://www.yowiehunters.com.au/queensland/2078-boompa-queensland-2016,,modern_1970_present
+skipped,203,duplicate_existing_record,QLD,2016,"Ormeau Hills, Queensland 2016",https://www.yowiehunters.com.au/queensland/1848-ormeau-hills-queensland-2016,,modern_1970_present
+skipped,204,duplicate_existing_record,QLD,2016,"Yandina, Queensland 2016",https://www.yowiehunters.com.au/queensland/2127-yandina-queensland-2016,,modern_1970_present
+skipped,205,duplicate_existing_record,QLD,2017,"Ormeau / Kingsholme, Queensland 2017",https://www.yowiehunters.com.au/queensland/2262-ormeau-kingsholme-queensland-2017,,modern_1970_present
+skipped,206,duplicate_existing_record,QLD,2018,"Agnes Waters, Queensland 2018",https://www.yowiehunters.com.au/queensland/2115-agnes-waters-queensland-2018,,modern_1970_present
+skipped,207,duplicate_existing_record,QLD,2018,"Nunimbah Valley, Queensland 2018",https://www.yowiehunters.com.au/queensland/2059-nunimbah-valley-queensland-2018,,modern_1970_present
+skipped,208,duplicate_existing_record,QLD,2018,"Witheren, Queensland 2018",https://www.yowiehunters.com.au/queensland/2035-witheren-queensland-2018,,modern_1970_present
+skipped,209,duplicate_existing_record,QLD,2019,"Currumbin Valley, Queensland 2019 (3)",https://www.yowiehunters.com.au/queensland/2281-currumbin-queensland-2019,,modern_1970_present
+skipped,210,duplicate_existing_record,QLD,2019,"Kilkivan, Queensland 2019",https://www.yowiehunters.com.au/queensland/2041-kilkivan-queensland-2019,,modern_1970_present
+skipped,211,duplicate_existing_record,QLD,2020,"Bellbird Grove, Queensland 2020",https://www.yowiehunters.com.au/queensland/2177-bellbird-grove-queensland-2020,,modern_1970_present
+skipped,212,duplicate_existing_record,QLD,2021,"Moore Park Beach / Bundaberg, Queensland 2021",https://www.yowiehunters.com.au/queensland/2224-moore-park-beach-bundaberg-queensland-2021,,modern_1970_present
+skipped,213,duplicate_existing_record,QLD,2023,"Mount Nebo, Queensland 2023",https://www.yowiehunters.com.au/queensland/2273-mount-nebo-queensland-2023,,modern_1970_present
+inserted,214,,VIC,2007,"Bemm River, Victoria 2007",https://www.yowiehunters.com.au/victoria/2085-bemm-river-victoria-2007,Bemm River,modern_1970_present
+inserted,215,,NSW,2000,"Aboriginal P.O.V, New South Wales 2001",https://www.yowiehunters.com.au/new-south-wales/1345-aboriginal-pov-nsw-2001,Northern,modern_1970_present
+inserted,216,,QLD,1985,"Advancetown, Queensland 1985",https://www.yowiehunters.com.au/queensland/1968-advancetown-queensland-1985,Advancetown,modern_1970_present
+inserted,217,,VIC,1985,"Benambra, Victoria 1985",https://www.yowiehunters.com.au/victoria/1974-benambra-victoria-1985,Benambra,modern_1970_present
+inserted,218,,NSW,1997,"Alstonville, New South Wales 1997",https://www.yowiehunters.com.au/new-south-wales/1597-alstonville-new-south-wales-1997,Alstonville,modern_1970_present
+inserted,219,,QLD,2018,"Aratula, Queensland 2018",https://www.yowiehunters.com.au/queensland/1987-aratula-queensland-2018,Aratula,modern_1970_present
+inserted,220,,VIC,2010,"Bendigo (area), Victoria 2010",https://www.yowiehunters.com.au/victoria/1547-bendigo-area-victoria-2010,South of Bendigo,modern_1970_present
+inserted,221,,NSW,1980,"Ashford, New South Wales 1980",https://www.yowiehunters.com.au/new-south-wales/2032-ashford-new-south-wales-1980,Ashford,modern_1970_present
+inserted,222,,QLD,1986,"Atherton, Queensland 1986",https://www.yowiehunters.com.au/queensland/2199-atherton-queensland-1986,Atherton,modern_1970_present
+inserted,223,,VIC,2000,"Billabong, Victoria 2000",https://www.yowiehunters.com.au/victoria/1263-victorian-billabong-vic-2000,Victorian Billabong,modern_1970_present
+inserted,224,,NSW,2008,"Ashford, New South Wales 2008",https://www.yowiehunters.com.au/new-south-wales/1998-ashford-new-south-wales-2008,Ashford,modern_1970_present
+inserted,225,,QLD,2009,"Bahrs Scrub, Queensland 2009",https://www.yowiehunters.com.au/queensland/2110-bahrs-scrub-queensland-2009,Bahrs Scrub,modern_1970_present
+inserted,226,,VIC,2013,"Colac, Victoria 2013",https://www.yowiehunters.com.au/victoria/1658-colac-victoria-2013,Colac,modern_1970_present
+inserted,227,,NSW,1969,"Bangalow, New South Wales 1969",https://www.yowiehunters.com.au/new-south-wales/1346-bangalow-new-south-wales-1969,Bangalow,expansion_1876_1969
+inserted,228,,QLD,1982,"Beachmere, Queensland 1982",https://www.yowiehunters.com.au/queensland/1809-beachmere-queensland-1982,Beachmere,modern_1970_present
+inserted,229,,VIC,1987,"Dufty's Beach - Murray River, Victoria 1987",https://www.yowiehunters.com.au/victoria/2184-dufty-s-beach-murray-river-victoria-1987,Dufty’s Beach,modern_1970_present
+inserted,230,,NSW,2018,"Bara, New South Wales 2018",https://www.yowiehunters.com.au/new-south-wales/2071-bara-new-south-wales-2018,Bara,modern_1970_present
+inserted,231,,QLD,2010,"Beechmont, Queensland 2010",https://www.yowiehunters.com.au/queensland/1965-beechmont-queensland-2010,Beechmont,modern_1970_present
+inserted,232,,VIC,2011,"Emerald, Victoria 2011",https://www.yowiehunters.com.au/victoria/1569-emerald-victoria-2011,Emerald,modern_1970_present
+inserted,233,,NSW,1978,"Barclay's Island, New South Wales 1978",https://www.yowiehunters.com.au/new-south-wales/1347-barclays-island-new-south-wales-1978,Barclay's Island,modern_1970_present
+inserted,234,,QLD,1980,"Beerwah, Queensland 1980",https://www.yowiehunters.com.au/queensland/1270-benewah-qld-1980,Beerwah,modern_1970_present
+inserted,235,,VIC,1999,"Falls Creek, Victoria 1999",https://www.yowiehunters.com.au/victoria/1249-falls-creek-vic-1999,Falls Creek,modern_1970_present
+inserted,236,,NSW,1993,"Barrington Tops, New South Wales 1993",https://www.yowiehunters.com.au/new-south-wales/1820-barrington-tops-new-south-wales-1993,Barrington Tops,modern_1970_present
+inserted,237,,QLD,1997,"Beerwah, Queensland 1997",https://www.yowiehunters.com.au/queensland/1268-beerwah-qld-1997,Beerwah,modern_1970_present
+inserted,238,,VIC,2016,"Grampians, Victoria 2016",https://www.yowiehunters.com.au/victoria/2186-grampians-victoria-2016,Grampians,modern_1970_present
+inserted,239,,NSW,2003,"Barrington Tops, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1819-barrington-tops-new-south-wales-2003,Barrington Tops,modern_1970_present
+inserted,240,,QLD,2016,"Bellthorpe, Queensland 2016",https://www.yowiehunters.com.au/queensland/1985-bellthorpe-queensland-2016,Bellthorpe,modern_1970_present
+inserted,241,,VIC,1986,"Harrietville, Victoria 1986",https://www.yowiehunters.com.au/victoria/1250-harietville-vic-1986,Harietville,modern_1970_present
+inserted,242,,NSW,1998,"Barwon River, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/1348-barwon-river-new-south-wales-1998,Barwon River,modern_1970_present
+inserted,243,,QLD,2000,"Blackbutt, Queensland 2000",https://www.yowiehunters.com.au/queensland/2223-blackbutt-queensland-2000,Blackbutt,modern_1970_present
+inserted,244,,VIC,2019,"Hepburn Springs, Victoria 2019",https://www.yowiehunters.com.au/victoria/2094-hepburn-springs-victoria-2019,Hepburn Springs,modern_1970_present
+inserted,245,,NSW,1980,"Baryulgil, New South Wales 1980",https://www.yowiehunters.com.au/new-south-wales/1843-baryulgil-new-south-wales-1980,Baryulgil,modern_1970_present
+inserted,246,,QLD,2002,"Blackbutt, Queensland 2002",https://www.yowiehunters.com.au/queensland/2222-blackbutt-queensland-2002,Blackbutt,modern_1970_present
+inserted,247,,VIC,2020,"Hepburn Springs, Victoria 2020",https://www.yowiehunters.com.au/victoria/2140-hepburn-springs-victoria-2020,Hepburn Springs,modern_1970_present
+inserted,248,,NSW,2000,"Bateman's Bay, New South Wales 2000",https://www.yowiehunters.com.au/new-south-wales/1352-batemans-bay-new-south-wales-2000,Bateman's Bay,modern_1970_present
+inserted,249,,QLD,2008,"Blackbutt, Queensland 2008",https://www.yowiehunters.com.au/queensland/1586-blackbutt-queensland-2008,Blackbutt Ranges,modern_1970_present
+inserted,250,,VIC,1982,"Macclesfield, Victoria 1982",https://www.yowiehunters.com.au/victoria/1252-macclesfield-vic-1982,Macclesfield,modern_1970_present
+inserted,251,,NSW,1970,"Bathurst, New South Wales 1970",https://www.yowiehunters.com.au/new-south-wales/1670-bathurst-new-south-wales-1970,Bathurst,modern_1970_present
+inserted,252,,QLD,1990,"Cairns, Queensland 1990",https://www.yowiehunters.com.au/queensland/2044-cairns-queensland-1990,Cairns,modern_1970_present
+inserted,253,,VIC,1988,"Mansfield, Victoria 1988",https://www.yowiehunters.com.au/victoria/1253-mansfield-vic-1988,Sawpit Gully . Bridge Creek,modern_1970_present
+inserted,254,,NSW,1984,"Bathurst, New South Wales 1984",https://www.yowiehunters.com.au/new-south-wales/1353-bathurst-new-south-wales-1984,Bathurst,modern_1970_present
+inserted,255,,QLD,1996,"Cairns, Queensland 1996",https://www.yowiehunters.com.au/queensland/1273-cairns-qld-1996,Cairns,modern_1970_present
+inserted,256,,VIC,1950,"Moe, Victoria 1950",https://www.yowiehunters.com.au/victoria/1254-moe-vic-1950,North of Moe,expansion_1876_1969
+inserted,257,,NSW,1990,"Bathurst, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/1354-bathurst-new-south-wales-1990,Bathurst,modern_1970_present
+inserted,258,,QLD,2005,"Cairns, Queensland 2005",https://www.yowiehunters.com.au/queensland/1508-cairns-queensland-2005,Cairns,modern_1970_present
+inserted,259,,VIC,1995,"Moe, Victoria 1995",https://www.yowiehunters.com.au/victoria/1255-moe-vic-1995,Moe,modern_1970_present
+inserted,260,,NSW,1995,"Bathurst, New South Wales 1995",https://www.yowiehunters.com.au/new-south-wales/1355-bathurst-new-south-wales-1995,Bathurst,modern_1970_present
+inserted,261,,QLD,1984,"Canarvon Gorge, Queensland 1984",https://www.yowiehunters.com.au/queensland/1275-canarvon-gorge-qld-1984,Canarvon Gorge / Yellowbank,modern_1970_present
+inserted,262,,VIC,1980,"Mount Buller, Victoria 1980's",https://www.yowiehunters.com.au/victoria/2275-mount-buller-victoria-1980s,Mount. Buller area,modern_1970_present
+inserted,263,,NSW,2011,"Belbora, New South Wales 2011",https://www.yowiehunters.com.au/new-south-wales/1582-belbora-new-south-wales-2011,Belbora,modern_1970_present
+inserted,264,,QLD,1993,"Canarvon Gorge, Queensland 1993",https://www.yowiehunters.com.au/queensland/1276-canarvon-gorge-qld-1993,Canarvon Gorge,modern_1970_present
+inserted,265,,VIC,1978,"Mount Warrenheip, Victoria 1978",https://www.yowiehunters.com.au/victoria/2180-mount-warrenheip-victoria-1978,Mount Warrenheip,modern_1970_present
+inserted,266,,NSW,2015,"Belbora, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/1841-belbora-new-south-wales-2015,Belbora,modern_1970_present
+inserted,267,,QLD,1986,"Canungra, Queensland 1986",https://www.yowiehunters.com.au/queensland/1871-canungra-queensland-1986,Canungra,modern_1970_present
+inserted,268,,VIC,1990,"Myrrhee, Victoria 1990",https://www.yowiehunters.com.au/victoria/1256-myhree-vic-1990,Myhree,modern_1970_present
+inserted,269,,NSW,1994,"Bellingen, New South Wales 1994",https://www.yowiehunters.com.au/new-south-wales/1944-bellingen-new-south-wales-1994,Bellingen,modern_1970_present
+inserted,270,,QLD,1998,"Canungra, Queensland 1998",https://www.yowiehunters.com.au/queensland/1285-cunungra-qld-1998,Canungra,modern_1970_present
+inserted,271,,VIC,1984,"Noojee, Victoria 1984",https://www.yowiehunters.com.au/victoria/1621-noojee-victoria-1984,Noojee,modern_1970_present
+inserted,272,,NSW,2018,"Bellingen, New South Wales 2018",https://www.yowiehunters.com.au/new-south-wales/2045-bellingen-new-south-wales-2018,Bellingen,modern_1970_present
+inserted,273,,QLD,1979,"Charters Towers, Queensland 1979 (1)",https://www.yowiehunters.com.au/queensland/1278-charters-towers-qld-1979,Charters Towers,modern_1970_present
+inserted,274,,VIC,2012,"Noojee, Victoria 2012",https://www.yowiehunters.com.au/victoria/1583-noojee-victoria-2012,Noojee,modern_1970_present
+inserted,275,,NSW,1973,"Bexhill, New South Wales 1973",https://www.yowiehunters.com.au/new-south-wales/1825-bexhill-new-south-wales-1973,Bexhill,modern_1970_present
+inserted,276,,QLD,2004,"Childers, Queensland 2004",https://www.yowiehunters.com.au/queensland/2065-childers-queensland-2004,Childers,modern_1970_present
+inserted,277,,VIC,2010,"Otways, Victoria 2010",https://www.yowiehunters.com.au/victoria/1678-otways-victoria-2010,Otways – Beauchamp Falls,modern_1970_present
+inserted,278,,NSW,2013,"Bexhill, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1623-bexhill-new-south-wales-2013,Bexhill,modern_1970_present
+inserted,279,,QLD,2011,"Clear Mountain, Queensland 2011",https://www.yowiehunters.com.au/queensland/1567-clear-mountain-queensland-2011,Clear Mountain,modern_1970_present
+inserted,280,,VIC,2008,"Redbank, Victoria 2008",https://www.yowiehunters.com.au/victoria/1679-redbank-victoria-2008,Redbank,modern_1970_present
+inserted,281,,NSW,2014,"Bilpin, New South Wales 2014",https://www.yowiehunters.com.au/new-south-wales/1682-bilpin-new-south-wales-2014,Bilpin,modern_1970_present
+inserted,282,,QLD,2018,"Conondale, Queensland 2018",https://www.yowiehunters.com.au/queensland/1986-conondale-queensland-2018,Conondale,modern_1970_present
+inserted,283,,VIC,2003,"Riddells Creek, Victoria 2003",https://www.yowiehunters.com.au/victoria/1260-riddles-creek-vic-2003,Riddells Creek,modern_1970_present
+inserted,284,,NSW,2006,"Blackheath, New South Wales 2006",https://www.yowiehunters.com.au/new-south-wales/1356-blackheath-new-south-wales-2006,Blackheath,modern_1970_present
+inserted,285,,QLD,2019,"Cooktown, Queensland 2019",https://www.yowiehunters.com.au/queensland/2206-cooktown-queensland-2019,Cooktown,modern_1970_present
+inserted,286,,VIC,2009,"Robinvale, Victoria 2009",https://www.yowiehunters.com.au/victoria/1262-robinvale-vic-2009,Robinvale,modern_1970_present
+inserted,287,,NSW,2006,"Blackheath, New South Wales 2006",https://www.yowiehunters.com.au/new-south-wales/1413-megalong-valley-new-south-wales-2006,Blackheath,modern_1970_present
+inserted,288,,QLD,1978,"Coomera, Queensland 1978",https://www.yowiehunters.com.au/queensland/1281-coomera-qld-1978,Coomera Valley,modern_1970_present
+inserted,289,,VIC,2014,"Rokewood, Victoria 2014",https://www.yowiehunters.com.au/victoria/2008-rokewood-victoria-2014,Rokewood,modern_1970_present
+inserted,290,,NSW,2009,"Blackheath, New South Wales 2009",https://www.yowiehunters.com.au/new-south-wales/1414-megalong-valley-new-south-wales-2009,Blackheath,modern_1970_present
+inserted,291,,QLD,2007,"Cooyar, Queensland 2007",https://www.yowiehunters.com.au/queensland/1282-cooyar-qld-2007,Cooyar,modern_1970_present
+inserted,292,,VIC,2006,"Thomson Dam, Victoria 2006",https://www.yowiehunters.com.au/victoria/2040-thomson-dam-victoria-2006,Thomson Dam,modern_1970_present
+inserted,293,,NSW,2013,"Blaxland, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1663-blaxland-new-south-wales-2013,Blaxland,modern_1970_present
+inserted,294,,QLD,1997,"Cowley Beach, Queensland 1997",https://www.yowiehunters.com.au/queensland/1283-cowley-beach-qld-1997,Cowley Beach,modern_1970_present
+inserted,295,,VIC,2015,"Trentham, Victoria 2015",https://www.yowiehunters.com.au/victoria/1811-trentham-victoria-2015,Trentham,modern_1970_present
+inserted,296,,NSW,1975,"Blue Knob, New South Wales 1975",https://www.yowiehunters.com.au/new-south-wales/2301-blue-knob-new-south-wales-1975,Blue Knob,modern_1970_present
+inserted,297,,QLD,2008,"Cowley Beach, Queensland 2008",https://www.yowiehunters.com.au/queensland/2300-cowley-beach-queensland-2008,Cowley Beach,modern_1970_present
+inserted,298,,VIC,2016,"Werribee, Victoria 2016",https://www.yowiehunters.com.au/victoria/1958-werribee-victoria-2016,Werribee,modern_1970_present
+inserted,299,,NSW,1984,"Blue Mountains, New South Wales 1984",https://www.yowiehunters.com.au/new-south-wales/1562-blue-mountains-new-south-wales-1984,Blue Mountains,modern_1970_present
+inserted,300,,QLD,2009,"Cressbrook Creek, Queensland 2009",https://www.yowiehunters.com.au/queensland/2084-cressbrook-creek-queensland-2009,Cressbrook Creek,modern_1970_present
+inserted,301,,VIC,1991,"Yarambulla, Victoria 1991",https://www.yowiehunters.com.au/victoria/1266-yarambulla-vic-1991,Yarambulla,modern_1970_present
+inserted,302,,NSW,1990,"Blue Mountains, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/1357-blue-mountains-new-south-wales-1990,Blue Mountains,modern_1970_present
+inserted,303,,QLD,2019,"Currumbin Valley, Queensland 2019",https://www.yowiehunters.com.au/queensland/2120-currumbin-valley-queensland-2019,Currumbin Valley,modern_1970_present
+inserted,304,,NSW,2015,"Bocoble, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/1888-bocoble-new-south-wales-2015,Bocoble,modern_1970_present
+inserted,305,,QLD,2019,"Currumbin Valley, Queensland 2019 (2)",https://www.yowiehunters.com.au/queensland/2134-currumbin-valley-queensland-2019-2,Currumbin Valley,modern_1970_present
+inserted,306,,NSW,2018,"Bocoble, New South Wales 2018",https://www.yowiehunters.com.au/new-south-wales/2023-bocoble-new-south-wales-2018,Bocoble,modern_1970_present
+inserted,307,,QLD,1978,"Currumbin, Queensland 1978",https://www.yowiehunters.com.au/queensland/2050-currumbin-queensland-1978,Currumbin,modern_1970_present
+inserted,308,,NSW,1912,"Bombala, New South Wales 1912",https://www.yowiehunters.com.au/new-south-wales/1358-bombala-new-south-wales-1912,Bombala,expansion_1876_1969
+inserted,309,,QLD,2013,"Daisy Hill, Queensland 2013",https://www.yowiehunters.com.au/queensland/1660-daisy-hill-queensland-2013,Daisy Hill,modern_1970_present
+inserted,310,,NSW,1996,"Bombala, New South Wales 1996",https://www.yowiehunters.com.au/new-south-wales/1839-bombala-new-south-wales-1996,Bombala,modern_1970_present
+inserted,311,,QLD,2013,"Dalby, Queensland 2013",https://www.yowiehunters.com.au/queensland/1657-dalby-queensland-2013,Dalby,modern_1970_present
+inserted,312,,NSW,1995,"Bonalbo, New South Wales 1995",https://www.yowiehunters.com.au/new-south-wales/1960-bonalbo-new-south-wales-1995,Bonalbo,modern_1970_present
+inserted,313,,QLD,2019,"Deepwater, Queensland 2019",https://www.yowiehunters.com.au/queensland/2121-deepwater-queensland-2019,Deepwater,modern_1970_present
+inserted,314,,NSW,2008,"Bongil Bongil, New South Wales 2008",https://www.yowiehunters.com.au/new-south-wales/1972-nambucca-heads-new-south-wales-2008,Bongil Bongil,modern_1970_present
+inserted,315,,QLD,1995,"Eagle Heights, Queensland 1995",https://www.yowiehunters.com.au/queensland/2064-eagle-heights-queensland-1995,Eagle Heights,modern_1970_present
+inserted,316,,NSW,2017,"Border Ranges, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/2182-border-ranges-new-sout-wales-2017,Border Ranges,modern_1970_present
+inserted,317,,QLD,1979,"Enoggera Creek, Queensland 1977",https://www.yowiehunters.com.au/queensland/1286-enoggera-creek-qld-1977,Enogerra Creek,modern_1970_present
+inserted,318,,NSW,1982,"Bowen Mountain, New South Wales 1982",https://www.yowiehunters.com.au/new-south-wales/1360-bowen-mountain-new-south-wales-1982,Bowen Mountain,modern_1970_present
+inserted,319,,QLD,2000,"Esk, Queensland 2000",https://www.yowiehunters.com.au/queensland/1814-esk-queensland-2000,Esk,modern_1970_present
+inserted,320,,NSW,2016,"Bowen Mountain, New South Wales 2016",https://www.yowiehunters.com.au/new-south-wales/1883-bowen-mountain-new-south-wales-2016,Bowen Mountain,modern_1970_present
+inserted,321,,QLD,1983,"Fraser Island, Queensland 1983",https://www.yowiehunters.com.au/queensland/1864-fraser-island-queensland-1983,Fraser Island,modern_1970_present
+inserted,322,,NSW,1995,"Braidwood, New South Wales 1995",https://www.yowiehunters.com.au/new-south-wales/1362-braidwood-new-south-wales-1995,Braidwood,modern_1970_present
+inserted,323,,QLD,2019,"Gallangowan State Forest, Queensland 2019",https://www.yowiehunters.com.au/queensland/2133-gallangowan-state-forest-queensland-2019,Gallangowen State Forest,modern_1970_present
+inserted,324,,NSW,1990,"Brisbane National Water Park, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/1851-brisbane-national-water-park-new-south-wales-1990,Brisbane Water National Park,modern_1970_present
+inserted,325,,QLD,1998,"Gatton, Queensland 1998",https://www.yowiehunters.com.au/queensland/1288-gatton-qld-1998,Gatton,modern_1970_present
+inserted,326,,NSW,2015,"Brisbane Water National Park, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/2118-brisbane-water-national-park-new-south-wales-2015,Woy Woy,modern_1970_present
+inserted,327,,QLD,2016,"Gatton, Queensland 2016",https://www.yowiehunters.com.au/queensland/2243-gatton-queensland-2016,Gatton,modern_1970_present
+inserted,328,,NSW,2015,"Broke, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/1973-broke-new-south-wales-2015,Broke,modern_1970_present
+inserted,329,,QLD,2000,"Gayndah, Queensland 2000 (1)",https://www.yowiehunters.com.au/queensland/1291-gayndah-qld-2000-1,Gayndah,modern_1970_present
+inserted,330,,NSW,2016,"Broke, New South Wales 2016",https://www.yowiehunters.com.au/new-south-wales/2272-broke-new-south-wales-2016,Broke,modern_1970_present
+inserted,331,,QLD,2000,"Gayndah, Queensland 2000 (3)",https://www.yowiehunters.com.au/queensland/1290-gayndah-qld-2000-3,Gayndah,modern_1970_present
+inserted,332,,NSW,1982,"Broken Hill, New South Wales 1982",https://www.yowiehunters.com.au/new-south-wales/1817-broken-hill-new-south-wales-1982,Broken Hill,modern_1970_present
+inserted,333,,QLD,2000,"Gogango, Queensland 2000",https://www.yowiehunters.com.au/queensland/1865-gogango-queensland-2000,Gogango,modern_1970_present
+inserted,334,,NSW,1990,"Brown Mountain, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/1951-brown-mountain-new-south-wales-1990,Brown Mountain,modern_1970_present
+inserted,335,,QLD,1997,"Gootchie, Queensland 1997",https://www.yowiehunters.com.au/queensland/1293-goochee-qld-1997,Gootchie,modern_1970_present
+inserted,336,,NSW,2017,"Bucca, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/1939-bucca-new-south-wales-2017,Bucca,modern_1970_present
+inserted,337,,QLD,2001,"Hinze Dam, Queensland 2001",https://www.yowiehunters.com.au/queensland/1295-hinze-dam-qld-2001,Hinze Dam,modern_1970_present
+inserted,338,,NSW,2003,"Bulahdelah, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1364-buladelah-new-south-wales-2003,Buladelah,modern_1970_present
+inserted,339,,QLD,2007,"Howard, Queensland 2007",https://www.yowiehunters.com.au/queensland/1858-howard-queensland-2007,Howard,modern_1970_present
+inserted,340,,NSW,2005,"Bulahdelah, New South Wales 2005",https://www.yowiehunters.com.au/new-south-wales/1995-bulahdelah-new-south-wales-2005,Bulahdelah,modern_1970_present
+inserted,341,,QLD,2016,"Howard, Queensland 2016",https://www.yowiehunters.com.au/queensland/1857-howard-queensland-2016,Howard,modern_1970_present
+inserted,342,,NSW,1984,"Bundanoon, New South Wales 1984",https://www.yowiehunters.com.au/new-south-wales/1365-bundanoon-new-south-wales-1984,Bundanoon,modern_1970_present
+inserted,343,,QLD,2014,"Jacobs Well, Queensland 2014",https://www.yowiehunters.com.au/queensland/2191-jacobs-well-queensland-2014,Jacobs Well,modern_1970_present
+inserted,344,,NSW,1984,"Bundarra, New South Wales 1984",https://www.yowiehunters.com.au/new-south-wales/1836-bundarra-new-south-wales-1984,Bundarra,modern_1970_present
+inserted,345,,QLD,2012,"Jimboomba, Queensland 2012",https://www.yowiehunters.com.au/queensland/1937-jimboomba-queensland-2012,Jimboomba,modern_1970_present
+inserted,346,,NSW,1997,"Bundarra, New South Wales 1997",https://www.yowiehunters.com.au/new-south-wales/1587-bundarra-new-south-wales-1997,Bundarra,modern_1970_present
+inserted,347,,QLD,2004,"Jimbour, Queensland 2004",https://www.yowiehunters.com.au/queensland/1675-jimbour-queensland-2004,Jimbour,modern_1970_present
+inserted,348,,NSW,1902,"Byron Bay, New South Wales 1902",https://www.yowiehunters.com.au/new-south-wales/1366-byron-bay-new-south-wales-1902,Byron Bay,expansion_1876_1969
+inserted,349,,QLD,2005,"Kenilworth, Queensland 2005",https://www.yowiehunters.com.au/queensland/1297-kenilworth-qld-2005,Kenilworth,modern_1970_present
+inserted,350,,NSW,2003,"Byron Shire, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1565-byron-shire-new-south-wales-2003,Byron Shire,modern_1970_present
+inserted,351,,QLD,2006,"Kenilworth, Queensland 2006",https://www.yowiehunters.com.au/queensland/1298-kenilworth-qld-2006,Kenilworth,modern_1970_present
+inserted,352,,ACT,1983,"Canberra, A.C.T. 1983",https://www.yowiehunters.com.au/new-south-wales/1367-canberra-act-1983,Forestry 1 hour from Canberra,modern_1970_present
+inserted,353,,QLD,1979,"Kilkivan, Queensland 1979",https://www.yowiehunters.com.au/queensland/1301-kilkivan-qld-1979,Kilkivan,modern_1970_present
+inserted,354,,NSW,1974,"Casino, New South Wales 1974",https://www.yowiehunters.com.au/new-south-wales/1884-casino-new-south-wales-1974,Casino,modern_1970_present
+inserted,355,,QLD,2019,"Kilkivan, Queensland 2019",https://www.yowiehunters.com.au/queensland/2194-kilkivan-queensland-2020,Kilkivan,modern_1970_present
+inserted,356,,NSW,2017,"Cattai, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/2173-cattai-new-south-wales-2017,Cattai,modern_1970_present
+inserted,357,,QLD,2010,"Killarney, Queensland 2010",https://www.yowiehunters.com.au/queensland/1599-killarney-queensland-2010,Killarney,modern_1970_present
+inserted,358,,NSW,2006,"Cessnock, New South Wales 2006",https://www.yowiehunters.com.au/new-south-wales/1368-cessnock-new-south-wales-2006,Cessnock,modern_1970_present
+inserted,359,,QLD,2020,"Kinbombi Falls, Queensland - 2020",https://www.yowiehunters.com.au/queensland/2298-kinbombi-falls-queensland-2020,Kinbombi Falls,modern_1970_present
+inserted,360,,NSW,2014,"Cessnock, New South Wales 2014",https://www.yowiehunters.com.au/new-south-wales/1672-cessnock-new-south-wales-2014,Cessnock,modern_1970_present
+inserted,361,,QLD,2017,"Kingsholme / Ormeau, Queensland 2017",https://www.yowiehunters.com.au/queensland/2270-kingsholme-ormeau-queensland-2017,Kingsholme / Ormeau,modern_1970_present
+inserted,362,,NSW,1980,"Clyde Mountain, New South Wales 1980",https://www.yowiehunters.com.au/new-south-wales/1370-clyde-mountain-new-south-wales-1980,Clyde Mountain,modern_1970_present
+inserted,363,,QLD,2001,"Laidley, Queensland 2001 (1)",https://www.yowiehunters.com.au/queensland/1304-laidley-qld-2001-1,Laidley,modern_1970_present
+inserted,364,,NSW,1980,"Coffs Harbour, New South Wales 1980",https://www.yowiehunters.com.au/new-south-wales/1372-coffs-harbour-new-south-wales-1980-sp-24339,Coffs Harbour,modern_1970_present
+inserted,365,,QLD,2001,"Laidley, Queensland 2001 (3)",https://www.yowiehunters.com.au/queensland/1303-laidley-qld-2001-sp-21011,Laidley,modern_1970_present
+inserted,366,,NSW,1995,"Coffs Harbour, New South Wales 1995",https://www.yowiehunters.com.au/new-south-wales/1947-coffs-harbour-new-south-wales-1995,Coffs Harbour,modern_1970_present
+inserted,367,,QLD,2015,"Lake Tinaroo, Queensland 1995",https://www.yowiehunters.com.au/queensland/2129-lake-tinaroo-queensland-1995,Lake Tinaroo,modern_1970_present
+inserted,368,,NSW,1997,"Colo River, New South Wales 1997",https://www.yowiehunters.com.au/new-south-wales/1553-colo-river-new-south-wales-1997,Colo River,modern_1970_present
+inserted,369,,QLD,1988,"Lamington NP, Queensland 1988",https://www.yowiehunters.com.au/queensland/1662-lamington-np-queensland-1988,Lamington National Park,modern_1970_present
+inserted,370,,NSW,2002,"Colo River, New South Wales 2002",https://www.yowiehunters.com.au/new-south-wales/1373-colo-river-new-south-wales-2002,Colo River,modern_1970_present
+inserted,371,,QLD,2020,"Landsborough, Queensland 2020",https://www.yowiehunters.com.au/queensland/2225-landsborough-queensland-2020,Landsborough,modern_1970_present
+inserted,372,,NSW,2010,"Colo, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/1834-colo-new-south-wales-2010,Colo,modern_1970_present
+inserted,373,,QLD,2017,"Logan Village, Queensland 2017",https://www.yowiehunters.com.au/queensland/1964-logan-village-queensland-2017,Logan Village,modern_1970_present
+inserted,374,,NSW,1976,"Cooma, New South Wales 1976",https://www.yowiehunters.com.au/new-south-wales/1374-cooma-new-south-wales-1976,Cooma,modern_1970_present
+inserted,375,,QLD,2000,"Malanda, Queensland 2000",https://www.yowiehunters.com.au/queensland/2007-malanda-queensland-2000,Malanda,modern_1970_present
+inserted,376,,NSW,1981,"Cooma, New South Wales 1981",https://www.yowiehunters.com.au/new-south-wales/1990-cooma-new-south-wales-1981,Cooma,modern_1970_present
+inserted,377,,QLD,2015,"Manumbar, Queensland 2015",https://www.yowiehunters.com.au/queensland/2128-manumbar-queensland-2015,Manumbar,modern_1970_present
+inserted,378,,NSW,2014,"Cooperbung, New South Wales 2014",https://www.yowiehunters.com.au/new-south-wales/2033-cooperbung-new-south-wales-2014,Cooperbung,modern_1970_present
+inserted,379,,QLD,2013,"Maudsland, Queensland 2013",https://www.yowiehunters.com.au/queensland/2282-maudsland-queensland-2013,Maudsland/Pacific Pines,modern_1970_present
+inserted,380,,NSW,2017,"Cooperbung, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/2034-cooperbung-new-south-wales-2017,Cooperabung,modern_1970_present
+inserted,381,,QLD,2016,"Miles, Queensland 2016",https://www.yowiehunters.com.au/queensland/1891-miles-queensland-2016,Between Chinchilla and Miles,modern_1970_present
+inserted,382,,NSW,1930,"Crescent Head, New South Wales 1930",https://www.yowiehunters.com.au/new-south-wales/1686-crescent-head-new-south-wales-1930,Crescent Head,expansion_1876_1969
+inserted,383,,QLD,1995,"Millaa Millaa, Queensland 1995 (1)",https://www.yowiehunters.com.au/queensland/1306-milla-milla-qld-1995-1,Millaa Millaa,modern_1970_present
+inserted,384,,NSW,2008,"Cudgen, New South Wales 2008",https://www.yowiehunters.com.au/new-south-wales/1376-cudgen-new-south-wales-2008,Cudgen,modern_1970_present
+inserted,385,,QLD,1995,"Millaa Millaa, Queensland 1995 (2)",https://www.yowiehunters.com.au/queensland/1305-milla-milla-qld-1995-2,Millaa Millaa,modern_1970_present
+inserted,386,,NSW,2011,"Cudgen, New South Wales 2011",https://www.yowiehunters.com.au/new-south-wales/1568-cudgen-new-south-wales-2011,Cudgen,modern_1970_present
+inserted,387,,QLD,1991,"Mt Nathan, Queensland 1991",https://www.yowiehunters.com.au/queensland/1596-mt-nathan-queensland-1991,Mt Nathan,modern_1970_present
+inserted,388,,NSW,2009,"Dairyville, New South Wales 2009",https://www.yowiehunters.com.au/new-south-wales/1377-dairyville-new-south-wales-2009,Dairyville,modern_1970_present
+inserted,389,,QLD,1979,"Mt. Cootha, Queensland 1979",https://www.yowiehunters.com.au/queensland/2076-mt-cootha-queensland-1979,Mount Cootha,modern_1970_present
+inserted,390,,NSW,2010,"Danger Falls, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/1378-danger-falls-new-south-wales-2010,Danger falls,modern_1970_present
+inserted,391,,QLD,1990,"Mt. Glorious, Queensland 1990",https://www.yowiehunters.com.au/queensland/1308-mt-glorious-qld-1990,Mt. Glorious,modern_1970_present
+inserted,392,,NSW,1999,"Dargan, New South Wales 1999",https://www.yowiehunters.com.au/new-south-wales/2025-dargan-new-south-wales-1999,Dargan,modern_1970_present
+inserted,393,,QLD,2010,"Mt. Glorious, Queensland 2010",https://www.yowiehunters.com.au/queensland/1309-mt-glorious-qld-2010,Mt Glorious,modern_1970_present
+inserted,394,,NSW,2004,"Deepwater, New South Wales 2004",https://www.yowiehunters.com.au/new-south-wales/1379-deepwater-new-south-wales-2004,Deepwater,modern_1970_present
+inserted,395,,QLD,1980,"Mt. Tamborine, Queensland 1980",https://www.yowiehunters.com.au/queensland/1311-mt-tamborine-qld-1980,Mt Tamborine,modern_1970_present
+inserted,396,,NSW,2015,"Dorrigo, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/2000-dorrigo-new-south-wales-2015,Dorrigo,modern_1970_present
+inserted,397,,QLD,1992,"Mt. Tamborine, Queensland 1992",https://www.yowiehunters.com.au/queensland/1312-mt-tamborine-qld-1992,Mt Tamborine,modern_1970_present
+inserted,398,,NSW,2018,"Dorrigo, New South Wales 2018",https://www.yowiehunters.com.au/new-south-wales/2001-dorrigo-new-south-wales-2018,Dorrigo,modern_1970_present
+inserted,399,,QLD,1995,"Mt. Tamborine, Queensland 1995",https://www.yowiehunters.com.au/queensland/1313-mt-tamborine-qld-1995,Mt Tamborine,modern_1970_present
+inserted,400,,NSW,1962,"Dungay Creek, New South Wales 1962",https://www.yowiehunters.com.au/new-south-wales/2080-dungay-creek-new-south-wales-1962,Dungay Creek,expansion_1876_1969
+inserted,401,,QLD,2001,"Mt. Tamborine, Queensland 2001",https://www.yowiehunters.com.au/queensland/1314-mt-tamborine-qld-2001,Mount Tambourine,modern_1970_present
+inserted,402,,NSW,1962,"Dungay Creek, New South Wales 1962",https://www.yowiehunters.com.au/new-south-wales/2081-dungay-creek-new-south-wales-1963,Dungay Creek,expansion_1876_1969
+inserted,403,,QLD,2002,"Mt. Tamborine, Queensland 2002",https://www.yowiehunters.com.au/queensland/2069-mt-tamborine-queensland-2002,Mount Tamborine,modern_1970_present
+inserted,404,,NSW,1981,"Dunoon, New South Wales 1981",https://www.yowiehunters.com.au/new-south-wales/1380-dunoon-new-south-wales-1981,Dunoon Village,modern_1970_present
+inserted,405,,QLD,1938,"Nanango, Queensland 1938",https://www.yowiehunters.com.au/queensland/1315-nanango-qld-1938,Nanango,expansion_1876_1969
+inserted,406,,NSW,1998,"Eden, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/1381-eden-new-south-wales-1998,Eden,modern_1970_present
+inserted,407,,QLD,2019,"Nunimbah Valley, Queensland 2019",https://www.yowiehunters.com.au/queensland/2181-nunimbah-valley-queensland-2019,Nunimbah Valley,modern_1970_present
+inserted,408,,NSW,1991,"Emu Plains, New South Wales 1991",https://www.yowiehunters.com.au/new-south-wales/2248-emu-plains-new-south-wales-1991,West of Emu Plains,modern_1970_present
+inserted,409,,QLD,1998,"Ormeau, Queensland 1998",https://www.yowiehunters.com.au/queensland/1316-ormeau-qld-1998,Ormeau,modern_1970_present
+inserted,410,,NSW,1987,"Engadine, New South Wales 1987",https://www.yowiehunters.com.au/new-south-wales/1382-engadine-new-south-wales-1987,Engadine,modern_1970_present
+inserted,411,,QLD,1998,"Ormeau, Queensland 1998",https://www.yowiehunters.com.au/queensland/1318-ormeau-qld-1998-sp-13220,Ormeau,modern_1970_present
+inserted,412,,NSW,2006,"Glen Innes, New South Wales 2006",https://www.yowiehunters.com.au/new-south-wales/1387-glan-innes-new-south-wales-2006,Between Glen Innes and Grafton,modern_1970_present
+inserted,413,,QLD,1999,"Ormeau, Queensland 1999",https://www.yowiehunters.com.au/queensland/1319-ormeau-qld-1999,Ormeau,modern_1970_present
+inserted,414,,NSW,2013,"Glenbrook, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1845-glenbrook-new-south-wales-2013,Glenbrook,modern_1970_present
+inserted,415,,QLD,2000,"Ormeau, Queensland 2000",https://www.yowiehunters.com.au/queensland/1320-ormeau-qld-2000,Ormeau,modern_1970_present
+inserted,416,,NSW,1993,"Glenfield, New South Wales 1993",https://www.yowiehunters.com.au/new-south-wales/2087-glenfield-new-south-wales-1993,Glenfield,modern_1970_present
+inserted,417,,QLD,2003,"Ormeau, Queensland 2003",https://www.yowiehunters.com.au/queensland/1321-ormeau-qld-2003,Ormeau,modern_1970_present
+inserted,418,,NSW,2003,"Glenorie, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1388-glenorie-new-south-wales-2003,Glenorie,modern_1970_present
+inserted,419,,QLD,2003,"Ormeau, Queensland 2003",https://www.yowiehunters.com.au/queensland/1322-ormeau-qld-2003-sp-4675,Ormeau,modern_1970_present
+inserted,420,,NSW,1985,"Glenreagh, New South Wales 1985",https://www.yowiehunters.com.au/new-south-wales/2116-glenreagh-new-south-wales-1985,Glenreagh,modern_1970_present
+inserted,421,,QLD,2004,"Ormeau, Queensland 2004",https://www.yowiehunters.com.au/queensland/1989-ormeau-queensland-2004,Ormeau,modern_1970_present
+inserted,422,,NSW,2002,"Goodradigbee River, New South Wales 2002",https://www.yowiehunters.com.au/new-south-wales/1390-goodradigbee-river-new-south-wales-2002,Goodradigbee River,modern_1970_present
+inserted,423,,QLD,2005,"Ormeau, Queensland 2005",https://www.yowiehunters.com.au/queensland/1988-ormeau-queensland-2005,Ormeau,modern_1970_present
+inserted,424,,NSW,1998,"Goonoo Forest, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/1391-goonoo-forest-new-south-wales-1998,Goonoo Forest,modern_1970_present
+inserted,425,,QLD,2017,"Owens Creek, Queensland 2017",https://www.yowiehunters.com.au/queensland/2139-owens-creek-queensland-2017,Owens Creek,modern_1970_present
+inserted,426,,NSW,1986,"Gosford, New South Wales 1986",https://www.yowiehunters.com.au/new-south-wales/1684-gosford-new-south-wales-1986,North Gosford,modern_1970_present
+inserted,427,,QLD,1979,"Palm Beach, Queensland 1979",https://www.yowiehunters.com.au/queensland/2179-palm-beach-queensland-1979,Palm Beach,modern_1970_present
+inserted,428,,NSW,2014,"Grafton - Coutts Crossing, New South Wales 2014",https://www.yowiehunters.com.au/new-south-wales/2073-grafton-coutts-crossing-nsw-2014,Grafton,modern_1970_present
+inserted,429,,QLD,2017,"Quaids Dam, Queensland 2017",https://www.yowiehunters.com.au/queensland/2109-quaids-dam-queensland-2017,Quaids Dam,modern_1970_present
+inserted,430,,NSW,1974,"Grafton, New South Wales 1974",https://www.yowiehunters.com.au/new-south-wales/1392-grafton-new-south-wales-1974,West of Grafton,modern_1970_present
+inserted,431,,QLD,1986,"Redbank Plains, Queensland 1986",https://www.yowiehunters.com.au/queensland/1578-redbank-plains-queensland-1986,Redbank Plains,modern_1970_present
+inserted,432,,NSW,2011,"Grafton, New South Wales 2011",https://www.yowiehunters.com.au/new-south-wales/1555-grafton-new-south-wales-2011,Grafton,modern_1970_present
+inserted,433,,QLD,1989,"Redbank Plains, Queensland 1989",https://www.yowiehunters.com.au/queensland/1935-redbank-plains-queensland-1989,Redbank,modern_1970_present
+inserted,434,,NSW,1998,"Grassy Head / Stuarts Point, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/2132-grassy-head-stuarts-point-new-south-wales-1998,Grassy Head / Stuarts Point [Yarriabini National Park],modern_1970_present
+inserted,435,,QLD,2009,"Rockhampton, Queensland 2009",https://www.yowiehunters.com.au/queensland/1324-rockhampton-qld-2009,Rockhampton,modern_1970_present
+inserted,436,,NSW,2004,"Grays Point, New South Wales 2004",https://www.yowiehunters.com.au/new-south-wales/1837-grays-point-new-south-wales-2004,Grays Point,modern_1970_present
+inserted,437,,QLD,2018,"Roma, Queensland 2018",https://www.yowiehunters.com.au/queensland/1981-roma-queensland-2018,Roma,modern_1970_present
+inserted,438,,NSW,2013,"Grenfell, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1842-grenfell-new-south-wales-2013,Grenfell,modern_1970_present
+inserted,439,,QLD,1996,"Sarina, Queensland 1996",https://www.yowiehunters.com.au/queensland/2093-sarina-queensland-1996,Sarina,modern_1970_present
+inserted,440,,NSW,2000,"Hannam Vale, New South Wales 2000",https://www.yowiehunters.com.au/new-south-wales/1561-hannam-vale-new-south-wales-2000,Hannam Vale,modern_1970_present
+inserted,441,,QLD,1980,"Slacks Creek, Queensland 1980",https://www.yowiehunters.com.au/queensland/1950-slacks-creek-queensland-1980,Slacks Creek,modern_1970_present
+inserted,442,,NSW,2008,"Hartley, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/1813-hartley-new-south-wales-2015,Hartley,modern_1970_present
+inserted,443,,QLD,1977,"Springbrook, Queensland 1977",https://www.yowiehunters.com.au/queensland/1325-springbrook-qld-1977,Springbrook,modern_1970_present
+inserted,444,,NSW,1994,"Hazelbrook, New South Wales 1994",https://www.yowiehunters.com.au/new-south-wales/1397-hazelbrook-new-south-wales-1995,Hazelbrook,modern_1970_present
+inserted,445,,QLD,1978,"Springbrook, Queensland 1978",https://www.yowiehunters.com.au/queensland/1326-springbrook-qld-1978,Springbrook,modern_1970_present
+inserted,446,,NSW,2001,"Hazelbrook, New South Wales 2001",https://www.yowiehunters.com.au/new-south-wales/1398-hazelbrook-new-south-wales-2001,Hazelbrook,modern_1970_present
+inserted,447,,QLD,1978,"Springbrook, Queensland 1978",https://www.yowiehunters.com.au/queensland/1327-springbrook-qld-1978-sp-22191,Springbrook,modern_1970_present
+inserted,448,,NSW,1994,"Helensburgh, New South Wales 1994",https://www.yowiehunters.com.au/new-south-wales/1961-helensburgh-new-south-wales-1994,Helensburgh,modern_1970_present
+inserted,449,,QLD,1982,"Springbrook, Queensland 1982",https://www.yowiehunters.com.au/queensland/1329-springbrook-qld-1982,Springbrook,modern_1970_present
+inserted,450,,NSW,2002,"Helensburgh, New South Wales 2002",https://www.yowiehunters.com.au/new-south-wales/1399-helensburgh-new-south-wales-2002,Helensburgh,modern_1970_present
+inserted,451,,NSW,1997,"Springbrook, Queensland 1997",https://www.yowiehunters.com.au/queensland/1445-springbrook-queensland-1997,Springwood,modern_1970_present
+inserted,452,,NSW,2002,"Helensburgh, New South Wales 2002",https://www.yowiehunters.com.au/new-south-wales/2123-helensburgh-new-south-wales-2003,Helensburgh,modern_1970_present
+inserted,453,,QLD,1998,"Springbrook, Queensland 1998",https://www.yowiehunters.com.au/queensland/1331-springbrook-qld-1998,Springbrook,modern_1970_present
+inserted,454,,NSW,2010,"Hickeys Falls, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/2176-hickeys-falls-new-south-wales-2010,Hickeys Falls,modern_1970_present
+inserted,455,,QLD,1998,"Springbrook, Queensland 1998",https://www.yowiehunters.com.au/queensland/1332-springbrook-qld-1998-sp-7529,Springbrook,modern_1970_present
+inserted,456,,NSW,2012,"Hornsby Heights, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/2107-hornsby-heights-new-south-wales-2012,Location: Off Tanglewood Firetrail,modern_1970_present
+inserted,457,,QLD,1934,"Stanthorpe, Queensland 1934",https://www.yowiehunters.com.au/queensland/1334-stanthorpe-qld-1934,Stanthorpe,expansion_1876_1969
+inserted,458,,NSW,1993,"Ingalba, New South Wales 1993",https://www.yowiehunters.com.au/new-south-wales/2189-ingalba-new-south-wales-1993,Ingalba State Forest,modern_1970_present
+inserted,459,,QLD,1985,"Stanthorpe, Queensland 1985",https://www.yowiehunters.com.au/queensland/2285-stanthorpe-queensland-1985,Stanthorpe,modern_1970_present
+inserted,460,,NSW,1992,"Ingleburn, New South Wales 1992",https://www.yowiehunters.com.au/new-south-wales/1400-ingleburn-new-south-wales-1992,Ingleburn,modern_1970_present
+inserted,461,,QLD,2013,"Tarampa, Queensland 2013",https://www.yowiehunters.com.au/queensland/2077-tarampa-queens-and-2013,Tarampa,modern_1970_present
+inserted,462,,NSW,1978,"Jackadgery, New South Wales 1978",https://www.yowiehunters.com.au/new-south-wales/1401-jackadgery-new-south-wales-1978,Jackadgery,modern_1970_present
+inserted,463,,QLD,2016,"Tarzali, Queensland 2016",https://www.yowiehunters.com.au/queensland/2089-tarzali-queensland-2016,Tarzali,modern_1970_present
+inserted,464,,NSW,1990,"Jackadgery, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/1595-jackadgery-new-south-wales-1990,Jackadgery,modern_1970_present
+inserted,465,,QLD,1965,"Tewantin, Queensland 1965",https://www.yowiehunters.com.au/queensland/1341-twantin-qld-1965,Tewantin,expansion_1876_1969
+inserted,466,,NSW,2013,"Jackadgery, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/2260-jackadgery-new-south-wales-2013,Jackadgery,modern_1970_present
+inserted,467,,QLD,2008,"Tin Can Bay, Queensland 1992 (2)",https://www.yowiehunters.com.au/queensland/1335-tin-can-bay-qld-1992-2,Camp Kerr,modern_1970_present
+inserted,468,,NSW,2000,"Jamison Valley, New South Wales 2000",https://www.yowiehunters.com.au/new-south-wales/1620-jamison-valley-new-south-wales-2000,Jamison Valley,modern_1970_present
+inserted,469,,QLD,1998,"Tin Can Bay, Queensland 1998",https://www.yowiehunters.com.au/queensland/1956-tin-can-bay-queensland-1998,Tin Can Bay,modern_1970_present
+inserted,470,,NSW,1990,"Jenolan Caves, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/1402-jenolan-caves-new-south-wales-1990,Circa,modern_1970_present
+inserted,471,,QLD,1990,"Tomson River, Queensland 1990",https://www.yowiehunters.com.au/queensland/1338-tomsons-river-qld-1990,Tomson River,modern_1970_present
+inserted,472,,NSW,2003,"Jiggi, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1892-jiggi-new-south-wales-2003,Jiggi,modern_1970_present
+inserted,473,,QLD,1997,"Toowoomba, Queensland 1997",https://www.yowiehunters.com.au/queensland/1804-toowoomba-queensland-1997,Picnic Point,modern_1970_present
+inserted,474,,NSW,1977,"Karuah River, New South Wales 1977",https://www.yowiehunters.com.au/new-south-wales/1572-karuah-river-new-south-wales-1977,Karuah River,modern_1970_present
+inserted,475,,QLD,1995,"Torbanlea, Queensland 1995",https://www.yowiehunters.com.au/queensland/1966-torbanlea-queensland-1995,Torbanlea,modern_1970_present
+inserted,476,,NSW,1997,"Katoomba, New South Wales 1997",https://www.yowiehunters.com.au/new-south-wales/2006-katoomba-new-south-wales-1997,Katoomba,modern_1970_present
+inserted,477,,QLD,2005,"Torrens Creek, Queensland 2005",https://www.yowiehunters.com.au/queensland/1339-torrens-creek-qld-2005,Torrens Creek,modern_1970_present
+inserted,478,,NSW,1999,"Katoomba, New South Wales 1999",https://www.yowiehunters.com.au/new-south-wales/1403-katoomba-new-south-wales-1999,Katoomba,modern_1970_present
+inserted,479,,QLD,1984,"Tugun, Queensland 1984",https://www.yowiehunters.com.au/queensland/2048-tugun-queensland-1984,Tugun,modern_1970_present
+inserted,480,,NSW,1998,"Keiraville, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/2068-keiraville-new-south-wales-1998,Keiraville,modern_1970_present
+inserted,481,,QLD,1982,"Tully, Queensland 1985",https://www.yowiehunters.com.au/queensland/1598-tully-queensland-1985,Tully,modern_1970_present
+inserted,482,,NSW,1968,"Kempsey, New South Wales 1968",https://www.yowiehunters.com.au/new-south-wales/1404-kempsey-new-south-wales-1968,Kempsey,expansion_1876_1969
+inserted,483,,QLD,1996,"Upper Coomera, Queensland 2006",https://www.yowiehunters.com.au/queensland/1860-upper-coomera-queensland-2006,Upper Coomera,modern_1970_present
+inserted,484,,NSW,1987,"Kiah, New South Wales 1987",https://www.yowiehunters.com.au/new-south-wales/2287-eden-new-south-wales-1987,Kiah,modern_1970_present
+inserted,485,,NSW,1980,"Wauchope, New South Wales 1980",https://www.yowiehunters.com.au/queensland/2245-wauchope-new-south-wales-1980,Wauchope,modern_1970_present
+inserted,486,,NSW,1980,"Kiandra, New South Wales 1980",https://www.yowiehunters.com.au/new-south-wales/1405-kiandra-new-south-wales-1980,Kiandra,modern_1970_present
+inserted,487,,QLD,2016,"Weyba Downs, Queensland 2016",https://www.yowiehunters.com.au/queensland/1886-weyba-downs-queensland-2016,Weyba Downs,modern_1970_present
+inserted,488,,NSW,2001,"Koreelah Forest, New South Wales 2001",https://www.yowiehunters.com.au/new-south-wales/1668-koreelah-forest-new-south-wales-2001,White Swamp,modern_1970_present
+inserted,489,,QLD,2018,"Widgee, Queensland 2018",https://www.yowiehunters.com.au/queensland/2060-widgee-queensland,Widgee,modern_1970_present
+inserted,490,,NSW,1980,"Korora Basin, New South Wales 1980",https://www.yowiehunters.com.au/new-south-wales/1473-woolgoolga-new-south-wales-1980,Korora Basin,modern_1970_present
+inserted,491,,QLD,2003,"Withcott, Queensland 2003",https://www.yowiehunters.com.au/queensland/1469-withcott-new-south-wales-2003,Withcott,modern_1970_present
+inserted,492,,NSW,2008,"Kosciuszko, New South Wales 2008",https://www.yowiehunters.com.au/new-south-wales/2003-kosciuszko-new-south-wales-2008,Kosciuszko,modern_1970_present
+inserted,493,,QLD,2015,"Witheren, Queensland 2015",https://www.yowiehunters.com.au/queensland/1875-beechmont-queensland-2015,Witheren,modern_1970_present
+inserted,494,,NSW,1989,"Kowmung River, New South Wales 1989",https://www.yowiehunters.com.au/new-south-wales/1688-kowmung-river-new-south-wales-1989,Kowmung River,modern_1970_present
+inserted,495,,QLD,2022,"Witheren, Queensland 2022",https://www.yowiehunters.com.au/queensland/2256-witheren-queensland-2022,Witheren,modern_1970_present
+inserted,496,,NSW,1990,"Krambach, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/2289-krambach-new-south-wales-1990,Krambach,modern_1970_present
+inserted,497,,QLD,2012,"Wolvi, Queensland 2012",https://www.yowiehunters.com.au/queensland/1609-wolvi-queensland-2012,Wolvi,modern_1970_present
+inserted,498,,NSW,2011,"Krambach, New South Wales 2011",https://www.yowiehunters.com.au/new-south-wales/1573-kramback-new-south-wales-2011,Krambach,modern_1970_present
+inserted,499,,QLD,1984,"Wongawallan, Queensland 1984",https://www.yowiehunters.com.au/queensland/1550-wongawallan-queensland-1984-sp-28881,Wongawallan,modern_1970_present
+inserted,500,,NSW,2010,"Ku-ring-gai National Park, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/2190-ku-ring-gai-national-park-new-south-wales-2010,Ku-ring-gai National Park,modern_1970_present
+inserted,501,,QLD,1980,"Wongawallen, Queensland 1980",https://www.yowiehunters.com.au/queensland/2066-wongawallen-queensland-1980,Wongawallen,modern_1970_present
+inserted,502,,NSW,1979,"Lake Cargelligo, New South Wales 1979",https://www.yowiehunters.com.au/new-south-wales/1406-lake-cargelligo-new-south-wales-1979,Lake Cargelligo,modern_1970_present
+inserted,503,,QLD,2008,"Woolooga, Queensland 2008",https://www.yowiehunters.com.au/queensland/1846-woolooga-queensland-2008,Woolooga,modern_1970_present
+inserted,504,,NSW,1976,"Lake George, New South Wales 1976",https://www.yowiehunters.com.au/new-south-wales/1855-lake-george-new-south-wales-1976,Lake George,modern_1970_present
+inserted,505,,QLD,2012,"Woolooga, Queensland 2012",https://www.yowiehunters.com.au/queensland/2113-woolooga-queensland-2012,Woolooga,modern_1970_present
+inserted,506,,NSW,1999,"Lake Macquarie, New South Wales 1999",https://www.yowiehunters.com.au/new-south-wales/1407-lake-macquarie-new-south-wales-1999,Lake Macquarie,modern_1970_present
+inserted,507,,QLD,2022,"Woolooga, Queensland 2022",https://www.yowiehunters.com.au/queensland/2257-wonga-queensland-2022,Woolooga,modern_1970_present
+inserted,508,,NSW,1995,"Leura, New South Wales 1995",https://www.yowiehunters.com.au/new-south-wales/1409-leura-new-south-wales-1995,Leura,modern_1970_present
+inserted,509,,QLD,1965,"Wyandra, Queensland 1965",https://www.yowiehunters.com.au/queensland/1343-wyandra-qld-1965,Wyandra,expansion_1876_1969
+inserted,510,,NSW,2009,"Leura, New South Wales 2009",https://www.yowiehunters.com.au/new-south-wales/1907-leura-new-south-wales-2009,Leura,modern_1970_present
+inserted,511,,QLD,2010,"Yandina, Queensland 2010",https://www.yowiehunters.com.au/queensland/1344-yandina-qld-2010,Yandina,modern_1970_present
+inserted,512,,NSW,2001,"Lightning Ridge, New South Wales 2001",https://www.yowiehunters.com.au/new-south-wales/2295-lightning-ridge-new-south-wales-2001,Lightning Ridge,modern_1970_present
+inserted,513,,QLD,2011,"Yarrabah, Queensland 2011",https://www.yowiehunters.com.au/queensland/1581-yarrabah-queensland-2011,Yarrabah,modern_1970_present
+inserted,514,,NSW,1935,"Lismore, New South wales 1935",https://www.yowiehunters.com.au/new-south-wales/1411-lismore-new-south-wales-1935,Lismore,expansion_1876_1969
+inserted,515,,QLD,2006,"Yarrabilba, Queensland 2006",https://www.yowiehunters.com.au/queensland/1584-yarabillba-queensland-2006,Yarrabilllba,modern_1970_present
+inserted,516,,NSW,2000,"Lithgow, New South Wales 2000",https://www.yowiehunters.com.au/new-south-wales/1412-lithgow-new-south-wales-2000,Lithgow,modern_1970_present
+inserted,517,,NSW,2004,"Lithgow, New South Wales 2004",https://www.yowiehunters.com.au/new-south-wales/1806-lithgow-new-south-wales-2004,Lithgow,modern_1970_present
+inserted,518,,NSW,2018,"Lithgow, New South Wales 2018",https://www.yowiehunters.com.au/new-south-wales/2031-lithgow-new-south-wales-2018,Lithgow,modern_1970_present
+inserted,519,,NSW,2011,"Lowanna, New South Wales 2011",https://www.yowiehunters.com.au/new-south-wales/1574-lowanna-new-south-wales-2011,Lowanna,modern_1970_present
+inserted,520,,NSW,1998,"Macquarie Feilds, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/2046-macquarie-feilds-new-south-wales-1998,Macquarie Fields,modern_1970_present
+inserted,521,,NSW,2015,"Maldon, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/1810-maldon-new-south-wales-2015,Maldon,modern_1970_present
+inserted,522,,NSW,1999,"Medowie, New South Wales 1999",https://www.yowiehunters.com.au/new-south-wales/1830-medowie-new-south-wales-1999,Medowie,modern_1970_present
+inserted,523,,NSW,2006,"Megalong Valley, New South Wales 2006",https://www.yowiehunters.com.au/new-south-wales/2247-megalong-valley-new-south-wales-2007,Megalong Valley,modern_1970_present
+inserted,524,,NSW,1973,"Minto, New South Wales 1973",https://www.yowiehunters.com.au/new-south-wales/1415-monto-new-south-wales-1973,Minto,modern_1970_present
+inserted,525,,NSW,1970,"Mogo, New South Wales 1977",https://www.yowiehunters.com.au/new-south-wales/1416-mogo-new-south-wales,Mogo,modern_1970_present
+inserted,526,,NSW,1995,"Mogo, New South Wales 1995",https://www.yowiehunters.com.au/new-south-wales/1417-mogo-new-south-wales-1995,Mogo,modern_1970_present
+inserted,527,,NSW,2021,"Molong, New South Wales 2021",https://www.yowiehunters.com.au/new-south-wales/2255-molong-new-south-wales-2021,Molong,modern_1970_present
+inserted,528,,NSW,2013,"Mongarlowe, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/2264-mongarlowe-new-south-wales-2013,Mongarlowe,modern_1970_present
+inserted,529,,NSW,2013,"Mooney Mooney, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1624-mooney-mooney-new-south-wales-2013,Mooney Mooney Creek,modern_1970_present
+inserted,530,,NSW,2015,"Morton NP, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/1887-morton-np-new-south-wales-2015,Morton National Park,modern_1970_present
+inserted,531,,NSW,1972,"Mount Lindesay, New South Wales 1972",https://www.yowiehunters.com.au/new-south-wales/2043-mount-lindesay-new-south-wales-1972,Mt. Lindesay,modern_1970_present
+inserted,532,,NSW,2009,"Mt. George, New South Wales 2009",https://www.yowiehunters.com.au/new-south-wales/1418-mt-george-new-south-wales-2009,Mt George,modern_1970_present
+inserted,533,,NSW,1983,"Mt. Kembla, New South Wales 1983",https://www.yowiehunters.com.au/new-south-wales/1419-mt-kembla-new-south-wales-1983,Mt Kembla,modern_1970_present
+inserted,534,,NSW,1986,"Mt. Kembla, New South Wales 1986",https://www.yowiehunters.com.au/new-south-wales/1420-mt-kembla-new-south-wales-1986,Mt Kembla,modern_1970_present
+inserted,535,,NSW,1993,"Mt. Kembla, New South Wales 1993",https://www.yowiehunters.com.au/new-south-wales/1422-mt-kembla-new-south-wales-1993,Mt Kembla,modern_1970_present
+inserted,536,,NSW,2012,"Mt. Kembla, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/1600-mt-kembla-new-south-wales-2012,Mt. Kembla,modern_1970_present
+inserted,537,,NSW,2013,"Mt. Kembla, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1955-mt-kembla-new-south-wales-2013,Mt. Kembla,modern_1970_present
+inserted,538,,NSW,2017,"Mt. Warning - Tyalgum, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/2119-mt-warning-tyalgum-new-south-wales-2017,Mt. Warning,modern_1970_present
+inserted,539,,NSW,2012,"Mt. Warning, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/2117-mt-warning-new-south-wales-2012,Mt Warning,modern_1970_present
+inserted,540,,NSW,1978,"Mudgee - Ulan, New South Wales 1978",https://www.yowiehunters.com.au/new-south-wales/2122-mudgee-ulan-new-south-wales-1978,Mudgee,modern_1970_present
+inserted,541,,NSW,2003,"Mulgoa, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1425-mulgoa-new-south-wales-2003,Mulgoa,modern_1970_present
+inserted,542,,NSW,1996,"Mullumbimby, New South Wales 1996",https://www.yowiehunters.com.au/new-south-wales/2286-mullumbimby-new-south-wales-1996,Mullumbimby,modern_1970_present
+inserted,543,,NSW,1960,"Mungay Creek, New South Wales 1960",https://www.yowiehunters.com.au/new-south-wales/1427-mungay-creek-new-south-wales-1960,Mungay Creek,expansion_1876_1969
+inserted,544,,NSW,2006,"Munmorah, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/1685-lake-munmorah-new-south-wales-2006,Lake Munmorah,modern_1970_present
+inserted,545,,NSW,2005,"Murwillumbah, New South Wales 2005",https://www.yowiehunters.com.au/new-south-wales/2226-murwillumbah-new-south-wales-2005,Murwillumbah,modern_1970_present
+inserted,546,,NSW,2015,"Narara, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/1967-narara-new-south-wales-2015,Narara,modern_1970_present
+inserted,547,,NSW,1978,"Narooma, New South Wales 1978",https://www.yowiehunters.com.au/new-south-wales/1428-narooma-new-south-wales-1978,Narooma,modern_1970_present
+inserted,548,,NSW,1979,"Narromine, New South Wales 1979",https://www.yowiehunters.com.au/new-south-wales/1429-narromine-new-south-wales-1979,Narromine,modern_1970_present
+inserted,549,,NSW,2019,"Newry State Forest, New South Wales 2019",https://www.yowiehunters.com.au/new-south-wales/2070-newry-state-forest-new-south-wales-2019,Newry State Forest,modern_1970_present
+inserted,550,,NSW,1988,"Nowra, New South Wales 1988",https://www.yowiehunters.com.au/new-south-wales/1430-nowra-new-south-wales-1988,Nowra,modern_1970_present
+inserted,551,,NSW,2006,"Nunderi, New South Wales 2006",https://www.yowiehunters.com.au/new-south-wales/1431-nunderi-new-south-wales-2006,Nunderi,modern_1970_present
+inserted,552,,NSW,1983,"Oberon, New South Wales 1983",https://www.yowiehunters.com.au/new-south-wales/1432-oberon-new-south-wales-1983,Oberon,modern_1970_present
+inserted,553,,NSW,1990,"Oberon, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/1549-oberon-new-south-wales-1990,Orberon,modern_1970_present
+inserted,554,,NSW,1991,"Oberon, New South Wales 1991",https://www.yowiehunters.com.au/new-south-wales/1433-oberon-new-south-wales-1991,Oberon,modern_1970_present
+inserted,555,,NSW,2009,"Oberon, New South Wales 2009",https://www.yowiehunters.com.au/new-south-wales/1434-oberon-new-south-wales-2009,Oberon,modern_1970_present
+inserted,556,,NSW,1967,"Oxley Island, New South Wales 1967",https://www.yowiehunters.com.au/new-south-wales/1436-oxley-island-new-south-wales-1967,Oxley Island,expansion_1876_1969
+inserted,557,,NSW,1977,"Oxley Island, New South Wales 1977",https://www.yowiehunters.com.au/new-south-wales/1437-oxley-island-new-south-wales-1977,Oxley Island,modern_1970_present
+inserted,558,,NSW,1977,"Pambula, New South Wales 1977",https://www.yowiehunters.com.au/new-south-wales/1438-pambula-new-south-wales-1977,Pambula,modern_1970_present
+inserted,559,,NSW,2000,"Pickett Hill, New South Wales 2000",https://www.yowiehunters.com.au/new-south-wales/1439-pickett-hill-new-south-wales-2000,Pickett Hill,modern_1970_present
+inserted,560,,NSW,1976,"Pilliga, New South Wales 1976",https://www.yowiehunters.com.au/new-south-wales/1919-pilliga-new-south-wales-1976,Pilliga,modern_1970_present
+inserted,561,,NSW,1978,"Pilliga, New South Wales 1978",https://www.yowiehunters.com.au/new-south-wales/1441-pilliga-new-south-wales-1978,Pilliga,modern_1970_present
+inserted,562,,NSW,1979,"Pilliga, New South Wales 1979",https://www.yowiehunters.com.au/new-south-wales/1440-pilliga-new-south-wales-1979,Pilliga,modern_1970_present
+inserted,563,,NSW,1979,"Pilliga, New South Wales 1979",https://www.yowiehunters.com.au/new-south-wales/1442-pilliga-new-south-wales-1979-sp-19667,Pilliga,modern_1970_present
+inserted,564,,NSW,2001,"Pilliga, New South Wales 2001",https://www.yowiehunters.com.au/new-south-wales/1577-pilliga-new-south-wales,Pilliga,modern_1970_present
+inserted,565,,NSW,2003,"Pilliga, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1443-pilliga-new-south-wales-2003,Pilliga,modern_1970_present
+inserted,566,,NSW,1982,"Pilliga, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/1444-pilliga-new-south-wales-2010,Pilliga,modern_1970_present
+inserted,567,,NSW,2003,"Port Macquarie, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1850-port-macquarie-new-south-wales-2003,Port Macquarie,modern_1970_present
+inserted,568,,NSW,2012,"Providence Portal, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/1602-providence-portal-new-south-wales-2012,Providence Portal,modern_1970_present
+inserted,569,,NSW,2005,"Richmond Range, New South Wales 2005",https://www.yowiehunters.com.au/new-south-wales/1560-richmond-range-new-south-wales-2005,Richmond Range,modern_1970_present
+inserted,570,,NSW,2007,"Richmond Range, New South Wales 2007",https://www.yowiehunters.com.au/new-south-wales/1543-gorge-creek-new-south-wales-2007,Gorge Creek,modern_1970_present
+inserted,571,,NSW,2018,"Richmond Range, New South Wales 2018",https://www.yowiehunters.com.au/new-south-wales/1984-richmond-range-new-south-wales-2018,Richmond Range,modern_1970_present
+inserted,572,,NSW,2013,"Roseberg State Forest, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1629-roseberg-state-forest-new-south-wales-2013,Roseberg State Forest,modern_1970_present
+inserted,573,,NSW,2013,"Roseberg State Forest, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/2058-roseberg-state-forest-new-south-wales-2014,Roseberg State Forest,modern_1970_present
+inserted,574,,NSW,1984,"Royal National Park, New South Wales 1984",https://www.yowiehunters.com.au/new-south-wales/1828-royal-national-park-new-south-wales-1984,Royal National Park,modern_1970_present
+inserted,575,,NSW,2001,"Scotts Head, New South Wales 2001",https://www.yowiehunters.com.au/new-south-wales/1446-scotts-head-new-south-wales-2001,Scotts Head,modern_1970_present
+inserted,576,,NSW,2005,"Springwood, New South Wales 2005",https://www.yowiehunters.com.au/new-south-wales/1859-springwood-new-south-wales-2005,Springwood,modern_1970_present
+inserted,577,,NSW,2010,"Springwood, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/1911-springwood-new-south-wales-2010,Springwood,modern_1970_present
+inserted,578,,NSW,2013,"Stannifer, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1689-stannifer-new-south-wales-2013,Stannifer,modern_1970_present
+inserted,579,,NSW,2008,"Stanwell Tops, New South Wales 2008",https://www.yowiehunters.com.au/new-south-wales/1447-stanwell-tops-new-south-wales-2008,Stanwell Tops,modern_1970_present
+inserted,580,,NSW,2017,"Strickland, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/2175-strickland-new-south-wales-2017,Strickland,modern_1970_present
+inserted,581,,NSW,2020,"Strickland, New South Wales 2020",https://www.yowiehunters.com.au/new-south-wales/2178-strickland-new-south-wales-2020,Strickland,modern_1970_present
+inserted,582,,NSW,2011,"Stuarts Point, New South Wales 2011",https://www.yowiehunters.com.au/new-south-wales/1579-stuarts-point-new-south-wales-2011,Stuarts Point,modern_1970_present
+inserted,583,,NSW,2012,"Stuarts Point, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/2082-stuarts-point-new-south-wales-2012,Stuarts Point,modern_1970_present
+inserted,584,,NSW,1982,"Sunny Corner, New South Wales 1982",https://www.yowiehunters.com.au/new-south-wales/1936-sunny-corner-new-south-wales-1982,Sunny Corner,modern_1970_present
+inserted,585,,NSW,1997,"Tabulam, New South wales 1997",https://www.yowiehunters.com.au/new-south-wales/1448-tabulam-new-sout-wales-1997,Tabulam,modern_1970_present
+inserted,586,,NSW,2010,"Tallong, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/1544-tallong-new-south-wales-2010,Tallong,modern_1970_present
+inserted,587,,NSW,1998,"Taree, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/1450-taree-new-south-wales-1998,Taree,modern_1970_present
+inserted,588,,NSW,1990,"Tenterfield, New South Wales 1990",https://www.yowiehunters.com.au/new-south-wales/2074-tenterfield-new-south-wales-1990,Tenterfield,modern_1970_present
+inserted,589,,NSW,2012,"Tenterfield, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/1868-tenterfield-new-south-wales-2012,Tenterfield,modern_1970_present
+inserted,590,,NSW,2003,"Tharwa, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1451-tharwa-new-south-wales-2003,Tharwa,modern_1970_present
+inserted,591,,NSW,2006,"Tharwa, New South Wales 2006",https://www.yowiehunters.com.au/new-south-wales/1452-tharwa-new-south-wales-2006,Tharwa,modern_1970_present
+inserted,592,,NSW,2017,"Tharwa, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/2022-thawa-new-south-wales-2017,Tharwa,modern_1970_present
+inserted,593,,NSW,1977,"Timsvale, New South Wales 1977",https://www.yowiehunters.com.au/new-south-wales/1453-timsvale-new-sout-wales-1977,Timsvale,modern_1970_present
+inserted,594,,NSW,1980,"Torrington, New South Wales 1980",https://www.yowiehunters.com.au/new-south-wales/1673-torringtom-new-south-wales-1980,Torrington,modern_1970_present
+inserted,595,,NSW,1985,"Torrington, New South Wales 1985",https://www.yowiehunters.com.au/new-south-wales/1940-torrington-new-south-wales-1985,Torrington,modern_1970_present
+inserted,596,,NSW,2013,"Torrington, New South Wales 2013",https://www.yowiehunters.com.au/new-south-wales/1914-torrington-new-south-wales-2013,Torrington,modern_1970_present
+inserted,597,,NSW,1991,"Tuglow, New South Wales 1991",https://www.yowiehunters.com.au/new-south-wales/2067-tuglow-new-south-wales-1991,Tuglow,modern_1970_present
+inserted,598,,NSW,1978,"Tweed Heads, New South Wales 1978",https://www.yowiehunters.com.au/new-south-wales/1454-tweed-heads-new-south-wales-1978,Tweed Heads,modern_1970_present
+inserted,599,,NSW,2007,"Uki, New South Wales 2007",https://www.yowiehunters.com.au/new-south-wales/1455-uki-new-south-wales-2007,Uki,modern_1970_present
+inserted,600,,NSW,2018,"Uki, New South Wales 2018",https://www.yowiehunters.com.au/new-south-wales/1982-uki-new-south-wales-2018,Uki,modern_1970_present
+inserted,601,,NSW,1988,"Vulcan State Forest, New South Wales 1988",https://www.yowiehunters.com.au/new-south-wales/1667-vulcan-state-forest-new-south-wales-1988,Vulcan State Forest,modern_1970_present
+inserted,602,,NSW,1982,"Walgett, New South Wales 1982",https://www.yowiehunters.com.au/new-south-wales/1458-walget-new-south-wales-1982,Walgett,modern_1970_present
+inserted,603,,NSW,2003,"Wanaaring, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1459-wanarring-new-south-wales-2003,Wanaaring,modern_1970_present
+inserted,604,,NSW,1871,"Warneton, New South Wales 1871",https://www.yowiehunters.com.au/new-south-wales/1460-waneton-new-south-wales-1871,Warneton/Belgrave,anchor_1842_1875
+inserted,605,,NSW,2003,"Warragamba, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1461-warragamba-new-south-wales-2003,Warragamba,modern_1970_present
+inserted,606,,NSW,2005,"Warrimoo, New South Wales 2005",https://www.yowiehunters.com.au/new-south-wales/1674-warrimoo-new-south-wales-2005,Warrimoo,modern_1970_present
+inserted,607,,NSW,1988,"Watagans, New South Wales 1988",https://www.yowiehunters.com.au/new-south-wales/1462-watigans-new-south-wales-1988,Cooranbong/Watigans,modern_1970_present
+inserted,608,,NSW,2003,"Watagans, New South Wales 2003",https://www.yowiehunters.com.au/new-south-wales/1464-watigans-new-south-wales-2003,Watagans,modern_1970_present
+inserted,609,,NSW,2004,"Watagans, New South Wales 2004",https://www.yowiehunters.com.au/new-south-wales/1580-watigans-new-south-wales-2004,Watagans,modern_1970_present
+inserted,610,,NSW,2010,"Watagans, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/1463-watigans-new-south-wales-2010,Watagans State Forest,modern_1970_present
+inserted,611,,NSW,2012,"Watagans, New South Wales 2012",https://www.yowiehunters.com.au/new-south-wales/1628-watigans-new-south-wales-2012,Watagans,modern_1970_present
+inserted,612,,NSW,2010,"Wauchope, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/1465-wauchope-new-south-wales-2010,Wauchope,modern_1970_present
+inserted,613,,NSW,1987,"Wee Jasper, New South Wales 1987",https://www.yowiehunters.com.au/new-south-wales/1467-wee-jasper-new-south-wales-1987,Between Wee Jasper and Yass on the back road crossing a bridge of the Burrinjuck Dam & Murrumbidgee River,modern_1970_present
+inserted,614,,NSW,2017,"Wee Jasper, New South Wales 2017",https://www.yowiehunters.com.au/new-south-wales/1953-wee-jasper-new-south-wales-2017,Wee Jasper,modern_1970_present
+inserted,615,,NSW,2010,"Wellingrove - Dundee, New South Wales 2010",https://www.yowiehunters.com.au/new-south-wales/2090-wellingrove-dundee-new-south-wales-2010,Wellingrove and Dundee,modern_1970_present
+inserted,616,,NSW,2020,"Wentworth Falls, New South Wales 2020",https://www.yowiehunters.com.au/new-south-wales/2276-wentworth-falls-new-south-wales-2020,Wentworth Falls,modern_1970_present
+inserted,617,,NSW,1998,"Wiangaree, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/2088-wiangaree-new-south-wales-1998,Wiangaree,modern_1970_present
+inserted,618,,NSW,2002,"Wolgan Valley, New South Wales 2002",https://www.yowiehunters.com.au/new-south-wales/1457-walgan-valley-new-south-wales-2002,Wolgan Valley,modern_1970_present
+inserted,619,,NSW,2000,"Wollar, New South Wales 2000",https://www.yowiehunters.com.au/new-south-wales/2124-wollar-new-south-wales-2000,Wollar,modern_1970_present
+inserted,620,,NSW,1987,"Wombeyan Caves, New South Wales 1987",https://www.yowiehunters.com.au/new-south-wales/2195-wombeyan-caves-new-south-wales-1987,Wombeyan Caves,modern_1970_present
+inserted,621,,NSW,1976,"Woodenbong, New South Wales 1976",https://www.yowiehunters.com.au/new-south-wales/1470-woodenbong-new-south-wales-1980,Woodenbong,modern_1970_present
+inserted,622,,NSW,1977,"Woodenbong, New South Wales 1977",https://www.yowiehunters.com.au/new-south-wales/1515-woodenbong-new-south-wales-1977,Woodenbong,modern_1970_present
+inserted,623,,NSW,1998,"Woodenbong, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/1826-woodenbong-new-south-wales-1998,Woodenbong,modern_1970_present
+inserted,624,,NSW,1999,"Woodford, New South Wales 1999",https://www.yowiehunters.com.au/new-south-wales/1471-woodford-new-south-wales-1999,Woodford,modern_1970_present
+inserted,625,,NSW,2001,"Woodford, New South Wales 2001",https://www.yowiehunters.com.au/new-south-wales/1472-woodford-new-south-wales-2001,Woodford,modern_1970_present
+inserted,626,,NSW,1985,"Woollamia, New South Wales 1985",https://www.yowiehunters.com.au/new-south-wales/2061-woollamia-new-south-wales-1985,Woollamia,modern_1970_present
+inserted,627,,NSW,1995,"Woy Woy, New South Wales 1995",https://www.yowiehunters.com.au/new-south-wales/1395-hawkesbury-river-new-south-wales-1995,Woy Woy,modern_1970_present
+inserted,628,,NSW,2015,"Woy Woy, New South Wales 2015",https://www.yowiehunters.com.au/new-south-wales/2143-woy-woy-new-south-wales-2015,Woy Woy,modern_1970_present
+inserted,629,,NSW,2019,"Woy Woy, New South Wales 2019",https://www.yowiehunters.com.au/new-south-wales/2130-woy-woy-new-south-wales-2019,Woy Woy,modern_1970_present
+inserted,630,,NSW,1876,"Wyangala Dam, New South Wales 1876",https://www.yowiehunters.com.au/new-south-wales/1474-wyangala-dam-new-south-wales-1876,Wyangala Dam,expansion_1876_1969
+inserted,631,,NSW,1998,"Yanderra, New South Wales 1998",https://www.yowiehunters.com.au/new-south-wales/2293-yanderra-new-south-wales-1998,Yanderra,modern_1970_present
+inserted,632,,NSW,1979,"Yarrangobilly, New South Wales 1979",https://www.yowiehunters.com.au/new-south-wales/1475-yarrangobilly-new-south-wales-1979,Yarrangobilly,modern_1970_present
+inserted,633,,NSW,1982,"Yarrangobilly, New South Wales 1982",https://www.yowiehunters.com.au/new-south-wales/1476-yarrangobilly-new-south-wales-1982,Yarrangobilly,modern_1970_present
+inserted,634,,NSW,1955,"Young, New South Wales 1955",https://www.yowiehunters.com.au/new-south-wales/1866-young-new-south-wales-1955,Young,expansion_1876_1969

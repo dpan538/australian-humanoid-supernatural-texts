@@ -800,6 +800,9 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
     { id: "locations" as const, value: data.summary.precise_point_count },
     { id: "queries" as const, value: data.summary.query_count },
   ];
+  const stateOrder = ["WA", "NT", "SA", "QLD", "NSW", "VIC", "TAS", "ACT"];
+  const stateEntries = stateOrder.map((state) => [state, stateCounts[state] ?? 0] as const);
+  const maxStateCount = Math.max(...stateEntries.map(([, value]) => value), 1);
 
   return (
     <section className="dashboard-console dash-hover-zone" aria-label="Database control console">
@@ -877,9 +880,14 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
       </div>
 
       <div className="console-lollipops">
-        {Object.entries(stateCounts).map(([state, value]) => (
-          <span key={state} style={{ "--stem": `${Math.max(18, 22 + value * 18)}px` } as CSSProperties}>
+        {stateEntries.map(([state, value]) => (
+          <span
+            key={state}
+            style={{ "--stem": `${Math.round(22 + (value / maxStateCount) * 58)}px` } as CSSProperties}
+            aria-label={`${state}: ${value} records`}
+          >
             <b>{state}</b>
+            <em>{value}</em>
           </span>
         ))}
       </div>
@@ -952,13 +960,15 @@ function SourceWheel({ values }: { values: Record<string, number> }) {
 function ConsolePolyline({ values }: { values: Record<string, number> }) {
   const entries = Object.entries(values).sort(([a], [b]) => Number(a) - Number(b));
   const max = Math.max(...entries.map(([, value]) => value), 1);
-  const points = entries.map(([year, value], index) => `${10 + index * 32},${72 - (value / max) * 54}`).join(" ");
+  const xFor = (index: number) => (entries.length <= 1 ? 110 : 10 + (index / (entries.length - 1)) * 200);
+  const yFor = (value: number) => 72 - (value / max) * 54;
+  const points = entries.map(([, value], index) => `${xFor(index).toFixed(1)},${yFor(value).toFixed(1)}`).join(" ");
 
   return (
     <svg className="console-polyline" viewBox="0 0 220 82" role="img" aria-label="Year counts polyline">
       <polyline points={points} />
       {entries.map(([year, value], index) => (
-        <circle key={year} cx={10 + index * 32} cy={72 - (value / max) * 54} r={value > 1 ? 4 : 2.5} />
+        <circle key={year} cx={xFor(index)} cy={yFor(value)} r={value > 1 ? 4 : 2.5} />
       ))}
     </svg>
   );

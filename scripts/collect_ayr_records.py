@@ -15,6 +15,7 @@ import csv
 import html
 import logging
 import re
+import subprocess
 import sys
 import time
 from collections import Counter, defaultdict
@@ -58,6 +59,11 @@ STATE_PAGES: dict[str, dict[str, str]] = {
     "TAS": {"path": "/tasmania", "name": "Tasmania"},
 }
 
+SECTION_PAGES: dict[str, dict[str, str]] = {
+    "historical": {"path": "/historical-articles", "name": "Historical Yowie Articles"},
+    "media": {"path": "/media-clips", "name": "Yowie Newspaper Articles"},
+}
+
 # Low-availability states are exhausted first; high-availability states fill
 # the remaining target using a year-spread selection.
 DEFAULT_STATE_QUOTAS: dict[str, int] = {
@@ -91,6 +97,83 @@ STATE_NAME_TO_CODE = {
 
 STATE_CODE_TO_NAME = {code: row["name"] for code, row in STATE_PAGES.items()}
 STATE_CODE_TO_NAME["ACT"] = "Australian Capital Territory"
+
+PLACE_STATE_HINTS: dict[str, tuple[str, str]] = {
+    "a.c.t": ("ACT", "Australian Capital Territory"),
+    "act": ("ACT", "Australian Capital Territory"),
+    "canberra": ("ACT", "Canberra"),
+    "brindabella": ("ACT", "Brindabella"),
+    "sydney": ("NSW", "Sydney"),
+    "illawarra": ("NSW", "Illawarra"),
+    "queanbeyan": ("NSW", "Queanbeyan"),
+    "goulburn": ("NSW", "Goulburn"),
+    "lismore": ("NSW", "Lismore"),
+    "richmond river": ("NSW", "Richmond River"),
+    "blue mountains": ("NSW", "Blue Mountains"),
+    "tenterfield": ("NSW", "Tenterfield"),
+    "bega": ("NSW", "Bega"),
+    "bombala": ("NSW", "Bombala"),
+    "maitland": ("NSW", "Maitland"),
+    "macleay": ("NSW", "Macleay"),
+    "macleay argus": ("NSW", "Macleay"),
+    "pyramul": ("NSW", "Pyramul"),
+    "singleton": ("NSW", "Singleton"),
+    "bowral": ("NSW", "Bowral"),
+    "penrith": ("NSW", "Penrith"),
+    "casino": ("NSW", "Casino"),
+    "kyogle": ("NSW", "Kyogle"),
+    "moruya": ("NSW", "Moruya"),
+    "tambarumba": ("NSW", "Tambarumba"),
+    "coonabarabran": ("NSW", "Coonabarabran"),
+    "woronora": ("NSW", "Woronora"),
+    "grafton": ("NSW", "Grafton"),
+    "krambach": ("NSW", "Krambach"),
+    "cowan": ("NSW", "Cowan"),
+    "narromine": ("NSW", "Narromine"),
+    "molong": ("NSW", "Molong"),
+    "new south wales": ("NSW", "New South Wales"),
+    "nsw": ("NSW", "New South Wales"),
+    "brisbane": ("QLD", "Brisbane"),
+    "courier mail": ("QLD", "Brisbane"),
+    "gold coast": ("QLD", "Gold Coast"),
+    "nanango": ("QLD", "Nanango"),
+    "kilkivan": ("QLD", "Kilkivan"),
+    "stanthorpe": ("QLD", "Stanthorpe"),
+    "cairns": ("QLD", "Cairns"),
+    "townsville": ("QLD", "Townsville"),
+    "murgon": ("QLD", "Murgon"),
+    "bundaberg": ("QLD", "Bundaberg"),
+    "sunshine coast": ("QLD", "Sunshine Coast"),
+    "noosa": ("QLD", "Noosa"),
+    "emerald": ("QLD", "Emerald"),
+    "nerang": ("QLD", "Nerang"),
+    "springbrook": ("QLD", "Springbrook"),
+    "darling downs": ("QLD", "Darling Downs"),
+    "queensland": ("QLD", "Queensland"),
+    "qld": ("QLD", "Queensland"),
+    "melbourne": ("VIC", "Melbourne"),
+    "argus": ("VIC", "Melbourne"),
+    "geelong": ("VIC", "Geelong"),
+    "gippsland": ("VIC", "Gippsland"),
+    "colac": ("VIC", "Colac"),
+    "victoria": ("VIC", "Victoria"),
+    "vic": ("VIC", "Victoria"),
+    "launceston": ("TAS", "Launceston"),
+    "tasmania": ("TAS", "Tasmania"),
+    "tas": ("TAS", "Tasmania"),
+    "west australian": ("WA", "Western Australia"),
+    "perth": ("WA", "Perth"),
+    "shark bay": ("WA", "Shark Bay"),
+    "western australia": ("WA", "Western Australia"),
+    "wa": ("WA", "Western Australia"),
+    "adelaide": ("SA", "Adelaide"),
+    "south australia": ("SA", "South Australia"),
+    "sa": ("SA", "South Australia"),
+    "nt news": ("NT", "Northern Territory"),
+    "northern territory": ("NT", "Northern Territory"),
+    "litchfield": ("NT", "Litchfield"),
+    "nt": ("NT", "Northern Territory"),
+}
 
 
 @dataclass(frozen=True)
@@ -151,9 +234,43 @@ def compact_excerpt(text: str, limit: int = 320) -> str:
 
 
 def fetch(session: requests.Session, url: str, timeout: int = 25) -> str:
-    response = session.get(url, timeout=timeout)
-    response.raise_for_status()
-    return response.text
+    last_error: Exception | None = None
+    for attempt in range(3):
+        try:
+            response = session.get(url, timeout=timeout)
+            response.raise_for_status()
+            return response.text
+        except requests.RequestException as exc:
+            last_error = exc
+            if attempt < 2:
+                time.sleep(0.8 + attempt * 0.7)
+
+    # Some Joomla/TLS combinations intermittently close Python's TLS stream
+    # while a browser/curl request succeeds. Keep the same low-rate request
+    # semantics and use curl only as a read-only transport fallback.
+    try:
+        result = subprocess.run(
+            [
+                "curl",
+                "-L",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--max-time",
+                str(timeout),
+                "-A",
+                USER_AGENT,
+                url,
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        return result.stdout
+    except subprocess.CalledProcessError as exc:
+        if last_error is not None:
+            raise last_error
+        raise requests.RequestException(f"curl fallback failed for {url}: {exc}") from exc
 
 
 def robots_allows_public_reports(session: requests.Session) -> tuple[bool, str]:
@@ -186,13 +303,46 @@ def parse_listing(html_text: str, state_code: str) -> list[Candidate]:
         year = parse_year(title) or parse_year(path)
         if not title or year is None:
             continue
-        if year > CURRENT_YEAR:
+        if year < 1803 or year > CURRENT_YEAR:
             continue
         seen.add(path)
         candidates.append(
             Candidate(
                 state_code=state_code,
                 state_name=state["name"],
+                path=path,
+                url=urljoin(BASE_URL, path),
+                listing_title=title,
+                listing_year=year,
+            )
+        )
+    return candidates
+
+
+def parse_section_listing(html_text: str, section_key: str) -> list[Candidate]:
+    section = SECTION_PAGES[section_key]
+    section_path = section["path"]
+    pattern = re.compile(
+        rf'href=["\']({re.escape(section_path)}/[^"\']+)["\'][^>]*>(.*?)</a>',
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    candidates: list[Candidate] = []
+    seen: set[str] = set()
+    for href, anchor in pattern.findall(html_text):
+        path = href.split("#", 1)[0].split("?", 1)[0]
+        if path in seen:
+            continue
+        title = clean_space(re.sub(r"<[^>]+>", " ", anchor))
+        year = parse_year(title) or parse_year(path)
+        if not title or year is None:
+            continue
+        if year < 1803 or year > CURRENT_YEAR:
+            continue
+        seen.add(path)
+        candidates.append(
+            Candidate(
+                state_code="AU",
+                state_name="Australia",
                 path=path,
                 url=urljoin(BASE_URL, path),
                 listing_title=title,
@@ -244,11 +394,18 @@ def infer_state_code(text: str, fallback: str) -> str:
     for name, code in sorted(STATE_NAME_TO_CODE.items(), key=lambda item: len(item[0]), reverse=True):
         if re.search(rf"(?<![a-z]){re.escape(name)}(?![a-z])", lowered):
             return code
+    for hint, (code, _place) in sorted(PLACE_STATE_HINTS.items(), key=lambda item: len(item[0]), reverse=True):
+        if re.search(rf"(?<![a-z]){re.escape(hint)}(?![a-z])", lowered):
+            return code
     return fallback
 
 
 def infer_place(title: str, location_field: str, state_code: str) -> str:
     source = location_field or title
+    lowered = source.lower()
+    for hint, (code, place) in sorted(PLACE_STATE_HINTS.items(), key=lambda item: len(item[0]), reverse=True):
+        if code == state_code and re.search(rf"(?<![a-z]){re.escape(hint)}(?![a-z])", lowered):
+            return place
     source = re.sub(YEAR_RE, "", source)
     source = re.sub(r"\([^)]*\)", "", source)
     state_name = STATE_CODE_TO_NAME.get(state_code, "")
@@ -286,10 +443,10 @@ def parse_detail_page(candidate: Candidate, html_text: str) -> ParsedRecord | No
     terrain = labelled_field(body_text, "Terrain")
 
     year = parse_year(date_text) or parse_year(title) or candidate.listing_year
-    if year is None or year > CURRENT_YEAR:
+    if year is None or year < 1803 or year > CURRENT_YEAR:
         return None
 
-    state_code = infer_state_code("\n".join([location_field, title, candidate.path]), candidate.state_code)
+    state_code = infer_state_code("\n".join([location_field, title, candidate.path, body_text[:1600]]), candidate.state_code)
     if state_code not in STATE_CODE_TO_NAME:
         return None
     state_name = STATE_CODE_TO_NAME[state_code]
@@ -297,9 +454,14 @@ def parse_detail_page(candidate: Candidate, html_text: str) -> ParsedRecord | No
     story = first_story_paragraph(body_text)
     body_excerpt = compact_excerpt(story or body_text, 360)
 
+    location_note = (
+        f"Source-stated location: {location_field}."
+        if location_field
+        else f"Location cue from public page title/path: {place}, {state_name}."
+    )
     display_parts = [
         f"Public AYR report page for {title}.",
-        f"Source-stated location: {location_field or place + ', ' + state_name}.",
+        location_note,
     ]
     if event:
         display_parts.append(f"Event field: {event}.")
@@ -385,7 +547,7 @@ def spread_select(candidates: list[Candidate], count: int) -> list[Candidate]:
     return selected
 
 
-def ordered_candidates(candidates_by_state: dict[str, list[Candidate]], target: int) -> list[Candidate]:
+def ordered_candidates(candidates_by_state: dict[str, list[Candidate]], target: int, multiplier: int = 3) -> list[Candidate]:
     selected: list[Candidate] = []
     seen: set[str] = set()
     for state_code, quota in DEFAULT_STATE_QUOTAS.items():
@@ -401,8 +563,8 @@ def ordered_candidates(candidates_by_state: dict[str, list[Candidate]], target: 
         state_code: [item for item in rows if item.path not in seen]
         for state_code, rows in candidates_by_state.items()
     }
-    state_order = ["WA", "SA", "NT", "TAS", "VIC", "NSW", "QLD"]
-    while len(selected) < target * 3 and any(remaining.values()):
+    state_order = ["WA", "SA", "NT", "TAS", "VIC", "NSW", "QLD", "ACT", "AU"]
+    while len(selected) < target * multiplier and any(remaining.values()):
         for state_code in state_order:
             if remaining.get(state_code):
                 pick = remaining[state_code].pop(0)
@@ -654,6 +816,7 @@ def write_status_csv(rows: list[dict[str, Any]], path: Path = INTERIM_CSV) -> No
 
 def write_report(
     path: Path,
+    candidates_output: Path,
     started_at: str,
     finished_at: str,
     start_count: int,
@@ -680,7 +843,7 @@ def write_report(
         f"- Ending record count: {end_count}",
         f"- Target new card-ready records: {target}",
         f"- Inserted new card-ready records: {len(inserted)}",
-        f"- Candidate/status CSV: `{INTERIM_CSV.relative_to(PROJECT_ROOT)}`",
+        f"- Candidate/status CSV: `{candidates_output.relative_to(PROJECT_ROOT)}`",
         "",
         "## Card-Ready Gate",
         "A page was inserted only when it supplied enough display data for the record card: year, title or Yowie figure, public source URL, Australian state/territory, and a concise objective summary. Search leads and pages missing those fields were skipped.",
@@ -708,7 +871,7 @@ def write_report(
         [
             "",
             "## Coverage Note",
-            "The AYR state pages are not evenly distributed. NSW, QLD, and VIC have many more public report pages than WA, SA, NT, and TAS, so this run exhausts low-availability states first and fills the 200-record target from higher-availability states. The imbalance should be addressed in the next round with source-specific searches rather than by fabricating regional symmetry.",
+            "The AYR public archive is not evenly distributed. NSW, QLD, and VIC have many more public report pages than WA, SA, NT, and TAS. The imbalance is source evidence, not something to smooth artificially.",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -726,15 +889,28 @@ def collect(args: argparse.Namespace) -> int:
         raise RuntimeError(robots_note)
 
     candidates_by_state: dict[str, list[Candidate]] = {}
-    for state_code in args.states:
-        listing_url = urljoin(BASE_URL, STATE_PAGES[state_code]["path"])
-        LOGGER.info("Fetching listing %s", listing_url)
-        html_text = fetch(session, listing_url)
-        candidates_by_state[state_code] = parse_listing(html_text, state_code)
-        LOGGER.info("%s candidates: %d", state_code, len(candidates_by_state[state_code]))
-        time.sleep(args.delay)
+    if not args.sections_only:
+        for state_code in args.states:
+            listing_url = urljoin(BASE_URL, STATE_PAGES[state_code]["path"])
+            LOGGER.info("Fetching listing %s", listing_url)
+            html_text = fetch(session, listing_url)
+            candidates_by_state[state_code] = parse_listing(html_text, state_code)
+            LOGGER.info("%s candidates: %d", state_code, len(candidates_by_state[state_code]))
+            time.sleep(args.delay)
 
-    candidates = ordered_candidates(candidates_by_state, args.target)
+    if args.include_sections or args.sections_only:
+        section_candidates: list[Candidate] = []
+        for section_key in args.sections:
+            listing_url = urljoin(BASE_URL, SECTION_PAGES[section_key]["path"])
+            LOGGER.info("Fetching section listing %s", listing_url)
+            html_text = fetch(session, listing_url)
+            rows = parse_section_listing(html_text, section_key)
+            LOGGER.info("%s section candidates: %d", section_key, len(rows))
+            section_candidates.extend(rows)
+            time.sleep(args.delay)
+        candidates_by_state["AU"] = section_candidates
+
+    candidates = ordered_candidates(candidates_by_state, args.target, args.candidate_multiplier)
     statuses: list[dict[str, Any]] = []
     inserted_count = 0
 
@@ -828,6 +1004,7 @@ def collect(args: argparse.Namespace) -> int:
     write_status_csv(statuses, Path(args.candidates_output))
     write_report(
         Path(args.report),
+        Path(args.candidates_output),
         started_at,
         finished_at,
         start_count,
@@ -859,6 +1036,29 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--candidates-output", default=str(INTERIM_CSV), help="Candidate/status CSV path")
     parser.add_argument("--report", default=str(REPORT_PATH), help="Markdown report path")
     parser.add_argument("--dry-run", action="store_true", help="Fetch and parse, but do not insert records")
+    parser.add_argument(
+        "--candidate-multiplier",
+        type=int,
+        default=3,
+        help="How many candidates to inspect relative to target before giving up",
+    )
+    parser.add_argument(
+        "--include-sections",
+        action="store_true",
+        help="Also collect card-ready records from public historical/media section pages",
+    )
+    parser.add_argument(
+        "--sections-only",
+        action="store_true",
+        help="Only collect from public historical/media section pages",
+    )
+    parser.add_argument(
+        "--sections",
+        nargs="+",
+        default=list(SECTION_PAGES.keys()),
+        choices=list(SECTION_PAGES.keys()),
+        help="Section pages to collect when --include-sections or --sections-only is set",
+    )
     parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
     return parser.parse_args()
 

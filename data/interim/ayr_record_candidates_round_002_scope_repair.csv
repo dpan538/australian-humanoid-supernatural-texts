@@ -1,0 +1,88 @@
+status,record_id,skip_reason,state_code,year,title,url,place_name,date_band
+skipped,636,duplicate_existing_record,AU,1831,1831 - Sailors Yowie Hoax?,https://www.yowiehunters.com.au/historical-articles/1525-sailors-yowie-hoax-1831,,backsearch_1803_1841
+skipped,,missing_card_ready_fields,AU,1842,1842 - Aust and NZ Monthly Magazine Article,https://www.yowiehunters.com.au/historical-articles/1486-aust-and-nz-monthly-magazine-article-1842,,anchor_1842_1875
+skipped,637,duplicate_existing_record,AU,1843,1843 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1894-1843-sydney-morning-herald,,anchor_1842_1875
+skipped,638,duplicate_existing_record,AU,1843,1843 - Sydney Morning Herald 2,https://www.yowiehunters.com.au/historical-articles/1933-1843-sydney-morning-herald-2,,anchor_1842_1875
+skipped,639,duplicate_existing_record,AU,1844,1844 - Charles Meredith Diary Entry,https://www.yowiehunters.com.au/historical-articles/1487-charles-meredith-diary-entry-1844,,anchor_1842_1875
+skipped,640,duplicate_existing_record,AU,1847,1847 - Geelong Advertiser,https://www.yowiehunters.com.au/historical-articles/1645-geelong-advertiser-1847,,anchor_1842_1875
+skipped,641,duplicate_existing_record,AU,1847,1847 - Sydney Morning Herald Article,https://www.yowiehunters.com.au/historical-articles/1488-sydney-morning-herald-article-1847,,anchor_1842_1875
+skipped,642,duplicate_existing_record,AU,1851,1851 - John Green Diary Entries,https://www.yowiehunters.com.au/historical-articles/1516-john-green-diary-entries-1851,,anchor_1842_1875
+skipped,643,duplicate_existing_record,AU,1866,"1866 - Peter Harris Diary, Toowareenah NSW",https://www.yowiehunters.com.au/historical-articles/1874-1866-peter-harris-diary-toowareenah-nsw,,anchor_1842_1875
+skipped,644,duplicate_existing_record,AU,1866,1866 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1931-1866-sydney-morning-herald,,anchor_1842_1875
+skipped,645,duplicate_existing_record,AU,1868,"1868 - Empire, Australian Gorilla",https://www.yowiehunters.com.au/historical-articles/1932-1868-empire-australian-gorilla,,anchor_1842_1875
+skipped,646,duplicate_existing_record,AU,1870,1870 - The Naturalist Article,https://www.yowiehunters.com.au/historical-articles/1588-the-naturalist-article-1870,,anchor_1842_1875
+skipped,647,duplicate_existing_record,AU,1871,1871 - Darling Downa Gazette,https://www.yowiehunters.com.au/historical-articles/1640-darling-downa-gazette-1871,,anchor_1842_1875
+skipped,648,duplicate_existing_record,AU,1871,1871 - Illawarra Mercury Article,https://www.yowiehunters.com.au/historical-articles/1481-illawarra-mercury-article-1871,,anchor_1842_1875
+skipped,649,duplicate_existing_record,AU,1871,1871 - Illustrated Australian News,https://www.yowiehunters.com.au/historical-articles/1644-illustrated-australian-news-1871,,anchor_1842_1875
+skipped,,missing_card_ready_fields,AU,1871,1871 - Manaro Mercury Article,https://www.yowiehunters.com.au/historical-articles/1484-manaro-mercury-article-1871,,anchor_1842_1875
+skipped,650,duplicate_existing_record,AU,1871,"1871 - Queanbeyan Age, Jingera Sighted",https://www.yowiehunters.com.au/historical-articles/1930-1871-queanbeyan-age-jingera-sighted,,anchor_1842_1875
+skipped,651,duplicate_existing_record,AU,1871,1871 - The Empire NSW,https://www.yowiehunters.com.au/historical-articles/1510-the-empire-article-1871,,anchor_1842_1875
+skipped,652,duplicate_existing_record,AU,1871,"1871 (1) - Empire, Sydney",https://www.yowiehunters.com.au/historical-articles/1643-empire-sydney-1871-1,,anchor_1842_1875
+skipped,653,duplicate_existing_record,AU,1871,"1871 (2) - Empire, Sydney",https://www.yowiehunters.com.au/historical-articles/1642-empire-sydney-1871-2,,anchor_1842_1875
+skipped,654,duplicate_existing_record,AU,1871,1871 (2) - Illawarra Mercury Article,https://www.yowiehunters.com.au/historical-articles/1482-illawarra-mercury-article-1871-2,,anchor_1842_1875
+skipped,655,duplicate_existing_record,AU,1871,"1871 (3) - Empire, Sydney",https://www.yowiehunters.com.au/historical-articles/1641-empire-sydney-1871-3,,anchor_1842_1875
+skipped,656,duplicate_existing_record,AU,1872,1872 - Monaro Mercury,https://www.yowiehunters.com.au/historical-articles/1650-monaro-mercury-1872,,anchor_1842_1875
+skipped,657,duplicate_existing_record,AU,1874,1874 - Cooma Express,https://www.yowiehunters.com.au/historical-articles/1651-cooma-express-1874,,anchor_1842_1875
+skipped,,missing_card_ready_fields,AU,1876,"1876 - Freemans Journal, Walla Walla",https://www.yowiehunters.com.au/historical-articles/1634-freemans-journal-walla-walla-1876,,expansion_1876_1969
+skipped,658,duplicate_existing_record,AU,1876,"1876 - Portland Guardian, Victoria",https://www.yowiehunters.com.au/historical-articles/1632-portland-guardian-victoria-1876,,expansion_1876_1969
+skipped,659,duplicate_existing_record,AU,1876,1876 - Town and Country Article,https://www.yowiehunters.com.au/historical-articles/1511-town-and-country-article-1876,,expansion_1876_1969
+skipped,,missing_card_ready_fields,AU,1876,1876 - Town and Country Article,https://www.yowiehunters.com.au/historical-articles/1627-town-and-country-article-nov-1876,,expansion_1876_1969
+skipped,660,duplicate_existing_record,AU,1877,1877 - Maitland Mercury,https://www.yowiehunters.com.au/historical-articles/1646-maitland-mercury-1877,,expansion_1876_1969
+skipped,661,duplicate_existing_record,AU,1877,1877 - Sydney Morning Herald Article,https://www.yowiehunters.com.au/historical-articles/1556-sydney-morning-herald-1877,,expansion_1876_1969
+skipped,662,duplicate_existing_record,AU,1878,"1878 - Freemans Journal Article, Pyramul",https://www.yowiehunters.com.au/historical-articles/1558-the-freemans-journal-article-1878,,expansion_1876_1969
+skipped,663,duplicate_existing_record,AU,1878,1878 - Lismore Star Article,https://www.yowiehunters.com.au/historical-articles/1512-star-magazine-article-1878,,expansion_1876_1969
+skipped,664,duplicate_existing_record,AU,1878,"1878 - Singleton Argus, Yowie Sighted",https://www.yowiehunters.com.au/historical-articles/1929-1878-singleton-argus-yowie-sighted,,expansion_1876_1969
+skipped,665,duplicate_existing_record,AU,1880,"1880 - Clarence Examiner, Hairyman Search",https://www.yowiehunters.com.au/historical-articles/1928-1880-clarence-examiner-hairyman-search,,expansion_1876_1969
+skipped,666,duplicate_existing_record,AU,1880,"1880 - Gippsland Times, 7ft Yowie",https://www.yowiehunters.com.au/historical-articles/1927-1880-gippsland-times-7ft-yowie,,expansion_1876_1969
+skipped,667,duplicate_existing_record,AU,1880,1880 - Melbourne Argus,https://www.yowiehunters.com.au/historical-articles/1844-1880-melbourne-argus,,expansion_1876_1969
+skipped,668,duplicate_existing_record,AU,1880,1880 - Southland Times (NZ),https://www.yowiehunters.com.au/historical-articles/1654-southland-times-nz-1880,,expansion_1876_1969
+skipped,669,duplicate_existing_record,AU,1880,1880 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1625-sydney-morning-herald-july-1880,,expansion_1876_1969
+skipped,670,duplicate_existing_record,AU,1880,"1880 - The Express and Telegraph, 7ft Yowie",https://www.yowiehunters.com.au/historical-articles/1926-the-express-and-telegraph-7ft-yowie,,expansion_1876_1969
+skipped,671,duplicate_existing_record,AU,1880,1880's - Arthur Bicknell ' Wood Devil ' Story,https://www.yowiehunters.com.au/historical-articles/2288-1880s-arthur-bicknell-wood-devil-story,,expansion_1876_1969
+skipped,672,duplicate_existing_record,AU,1881,1881 - Goulburn Herald Article,https://www.yowiehunters.com.au/historical-articles/1489-goulburn-herald-article-1881,,expansion_1876_1969
+skipped,673,duplicate_existing_record,AU,1882,1882 - Colac Herald,https://www.yowiehunters.com.au/historical-articles/1952-1882-colac-herald,,expansion_1876_1969
+skipped,674,duplicate_existing_record,AU,1882,"1882 - Illawarra Mercury, Australian Gorilla",https://www.yowiehunters.com.au/historical-articles/1924-1882-illawarra-mercury-australian-gorilla,,expansion_1876_1969
+skipped,675,duplicate_existing_record,AU,1882,1882 - The Naturalist Article,https://www.yowiehunters.com.au/historical-articles/1509-the-naturalist-article-1882,,expansion_1876_1969
+skipped,676,duplicate_existing_record,AU,1882,1882 - Town and Country,https://www.yowiehunters.com.au/historical-articles/1653-town-and-country-1882,,expansion_1876_1969
+skipped,677,duplicate_existing_record,AU,1882,"1882 - Victoria Express, Gorilla Shot",https://www.yowiehunters.com.au/historical-articles/1925-1882-victoria-express-gorilla-shot,,expansion_1876_1969
+skipped,678,duplicate_existing_record,AU,1883,1883 - Illawarra Mercury Article,https://www.yowiehunters.com.au/historical-articles/1483-illawarra-mercury-article-1883,,expansion_1876_1969
+skipped,679,duplicate_existing_record,AU,1886,1886 - Brisbane Courier,https://www.yowiehunters.com.au/historical-articles/1557-brisbane-courier-1886,,expansion_1876_1969
+skipped,680,duplicate_existing_record,AU,1886,1886 - Queanbeyan Age,https://www.yowiehunters.com.au/historical-articles/1635-queanbeyan-age-1886,,expansion_1876_1969
+skipped,681,duplicate_existing_record,AU,1888,1888 - History of Australian Exploration,https://www.yowiehunters.com.au/historical-articles/1589-history-of-australian-exploration-1888,,expansion_1876_1969
+skipped,682,duplicate_existing_record,AU,1889,"1889 - Bowral Free Press, Australian Gorilla",https://www.yowiehunters.com.au/historical-articles/1923-1889-bowral-free-press-australian-gorilla,,expansion_1876_1969
+skipped,,missing_card_ready_fields,AU,1889,1889 - Kiama Independent,https://www.yowiehunters.com.au/historical-articles/1636-kiama-independent-1889,,expansion_1876_1969
+skipped,683,duplicate_existing_record,AU,1889,1889 - The Illustrated Sydney News Article,https://www.yowiehunters.com.au/historical-articles/1554-the-illustrated-sydney-news-1889,,expansion_1876_1969
+skipped,684,duplicate_existing_record,AU,1891,1891 - Bathurst Times Article,https://www.yowiehunters.com.au/historical-articles/1546-bathurst-times-1891,,expansion_1876_1969
+skipped,685,duplicate_existing_record,AU,1892,1892 - Maitland Mercury,https://www.yowiehunters.com.au/historical-articles/1652-maitland-mercury-1892,,expansion_1876_1969
+skipped,686,duplicate_existing_record,AU,1893,1893 - Goulburn Penny Post Article,https://www.yowiehunters.com.au/historical-articles/1490-goulburn-penny-post-article-1893,,expansion_1876_1969
+skipped,687,duplicate_existing_record,AU,1893,1893 (2) - Goulburn Penny Post Article,https://www.yowiehunters.com.au/historical-articles/1491-goulburn-penny-post-article-1893-2,,expansion_1876_1969
+skipped,688,duplicate_existing_record,AU,1894,1894 - Queanbeyan Observer Article,https://www.yowiehunters.com.au/historical-articles/1492-queenbeyan-observer-article-1894,,expansion_1876_1969
+skipped,689,duplicate_existing_record,AU,1901,1901 - R. H. Mathews Article,https://www.yowiehunters.com.au/historical-articles/1503-r-h-mathews-article-1901,,expansion_1876_1969
+skipped,690,duplicate_existing_record,AU,1902,1902 - Bathurst Free press,https://www.yowiehunters.com.au/historical-articles/1630-bathurst-free-press-1902,,expansion_1876_1969
+skipped,691,duplicate_existing_record,AU,1903,"1903 - Nepean Times, Penrith",https://www.yowiehunters.com.au/historical-articles/1631-nepean-times-penrith-1903,,expansion_1876_1969
+skipped,692,duplicate_existing_record,AU,1903,1903 - Queanbeyan Age,https://www.yowiehunters.com.au/historical-articles/1637-queanbeyan-age-1903,,expansion_1876_1969
+skipped,693,duplicate_existing_record,AU,1903,1903 - The Wallabadah Manucript,https://www.yowiehunters.com.au/historical-articles/1615-the-wallabadah-manucript-1903,,expansion_1876_1969
+skipped,694,duplicate_existing_record,AU,1903,1903 (1) - Queanbeyan Observer Article,https://www.yowiehunters.com.au/historical-articles/1493-quuenbeyan-observer-article-1903,,expansion_1876_1969
+skipped,695,duplicate_existing_record,AU,1903,1903 (2) - Queanbeyan Observer Article,https://www.yowiehunters.com.au/historical-articles/1494-queanbeyan-observer-article-1903-2,,expansion_1876_1969
+skipped,696,duplicate_existing_record,AU,1903,1903 (3) - Queanbeyan Obsever Article,https://www.yowiehunters.com.au/historical-articles/1495-queanbeyan-obsever-article-1903-3,,expansion_1876_1969
+skipped,,missing_card_ready_fields,AU,1904,1904 - Science of Man Article,https://www.yowiehunters.com.au/historical-articles/1485-science-of-man-article-1904,,expansion_1876_1969
+skipped,697,duplicate_existing_record,AU,1905,1905 - Casino and Kyogle Advertiser Yowie Article,https://www.yowiehunters.com.au/historical-articles/2015-1905-casino-and-kyogle-advertiser-yowie-article,,expansion_1876_1969
+skipped,,missing_card_ready_fields,AU,1905,1905 - Western Champion,https://www.yowiehunters.com.au/historical-articles/1638-western-champion-1905,,expansion_1876_1969
+skipped,698,duplicate_existing_record,AU,1906,1906 - Singleton Argus,https://www.yowiehunters.com.au/historical-articles/1639-singleton-argus-1906,,expansion_1876_1969
+skipped,699,duplicate_existing_record,AU,1907,1907 - R. H. Mathews Article,https://www.yowiehunters.com.au/historical-articles/1502-r-h-mathews-article-1907,,expansion_1876_1969
+skipped,700,duplicate_existing_record,AU,1907,1907 - The Hairyman by Henry Lawson,https://www.yowiehunters.com.au/historical-articles/2017-1907-the-hairyman-by-henry-lawson,,expansion_1876_1969
+skipped,701,duplicate_existing_record,AU,1909,1909 - Brisbane Workers Newspaper,https://www.yowiehunters.com.au/historical-articles/1626-brisbane-workers-newspaper-1909,,expansion_1876_1969
+skipped,702,duplicate_existing_record,AU,1909,1909 - R. H. Mathew Article,https://www.yowiehunters.com.au/historical-articles/1649-r-h-mathew-article-1909,,expansion_1876_1969
+skipped,703,duplicate_existing_record,AU,1912,1912 - Goulburn Penny Post Article,https://www.yowiehunters.com.au/historical-articles/1498-goulburn-penny-post-article-1912,,expansion_1876_1969
+skipped,704,duplicate_existing_record,AU,1912,1912 - Queanbeyan Age Article,https://www.yowiehunters.com.au/historical-articles/1500-queanbeyan-age-article-1912,,expansion_1876_1969
+skipped,705,duplicate_existing_record,AU,1912,1912 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1529-sydney-morning-herald-1912,,expansion_1876_1969
+skipped,706,duplicate_existing_record,AU,1912,1912 - Sydney Morning Herald Article,https://www.yowiehunters.com.au/historical-articles/1497-sydney-morning-herald-article-1912,,expansion_1876_1969
+skipped,707,duplicate_existing_record,AU,1912,1912 - Sydney Sun Article,https://www.yowiehunters.com.au/historical-articles/1499-sydney-sun-article-1912,,expansion_1876_1969
+skipped,708,duplicate_existing_record,AU,1912,1912 (2) - Sydney Sun Article,https://www.yowiehunters.com.au/historical-articles/1501-sydney-sun-article-1912-2,,expansion_1876_1969
+skipped,709,duplicate_existing_record,AU,1913,1913 - Henry Lawson Article,https://www.yowiehunters.com.au/historical-articles/1506-henry-lawson-article-1913,,expansion_1876_1969
+skipped,710,duplicate_existing_record,AU,1927,"1927 - Brindabella Article, John Gale",https://www.yowiehunters.com.au/historical-articles/1496-john-gale-brindabella-article-1927,,expansion_1876_1969
+skipped,711,duplicate_existing_record,AU,1927,"1927 - History of ACT Legends, John Gale",https://www.yowiehunters.com.au/historical-articles/1655-history-of-act-legends-john-gale-1927,,expansion_1876_1969
+skipped,712,duplicate_existing_record,AU,1928,1928 - Brisbane Courier,https://www.yowiehunters.com.au/historical-articles/1633-brisbane-courier-queensland-1928,,expansion_1876_1969
+skipped,,missing_card_ready_fields,AU,1930,1930 - Rabbit Proof Fence Exert,https://www.yowiehunters.com.au/historical-articles/1519-rabbit-proof-fence-exert-1930,,expansion_1876_1969
+skipped,713,duplicate_existing_record,AU,1932,"1932 - Stanthorpe, Queensland",https://www.yowiehunters.com.au/historical-articles/1527-stanthorpe-queensland-1932,,expansion_1876_1969
+inserted,714,,QLD,1934,1934 - The Cairns Post,https://www.yowiehunters.com.au/historical-articles/2263-1934-the-cairns-post,Cairns,expansion_1876_1969

@@ -700,11 +700,11 @@ a {
 }
 
 .dashboard-view {
-  padding: 24px 30px 24px 34px;
+  padding: 28px 42px 30px 48px;
   display: grid;
-  grid-template-columns: minmax(590px, 1.2fr) minmax(430px, 0.9fr);
-  gap: 28px;
-  align-items: stretch;
+  grid-template-columns: minmax(600px, 1fr) minmax(560px, 0.9fr);
+  gap: clamp(36px, 4.2vw, 72px);
+  align-items: center;
 }
 
 .dash-hover-zone {
@@ -720,6 +720,8 @@ a {
 .dashboard-track-network {
   position: relative;
   min-width: 0;
+  height: min(760px, 100%);
+  align-self: center;
   overflow: hidden;
 }
 
@@ -758,13 +760,13 @@ a {
 
 .network-wire {
   stroke: rgba(196, 199, 196, 0.26);
-  stroke-width: 2.4;
+  stroke-width: 1.9;
   stroke-linecap: square;
 }
 
 .network-wire.pale {
   stroke: rgba(196, 199, 196, 0.16);
-  stroke-width: 1.6;
+  stroke-width: 1.25;
 }
 
 .network-wire.long {
@@ -783,11 +785,11 @@ a {
 
 .track-list {
   position: absolute;
-  top: 132px;
-  left: 58%;
+  top: 116px;
+  left: 55%;
   right: 18px;
   display: grid;
-  gap: 8px;
+  gap: 7px;
 }
 
 .track-list > span {
@@ -868,9 +870,11 @@ a {
 .dashboard-console {
   align-self: center;
   display: grid;
-  grid-template-rows: auto auto auto auto auto auto 1fr;
-  gap: 14px;
-  padding: 10px 12px;
+  grid-template-rows: auto auto auto auto auto auto 96px;
+  gap: 16px;
+  padding: 14px 14px 10px;
+  max-height: 760px;
+  overflow: hidden;
 }
 
 .console-header {
@@ -957,13 +961,13 @@ a {
 
 .console-grid-top {
   display: grid;
-  grid-template-columns: 68px 68px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 82px 82px minmax(0, 1fr);
+  gap: 12px;
   align-items: stretch;
 }
 
 .mini-control {
-  min-height: 58px;
+  min-height: 70px;
   display: grid;
   align-content: space-between;
   padding: 7px;
@@ -983,7 +987,7 @@ a {
 
 .console-wave {
   width: 100%;
-  min-height: 58px;
+  min-height: 70px;
   border: 1px solid rgba(242, 242, 237, 0.72);
 }
 
@@ -1043,15 +1047,15 @@ a {
 
 .console-mid-row {
   display: grid;
-  grid-template-columns: minmax(150px, 0.85fr) 1fr;
-  gap: 14px;
+  grid-template-columns: minmax(220px, 0.96fr) minmax(260px, 1fr);
+  gap: 18px;
   align-items: center;
 }
 
 .source-wheel-module {
-  min-height: 122px;
+  min-height: 136px;
   display: grid;
-  grid-template-columns: 108px 1fr;
+  grid-template-columns: 116px 1fr;
   grid-template-rows: auto 1fr;
   column-gap: 12px;
   align-items: center;
@@ -1062,8 +1066,8 @@ a {
 }
 
 .source-wheel {
-  width: 104px;
-  height: 104px;
+  width: 112px;
+  height: 112px;
   border: 1px solid rgba(242, 242, 237, 0.64);
   border-radius: 50%;
   background: conic-gradient(var(--source-wheel));
@@ -1143,7 +1147,7 @@ a {
 
 .console-polyline {
   width: 100%;
-  min-height: 88px;
+  min-height: 104px;
   border: 1px solid rgba(242, 242, 237, 0.52);
 }
 
@@ -1180,18 +1184,20 @@ a {
 
 .console-lollipops {
   align-self: end;
-  min-height: 104px;
+  height: 96px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   align-items: end;
   border-bottom: 1px solid var(--ink);
+  overflow: hidden;
 }
 
 .console-lollipops span {
   position: relative;
   min-height: var(--stem);
   display: grid;
-  place-items: end center;
+  justify-items: center;
+  align-items: end;
 }
 
 .console-lollipops span::before {
@@ -1216,10 +1222,19 @@ a {
 .console-lollipops b {
   position: relative;
   z-index: 1;
-  margin-bottom: -18px;
+  margin-bottom: -19px;
   color: var(--muted);
   font-size: 0.58rem;
   font-weight: 400;
+}
+
+.console-lollipops em {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -35px;
+  color: var(--ink);
+  font-size: 0.56rem;
+  font-style: normal;
 }
 
 .signal-square {
