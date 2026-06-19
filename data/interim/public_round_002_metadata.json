@@ -1,0 +1,37 @@
+{
+  "arguments": {
+    "config": "/Users/jarlgiovanni/Desktop/bigfoot_research/config/round_002.yml",
+    "db": "data/processed/australian_humanoid_figures.sqlite",
+    "fail_on_blocked": false,
+    "keep_blocked": false,
+    "leads_output": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/public_round_002_leads.csv",
+    "limit": null,
+    "location_output": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/public_round_002_location_review.csv",
+    "manifest_output": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/public_round_002_manifest.json",
+    "metadata_output": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/public_round_002_metadata.json",
+    "noise_rules": "/Users/jarlgiovanni/Desktop/bigfoot_research/config/noise_rules.yml",
+    "only_locations": false,
+    "only_planned_queries": false,
+    "only_validation": false,
+    "output_suffix": null,
+    "report": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/processed/public_round_002_plan.md",
+    "sample": null,
+    "sample_seed": 42,
+    "verbose": false,
+    "without_validation_queue": false
+  },
+  "config_path": "/Users/jarlgiovanni/Desktop/bigfoot_research/config/round_002.yml",
+  "counts": {
+    "blocked_leads": 0,
+    "candidate_leads": 486,
+    "deduplicated_leads": 30,
+    "location_review_rows": 208,
+    "written_leads": 456
+  },
+  "db_path": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/processed/australian_humanoid_figures.sqlite",
+  "generated_at": "2026-06-19T10:52:56+00:00",
+  "git_commit": "487cd42898cccce98d7502e01cdc723bc55464f7",
+  "noise_rules_path": "/Users/jarlgiovanni/Desktop/bigfoot_research/config/noise_rules.yml",
+  "round_id": "public_round_002",
+  "script": "scripts/collect_public_round_002.py"
+}

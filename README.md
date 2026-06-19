@@ -57,7 +57,11 @@ make init seed queries validate export test
 
 `make collect-public-round` runs a small public-only seed collection round. It retrieves Wikimedia public summaries, one verified ABC News public page, and public metadata leads for early NLA/Trove items. Trove/NLA leads are marked as metadata leads unless full text is manually/API-key verified.
 
-`make plan-public-round-002` writes a broader second-round public-source lead plan and location-review queue without making network requests or inserting records. It is the review step before any expanded live collection. The planner is configured by `config/round_002.yml`, filters blocked high-noise or non-public source rows by default, preserves per-location evidence in `locations_json`, and can fail before writing outputs with `--fail-on-blocked`.
+`make collect-ayr-records` runs the first expanded live collection pass against public Australian Yowie Research report pages. It targets 200 new `raw_public_web_card_ready` records. A page is inserted only when it has enough information for a frontend record card: year, title/figure, public URL/source, Australian state or territory, and an objective display summary. Search leads, query plans, and pages missing those fields are not records.
+
+`make plan-public-round-002` writes a broader second-round public-source lead plan and location-review queue without making network requests or inserting records. It is the review step before any expanded live collection. The planner is configured by `config/round_002.yml`, filters blocked high-noise or non-public source rows by default, deduplicates repeated query/source/date leads into `related_lead_ids`, preserves per-location evidence in `locations_json`, and can fail before writing outputs with `--fail-on-blocked`. It also writes run metadata and a SHA256 manifest for reproducibility.
+
+`make audit-round-002` writes `data/processed/public_round_002_coverage_audit.md`, summarising planned lead coverage by date band, location hint, source mix, figure mix, and the recommended next 500-record collection quotas. Planned leads are not records and are not exported to the frontend as record cards.
 
 `make locations` seeds a small reviewed gazetteer and attaches rule-based place/region matches to imported records. Location matches are evidence for human review, not final geocoding truth.
 
@@ -103,6 +107,8 @@ Design cautions:
 ## What This Does Not Do
 
 This pass does not perform live Trove scraping, require API credentials, run Google Trends collection, collect Wikimedia pageviews, or infer final interpretive categories. Rule-based classification is triage only. Every imported record still requires human review.
+
+Planned leads are never frontend records. A row may enter `records` only after it has enough public information to render a review card and pass the publicness/location gate.
 
 ## Citation
 

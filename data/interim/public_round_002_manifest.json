@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "bytes": 385510,
+      "path": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/public_round_002_leads.csv",
+      "sha256": "4fd182a7d39efd1f016e68bff4a9bc1062082a24a829a51daa972dbbe71e4277"
+    },
+    {
+      "bytes": 163186,
+      "path": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/public_round_002_location_review.csv",
+      "sha256": "280a64fee60051aaa27909a4010ae98c9a4d473a56e13304ef7a057856f95478"
+    },
+    {
+      "bytes": 3384,
+      "path": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/processed/public_round_002_plan.md",
+      "sha256": "1a2083475faaab3e84d073c7b7eba9de644af0ece7212793171591560ace404c"
+    },
+    {
+      "bytes": 1763,
+      "path": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/public_round_002_metadata.json",
+      "sha256": "818a12869d5b0f5eb82d00b345262a9c4bfccf8a42e949e7e65cbc539d02bcbe"
+    }
+  ]
+}

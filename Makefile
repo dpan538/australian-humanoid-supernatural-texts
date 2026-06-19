@@ -2,7 +2,7 @@ PYTHON ?= python3
 PYTHON_ENV ?= PYTHONDONTWRITEBYTECODE=1
 DB ?= data/processed/australian_humanoid_figures.sqlite
 
-.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round plan-public-round-002 locations validate export export-frontend dedupe test frontend-build
+.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round collect-ayr-records plan-public-round-002 audit-round-002 locations validate export export-frontend dedupe test frontend-build
 
 init:
 	$(PYTHON_ENV) $(PYTHON) scripts/init_db.py --db $(DB)
@@ -25,8 +25,14 @@ pageviews-template:
 collect-public-round:
 	$(PYTHON_ENV) $(PYTHON) scripts/collect_public_round.py --db $(DB)
 
+collect-ayr-records:
+	$(PYTHON_ENV) $(PYTHON) scripts/collect_ayr_records.py --db $(DB) --target 200
+
 plan-public-round-002:
 	$(PYTHON_ENV) $(PYTHON) scripts/collect_public_round_002.py --db $(DB)
+
+audit-round-002:
+	$(PYTHON_ENV) $(PYTHON) scripts/audit_round_coverage.py --db $(DB) --round-prefix public_round_002
 
 locations:
 	$(PYTHON_ENV) $(PYTHON) scripts/enrich_locations.py --db $(DB)

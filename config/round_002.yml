@@ -26,6 +26,18 @@ planned_include_statuses:
   - control_only
   - validate_before_include
 
+bare_query_policy:
+  manual_review:
+    - Yowie
+    - Bunyip
+    - Quinkan
+    - Wandjina
+  context_sensitive:
+    - Mamu
+    - Mimi
+    - Yahoo
+    - Hairy Man
+
 historical_bands:
   - band_name: backsearch_negative_control
     date_start: "1803"
@@ -89,6 +101,34 @@ search_url_templates:
   aiatsis_public_catalogue: "https://aiatsis.gov.au/search?keywords={query}"
   andc: "https://researchdata.edu.au/search#!/q={query}"
   modern_web: "https://www.google.com/search?q={query}+Australia+public+source"
+
+api_request_templates:
+  trove_newspaper: "curl 'https://api.trove.nla.gov.au/v3/result?key=YOUR_TROVE_KEY&encoding=json&zone=newspaper&q={query}&reclevel=brief&l-year={date_start}'"
+  trove_magazine: "curl 'https://api.trove.nla.gov.au/v3/result?key=YOUR_TROVE_KEY&encoding=json&zone=magazine&q={query}&reclevel=brief&l-year={date_start}'"
+  wikimedia_pageviews: "curl 'https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/{query}/monthly/{date_start}/latest'"
+
+source_health:
+  default:
+    status: not_checked
+    last_checked: not yet checked
+  trove_newspaper:
+    status: not_checked
+    last_checked: not yet checked
+  trove_magazine:
+    status: not_checked
+    last_checked: not yet checked
+  nla_catalogue:
+    status: not_checked
+    last_checked: not yet checked
+  aiatsis_public_catalogue:
+    status: not_checked
+    last_checked: not yet checked
+  andc:
+    status: not_checked
+    last_checked: not yet checked
+  modern_web:
+    status: not_checked
+    last_checked: not yet checked
 
 location_hints:
   Yowie:

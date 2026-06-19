@@ -71,7 +71,7 @@ const TERRAIN_LABELS: Record<TerrainKind, string> = {
 };
 
 const STATE_LABEL_OVERRIDES: Partial<Record<keyof typeof STATE_NAMES, [number, number]>> = {
-  SA: [520, 417],
+  SA: [520, 402],
   NSW: [733, 479],
   VIC: [688, 552],
   TAS: [714, 654],
@@ -1098,7 +1098,7 @@ function recordBody(record: RecordItem) {
   const figure = recordDisplayTitle(record);
   const source = record.publication || record.source_name || "a public source";
   const date = record.date_published || (record.year ? String(record.year) : "an undated record");
-  return `Public metadata lead for ${figure}, recorded in ${source} (${date}). This card is a review surface: source voice, relevance, location, and publicness still require human checking before interpretation.`;
+  return `Public record note for ${figure}, recorded in ${source} (${date}). This card is a review surface: source voice, relevance, location, and publicness still require human checking before interpretation.`;
 }
 
 function RecordCardOverlay({ record, onClose }: { record: RecordItem; onClose: () => void }) {

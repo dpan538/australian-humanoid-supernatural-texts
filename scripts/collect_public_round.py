@@ -531,6 +531,30 @@ def write_round_csv(records: list[dict], leads: list[dict]) -> None:
     write_csv(LEADS_CSV, leads, ["lead_type", "source", "title", "url", "notes"])
 
 
+def early_source_lead_rows() -> list[dict]:
+    rows = []
+    for lead in EARLY_SOURCE_LEADS:
+        rows.append(
+            {
+                "lead_type": "public_metadata_lead",
+                "source": lead["source_name"],
+                "title": lead["title"],
+                "url": lead.get("url", ""),
+                "notes": " | ".join(
+                    part
+                    for part in [
+                        lead.get("date_published", ""),
+                        f"figure={lead.get('figure', '')}",
+                        lead.get("snippet", ""),
+                        "Not inserted into records until public full text/card-ready fields are verified.",
+                    ]
+                    if part
+                ),
+            }
+        )
+    return rows
+
+
 def write_report(conn, inserted_ids: list[int], records: list[dict], leads: list[dict], failures: list[dict]) -> None:
     rows = conn.execute(
         """
@@ -570,7 +594,7 @@ def write_report(conn, inserted_ids: list[int], records: list[dict], leads: list
         "- Small, public-only collection round.",
         "- Wikimedia summaries were retrieved through public API endpoints.",
         "- ABC News Kilcoy page was downloaded as a public web page.",
-        "- Trove/NLA early items were inserted as public metadata leads only because Trove API requires a key and full article pages were not reliably retrievable from this environment.",
+        "- Trove/NLA early items were written to the source-lead CSV only because Trove API requires a key and full article pages were not reliably retrievable from this environment.",
         "- No restricted, secret/sacred, unpublished, or non-public materials were targeted.",
         "",
         "## Imported Records",
@@ -629,7 +653,7 @@ def main() -> None:
         if failure:
             failures.append(failure)
 
-    records.extend(EARLY_SOURCE_LEADS)
+    leads.extend(early_source_lead_rows())
     leads.extend(fetch_wikipedia_yowie_leads())
     leads.extend(failures)
     write_round_csv(records, leads)
@@ -649,7 +673,7 @@ def main() -> None:
                 started,
                 "Small public-only seed collection for earlier/more source discovery and location evidence.",
                 "Wikimedia summary API, one ABC public page, public metadata leads from NLA/Trove references.",
-                "Trove API requires a key; early Trove leads were not treated as full-text records.",
+                "Trove API requires a key; early Trove leads are written to the lead CSV only, not records.",
             ),
         )
         run_id = int(cursor.lastrowid)
@@ -661,7 +685,7 @@ def main() -> None:
         conn.commit()
         write_report(conn, inserted_ids, records, leads, failures)
 
-    print(f"Imported or updated {len(records)} public records/leads")
+    print(f"Imported or updated {len(records)} public records")
     print(f"Wrote source leads: {LEADS_CSV}")
     print(f"Wrote report: {REPORT_PATH}")
 
