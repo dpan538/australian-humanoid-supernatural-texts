@@ -2,7 +2,7 @@ PYTHON ?= python3
 PYTHON_ENV ?= PYTHONDONTWRITEBYTECODE=1
 DB ?= data/processed/australian_humanoid_figures.sqlite
 
-.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round locations validate export dedupe test
+.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round locations validate export export-frontend dedupe test frontend-build
 
 init:
 	$(PYTHON_ENV) $(PYTHON) scripts/init_db.py --db $(DB)
@@ -34,8 +34,14 @@ validate:
 export:
 	$(PYTHON_ENV) $(PYTHON) scripts/export_dataset.py --db $(DB)
 
+export-frontend:
+	$(PYTHON_ENV) $(PYTHON) scripts/export_frontend_json.py --db $(DB)
+
 dedupe:
 	$(PYTHON_ENV) $(PYTHON) scripts/run_dedupe.py --db $(DB)
 
 test:
 	$(PYTHON_ENV) $(PYTHON) scripts/run_tests.py
+
+frontend-build:
+	npm run build

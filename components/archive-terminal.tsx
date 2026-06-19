@@ -1,0 +1,1037 @@
+"use client";
+
+import { CSSProperties, useState } from "react";
+import Link from "next/link";
+import type { DateBand, FrontendData, LocationItem, RecordItem } from "@/lib/types";
+import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
+
+export type ViewMode = "map" | "density" | "dashboard" | "source";
+
+const VIEW_SEQUENCE: ViewMode[] = ["dashboard", "map", "density"];
+
+const VIEW_LABELS: Record<ViewMode, string> = {
+  dashboard: "Dashboard",
+  map: "Map",
+  density: "Density",
+  source: "Source",
+};
+
+const VIEW_PATHS: Record<ViewMode, string> = {
+  dashboard: "/dashboard",
+  map: "/map",
+  density: "/density",
+  source: "/source",
+};
+
+const STATE_NAMES: Record<string, string> = {
+  WA: "Western Australia",
+  NT: "Northern Territory",
+  SA: "South Australia",
+  QLD: "Queensland",
+  NSW: "New South Wales",
+  VIC: "Victoria",
+  TAS: "Tasmania",
+  ACT: "Australian Capital Territory",
+};
+
+const DENSITY_CHARS = [" ", ".", ":", "+", "#"];
+const TERRAIN_SYMBOLS = {
+  range: "+",
+  plateau: "@",
+  upland: "#",
+  lowland: "o",
+  desert: ".",
+  plain: "_",
+  basin: "$",
+} as const;
+
+type TerrainKind = keyof typeof TERRAIN_SYMBOLS;
+
+const TERRAIN_KINDS = Object.keys(TERRAIN_SYMBOLS) as TerrainKind[];
+const TERRAIN_LABELS: Record<TerrainKind, string> = {
+  range: "RANGE",
+  plateau: "PLATEAU",
+  upland: "UPLAND",
+  lowland: "LOWLAND",
+  desert: "DESERT",
+  plain: "PLAIN",
+  basin: "BASIN",
+};
+
+const STATE_LABEL_OVERRIDES: Partial<Record<keyof typeof STATE_NAMES, [number, number]>> = {
+  NSW: [718, 494],
+  VIC: [698, 552],
+  TAS: [714, 654],
+  ACT: [784, 512],
+};
+
+const POINT_DISPLAY_NUDGES: Record<string, { x: number; y: number; stemDx: number; stemDy: number }> = {
+  "Batemans Bay|NSW": { x: -13, y: -8, stemDx: -17, stemDy: -19 },
+  "Ulladulla|NSW": { x: -14, y: -8, stemDx: -17, stemDy: -19 },
+  "Kilcoy|QLD": { x: -12, y: 0, stemDx: -15, stemDy: 20 },
+};
+
+const STATE_TERRAIN_KINDS = TERRAIN_TILES.reduce<Record<string, TerrainKind[]>>((acc, tile) => {
+  if (!TERRAIN_KINDS.includes(tile.kind as TerrainKind)) {
+    return acc;
+  }
+  const kind = tile.kind as TerrainKind;
+  const stateKinds = acc[tile.state] ?? [];
+  if (!stateKinds.includes(kind)) {
+    stateKinds.push(kind);
+  }
+  acc[tile.state] = stateKinds;
+  return acc;
+}, {});
+
+const JSON_BOUNDS = {
+  minX: -999,
+  maxX: 8821,
+  minY: 649,
+  maxY: 9851,
+} as const;
+
+const SVG_BOUNDS = {
+  minX: 54,
+  maxX: 914,
+  minY: 36,
+  maxY: 676,
+} as const;
+
+const HICHARTS_AU_TRANSFORM = {
+  scale: 0.000158093982027,
+  jsonres: 15.5,
+  jsonmarginX: -999,
+  jsonmarginY: 9851,
+  xoffset: -2082021.85219,
+  yoffset: -1210304.51735,
+} as const;
+
+const LAMBERT_AU = {
+  radius: 6378137,
+  lat1: -18,
+  lat2: -36,
+  lat0: 0,
+  lon0: 134,
+} as const;
+
+function numberFormat(value: number | null | undefined) {
+  if (value === null || value === undefined) {
+    return "--";
+  }
+  return new Intl.NumberFormat("en-AU").format(value);
+}
+
+function truncate(value: string | null | undefined, length: number) {
+  if (!value) {
+    return "uncoded";
+  }
+  return value.length > length ? `${value.slice(0, length - 3)}...` : value;
+}
+
+function entriesDescending(values: Record<string, number>, limit?: number) {
+  const entries = Object.entries(values).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  return limit ? entries.slice(0, limit) : entries;
+}
+
+function conicGradient(values: Record<string, number>) {
+  const palette = ["#f2f2ed", "#a7ff63", "#8ed8ff", "#d7d0c6", "#7f858a", "#5f9361", "#b0b7bc", "#2f3031"];
+  const entries = entriesDescending(values);
+  const total = entries.reduce((sum, [, value]) => sum + value, 0) || 1;
+  let cursor = 0;
+  return entries
+    .map(([, value], index) => {
+      const start = cursor;
+      cursor += (value / total) * 100;
+      return `${palette[index % palette.length]} ${start}% ${cursor}%`;
+    })
+    .join(", ");
+}
+
+function projectPoint(latitude: number, longitude: number) {
+  const projected = projectLambertConformalConic(latitude, longitude);
+  const jsonX =
+    (projected.x - HICHARTS_AU_TRANSFORM.xoffset) *
+      HICHARTS_AU_TRANSFORM.scale *
+      HICHARTS_AU_TRANSFORM.jsonres +
+    HICHARTS_AU_TRANSFORM.jsonmarginX;
+  const jsonY =
+    (projected.y - HICHARTS_AU_TRANSFORM.yoffset) *
+      HICHARTS_AU_TRANSFORM.scale *
+      HICHARTS_AU_TRANSFORM.jsonres +
+    HICHARTS_AU_TRANSFORM.jsonmarginY;
+  const x =
+    SVG_BOUNDS.minX +
+    ((jsonX - JSON_BOUNDS.minX) / (JSON_BOUNDS.maxX - JSON_BOUNDS.minX)) *
+      (SVG_BOUNDS.maxX - SVG_BOUNDS.minX);
+  const y =
+    SVG_BOUNDS.minY +
+    ((JSON_BOUNDS.maxY - jsonY) / (JSON_BOUNDS.maxY - JSON_BOUNDS.minY)) *
+      (SVG_BOUNDS.maxY - SVG_BOUNDS.minY);
+
+  return {
+    x: Math.max(SVG_BOUNDS.minX + 4, Math.min(SVG_BOUNDS.maxX - 4, x)),
+    y: Math.max(SVG_BOUNDS.minY + 4, Math.min(SVG_BOUNDS.maxY - 4, y)),
+  };
+}
+
+function projectLambertConformalConic(latitude: number, longitude: number) {
+  const deg = Math.PI / 180;
+  const lat = latitude * deg;
+  const lon = longitude * deg;
+  const lat1 = LAMBERT_AU.lat1 * deg;
+  const lat2 = LAMBERT_AU.lat2 * deg;
+  const lat0 = LAMBERT_AU.lat0 * deg;
+  const lon0 = LAMBERT_AU.lon0 * deg;
+  const n =
+    Math.log(Math.cos(lat1) / Math.cos(lat2)) /
+    Math.log(Math.tan(Math.PI / 4 + lat2 / 2) / Math.tan(Math.PI / 4 + lat1 / 2));
+  const f = (Math.cos(lat1) * Math.pow(Math.tan(Math.PI / 4 + lat1 / 2), n)) / n;
+  const rho = (LAMBERT_AU.radius * f) / Math.pow(Math.tan(Math.PI / 4 + lat / 2), n);
+  const rho0 = (LAMBERT_AU.radius * f) / Math.pow(Math.tan(Math.PI / 4 + lat0 / 2), n);
+  const theta = n * (lon - lon0);
+
+  return {
+    x: rho * Math.sin(theta),
+    y: rho0 - rho * Math.cos(theta),
+  };
+}
+
+function pointDisplayNudge(point: LocationItem) {
+  const key = `${point.place_name}|${point.state_territory ?? ""}`;
+  return POINT_DISPLAY_NUDGES[key] ?? { x: 0, y: 0, stemDx: 0, stemDy: 24 };
+}
+
+export function ArchiveTerminal({ data, view }: { data: FrontendData; view: ViewMode }) {
+  const nextView = getNextView(view);
+
+  return (
+    <main className="terminal-shell">
+      <div className="noise-layer" aria-hidden="true" />
+      <div className="terminal-stage">
+        <section className={`view-area view-area-${view}`} aria-label={`${view} data view`}>
+          {view === "map" ? <MapView data={data} /> : null}
+          {view === "density" ? <DensityView data={data} /> : null}
+          {view === "dashboard" ? <DashboardView data={data} /> : null}
+          {view === "source" ? <SourceView data={data} /> : null}
+        </section>
+
+        <div className="external-control-dock" aria-label="Fixed external controls">
+          <Link className="dock-button about-button" href="/about">
+            About
+          </Link>
+          <Link className={view === "source" ? "dock-button source-button active" : "dock-button source-button"} href="/source" aria-current={view === "source" ? "page" : undefined}>
+            Source
+          </Link>
+          <Link
+            className="dock-button view-cycle-button"
+            href={VIEW_PATHS[nextView]}
+            aria-label={`Current view ${VIEW_LABELS[view]}; switch to ${VIEW_LABELS[nextView]}`}
+            title={`Switch to ${VIEW_LABELS[nextView]}`}
+          >
+            <span className="view-label-current">{VIEW_LABELS[view]}</span>
+            <span className="view-label-next">{VIEW_LABELS[nextView]}</span>
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+function getNextView(view: ViewMode) {
+  const index = VIEW_SEQUENCE.indexOf(view);
+  if (index === -1) {
+    return "dashboard";
+  }
+  return VIEW_SEQUENCE[(index + 1) % VIEW_SEQUENCE.length];
+}
+
+function MapView({ data }: { data: FrontendData }) {
+  const [hoverState, setHoverState] = useState<string | null>(null);
+  const [hoverPoint, setHoverPoint] = useState<LocationItem | null>(null);
+  const stateCounts = data.summary.state_record_counts;
+  const activeState = hoverState ? STATE_NAMES[hoverState] : "Australia";
+  const activeCount = hoverState ? stateCounts[hoverState] ?? 0 : data.summary.record_count;
+  const points = data.map_points.filter((point) => point.latitude !== null && point.longitude !== null);
+
+  return (
+    <div className="map-view">
+      <div className="map-source-block" aria-label="Map boundary and terrain source">
+        <span>BOUNDARY: {MAP_BOUNDARY_SOURCE.name}</span>
+        <span>TERRAIN: {TERRAIN_TILES.length} LANDFORM CUES / STATE-CLIPPED</span>
+      </div>
+      <div className="map-canvas">
+        <svg
+          className="australia-map"
+          viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          aria-label="Public signal map of Australia by state and territory"
+        >
+          <MapPatternDefs />
+          <TerrainSurfaceLayer hoverState={hoverState} />
+          {STATE_SHAPES.map((state) => {
+            const count = stateCounts[state.code] ?? 0;
+            const intensity = count > 1 ? "hot" : count === 1 ? "warm" : "cold";
+            const label = STATE_LABEL_OVERRIDES[state.code as keyof typeof STATE_NAMES] ?? state.label;
+            return (
+              <g key={state.code}>
+                <path
+                  className={`state-shape ${hoverState === state.code ? "hovered" : ""} ${intensity}`}
+                  d={state.d}
+                  onMouseEnter={() => setHoverState(state.code)}
+                  onPointerEnter={() => setHoverState(state.code)}
+                  onMouseLeave={() => setHoverState(null)}
+                  onPointerLeave={() => setHoverState(null)}
+                />
+                <text
+                  className={`state-label state-label-${state.code.toLowerCase()}`}
+                  x={label[0]}
+                  y={label[1]}
+                >
+                  {state.code}
+                </text>
+              </g>
+            );
+          })}
+          <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
+          <g>
+            {points.map((point, index) => {
+              const projected = projectPoint(point.latitude as number, point.longitude as number);
+              const nudge = pointDisplayNudge(point);
+              const clusterOffset = ((index % 3) - 1) * 6;
+              const x = projected.x + clusterOffset + nudge.x;
+              const y = projected.y + (index % 2 === 0 ? -2 : 5) + nudge.y;
+              const selected = hoverPoint?.record_id === point.record_id && hoverPoint.place_name === point.place_name;
+              return (
+                <g
+                  key={`${point.record_id}-${point.place_name}-${index}`}
+                  onMouseEnter={() => setHoverPoint(point)}
+                  onMouseLeave={() => setHoverPoint(null)}
+                >
+                  <line className="point-stem" x1={x} y1={y} x2={x + nudge.stemDx} y2={y + nudge.stemDy} />
+                  <circle className={selected ? "map-point active" : "map-point"} cx={x} cy={y} r={selected ? 6 : 4.5} />
+                  {selected ? (
+                    <text className="point-label" x={Math.min(x + 12, MAP_VIEWBOX.width - 172)} y={Math.max(y - 12, 28)}>
+                      {point.place_name}
+                    </text>
+                  ) : null}
+                </g>
+              );
+            })}
+          </g>
+          <TerrainLegend />
+        </svg>
+      </div>
+
+      <aside className="map-readout">
+        <div className="readout-block">
+          <span className="tiny-label">REGION</span>
+          <strong>{activeState}</strong>
+          <span className="readout-number">{numberFormat(activeCount)}</span>
+          <span className="readout-tail">records</span>
+        </div>
+        <div className="readout-grid">
+          {Object.entries(STATE_NAMES).map(([code]) => (
+            <div
+              className={hoverState === code ? "state-mini active" : "state-mini"}
+              key={code}
+              onMouseEnter={() => setHoverState(code)}
+              onPointerEnter={() => setHoverState(code)}
+              onMouseLeave={() => setHoverState(null)}
+              onPointerLeave={() => setHoverState(null)}
+              onFocus={() => setHoverState(code)}
+              onBlur={() => setHoverState(null)}
+              tabIndex={0}
+            >
+              <span>{code}</span>
+              <b>{stateCounts[code] ?? 0}</b>
+            </div>
+          ))}
+        </div>
+      </aside>
+    </div>
+  );
+}
+
+function TerrainLegend() {
+  const frameWidth = 242;
+  const frameHeight = 84;
+  const inset = 14;
+  const columnGap = 124;
+
+  return (
+    <g className="terrain-legend" transform={`translate(8 ${MAP_VIEWBOX.height - 118})`} aria-label="Terrain tile key">
+      <rect className="terrain-legend-back" x="0" y="0" width={frameWidth} height={frameHeight} />
+      {TERRAIN_KINDS.map((kind, index) => {
+        const column = index > 3 ? 1 : 0;
+        const row = column ? index - 4 : index;
+        const x = inset + column * columnGap;
+        const y = 20 + row * 17;
+        return (
+          <g key={kind} transform={`translate(${x} ${y})`}>
+            <text className={`terrain-legend-symbol terrain-pattern-${kind}`} x="0" y="0">
+              {TERRAIN_SYMBOLS[kind]}
+              {TERRAIN_SYMBOLS[kind]}
+            </text>
+            <text className="terrain-legend-label" x="24" y="0">
+              {TERRAIN_LABELS[kind]}
+            </text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+function MapPatternDefs() {
+  return (
+    <defs>
+      {TERRAIN_KINDS.map((kind, index) => (
+        <pattern
+          key={kind}
+          id={`terrain-pattern-${kind}`}
+          width={kind === "plain" ? 36 : 42}
+          height={kind === "plain" ? 30 : 38}
+          patternUnits="userSpaceOnUse"
+          patternTransform={`translate(${index * 7} ${index * 5})`}
+        >
+          <text className={`terrain-pattern-symbol terrain-pattern-${kind}`} x="5" y="13">
+            {TERRAIN_SYMBOLS[kind]}
+          </text>
+          <text className={`terrain-pattern-symbol terrain-pattern-${kind}`} x="22" y="28">
+            {TERRAIN_SYMBOLS[kind]}
+          </text>
+          <text className={`terrain-pattern-symbol terrain-pattern-${kind}`} x="31" y="11">
+            {TERRAIN_SYMBOLS[kind]}
+          </text>
+        </pattern>
+      ))}
+      {STATE_SHAPES.map((state) => (
+        <clipPath key={state.code} id={`clip-state-${state.code}`}>
+          <path d={state.d} />
+        </clipPath>
+      ))}
+    </defs>
+  );
+}
+
+function TerrainSurfaceLayer({ hoverState }: { hoverState: string | null }) {
+  return (
+    <g className="terrain-surface-layer" aria-label="State-clipped landform texture layer">
+      {STATE_SHAPES.flatMap((state) => {
+        const kinds = STATE_TERRAIN_KINDS[state.code] ?? ["plain"];
+        return kinds.slice(0, 3).map((kind, index) => (
+          <rect
+            key={`${state.code}-${kind}`}
+            className={`terrain-surface terrain-surface-${kind} ${
+              hoverState === state.code ? "emphasized" : hoverState ? "dimmed" : "idle"
+            }`}
+            style={
+              {
+                "--terrain-idle": String(Math.max(0.08, 0.22 - index * 0.05)),
+                "--terrain-active": String(Math.max(0.32, 0.72 - index * 0.1)),
+              } as CSSProperties
+            }
+            clipPath={`url(#clip-state-${state.code})`}
+            x="0"
+            y="0"
+            width={MAP_VIEWBOX.width}
+            height={MAP_VIEWBOX.height}
+            fill={`url(#terrain-pattern-${kind})`}
+          />
+        ));
+      })}
+    </g>
+  );
+}
+
+function DensityView({ data }: { data: FrontendData }) {
+  const maxRecords = Math.max(...data.date_bands.map((band) => band.record_count), 1);
+  const maxQueries = Math.max(...data.date_bands.map((band) => band.planned_query_count), 1);
+  const queryTypes = data.queries.reduce<Record<string, number>>((acc, query) => {
+    acc[query.query_type] = (acc[query.query_type] ?? 0) + 1;
+    return acc;
+  }, {});
+
+  return (
+    <div className="density-view">
+      <header className="density-header">
+        <span>TIME DENSITY / NONLINEAR BANDS</span>
+        <b>
+          {data.summary.earliest_year}-{data.summary.latest_year}
+        </b>
+      </header>
+      <div className="density-bands">
+        {data.date_bands.map((band, index) => (
+          <DensityBand key={band.id} band={band} index={index} maxRecords={maxRecords} maxQueries={maxQueries} />
+        ))}
+      </div>
+      <div className="density-aux-grid">
+        <DensitySignal title="SOURCE FIELD" values={data.summary.source_type_counts} />
+        <DensitySignal title="QUERY TYPES" values={queryTypes} />
+        <DensityFigureRail records={data.records} />
+      </div>
+      <div className="density-footer">
+        <div className="density-note">
+          <span>UNCERTAINTY</span>
+          <b className="redacted">LOW CONFIDENCE / REVIEW QUEUE</b>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DensityBand({
+  band,
+  index,
+  maxRecords,
+  maxQueries,
+}: {
+  band: DateBand;
+  index: number;
+  maxRecords: number;
+  maxQueries: number;
+}) {
+  const recordLevel = Math.ceil((band.record_count / maxRecords) * 28);
+  const queryLevel = Math.ceil((band.planned_query_count / maxQueries) * 28);
+  const char = DENSITY_CHARS[Math.min(DENSITY_CHARS.length - 1, index)];
+  return (
+    <section className="density-band">
+      <div className="density-matrix" aria-hidden="true">
+        {Array.from({ length: 28 }).map((_, cellIndex) => (
+          <span key={cellIndex} className={cellIndex < recordLevel ? "matrix-cell lit" : "matrix-cell"}>
+            {cellIndex < recordLevel ? char : "."}
+          </span>
+        ))}
+      </div>
+      <div className="band-meta">
+        <span>{band.label}</span>
+        <b>{numberFormat(band.record_count)}</b>
+        <small style={{ "--query-level": `${Math.max(6, queryLevel * 3)}%` } as CSSProperties}>Q {band.planned_query_count}</small>
+      </div>
+    </section>
+  );
+}
+
+function DensitySignal({ title, values }: { title: string; values: Record<string, number> }) {
+  const entries = entriesDescending(values, 5);
+  const max = Math.max(...entries.map(([, value]) => value), 1);
+
+  return (
+    <section className="density-signal">
+      <span className="tiny-label">{title}</span>
+      <div className="density-signal-bars">
+        {entries.map(([label, value]) => (
+          <div key={label} className="density-signal-row">
+            <span>{truncate(label, 18)}</span>
+            <i style={{ "--signal-width": `${Math.max(8, (value / max) * 100)}%` } as CSSProperties} />
+            <b>{value}</b>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function DensityFigureRail({ records }: { records: RecordItem[] }) {
+  const figures = records.reduce<Record<string, number>>((acc, record) => {
+    const key = record.canonical_figure_guess || record.canonical_figure || "uncoded";
+    acc[key] = (acc[key] ?? 0) + 1;
+    return acc;
+  }, {});
+  const entries = entriesDescending(figures, 8);
+
+  return (
+    <section className="density-figure-rail">
+      <span className="tiny-label">FIGURE SIGNAL</span>
+      <div>
+        {entries.map(([figure, value], index) => (
+          <span key={figure} className={index % 3 === 0 ? "rail-mark strong" : "rail-mark"}>
+            {truncate(figure, 10)}:{value}
+          </span>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function DashboardView({ data }: { data: FrontendData }) {
+  return (
+    <div className="dashboard-view">
+      <DashboardTrackNetwork data={data} />
+      <DashboardControlConsole data={data} />
+    </div>
+  );
+}
+
+function DashboardTrackNetwork({ data }: { data: FrontendData }) {
+  const tracks = [...data.records]
+    .sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.record_id - b.record_id)
+    .slice(0, 14);
+  const nodes = tracks.map((record, index) => ({
+    record,
+    x: index % 3 === 0 ? 58 : index % 3 === 1 ? 174 : 274,
+    y: 74 + index * 27,
+    tx: 446,
+    ty: 132 + index * 23,
+  }));
+
+  return (
+    <section className="dashboard-track-network dash-hover-zone" aria-label="Record network and track list">
+      <svg className="network-svg" viewBox="0 0 760 520" role="img" aria-label="Archive record signal network">
+        <path className="corner-mark top-left" d="M136 28 h-18 v18 M136 28 v-24" />
+        <path className="corner-mark top-right" d="M596 28 h18 v18 M596 28 v-24" />
+        <path className="corner-mark bottom-left" d="M136 492 h-18 v-18 M136 492 v24" />
+        <path className="corner-mark bottom-right" d="M596 492 h18 v-18 M596 492 v24" />
+        <rect className="network-wave-box" x="250" y="70" width="146" height="132" />
+        {["0A", "0B", "0C", "0D", "0E"].map((pass, passIndex) => (
+          <g key={pass} transform={`translate(262 ${84 + passIndex * 23})`}>
+            <text className="network-micro-text" x="0" y="8">
+              PASS/{pass}
+            </text>
+            {Array.from({ length: 42 }).map((_, barIndex) => {
+              const source = tracks[(barIndex + passIndex) % Math.max(tracks.length, 1)];
+              const height = 2 + (((source?.year ?? 1800) + barIndex * 7) % 17);
+              return <rect key={barIndex} className="network-wave-bar" x={50 + barIndex * 2.1} y={18 - height} width="1.1" height={height} />;
+            })}
+          </g>
+        ))}
+        <rect className="network-average" x="220" y="248" width="186" height="56" />
+        <text className="network-micro-text" x="228" y="266">
+          AVERAGE
+        </text>
+        <text className="network-micro-text" x="228" y="292">
+          TOTAL TIME: {data.summary.earliest_year}-{data.summary.latest_year}
+        </text>
+        {nodes.map((node, index) => (
+          <g key={`line-${node.record.record_id}`}>
+            <line className="network-wire" x1={node.x + 32} y1={node.y + 8} x2={318} y2={276} />
+            <line className="network-wire pale" x1={318} y1={276} x2={node.tx - 16} y2={node.ty} />
+            {index % 4 === 0 ? <line className="network-wire long" x1={node.x + 20} y1={node.y + 8} x2={48 + index * 8} y2={438 - index * 11} /> : null}
+          </g>
+        ))}
+        {nodes.map((node) => (
+          <g key={node.record.record_id}>
+            <rect className="network-slot" x={node.x} y={node.y} width="52" height="15" />
+            <rect className="network-slot-fill" x={node.x + 8} y={node.y + 4} width="33" height="7" />
+            <circle className="network-dot" cx={node.x - 8} cy={node.y + 8} r="3" />
+            <text className="network-slot-label" x={node.x + 58} y={node.y + 11}>
+              SLOT_{String(node.record.record_id).padStart(2, "0")}
+            </text>
+          </g>
+        ))}
+        <circle className="network-big-dot" cx="382" cy="448" r="8" />
+        <rect className="network-bottom-mark" x="402" y="443" width="9" height="9" />
+        <rect className="network-bottom-mark" x="548" y="446" width="7" height="7" />
+      </svg>
+      <div className="track-list">
+        <span>TRACKS</span>
+        {tracks.map((record, index) => (
+          <div className="track-row" key={record.record_id}>
+            <b>{String(index + 1).padStart(2, "0")}.</b>
+            <i>{truncate(record.canonical_figure_guess || record.canonical_figure || record.title, index > 10 ? 38 : 24)}</i>
+          </div>
+        ))}
+      </div>
+      <div className="network-footer">
+        <span>PUBLIC DATA FIELD</span>
+        <span>{data.summary.record_count} RECORDS</span>
+        <span>{data.summary.query_count} QUERIES</span>
+      </div>
+    </section>
+  );
+}
+
+function DashboardControlConsole({ data }: { data: FrontendData }) {
+  const [mode, setMode] = useState<"records" | "locations" | "queries">("queries");
+  const queryTypes = data.queries.reduce<Record<string, number>>((acc, query) => {
+    acc[query.query_type] = (acc[query.query_type] ?? 0) + 1;
+    return acc;
+  }, {});
+  const stateCounts = data.summary.state_record_counts;
+  const figureCounts = data.records.reduce<Record<string, number>>((acc, record) => {
+    const label = record.canonical_figure_guess || record.canonical_figure || "uncoded";
+    acc[label] = (acc[label] ?? 0) + 1;
+    return acc;
+  }, {});
+  const sourceRows = Object.entries(data.summary.source_rollup)
+    .sort((a, b) => b[1].query_count - a[1].query_count || b[1].record_count - a[1].record_count)
+    .slice(0, 6);
+  const activeValues =
+    mode === "records" ? figureCounts : mode === "locations" ? stateCounts : queryTypes;
+  const activeTabs = [
+    { id: "records" as const, label: "RECORDS" },
+    { id: "locations" as const, label: "LOCATIONS" },
+    { id: "queries" as const, label: "QUERY FIELD" },
+  ];
+  const topMetrics =
+    mode === "records"
+      ? [
+          ["PUBLIC", data.summary.record_count],
+          ["FIGURES", data.summary.figure_count],
+        ]
+      : mode === "locations"
+        ? [
+            ["STATES", Object.values(stateCounts).filter((value) => value > 0).length],
+            ["EXACT", data.summary.precise_point_count],
+          ]
+        : [
+            ["QUERIES", data.summary.query_count],
+            ["EXACT", queryTypes.exact_phrase ?? 0],
+          ];
+  const outputValues = [
+    { id: "records" as const, value: data.summary.record_count },
+    { id: "locations" as const, value: data.summary.precise_point_count },
+    { id: "queries" as const, value: data.summary.query_count },
+  ];
+
+  return (
+    <section className="dashboard-console dash-hover-zone" aria-label="Database control console">
+      <header className="console-header">
+        <div>
+          <span>PUBLIC FIELD:</span>
+          <b>AU HUMANOID SIGNAL</b>
+        </div>
+        <div className="output-switch" aria-label="Output density">
+          {outputValues.map((item) => (
+            <button
+              className={mode === item.id ? "active" : ""}
+              key={item.id}
+              type="button"
+              onClick={() => setMode(item.id)}
+              aria-pressed={mode === item.id}
+            >
+              {item.value}
+            </button>
+          ))}
+        </div>
+      </header>
+
+      <div className="console-tabs">
+        {activeTabs.map((tab) => (
+          <button
+            className={mode === tab.id ? "active" : ""}
+            key={tab.id}
+            type="button"
+            onClick={() => setMode(tab.id)}
+            aria-pressed={mode === tab.id}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="console-grid-top">
+        <MiniControl label={topMetrics[0][0] as string} value={topMetrics[0][1] as number} />
+        <MiniControl label={topMetrics[1][0] as string} value={topMetrics[1][1] as number} />
+        <ConsoleWave records={data.records} />
+      </div>
+
+      <div className="console-sequencer">
+        <span className="tiny-label">TIME CUTTER</span>
+        <div>
+          {data.date_bands.map((band, index) => (
+            <span key={band.id} className={band.record_count > 0 ? "lit" : ""}>
+              {index + 1}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="console-effect-grid">
+        {entriesDescending(activeValues, 8).map(([label, value]) => (
+          <span key={label}>
+            {truncate(label, 14)} <b>{value}</b>
+          </span>
+        ))}
+      </div>
+
+      <div className="console-mid-row">
+        <SourceWheel values={data.summary.source_type_counts} />
+        <ConsolePolyline values={data.summary.records_by_year} />
+      </div>
+
+      <div className="console-source-grid">
+        {sourceRows.map(([label, counts]) => (
+          <div key={label}>
+            <span>{truncate(label, 15)}</span>
+            <i style={{ "--source-meter": `${Math.max(8, Math.min(100, counts.query_count))}%` } as CSSProperties} />
+          </div>
+        ))}
+      </div>
+
+      <div className="console-lollipops">
+        {Object.entries(stateCounts).map(([state, value]) => (
+          <span key={state} style={{ "--stem": `${Math.max(18, 22 + value * 18)}px` } as CSSProperties}>
+            <b>{state}</b>
+          </span>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function MiniControl({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="mini-control">
+      <span>{label}</span>
+      <b>{value}</b>
+    </div>
+  );
+}
+
+function ConsoleWave({ records }: { records: RecordItem[] }) {
+  const points = records.slice(0, 16).map((record, index) => {
+    const x = 6 + index * 12;
+    const y = 38 - (((record.year ?? 1842) % 29) / 29) * 30;
+    return `${x},${y.toFixed(1)}`;
+  });
+
+  return (
+    <svg className="console-wave" viewBox="0 0 200 48" role="img" aria-label="Record waveform">
+      <polyline points={points.join(" ")} />
+    </svg>
+  );
+}
+
+function RadialMeter({ label, values }: { label: string; values: Record<string, number> }) {
+  const total = Object.values(values).reduce((sum, value) => sum + value, 0) || 1;
+  const first = Object.values(values)[0] ?? 0;
+  const angle = Math.round((first / total) * 300);
+
+  return (
+    <div className="radial-meter">
+      <svg viewBox="0 0 72 72" role="img" aria-label={`${label} radial meter`}>
+        <circle cx="36" cy="36" r="28" />
+        <path d={`M36 36 L36 8 A28 28 0 ${angle > 180 ? 1 : 0} 1 ${36 + 28 * Math.sin((angle * Math.PI) / 180)} ${36 - 28 * Math.cos((angle * Math.PI) / 180)} Z`} />
+        <circle cx="36" cy="36" r="10" />
+      </svg>
+      <span>{label}</span>
+    </div>
+  );
+}
+
+function SourceWheel({ values }: { values: Record<string, number> }) {
+  const entries = entriesDescending(values, 6);
+  const max = Math.max(...entries.map(([, value]) => value), 1);
+
+  return (
+    <div className="source-wheel-module">
+      <span className="tiny-label">SOURCE</span>
+      <div className="source-wheel" style={{ "--source-wheel": conicGradient(values) } as CSSProperties}>
+        <i />
+      </div>
+      <div className="source-wheel-list">
+        {entries.map(([label, value]) => (
+          <span key={label}>
+            <b style={{ "--source-dot": `${Math.max(22, (value / max) * 100)}%` } as CSSProperties} />
+            {truncate(label, 12)}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ConsolePolyline({ values }: { values: Record<string, number> }) {
+  const entries = Object.entries(values).sort(([a], [b]) => Number(a) - Number(b));
+  const max = Math.max(...entries.map(([, value]) => value), 1);
+  const points = entries.map(([year, value], index) => `${10 + index * 32},${72 - (value / max) * 54}`).join(" ");
+
+  return (
+    <svg className="console-polyline" viewBox="0 0 220 82" role="img" aria-label="Year counts polyline">
+      <polyline points={points} />
+      {entries.map(([year, value], index) => (
+        <circle key={year} cx={10 + index * 32} cy={72 - (value / max) * 54} r={value > 1 ? 4 : 2.5} />
+      ))}
+    </svg>
+  );
+}
+
+function SignalSquare({ records }: { records: RecordItem[] }) {
+  const nodes = records.slice(0, 14).map((record, index) => {
+    const leftColumn = index % 2 === 0;
+    return {
+      record,
+      x: leftColumn ? 12 + (index % 3) * 7 : 57 + (index % 3) * 9,
+      y: 12 + index * 5.7,
+      anchorX: 50,
+      anchorY: 50 + ((index % 5) - 2) * 7,
+    };
+  });
+
+  return (
+    <section className="signal-square">
+      <svg viewBox="0 0 100 100" className="signal-svg" role="img" aria-label="Record signal network">
+        <rect x="36" y="42" width="28" height="16" className="signal-core" />
+        <text x="39" y="51" className="signal-core-text">
+          ARCH
+        </text>
+        {nodes.map((node) => (
+          <line
+            key={`line-${node.record.record_id}`}
+            className="signal-line"
+            x1={node.x + 8}
+            y1={node.y + 2}
+            x2={node.anchorX}
+            y2={node.anchorY}
+          />
+        ))}
+        {nodes.map((node) => (
+          <g key={node.record.record_id}>
+            <rect x={node.x} y={node.y} width="15" height="4.3" className="slot-box" />
+            <rect x={node.x + 2} y={node.y + 0.9} width="10" height="2.5" className="slot-fill" />
+            <text x={node.x + 16.5} y={node.y + 3.6} className="slot-label">
+              SLOT_{String(node.record.record_id).padStart(2, "0")}
+            </text>
+          </g>
+        ))}
+      </svg>
+      <div className="square-caption">
+        <span>RECORD SIGNAL</span>
+        <b>{records.length}</b>
+      </div>
+    </section>
+  );
+}
+
+function MetricTile({ label, value, detail }: { label: string; value: number; detail: string }) {
+  return (
+    <div className="metric-tile">
+      <span>{label}</span>
+      <b>{numberFormat(value)}</b>
+      <small>{detail}</small>
+    </div>
+  );
+}
+
+function Dial({ title, values }: { title: string; values: Record<string, number> }) {
+  const topEntries = entriesDescending(values, 4);
+  return (
+    <div className="dial-module">
+      <span className="tiny-label">{title}</span>
+      <div className="dial-ring" style={{ "--dial": conicGradient(values) } as CSSProperties}>
+        <div />
+      </div>
+      <div className="dial-list">
+        {topEntries.map(([label, count]) => (
+          <span key={label}>
+            {truncate(label, 13)} <b>{count}</b>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MiniSpark({ values }: { values: Record<string, number> }) {
+  const entries = Object.entries(values).sort(([a], [b]) => Number(a) - Number(b));
+  const max = Math.max(...entries.map(([, value]) => value), 1);
+  return (
+    <div className="mini-spark" aria-label="Year signal">
+      {entries.map(([year, value]) => (
+        <span key={year} style={{ "--bar": `${Math.max(10, (value / max) * 100)}%` } as CSSProperties} title={`${year}: ${value}`} />
+      ))}
+    </div>
+  );
+}
+
+function Waveform({ records }: { records: RecordItem[] }) {
+  const sorted = [...records].sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999));
+  const points = sorted.map((record, index) => {
+    const x = 8 + (index / Math.max(sorted.length - 1, 1)) * 184;
+    const year = record.year ?? 0;
+    const y = 48 - ((year % 37) / 37) * 36;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  });
+
+  return (
+    <div className="wave-module">
+      <span className="tiny-label">SIGNAL</span>
+      <svg viewBox="0 0 200 58" role="img" aria-label="Record waveform">
+        <polyline className="wave-shadow" points={points.join(" ")} />
+        <polyline className="wave-line" points={points.join(" ")} />
+      </svg>
+    </div>
+  );
+}
+
+function RecordLine({ record }: { record: RecordItem }) {
+  const sensitive = record.ethics_flag === "caution_indigenous_knowledge";
+  return (
+    <div className={sensitive ? "record-line caution" : "record-line"}>
+      <span>{record.year ?? "----"}</span>
+      <b>{truncate(record.canonical_figure_guess || record.canonical_figure, 18)}</b>
+      <em>{truncate(record.location_summary || record.publication, 32)}</em>
+    </div>
+  );
+}
+
+function SourceView({ data }: { data: FrontendData }) {
+  const sourceRows = Object.entries(data.summary.source_rollup).sort((a, b) => b[1].query_count - a[1].query_count);
+  const ethicsRows = entriesDescending(data.summary.ethics_counts);
+  return (
+    <div className="source-view" aria-label="Sources">
+      <div className="source-display">
+        <header className="source-display-header">
+          <span>SOURCE REGISTER</span>
+          <h2>PUBLIC SOURCE FIELD</h2>
+          <div>
+            <b>{data.summary.source_count}</b>
+            <b>{data.summary.record_count}</b>
+            <b>{data.summary.query_count}</b>
+          </div>
+        </header>
+
+        <div className="source-display-grid">
+          <div className="source-display-column">
+            <section className="source-display-section source-rollup-section" aria-label="Source rollup">
+              <div className="source-section-kicker">ROLLUP</div>
+              {sourceRows.map(([sourceType, counts]) => (
+                <div className="source-display-row" key={sourceType}>
+                  <span>{sourceType}</span>
+                  <b>R {counts.record_count}</b>
+                  <b>Q {counts.query_count}</b>
+                </div>
+              ))}
+            </section>
+
+            <section className="source-display-section source-ethics-section" aria-label="Ethics flags">
+              <div className="source-section-kicker">ETHICS FLAG</div>
+              {ethicsRows.map(([label, count]) => (
+                <div className="source-display-row" key={label}>
+                  <span>{label}</span>
+                  <b>{count}</b>
+                </div>
+              ))}
+            </section>
+
+            <section className="source-display-section source-repo-section" aria-label="Repository">
+              <div className="source-section-kicker">REPOSITORY</div>
+              <a href="https://github.com/dpan538/australian-humanoid-supernatural-texts" target="_blank" rel="noreferrer">
+                GITHUB / DPAN538
+                <span>AUSTRALIAN-HUMANOID-SUPERNATURAL-TEXTS</span>
+              </a>
+            </section>
+          </div>
+
+          <section className="source-display-section source-register-section" aria-label="Registered sources">
+            <div className="source-section-kicker">REGISTERED SOURCES</div>
+            {data.sources.map((source) => (
+              <div className="source-display-row source-register-row" key={source.source_id}>
+                <span>{source.source_name}</span>
+                <div>
+                  <b>{source.source_type}</b>
+                  <b>{source.publicness_level}</b>
+                </div>
+              </div>
+            ))}
+          </section>
+        </div>
+
+        <p className="source-display-note">{data.scope.ethical_note}</p>
+      </div>
+    </div>
+  );
+}
