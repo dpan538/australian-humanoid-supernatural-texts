@@ -57,6 +57,8 @@ make init seed queries validate export test
 
 `make collect-public-round` runs a small public-only seed collection round. It retrieves Wikimedia public summaries, one verified ABC News public page, and public metadata leads for early NLA/Trove items. Trove/NLA leads are marked as metadata leads unless full text is manually/API-key verified.
 
+`make plan-public-round-002` writes a broader second-round public-source lead plan and location-review queue without making network requests or inserting records. It is the review step before any expanded live collection.
+
 `make locations` seeds a small reviewed gazetteer and attaches rule-based place/region matches to imported records. Location matches are evidence for human review, not final geocoding truth.
 
 `python3 scripts/import_manual_csv.py path/to/records.csv` imports manually downloaded or search-exported public records. The CSV must include:
