@@ -1,0 +1,5711 @@
+{
+  "Aberfeldy, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Aberfeldy",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3825",
+        "state": "Victoria"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-37.7223760",
+        "-37.6817820",
+        "146.3555250",
+        "146.4011620"
+      ],
+      "category": "boundary",
+      "display_name": "Aberfeldy, Victoria, 3825, Australia",
+      "importance": 0.16004725795376515,
+      "lat": "-37.7021795",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.3790538",
+      "name": "Aberfeldy",
+      "osm_id": 11693138,
+      "osm_type": "relation",
+      "place_id": 20583611,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Aberfeldy",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Aberfeldy",
+        "postcode": "3825",
+        "state": "Victoria"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-37.7176485",
+        "-37.6776485",
+        "146.3408302",
+        "146.3808302"
+      ],
+      "category": "place",
+      "display_name": "Aberfeldy, Victoria, 3825, Australia",
+      "importance": 0.13338059128709848,
+      "lat": "-37.6976485",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.3608302",
+      "name": "Aberfeldy",
+      "osm_id": 1665596100,
+      "osm_type": "node",
+      "place_id": 20603044,
+      "place_rank": 20,
+      "type": "hamlet"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Aberfeldy River",
+        "state": "Victoria"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-37.9204508",
+        "-37.6526024",
+        "146.3840937",
+        "146.4408256"
+      ],
+      "category": "waterway",
+      "display_name": "Aberfeldy River, Victoria, Australia",
+      "importance": 0.3583819294050449,
+      "lat": "-37.7823760",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.4038095",
+      "name": "Aberfeldy River",
+      "osm_id": 2211670,
+      "osm_type": "relation",
+      "place_id": 20578641,
+      "place_rank": 18,
+      "type": "river"
+    }
+  ],
+  "Acacia Hills, NT, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city_district": "Acacia Hills",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0822",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-12.8392810",
+        "-12.7013700",
+        "131.0856760",
+        "131.2165370"
+      ],
+      "category": "boundary",
+      "display_name": "Acacia Hills, Northern Territory, 0822, Australia",
+      "importance": 0.26001653813030656,
+      "lat": "-12.7684190",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "131.1419510",
+      "name": "Acacia Hills",
+      "osm_id": 11716565,
+      "osm_type": "relation",
+      "place_id": 28821076,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "territory": "Northern Territory",
+        "town": "Acacia Hills"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-12.7988199",
+        "-12.7188199",
+        "131.1096296",
+        "131.1896296"
+      ],
+      "category": "place",
+      "display_name": "Acacia Hills, Northern Territory, Australia",
+      "importance": 0.16004000076295108,
+      "lat": "-12.7588199",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "131.1496296",
+      "name": "Acacia Hills",
+      "osm_id": 5539166406,
+      "osm_type": "node",
+      "place_id": 28900880,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Ashford, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2361",
+        "state": "New South Wales",
+        "town": "Ashford"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-29.4464447",
+        "-29.1361129",
+        "150.9802183",
+        "151.3533345"
+      ],
+      "category": "boundary",
+      "display_name": "Ashford, New South Wales, 2361, Australia",
+      "importance": 0.3575511715318858,
+      "lat": "-29.3257299",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.0945365",
+      "name": "Ashford",
+      "osm_id": 5857637,
+      "osm_type": "relation",
+      "place_id": 28241383,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "farm": "Ashford",
+        "hamlet": "Gilgooma",
+        "postcode": "2829",
+        "state": "New South Wales"
+      },
+      "addresstype": "farm",
+      "boundingbox": [
+        "-30.7997748",
+        "-30.7797748",
+        "148.4754914",
+        "148.4954914"
+      ],
+      "category": "place",
+      "display_name": "Ashford, Gilgooma, New South Wales, 2829, Australia",
+      "importance": 0.10671244602121002,
+      "lat": "-30.7897748",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.4854914",
+      "name": "Ashford",
+      "osm_id": 6420141746,
+      "osm_type": "node",
+      "place_id": 28381819,
+      "place_rank": 22,
+      "type": "farm"
+    }
+  ],
+  "Barrington Tops, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Barrington Tops",
+        "postcode": "2422",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.0787701",
+        "-31.8455147",
+        "151.4028512",
+        "151.6567172"
+      ],
+      "category": "boundary",
+      "display_name": "Barrington Tops, New South Wales, 2422, Australia",
+      "importance": 0.16004579766536964,
+      "lat": "-32.0233333",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.4844444",
+      "name": "Barrington Tops",
+      "osm_id": 6058890,
+      "osm_type": "relation",
+      "place_id": 28817971,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Batemans Bay, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Batemans Bay",
+        "postcode": "2536",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-35.7520877",
+        "-35.6645571",
+        "150.1236614",
+        "150.2102380"
+      ],
+      "category": "boundary",
+      "display_name": "Batemans Bay, New South Wales, 2536, Australia",
+      "importance": 0.4122803330194641,
+      "lat": "-35.7072183",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.1782890",
+      "name": "Batemans Bay",
+      "osm_id": 6079470,
+      "osm_type": "relation",
+      "place_id": 24141109,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "bay": "Batemans Bay",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2536",
+        "state": "New South Wales"
+      },
+      "addresstype": "bay",
+      "boundingbox": [
+        "-35.7229563",
+        "-35.7228563",
+        "150.2289985",
+        "150.2290985"
+      ],
+      "category": "natural",
+      "display_name": "Batemans Bay, New South Wales, 2536, Australia",
+      "importance": 0.10669266727702752,
+      "lat": "-35.7229063",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.2290485",
+      "name": "Batemans Bay",
+      "osm_id": 916573104,
+      "osm_type": "node",
+      "place_id": 24194648,
+      "place_rank": 22,
+      "type": "bay"
+    }
+  ],
+  "Bathurst, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Bathurst",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2795",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-33.5766482",
+        "-33.2566482",
+        "149.4203725",
+        "149.7403725"
+      ],
+      "category": "place",
+      "display_name": "Bathurst, New South Wales, 2795, Australia",
+      "importance": 0.5297443376314536,
+      "lat": "-33.4166482",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.5803725",
+      "name": "Bathurst",
+      "osm_id": 172987017,
+      "osm_type": "node",
+      "place_id": 23296393,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Bathurst Regional Council",
+        "postcode": "2795",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-33.9976261",
+        "-32.9486157",
+        "149.1172255",
+        "149.9221834"
+      ],
+      "category": "boundary",
+      "display_name": "Bathurst Regional Council, New South Wales, 2795, Australia",
+      "importance": 0.43005488498339645,
+      "lat": "-33.4747071",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.6413197",
+      "name": "Bathurst Regional Council",
+      "osm_id": 6330866,
+      "osm_type": "relation",
+      "place_id": 23263750,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Beerwah, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Beerwah",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4519",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.8922819",
+        "-26.8221950",
+        "152.8912680",
+        "153.0278910"
+      ],
+      "category": "boundary",
+      "display_name": "Beerwah, Queensland, 4519, Australia",
+      "importance": 0.349558219859191,
+      "lat": "-26.8573095",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9604137",
+      "name": "Beerwah",
+      "osm_id": 11675249,
+      "osm_type": "relation",
+      "place_id": 27519302,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Beerwah",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4519",
+        "railway": "Beerwah",
+        "road": "Simpson Street",
+        "state": "Queensland",
+        "town": "Beerwah"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-26.8619903",
+        "-26.8519903",
+        "152.9533651",
+        "152.9633651"
+      ],
+      "category": "railway",
+      "display_name": "Beerwah, Simpson Street, Beerwah, Queensland, 4519, Australia",
+      "importance": 0.23468656939839805,
+      "lat": "-26.8569903",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9583651",
+      "name": "Beerwah",
+      "osm_id": 332339550,
+      "osm_type": "node",
+      "place_id": 27609934,
+      "place_rank": 30,
+      "type": "station"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4519",
+        "state": "Queensland",
+        "town": "Beerwah"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-26.8971243",
+        "-26.8171243",
+        "152.9175914",
+        "152.9975914"
+      ],
+      "category": "place",
+      "display_name": "Beerwah, Queensland, 4519, Australia",
+      "importance": 0.16005610513466084,
+      "lat": "-26.8571243",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9575914",
+      "name": "Beerwah",
+      "osm_id": 107158790,
+      "osm_type": "node",
+      "place_id": 27535759,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Bega, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2550",
+        "state": "New South Wales",
+        "town": "Bega"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-36.7264639",
+        "-36.6451488",
+        "149.8094204",
+        "149.8755098"
+      ],
+      "category": "boundary",
+      "display_name": "Bega, New South Wales, 2550, Australia",
+      "importance": 0.40336244684265926,
+      "lat": "-36.6780983",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.8408283",
+      "name": "Bega",
+      "osm_id": 6052734,
+      "osm_type": "relation",
+      "place_id": 20454585,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Bega Valley Shire Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-37.5050961",
+        "-36.1278598",
+        "149.3565349",
+        "150.0841572"
+      ],
+      "category": "boundary",
+      "display_name": "Bega Valley Shire Council, New South Wales, Australia",
+      "importance": 0.44266723809851893,
+      "lat": "-36.8164249",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.7118548",
+      "name": "Bega Valley Shire Council",
+      "osm_id": 6239664,
+      "osm_type": "relation",
+      "place_id": 20459706,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Belbora, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Belbora",
+        "postcode": "2422",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.0483605",
+        "-31.9103075",
+        "152.1152918",
+        "152.2441474"
+      ],
+      "category": "boundary",
+      "display_name": "Belbora, New South Wales, 2422, Australia",
+      "importance": 0.16004579766536964,
+      "lat": "-31.9733333",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.1511111",
+      "name": "Belbora",
+      "osm_id": 6058892,
+      "osm_type": "relation",
+      "place_id": 28287922,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Bellingen, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Bellingen Shire Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-30.5670730",
+        "-30.1808007",
+        "152.3896452",
+        "153.0606431"
+      ],
+      "category": "boundary",
+      "display_name": "Bellingen Shire Council, New South Wales, Australia",
+      "importance": 0.44266723809851893,
+      "lat": "-30.3739913",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7192100",
+      "name": "Bellingen Shire Council",
+      "osm_id": 6165980,
+      "osm_type": "relation",
+      "place_id": 28322182,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Bellingen",
+        "postcode": "2454",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-30.4993128",
+        "-30.4087369",
+        "152.8327536",
+        "152.9500656"
+      ],
+      "category": "boundary",
+      "display_name": "Bellingen, New South Wales, 2454, Australia",
+      "importance": 0.3699543402288119,
+      "lat": "-30.4510473",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.8970754",
+      "name": "Bellingen",
+      "osm_id": 6063382,
+      "osm_type": "relation",
+      "place_id": 28509700,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Bemm River, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Bemm River",
+        "state": "Victoria"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-37.7806634",
+        "-37.4751064",
+        "148.8805605",
+        "149.0219504"
+      ],
+      "category": "waterway",
+      "display_name": "Bemm River, Victoria, Australia",
+      "importance": 0.36054710293380643,
+      "lat": "-37.6399090",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.8869984",
+      "name": "Bemm River",
+      "osm_id": 151173758,
+      "osm_type": "way",
+      "place_id": 20404060,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Bemm River",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3889",
+        "state": "Victoria"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-37.7899638",
+        "-37.6427710",
+        "148.8263390",
+        "149.0302960"
+      ],
+      "category": "boundary",
+      "display_name": "Bemm River, Victoria, 3889, Australia",
+      "importance": 0.3041636407631838,
+      "lat": "-37.7121150",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.9287233",
+      "name": "Bemm River",
+      "osm_id": 2646107,
+      "osm_type": "relation",
+      "place_id": 20546928,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Victoria",
+        "village": "Bemm River"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-37.7800836",
+        "-37.7400836",
+        "148.9482657",
+        "148.9882657"
+      ],
+      "category": "place",
+      "display_name": "Bemm River, Victoria, Australia",
+      "importance": 0.1467151041428244,
+      "lat": "-37.7600836",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.9682657",
+      "name": "Bemm River",
+      "osm_id": 260333464,
+      "osm_type": "node",
+      "place_id": 20503060,
+      "place_rank": 19,
+      "type": "village"
+    }
+  ],
+  "Bexhill, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Bexhill",
+        "postcode": "2480",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.7797696",
+        "-28.7319450",
+        "153.3186779",
+        "153.3855799"
+      ],
+      "category": "boundary",
+      "display_name": "Bexhill, New South Wales, 2480, Australia",
+      "importance": 0.16004790798809795,
+      "lat": "-28.7631637",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3480115",
+      "name": "Bexhill",
+      "osm_id": 6069695,
+      "osm_type": "relation",
+      "place_id": 28531051,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2480",
+        "residential": "Bexhill",
+        "state": "New South Wales",
+        "village": "Bexhill"
+      },
+      "addresstype": "residential",
+      "boundingbox": [
+        "-28.7705845",
+        "-28.7607039",
+        "153.3323017",
+        "153.3475607"
+      ],
+      "category": "landuse",
+      "display_name": "Bexhill, New South Wales, 2480, Australia",
+      "importance": 0.08004790798809794,
+      "lat": "-28.7658210",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3456621",
+      "name": "Bexhill",
+      "osm_id": 363686398,
+      "osm_type": "way",
+      "place_id": 28491091,
+      "place_rank": 24,
+      "type": "residential"
+    }
+  ],
+  "Blackbutt, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Blackbutt",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4314",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.8974540",
+        "-26.8686250",
+        "152.0837260",
+        "152.1358130"
+      ],
+      "category": "boundary",
+      "display_name": "Blackbutt, Queensland, 4314, Australia",
+      "importance": 0.33029660482760953,
+      "lat": "-26.8830175",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.1011195",
+      "name": "Blackbutt",
+      "osm_id": 11675120,
+      "osm_type": "relation",
+      "place_id": 27637915,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4314",
+        "state": "Queensland",
+        "town": "Blackbutt"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-26.9230029",
+        "-26.8430029",
+        "152.0631034",
+        "152.1431034"
+      ],
+      "category": "place",
+      "display_name": "Blackbutt, Queensland, 4314, Australia",
+      "importance": 0.1600460860608835,
+      "lat": "-26.8830029",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.1031034",
+      "name": "Blackbutt",
+      "osm_id": 367130333,
+      "osm_type": "node",
+      "place_id": 27744926,
+      "place_rank": 18,
+      "type": "town"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Anakie Siding",
+        "country": "Australia",
+        "country_code": "au",
+        "farm": "Blackbutt",
+        "postcode": "4702",
+        "state": "Queensland"
+      },
+      "addresstype": "farm",
+      "boundingbox": [
+        "-23.5537276",
+        "-23.5337276",
+        "147.7069157",
+        "147.7269157"
+      ],
+      "category": "place",
+      "display_name": "Blackbutt, Anakie Siding, Queensland, 4702, Australia",
+      "importance": 0.10671250095368884,
+      "lat": "-23.5437276",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.7169157",
+      "name": "Blackbutt",
+      "osm_id": 5016218245,
+      "osm_type": "node",
+      "place_id": 28002928,
+      "place_rank": 22,
+      "type": "farm"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Blackbutt",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4314",
+        "residential": "Blackbutt",
+        "state": "Queensland",
+        "town": "Blackbutt"
+      },
+      "addresstype": "residential",
+      "boundingbox": [
+        "-26.8932367",
+        "-26.8810000",
+        "152.0988679",
+        "152.1093070"
+      ],
+      "category": "landuse",
+      "display_name": "Blackbutt, Queensland, 4314, Australia",
+      "importance": 0.08004608606088347,
+      "lat": "-26.8867727",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.1047628",
+      "name": "Blackbutt",
+      "osm_id": 717095797,
+      "osm_type": "way",
+      "place_id": 27697160,
+      "place_rank": 24,
+      "type": "residential"
+    }
+  ],
+  "Blackheath, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2785",
+        "state": "New South Wales",
+        "town": "Blackheath"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-33.6771674",
+        "-33.5859613",
+        "150.2345830",
+        "150.3466665"
+      ],
+      "category": "boundary",
+      "display_name": "Blackheath, New South Wales, 2785, Australia",
+      "importance": 0.3735437609124175,
+      "lat": "-33.6338889",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.2847222",
+      "name": "Blackheath",
+      "osm_id": 6086230,
+      "osm_type": "relation",
+      "place_id": 23458618,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2785",
+        "railway": "Blackheath",
+        "road": "Great Western Highway",
+        "state": "New South Wales",
+        "town": "Blackheath"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-33.6382273",
+        "-33.6282273",
+        "150.2793174",
+        "150.2893174"
+      ],
+      "category": "railway",
+      "display_name": "Blackheath, Great Western Highway, Blackheath, New South Wales, 2785, Australia",
+      "importance": 0.23648094285300414,
+      "lat": "-33.6332273",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.2843174",
+      "name": "Blackheath",
+      "osm_id": 207728195,
+      "osm_type": "node",
+      "place_id": 23433754,
+      "place_rank": 30,
+      "type": "station"
+    }
+  ],
+  "Blue Knob, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Blue Knob",
+        "postcode": "2440",
+        "state": "New South Wales",
+        "village": "Bellbrook"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-30.6984500",
+        "-30.6983500",
+        "152.5559900",
+        "152.5560900"
+      ],
+      "category": "natural",
+      "display_name": "Blue Knob, Bellbrook, New South Wales, 2440, Australia",
+      "importance": 0.16005500190737773,
+      "lat": "-30.6984000",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5560400",
+      "name": "Blue Knob",
+      "osm_id": 3019436893,
+      "osm_type": "node",
+      "place_id": 28163972,
+      "place_rank": 18,
+      "type": "peak"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Blue Knob",
+        "postcode": "2480",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.5760225",
+        "-28.5214051",
+        "153.1655899",
+        "153.2199600"
+      ],
+      "category": "boundary",
+      "display_name": "Blue Knob, New South Wales, 2480, Australia",
+      "importance": 0.16004790798809795,
+      "lat": "-28.5483333",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1844444",
+      "name": "Blue Knob",
+      "osm_id": 6069705,
+      "osm_type": "relation",
+      "place_id": 28264035,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Blue Knob",
+        "state": "New South Wales"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-31.5774400",
+        "-31.5773400",
+        "152.1695500",
+        "152.1696500"
+      ],
+      "category": "natural",
+      "display_name": "Blue Knob, New South Wales, Australia",
+      "importance": 0.16004579766536964,
+      "lat": "-31.5773900",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.1696000",
+      "name": "Blue Knob",
+      "osm_id": 3019436894,
+      "osm_type": "node",
+      "place_id": 28209295,
+      "place_rank": 18,
+      "type": "peak"
+    }
+  ],
+  "Blue Mountains, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "mountain_range": "Blue Mountains",
+        "state": "New South Wales"
+      },
+      "addresstype": "mountain_range",
+      "boundingbox": [
+        "-33.9553209",
+        "-33.1789387",
+        "150.1281731",
+        "150.6871019"
+      ],
+      "category": "natural",
+      "display_name": "Blue Mountains, New South Wales, Australia",
+      "importance": 0.5027059905512913,
+      "lat": "-33.6097410",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4052237",
+      "name": "Blue Mountains",
+      "osm_id": 889118010,
+      "osm_type": "way",
+      "place_id": 23379781,
+      "place_rank": 18,
+      "type": "mountain_range"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Blue Mountains City Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-33.9002879",
+        "-33.3633831",
+        "150.1660300",
+        "150.6598411"
+      ],
+      "category": "boundary",
+      "display_name": "Blue Mountains City Council, New South Wales, Australia",
+      "importance": 0.4526540225690988,
+      "lat": "-33.6351142",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4375037",
+      "name": "Blue Mountains City Council",
+      "osm_id": 6299568,
+      "osm_type": "relation",
+      "place_id": 23363013,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Bocoble, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Bocoble",
+        "postcode": "2850",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.8329109",
+        "-32.7740485",
+        "149.6964176",
+        "149.7794018"
+      ],
+      "category": "boundary",
+      "display_name": "Bocoble, New South Wales, 2850, Australia",
+      "importance": 0.1600480636301213,
+      "lat": "-32.7983333",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.7177778",
+      "name": "Bocoble",
+      "osm_id": 6058910,
+      "osm_type": "relation",
+      "place_id": 23225722,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Bombala, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2632",
+        "state": "New South Wales",
+        "town": "Bombala"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-36.9513463",
+        "-36.8284698",
+        "149.1632035",
+        "149.3321157"
+      ],
+      "category": "boundary",
+      "display_name": "Bombala, New South Wales, 2632, Australia",
+      "importance": 0.348606766793213,
+      "lat": "-36.9113175",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.2389375",
+      "name": "Bombala",
+      "osm_id": 6055558,
+      "osm_type": "relation",
+      "place_id": 20489568,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Border Ranges, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Border Ranges",
+        "postcode": "2474",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.4461867",
+        "-28.3394550",
+        "153.0016888",
+        "153.1458656"
+      ],
+      "category": "boundary",
+      "display_name": "Border Ranges, New South Wales, 2474, Australia",
+      "importance": 0.16004691157396808,
+      "lat": "-28.3944444",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.0672222",
+      "name": "Border Ranges",
+      "osm_id": 6069721,
+      "osm_type": "relation",
+      "place_id": 28768985,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Bowen Mountain, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2753",
+        "state": "New South Wales",
+        "suburb": "Bowen Mountain"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-33.6121769",
+        "-33.5455101",
+        "150.5954206",
+        "150.6483209"
+      ],
+      "category": "boundary",
+      "display_name": "Bowen Mountain, Sydney, New South Wales, 2753, Australia",
+      "importance": 0.16008246051728084,
+      "lat": "-33.5735614",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.6256438",
+      "name": "Bowen Mountain",
+      "osm_id": 5558984,
+      "osm_type": "relation",
+      "place_id": 23437408,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Bowen Mountain",
+        "state": "New South Wales"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-33.5699106",
+        "-33.5698106",
+        "150.6181518",
+        "150.6182518"
+      ],
+      "category": "natural",
+      "display_name": "Bowen Mountain, Sydney, New South Wales, Australia",
+      "importance": 0.16008246051728084,
+      "lat": "-33.5698606",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.6182018",
+      "name": "Bowen Mountain",
+      "osm_id": 8374259948,
+      "osm_type": "node",
+      "place_id": 23498705,
+      "place_rank": 18,
+      "type": "peak"
+    }
+  ],
+  "Bowral, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Bowral",
+        "postcode": "2576",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-34.5132845",
+        "-34.4525679",
+        "150.3692259",
+        "150.4908147"
+      ],
+      "category": "boundary",
+      "display_name": "Bowral, New South Wales, 2576, Australia",
+      "importance": 0.40647197265303264,
+      "lat": "-34.4816626",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4177868",
+      "name": "Bowral",
+      "osm_id": 6074485,
+      "osm_type": "relation",
+      "place_id": 23937142,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Braidwood, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Braidwood",
+        "postcode": "2622",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-35.5197292",
+        "-35.3352424",
+        "149.6967454",
+        "149.9145792"
+      ],
+      "category": "boundary",
+      "display_name": "Braidwood, New South Wales, 2622, Australia",
+      "importance": 0.3915604223356184,
+      "lat": "-35.4388907",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.7955552",
+      "name": "Braidwood",
+      "osm_id": 6079482,
+      "osm_type": "relation",
+      "place_id": 23940124,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Bribie Island, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Brisbane",
+        "country": "Australia",
+        "country_code": "au",
+        "island": "Bribie Island",
+        "postcode": "4507",
+        "state": "Queensland"
+      },
+      "addresstype": "island",
+      "boundingbox": [
+        "-27.1007203",
+        "-26.8089171",
+        "153.0751082",
+        "153.2074007"
+      ],
+      "category": "place",
+      "display_name": "Bribie Island, Brisbane, Queensland, 4507, Australia",
+      "importance": 0.42856428216416703,
+      "lat": "-26.9644799",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1202380",
+      "name": "Bribie Island",
+      "osm_id": 13688995,
+      "osm_type": "relation",
+      "place_id": 27305053,
+      "place_rank": 17,
+      "type": "island"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Brisbane",
+        "country": "Australia",
+        "country_code": "au",
+        "island": "Bribie Island",
+        "postcode": "4507",
+        "state": "Queensland"
+      },
+      "addresstype": "island",
+      "boundingbox": [
+        "-27.3086055",
+        "-26.6686055",
+        "152.8127330",
+        "153.4527330"
+      ],
+      "category": "place",
+      "display_name": "Bribie Island, Brisbane, Queensland, 4507, Australia",
+      "importance": 0.17338333485923552,
+      "lat": "-26.9886055",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1327330",
+      "name": "Bribie Island",
+      "osm_id": 3522665233,
+      "osm_type": "node",
+      "place_id": 27395331,
+      "place_rank": 17,
+      "type": "island"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "island": "Bribie Island",
+        "postcode": "4507",
+        "state": "Queensland"
+      },
+      "addresstype": "island",
+      "boundingbox": [
+        "-26.9251700",
+        "-26.9250700",
+        "153.1239087",
+        "153.1240087"
+      ],
+      "category": "natural",
+      "display_name": "Bribie Island, Queensland, 4507, Australia",
+      "importance": 0.10672277180132751,
+      "lat": "-26.9251200",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1239587",
+      "name": "Bribie Island",
+      "osm_id": 10018995194,
+      "osm_type": "node",
+      "place_id": 27386386,
+      "place_rank": 22,
+      "type": "island"
+    }
+  ],
+  "Brisbane, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Brisbane",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-27.9386050",
+        "-26.7922700",
+        "152.3827210",
+        "153.5465130"
+      ],
+      "category": "place",
+      "display_name": "Brisbane, Queensland, Australia",
+      "importance": 0.7126705606994053,
+      "lat": "-27.4689623",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.0235009",
+      "name": "Brisbane",
+      "osm_id": 14027280,
+      "osm_type": "relation",
+      "place_id": 27827413,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Brisbane",
+        "state": "Queensland"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-27.6602190",
+        "-27.0215438",
+        "152.6796930",
+        "153.4682348"
+      ],
+      "category": "boundary",
+      "display_name": "City of Brisbane, Queensland, Australia",
+      "importance": 0.47789038763300545,
+      "lat": "-27.4693645",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9687926",
+      "name": "City of Brisbane",
+      "osm_id": 11677792,
+      "osm_type": "relation",
+      "place_id": 27803924,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Broke, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Broke",
+        "postcode": "2330",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.8467934",
+        "-32.6886234",
+        "151.0014532",
+        "151.2249708"
+      ],
+      "category": "boundary",
+      "display_name": "Broke, New South Wales, 2330, Australia",
+      "importance": 0.1600466918440528,
+      "lat": "-32.7477265",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.1023020",
+      "name": "Broke",
+      "osm_id": 6058926,
+      "osm_type": "relation",
+      "place_id": 23246686,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Broken Hill, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Broken Hill",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2880",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-33.1137900",
+        "-31.5918790",
+        "141.0010739",
+        "142.2529502"
+      ],
+      "category": "boundary",
+      "display_name": "Broken Hill, New South Wales, 2880, Australia",
+      "importance": 0.4991482216517998,
+      "lat": "-31.9650000",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "141.4511111",
+      "name": "Broken Hill",
+      "osm_id": 5731495,
+      "osm_type": "relation",
+      "place_id": 19012430,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Bundarra, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Bundarra",
+        "postcode": "2359",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-30.2903177",
+        "-29.9027095",
+        "150.8007978",
+        "151.3268336"
+      ],
+      "category": "boundary",
+      "display_name": "Bundarra, New South Wales, 2359, Australia",
+      "importance": 0.22489365626900393,
+      "lat": "-30.1697551",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.0739435",
+      "name": "Bundarra",
+      "osm_id": 6063435,
+      "osm_type": "relation",
+      "place_id": 28700430,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Cairns, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Cairns",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4870",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-17.0806657",
+        "-16.7606657",
+        "145.6121854",
+        "145.9321854"
+      ],
+      "category": "place",
+      "display_name": "Cairns, Queensland, 4870, Australia",
+      "importance": 0.5814575373762947,
+      "lat": "-16.9206657",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.7721854",
+      "name": "Cairns",
+      "osm_id": 29405229,
+      "osm_type": "node",
+      "place_id": 27114952,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Cairns Regional",
+        "state": "Queensland"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-17.5060820",
+        "-16.6984680",
+        "145.6145880",
+        "146.3106041"
+      ],
+      "category": "boundary",
+      "display_name": "Cairns Regional, Queensland, Australia",
+      "importance": 0.41383259701480163,
+      "lat": "-17.1022281",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.7650465",
+      "name": "Cairns Regional",
+      "osm_id": 11677109,
+      "osm_type": "relation",
+      "place_id": 27163267,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Camp Kerr, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Tin Can Bay",
+        "country": "Australia",
+        "country_code": "au",
+        "military": "Camp Kerr",
+        "postcode": "4570",
+        "road": "Clyde Road",
+        "state": "Queensland"
+      },
+      "addresstype": "military",
+      "boundingbox": [
+        "-25.9514560",
+        "-25.9478865",
+        "152.9110485",
+        "152.9167914"
+      ],
+      "category": "military",
+      "display_name": "Camp Kerr, Clyde Road, Tin Can Bay, Queensland, 4570, Australia",
+      "importance": 4.727168688482517e-05,
+      "lat": "-25.9497504",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9133105",
+      "name": "Camp Kerr",
+      "osm_id": 860888121,
+      "osm_type": "way",
+      "place_id": 27651970,
+      "place_rank": 30,
+      "type": "training_area"
+    }
+  ],
+  "Canarvon Gorge, QLD, Australia": [],
+  "Canberra, ACT, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "city": "Canberra",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "postcode": "2600",
+        "territory": "Australian Capital Territory"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-35.4575906",
+        "-35.1375906",
+        "148.9412676",
+        "149.2612676"
+      ],
+      "category": "place",
+      "display_name": "Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+      "importance": 0.6754372088484613,
+      "lat": "-35.2975906",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1012676",
+      "name": "Canberra",
+      "osm_id": 21674637,
+      "osm_type": "node",
+      "place_id": 24625296,
+      "place_rank": 15,
+      "type": "city"
+    }
+  ],
+  "Canungra, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Canungra",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4275",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-28.0827690",
+        "-27.9937420",
+        "153.0956660",
+        "153.1761810"
+      ],
+      "category": "boundary",
+      "display_name": "Canungra, Queensland, 4275, Australia",
+      "importance": 0.35049604782988514,
+      "lat": "-28.0385865",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1419128",
+      "name": "Canungra",
+      "osm_id": 11675483,
+      "osm_type": "relation",
+      "place_id": 28246344,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4275",
+        "state": "Queensland",
+        "town": "Canungra"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-28.0571019",
+        "-27.9771019",
+        "153.1252540",
+        "153.2052540"
+      ],
+      "category": "place",
+      "display_name": "Canungra, Queensland, 4275, Australia",
+      "importance": 0.16004841306172274,
+      "lat": "-28.0171019",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1652540",
+      "name": "Canungra",
+      "osm_id": 589409513,
+      "osm_type": "node",
+      "place_id": 28125678,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Casino, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Casino",
+        "postcode": "2470",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.9080450",
+        "-28.7949211",
+        "152.9710987",
+        "153.0943799"
+      ],
+      "category": "boundary",
+      "display_name": "Casino, New South Wales, 2470, Australia",
+      "importance": 0.16004826504921033,
+      "lat": "-28.8629114",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.0483736",
+      "name": "Casino",
+      "osm_id": 6069761,
+      "osm_type": "relation",
+      "place_id": 28684731,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Cessnock, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Cessnock",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-32.9916667",
+        "-32.6716667",
+        "151.1911111",
+        "151.5111111"
+      ],
+      "category": "place",
+      "display_name": "Cessnock, New South Wales, Australia",
+      "importance": 0.44875702593866645,
+      "lat": "-32.8316667",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.3511111",
+      "name": "Cessnock",
+      "osm_id": 114176225,
+      "osm_type": "node",
+      "place_id": 23184100,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Cessnock City Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-33.1390453",
+        "-32.6488786",
+        "150.8012897",
+        "151.6235600"
+      ],
+      "category": "boundary",
+      "display_name": "Cessnock City Council, New South Wales, Australia",
+      "importance": 0.43372653935730887,
+      "lat": "-32.8940376",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.3014639",
+      "name": "Cessnock City Council",
+      "osm_id": 6191219,
+      "osm_type": "relation",
+      "place_id": 23160524,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Cessnock",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Cessnock",
+        "postcode": "2325",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.8704308",
+        "-32.7965251",
+        "151.3198310",
+        "151.4143563"
+      ],
+      "category": "boundary",
+      "display_name": "Cessnock, New South Wales, 2325, Australia",
+      "importance": 0.16005105897611963,
+      "lat": "-32.8333333",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.3561111",
+      "name": "Cessnock",
+      "osm_id": 6058958,
+      "osm_type": "relation",
+      "place_id": 23184318,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Charters Towers, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "town": "Charters Towers"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-20.1114089",
+        "-20.0314089",
+        "146.2309824",
+        "146.3109824"
+      ],
+      "category": "place",
+      "display_name": "Charters Towers, Queensland, Australia",
+      "importance": 0.4401108075321503,
+      "lat": "-20.0714089",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.2709824",
+      "name": "Charters Towers",
+      "osm_id": 1974780324,
+      "osm_type": "node",
+      "place_id": 27514831,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Coffs Harbour, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2450",
+        "state": "New South Wales",
+        "suburb": "Coffs Harbour"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-30.3551694",
+        "-30.2616193",
+        "153.0598598",
+        "153.1548350"
+      ],
+      "category": "boundary",
+      "display_name": "Coffs Harbour, New South Wales, 2450, Australia",
+      "importance": 0.5064543880661293,
+      "lat": "-30.2985996",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1094116",
+      "name": "Coffs Harbour",
+      "osm_id": 6063464,
+      "osm_type": "relation",
+      "place_id": 28531212,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Coffs Harbour",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2450",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-30.4562407",
+        "-30.1362407",
+        "152.9535293",
+        "153.2735293"
+      ],
+      "category": "place",
+      "display_name": "Coffs Harbour, New South Wales, 2450, Australia",
+      "importance": 0.5064543880661293,
+      "lat": "-30.2962407",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1135293",
+      "name": "Coffs Harbour",
+      "osm_id": 25976250,
+      "osm_type": "node",
+      "place_id": 28536068,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Coffs Harbour City Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-30.4491449",
+        "-29.8974529",
+        "152.7957868",
+        "153.2618418"
+      ],
+      "category": "boundary",
+      "display_name": "Coffs Harbour City Council, New South Wales, Australia",
+      "importance": 0.44556519337943523,
+      "lat": "-30.1732797",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9985876",
+      "name": "Coffs Harbour City Council",
+      "osm_id": 6165983,
+      "osm_type": "relation",
+      "place_id": 28385479,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Colac, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city": "Colac",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3250",
+        "state": "Victoria"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-38.3554290",
+        "-38.2638100",
+        "143.5523310",
+        "143.6255750"
+      ],
+      "category": "boundary",
+      "display_name": "Colac, Victoria, 3250, Australia",
+      "importance": 0.43802392276794555,
+      "lat": "-38.3399766",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "143.5858537",
+      "name": "Colac",
+      "osm_id": 3145220,
+      "osm_type": "relation",
+      "place_id": 19296881,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Colo River, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Colo River",
+        "state": "New South Wales"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-33.4429500",
+        "-33.1953229",
+        "150.4652445",
+        "150.8871328"
+      ],
+      "category": "waterway",
+      "display_name": "Colo River, New South Wales, Australia",
+      "importance": 0.43096957211662124,
+      "lat": "-33.3778079",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.6487565",
+      "name": "Colo River",
+      "osm_id": 199581817,
+      "osm_type": "way",
+      "place_id": 23366344,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Upper Colo",
+        "postcode": "2756",
+        "river": "Colo River",
+        "state": "New South Wales"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-33.4069201",
+        "-33.4005646",
+        "150.7101462",
+        "150.7108670"
+      ],
+      "category": "waterway",
+      "display_name": "Colo River, Upper Colo, New South Wales, 2756, Australia",
+      "importance": 0.1467169367513542,
+      "lat": "-33.4037679",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.7104078",
+      "name": "Colo River",
+      "osm_id": 235096768,
+      "osm_type": "way",
+      "place_id": 23389829,
+      "place_rank": 19,
+      "type": "river"
+    }
+  ],
+  "Cooma, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2630",
+        "state": "New South Wales",
+        "town": "Cooma"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-36.3076721",
+        "-36.1887240",
+        "149.0472435",
+        "149.1780498"
+      ],
+      "category": "boundary",
+      "display_name": "Cooma, New South Wales, 2630, Australia",
+      "importance": 0.4073897729372878,
+      "lat": "-36.2356785",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1261779",
+      "name": "Cooma",
+      "osm_id": 6064117,
+      "osm_type": "relation",
+      "place_id": 20472057,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "farm": "Cooma",
+        "house_number": "8",
+        "postcode": "2400",
+        "state": "New South Wales",
+        "town": "Moree"
+      },
+      "addresstype": "farm",
+      "boundingbox": [
+        "-29.4613417",
+        "-29.4413417",
+        "149.5466108",
+        "149.5666108"
+      ],
+      "category": "place",
+      "display_name": "Cooma, 8, Moree, New South Wales, 2400, Australia",
+      "importance": 0.10671531624322879,
+      "lat": "-29.4513417",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.5566108",
+      "name": "Cooma",
+      "osm_id": 6577813283,
+      "osm_type": "node",
+      "place_id": 28588246,
+      "place_rank": 22,
+      "type": "farm"
+    }
+  ],
+  "Coonabarabran, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2357",
+        "state": "New South Wales",
+        "town": "Coonabarabran"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-31.5344694",
+        "-31.0894409",
+        "149.0435106",
+        "149.5332255"
+      ],
+      "category": "boundary",
+      "display_name": "Coonabarabran, New South Wales, 2357, Australia",
+      "importance": 0.5009200543152518,
+      "lat": "-31.2728076",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.2733225",
+      "name": "Coonabarabran",
+      "osm_id": 5803540,
+      "osm_type": "relation",
+      "place_id": 28543906,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Cowley Beach, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Cowley Beach",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4871",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-17.7112740",
+        "-17.5989440",
+        "146.0583080",
+        "146.2013650"
+      ],
+      "category": "boundary",
+      "display_name": "Cowley Beach, Queensland, 4871, Australia",
+      "importance": 0.322688475709118,
+      "lat": "-17.6535660",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.1321886",
+      "name": "Cowley Beach",
+      "osm_id": 11677265,
+      "osm_type": "relation",
+      "place_id": 27491865,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "village": "Cowley Beach"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-17.7152339",
+        "-17.6752339",
+        "146.0913215",
+        "146.1313215"
+      ],
+      "category": "place",
+      "display_name": "Cowley Beach, Queensland, Australia",
+      "importance": 0.1467136865796902,
+      "lat": "-17.6952339",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.1113215",
+      "name": "Cowley Beach",
+      "osm_id": 6036336526,
+      "osm_type": "node",
+      "place_id": 27459809,
+      "place_rank": 19,
+      "type": "village"
+    }
+  ],
+  "Cudgen, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2487",
+        "state": "New South Wales",
+        "village": "Cudgen"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-28.2890073",
+        "-28.2565751",
+        "153.5210816",
+        "153.5723795"
+      ],
+      "category": "boundary",
+      "display_name": "Cudgen, New South Wales, 2487, Australia",
+      "importance": 0.16004901274128328,
+      "lat": "-28.2734276",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.5505103",
+      "name": "Cudgen",
+      "osm_id": 6069809,
+      "osm_type": "relation",
+      "place_id": 28403022,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Currumbin Valley, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Currumbin Valley",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4223",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-28.2503110",
+        "-28.1584260",
+        "153.3363676",
+        "153.4578720"
+      ],
+      "category": "boundary",
+      "display_name": "Currumbin Valley, Queensland, 4223, Australia",
+      "importance": 0.30093685344584264,
+      "lat": "-28.2040480",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3980364",
+      "name": "Currumbin Valley",
+      "osm_id": 11675439,
+      "osm_type": "relation",
+      "place_id": 28450390,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Currumbin Valley",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4223",
+        "state": "Queensland",
+        "suburb": "Currumbin Valley"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-28.1994010",
+        "-28.1594010",
+        "153.4026050",
+        "153.4426050"
+      ],
+      "category": "place",
+      "display_name": "Currumbin Valley, Queensland, 4223, Australia",
+      "importance": 0.14673367895017925,
+      "lat": "-28.1794010",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.4226050",
+      "name": "Currumbin Valley",
+      "osm_id": 2959443185,
+      "osm_type": "node",
+      "place_id": 28425152,
+      "place_rank": 19,
+      "type": "suburb"
+    }
+  ],
+  "Daisy Hill, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "suburb": "Daisy Hill"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-27.6493310",
+        "-27.6068680",
+        "153.1332470",
+        "153.1757450"
+      ],
+      "category": "boundary",
+      "display_name": "Daisy Hill, Queensland, Australia",
+      "importance": 0.29684236187219576,
+      "lat": "-27.6436110",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1538113",
+      "name": "Daisy Hill",
+      "osm_id": 11675400,
+      "osm_type": "relation",
+      "place_id": 28380818,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Dorrigo, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Dorrigo",
+        "postcode": "2453",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-30.3604751",
+        "-30.2948958",
+        "152.6496350",
+        "152.7349910"
+      ],
+      "category": "boundary",
+      "display_name": "Dorrigo, New South Wales, 2453, Australia",
+      "importance": 0.16004870756084533,
+      "lat": "-30.3399677",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7120341",
+      "name": "Dorrigo",
+      "osm_id": 6063509,
+      "osm_type": "relation",
+      "place_id": 28439619,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "nature_reserve": "Dorrigo National Park",
+        "postcode": "2454",
+        "state": "New South Wales",
+        "village": "Gleniffer"
+      },
+      "addresstype": "nature_reserve",
+      "boundingbox": [
+        "-30.4142590",
+        "-30.2904020",
+        "152.7243462",
+        "152.9228790"
+      ],
+      "category": "leisure",
+      "display_name": "Dorrigo National Park, Gleniffer, New South Wales, 2454, Australia",
+      "importance": 0.43169223361915116,
+      "lat": "-30.3523374",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.8200207",
+      "name": "Dorrigo National Park",
+      "osm_id": 5678193,
+      "osm_type": "relation",
+      "place_id": 28486672,
+      "place_rank": 24,
+      "type": "nature_reserve"
+    }
+  ],
+  "Dungay Creek, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales",
+        "stream": "Dungay Creek"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-31.1497460",
+        "-31.0815100",
+        "152.4759000",
+        "152.7425218"
+      ],
+      "category": "waterway",
+      "display_name": "Dungay Creek, New South Wales, Australia",
+      "importance": 0.10672166857404437,
+      "lat": "-31.0815329",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.6117998",
+      "name": "Dungay Creek",
+      "osm_id": 919110645,
+      "osm_type": "way",
+      "place_id": 28191549,
+      "place_rank": 22,
+      "type": "stream"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Dungay",
+        "postcode": "2484",
+        "state": "New South Wales",
+        "stream": "Dungay Creek"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-28.2857175",
+        "-28.2655840",
+        "153.3579890",
+        "153.3797430"
+      ],
+      "category": "waterway",
+      "display_name": "Dungay Creek, Dungay, New South Wales, 2484, Australia",
+      "importance": 0.10671567940794993,
+      "lat": "-28.2779685",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3657745",
+      "name": "Dungay Creek",
+      "osm_id": 674477595,
+      "osm_type": "way",
+      "place_id": 28257797,
+      "place_rank": 22,
+      "type": "stream"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Kynnumboon",
+        "postcode": "2484",
+        "state": "New South Wales",
+        "stream": "Dungay Creek"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-28.2921705",
+        "-28.2898480",
+        "153.3858840",
+        "153.3901460"
+      ],
+      "category": "waterway",
+      "display_name": "Dungay Creek, Kynnumboon, New South Wales, 2484, Australia",
+      "importance": 0.10671567940794993,
+      "lat": "-28.2920650",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3873968",
+      "name": "Dungay Creek",
+      "osm_id": 96587732,
+      "osm_type": "way",
+      "place_id": 28226919,
+      "place_rank": 22,
+      "type": "stream"
+    }
+  ],
+  "Emerald, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3782",
+        "state": "Victoria",
+        "suburb": "Emerald"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-37.9829830",
+        "-37.8819240",
+        "145.3821680",
+        "145.4866960"
+      ],
+      "category": "boundary",
+      "display_name": "Emerald, Victoria, 3782, Australia",
+      "importance": 0.33861775862348764,
+      "lat": "-37.9321282",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.4407282",
+      "name": "Emerald",
+      "osm_id": 2430748,
+      "osm_type": "relation",
+      "place_id": 20891887,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3205",
+        "state": "Victoria",
+        "suburb": "South Melbourne"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-37.8421690",
+        "-37.8259470",
+        "144.9403643",
+        "144.9717680"
+      ],
+      "category": "boundary",
+      "display_name": "South Melbourne, Victoria, 3205, Australia",
+      "importance": 0.38401233771949483,
+      "lat": "-37.8334400",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9570533",
+      "name": "South Melbourne",
+      "osm_id": 2396282,
+      "osm_type": "relation",
+      "place_id": 22509824,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Falls Creek, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Falls Creek",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3699",
+        "state": "Victoria"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-36.9401290",
+        "-36.8178380",
+        "147.1433460",
+        "147.3455800"
+      ],
+      "category": "boundary",
+      "display_name": "Falls Creek, Victoria, 3699, Australia",
+      "importance": 0.4101932977803121,
+      "lat": "-36.8786830",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.2441791",
+      "name": "Falls Creek",
+      "osm_id": 2611560,
+      "osm_type": "relation",
+      "place_id": 20340872,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Victoria",
+        "village": "Falls Creek"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-36.8834985",
+        "-36.8434985",
+        "147.2615865",
+        "147.3015865"
+      ],
+      "category": "place",
+      "display_name": "Falls Creek, Victoria, Australia",
+      "importance": 0.1467147943846799,
+      "lat": "-36.8634985",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.2815865",
+      "name": "Falls Creek",
+      "osm_id": 243920369,
+      "osm_type": "node",
+      "place_id": 20828446,
+      "place_rank": 19,
+      "type": "village"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3757",
+        "state": "Victoria",
+        "stream": "Falls Creek",
+        "town": "Whittlesea"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-37.4347627",
+        "-37.4205899",
+        "145.1030725",
+        "145.1137622"
+      ],
+      "category": "waterway",
+      "display_name": "Falls Creek, Whittlesea, Victoria, 3757, Australia",
+      "importance": 0.10674711909666589,
+      "lat": "-37.4309405",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.1122613",
+      "name": "Falls Creek",
+      "osm_id": 132599204,
+      "osm_type": "way",
+      "place_id": 417492091,
+      "place_rank": 22,
+      "type": "stream"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Toorongo",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3833",
+        "state": "Victoria",
+        "stream": "Falls Creek"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-37.7916423",
+        "-37.7898404",
+        "146.1263930",
+        "146.1306695"
+      ],
+      "category": "waterway",
+      "display_name": "Falls Creek, Toorongo, Victoria, 3833, Australia",
+      "importance": 0.10674711909666589,
+      "lat": "-37.7916332",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.1287711",
+      "name": "Falls Creek",
+      "osm_id": 1380020367,
+      "osm_type": "way",
+      "place_id": 20348790,
+      "place_rank": 22,
+      "type": "stream"
+    }
+  ],
+  "Gatton, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4343",
+        "state": "Queensland",
+        "town": "Gatton"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-27.5966070",
+        "-27.5349480",
+        "152.2194330",
+        "152.3262790"
+      ],
+      "category": "boundary",
+      "display_name": "Gatton, Queensland, 4343, Australia",
+      "importance": 0.3719975382006177,
+      "lat": "-27.5615314",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.2791353",
+      "name": "Gatton",
+      "osm_id": 11675671,
+      "osm_type": "relation",
+      "place_id": 28203975,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Gayndah, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Gayndah",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4625",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-25.6688520",
+        "-25.5828720",
+        "151.5706230",
+        "151.6931250"
+      ],
+      "category": "boundary",
+      "display_name": "Gayndah, Queensland, 4625, Australia",
+      "importance": 0.36391963791291315,
+      "lat": "-25.6268775",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.6370233",
+      "name": "Gayndah",
+      "osm_id": 11676035,
+      "osm_type": "relation",
+      "place_id": 28724445,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4625",
+        "state": "Queensland",
+        "town": "Gayndah"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-25.6646003",
+        "-25.5846003",
+        "151.5683508",
+        "151.6483508"
+      ],
+      "category": "place",
+      "display_name": "Gayndah, Queensland, 4625, Australia",
+      "importance": 0.1600468963149462,
+      "lat": "-25.6246003",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.6083508",
+      "name": "Gayndah",
+      "osm_id": 246283163,
+      "osm_type": "node",
+      "place_id": 28583461,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Gippsland, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "region": "Gippsland",
+        "state": "Victoria"
+      },
+      "addresstype": "region",
+      "boundingbox": [
+        "-39.1591900",
+        "-36.6124300",
+        "145.1161600",
+        "149.9765907"
+      ],
+      "category": "place",
+      "display_name": "Gippsland, Victoria, Australia",
+      "importance": 0.1600468810559243,
+      "lat": "-37.8744827",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.9111788",
+      "name": "Gippsland",
+      "osm_id": 4246268,
+      "osm_type": "relation",
+      "place_id": 20404420,
+      "place_rank": 18,
+      "type": "region"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Shire of East Gippsland",
+        "state": "Victoria"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-38.0787060",
+        "-36.6124370",
+        "147.1890340",
+        "149.9765907"
+      ],
+      "category": "boundary",
+      "display_name": "Shire of East Gippsland, Victoria, Australia",
+      "importance": 0.43096957211662124,
+      "lat": "-37.3466413",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.5079918",
+      "name": "Shire of East Gippsland",
+      "osm_id": 3359756,
+      "osm_type": "relation",
+      "place_id": 21422989,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Shire of South Gippsland",
+        "state": "Victoria"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-39.1365810",
+        "-38.2611900",
+        "145.6056900",
+        "146.5283500"
+      ],
+      "category": "boundary",
+      "display_name": "Shire of South Gippsland, Victoria, Australia",
+      "importance": 0.4167181092808382,
+      "lat": "-38.6990505",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.0166810",
+      "name": "Shire of South Gippsland",
+      "osm_id": 3335917,
+      "osm_type": "relation",
+      "place_id": 20014564,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Gold Coast, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Gold Coast",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4217",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-28.1623731",
+        "-27.8423731",
+        "153.2545987",
+        "153.5745987"
+      ],
+      "category": "place",
+      "display_name": "Gold Coast, Queensland, 4217, Australia",
+      "importance": 0.6280772037744516,
+      "lat": "-28.0023731",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.4145987",
+      "name": "Gold Coast",
+      "osm_id": 145620822,
+      "osm_type": "node",
+      "place_id": 28219517,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Gold Coast City",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-28.2651100",
+        "-27.6903950",
+        "153.1689100",
+        "153.5519459"
+      ],
+      "category": "boundary",
+      "display_name": "Gold Coast City, Queensland, Australia",
+      "importance": 0.4353606624145101,
+      "lat": "-27.9778928",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3276643",
+      "name": "Gold Coast City",
+      "osm_id": 11675459,
+      "osm_type": "relation",
+      "place_id": 27885515,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Goulburn, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2580",
+        "state": "New South Wales",
+        "town": "Goulburn"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-34.7937910",
+        "-34.6956000",
+        "149.6716221",
+        "149.7758447"
+      ],
+      "category": "boundary",
+      "display_name": "Goulburn, New South Wales, 2580, Australia",
+      "importance": 0.4865632884358775,
+      "lat": "-34.7523871",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.7198009",
+      "name": "Goulburn",
+      "osm_id": 6074534,
+      "osm_type": "relation",
+      "place_id": 23954320,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Grafton, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2460",
+        "state": "New South Wales",
+        "suburb": "Grafton"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-29.6982108",
+        "-29.6637540",
+        "152.9028273",
+        "152.9567149"
+      ],
+      "category": "boundary",
+      "display_name": "Grafton, New South Wales, 2460, Australia",
+      "importance": 0.47695191970321454,
+      "lat": "-29.6816773",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9336357",
+      "name": "Grafton",
+      "osm_id": 6069900,
+      "osm_type": "relation",
+      "place_id": 28786269,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Grafton",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-29.8512500",
+        "-29.5312500",
+        "152.7733435",
+        "153.0933435"
+      ],
+      "category": "place",
+      "display_name": "Grafton, New South Wales, Australia",
+      "importance": 0.47695191970321454,
+      "lat": "-29.6912500",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9333435",
+      "name": "Grafton",
+      "osm_id": 3834031650,
+      "osm_type": "node",
+      "place_id": 28529822,
+      "place_rank": 16,
+      "type": "city"
+    }
+  ],
+  "Hartley, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2790",
+        "state": "New South Wales",
+        "suburb": "Hartley"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-33.5853103",
+        "-33.4808806",
+        "150.0738188",
+        "150.2333293"
+      ],
+      "category": "boundary",
+      "display_name": "Hartley, New South Wales, 2790, Australia",
+      "importance": 0.1600518005645838,
+      "lat": "-33.5483333",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.1844444",
+      "name": "Hartley",
+      "osm_id": 6044391,
+      "osm_type": "relation",
+      "place_id": 23411271,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2790",
+        "state": "New South Wales",
+        "suburb": "Hartley Vale"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-33.5620177",
+        "-33.5012665",
+        "150.1960522",
+        "150.2576702"
+      ],
+      "category": "boundary",
+      "display_name": "Hartley Vale, New South Wales, 2790, Australia",
+      "importance": 0.31673068536229987,
+      "lat": "-33.5316667",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.2344444",
+      "name": "Hartley Vale",
+      "osm_id": 6044390,
+      "osm_type": "relation",
+      "place_id": 23474021,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Hawkesbury River, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Hawkesbury River",
+        "state": "New South Wales"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-33.6086234",
+        "-33.3771920",
+        "150.7002197",
+        "151.3083810"
+      ],
+      "category": "waterway",
+      "display_name": "Hawkesbury River, New South Wales, Australia",
+      "importance": 0.47052520084556465,
+      "lat": "-33.5038702",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.9274931",
+      "name": "Hawkesbury River",
+      "osm_id": 1542972,
+      "osm_type": "relation",
+      "place_id": 23049728,
+      "place_rank": 18,
+      "type": "river"
+    }
+  ],
+  "Hazelbrook, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2779",
+        "state": "New South Wales",
+        "village": "Hazelbrook"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-33.7574560",
+        "-33.6899458",
+        "150.4394410",
+        "150.4862357"
+      ],
+      "category": "boundary",
+      "display_name": "Hazelbrook, New South Wales, 2779, Australia",
+      "importance": 0.32076214465567665,
+      "lat": "-33.7219948",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4534122",
+      "name": "Hazelbrook",
+      "osm_id": 5492653,
+      "osm_type": "relation",
+      "place_id": 23086274,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2778",
+        "railway": "Hazelbrook",
+        "road": "Railway Parade",
+        "state": "New South Wales",
+        "town": "Hazelbrook"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-33.7289715",
+        "-33.7189715",
+        "150.4494865",
+        "150.4594865"
+      ],
+      "category": "railway",
+      "display_name": "Hazelbrook, Railway Parade, Hazelbrook, New South Wales, 2778, Australia",
+      "importance": 0.23648094285300414,
+      "lat": "-33.7239715",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4544865",
+      "name": "Hazelbrook",
+      "osm_id": 1886255298,
+      "osm_type": "node",
+      "place_id": 23153699,
+      "place_rank": 30,
+      "type": "station"
+    }
+  ],
+  "Helensburgh, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Helensburgh",
+        "postcode": "2508",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-34.2165481",
+        "-34.1458870",
+        "150.9566505",
+        "151.0094461"
+      ],
+      "category": "boundary",
+      "display_name": "Helensburgh, New South Wales, 2508, Australia",
+      "importance": 0.3498723237425788,
+      "lat": "-34.1908519",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.9822187",
+      "name": "Helensburgh",
+      "osm_id": 6076629,
+      "osm_type": "relation",
+      "place_id": 23972140,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2508",
+        "railway": "Helensburgh",
+        "road": "Wilsons Creek Road",
+        "state": "New South Wales",
+        "town": "Helensburgh"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-34.1819399",
+        "-34.1719399",
+        "150.9898093",
+        "150.9998093"
+      ],
+      "category": "railway",
+      "display_name": "Helensburgh, Wilsons Creek Road, Helensburgh, New South Wales, 2508, Australia",
+      "importance": 0.2836220396951343,
+      "lat": "-34.1769399",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.9948093",
+      "name": "Helensburgh",
+      "osm_id": 1839588333,
+      "osm_type": "node",
+      "place_id": 23910972,
+      "place_rank": 30,
+      "type": "station"
+    }
+  ],
+  "Hepburn Springs, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Hepburn Springs",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3461",
+        "state": "Victoria"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-37.3283800",
+        "-37.3040340",
+        "144.1355060",
+        "144.1579440"
+      ],
+      "category": "boundary",
+      "display_name": "Hepburn Springs, Victoria, 3461, Australia",
+      "importance": 0.1679799034751623,
+      "lat": "-37.3161925",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.1467627",
+      "name": "Hepburn Springs",
+      "osm_id": 2755948,
+      "osm_type": "relation",
+      "place_id": 23568322,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Hepburn Springs",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Hepburn Springs",
+        "postcode": "3461",
+        "state": "Victoria"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-37.3291002",
+        "-37.2891002",
+        "144.1209344",
+        "144.1609344"
+      ],
+      "category": "place",
+      "display_name": "Hepburn Springs, Victoria, 3461, Australia",
+      "importance": 0.13337441748683906,
+      "lat": "-37.3091002",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.1409344",
+      "name": "Hepburn Springs",
+      "osm_id": 60303320,
+      "osm_type": "node",
+      "place_id": 22903204,
+      "place_rank": 20,
+      "type": "hamlet"
+    }
+  ],
+  "Howard, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Howard",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4659",
+        "state": "Queensland",
+        "town": "Howard"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-25.3943810",
+        "-25.2824380",
+        "152.5021770",
+        "152.5911500"
+      ],
+      "category": "boundary",
+      "display_name": "Howard, Queensland, 4659, Australia",
+      "importance": 0.3294460664555125,
+      "lat": "-25.3383285",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5364030",
+      "name": "Howard",
+      "osm_id": 11676280,
+      "osm_type": "relation",
+      "place_id": 27225389,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4662",
+        "state": "Queensland",
+        "town": "Howard"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-25.3587601",
+        "-25.2787601",
+        "152.5213958",
+        "152.6013958"
+      ],
+      "category": "place",
+      "display_name": "Howard, Queensland, 4662, Australia",
+      "importance": 0.16004670710307467,
+      "lat": "-25.3187601",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5613958",
+      "name": "Howard",
+      "osm_id": 1686562537,
+      "osm_type": "node",
+      "place_id": 27223329,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Illawarra, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "region": "Illawarra",
+        "state": "New South Wales"
+      },
+      "addresstype": "region",
+      "boundingbox": [
+        "-34.7925927",
+        "-34.1300239",
+        "150.6107498",
+        "151.0665796"
+      ],
+      "category": "place",
+      "display_name": "Illawarra, New South Wales, Australia",
+      "importance": 0.16006058060578315,
+      "lat": "-34.4614504",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.7904090",
+      "name": "Illawarra",
+      "osm_id": 7876497,
+      "osm_type": "relation",
+      "place_id": 24013173,
+      "place_rank": 18,
+      "type": "region"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "lake": "Lake Illawarra",
+        "postcode": "2530",
+        "state": "New South Wales",
+        "village": "Yallah"
+      },
+      "addresstype": "lake",
+      "boundingbox": [
+        "-34.5615506",
+        "-34.4836170",
+        "150.7958242",
+        "150.8877901"
+      ],
+      "category": "water",
+      "display_name": "Lake Illawarra, Yallah, New South Wales, 2530, Australia",
+      "importance": 0.4253784106722686,
+      "lat": "-34.5225021",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8404660",
+      "name": "Lake Illawarra",
+      "osm_id": 1076609,
+      "osm_type": "relation",
+      "place_id": 23955226,
+      "place_rank": 20,
+      "type": "lake"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "mountain_range": "Illawarra Escarpment",
+        "postcode": "2577",
+        "state": "New South Wales",
+        "town": "Robertson"
+      },
+      "addresstype": "mountain_range",
+      "boundingbox": [
+        "-34.8121118",
+        "-34.2192545",
+        "150.5676266",
+        "151.0020160"
+      ],
+      "category": "natural",
+      "display_name": "Illawarra Escarpment, Robertson, New South Wales, 2577, Australia",
+      "importance": 0.38057472762224825,
+      "lat": "-34.5096680",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.7265980",
+      "name": "Illawarra Escarpment",
+      "osm_id": 889117003,
+      "osm_type": "way",
+      "place_id": 23865489,
+      "place_rank": 18,
+      "type": "mountain_range"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Lake Illawarra",
+        "postcode": "2528",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-34.5499923",
+        "-34.5298497",
+        "150.8482917",
+        "150.8824779"
+      ],
+      "category": "boundary",
+      "display_name": "Lake Illawarra, New South Wales, 2528, Australia",
+      "importance": 0.308429648456196,
+      "lat": "-34.5427778",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8594444",
+      "name": "Lake Illawarra",
+      "osm_id": 6076654,
+      "osm_type": "relation",
+      "place_id": 23971628,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Jackadgery, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Jackadgery",
+        "postcode": "2460",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-29.7175903",
+        "-29.5103485",
+        "152.3851572",
+        "152.6846882"
+      ],
+      "category": "boundary",
+      "display_name": "Jackadgery, New South Wales, 2460, Australia",
+      "importance": 0.16004996643015182,
+      "lat": "-29.5816646",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5511068",
+      "name": "Jackadgery",
+      "osm_id": 6069930,
+      "osm_type": "relation",
+      "place_id": 28840348,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Katoomba, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2780",
+        "state": "New South Wales",
+        "town": "Katoomba"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-33.7372987",
+        "-33.6714570",
+        "150.2608250",
+        "150.3379940"
+      ],
+      "category": "boundary",
+      "display_name": "Katoomba, New South Wales, 2780, Australia",
+      "importance": 0.351725953161806,
+      "lat": "-33.7137590",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3121633",
+      "name": "Katoomba",
+      "osm_id": 5496187,
+      "osm_type": "relation",
+      "place_id": 23217247,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2780",
+        "railway": "Katoomba",
+        "road": "Goldsmith Place",
+        "state": "New South Wales"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-33.7168546",
+        "-33.7068546",
+        "150.3062294",
+        "150.3162294"
+      ],
+      "category": "railway",
+      "display_name": "Katoomba, Goldsmith Place, Sydney, New South Wales, 2780, Australia",
+      "importance": 0.2753675655596695,
+      "lat": "-33.7118546",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3112294",
+      "name": "Katoomba",
+      "osm_id": 1886240872,
+      "osm_type": "node",
+      "place_id": 23306922,
+      "place_rank": 30,
+      "type": "station"
+    }
+  ],
+  "Kempsey, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Kempsey Shire Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-31.3105318",
+        "-30.5005730",
+        "152.2698247",
+        "153.0903863"
+      ],
+      "category": "boundary",
+      "display_name": "Kempsey Shire Council, New South Wales, Australia",
+      "importance": 0.44556519337943523,
+      "lat": "-30.9056457",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5228021",
+      "name": "Kempsey Shire Council",
+      "osm_id": 6178731,
+      "osm_type": "relation",
+      "place_id": 28160544,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Kempsey",
+        "postcode": "2440",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-31.0866158",
+        "-31.0381933",
+        "152.8306680",
+        "152.8794541"
+      ],
+      "category": "boundary",
+      "display_name": "Kempsey, New South Wales, 2440, Australia",
+      "importance": 0.41264182722604775,
+      "lat": "-31.0798092",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.8422890",
+      "name": "Kempsey",
+      "osm_id": 6063608,
+      "osm_type": "relation",
+      "place_id": 28174333,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Kenilworth, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Kenilworth",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4574",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.7335620",
+        "-26.5369770",
+        "152.5511070",
+        "152.7698520"
+      ],
+      "category": "boundary",
+      "display_name": "Kenilworth, Queensland, 4574, Australia",
+      "importance": 0.3343910964012564,
+      "lat": "-26.6352315",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.6166379",
+      "name": "Kenilworth",
+      "osm_id": 11675193,
+      "osm_type": "relation",
+      "place_id": 27643070,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4574",
+        "state": "Queensland",
+        "town": "Kenilworth"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-26.6353498",
+        "-26.5553498",
+        "152.6872623",
+        "152.7672623"
+      ],
+      "category": "place",
+      "display_name": "Kenilworth, Queensland, 4574, Australia",
+      "importance": 0.16005610513466084,
+      "lat": "-26.5953498",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7272623",
+      "name": "Kenilworth",
+      "osm_id": 137104451,
+      "osm_type": "node",
+      "place_id": 27507370,
+      "place_rank": 18,
+      "type": "town"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Kenilworth",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4574",
+        "retail": "Kenilworth",
+        "state": "Queensland",
+        "town": "Kenilworth"
+      },
+      "addresstype": "retail",
+      "boundingbox": [
+        "-26.5967170",
+        "-26.5944281",
+        "152.7266275",
+        "152.7285193"
+      ],
+      "category": "landuse",
+      "display_name": "Kenilworth, Queensland, 4574, Australia",
+      "importance": 0.08005610513466084,
+      "lat": "-26.5955699",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7273996",
+      "name": "Kenilworth",
+      "osm_id": 37625132,
+      "osm_type": "way",
+      "place_id": 27720405,
+      "place_rank": 24,
+      "type": "retail"
+    }
+  ],
+  "Kiah, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Kiah",
+        "postcode": "2551",
+        "state": "New South Wales"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-37.1978337",
+        "-37.1100904",
+        "149.7489523",
+        "149.9234032"
+      ],
+      "category": "boundary",
+      "display_name": "Kiah, New South Wales, 2551, Australia",
+      "importance": 0.16004953765163651,
+      "lat": "-37.1481965",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.8555282",
+      "name": "Kiah",
+      "osm_id": 6032452,
+      "osm_type": "relation",
+      "place_id": 20312257,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Kilcoy, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Kilcoy",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4515",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.9549960",
+        "-26.9284190",
+        "152.5526380",
+        "152.5723360"
+      ],
+      "category": "boundary",
+      "display_name": "Kilcoy, Queensland, 4515, Australia",
+      "importance": 0.3415289282979405,
+      "lat": "-26.9417175",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5611570",
+      "name": "Kilcoy",
+      "osm_id": 11675277,
+      "osm_type": "relation",
+      "place_id": 27642669,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "town": "Kilcoy"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-26.9831268",
+        "-26.9031268",
+        "152.5254162",
+        "152.6054162"
+      ],
+      "category": "place",
+      "display_name": "Kilcoy, Queensland, Australia",
+      "importance": 0.16004677119096664,
+      "lat": "-26.9431268",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5654162",
+      "name": "Kilcoy",
+      "osm_id": 136980902,
+      "osm_type": "node",
+      "place_id": 27533372,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Kilkivan, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Kilkivan",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4600",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.1705680",
+        "-25.9856620",
+        "152.1540940",
+        "152.3182050"
+      ],
+      "category": "boundary",
+      "display_name": "Kilkivan, Queensland, 4600, Australia",
+      "importance": 0.33478681080244976,
+      "lat": "-26.0802920",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.2473652",
+      "name": "Kilkivan",
+      "osm_id": 11675076,
+      "osm_type": "relation",
+      "place_id": 27607054,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "town": "Kilkivan"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-26.1257107",
+        "-26.0457107",
+        "152.1971582",
+        "152.2771582"
+      ],
+      "category": "place",
+      "display_name": "Kilkivan, Queensland, Australia",
+      "importance": 0.16004727168688485,
+      "lat": "-26.0857107",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.2371582",
+      "name": "Kilkivan",
+      "osm_id": 253861289,
+      "osm_type": "node",
+      "place_id": 27716878,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Krambach, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Krambach",
+        "postcode": "2429",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.0845992",
+        "-32.0057352",
+        "152.1883385",
+        "152.3291216"
+      ],
+      "category": "boundary",
+      "display_name": "Krambach, New South Wales, 2429, Australia",
+      "importance": 0.16004579766536964,
+      "lat": "-32.0521151",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.2606101",
+      "name": "Krambach",
+      "osm_id": 6059103,
+      "osm_type": "relation",
+      "place_id": 23869093,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Laidley, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Laidley",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "town": "Laidley"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-27.6605930",
+        "-27.6190870",
+        "152.3812220",
+        "152.4426180"
+      ],
+      "category": "boundary",
+      "display_name": "Laidley, Queensland, Australia",
+      "importance": 0.34223694096820295,
+      "lat": "-27.6395345",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.4132894",
+      "name": "Laidley",
+      "osm_id": 11675666,
+      "osm_type": "relation",
+      "place_id": 27874938,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4341",
+        "state": "Queensland",
+        "town": "Laidley"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-27.6707010",
+        "-27.5907010",
+        "152.3541631",
+        "152.4341631"
+      ],
+      "category": "place",
+      "display_name": "Laidley, Queensland, 4341, Australia",
+      "importance": 0.16004712520027464,
+      "lat": "-27.6307010",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.3941631",
+      "name": "Laidley",
+      "osm_id": 286923839,
+      "osm_type": "node",
+      "place_id": 27898648,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Lamington National Park, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "nature_reserve": "Lamington National Park",
+        "state": "Queensland"
+      },
+      "addresstype": "nature_reserve",
+      "boundingbox": [
+        "-28.3578530",
+        "-28.1299955",
+        "153.0077685",
+        "153.2267938"
+      ],
+      "category": "leisure",
+      "display_name": "Lamington National Park, Queensland, Australia",
+      "importance": 0.46306549857676693,
+      "lat": "-28.2440481",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1573088",
+      "name": "Lamington National Park",
+      "osm_id": 306382,
+      "osm_type": "relation",
+      "place_id": 28459635,
+      "place_rank": 24,
+      "type": "nature_reserve"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Binna Burra",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Beechmont",
+        "information": "Lamington National Park",
+        "postcode": "4211",
+        "road": "Binna Burra Road",
+        "state": "Queensland"
+      },
+      "addresstype": "information",
+      "boundingbox": [
+        "-28.1815867",
+        "-28.1814867",
+        "153.1870717",
+        "153.1871717"
+      ],
+      "category": "information",
+      "display_name": "Lamington National Park, Binna Burra Road, Beechmont, Binna Burra, Queensland, 4211, Australia",
+      "importance": 0.46306549857676693,
+      "lat": "-28.1815367",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1871217",
+      "name": "Lamington National Park",
+      "osm_id": 13908928140,
+      "osm_type": "node",
+      "place_id": 420053229,
+      "place_rank": 30,
+      "type": "board"
+    }
+  ],
+  "Launceston, TAS, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Launceston",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Tasmania"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-41.5268720",
+        "-41.3345650",
+        "146.9721810",
+        "147.3052450"
+      ],
+      "category": "place",
+      "display_name": "Launceston, Tasmania, Australia",
+      "importance": 0.5582913777439519,
+      "lat": "-41.4340813",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.1373496",
+      "name": "Launceston",
+      "osm_id": 10632701,
+      "osm_type": "relation",
+      "place_id": 24019664,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Launceston",
+        "state": "Tasmania"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-41.5561780",
+        "-41.0857340",
+        "146.9766380",
+        "147.6480590"
+      ],
+      "category": "boundary",
+      "display_name": "City of Launceston, Tasmania, Australia",
+      "importance": 0.36001248335965585,
+      "lat": "-41.3209940",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.2731288",
+      "name": "City of Launceston",
+      "osm_id": 10581631,
+      "osm_type": "relation",
+      "place_id": 23884868,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Leura, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2780",
+        "state": "New South Wales",
+        "suburb": "Leura"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-33.7378800",
+        "-33.6724870",
+        "150.3202180",
+        "150.3595085"
+      ],
+      "category": "boundary",
+      "display_name": "Leura, New South Wales, 2780, Australia",
+      "importance": 0.34397419227863374,
+      "lat": "-33.7156888",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3317665",
+      "name": "Leura",
+      "osm_id": 5496188,
+      "osm_type": "relation",
+      "place_id": 23128313,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2780",
+        "railway": "Leura",
+        "road": "Railway Parade",
+        "state": "New South Wales"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-33.7169015",
+        "-33.7069015",
+        "150.3254967",
+        "150.3354967"
+      ],
+      "category": "railway",
+      "display_name": "Leura, Railway Parade, Sydney, New South Wales, 2780, Australia",
+      "importance": 0.23468656939839805,
+      "lat": "-33.7119015",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3304967",
+      "name": "Leura",
+      "osm_id": 1886255305,
+      "osm_type": "node",
+      "place_id": 23126063,
+      "place_rank": 30,
+      "type": "station"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "farm": "Leura",
+        "house_number": "408",
+        "postcode": "2824",
+        "state": "New South Wales",
+        "town": "Warren"
+      },
+      "addresstype": "farm",
+      "boundingbox": [
+        "-31.6828801",
+        "-31.6628801",
+        "147.8002913",
+        "147.8202913"
+      ],
+      "category": "place",
+      "display_name": "Leura, 408, Warren, New South Wales, 2824, Australia",
+      "importance": 0.10670666742961774,
+      "lat": "-31.6728801",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.8102913",
+      "name": "Leura",
+      "osm_id": 3372658516,
+      "osm_type": "node",
+      "place_id": 28387541,
+      "place_rank": 22,
+      "type": "farm"
+    }
+  ],
+  "Lismore, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Lismore",
+        "postcode": "2480",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.8172584",
+        "-28.7962146",
+        "153.2692801",
+        "153.3066736"
+      ],
+      "category": "boundary",
+      "display_name": "Lismore, New South Wales, 2480, Australia",
+      "importance": 0.49103241866608066,
+      "lat": "-28.8077608",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2791883",
+      "name": "Lismore",
+      "osm_id": 6069981,
+      "osm_type": "relation",
+      "place_id": 28585937,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Lismore City Council",
+        "postcode": "2480",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-29.0714399",
+        "-28.5158299",
+        "153.0736578",
+        "153.4500360"
+      ],
+      "category": "boundary",
+      "display_name": "Lismore City Council, New South Wales, 2480, Australia",
+      "importance": 0.44312150952092727,
+      "lat": "-28.7936072",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2671259",
+      "name": "Lismore City Council",
+      "osm_id": 6168485,
+      "osm_type": "relation",
+      "place_id": 28605630,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Lithgow, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2790",
+        "state": "New South Wales",
+        "town": "Lithgow"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-33.5215360",
+        "-33.4415360",
+        "150.1164887",
+        "150.1964887"
+      ],
+      "category": "place",
+      "display_name": "Lithgow, New South Wales, 2790, Australia",
+      "importance": 0.46498457158692574,
+      "lat": "-33.4815360",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.1564887",
+      "name": "Lithgow",
+      "osm_id": 78078822,
+      "osm_type": "node",
+      "place_id": 23249962,
+      "place_rank": 18,
+      "type": "town"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Lithgow City Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-33.7606540",
+        "-32.8798041",
+        "149.7516779",
+        "150.6197699"
+      ],
+      "category": "boundary",
+      "display_name": "Lithgow City Council, New South Wales, Australia",
+      "importance": 0.4338135699802763,
+      "lat": "-33.3201229",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.1950254",
+      "name": "Lithgow City Council",
+      "osm_id": 6299566,
+      "osm_type": "relation",
+      "place_id": 23215030,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2790",
+        "state": "New South Wales",
+        "suburb": "Lithgow"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-33.4962700",
+        "-33.4638207",
+        "150.1322870",
+        "150.1742366"
+      ],
+      "category": "boundary",
+      "display_name": "Lithgow, New South Wales, 2790, Australia",
+      "importance": 0.1600518005645838,
+      "lat": "-33.4827287",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.1570223",
+      "name": "Lithgow",
+      "osm_id": 6044394,
+      "osm_type": "relation",
+      "place_id": 23371381,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Maitland, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Maitland",
+        "municipality": "Newcastle-Maitland",
+        "postcode": "2320",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.7549375",
+        "-32.7184090",
+        "151.5302390",
+        "151.5755880"
+      ],
+      "category": "boundary",
+      "display_name": "Maitland, Newcastle-Maitland, New South Wales, 2320, Australia",
+      "importance": 0.48284509765180594,
+      "lat": "-32.7316683",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.5511123",
+      "name": "Maitland",
+      "osm_id": 6058592,
+      "osm_type": "relation",
+      "place_id": 22993773,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Maitland City Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-32.8104930",
+        "-32.6056990",
+        "151.3991999",
+        "151.7446160"
+      ],
+      "category": "boundary",
+      "display_name": "Maitland City Council, New South Wales, Australia",
+      "importance": 0.43424699667243644,
+      "lat": "-32.7081770",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.5268437",
+      "name": "Maitland City Council",
+      "osm_id": 6189782,
+      "osm_type": "relation",
+      "place_id": 22959072,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Melbourne, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city": "Melbourne",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3000",
+        "state": "Victoria"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-37.9742454",
+        "-37.6542454",
+        "144.8031732",
+        "145.1231732"
+      ],
+      "category": "place",
+      "display_name": "Melbourne, Victoria, 3000, Australia",
+      "importance": 0.763077479403244,
+      "lat": "-37.8142454",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9631732",
+      "name": "Melbourne",
+      "osm_id": 21579127,
+      "osm_type": "node",
+      "place_id": 22295485,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Melbourne",
+        "state": "Victoria"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-37.8506670",
+        "-37.7754510",
+        "144.8969810",
+        "144.9913462"
+      ],
+      "category": "boundary",
+      "display_name": "City of Melbourne, Victoria, Australia",
+      "importance": 0.45998972565190827,
+      "lat": "-37.8123825",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9482613",
+      "name": "City of Melbourne",
+      "osm_id": 2404870,
+      "osm_type": "relation",
+      "place_id": 22297510,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Victoria",
+        "suburb": "Melbourne"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-37.8555270",
+        "-37.7994460",
+        "144.9514311",
+        "144.9890970"
+      ],
+      "category": "boundary",
+      "display_name": "Melbourne, Victoria, Australia",
+      "importance": 0.44854900924452645,
+      "lat": "-37.8141705",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9655616",
+      "name": "Melbourne",
+      "osm_id": 2383266,
+      "osm_type": "relation",
+      "place_id": 22263913,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Mogo, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Mogo",
+        "postcode": "2536",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-35.8686535",
+        "-35.7399069",
+        "150.0320311",
+        "150.1958260"
+      ],
+      "category": "boundary",
+      "display_name": "Mogo, New South Wales, 2536, Australia",
+      "importance": 0.3250193457146212,
+      "lat": "-35.7830222",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.1426078",
+      "name": "Mogo",
+      "osm_id": 6079541,
+      "osm_type": "relation",
+      "place_id": 24129384,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Mogo",
+        "postcode": "2850",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.3284920",
+        "-32.1840771",
+        "149.9667527",
+        "150.0799443"
+      ],
+      "category": "boundary",
+      "display_name": "Mogo, New South Wales, 2850, Australia",
+      "importance": 0.1600480636301213,
+      "lat": "-32.2652000",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.0179000",
+      "name": "Mogo",
+      "osm_id": 6059149,
+      "osm_type": "relation",
+      "place_id": 23163977,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Mt Kembla, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Wollongong",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Mount Kembla",
+        "postcode": "2526",
+        "state": "New South Wales"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-34.4422339",
+        "-34.4421339",
+        "150.8066632",
+        "150.8067632"
+      ],
+      "category": "natural",
+      "display_name": "Mount Kembla, Wollongong, New South Wales, 2526, Australia",
+      "importance": 0.37898700054830464,
+      "lat": "-34.4421839",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8067132",
+      "name": "Mount Kembla",
+      "osm_id": 1208355199,
+      "osm_type": "node",
+      "place_id": 23996796,
+      "place_rank": 18,
+      "type": "peak"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Mount Kembla",
+        "postcode": "2526",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-34.4493681",
+        "-34.4085692",
+        "150.8003632",
+        "150.8373468"
+      ],
+      "category": "boundary",
+      "display_name": "Mount Kembla, New South Wales, 2526, Australia",
+      "importance": 0.16006058060578315,
+      "lat": "-34.4293926",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8216912",
+      "name": "Mount Kembla",
+      "osm_id": 6076672,
+      "osm_type": "relation",
+      "place_id": 24042392,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Mt Tamborine, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Tamborine Mountain",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4272",
+        "state": "Queensland",
+        "suburb": "Mount Tamborine"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-27.9884035",
+        "-27.9484035",
+        "153.1767792",
+        "153.2167792"
+      ],
+      "category": "place",
+      "display_name": "Mount Tamborine, Tamborine Mountain, Queensland, 4272, Australia",
+      "importance": 0.14671507972838937,
+      "lat": "-27.9684035",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1967792",
+      "name": "Mount Tamborine",
+      "osm_id": 207089354,
+      "osm_type": "node",
+      "place_id": 27929619,
+      "place_rank": 19,
+      "type": "suburb"
+    }
+  ],
+  "Noojee, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Noojee",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3833",
+        "state": "Victoria"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-37.9137600",
+        "-37.7582310",
+        "145.8927010",
+        "146.0642490"
+      ],
+      "category": "boundary",
+      "display_name": "Noojee, Victoria, 3833, Australia",
+      "importance": 0.2861574737770128,
+      "lat": "-37.8352675",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.9443211",
+      "name": "Noojee",
+      "osm_id": 2463044,
+      "osm_type": "relation",
+      "place_id": 20674996,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3832",
+        "state": "Victoria",
+        "village": "Noojee"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-37.9135934",
+        "-37.8735934",
+        "145.9799702",
+        "146.0199702"
+      ],
+      "category": "place",
+      "display_name": "Noojee, Victoria, 3832, Australia",
+      "importance": 0.14671392462043178,
+      "lat": "-37.8935934",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.9999702",
+      "name": "Noojee",
+      "osm_id": 5704950553,
+      "osm_type": "node",
+      "place_id": 20696889,
+      "place_rank": 19,
+      "type": "village"
+    }
+  ],
+  "Oberon, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Oberon Council",
+        "postcode": "2787",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-34.2059298",
+        "-33.4847731",
+        "149.3947205",
+        "150.2409670"
+      ],
+      "category": "boundary",
+      "display_name": "Oberon Council, New South Wales, 2787, Australia",
+      "importance": 0.4242810569321047,
+      "lat": "-33.8455931",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.8326162",
+      "name": "Oberon Council",
+      "osm_id": 6307911,
+      "osm_type": "relation",
+      "place_id": 23117803,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Oberon",
+        "postcode": "2787",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-33.7908259",
+        "-33.5887752",
+        "149.7564919",
+        "149.9533208"
+      ],
+      "category": "boundary",
+      "display_name": "Oberon, New South Wales, 2787, Australia",
+      "importance": 0.33113623856093605,
+      "lat": "-33.7041500",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.8588000",
+      "name": "Oberon",
+      "osm_id": 6074607,
+      "osm_type": "relation",
+      "place_id": 23085067,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Ormeau, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Ormeau",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-27.7998430",
+        "-27.7497870",
+        "153.2272050",
+        "153.2855470"
+      ],
+      "category": "boundary",
+      "display_name": "Ormeau, Queensland, Australia",
+      "importance": 0.31017616620231897,
+      "lat": "-27.7748130",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2520815",
+      "name": "Ormeau",
+      "osm_id": 11678050,
+      "osm_type": "relation",
+      "place_id": 28070093,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4209",
+        "railway": "Ormeau",
+        "road": "Mirambeena Drive",
+        "state": "Queensland",
+        "suburb": "Pimpama"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-27.8041852",
+        "-27.7941852",
+        "153.2774294",
+        "153.2874294"
+      ],
+      "category": "railway",
+      "display_name": "Ormeau, Mirambeena Drive, Pimpama, Queensland, 4209, Australia",
+      "importance": 0.2791651820367976,
+      "lat": "-27.7991852",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2824294",
+      "name": "Ormeau",
+      "osm_id": 10156322874,
+      "osm_type": "node",
+      "place_id": 28282335,
+      "place_rank": 30,
+      "type": "station"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Ormeau",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4208",
+        "state": "Queensland",
+        "suburb": "Ormeau"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-27.7940328",
+        "-27.7540328",
+        "153.2286457",
+        "153.2686457"
+      ],
+      "category": "place",
+      "display_name": "Ormeau, Queensland, 4208, Australia",
+      "importance": 0.14673367895017925,
+      "lat": "-27.7740328",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2486457",
+      "name": "Ormeau",
+      "osm_id": 145620068,
+      "osm_type": "node",
+      "place_id": 28218883,
+      "place_rank": 19,
+      "type": "suburb"
+    }
+  ],
+  "Pilliga, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2388",
+        "state": "New South Wales",
+        "village": "Pilliga"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-30.5815699",
+        "-30.2355906",
+        "148.5346891",
+        "149.1069823"
+      ],
+      "category": "boundary",
+      "display_name": "Pilliga, New South Wales, 2388, Australia",
+      "importance": 0.19938740066310082,
+      "lat": "-30.3516050",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.8888022",
+      "name": "Pilliga",
+      "osm_id": 5793720,
+      "osm_type": "relation",
+      "place_id": 28655050,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Pyramul, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Pyramul",
+        "postcode": "2850",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.9950652",
+        "-32.8478959",
+        "149.5147023",
+        "149.6974696"
+      ],
+      "category": "boundary",
+      "display_name": "Pyramul, New South Wales, 2850, Australia",
+      "importance": 0.1600480636301213,
+      "lat": "-32.8818000",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.6179000",
+      "name": "Pyramul",
+      "osm_id": 6059212,
+      "osm_type": "relation",
+      "place_id": 23284374,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Queanbeyan, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Queanbeyan",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2620",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-35.5124518",
+        "-35.1924518",
+        "149.0737634",
+        "149.3937634"
+      ],
+      "category": "place",
+      "display_name": "Queanbeyan, New South Wales, 2620, Australia",
+      "importance": 0.47955511960520114,
+      "lat": "-35.3524518",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.2337634",
+      "name": "Queanbeyan",
+      "osm_id": 40817809,
+      "osm_type": "node",
+      "place_id": 24433923,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales",
+        "suburb": "Queanbeyan"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-35.3628807",
+        "-35.3418444",
+        "149.2192041",
+        "149.2398556"
+      ],
+      "category": "boundary",
+      "display_name": "Queanbeyan, New South Wales, Australia",
+      "importance": 0.1600725818265049,
+      "lat": "-35.3530411",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.2308944",
+      "name": "Queanbeyan",
+      "osm_id": 6068053,
+      "osm_type": "relation",
+      "place_id": 24029688,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Robinvale, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3549",
+        "state": "Victoria",
+        "town": "Robinvale"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-34.6819430",
+        "-34.5464093",
+        "142.6892684",
+        "142.8112036"
+      ],
+      "category": "boundary",
+      "display_name": "Robinvale, Victoria, 3549, Australia",
+      "importance": 0.34045234732906265,
+      "lat": "-34.5840409",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "142.7739356",
+      "name": "Robinvale",
+      "osm_id": 3112579,
+      "osm_type": "relation",
+      "place_id": 19057651,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Springbrook, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Springbrook",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "village": "Springbrook"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-28.2413073",
+        "-28.1291320",
+        "153.2376210",
+        "153.3172852"
+      ],
+      "category": "boundary",
+      "display_name": "Springbrook, Queensland, Australia",
+      "importance": 0.3466613603637845,
+      "lat": "-28.1857490",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2715593",
+      "name": "Springbrook",
+      "osm_id": 11675437,
+      "osm_type": "relation",
+      "place_id": 28578528,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4213",
+        "state": "Queensland",
+        "village": "Springbrook"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-28.2117972",
+        "-28.1717972",
+        "153.2452116",
+        "153.2852116"
+      ],
+      "category": "place",
+      "display_name": "Springbrook, Queensland, 4213, Australia",
+      "importance": 0.14673367895017925,
+      "lat": "-28.1917972",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2652116",
+      "name": "Springbrook",
+      "osm_id": 4316622215,
+      "osm_type": "node",
+      "place_id": 28519685,
+      "place_rank": 19,
+      "type": "village"
+    }
+  ],
+  "Springwood, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2777",
+        "state": "New South Wales",
+        "town": "Springwood"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-33.7287500",
+        "-33.6554250",
+        "150.5427310",
+        "150.6068318"
+      ],
+      "category": "boundary",
+      "display_name": "Springwood, New South Wales, 2777, Australia",
+      "importance": 0.36160342477182406,
+      "lat": "-33.7017613",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.5655467",
+      "name": "Springwood",
+      "osm_id": 5492511,
+      "osm_type": "relation",
+      "place_id": 23316689,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2777",
+        "railway": "Springwood",
+        "road": "Macquarie Road",
+        "state": "New South Wales"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-33.7037482",
+        "-33.6937482",
+        "150.5589732",
+        "150.5689732"
+      ],
+      "category": "railway",
+      "display_name": "Springwood, Macquarie Road, Sydney, New South Wales, 2777, Australia",
+      "importance": 0.3272701010450185,
+      "lat": "-33.6987482",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.5639732",
+      "name": "Springwood",
+      "osm_id": 2393270560,
+      "osm_type": "node",
+      "place_id": 23463841,
+      "place_rank": 30,
+      "type": "station"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "farm": "Springwood",
+        "postcode": "2648",
+        "state": "New South Wales"
+      },
+      "addresstype": "farm",
+      "boundingbox": [
+        "-33.2818304",
+        "-33.2618304",
+        "141.5870742",
+        "141.6070742"
+      ],
+      "category": "place",
+      "display_name": "Springwood, New South Wales, 2648, Australia",
+      "importance": 0.1067131128404669,
+      "lat": "-33.2718304",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "141.5970742",
+      "name": "Springwood",
+      "osm_id": 2340089000,
+      "osm_type": "node",
+      "place_id": 19212193,
+      "place_rank": 22,
+      "type": "farm"
+    }
+  ],
+  "Stanthorpe, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4380",
+        "state": "Queensland",
+        "town": "Stanthorpe"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-28.6965500",
+        "-28.6278240",
+        "151.9012870",
+        "151.9696850"
+      ],
+      "category": "boundary",
+      "display_name": "Stanthorpe, Queensland, 4380, Australia",
+      "importance": 0.402945750627893,
+      "lat": "-28.6559947",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.9338265",
+      "name": "Stanthorpe",
+      "osm_id": 11678041,
+      "osm_type": "relation",
+      "place_id": 28713744,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Sydney, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-34.2598367",
+        "-33.3641864",
+        "150.2608250",
+        "151.3438980"
+      ],
+      "category": "place",
+      "display_name": "Sydney, New South Wales, Australia",
+      "importance": 0.7815069337380703,
+      "lat": "-33.8698439",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.2082848",
+      "name": "Sydney",
+      "osm_id": 5750005,
+      "osm_type": "relation",
+      "place_id": 420680648,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "borough": "Sydney CBD",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Council of the City of Sydney",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-33.9243832",
+        "-33.8535997",
+        "151.1748638",
+        "151.2330104"
+      ],
+      "category": "boundary",
+      "display_name": "Council of the City of Sydney, Sydney CBD, Sydney, New South Wales, Australia",
+      "importance": 0.5102168444433652,
+      "lat": "-33.8890382",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.2050397",
+      "name": "Council of the City of Sydney",
+      "osm_id": 1251066,
+      "osm_type": "relation",
+      "place_id": 23469823,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Tenterfield, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Tenterfield Shire Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-29.4277895",
+        "-28.2491150",
+        "151.3653441",
+        "152.6314134"
+      ],
+      "category": "boundary",
+      "display_name": "Tenterfield Shire Council, New South Wales, Australia",
+      "importance": 0.4393959249852274,
+      "lat": "-28.8384300",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.2813166",
+      "name": "Tenterfield Shire Council",
+      "osm_id": 6163155,
+      "osm_type": "relation",
+      "place_id": 28554783,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Tenterfield",
+        "postcode": "2372",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-29.2441364",
+        "-28.9418775",
+        "151.8614715",
+        "152.2067028"
+      ],
+      "category": "boundary",
+      "display_name": "Tenterfield, New South Wales, 2372, Australia",
+      "importance": 0.37958691803318917,
+      "lat": "-29.0483333",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.0177778",
+      "name": "Tenterfield",
+      "osm_id": 6070168,
+      "osm_type": "relation",
+      "place_id": 28377592,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Tharwa, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Queanbeyan",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2620",
+        "road": "Tharwa Road",
+        "state": "New South Wales",
+        "suburb": "Queanbeyan West"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-35.3598686",
+        "-35.3576621",
+        "149.2193605",
+        "149.2226102"
+      ],
+      "category": "highway",
+      "display_name": "Tharwa Road, Queanbeyan West, Queanbeyan, New South Wales, 2620, Australia",
+      "importance": 0.05340591515983822,
+      "lat": "-35.3585986",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.2208702",
+      "name": "Tharwa Road",
+      "osm_id": 441985653,
+      "osm_type": "way",
+      "place_id": 23708572,
+      "place_rank": 26,
+      "type": "tertiary"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Queanbeyan",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2620",
+        "road": "Tharwa Road",
+        "state": "New South Wales",
+        "suburb": "Karabar"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-35.3653828",
+        "-35.3640967",
+        "149.2153619",
+        "149.2158343"
+      ],
+      "category": "highway",
+      "display_name": "Tharwa Road, Karabar, Queanbeyan, New South Wales, 2620, Australia",
+      "importance": 0.05340591515983822,
+      "lat": "-35.3647196",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.2155445",
+      "name": "Tharwa Road",
+      "osm_id": 488854245,
+      "osm_type": "way",
+      "place_id": 23756559,
+      "place_rank": 26,
+      "type": "tertiary"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Queanbeyan",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2620",
+        "road": "Tharwa Road",
+        "state": "New South Wales",
+        "suburb": "Queanbeyan"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-35.3576621",
+        "-35.3569902",
+        "149.2226102",
+        "149.2229466"
+      ],
+      "category": "highway",
+      "display_name": "Tharwa Road, Queanbeyan, New South Wales, 2620, Australia",
+      "importance": 0.05340591515983822,
+      "lat": "-35.3573807",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.2228931",
+      "name": "Tharwa Road",
+      "osm_id": 441985654,
+      "osm_type": "way",
+      "place_id": 23764414,
+      "place_rank": 26,
+      "type": "tertiary"
+    }
+  ],
+  "Torrington, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Torrington",
+        "postcode": "2371",
+        "state": "New South Wales"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-29.3882354",
+        "-29.1902860",
+        "151.5679993",
+        "151.7846797"
+      ],
+      "category": "boundary",
+      "display_name": "Torrington, New South Wales, 2371, Australia",
+      "importance": 0.35352855872429106,
+      "lat": "-29.3112985",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.6967475",
+      "name": "Torrington",
+      "osm_id": 5862876,
+      "osm_type": "relation",
+      "place_id": 28301734,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Watagans, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "nature_reserve": "Watagans National Park",
+        "postcode": "2325",
+        "state": "New South Wales",
+        "village": "Ellalong"
+      },
+      "addresstype": "nature_reserve",
+      "boundingbox": [
+        "-33.0593659",
+        "-32.9593750",
+        "151.2947382",
+        "151.4482640"
+      ],
+      "category": "leisure",
+      "display_name": "Watagans National Park, Ellalong, New South Wales, 2325, Australia",
+      "importance": 0.4516681956131193,
+      "lat": "-33.0095237",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.3768922",
+      "name": "Watagans National Park",
+      "osm_id": 6056386,
+      "osm_type": "relation",
+      "place_id": 23247161,
+      "place_rank": 24,
+      "type": "nature_reserve"
+    }
+  ],
+  "Wentworth Falls, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2782",
+        "road": "National Pass Track",
+        "state": "New South Wales",
+        "tourism": "Wentworth Falls",
+        "town": "Wentworth Falls"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-33.7280700",
+        "-33.7279700",
+        "150.3740133",
+        "150.3741133"
+      ],
+      "category": "tourism",
+      "display_name": "Wentworth Falls, National Pass Track, Wentworth Falls, New South Wales, 2782, Australia",
+      "importance": 0.3523323513289129,
+      "lat": "-33.7280200",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3740633",
+      "name": "Wentworth Falls",
+      "osm_id": 21266664,
+      "osm_type": "node",
+      "place_id": 23138424,
+      "place_rank": 30,
+      "type": "attraction"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2782",
+        "state": "New South Wales",
+        "village": "Wentworth Falls"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-33.7716120",
+        "-33.6868450",
+        "150.3510739",
+        "150.4088460"
+      ],
+      "category": "boundary",
+      "display_name": "Wentworth Falls, New South Wales, 2782, Australia",
+      "importance": 0.34397419227863374,
+      "lat": "-33.7156389",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3697595",
+      "name": "Wentworth Falls",
+      "osm_id": 5492655,
+      "osm_type": "relation",
+      "place_id": 23158833,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2782",
+        "railway": "Wentworth Falls",
+        "road": "Station Street",
+        "state": "New South Wales"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-33.7148800",
+        "-33.7048800",
+        "150.3714087",
+        "150.3814087"
+      ],
+      "category": "railway",
+      "display_name": "Wentworth Falls, Station Street, Sydney, New South Wales, 2782, Australia",
+      "importance": 0.2432038182346074,
+      "lat": "-33.7098800",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3764087",
+      "name": "Wentworth Falls",
+      "osm_id": 2393270562,
+      "osm_type": "node",
+      "place_id": 23135456,
+      "place_rank": 30,
+      "type": "station"
+    }
+  ],
+  "Witheren, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Witheren",
+        "postcode": "4275",
+        "state": "Queensland"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.0898590",
+        "-27.9826500",
+        "153.1206540",
+        "153.2388770"
+      ],
+      "category": "boundary",
+      "display_name": "Witheren, Queensland, 4275, Australia",
+      "importance": 0.16004841306172274,
+      "lat": "-28.0506572",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1877059",
+      "name": "Witheren",
+      "osm_id": 11675482,
+      "osm_type": "relation",
+      "place_id": 28562618,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Witheren",
+        "postcode": "4275",
+        "state": "Queensland",
+        "town": "Canungra"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.0487356",
+        "-28.0287356",
+        "153.1700729",
+        "153.1900729"
+      ],
+      "category": "place",
+      "display_name": "Witheren, Canungra, Queensland, 4275, Australia",
+      "importance": 0.0667150797283894,
+      "lat": "-28.0387356",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1800729",
+      "name": "Witheren",
+      "osm_id": 5408569856,
+      "osm_type": "node",
+      "place_id": 28618012,
+      "place_rank": 25,
+      "type": "locality"
+    }
+  ],
+  "Woodenbong, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Woodenbong",
+        "postcode": "2476",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.4327844",
+        "-28.3147790",
+        "152.5348989",
+        "152.6544293"
+      ],
+      "category": "boundary",
+      "display_name": "Woodenbong, New South Wales, 2476, Australia",
+      "importance": 0.1600483154039826,
+      "lat": "-28.3913455",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.6120214",
+      "name": "Woodenbong",
+      "osm_id": 6070264,
+      "osm_type": "relation",
+      "place_id": 28608182,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Woolooga, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Woolooga",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4570",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.1417410",
+        "-25.8921240",
+        "152.2723280",
+        "152.4361220"
+      ],
+      "category": "boundary",
+      "display_name": "Woolooga, Queensland, 4570, Australia",
+      "importance": 0.19283288150311992,
+      "lat": "-26.0171915",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.3704487",
+      "name": "Woolooga",
+      "osm_id": 11675074,
+      "osm_type": "relation",
+      "place_id": 27347536,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Woolooga",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Woolooga",
+        "postcode": "4570",
+        "state": "Queensland"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-26.0730046",
+        "-26.0330046",
+        "152.3724249",
+        "152.4124249"
+      ],
+      "category": "place",
+      "display_name": "Woolooga, Queensland, 4570, Australia",
+      "importance": 0.13338060502021817,
+      "lat": "-26.0530046",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.3924249",
+      "name": "Woolooga",
+      "osm_id": 431093113,
+      "osm_type": "node",
+      "place_id": 27251417,
+      "place_rank": 20,
+      "type": "hamlet"
+    }
+  ],
+  "Woy Woy, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2256",
+        "state": "New South Wales",
+        "suburb": "Woy Woy"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-33.5335827",
+        "-33.4730939",
+        "151.2539470",
+        "151.3410191"
+      ],
+      "category": "boundary",
+      "display_name": "Woy Woy, New South Wales, 2256, Australia",
+      "importance": 0.2954185985350713,
+      "lat": "-33.4880548",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.3274925",
+      "name": "Woy Woy",
+      "osm_id": 6039404,
+      "osm_type": "relation",
+      "place_id": 23930365,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2256",
+        "railway": "Woy Woy",
+        "road": "Railway Street",
+        "state": "New South Wales",
+        "town": "Woy Woy"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-33.4908799",
+        "-33.4808799",
+        "151.3181381",
+        "151.3281381"
+      ],
+      "category": "railway",
+      "display_name": "Woy Woy, Railway Street, Woy Woy, New South Wales, 2256, Australia",
+      "importance": 0.2702882353650111,
+      "lat": "-33.4858799",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.3231381",
+      "name": "Woy Woy",
+      "osm_id": 1886265378,
+      "osm_type": "node",
+      "place_id": 23274649,
+      "place_rank": 30,
+      "type": "station"
+    }
+  ]
+}
