@@ -86,6 +86,11 @@ export type LocationItem = {
   title: string | null;
   canonical_figure: string | null;
   date_band: string;
+  source_name?: string | null;
+  source_type?: string | null;
+  publication?: string | null;
+  url?: string | null;
+  ingestion_status?: string | null;
 };
 
 export type MapClusterItem = {

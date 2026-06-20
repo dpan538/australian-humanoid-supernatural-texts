@@ -233,6 +233,16 @@ function pointDisplayNudge(point: LocationItem) {
 export function ArchiveTerminal({ data, view }: { data: FrontendData; view: ViewMode }) {
   const nextView = getNextView(view);
   const [selectedRecord, setSelectedRecord] = useState<RecordItem | null>(null);
+  const overlayNavigation = selectedRecord ? recordNavigationContext(data, selectedRecord) : null;
+
+  function showAdjacentRecord(direction: 1 | -1) {
+    if (!overlayNavigation || overlayNavigation.records.length < 2) {
+      return;
+    }
+    const nextIndex =
+      (overlayNavigation.currentIndex + direction + overlayNavigation.records.length) % overlayNavigation.records.length;
+    setSelectedRecord(overlayNavigation.records[nextIndex]);
+  }
 
   useEffect(() => {
     if (!selectedRecord) {
@@ -242,10 +252,18 @@ export function ArchiveTerminal({ data, view }: { data: FrontendData; view: View
       if (event.key === "Escape") {
         setSelectedRecord(null);
       }
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        event.preventDefault();
+        showAdjacentRecord(1);
+      }
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        event.preventDefault();
+        showAdjacentRecord(-1);
+      }
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [selectedRecord]);
+  }, [selectedRecord, overlayNavigation]);
 
   return (
     <main className="terminal-shell">
@@ -276,7 +294,14 @@ export function ArchiveTerminal({ data, view }: { data: FrontendData; view: View
           </Link>
         </div>
       </div>
-      {selectedRecord ? <RecordCardOverlay record={selectedRecord} onClose={() => setSelectedRecord(null)} /> : null}
+      {selectedRecord ? (
+        <RecordCardOverlay
+          record={selectedRecord}
+          navigation={overlayNavigation}
+          onClose={() => setSelectedRecord(null)}
+          onNavigate={showAdjacentRecord}
+        />
+      ) : null}
     </main>
   );
 }
@@ -1188,14 +1213,62 @@ function recordBody(record: RecordItem) {
   return `Public record note for ${figure}, recorded in ${source} (${date}). This card is a review surface: source voice, relevance, location, and publicness still require human checking before interpretation.`;
 }
 
-function RecordCardOverlay({ record, onClose }: { record: RecordItem; onClose: () => void }) {
-  const tone = sourceTone(record);
+type RecordNavigationContext = {
+  records: RecordItem[];
+  currentIndex: number;
+  regionLabel: string;
+};
+
+function recordNavigationContext(data: FrontendData, record: RecordItem): RecordNavigationContext {
+  const recordsById = new Map(data.records.map((item) => [item.record_id, item]));
+  const selectedPoint = data.map_points.find((point) => point.record_id === record.record_id);
+  const state = selectedPoint?.state_territory;
+  const strictPointRecords = data.map_points
+    .filter((point) => Boolean(state) && point.state_territory === state)
+    .map((point) => recordsById.get(point.record_id))
+    .filter((item): item is RecordItem => Boolean(item));
+  const unique = Array.from(new Map(strictPointRecords.map((item) => [item.record_id, item])).values()).sort((a, b) => {
+    const yearA = a.year ?? 9999;
+    const yearB = b.year ?? 9999;
+    return yearA - yearB || (a.title ?? "").localeCompare(b.title ?? "") || a.record_id - b.record_id;
+  });
+  const fallback = [...data.records].sort((a, b) => {
+    const yearA = a.year ?? 9999;
+    const yearB = b.year ?? 9999;
+    return yearA - yearB || (a.title ?? "").localeCompare(b.title ?? "") || a.record_id - b.record_id;
+  });
+  const records = unique.length ? unique : fallback;
+  const currentIndex = Math.max(
+    0,
+    records.findIndex((item) => item.record_id === record.record_id),
+  );
+  return {
+    records,
+    currentIndex,
+    regionLabel: state ? STATE_NAMES[state] ?? state : "archive",
+  };
+}
+
+function RecordCardOverlay({
+  record,
+  navigation,
+  onClose,
+  onNavigate,
+}: {
+  record: RecordItem;
+  navigation: RecordNavigationContext | null;
+  onClose: () => void;
+  onNavigate: (direction: 1 | -1) => void;
+}) {
+  const tone = mapSourceTone(record);
   const location = record.location_summary || "location unverified";
   const sourceName = record.source_name || record.publication || "public source";
   const sourceClass = tone.className;
   const year = record.year ?? "----";
   const title = record.title || recordDisplayTitle(record);
   const body = recordBody(record);
+  const canNavigate = Boolean(navigation && navigation.records.length > 1);
+  const navPosition = navigation ? `${navigation.currentIndex + 1} / ${navigation.records.length}` : "1 / 1";
 
   return (
     <div className="record-overlay" role="presentation" onClick={onClose}>
@@ -1206,9 +1279,30 @@ function RecordCardOverlay({ record, onClose }: { record: RecordItem; onClose: (
         aria-label={`Record ${title}`}
         onClick={(event) => event.stopPropagation()}
       >
+        {canNavigate ? (
+          <>
+            <button
+              className="record-card-nav record-card-nav-prev"
+              type="button"
+              onClick={() => onNavigate(-1)}
+              aria-label={`Previous record in ${navigation?.regionLabel ?? "current region"}`}
+            >
+              &lt;
+            </button>
+            <button
+              className="record-card-nav record-card-nav-next"
+              type="button"
+              onClick={() => onNavigate(1)}
+              aria-label={`Next record in ${navigation?.regionLabel ?? "current region"}`}
+            >
+              &gt;
+            </button>
+          </>
+        ) : null}
         <section className="record-card-table" aria-label="Record metadata">
           <div className="record-card-table-top">
             <span>aus humanoid record</span>
+            <span>{navigation?.regionLabel ?? "archive"} / {navPosition}</span>
             <button type="button" onClick={onClose} aria-label="Close record card">
               CLOSE
             </button>

@@ -1,6 +1,6 @@
 # Frontend Record Card Sample Audit
 
-- Generated at: `2026-06-20T09:56:28+00:00`
+- Generated at: `2026-06-20T11:03:20+00:00`
 - Frontend schema: `frontend-data/v1`
 - Total records: `986`
 - Sample size: `50`

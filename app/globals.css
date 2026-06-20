@@ -1764,6 +1764,63 @@ a {
   --record-paper: #f4f4ef;
 }
 
+.record-card.source-tone-ayr-historical {
+  --record-tone: #303433;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-ayr-witness {
+  --record-tone: #223c2b;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-media {
+  --record-tone: #17334a;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-institutional {
+  --record-tone: #2f3148;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-candidate {
+  --record-tone: #463f2c;
+  --record-paper: #f4f4ef;
+}
+
+.record-card-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 42px;
+  height: 96px;
+  border: 0;
+  color: rgba(5, 6, 6, 0.34);
+  background: transparent;
+  font-family: "Courier New", "SFMono-Regular", Consolas, monospace;
+  font-size: 2rem;
+  line-height: 1;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: color 120ms ease, background 120ms ease;
+}
+
+.record-card-nav:hover,
+.record-card-nav:focus-visible {
+  color: rgba(5, 6, 6, 0.74);
+  background: rgba(5, 6, 6, 0.035);
+  outline: none;
+}
+
+.record-card-nav-prev {
+  left: 0;
+}
+
+.record-card-nav-next {
+  right: 0;
+}
+
 .record-card-table {
   min-height: 158px;
   padding: 19px 20px 20px;

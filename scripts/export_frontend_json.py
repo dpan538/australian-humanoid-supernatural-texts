@@ -375,9 +375,16 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
     first_location_by_record: dict[int, dict[str, Any]] = {}
     precise_points = []
     broad_locations = []
+    records_by_id = {int(record["record_id"]): record for record in records}
     for location in locations:
         state = location.get("state_territory")
         record_id = int(location["record_id"])
+        linked_record = records_by_id.get(record_id, {})
+        location["source_name"] = linked_record.get("source_name")
+        location["source_type"] = linked_record.get("source_type")
+        location["publication"] = linked_record.get("publication")
+        location["url"] = linked_record.get("url")
+        location["ingestion_status"] = linked_record.get("ingestion_status")
         existing_location = first_location_by_record.get(record_id)
         if existing_location is None or (
             existing_location.get("state_territory") not in STATE_CODES and location.get("state_territory") in STATE_CODES
