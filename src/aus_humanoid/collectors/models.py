@@ -31,10 +31,17 @@ class CollectionCandidate:
     acceptance_decision: str
     rejection_reason: str
     evidence_summary: str
+    latitude: float | None = None
+    longitude: float | None = None
+    location_precision: str = ""
+    geocode_source: str = ""
+    geocode_verification_status: str = ""
+    coordinate_evidence_note: str = ""
+    duplicate_check_status: str = ""
+    quality_class: str = ""
     raw_metadata_json: dict[str, Any] = field(default_factory=dict)
 
     def as_row(self) -> dict[str, Any]:
         row = asdict(self)
         row["raw_metadata_json"] = self.raw_metadata_json
         return row
-

@@ -1,0 +1,130 @@
+schema_version: "2.1.0"
+run_family: strict_geo_public_collection
+target:
+  accepted_net_new_source_items: 3000
+  strict_geocoded_items_required: 3000
+  minimum_non_ayr: 2850
+  maximum_new_ayr: 150
+  minimum_pre_1970: 900
+  preferred_primary_or_institutional: 1800
+  preferred_publication_diversity: 120
+batch_size: 50
+counting_rule:
+  accepted_record_must_have:
+    - stable_public_url_or_identifier
+    - source_title
+    - publication_or_organisation
+    - publication_date_or_explicit_date_note
+    - access_date
+    - source_type
+    - source_tier
+    - publicness_status
+    - rights_access_note
+    - substantive_evidence_summary_or_short_excerpt
+    - narrative_type_or_secondary_role
+    - australian_relationship
+    - humanoid_basis
+    - source_label_where_present
+    - location_role
+    - location_text_as_printed
+    - latitude
+    - longitude
+    - geocode_source
+    - geocode_verification_status
+    - coordinate_evidence_note
+    - ethics_review_status
+    - cultural_sensitivity
+    - duplicate_check_status
+  strict_geography_gate:
+    accepted_values:
+      geocode_verification_status:
+        - verified_place
+        - verified_locality
+        - verified_gazetteer_point
+        - verified_institutional_coordinate
+      location_precision:
+        - exact_site
+        - town
+        - locality
+        - named_feature
+    rejected_values:
+      location_precision:
+        - country
+        - state_or_territory
+        - broad_region
+        - publication_location_only
+        - uncertain
+        - unknown
+      location_role:
+        - publication_location
+        - source_collection_location
+  not_counted:
+    - unresolved_leads
+    - metadata_only_catalogue_pointers
+    - exact_duplicate_urls
+    - search_result_snippets
+    - controls
+    - exclusions
+    - inaccessible_pages_without_sufficient_evidence
+    - ai_generated_summaries
+    - records_without_verified_coordinates
+quality_classes:
+  A:
+    label: strict_primary_geocoded
+    counts_toward_target: true
+    description: Original or near-primary public source with a named Australian locality and verified coordinates.
+  B:
+    label: strict_institutional_geocoded
+    counts_toward_target: true
+    description: Public institutional, library, museum, heritage, park, or community-controlled public item with verified locality coordinates.
+  C:
+    label: strict_reputable_retelling_geocoded
+    counts_toward_target: true
+    description: Reputable media or local-history retelling with stable source chain, substantive narrative content, and verified coordinates.
+  D:
+    label: review_lead_geography_missing
+    counts_toward_target: false
+    description: Relevant public item but location is broad, inferred, missing, or not yet geocoded.
+  E:
+    label: excluded_or_control
+    counts_toward_target: false
+    description: Duplicate, control, non-humanoid, inaccessible, restricted, metadata-only, or insufficient evidence item.
+state_priority:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - VIC
+  - QLD
+  - NSW
+date_bands:
+  - before 1842
+  - 1842-1875
+  - 1876-1918
+  - 1919-1945
+  - 1946-1969
+  - 1970-1999
+  - 2000-present
+source_priority:
+  tier_a:
+    - Trove article pages with article IDs and publication details
+    - National Library of Australia digitized items
+    - state library digitized collections
+    - Internet Archive public-domain books and periodicals
+    - original public newspapers, magazines, memoirs, local histories, and government reports
+  tier_b:
+    - AIATSIS public catalogue and public institutional guidance
+    - community-controlled public resources
+    - museums, galleries, parks, heritage authorities, and councils
+  tier_c:
+    - ABC
+    - SBS
+    - reputable national or local journalism
+    - public oral-history and folklore projects
+  discovery_only:
+    - AYR
+    - Wikipedia
+    - tourism pages
+    - paranormal directories
+    - blogs and forums

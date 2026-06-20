@@ -94,6 +94,8 @@ make frontend-build
 
 `make collect-v2-batch` stages V2 collection candidates. It does not count unresolved leads, metadata-only pointers, controls, exclusions, duplicates, or inaccessible snippets toward the 500 accepted-source target.
 
+`make collect-v2-3000` starts the strict-geography expansion path. This path targets 3,000 net-new public source items, but a candidate counts only when it has a stable public source, substantive evidence summary, source label, ethics status, and verified latitude/longitude tied to a named Australian place. State-only, broad-region, publication-location-only, and ungeocoded records remain leads or review items and must not be rendered as map flags.
+
 `make export-v2` writes normalized review exports under `data/exports/v2/` and `public/data/frontend-data/v2.json`.
 
 `make audit-v2` writes V2 corpus status, diversity, temporal, geographic, ethics, cleaning, dedupe, and collection-progress reports under `data/processed/v2/`.
@@ -140,7 +142,7 @@ Raw text is saved under `data/raw/text/`, records are inserted into SQLite, year
 
 `make export-frontend` writes `public/data/frontend-data.json`, the static legacy-compatible data contract used by the Next.js archive-terminal interface, and also writes the normalized V2 contract through `scripts/export_v2.py`. `make frontend-build` runs the production build intended for Vercel.
 
-`make export-frontend` also runs a deterministic 50-record card-readiness and map-coverage audit at `data/processed/v2/frontend_record_card_sample_audit.md`. Use this after collection or migration work to confirm that records have enough fields for the overlay card and that every frontend record has an individual clickable map flag. State-level or broad locations use deterministic in-state display placement and must not be interpreted as precise event coordinates.
+`make export-frontend` also runs a deterministic 50-record card-readiness and map-coverage audit at `data/processed/v2/frontend_record_card_sample_audit.md`. Use this after collection or migration work to confirm that records have enough fields for the overlay card and to separate card-ready records from strict map-grade records. The public map renders only records with verified latitude/longitude. State-level, broad-region, publication-location-only, and ungeocoded records remain visible to review/export workflows but are not displayed as individual map flags.
 
 ## Public Interface Design
 

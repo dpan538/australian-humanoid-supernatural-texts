@@ -2,7 +2,7 @@ PYTHON ?= python3
 PYTHON_ENV ?= PYTHONDONTWRITEBYTECODE=1
 DB ?= data/processed/australian_humanoid_figures.sqlite
 
-.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round collect-ayr-records plan-public-round-002 audit-round-002 locations validate export export-frontend frontend-audit dedupe test frontend-build snapshot-legacy migrate-v2 classify-legacy clean-v2 dedupe-v2 audit-v2 collect-v2-dry-run collect-v2-batch collect-v2-500 export-v2 validate-v2
+.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round collect-ayr-records plan-public-round-002 audit-round-002 locations validate export export-frontend frontend-audit dedupe test frontend-build snapshot-legacy migrate-v2 classify-legacy clean-v2 dedupe-v2 audit-v2 collect-v2-dry-run collect-v2-batch collect-v2-500 collect-v2-3000 export-v2 validate-v2
 
 init:
 	$(PYTHON_ENV) $(PYTHON) scripts/init_db.py --db $(DB)
@@ -84,6 +84,9 @@ collect-v2-batch:
 
 collect-v2-500:
 	$(PYTHON_ENV) $(PYTHON) scripts/collect_v2_batch.py --db $(DB) --run-id v2_collection_batch_001 --trove-leads --limit 50
+
+collect-v2-3000:
+	$(PYTHON_ENV) $(PYTHON) scripts/collect_v2_batch.py --db $(DB) --run-id strict_geo_collection_3000_batch_001 --trove-leads --limit 50 --strict-geo-only --target 3000 --report data/processed/v2/collection_3000_strict_geo_progress.md
 
 export-v2:
 	$(PYTHON_ENV) $(PYTHON) scripts/export_v2.py --db $(DB)
