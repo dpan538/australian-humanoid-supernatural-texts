@@ -2,7 +2,7 @@ PYTHON ?= python3
 PYTHON_ENV ?= PYTHONDONTWRITEBYTECODE=1
 DB ?= data/processed/australian_humanoid_figures.sqlite
 
-.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round collect-ayr-records plan-public-round-002 audit-round-002 locations validate export export-frontend dedupe test frontend-build snapshot-legacy migrate-v2 classify-legacy clean-v2 dedupe-v2 audit-v2 collect-v2-dry-run collect-v2-batch collect-v2-500 export-v2 validate-v2
+.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round collect-ayr-records plan-public-round-002 audit-round-002 locations validate export export-frontend frontend-audit dedupe test frontend-build snapshot-legacy migrate-v2 classify-legacy clean-v2 dedupe-v2 audit-v2 collect-v2-dry-run collect-v2-batch collect-v2-500 export-v2 validate-v2
 
 init:
 	$(PYTHON_ENV) $(PYTHON) scripts/init_db.py --db $(DB)
@@ -46,6 +46,10 @@ export:
 export-frontend:
 	$(PYTHON_ENV) $(PYTHON) scripts/export_frontend_json.py --db $(DB)
 	$(PYTHON_ENV) $(PYTHON) scripts/export_v2.py --db $(DB)
+	$(PYTHON_ENV) $(PYTHON) scripts/audit_frontend_records.py --sample-size 50
+
+frontend-audit:
+	$(PYTHON_ENV) $(PYTHON) scripts/audit_frontend_records.py --sample-size 50
 
 dedupe:
 	$(PYTHON_ENV) $(PYTHON) scripts/run_dedupe.py --db $(DB)

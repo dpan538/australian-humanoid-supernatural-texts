@@ -1,6 +1,6 @@
 {
   "schema_version": "frontend-data/v1",
-  "generated_at": "2026-06-20T02:12:16+00:00",
+  "generated_at": "2026-06-20T02:37:42+00:00",
   "scope": {
     "country": "Australia",
     "public_only": true,
@@ -15,6 +15,7 @@
     "location_count": 990,
     "precise_point_count": 1,
     "broad_location_count": 114,
+    "map_cluster_count": 8,
     "earliest_year": 1825,
     "latest_year": 2026,
     "state_record_counts": {
@@ -56539,6 +56540,96 @@
       "title": "Yowie country: Queensland town revamps tourism brand as a prime spot for mythological creature",
       "canonical_figure": "Yowie",
       "date_band": "modern_1970_present"
+    }
+  ],
+  "map_clusters": [
+    {
+      "cluster_id": "state:WA",
+      "cluster_type": "state_or_territory_aggregate",
+      "state_territory": "WA",
+      "label": "WA",
+      "record_count": 46,
+      "representative_record_id": 862,
+      "location_role": "uncertain_or_broad_location",
+      "location_precision": "state_or_territory",
+      "display_note": "Aggregated state/territory signal for records without precise public coordinates."
+    },
+    {
+      "cluster_id": "state:NT",
+      "cluster_type": "state_or_territory_aggregate",
+      "state_territory": "NT",
+      "label": "NT",
+      "record_count": 25,
+      "representative_record_id": 887,
+      "location_role": "uncertain_or_broad_location",
+      "location_precision": "state_or_territory",
+      "display_note": "Aggregated state/territory signal for records without precise public coordinates."
+    },
+    {
+      "cluster_id": "state:SA",
+      "cluster_type": "state_or_territory_aggregate",
+      "state_territory": "SA",
+      "label": "SA",
+      "record_count": 11,
+      "representative_record_id": 668,
+      "location_role": "uncertain_or_broad_location",
+      "location_precision": "state_or_territory",
+      "display_note": "Aggregated state/territory signal for records without precise public coordinates."
+    },
+    {
+      "cluster_id": "state:QLD",
+      "cluster_type": "state_or_territory_aggregate",
+      "state_territory": "QLD",
+      "label": "QLD",
+      "record_count": 318,
+      "representative_record_id": 642,
+      "location_role": "uncertain_or_broad_location",
+      "location_precision": "state_or_territory",
+      "display_note": "Aggregated state/territory signal for records without precise public coordinates."
+    },
+    {
+      "cluster_id": "state:NSW",
+      "cluster_type": "state_or_territory_aggregate",
+      "state_territory": "NSW",
+      "label": "NSW",
+      "record_count": 453,
+      "representative_record_id": 853,
+      "location_role": "uncertain_or_broad_location",
+      "location_precision": "state_or_territory",
+      "display_note": "Aggregated state/territory signal for records without precise public coordinates."
+    },
+    {
+      "cluster_id": "state:VIC",
+      "cluster_type": "state_or_territory_aggregate",
+      "state_territory": "VIC",
+      "label": "VIC",
+      "record_count": 87,
+      "representative_record_id": 640,
+      "location_role": "uncertain_or_broad_location",
+      "location_precision": "state_or_territory",
+      "display_note": "Aggregated state/territory signal for records without precise public coordinates."
+    },
+    {
+      "cluster_id": "state:TAS",
+      "cluster_type": "state_or_territory_aggregate",
+      "state_territory": "TAS",
+      "label": "TAS",
+      "record_count": 6,
+      "representative_record_id": 40,
+      "location_role": "uncertain_or_broad_location",
+      "location_precision": "state_or_territory",
+      "display_note": "Aggregated state/territory signal for records without precise public coordinates."
+    },
+    {
+      "cluster_id": "state:ACT",
+      "cluster_type": "state_or_territory_aggregate",
+      "state_territory": "ACT",
+      "label": "ACT",
+      "record_count": 17,
+      "representative_record_id": 672,
+      "location_role": "uncertain_or_broad_location",
+      "location_precision": "state_or_territory",
+      "display_note": "Aggregated state/territory signal for records without precise public coordinates."
     }
   ],
   "broad_locations": [

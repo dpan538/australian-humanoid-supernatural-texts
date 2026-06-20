@@ -272,6 +272,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
     source_type_counts = Counter(record.get("source_type") or "unknown" for record in records)
 
     state_record_ids: dict[str, set[int]] = {code: set() for code in STATE_CODES}
+    state_representative_records: dict[str, int] = {}
     precise_points = []
     broad_locations = []
     for location in locations:
@@ -279,10 +280,27 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         record_id = int(location["record_id"])
         if state in state_record_ids:
             state_record_ids[state].add(record_id)
+            state_representative_records.setdefault(state, record_id)
         if location.get("latitude") is not None and location.get("longitude") is not None:
             precise_points.append(location)
         elif location.get("location_type") in {"broad_region", "state_or_territory", "country"}:
             broad_locations.append(location)
+
+    map_clusters = [
+        {
+            "cluster_id": f"state:{code}",
+            "cluster_type": "state_or_territory_aggregate",
+            "state_territory": code,
+            "label": code,
+            "record_count": len(record_ids),
+            "representative_record_id": state_representative_records.get(code),
+            "location_role": "uncertain_or_broad_location",
+            "location_precision": "state_or_territory",
+            "display_note": "Aggregated state/territory signal for records without precise public coordinates.",
+        }
+        for code, record_ids in state_record_ids.items()
+        if record_ids
+    ]
 
     records_by_figure = Counter((record.get("canonical_figure_guess") or record.get("canonical_figure") or "uncoded") for record in records)
     records_by_year = Counter(str(record["year"]) for record in records if record.get("year") is not None)
@@ -321,6 +339,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             "location_count": len(locations),
             "precise_point_count": len(precise_points),
             "broad_location_count": len(broad_locations),
+            "map_cluster_count": len(map_clusters),
             "earliest_year": min(years) if years else None,
             "latest_year": max(years) if years else None,
             "state_record_counts": {code: len(ids) for code, ids in state_record_ids.items()},
@@ -335,6 +354,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         "records": records,
         "locations": locations,
         "map_points": precise_points,
+        "map_clusters": map_clusters,
         "broad_locations": broad_locations,
         "figures": list(figures_by_id.values()),
         "queries": queries,

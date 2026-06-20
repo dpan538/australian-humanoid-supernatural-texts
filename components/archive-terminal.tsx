@@ -2,7 +2,7 @@
 
 import { CSSProperties, useEffect, useState } from "react";
 import Link from "next/link";
-import type { DateBand, FrontendData, LocationItem, RecordItem } from "@/lib/types";
+import type { DateBand, FrontendData, LocationItem, MapClusterItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
@@ -75,6 +75,17 @@ const STATE_LABEL_OVERRIDES: Partial<Record<keyof typeof STATE_NAMES, [number, n
   NSW: [733, 479],
   VIC: [688, 552],
   TAS: [714, 654],
+  ACT: [784, 512],
+};
+
+const STATE_CLUSTER_POSITIONS: Record<string, [number, number]> = {
+  WA: [246, 356],
+  NT: [412, 262],
+  SA: [520, 389],
+  QLD: [682, 322],
+  NSW: [720, 482],
+  VIC: [660, 548],
+  TAS: [704, 642],
   ACT: [784, 512],
 };
 
@@ -281,10 +292,12 @@ function getNextView(view: ViewMode) {
 function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
   const [hoverState, setHoverState] = useState<string | null>(null);
   const [hoverPoint, setHoverPoint] = useState<LocationItem | null>(null);
+  const [hoverCluster, setHoverCluster] = useState<MapClusterItem | null>(null);
   const stateCounts = data.summary.state_record_counts;
   const activeState = hoverState ? STATE_NAMES[hoverState] : "Australia";
   const activeCount = hoverState ? stateCounts[hoverState] ?? 0 : data.summary.record_count;
   const points = data.map_points.filter((point) => point.latitude !== null && point.longitude !== null);
+  const clusters = (data.map_clusters ?? []).filter((cluster) => cluster.record_count > 0);
 
   return (
     <div className="map-view">
@@ -328,6 +341,59 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
           })}
           <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
           <g>
+            {clusters.map((cluster) => {
+              const position = STATE_CLUSTER_POSITIONS[cluster.state_territory];
+              if (!position) {
+                return null;
+              }
+              const [x, y] = position;
+              const selected = hoverCluster?.cluster_id === cluster.cluster_id || hoverState === cluster.state_territory;
+              const record = data.records.find((item) => item.record_id === cluster.representative_record_id);
+              const radius = Math.min(28, 7 + Math.log10(cluster.record_count + 1) * 8);
+              const dense = cluster.record_count >= 100 ? " dense" : cluster.record_count >= 25 ? " medium" : "";
+              return (
+                <g
+                  key={cluster.cluster_id}
+                  className={selected ? `map-cluster active${dense}` : `map-cluster${dense}`}
+                  onMouseEnter={() => {
+                    setHoverCluster(cluster);
+                    setHoverState(cluster.state_territory);
+                  }}
+                  onMouseLeave={() => {
+                    setHoverCluster(null);
+                    setHoverState(null);
+                  }}
+                  onFocus={() => {
+                    setHoverCluster(cluster);
+                    setHoverState(cluster.state_territory);
+                  }}
+                  onBlur={() => {
+                    setHoverCluster(null);
+                    setHoverState(null);
+                  }}
+                  onClick={() => {
+                    if (record) {
+                      onSelectRecord(record);
+                    }
+                  }}
+                  onKeyDown={(event) => {
+                    if (record && (event.key === "Enter" || event.key === " ")) {
+                      event.preventDefault();
+                      onSelectRecord(record);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={record ? 0 : -1}
+                  aria-label={`${cluster.label} aggregate: ${cluster.record_count} records with state or broad location evidence`}
+                >
+                  <circle className="map-cluster-ring" cx={x} cy={y} r={radius} />
+                  <circle className="map-cluster-core" cx={x} cy={y} r={Math.max(3.5, radius * 0.32)} />
+                  <text className="map-cluster-count" x={x} y={y + radius + 13}>
+                    {cluster.record_count}
+                  </text>
+                </g>
+              );
+            })}
             {points.map((point, index) => {
               const projected = projectPoint(point.latitude as number, point.longitude as number);
               const nudge = pointDisplayNudge(point);

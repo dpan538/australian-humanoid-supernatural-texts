@@ -16,6 +16,7 @@ export type Summary = {
   location_count: number;
   precise_point_count: number;
   broad_location_count: number;
+  map_cluster_count?: number;
   earliest_year: number | null;
   latest_year: number | null;
   state_record_counts: Record<string, number>;
@@ -86,6 +87,18 @@ export type LocationItem = {
   date_band: string;
 };
 
+export type MapClusterItem = {
+  cluster_id: string;
+  cluster_type: string;
+  state_territory: string;
+  label: string;
+  record_count: number;
+  representative_record_id: number | null;
+  location_role: string;
+  location_precision: string;
+  display_note: string;
+};
+
 export type FigureItem = {
   figure_id: number;
   canonical_name: string;
@@ -150,6 +163,7 @@ export type FrontendData = {
   records: RecordItem[];
   locations: LocationItem[];
   map_points: LocationItem[];
+  map_clusters?: MapClusterItem[];
   broad_locations: LocationItem[];
   figures: FigureItem[];
   queries: QueryItem[];
