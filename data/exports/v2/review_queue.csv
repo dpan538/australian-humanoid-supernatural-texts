@@ -1,0 +1,986 @@
+schema_version,legacy_record_id,source_item_id,narrative_id,primary_record_role,migration_confidence,review_flags,title,source_type,source_tier,narrative_type,secondary_role,analysis_status,ethics_review_status,display_mode
+2.0.0,1,1,1,first-class narrative source,medium,[],Yowie,modern_web,C,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,2,2,2,first-class narrative source,medium,"[""indigenous_related""]",Yara-ma-yha-who,modern_web,C,traditional_narrative,heritage_discourse,display_ready_unreviewed,caution_indigenous_related,summary_only
+2.0.0,3,3,3,first-class narrative source,medium,"[""high_sensitivity""]",Wandjina,modern_web,C,spirit_person_narrative,heritage_discourse,display_ready_unreviewed,requires_ethics_review,summary_only
+2.0.0,4,4,,control,medium,"[""control""]",Bunyip,modern_web,C,,,,,
+2.0.0,5,5,,control,medium,"[""control""]",Drop bear,modern_web,C,,,,,
+2.0.0,6,6,4,first-class narrative source,medium,[],Yowie country: Queensland town revamps tourism brand as a prime spot for mythological creature,modern_web,C,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,13,7,5,first-class narrative source,medium,"[""indigenous_related""]",Nargun,modern_web,C,traditional_narrative,heritage_discourse,display_ready_unreviewed,caution_indigenous_related,summary_only
+2.0.0,14,8,6,first-class narrative source,medium,[],"Kalamundra, Western Australia 1983",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,15,9,7,first-class narrative source,medium,[],"Australind, Western Australia 1991",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,16,10,8,first-class narrative source,medium,[],"Exmouth, Western Australia 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,17,11,9,first-class narrative source,medium,[],"Coral Bay, Western Australia 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,18,12,10,first-class narrative source,medium,[],"Lancedin, Western Australia 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,19,13,11,first-class narrative source,medium,[],"Greenbushes, Western Australia 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,20,14,12,first-class narrative source,medium,[],"Donnybrook, Western Australia 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,21,15,13,first-class narrative source,medium,[],"Mandurah, Western Australia 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,22,16,14,first-class narrative source,medium,[],"Jarrahdale, Western Australia 2020",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,23,17,15,first-class narrative source,medium,[],"Alcoa Wetlands, Western Australia 2022",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,24,18,16,first-class narrative source,medium,[],"Willunga, South Australia 1992",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,25,19,17,first-class narrative source,medium,[],"Yalata, South Australia 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,26,20,18,first-class narrative source,medium,[],"Roxby Downs, South Australia 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,27,21,19,first-class narrative source,medium,[],"Wilpena Pound, South Australia 2014",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,28,22,20,first-class narrative source,medium,[],"Sixth Creek - Adelaide Hills, South Australia 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,29,23,21,first-class narrative source,medium,[],"Loxton, South Australia 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,30,24,22,first-class narrative source,medium,[],"Poochera, South Australia 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,31,25,23,first-class narrative source,medium,[],"Darwin (Fannie Bay), Northern Territory 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,32,26,24,first-class narrative source,medium,[],"Yambah Station, Northern Territory 1987",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,33,27,25,first-class narrative source,medium,[],"Berry Springs, Northern Territory 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,34,28,26,first-class narrative source,medium,[],"Acacia Hills, Northern Territory 1997 (1)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,35,29,27,first-class narrative source,medium,[],"Acacia Hills, Northern Territory 1997 (2)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,36,30,28,first-class narrative source,medium,[],"Acacia Hills & Humpty Doo, Northern Territory 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,37,31,29,first-class narrative source,medium,[],"Adelaide River, Northern Territory 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,38,32,30,first-class narrative source,medium,[],"Tanima Desert, Northern Territory 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,39,33,31,first-class narrative source,medium,[],"Kings Canyon, Northern Territory 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,40,34,32,first-class narrative source,medium,[],"Lake Dulverton, Tasmania 1987 (1)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,41,35,33,first-class narrative source,medium,[],"Lake Dulverton, Tasmania 1987 (2)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,42,36,34,first-class narrative source,medium,[],"Smithton, Tasmania 1992",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,43,37,35,first-class narrative source,medium,[],"Christmas Hills Reserve, Tasmania 2024",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,44,38,36,first-class narrative source,medium,"[""original_article_verification_required""]","Phillip Island, Victoria 1849",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,45,39,37,first-class narrative source,medium,[],"Sherbrooke Forest, Victoria 1970",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,46,40,38,first-class narrative source,medium,[],"Colac, Victoria 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,47,41,39,first-class narrative source,medium,[],"Kinglake West & Eden Park, Victoria late 1980's",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,48,42,40,first-class narrative source,medium,[],"Cranbourne, Victoria 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,49,43,41,first-class narrative source,medium,[],"Noojee, Victoria 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,50,44,42,first-class narrative source,medium,[],"Toolangi, Victoria 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,51,45,43,first-class narrative source,medium,[],"Avonsleigh, Victoria 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,52,46,44,first-class narrative source,medium,[],"Darriman, Victoria 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,53,47,45,first-class narrative source,medium,[],"Cranbourne, Victoria 1987",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,54,48,46,first-class narrative source,medium,[],"Lyndhurst, Victoria 1987",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,55,49,47,first-class narrative source,medium,"[""original_article_verification_required""]","Emerald, Victoria 1988",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,56,50,48,first-class narrative source,medium,[],"Dellicknora, Victoria 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,57,51,49,first-class narrative source,medium,[],"Lake Buffalo, Victoria 1991",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,58,52,50,first-class narrative source,medium,[],"Hepburn Springs, Victoria 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,59,53,51,first-class narrative source,medium,[],"Aberfeldy, Victoria 1996",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,60,54,52,first-class narrative source,medium,[],"Warnambool, Victoria 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,61,55,53,first-class narrative source,medium,[],"Wilsons Promontory, Victoria 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,62,56,54,first-class narrative source,medium,[],"Licola, Victoria 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,63,57,55,first-class narrative source,medium,[],"Robinvale, Victoria 2004",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,64,58,56,first-class narrative source,medium,[],"Mansfield, Victoria 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,65,59,57,first-class narrative source,medium,[],"Barmah Forest (Murray River), Victoria 2007",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,66,60,58,first-class narrative source,medium,[],"Nowa Nowa, Victoria 2007",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,67,61,59,first-class narrative source,medium,[],"Redbank, Victoria 2008 (2)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,68,62,60,first-class narrative source,medium,[],"Robinvale, Victoria 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,69,63,61,first-class narrative source,medium,[],"Aberfeldy, Victoria 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,70,64,62,first-class narrative source,medium,[],"Briagolong, Victoria 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,71,65,63,first-class narrative source,medium,[],"Bendigo (area), Victoria 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,72,66,64,first-class narrative source,medium,[],"Falls Creek, Victoria 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,73,67,65,first-class narrative source,medium,[],"Yarra Valley, Victoria 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,74,68,66,first-class narrative source,medium,[],"Bemm River, Victoria 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,75,69,67,first-class narrative source,medium,[],"Healesville, Victoria 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,76,70,68,first-class narrative source,medium,[],"Harrietville, Victoria 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,77,71,69,first-class narrative source,medium,[],"Mount Hotham, Victoria 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,78,72,70,first-class narrative source,medium,[],"Goongerah, Victoria 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,79,73,71,first-class narrative source,medium,[],"Noojee, Victoria 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,80,74,72,first-class narrative source,medium,[],"Bunyip, Victoria 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,81,75,73,first-class narrative source,medium,[],"Blackwood, Victoria 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,82,76,74,first-class narrative source,medium,[],"Creswick, Victoria 2020",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,83,77,75,first-class narrative source,medium,[],"Mitta Mitta, Victoria 2023",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,84,78,76,first-class narrative source,medium,"[""original_article_verification_required""]","Braidwood, New South Wales 1870",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,85,79,77,first-class narrative source,medium,"[""original_article_verification_required""]","Charlton, New South Wales 1923",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,86,80,78,first-class narrative source,medium,"[""original_article_verification_required""]","Dungay Creek, New South Wales 1962",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,87,81,79,first-class narrative source,medium,"[""original_article_verification_required""]","Woy Woy, New South Wales 1968",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,88,82,80,first-class narrative source,medium,[],"Middle Brother Mountain, New South Wales 1973",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,89,83,81,first-class narrative source,medium,[],"Katoomba, New South Wales 1975",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,90,84,82,first-class narrative source,medium,[],"Bateman's Bay, New South Wales 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,91,85,83,first-class narrative source,medium,[],"Talingbo, New South Wales 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,92,86,84,first-class narrative source,medium,[],"Mogo, New South Wales 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,93,87,85,first-class narrative source,medium,[],"Bateman's Bay, New South Wales 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,94,88,86,first-class narrative source,medium,[],"Wentworth Falls, New South Wales 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,95,89,87,first-class narrative source,medium,[],"Coffs Harbour, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,96,90,88,first-class narrative source,medium,[],"Wee Jasper & Uki, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,97,91,89,first-class narrative source,medium,[],"Ophir, New South Wales 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,98,92,90,first-class narrative source,medium,[],"Evans Head, New South Wales 1983",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,99,93,91,first-class narrative source,medium,[],"Brooklyn, New South Wales 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,100,94,92,first-class narrative source,medium,[],"Sunny Corner, New South Wales 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,101,95,93,first-class narrative source,medium,[],"Border Ranges and Blue Knob, New South Wales 1987 & 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,102,96,94,first-class narrative source,medium,[],"Mt. Kembla, New South Wales 1988",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,103,97,95,first-class narrative source,medium,[],"Bateman's Bay, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,104,98,96,first-class narrative source,medium,[],"Fingal Head, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,105,99,97,first-class narrative source,medium,[],"Tallong, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,106,100,98,first-class narrative source,medium,[],"Callala Bay, New South Wales 1992",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,107,101,99,first-class narrative source,medium,[],"Leeville, New South Wales 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,108,102,100,first-class narrative source,medium,[],"Mulgoa, New South Wales 1994",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,109,103,101,first-class narrative source,medium,[],"Kempsey, New Sout Wales 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,110,104,102,first-class narrative source,medium,[],"Cessnock, New South Wales 1996",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,111,105,103,first-class narrative source,medium,[],"Hawkesbury River, New South Wales 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,112,106,104,first-class narrative source,medium,[],"Faulconbridge, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,113,107,105,first-class narrative source,medium,[],"Mudgee, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,114,108,106,first-class narrative source,medium,[],"Bourke, New South Wales 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,115,109,107,first-class narrative source,medium,[],"Mt. Kembla, New South Wales 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,116,110,108,first-class narrative source,medium,[],"Leura, New South Wales 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,117,111,109,first-class narrative source,medium,[],"Yowrie, New South Wales 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,118,112,110,first-class narrative source,medium,[],"Lismore, New South Wales 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,119,113,111,first-class narrative source,medium,[],"Glossodia, New South Wales 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,120,114,112,first-class narrative source,medium,[],"Wollemi National Park, New South Wales 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,121,115,113,first-class narrative source,medium,[],"Gunnedah, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,122,116,114,first-class narrative source,medium,[],"Rosebank, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,123,117,115,first-class narrative source,medium,[],"Wentworth Falls, New South Falls 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,124,118,116,first-class narrative source,medium,[],"Blue Knob, New South Wales 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,125,119,117,first-class narrative source,medium,[],"Thredbo, New South Wales 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,126,120,118,first-class narrative source,medium,[],"Colo Heights, New South Wales 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,127,121,119,first-class narrative source,medium,[],"Hartley, New South Wales 2007",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,128,122,120,first-class narrative source,medium,[],"Bongil Bongil, New South Wales 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,129,123,121,first-class narrative source,medium,[],"Coonabarabran, New South Wales 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,130,124,122,first-class narrative source,medium,[],"Broken Hill, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,131,125,123,first-class narrative source,medium,[],"Macquarie Pass - Robertson, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,132,126,124,first-class narrative source,medium,[],"Watagans, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,133,127,125,first-class narrative source,medium,[],"Dorrigo, New South Wales 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,134,128,126,first-class narrative source,medium,[],"Wentworth Falls, New South Wales 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,135,129,127,first-class narrative source,medium,[],"Munmorah, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,136,130,128,first-class narrative source,medium,[],"Wingello, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,137,131,129,first-class narrative source,medium,[],"Hawkesburry River, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,138,132,130,first-class narrative source,medium,[],"Parkes, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,139,133,131,first-class narrative source,medium,[],"Tucabia, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,140,134,132,first-class narrative source,medium,[],"Nemingha, New South Wales 2014",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,141,135,133,first-class narrative source,medium,[],"Coramba, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,142,136,134,first-class narrative source,medium,[],"Mt. Keira, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,143,137,135,first-class narrative source,medium,[],"Kiah, New South Wales 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,144,138,136,first-class narrative source,medium,[],"Lawrence, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,145,139,137,first-class narrative source,medium,[],"Wingello, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,146,140,138,first-class narrative source,medium,[],"Grafton, New South Wales 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,147,141,139,first-class narrative source,medium,[],"Wingen, New South Wales 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,148,142,140,first-class narrative source,medium,[],"Nightcap NP, New South Wales 2022",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,149,143,141,first-class narrative source,medium,"[""original_article_verification_required""]","Charters Towers, Queensland 1932",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,150,144,142,first-class narrative source,medium,"[""original_article_verification_required""]","Aramara, Queensland 1950",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,151,145,143,first-class narrative source,medium,[],"Burleigh, Queensland 1973",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,152,146,144,first-class narrative source,medium,[],"Canungra, Queensland 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,153,147,145,first-class narrative source,medium,[],"Nerang, Queensland 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,154,148,146,first-class narrative source,medium,[],"Charters Towers, Queensland 1979 (2)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,155,149,147,first-class narrative source,medium,[],"Mt. Isa, Queensland 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,156,150,148,first-class narrative source,medium,[],"Kilcoy, Queensland 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,157,151,149,first-class narrative source,medium,[],"Springbrook, Queensland 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,158,152,150,first-class narrative source,medium,[],"Cunninghams Gap, Queensland 1981",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,159,153,151,first-class narrative source,medium,[],"Worongary, Queensland 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,160,154,152,first-class narrative source,medium,[],"Springbrook, Queensland 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,161,155,153,first-class narrative source,medium,[],"Gympie (East), Queensland 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,162,156,154,first-class narrative source,medium,[],"Worongary, Queensland 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,163,157,155,first-class narrative source,medium,[],"Mt. Superbus, Queensland 1986",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,164,158,156,first-class narrative source,medium,[],"Gympie (East), Queensland 1989",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,165,159,157,first-class narrative source,medium,[],"Eudlo, Queensland 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,166,160,158,first-class narrative source,medium,[],"Canungra, Queensland 1991",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,167,161,159,first-class narrative source,medium,[],"Tin Can Bay, Queensland 1992 (1)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,168,162,160,first-class narrative source,medium,[],"Kilcoy, Queensland 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,169,163,161,first-class narrative source,medium,[],"McPherson Ranges, Queensland 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,170,164,162,first-class narrative source,medium,[],"Rockhampton, Queensland 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,171,165,163,first-class narrative source,medium,[],"Molendinar, Queensland 1996",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,172,166,164,first-class narrative source,medium,[],"Camira, Queensland 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,173,167,165,first-class narrative source,medium,[],"Ormeau, Queensland 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,174,168,166,first-class narrative source,medium,[],"Bribie Island, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,175,169,167,first-class narrative source,medium,[],"Kenilworth, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,176,170,168,first-class narrative source,medium,[],"Scotchy Pocket, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,177,171,169,first-class narrative source,medium,[],"Daisy Hill, Queensland 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,178,172,170,first-class narrative source,medium,[],"Booreen Point, Queensland 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,179,173,171,first-class narrative source,medium,[],"Gayndah, Queensland 2000 (2)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,180,174,172,first-class narrative source,medium,[],"Kilcoy, Queensland 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,181,175,173,first-class narrative source,medium,[],"Tully, Queensland 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,182,176,174,first-class narrative source,medium,[],"Laidley, Queensland 2001 (2)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,183,177,175,first-class narrative source,medium,[],"Beerwah, Queensland 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,184,178,176,first-class narrative source,medium,[],"Glasshouse Mtns, Queensland 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,185,179,177,first-class narrative source,medium,[],"Tin Can Bay, Queensland 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,186,180,178,first-class narrative source,medium,[],"Lamington NP, Queensland 2004",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,187,181,179,first-class narrative source,medium,[],"Canarvon Gorge, Queensland 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,188,182,180,first-class narrative source,medium,[],"Ormeau, Queensland 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,189,183,181,first-class narrative source,medium,[],"Mapleton, Queensland 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,190,184,182,first-class narrative source,medium,[],"Alpha, Queensland 2007",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,191,185,183,first-class narrative source,medium,[],Uki Qld 2007,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,192,186,184,first-class narrative source,medium,[],"Leyburn, Queensland 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,193,187,185,first-class narrative source,medium,[],"Kilkivan, Queensland 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,194,188,186,first-class narrative source,medium,[],"Eumundi - Yandina, Queensland 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,195,189,187,first-class narrative source,medium,[],"Oak Beach, Queensland 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,196,190,188,first-class narrative source,medium,[],"Koumala Range, Queensland 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,197,191,189,first-class narrative source,medium,[],"Miriam Vale, Queensland 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,198,192,190,first-class narrative source,medium,[],"Bribie Island, Queensland 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,199,193,191,first-class narrative source,medium,[],"Laidley, Queensland 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,200,194,192,first-class narrative source,medium,[],"Deepwater National Park, Queensland 2014",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,201,195,193,first-class narrative source,medium,[],"Nanango, Queensland 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,202,196,194,first-class narrative source,medium,[],"Glenbar, Queensland 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,203,197,195,first-class narrative source,medium,[],"Ormeau Hills, Queensland 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,204,198,196,first-class narrative source,medium,[],"Yandina, Queensland 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,205,199,197,first-class narrative source,medium,[],"Ormeau / Kingsholme, Queensland 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,206,200,198,first-class narrative source,medium,[],"Agnes Waters, Queensland 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,207,201,199,first-class narrative source,medium,[],"Nunimbah Valley, Queensland 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,208,202,200,first-class narrative source,medium,[],"Witheren, Queensland 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,209,203,201,first-class narrative source,medium,[],"Currumbin Valley, Queensland 2019 (3)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,210,204,202,first-class narrative source,medium,[],"Kilkivan, Queensland 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,211,205,203,first-class narrative source,medium,[],"Bellbird Grove, Queensland 2020",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,212,206,204,first-class narrative source,medium,[],"Moore Park Beach / Bundaberg, Queensland 2021",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,213,207,205,first-class narrative source,medium,[],"Mount Nebo, Queensland 2023",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,214,208,206,first-class narrative source,medium,[],"Bemm River, Victoria 2007",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,215,209,207,first-class narrative source,medium,[],"Aboriginal P.O.V, New South Wales 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,216,210,208,first-class narrative source,medium,[],"Advancetown, Queensland 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,217,211,209,first-class narrative source,medium,[],"Benambra, Victoria 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,218,212,210,first-class narrative source,medium,[],"Alstonville, New South Wales 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,219,213,211,first-class narrative source,medium,[],"Aratula, Queensland 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,220,214,212,first-class narrative source,medium,[],"Bendigo (area), Victoria 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,221,215,213,first-class narrative source,medium,[],"Ashford, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,222,216,214,first-class narrative source,medium,[],"Atherton, Queensland 1986",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,223,217,215,first-class narrative source,medium,[],"Billabong, Victoria 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,224,218,216,first-class narrative source,medium,[],"Ashford, New South Wales 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,225,219,217,first-class narrative source,medium,[],"Bahrs Scrub, Queensland 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,226,220,218,first-class narrative source,medium,[],"Colac, Victoria 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,227,221,219,first-class narrative source,medium,"[""original_article_verification_required""]","Bangalow, New South Wales 1969",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,228,222,220,first-class narrative source,medium,[],"Beachmere, Queensland 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,229,223,221,first-class narrative source,medium,[],"Dufty's Beach - Murray River, Victoria 1987",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,230,224,222,first-class narrative source,medium,[],"Bara, New South Wales 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,231,225,223,first-class narrative source,medium,[],"Beechmont, Queensland 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,232,226,224,first-class narrative source,medium,[],"Emerald, Victoria 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,233,227,225,first-class narrative source,medium,[],"Barclay's Island, New South Wales 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,234,228,226,first-class narrative source,medium,[],"Beerwah, Queensland 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,235,229,227,first-class narrative source,medium,[],"Falls Creek, Victoria 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,236,230,228,first-class narrative source,medium,[],"Barrington Tops, New South Wales 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,237,231,229,first-class narrative source,medium,[],"Beerwah, Queensland 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,238,232,230,first-class narrative source,medium,[],"Grampians, Victoria 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,239,233,231,first-class narrative source,medium,[],"Barrington Tops, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,240,234,232,first-class narrative source,medium,[],"Bellthorpe, Queensland 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,241,235,233,first-class narrative source,medium,[],"Harrietville, Victoria 1986",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,242,236,234,first-class narrative source,medium,[],"Barwon River, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,243,237,235,first-class narrative source,medium,[],"Blackbutt, Queensland 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,244,238,236,first-class narrative source,medium,[],"Hepburn Springs, Victoria 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,245,239,237,first-class narrative source,medium,[],"Baryulgil, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,246,240,238,first-class narrative source,medium,[],"Blackbutt, Queensland 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,247,241,239,first-class narrative source,medium,[],"Hepburn Springs, Victoria 2020",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,248,242,240,first-class narrative source,medium,[],"Bateman's Bay, New South Wales 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,249,243,241,first-class narrative source,medium,[],"Blackbutt, Queensland 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,250,244,242,first-class narrative source,medium,[],"Macclesfield, Victoria 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,251,245,243,first-class narrative source,medium,[],"Bathurst, New South Wales 1970",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,252,246,244,first-class narrative source,medium,[],"Cairns, Queensland 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,253,247,245,first-class narrative source,medium,[],"Mansfield, Victoria 1988",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,254,248,246,first-class narrative source,medium,[],"Bathurst, New South Wales 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,255,249,247,first-class narrative source,medium,[],"Cairns, Queensland 1996",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,256,250,248,first-class narrative source,medium,"[""original_article_verification_required""]","Moe, Victoria 1950",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,257,251,249,first-class narrative source,medium,[],"Bathurst, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,258,252,250,first-class narrative source,medium,[],"Cairns, Queensland 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,259,253,251,first-class narrative source,medium,[],"Moe, Victoria 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,260,254,252,first-class narrative source,medium,[],"Bathurst, New South Wales 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,261,255,253,first-class narrative source,medium,[],"Canarvon Gorge, Queensland 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,262,256,254,first-class narrative source,medium,[],"Mount Buller, Victoria 1980's",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,263,257,255,first-class narrative source,medium,[],"Belbora, New South Wales 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,264,258,256,first-class narrative source,medium,[],"Canarvon Gorge, Queensland 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,265,259,257,first-class narrative source,medium,[],"Mount Warrenheip, Victoria 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,266,260,258,first-class narrative source,medium,[],"Belbora, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,267,261,259,first-class narrative source,medium,[],"Canungra, Queensland 1986",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,268,262,260,first-class narrative source,medium,[],"Myrrhee, Victoria 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,269,263,261,first-class narrative source,medium,[],"Bellingen, New South Wales 1994",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,270,264,262,first-class narrative source,medium,[],"Canungra, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,271,265,263,first-class narrative source,medium,[],"Noojee, Victoria 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,272,266,264,first-class narrative source,medium,[],"Bellingen, New South Wales 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,273,267,265,first-class narrative source,medium,[],"Charters Towers, Queensland 1979 (1)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,274,268,266,first-class narrative source,medium,[],"Noojee, Victoria 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,275,269,267,first-class narrative source,medium,[],"Bexhill, New South Wales 1973",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,276,270,268,first-class narrative source,medium,[],"Childers, Queensland 2004",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,277,271,269,first-class narrative source,medium,[],"Otways, Victoria 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,278,272,270,first-class narrative source,medium,[],"Bexhill, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,279,273,271,first-class narrative source,medium,[],"Clear Mountain, Queensland 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,280,274,272,first-class narrative source,medium,[],"Redbank, Victoria 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,281,275,273,first-class narrative source,medium,[],"Bilpin, New South Wales 2014",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,282,276,274,first-class narrative source,medium,[],"Conondale, Queensland 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,283,277,275,first-class narrative source,medium,[],"Riddells Creek, Victoria 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,284,278,276,first-class narrative source,medium,[],"Blackheath, New South Wales 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,285,279,277,first-class narrative source,medium,[],"Cooktown, Queensland 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,286,280,278,first-class narrative source,medium,[],"Robinvale, Victoria 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,287,281,279,first-class narrative source,medium,[],"Blackheath, New South Wales 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,288,282,280,first-class narrative source,medium,[],"Coomera, Queensland 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,289,283,281,first-class narrative source,medium,[],"Rokewood, Victoria 2014",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,290,284,282,first-class narrative source,medium,[],"Blackheath, New South Wales 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,291,285,283,first-class narrative source,medium,[],"Cooyar, Queensland 2007",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,292,286,284,first-class narrative source,medium,[],"Thomson Dam, Victoria 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,293,287,285,first-class narrative source,medium,[],"Blaxland, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,294,288,286,first-class narrative source,medium,[],"Cowley Beach, Queensland 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,295,289,287,first-class narrative source,medium,[],"Trentham, Victoria 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,296,290,288,first-class narrative source,medium,[],"Blue Knob, New South Wales 1975",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,297,291,289,first-class narrative source,medium,[],"Cowley Beach, Queensland 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,298,292,290,first-class narrative source,medium,[],"Werribee, Victoria 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,299,293,291,first-class narrative source,medium,[],"Blue Mountains, New South Wales 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,300,294,292,first-class narrative source,medium,[],"Cressbrook Creek, Queensland 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,301,295,293,first-class narrative source,medium,[],"Yarambulla, Victoria 1991",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,302,296,294,first-class narrative source,medium,[],"Blue Mountains, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,303,297,295,first-class narrative source,medium,[],"Currumbin Valley, Queensland 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,304,298,296,first-class narrative source,medium,[],"Bocoble, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,305,299,297,first-class narrative source,medium,[],"Currumbin Valley, Queensland 2019 (2)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,306,300,298,first-class narrative source,medium,[],"Bocoble, New South Wales 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,307,301,299,first-class narrative source,medium,[],"Currumbin, Queensland 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,308,302,300,first-class narrative source,medium,"[""original_article_verification_required""]","Bombala, New South Wales 1912",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,309,303,301,first-class narrative source,medium,[],"Daisy Hill, Queensland 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,310,304,302,first-class narrative source,medium,[],"Bombala, New South Wales 1996",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,311,305,303,first-class narrative source,medium,[],"Dalby, Queensland 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,312,306,304,first-class narrative source,medium,[],"Bonalbo, New South Wales 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,313,307,305,first-class narrative source,medium,[],"Deepwater, Queensland 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,314,308,306,first-class narrative source,medium,[],"Bongil Bongil, New South Wales 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,315,309,307,first-class narrative source,medium,[],"Eagle Heights, Queensland 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,316,310,308,first-class narrative source,medium,[],"Border Ranges, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,317,311,309,first-class narrative source,medium,[],"Enoggera Creek, Queensland 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,318,312,310,first-class narrative source,medium,[],"Bowen Mountain, New South Wales 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,319,313,311,first-class narrative source,medium,[],"Esk, Queensland 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,320,314,312,first-class narrative source,medium,[],"Bowen Mountain, New South Wales 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,321,315,313,first-class narrative source,medium,[],"Fraser Island, Queensland 1983",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,322,316,314,first-class narrative source,medium,[],"Braidwood, New South Wales 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,323,317,315,first-class narrative source,medium,[],"Gallangowan State Forest, Queensland 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,324,318,316,first-class narrative source,medium,[],"Brisbane National Water Park, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,325,319,317,first-class narrative source,medium,[],"Gatton, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,326,320,318,first-class narrative source,medium,[],"Brisbane Water National Park, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,327,321,319,first-class narrative source,medium,[],"Gatton, Queensland 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,328,322,320,first-class narrative source,medium,[],"Broke, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,329,323,321,first-class narrative source,medium,[],"Gayndah, Queensland 2000 (1)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,330,324,322,first-class narrative source,medium,[],"Broke, New South Wales 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,331,325,323,first-class narrative source,medium,[],"Gayndah, Queensland 2000 (3)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,332,326,324,first-class narrative source,medium,[],"Broken Hill, New South Wales 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,333,327,325,first-class narrative source,medium,[],"Gogango, Queensland 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,334,328,326,first-class narrative source,medium,[],"Brown Mountain, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,335,329,327,first-class narrative source,medium,[],"Gootchie, Queensland 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,336,330,328,first-class narrative source,medium,[],"Bucca, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,337,331,329,first-class narrative source,medium,[],"Hinze Dam, Queensland 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,338,332,330,first-class narrative source,medium,[],"Bulahdelah, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,339,333,331,first-class narrative source,medium,[],"Howard, Queensland 2007",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,340,334,332,first-class narrative source,medium,[],"Bulahdelah, New South Wales 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,341,335,333,first-class narrative source,medium,[],"Howard, Queensland 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,342,336,334,first-class narrative source,medium,[],"Bundanoon, New South Wales 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,343,337,335,first-class narrative source,medium,[],"Jacobs Well, Queensland 2014",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,344,338,336,first-class narrative source,medium,[],"Bundarra, New South Wales 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,345,339,337,first-class narrative source,medium,[],"Jimboomba, Queensland 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,346,340,338,first-class narrative source,medium,[],"Bundarra, New South Wales 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,347,341,339,first-class narrative source,medium,[],"Jimbour, Queensland 2004",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,348,342,340,first-class narrative source,medium,"[""original_article_verification_required""]","Byron Bay, New South Wales 1902",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,349,343,341,first-class narrative source,medium,[],"Kenilworth, Queensland 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,350,344,342,first-class narrative source,medium,[],"Byron Shire, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,351,345,343,first-class narrative source,medium,[],"Kenilworth, Queensland 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,352,346,344,first-class narrative source,medium,[],"Canberra, A.C.T. 1983",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,353,347,345,first-class narrative source,medium,[],"Kilkivan, Queensland 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,354,348,346,first-class narrative source,medium,[],"Casino, New South Wales 1974",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,355,349,347,first-class narrative source,medium,[],"Kilkivan, Queensland 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,356,350,348,first-class narrative source,medium,[],"Cattai, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,357,351,349,first-class narrative source,medium,[],"Killarney, Queensland 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,358,352,350,first-class narrative source,medium,[],"Cessnock, New South Wales 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,359,353,351,first-class narrative source,medium,[],"Kinbombi Falls, Queensland - 2020",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,360,354,352,first-class narrative source,medium,[],"Cessnock, New South Wales 2014",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,361,355,353,first-class narrative source,medium,[],"Kingsholme / Ormeau, Queensland 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,362,356,354,first-class narrative source,medium,[],"Clyde Mountain, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,363,357,355,first-class narrative source,medium,[],"Laidley, Queensland 2001 (1)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,364,358,356,first-class narrative source,medium,[],"Coffs Harbour, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,365,359,357,first-class narrative source,medium,[],"Laidley, Queensland 2001 (3)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,366,360,358,first-class narrative source,medium,[],"Coffs Harbour, New South Wales 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,367,361,359,first-class narrative source,medium,[],"Lake Tinaroo, Queensland 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,368,362,360,first-class narrative source,medium,[],"Colo River, New South Wales 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,369,363,361,first-class narrative source,medium,[],"Lamington NP, Queensland 1988",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,370,364,362,first-class narrative source,medium,[],"Colo River, New South Wales 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,371,365,363,first-class narrative source,medium,[],"Landsborough, Queensland 2020",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,372,366,364,first-class narrative source,medium,[],"Colo, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,373,367,365,first-class narrative source,medium,[],"Logan Village, Queensland 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,374,368,366,first-class narrative source,medium,[],"Cooma, New South Wales 1976",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,375,369,367,first-class narrative source,medium,[],"Malanda, Queensland 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,376,370,368,first-class narrative source,medium,[],"Cooma, New South Wales 1981",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,377,371,369,first-class narrative source,medium,[],"Manumbar, Queensland 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,378,372,370,first-class narrative source,medium,[],"Cooperbung, New South Wales 2014",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,379,373,371,first-class narrative source,medium,[],"Maudsland, Queensland 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,380,374,372,first-class narrative source,medium,[],"Cooperbung, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,381,375,373,first-class narrative source,medium,[],"Miles, Queensland 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,382,376,374,first-class narrative source,medium,"[""original_article_verification_required""]","Crescent Head, New South Wales 1930",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,383,377,375,first-class narrative source,medium,[],"Millaa Millaa, Queensland 1995 (1)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,384,378,376,first-class narrative source,medium,[],"Cudgen, New South Wales 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,385,379,377,first-class narrative source,medium,[],"Millaa Millaa, Queensland 1995 (2)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,386,380,378,first-class narrative source,medium,[],"Cudgen, New South Wales 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,387,381,379,first-class narrative source,medium,[],"Mt Nathan, Queensland 1991",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,388,382,380,first-class narrative source,medium,[],"Dairyville, New South Wales 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,389,383,381,first-class narrative source,medium,[],"Mt. Cootha, Queensland 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,390,384,382,first-class narrative source,medium,[],"Danger Falls, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,391,385,383,first-class narrative source,medium,[],"Mt. Glorious, Queensland 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,392,386,384,first-class narrative source,medium,[],"Dargan, New South Wales 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,393,387,385,first-class narrative source,medium,[],"Mt. Glorious, Queensland 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,394,388,386,first-class narrative source,medium,[],"Deepwater, New South Wales 2004",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,395,389,387,first-class narrative source,medium,[],"Mt. Tamborine, Queensland 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,396,390,388,first-class narrative source,medium,[],"Dorrigo, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,397,391,389,first-class narrative source,medium,[],"Mt. Tamborine, Queensland 1992",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,398,392,390,first-class narrative source,medium,[],"Dorrigo, New South Wales 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,399,393,391,first-class narrative source,medium,[],"Mt. Tamborine, Queensland 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,400,394,392,first-class narrative source,medium,"[""original_article_verification_required""]","Dungay Creek, New South Wales 1962",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,401,395,393,first-class narrative source,medium,[],"Mt. Tamborine, Queensland 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,402,396,394,first-class narrative source,medium,"[""original_article_verification_required""]","Dungay Creek, New South Wales 1962",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,403,397,395,first-class narrative source,medium,[],"Mt. Tamborine, Queensland 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,404,398,396,first-class narrative source,medium,[],"Dunoon, New South Wales 1981",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,405,399,397,first-class narrative source,medium,"[""original_article_verification_required""]","Nanango, Queensland 1938",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,406,400,398,first-class narrative source,medium,[],"Eden, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,407,401,399,first-class narrative source,medium,[],"Nunimbah Valley, Queensland 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,408,402,400,first-class narrative source,medium,[],"Emu Plains, New South Wales 1991",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,409,403,401,first-class narrative source,medium,[],"Ormeau, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,410,404,402,first-class narrative source,medium,[],"Engadine, New South Wales 1987",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,411,405,403,first-class narrative source,medium,[],"Ormeau, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,412,406,404,first-class narrative source,medium,[],"Glen Innes, New South Wales 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,413,407,405,first-class narrative source,medium,[],"Ormeau, Queensland 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,414,408,406,first-class narrative source,medium,[],"Glenbrook, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,415,409,407,first-class narrative source,medium,[],"Ormeau, Queensland 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,416,410,408,first-class narrative source,medium,[],"Glenfield, New South Wales 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,417,411,409,first-class narrative source,medium,[],"Ormeau, Queensland 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,418,412,410,first-class narrative source,medium,[],"Glenorie, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,419,413,411,first-class narrative source,medium,[],"Ormeau, Queensland 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,420,414,412,first-class narrative source,medium,[],"Glenreagh, New South Wales 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,421,415,413,first-class narrative source,medium,[],"Ormeau, Queensland 2004",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,422,416,414,first-class narrative source,medium,[],"Goodradigbee River, New South Wales 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,423,417,415,first-class narrative source,medium,[],"Ormeau, Queensland 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,424,418,416,first-class narrative source,medium,[],"Goonoo Forest, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,425,419,417,first-class narrative source,medium,[],"Owens Creek, Queensland 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,426,420,418,first-class narrative source,medium,[],"Gosford, New South Wales 1986",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,427,421,419,first-class narrative source,medium,[],"Palm Beach, Queensland 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,428,422,420,first-class narrative source,medium,[],"Grafton - Coutts Crossing, New South Wales 2014",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,429,423,421,first-class narrative source,medium,[],"Quaids Dam, Queensland 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,430,424,422,first-class narrative source,medium,[],"Grafton, New South Wales 1974",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,431,425,423,first-class narrative source,medium,[],"Redbank Plains, Queensland 1986",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,432,426,424,first-class narrative source,medium,"[""original_article_verification_required""]","Grafton, New South Wales 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,433,427,425,first-class narrative source,medium,[],"Redbank Plains, Queensland 1989",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,434,428,426,first-class narrative source,medium,[],"Grassy Head / Stuarts Point, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,435,429,427,first-class narrative source,medium,[],"Rockhampton, Queensland 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,436,430,428,first-class narrative source,medium,[],"Grays Point, New South Wales 2004",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,437,431,429,first-class narrative source,medium,[],"Roma, Queensland 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,438,432,430,first-class narrative source,medium,[],"Grenfell, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,439,433,431,first-class narrative source,medium,[],"Sarina, Queensland 1996",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,440,434,432,first-class narrative source,medium,[],"Hannam Vale, New South Wales 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,441,435,433,first-class narrative source,medium,[],"Slacks Creek, Queensland 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,442,436,434,first-class narrative source,medium,[],"Hartley, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,443,437,435,first-class narrative source,medium,[],"Springbrook, Queensland 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,444,438,436,first-class narrative source,medium,[],"Hazelbrook, New South Wales 1994",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,445,439,437,first-class narrative source,medium,[],"Springbrook, Queensland 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,446,440,438,first-class narrative source,medium,[],"Hazelbrook, New South Wales 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,447,441,439,first-class narrative source,medium,[],"Springbrook, Queensland 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,448,442,440,first-class narrative source,medium,[],"Helensburgh, New South Wales 1994",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,449,443,441,first-class narrative source,medium,[],"Springbrook, Queensland 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,450,444,442,first-class narrative source,medium,[],"Helensburgh, New South Wales 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,451,445,443,first-class narrative source,medium,[],"Springbrook, Queensland 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,452,446,444,first-class narrative source,medium,[],"Helensburgh, New South Wales 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,453,447,445,first-class narrative source,medium,[],"Springbrook, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,454,448,446,first-class narrative source,medium,[],"Hickeys Falls, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,455,449,447,first-class narrative source,medium,[],"Springbrook, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,456,450,448,first-class narrative source,medium,[],"Hornsby Heights, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,457,451,449,first-class narrative source,medium,"[""original_article_verification_required""]","Stanthorpe, Queensland 1934",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,458,452,450,first-class narrative source,medium,[],"Ingalba, New South Wales 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,459,453,451,first-class narrative source,medium,[],"Stanthorpe, Queensland 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,460,454,452,first-class narrative source,medium,[],"Ingleburn, New South Wales 1992",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,461,455,453,first-class narrative source,medium,[],"Tarampa, Queensland 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,462,456,454,first-class narrative source,medium,[],"Jackadgery, New South Wales 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,463,457,455,first-class narrative source,medium,[],"Tarzali, Queensland 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,464,458,456,first-class narrative source,medium,[],"Jackadgery, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,465,459,457,first-class narrative source,medium,"[""original_article_verification_required""]","Tewantin, Queensland 1965",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,466,460,458,first-class narrative source,medium,[],"Jackadgery, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,467,461,459,first-class narrative source,medium,[],"Tin Can Bay, Queensland 1992 (2)",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,468,462,460,first-class narrative source,medium,[],"Jamison Valley, New South Wales 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,469,463,461,first-class narrative source,medium,[],"Tin Can Bay, Queensland 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,470,464,462,first-class narrative source,medium,[],"Jenolan Caves, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,471,465,463,first-class narrative source,medium,[],"Tomson River, Queensland 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,472,466,464,first-class narrative source,medium,[],"Jiggi, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,473,467,465,first-class narrative source,medium,[],"Toowoomba, Queensland 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,474,468,466,first-class narrative source,medium,[],"Karuah River, New South Wales 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,475,469,467,first-class narrative source,medium,[],"Torbanlea, Queensland 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,476,470,468,first-class narrative source,medium,[],"Katoomba, New South Wales 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,477,471,469,first-class narrative source,medium,[],"Torrens Creek, Queensland 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,478,472,470,first-class narrative source,medium,[],"Katoomba, New South Wales 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,479,473,471,first-class narrative source,medium,[],"Tugun, Queensland 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,480,474,472,first-class narrative source,medium,[],"Keiraville, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,481,475,473,first-class narrative source,medium,[],"Tully, Queensland 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,482,476,474,first-class narrative source,medium,"[""original_article_verification_required""]","Kempsey, New South Wales 1968",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,483,477,475,first-class narrative source,medium,[],"Upper Coomera, Queensland 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,484,478,476,first-class narrative source,medium,[],"Kiah, New South Wales 1987",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,485,479,477,first-class narrative source,medium,[],"Wauchope, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,486,480,478,first-class narrative source,medium,[],"Kiandra, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,487,481,479,first-class narrative source,medium,[],"Weyba Downs, Queensland 2016",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,488,482,480,first-class narrative source,medium,[],"Koreelah Forest, New South Wales 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,489,483,481,first-class narrative source,medium,[],"Widgee, Queensland 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,490,484,482,first-class narrative source,medium,[],"Korora Basin, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,491,485,483,first-class narrative source,medium,[],"Withcott, Queensland 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,492,486,484,first-class narrative source,medium,[],"Kosciuszko, New South Wales 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,493,487,485,first-class narrative source,medium,[],"Witheren, Queensland 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,494,488,486,first-class narrative source,medium,[],"Kowmung River, New South Wales 1989",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,495,489,487,first-class narrative source,medium,[],"Witheren, Queensland 2022",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,496,490,488,first-class narrative source,medium,[],"Krambach, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,497,491,489,first-class narrative source,medium,[],"Wolvi, Queensland 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,498,492,490,first-class narrative source,medium,[],"Krambach, New South Wales 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,499,493,491,first-class narrative source,medium,[],"Wongawallan, Queensland 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,500,494,492,first-class narrative source,medium,[],"Ku-ring-gai National Park, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,501,495,493,first-class narrative source,medium,[],"Wongawallen, Queensland 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,502,496,494,first-class narrative source,medium,[],"Lake Cargelligo, New South Wales 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,503,497,495,first-class narrative source,medium,[],"Woolooga, Queensland 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,504,498,496,first-class narrative source,medium,[],"Lake George, New South Wales 1976",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,505,499,497,first-class narrative source,medium,[],"Woolooga, Queensland 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,506,500,498,first-class narrative source,medium,[],"Lake Macquarie, New South Wales 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,507,501,499,first-class narrative source,medium,[],"Woolooga, Queensland 2022",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,508,502,500,first-class narrative source,medium,[],"Leura, New South Wales 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,509,503,501,first-class narrative source,medium,"[""original_article_verification_required""]","Wyandra, Queensland 1965",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,510,504,502,first-class narrative source,medium,[],"Leura, New South Wales 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,511,505,503,first-class narrative source,medium,[],"Yandina, Queensland 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,512,506,504,first-class narrative source,medium,[],"Lightning Ridge, New South Wales 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,513,507,505,first-class narrative source,medium,[],"Yarrabah, Queensland 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,514,508,506,first-class narrative source,medium,"[""original_article_verification_required""]","Lismore, New South wales 1935",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,515,509,507,first-class narrative source,medium,[],"Yarrabilba, Queensland 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,516,510,508,first-class narrative source,medium,[],"Lithgow, New South Wales 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,517,511,509,first-class narrative source,medium,[],"Lithgow, New South Wales 2004",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,518,512,510,first-class narrative source,medium,[],"Lithgow, New South Wales 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,519,513,511,first-class narrative source,medium,[],"Lowanna, New South Wales 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,520,514,512,first-class narrative source,medium,[],"Macquarie Feilds, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,521,515,513,first-class narrative source,medium,[],"Maldon, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,522,516,514,first-class narrative source,medium,[],"Medowie, New South Wales 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,523,517,515,first-class narrative source,medium,[],"Megalong Valley, New South Wales 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,524,518,516,first-class narrative source,medium,[],"Minto, New South Wales 1973",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,525,519,517,first-class narrative source,medium,[],"Mogo, New South Wales 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,526,520,518,first-class narrative source,medium,[],"Mogo, New South Wales 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,527,521,519,first-class narrative source,medium,[],"Molong, New South Wales 2021",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,528,522,520,first-class narrative source,medium,[],"Mongarlowe, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,529,523,521,first-class narrative source,medium,[],"Mooney Mooney, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,530,524,522,first-class narrative source,medium,[],"Morton NP, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,531,525,523,first-class narrative source,medium,[],"Mount Lindesay, New South Wales 1972",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,532,526,524,first-class narrative source,medium,[],"Mt. George, New South Wales 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,533,527,525,first-class narrative source,medium,[],"Mt. Kembla, New South Wales 1983",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,534,528,526,first-class narrative source,medium,[],"Mt. Kembla, New South Wales 1986",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,535,529,527,first-class narrative source,medium,[],"Mt. Kembla, New South Wales 1993",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,536,530,528,first-class narrative source,medium,[],"Mt. Kembla, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,537,531,529,first-class narrative source,medium,[],"Mt. Kembla, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,538,532,530,first-class narrative source,medium,[],"Mt. Warning - Tyalgum, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,539,533,531,first-class narrative source,medium,[],"Mt. Warning, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,540,534,532,first-class narrative source,medium,[],"Mudgee - Ulan, New South Wales 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,541,535,533,first-class narrative source,medium,[],"Mulgoa, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,542,536,534,first-class narrative source,medium,[],"Mullumbimby, New South Wales 1996",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,543,537,535,first-class narrative source,medium,"[""original_article_verification_required""]","Mungay Creek, New South Wales 1960",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,544,538,536,first-class narrative source,medium,[],"Munmorah, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,545,539,537,first-class narrative source,medium,[],"Murwillumbah, New South Wales 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,546,540,538,first-class narrative source,medium,[],"Narara, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,547,541,539,first-class narrative source,medium,[],"Narooma, New South Wales 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,548,542,540,first-class narrative source,medium,[],"Narromine, New South Wales 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,549,543,541,first-class narrative source,medium,[],"Newry State Forest, New South Wales 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,550,544,542,first-class narrative source,medium,[],"Nowra, New South Wales 1988",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,551,545,543,first-class narrative source,medium,[],"Nunderi, New South Wales 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,552,546,544,first-class narrative source,medium,[],"Oberon, New South Wales 1983",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,553,547,545,first-class narrative source,medium,[],"Oberon, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,554,548,546,first-class narrative source,medium,[],"Oberon, New South Wales 1991",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,555,549,547,first-class narrative source,medium,[],"Oberon, New South Wales 2009",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,556,550,548,first-class narrative source,medium,"[""original_article_verification_required""]","Oxley Island, New South Wales 1967",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,557,551,549,first-class narrative source,medium,[],"Oxley Island, New South Wales 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,558,552,550,first-class narrative source,medium,[],"Pambula, New South Wales 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,559,553,551,first-class narrative source,medium,[],"Pickett Hill, New South Wales 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,560,554,552,first-class narrative source,medium,[],"Pilliga, New South Wales 1976",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,561,555,553,first-class narrative source,medium,[],"Pilliga, New South Wales 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,562,556,554,first-class narrative source,medium,[],"Pilliga, New South Wales 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,563,557,555,first-class narrative source,medium,[],"Pilliga, New South Wales 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,564,558,556,first-class narrative source,medium,[],"Pilliga, New South Wales 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,565,559,557,first-class narrative source,medium,[],"Pilliga, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,566,560,558,first-class narrative source,medium,[],"Pilliga, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,567,561,559,first-class narrative source,medium,[],"Port Macquarie, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,568,562,560,first-class narrative source,medium,[],"Providence Portal, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,569,563,561,first-class narrative source,medium,[],"Richmond Range, New South Wales 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,570,564,562,first-class narrative source,medium,[],"Richmond Range, New South Wales 2007",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,571,565,563,first-class narrative source,medium,[],"Richmond Range, New South Wales 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,572,566,564,first-class narrative source,medium,[],"Roseberg State Forest, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,573,567,565,first-class narrative source,medium,[],"Roseberg State Forest, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,574,568,566,first-class narrative source,medium,[],"Royal National Park, New South Wales 1984",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,575,569,567,first-class narrative source,medium,[],"Scotts Head, New South Wales 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,576,570,568,first-class narrative source,medium,[],"Springwood, New South Wales 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,577,571,569,first-class narrative source,medium,[],"Springwood, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,578,572,570,first-class narrative source,medium,[],"Stannifer, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,579,573,571,first-class narrative source,medium,[],"Stanwell Tops, New South Wales 2008",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,580,574,572,first-class narrative source,medium,[],"Strickland, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,581,575,573,first-class narrative source,medium,[],"Strickland, New South Wales 2020",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,582,576,574,first-class narrative source,medium,[],"Stuarts Point, New South Wales 2011",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,583,577,575,first-class narrative source,medium,[],"Stuarts Point, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,584,578,576,first-class narrative source,medium,[],"Sunny Corner, New South Wales 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,585,579,577,first-class narrative source,medium,[],"Tabulam, New South wales 1997",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,586,580,578,first-class narrative source,medium,[],"Tallong, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,587,581,579,first-class narrative source,medium,[],"Taree, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,588,582,580,first-class narrative source,medium,[],"Tenterfield, New South Wales 1990",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,589,583,581,first-class narrative source,medium,[],"Tenterfield, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,590,584,582,first-class narrative source,medium,[],"Tharwa, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,591,585,583,first-class narrative source,medium,[],"Tharwa, New South Wales 2006",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,592,586,584,first-class narrative source,medium,[],"Tharwa, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,593,587,585,first-class narrative source,medium,[],"Timsvale, New South Wales 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,594,588,586,first-class narrative source,medium,[],"Torrington, New South Wales 1980",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,595,589,587,first-class narrative source,medium,[],"Torrington, New South Wales 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,596,590,588,first-class narrative source,medium,[],"Torrington, New South Wales 2013",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,597,591,589,first-class narrative source,medium,[],"Tuglow, New South Wales 1991",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,598,592,590,first-class narrative source,medium,[],"Tweed Heads, New South Wales 1978",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,599,593,591,first-class narrative source,medium,[],"Uki, New South Wales 2007",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,600,594,592,first-class narrative source,medium,[],"Uki, New South Wales 2018",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,601,595,593,first-class narrative source,medium,[],"Vulcan State Forest, New South Wales 1988",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,602,596,594,first-class narrative source,medium,[],"Walgett, New South Wales 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,603,597,595,first-class narrative source,medium,[],"Wanaaring, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,604,598,596,first-class narrative source,medium,"[""original_article_verification_required""]","Warneton, New South Wales 1871",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,605,599,597,first-class narrative source,medium,[],"Warragamba, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,606,600,598,first-class narrative source,medium,[],"Warrimoo, New South Wales 2005",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,607,601,599,first-class narrative source,medium,[],"Watagans, New South Wales 1988",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,608,602,600,first-class narrative source,medium,[],"Watagans, New South Wales 2003",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,609,603,601,first-class narrative source,medium,[],"Watagans, New South Wales 2004",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,610,604,602,first-class narrative source,medium,[],"Watagans, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,611,605,603,first-class narrative source,medium,[],"Watagans, New South Wales 2012",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,612,606,604,first-class narrative source,medium,[],"Wauchope, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,613,607,605,first-class narrative source,medium,[],"Wee Jasper, New South Wales 1987",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,614,608,606,first-class narrative source,medium,[],"Wee Jasper, New South Wales 2017",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,615,609,607,first-class narrative source,medium,[],"Wellingrove - Dundee, New South Wales 2010",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,616,610,608,first-class narrative source,medium,[],"Wentworth Falls, New South Wales 2020",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,617,611,609,first-class narrative source,medium,[],"Wiangaree, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,618,612,610,first-class narrative source,medium,[],"Wolgan Valley, New South Wales 2002",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,619,613,611,first-class narrative source,medium,[],"Wollar, New South Wales 2000",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,620,614,612,first-class narrative source,medium,[],"Wombeyan Caves, New South Wales 1987",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,621,615,613,first-class narrative source,medium,[],"Woodenbong, New South Wales 1976",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,622,616,614,first-class narrative source,medium,[],"Woodenbong, New South Wales 1977",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,623,617,615,first-class narrative source,medium,[],"Woodenbong, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,624,618,616,first-class narrative source,medium,[],"Woodford, New South Wales 1999",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,625,619,617,first-class narrative source,medium,[],"Woodford, New South Wales 2001",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,626,620,618,first-class narrative source,medium,[],"Woollamia, New South Wales 1985",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,627,621,619,first-class narrative source,medium,[],"Woy Woy, New South Wales 1995",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,628,622,620,first-class narrative source,medium,[],"Woy Woy, New South Wales 2015",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,629,623,621,first-class narrative source,medium,[],"Woy Woy, New South Wales 2019",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,630,624,622,first-class narrative source,medium,"[""original_article_verification_required""]","Wyangala Dam, New South Wales 1876",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,631,625,623,first-class narrative source,medium,[],"Yanderra, New South Wales 1998",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,632,626,624,first-class narrative source,medium,[],"Yarrangobilly, New South Wales 1979",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,633,627,625,first-class narrative source,medium,[],"Yarrangobilly, New South Wales 1982",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,634,628,626,first-class narrative source,medium,"[""original_article_verification_required""]","Young, New South Wales 1955",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,636,629,627,first-class narrative source,medium,"[""original_article_verification_required""]",1831 - Sailors Yowie Hoax?,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,637,630,628,first-class narrative source,medium,"[""original_article_verification_required""]",1843 - Sydney Morning Herald,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,638,631,629,first-class narrative source,medium,"[""original_article_verification_required""]",1843 - Sydney Morning Herald 2,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,639,632,630,first-class narrative source,medium,"[""original_article_verification_required""]",1844 - Charles Meredith Diary Entry,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,640,633,631,first-class narrative source,medium,"[""original_article_verification_required""]",1847 - Geelong Advertiser,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,641,634,632,first-class narrative source,medium,"[""original_article_verification_required""]",1847 - Sydney Morning Herald Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,642,635,633,first-class narrative source,medium,"[""original_article_verification_required""]",1851 - John Green Diary Entries,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,643,636,634,first-class narrative source,medium,"[""original_article_verification_required""]","1866 - Peter Harris Diary, Toowareenah NSW",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,644,637,635,first-class narrative source,medium,"[""original_article_verification_required""]",1866 - Sydney Morning Herald,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,645,638,636,first-class narrative source,medium,"[""original_article_verification_required""]","1868 - Empire, Australian Gorilla",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,646,639,637,first-class narrative source,medium,"[""original_article_verification_required""]",1870 - The Naturalist Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,647,640,638,first-class narrative source,medium,"[""original_article_verification_required""]",1871 - Darling Downa Gazette,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,648,641,639,first-class narrative source,medium,"[""original_article_verification_required""]",1871 - Illawarra Mercury Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,649,642,640,first-class narrative source,medium,"[""original_article_verification_required""]",1871 - Illustrated Australian News,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,650,643,641,first-class narrative source,medium,"[""original_article_verification_required""]","1871 - Queanbeyan Age, Jingera Sighted",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,651,644,642,first-class narrative source,medium,"[""original_article_verification_required""]",1871 - The Empire NSW,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,652,645,643,first-class narrative source,medium,"[""original_article_verification_required""]","1871 (1) - Empire, Sydney",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,653,646,644,first-class narrative source,medium,"[""original_article_verification_required""]","1871 (2) - Empire, Sydney",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,654,647,645,first-class narrative source,medium,"[""original_article_verification_required""]",1871 (2) - Illawarra Mercury Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,655,648,646,first-class narrative source,medium,"[""original_article_verification_required""]","1871 (3) - Empire, Sydney",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,656,649,647,first-class narrative source,medium,"[""original_article_verification_required""]",1872 - Monaro Mercury,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,657,650,648,first-class narrative source,medium,"[""original_article_verification_required""]",1874 - Cooma Express,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,658,651,649,first-class narrative source,medium,"[""original_article_verification_required""]","1876 - Portland Guardian, Victoria",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,659,652,650,first-class narrative source,medium,"[""original_article_verification_required""]",1876 - Town and Country Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,660,653,651,first-class narrative source,medium,"[""original_article_verification_required""]",1877 - Maitland Mercury,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,661,654,652,first-class narrative source,medium,"[""original_article_verification_required""]",1877 - Sydney Morning Herald Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,662,655,653,first-class narrative source,medium,"[""original_article_verification_required""]","1878 - Freemans Journal Article, Pyramul",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,663,656,654,first-class narrative source,medium,"[""original_article_verification_required""]",1878 - Lismore Star Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,664,657,655,first-class narrative source,medium,"[""original_article_verification_required""]","1878 - Singleton Argus, Yowie Sighted",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,665,658,656,first-class narrative source,medium,"[""original_article_verification_required""]","1880 - Clarence Examiner, Hairyman Search",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,666,659,657,first-class narrative source,medium,"[""original_article_verification_required""]","1880 - Gippsland Times, 7ft Yowie",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,667,660,658,first-class narrative source,medium,"[""original_article_verification_required""]",1880 - Melbourne Argus,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,668,661,659,first-class narrative source,medium,"[""original_article_verification_required""]",1880 - Southland Times (NZ),modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,669,662,660,first-class narrative source,medium,"[""original_article_verification_required""]",1880 - Sydney Morning Herald,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,670,663,661,first-class narrative source,medium,"[""original_article_verification_required""]","1880 - The Express and Telegraph, 7ft Yowie",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,671,664,662,first-class narrative source,medium,"[""original_article_verification_required""]",1880's - Arthur Bicknell ' Wood Devil ' Story,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,672,665,663,first-class narrative source,medium,"[""original_article_verification_required""]",1881 - Goulburn Herald Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,673,666,664,first-class narrative source,medium,"[""original_article_verification_required""]",1882 - Colac Herald,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,674,667,665,first-class narrative source,medium,"[""original_article_verification_required""]","1882 - Illawarra Mercury, Australian Gorilla",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,675,668,666,first-class narrative source,medium,"[""original_article_verification_required""]",1882 - The Naturalist Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,676,669,667,first-class narrative source,medium,"[""original_article_verification_required""]",1882 - Town and Country,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,677,670,668,first-class narrative source,medium,"[""original_article_verification_required""]","1882 - Victoria Express, Gorilla Shot",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,678,671,669,first-class narrative source,medium,"[""original_article_verification_required""]",1883 - Illawarra Mercury Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,679,672,670,first-class narrative source,medium,"[""original_article_verification_required""]",1886 - Brisbane Courier,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,680,673,671,first-class narrative source,medium,"[""original_article_verification_required""]",1886 - Queanbeyan Age,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,681,674,672,first-class narrative source,medium,"[""original_article_verification_required""]",1888 - History of Australian Exploration,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,682,675,673,first-class narrative source,medium,"[""original_article_verification_required""]","1889 - Bowral Free Press, Australian Gorilla",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,683,676,674,first-class narrative source,medium,"[""original_article_verification_required""]",1889 - The Illustrated Sydney News Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,684,677,675,first-class narrative source,medium,"[""original_article_verification_required""]",1891 - Bathurst Times Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,685,678,676,first-class narrative source,medium,"[""original_article_verification_required""]",1892 - Maitland Mercury,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,686,679,677,first-class narrative source,medium,"[""original_article_verification_required""]",1893 - Goulburn Penny Post Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,687,680,678,first-class narrative source,medium,"[""original_article_verification_required""]",1893 (2) - Goulburn Penny Post Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,688,681,679,first-class narrative source,medium,"[""original_article_verification_required""]",1894 - Queanbeyan Observer Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,689,682,680,first-class narrative source,medium,"[""original_article_verification_required""]",1901 - R. H. Mathews Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,690,683,681,first-class narrative source,medium,"[""original_article_verification_required""]",1902 - Bathurst Free press,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,691,684,682,first-class narrative source,medium,"[""original_article_verification_required""]","1903 - Nepean Times, Penrith",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,692,685,683,first-class narrative source,medium,"[""original_article_verification_required""]",1903 - Queanbeyan Age,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,693,686,684,first-class narrative source,medium,"[""original_article_verification_required""]",1903 - The Wallabadah Manucript,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,694,687,685,first-class narrative source,medium,"[""original_article_verification_required""]",1903 (1) - Queanbeyan Observer Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,695,688,686,first-class narrative source,medium,"[""original_article_verification_required""]",1903 (2) - Queanbeyan Observer Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,696,689,687,first-class narrative source,medium,"[""original_article_verification_required""]",1903 (3) - Queanbeyan Obsever Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,697,690,688,first-class narrative source,medium,"[""original_article_verification_required""]",1905 - Casino and Kyogle Advertiser Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,698,691,689,first-class narrative source,medium,"[""original_article_verification_required""]",1906 - Singleton Argus,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,699,692,690,first-class narrative source,medium,"[""original_article_verification_required""]",1907 - R. H. Mathews Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,700,693,691,first-class narrative source,medium,"[""original_article_verification_required""]",1907 - The Hairyman by Henry Lawson,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,701,694,692,first-class narrative source,medium,"[""original_article_verification_required""]",1909 - Brisbane Workers Newspaper,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,702,695,693,first-class narrative source,medium,"[""original_article_verification_required""]",1909 - R. H. Mathew Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,703,696,694,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Goulburn Penny Post Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,704,697,695,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Queanbeyan Age Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,705,698,696,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Sydney Morning Herald,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,706,699,697,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Sydney Morning Herald Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,707,700,698,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Sydney Sun Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,708,701,699,first-class narrative source,medium,"[""original_article_verification_required""]",1912 (2) - Sydney Sun Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,709,702,700,first-class narrative source,medium,"[""original_article_verification_required""]",1913 - Henry Lawson Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,710,703,701,first-class narrative source,medium,"[""original_article_verification_required""]","1927 - Brindabella Article, John Gale",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,711,704,702,first-class narrative source,medium,"[""original_article_verification_required""]","1927 - History of ACT Legends, John Gale",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,712,705,703,first-class narrative source,medium,"[""original_article_verification_required""]",1928 - Brisbane Courier,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,713,706,704,first-class narrative source,medium,"[""original_article_verification_required""]","1932 - Stanthorpe, Queensland",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,714,707,705,first-class narrative source,medium,"[""original_article_verification_required""]",1934 - The Cairns Post,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,715,708,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]",Indigenous Spirit and Ghost Folklore of “Settled” Australia,academic_metadata,B,,,,,
+2.0.0,716,709,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Quinkan prehistory : the archaeology of aboriginal art in S.E. Cape York Peninsula, Australia",academic_metadata,B,,,,,
+2.0.0,717,710,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Quinkan Prehistory: The Archaeology of Aboriginal Art in S.E. Cape York Peninsula, Australia by M.J. Morwood & D.R. Hobbs (eds)",academic_metadata,B,,,,,
+2.0.0,718,711,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Glass beads in a Dillybag: a cached assemblage from a rockshelter in Quinkan Country, Cape York Peninsula, Queensland, Australia",academic_metadata,B,,,,,
+2.0.0,719,712,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","CATEGORISING CATFISH, JEWFISH AND EEL MOTIFS IN LAURA (QUINKAN) ROCK ART, CAPE YORK PENINSULA, AUSTRALIA",academic_metadata,B,,,,,
+2.0.0,720,713,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","A new species of velvet gecko (Diplodactylidae: Oedura) from north-east Queensland, Australia",academic_metadata,B,,,,,
+2.0.0,721,714,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Dublin Core: the base for an Indigenous culture environment?,academic_metadata,B,,,,,
+2.0.0,722,715,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","New bee species from northern Queensland, Australia (Hymenoptera: Colletidae, Halictidae, Megachilidae)",academic_metadata,B,,,,,
+2.0.0,723,716,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Indigenous Rock Art Tourism in Australia: Contexts, Trajectories, and Multifaceted Realities",academic_metadata,B,,,,,
+2.0.0,724,717,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Two New Species of Skinks, Genus Ctenotus (Reptilia Lacertilia, Scincidae), from Cape York Peninsula, Queensland, Australia",academic_metadata,B,,,,,
+2.0.0,725,718,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Quinkan Prehistory: The Archaeology of Aboriginal Art in S.E. Cape York Peninsula, Australia [Book Review]",academic_metadata,B,,,,,
+2.0.0,726,719,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Ancient Art and Modern Australians: Continuity in the Laura Art System (Cape York Peninsula),academic_metadata,B,,,,,
+2.0.0,727,720,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Discovering the Quinkans: Adventures of a Young Geographer, Long Ago, in a Place Far Away",academic_metadata,B,,,,,
+2.0.0,728,721,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",(re)collections: developing a metadata application profile for the Quinkan Culture Matchbox,academic_metadata,B,,,,,
+2.0.0,729,722,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Review,academic_metadata,B,,,,,
+2.0.0,730,723,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Dr George Musgrave 1920-2006,academic_metadata,B,,,,,
+2.0.0,731,724,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Percy Trezise OA 1923-2005,academic_metadata,B,,,,,
+2.0.0,732,725,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia.",academic_metadata,B,,,,,
+2.0.0,733,726,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","The first Australian Synchrotron powder diffraction analysis of pigment from a Wandjina motif in the Kimberley, Western Australia",academic_metadata,B,,,,,
+2.0.0,734,727,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",THE AUSTRALIAN EVOLUTION OF THE WANDJINAS FROM RAINCLOUDS,academic_metadata,B,,,,,
+2.0.0,735,728,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Evidence of ENSO mega‐drought triggered collapse of prehistory Aboriginal society in northwest Australia,academic_metadata,B,,,,,
+2.0.0,736,729,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Repainting of images on rock in Australia and the maintenance of Aboriginal culture,academic_metadata,B,,,,,
+2.0.0,737,730,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Wandjina, graffiti and heritage: The power and politics of enduring imagery",academic_metadata,B,,,,,
+2.0.0,738,731,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",AMS RADIOCARBON AGES FOR BEESWAX AND CHARCOAL PIGMENTS IN NORTH KIMBERLEY ROCK ART,academic_metadata,B,,,,,
+2.0.0,739,732,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Painting and Repainting in the West Kimberley,academic_metadata,B,,,,,
+2.0.0,740,733,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Images of Power: Aboriginal Art of the Kimberley,academic_metadata,B,,,,,
+2.0.0,741,734,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",PATTERNS OF EVOLUTION AND EXTINCTION IN THE LAST HARPETID TRILOBITES DURING THE LATE DEVONIAN (FRASNIAN),academic_metadata,B,,,,,
+2.0.0,742,735,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Visiting Gonjorong’s Cave,academic_metadata,B,,,,,
+2.0.0,743,736,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Evaluating human responses to ENSO driven climate change during the Holocene in northwest Australia through macrobotanical analyses,academic_metadata,B,,,,,
+2.0.0,744,737,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Archeology: <i>The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia.</i> I. M. CRAWFORD",academic_metadata,B,,,,,
+2.0.0,745,738,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Joseph Bradshaw's 'Lost' Watercolours Found,academic_metadata,B,,,,,
+2.0.0,746,739,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia. By I. M. Crawford. 10 × 7½. Pp. 144 + 129 photographs (46 in full colour), line drawings, and maps. Melbourne: Oxford University Press, 1968. $A. 6.00. U.K. price £3. 9<i>s</i>. (£3.45).",academic_metadata,B,,,,,
+2.0.0,747,740,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Les elevés des Wandjina de George Grey. De L’art Aborigène à L'art primitif (1838–1906),academic_metadata,B,,,,,
+2.0.0,748,741,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",The Gwion or Bradshaw Art Style of Australia’s Kimberley Region is undoubtedly among the Earliest Rock Art in the Country – but is it Pleistocene?,academic_metadata,B,,,,,
+2.0.0,749,742,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",The Image in Deep Time,academic_metadata,B,,,,,
+2.0.0,750,743,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Aboriginal art and identity,academic_metadata,B,,,,,
+2.0.0,751,744,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Book reviews,academic_metadata,B,,,,,
+2.0.0,752,745,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]","A revision of Australian Mesozoic and Cenozoic lungfish of the family Neoceratodontidae (Osteichthyes:Dipnoi), with a description of four new species",academic_metadata,B,,,,,
+2.0.0,753,746,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]","Series as Epic: Patricia Wrightson's ""The Book of Wirrun""",academic_metadata,B,,,,,
+2.0.0,754,747,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]",Obituary: Patricia Wrightson (1921-2010): Australian Synthesiser of Settler and Indigenous Lore,academic_metadata,B,,,,,
+2.0.0,755,748,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]",Introduction,academic_metadata,B,,,,,
+2.0.0,756,749,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]","The Yara-ma-yha-who, “Real” Vampires, and Aboriginal Erasure",academic_metadata,B,,,,,
+2.0.0,757,750,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]",Writing Indigenous Vampires: Aboriginal Gothic or Aboriginal Fantastic?,academic_metadata,B,,,,,
+2.0.0,758,751,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]",Monster Mash: What Happens When Aboriginal Monsters Are Co-opted into the Mainstream?,academic_metadata,B,,,,,
+2.0.0,759,752,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]",Monsters,academic_metadata,B,,,,,
+2.0.0,760,753,,catalogue_metadata,medium,"[""metadata_only_not_accepted""]",Can't tell a yahoo from a yowie,academic_metadata,B,,,,,
+2.0.0,761,754,,catalogue_metadata,medium,"[""metadata_only_not_accepted""]","The Necessary Other, or 'When One Needs a Monster': The Return of the Australian Yowie",academic_metadata,B,,,,,
+2.0.0,762,755,,catalogue_metadata,medium,"[""metadata_only_not_accepted""]",Batemans Bay yowie sighting an Australian first,academic_metadata,B,,,,,
+2.0.0,763,756,,catalogue_metadata,medium,"[""metadata_only_not_accepted""]",Cabinets of curiosity,academic_metadata,B,,,,,
+2.0.0,764,757,,catalogue_metadata,medium,"[""metadata_only_not_accepted""]","Yetis, Yowies and dinosaur trees: amazing finds in the hunt for living legends",academic_metadata,B,,,,,
+2.0.0,765,758,,catalogue_metadata,medium,"[""metadata_only_not_accepted""]",The Abstracts of the 1st New South Wales APS State Conference,academic_metadata,B,,,,,
+2.0.0,766,759,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Dyirbal song poetry : the oral literature of an Australian rainforest people,academic_metadata,B,,,,,
+2.0.0,767,760,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Traditional Healers of Central Australia: Ngangkari,academic_metadata,B,,,,,
+2.0.0,768,761,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Universalising the particular? God and Indigenous spirit beings in East Kimberley,academic_metadata,B,,,,,
+2.0.0,769,762,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Our experiences of researching with our mob on our country: Traditional custodians as researchers,academic_metadata,B,,,,,
+2.0.0,799,763,,catalogue_metadata,medium,"[""metadata_only_not_accepted""]",The Collective Memory of the Hairy Man,academic_metadata,B,,,,,
+2.0.0,800,764,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Wandjina, n.",academic_metadata,B,,,,,
+2.0.0,801,765,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Wandjina Figure,academic_metadata,B,,,,,
+2.0.0,802,766,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Paranoia and the Wandjina,academic_metadata,B,,,,,
+2.0.0,803,767,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",From the Souks of Marrakech and the Wandjina Gods: How Travel Writing Transforms Our Visions of the Other,academic_metadata,B,,,,,
+2.0.0,804,768,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Quinkan Galleries,academic_metadata,B,,,,,
+2.0.0,805,769,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Quinkan, n.",academic_metadata,B,,,,,
+2.0.0,806,770,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]","Endangered Rock Art: Forty years of cultural heritage management in the Quinkan region, Cape York Peninsula",academic_metadata,B,,,,,
+2.0.0,807,771,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]",Patricia Wrightson's Pastoral: The Nargun and the Stars,academic_metadata,B,,,,,
+2.0.0,808,772,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]","Pangkarlangu, Wonder, Extinction",academic_metadata,B,,,,,
+2.0.0,809,773,,catalogue_metadata,medium,"[""indigenous_related"", ""metadata_only_not_accepted""]","Same monster, different meanings: how Indigenous ideas about the Pangkarlangu Hairypeople have changed",academic_metadata,B,,,,,
+2.0.0,810,774,,catalogue_metadata,medium,"[""high_sensitivity"", ""metadata_only_not_accepted""]",Specters of Reality: Mamu in the Eastern Western Desert of Australia,academic_metadata,B,,,,,
+2.0.0,811,775,706,first-class narrative source,medium,[],Australia Post Alphabet Stamp Series A Z,internet_archive_metadata,A,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,812,776,707,first-class narrative source,medium,[],Documentary Accounts Of Cryptids Around The World,internet_archive_metadata,A,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,813,777,708,first-class narrative source,medium,[],Ep 114 The Yowie,internet_archive_metadata,A,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,814,778,709,first-class narrative source,medium,[],Episode 82: Bigfoot Discovery Museum Show,internet_archive_metadata,A,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,815,779,710,first-class narrative source,medium,[],Season 2 Episode 23 Tony Healy,internet_archive_metadata,A,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,816,780,711,first-class narrative source,medium,[],13 O'Clock Episode 261 LIVE: Sasquatch!,internet_archive_metadata,A,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,817,781,712,first-class narrative source,medium,[],Track: The Search for Australia's Bigfoot | Conspiracy | Unexplained | Full English Documentary,internet_archive_metadata,A,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,818,782,713,first-class narrative source,medium,[],"SFi042 - Rex Gilroy - Cryptozoology, Australian Yowie and Big Cat hunter",internet_archive_metadata,A,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,819,783,714,first-class narrative source,medium,"[""high_sensitivity""]",I Wandjina Australiani,internet_archive_metadata,A,spirit_person_narrative,heritage_discourse,display_ready_unreviewed,requires_ethics_review,summary_only
+2.0.0,820,784,715,first-class narrative source,medium,"[""high_sensitivity""]",Wandjina Australiano,internet_archive_metadata,A,spirit_person_narrative,heritage_discourse,display_ready_unreviewed,requires_ethics_review,summary_only
+2.0.0,821,785,716,first-class narrative source,medium,"[""high_sensitivity""]",Wandjina,internet_archive_metadata,A,spirit_person_narrative,heritage_discourse,display_ready_unreviewed,requires_ethics_review,summary_only
+2.0.0,822,786,717,first-class narrative source,medium,"[""indigenous_related""]",Strange Lore: Yara Ma Yha Who,internet_archive_metadata,A,traditional_narrative,heritage_discourse,display_ready_unreviewed,caution_indigenous_related,summary_only
+2.0.0,823,787,718,first-class narrative source,medium,[],Dramatic Selections from Henry Lawson's Short Stories,internet_archive_metadata,A,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,824,788,719,first-class narrative source,medium,"[""original_article_verification_required""]",1935 - Sydney Morning Herald,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,825,789,720,first-class narrative source,medium,"[""original_article_verification_required""]","1938 - Nanango, Yowie Report",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,826,790,721,first-class narrative source,medium,"[""original_article_verification_required""]",1954 - The Bulletin NSW,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,827,791,722,first-class narrative source,medium,"[""original_article_verification_required""]","1962 - Macleay Argus, Dungay Creek Yowie Article",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,828,792,723,first-class narrative source,medium,[],1976 - Macleay Argus Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,829,793,724,first-class narrative source,medium,[],1976 - Reward for Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,830,794,725,first-class narrative source,medium,[],1977 - Hairy Man of South East Australia,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,831,795,726,first-class narrative source,medium,[],"1978 - Bilambil Yowie Article, Daily News",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,832,796,727,first-class narrative source,medium,[],1979 - Kilkivan Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,833,797,728,first-class narrative source,medium,[],1985 - International Society of Cryptozoology Report,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,834,798,729,first-class narrative source,medium,[],1987 - Yambah Station Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,835,799,730,first-class narrative source,medium,[],1989 - Analysis of the Hairy Man by M. Smith,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,836,800,731,first-class narrative source,medium,[],"1993 - Mt Spurgeon, Yowie Article",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,837,801,732,first-class narrative source,medium,[],1994 - Sydney Morning Herald,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,838,802,733,first-class narrative source,medium,[],1995 - Liz James Research Diary,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,839,803,734,first-class narrative source,medium,[],"1995 - Who or what is a Yowie, Healy/Cropper",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,840,804,735,first-class narrative source,medium,[],1996 - Gary Opit Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,841,805,736,first-class narrative source,medium,[],1998 - NT News Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,842,806,737,first-class narrative source,medium,[],1999 - Night of the Yowie,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,843,807,738,first-class narrative source,medium,[],1999 - Yowiehunters News Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,844,808,739,first-class narrative source,medium,[],1999 (2) - Yowiehunters News Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,845,809,740,first-class narrative source,medium,[],2000 - Gold Coast Bulletin,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,846,810,741,first-class narrative source,medium,[],2000 - Townsville Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,847,811,742,first-class narrative source,medium,[],2001 - Yowiehunters News Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,848,812,743,first-class narrative source,medium,[],2003 - Graham Joyner Interview,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,849,813,744,first-class narrative source,medium,[],2006 - BOOK REVIEW - The Yowie,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,850,814,745,first-class narrative source,medium,[],2006 - Gold Coast Sun Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,851,815,746,first-class narrative source,medium,"[""original_article_verification_required""]","2008 - NSW Glendonbrook, NSW",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,852,816,747,first-class narrative source,medium,[],"2021 - The Wudatji, a Western Australian Junjurrie by Gary Opit",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,853,817,748,first-class narrative source,medium,"[""original_article_verification_required""]",1825 - Richmond River Herald 06-03-1825,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,854,818,749,first-class narrative source,medium,"[""original_article_verification_required""]",1825 - Sugarloaf Mountain NSW Yowie Article - Source Unknown,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,855,819,750,first-class narrative source,medium,"[""original_article_verification_required""]",1861 - The Argus Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,856,820,751,first-class narrative source,medium,"[""original_article_verification_required""]",1871 - Sydney Herald Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,857,821,752,first-class narrative source,medium,"[""original_article_verification_required""]",1874 - Pyramul Hairyman Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,858,822,753,first-class narrative source,medium,"[""original_article_verification_required""]",1876 - Illawarra Mercury Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,859,823,754,first-class narrative source,medium,"[""original_article_verification_required""]",1877 - Sydney Morning Herald Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,860,824,755,first-class narrative source,medium,"[""original_article_verification_required""]",1878 - Freemans Journal Pyramul Hairyman,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,861,825,756,first-class narrative source,medium,"[""original_article_verification_required""]",1878 - Northern Star Lismore Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,862,826,757,first-class narrative source,medium,"[""original_article_verification_required""]",1882 - The West Australian Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,863,827,758,first-class narrative source,medium,"[""original_article_verification_required""]",1892 - Sydney Mail Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,864,828,759,first-class narrative source,medium,"[""original_article_verification_required""]",1894 - Queanbeyan Observer Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,865,829,760,first-class narrative source,medium,"[""original_article_verification_required""]",1895 - Bowral Free Press Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,866,830,761,first-class narrative source,medium,"[""original_article_verification_required""]",1902 - Blue Mountains Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,867,831,762,first-class narrative source,medium,"[""original_article_verification_required""]",1903 - Delegate Argus Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,868,832,763,first-class narrative source,medium,"[""original_article_verification_required""]",1903 - Queanbeyan Observer Yowie Article 07-08-1903,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,869,833,764,first-class narrative source,medium,"[""original_article_verification_required""]",1905 - Molong Express Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,870,834,765,first-class narrative source,medium,"[""original_article_verification_required""]",1905 - Narromine News Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,871,835,766,first-class narrative source,medium,"[""original_article_verification_required""]",1906 - Bega Budget Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,872,836,767,first-class narrative source,medium,"[""original_article_verification_required""]",1906 - Cowan NSW Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,873,837,768,first-class narrative source,medium,"[""original_article_verification_required""]",1906 - Gippsland Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,874,838,769,first-class narrative source,medium,"[""original_article_verification_required""]",1906 - Tenterfield Courrier Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,875,839,770,first-class narrative source,medium,"[""original_article_verification_required""]",1909 - Bundaberg Mail & Burnett Advtertiser Yowie Article 10-09-1909,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,876,840,771,first-class narrative source,medium,"[""original_article_verification_required""]",1909 - Richmond River Herald Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,877,841,772,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Adelaide Chronicle Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,878,842,773,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Evening News Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,879,843,774,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Otago Daily Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,880,844,775,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Riverina Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,881,845,776,first-class narrative source,medium,"[""original_article_verification_required""]",1912 - Sydney Morning Heald Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,882,846,777,first-class narrative source,medium,"[""original_article_verification_required""]",1912- Bega Budget Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,883,847,778,first-class narrative source,medium,"[""original_article_verification_required""]",1913 - Bombala Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,884,848,779,first-class narrative source,medium,"[""original_article_verification_required""]",1913 - Maitland Daily Mercury Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,885,849,780,first-class narrative source,medium,"[""original_article_verification_required""]",1927 - Canberra History & Legends by J. Gale,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,886,850,781,first-class narrative source,medium,"[""original_article_verification_required""]",1927 - History and Legends of the A.C.T. by John Gale,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,887,851,782,first-class narrative source,medium,"[""original_article_verification_required""]",1932 - Northern Territory Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,888,852,783,first-class narrative source,medium,"[""original_article_verification_required""]",1964 - Sydney Herald Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,889,853,784,first-class narrative source,medium,"[""original_article_verification_required""]",1965 - Sydney Sun Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,890,854,785,first-class narrative source,medium,[],1970 - Courier Mail Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,891,855,786,first-class narrative source,medium,[],1970's - Northern Star Re:1935 Lismore Yowie Sighting,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,892,856,787,first-class narrative source,medium,[],1976 - Macleay Argus Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,893,857,788,first-class narrative source,medium,[],1976 - Sydney Sun Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,894,858,789,first-class narrative source,medium,[],1976 - Telegraph Canberra area Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,895,859,790,first-class narrative source,medium,[],1977 - Gold Coast Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,896,860,791,first-class narrative source,medium,[],1977 - Gold Coast Bulletin Yowie Article 2,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,897,861,792,first-class narrative source,medium,[],1977 - Lismore Northern Star Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,898,862,793,first-class narrative source,medium,[],1977 - Lismore Nothern Star Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,899,863,794,first-class narrative source,medium,[],1977 - Tambarumba Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,900,864,795,first-class narrative source,medium,[],1977 - Unknown Origin. Re: Springbrook,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,901,865,796,first-class narrative source,medium,[],1978 - Canberra Times,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,902,866,797,first-class narrative source,medium,[],1978 - Gold Coast Bulletin (Nerang) 25-08-1978,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,903,867,798,first-class narrative source,medium,[],1978 - Gold Coast Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,904,868,799,first-class narrative source,medium,[],1978 - Gold Coast Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,905,869,800,first-class narrative source,medium,[],1978 - Gold Coast Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,906,870,801,first-class narrative source,medium,[],1978 - Moruya Examiner Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,907,871,802,first-class narrative source,medium,[],1979 - Daily Telegraph Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,908,872,803,first-class narrative source,medium,[],1979 - Gold Coast Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,909,873,804,first-class narrative source,medium,"[""original_article_verification_required""]",1979 - Murgon Yowie Newspaper Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,910,874,805,first-class narrative source,medium,[],1979 - Pilliga/Coonabarabran Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,911,875,806,first-class narrative source,medium,[],1979 - The Cronicle QLD Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,912,876,807,first-class narrative source,medium,[],1979 - Townsville Daily Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,913,877,808,first-class narrative source,medium,[],1979 - Townsville Daily Bulletin Yowie Article 2,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,914,878,809,first-class narrative source,medium,[],1980 - Canberra Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,915,879,810,first-class narrative source,medium,[],1980's? - Macleay Argus Yowie Report,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,916,880,811,first-class narrative source,medium,[],1981 - Canberra Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,917,881,812,first-class narrative source,medium,[],1981 - Lismore Northern Star Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,918,882,813,first-class narrative source,medium,[],1981 - Lismore Northern Star Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,919,883,814,first-class narrative source,medium,[],1981 - Lismore Northern Star Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,920,884,815,first-class narrative source,medium,[],1983 - Border Post Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,921,885,816,first-class narrative source,medium,[],1987 - Launceston Examiner 1987-01-06,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,922,886,817,first-class narrative source,medium,[],1987 - News Perth Ape Monster,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,923,887,818,first-class narrative source,medium,[],1987 - NT News Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,924,888,819,first-class narrative source,medium,[],1987 - People Magazine Yowie Report,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,925,889,820,first-class narrative source,medium,[],1987 - Sunday Press Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,926,890,821,first-class narrative source,medium,[],1987 - Sydney Mirror Woronora Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,927,891,822,first-class narrative source,medium,[],1987 - Sydney Morning Herald. Woronora Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,928,892,823,first-class narrative source,medium,[],1987 - Sydney Sun Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,929,893,824,first-class narrative source,medium,[],1988 - Unkown Origin of Emerald Encounter,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,930,894,825,first-class narrative source,medium,[],1990 - Grafton Examiner Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,931,895,826,first-class narrative source,medium,[],1990 - Krambach Yowie Aricle,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,932,896,827,first-class narrative source,medium,[],1992 - Lismore Northern Star Yowie Footprints,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,933,897,828,first-class narrative source,medium,[],1992 - Noosa News Yowie Report,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,934,898,829,first-class narrative source,medium,[],1992 - Shark Bay / 40 Mile Yowie Article - Source Unknown,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,935,899,830,first-class narrative source,medium,[],1993 - Lismore Northern Star Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,936,900,831,first-class narrative source,medium,[],1994 - Brisbane Daily Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,937,901,832,first-class narrative source,medium,[],1994 - Canberra Times Out Of Shadows Launch,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,938,902,833,first-class narrative source,medium,[],1994 - Sunshine Coast Magazine Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,939,903,834,first-class narrative source,medium,[],1995 - Cairns Post Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,940,904,835,first-class narrative source,medium,[],1997 - Litchfield Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,941,905,836,first-class narrative source,medium,[],1997 - NT News Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,942,906,837,first-class narrative source,medium,[],1998 - Northern Territory News,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,943,907,838,first-class narrative source,medium,[],1999 - Gold Coast Bulletin - 25-08-1999,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,944,908,839,first-class narrative source,medium,[],1999 - Lismore Northern Star Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,945,909,840,first-class narrative source,medium,[],1999 - Thats Life Magazine Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,946,910,841,first-class narrative source,medium,[],2000 - Daily Examiner Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,947,911,842,first-class narrative source,medium,[],2000 - Gold Coast Bulletin Yowiehunters,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,948,912,843,first-class narrative source,medium,[],2000 - Northern Territory News,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,949,913,844,first-class narrative source,medium,[],2000 - Queensland Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,950,914,845,first-class narrative source,medium,[],2001 - Gold Coast Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,951,915,846,first-class narrative source,medium,[],2001 - Gold Coast Bulletin Yowie Article 2,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,952,916,847,first-class narrative source,medium,[],2001 - Queensland Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,953,917,848,first-class narrative source,medium,[],2001 - Queensland Times Yowie Article 2,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,954,918,849,first-class narrative source,medium,[],2002 - Lismore Northern Star Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,955,919,850,first-class narrative source,medium,[],2005 - Gold Coast Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,956,920,851,first-class narrative source,medium,[],2007 - Gold Coast Bulletin Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,957,921,852,first-class narrative source,medium,[],2009 - Coonabarabran Times - Yowie Bus Inccident,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,958,922,853,first-class narrative source,medium,[],2009 - NT News Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,959,923,854,first-class narrative source,medium,[],2011 - Daily Examiner Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,960,924,855,first-class narrative source,medium,[],2012 - Sydney Telegraph Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,961,925,856,first-class narrative source,medium,[],2012- News.Com Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,962,926,857,first-class narrative source,medium,[],2013 - Queensland Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,963,927,858,first-class narrative source,medium,[],2014 - Cairns Post Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,964,928,859,first-class narrative source,medium,[],2014 - Cairns Post Yowie Article 2,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,965,929,860,first-class narrative source,medium,[],"2014 - Canberra Times, Re: 1912 Braidwood",modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,966,930,861,first-class narrative source,medium,[],2014 - Gympie Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,967,931,862,first-class narrative source,medium,[],2014 - NT News Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,968,932,863,first-class narrative source,medium,[],2015 - Byron Shire News Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,969,933,864,first-class narrative source,medium,[],2015 - Gympie Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,970,934,865,first-class narrative source,medium,[],2015- Epoch Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,971,935,866,first-class narrative source,medium,[],2016 - Cairns Post Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,972,936,867,first-class narrative source,medium,[],2016 - Chinchilla News Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,973,937,868,first-class narrative source,medium,[],2016 - Daily Examiner Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,974,938,869,first-class narrative source,medium,[],2016 - Daily Mail UK Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,975,939,870,first-class narrative source,medium,[],2016 - Gympie Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,976,940,871,first-class narrative source,medium,[],2016- NRM Digital Media Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,977,941,872,first-class narrative source,medium,[],2017 - Eden Magnet Yowie Article (2) 27-04-2017,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,978,942,873,first-class narrative source,medium,[],2017 - Illawarra Mercury Yowie Article 02-05-2017,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,979,943,874,first-class narrative source,medium,[],2017 - News Mail & Queensland Times Yowie Article 04-02-2017,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,980,944,875,first-class narrative source,medium,[],2017 - Sunshine Coast Daily Yowie Article 13-12-2017,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,981,945,876,first-class narrative source,medium,[],2018 - Northern Star Yowie Article 02-06-2018,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,982,946,877,first-class narrative source,medium,[],2018 - South Burnett Times Yowie Article,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,983,947,878,first-class narrative source,medium,[],2018 - Sydney Morning Herald Yowie Article 10-11-2018,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,984,948,879,first-class narrative source,medium,[],2019 - Courier Mail Yowie Article 15-07-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,985,949,880,first-class narrative source,medium,[],2019 - Daily Mail Yowie Article (Cairns) 07-02-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,986,950,881,first-class narrative source,medium,[],2019 - Daily Mail Yowie Article 29-01-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,987,951,882,first-class narrative source,medium,[],2019 - Gold Coast Bulletin Yowie Article (Various GC Based Information) 09-02-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,988,952,883,first-class narrative source,medium,[],2019 - Gold Coast Bulletin Yowie Article 09-02-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,989,953,884,first-class narrative source,medium,[],2019 - Gold Coast Bulletin Yowie Article 19-07-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,990,954,885,first-class narrative source,medium,[],2019 - Gold Coast Bulletin Yowie Article 24-01-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,991,955,886,first-class narrative source,medium,[],2019 - Gympie Times Yowie Article 15-06-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,992,956,887,first-class narrative source,medium,[],2019- Gold Coast Bulletin Yowie Article 20-07-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,993,957,888,first-class narrative source,medium,[],2019- Gold Coast Bulletin Yowie Article 24-07-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,994,958,889,first-class narrative source,medium,[],2019- Gold Coast Bulletin Yowie Article 25-01-2019,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,995,959,890,first-class narrative source,medium,[],2020 - Coast to Coast Yowie Article 21-02-2020,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,996,960,891,first-class narrative source,medium,[],2020 - Gold Coast Bulletin Yowie Article 14-02-2020,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,997,961,892,first-class narrative source,medium,[],2020 - Gold Coast Bulletin Yowie Article 18-07-2020,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,998,962,893,first-class narrative source,medium,[],2020 - Gold Coast Bulletin Yowie Article 25-07-2020,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,999,963,894,first-class narrative source,medium,[],2020 - News Mail Yowie Article 29-11-2020,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1000,964,895,first-class narrative source,medium,[],2020 - Stanthorpe Border Post Yowie Article 07-07-2020,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1001,965,896,first-class narrative source,medium,[],2021 - Coast to Coast Radio Yowie Article 24-05-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1002,966,897,first-class narrative source,medium,[],2021 - Coonabarabran Times Yowie Article 05-12-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1003,967,898,first-class narrative source,medium,[],2021 - Courier Mail Yowie Article 07-02-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1004,968,899,first-class narrative source,medium,[],2021 - Daily Mail Yowie Article 22-05-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1005,969,900,first-class narrative source,medium,[],2021 - Fortean News Yowie Article 26-05-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1006,970,901,first-class narrative source,medium,[],2021 - Gold Coast Bulletin Yowie Article 06-02-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1007,971,902,first-class narrative source,medium,[],2021 - Gold Coast Bulletin Yowie Article 01-01-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1008,972,903,first-class narrative source,medium,[],2021 - Gold Coast Bulletin Yowie Article 06-02-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1009,973,904,first-class narrative source,medium,[],2021 - News Mail Yowie Article 12-02-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1010,974,905,first-class narrative source,medium,[],2021 - News Mail Yowie Article 11-02-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1011,975,906,first-class narrative source,medium,[],2021 - News.com Yowie Article 24-05-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1012,976,907,first-class narrative source,medium,"[""original_article_verification_required""]",2021 - Paris Match Newspaper Yowie Article - 25-05-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1013,977,908,first-class narrative source,medium,[],2021- 7 News / Sunrise Yowie Article 24-05-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1014,978,909,first-class narrative source,medium,[],2021- Mysterious Universe Yowie Article 25-05-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1015,979,910,first-class narrative source,medium,[],2021- Sydney News Today Yowie Article 23-05-2021,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1016,980,911,first-class narrative source,medium,[],2022 - 7 News Yowie Article 26-02-2022,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1017,981,912,first-class narrative source,medium,[],2022 - Gold Coast Bulletin Yowie Article 22-06-2022,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1018,982,913,first-class narrative source,medium,[],2022 - Gold Coast Bulletin Yowie Article 25-06-2022,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1019,983,914,first-class narrative source,medium,[],2023 - Gold Coast Bulletin Yowie Article 01-10-2023,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1020,984,915,first-class narrative source,medium,[],2023 - New York Post Yowie Article 31-10-2023,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full
+2.0.0,1021,985,916,first-class narrative source,medium,[],2023 - News.Com Yowie Article 31-10-2023,modern_web,E,encounter_account,,display_ready_unreviewed,ok_public,full

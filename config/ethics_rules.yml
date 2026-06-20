@@ -1,0 +1,23 @@
+schema_version: "2.0.0"
+principles:
+  - "Public discoverability does not automatically mean unrestricted reproduction."
+  - "Public catalogue metadata is a signal, not permission to extract restricted cultural knowledge."
+  - "Do not collect restricted, secret/sacred, unpublished, or community-controlled non-public content."
+  - "Preserve source/community terminology and mediation context."
+display_modes:
+  full: "Public source item may be displayed with neutral summary and short excerpt."
+  summary_only: "Show neutral summary and metadata; avoid reproducing sensitive substance."
+  metadata_only: "Show source metadata only."
+  suppressed: "Exclude from public frontend export."
+sensitivity_defaults:
+  Wandjina: high
+  Wanjina: high
+  Quinkan: high
+  Quinkin: high
+  Mamu: high
+  Mimih: medium
+  Mimi: medium
+  Nargun: high
+  Garkain: high
+  Mokoi: high
+  Pangkarlangu: high

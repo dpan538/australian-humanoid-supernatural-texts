@@ -1,0 +1,20 @@
+{
+  "exports": {
+    "collection_500_accepted": 0,
+    "collection_500_rejected": 9,
+    "encounter_events_review.csv": 909,
+    "entity_concepts.csv": 4,
+    "entity_labels_review.csv": 985,
+    "exclusions.csv": 2,
+    "leads.csv": 0,
+    "narrative_locations_review.csv": 920,
+    "narrative_relations.csv": 0,
+    "narrative_source_links.csv": 916,
+    "narrative_units": 916,
+    "review_queue": 985,
+    "source_items": 985
+  },
+  "frontend_data_v2": "public/data/frontend-data/v2.json",
+  "generated_at": "2026-06-20T02:12:17+00:00",
+  "schema_version": "2.0.0"
+}

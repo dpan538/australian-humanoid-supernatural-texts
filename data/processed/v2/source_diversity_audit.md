@@ -1,0 +1,64 @@
+# V2 Source Diversity Audit
+
+- Generated: `2026-06-20T02:07:02+00:00`
+- Schema version: `2.0.0`
+
+## Source Organisations
+- Australian Yowie Research: 898
+- Internet Archive: 13
+- OpenAlex: 7
+- English Wikipedia: 6
+- Australian Archaeology: 4
+- Australian aboriginal studies/Australian Aboriginal studies: 3
+- ResearchOnline at James Cook University (James Cook University): 3
+- Children's Literature Association quarterly: 2
+- Medical Entomology and Zoology: 2
+- Oxford English Dictionary: 2
+- Palethnologie: 2
+- RUNE (Research UNE): 2
+- Rock Art Research: 2
+- ABC News: 1
+- ANU Open Research (Australian National University): 1
+- American Anthropologist: 1
+- Anthropological Forum: 1
+- Antiquity: 1
+- Archaeology in Oceania/Archæology & physical anthropology in Oceania: 1
+- Arts: 1
+- Austral Entomology: 1
+- Australian Journal of Psychology: 1
+- Australian and New Zealand Journal of Art: 1
+- Children's Literature Association Quarterly: 1
+- Encyclopedic Dictionary of Archaeology: 1
+- Figshare: 1
+- Folklore: 1
+- Geophysical Research Letters: 1
+- Humanities Research: 1
+- Journal of Australian indigenous issues: 1
+- Journal of Herpetology: 1
+- Journal of Paleontology: 1
+- M/C Journal: 1
+- Man: 1
+- Monster Anthropology: 1
+- Monster Anthropology in Australasia and Beyond: 1
+- ORGANON: 1
+- Oceania: 1
+- Oxford Art Online: 1
+- Palaeontology: 1
+- Research Online (University of Wollongong): 1
+- Samuel Beckett Today / Aujourd’hui: 1
+- Swamphen a Journal of Cultural Ecology (ASLEC-ANZ): 1
+- The Antiquaries Journal: 1
+- The Australian Journal of Anthropology: 1
+- The Conversation: 1
+- The Holocene: 1
+- The International Journal of Diversity in Organizations, Communities, and Nations: Annual Review: 1
+- USC Research Bank (University of the Sunshine Coast): 1
+- World Archaeology: 1
+- Yearbook - Association of Pacific Coast Geographers: 1
+- Zootaxa: 1
+
+## Mediation
+- specialist_aggregator_or_witness_publication: 898
+- bibliographic_metadata: 67
+- digitized_public_item_or_metadata: 13
+- public_web_or_media: 7

@@ -1,0 +1,35 @@
+schema_version: "2.0.0"
+analysis_statuses:
+  - analysis_ready
+  - display_ready_reviewed
+  - display_ready_unreviewed
+  - review_required
+  - lead_only
+  - excluded
+automation_rule: "Automated scripts must never assign analysis_ready."
+shared_dimensions:
+  - source_traceability
+  - stable_identifier
+  - publicness
+  - rights_access_status
+  - classification_confidence
+  - source_mediation
+  - transcription_quality
+  - human_review_status
+  - ethics_review_status
+  - duplicate_variant_resolution
+type_specific_dimensions:
+  encounter_account:
+    - event_specificity
+    - event_date_quality
+    - event_location_quality
+    - morphology_evidence
+    - witness_reporting_context
+    - source_proximity
+  traditional_narrative:
+    - public_attribution
+    - narrator_collector_author_context
+    - community_language_context_where_public
+    - source_authority
+    - sensitivity_publicness
+    - reuse_status

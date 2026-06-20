@@ -1,0 +1,36 @@
+schema_version: "2.0.0"
+tiers:
+  A:
+    label: "Primary and near-primary public source"
+    examples:
+      - Trove newspapers and magazines
+      - NLA digitized items
+      - original public books, diaries, memoirs, local histories
+      - Internet Archive public-domain source texts
+  B:
+    label: "Public institutional or community-controlled public source"
+    examples:
+      - AIATSIS public material and catalogue guidance
+      - state libraries and archives
+      - public museums and galleries
+      - heritage authorities
+      - parks and cultural landscape authorities
+  C:
+    label: "Public circulation and reputable retelling"
+    examples:
+      - ABC
+      - SBS
+      - reputable journalism
+      - local-history organisations
+  D:
+    label: "Scholarly secondary study"
+    accepted_when: "Accessible content contains substantive relevant material; metadata alone is a pointer."
+  E:
+    label: "Discovery-only or specialist aggregator"
+    accepted_when: "Stable public page contains substantive narrative, but source mediation must remain visible."
+not_counted_without_review:
+  - metadata-only catalogue pointers
+  - search result snippets
+  - unresolved leads
+  - anonymous aggregators
+  - AI-generated summaries

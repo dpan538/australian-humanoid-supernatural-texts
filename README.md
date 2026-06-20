@@ -1,6 +1,12 @@
 # Humanoid Supernatural Beings in Australian Public Texts
 
-This repository supports the project **Humanoid Supernatural Beings in Australian Public Texts: Semantic Change, Public Discourse, and Search Attention from 1842 to the Present**.
+This repository supports the project **Australian Public Text Archive of Supernatural Humanoid Narratives and Encounters**.
+
+Earlier repository history used the working title **Humanoid Supernatural Beings in Australian Public Texts: Semantic Change, Public Discourse, and Search Attention from 1842 to the Present**. That legacy framing is preserved for provenance, but V2 adopts a typed multi-corpus narrative archive model.
+
+Recommended description:
+
+> A typed, provenance-aware, ethically constrained archive of public Australian texts about supernatural or anomalous humanoid encounters, apparitions, rumours, legends, traditional narratives, and their later retellings.
 
 The first engineering pass builds a reproducible data-collection foundation. It creates a SQLite schema, seed lexicons, source definitions, query plans, conservative import/classification utilities, validation checks, export scripts, and documentation. It does **not** scrape aggressively, collect restricted materials, or write the final analysis.
 
@@ -8,7 +14,11 @@ Repository: <https://github.com/dpan538/australian-humanoid-supernatural-texts>
 
 ## Scope
 
-The project is Australia-only and studies public textual representations of humanoid or humanoid-adjacent supernatural beings. It is not a generic monster database. Indigenous cultural knowledge is treated carefully by coding source voice, publicness, mediation, and ethics flags rather than flattening material into a cryptid category.
+The project is Australia-only and studies public textual narratives and records about humanoid or humanoid-adjacent supernatural or anomalous figures. It is not a generic monster database. Indigenous cultural knowledge is treated carefully by coding source voice, publicness, mediation, source/community terminology, display mode, and ethics status rather than flattening material into a cryptid category.
+
+The governing research question is:
+
+> How have supernatural or anomalous humanoid figures been encountered, narrated, localised, named, transmitted, and reinterpreted in Australian public texts?
 
 Do not collect secret/sacred, restricted, unpublished, community-controlled, or non-public materials. Public catalogue metadata can help identify sources for review, but it is not permission to extract restricted cultural knowledge.
 
@@ -44,6 +54,51 @@ The acceptance shortcut is:
 ```sh
 make init seed queries validate export test
 ```
+
+## V2 Normalized Narrative Archive
+
+V2 keeps the legacy `records` table intact and adds normalized tables for:
+
+- `source_items`
+- `narrative_units`
+- `encounter_events`
+- `entity_concepts`
+- `entity_labels`
+- `narrative_source_links`
+- `narrative_relations`
+- `narrative_locations`
+- `reviews`
+- `leads`
+- `exclusions`
+- `legacy_record_mappings`
+
+The top-level research object is `narrative_unit`. An encounter event is an optional subtype, not the universal record model.
+
+Run the non-destructive V2 workflow:
+
+```sh
+make snapshot-legacy
+make migrate-v2
+make collect-v2-dry-run
+make export-v2
+make audit-v2
+make validate-v2
+make export-frontend
+make test
+make frontend-build
+```
+
+`make snapshot-legacy` freezes the current flat-record corpus under `data/releases/legacy_985/` with checksums and a release README.
+
+`make migrate-v2` creates the additive V2 schema and maps every legacy record through `legacy_record_mappings`.
+
+`make collect-v2-batch` stages V2 collection candidates. It does not count unresolved leads, metadata-only pointers, controls, exclusions, duplicates, or inaccessible snippets toward the 500 accepted-source target.
+
+`make export-v2` writes normalized review exports under `data/exports/v2/` and `public/data/frontend-data/v2.json`.
+
+`make audit-v2` writes V2 corpus status, diversity, temporal, geographic, ethics, cleaning, dedupe, and collection-progress reports under `data/processed/v2/`.
+
+See `docs/research/METHODS_V2.md`, `docs/research/SCOPE_V2.md`, and `docs/research/FRONTEND_DATA_CONTRACT_V2.md`.
 
 ## Commands
 
@@ -83,7 +138,7 @@ Raw text is saved under `data/raw/text/`, records are inserted into SQLite, year
 - `attention_series.csv`
 - `record_locations.csv`
 
-`make export-frontend` writes `public/data/frontend-data.json`, the static data contract used by the Next.js archive-terminal interface. `make frontend-build` runs the production build intended for Vercel.
+`make export-frontend` writes `public/data/frontend-data.json`, the static legacy-compatible data contract used by the Next.js archive-terminal interface, and also writes the normalized V2 contract through `scripts/export_v2.py`. `make frontend-build` runs the production build intended for Vercel.
 
 ## Public Interface Design
 
@@ -106,9 +161,9 @@ Design cautions:
 
 ## What This Does Not Do
 
-This pass does not perform live Trove scraping, require API credentials, run Google Trends collection, collect Wikimedia pageviews, or infer final interpretive categories. Rule-based classification is triage only. Every imported record still requires human review.
+This pass does not perform live Trove scraping without an API key, require API credentials, run Google Trends collection, collect Wikimedia pageviews, or infer final interpretive categories. Rule-based classification is triage only. Every imported record still requires human review.
 
-Planned leads are never frontend records. A row may enter `records` only after it has enough public information to render a review card and pass the publicness/location gate.
+Planned leads are never accepted V2 source items. A row may enter the legacy `records` table only after it has enough public information to render a review card and pass the publicness/location gate. A V2 candidate counts toward the +500 target only after it passes the stricter accepted-source gate.
 
 ## Citation
 

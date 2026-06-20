@@ -1,0 +1,56 @@
+schema_version: "2.0.0"
+target:
+  accepted_net_new_source_items: 500
+  minimum_non_ayr: 450
+  minimum_pre_1970: 200
+  preferred_primary_or_institutional: 250
+batch_size: 50
+date_bands:
+  - before 1842
+  - 1842-1875
+  - 1876-1918
+  - 1919-1945
+  - 1946-1969
+  - 1970-1999
+  - 2000-present
+  - undated / circulation period only
+states:
+  - NSW
+  - VIC
+  - QLD
+  - WA
+  - SA
+  - TAS
+  - NT
+  - ACT
+priority_sources:
+  - Trove newspapers and magazines
+  - National Library of Australia digitized items
+  - Internet Archive public-domain texts
+  - AIATSIS and community-controlled public resources
+  - public museums, galleries, heritage authorities, parks
+  - ABC/SBS/reputable journalism
+acceptance_gate:
+  - stable public URL or identifier
+  - source title
+  - publication or organisation
+  - publication date or explicit date note
+  - access date
+  - source type and source tier
+  - publicness and rights/access note
+  - substantive excerpt or neutral evidence summary
+  - narrative type or secondary role
+  - Australian relationship
+  - humanoid basis
+  - source label where present
+  - location role or explicit no-location status
+  - ethics and sensitivity status
+not_counted:
+  - unresolved leads
+  - metadata-only catalogue pointers
+  - exact duplicate URLs
+  - search-result snippets
+  - controls
+  - exclusions
+  - inaccessible pages without sufficient evidence
+  - AI-generated summaries

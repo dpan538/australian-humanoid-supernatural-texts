@@ -2,7 +2,7 @@ PYTHON ?= python3
 PYTHON_ENV ?= PYTHONDONTWRITEBYTECODE=1
 DB ?= data/processed/australian_humanoid_figures.sqlite
 
-.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round collect-ayr-records plan-public-round-002 audit-round-002 locations validate export export-frontend dedupe test frontend-build
+.PHONY: init seed queries trove-template trends-template pageviews-template collect-public-round collect-ayr-records plan-public-round-002 audit-round-002 locations validate export export-frontend dedupe test frontend-build snapshot-legacy migrate-v2 classify-legacy clean-v2 dedupe-v2 audit-v2 collect-v2-dry-run collect-v2-batch collect-v2-500 export-v2 validate-v2
 
 init:
 	$(PYTHON_ENV) $(PYTHON) scripts/init_db.py --db $(DB)
@@ -45,6 +45,7 @@ export:
 
 export-frontend:
 	$(PYTHON_ENV) $(PYTHON) scripts/export_frontend_json.py --db $(DB)
+	$(PYTHON_ENV) $(PYTHON) scripts/export_v2.py --db $(DB)
 
 dedupe:
 	$(PYTHON_ENV) $(PYTHON) scripts/run_dedupe.py --db $(DB)
@@ -54,3 +55,34 @@ test:
 
 frontend-build:
 	npm run build
+
+snapshot-legacy:
+	$(PYTHON_ENV) $(PYTHON) scripts/snapshot_legacy.py --db $(DB)
+
+migrate-v2:
+	$(PYTHON_ENV) $(PYTHON) scripts/migrate_legacy_records_v2.py --db $(DB)
+
+classify-legacy: migrate-v2
+
+clean-v2: migrate-v2
+
+dedupe-v2:
+	$(PYTHON_ENV) $(PYTHON) scripts/run_dedupe.py --db $(DB)
+
+audit-v2:
+	$(PYTHON_ENV) $(PYTHON) scripts/audit_v2.py --db $(DB)
+
+collect-v2-dry-run:
+	$(PYTHON_ENV) $(PYTHON) scripts/collect_v2_batch.py --db $(DB) --run-id v2_collection_batch_001 --trove-leads --limit 50
+
+collect-v2-batch:
+	$(PYTHON_ENV) $(PYTHON) scripts/collect_v2_batch.py --db $(DB) --run-id v2_collection_batch_001 --trove-leads --limit 50
+
+collect-v2-500:
+	$(PYTHON_ENV) $(PYTHON) scripts/collect_v2_batch.py --db $(DB) --run-id v2_collection_batch_001 --trove-leads --limit 50
+
+export-v2:
+	$(PYTHON_ENV) $(PYTHON) scripts/export_v2.py --db $(DB)
+
+validate-v2:
+	$(PYTHON_ENV) $(PYTHON) scripts/validate_v2.py --db $(DB)

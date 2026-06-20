@@ -1,0 +1,329 @@
+query_id,source_name,source_type,canonical_name,query_string,query_type,date_start,date_end,expected_noise_level,status,notes
+301,AIATSIS Public Catalogue,aiatsis_public_catalogue,Bunyip,"""Bunyip""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Bunyip."
+313,AIATSIS Public Catalogue,aiatsis_public_catalogue,Drop bear,"""Drop bear""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Drop bear."
+241,AIATSIS Public Catalogue,aiatsis_public_catalogue,Garkain,"""Garkain""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Garkain."
+77,AIATSIS Public Catalogue,aiatsis_public_catalogue,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man of the Wood."
+99,AIATSIS Public Catalogue,aiatsis_public_catalogue,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+93,AIATSIS Public Catalogue,aiatsis_public_catalogue,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+265,AIATSIS Public Catalogue,aiatsis_public_catalogue,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mamu."
+163,AIATSIS Public Catalogue,aiatsis_public_catalogue,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+147,AIATSIS Public Catalogue,aiatsis_public_catalogue,Mimih,"""Mimih""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimih."
+169,AIATSIS Public Catalogue,aiatsis_public_catalogue,Mimih,"""Mimih""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+253,AIATSIS Public Catalogue,aiatsis_public_catalogue,Mokoi,"""Mokoi""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mokoi."
+229,AIATSIS Public Catalogue,aiatsis_public_catalogue,Nargun,"""Nargun""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Nargun."
+277,AIATSIS Public Catalogue,aiatsis_public_catalogue,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Pangkarlangu."
+289,AIATSIS Public Catalogue,aiatsis_public_catalogue,Puttikan,"""Puttikan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Puttikan."
+181,AIATSIS Public Catalogue,aiatsis_public_catalogue,Quinkan,"""Quinkan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkan."
+193,AIATSIS Public Catalogue,aiatsis_public_catalogue,Quinkan,"""Quinkin""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkin."
+205,AIATSIS Public Catalogue,aiatsis_public_catalogue,Wandjina,"""Wandjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wandjina."
+217,AIATSIS Public Catalogue,aiatsis_public_catalogue,Wandjina,"""Wanjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wanjina."
+59,AIATSIS Public Catalogue,aiatsis_public_catalogue,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+43,AIATSIS Public Catalogue,aiatsis_public_catalogue,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo-devil-devil."
+65,AIATSIS Public Catalogue,aiatsis_public_catalogue,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+135,AIATSIS Public Catalogue,aiatsis_public_catalogue,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-tha-who."
+123,AIATSIS Public Catalogue,aiatsis_public_catalogue,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-yha-who."
+111,AIATSIS Public Catalogue,aiatsis_public_catalogue,Yaroma,"""Yaroma""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yaroma."
+31,AIATSIS Public Catalogue,aiatsis_public_catalogue,Yowie,"""Australian ape""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian ape."
+19,AIATSIS Public Catalogue,aiatsis_public_catalogue,Yowie,"""Australian gorilla""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian gorilla."
+7,AIATSIS Public Catalogue,aiatsis_public_catalogue,Yowie,"""Yowie""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yowie."
+302,Research Data Australia,andc,Bunyip,"""Bunyip""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Bunyip."
+314,Research Data Australia,andc,Drop bear,"""Drop bear""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Drop bear."
+242,Research Data Australia,andc,Garkain,"""Garkain""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Garkain."
+78,Research Data Australia,andc,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man of the Wood."
+100,Research Data Australia,andc,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+94,Research Data Australia,andc,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+266,Research Data Australia,andc,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mamu."
+164,Research Data Australia,andc,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+148,Research Data Australia,andc,Mimih,"""Mimih""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimih."
+170,Research Data Australia,andc,Mimih,"""Mimih""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+254,Research Data Australia,andc,Mokoi,"""Mokoi""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mokoi."
+230,Research Data Australia,andc,Nargun,"""Nargun""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Nargun."
+278,Research Data Australia,andc,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Pangkarlangu."
+290,Research Data Australia,andc,Puttikan,"""Puttikan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Puttikan."
+182,Research Data Australia,andc,Quinkan,"""Quinkan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkan."
+194,Research Data Australia,andc,Quinkan,"""Quinkin""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkin."
+206,Research Data Australia,andc,Wandjina,"""Wandjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wandjina."
+218,Research Data Australia,andc,Wandjina,"""Wanjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wanjina."
+60,Research Data Australia,andc,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+44,Research Data Australia,andc,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo-devil-devil."
+66,Research Data Australia,andc,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+136,Research Data Australia,andc,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-tha-who."
+124,Research Data Australia,andc,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-yha-who."
+112,Research Data Australia,andc,Yaroma,"""Yaroma""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yaroma."
+32,Research Data Australia,andc,Yowie,"""Australian ape""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian ape."
+20,Research Data Australia,andc,Yowie,"""Australian gorilla""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian gorilla."
+8,Research Data Australia,andc,Yowie,"""Yowie""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yowie."
+321,Google Trends,google_trends,,Bunyip,attention_series,2004,present,medium,planned,Google Trends attention series; attention-series planning term.
+323,Google Trends,google_trends,,Drop bear,attention_series,2004,present,low,planned,Google Trends attention series; attention-series planning term.
+327,Google Trends,google_trends,,Quinkan,attention_series,2004,present,low,planned,Google Trends attention series; attention-series planning term.
+325,Google Trends,google_trends,,Wandjina,attention_series,2004,present,medium,planned,Google Trends attention series; attention-series planning term.
+319,Google Trends,google_trends,,Yowie,attention_series,2004,present,medium,planned,Google Trends attention series; attention-series planning term.
+303,Modern Public Web,modern_web,Bunyip,"""Bunyip""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Bunyip."
+315,Modern Public Web,modern_web,Drop bear,"""Drop bear""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Drop bear."
+243,Modern Public Web,modern_web,Garkain,"""Garkain""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Garkain."
+79,Modern Public Web,modern_web,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man of the Wood."
+101,Modern Public Web,modern_web,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+95,Modern Public Web,modern_web,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+267,Modern Public Web,modern_web,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mamu."
+165,Modern Public Web,modern_web,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+149,Modern Public Web,modern_web,Mimih,"""Mimih""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimih."
+171,Modern Public Web,modern_web,Mimih,"""Mimih""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+255,Modern Public Web,modern_web,Mokoi,"""Mokoi""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mokoi."
+231,Modern Public Web,modern_web,Nargun,"""Nargun""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Nargun."
+279,Modern Public Web,modern_web,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Pangkarlangu."
+291,Modern Public Web,modern_web,Puttikan,"""Puttikan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Puttikan."
+183,Modern Public Web,modern_web,Quinkan,"""Quinkan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkan."
+195,Modern Public Web,modern_web,Quinkan,"""Quinkin""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkin."
+207,Modern Public Web,modern_web,Wandjina,"""Wandjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wandjina."
+219,Modern Public Web,modern_web,Wandjina,"""Wanjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wanjina."
+61,Modern Public Web,modern_web,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+45,Modern Public Web,modern_web,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo-devil-devil."
+67,Modern Public Web,modern_web,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+137,Modern Public Web,modern_web,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-tha-who."
+125,Modern Public Web,modern_web,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-yha-who."
+113,Modern Public Web,modern_web,Yaroma,"""Yaroma""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yaroma."
+33,Modern Public Web,modern_web,Yowie,"""Australian ape""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian ape."
+21,Modern Public Web,modern_web,Yowie,"""Australian gorilla""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian gorilla."
+9,Modern Public Web,modern_web,Yowie,"""Yowie""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yowie."
+304,National Library of Australia Catalogue,nla_catalogue,Bunyip,"""Bunyip""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Bunyip."
+316,National Library of Australia Catalogue,nla_catalogue,Drop bear,"""Drop bear""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Drop bear."
+244,National Library of Australia Catalogue,nla_catalogue,Garkain,"""Garkain""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Garkain."
+80,National Library of Australia Catalogue,nla_catalogue,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man of the Wood."
+102,National Library of Australia Catalogue,nla_catalogue,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+96,National Library of Australia Catalogue,nla_catalogue,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+268,National Library of Australia Catalogue,nla_catalogue,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mamu."
+166,National Library of Australia Catalogue,nla_catalogue,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+150,National Library of Australia Catalogue,nla_catalogue,Mimih,"""Mimih""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimih."
+172,National Library of Australia Catalogue,nla_catalogue,Mimih,"""Mimih""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+256,National Library of Australia Catalogue,nla_catalogue,Mokoi,"""Mokoi""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mokoi."
+232,National Library of Australia Catalogue,nla_catalogue,Nargun,"""Nargun""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Nargun."
+280,National Library of Australia Catalogue,nla_catalogue,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Pangkarlangu."
+292,National Library of Australia Catalogue,nla_catalogue,Puttikan,"""Puttikan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Puttikan."
+184,National Library of Australia Catalogue,nla_catalogue,Quinkan,"""Quinkan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkan."
+196,National Library of Australia Catalogue,nla_catalogue,Quinkan,"""Quinkin""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkin."
+208,National Library of Australia Catalogue,nla_catalogue,Wandjina,"""Wandjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wandjina."
+220,National Library of Australia Catalogue,nla_catalogue,Wandjina,"""Wanjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wanjina."
+62,National Library of Australia Catalogue,nla_catalogue,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+46,National Library of Australia Catalogue,nla_catalogue,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo-devil-devil."
+68,National Library of Australia Catalogue,nla_catalogue,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+138,National Library of Australia Catalogue,nla_catalogue,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-tha-who."
+126,National Library of Australia Catalogue,nla_catalogue,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-yha-who."
+114,National Library of Australia Catalogue,nla_catalogue,Yaroma,"""Yaroma""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yaroma."
+34,National Library of Australia Catalogue,nla_catalogue,Yowie,"""Australian ape""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian ape."
+22,National Library of Australia Catalogue,nla_catalogue,Yowie,"""Australian gorilla""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian gorilla."
+10,National Library of Australia Catalogue,nla_catalogue,Yowie,"""Yowie""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yowie."
+296,Trove Magazines and Newsletters,trove_magazine,Bunyip,"""Bunyip""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Bunyip.
+298,Trove Magazines and Newsletters,trove_magazine,Bunyip,"""Bunyip""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Bunyip.
+300,Trove Magazines and Newsletters,trove_magazine,Bunyip,"""Bunyip""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Bunyip.
+305,Trove Magazines and Newsletters,trove_magazine,Bunyip,"""Bunyip""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Bunyip."
+308,Trove Magazines and Newsletters,trove_magazine,Drop bear,"""Drop bear""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Drop bear.
+310,Trove Magazines and Newsletters,trove_magazine,Drop bear,"""Drop bear""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Drop bear.
+312,Trove Magazines and Newsletters,trove_magazine,Drop bear,"""Drop bear""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Drop bear.
+317,Trove Magazines and Newsletters,trove_magazine,Drop bear,"""Drop bear""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Drop bear."
+236,Trove Magazines and Newsletters,trove_magazine,Garkain,"""Garkain""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Garkain.
+238,Trove Magazines and Newsletters,trove_magazine,Garkain,"""Garkain""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Garkain.
+240,Trove Magazines and Newsletters,trove_magazine,Garkain,"""Garkain""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Garkain.
+245,Trove Magazines and Newsletters,trove_magazine,Garkain,"""Garkain""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Garkain."
+72,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man of the Wood""",negative_control,1803,1841,high,planned,Retrospective Trove backsearch window; generated from alias Hairy Man.
+84,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",negative_control,1803,1841,high,planned,Retrospective Trove backsearch window; generated from alias Hairy Man.
+74,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Hairy Man of the Wood.
+88,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1842,1875,high,planned,Early anchor period; generated from alias Hairy Man.
+86,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1842,1875,high,planned,Early anchor period; generated from alias Hairy Man.
+76,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Hairy Man of the Wood.
+92,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1876,1969,high,planned,Pre-modern newspaper and publication expansion; generated from alias Hairy Man.
+90,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1876,1969,high,planned,Pre-modern newspaper and publication expansion; generated from alias Hairy Man.
+81,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man of the Wood."
+103,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+97,Trove Magazines and Newsletters,trove_magazine,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+260,Trove Magazines and Newsletters,trove_magazine,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",negative_control,1803,1841,high,planned,Retrospective Trove backsearch window; generated from alias Mamu.
+262,Trove Magazines and Newsletters,trove_magazine,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1842,1875,high,planned,Early anchor period; generated from alias Mamu.
+264,Trove Magazines and Newsletters,trove_magazine,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1876,1969,high,planned,Pre-modern newspaper and publication expansion; generated from alias Mamu.
+269,Trove Magazines and Newsletters,trove_magazine,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mamu."
+154,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",negative_control,1803,1841,extreme,planned,Retrospective Trove backsearch window; generated from alias Mimi.
+142,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimih""",negative_control,1803,1841,extreme,planned,Retrospective Trove backsearch window; generated from alias Mimi.
+156,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1842,1875,extreme,planned,Early anchor period; generated from alias Mimi.
+144,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimih""",exact_phrase,1842,1875,medium,planned,Early anchor period; generated from alias Mimih.
+158,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimih""",constrained_boolean,1842,1875,extreme,planned,Early anchor period; generated from alias Mimi.
+160,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1876,1969,extreme,planned,Pre-modern newspaper and publication expansion; generated from alias Mimi.
+146,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimih""",exact_phrase,1876,1969,medium,planned,Pre-modern newspaper and publication expansion; generated from alias Mimih.
+162,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimih""",constrained_boolean,1876,1969,extreme,planned,Pre-modern newspaper and publication expansion; generated from alias Mimi.
+167,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+151,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimih""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimih."
+173,Trove Magazines and Newsletters,trove_magazine,Mimih,"""Mimih""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+248,Trove Magazines and Newsletters,trove_magazine,Mokoi,"""Mokoi""",negative_control,1803,1841,medium,planned,Retrospective Trove backsearch window; generated from alias Mokoi.
+250,Trove Magazines and Newsletters,trove_magazine,Mokoi,"""Mokoi""",exact_phrase,1842,1875,medium,planned,Early anchor period; generated from alias Mokoi.
+252,Trove Magazines and Newsletters,trove_magazine,Mokoi,"""Mokoi""",exact_phrase,1876,1969,medium,planned,Pre-modern newspaper and publication expansion; generated from alias Mokoi.
+257,Trove Magazines and Newsletters,trove_magazine,Mokoi,"""Mokoi""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mokoi."
+224,Trove Magazines and Newsletters,trove_magazine,Nargun,"""Nargun""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Nargun.
+226,Trove Magazines and Newsletters,trove_magazine,Nargun,"""Nargun""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Nargun.
+228,Trove Magazines and Newsletters,trove_magazine,Nargun,"""Nargun""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Nargun.
+233,Trove Magazines and Newsletters,trove_magazine,Nargun,"""Nargun""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Nargun."
+272,Trove Magazines and Newsletters,trove_magazine,Pangkarlangu,"""Pangkarlangu""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Pangkarlangu.
+274,Trove Magazines and Newsletters,trove_magazine,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Pangkarlangu.
+276,Trove Magazines and Newsletters,trove_magazine,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Pangkarlangu.
+281,Trove Magazines and Newsletters,trove_magazine,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Pangkarlangu."
+284,Trove Magazines and Newsletters,trove_magazine,Puttikan,"""Puttikan""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Puttikan.
+286,Trove Magazines and Newsletters,trove_magazine,Puttikan,"""Puttikan""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Puttikan.
+288,Trove Magazines and Newsletters,trove_magazine,Puttikan,"""Puttikan""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Puttikan.
+293,Trove Magazines and Newsletters,trove_magazine,Puttikan,"""Puttikan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Puttikan."
+176,Trove Magazines and Newsletters,trove_magazine,Quinkan,"""Quinkan""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Quinkan.
+188,Trove Magazines and Newsletters,trove_magazine,Quinkan,"""Quinkin""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Quinkin.
+178,Trove Magazines and Newsletters,trove_magazine,Quinkan,"""Quinkan""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Quinkan.
+190,Trove Magazines and Newsletters,trove_magazine,Quinkan,"""Quinkin""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Quinkin.
+180,Trove Magazines and Newsletters,trove_magazine,Quinkan,"""Quinkan""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Quinkan.
+192,Trove Magazines and Newsletters,trove_magazine,Quinkan,"""Quinkin""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Quinkin.
+185,Trove Magazines and Newsletters,trove_magazine,Quinkan,"""Quinkan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkan."
+197,Trove Magazines and Newsletters,trove_magazine,Quinkan,"""Quinkin""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkin."
+200,Trove Magazines and Newsletters,trove_magazine,Wandjina,"""Wandjina""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Wandjina.
+212,Trove Magazines and Newsletters,trove_magazine,Wandjina,"""Wanjina""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Wanjina.
+202,Trove Magazines and Newsletters,trove_magazine,Wandjina,"""Wandjina""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Wandjina.
+214,Trove Magazines and Newsletters,trove_magazine,Wandjina,"""Wanjina""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Wanjina.
+204,Trove Magazines and Newsletters,trove_magazine,Wandjina,"""Wandjina""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Wandjina.
+216,Trove Magazines and Newsletters,trove_magazine,Wandjina,"""Wanjina""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Wanjina.
+209,Trove Magazines and Newsletters,trove_magazine,Wandjina,"""Wandjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wandjina."
+221,Trove Magazines and Newsletters,trove_magazine,Wandjina,"""Wanjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wanjina."
+50,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",negative_control,1803,1841,extreme,planned,Retrospective Trove backsearch window; generated from alias Yahoo.
+38,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo-devil-devil""",negative_control,1803,1841,extreme,planned,Retrospective Trove backsearch window; generated from alias Yahoo.
+52,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1842,1875,extreme,planned,Early anchor period; generated from alias Yahoo.
+40,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Yahoo-devil-devil.
+54,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1842,1875,extreme,planned,Early anchor period; generated from alias Yahoo.
+56,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1876,1969,extreme,planned,Pre-modern newspaper and publication expansion; generated from alias Yahoo.
+42,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Yahoo-devil-devil.
+58,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1876,1969,extreme,planned,Pre-modern newspaper and publication expansion; generated from alias Yahoo.
+63,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+47,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo-devil-devil."
+69,Trove Magazines and Newsletters,trove_magazine,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+130,Trove Magazines and Newsletters,trove_magazine,Yara-ma-yha-who,"""Yara-ma-tha-who""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Yara-ma-tha-who.
+118,Trove Magazines and Newsletters,trove_magazine,Yara-ma-yha-who,"""Yara-ma-yha-who""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Yara-ma-yha-who.
+132,Trove Magazines and Newsletters,trove_magazine,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Yara-ma-tha-who.
+120,Trove Magazines and Newsletters,trove_magazine,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Yara-ma-yha-who.
+134,Trove Magazines and Newsletters,trove_magazine,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Yara-ma-tha-who.
+122,Trove Magazines and Newsletters,trove_magazine,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Yara-ma-yha-who.
+139,Trove Magazines and Newsletters,trove_magazine,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-tha-who."
+127,Trove Magazines and Newsletters,trove_magazine,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-yha-who."
+106,Trove Magazines and Newsletters,trove_magazine,Yaroma,"""Yaroma""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Yaroma.
+108,Trove Magazines and Newsletters,trove_magazine,Yaroma,"""Yaroma""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Yaroma.
+110,Trove Magazines and Newsletters,trove_magazine,Yaroma,"""Yaroma""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Yaroma.
+115,Trove Magazines and Newsletters,trove_magazine,Yaroma,"""Yaroma""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yaroma."
+26,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Australian ape""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Australian ape.
+14,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Australian gorilla""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Australian gorilla.
+2,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Yowie""",negative_control,1803,1841,medium,planned,Retrospective Trove backsearch window; generated from alias Yowie.
+28,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Australian ape""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Australian ape.
+16,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Australian gorilla""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Australian gorilla.
+4,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Yowie""",exact_phrase,1842,1875,medium,planned,Early anchor period; generated from alias Yowie.
+30,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Australian ape""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Australian ape.
+18,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Australian gorilla""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Australian gorilla.
+6,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Yowie""",exact_phrase,1876,1969,medium,planned,Pre-modern newspaper and publication expansion; generated from alias Yowie.
+35,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Australian ape""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian ape."
+23,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Australian gorilla""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian gorilla."
+11,Trove Magazines and Newsletters,trove_magazine,Yowie,"""Yowie""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yowie."
+295,Trove Newspapers and Gazettes,trove_newspaper,Bunyip,"""Bunyip""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Bunyip.
+297,Trove Newspapers and Gazettes,trove_newspaper,Bunyip,"""Bunyip""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Bunyip.
+299,Trove Newspapers and Gazettes,trove_newspaper,Bunyip,"""Bunyip""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Bunyip.
+306,Trove Newspapers and Gazettes,trove_newspaper,Bunyip,"""Bunyip""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Bunyip."
+307,Trove Newspapers and Gazettes,trove_newspaper,Drop bear,"""Drop bear""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Drop bear.
+309,Trove Newspapers and Gazettes,trove_newspaper,Drop bear,"""Drop bear""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Drop bear.
+311,Trove Newspapers and Gazettes,trove_newspaper,Drop bear,"""Drop bear""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Drop bear.
+318,Trove Newspapers and Gazettes,trove_newspaper,Drop bear,"""Drop bear""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Drop bear."
+235,Trove Newspapers and Gazettes,trove_newspaper,Garkain,"""Garkain""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Garkain.
+237,Trove Newspapers and Gazettes,trove_newspaper,Garkain,"""Garkain""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Garkain.
+239,Trove Newspapers and Gazettes,trove_newspaper,Garkain,"""Garkain""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Garkain.
+246,Trove Newspapers and Gazettes,trove_newspaper,Garkain,"""Garkain""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Garkain."
+71,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man of the Wood""",negative_control,1803,1841,high,planned,Retrospective Trove backsearch window; generated from alias Hairy Man.
+83,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",negative_control,1803,1841,high,planned,Retrospective Trove backsearch window; generated from alias Hairy Man.
+73,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Hairy Man of the Wood.
+87,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1842,1875,high,planned,Early anchor period; generated from alias Hairy Man.
+85,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1842,1875,high,planned,Early anchor period; generated from alias Hairy Man.
+75,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Hairy Man of the Wood.
+91,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1876,1969,high,planned,Pre-modern newspaper and publication expansion; generated from alias Hairy Man.
+89,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1876,1969,high,planned,Pre-modern newspaper and publication expansion; generated from alias Hairy Man.
+82,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man of the Wood""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man of the Wood."
+104,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man of the Wood""",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+98,Trove Newspapers and Gazettes,trove_newspaper,Hairy Man,"""Hairy Man"" AND (Yowie OR Yahoo OR Australia OR Aboriginal OR bush)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Hairy Man."
+259,Trove Newspapers and Gazettes,trove_newspaper,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",negative_control,1803,1841,high,planned,Retrospective Trove backsearch window; generated from alias Mamu.
+261,Trove Newspapers and Gazettes,trove_newspaper,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1842,1875,high,planned,Early anchor period; generated from alias Mamu.
+263,Trove Newspapers and Gazettes,trove_newspaper,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1876,1969,high,planned,Pre-modern newspaper and publication expansion; generated from alias Mamu.
+270,Trove Newspapers and Gazettes,trove_newspaper,Mamu,"""Mamu"" AND (spirit OR spirits OR being OR Aboriginal OR Anangu OR Pitjantjatjara)",constrained_boolean,1970,present,high,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mamu."
+153,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",negative_control,1803,1841,extreme,planned,Retrospective Trove backsearch window; generated from alias Mimi.
+141,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimih""",negative_control,1803,1841,extreme,planned,Retrospective Trove backsearch window; generated from alias Mimi.
+155,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1842,1875,extreme,planned,Early anchor period; generated from alias Mimi.
+143,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimih""",exact_phrase,1842,1875,medium,planned,Early anchor period; generated from alias Mimih.
+157,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimih""",constrained_boolean,1842,1875,extreme,planned,Early anchor period; generated from alias Mimi.
+159,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1876,1969,extreme,planned,Pre-modern newspaper and publication expansion; generated from alias Mimi.
+145,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimih""",exact_phrase,1876,1969,medium,planned,Pre-modern newspaper and publication expansion; generated from alias Mimih.
+161,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimih""",constrained_boolean,1876,1969,extreme,planned,Pre-modern newspaper and publication expansion; generated from alias Mimi.
+168,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimi"" AND (spirit OR spirits OR Aboriginal OR Arnhem OR ""rock art"" OR Mimih)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+152,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimih""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimih."
+174,Trove Newspapers and Gazettes,trove_newspaper,Mimih,"""Mimih""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mimi."
+247,Trove Newspapers and Gazettes,trove_newspaper,Mokoi,"""Mokoi""",negative_control,1803,1841,medium,planned,Retrospective Trove backsearch window; generated from alias Mokoi.
+249,Trove Newspapers and Gazettes,trove_newspaper,Mokoi,"""Mokoi""",exact_phrase,1842,1875,medium,planned,Early anchor period; generated from alias Mokoi.
+251,Trove Newspapers and Gazettes,trove_newspaper,Mokoi,"""Mokoi""",exact_phrase,1876,1969,medium,planned,Pre-modern newspaper and publication expansion; generated from alias Mokoi.
+258,Trove Newspapers and Gazettes,trove_newspaper,Mokoi,"""Mokoi""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Mokoi."
+223,Trove Newspapers and Gazettes,trove_newspaper,Nargun,"""Nargun""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Nargun.
+225,Trove Newspapers and Gazettes,trove_newspaper,Nargun,"""Nargun""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Nargun.
+227,Trove Newspapers and Gazettes,trove_newspaper,Nargun,"""Nargun""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Nargun.
+234,Trove Newspapers and Gazettes,trove_newspaper,Nargun,"""Nargun""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Nargun."
+271,Trove Newspapers and Gazettes,trove_newspaper,Pangkarlangu,"""Pangkarlangu""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Pangkarlangu.
+273,Trove Newspapers and Gazettes,trove_newspaper,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Pangkarlangu.
+275,Trove Newspapers and Gazettes,trove_newspaper,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Pangkarlangu.
+282,Trove Newspapers and Gazettes,trove_newspaper,Pangkarlangu,"""Pangkarlangu""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Pangkarlangu."
+283,Trove Newspapers and Gazettes,trove_newspaper,Puttikan,"""Puttikan""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Puttikan.
+285,Trove Newspapers and Gazettes,trove_newspaper,Puttikan,"""Puttikan""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Puttikan.
+287,Trove Newspapers and Gazettes,trove_newspaper,Puttikan,"""Puttikan""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Puttikan.
+294,Trove Newspapers and Gazettes,trove_newspaper,Puttikan,"""Puttikan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Puttikan."
+175,Trove Newspapers and Gazettes,trove_newspaper,Quinkan,"""Quinkan""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Quinkan.
+187,Trove Newspapers and Gazettes,trove_newspaper,Quinkan,"""Quinkin""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Quinkin.
+177,Trove Newspapers and Gazettes,trove_newspaper,Quinkan,"""Quinkan""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Quinkan.
+189,Trove Newspapers and Gazettes,trove_newspaper,Quinkan,"""Quinkin""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Quinkin.
+179,Trove Newspapers and Gazettes,trove_newspaper,Quinkan,"""Quinkan""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Quinkan.
+191,Trove Newspapers and Gazettes,trove_newspaper,Quinkan,"""Quinkin""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Quinkin.
+186,Trove Newspapers and Gazettes,trove_newspaper,Quinkan,"""Quinkan""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkan."
+198,Trove Newspapers and Gazettes,trove_newspaper,Quinkan,"""Quinkin""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Quinkin."
+199,Trove Newspapers and Gazettes,trove_newspaper,Wandjina,"""Wandjina""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Wandjina.
+211,Trove Newspapers and Gazettes,trove_newspaper,Wandjina,"""Wanjina""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Wanjina.
+201,Trove Newspapers and Gazettes,trove_newspaper,Wandjina,"""Wandjina""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Wandjina.
+213,Trove Newspapers and Gazettes,trove_newspaper,Wandjina,"""Wanjina""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Wanjina.
+203,Trove Newspapers and Gazettes,trove_newspaper,Wandjina,"""Wandjina""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Wandjina.
+215,Trove Newspapers and Gazettes,trove_newspaper,Wandjina,"""Wanjina""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Wanjina.
+210,Trove Newspapers and Gazettes,trove_newspaper,Wandjina,"""Wandjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wandjina."
+222,Trove Newspapers and Gazettes,trove_newspaper,Wandjina,"""Wanjina""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Wanjina."
+49,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",negative_control,1803,1841,extreme,planned,Retrospective Trove backsearch window; generated from alias Yahoo.
+37,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo-devil-devil""",negative_control,1803,1841,extreme,planned,Retrospective Trove backsearch window; generated from alias Yahoo.
+51,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1842,1875,extreme,planned,Early anchor period; generated from alias Yahoo.
+39,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Yahoo-devil-devil.
+53,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1842,1875,extreme,planned,Early anchor period; generated from alias Yahoo.
+55,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1876,1969,extreme,planned,Pre-modern newspaper and publication expansion; generated from alias Yahoo.
+41,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Yahoo-devil-devil.
+57,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1876,1969,extreme,planned,Pre-modern newspaper and publication expansion; generated from alias Yahoo.
+64,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo"" AND (""hairy man"" OR Yowie OR ""devil-devil"" OR Aboriginal OR Australia)",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+48,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo-devil-devil""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo-devil-devil."
+70,Trove Newspapers and Gazettes,trove_newspaper,Yahoo,"""Yahoo-devil-devil""",constrained_boolean,1970,present,extreme,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yahoo."
+129,Trove Newspapers and Gazettes,trove_newspaper,Yara-ma-yha-who,"""Yara-ma-tha-who""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Yara-ma-tha-who.
+117,Trove Newspapers and Gazettes,trove_newspaper,Yara-ma-yha-who,"""Yara-ma-yha-who""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Yara-ma-yha-who.
+131,Trove Newspapers and Gazettes,trove_newspaper,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Yara-ma-tha-who.
+119,Trove Newspapers and Gazettes,trove_newspaper,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Yara-ma-yha-who.
+133,Trove Newspapers and Gazettes,trove_newspaper,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Yara-ma-tha-who.
+121,Trove Newspapers and Gazettes,trove_newspaper,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Yara-ma-yha-who.
+140,Trove Newspapers and Gazettes,trove_newspaper,Yara-ma-yha-who,"""Yara-ma-tha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-tha-who."
+128,Trove Newspapers and Gazettes,trove_newspaper,Yara-ma-yha-who,"""Yara-ma-yha-who""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yara-ma-yha-who."
+105,Trove Newspapers and Gazettes,trove_newspaper,Yaroma,"""Yaroma""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Yaroma.
+107,Trove Newspapers and Gazettes,trove_newspaper,Yaroma,"""Yaroma""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Yaroma.
+109,Trove Newspapers and Gazettes,trove_newspaper,Yaroma,"""Yaroma""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Yaroma.
+116,Trove Newspapers and Gazettes,trove_newspaper,Yaroma,"""Yaroma""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yaroma."
+25,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Australian ape""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Australian ape.
+13,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Australian gorilla""",negative_control,1803,1841,low,planned,Retrospective Trove backsearch window; generated from alias Australian gorilla.
+1,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Yowie""",negative_control,1803,1841,medium,planned,Retrospective Trove backsearch window; generated from alias Yowie.
+27,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Australian ape""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Australian ape.
+15,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Australian gorilla""",exact_phrase,1842,1875,low,planned,Early anchor period; generated from alias Australian gorilla.
+3,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Yowie""",exact_phrase,1842,1875,medium,planned,Early anchor period; generated from alias Yowie.
+29,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Australian ape""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Australian ape.
+17,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Australian gorilla""",exact_phrase,1876,1969,low,planned,Pre-modern newspaper and publication expansion; generated from alias Australian gorilla.
+5,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Yowie""",exact_phrase,1876,1969,medium,planned,Pre-modern newspaper and publication expansion; generated from alias Yowie.
+36,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Australian ape""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian ape."
+24,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Australian gorilla""",exact_phrase,1970,present,low,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Australian gorilla."
+12,Trove Newspapers and Gazettes,trove_newspaper,Yowie,"""Yowie""",exact_phrase,1970,present,medium,planned,"Modern Yowie, heritage, tourism, and media period; generated from alias Yowie."
+322,Wikimedia Pageviews,wikimedia_pageviews,,Bunyip,attention_series,2015-07-01,present,medium,planned,Wikimedia Pageviews attention series; attention-series planning term.
+324,Wikimedia Pageviews,wikimedia_pageviews,,Drop bear,attention_series,2015-07-01,present,low,planned,Wikimedia Pageviews attention series; attention-series planning term.
+328,Wikimedia Pageviews,wikimedia_pageviews,,Quinkan,attention_series,2015-07-01,present,low,planned,Wikimedia Pageviews attention series; attention-series planning term.
+326,Wikimedia Pageviews,wikimedia_pageviews,,Wandjina,attention_series,2015-07-01,present,medium,planned,Wikimedia Pageviews attention series; attention-series planning term.
+320,Wikimedia Pageviews,wikimedia_pageviews,,Yowie,attention_series,2015-07-01,present,medium,planned,Wikimedia Pageviews attention series; attention-series planning term.
