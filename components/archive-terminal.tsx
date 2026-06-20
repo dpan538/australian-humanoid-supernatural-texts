@@ -385,8 +385,8 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
                   tabIndex={record ? 0 : -1}
                   aria-label={`Open strict geocoded record ${record?.title ?? point.place_name}`}
                 >
-                  <circle className="record-flag-hit" cx={x} cy={y} r="7" />
-                  <circle className="record-flag-dot" cx={x} cy={y} r={selected ? 3.8 : 2.8} />
+                  <circle className="record-flag-hit" cx={x} cy={y} r="10" />
+                  <circle className="record-flag-dot" cx={x} cy={y} r={selected ? 5.2 : stateLinked ? 3.9 : 3.25} />
                   {selected ? (
                     <text className="record-flag-label" x={Math.min(x + 12, MAP_VIEWBOX.width - 150)} y={Math.max(y - 10, 26)}>
                       {point.year ?? "--"} / {truncate(record?.canonical_figure_guess ?? point.canonical_figure ?? record?.title, 24)}

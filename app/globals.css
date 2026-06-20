@@ -402,7 +402,7 @@ a {
 }
 
 .record-flag-layer.has-hover .record-flag {
-  opacity: 0.28;
+  opacity: 0.22;
 }
 
 .record-flag {
@@ -424,8 +424,8 @@ a {
 
 .record-flag-dot {
   fill: var(--flag-tone, rgba(167, 255, 99, 0.82));
-  stroke: rgba(242, 242, 237, 0.42);
-  stroke-width: 0.42;
+  stroke: rgba(242, 242, 237, 0.48);
+  stroke-width: 0.48;
   vector-effect: non-scaling-stroke;
   transition: fill 120ms ease, stroke 120ms ease, r 120ms ease;
 }
@@ -441,17 +441,18 @@ a {
 
 .record-flag.state-linked .record-flag-dot {
   fill: var(--flag-tone, rgba(167, 255, 99, 0.82));
-  stroke: rgba(242, 242, 237, 0.5);
+  stroke: rgba(242, 242, 237, 0.62);
 }
 
 .record-flag.active {
   opacity: 1;
-  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--flag-tone, rgba(242, 242, 237, 0.36)) 45%, transparent));
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--flag-tone, rgba(242, 242, 237, 0.36)) 62%, transparent));
 }
 
 .record-flag.active .record-flag-dot {
-  fill: color-mix(in srgb, var(--flag-tone, rgba(242, 242, 237, 0.96)) 72%, rgba(242, 242, 237, 0.9));
-  stroke: rgba(242, 242, 237, 0.66);
+  fill: color-mix(in srgb, var(--flag-tone, rgba(242, 242, 237, 0.96)) 68%, rgba(242, 242, 237, 0.96));
+  stroke: rgba(242, 242, 237, 0.9);
+  stroke-width: 0.75;
 }
 
 .record-flag.unplaced {
