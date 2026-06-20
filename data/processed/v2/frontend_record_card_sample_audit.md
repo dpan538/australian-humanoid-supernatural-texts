@@ -1,11 +1,11 @@
 # Frontend Record Card Sample Audit
 
-- Generated at: `2026-06-20T05:29:19+00:00`
+- Generated at: `2026-06-20T06:35:49+00:00`
 - Frontend schema: `frontend-data/v1`
 - Total records: `985`
 - Sample size: `50`
 - Precise map points: `1`
-- Individual record flags: `1`
+- Strict geocoded record flags: `1`
 - State/territory map clusters: `8` (summary data only)
 
 ## Sample Card Readiness
@@ -13,6 +13,8 @@
 - ok: `50`
 
 ## Whole-Corpus Map Display Coverage
+
+Only records with verified latitude/longitude are expected to map as individual flags. Card-ready records without strict public coordinates are reported as `not_mapped` and should not be treated as frontend failures.
 
 - not_mapped: `984`
 - precise_point: `1`

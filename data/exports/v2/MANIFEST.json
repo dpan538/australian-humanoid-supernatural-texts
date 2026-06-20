@@ -1,7 +1,7 @@
 {
   "exports": {
-    "collection_500_accepted": 0,
-    "collection_500_rejected": 9,
+    "collection_500_accepted": 1,
+    "collection_500_rejected": 18,
     "encounter_events_review.csv": 909,
     "entity_concepts.csv": 4,
     "entity_labels_review.csv": 985,
@@ -15,6 +15,6 @@
     "source_items": 985
   },
   "frontend_data_v2": "public/data/frontend-data/v2.json",
-  "generated_at": "2026-06-20T05:18:46+00:00",
+  "generated_at": "2026-06-20T06:35:49+00:00",
   "schema_version": "2.0.0"
 }

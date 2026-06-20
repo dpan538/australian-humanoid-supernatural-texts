@@ -813,6 +813,12 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
     return acc;
   }, {});
   const stateCounts = data.summary.state_record_counts;
+  const strictStateCounts = data.map_points.reduce<Record<string, number>>((acc, point) => {
+    if (point.state_territory) {
+      acc[point.state_territory] = (acc[point.state_territory] ?? 0) + 1;
+    }
+    return acc;
+  }, {});
   const figureCounts = data.records.reduce<Record<string, number>>((acc, record) => {
     const label = record.canonical_figure_guess || record.canonical_figure || "uncoded";
     acc[label] = (acc[label] ?? 0) + 1;
@@ -822,34 +828,34 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
     .sort((a, b) => b[1].query_count - a[1].query_count || b[1].record_count - a[1].record_count)
     .slice(0, 6);
   const activeValues =
-    mode === "records" ? figureCounts : mode === "locations" ? stateCounts : queryTypes;
+    mode === "records" ? figureCounts : mode === "locations" ? strictStateCounts : queryTypes;
   const activeTabs = [
     { id: "records" as const, label: "RECORDS" },
-    { id: "locations" as const, label: "LOCATIONS" },
+    { id: "locations" as const, label: "GEO FIELD" },
     { id: "queries" as const, label: "QUERY FIELD" },
   ];
   const topMetrics =
     mode === "records"
       ? [
-          ["PUBLIC", data.summary.record_count],
+          ["CARD READY", data.summary.record_count],
           ["FIGURES", data.summary.figure_count],
         ]
       : mode === "locations"
         ? [
-            ["STATES", Object.values(stateCounts).filter((value) => value > 0).length],
-            ["EXACT", data.summary.precise_point_count],
+            ["STRICT", data.summary.precise_point_count],
+            ["BROAD", data.summary.broad_location_count],
           ]
         : [
             ["QUERIES", data.summary.query_count],
             ["EXACT", queryTypes.exact_phrase ?? 0],
           ];
   const outputValues = [
-    { id: "records" as const, value: data.summary.record_count },
-    { id: "locations" as const, value: data.summary.precise_point_count },
-    { id: "queries" as const, value: data.summary.query_count },
+    { id: "records" as const, value: data.summary.record_count, label: "Card-ready records" },
+    { id: "locations" as const, value: data.summary.precise_point_count, label: "Strict geocoded map points" },
+    { id: "queries" as const, value: data.summary.query_count, label: "Planned queries" },
   ];
   const stateOrder = ["WA", "NT", "SA", "QLD", "NSW", "VIC", "TAS", "ACT"];
-  const stateEntries = stateOrder.map((state) => [state, stateCounts[state] ?? 0] as const);
+  const stateEntries = stateOrder.map((state) => [state, mode === "locations" ? strictStateCounts[state] ?? 0 : stateCounts[state] ?? 0] as const);
   const maxStateCount = Math.max(...stateEntries.map(([, value]) => value), 1);
 
   return (
@@ -867,6 +873,8 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
               type="button"
               onClick={() => setMode(item.id)}
               aria-pressed={mode === item.id}
+              aria-label={item.label}
+              title={item.label}
             >
               {item.value}
             </button>
