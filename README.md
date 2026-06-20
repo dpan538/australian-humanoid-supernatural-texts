@@ -140,7 +140,7 @@ Raw text is saved under `data/raw/text/`, records are inserted into SQLite, year
 
 `make export-frontend` writes `public/data/frontend-data.json`, the static legacy-compatible data contract used by the Next.js archive-terminal interface, and also writes the normalized V2 contract through `scripts/export_v2.py`. `make frontend-build` runs the production build intended for Vercel.
 
-`make export-frontend` also runs a deterministic 50-record card-readiness and map-coverage audit at `data/processed/v2/frontend_record_card_sample_audit.md`. Use this after collection or migration work to confirm that records have enough fields for the overlay card and that broad state/territory locations are represented by aggregate map markers rather than disappearing from the map.
+`make export-frontend` also runs a deterministic 50-record card-readiness and map-coverage audit at `data/processed/v2/frontend_record_card_sample_audit.md`. Use this after collection or migration work to confirm that records have enough fields for the overlay card and that every frontend record has an individual clickable map flag. State-level or broad locations use deterministic in-state display placement and must not be interpreted as precise event coordinates.
 
 ## Public Interface Design
 

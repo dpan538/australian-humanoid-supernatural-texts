@@ -62,21 +62,15 @@ def card_issues(record: dict[str, Any]) -> list[str]:
 
 def map_coverage(data: dict[str, Any], records: list[dict[str, Any]]) -> dict[int, str]:
     coverage: dict[int, str] = {}
+    for flag in data.get("map_flags", []):
+        record_id = flag.get("record_id")
+        if isinstance(record_id, int):
+            coverage[record_id] = flag.get("display_precision") or "record_flag"
+
     for point in data.get("map_points", []):
         record_id = point.get("record_id")
-        if isinstance(record_id, int):
+        if isinstance(record_id, int) and record_id not in coverage:
             coverage[record_id] = "precise_point"
-
-    state_clusters = {
-        cluster.get("state_territory")
-        for cluster in data.get("map_clusters", [])
-        if cluster.get("record_count", 0) > 0
-    }
-    for location in data.get("locations", []):
-        record_id = location.get("record_id")
-        state = location.get("state_territory")
-        if isinstance(record_id, int) and record_id not in coverage and state in state_clusters:
-            coverage[record_id] = "state_cluster"
 
     for record in records:
         record_id = record.get("record_id")
@@ -114,7 +108,8 @@ def write_report(data: dict[str, Any], sample_size: int, output: Path) -> Path:
         f"- Total records: `{len(records)}`",
         f"- Sample size: `{len(sample)}`",
         f"- Precise map points: `{summary.get('precise_point_count', 0)}`",
-        f"- State/territory map clusters: `{summary.get('map_cluster_count', 0)}`",
+        f"- Individual record flags: `{summary.get('map_flag_count', 0)}`",
+        f"- State/territory map clusters: `{summary.get('map_cluster_count', 0)}` (summary data only)",
         "",
         "## Sample Card Readiness",
         "",

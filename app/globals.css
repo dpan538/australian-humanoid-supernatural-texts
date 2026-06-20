@@ -293,12 +293,12 @@ a {
 }
 
 .terrain-surface.emphasized {
-  opacity: 0.92;
-  filter: drop-shadow(0 0 16px rgba(242, 242, 237, 0.28));
+  opacity: 0.11;
+  filter: none;
 }
 
 .terrain-surface.dimmed {
-  opacity: 0.018;
+  opacity: 0.01;
 }
 
 .terrain-pattern-symbol {
@@ -359,6 +359,9 @@ a {
   fill: rgba(242, 242, 237, 0.84);
   font-size: 1.42rem;
   font-weight: 700;
+  paint-order: stroke;
+  stroke: rgba(5, 6, 6, 0.78);
+  stroke-width: 2px;
 }
 
 .state-label-vic,
@@ -392,6 +395,91 @@ a {
 .map-point.active {
   fill: var(--ink);
   filter: drop-shadow(0 0 16px rgba(242, 242, 237, 0.72));
+}
+
+.record-flag-layer {
+  isolation: isolate;
+}
+
+.record-flag {
+  cursor: pointer;
+  opacity: 0.62;
+  transition: opacity 120ms ease, filter 120ms ease;
+}
+
+.record-flag-stem {
+  stroke: rgba(142, 216, 255, 0.22);
+  stroke-width: 0.85;
+  vector-effect: non-scaling-stroke;
+  transition: stroke 120ms ease, stroke-width 120ms ease;
+}
+
+.record-flag-dot {
+  fill: rgba(167, 255, 99, 0.52);
+  stroke: rgba(242, 242, 237, 0.48);
+  stroke-width: 0.45;
+  vector-effect: non-scaling-stroke;
+  transition: fill 120ms ease, stroke 120ms ease, r 120ms ease;
+}
+
+.record-flag-hit {
+  fill: transparent;
+  stroke: transparent;
+}
+
+.record-flag.state-linked {
+  opacity: 0.88;
+}
+
+.record-flag.state-linked .record-flag-stem {
+  stroke: rgba(142, 216, 255, 0.18);
+}
+
+.record-flag.state-linked .record-flag-dot {
+  fill: rgba(167, 255, 99, 0.82);
+  stroke: rgba(242, 242, 237, 0.62);
+}
+
+.record-flag.active {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(167, 255, 99, 0.34));
+}
+
+.record-flag.active .record-flag-stem {
+  stroke: rgba(142, 216, 255, 0.72);
+  stroke-width: 1.25;
+}
+
+.record-flag.active .record-flag-dot {
+  fill: rgba(242, 242, 237, 0.96);
+  stroke: rgba(167, 255, 99, 0.92);
+}
+
+.record-flag.unplaced {
+  opacity: 0.38;
+}
+
+.record-flag.unplaced .record-flag-stem {
+  stroke: rgba(176, 183, 188, 0.22);
+}
+
+.record-flag.unplaced .record-flag-dot {
+  fill: rgba(176, 183, 188, 0.38);
+  stroke: rgba(242, 242, 237, 0.3);
+}
+
+.record-flag.precise .record-flag-dot {
+  fill: rgba(242, 242, 237, 0.76);
+}
+
+.record-flag-label {
+  fill: rgba(242, 242, 237, 0.94);
+  font-size: 0.58rem;
+  font-weight: 700;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: rgba(5, 6, 6, 0.92);
+  stroke-width: 2px;
 }
 
 .map-cluster {

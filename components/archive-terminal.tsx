@@ -2,7 +2,7 @@
 
 import { CSSProperties, useEffect, useState } from "react";
 import Link from "next/link";
-import type { DateBand, FrontendData, LocationItem, MapClusterItem, RecordItem } from "@/lib/types";
+import type { DateBand, FrontendData, LocationItem, MapFlagItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
@@ -291,13 +291,13 @@ function getNextView(view: ViewMode) {
 
 function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
   const [hoverState, setHoverState] = useState<string | null>(null);
-  const [hoverPoint, setHoverPoint] = useState<LocationItem | null>(null);
-  const [hoverCluster, setHoverCluster] = useState<MapClusterItem | null>(null);
+  const [hoverFlag, setHoverFlag] = useState<MapFlagItem | null>(null);
   const stateCounts = data.summary.state_record_counts;
-  const activeState = hoverState ? STATE_NAMES[hoverState] : "Australia";
-  const activeCount = hoverState ? stateCounts[hoverState] ?? 0 : data.summary.record_count;
-  const points = data.map_points.filter((point) => point.latitude !== null && point.longitude !== null);
-  const clusters = (data.map_clusters ?? []).filter((cluster) => cluster.record_count > 0);
+  const flags = data.map_flags ?? [];
+  const unplacedCount = flags.filter((flag) => flag.state_territory === "UNMAPPED").length;
+  const activeState = hoverState === "UNMAPPED" ? "No public location" : hoverState ? STATE_NAMES[hoverState] : "Australia";
+  const activeCount = hoverState === "UNMAPPED" ? unplacedCount : hoverState ? stateCounts[hoverState] ?? 0 : data.summary.record_count;
+  const recordsById = new Map(data.records.map((record) => [record.record_id, record]));
 
   return (
     <div className="map-view">
@@ -318,7 +318,6 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
           {STATE_SHAPES.map((state) => {
             const count = stateCounts[state.code] ?? 0;
             const intensity = count > 1 ? "hot" : count === 1 ? "warm" : "cold";
-            const label = STATE_LABEL_OVERRIDES[state.code as keyof typeof STATE_NAMES] ?? state.label;
             return (
               <g key={state.code}>
                 <path
@@ -329,111 +328,84 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
                   onMouseLeave={() => setHoverState(null)}
                   onPointerLeave={() => setHoverState(null)}
                 />
+              </g>
+            );
+          })}
+          <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
+          <g className="record-flag-layer" aria-label="One clickable public record flag per mapped record">
+            {flags.map((flag) => {
+              const selected = hoverFlag?.flag_id === flag.flag_id;
+              const stateLinked = hoverState === flag.state_territory && flag.state_territory !== "UNMAPPED";
+              const record = recordsById.get(flag.record_id);
+              const className = [
+                "record-flag",
+                selected ? "active" : "",
+                stateLinked ? "state-linked" : "",
+                flag.display_precision === "no_public_location" ? "unplaced" : "",
+                flag.display_precision === "precise_public_coordinate" ? "precise" : "",
+              ]
+                .filter(Boolean)
+                .join(" ");
+              return (
+                <g
+                  key={flag.flag_id}
+                  className={className}
+                  clipPath={flag.state_territory !== "UNMAPPED" ? `url(#clip-state-${flag.state_territory})` : undefined}
+                  onMouseEnter={() => {
+                    setHoverFlag(flag);
+                    setHoverState(flag.state_territory);
+                  }}
+                  onMouseLeave={() => {
+                    setHoverFlag(null);
+                    setHoverState(null);
+                  }}
+                  onFocus={() => {
+                    setHoverFlag(flag);
+                    setHoverState(flag.state_territory);
+                  }}
+                  onBlur={() => {
+                    setHoverFlag(null);
+                    setHoverState(null);
+                  }}
+                  onClick={() => {
+                    if (record) {
+                      onSelectRecord(record);
+                    }
+                  }}
+                  onKeyDown={(event) => {
+                    if (record && (event.key === "Enter" || event.key === " ")) {
+                      event.preventDefault();
+                      onSelectRecord(record);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={record ? 0 : -1}
+                  aria-label={`Open record ${record?.title ?? flag.title ?? flag.flag_id}`}
+                >
+                  <line className="record-flag-stem" x1={flag.x} y1={flag.y} x2={flag.x + flag.stem_dx} y2={flag.y + flag.stem_dy} />
+                  <circle className="record-flag-hit" cx={flag.x} cy={flag.y} r="5.5" />
+                  <circle className="record-flag-dot" cx={flag.x} cy={flag.y} r={selected ? 3.8 : 2.1} />
+                  {selected ? (
+                    <text className="record-flag-label" x={Math.min(flag.x + 10, MAP_VIEWBOX.width - 150)} y={Math.max(flag.y - 8, 26)}>
+                      {flag.year ?? "--"} / {truncate(record?.canonical_figure_guess ?? flag.canonical_figure ?? record?.title, 24)}
+                    </text>
+                  ) : null}
+                </g>
+              );
+            })}
+          </g>
+          <g className="state-label-layer" aria-hidden="true">
+            {STATE_SHAPES.map((state) => {
+              const label = STATE_LABEL_OVERRIDES[state.code as keyof typeof STATE_NAMES] ?? state.label;
+              return (
                 <text
+                  key={`label-${state.code}`}
                   className={`state-label state-label-${state.code.toLowerCase()}`}
                   x={label[0]}
                   y={label[1]}
                 >
                   {state.code}
                 </text>
-              </g>
-            );
-          })}
-          <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
-          <g>
-            {clusters.map((cluster) => {
-              const position = STATE_CLUSTER_POSITIONS[cluster.state_territory];
-              if (!position) {
-                return null;
-              }
-              const [x, y] = position;
-              const selected = hoverCluster?.cluster_id === cluster.cluster_id || hoverState === cluster.state_territory;
-              const record = data.records.find((item) => item.record_id === cluster.representative_record_id);
-              const radius = Math.min(28, 7 + Math.log10(cluster.record_count + 1) * 8);
-              const dense = cluster.record_count >= 100 ? " dense" : cluster.record_count >= 25 ? " medium" : "";
-              return (
-                <g
-                  key={cluster.cluster_id}
-                  className={selected ? `map-cluster active${dense}` : `map-cluster${dense}`}
-                  onMouseEnter={() => {
-                    setHoverCluster(cluster);
-                    setHoverState(cluster.state_territory);
-                  }}
-                  onMouseLeave={() => {
-                    setHoverCluster(null);
-                    setHoverState(null);
-                  }}
-                  onFocus={() => {
-                    setHoverCluster(cluster);
-                    setHoverState(cluster.state_territory);
-                  }}
-                  onBlur={() => {
-                    setHoverCluster(null);
-                    setHoverState(null);
-                  }}
-                  onClick={() => {
-                    if (record) {
-                      onSelectRecord(record);
-                    }
-                  }}
-                  onKeyDown={(event) => {
-                    if (record && (event.key === "Enter" || event.key === " ")) {
-                      event.preventDefault();
-                      onSelectRecord(record);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={record ? 0 : -1}
-                  aria-label={`${cluster.label} aggregate: ${cluster.record_count} records with state or broad location evidence`}
-                >
-                  <circle className="map-cluster-ring" cx={x} cy={y} r={radius} />
-                  <circle className="map-cluster-core" cx={x} cy={y} r={Math.max(3.5, radius * 0.32)} />
-                  <text className="map-cluster-count" x={x} y={y + radius + 13}>
-                    {cluster.record_count}
-                  </text>
-                </g>
-              );
-            })}
-            {points.map((point, index) => {
-              const projected = projectPoint(point.latitude as number, point.longitude as number);
-              const nudge = pointDisplayNudge(point);
-              const clusterOffset = ((index % 3) - 1) * 6;
-              const x = svgCoord(projected.x + clusterOffset + nudge.x);
-              const y = svgCoord(projected.y + (index % 2 === 0 ? -2 : 5) + nudge.y);
-              const stemX = svgCoord(x + nudge.stemDx);
-              const stemY = svgCoord(y + nudge.stemDy);
-              const labelX = svgCoord(Math.min(x + 12, MAP_VIEWBOX.width - 172));
-              const labelY = svgCoord(Math.max(y - 12, 28));
-              const selected = hoverPoint?.record_id === point.record_id && hoverPoint.place_name === point.place_name;
-              const record = data.records.find((item) => item.record_id === point.record_id);
-              return (
-                <g
-                  key={`${point.record_id}-${point.place_name}-${index}`}
-                  onMouseEnter={() => setHoverPoint(point)}
-                  onMouseLeave={() => setHoverPoint(null)}
-                  onClick={() => {
-                    if (record) {
-                      onSelectRecord(record);
-                    }
-                  }}
-                  onKeyDown={(event) => {
-                    if (record && (event.key === "Enter" || event.key === " ")) {
-                      event.preventDefault();
-                      onSelectRecord(record);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={record ? 0 : -1}
-                  aria-label={`Open record ${record?.title ?? point.place_name}`}
-                >
-                  <line className="point-stem" x1={x} y1={y} x2={stemX} y2={stemY} />
-                  <circle className={selected ? "map-point active" : "map-point"} cx={x} cy={y} r={selected ? 6 : 4.5} />
-                  {selected ? (
-                    <text className="point-label" x={labelX} y={labelY}>
-                      {point.place_name}
-                    </text>
-                  ) : null}
-                </g>
               );
             })}
           </g>
