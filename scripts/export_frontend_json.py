@@ -67,6 +67,16 @@ DATE_BANDS = [
 ]
 
 STATE_CODES = ["WA", "NT", "SA", "QLD", "NSW", "VIC", "TAS", "ACT"]
+STATE_NAME_TO_CODE = {
+    "western australia": "WA",
+    "northern territory": "NT",
+    "south australia": "SA",
+    "queensland": "QLD",
+    "new south wales": "NSW",
+    "victoria": "VIC",
+    "tasmania": "TAS",
+    "australian capital territory": "ACT",
+}
 
 def row_dict(row: Any) -> dict[str, Any]:
     return {key: row[key] for key in row.keys()}
@@ -98,6 +108,17 @@ def safe_int(value: Any) -> int | None:
         return int(value)
     except (TypeError, ValueError):
         return None
+
+
+def state_code_from_text(text: str | None) -> str | None:
+    normalized = (text or "").lower()
+    for state_name, code in STATE_NAME_TO_CODE.items():
+        if state_name in normalized:
+            return code
+    for code in STATE_CODES:
+        if f" {code.lower()} " in f" {normalized} ":
+            return code
+    return None
 
 
 def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Path = FRONTEND_DATA_PATH) -> Path:
@@ -163,6 +184,85 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                 item["longitude"] = float(item["longitude"]) if item.get("longitude") not in (None, "") else None
                 item["date_band"] = year_to_band(item["year"])
                 locations.append(item)
+
+        accepted_candidate_rows = []
+        if "collection_candidates_v2" in tables:
+            accepted_candidate_rows = conn.execute(
+                """
+                SELECT *
+                FROM collection_candidates_v2
+                WHERE candidate_status = 'accepted'
+                  AND COALESCE(publicness_status, '') != 'restricted_excluded'
+                  AND latitude IS NOT NULL
+                  AND longitude IS NOT NULL
+                ORDER BY candidate_id
+                """
+            ).fetchall()
+            for row in accepted_candidate_rows:
+                candidate = row_dict(row)
+                candidate_id = int(candidate["candidate_id"])
+                record_id = 900000000 + candidate_id
+                year = safe_int(str(candidate.get("publication_date_text") or "")[:4])
+                state_code = state_code_from_text(candidate.get("location_text"))
+                record = {
+                    "record_id": record_id,
+                    "source_id": 0,
+                    "query_id": None,
+                    "figure_id": None,
+                    "external_id": candidate.get("external_id"),
+                    "title": candidate.get("title"),
+                    "publication": candidate.get("publication_or_organisation"),
+                    "author": None,
+                    "date_published": candidate.get("publication_date_text"),
+                    "year": year,
+                    "url": candidate.get("url"),
+                    "snippet": candidate.get("evidence_summary"),
+                    "publicness_level": candidate.get("publicness_status"),
+                    "ingestion_status": "strict_geo_candidate",
+                    "source_name": candidate.get("source_name"),
+                    "source_type": candidate.get("source_type"),
+                    "canonical_figure": candidate.get("source_label"),
+                    "cluster": "strict_geo_collection",
+                    "tier": candidate.get("source_tier"),
+                    "include_status": "include_v2_candidate",
+                    "figure_humanoid_degree": candidate.get("humanoid_basis"),
+                    "ontology_default": candidate.get("narrative_type"),
+                    "involves_indigenous_knowledge": candidate.get("ethics_review_status") == "caution_indigenous_knowledge",
+                    "canonical_figure_guess": candidate.get("source_label"),
+                    "figure_name_as_printed": candidate.get("source_label"),
+                    "ontology_code": candidate.get("narrative_type"),
+                    "humanoid_degree_code": candidate.get("humanoid_basis"),
+                    "source_voice": candidate.get("secondary_role"),
+                    "genre": candidate.get("source_type"),
+                    "publicness_code": candidate.get("publicness_status"),
+                    "relevance_code": "relevant",
+                    "ethics_flag": candidate.get("ethics_review_status"),
+                    "coding_notes": f"V2 strict geocoded candidate {candidate_id}; quality {candidate.get('quality_class') or 'ungraded'}.",
+                    "date_band": year_to_band(year),
+                    "location_summary": candidate.get("location_text") or "",
+                }
+                location = {
+                    "record_id": record_id,
+                    "relation_type": candidate.get("location_role"),
+                    "evidence_text": candidate.get("coordinate_evidence_note") or candidate.get("evidence_summary"),
+                    "confidence": candidate.get("quality_class"),
+                    "notes": "Accepted V2 strict-geography candidate.",
+                    "place_name": candidate.get("location_text") or candidate.get("title") or "Strict geocoded candidate",
+                    "region": None,
+                    "state_territory": state_code,
+                    "country": "Australia",
+                    "latitude": float(candidate["latitude"]),
+                    "longitude": float(candidate["longitude"]),
+                    "location_type": candidate.get("location_precision"),
+                    "geocode_source": candidate.get("geocode_source"),
+                    "verification_status": candidate.get("geocode_verification_status"),
+                    "year": year,
+                    "title": candidate.get("title"),
+                    "canonical_figure": candidate.get("source_label"),
+                    "date_band": year_to_band(year),
+                }
+                records.append(record)
+                locations.append(location)
 
         figure_rows = conn.execute(
             """

@@ -403,7 +403,7 @@ a {
 
 .record-flag {
   cursor: pointer;
-  opacity: 0.62;
+  opacity: 0.92;
   transition: opacity 120ms ease, filter 120ms ease;
   animation: record-flag-arrive 520ms steps(5, end) both;
   animation-delay: var(--flag-delay, 0ms);
@@ -414,21 +414,29 @@ a {
     opacity: 0;
   }
   to {
-    opacity: 0.62;
+    opacity: 0.92;
   }
 }
 
 .record-flag-stem {
-  stroke: rgba(142, 216, 255, 0.22);
-  stroke-width: 0.85;
+  stroke: rgba(142, 216, 255, 0.48);
+  stroke-width: 1.25;
   vector-effect: non-scaling-stroke;
   transition: stroke 120ms ease, stroke-width 120ms ease;
 }
 
+.record-flag-halo {
+  fill: rgba(5, 6, 6, 0.72);
+  stroke: var(--flag-tone, rgba(167, 255, 99, 0.82));
+  stroke-width: 0.85;
+  vector-effect: non-scaling-stroke;
+  transition: fill 120ms ease, stroke 120ms ease, r 120ms ease;
+}
+
 .record-flag-dot {
-  fill: var(--flag-tone, rgba(167, 255, 99, 0.52));
-  stroke: rgba(242, 242, 237, 0.48);
-  stroke-width: 0.45;
+  fill: var(--flag-tone, rgba(167, 255, 99, 0.82));
+  stroke: rgba(242, 242, 237, 0.92);
+  stroke-width: 0.85;
   vector-effect: non-scaling-stroke;
   transition: fill 120ms ease, stroke 120ms ease, r 120ms ease;
 }
@@ -443,17 +451,21 @@ a {
 }
 
 .record-flag.state-linked .record-flag-stem {
-  stroke: rgba(142, 216, 255, 0.18);
+  stroke: rgba(142, 216, 255, 0.62);
+}
+
+.record-flag.state-linked .record-flag-halo {
+  stroke: var(--flag-tone, rgba(167, 255, 99, 0.94));
 }
 
 .record-flag.state-linked .record-flag-dot {
   fill: var(--flag-tone, rgba(167, 255, 99, 0.82));
-  stroke: rgba(242, 242, 237, 0.62);
+  stroke: rgba(242, 242, 237, 0.96);
 }
 
 .record-flag.active {
   opacity: 1;
-  filter: drop-shadow(0 0 10px rgba(167, 255, 99, 0.34));
+  filter: drop-shadow(0 0 12px rgba(242, 242, 237, 0.36));
 }
 
 .record-flag.active .record-flag-stem {

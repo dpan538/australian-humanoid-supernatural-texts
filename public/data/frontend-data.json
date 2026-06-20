@@ -1,6 +1,6 @@
 {
   "schema_version": "frontend-data/v1",
-  "generated_at": "2026-06-20T06:35:48+00:00",
+  "generated_at": "2026-06-20T08:16:36+00:00",
   "scope": {
     "country": "Australia",
     "public_only": true,
@@ -8,15 +8,15 @@
     "ethical_note": "Public metadata and public pages are display signals, not permission to extract restricted cultural knowledge."
   },
   "summary": {
-    "record_count": 985,
+    "record_count": 986,
     "figure_count": 32,
     "query_count": 328,
     "source_count": 15,
-    "location_count": 990,
-    "precise_point_count": 1,
+    "location_count": 991,
+    "precise_point_count": 2,
     "broad_location_count": 114,
     "map_cluster_count": 8,
-    "map_flag_count": 1,
+    "map_flag_count": 2,
     "earliest_year": 1825,
     "latest_year": 2026,
     "state_record_counts": {
@@ -25,7 +25,7 @@
       "SA": 11,
       "QLD": 318,
       "NSW": 453,
-      "VIC": 87,
+      "VIC": 88,
       "TAS": 6,
       "ACT": 17
     },
@@ -33,7 +33,7 @@
       "Yowie": 914,
       "Wandjina": 28,
       "Quinkan": 19,
-      "Nargun": 6,
+      "Nargun": 7,
       "Mamu": 5,
       "Mimih": 1,
       "Yara-ma-yha-who": 4,
@@ -162,16 +162,18 @@
       "cautionary_being": 4,
       "giant": 4,
       "non_humanoid_control": 1,
-      "satire": 1
+      "satire": 1,
+      "traditional_narrative": 1
     },
     "ethics_counts": {
       "ok_public": 917,
-      "caution_indigenous_knowledge": 68
+      "caution_indigenous_knowledge": 69
     },
     "source_type_counts": {
       "modern_web": 905,
       "academic_metadata": 67,
-      "internet_archive_metadata": 13
+      "internet_archive_metadata": 13,
+      "institutional_web": 1
     },
     "source_rollup": {
       "modern_web": {
@@ -184,6 +186,10 @@
       },
       "internet_archive_metadata": {
         "record_count": 13,
+        "query_count": 0
+      },
+      "institutional_web": {
+        "record_count": 1,
         "query_count": 0
       },
       "trove_newspaper": {
@@ -36717,6 +36723,43 @@
       "coding_notes": "OpenAlex public metadata record; region is a reviewable figure-associated signal, not a verified event place.",
       "date_band": "modern_1970_present",
       "location_summary": "Figure-associated region: Western Australia (WA): medium"
+    },
+    {
+      "record_id": 900000019,
+      "source_id": 0,
+      "query_id": null,
+      "figure_id": null,
+      "external_id": "parks-victoria:den-of-nargun",
+      "title": "Den of Nargun",
+      "publication": "Parks Victoria",
+      "author": null,
+      "date_published": "Undated public web page; accessed 2026-06-20",
+      "year": null,
+      "url": "https://www.parks.vic.gov.au/places-to-see/sites/den-of-nargun",
+      "snippet": "The Parks Victoria page presents Den of Nargun as a publicly accessible place associated with a Gunai/Kurnai narrative about Nargun; this candidate records the public place association and does not reproduce restricted cultural knowledge.",
+      "publicness_level": "public_page",
+      "ingestion_status": "strict_geo_candidate",
+      "source_name": "Parks Victoria",
+      "source_type": "institutional_web",
+      "canonical_figure": "Nargun",
+      "cluster": "strict_geo_collection",
+      "tier": "B",
+      "include_status": "include_v2_candidate",
+      "figure_humanoid_degree": "Public source describes the Nargun as a powerful being in a place-linked traditional narrative",
+      "ontology_default": "traditional_narrative",
+      "involves_indigenous_knowledge": true,
+      "canonical_figure_guess": "Nargun",
+      "figure_name_as_printed": "Nargun",
+      "ontology_code": "traditional_narrative",
+      "humanoid_degree_code": "Public source describes the Nargun as a powerful being in a place-linked traditional narrative",
+      "source_voice": "heritage_discourse",
+      "genre": "institutional_web",
+      "publicness_code": "public_page",
+      "relevance_code": "relevant",
+      "ethics_flag": "caution_indigenous_knowledge",
+      "coding_notes": "V2 strict geocoded candidate 19; quality B.",
+      "date_band": "undated",
+      "location_summary": "Den of Nargun, Mitchell River National Park, Victoria"
     }
   ],
   "locations": [
@@ -56519,6 +56562,26 @@
       "title": "The Image in Deep Time",
       "canonical_figure": "Wandjina",
       "date_band": "modern_1970_present"
+    },
+    {
+      "record_id": 900000019,
+      "relation_type": "legend_associated_place",
+      "evidence_text": "The official Parks Victoria Den of Nargun page links to Google Maps coordinates -37.702110, 147.355978.",
+      "confidence": "B",
+      "notes": "Accepted V2 strict-geography candidate.",
+      "place_name": "Den of Nargun, Mitchell River National Park, Victoria",
+      "region": null,
+      "state_territory": "VIC",
+      "country": "Australia",
+      "latitude": -37.70211,
+      "longitude": 147.355978,
+      "location_type": "named_feature",
+      "geocode_source": "Parks Victoria official page Google Maps link",
+      "verification_status": "verified_institutional_coordinate",
+      "year": null,
+      "title": "Den of Nargun",
+      "canonical_figure": "Nargun",
+      "date_band": "undated"
     }
   ],
   "map_points": [
@@ -56541,6 +56604,26 @@
       "title": "Yowie country: Queensland town revamps tourism brand as a prime spot for mythological creature",
       "canonical_figure": "Yowie",
       "date_band": "modern_1970_present"
+    },
+    {
+      "record_id": 900000019,
+      "relation_type": "legend_associated_place",
+      "evidence_text": "The official Parks Victoria Den of Nargun page links to Google Maps coordinates -37.702110, 147.355978.",
+      "confidence": "B",
+      "notes": "Accepted V2 strict-geography candidate.",
+      "place_name": "Den of Nargun, Mitchell River National Park, Victoria",
+      "region": null,
+      "state_territory": "VIC",
+      "country": "Australia",
+      "latitude": -37.70211,
+      "longitude": 147.355978,
+      "location_type": "named_feature",
+      "geocode_source": "Parks Victoria official page Google Maps link",
+      "verification_status": "verified_institutional_coordinate",
+      "year": null,
+      "title": "Den of Nargun",
+      "canonical_figure": "Nargun",
+      "date_band": "undated"
     }
   ],
   "map_flags": [],
@@ -56605,7 +56688,7 @@
       "cluster_type": "state_or_territory_aggregate",
       "state_territory": "VIC",
       "label": "VIC",
-      "record_count": 87,
+      "record_count": 88,
       "representative_record_id": 640,
       "location_role": "uncertain_or_broad_location",
       "location_precision": "state_or_territory",
