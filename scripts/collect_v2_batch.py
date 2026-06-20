@@ -44,6 +44,9 @@ STRICT_GEO_REJECTED_LOCATION_ROLES = {
 }
 
 GEO_COLUMNS = {
+    "access_date": "TEXT",
+    "publicness_status": "TEXT",
+    "rights_access_status": "TEXT",
     "latitude": "REAL",
     "longitude": "REAL",
     "location_precision": "TEXT",
@@ -113,7 +116,16 @@ def strict_geo_gate(row: dict[str, Any]) -> tuple[bool, str]:
     precision = canonicalise_whitespace(row.get("location_precision"))
     if precision not in STRICT_GEO_ACCEPTED_PRECISIONS:
         return False, "strict_geo_location_precision_too_broad"
-    required = ["location_text", "geocode_source", "coordinate_evidence_note", "duplicate_check_status", "quality_class"]
+    required = [
+        "access_date",
+        "publicness_status",
+        "rights_access_status",
+        "location_text",
+        "geocode_source",
+        "coordinate_evidence_note",
+        "duplicate_check_status",
+        "quality_class",
+    ]
     missing = [field for field in required if not canonicalise_whitespace(row.get(field))]
     if missing:
         return False, "strict_geo_missing_fields:" + ",".join(missing)
@@ -196,8 +208,9 @@ def insert_candidate(conn, data: dict[str, Any], strict_geo_only: bool = False) 
         """
         INSERT INTO collection_candidates_v2(
             run_id, candidate_status, source_name, source_type, source_tier,
-            title, publication_or_organisation, publication_date_text, url,
-            canonical_url, external_id, narrative_type, secondary_role,
+            title, publication_or_organisation, publication_date_text, access_date, url,
+            canonical_url, external_id, publicness_status, rights_access_status,
+            narrative_type, secondary_role,
             australian_relation, humanoid_basis, source_label, location_text,
             location_role, latitude, longitude, location_precision,
             geocode_source, geocode_verification_status, coordinate_evidence_note,
@@ -205,7 +218,7 @@ def insert_candidate(conn, data: dict[str, Any], strict_geo_only: bool = False) 
             acceptance_decision, rejection_reason, evidence_summary,
             raw_metadata_json, created_at, updated_at
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(run_id, canonical_url, external_id) DO UPDATE SET
             candidate_status=excluded.candidate_status,
             acceptance_decision=excluded.acceptance_decision,
@@ -223,9 +236,12 @@ def insert_candidate(conn, data: dict[str, Any], strict_geo_only: bool = False) 
             data.get("title"),
             data.get("publication_or_organisation"),
             data.get("publication_date_text"),
+            data.get("access_date"),
             data.get("url"),
             canonical_url,
             data.get("external_id"),
+            data.get("publicness_status"),
+            data.get("rights_access_status"),
             data.get("narrative_type"),
             data.get("secondary_role"),
             data.get("australian_relation") or data.get("australia_relation"),

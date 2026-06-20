@@ -31,6 +31,9 @@ class CollectionCandidate:
     acceptance_decision: str
     rejection_reason: str
     evidence_summary: str
+    access_date: str = ""
+    publicness_status: str = ""
+    rights_access_status: str = ""
     latitude: float | None = None
     longitude: float | None = None
     location_precision: str = ""

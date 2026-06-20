@@ -13,8 +13,11 @@ REQUIRED_MANUAL_COLUMNS = [
     "title",
     "publication_or_organisation",
     "publication_date_text",
+    "access_date",
     "url",
     "external_id",
+    "publicness_status",
+    "rights_access_status",
     "narrative_type",
     "secondary_role",
     "australian_relation",
@@ -26,4 +29,3 @@ REQUIRED_MANUAL_COLUMNS = [
     "cultural_sensitivity",
     "evidence_summary",
 ]
-

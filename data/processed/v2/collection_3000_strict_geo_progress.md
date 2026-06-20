@@ -1,12 +1,13 @@
 # V2 Collection Progress
 
-- Generated: `2026-06-20T05:51:35+00:00`
-- Accepted net-new source items: 0
+- Generated: `2026-06-20T06:14:49+00:00`
+- Accepted net-new source items: 1
 - Target: 3000
-- Remaining: 3000
+- Remaining: 2999
 - Strict geography only: `True`
 
 ## Candidate Status
+- accepted: 1
 - lead_only: 18
 
 ## Current Limitation
