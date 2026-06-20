@@ -1,15 +1,192 @@
-"""Internet Archive V2 collector placeholder.
+"""Internet Archive V2 collector.
 
-Accepted V2 use requires inspecting the actual public item/text. Metadata-only
-matches remain source pointers.
+Search hits are not accepted as records by themselves. A candidate must expose
+public OCR/text, contain a relevant source label in that text, and name an
+Australian place already present in the project gazetteer with coordinates.
+Otherwise it is staged as a lead or rejection with a reason.
 """
 
 from __future__ import annotations
 
+import json
+import re
+import subprocess
 from collections.abc import Iterable
+from pathlib import Path
+from typing import Any
+from urllib.parse import quote_plus
 
-from .base import BaseCollector
+from aus_humanoid.geo import GAZETTEER
+from aus_humanoid.normalise import canonicalise_whitespace, normalise_alias
+from aus_humanoid.utils import PROJECT_ROOT, utc_now_iso
+
+from .base import BaseCollector, USER_AGENT, neutral_summary
 from .models import CollectionCandidate
+
+
+SEARCH_SPECS: tuple[dict[str, str], ...] = (
+    {"label": "Yowie", "query": '"Yowie" AND Australia', "sensitivity": "low"},
+    {"label": "Yahoo", "query": '"Yahoo" AND Australia AND Aboriginal', "sensitivity": "low"},
+    {"label": "Australian gorilla", "query": '"Australian gorilla"', "sensitivity": "low"},
+    {"label": "Hairy Man", "query": '"Hairy Man" AND Australia', "sensitivity": "medium"},
+    {"label": "Quinkan", "query": '"Quinkan" OR "Quinkin"', "sensitivity": "high"},
+    {"label": "Nargun", "query": '"Nargun" AND Gippsland', "sensitivity": "high"},
+    {"label": "Mimih", "query": '"Mimih" AND Australia', "sensitivity": "high"},
+    {"label": "Wandjina", "query": '"Wandjina" OR "Wanjina"', "sensitivity": "high"},
+    {"label": "Pangkarlangu", "query": '"Pangkarlangu"', "sensitivity": "high"},
+    {"label": "Yara-ma-yha-who", "query": '"Yara-ma-yha-who" OR "Yara ma yha who"', "sensitivity": "high"},
+)
+
+NOISE_PATTERNS = (
+    "cadbury",
+    "chocolate",
+    "toy",
+    "yowie bay",
+    "yahoo mail",
+    "yahoo news",
+    "mamu corporation",
+    "hiv",
+    "macaque",
+    "anime",
+    "fanfiction",
+    "video game",
+    "witcher",
+)
+
+NARRATIVE_BY_LABEL = {
+    "yowie": "encounter_account",
+    "yahoo": "descriptive_belief_record",
+    "australian gorilla": "encounter_account",
+    "hairy man": "local_legend",
+    "quinkan": "traditional_narrative",
+    "nargun": "traditional_narrative",
+    "mimih": "spirit_person_narrative",
+    "wandjina": "spirit_person_narrative",
+    "pangkarlangu": "giant_or_ogre_narrative",
+    "yara-ma-yha-who": "traditional_narrative",
+}
+
+
+def curl_json(url: str, cache_path: Path) -> dict[str, Any]:
+    """Fetch JSON through curl and cache the response for reproducibility."""
+
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    if cache_path.exists():
+        return json.loads(cache_path.read_text(encoding="utf-8"))
+    result = subprocess.run(
+        ["curl", "-L", "-sS", "-A", USER_AGENT, "--max-time", "35", url],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or f"curl failed for {url}")
+    payload = json.loads(result.stdout)
+    cache_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
+    return payload
+
+
+def curl_text(url: str, cache_path: Path) -> str:
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    if cache_path.exists():
+        return cache_path.read_text(encoding="utf-8", errors="replace")
+    result = subprocess.run(
+        ["curl", "-L", "-sS", "-A", USER_AGENT, "--max-time", "45", url],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or f"curl failed for {url}")
+    cache_path.write_text(result.stdout, encoding="utf-8")
+    return result.stdout
+
+
+def first_text_file(metadata: dict[str, Any]) -> dict[str, Any] | None:
+    for item in metadata.get("files", []):
+        name = str(item.get("name") or "")
+        if not name.endswith(".txt"):
+            continue
+        if str(item.get("private") or "").lower() == "true":
+            continue
+        if name.endswith(("_meta.txt", "_files.xml")):
+            continue
+        return item
+    return None
+
+
+def has_noise(text: str) -> str:
+    lowered = text.lower()
+    for pattern in NOISE_PATTERNS:
+        if re.search(rf"\b{re.escape(pattern)}\b", lowered):
+            return pattern
+    return ""
+
+
+def source_label_present(label: str, text: str) -> bool:
+    norm = normalise_alias(text)
+    label_norm = normalise_alias(label)
+    if label_norm in norm:
+        return True
+    if label_norm == "yara-ma-yha-who" and "yara ma yha who" in norm:
+        return True
+    if label_norm == "quinkan" and "quinkin" in norm:
+        return True
+    if label_norm == "wandjina" and "wanjina" in norm:
+        return True
+    return False
+
+
+def sentence_evidence(label: str, text: str) -> str:
+    compact = canonicalise_whitespace(text)
+    pattern = re.compile(r"[^.?!]{0,180}" + re.escape(label.split()[0]) + r"[^.?!]{0,240}[.?!]?", re.I)
+    match = pattern.search(compact)
+    if match:
+        return canonicalise_whitespace(match.group(0))[:520]
+    return compact[:520]
+
+
+def gazetteer_places() -> list[dict[str, Any]]:
+    places: list[dict[str, Any]] = []
+    for entry in GAZETTEER:
+        if entry.latitude is None or entry.longitude is None:
+            continue
+        if entry.location_type not in {"town", "locality", "named_feature"}:
+            continue
+        for name in (entry.place_name, *entry.aliases):
+            if not name:
+                continue
+            places.append(
+                {
+                    "name": name,
+                    "place_name": entry.place_name,
+                    "state": entry.state_territory or "",
+                    "latitude": entry.latitude,
+                    "longitude": entry.longitude,
+                    "location_type": entry.location_type,
+                    "source": entry.geocode_source,
+                }
+            )
+    places.sort(key=lambda item: len(item["name"]), reverse=True)
+    return places
+
+
+def find_strict_place(text: str) -> dict[str, Any] | None:
+    norm = normalise_alias(text)
+    for place in gazetteer_places():
+        name = normalise_alias(place["name"])
+        if len(name) < 4:
+            continue
+        if re.search(rf"\b{re.escape(name)}\b", norm):
+            return place
+    return None
+
+
+def metadata_value(metadata: dict[str, Any], doc: dict[str, Any], key: str) -> str:
+    value = metadata.get("metadata", {}).get(key) or doc.get(key) or ""
+    if isinstance(value, list):
+        return canonicalise_whitespace(", ".join(str(v) for v in value))
+    return canonicalise_whitespace(value)
 
 
 class InternetArchiveCollector(BaseCollector):
@@ -18,5 +195,170 @@ class InternetArchiveCollector(BaseCollector):
     source_tier = "A"
 
     def collect(self) -> Iterable[CollectionCandidate]:
-        return []
+        emitted = 0
+        cache_root = PROJECT_ROOT / "data" / "interim" / "collection_cache" / "internet_archive_v2"
+        for spec in SEARCH_SPECS:
+            if emitted >= self.limit:
+                break
+            try:
+                search = self._search(spec, cache_root)
+            except Exception as exc:
+                yield self._lead(spec, "", "", f"archive_search_failed:{exc}", {"query": spec["query"]})
+                emitted += 1
+                continue
+            docs = search.get("response", {}).get("docs", []) if isinstance(search, dict) else []
+            for doc in docs:
+                if emitted >= self.limit:
+                    break
+                candidate = self._candidate_from_doc(spec, doc, cache_root)
+                yield candidate
+                emitted += 1
+                self.wait()
 
+    def _search(self, spec: dict[str, str], cache_root: Path) -> dict[str, Any]:
+        search_url = (
+            "https://archive.org/advancedsearch.php?"
+            + "&".join(
+                [
+                    "q=" + quote_plus(f"({spec['query']}) AND mediatype:texts"),
+                    "fl[]=identifier",
+                    "fl[]=title",
+                    "fl[]=date",
+                    "fl[]=creator",
+                    "fl[]=description",
+                    "fl[]=publicdate",
+                    "rows=25",
+                    "output=json",
+                ]
+            )
+        )
+        cache_name = normalise_alias(spec["label"]).replace(" ", "_").replace("/", "_")
+        return curl_json(search_url, cache_root / "search" / f"{cache_name}.json")
+
+    def _candidate_from_doc(self, spec: dict[str, str], doc: dict[str, Any], cache_root: Path) -> CollectionCandidate:
+        identifier = canonicalise_whitespace(doc.get("identifier"))
+        title = canonicalise_whitespace(doc.get("title")) or identifier or f"Internet Archive lead: {spec['label']}"
+        item_url = f"https://archive.org/details/{identifier}" if identifier else ""
+        if not identifier:
+            return self._lead(spec, title, item_url, "archive_identifier_missing", {"doc": doc})
+
+        metadata_url = f"https://archive.org/metadata/{quote_plus(identifier)}"
+        try:
+            metadata = curl_json(metadata_url, cache_root / "metadata" / f"{identifier}.json")
+        except Exception as exc:
+            return self._lead(spec, title, item_url, f"archive_metadata_failed:{exc}", {"doc": doc})
+
+        combined_meta = canonicalise_whitespace(
+            " ".join(
+                str(value)
+                for value in [
+                    title,
+                    doc.get("description"),
+                    metadata.get("metadata", {}).get("description"),
+                    metadata.get("metadata", {}).get("subject"),
+                ]
+                if value
+            )
+        )
+        noise = has_noise(combined_meta)
+        if noise:
+            return self._rejected(spec, title, item_url, f"noise:{noise}", {"doc": doc, "metadata_url": metadata_url})
+
+        text_file = first_text_file(metadata)
+        if text_file is None:
+            return self._lead(spec, title, item_url, "public_text_or_ocr_not_available", {"doc": doc, "metadata_url": metadata_url})
+        text_url = f"https://archive.org/download/{quote_plus(identifier)}/{quote_plus(str(text_file['name']))}"
+        try:
+            text = curl_text(text_url, cache_root / "text" / identifier / str(text_file["name"]))
+        except Exception as exc:
+            return self._lead(spec, title, item_url, f"archive_text_failed:{exc}", {"doc": doc, "text_file": text_file})
+
+        evidence_blob = "\n".join([combined_meta, text[:300000]])
+        if not source_label_present(spec["label"], evidence_blob):
+            return self._rejected(spec, title, item_url, "source_label_not_found_in_public_text", {"doc": doc, "text_file": text_file})
+
+        place = find_strict_place(evidence_blob)
+        if place is None:
+            return self._lead(spec, title, item_url, "relevant_public_text_but_no_strict_gazetteer_place", {"doc": doc, "text_file": text_file})
+
+        sensitivity = spec["sensitivity"]
+        accepted = sensitivity != "high"
+        status = "accepted" if accepted else "lead_only"
+        decision = "accepted" if accepted else "not_accepted"
+        rejection = "" if accepted else "high_sensitivity_requires_human_ethics_review_before_acceptance"
+        evidence = sentence_evidence(spec["label"], evidence_blob)
+        label_key = normalise_alias(spec["label"])
+        return CollectionCandidate(
+            run_id=self.run_id,
+            candidate_status=status,
+            source_name=self.source_name,
+            source_type=self.source_type,
+            source_tier=self.source_tier,
+            title=title,
+            publication_or_organisation=metadata_value(metadata, doc, "creator") or "Internet Archive public text",
+            publication_date_text=metadata_value(metadata, doc, "date") or metadata_value(metadata, doc, "publicdate") or "undated public item",
+            access_date=utc_now_iso()[:10],
+            url=item_url,
+            canonical_url=item_url,
+            external_id=f"internet_archive:{identifier}",
+            publicness_status="public_full_text",
+            rights_access_status="Internet Archive public item; short excerpt/neutral summary only in project export.",
+            narrative_type=NARRATIVE_BY_LABEL.get(label_key, "descriptive_belief_record"),
+            secondary_role="",
+            australian_relation="source_text_contains_australian_place_signal",
+            humanoid_basis="source_label_matched_public_text",
+            source_label=spec["label"],
+            location_text=str(place["place_name"]),
+            location_role="narrative_setting",
+            latitude=float(place["latitude"]),
+            longitude=float(place["longitude"]),
+            location_precision=str(place["location_type"]),
+            geocode_source=str(place["source"]),
+            geocode_verification_status="verified_gazetteer_point",
+            coordinate_evidence_note=f"Matched gazetteer place `{place['place_name']}` in public text/metadata.",
+            duplicate_check_status="canonical_url_checked",
+            quality_class="A",
+            ethics_review_status="not_yet_reviewed" if sensitivity == "high" else "ok_public",
+            cultural_sensitivity=sensitivity,
+            acceptance_decision=decision,
+            rejection_reason=rejection,
+            evidence_summary=neutral_summary(
+                f"The public Internet Archive text contains the source label `{spec['label']}` and the mapped place `{place['place_name']}`.",
+                evidence,
+            ),
+            raw_metadata_json={"doc": doc, "metadata_url": metadata_url, "text_file": text_file},
+        )
+
+    def _lead(self, spec: dict[str, str], title: str, url: str, reason: str, raw: dict[str, Any]) -> CollectionCandidate:
+        return CollectionCandidate(
+            run_id=self.run_id,
+            candidate_status="lead_only",
+            source_name=self.source_name,
+            source_type=self.source_type,
+            source_tier=self.source_tier,
+            title=title or f"Internet Archive lead: {spec['label']}",
+            publication_or_organisation="Internet Archive",
+            publication_date_text="",
+            url=url,
+            canonical_url=url,
+            external_id=f"ia-lead:{normalise_alias(title or spec['label']).replace(' ', '-')[:80]}",
+            narrative_type="",
+            secondary_role="unresolved_lead",
+            australian_relation="requires_text_and_location_verification",
+            humanoid_basis="source_label_search_hit_requires_verification",
+            source_label=spec["label"],
+            location_text="",
+            location_role="uncertain_or_broad_location",
+            ethics_review_status="not_yet_reviewed",
+            cultural_sensitivity=spec.get("sensitivity", "medium"),
+            acceptance_decision="not_accepted",
+            rejection_reason=reason,
+            evidence_summary=neutral_summary("Internet Archive item requires further review.", reason),
+            raw_metadata_json=raw,
+        )
+
+    def _rejected(self, spec: dict[str, str], title: str, url: str, reason: str, raw: dict[str, Any]) -> CollectionCandidate:
+        candidate = self._lead(spec, title, url, reason, raw)
+        candidate.candidate_status = "rejected"
+        candidate.secondary_role = "exclusion"
+        return candidate
