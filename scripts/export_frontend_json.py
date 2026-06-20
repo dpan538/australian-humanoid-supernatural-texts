@@ -68,19 +68,6 @@ DATE_BANDS = [
 
 STATE_CODES = ["WA", "NT", "SA", "QLD", "NSW", "VIC", "TAS", "ACT"]
 
-STATE_FLAG_FIELDS = {
-    "WA": (168, 394, 326, 488, 18),
-    "NT": (428, 552, 218, 338, 13),
-    "SA": (438, 578, 378, 456, 12),
-    "QLD": (610, 766, 258, 454, 16),
-    "NSW": (650, 766, 454, 522, 22),
-    "VIC": (610, 704, 542, 586, 13),
-    "TAS": (696, 738, 642, 676, 7),
-    "ACT": (762, 792, 492, 522, 5),
-    "UNMAPPED": (828, 908, 220, 286, 8),
-}
-
-
 def row_dict(row: Any) -> dict[str, Any]:
     return {key: row[key] for key in row.keys()}
 
@@ -107,23 +94,6 @@ def query_band(date_start: str | None, date_end: str | None) -> str:
 def safe_int(value: Any) -> int | None:
     if value in (None, ""):
         return None
-
-
-def display_flag_position(state: str, index: int, total: int) -> tuple[float, float, float, float]:
-    x0, x1, y0, y1, columns = STATE_FLAG_FIELDS.get(state, STATE_FLAG_FIELDS["UNMAPPED"])
-    rows = max(1, (total + columns - 1) // columns)
-    col = index % columns
-    row = index // columns
-    x_step = (x1 - x0) / max(columns - 1, 1)
-    y_step = (y1 - y0) / max(rows - 1, 1)
-    # Tiny deterministic jitter keeps dense fields from looking mechanically sorted.
-    jitter_x = ((index * 37) % 7 - 3) * 0.55
-    jitter_y = ((index * 53) % 5 - 2) * 0.45
-    x = x0 + col * x_step + jitter_x
-    y = y0 + row * y_step + jitter_y
-    stem_dx = 8 if (index + row) % 2 else -8
-    stem_dy = -10 if index % 3 else 10
-    return (round(x, 3), round(y, 3), stem_dx, stem_dy)
     try:
         return int(value)
     except (TypeError, ValueError):
@@ -337,46 +307,9 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         if record_ids
     ]
 
-    records_by_id = {int(record["record_id"]): record for record in records}
-    record_ids_by_display_state: dict[str, list[int]] = {code: [] for code in [*STATE_CODES, "UNMAPPED"]}
-    for record in records:
-        record_id = int(record["record_id"])
-        location = first_location_by_record.get(record_id)
-        state = location.get("state_territory") if location else None
-        display_state = state if state in STATE_CODES else "UNMAPPED"
-        record_ids_by_display_state[display_state].append(record_id)
-
+    # Strict map policy: only verified records with public latitude/longitude become map flags.
+    # State-level or broad locations remain reviewable location data, but are not rendered as points.
     map_flags: list[dict[str, Any]] = []
-    for display_state, record_ids in record_ids_by_display_state.items():
-        for index, record_id in enumerate(record_ids):
-            record = records_by_id[record_id]
-            location = first_location_by_record.get(record_id)
-            x, y, stem_dx, stem_dy = display_flag_position(display_state, index, len(record_ids))
-            if display_state == "UNMAPPED":
-                display_precision = "no_public_location"
-            elif location and location.get("latitude") is not None and location.get("longitude") is not None:
-                display_precision = "precise_public_coordinate"
-            else:
-                display_precision = "state_or_broad_display_placement"
-            map_flags.append(
-                {
-                    "flag_id": f"record:{record_id}",
-                    "record_id": record_id,
-                    "state_territory": display_state,
-                    "x": x,
-                    "y": y,
-                    "stem_dx": stem_dx,
-                    "stem_dy": stem_dy,
-                    "display_precision": display_precision,
-                    "source_location_type": location.get("location_type") if location else None,
-                    "confidence": location.get("confidence") if location else None,
-                    "title": record.get("title"),
-                    "year": record.get("year"),
-                    "canonical_figure": record.get("canonical_figure_guess")
-                    or record.get("canonical_figure")
-                    or record.get("figure_name_as_printed"),
-                }
-            )
 
     records_by_figure = Counter((record.get("canonical_figure_guess") or record.get("canonical_figure") or "uncoded") for record in records)
     records_by_year = Counter(str(record["year"]) for record in records if record.get("year") is not None)
@@ -416,7 +349,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             "precise_point_count": len(precise_points),
             "broad_location_count": len(broad_locations),
             "map_cluster_count": len(map_clusters),
-            "map_flag_count": len(map_flags),
+            "map_flag_count": len(precise_points),
             "earliest_year": min(years) if years else None,
             "latest_year": max(years) if years else None,
             "state_record_counts": {code: len(ids) for code, ids in state_record_ids.items()},
@@ -431,8 +364,8 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         "records": records,
         "locations": locations,
         "map_points": precise_points,
-        "map_clusters": map_clusters,
         "map_flags": map_flags,
+        "map_clusters": map_clusters,
         "broad_locations": broad_locations,
         "figures": list(figures_by_id.values()),
         "queries": queries,

@@ -2,7 +2,7 @@
 
 import { CSSProperties, useEffect, useState } from "react";
 import Link from "next/link";
-import type { DateBand, FrontendData, LocationItem, MapFlagItem, RecordItem } from "@/lib/types";
+import type { DateBand, FrontendData, LocationItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
@@ -291,12 +291,17 @@ function getNextView(view: ViewMode) {
 
 function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
   const [hoverState, setHoverState] = useState<string | null>(null);
-  const [hoverFlag, setHoverFlag] = useState<MapFlagItem | null>(null);
+  const [hoverPoint, setHoverPoint] = useState<LocationItem | null>(null);
   const stateCounts = data.summary.state_record_counts;
-  const flags = data.map_flags ?? [];
-  const unplacedCount = flags.filter((flag) => flag.state_territory === "UNMAPPED").length;
-  const activeState = hoverState === "UNMAPPED" ? "No public location" : hoverState ? STATE_NAMES[hoverState] : "Australia";
-  const activeCount = hoverState === "UNMAPPED" ? unplacedCount : hoverState ? stateCounts[hoverState] ?? 0 : data.summary.record_count;
+  const points = data.map_points.filter((point) => point.latitude !== null && point.longitude !== null);
+  const preciseStateCounts = points.reduce<Record<string, number>>((acc, point) => {
+    if (point.state_territory) {
+      acc[point.state_territory] = (acc[point.state_territory] ?? 0) + 1;
+    }
+    return acc;
+  }, {});
+  const activeState = hoverState ? STATE_NAMES[hoverState] : "Australia";
+  const activeCount = hoverState ? preciseStateCounts[hoverState] ?? 0 : points.length;
   const recordsById = new Map(data.records.map((record) => [record.record_id, record]));
 
   return (
@@ -332,39 +337,39 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
             );
           })}
           <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
-          <g className="record-flag-layer" aria-label="One clickable public record flag per mapped record">
-            {flags.map((flag) => {
-              const selected = hoverFlag?.flag_id === flag.flag_id;
-              const stateLinked = hoverState === flag.state_territory && flag.state_territory !== "UNMAPPED";
-              const record = recordsById.get(flag.record_id);
-              const className = [
-                "record-flag",
-                selected ? "active" : "",
-                stateLinked ? "state-linked" : "",
-                flag.display_precision === "no_public_location" ? "unplaced" : "",
-                flag.display_precision === "precise_public_coordinate" ? "precise" : "",
-              ]
+          <g className="record-flag-layer" aria-label="Strict geocoded public record flags">
+            {points.map((point, index) => {
+              const projected = projectPoint(point.latitude as number, point.longitude as number);
+              const x = svgCoord(projected.x);
+              const y = svgCoord(projected.y);
+              const selected = hoverPoint?.record_id === point.record_id && hoverPoint.place_name === point.place_name;
+              const stateLinked = hoverState === point.state_territory;
+              const record = recordsById.get(point.record_id);
+              const toneClass = record ? sourceTone(record).className : "source-tone-default";
+              const className = ["record-flag", "precise", toneClass, selected ? "active" : "", stateLinked ? "state-linked" : ""]
                 .filter(Boolean)
                 .join(" ");
+              const stemDx = index % 2 ? 10 : -10;
+              const stemDy = index % 3 ? -12 : 12;
               return (
                 <g
-                  key={flag.flag_id}
+                  key={`${point.record_id}-${point.place_name}-${index}`}
                   className={className}
-                  clipPath={flag.state_territory !== "UNMAPPED" ? `url(#clip-state-${flag.state_territory})` : undefined}
+                  style={{ "--flag-delay": `${Math.min(index, 80) * 26}ms` } as CSSProperties}
                   onMouseEnter={() => {
-                    setHoverFlag(flag);
-                    setHoverState(flag.state_territory);
+                    setHoverPoint(point);
+                    setHoverState(point.state_territory);
                   }}
                   onMouseLeave={() => {
-                    setHoverFlag(null);
+                    setHoverPoint(null);
                     setHoverState(null);
                   }}
                   onFocus={() => {
-                    setHoverFlag(flag);
-                    setHoverState(flag.state_territory);
+                    setHoverPoint(point);
+                    setHoverState(point.state_territory);
                   }}
                   onBlur={() => {
-                    setHoverFlag(null);
+                    setHoverPoint(null);
                     setHoverState(null);
                   }}
                   onClick={() => {
@@ -380,14 +385,14 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
                   }}
                   role="button"
                   tabIndex={record ? 0 : -1}
-                  aria-label={`Open record ${record?.title ?? flag.title ?? flag.flag_id}`}
+                  aria-label={`Open strict geocoded record ${record?.title ?? point.place_name}`}
                 >
-                  <line className="record-flag-stem" x1={flag.x} y1={flag.y} x2={flag.x + flag.stem_dx} y2={flag.y + flag.stem_dy} />
-                  <circle className="record-flag-hit" cx={flag.x} cy={flag.y} r="5.5" />
-                  <circle className="record-flag-dot" cx={flag.x} cy={flag.y} r={selected ? 3.8 : 2.1} />
+                  <line className="record-flag-stem" x1={x} y1={y} x2={x + stemDx} y2={y + stemDy} />
+                  <circle className="record-flag-hit" cx={x} cy={y} r="5.5" />
+                  <circle className="record-flag-dot" cx={x} cy={y} r={selected ? 4.3 : 2.4} />
                   {selected ? (
-                    <text className="record-flag-label" x={Math.min(flag.x + 10, MAP_VIEWBOX.width - 150)} y={Math.max(flag.y - 8, 26)}>
-                      {flag.year ?? "--"} / {truncate(record?.canonical_figure_guess ?? flag.canonical_figure ?? record?.title, 24)}
+                    <text className="record-flag-label" x={Math.min(x + 12, MAP_VIEWBOX.width - 150)} y={Math.max(y - 10, 26)}>
+                      {point.year ?? "--"} / {truncate(record?.canonical_figure_guess ?? point.canonical_figure ?? record?.title, 24)}
                     </text>
                   ) : null}
                 </g>
@@ -434,9 +439,14 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
               tabIndex={0}
             >
               <span>{code}</span>
-              <b>{stateCounts[code] ?? 0}</b>
+              <b>{preciseStateCounts[code] ?? 0}</b>
             </div>
           ))}
+        </div>
+        <div className="map-health-note">
+          <span>STRICT GEO</span>
+          <b>{points.length}</b>
+          <small>verified map points / {data.summary.record_count} records</small>
         </div>
       </aside>
     </div>
