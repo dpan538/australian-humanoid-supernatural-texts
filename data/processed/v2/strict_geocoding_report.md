@@ -1,11 +1,11 @@
 # Strict Geocoding Report
 
-- Generated: `2026-06-20T09:45:12+00:00`
+- Generated: `2026-06-20T09:55:31+00:00`
 - Mode: `apply`
-- Queried locations: `250`
-- Accepted geocodes: `213`
-- Rejected/no match: `37`
-- Affected record-location links: `243`
+- Queried locations: `174`
+- Accepted geocodes: `107`
+- Rejected/no match: `67`
+- Affected record-location links: `107`
 
 ## Policy
 
@@ -15,43 +15,43 @@ Only pre-existing source-named localities are geocoded. Publication locations, c
 
 | location_id | place | state | records | latitude | longitude |
 | --- | --- | --- | ---: | ---: | ---: |
-| 494 | Macleay, NSW | NSW | 2 | -30.906402 | 152.590455 |
-| 307 | Millaa Millaa, QLD | QLD | 2 | -17.493974 | 145.630462 |
-| 398 | Molong, NSW | NSW | 2 | -33.092382 | 148.863861 |
-| 404 | Mt. Kembla, NSW | NSW | 2 | -34.442184 | 150.806713 |
-| 113 | Mudgee, NSW | NSW | 2 | -32.598070 | 149.588638 |
-| 108 | Mulgoa, NSW | NSW | 2 | -33.837156 | 150.650401 |
-| 187 | Nanango, QLD | QLD | 2 | -26.676420 | 151.985174 |
-| 413 | Narromine, NSW | NSW | 2 | -32.231702 | 147.952852 |
-| 419 | Oxley Island, NSW | NSW | 2 | -31.913209 | 152.566612 |
-| 71 | Redbank, VIC | VIC | 2 | -36.938875 | 143.328161 |
-| 425 | Richmond Range, NSW | NSW | 2 | -29.328539 | 152.997738 |
-| 488 | Richmond River, NSW | NSW | 2 | -28.863204 | 153.082310 |
-| 161 | Rockhampton, QLD | QLD | 2 | -23.378214 | 150.513423 |
-| 427 | Roseberg State Forest, NSW | NSW | 2 | -33.822573 | 149.047351 |
-| 471 | Singleton, NSW | NSW | 2 | -32.602355 | 151.113289 |
-| 432 | Strickland, NSW | NSW | 2 | -33.855896 | 151.268280 |
-| 433 | Stuarts Point, NSW | NSW | 2 | -30.820931 | 152.993314 |
-| 100 | Sunny Corner, NSW | NSW | 2 | -33.384282 | 149.888402 |
-| 503 | Sunshine Coast, QLD | QLD | 2 | -26.707909 | 152.850833 |
-| 105 | Tallong, NSW | NSW | 2 | -34.719225 | 150.086320 |
-| 486 | Townsville, QLD | QLD | 2 | -19.256939 | 146.823954 |
-| 171 | Tully, QLD | QLD | 2 | -17.942923 | 145.928582 |
-| 442 | Uki, NSW | NSW | 2 | -28.415278 | 153.330556 |
-| 369 | Wauchope, NSW | NSW | 2 | -31.455788 | 152.734664 |
-| 133 | Wingello, NSW | NSW | 2 | -34.703204 | 150.166024 |
-| 459 | Woodford, NSW | NSW | 2 | -33.734968 | 150.481089 |
-| 153 | Worongary, QLD | QLD | 2 | -28.036074 | 153.339128 |
-| 499 | Woronora, NSW | NSW | 2 | -34.024801 | 151.045408 |
-| 190 | Yandina, QLD | QLD | 2 | -26.565894 | 152.959611 |
-| 463 | Yarrangobilly, NSW | NSW | 2 | -35.648333 | 148.467778 |
-| 474 | 's, QLD | QLD | 1 | -27.492342 | 153.041873 |
-| 41 | Adelaide River, NT | NT | 1 | -13.238766 | 131.107007 |
-| 492 | Adelaide, SA | SA | 1 | -34.928181 | 138.599931 |
-| 200 | Advancetown, QLD | QLD | 1 | -28.061915 | 153.278130 |
-| 192 | Agnes Waters, QLD | QLD | 1 | -24.211238 | 151.900547 |
-| 178 | Alpha, QLD | QLD | 1 | -23.524547 | 146.753548 |
-| 202 | Alstonville, NSW | NSW | 1 | -28.841276 | 153.440581 |
-| 203 | Aratula, QLD | QLD | 1 | -27.983099 | 152.539109 |
-| 206 | Atherton, QLD | QLD | 1 | -17.266711 | 145.476892 |
-| 21 | Australind, WA | WA | 1 | -33.280736 | 115.720448 |
+| 155 | Mt Superbus, QLD | QLD | 1 | -28.218449 | 152.460335 |
+| 406 | Mt Warning, NSW | NSW | 1 | -28.381800 | 153.284600 |
+| 313 | Mt. Glorious, QLD | QLD | 1 | -27.322891 | 152.764303 |
+| 149 | Mt. Isa, QLD | QLD | 1 | -20.728990 | 139.493152 |
+| 402 | Mt. Lindesay, NSW | NSW | 1 | -30.202899 | 150.145114 |
+| 405 | Mt. Warning, NSW | NSW | 1 | -28.381800 | 153.284600 |
+| 407 | Mullumbimby, NSW | NSW | 1 | -28.548333 | 153.501111 |
+| 408 | Mungay Creek, NSW | NSW | 1 | -30.906800 | 152.676200 |
+| 497 | Murgon, QLD | QLD | 1 | -26.244173 | 151.936075 |
+| 410 | Murwillumbah, NSW | NSW | 1 | -28.326762 | 153.397154 |
+| 411 | Narara, NSW | NSW | 1 | -33.395556 | 151.335556 |
+| 412 | Narooma, NSW | NSW | 1 | -36.219015 | 150.131724 |
+| 136 | Nemingha, NSW | NSW | 1 | -31.121216 | 150.988881 |
+| 148 | Nerang, QLD | QLD | 1 | -27.989657 | 153.336594 |
+| 414 | Newry State Forest, NSW | NSW | 1 | -30.539809 | 152.965781 |
+| 501 | Noosa, QLD | QLD | 1 | -26.318244 | 152.930798 |
+| 145 | North Aramara, QLD | QLD | 1 | -25.551440 | 152.334675 |
+| 332 | North Gosford, NSW | NSW | 1 | -33.415000 | 151.351111 |
+| 228 | North of Moe, VIC | VIC | 1 | -38.185510 | 146.247703 |
+| 199 | Northern, NSW | NSW | 1 | -33.701014 | 151.299783 |
+| 70 | Nowa Nowa, VIC | VIC | 1 | -37.731836 | 148.091006 |
+| 415 | Nowra, NSW | NSW | 1 | -34.874120 | 150.600471 |
+| 416 | Nunderi, NSW | NSW | 1 | -28.322671 | 153.463307 |
+| 183 | Oak Beach, QLD | QLD | 1 | -16.586144 | 145.523438 |
+| 97 | Ophir, NSW | NSW | 1 | -33.128500 | 149.242900 |
+| 191 | Ormeau / Kingsholme, QLD | QLD | 1 | -27.847922 | 153.214761 |
+| 189 | Ormeau Hills, QLD | QLD | 1 | -27.800612 | 153.233746 |
+| 331 | Owens Creek, QLD | QLD | 1 | -21.100528 | 148.705742 |
+| 333 | Palm Beach, QLD | QLD | 1 | -28.115533 | 153.458394 |
+| 420 | Pambula, NSW | NSW | 1 | -36.928848 | 149.875284 |
+| 478 | Penrith, NSW | NSW | 1 | -33.751195 | 150.694171 |
+| 498 | Perth, WA | WA | 1 | -31.955897 | 115.860578 |
+| 48 | Phillip Island, VIC | VIC | 1 | -38.507178 | 145.188810 |
+| 421 | Pickett Hill, NSW | NSW | 1 | -30.572823 | 152.995357 |
+| 362 | Picnic Point, QLD | QLD | 1 | -27.579013 | 151.986656 |
+| 36 | Poochera, SA | SA | 1 | -32.720310 | 134.838545 |
+| 423 | Port Macquarie, NSW | NSW | 1 | -31.429950 | 152.910352 |
+| 424 | Providence Portal, NSW | NSW | 1 | -35.948500 | 148.634600 |
+| 336 | Redbank Plains, QLD | QLD | 1 | -27.651318 | 152.847946 |
+| 337 | Redbank, QLD | QLD | 1 | -27.599454 | 152.872492 |

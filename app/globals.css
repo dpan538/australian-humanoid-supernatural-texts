@@ -401,11 +401,15 @@ a {
   isolation: isolate;
 }
 
+.record-flag-layer.has-hover .record-flag {
+  opacity: 0.28;
+}
+
 .record-flag {
   cursor: pointer;
-  opacity: 0.92;
-  transition: opacity 120ms ease, filter 120ms ease;
-  animation: record-flag-arrive 520ms steps(5, end) both;
+  opacity: 0.84;
+  transition: opacity 140ms ease, filter 140ms ease;
+  animation: record-flag-arrive 760ms steps(7, end) both;
   animation-delay: var(--flag-delay, 0ms);
 }
 
@@ -414,29 +418,14 @@ a {
     opacity: 0;
   }
   to {
-    opacity: 0.92;
+    opacity: 0.84;
   }
-}
-
-.record-flag-stem {
-  stroke: rgba(142, 216, 255, 0.48);
-  stroke-width: 1.25;
-  vector-effect: non-scaling-stroke;
-  transition: stroke 120ms ease, stroke-width 120ms ease;
-}
-
-.record-flag-halo {
-  fill: rgba(5, 6, 6, 0.72);
-  stroke: var(--flag-tone, rgba(167, 255, 99, 0.82));
-  stroke-width: 0.85;
-  vector-effect: non-scaling-stroke;
-  transition: fill 120ms ease, stroke 120ms ease, r 120ms ease;
 }
 
 .record-flag-dot {
   fill: var(--flag-tone, rgba(167, 255, 99, 0.82));
-  stroke: rgba(242, 242, 237, 0.92);
-  stroke-width: 0.85;
+  stroke: rgba(242, 242, 237, 0.42);
+  stroke-width: 0.42;
   vector-effect: non-scaling-stroke;
   transition: fill 120ms ease, stroke 120ms ease, r 120ms ease;
 }
@@ -447,43 +436,26 @@ a {
 }
 
 .record-flag.state-linked {
-  opacity: 0.88;
-}
-
-.record-flag.state-linked .record-flag-stem {
-  stroke: rgba(142, 216, 255, 0.62);
-}
-
-.record-flag.state-linked .record-flag-halo {
-  stroke: var(--flag-tone, rgba(167, 255, 99, 0.94));
+  opacity: 0.9;
 }
 
 .record-flag.state-linked .record-flag-dot {
   fill: var(--flag-tone, rgba(167, 255, 99, 0.82));
-  stroke: rgba(242, 242, 237, 0.96);
+  stroke: rgba(242, 242, 237, 0.5);
 }
 
 .record-flag.active {
   opacity: 1;
-  filter: drop-shadow(0 0 12px rgba(242, 242, 237, 0.36));
-}
-
-.record-flag.active .record-flag-stem {
-  stroke: rgba(142, 216, 255, 0.72);
-  stroke-width: 1.25;
+  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--flag-tone, rgba(242, 242, 237, 0.36)) 45%, transparent));
 }
 
 .record-flag.active .record-flag-dot {
-  fill: rgba(242, 242, 237, 0.96);
-  stroke: rgba(167, 255, 99, 0.92);
+  fill: color-mix(in srgb, var(--flag-tone, rgba(242, 242, 237, 0.96)) 72%, rgba(242, 242, 237, 0.9));
+  stroke: rgba(242, 242, 237, 0.66);
 }
 
 .record-flag.unplaced {
   opacity: 0.38;
-}
-
-.record-flag.unplaced .record-flag-stem {
-  stroke: rgba(176, 183, 188, 0.22);
 }
 
 .record-flag.unplaced .record-flag-dot {
@@ -496,7 +468,7 @@ a {
 }
 
 .record-flag.source-tone-newspaper {
-  --flag-tone: rgba(167, 255, 99, 0.78);
+  --flag-tone: rgba(167, 255, 99, 0.76);
 }
 
 .record-flag.source-tone-magazine {
@@ -504,7 +476,7 @@ a {
 }
 
 .record-flag.source-tone-web {
-  --flag-tone: rgba(242, 242, 237, 0.7);
+  --flag-tone: rgba(242, 242, 237, 0.66);
 }
 
 .record-flag.source-tone-catalogue {
@@ -522,6 +494,26 @@ a {
 .record-flag.source-tone-manual,
 .record-flag.source-tone-default {
   --flag-tone: rgba(95, 147, 97, 0.8);
+}
+
+.record-flag.source-tone-ayr-historical {
+  --flag-tone: rgba(189, 205, 198, 0.78);
+}
+
+.record-flag.source-tone-ayr-witness {
+  --flag-tone: rgba(155, 255, 93, 0.74);
+}
+
+.record-flag.source-tone-media {
+  --flag-tone: rgba(142, 216, 255, 0.82);
+}
+
+.record-flag.source-tone-institutional {
+  --flag-tone: rgba(184, 176, 255, 0.78);
+}
+
+.record-flag.source-tone-candidate {
+  --flag-tone: rgba(238, 224, 176, 0.78);
 }
 
 .record-flag-label {

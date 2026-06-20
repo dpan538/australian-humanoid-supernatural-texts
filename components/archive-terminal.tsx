@@ -337,7 +337,7 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
             );
           })}
           <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
-          <g className="record-flag-layer" aria-label="Strict geocoded public record flags">
+          <g className={`record-flag-layer ${hoverPoint ? "has-hover" : ""}`} aria-label="Strict geocoded public record flags">
             {points.map((point, index) => {
               const projected = projectPoint(point.latitude as number, point.longitude as number);
               const x = svgCoord(projected.x);
@@ -345,17 +345,15 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
               const selected = hoverPoint?.record_id === point.record_id && hoverPoint.place_name === point.place_name;
               const stateLinked = hoverState === point.state_territory;
               const record = recordsById.get(point.record_id);
-              const toneClass = record ? sourceTone(record).className : "source-tone-default";
+              const toneClass = record ? mapSourceTone(record).className : "source-tone-default";
               const className = ["record-flag", "precise", toneClass, selected ? "active" : "", stateLinked ? "state-linked" : ""]
                 .filter(Boolean)
                 .join(" ");
-              const stemDx = index % 2 ? 10 : -10;
-              const stemDy = index % 3 ? -12 : 12;
               return (
                 <g
                   key={`${point.record_id}-${point.place_name}-${index}`}
                   className={className}
-                  style={{ "--flag-delay": `${Math.min(index, 80) * 26}ms` } as CSSProperties}
+                  style={{ "--flag-delay": `${Math.min(index, 720) * 10}ms` } as CSSProperties}
                   onMouseEnter={() => {
                     setHoverPoint(point);
                     setHoverState(point.state_territory);
@@ -387,10 +385,8 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
                   tabIndex={record ? 0 : -1}
                   aria-label={`Open strict geocoded record ${record?.title ?? point.place_name}`}
                 >
-                  <line className="record-flag-stem" x1={x} y1={y} x2={x + stemDx} y2={y + stemDy} />
-                  <circle className="record-flag-hit" cx={x} cy={y} r="9" />
-                  <circle className="record-flag-halo" cx={x} cy={y} r={selected ? 8.8 : 6.4} />
-                  <circle className="record-flag-dot" cx={x} cy={y} r={selected ? 5.4 : 4.2} />
+                  <circle className="record-flag-hit" cx={x} cy={y} r="7" />
+                  <circle className="record-flag-dot" cx={x} cy={y} r={selected ? 3.8 : 2.8} />
                   {selected ? (
                     <text className="record-flag-label" x={Math.min(x + 12, MAP_VIEWBOX.width - 150)} y={Math.max(y - 10, 26)}>
                       {point.year ?? "--"} / {truncate(record?.canonical_figure_guess ?? point.canonical_figure ?? record?.title, 24)}
@@ -1152,6 +1148,30 @@ function RecordLine({ record }: { record: RecordItem }) {
 
 function sourceTone(record: RecordItem) {
   return SOURCE_TONE[record.source_type ?? ""] ?? { label: "SOURCE", className: "source-tone-default" };
+}
+
+const HISTORICAL_PUBLICATION_PATTERN =
+  /\b(article|courier|post|herald|argus|bulletin|times|mercury|gazette|advertiser|chronicle|examiner|star|mail|mirror|telegraph|age|leader|news|budget|advocate|journal|guardian|free press|penny post|press)\b/i;
+
+function mapSourceTone(record: RecordItem) {
+  const text = [record.source_name, record.source_type, record.publication, record.title, record.url].filter(Boolean).join(" ");
+  const lower = text.toLowerCase();
+  if (record.ingestion_status === "strict_geo_candidate") {
+    return { label: "STRICT CANDIDATE", className: "source-tone-candidate" };
+  }
+  if (lower.includes("abc")) {
+    return { label: "MEDIA", className: "source-tone-media" };
+  }
+  if (lower.includes("parks victoria") || lower.includes("museum") || lower.includes("library") || lower.includes("catalogue")) {
+    return { label: "INSTITUTIONAL", className: "source-tone-institutional" };
+  }
+  if (lower.includes("australian yowie research")) {
+    if ((record.year && record.year < 1970) || HISTORICAL_PUBLICATION_PATTERN.test(text)) {
+      return { label: "AYR HISTORICAL", className: "source-tone-ayr-historical" };
+    }
+    return { label: "AYR WITNESS", className: "source-tone-ayr-witness" };
+  }
+  return sourceTone(record);
 }
 
 function recordDisplayTitle(record: RecordItem) {
