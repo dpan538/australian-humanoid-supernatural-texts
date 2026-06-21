@@ -40,6 +40,10 @@ const SOURCE_TONE: Record<string, { label: string; className: string }> = {
   nla_catalogue: { label: "CATALOGUE", className: "source-tone-catalogue" },
   aiatsis_public_catalogue: { label: "CATALOGUE", className: "source-tone-catalogue" },
   andc: { label: "METADATA", className: "source-tone-metadata" },
+  academic_metadata: { label: "ACADEMIC", className: "source-tone-academic" },
+  internet_archive_metadata: { label: "ARCHIVE", className: "source-tone-archive" },
+  institutional_web: { label: "INSTITUTIONAL", className: "source-tone-institutional" },
+  seeded_public_web: { label: "PUBLIC WEB", className: "source-tone-seeded-web" },
   google_trends: { label: "ATTENTION", className: "source-tone-attention" },
   wikimedia_pageviews: { label: "PAGEVIEWS", className: "source-tone-attention" },
   modern_web: { label: "WEB", className: "source-tone-web" },
@@ -367,6 +371,7 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
               const projected = projectPoint(point.latitude as number, point.longitude as number);
               const x = svgCoord(projected.x);
               const y = svgCoord(projected.y);
+              const flagDelay = points.length > 1 ? (index / Math.max(1, points.length - 1)) * 820 : 0;
               const selected = hoverPoint?.record_id === point.record_id && hoverPoint.place_name === point.place_name;
               const stateLinked = hoverState === point.state_territory;
               const record = recordsById.get(point.record_id);
@@ -378,7 +383,7 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
                 <g
                   key={`${point.record_id}-${point.place_name}-${index}`}
                   className={className}
-                  style={{ "--flag-delay": `${Math.min(index, 720) * 10}ms` } as CSSProperties}
+                  style={{ "--flag-delay": `${flagDelay.toFixed(1)}ms` } as CSSProperties}
                   onMouseEnter={() => {
                     setHoverPoint(point);
                     setHoverState(point.state_territory);
@@ -574,13 +579,18 @@ function DensityView({ data, onSelectRecord }: { data: FrontendData; onSelectRec
     acc[query.query_type] = (acc[query.query_type] ?? 0) + 1;
     return acc;
   }, {});
+  const locationHealth = {
+    strict_geo: data.summary.precise_point_count,
+    broad_or_review: Math.max(0, data.summary.record_count - data.summary.precise_point_count),
+    locations_total: data.summary.location_count,
+  };
 
   return (
     <div className="density-view">
       <header className="density-header">
         <span>TIME DENSITY / NONLINEAR BANDS</span>
         <b>
-          {data.summary.earliest_year}-{data.summary.latest_year}
+          {data.summary.earliest_year}-{data.summary.latest_year} / {data.summary.precise_point_count} GEO
         </b>
       </header>
       <div className="density-bands">
@@ -598,13 +608,13 @@ function DensityView({ data, onSelectRecord }: { data: FrontendData; onSelectRec
       </div>
       <div className="density-aux-grid">
         <DensitySignal title="SOURCE FIELD" values={data.summary.source_type_counts} />
-        <DensitySignal title="QUERY TYPES" values={queryTypes} />
+        <DensitySignal title="LOCATION HEALTH" values={locationHealth} />
         <DensityFigureRail records={data.records} onSelectRecord={onSelectRecord} />
       </div>
       <div className="density-footer">
         <div className="density-note">
-          <span>UNCERTAINTY</span>
-          <b className="redacted">LOW CONFIDENCE / REVIEW QUEUE</b>
+          <span>QUERY TYPES</span>
+          <b>{entriesDescending(queryTypes, 3).map(([label, value]) => `${truncate(label, 12)} ${value}`).join(" / ")}</b>
         </div>
       </div>
     </div>
@@ -738,9 +748,7 @@ function DashboardTrackNetwork({
   data: FrontendData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const tracks = [...data.records]
-    .sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.record_id - b.record_id)
-    .slice(0, 14);
+  const tracks = dashboardTrackSample(data);
   const nodes = tracks.map((record, index) => ({
     record,
     x: index % 3 === 0 ? 58 : index % 3 === 1 ? 174 : 274,
@@ -815,7 +823,7 @@ function DashboardTrackNetwork({
         {tracks.map((record, index) => (
           <button className="track-row" key={record.record_id} type="button" onClick={() => onSelectRecord(record)}>
             <b>{String(index + 1).padStart(2, "0")}.</b>
-            <i>{truncate(record.canonical_figure_guess || record.canonical_figure || record.title, index > 10 ? 38 : 24)}</i>
+            <i>{dashboardTrackLabel(data, record, index)}</i>
           </button>
         ))}
       </div>
@@ -1036,20 +1044,113 @@ function SourceWheel({ values }: { values: Record<string, number> }) {
 }
 
 function ConsolePolyline({ values }: { values: Record<string, number> }) {
-  const entries = Object.entries(values).sort(([a], [b]) => Number(a) - Number(b));
+  const rawEntries = Object.entries(values)
+    .map(([year, value]) => [Number(year), value] as const)
+    .filter(([year]) => Number.isFinite(year))
+    .sort(([a], [b]) => a - b);
+  const entries = aggregateYearValues(rawEntries, 28);
   const max = Math.max(...entries.map(([, value]) => value), 1);
   const xFor = (index: number) => (entries.length <= 1 ? 110 : 10 + (index / (entries.length - 1)) * 200);
-  const yFor = (value: number) => 72 - (value / max) * 54;
+  const yFor = (value: number) => 70 - (value / max) * 52;
   const points = entries.map(([, value], index) => `${xFor(index).toFixed(1)},${yFor(value).toFixed(1)}`).join(" ");
 
   return (
     <svg className="console-polyline" viewBox="0 0 220 82" role="img" aria-label="Year counts polyline">
+      {entries.map(([label, value], index) => (
+        <rect
+          key={`bar-${label}`}
+          className="console-density-bar"
+          x={xFor(index) - 2.8}
+          y={yFor(value)}
+          width="5.6"
+          height={72 - yFor(value)}
+        />
+      ))}
       <polyline points={points} />
-      {entries.map(([year, value], index) => (
-        <circle key={year} cx={xFor(index)} cy={yFor(value)} r={value > 1 ? 4 : 2.5} />
+      {entries.map(([label, value], index) => (
+        <circle key={label} cx={xFor(index)} cy={yFor(value)} r={Math.max(1.4, Math.min(2.6, 1.2 + value / max * 1.8))} />
       ))}
     </svg>
   );
+}
+
+function dashboardTrackLabel(data: FrontendData, record: RecordItem, index: number) {
+  const point = data.map_points.find((item) => item.record_id === record.record_id);
+  const state = point?.state_territory ?? record.location_summary?.match(/\b(WA|NT|SA|QLD|NSW|VIC|TAS|ACT)\b/)?.[1] ?? "AU";
+  const year = record.year ? String(record.year) : "----";
+  const tone = mapSourceTone(record).label.replace("AYR ", "");
+  const figure = record.canonical_figure_guess || record.canonical_figure || "record";
+  const title = figure === "Yowie" || index > 6 ? record.title || figure : figure;
+  return truncate(`${year} ${state} ${tone} / ${title}`, index > 10 ? 42 : 32);
+}
+
+function dashboardTrackSample(data: FrontendData) {
+  const recordsById = new Map(data.records.map((record) => [record.record_id, record]));
+  const strictRecordIds = new Set(data.map_points.map((point) => point.record_id));
+  const base = data.records.filter((record) => strictRecordIds.has(record.record_id));
+  const pool = (base.length ? base : data.records).filter((record) => record.relevance_code !== "noise");
+  const byYear = [...pool].sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.record_id - b.record_id);
+  const selected: RecordItem[] = [];
+  const seen = new Set<number>();
+  const add = (record: RecordItem | undefined) => {
+    if (record && !seen.has(record.record_id) && selected.length < 14) {
+      selected.push(record);
+      seen.add(record.record_id);
+    }
+  };
+
+  const firstBy = (keyFn: (record: RecordItem) => string | null | undefined, limit: number) => {
+    const keys = new Set<string>();
+    for (const record of byYear) {
+      const key = keyFn(record);
+      if (!key || keys.has(key)) {
+        continue;
+      }
+      keys.add(key);
+      add(record);
+      if (keys.size >= limit || selected.length >= 14) {
+        break;
+      }
+    }
+  };
+
+  firstBy((record) => record.canonical_figure_guess || record.canonical_figure || record.title, 7);
+  firstBy((record) => record.source_type || record.source_name, 4);
+
+  for (const code of Object.keys(STATE_NAMES)) {
+    const point = data.map_points.find((item) => item.state_territory === code);
+    add(point ? recordsById.get(point.record_id) : undefined);
+  }
+
+  for (const band of data.date_bands) {
+    add(byYear.find((record) => record.date_band === band.id));
+  }
+
+  for (const record of byYear) {
+    add(record);
+  }
+
+  return selected;
+}
+
+function aggregateYearValues(entries: readonly (readonly [number, number])[], targetBins: number) {
+  if (entries.length <= targetBins) {
+    return entries.map(([year, value]) => [String(year), value] as const);
+  }
+  const minYear = entries[0]?.[0] ?? 0;
+  const maxYear = entries[entries.length - 1]?.[0] ?? minYear;
+  const span = Math.max(1, maxYear - minYear + 1);
+  const binCount = Math.min(targetBins, span);
+  const bins = Array.from({ length: binCount }, (_, index) => ({
+    start: Math.round(minYear + (index / binCount) * span),
+    end: Math.round(minYear + ((index + 1) / binCount) * span - 1),
+    value: 0,
+  }));
+  for (const [year, value] of entries) {
+    const index = Math.min(binCount - 1, Math.max(0, Math.floor(((year - minYear) / span) * binCount)));
+    bins[index].value += value;
+  }
+  return bins.map((bin) => [`${bin.start}-${bin.end}`, bin.value] as const);
 }
 
 function SignalSquare({ records }: { records: RecordItem[] }) {
@@ -1196,6 +1297,15 @@ function mapSourceTone(record: RecordItem) {
     }
     return { label: "AYR WITNESS", className: "source-tone-ayr-witness" };
   }
+  if (record.source_type === "academic_metadata") {
+    return { label: "ACADEMIC", className: "source-tone-academic" };
+  }
+  if (record.source_type === "internet_archive_metadata") {
+    return { label: "ARCHIVE", className: "source-tone-archive" };
+  }
+  if (record.source_type === "seeded_public_web") {
+    return { label: "PUBLIC WEB", className: "source-tone-seeded-web" };
+  }
   return sourceTone(record);
 }
 
@@ -1272,19 +1382,16 @@ function RecordCardOverlay({
 
   return (
     <div className="record-overlay" role="presentation" onClick={onClose}>
-      <article
-        className={`record-card ${sourceClass}`}
-        role="dialog"
-        aria-modal="true"
-        aria-label={`Record ${title}`}
-        onClick={(event) => event.stopPropagation()}
-      >
+      <div className="record-card-shell" onClick={(event) => event.stopPropagation()}>
         {canNavigate ? (
           <>
             <button
               className="record-card-nav record-card-nav-prev"
               type="button"
-              onClick={() => onNavigate(-1)}
+              onClick={(event) => {
+                event.stopPropagation();
+                onNavigate(-1);
+              }}
               aria-label={`Previous record in ${navigation?.regionLabel ?? "current region"}`}
             >
               &lt;
@@ -1292,13 +1399,22 @@ function RecordCardOverlay({
             <button
               className="record-card-nav record-card-nav-next"
               type="button"
-              onClick={() => onNavigate(1)}
+              onClick={(event) => {
+                event.stopPropagation();
+                onNavigate(1);
+              }}
               aria-label={`Next record in ${navigation?.regionLabel ?? "current region"}`}
             >
               &gt;
             </button>
           </>
         ) : null}
+        <article
+          className={`record-card ${sourceClass}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Record ${title}`}
+        >
         <section className="record-card-table" aria-label="Record metadata">
           <div className="record-card-table-top">
             <span>aus humanoid record</span>
@@ -1351,7 +1467,8 @@ function RecordCardOverlay({
             )}
           </footer>
         </section>
-      </article>
+        </article>
+      </div>
     </div>
   );
 }
@@ -1406,15 +1523,17 @@ function SourceView({ data }: { data: FrontendData }) {
 
           <section className="source-display-section source-register-section" aria-label="Registered sources">
             <div className="source-section-kicker">REGISTERED SOURCES</div>
-            {data.sources.map((source) => (
-              <div className="source-display-row source-register-row" key={source.source_id}>
-                <span>{source.source_name}</span>
-                <div>
-                  <b>{source.source_type}</b>
-                  <b>{source.publicness_level}</b>
+            <div className="source-register-scroll">
+              {data.sources.map((source) => (
+                <div className="source-display-row source-register-row" key={source.source_id}>
+                  <span>{source.source_name}</span>
+                  <div>
+                    <b>{source.source_type}</b>
+                    <b>{source.publicness_level}</b>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </section>
         </div>
 

@@ -488,6 +488,18 @@ a {
   --flag-tone: rgba(215, 208, 198, 0.7);
 }
 
+.record-flag.source-tone-academic {
+  --flag-tone: rgba(199, 190, 226, 0.74);
+}
+
+.record-flag.source-tone-archive {
+  --flag-tone: rgba(238, 224, 176, 0.76);
+}
+
+.record-flag.source-tone-seeded-web {
+  --flag-tone: rgba(119, 205, 178, 0.76);
+}
+
 .record-flag.source-tone-attention {
   --flag-tone: rgba(121, 170, 255, 0.76);
 }
@@ -1049,6 +1061,8 @@ a {
   font-size: clamp(0.76rem, 0.97vw, 1.03rem);
   font-style: normal;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .track-row:hover i,
@@ -1373,10 +1387,18 @@ a {
   width: 100%;
   min-height: 104px;
   border: 1px solid rgba(242, 242, 237, 0.52);
+  background:
+    repeating-linear-gradient(90deg, rgba(242, 242, 237, 0.018), rgba(242, 242, 237, 0.018) 1px, transparent 1px, transparent 14px),
+    rgba(5, 6, 6, 0.28);
+}
+
+.console-density-bar {
+  fill: rgba(142, 216, 255, 0.14);
 }
 
 .console-polyline circle {
   fill: var(--ink);
+  opacity: 0.82;
 }
 
 .console-source-grid {
@@ -1715,13 +1737,17 @@ a {
   opacity: 0.8;
 }
 
+.record-card-shell {
+  position: relative;
+  z-index: 1;
+  width: min(920px, calc(100vw - 110px));
+}
+
 .record-card {
   --record-tone: #173935;
   --record-paper: #f4f4ef;
   --record-paper-2: #ffffff;
-  position: relative;
-  z-index: 1;
-  width: min(920px, calc(100vw - 70px));
+  width: 100%;
   min-height: min(590px, calc(100svh - 92px));
   display: grid;
   grid-template-rows: minmax(158px, auto) minmax(206px, 0.78fr) minmax(124px, auto);
@@ -1750,6 +1776,21 @@ a {
 .record-card.source-tone-catalogue,
 .record-card.source-tone-metadata {
   --record-tone: #343536;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-academic {
+  --record-tone: #373143;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-archive {
+  --record-tone: #3e382c;
+  --record-paper: #f4f4ef;
+}
+
+.record-card.source-tone-seeded-web {
+  --record-tone: #1f3b36;
   --record-paper: #f4f4ef;
 }
 
@@ -1792,11 +1833,11 @@ a {
 .record-card-nav {
   position: absolute;
   top: 50%;
-  z-index: 2;
+  z-index: 3;
   width: 42px;
   height: 96px;
   border: 0;
-  color: rgba(5, 6, 6, 0.34);
+  color: rgba(242, 242, 237, 0.5);
   background: transparent;
   font-family: "Courier New", "SFMono-Regular", Consolas, monospace;
   font-size: 2rem;
@@ -1808,17 +1849,17 @@ a {
 
 .record-card-nav:hover,
 .record-card-nav:focus-visible {
-  color: rgba(5, 6, 6, 0.74);
-  background: rgba(5, 6, 6, 0.035);
+  color: rgba(242, 242, 237, 0.86);
+  background: rgba(242, 242, 237, 0.035);
   outline: none;
 }
 
 .record-card-nav-prev {
-  left: 0;
+  left: -52px;
 }
 
 .record-card-nav-next {
-  right: 0;
+  right: -52px;
 }
 
 .record-card-table {
@@ -1991,11 +2032,12 @@ a {
 .source-display {
   position: relative;
   width: min(1120px, 100%);
-  height: min(820px, 100%);
-  min-height: 650px;
+  height: min(760px, 100%);
+  min-height: min(650px, 100%);
   display: grid;
-  align-content: center;
-  gap: 24px;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  align-content: stretch;
+  gap: 20px;
   color: var(--ink);
   padding: 8px 0;
 }
@@ -2020,13 +2062,15 @@ a {
   display: grid;
   grid-template-columns: minmax(330px, 0.82fr) minmax(580px, 1.2fr);
   gap: 28px;
-  align-items: start;
+  align-items: stretch;
+  min-height: 0;
 }
 
 .source-display-column {
   display: grid;
   gap: 8px;
   align-content: start;
+  min-height: 0;
 }
 
 .source-display-header {
@@ -2112,10 +2156,34 @@ a {
 
 .source-register-section {
   gap: 6px;
+  padding-right: 16px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.source-register-scroll {
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(159, 224, 255, 0.48) rgba(242, 242, 237, 0.04);
 }
 
 .source-register-section .source-display-row {
   grid-template-columns: minmax(240px, 1fr) minmax(230px, 0.76fr);
+}
+
+.source-register-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.source-register-scroll::-webkit-scrollbar-track {
+  background: rgba(242, 242, 237, 0.04);
+}
+
+.source-register-scroll::-webkit-scrollbar-thumb {
+  background: rgba(159, 224, 255, 0.48);
 }
 
 .source-register-row div {
@@ -2465,5 +2533,16 @@ a {
 
   .external-control-dock {
     align-self: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

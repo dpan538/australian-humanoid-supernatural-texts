@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from aus_humanoid.collectors.manual_import import REQUIRED_MANUAL_COLUMNS
 from aus_humanoid.collectors.internet_archive import InternetArchiveCollector
+from aus_humanoid.collectors.seeded_web import SeededWebCollector
 from aus_humanoid.collectors.trove import TroveCollector
 from aus_humanoid.db import DEFAULT_DB_PATH, connect
 from aus_humanoid.normalise import canonicalise_whitespace
@@ -308,6 +309,17 @@ def stage_internet_archive(conn, run_id: str, limit: int, strict_geo_only: bool 
     return counts
 
 
+def stage_seeded_web(conn, run_id: str, seed_path: Path, limit: int, strict_geo_only: bool = False) -> dict[str, int]:
+    counts = {"accepted": 0, "rejected": 0, "duplicate": 0, "lead_only": 0}
+    collector = SeededWebCollector(run_id=run_id, seed_path=seed_path, limit=limit)
+    for candidate in collector.collect():
+        row = candidate.as_row()
+        row["raw_metadata_json"] = candidate.raw_metadata_json
+        status = insert_candidate(conn, row, strict_geo_only=strict_geo_only)
+        counts[status] = counts.get(status, 0) + 1
+    return counts
+
+
 def write_progress(conn, report: Path, target: int, strict_geo_only: bool = False) -> None:
     rows = conn.execute(
         """
@@ -340,6 +352,7 @@ def write_progress(conn, report: Path, target: int, strict_geo_only: bool = Fals
             "- In strict-geography mode, candidates without verified latitude/longitude, locality precision, geocode source, coordinate evidence, duplicate status, and quality class A/B/C are rejected.",
             "- Trove article-level collection requires a supplied `TROVE_API_KEY` or manual verified imports.",
             "- Internet Archive items count only when public text/OCR is accessible, the source label is present in text, and a strict gazetteer place is matched.",
+            "- Seeded public-web rows count only when the configured public page or manual public excerpt verifies both the source label and the strict place.",
         ]
     )
     report.parent.mkdir(parents=True, exist_ok=True)
@@ -353,6 +366,7 @@ def main() -> None:
     parser.add_argument("--manual-csv", help="Manually verified accepted/rejected candidates CSV")
     parser.add_argument("--trove-leads", action="store_true", help="Stage reproducible Trove public query leads")
     parser.add_argument("--internet-archive", action="store_true", help="Stage strict public-text Internet Archive candidates")
+    parser.add_argument("--seeded-web", help="YAML seed list for strict public-web candidates")
     parser.add_argument("--limit", type=int, default=50, help="Maximum collector candidates")
     parser.add_argument("--report", default=str(DEFAULT_REPORT), help="Progress report path")
     parser.add_argument("--target", type=int, default=500, help="Accepted source-item target for progress reporting")
@@ -367,11 +381,14 @@ def main() -> None:
         if args.manual_csv:
             for key, value in stage_manual_csv(conn, Path(args.manual_csv), args.run_id, strict_geo_only=args.strict_geo_only).items():
                 counts[key] = counts.get(key, 0) + value
-        if args.trove_leads or (not args.manual_csv and not args.internet_archive):
+        if args.trove_leads or (not args.manual_csv and not args.internet_archive and not args.seeded_web):
             for key, value in stage_trove_leads(conn, args.run_id, args.limit, strict_geo_only=args.strict_geo_only).items():
                 counts[key] = counts.get(key, 0) + value
         if args.internet_archive:
             for key, value in stage_internet_archive(conn, args.run_id, args.limit, strict_geo_only=args.strict_geo_only).items():
+                counts[key] = counts.get(key, 0) + value
+        if args.seeded_web:
+            for key, value in stage_seeded_web(conn, args.run_id, Path(args.seeded_web), args.limit, strict_geo_only=args.strict_geo_only).items():
                 counts[key] = counts.get(key, 0) + value
         conn.commit()
         write_progress(conn, Path(args.report), args.target, strict_geo_only=args.strict_geo_only)

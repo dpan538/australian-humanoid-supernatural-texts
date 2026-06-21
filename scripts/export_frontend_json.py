@@ -416,7 +416,25 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
 
     # Strict map policy: only verified records with public latitude/longitude become map flags.
     # State-level or broad locations remain reviewable location data, but are not rendered as points.
-    map_flags: list[dict[str, Any]] = []
+    # Keep map_flags in lockstep with map_points so every displayed strict point remains auditable.
+    map_flags: list[dict[str, Any]] = [
+        {
+            "flag_id": f"strict:{point['record_id']}:{index}",
+            "record_id": point["record_id"],
+            "state_territory": point.get("state_territory"),
+            "x": point.get("longitude"),
+            "y": point.get("latitude"),
+            "stem_dx": 0,
+            "stem_dy": 0,
+            "display_precision": "precise_point",
+            "source_location_type": point.get("location_type"),
+            "confidence": point.get("confidence"),
+            "title": point.get("title"),
+            "year": point.get("year"),
+            "canonical_figure": point.get("canonical_figure"),
+        }
+        for index, point in enumerate(precise_points)
+    ]
 
     records_by_figure = Counter((record.get("canonical_figure_guess") or record.get("canonical_figure") or "uncoded") for record in records)
     records_by_year = Counter(str(record["year"]) for record in records if record.get("year") is not None)
