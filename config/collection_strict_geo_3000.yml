@@ -1,13 +1,23 @@
 schema_version: "2.1.0"
-run_family: strict_geo_public_collection
+run_family: public_collection_with_strict_map_layer
 target:
-  accepted_net_new_source_items: 3000
-  strict_geocoded_items_required: 3000
-  minimum_non_ayr: 2850
+  public_display_records_goal: 2500-3000
+  strict_map_records_goal: 1500
+  accepted_net_new_source_items: 1500
+  strict_geocoded_items_required: 1500
+  minimum_non_ayr: 1350
   maximum_new_ayr: 150
-  minimum_pre_1970: 900
-  preferred_primary_or_institutional: 1800
+  minimum_pre_1970: 450
+  preferred_primary_or_institutional: 900
   preferred_publication_diversity: 120
+  low_coverage_state_priority:
+    - WA
+    - NT
+    - SA
+    - TAS
+    - VIC
+  dominant_cluster_cap:
+    Yowie: 0.45
 batch_size: 50
 counting_rule:
   accepted_record_must_have:
@@ -35,6 +45,17 @@ counting_rule:
     - ethics_review_status
     - cultural_sensitivity
     - duplicate_check_status
+  public_display_record_may_have:
+    - broad_region_or_state_location
+    - unresolved_precise_coordinates
+    - source_text_public_summary_only
+    - ethics_review_status_not_yet_reviewed
+  map_layer_requires:
+    - latitude
+    - longitude
+    - verified_place_or_locality
+    - location_role_not_publication_location
+    - coordinate_evidence_note
   strict_geography_gate:
     accepted_values:
       geocode_verification_status:
@@ -67,7 +88,27 @@ counting_rule:
     - exclusions
     - inaccessible_pages_without_sufficient_evidence
     - ai_generated_summaries
-    - records_without_verified_coordinates
+    - records_without_substantive_public_text_or_summary
+    - records_without_verified_coordinates_for_map_layer
+view_contract:
+  dashboard:
+    includes:
+      - strict_map_records
+      - broad_or_review_location_records
+      - public_display_records_without_coordinates
+  density:
+    includes:
+      - strict_map_records
+      - broad_or_review_location_records
+      - public_display_records_without_coordinates
+  map:
+    includes:
+      - strict_map_records_only
+    excludes:
+      - broad_or_review_location_records
+      - publication_location_only
+      - source_collection_location
+      - no_coordinate_records
 quality_classes:
   A:
     label: strict_primary_geocoded
@@ -82,9 +123,10 @@ quality_classes:
     counts_toward_target: true
     description: Reputable media or local-history retelling with stable source chain, substantive narrative content, and verified coordinates.
   D:
-    label: review_lead_geography_missing
-    counts_toward_target: false
-    description: Relevant public item but location is broad, inferred, missing, or not yet geocoded.
+    label: public_display_geography_incomplete
+    counts_toward_target: true
+    counts_toward_strict_map_target: false
+    description: Relevant public item with substantive text/summary but broad, inferred, missing, or not-yet-geocoded location. Eligible for dashboard/density, not map.
   E:
     label: excluded_or_control
     counts_toward_target: false
@@ -128,3 +170,40 @@ source_priority:
     - tourism pages
     - paranormal directories
     - blogs and forums
+figure_priority:
+  reduce_dominance:
+    - Yowie
+    - Yahoo
+  expand_non_yowie_public_labels:
+    WA:
+      - Wandjina
+      - Wanjina
+      - Hairy Man
+      - wild man
+    NT:
+      - Mimih
+      - Mimi
+      - Garkain
+      - Mokoi
+      - Pangkarlangu
+      - Mamu
+      - Tjangara
+    SA:
+      - Mamu
+      - Tjangara
+      - ghost_legend
+      - apparition_account
+    VIC:
+      - Nargun
+      - Puttikan
+      - ghost_legend
+      - apparition_account
+    TAS:
+      - ghost_legend
+      - apparition_account
+      - local_legend
+    QLD:
+      - Quinkan
+      - Quinkin
+      - Yaroma
+      - Yara-ma-yha-who

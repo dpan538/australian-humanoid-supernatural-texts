@@ -1,6 +1,6 @@
 # V2 Final Corpus Status
 
-- Generated: `2026-06-21T07:29:06+00:00`
+- Generated: `2026-06-21T09:14:30+00:00`
 - Schema version: `2.0.0`
 
 ## Exact Counts
@@ -9,10 +9,10 @@
 - Migrated narrative units: 916
 - Unmapped legacy rows: 112
 - Legacy mappings: 985
-- New accepted source items: 3
-- Rejected candidates: 15
-- Duplicate candidates: 11
-- Leads: 140
+- New accepted source items: 13
+- Rejected candidates: 28
+- Duplicate candidates: 14
+- Leads: 164
 - Exclusions: 2
 
 ## Counts By Source Organisation

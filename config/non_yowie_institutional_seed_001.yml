@@ -1,0 +1,136 @@
+schema_version: "2.1.0"
+description: >
+  Small audited seed list for non-Yowie public institutional/community-visible
+  records. Broad-location entries are eligible for dashboard/density review
+  only until strict coordinates are verified.
+seeds:
+  - source_name: Gunaikurnai Land and Waters Aboriginal Corporation
+    source_type: community_controlled_public_web
+    source_tier: B
+    title: Mitchell River National Park
+    publication_or_organisation: Gunaikurnai Land and Waters Aboriginal Corporation
+    publication_date_text: public page, accessed 2026-06-21
+    url: https://gunaikurnai.org/our-country/joint-management/mitchell-river-national-park/
+    external_id: gunaikurnai:mitchell-river-national-park
+    narrative_type: traditional_narrative
+    secondary_role: heritage_discourse
+    source_label: Nargun
+    expected_terms:
+      - Nargun
+      - Mitchell River
+    location_text: Mitchell River National Park
+    location_aliases:
+      - Mitchell River
+      - Gippsland
+    location_role: legend_associated_place
+    latitude: -37.70211
+    longitude: 147.355978
+    location_precision: named_feature
+    geocode_source: seeded_public_source_crosschecked_place
+    geocode_verification_status: verified_gazetteer_point
+    coordinate_evidence_note: Den of Nargun / Mitchell River National Park place association; coordinates inherited from verified project gazetteer point.
+    duplicate_check_status: canonical_url_checked
+    quality_class: B
+    publicness_status: public_page
+    rights_access_status: public community-controlled web page; neutral summary only
+    ethics_review_status: needs_human_ethics_review
+    cultural_sensitivity: high
+    australian_relation: Gunaikurnai public place and narrative association in Victoria.
+    humanoid_basis: public source discusses the Nargun as a culturally significant being associated with place.
+    evidence_summary: The public Gunaikurnai page associates Mitchell River National Park with the Nargun and related Gunaikurnai cultural/place narrative context.
+
+  - source_name: Art Gallery of South Australia
+    source_type: institutional_web
+    source_tier: B
+    title: Garkain - AGSA Collection
+    publication_or_organisation: Art Gallery of South Australia
+    publication_date_text: public collection page, accessed 2026-06-21
+    url: https://www.agsa.sa.gov.au/collection-publications/collection/works/garkain/35721/
+    external_id: agsa:collection:35721
+    narrative_type: spirit_person_narrative
+    secondary_role: descriptive_belief_record
+    source_label: Garkain
+    expected_terms:
+      - Garkain
+    location_text: Arnhem Land
+    location_aliases:
+      - Arnhem
+    location_role: cultural_association_region
+    location_precision: broad_region
+    geocode_source: public_institutional_description_broad_region
+    geocode_verification_status: needs_review
+    coordinate_evidence_note: Broad public collection context only; no strict coordinate asserted.
+    duplicate_check_status: canonical_url_checked
+    quality_class: D
+    publicness_status: public_page
+    rights_access_status: public collection page; no full reproduction asserted
+    ethics_review_status: needs_human_ethics_review
+    cultural_sensitivity: high
+    australian_relation: Public Australian institutional collection item with Arnhem Land cultural association.
+    humanoid_basis: source label identifies Garkain in public collection context.
+    evidence_summary: The AGSA public collection page records Garkain as a public institutional collection item; this is retained as public descriptive evidence, not a cryptid classification.
+    allow_short_public_text: true
+
+  - source_name: ACMI
+    source_type: institutional_web
+    source_tier: B
+    title: Mamu
+    publication_or_organisation: ACMI
+    publication_date_text: 1969 public collection page, accessed 2026-06-21
+    url: https://www.acmi.net.au/works/70070--mamu-a/
+    external_id: acmi:works:70070
+    narrative_type: spirit_person_narrative
+    secondary_role: descriptive_belief_record
+    source_label: Mamu
+    expected_terms:
+      - Mamu
+    location_text: Australia
+    location_aliases:
+      - Australia
+    location_role: uncertain_or_broad_location
+    location_precision: country
+    geocode_source: public_institutional_description_country_scope
+    geocode_verification_status: needs_review
+    coordinate_evidence_note: Public collection record has country-level Australian relation only; excluded from map.
+    duplicate_check_status: canonical_url_checked
+    quality_class: D
+    publicness_status: public_page
+    rights_access_status: public collection page; no full reproduction asserted
+    ethics_review_status: needs_human_ethics_review
+    cultural_sensitivity: high
+    australian_relation: Public Australian collection item.
+    humanoid_basis: source label identifies Mamu in a public collection context.
+    evidence_summary: The ACMI public collection page records Mamu as an Australian public collection item; retained for dashboard/density review, not map display.
+    allow_short_public_text: true
+
+  - source_name: Australian National University
+    source_type: institutional_web
+    source_tier: B
+    title: Pangkarlangu, Wonder, Extinction
+    publication_or_organisation: Australian National University
+    publication_date_text: public research-output page, accessed 2026-06-21
+    url: https://researchportalplus.anu.edu.au/en/publications/pangkarlangu-wonder-extinction/
+    external_id: anu:research-output:pangkarlangu-wonder-extinction
+    narrative_type: giant_or_ogre_narrative
+    secondary_role: scholarly_commentary
+    source_label: Pangkarlangu
+    expected_terms:
+      - Pangkarlangu
+      - Warlpiri
+    location_text: Warlpiri country
+    location_aliases:
+      - Warlpiri
+    location_role: cultural_association_region
+    location_precision: broad_region
+    geocode_source: public_research_output_broad_region
+    geocode_verification_status: needs_review
+    coordinate_evidence_note: Broad cultural-region signal only; no strict coordinate asserted.
+    duplicate_check_status: canonical_url_checked
+    quality_class: D
+    publicness_status: public_page
+    rights_access_status: public research-output page; no full reproduction asserted
+    ethics_review_status: needs_human_ethics_review
+    cultural_sensitivity: high
+    australian_relation: Public Australian university research-output page with Warlpiri relation.
+    humanoid_basis: source label identifies Pangkarlangu as a giant/ogre narrative category in public scholarly context.
+    evidence_summary: The ANU public research-output page identifies Pangkarlangu in a Warlpiri public scholarly context; retained as public descriptive evidence for review.

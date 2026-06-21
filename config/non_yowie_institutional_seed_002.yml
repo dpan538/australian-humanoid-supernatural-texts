@@ -1,0 +1,203 @@
+schema_version: "2.1.0"
+description: >
+  Second audited non-Yowie seed list. These rows broaden dashboard/density
+  coverage with public institutional and heritage sources while preserving the
+  strict map rule: only rows with verified coordinates become map points.
+seeds:
+  - source_name: Port Arthur Historic Site
+    source_type: institutional_web
+    source_tier: B
+    title: Ghost Tour - Port Arthur Historic Site
+    publication_or_organisation: Port Arthur Historic Site
+    publication_date_text: public page, accessed 2026-06-21
+    url: https://portarthur.org.au/ghost-tour/
+    external_id: portarthur:ghost-tour
+    narrative_type: ghost_legend
+    secondary_role: heritage_discourse
+    source_label: Ghost
+    expected_terms:
+      - Ghost
+      - Port Arthur
+    location_text: Port Arthur Historic Site
+    location_aliases:
+      - Port Arthur
+    location_role: legend_associated_place
+    latitude: -43.147019
+    longitude: 147.851265
+    location_precision: named_feature
+    geocode_source: seeded_public_source_crosschecked_place
+    geocode_verification_status: verified_gazetteer_point
+    coordinate_evidence_note: Public page associates ghost stories with Port Arthur Historic Site; coordinates are for the named historic site.
+    duplicate_check_status: canonical_url_checked
+    quality_class: B
+    publicness_status: public_page
+    rights_access_status: public heritage/tour page; neutral summary only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public Tasmanian heritage site page with place-linked ghost-story circulation.
+    humanoid_basis: Public page describes ghost stories and souls associated with the historic site.
+    evidence_summary: The Port Arthur public page describes lantern-lit ghost tours and documented ghost stories associated with the historic site since 1870.
+
+  - source_name: Art Gallery of New South Wales
+    source_type: institutional_web
+    source_tier: B
+    title: Mimih spirit
+    publication_or_organisation: Art Gallery of New South Wales
+    publication_date_text: 1985 public collection page, accessed 2026-06-21
+    url: https://www.artgallery.nsw.gov.au/collection/works/80.1985/
+    external_id: agnsw:collection:80.1985
+    narrative_type: spirit_person_narrative
+    secondary_role: descriptive_belief_record
+    source_label: Mimih
+    expected_terms:
+      - Mimih
+      - Maningrida
+    location_text: Maningrida, Central Arnhem Land, Northern Territory
+    location_aliases:
+      - Maningrida
+      - Arnhem
+      - Northern Territory
+    location_role: source_collection_location
+    location_precision: broad_region
+    geocode_source: public_collection_place_made_not_narrative_location
+    geocode_verification_status: needs_review
+    coordinate_evidence_note: The page gives place-made and language/context metadata; no strict narrative-event coordinate is asserted.
+    duplicate_check_status: canonical_url_checked
+    quality_class: D
+    publicness_status: public_page
+    rights_access_status: public collection page; no full reproduction asserted
+    ethics_review_status: needs_human_ethics_review
+    cultural_sensitivity: high
+    australian_relation: Public Australian gallery collection record with Maningrida / Central Arnhem Land relation.
+    humanoid_basis: Public source label identifies Mimih/Mimi spirits in collection context.
+    evidence_summary: The AGNSW public collection page identifies Crusoe Kurddal's Mimih spirit work and gives Maningrida/Central Arnhem Land context; this is retained as public descriptive evidence, not map evidence.
+
+  - source_name: Australian Screen
+    source_type: institutional_web
+    source_tier: B
+    title: Deadly Yarns 3 - Who Paintin' Dis Wandjina?
+    publication_or_organisation: Australian Screen / NFSA
+    publication_date_text: 2007 public title page, accessed 2026-06-21
+    url: https://aso.gov.au/titles/shorts/who-paintin-dis-wandjina/
+    external_id: aso:who-paintin-dis-wandjina
+    narrative_type: retelling_or_adaptation
+    secondary_role: media_commentary
+    source_label: Wandjina
+    expected_terms:
+      - Wandjina
+    location_text: Western Australia
+    location_aliases:
+      - Perth
+      - Western Australia
+    location_role: narrative_setting
+    location_precision: state_or_territory
+    geocode_source: public_screen_title_broad_setting
+    geocode_verification_status: needs_review
+    coordinate_evidence_note: Public title page provides a Western Australian media-retelling context; no strict coordinate asserted.
+    duplicate_check_status: canonical_url_checked
+    quality_class: D
+    publicness_status: public_page
+    rights_access_status: public title page; no audiovisual reproduction asserted
+    ethics_review_status: needs_human_ethics_review
+    cultural_sensitivity: high
+    australian_relation: Public Australian Screen title page for a Western Australian short film.
+    humanoid_basis: Source title and synopsis use Wandjina terminology in a public media-retelling context.
+    evidence_summary: The Australian Screen page describes the short film as a public media retelling involving Wandjina iconography and traditional-owner response.
+
+  - source_name: Australian Screen
+    source_type: institutional_web
+    source_tier: B
+    title: Message Stick - Scotty Martin, Rodeo Boy, Don't Say Sorry, clip 2
+    publication_or_organisation: Australian Screen / NFSA
+    publication_date_text: 2005 public clip page, accessed 2026-06-21
+    url: https://aso.gov.au/titles/tv/message-stick-scotty-martin/clip2/
+    external_id: aso:message-stick-scotty-martin-clip2
+    narrative_type: descriptive_belief_record
+    secondary_role: media_commentary
+    source_label: Wandjina
+    expected_terms:
+      - Wandjina
+      - Kimberley
+    location_text: Kimberley region, Western Australia
+    location_aliases:
+      - Kimberley
+      - Western Australia
+    location_role: cultural_association_region
+    location_precision: broad_region
+    geocode_source: public_clip_description_broad_region
+    geocode_verification_status: needs_review
+    coordinate_evidence_note: Public clip description places Wandjina rock-art explanation in the Kimberley region; no strict coordinate asserted.
+    duplicate_check_status: canonical_url_checked
+    quality_class: D
+    publicness_status: public_page
+    rights_access_status: public clip metadata page; no audiovisual reproduction asserted
+    ethics_review_status: needs_human_ethics_review
+    cultural_sensitivity: high
+    australian_relation: Public Australian Screen page with Kimberley / Western Australia relation.
+    humanoid_basis: The page describes rock-art figures and explains Wandjina as an ancestral being in public clip description.
+    evidence_summary: The Australian Screen clip page describes Scotty Martin explaining Wandjina rock paintings in the Kimberley region of Western Australia.
+
+  - source_name: Australian Screen
+    source_type: institutional_web
+    source_tier: B
+    title: Wandjina! - Episode 5
+    publication_or_organisation: Australian Screen / NFSA
+    publication_date_text: 1966 public title page, accessed 2026-06-21
+    url: https://aso.gov.au/titles/tv/wandjina-episode-5/
+    external_id: aso:wandjina-episode-5
+    narrative_type: retelling_or_adaptation
+    secondary_role: media_commentary
+    source_label: Wandjina
+    expected_terms:
+      - Wandjina
+    location_text: Australia
+    location_aliases:
+      - Australia
+    location_role: uncertain_or_broad_location
+    location_precision: country
+    geocode_source: public_screen_title_country_scope
+    geocode_verification_status: needs_review
+    coordinate_evidence_note: Public title page gives Australian production/context but no strict narrative coordinate.
+    duplicate_check_status: canonical_url_checked
+    quality_class: D
+    publicness_status: public_page
+    rights_access_status: public title page; no audiovisual reproduction asserted
+    ethics_review_status: needs_human_ethics_review
+    cultural_sensitivity: high
+    australian_relation: Public Australian Screen title page for an Australian television episode.
+    humanoid_basis: Source title uses Wandjina terminology in a public television retelling/adaptation context.
+    evidence_summary: The Australian Screen public page records the 1966 television episode Wandjina! as a media retelling/adaptation context.
+
+  - source_name: Australian Screen
+    source_type: institutional_web
+    source_tier: B
+    title: A Big Country - Peninsula People, clip 2
+    publication_or_organisation: Australian Screen / NFSA
+    publication_date_text: 1968 public clip page, accessed 2026-06-21
+    url: https://aso.gov.au/titles/tv/big-country-peninsula-people/clip2/
+    external_id: aso:big-country-peninsula-people-clip2
+    narrative_type: descriptive_belief_record
+    secondary_role: media_commentary
+    source_label: Quinkan
+    expected_terms:
+      - Quinkan
+      - Cape York
+    location_text: Quinkan Country near Laura, Cape York, Queensland
+    location_aliases:
+      - Quinkan
+      - Laura
+      - Cape York
+    location_role: cultural_association_region
+    location_precision: broad_region
+    geocode_source: public_clip_description_broad_region
+    geocode_verification_status: needs_review
+    coordinate_evidence_note: Public clip page identifies Quinkan beings and a Cape York / Laura relation; no strict coordinate asserted.
+    duplicate_check_status: canonical_url_checked
+    quality_class: D
+    publicness_status: public_page
+    rights_access_status: public clip metadata page; no audiovisual reproduction asserted
+    ethics_review_status: needs_human_ethics_review
+    cultural_sensitivity: high
+    australian_relation: Public Australian Screen clip page with Cape York / Queensland relation.
+    humanoid_basis: The page describes ancestral spirits known as Quinkan beings in public clip description.
+    evidence_summary: The Australian Screen clip page describes Quinkan beings in public discussion of Aboriginal rock paintings and Cape York cultural landscape context.

@@ -1084,8 +1084,9 @@ function dashboardTrackLabel(record: RecordItem) {
     .replace(/^\s*(?:ca\.?\s*)?\d{4}\s*[-–:]\s*/i, "")
     .replace(/\s+/g, " ")
     .trim();
-  const label = title || figure || `Record ${record.record_id}`;
-  return `${truncate(label, 27)} (${year})`;
+  const state = record.state_territory ? ` / ${record.state_territory}` : "";
+  const label = figure || title || `Record ${record.record_id}`;
+  return `${truncate(`${label}${state}`, 24)} (${year})`;
 }
 
 function dashboardTrackSample(data: FrontendData) {
@@ -1115,8 +1116,17 @@ function dashboardTrackSample(data: FrontendData) {
     }
   };
 
-  firstBy((record) => record.canonical_figure_guess || record.canonical_figure || record.title, 7);
-  firstBy((record) => record.source_type || record.source_name, 4);
+  const figureOf = (record: RecordItem) => record.canonical_figure_guess || record.canonical_figure || record.title || "uncoded";
+  const nonDominant = byYear.filter((record) => !/^yowie$/i.test(figureOf(record)));
+  for (const record of nonDominant) {
+    add(record);
+    if (selected.length >= 9) {
+      break;
+    }
+  }
+
+  firstBy((record) => figureOf(record), 10);
+  firstBy((record) => record.source_type || record.source_name, 5);
 
   for (const code of Object.keys(STATE_NAMES)) {
     add(byYear.find((record) => record.state_territory === code));

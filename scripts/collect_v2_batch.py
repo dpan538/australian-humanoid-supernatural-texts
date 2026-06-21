@@ -168,7 +168,7 @@ def has_required_acceptance_fields(row: dict[str, Any], strict_geo_only: bool = 
     return True, ""
 
 
-def existing_urls(conn) -> set[str]:
+def existing_urls(conn, current_run_id: str = "") -> set[str]:
     urls = {
         row[0]
         for row in conn.execute(
@@ -178,7 +178,14 @@ def existing_urls(conn) -> set[str]:
     urls.update(
         row[0]
         for row in conn.execute(
-            "SELECT canonical_url FROM collection_candidates_v2 WHERE candidate_status = 'accepted' AND COALESCE(canonical_url, '') != ''"
+            """
+            SELECT canonical_url
+            FROM collection_candidates_v2
+            WHERE candidate_status = 'accepted'
+              AND COALESCE(canonical_url, '') != ''
+              AND COALESCE(run_id, '') != ?
+            """,
+            (current_run_id,),
         ).fetchall()
     )
     return urls
@@ -189,7 +196,7 @@ def insert_candidate(conn, data: dict[str, Any], strict_geo_only: bool = False) 
     canonical_url = canonicalize_url(data.get("canonical_url") or data.get("url") or "")
     data["canonical_url"] = canonical_url
     ok, reason = has_required_acceptance_fields(data, strict_geo_only=strict_geo_only)
-    if canonical_url and canonical_url in existing_urls(conn):
+    if canonical_url and canonical_url in existing_urls(conn, str(data.get("run_id") or "")):
         status = "duplicate"
         decision = "not_accepted"
         rejection = "duplicate_canonical_url"
@@ -350,8 +357,9 @@ def write_progress(conn, report: Path, target: int, strict_geo_only: bool = Fals
             "- This run stages leads and/or manually verified candidates only.",
             f"- Metadata-only, unresolved leads, duplicate URLs, restricted records, controls, and exclusions do not count toward the {target} accepted target.",
             "- In strict-geography mode, candidates without verified latitude/longitude, locality precision, geocode source, coordinate evidence, duplicate status, and quality class A/B/C are rejected.",
+            "- Outside strict-geography mode, substantive public-text candidates with broad or unresolved geography may be accepted for dashboard/density review surfaces only; they are excluded from the map until strict coordinates are verified.",
             "- Trove article-level collection requires a supplied `TROVE_API_KEY` or manual verified imports.",
-            "- Internet Archive items count only when public text/OCR is accessible, the source label is present in text, and a strict gazetteer place is matched.",
+            "- Internet Archive strict-map items require public text/OCR, source label in text, and a strict gazetteer place. Internet Archive public-display items may use broad geography but must still expose public text/OCR and source-label evidence.",
             "- Seeded public-web rows count only when the configured public page or manual public excerpt verifies both the source label and the strict place.",
         ]
     )

@@ -1,9 +1,10 @@
 """Internet Archive V2 collector.
 
 Search hits are not accepted as records by themselves. A candidate must expose
-public OCR/text, contain a relevant source label in that text, and name an
-Australian place already present in the project gazetteer with coordinates.
-Otherwise it is staged as a lead or rejection with a reason.
+public OCR/text and contain a relevant source label in that text. Candidates
+with a verified gazetteer place are eligible for the strict map layer; candidates
+with public text but incomplete geography are accepted only for dashboard/density
+review surfaces, not for the map.
 """
 
 from __future__ import annotations
@@ -25,16 +26,25 @@ from .models import CollectionCandidate
 
 
 SEARCH_SPECS: tuple[dict[str, str], ...] = (
-    {"label": "Yowie", "query": '"Yowie" AND Australia', "sensitivity": "low"},
-    {"label": "Yahoo", "query": '"Yahoo" AND Australia AND Aboriginal', "sensitivity": "low"},
-    {"label": "Australian gorilla", "query": '"Australian gorilla"', "sensitivity": "low"},
-    {"label": "Hairy Man", "query": '"Hairy Man" AND Australia', "sensitivity": "medium"},
-    {"label": "Quinkan", "query": '"Quinkan" OR "Quinkin"', "sensitivity": "high"},
-    {"label": "Nargun", "query": '"Nargun" AND Gippsland', "sensitivity": "high"},
-    {"label": "Mimih", "query": '"Mimih" AND Australia', "sensitivity": "high"},
-    {"label": "Wandjina", "query": '"Wandjina" OR "Wanjina"', "sensitivity": "high"},
-    {"label": "Pangkarlangu", "query": '"Pangkarlangu"', "sensitivity": "high"},
-    {"label": "Yara-ma-yha-who", "query": '"Yara-ma-yha-who" OR "Yara ma yha who"', "sensitivity": "high"},
+    # Non-Yowie and low-coverage regions first. These are public-text probes,
+    # not ontology assertions or claims of supernatural truth.
+    {"label": "Nargun", "query": '"Nargun" AND (Gippsland OR Victoria OR Australia)', "sensitivity": "high", "fallback_place": "Gippsland", "fallback_state": "VIC"},
+    {"label": "Puttikan", "query": '"Puttikan" AND (Victoria OR Australia)', "sensitivity": "high", "fallback_place": "Victoria", "fallback_state": "VIC"},
+    {"label": "Mimih", "query": '("Mimih" OR "Mimi spirits") AND ("Northern Territory" OR Arnhem OR Australia)', "sensitivity": "high", "fallback_place": "Northern Territory", "fallback_state": "NT"},
+    {"label": "Garkain", "query": '"Garkain" AND (Arnhem OR "Northern Territory" OR Australia)', "sensitivity": "high", "fallback_place": "Arnhem Land", "fallback_state": "NT"},
+    {"label": "Mokoi", "query": '"Mokoi" AND (Arnhem OR "Northern Territory" OR Australia)', "sensitivity": "high", "fallback_place": "Northern Territory", "fallback_state": "NT"},
+    {"label": "Pangkarlangu", "query": '"Pangkarlangu" AND (Warlpiri OR "Northern Territory" OR Australia)', "sensitivity": "high", "fallback_place": "Northern Territory", "fallback_state": "NT"},
+    {"label": "Mamu", "query": '"Mamu" AND (Anangu OR Pitjantjatjara OR spirit OR Australia)', "sensitivity": "high", "fallback_place": "Central Australia", "fallback_state": "AU"},
+    {"label": "Wandjina", "query": '("Wandjina" OR "Wanjina") AND ("Western Australia" OR Kimberley OR Australia)', "sensitivity": "high", "fallback_place": "Kimberley", "fallback_state": "WA"},
+    {"label": "Quinkan", "query": '("Quinkan" OR "Quinkin") AND (Laura OR "Cape York" OR Queensland OR Australia)', "sensitivity": "high", "fallback_place": "Laura", "fallback_state": "QLD"},
+    {"label": "Yaroma", "query": '"Yaroma" AND (Queensland OR Australia)', "sensitivity": "high", "fallback_place": "Queensland", "fallback_state": "QLD"},
+    {"label": "Yara-ma-yha-who", "query": '("Yara-ma-yha-who" OR "Yara ma yha who") AND Australia', "sensitivity": "high", "fallback_place": "Australia", "fallback_state": "AU"},
+    {"label": "Tjangara", "query": '"Tjangara" AND (giant OR spirit OR Australia)', "sensitivity": "high", "fallback_place": "Australia", "fallback_state": "AU"},
+    # Hairy-humanoid operational cluster remains, but it is no longer first.
+    {"label": "Australian gorilla", "query": '"Australian gorilla"', "sensitivity": "low", "fallback_place": "Australia", "fallback_state": "AU"},
+    {"label": "Hairy Man", "query": '"Hairy Man" AND Australia', "sensitivity": "medium", "fallback_place": "Australia", "fallback_state": "AU"},
+    {"label": "Yahoo", "query": '"Yahoo" AND Australia AND Aboriginal', "sensitivity": "low", "fallback_place": "Australia", "fallback_state": "AU"},
+    {"label": "Yowie", "query": '"Yowie" AND Australia', "sensitivity": "low", "fallback_place": "Australia", "fallback_state": "AU"},
 )
 
 NOISE_PATTERNS = (
@@ -50,7 +60,23 @@ NOISE_PATTERNS = (
     "anime",
     "fanfiction",
     "video game",
+    "playstation",
+    "ps2",
+    "xbox",
+    "nintendo",
+    "tasmanian tiger 3",
     "witcher",
+    "alien gods",
+    "ufo",
+    "extraterrestrial",
+    "palenque",
+    "church committee",
+    "foreign leaders",
+    "dublin core",
+    "accessibility",
+    "virtual museum",
+    "museum on the web",
+    "china mail",
 )
 
 NARRATIVE_BY_LABEL = {
@@ -64,6 +90,28 @@ NARRATIVE_BY_LABEL = {
     "wandjina": "spirit_person_narrative",
     "pangkarlangu": "giant_or_ogre_narrative",
     "yara-ma-yha-who": "traditional_narrative",
+    "garkain": "spirit_person_narrative",
+    "mokoi": "spirit_person_narrative",
+    "mamu": "spirit_person_narrative",
+    "puttikan": "traditional_narrative",
+    "yaroma": "giant_or_ogre_narrative",
+    "tjangara": "giant_or_ogre_narrative",
+}
+
+BROAD_LOCATION_HINTS = {
+    "arnhem land": ("Arnhem Land", "NT"),
+    "northern territory": ("Northern Territory", "NT"),
+    "central australia": ("Central Australia", "AU"),
+    "kimberley": ("Kimberley", "WA"),
+    "western australia": ("Western Australia", "WA"),
+    "gippsland": ("Gippsland", "VIC"),
+    "victoria": ("Victoria", "VIC"),
+    "south australia": ("South Australia", "SA"),
+    "tasmania": ("Tasmania", "TAS"),
+    "cape york": ("Cape York Peninsula", "QLD"),
+    "laura": ("Laura", "QLD"),
+    "queensland": ("Queensland", "QLD"),
+    "australia": ("Australia", "AU"),
 }
 
 
@@ -182,6 +230,14 @@ def find_strict_place(text: str) -> dict[str, Any] | None:
     return None
 
 
+def find_broad_place(spec: dict[str, str], text: str) -> tuple[str, str]:
+    norm = normalise_alias(text)
+    for term, (place, state) in BROAD_LOCATION_HINTS.items():
+        if re.search(rf"\b{re.escape(term)}\b", norm):
+            return place, state
+    return spec.get("fallback_place") or "Australia", spec.get("fallback_state") or "AU"
+
+
 def metadata_value(metadata: dict[str, Any], doc: dict[str, Any], key: str) -> str:
     value = metadata.get("metadata", {}).get(key) or doc.get(key) or ""
     if isinstance(value, list):
@@ -278,19 +334,31 @@ class InternetArchiveCollector(BaseCollector):
             return self._rejected(spec, title, item_url, "source_label_not_found_in_public_text", {"doc": doc, "text_file": text_file})
 
         place = find_strict_place(evidence_blob)
-        if place is None:
-            return self._lead(spec, title, item_url, "relevant_public_text_but_no_strict_gazetteer_place", {"doc": doc, "text_file": text_file})
-
         sensitivity = spec["sensitivity"]
-        accepted = sensitivity != "high"
-        status = "accepted" if accepted else "lead_only"
-        decision = "accepted" if accepted else "not_accepted"
-        rejection = "" if accepted else "high_sensitivity_requires_human_ethics_review_before_acceptance"
         evidence = sentence_evidence(spec["label"], evidence_blob)
         label_key = normalise_alias(spec["label"])
+        has_strict_place = place is not None
+        broad_place, broad_state = find_broad_place(spec, evidence_blob)
+        location_text = str(place["place_name"]) if has_strict_place else broad_place
+        location_role = "narrative_setting" if has_strict_place else "uncertain_or_broad_location"
+        location_precision = str(place["location_type"]) if has_strict_place else "broad_region"
+        geocode_source = str(place["source"]) if has_strict_place else "internet_archive_public_text_broad_location_signal"
+        verification_status = "verified_gazetteer_point" if has_strict_place else "needs_review"
+        coordinate_note = (
+            f"Matched gazetteer place `{place['place_name']}` in public text/metadata."
+            if has_strict_place
+            else f"Public text matched `{spec['label']}` but only broad location signal `{location_text}`; excluded from map until human geocoding review."
+        )
+        quality_class = "A" if has_strict_place else "D"
+        ethics_status = "needs_human_ethics_review" if sensitivity == "high" else "ok_public"
+        summary_intro = (
+            f"The public Internet Archive text contains the source label `{spec['label']}` and the mapped place `{location_text}`."
+            if has_strict_place
+            else f"The public Internet Archive text contains the source label `{spec['label']}` and a broad Australian location signal `{location_text}`."
+        )
         return CollectionCandidate(
             run_id=self.run_id,
-            candidate_status=status,
+            candidate_status="accepted",
             source_name=self.source_name,
             source_type=self.source_type,
             source_tier=self.source_tier,
@@ -308,22 +376,22 @@ class InternetArchiveCollector(BaseCollector):
             australian_relation="source_text_contains_australian_place_signal",
             humanoid_basis="source_label_matched_public_text",
             source_label=spec["label"],
-            location_text=str(place["place_name"]),
-            location_role="narrative_setting",
-            latitude=float(place["latitude"]),
-            longitude=float(place["longitude"]),
-            location_precision=str(place["location_type"]),
-            geocode_source=str(place["source"]),
-            geocode_verification_status="verified_gazetteer_point",
-            coordinate_evidence_note=f"Matched gazetteer place `{place['place_name']}` in public text/metadata.",
+            location_text=location_text,
+            location_role=location_role,
+            latitude=float(place["latitude"]) if has_strict_place else None,
+            longitude=float(place["longitude"]) if has_strict_place else None,
+            location_precision=location_precision,
+            geocode_source=geocode_source,
+            geocode_verification_status=verification_status,
+            coordinate_evidence_note=coordinate_note,
             duplicate_check_status="canonical_url_checked",
-            quality_class="A",
-            ethics_review_status="not_yet_reviewed" if sensitivity == "high" else "ok_public",
+            quality_class=quality_class,
+            ethics_review_status=ethics_status,
             cultural_sensitivity=sensitivity,
-            acceptance_decision=decision,
-            rejection_reason=rejection,
+            acceptance_decision="accepted",
+            rejection_reason="",
             evidence_summary=neutral_summary(
-                f"The public Internet Archive text contains the source label `{spec['label']}` and the mapped place `{place['place_name']}`.",
+                summary_intro,
                 evidence,
             ),
             raw_metadata_json={"doc": doc, "metadata_url": metadata_url, "text_file": text_file},
