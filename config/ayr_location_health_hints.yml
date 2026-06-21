@@ -1,0 +1,174 @@
+# Public AYR location-health hints.
+#
+# These hints are deliberately narrower than the collector's state inference
+# rules: they should be source-visible place cues, not newspaper mastheads,
+# people, institutions, or generic regions. The health script uses these to
+# add reviewable locality rows, then the geocoder applies strict coordinates
+# only when the place/state match can be verified.
+
+places:
+  - place_name: Beechmont
+    state_territory: QLD
+    aliases: [beechmont, beechmont yowie]
+  - place_name: Witheren
+    state_territory: QLD
+    aliases: [witheren, witheren yowie]
+  - place_name: Canungra
+    state_territory: QLD
+    aliases: [canungra]
+  - place_name: Currumbin
+    state_territory: QLD
+    aliases: [currumbin]
+  - place_name: Nerang
+    state_territory: QLD
+    aliases: [nerang]
+  - place_name: Bilambil
+    state_territory: NSW
+    aliases: [bilambil]
+  - place_name: Duroby
+    state_territory: NSW
+    aliases: [duroby]
+  - place_name: Pratten
+    state_territory: QLD
+    aliases: [pratten]
+  - place_name: Texas
+    state_territory: QLD
+    aliases: [texas]
+  - place_name: Coonabarabran
+    state_territory: NSW
+    aliases: [coonabarabran]
+  - place_name: Mendooran
+    state_territory: NSW
+    aliases: [mendooran, mendooran road]
+  - place_name: Goonoo
+    state_territory: NSW
+    aliases: [goonoo]
+  - place_name: Dubbo
+    state_territory: NSW
+    aliases: [dubbo]
+  - place_name: D'Aguilar
+    state_territory: QLD
+    aliases: [d'aguilar, daguilar]
+  - place_name: Nunderi
+    state_territory: NSW
+    aliases: [nunderi]
+  - place_name: Tugun
+    state_territory: QLD
+    aliases: [tugun]
+  - place_name: Palm Beach
+    state_territory: QLD
+    aliases: [palm beach]
+  - place_name: Moore Park Beach
+    state_territory: QLD
+    aliases: [moore park yowie, moore park, moore park beach]
+  - place_name: Bundaberg
+    state_territory: QLD
+    aliases: [bundaberg, bundaberg yowie]
+  - place_name: Lamington
+    state_territory: QLD
+    aliases: [lamington national park, lamington yowie]
+  - place_name: Hargraves
+    state_territory: NSW
+    aliases: [hargraves]
+  - place_name: Wauchope
+    state_territory: NSW
+    aliases: [wauchope]
+  - place_name: Kalamunda
+    state_territory: WA
+    aliases: [kalamunda, kalamundra]
+  - place_name: Lake Dulverton
+    state_territory: TAS
+    aliases: [lake dulverton]
+  - place_name: Papunya
+    state_territory: NT
+    aliases: [papunya]
+  - place_name: Mount Liebig
+    state_territory: NT
+    aliases: [mt. liebig, mt liebig, mount liebig]
+  - place_name: Minto
+    state_territory: NSW
+    aliases: [minto]
+  - place_name: Murramarang
+    state_territory: NSW
+    aliases: [murramarang]
+  - place_name: Araluen
+    state_territory: NSW
+    aliases: [araluen]
+  - place_name: Gayndah
+    state_territory: QLD
+    aliases: [gayndah]
+  - place_name: Binjour
+    state_territory: QLD
+    aliases: [binjour]
+  - place_name: Gympie
+    state_territory: QLD
+    aliases: [gympie]
+  - place_name: Yarram
+    state_territory: VIC
+    aliases: [yarram, yarram ape]
+  - place_name: Tully
+    state_territory: QLD
+    aliases: [tully]
+  - place_name: Mount George
+    state_territory: NSW
+    aliases: [mt george, mount george]
+  - place_name: Connellys Creek
+    state_territory: NSW
+    aliases: [connellys creek, connelly's creek]
+  - place_name: Kenilworth
+    state_territory: QLD
+    aliases: [kenilworth]
+  - place_name: Yabba
+    state_territory: QLD
+    aliases: [yabba]
+  - place_name: Booloumba
+    state_territory: QLD
+    aliases: [booloomba, booloumba]
+  - place_name: Picnic Point
+    state_territory: QLD
+    aliases: [picnic point]
+  - place_name: Roma
+    state_territory: QLD
+    aliases: [roma]
+  - place_name: Murray Falls
+    state_territory: QLD
+    aliases: [murray falls, murrray falls]
+  - place_name: Babinda
+    state_territory: QLD
+    aliases: [babinda]
+  - place_name: Eden
+    state_territory: NSW
+    aliases: [eden]
+  - place_name: Nullica River
+    state_territory: NSW
+    aliases: [nullica river]
+  - place_name: Uki
+    state_territory: NSW
+    aliases: [uki]
+  - place_name: Coomba Falls
+    state_territory: QLD
+    aliases: [coomba falls]
+  - place_name: Newnes
+    state_territory: NSW
+    aliases: [newnes]
+  - place_name: Burragorang
+    state_territory: NSW
+    aliases: [burragorang, burragorang yowie]
+  - place_name: Tarzali
+    state_territory: QLD
+    aliases: [tarzali, tarzali yowie]
+  - place_name: Ban Ban
+    state_territory: QLD
+    aliases: [ban baa, ban ban]
+  - place_name: Narrabri
+    state_territory: NSW
+    aliases: [narrabri]
+  - place_name: Einasleigh
+    state_territory: QLD
+    aliases: [eignsleigh, einasleigh]
+  - place_name: Kosciuszko
+    state_territory: NSW
+    aliases: [kosciuszko, kosciuszko yowie]
+  - place_name: Jimna
+    state_territory: QLD
+    aliases: [jimna]

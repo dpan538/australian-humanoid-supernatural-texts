@@ -1047,6 +1047,67 @@
       "type": "administrative"
     }
   ],
+  "Ban Ban, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Ban Ban",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4625",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-25.7869460",
+        "-25.6096890",
+        "151.7222640",
+        "151.8879060"
+      ],
+      "category": "boundary",
+      "display_name": "Ban Ban, Queensland, 4625, Australia",
+      "importance": 0.30093685344584264,
+      "lat": "-25.6983450",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.7621472",
+      "name": "Ban Ban",
+      "osm_id": 11676040,
+      "osm_type": "relation",
+      "place_id": 28833359,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Ban Ban",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Ban Ban",
+        "postcode": "4625",
+        "state": "Queensland"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-25.7152780",
+        "-25.6952780",
+        "151.8188880",
+        "151.8388880"
+      ],
+      "category": "place",
+      "display_name": "Ban Ban, Queensland, 4625, Australia",
+      "importance": 0.06671356298161288,
+      "lat": "-25.7052780",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.8288880",
+      "name": "Ban Ban",
+      "osm_id": 6036337125,
+      "osm_type": "node",
+      "place_id": 28781151,
+      "place_rank": 25,
+      "type": "locality"
+    }
+  ],
   "Bangalow, NSW, Australia": [
     {
       "address": {
@@ -2355,6 +2416,66 @@
       "place_id": 28491091,
       "place_rank": 24,
       "type": "residential"
+    }
+  ],
+  "Bilambil, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Bilambil",
+        "postcode": "2486",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.2382451",
+        "-28.2107408",
+        "153.4435623",
+        "153.5039819"
+      ],
+      "category": "boundary",
+      "display_name": "Bilambil, New South Wales, 2486, Australia",
+      "importance": 0.16004901274128328,
+      "lat": "-28.2245935",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.4659475",
+      "name": "Bilambil",
+      "osm_id": 6069697,
+      "osm_type": "relation",
+      "place_id": 28485844,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Bilambil Heights",
+        "postcode": "2486",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.2269738",
+        "-28.1932445",
+        "153.4634037",
+        "153.5058303"
+      ],
+      "category": "boundary",
+      "display_name": "Bilambil Heights, New South Wales, 2486, Australia",
+      "importance": 0.2836220396951343,
+      "lat": "-28.2103755",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.4866586",
+      "name": "Bilambil Heights",
+      "osm_id": 6069696,
+      "osm_type": "relation",
+      "place_id": 28235727,
+      "place_rank": 18,
+      "type": "administrative"
     }
   ],
   "Bilpin, NSW, Australia": [
@@ -6069,6 +6190,39 @@
       "type": "farm"
     }
   ],
+  "Coomba Falls, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Maidenwell",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4615",
+        "state": "Queensland",
+        "village": "Maidenwell",
+        "waterfall": "Coomba Falls"
+      },
+      "addresstype": "waterfall",
+      "boundingbox": [
+        "-26.8501932",
+        "-26.8500932",
+        "151.8153009",
+        "151.8154009"
+      ],
+      "category": "waterway",
+      "display_name": "Coomba Falls, Maidenwell, Queensland, 4615, Australia",
+      "importance": 0.13337941939421682,
+      "lat": "-26.8501432",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.8153509",
+      "name": "Coomba Falls",
+      "osm_id": 3421294495,
+      "osm_type": "node",
+      "place_id": 28752940,
+      "place_rank": 20,
+      "type": "waterfall"
+    }
+  ],
   "Coomera Valley, QLD, Australia": [
     {
       "address": {
@@ -7953,6 +8107,97 @@
       "place_id": 28436693,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Einasleigh, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4871",
+        "state": "Queensland",
+        "village": "Einasleigh"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-19.0358930",
+        "-18.1343920",
+        "143.7656240",
+        "144.4860100"
+      ],
+      "category": "boundary",
+      "display_name": "Einasleigh, Queensland, 4871, Australia",
+      "importance": 0.24632300460320036,
+      "lat": "-18.5139714",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.0936324",
+      "name": "Einasleigh",
+      "osm_id": 11676969,
+      "osm_type": "relation",
+      "place_id": 27145524,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4871",
+        "residential": "Einasleigh",
+        "state": "Queensland",
+        "village": "Einasleigh"
+      },
+      "addresstype": "residential",
+      "boundingbox": [
+        "-18.5218569",
+        "-18.5084568",
+        "144.0898377",
+        "144.0949765"
+      ],
+      "category": "landuse",
+      "display_name": "Einasleigh, Queensland, 4871, Australia",
+      "importance": 0.0800461394674601,
+      "lat": "-18.5151955",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.0933024",
+      "name": "Einasleigh",
+      "osm_id": 708815534,
+      "osm_type": "way",
+      "place_id": 27213354,
+      "place_rank": 24,
+      "type": "residential"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Einasleigh",
+        "postcode": "4871",
+        "state": "Queensland",
+        "village": "Einasleigh"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-18.5922240",
+        "-18.5722240",
+        "144.1172280",
+        "144.1372280"
+      ],
+      "category": "place",
+      "display_name": "Einasleigh, Queensland, 4871, Australia",
+      "importance": 0.06671280613412679,
+      "lat": "-18.5822240",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.1272280",
+      "name": "Einasleigh",
+      "osm_id": 6036336034,
+      "osm_type": "node",
+      "place_id": 27147425,
+      "place_rank": 25,
+      "type": "locality"
     }
   ],
   "Emerald, QLD, Australia": [
@@ -11705,6 +11950,65 @@
       "place_id": 28373645,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Jimna, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Jimna",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4515",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.8459620",
+        "-26.5569230",
+        "152.4114710",
+        "152.6684570"
+      ],
+      "category": "boundary",
+      "display_name": "Jimna, Queensland, 4515, Australia",
+      "importance": 0.29892160108322774,
+      "lat": "-26.7014630",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5099119",
+      "name": "Jimna",
+      "osm_id": 11675280,
+      "osm_type": "relation",
+      "place_id": 27706325,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "village": "Jimna"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-26.6797686",
+        "-26.6397686",
+        "152.4450521",
+        "152.4850521"
+      ],
+      "category": "place",
+      "display_name": "Jimna, Queensland, Australia",
+      "importance": 0.14671343785763327,
+      "lat": "-26.6597686",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.4650521",
+      "name": "Jimna",
+      "osm_id": 1884404091,
+      "osm_type": "node",
+      "place_id": 27666195,
+      "place_rank": 19,
+      "type": "village"
     }
   ],
   "Kalamunda, WA, Australia": [
@@ -16159,6 +16463,65 @@
       "type": "stream"
     }
   ],
+  "Moore Park Beach, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Moore Park Beach",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4670",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-24.7531230",
+        "-24.6512700",
+        "152.1622220",
+        "152.3119800"
+      ],
+      "category": "boundary",
+      "display_name": "Moore Park Beach, Queensland, 4670, Australia",
+      "importance": 0.31353539144981896,
+      "lat": "-24.7020585",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.2228434",
+      "name": "Moore Park Beach",
+      "osm_id": 5392056,
+      "osm_type": "relation",
+      "place_id": 27484866,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "town": "Moore Park Beach"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-24.7520019",
+        "-24.6720019",
+        "152.2303658",
+        "152.3103658"
+      ],
+      "category": "place",
+      "display_name": "Moore Park Beach, Queensland, Australia",
+      "importance": 0.16004000076295108,
+      "lat": "-24.7120019",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.2703658",
+      "name": "Moore Park Beach",
+      "osm_id": 3612994443,
+      "osm_type": "node",
+      "place_id": 27696196,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
   "Moore Park Beach. Bundaburg, QLD, Australia": [],
   "Morton National Park, NSW, Australia": [
     {
@@ -17920,6 +18283,65 @@
       "type": "administrative"
     }
   ],
+  "Narrabri, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Narrabri Shire Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-30.9063105",
+        "-29.7492790",
+        "148.8107244",
+        "150.3939967"
+      ],
+      "category": "boundary",
+      "display_name": "Narrabri Shire Council, New South Wales, Australia",
+      "importance": 0.42587119354013725,
+      "lat": "-30.3278407",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.5571542",
+      "name": "Narrabri Shire Council",
+      "osm_id": 6389900,
+      "osm_type": "relation",
+      "place_id": 28839780,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2390",
+        "state": "New South Wales",
+        "town": "Narrabri"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-30.4249995",
+        "-30.0280085",
+        "149.4624828",
+        "150.0904298"
+      ],
+      "category": "boundary",
+      "display_name": "Narrabri, New South Wales, 2390, Australia",
+      "importance": 0.42587119354013725,
+      "lat": "-30.3296154",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.7814491",
+      "name": "Narrabri",
+      "osm_id": 5793383,
+      "osm_type": "relation",
+      "place_id": 28551864,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Narromine, NSW, Australia": [
     {
       "address": {
@@ -18101,6 +18523,37 @@
       "place_id": 28227811,
       "place_rank": 18,
       "type": "river"
+    }
+  ],
+  "Newnes, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Newnes",
+        "postcode": "2790",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-33.2189481",
+        "-33.1630404",
+        "150.1862790",
+        "150.3314086"
+      ],
+      "category": "boundary",
+      "display_name": "Newnes, New South Wales, 2790, Australia",
+      "importance": 0.16004728694590675,
+      "lat": "-33.1810592",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.2343890",
+      "name": "Newnes",
+      "osm_id": 6056437,
+      "osm_type": "relation",
+      "place_id": 23392665,
+      "place_rank": 18,
+      "type": "administrative"
     }
   ],
   "Newry State Forest, NSW, Australia": [
@@ -18703,6 +19156,69 @@
       "place_id": 23947719,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Nullica River, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Boydtown",
+        "postcode": "2551",
+        "river": "Nullica River",
+        "state": "New South Wales",
+        "town": "Eden"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-37.0972830",
+        "-37.0897778",
+        "149.8564519",
+        "149.8729543"
+      ],
+      "category": "waterway",
+      "display_name": "Nullica River, Boydtown, Eden, New South Wales, 2551, Australia",
+      "importance": 0.14671620431830315,
+      "lat": "-37.0939505",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.8653612",
+      "name": "Nullica River",
+      "osm_id": 232861582,
+      "osm_type": "way",
+      "place_id": 20387122,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2551",
+        "state": "New South Wales",
+        "stream": "Nullica River",
+        "town": "Eden"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-37.0980251",
+        "-37.0662623",
+        "149.7779944",
+        "149.8564519"
+      ],
+      "category": "waterway",
+      "display_name": "Nullica River, Eden, New South Wales, 2551, Australia",
+      "importance": 0.10671620431830317,
+      "lat": "-37.0894275",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.8185784",
+      "name": "Nullica River",
+      "osm_id": 444125682,
+      "osm_type": "way",
+      "place_id": 20525397,
+      "place_rank": 22,
+      "type": "stream"
     }
   ],
   "Nunderi, NSW, Australia": [
@@ -19525,6 +20041,37 @@
       "place_id": 20417819,
       "place_rank": 19,
       "type": "river"
+    }
+  ],
+  "Papunya, NT, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0872",
+        "territory": "Northern Territory",
+        "village": "Papunya"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-23.2144760",
+        "-23.1909450",
+        "131.9010930",
+        "131.9234160"
+      ],
+      "category": "boundary",
+      "display_name": "Papunya, Northern Territory, 0872, Australia",
+      "importance": 0.3940013458892202,
+      "lat": "-23.2049554",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "131.9122492",
+      "name": "Papunya",
+      "osm_id": 11716640,
+      "osm_type": "relation",
+      "place_id": 28958898,
+      "place_rank": 18,
+      "type": "administrative"
     }
   ],
   "Parkes and Central District, NSW, Australia": [],
