@@ -172,3 +172,105 @@ places:
   - place_name: Jimna
     state_territory: QLD
     aliases: [jimna]
+  - place_name: Grafton
+    state_territory: NSW
+    aliases: [grafton]
+  - place_name: Ipswich
+    state_territory: QLD
+    aliases: [ipswich]
+  - place_name: Ormeau
+    state_territory: QLD
+    aliases: [ormeau]
+  - place_name: Kilkivan
+    state_territory: QLD
+    aliases: [kilkivan]
+  - place_name: Tamborine
+    state_territory: QLD
+    aliases: [tamborine]
+  - place_name: Braidwood
+    state_territory: NSW
+    aliases: [braidwood]
+  - place_name: Yambah Station
+    state_territory: NT
+    aliases: [yambah station]
+  - place_name: Top Bore
+    state_territory: NT
+    aliases: [top bore]
+  - place_name: Gold Coast
+    state_territory: QLD
+    aliases: [gold coast, gold coast yowie]
+  - place_name: Gatton
+    state_territory: QLD
+    aliases: [gatton]
+  - place_name: Esk
+    state_territory: QLD
+    aliases: [esk]
+  - place_name: Tucabia
+    state_territory: NSW
+    aliases: [tucabia]
+  - place_name: Toowoomba
+    state_territory: QLD
+    aliases: [toowoomba]
+  - place_name: Bexhill
+    state_territory: NSW
+    aliases: [bexhill]
+  - place_name: Augusta
+    state_territory: WA
+    aliases: [augusta]
+  - place_name: Bombala
+    state_territory: NSW
+    aliases: [bombala]
+  - place_name: Brindabella
+    state_territory: ACT
+    aliases: [brindabella]
+  - place_name: Talbingo
+    state_territory: NSW
+    aliases: [talbingo]
+  - place_name: Wentworth Falls
+    state_territory: NSW
+    aliases: [wentworth falls]
+  - place_name: Stanthorpe
+    state_territory: QLD
+    aliases: [stanthorpe]
+  - place_name: Jackadgery
+    state_territory: NSW
+    aliases: [jackadgery]
+  - place_name: Acacia Hills
+    state_territory: NT
+    aliases: [acacia hills]
+  - place_name: Penrith
+    state_territory: NSW
+    aliases: [penrith]
+  - place_name: Bilpin
+    state_territory: NSW
+    aliases: [bilpin]
+  - place_name: Laidley
+    state_territory: QLD
+    aliases: [laidley]
+  - place_name: Watagans
+    state_territory: NSW
+    aliases: [watagans]
+  - place_name: Mackay
+    state_territory: QLD
+    aliases: [mackay]
+  - place_name: Woodburn
+    state_territory: NSW
+    aliases: [woodburn]
+  - place_name: Woodenbong
+    state_territory: NSW
+    aliases: [woodenbong]
+  - place_name: Dunoon
+    state_territory: NSW
+    aliases: [dunoon]
+  - place_name: Evans Head
+    state_territory: NSW
+    aliases: [evans head, evens head]
+  - place_name: Bonalbo
+    state_territory: NSW
+    aliases: [bonalbo, bonablbo]
+  - place_name: Lismore
+    state_territory: NSW
+    aliases: [lismore]
+  - place_name: Batemans Bay
+    state_territory: NSW
+    aliases: [batemans bay]

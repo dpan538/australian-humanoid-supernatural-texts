@@ -26,6 +26,16 @@ from aus_humanoid.utils import PROJECT_ROOT, read_yaml, utc_now_iso
 
 DEFAULT_HINTS = PROJECT_ROOT / "config" / "ayr_location_health_hints.yml"
 DEFAULT_REPORT = PROJECT_ROOT / "data" / "processed" / "v2" / "ayr_location_health_report.md"
+NEGATIVE_CONTEXT_PATTERNS = (
+    "resides in",
+    "now resides",
+    "reporter",
+    "newspaper",
+    "magazine",
+    "locals in",
+    "publication",
+    "source:",
+)
 
 
 def canonical_space(value: str | None) -> str:
@@ -148,6 +158,11 @@ def attach_hint(conn: sqlite3.Connection, record_id: int, location_id: int, evid
     return True
 
 
+def evidence_is_acceptable(evidence: str) -> bool:
+    lowered = evidence.lower()
+    return not any(pattern in lowered for pattern in NEGATIVE_CONTEXT_PATTERNS)
+
+
 def run(db_path: str | Path, hints_path: Path, report_path: Path, apply: bool) -> dict[str, Any]:
     hints = load_hints(hints_path)
     stats = {
@@ -161,10 +176,15 @@ def run(db_path: str | Path, hints_path: Path, report_path: Path, apply: bool) -
     with connect(db_path) as conn:
         rows = conn.execute(
             """
-            SELECT *
-            FROM records
-            WHERE COALESCE(publicness_level, '') != 'restricted_excluded'
-            ORDER BY record_id
+            SELECT r.*
+            FROM records r
+            JOIN sources s ON s.source_id = r.source_id
+            WHERE COALESCE(r.publicness_level, '') != 'restricted_excluded'
+              AND (
+                s.source_name = 'Australian Yowie Research'
+                OR COALESCE(r.external_id, '') LIKE 'ayr:%'
+              )
+            ORDER BY r.record_id
             """
         ).fetchall()
         stats["strict_records_before"] = conn.execute(
@@ -193,6 +213,8 @@ def run(db_path: str | Path, hints_path: Path, report_path: Path, apply: bool) -
                     if not found:
                         continue
                     evidence = canonical_space(text[max(0, found.start() - 90) : min(len(text), found.end() + 90)])
+                    if not evidence_is_acceptable(evidence):
+                        continue
                     stats["hint_counts"][hint["place_name"]] = stats["hint_counts"].get(hint["place_name"], 0) + 1
                     matched_this_record = True
                     if apply:

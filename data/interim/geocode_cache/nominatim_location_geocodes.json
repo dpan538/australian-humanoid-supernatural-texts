@@ -924,6 +924,37 @@
       "type": "administrative"
     }
   ],
+  "Augusta, WA, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6290",
+        "state": "Western Australia",
+        "town": "Augusta"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-34.3466810",
+        "-34.2649690",
+        "115.0879990",
+        "115.2014980"
+      ],
+      "category": "boundary",
+      "display_name": "Augusta, Western Australia, 6290, Australia",
+      "importance": 0.42066187458738946,
+      "lat": "-34.3156059",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.1605864",
+      "name": "Augusta",
+      "osm_id": 11688644,
+      "osm_type": "relation",
+      "place_id": 33807472,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Australind, WA, Australia": [
     {
       "address": {
@@ -4575,6 +4606,155 @@
       "type": "administrative"
     }
   ],
+  "Burragorang, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2570",
+        "reservoir": "Lake Burragorang",
+        "state": "New South Wales",
+        "village": "Nattai"
+      },
+      "addresstype": "reservoir",
+      "boundingbox": [
+        "-34.1840900",
+        "-33.8390570",
+        "150.2686813",
+        "150.5981765"
+      ],
+      "category": "water",
+      "display_name": "Lake Burragorang, Nattai, New South Wales, 2570, Australia",
+      "importance": 0.3807705141182751,
+      "lat": "-34.0115925",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4315419",
+      "name": "Lake Burragorang",
+      "osm_id": 2797369,
+      "osm_type": "relation",
+      "place_id": 23921883,
+      "place_rank": 20,
+      "type": "reservoir"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Burragorang Valley",
+        "postcode": "2570",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-34.1863108",
+        "-33.9046398",
+        "150.2035639",
+        "150.5703732"
+      ],
+      "category": "boundary",
+      "display_name": "Burragorang Valley, New South Wales, 2570, Australia",
+      "importance": 0.16005010681315326,
+      "lat": "-34.1046218",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3181813",
+      "name": "Burragorang Valley",
+      "osm_id": 17518572,
+      "osm_type": "relation",
+      "place_id": 420286495,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Burragorang Peak",
+        "state": "New South Wales"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-34.0795900",
+        "-34.0794900",
+        "150.3860000",
+        "150.3861000"
+      ],
+      "category": "natural",
+      "display_name": "Burragorang Peak, New South Wales, Australia",
+      "importance": 0.16005010681315326,
+      "lat": "-34.0795400",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3860500",
+      "name": "Burragorang Peak",
+      "osm_id": 3019436951,
+      "osm_type": "node",
+      "place_id": 23912278,
+      "place_rank": 18,
+      "type": "peak"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "nature_reserve": "Burragorang State Conservation Area",
+        "postcode": "2570",
+        "state": "New South Wales",
+        "village": "Nattai"
+      },
+      "addresstype": "nature_reserve",
+      "boundingbox": [
+        "-34.1425270",
+        "-33.8906900",
+        "150.4183300",
+        "150.5965280"
+      ],
+      "category": "leisure",
+      "display_name": "Burragorang State Conservation Area, Nattai, New South Wales, 2570, Australia",
+      "importance": 0.08005010681315325,
+      "lat": "-33.9837670",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4514218",
+      "name": "Burragorang State Conservation Area",
+      "osm_id": 5910099,
+      "osm_type": "relation",
+      "place_id": 23937526,
+      "place_rank": 24,
+      "type": "nature_reserve"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "industrial": "Burragorang Coal",
+        "postcode": "2570",
+        "state": "New South Wales",
+        "village": "Nattai"
+      },
+      "addresstype": "industrial",
+      "boundingbox": [
+        "-34.0624836",
+        "-34.0468707",
+        "150.4403143",
+        "150.4577713"
+      ],
+      "category": "landuse",
+      "display_name": "Burragorang Coal, Nattai, New South Wales, 2570, Australia",
+      "importance": 0.08005010681315325,
+      "lat": "-34.0547423",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4488454",
+      "name": "Burragorang Coal",
+      "osm_id": 54578534,
+      "osm_type": "way",
+      "place_id": 23920111,
+      "place_rank": 24,
+      "type": "industrial"
+    }
+  ],
   "Byron Bay, NSW, Australia": [
     {
       "address": {
@@ -7956,6 +8136,68 @@
     }
   ],
   "Dunoon Village, NSW, Australia": [],
+  "Dunoon, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Dunoon",
+        "postcode": "2480",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.7067702",
+        "-28.6190676",
+        "153.2898381",
+        "153.3640688"
+      ],
+      "category": "boundary",
+      "display_name": "Dunoon, New South Wales, 2480, Australia",
+      "importance": 0.16004790798809795,
+      "lat": "-28.6840311",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3154089",
+      "name": "Dunoon",
+      "osm_id": 6069839,
+      "osm_type": "relation",
+      "place_id": 28490576,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Duroby, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Duroby",
+        "postcode": "2486",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.2490519",
+        "-28.2344321",
+        "153.4486356",
+        "153.4761685"
+      ],
+      "category": "boundary",
+      "display_name": "Duroby, New South Wales, 2486, Australia",
+      "importance": 0.16004901274128328,
+      "lat": "-28.2403582",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.4643689",
+      "name": "Duroby",
+      "osm_id": 6069841,
+      "osm_type": "relation",
+      "place_id": 28214113,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Eagle Heights, QLD, Australia": [
     {
       "address": {
@@ -10668,6 +10910,66 @@
       "type": "administrative"
     }
   ],
+  "Hargraves, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Hargraves",
+        "postcode": "2850",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.9803158",
+        "-32.6578154",
+        "149.1637428",
+        "149.5874560"
+      ],
+      "category": "boundary",
+      "display_name": "Hargraves, New South Wales, 2850, Australia",
+      "importance": 0.16273786379520622,
+      "lat": "-32.8175000",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.3752778",
+      "name": "Hargraves",
+      "osm_id": 6059074,
+      "osm_type": "relation",
+      "place_id": 22968160,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Hargraves",
+        "postcode": "2850",
+        "state": "New South Wales"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-32.8075493",
+        "-32.7675493",
+        "149.4440898",
+        "149.4840898"
+      ],
+      "category": "place",
+      "display_name": "Hargraves, New South Wales, 2850, Australia",
+      "importance": 0.13338139696345463,
+      "lat": "-32.7875493",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.4640898",
+      "name": "Hargraves",
+      "osm_id": 10923031736,
+      "osm_type": "node",
+      "place_id": 22936521,
+      "place_rank": 20,
+      "type": "hamlet"
+    }
+  ],
   "Harietville, VIC, Australia": [],
   "Harrietville, VIC, Australia": [
     {
@@ -11588,6 +11890,93 @@
       "place_id": 23502732,
       "place_rank": 30,
       "type": "station"
+    }
+  ],
+  "Ipswich, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Ipswich",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4305",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-27.7760323",
+        "-27.4560323",
+        "152.6008348",
+        "152.9208348"
+      ],
+      "category": "place",
+      "display_name": "Ipswich, Queensland, 4305, Australia",
+      "importance": 0.5220080456730997,
+      "lat": "-27.6160323",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7608348",
+      "name": "Ipswich",
+      "osm_id": 21477953,
+      "osm_type": "node",
+      "place_id": 27732865,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Ipswich City",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-27.8654690",
+        "-27.4903270",
+        "152.3827210",
+        "152.9408830"
+      ],
+      "category": "boundary",
+      "display_name": "Ipswich City, Queensland, Australia",
+      "importance": 0.4286584454214316,
+      "lat": "-27.6782200",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.6705348",
+      "name": "Ipswich City",
+      "osm_id": 11675604,
+      "osm_type": "relation",
+      "place_id": 27910767,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "suburb": "Ipswich"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-27.6364776",
+        "-27.6102390",
+        "152.7484080",
+        "152.7715890"
+      ],
+      "category": "boundary",
+      "display_name": "Ipswich, Queensland, Australia",
+      "importance": 0.3054111172263137,
+      "lat": "-27.6234673",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7594638",
+      "name": "Ipswich",
+      "osm_id": 11675330,
+      "osm_type": "relation",
+      "place_id": 27825950,
+      "place_rank": 18,
+      "type": "administrative"
     }
   ],
   "Jackadgery, NSW, Australia": [
@@ -14708,6 +15097,94 @@
       "type": "administrative"
     }
   ],
+  "Mackay, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Mackay",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4740",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-21.3019560",
+        "-20.9819560",
+        "149.0265149",
+        "149.3465149"
+      ],
+      "category": "place",
+      "display_name": "Mackay, Queensland, 4740, Australia",
+      "importance": 0.5267838094312538,
+      "lat": "-21.1419560",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1865149",
+      "name": "Mackay",
+      "osm_id": 1875557678,
+      "osm_type": "node",
+      "place_id": 27196299,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Mackay Regional",
+        "state": "Queensland"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-21.7713350",
+        "-20.3651040",
+        "148.1490480",
+        "152.6072650"
+      ],
+      "category": "boundary",
+      "display_name": "Mackay Regional, Queensland, Australia",
+      "importance": 0.4076496563503252,
+      "lat": "-21.0678305",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1531206",
+      "name": "Mackay Regional",
+      "osm_id": 11677563,
+      "osm_type": "relation",
+      "place_id": 27149043,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Mackay",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4740",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-21.1523530",
+        "-21.1330520",
+        "149.1659790",
+        "149.1989210"
+      ],
+      "category": "boundary",
+      "display_name": "Mackay, Queensland, 4740, Australia",
+      "importance": 0.3047903492217065,
+      "lat": "-21.1426885",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1855588",
+      "name": "Mackay",
+      "osm_id": 11677503,
+      "osm_type": "relation",
+      "place_id": 27262338,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Macleay, NSW, Australia": [
     {
       "address": {
@@ -16734,6 +17211,93 @@
       "place_id": 27674468,
       "place_rank": 18,
       "type": "peak"
+    }
+  ],
+  "Mount Liebig, NT, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Mount Liebig",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-23.2888800",
+        "-23.2887800",
+        "131.3644400",
+        "131.3645400"
+      ],
+      "category": "natural",
+      "display_name": "Mount Liebig, Northern Territory, Australia",
+      "importance": 0.21337448257116948,
+      "lat": "-23.2888300",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "131.3644900",
+      "name": "Mount Liebig",
+      "osm_id": 3020053658,
+      "osm_type": "node",
+      "place_id": 28663528,
+      "place_rank": 18,
+      "type": "peak"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city_district": "Mount Liebig",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0872",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-23.3152370",
+        "-23.2207970",
+        "131.2123900",
+        "131.3429460"
+      ],
+      "category": "boundary",
+      "display_name": "Mount Liebig, Northern Territory, 0872, Australia",
+      "importance": 0.16004854428931103,
+      "lat": "-23.2680160",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "131.2776673",
+      "name": "Mount Liebig",
+      "osm_id": 11716637,
+      "osm_type": "relation",
+      "place_id": 28790654,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "territory": "Northern Territory",
+        "village": "Mount Liebig"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-23.2857416",
+        "-23.2457416",
+        "131.2531124",
+        "131.2931124"
+      ],
+      "category": "place",
+      "display_name": "Mount Liebig, Northern Territory, Australia",
+      "importance": 0.14671521095597767,
+      "lat": "-23.2657416",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "131.2731124",
+      "name": "Mount Liebig",
+      "osm_id": 1999672751,
+      "osm_type": "node",
+      "place_id": 28923483,
+      "place_rank": 19,
+      "type": "village"
     }
   ],
   "Mount Tamborine, QLD, Australia": [
@@ -23027,6 +23591,65 @@
       "type": "administrative"
     }
   ],
+  "Talbingo, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2720",
+        "state": "New South Wales",
+        "village": "Talbingo"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-35.6635579",
+        "-35.5354804",
+        "148.2614463",
+        "148.3793495"
+      ],
+      "category": "boundary",
+      "display_name": "Talbingo, New South Wales, 2720, Australia",
+      "importance": 0.37958691803318917,
+      "lat": "-35.5819244",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.3029977",
+      "name": "Talbingo",
+      "osm_id": 6022608,
+      "osm_type": "relation",
+      "place_id": 24170049,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Talbingo",
+        "state": "New South Wales"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-36.7559400",
+        "-36.7558400",
+        "148.7356100",
+        "148.7357100"
+      ],
+      "category": "natural",
+      "display_name": "Talbingo, New South Wales, Australia",
+      "importance": 0.1600454360265507,
+      "lat": "-36.7558900",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.7356600",
+      "name": "Talbingo",
+      "osm_id": 3002570663,
+      "osm_type": "node",
+      "place_id": 20550635,
+      "place_rank": 18,
+      "type": "peak"
+    }
+  ],
   "Talingbo, NSW, Australia": [],
   "Tallong, NSW, Australia": [
     {
@@ -23060,6 +23683,66 @@
     }
   ],
   "Tambarumba, NSW, Australia": [],
+  "Tamborine, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4270",
+        "state": "Queensland",
+        "suburb": "Tamborine"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-27.9183650",
+        "-27.8177830",
+        "153.0731380",
+        "153.1889400"
+      ],
+      "category": "boundary",
+      "display_name": "Tamborine, Queensland, 4270, Australia",
+      "importance": 0.3514206354333152,
+      "lat": "-27.9024629",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1095731",
+      "name": "Tamborine",
+      "osm_id": 11675422,
+      "osm_type": "relation",
+      "place_id": 27976396,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Tamborine Mountain",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4272",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-28.0024610",
+        "-27.8950020",
+        "153.1567710",
+        "153.2259290"
+      ],
+      "category": "boundary",
+      "display_name": "Tamborine Mountain, Queensland, 4272, Australia",
+      "importance": 0.3927108502588685,
+      "lat": "-27.9489195",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1929006",
+      "name": "Tamborine Mountain",
+      "osm_id": 11675426,
+      "osm_type": "relation",
+      "place_id": 27822093,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Tanami Desert, NT, Australia": [
     {
       "address": {
@@ -23645,6 +24328,7 @@
       "type": "administrative"
     }
   ],
+  "Top Bore, NT, Australia": [],
   "Torbanlea, QLD, Australia": [
     {
       "address": {
@@ -25844,6 +26528,154 @@
     }
   ],
   "Wongawallen, QLD, Australia": [],
+  "Woodburn, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Woodburn",
+        "postcode": "2538",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-35.4311786",
+        "-35.3536602",
+        "150.3383420",
+        "150.4405067"
+      ],
+      "category": "boundary",
+      "display_name": "Woodburn, New South Wales, 2538, Australia",
+      "importance": 0.16005168764782177,
+      "lat": "-35.3730556",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3763889",
+      "name": "Woodburn",
+      "osm_id": 6079595,
+      "osm_type": "relation",
+      "place_id": 23959256,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Woodburn",
+        "postcode": "2472",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-29.1362264",
+        "-29.0453109",
+        "153.3050045",
+        "153.4022434"
+      ],
+      "category": "boundary",
+      "display_name": "Woodburn, New South Wales, 2472, Australia",
+      "importance": 0.16004826504921033,
+      "lat": "-29.0722558",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3437662",
+      "name": "Woodburn",
+      "osm_id": 6070263,
+      "osm_type": "relation",
+      "place_id": 28389748,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "farm": "Woodburn",
+        "hamlet": "Mebul",
+        "postcode": "2852",
+        "state": "New South Wales"
+      },
+      "addresstype": "farm",
+      "boundingbox": [
+        "-32.3298391",
+        "-32.3098391",
+        "149.3118806",
+        "149.3318806"
+      ],
+      "category": "place",
+      "display_name": "Woodburn, Mebul, New South Wales, 2852, Australia",
+      "importance": 0.10671473029678795,
+      "lat": "-32.3198391",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.3218806",
+      "name": "Woodburn",
+      "osm_id": 3371178534,
+      "osm_type": "node",
+      "place_id": 23029148,
+      "place_rank": 22,
+      "type": "farm"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "farm": "Woodburn",
+        "hamlet": "Miandetta",
+        "postcode": "2825",
+        "state": "New South Wales"
+      },
+      "addresstype": "farm",
+      "boundingbox": [
+        "-31.5981869",
+        "-31.5781869",
+        "146.8954911",
+        "146.9154911"
+      ],
+      "category": "place",
+      "display_name": "Woodburn, Miandetta, New South Wales, 2825, Australia",
+      "importance": 0.10670666742961774,
+      "lat": "-31.5881869",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.9054911",
+      "name": "Woodburn",
+      "osm_id": 2640457287,
+      "osm_type": "node",
+      "place_id": 28899138,
+      "place_rank": 22,
+      "type": "farm"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Woodburn",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-32.0107174",
+        "-31.9907174",
+        "151.2564874",
+        "151.2764874"
+      ],
+      "category": "place",
+      "display_name": "Woodburn, New South Wales, Australia",
+      "importance": 0.0667150797283894,
+      "lat": "-32.0007174",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.2664874",
+      "name": "Woodburn",
+      "osm_id": 4099733779,
+      "osm_type": "node",
+      "place_id": 23045782,
+      "place_rank": 25,
+      "type": "locality"
+    }
+  ],
   "Woodenbong, NSW, Australia": [
     {
       "address": {
