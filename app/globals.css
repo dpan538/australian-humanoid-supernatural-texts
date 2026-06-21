@@ -1054,7 +1054,7 @@ a {
 
 .track-row i {
   min-width: 92px;
-  max-width: 390px;
+  max-width: 310px;
   padding: 2px 7px 3px;
   color: var(--bg);
   background: var(--ink);
@@ -1083,14 +1083,6 @@ a {
 .network-record-target:focus-visible .network-slot {
   fill: rgba(159, 224, 255, 0.18);
   filter: drop-shadow(0 0 8px rgba(242, 242, 237, 0.35));
-}
-
-.track-row:nth-child(5n) i {
-  min-width: 170px;
-}
-
-.track-row:nth-child(6n) i {
-  min-width: 245px;
 }
 
 .network-footer {
@@ -2169,7 +2161,8 @@ a {
   min-height: 0;
   height: 100%;
   max-height: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
+  padding-right: 8px;
   overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: rgba(159, 224, 255, 0.48) rgba(242, 242, 237, 0.04);

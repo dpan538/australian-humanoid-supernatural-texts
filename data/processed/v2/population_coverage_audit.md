@@ -1,6 +1,6 @@
 # Population Coverage Audit
 
-- Generated: `2026-06-21T12:31:39+00:00`
+- Generated: `2026-06-21T13:23:52+00:00`
 - Frontend data record count: `1119`
 - Strict map point count: `930`
 - Population source: Australian Bureau of Statistics — National, state and territory population, December 2025

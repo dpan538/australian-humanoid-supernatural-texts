@@ -15,6 +15,7 @@ export type Summary = {
   source_count: number;
   location_count: number;
   precise_point_count: number;
+  strict_map_record_count?: number;
   broad_location_count: number;
   map_cluster_count?: number;
   map_flag_count?: number;
@@ -71,6 +72,15 @@ export type RecordItem = {
   state_territory?: string | null;
   location_precision_status?: string | null;
   has_strict_map_point?: boolean;
+  map_latitude?: number | null;
+  map_longitude?: number | null;
+  map_place_name?: string | null;
+  map_location_role?: string | null;
+  map_location_type?: string | null;
+  map_geocode_source?: string | null;
+  map_verification_status?: string | null;
+  map_confidence?: string | null;
+  map_evidence_text?: string | null;
 };
 
 export type LocationItem = {

@@ -40,6 +40,15 @@ SEARCH_SPECS: tuple[dict[str, str], ...] = (
     {"label": "Yaroma", "query": '"Yaroma" AND (Queensland OR Australia)', "sensitivity": "high", "fallback_place": "Queensland", "fallback_state": "QLD"},
     {"label": "Yara-ma-yha-who", "query": '("Yara-ma-yha-who" OR "Yara ma yha who") AND Australia', "sensitivity": "high", "fallback_place": "Australia", "fallback_state": "AU"},
     {"label": "Tjangara", "query": '"Tjangara" AND (giant OR spirit OR Australia)', "sensitivity": "high", "fallback_place": "Australia", "fallback_state": "AU"},
+    # Person-form ghost/appartion books and public texts. These are useful for
+    # dashboard/density expansion when the public item is clearly Australian,
+    # while strict map eligibility still requires a verified place.
+    {"label": "Ghost", "query": '("Australian ghost stories" OR "ghosts of Australia" OR "haunted Australia" OR "Australian ghosts")', "sensitivity": "low", "fallback_place": "Australia", "fallback_state": "AU"},
+    {"label": "Ghost", "query": '("Tasmanian ghost" OR "Tasmania ghost stories" OR "haunted Tasmania")', "sensitivity": "low", "fallback_place": "Tasmania", "fallback_state": "TAS"},
+    {"label": "Ghost", "query": '("Victorian ghost" OR "Victoria ghost stories" OR "haunted Victoria Australia")', "sensitivity": "low", "fallback_place": "Victoria", "fallback_state": "VIC"},
+    {"label": "Ghost", "query": '("Western Australian ghost" OR "Western Australia ghost stories" OR "haunted Western Australia")', "sensitivity": "low", "fallback_place": "Western Australia", "fallback_state": "WA"},
+    {"label": "Ghost", "query": '("South Australian ghost" OR "South Australia ghost stories" OR "haunted South Australia")', "sensitivity": "low", "fallback_place": "South Australia", "fallback_state": "SA"},
+    {"label": "Ghost", "query": '("Northern Territory ghost" OR "Northern Territory ghost stories" OR "haunted Northern Territory")', "sensitivity": "low", "fallback_place": "Northern Territory", "fallback_state": "NT"},
     # Hairy-humanoid operational cluster remains, but it is no longer first.
     {"label": "Australian gorilla", "query": '"Australian gorilla"', "sensitivity": "low", "fallback_place": "Australia", "fallback_state": "AU"},
     {"label": "Hairy Man", "query": '"Hairy Man" AND Australia', "sensitivity": "medium", "fallback_place": "Australia", "fallback_state": "AU"},
@@ -96,6 +105,7 @@ NARRATIVE_BY_LABEL = {
     "puttikan": "traditional_narrative",
     "yaroma": "giant_or_ogre_narrative",
     "tjangara": "giant_or_ogre_narrative",
+    "ghost": "ghost_legend",
 }
 
 BROAD_LOCATION_HINTS = {
@@ -183,6 +193,36 @@ def source_label_present(label: str, text: str) -> bool:
     if label_norm == "wandjina" and "wanjina" in norm:
         return True
     return False
+
+
+def metadata_label_present(label: str, text: str) -> bool:
+    norm = normalise_alias(text)
+    label_norm = normalise_alias(label)
+    if label_norm == "ghost":
+        return any(term in norm for term in ("ghost", "ghosts", "haunted", "apparition"))
+    return source_label_present(label, text)
+
+
+def australian_metadata_signal(text: str, fallback_place: str = "") -> bool:
+    norm = normalise_alias(" ".join([text, fallback_place]))
+    return any(
+        term in norm
+        for term in (
+            "australia",
+            "australian",
+            "tasmania",
+            "victoria",
+            "western australia",
+            "south australia",
+            "northern territory",
+            "queensland",
+            "new south wales",
+            "kimberley",
+            "arnhem",
+            "gippsland",
+            "cape york",
+        )
+    )
 
 
 def sentence_evidence(label: str, text: str) -> str:
@@ -322,6 +362,8 @@ class InternetArchiveCollector(BaseCollector):
 
         text_file = first_text_file(metadata)
         if text_file is None:
+            if metadata_label_present(spec["label"], combined_meta) and australian_metadata_signal(combined_meta, spec.get("fallback_place", "")):
+                return self._metadata_candidate(spec, doc, metadata, title, item_url, metadata_url)
             return self._lead(spec, title, item_url, "public_text_or_ocr_not_available", {"doc": doc, "metadata_url": metadata_url})
         text_url = f"https://archive.org/download/{quote_plus(identifier)}/{quote_plus(str(text_file['name']))}"
         try:
@@ -395,6 +437,72 @@ class InternetArchiveCollector(BaseCollector):
                 evidence,
             ),
             raw_metadata_json={"doc": doc, "metadata_url": metadata_url, "text_file": text_file},
+        )
+
+    def _metadata_candidate(
+        self,
+        spec: dict[str, str],
+        doc: dict[str, Any],
+        metadata: dict[str, Any],
+        title: str,
+        item_url: str,
+        metadata_url: str,
+    ) -> CollectionCandidate:
+        combined_meta = canonicalise_whitespace(
+            " ".join(
+                str(value)
+                for value in [
+                    title,
+                    doc.get("description"),
+                    metadata.get("metadata", {}).get("description"),
+                    metadata.get("metadata", {}).get("subject"),
+                ]
+                if value
+            )
+        )
+        broad_place, broad_state = find_broad_place(spec, combined_meta)
+        sensitivity = spec["sensitivity"]
+        label_key = normalise_alias(spec["label"])
+        ethics_status = "needs_human_ethics_review" if sensitivity == "high" else "ok_public"
+        return CollectionCandidate(
+            run_id=self.run_id,
+            candidate_status="accepted",
+            source_name=self.source_name,
+            source_type="internet_archive_metadata",
+            source_tier="B",
+            title=title,
+            publication_or_organisation=metadata_value(metadata, doc, "creator") or "Internet Archive public item",
+            publication_date_text=metadata_value(metadata, doc, "date") or metadata_value(metadata, doc, "publicdate") or "undated public item",
+            access_date=utc_now_iso()[:10],
+            url=item_url,
+            canonical_url=item_url,
+            external_id=f"internet_archive:{metadata.get('metadata', {}).get('identifier') or doc.get('identifier') or title}",
+            publicness_status="public_metadata",
+            rights_access_status="Internet Archive public metadata/item page; no full reproduction asserted.",
+            narrative_type=NARRATIVE_BY_LABEL.get(label_key, "descriptive_belief_record"),
+            secondary_role="retelling_or_adaptation" if label_key == "ghost" else "descriptive_belief_record",
+            australian_relation="public item metadata contains Australian relation",
+            humanoid_basis="source label in public title or metadata",
+            source_label=spec["label"],
+            location_text=broad_place,
+            location_role="uncertain_or_broad_location",
+            latitude=None,
+            longitude=None,
+            location_precision="broad_region",
+            geocode_source="internet_archive_public_metadata_broad_location_signal",
+            geocode_verification_status="needs_review",
+            coordinate_evidence_note=f"Public metadata/title matched `{spec['label']}` and broad place `{broad_place}`; not exported to strict map.",
+            duplicate_check_status="canonical_url_checked",
+            quality_class="B",
+            ethics_review_status=ethics_status,
+            cultural_sensitivity=sensitivity,
+            acceptance_decision="accepted",
+            rejection_reason="",
+            evidence_summary=neutral_summary(
+                f"The public Internet Archive item metadata/title contains the source label `{spec['label']}` and an Australian relation `{broad_place}`.",
+                combined_meta[:520],
+            ),
+            raw_metadata_json={"doc": doc, "metadata_url": metadata_url, "metadata_acceptance": "title_or_public_metadata_label_match"},
         )
 
     def _lead(self, spec: dict[str, str], title: str, url: str, reason: str, raw: dict[str, Any]) -> CollectionCandidate:

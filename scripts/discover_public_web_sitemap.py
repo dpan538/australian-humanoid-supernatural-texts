@@ -49,14 +49,20 @@ DEFAULT_TERMS = [
     "pangkarlangu",
 ]
 
-CONTENT_TERMS = [
+STRONG_SUPERNATURAL_CONTENT_TERMS = [
     "ghost",
     "haunt",
     "apparition",
-    "spirit",
     "afterlife",
     "paranormal",
+]
+
+WEAK_CONTEXT_TERMS = [
+    "spirit",
     "legend",
+]
+
+PERSON_FORM_CONTENT_TERMS = [
     "lady",
     "woman",
     "man",
@@ -76,6 +82,21 @@ CONTENT_TERMS = [
     "pangkarlangu",
 ]
 
+ENTITY_CONTENT_TERMS = [
+    "hairy man",
+    "wild man",
+    "mimih",
+    "mimi",
+    "wandjina",
+    "quinkan",
+    "nargun",
+    "garkain",
+    "mamu",
+    "pangkarlangu",
+]
+
+CONTENT_TERMS = STRONG_SUPERNATURAL_CONTENT_TERMS + WEAK_CONTEXT_TERMS + PERSON_FORM_CONTENT_TERMS
+
 DEFAULT_ROOTS = [
     "https://www.nationaltrust.org.au/sitemap.xml",
     "https://portarthur.org.au/sitemap.xml",
@@ -92,6 +113,15 @@ DEFAULT_ROOTS = [
     "https://libraries.tas.gov.au/sitemap.xml",
     "https://www.narrynah.com.au/sitemap.xml",
     "https://www.qvmag.tas.gov.au/sitemap.xml",
+]
+
+DISCOVERY_ONLY_TOURISM_ROOTS = [
+    "https://www.visitvictoria.com/sitemap.xml",
+    "https://www.westernaustralia.com/sitemap.xml",
+    "https://southaustralia.com/sitemap.xml",
+    "https://northernterritory.com/sitemap.xml",
+    "https://www.discovertasmania.com.au/sitemap.xml",
+    "https://visitcanberra.com.au/sitemap.xml",
 ]
 
 USER_AGENT = (
@@ -190,17 +220,34 @@ def main() -> None:
     parser.add_argument("--max-sitemaps", type=int, default=40)
     parser.add_argument("--timeout", type=int, default=25)
     parser.add_argument("--term", action="append", dest="terms", help="URL term. Repeatable.")
+    parser.add_argument("--per-root-limit", type=int, default=80, help="Maximum page URLs fetched from each sitemap root in content-scan mode.")
+    parser.add_argument(
+        "--content-scan",
+        action="store_true",
+        help="Fetch sitemap pages even when the URL does not contain a target term, then classify by visible text.",
+    )
+    parser.add_argument(
+        "--include-tourism-discovery",
+        action="store_true",
+        help="Include official tourism sitemaps as discovery-only leads. These should not be accepted without stronger source backing.",
+    )
     args = parser.parse_args()
 
     terms = [term.lower() for term in (args.terms or DEFAULT_TERMS)]
     term_pattern = re.compile("|".join(re.escape(term) for term in terms), flags=re.I)
     roots = args.roots or DEFAULT_ROOTS
+    if args.include_tourism_discovery and not args.roots:
+        roots = [*roots, *DISCOVERY_ONLY_TOURISM_ROOTS]
 
-    pages: set[str] = set()
+    pages: list[str] = []
     for root in roots:
-        pages.update(crawl_sitemap(root, timeout=args.timeout, max_sitemaps=args.max_sitemaps))
+        root_pages = crawl_sitemap(root, timeout=args.timeout, max_sitemaps=args.max_sitemaps)
+        if args.content_scan:
+            root_pages = root_pages[: args.per_root_limit]
+        pages.extend(root_pages)
 
-    url_candidates = sorted(url for url in pages if term_pattern.search(url))[: args.limit]
+    unique_pages = list(dict.fromkeys(pages))
+    url_candidates = unique_pages[: args.limit] if args.content_scan else sorted(url for url in unique_pages if term_pattern.search(url))[: args.limit]
     rows = []
     for url in url_candidates:
         try:
@@ -209,7 +256,12 @@ def main() -> None:
             title = title_from_html(response.text)
             text_lower = text.lower()
             hits = [term for term in CONTENT_TERMS if term.lower() in text_lower]
-            status = "review_candidate" if len(text) >= 240 and hits else "weak_lead"
+            supernatural_hits = [term for term in STRONG_SUPERNATURAL_CONTENT_TERMS if term.lower() in text_lower]
+            weak_hits = [term for term in WEAK_CONTEXT_TERMS if term.lower() in text_lower]
+            person_hits = [term for term in PERSON_FORM_CONTENT_TERMS if term.lower() in text_lower]
+            entity_hits = [term for term in ENTITY_CONTENT_TERMS if term.lower() in text_lower]
+            url_hit = bool(term_pattern.search(url))
+            status = "review_candidate" if len(text) >= 240 and ((supernatural_hits and (person_hits or url_hit)) or entity_hits) else "weak_lead"
             rows.append(
                 {
                     "generated_at": utc_now_iso(),
@@ -218,8 +270,12 @@ def main() -> None:
                     "title": title,
                     "text_length": len(text),
                     "matched_terms": ";".join(hits),
+                    "supernatural_terms": ";".join(supernatural_hits),
+                    "weak_context_terms": ";".join(weak_hits),
+                    "person_form_terms": ";".join(person_hits),
+                    "entity_terms": ";".join(entity_hits),
                     "lead_status": status,
-                    "review_note": "Review for person-form narrative, location role, source publicness, and duplication before seeding.",
+                    "review_note": "Review for person-form narrative, location role, source publicness, and duplication before seeding. Tourism pages are discovery-only unless backed by an institutional, archival, newspaper, book, or community-controlled public source.",
                     "snippet": text[:420],
                 }
             )
@@ -232,6 +288,10 @@ def main() -> None:
                     "title": "",
                     "text_length": 0,
                     "matched_terms": "",
+                    "supernatural_terms": "",
+                    "weak_context_terms": "",
+                    "person_form_terms": "",
+                    "entity_terms": "",
                     "lead_status": "fetch_failed",
                     "review_note": str(exc),
                     "snippet": "",
@@ -247,6 +307,10 @@ def main() -> None:
         "title",
         "text_length",
         "matched_terms",
+        "supernatural_terms",
+        "weak_context_terms",
+        "person_form_terms",
+        "entity_terms",
         "lead_status",
         "review_note",
         "snippet",

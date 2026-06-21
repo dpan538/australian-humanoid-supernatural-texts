@@ -8,9 +8,10 @@ Tier B sources include public institutional and community-controlled public reso
 
 Tier C sources include reputable public circulation sources such as ABC, SBS, journalism, broadcasting pages, and local-history organisations.
 
+Tourism and destination-marketing pages are treated as low-trust circulation evidence or discovery-only leads by default. They may help identify a place name, retelling, or source chain, but they should not be accepted as primary evidence unless the same narrative is supported by a stronger local archive, newspaper, institutional, book, public heritage, or community-controlled public source.
+
 Metadata-only OpenAlex, Crossref, NLA, AIATSIS, or catalogue records are useful pointers, but they do not count as accepted V2 source items until accessible substantive content is inspected.
 
 AYR and similar specialist aggregators are discovery aids or mediated public witness pages. They are not ontology authorities.
 
 No collector may bypass paywalls, login walls, robots expectations, access restrictions, or cultural restrictions.
-

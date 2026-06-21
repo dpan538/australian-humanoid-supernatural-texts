@@ -199,6 +199,15 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             item["state_territory"] = None
             item["location_precision_status"] = "unmapped"
             item["has_strict_map_point"] = False
+            item["map_latitude"] = None
+            item["map_longitude"] = None
+            item["map_place_name"] = None
+            item["map_location_role"] = None
+            item["map_location_type"] = None
+            item["map_geocode_source"] = None
+            item["map_verification_status"] = None
+            item["map_confidence"] = None
+            item["map_evidence_text"] = None
             records.append(item)
 
         locations: list[dict[str, Any]] = []
@@ -287,6 +296,15 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                     "state_territory": state_code,
                     "location_precision_status": candidate.get("location_precision") or ("precise_point" if has_strict_point else "unmapped"),
                     "has_strict_map_point": has_strict_point,
+                    "map_latitude": latitude if has_strict_point else None,
+                    "map_longitude": longitude if has_strict_point else None,
+                    "map_place_name": candidate.get("location_text") if has_strict_point else None,
+                    "map_location_role": candidate.get("location_role") if has_strict_point else None,
+                    "map_location_type": candidate.get("location_precision") if has_strict_point else None,
+                    "map_geocode_source": candidate.get("geocode_source") if has_strict_point else None,
+                    "map_verification_status": candidate.get("geocode_verification_status") if has_strict_point else None,
+                    "map_confidence": candidate.get("quality_class") if has_strict_point else None,
+                    "map_evidence_text": candidate.get("coordinate_evidence_note") if has_strict_point else None,
                 }
                 records.append(record)
                 if has_strict_point:
@@ -421,6 +439,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
     state_record_ids: dict[str, set[int]] = {code: set() for code in STATE_CODES}
     state_representative_records: dict[str, int] = {}
     first_location_by_record: dict[int, dict[str, Any]] = {}
+    strict_location_by_record: dict[int, dict[str, Any]] = {}
     precise_points = []
     broad_locations = []
     records_by_id = {int(record["record_id"]): record for record in records}
@@ -443,10 +462,11 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             state_representative_records.setdefault(state, record_id)
         if location.get("latitude") is not None and location.get("longitude") is not None:
             precise_points.append(location)
+            strict_location_by_record.setdefault(record_id, location)
         elif location.get("location_type") in {"broad_region", "state_or_territory", "country"}:
             broad_locations.append(location)
 
-    precise_record_ids = {int(point["record_id"]) for point in precise_points}
+    precise_record_ids = set(strict_location_by_record)
     for record_id, location in first_location_by_record.items():
         record = records_by_id.get(record_id)
         if not record:
@@ -454,6 +474,19 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         record["state_territory"] = location.get("state_territory")
         record["location_precision_status"] = location.get("location_type") or "mapped"
         record["has_strict_map_point"] = record_id in precise_record_ids
+        if record["has_strict_map_point"]:
+            strict_location = strict_location_by_record[record_id]
+            record["state_territory"] = strict_location.get("state_territory") or record.get("state_territory")
+            record["location_precision_status"] = strict_location.get("location_type") or record.get("location_precision_status")
+            record["map_latitude"] = strict_location.get("latitude")
+            record["map_longitude"] = strict_location.get("longitude")
+            record["map_place_name"] = strict_location.get("place_name")
+            record["map_location_role"] = strict_location.get("relation_type")
+            record["map_location_type"] = strict_location.get("location_type")
+            record["map_geocode_source"] = strict_location.get("geocode_source")
+            record["map_verification_status"] = strict_location.get("verification_status")
+            record["map_confidence"] = strict_location.get("confidence")
+            record["map_evidence_text"] = strict_location.get("evidence_text")
 
     corpus_state_record_ids: dict[str, set[int]] = {code: set() for code in STATE_CODES}
     unmapped_record_count = 0
@@ -539,6 +572,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             "source_count": len(sources),
             "location_count": len(locations),
             "precise_point_count": len(precise_points),
+            "strict_map_record_count": len(precise_record_ids),
             "map_point_count": len(precise_points),
             "broad_location_count": len(broad_locations),
             "map_cluster_count": len(map_clusters),

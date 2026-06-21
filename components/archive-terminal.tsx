@@ -2,7 +2,7 @@
 
 import { CSSProperties, useEffect, useState } from "react";
 import Link from "next/link";
-import type { DateBand, FrontendData, LocationItem, RecordItem } from "@/lib/types";
+import type { DateBand, FrontendData, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
@@ -91,12 +91,6 @@ const STATE_CLUSTER_POSITIONS: Record<string, [number, number]> = {
   VIC: [660, 548],
   TAS: [704, 642],
   ACT: [784, 512],
-};
-
-const POINT_DISPLAY_NUDGES: Record<string, { x: number; y: number; stemDx: number; stemDy: number }> = {
-  "Batemans Bay|NSW": { x: -13, y: -8, stemDx: -17, stemDy: -19 },
-  "Ulladulla|NSW": { x: -14, y: -8, stemDx: -17, stemDy: -19 },
-  "Kilcoy|QLD": { x: -12, y: 0, stemDx: -15, stemDy: 20 },
 };
 
 const STATE_TERRAIN_KINDS = TERRAIN_TILES.reduce<Record<string, TerrainKind[]>>((acc, tile) => {
@@ -229,11 +223,6 @@ function projectLambertConformalConic(latitude: number, longitude: number) {
   };
 }
 
-function pointDisplayNudge(point: LocationItem) {
-  const key = `${point.place_name}|${point.state_territory ?? ""}`;
-  return POINT_DISPLAY_NUDGES[key] ?? { x: 0, y: 0, stemDx: 0, stemDy: 24 };
-}
-
 export function ArchiveTerminal({ data, view }: { data: FrontendData; view: ViewMode }) {
   const nextView = getNextView(view);
   const [selectedRecord, setSelectedRecord] = useState<RecordItem | null>(null);
@@ -320,18 +309,19 @@ function getNextView(view: ViewMode) {
 
 function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
   const [hoverState, setHoverState] = useState<string | null>(null);
-  const [hoverPoint, setHoverPoint] = useState<LocationItem | null>(null);
-  const stateCounts = data.summary.state_record_counts;
-  const points = data.map_points.filter((point) => point.latitude !== null && point.longitude !== null);
-  const preciseStateCounts = points.reduce<Record<string, number>>((acc, point) => {
-    if (point.state_territory) {
-      acc[point.state_territory] = (acc[point.state_territory] ?? 0) + 1;
+  const [hoverRecord, setHoverRecord] = useState<RecordItem | null>(null);
+  const stateCounts = data.summary.corpus_state_counts ?? data.summary.state_record_counts;
+  const mapRecords = data.records.filter(
+    (record) => record.has_strict_map_point && record.map_latitude !== null && record.map_longitude !== null,
+  );
+  const preciseStateCounts = mapRecords.reduce<Record<string, number>>((acc, record) => {
+    if (record.state_territory) {
+      acc[record.state_territory] = (acc[record.state_territory] ?? 0) + 1;
     }
     return acc;
   }, {});
   const activeState = hoverState ? STATE_NAMES[hoverState] : "Australia";
-  const activeCount = hoverState ? preciseStateCounts[hoverState] ?? 0 : points.length;
-  const recordsById = new Map(data.records.map((record) => [record.record_id, record]));
+  const activeCount = hoverState ? preciseStateCounts[hoverState] ?? 0 : mapRecords.length;
 
   return (
     <div className="map-view">
@@ -366,60 +356,57 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
             );
           })}
           <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
-          <g className={`record-flag-layer ${hoverPoint ? "has-hover" : ""}`} aria-label="Strict geocoded public record flags">
-            {points.map((point, index) => {
-              const projected = projectPoint(point.latitude as number, point.longitude as number);
+          <g className={`record-flag-layer ${hoverRecord ? "has-hover" : ""}`} aria-label="Strict geocoded public record flags">
+            {mapRecords.map((record, index) => {
+              const projected = projectPoint(record.map_latitude as number, record.map_longitude as number);
               const x = svgCoord(projected.x);
               const y = svgCoord(projected.y);
-              const flagDelay = points.length > 1 ? (index / Math.max(1, points.length - 1)) * 820 : 0;
-              const selected = hoverPoint?.record_id === point.record_id && hoverPoint.place_name === point.place_name;
-              const stateLinked = hoverState === point.state_territory;
-              const record = recordsById.get(point.record_id);
-              const toneClass = record ? mapSourceTone(record).className : "source-tone-default";
+              const flagDelay = mapRecords.length > 1 ? (index / Math.max(1, mapRecords.length - 1)) * 820 : 0;
+              const selected = hoverRecord?.record_id === record.record_id;
+              const stateLinked = hoverState === record.state_territory;
+              const toneClass = mapSourceTone(record).className;
               const className = ["record-flag", "precise", toneClass, selected ? "active" : "", stateLinked ? "state-linked" : ""]
                 .filter(Boolean)
                 .join(" ");
               return (
                 <g
-                  key={`${point.record_id}-${point.place_name}-${index}`}
+                  key={`${record.record_id}-${record.map_place_name ?? "strict"}-${index}`}
                   className={className}
                   style={{ "--flag-delay": `${flagDelay.toFixed(1)}ms` } as CSSProperties}
                   onMouseEnter={() => {
-                    setHoverPoint(point);
-                    setHoverState(point.state_territory);
+                    setHoverRecord(record);
+                    setHoverState(record.state_territory ?? null);
                   }}
                   onMouseLeave={() => {
-                    setHoverPoint(null);
+                    setHoverRecord(null);
                     setHoverState(null);
                   }}
                   onFocus={() => {
-                    setHoverPoint(point);
-                    setHoverState(point.state_territory);
+                    setHoverRecord(record);
+                    setHoverState(record.state_territory ?? null);
                   }}
                   onBlur={() => {
-                    setHoverPoint(null);
+                    setHoverRecord(null);
                     setHoverState(null);
                   }}
                   onClick={() => {
-                    if (record) {
-                      onSelectRecord(record);
-                    }
+                    onSelectRecord(record);
                   }}
                   onKeyDown={(event) => {
-                    if (record && (event.key === "Enter" || event.key === " ")) {
+                    if (event.key === "Enter" || event.key === " ") {
                       event.preventDefault();
                       onSelectRecord(record);
                     }
                   }}
                   role="button"
-                  tabIndex={record ? 0 : -1}
-                  aria-label={`Open strict geocoded record ${record?.title ?? point.place_name}`}
+                  tabIndex={0}
+                  aria-label={`Open strict geocoded record ${record.title ?? record.map_place_name}`}
                 >
                   <circle className="record-flag-hit" cx={x} cy={y} r="10" />
                   <circle className="record-flag-dot" cx={x} cy={y} r={selected ? 5.2 : stateLinked ? 3.9 : 3.25} />
                   {selected ? (
                     <text className="record-flag-label" x={Math.min(x + 12, MAP_VIEWBOX.width - 150)} y={Math.max(y - 10, 26)}>
-                      {point.year ?? "--"} / {truncate(record?.canonical_figure_guess ?? point.canonical_figure ?? record?.title, 24)}
+                      {record.year ?? "--"} / {truncate(record.canonical_figure_guess ?? record.canonical_figure ?? record.title, 24)}
                     </text>
                   ) : null}
                 </g>
@@ -472,7 +459,7 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
         </div>
         <div className="map-health-note">
           <span>STRICT GEO</span>
-          <b>{points.length}</b>
+          <b>{mapRecords.length}</b>
           <small>verified map points / {data.summary.record_count} records</small>
         </div>
       </aside>
@@ -845,9 +832,9 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
   const stateCounts = data.summary.corpus_state_counts ?? data.summary.state_record_counts;
   const strictStateCounts =
     data.summary.strict_state_counts ??
-    data.map_points.reduce<Record<string, number>>((acc, point) => {
-      if (point.state_territory) {
-        acc[point.state_territory] = (acc[point.state_territory] ?? 0) + 1;
+    data.records.reduce<Record<string, number>>((acc, record) => {
+      if (record.has_strict_map_point && record.state_territory) {
+        acc[record.state_territory] = (acc[record.state_territory] ?? 0) + 1;
       }
       return acc;
     }, {});
@@ -1082,11 +1069,19 @@ function dashboardTrackLabel(record: RecordItem) {
   const rawTitle = record.title || figure || `Record ${record.record_id}`;
   const title = rawTitle
     .replace(/^\s*(?:ca\.?\s*)?\d{4}\s*[-–:]\s*/i, "")
+    .replace(/\s*\/\s*\d{4}\s*$/i, "")
     .replace(/\s+/g, " ")
     .trim();
-  const state = record.state_territory ? ` / ${record.state_territory}` : "";
-  const label = figure || title || `Record ${record.record_id}`;
-  return `${truncate(`${label}${state}`, 24)} (${year})`;
+  const genericFigure = new Set(["yowie", "ghost", "apparition", "hairy man"]);
+  const figureNorm = figure.trim().toLowerCase();
+  const titleNorm = title.trim().toLowerCase();
+  const label =
+    title && titleNorm !== figureNorm && !titleNorm.startsWith("record ")
+      ? title
+      : figure && !genericFigure.has(figureNorm)
+        ? figure
+        : title || figure || `Record ${record.record_id}`;
+  return `${truncate(label, 26)} (${year})`;
 }
 
 function dashboardTrackSample(data: FrontendData) {
@@ -1337,14 +1332,11 @@ type RecordNavigationContext = {
 };
 
 function recordNavigationContext(data: FrontendData, record: RecordItem): RecordNavigationContext {
-  const recordsById = new Map(data.records.map((item) => [item.record_id, item]));
-  const selectedPoint = data.map_points.find((point) => point.record_id === record.record_id);
-  const state = selectedPoint?.state_territory;
-  const strictPointRecords = data.map_points
-    .filter((point) => Boolean(state) && point.state_territory === state)
-    .map((point) => recordsById.get(point.record_id))
-    .filter((item): item is RecordItem => Boolean(item));
-  const unique = Array.from(new Map(strictPointRecords.map((item) => [item.record_id, item])).values()).sort((a, b) => {
+  const state = record.has_strict_map_point ? record.state_territory : null;
+  const strictPointRecords = data.records.filter(
+    (item) => Boolean(state) && item.has_strict_map_point && item.state_territory === state,
+  );
+  const unique = strictPointRecords.sort((a, b) => {
     const yearA = a.year ?? 9999;
     const yearB = b.year ?? 9999;
     return yearA - yearB || (a.title ?? "").localeCompare(b.title ?? "") || a.record_id - b.record_id;
