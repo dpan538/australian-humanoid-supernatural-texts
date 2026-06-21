@@ -44,12 +44,29 @@ DATE_BANDS = [
         "role": "pre-modern newspaper and publication expansion",
     },
     {
-        "id": "modern_1970_present",
-        "label": "1970-present",
+        "id": "modern_1970_1990",
+        "label": "1970-1990",
         "start": 1970,
-        "end": None,
-        "role": "modern Yowie / heritage / tourism / media period",
+        "end": 1990,
+        "role": "early modern witness, heritage, tourism, and media period",
     },
+    {
+        "id": "modern_1991_2010",
+        "label": "1991-2010",
+        "start": 1991,
+        "end": 2010,
+        "role": "late modern web, media, and public retelling period",
+    },
+    {
+        "id": "contemporary_2011_present",
+        "label": "2011-present",
+        "start": 2011,
+        "end": None,
+        "role": "contemporary public web and platform circulation period",
+    },
+]
+
+ATTENTION_DATE_WINDOWS = [
     {
         "id": "google_trends_2004_present",
         "label": "2004-present",
@@ -85,7 +102,7 @@ def row_dict(row: Any) -> dict[str, Any]:
 def year_to_band(year: int | None) -> str:
     if year is None:
         return "undated"
-    for band in DATE_BANDS[:4]:
+    for band in DATE_BANDS:
         end = band["end"] if band["end"] is not None else 9999
         if int(band["start"]) <= year <= int(end):
             return str(band["id"])
@@ -95,10 +112,33 @@ def year_to_band(year: int | None) -> str:
 def query_band(date_start: str | None, date_end: str | None) -> str:
     start = str(date_start or "")
     end = str(date_end or "")
-    for band in DATE_BANDS:
+    for band in [*DATE_BANDS, *ATTENTION_DATE_WINDOWS]:
         if start == str(band["start"]) and (end == str(band["end"]) or (band["end"] is None and end == "present")):
             return str(band["id"])
     return f"{start}-{end}".strip("-") or "unspecified"
+
+
+def year_from_date_text(value: str | None) -> int | None:
+    if not value:
+        return None
+    text = str(value).strip()
+    if len(text) >= 4 and text[:4].isdigit():
+        return int(text[:4])
+    return None
+
+
+def query_overlaps_band(query: dict[str, Any], band: dict[str, Any]) -> bool:
+    start = year_from_date_text(query.get("date_start"))
+    end = year_from_date_text(query.get("date_end"))
+    if str(query.get("date_end") or "").lower() == "present":
+        end = 9999
+    if start is None:
+        return False
+    if end is None:
+        end = start
+    band_start = int(band["start"])
+    band_end = int(band["end"]) if band["end"] is not None else 9999
+    return start <= band_end and end >= band_start
 
 
 def safe_int(value: Any) -> int | None:
@@ -467,11 +507,12 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
 
     date_band_summaries = []
     for band in DATE_BANDS:
+        planned_query_count = sum(1 for query in queries if query_overlaps_band(query, band))
         date_band_summaries.append(
             {
                 **band,
                 "record_count": int(record_band_counts.get(str(band["id"]), 0)),
-                "planned_query_count": int(query_band_counts.get(str(band["id"]), 0)),
+                "planned_query_count": int(planned_query_count),
             }
         )
 
