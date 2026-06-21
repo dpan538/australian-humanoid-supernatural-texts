@@ -97,6 +97,7 @@ STATE_NAME_TO_CODE = {
 
 STATE_CODE_TO_NAME = {code: row["name"] for code, row in STATE_PAGES.items()}
 STATE_CODE_TO_NAME["ACT"] = "Australian Capital Territory"
+STATE_CODE_TO_NAME["AU"] = "Australia"
 
 PLACE_STATE_HINTS: dict[str, tuple[str, str]] = {
     "a.c.t": ("ACT", "Australian Capital Territory"),
@@ -474,7 +475,7 @@ def first_story_paragraph(body_text: str) -> str:
     return ""
 
 
-def parse_detail_page(candidate: Candidate, html_text: str) -> ParsedRecord | None:
+def parse_detail_page(candidate: Candidate, html_text: str, allow_au_unspecified: bool = False) -> ParsedRecord | None:
     title = extract_h1(html_text, candidate.listing_title)
     body_text = extract_body_text(html_text)
     location_field = labelled_field(body_text, "Location")
@@ -487,18 +488,26 @@ def parse_detail_page(candidate: Candidate, html_text: str) -> ParsedRecord | No
         return None
 
     state_code = infer_state_code("\n".join([location_field, title, candidate.path, body_text[:1600]]), candidate.state_code)
+    if state_code == "AU" and not allow_au_unspecified:
+        return None
     if state_code not in STATE_CODE_TO_NAME:
         return None
     state_name = STATE_CODE_TO_NAME[state_code]
-    place = infer_place(title, location_field, state_code)
+    place = "Australia" if state_code == "AU" else infer_place(title, location_field, state_code)
     story = first_story_paragraph(body_text)
     body_excerpt = compact_excerpt(story or body_text, 360)
 
-    location_note = (
-        f"Source-stated location: {location_field}."
-        if location_field
-        else f"Location cue from public page title/path: {place}, {state_name}."
-    )
+    if state_code == "AU":
+        location_note = (
+            "No state or locality is asserted in the public page fields; retained as an Australia-level corpus record "
+            "for dashboard/density only and excluded from strict map placement."
+        )
+    else:
+        location_note = (
+            f"Source-stated location: {location_field}."
+            if location_field
+            else f"Location cue from public page title/path: {place}, {state_name}."
+        )
     display_parts = [
         f"Public AYR report page for {title}.",
         location_note,
@@ -686,12 +695,21 @@ def save_raw_text(record_id: int, title: str, raw_text: str) -> str:
 
 
 def upsert_location(conn, parsed: ParsedRecord) -> int:
-    if parsed.place_name == parsed.state_name:
+    if parsed.state_code == "AU":
+        stored_place = "Australia"
+        location_type = "country"
+        state_value = None
+        region_value = "Australia"
+    elif parsed.place_name == parsed.state_name:
         stored_place = parsed.state_name
         location_type = "state_or_territory"
+        state_value = parsed.state_code
+        region_value = parsed.state_name
     else:
         stored_place = f"{parsed.place_name}, {parsed.state_code}"
         location_type = "locality"
+        state_value = parsed.state_code
+        region_value = parsed.place_name
     conn.execute(
         """
         INSERT INTO locations (
@@ -709,12 +727,16 @@ def upsert_location(conn, parsed: ParsedRecord) -> int:
         """,
         (
             stored_place,
-            parsed.place_name if parsed.place_name != parsed.state_name else parsed.state_name,
-            parsed.state_code,
+            region_value,
+            state_value,
             location_type,
             "ayr_public_page_location_field",
-            "source_named_place_needs_geocode",
-            "Place/state extracted from public AYR page title or Location field; coordinates not asserted.",
+            "country_level_corpus_record" if parsed.state_code == "AU" else "source_named_place_needs_geocode",
+            (
+                "Australia-level AYR section record with no asserted state/locality; excluded from strict map."
+                if parsed.state_code == "AU"
+                else "Place/state extracted from public AYR page title or Location field; coordinates not asserted."
+            ),
         ),
     )
     row = conn.execute(
@@ -886,7 +908,7 @@ def write_report(
         f"- Candidate/status CSV: `{display_path(candidates_output)}`",
         "",
         "## Card-Ready Gate",
-        "A page was inserted only when it supplied enough display data for the record card: year, title or Yowie figure, public source URL, Australian state/territory, and a concise objective summary. Search leads and pages missing those fields were skipped.",
+        "A page was inserted only when it supplied enough display data for the record card: year, title or Yowie figure, public source URL, a concise objective summary, and either an Australian state/territory or an explicit Australia-level unresolved location marker. Australia-level section records are retained for dashboard/density and excluded from strict map placement.",
         "",
         "## New Records By State/Territory",
     ]
@@ -979,7 +1001,7 @@ def collect(args: argparse.Namespace) -> int:
                 continue
             try:
                 html_text = fetch(session, candidate.url)
-                parsed = parse_detail_page(candidate, html_text)
+                parsed = parse_detail_page(candidate, html_text, allow_au_unspecified=args.allow_au_unspecified)
             except requests.RequestException as exc:
                 statuses.append(
                     {
@@ -1100,6 +1122,11 @@ def parse_args() -> argparse.Namespace:
         help="Section pages to collect when --include-sections or --sections-only is set",
     )
     parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
+    parser.add_argument(
+        "--allow-au-unspecified",
+        action="store_true",
+        help="Accept public section pages with year/title/summary but no state or locality as Australia-level corpus records. These remain excluded from strict map placement.",
+    )
     return parser.parse_args()
 
 

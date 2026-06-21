@@ -1,0 +1,385 @@
+status,record_id,skip_reason,state_code,year,title,url,place_name,date_band
+skipped,636,duplicate_existing_record,AU,1831,1831 - Sailors Yowie Hoax?,https://www.yowiehunters.com.au/historical-articles/1525-sailors-yowie-hoax-1831,,backsearch_1803_1841
+inserted,1059,,AU,1842,1842 - Aust and NZ Monthly Magazine Article,https://www.yowiehunters.com.au/historical-articles/1486-aust-and-nz-monthly-magazine-article-1842,Australia,anchor_1842_1875
+skipped,637,duplicate_existing_record,AU,1843,1843 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1894-1843-sydney-morning-herald,,anchor_1842_1875
+skipped,638,duplicate_existing_record,AU,1843,1843 - Sydney Morning Herald 2,https://www.yowiehunters.com.au/historical-articles/1933-1843-sydney-morning-herald-2,,anchor_1842_1875
+skipped,639,duplicate_existing_record,AU,1844,1844 - Charles Meredith Diary Entry,https://www.yowiehunters.com.au/historical-articles/1487-charles-meredith-diary-entry-1844,,anchor_1842_1875
+skipped,640,duplicate_existing_record,AU,1847,1847 - Geelong Advertiser,https://www.yowiehunters.com.au/historical-articles/1645-geelong-advertiser-1847,,anchor_1842_1875
+skipped,641,duplicate_existing_record,AU,1847,1847 - Sydney Morning Herald Article,https://www.yowiehunters.com.au/historical-articles/1488-sydney-morning-herald-article-1847,,anchor_1842_1875
+skipped,642,duplicate_existing_record,AU,1851,1851 - John Green Diary Entries,https://www.yowiehunters.com.au/historical-articles/1516-john-green-diary-entries-1851,,anchor_1842_1875
+skipped,643,duplicate_existing_record,AU,1866,"1866 - Peter Harris Diary, Toowareenah NSW",https://www.yowiehunters.com.au/historical-articles/1874-1866-peter-harris-diary-toowareenah-nsw,,anchor_1842_1875
+skipped,644,duplicate_existing_record,AU,1866,1866 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1931-1866-sydney-morning-herald,,anchor_1842_1875
+skipped,645,duplicate_existing_record,AU,1868,"1868 - Empire, Australian Gorilla",https://www.yowiehunters.com.au/historical-articles/1932-1868-empire-australian-gorilla,,anchor_1842_1875
+skipped,646,duplicate_existing_record,AU,1870,1870 - The Naturalist Article,https://www.yowiehunters.com.au/historical-articles/1588-the-naturalist-article-1870,,anchor_1842_1875
+skipped,647,duplicate_existing_record,AU,1871,1871 - Darling Downa Gazette,https://www.yowiehunters.com.au/historical-articles/1640-darling-downa-gazette-1871,,anchor_1842_1875
+skipped,648,duplicate_existing_record,AU,1871,1871 - Illawarra Mercury Article,https://www.yowiehunters.com.au/historical-articles/1481-illawarra-mercury-article-1871,,anchor_1842_1875
+skipped,649,duplicate_existing_record,AU,1871,1871 - Illustrated Australian News,https://www.yowiehunters.com.au/historical-articles/1644-illustrated-australian-news-1871,,anchor_1842_1875
+skipped,1022,duplicate_existing_record,AU,1871,1871 - Manaro Mercury Article,https://www.yowiehunters.com.au/historical-articles/1484-manaro-mercury-article-1871,,anchor_1842_1875
+skipped,650,duplicate_existing_record,AU,1871,"1871 - Queanbeyan Age, Jingera Sighted",https://www.yowiehunters.com.au/historical-articles/1930-1871-queanbeyan-age-jingera-sighted,,anchor_1842_1875
+skipped,651,duplicate_existing_record,AU,1871,1871 - The Empire NSW,https://www.yowiehunters.com.au/historical-articles/1510-the-empire-article-1871,,anchor_1842_1875
+skipped,652,duplicate_existing_record,AU,1871,"1871 (1) - Empire, Sydney",https://www.yowiehunters.com.au/historical-articles/1643-empire-sydney-1871-1,,anchor_1842_1875
+skipped,653,duplicate_existing_record,AU,1871,"1871 (2) - Empire, Sydney",https://www.yowiehunters.com.au/historical-articles/1642-empire-sydney-1871-2,,anchor_1842_1875
+skipped,654,duplicate_existing_record,AU,1871,1871 (2) - Illawarra Mercury Article,https://www.yowiehunters.com.au/historical-articles/1482-illawarra-mercury-article-1871-2,,anchor_1842_1875
+skipped,655,duplicate_existing_record,AU,1871,"1871 (3) - Empire, Sydney",https://www.yowiehunters.com.au/historical-articles/1641-empire-sydney-1871-3,,anchor_1842_1875
+skipped,656,duplicate_existing_record,AU,1872,1872 - Monaro Mercury,https://www.yowiehunters.com.au/historical-articles/1650-monaro-mercury-1872,,anchor_1842_1875
+skipped,657,duplicate_existing_record,AU,1874,1874 - Cooma Express,https://www.yowiehunters.com.au/historical-articles/1651-cooma-express-1874,,anchor_1842_1875
+skipped,1023,duplicate_existing_record,AU,1876,"1876 - Freemans Journal, Walla Walla",https://www.yowiehunters.com.au/historical-articles/1634-freemans-journal-walla-walla-1876,,expansion_1876_1969
+skipped,658,duplicate_existing_record,AU,1876,"1876 - Portland Guardian, Victoria",https://www.yowiehunters.com.au/historical-articles/1632-portland-guardian-victoria-1876,,expansion_1876_1969
+skipped,659,duplicate_existing_record,AU,1876,1876 - Town and Country Article,https://www.yowiehunters.com.au/historical-articles/1511-town-and-country-article-1876,,expansion_1876_1969
+skipped,1024,duplicate_existing_record,AU,1876,1876 - Town and Country Article,https://www.yowiehunters.com.au/historical-articles/1627-town-and-country-article-nov-1876,,expansion_1876_1969
+skipped,660,duplicate_existing_record,AU,1877,1877 - Maitland Mercury,https://www.yowiehunters.com.au/historical-articles/1646-maitland-mercury-1877,,expansion_1876_1969
+skipped,661,duplicate_existing_record,AU,1877,1877 - Sydney Morning Herald Article,https://www.yowiehunters.com.au/historical-articles/1556-sydney-morning-herald-1877,,expansion_1876_1969
+skipped,662,duplicate_existing_record,AU,1878,"1878 - Freemans Journal Article, Pyramul",https://www.yowiehunters.com.au/historical-articles/1558-the-freemans-journal-article-1878,,expansion_1876_1969
+skipped,663,duplicate_existing_record,AU,1878,1878 - Lismore Star Article,https://www.yowiehunters.com.au/historical-articles/1512-star-magazine-article-1878,,expansion_1876_1969
+skipped,664,duplicate_existing_record,AU,1878,"1878 - Singleton Argus, Yowie Sighted",https://www.yowiehunters.com.au/historical-articles/1929-1878-singleton-argus-yowie-sighted,,expansion_1876_1969
+skipped,665,duplicate_existing_record,AU,1880,"1880 - Clarence Examiner, Hairyman Search",https://www.yowiehunters.com.au/historical-articles/1928-1880-clarence-examiner-hairyman-search,,expansion_1876_1969
+skipped,666,duplicate_existing_record,AU,1880,"1880 - Gippsland Times, 7ft Yowie",https://www.yowiehunters.com.au/historical-articles/1927-1880-gippsland-times-7ft-yowie,,expansion_1876_1969
+skipped,667,duplicate_existing_record,AU,1880,1880 - Melbourne Argus,https://www.yowiehunters.com.au/historical-articles/1844-1880-melbourne-argus,,expansion_1876_1969
+skipped,668,duplicate_existing_record,AU,1880,1880 - Southland Times (NZ),https://www.yowiehunters.com.au/historical-articles/1654-southland-times-nz-1880,,expansion_1876_1969
+skipped,669,duplicate_existing_record,AU,1880,1880 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1625-sydney-morning-herald-july-1880,,expansion_1876_1969
+skipped,670,duplicate_existing_record,AU,1880,"1880 - The Express and Telegraph, 7ft Yowie",https://www.yowiehunters.com.au/historical-articles/1926-the-express-and-telegraph-7ft-yowie,,expansion_1876_1969
+skipped,671,duplicate_existing_record,AU,1880,1880's - Arthur Bicknell ' Wood Devil ' Story,https://www.yowiehunters.com.au/historical-articles/2288-1880s-arthur-bicknell-wood-devil-story,,expansion_1876_1969
+skipped,672,duplicate_existing_record,AU,1881,1881 - Goulburn Herald Article,https://www.yowiehunters.com.au/historical-articles/1489-goulburn-herald-article-1881,,expansion_1876_1969
+skipped,673,duplicate_existing_record,AU,1882,1882 - Colac Herald,https://www.yowiehunters.com.au/historical-articles/1952-1882-colac-herald,,expansion_1876_1969
+skipped,674,duplicate_existing_record,AU,1882,"1882 - Illawarra Mercury, Australian Gorilla",https://www.yowiehunters.com.au/historical-articles/1924-1882-illawarra-mercury-australian-gorilla,,expansion_1876_1969
+skipped,675,duplicate_existing_record,AU,1882,1882 - The Naturalist Article,https://www.yowiehunters.com.au/historical-articles/1509-the-naturalist-article-1882,,expansion_1876_1969
+skipped,676,duplicate_existing_record,AU,1882,1882 - Town and Country,https://www.yowiehunters.com.au/historical-articles/1653-town-and-country-1882,,expansion_1876_1969
+skipped,677,duplicate_existing_record,AU,1882,"1882 - Victoria Express, Gorilla Shot",https://www.yowiehunters.com.au/historical-articles/1925-1882-victoria-express-gorilla-shot,,expansion_1876_1969
+skipped,678,duplicate_existing_record,AU,1883,1883 - Illawarra Mercury Article,https://www.yowiehunters.com.au/historical-articles/1483-illawarra-mercury-article-1883,,expansion_1876_1969
+skipped,679,duplicate_existing_record,AU,1886,1886 - Brisbane Courier,https://www.yowiehunters.com.au/historical-articles/1557-brisbane-courier-1886,,expansion_1876_1969
+skipped,680,duplicate_existing_record,AU,1886,1886 - Queanbeyan Age,https://www.yowiehunters.com.au/historical-articles/1635-queanbeyan-age-1886,,expansion_1876_1969
+skipped,681,duplicate_existing_record,AU,1888,1888 - History of Australian Exploration,https://www.yowiehunters.com.au/historical-articles/1589-history-of-australian-exploration-1888,,expansion_1876_1969
+skipped,682,duplicate_existing_record,AU,1889,"1889 - Bowral Free Press, Australian Gorilla",https://www.yowiehunters.com.au/historical-articles/1923-1889-bowral-free-press-australian-gorilla,,expansion_1876_1969
+skipped,1025,duplicate_existing_record,AU,1889,1889 - Kiama Independent,https://www.yowiehunters.com.au/historical-articles/1636-kiama-independent-1889,,expansion_1876_1969
+skipped,683,duplicate_existing_record,AU,1889,1889 - The Illustrated Sydney News Article,https://www.yowiehunters.com.au/historical-articles/1554-the-illustrated-sydney-news-1889,,expansion_1876_1969
+skipped,684,duplicate_existing_record,AU,1891,1891 - Bathurst Times Article,https://www.yowiehunters.com.au/historical-articles/1546-bathurst-times-1891,,expansion_1876_1969
+skipped,685,duplicate_existing_record,AU,1892,1892 - Maitland Mercury,https://www.yowiehunters.com.au/historical-articles/1652-maitland-mercury-1892,,expansion_1876_1969
+skipped,686,duplicate_existing_record,AU,1893,1893 - Goulburn Penny Post Article,https://www.yowiehunters.com.au/historical-articles/1490-goulburn-penny-post-article-1893,,expansion_1876_1969
+skipped,687,duplicate_existing_record,AU,1893,1893 (2) - Goulburn Penny Post Article,https://www.yowiehunters.com.au/historical-articles/1491-goulburn-penny-post-article-1893-2,,expansion_1876_1969
+skipped,688,duplicate_existing_record,AU,1894,1894 - Queanbeyan Observer Article,https://www.yowiehunters.com.au/historical-articles/1492-queenbeyan-observer-article-1894,,expansion_1876_1969
+skipped,689,duplicate_existing_record,AU,1901,1901 - R. H. Mathews Article,https://www.yowiehunters.com.au/historical-articles/1503-r-h-mathews-article-1901,,expansion_1876_1969
+skipped,690,duplicate_existing_record,AU,1902,1902 - Bathurst Free press,https://www.yowiehunters.com.au/historical-articles/1630-bathurst-free-press-1902,,expansion_1876_1969
+skipped,691,duplicate_existing_record,AU,1903,"1903 - Nepean Times, Penrith",https://www.yowiehunters.com.au/historical-articles/1631-nepean-times-penrith-1903,,expansion_1876_1969
+skipped,692,duplicate_existing_record,AU,1903,1903 - Queanbeyan Age,https://www.yowiehunters.com.au/historical-articles/1637-queanbeyan-age-1903,,expansion_1876_1969
+skipped,693,duplicate_existing_record,AU,1903,1903 - The Wallabadah Manucript,https://www.yowiehunters.com.au/historical-articles/1615-the-wallabadah-manucript-1903,,expansion_1876_1969
+skipped,694,duplicate_existing_record,AU,1903,1903 (1) - Queanbeyan Observer Article,https://www.yowiehunters.com.au/historical-articles/1493-quuenbeyan-observer-article-1903,,expansion_1876_1969
+skipped,695,duplicate_existing_record,AU,1903,1903 (2) - Queanbeyan Observer Article,https://www.yowiehunters.com.au/historical-articles/1494-queanbeyan-observer-article-1903-2,,expansion_1876_1969
+skipped,696,duplicate_existing_record,AU,1903,1903 (3) - Queanbeyan Obsever Article,https://www.yowiehunters.com.au/historical-articles/1495-queanbeyan-obsever-article-1903-3,,expansion_1876_1969
+inserted,1060,,AU,1904,1904 - Science of Man Article,https://www.yowiehunters.com.au/historical-articles/1485-science-of-man-article-1904,Australia,expansion_1876_1969
+skipped,697,duplicate_existing_record,AU,1905,1905 - Casino and Kyogle Advertiser Yowie Article,https://www.yowiehunters.com.au/historical-articles/2015-1905-casino-and-kyogle-advertiser-yowie-article,,expansion_1876_1969
+skipped,1026,duplicate_existing_record,AU,1905,1905 - Western Champion,https://www.yowiehunters.com.au/historical-articles/1638-western-champion-1905,,expansion_1876_1969
+skipped,698,duplicate_existing_record,AU,1906,1906 - Singleton Argus,https://www.yowiehunters.com.au/historical-articles/1639-singleton-argus-1906,,expansion_1876_1969
+skipped,699,duplicate_existing_record,AU,1907,1907 - R. H. Mathews Article,https://www.yowiehunters.com.au/historical-articles/1502-r-h-mathews-article-1907,,expansion_1876_1969
+skipped,700,duplicate_existing_record,AU,1907,1907 - The Hairyman by Henry Lawson,https://www.yowiehunters.com.au/historical-articles/2017-1907-the-hairyman-by-henry-lawson,,expansion_1876_1969
+skipped,701,duplicate_existing_record,AU,1909,1909 - Brisbane Workers Newspaper,https://www.yowiehunters.com.au/historical-articles/1626-brisbane-workers-newspaper-1909,,expansion_1876_1969
+skipped,702,duplicate_existing_record,AU,1909,1909 - R. H. Mathew Article,https://www.yowiehunters.com.au/historical-articles/1649-r-h-mathew-article-1909,,expansion_1876_1969
+skipped,703,duplicate_existing_record,AU,1912,1912 - Goulburn Penny Post Article,https://www.yowiehunters.com.au/historical-articles/1498-goulburn-penny-post-article-1912,,expansion_1876_1969
+skipped,704,duplicate_existing_record,AU,1912,1912 - Queanbeyan Age Article,https://www.yowiehunters.com.au/historical-articles/1500-queanbeyan-age-article-1912,,expansion_1876_1969
+skipped,705,duplicate_existing_record,AU,1912,1912 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1529-sydney-morning-herald-1912,,expansion_1876_1969
+skipped,706,duplicate_existing_record,AU,1912,1912 - Sydney Morning Herald Article,https://www.yowiehunters.com.au/historical-articles/1497-sydney-morning-herald-article-1912,,expansion_1876_1969
+skipped,707,duplicate_existing_record,AU,1912,1912 - Sydney Sun Article,https://www.yowiehunters.com.au/historical-articles/1499-sydney-sun-article-1912,,expansion_1876_1969
+skipped,708,duplicate_existing_record,AU,1912,1912 (2) - Sydney Sun Article,https://www.yowiehunters.com.au/historical-articles/1501-sydney-sun-article-1912-2,,expansion_1876_1969
+skipped,709,duplicate_existing_record,AU,1913,1913 - Henry Lawson Article,https://www.yowiehunters.com.au/historical-articles/1506-henry-lawson-article-1913,,expansion_1876_1969
+skipped,710,duplicate_existing_record,AU,1927,"1927 - Brindabella Article, John Gale",https://www.yowiehunters.com.au/historical-articles/1496-john-gale-brindabella-article-1927,,expansion_1876_1969
+skipped,711,duplicate_existing_record,AU,1927,"1927 - History of ACT Legends, John Gale",https://www.yowiehunters.com.au/historical-articles/1655-history-of-act-legends-john-gale-1927,,expansion_1876_1969
+skipped,712,duplicate_existing_record,AU,1928,1928 - Brisbane Courier,https://www.yowiehunters.com.au/historical-articles/1633-brisbane-courier-queensland-1928,,expansion_1876_1969
+skipped,1027,duplicate_existing_record,AU,1930,1930 - Rabbit Proof Fence Exert,https://www.yowiehunters.com.au/historical-articles/1519-rabbit-proof-fence-exert-1930,,expansion_1876_1969
+skipped,713,duplicate_existing_record,AU,1932,"1932 - Stanthorpe, Queensland",https://www.yowiehunters.com.au/historical-articles/1527-stanthorpe-queensland-1932,,expansion_1876_1969
+skipped,714,duplicate_existing_record,AU,1934,1934 - The Cairns Post,https://www.yowiehunters.com.au/historical-articles/2263-1934-the-cairns-post,,expansion_1876_1969
+skipped,824,duplicate_existing_record,AU,1935,1935 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1504-sydney-morning-herald-1935,,expansion_1876_1969
+skipped,825,duplicate_existing_record,AU,1938,"1938 - Nanango, Yowie Report",https://www.yowiehunters.com.au/historical-articles/1528-nanango-queensland-1938,,expansion_1876_1969
+inserted,1061,,AU,1942,1942 - Green Mountains Extract Bernard O'Reilly,https://www.yowiehunters.com.au/historical-articles/1873-1942-green-mountains-extract-bernard-o-reilly,Australia,expansion_1876_1969
+skipped,826,duplicate_existing_record,AU,1954,1954 - The Bulletin NSW,https://www.yowiehunters.com.au/historical-articles/1505-the-bulletin-article-1954,,expansion_1876_1969
+skipped,827,duplicate_existing_record,AU,1962,"1962 - Macleay Argus, Dungay Creek Yowie Article",https://www.yowiehunters.com.au/historical-articles/1426-mungay-creek-new-south-wales-1950,,expansion_1876_1969
+skipped,828,duplicate_existing_record,AU,1976,1976 - Macleay Argus Yowie Article,https://www.yowiehunters.com.au/historical-articles/2062-1976-macleay-argus-yowie-article,,modern_1970_present
+skipped,829,duplicate_existing_record,AU,1976,1976 - Reward for Yowie Article,https://www.yowiehunters.com.au/historical-articles/1607-reward-for-yowie-article-1976,,modern_1970_present
+skipped,830,duplicate_existing_record,AU,1977,1977 - Hairy Man of South East Australia,https://www.yowiehunters.com.au/historical-articles/1647-hairy-man-of-south-east-australia-1977,,modern_1970_present
+skipped,831,duplicate_existing_record,AU,1978,"1978 - Bilambil Yowie Article, Daily News",https://www.yowiehunters.com.au/historical-articles/1606-bilambil-yowie-article-daily-news-1978,,modern_1970_present
+skipped,832,duplicate_existing_record,AU,1979,1979 - Kilkivan Yowie Article,https://www.yowiehunters.com.au/historical-articles/1605-kilkivan-yowie-article-1979,,modern_1970_present
+inserted,1062,,AU,1981,1981 - Old Torrington (Book),https://www.yowiehunters.com.au/historical-articles/1913-1981-old-torrington-book,Australia,modern_1970_present
+inserted,1063,,AU,1984,1984 - Explanation of Term 'Yahoo' - G. Joyner,https://www.yowiehunters.com.au/historical-articles/1903-1984-explanation-of-term-yahoo-g-joyner,Australia,modern_1970_present
+skipped,833,duplicate_existing_record,AU,1985,1985 - International Society of Cryptozoology Report,https://www.yowiehunters.com.au/historical-articles/2294-1985-international-society-of-cryptozoology-report,,modern_1970_present
+inserted,1064,,AU,1986,"1986 - Yahoo, Yowie, Reports of Australian Hairy Bipeds",https://www.yowiehunters.com.au/historical-articles/1902-1986-yahoo-the-yowie-and-reports-of-australian-hairy-bipeds,Australia,modern_1970_present
+skipped,834,duplicate_existing_record,AU,1987,1987 - Yambah Station Yowie Article,https://www.yowiehunters.com.au/historical-articles/1608-yambah-station-yowie-article-1987,,modern_1970_present
+inserted,1065,,AU,1988,1988 - Burnum Burnum's Aboriginal Australia,https://www.yowiehunters.com.au/historical-articles/2018-1988-burnum-burnum-s-aboriginal-australia,Australia,modern_1970_present
+skipped,835,duplicate_existing_record,AU,1989,1989 - Analysis of the Hairy Man by M. Smith,https://www.yowiehunters.com.au/historical-articles/1648-analysis-of-the-hairy-man-by-m-smith-1989,,modern_1970_present
+inserted,1066,,AU,1990,1990 - You Kids Count your Shadows - Aboriginal Legends by Frank Povah,https://www.yowiehunters.com.au/historical-articles/1521-aboriginal-legends-frank-povah-1990,Australia,modern_1970_present
+skipped,836,duplicate_existing_record,AU,1993,"1993 - Mt Spurgeon, Yowie Article",https://www.yowiehunters.com.au/historical-articles/1611-mt-spurgeon-yowie-article,,modern_1970_present
+skipped,837,duplicate_existing_record,AU,1994,1994 - Sydney Morning Herald,https://www.yowiehunters.com.au/historical-articles/1901-1994-sydney-morning-herald,,modern_1970_present
+skipped,838,duplicate_existing_record,AU,1995,1995 - Liz James Research Diary,https://www.yowiehunters.com.au/historical-articles/1517-liz-james-research-diary-1985,,modern_1970_present
+inserted,1067,,AU,1995,1995 - Out of the Shadows (Book) Article,https://www.yowiehunters.com.au/historical-articles/1514-out-of-the-shadows-article-1995,Australia,modern_1970_present
+skipped,839,duplicate_existing_record,AU,1995,"1995 - Who or what is a Yowie, Healy/Cropper",https://www.yowiehunters.com.au/historical-articles/1520-who-or-what-is-a-yowie-1995,,modern_1970_present
+skipped,840,duplicate_existing_record,AU,1996,1996 - Gary Opit Article,https://www.yowiehunters.com.au/historical-articles/1507-gary-opit-article-1996,,modern_1970_present
+inserted,1068,,AU,1996,1996 - Yowie Article By Dr. Helmut Loofs-Wissowa,https://www.yowiehunters.com.au/historical-articles/1900-1996-yowie-article-by-dr-helmut-loofs-wissowa,Australia,modern_1970_present
+skipped,841,duplicate_existing_record,AU,1998,1998 - NT News Article,https://www.yowiehunters.com.au/historical-articles/1513-nt-news-article-1998,,modern_1970_present
+inserted,1069,,AU,1998,1998 - What is a Yowie by Colin Groves,https://www.yowiehunters.com.au/historical-articles/1524-what-is-a-yowie-by-colin-groves-1998,Australia,modern_1970_present
+inserted,1070,,AU,1999,1999 - AYR Interviews Paul Cropper,https://www.yowiehunters.com.au/historical-articles/1533-ayr-interviews-paul-cropper-1999,Australia,modern_1970_present
+skipped,842,duplicate_existing_record,AU,1999,1999 - Night of the Yowie,https://www.yowiehunters.com.au/historical-articles/1604-night-of-the-yowie-1999,,modern_1970_present
+skipped,843,duplicate_existing_record,AU,1999,1999 - Yowiehunters News Article,https://www.yowiehunters.com.au/historical-articles/1613-yowiehunters-news-article-1999,,modern_1970_present
+skipped,844,duplicate_existing_record,AU,1999,1999 (2) - Yowiehunters News Article,https://www.yowiehunters.com.au/historical-articles/1614-yowiehunters-news-article-1999-2,,modern_1970_present
+skipped,1028,duplicate_existing_record,AU,2000,2000 - Batemans Bay Post Yowie Article,https://www.yowiehunters.com.au/historical-articles/1909-2000-batemans-bay-post-yowie-article,,modern_1970_present
+skipped,845,duplicate_existing_record,AU,2000,2000 - Gold Coast Bulletin,https://www.yowiehunters.com.au/historical-articles/1590-gold-coast-bulletin-2000,,modern_1970_present
+skipped,1029,duplicate_existing_record,AU,2000,2000 - The Advocate Article,https://www.yowiehunters.com.au/historical-articles/1523-the-advocate-article-2000,,modern_1970_present
+skipped,846,duplicate_existing_record,AU,2000,2000 - Townsville Bulletin Yowie Article,https://www.yowiehunters.com.au/historical-articles/1899-2000-townsville-bulletin-yowie-article,,modern_1970_present
+inserted,1071,,AU,2001,2001 - Aboriginal Legends Watun Goori,https://www.yowiehunters.com.au/historical-articles/1522-aboriginal-legends-watun-goori-2001,Australia,modern_1970_present
+skipped,847,duplicate_existing_record,AU,2001,2001 - Yowiehunters News Article,https://www.yowiehunters.com.au/historical-articles/1612-yowiehunters-news-article-2001,,modern_1970_present
+inserted,1072,,AU,2002,2002 - Occult POV on the Yowie,https://www.yowiehunters.com.au/historical-articles/1518-occult-pov-on-the-yowie-2002,Australia,modern_1970_present
+skipped,848,duplicate_existing_record,AU,2003,2003 - Graham Joyner Interview,https://www.yowiehunters.com.au/historical-articles/1526-graham-joyner-interview-2003,,modern_1970_present
+inserted,1073,,AU,2006,"2006 - Australian Aboriginal Words, Oxford Dictionary",https://www.yowiehunters.com.au/historical-articles/2042-2006-australian-aboriginal-words-oxford-dictionary,Australia,modern_1970_present
+skipped,849,duplicate_existing_record,AU,2006,2006 - BOOK REVIEW - The Yowie,https://www.yowiehunters.com.au/historical-articles/1123-book-review-the-yowie-in-search-of-australias-bigfoot,,modern_1970_present
+skipped,850,duplicate_existing_record,AU,2006,2006 - Gold Coast Sun Yowie Article,https://www.yowiehunters.com.au/historical-articles/1478-gold-coast-sun-yowie-article-2006,,modern_1970_present
+skipped,851,duplicate_existing_record,AU,2008,"2008 - NSW Glendonbrook, NSW",https://www.yowiehunters.com.au/historical-articles/1479-glendonbrook-new-south-wales-footpring-find-2008,,modern_1970_present
+inserted,1074,,AU,2021,"2021 - The Australian Bigfoot, an Historical Review by Gary Opit",https://www.yowiehunters.com.au/historical-articles/2218-2021-the-australian-bigfoot-an-historical-review-by-gary-opit,Australia,modern_1970_present
+skipped,852,duplicate_existing_record,AU,2021,"2021 - The Wudatji, a Western Australian Junjurrie by Gary Opit",https://www.yowiehunters.com.au/historical-articles/2217-2021-the-wudatji-a-western-australian-junjurrie-by-gary-opit,,modern_1970_present
+skipped,853,duplicate_existing_record,AU,1825,1825 - Richmond River Herald 06-03-1825,https://www.yowiehunters.com.au/media-clips/2254-1825-richmond-river-herald-06-03-1825,,backsearch_1803_1841
+skipped,854,duplicate_existing_record,AU,1825,1825 - Sugarloaf Mountain NSW Yowie Article - Source Unknown,https://www.yowiehunters.com.au/media-clips/2154-1825-sugarloaf-mountain-nsw-yowie-article-source-unknown,,backsearch_1803_1841
+skipped,855,duplicate_existing_record,AU,1861,1861 - The Argus Yowie Article,https://www.yowiehunters.com.au/media-clips/1774-1861-the-argus-yowie-article,,anchor_1842_1875
+skipped,856,duplicate_existing_record,AU,1871,1871 - Sydney Herald Yowie Article,https://www.yowiehunters.com.au/media-clips/1719-1871-sydney-herald-yowie-article,,anchor_1842_1875
+skipped,857,duplicate_existing_record,AU,1874,1874 - Pyramul Hairyman Article,https://www.yowiehunters.com.au/media-clips/1779-1874-pyramul-hairyman-article,,anchor_1842_1875
+skipped,858,duplicate_existing_record,AU,1876,1876 - Illawarra Mercury Yowie Article,https://www.yowiehunters.com.au/media-clips/2164-1876-illawarra-mercury-yowie-article,,expansion_1876_1969
+skipped,859,duplicate_existing_record,AU,1877,1877 - Sydney Morning Herald Yowie Article,https://www.yowiehunters.com.au/media-clips/1701-1877-sydney-morning-herald-yowie-article,,expansion_1876_1969
+skipped,860,duplicate_existing_record,AU,1878,1878 - Freemans Journal Pyramul Hairyman,https://www.yowiehunters.com.au/media-clips/1717-1878-freemans-journal-pyramul-hairyman,,expansion_1876_1969
+skipped,861,duplicate_existing_record,AU,1878,1878 - Northern Star Lismore Yowie Article,https://www.yowiehunters.com.au/media-clips/1721-1878-northern-star-lismore-yowie-article,,expansion_1876_1969
+inserted,1075,,AU,1882,1882 - Decatur Republican Illinois Yowie Article,https://www.yowiehunters.com.au/media-clips/1708-1882-decatur-republican-illinois,Australia,expansion_1876_1969
+skipped,862,duplicate_existing_record,AU,1882,1882 - The West Australian Yowie Article,https://www.yowiehunters.com.au/media-clips/2170-1882-the-west-australian-yowie-article,,expansion_1876_1969
+skipped,1030,duplicate_existing_record,AU,1885,1885 - Australian Town and Country Yowie Article,https://www.yowiehunters.com.au/media-clips/2155-1885-australian-town-and-country-yowie-article,,expansion_1876_1969
+inserted,1076,,AU,1891,1891 - Indiana Democrat Yowie Article,https://www.yowiehunters.com.au/media-clips/1709-1891-indiana-democrat-yowie-article,Australia,expansion_1876_1969
+skipped,863,duplicate_existing_record,AU,1892,1892 - Sydney Mail Yowie Article,https://www.yowiehunters.com.au/media-clips/2169-1892-sydney-mail-yowie-article,,expansion_1876_1969
+skipped,864,duplicate_existing_record,AU,1894,1894 - Queanbeyan Observer Yowie Article,https://www.yowiehunters.com.au/media-clips/1724-1894-queanbeyan-observer-1894,,expansion_1876_1969
+skipped,865,duplicate_existing_record,AU,1895,1895 - Bowral Free Press Yowie Article,https://www.yowiehunters.com.au/media-clips/2159-1895-bowral-free-press-yowie-article,,expansion_1876_1969
+skipped,866,duplicate_existing_record,AU,1902,1902 - Blue Mountains Yowie Article,https://www.yowiehunters.com.au/media-clips/2158-1902-blue-mountains-yowie-article,,expansion_1876_1969
+skipped,867,duplicate_existing_record,AU,1903,1903 - Delegate Argus Yowie Article,https://www.yowiehunters.com.au/media-clips/2161-1903-delegate-argus-yowie-article,,expansion_1876_1969
+skipped,868,duplicate_existing_record,AU,1903,1903 - Queanbeyan Observer Yowie Article 07-08-1903,https://www.yowiehunters.com.au/media-clips/2240-1903-queanbeyan-observer-yowie-article-07-08-1903,,expansion_1876_1969
+skipped,869,duplicate_existing_record,AU,1905,1905 - Molong Express Yowie Article,https://www.yowiehunters.com.au/media-clips/2149-1905-molong-express-yowie-article,,expansion_1876_1969
+skipped,870,duplicate_existing_record,AU,1905,1905 - Narromine News Yowie Article,https://www.yowiehunters.com.au/media-clips/2165-1905-narromine-news-yowie-article,,expansion_1876_1969
+skipped,871,duplicate_existing_record,AU,1906,1906 - Bega Budget Yowie Article,https://www.yowiehunters.com.au/media-clips/2156-1906-bega-budget-yowie-article,,expansion_1876_1969
+skipped,872,duplicate_existing_record,AU,1906,1906 - Cowan NSW Yowie Article,https://www.yowiehunters.com.au/media-clips/2009-1906-cowan-nsw-yowie-article,,expansion_1876_1969
+skipped,873,duplicate_existing_record,AU,1906,1906 - Gippsland Times Yowie Article,https://www.yowiehunters.com.au/media-clips/2162-1906-gippsland-times-yowie-article,,expansion_1876_1969
+skipped,874,duplicate_existing_record,AU,1906,1906 - Tenterfield Courrier Yowie Article,https://www.yowiehunters.com.au/media-clips/2153-1906-tenterfield-courrier-yowie-article,,expansion_1876_1969
+skipped,875,duplicate_existing_record,AU,1909,1909 - Bundaberg Mail & Burnett Advtertiser Yowie Article 10-09-1909,https://www.yowiehunters.com.au/media-clips/2052-1909-bundaberg-mail-burnett-advtertiser-yowie-article,,expansion_1876_1969
+inserted,1077,,AU,1909,1909 - Northern Districts Advertiser 28-06-1909,https://www.yowiehunters.com.au/media-clips/2241-1909-northern-districts-advertiser-28-06-1909,Australia,expansion_1876_1969
+skipped,876,duplicate_existing_record,AU,1909,1909 - Richmond River Herald Yowie Article,https://www.yowiehunters.com.au/media-clips/2167-1909-richmond-river-herald-yowie-article,,expansion_1876_1969
+skipped,877,duplicate_existing_record,AU,1912,1912 - Adelaide Chronicle Yowie Article,https://www.yowiehunters.com.au/media-clips/2014-1912-adelaide-chronicle-yowie-article,,expansion_1876_1969
+skipped,878,duplicate_existing_record,AU,1912,1912 - Evening News Yowie Article,https://www.yowiehunters.com.au/media-clips/2013-1912-evening-news-yowie-article,,expansion_1876_1969
+skipped,879,duplicate_existing_record,AU,1912,1912 - Otago Daily Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1895-1912-otago-daily-times-yowie-article,,expansion_1876_1969
+skipped,880,duplicate_existing_record,AU,1912,1912 - Riverina Times Yowie Article,https://www.yowiehunters.com.au/media-clips/2012-1912-riverina-times-yowie-article,,expansion_1876_1969
+skipped,1031,duplicate_existing_record,AU,1912,1912 - Sunday Mail Yowie Article,https://www.yowiehunters.com.au/media-clips/1775-1912-sunday-mail-yowie-article,,expansion_1876_1969
+skipped,881,duplicate_existing_record,AU,1912,1912 - Sydney Morning Heald Yowie Article,https://www.yowiehunters.com.au/media-clips/1853-1912-sydney-morning-heald,,expansion_1876_1969
+skipped,882,duplicate_existing_record,AU,1912,1912- Bega Budget Yowie Article,https://www.yowiehunters.com.au/media-clips/1852-1912-bega-budget,,expansion_1876_1969
+skipped,883,duplicate_existing_record,AU,1913,1913 - Bombala Times Yowie Article,https://www.yowiehunters.com.au/media-clips/2144-1913-bombala-times-yowie-article,,expansion_1876_1969
+skipped,884,duplicate_existing_record,AU,1913,1913 - Maitland Daily Mercury Yowie Article,https://www.yowiehunters.com.au/media-clips/2011-1913-maitland-daily-mercury-yowie-article,,expansion_1876_1969
+inserted,1078,,AU,1914,1914 - The Naming of Yowie Bay?,https://www.yowiehunters.com.au/media-clips/1698-1914-the-naming-of-yowie-bay,Australia,expansion_1876_1969
+skipped,885,duplicate_existing_record,AU,1927,1927 - Canberra History & Legends by J. Gale,https://www.yowiehunters.com.au/media-clips/1716-1927-canberra-history-legends-by-j-gale,,expansion_1876_1969
+skipped,886,duplicate_existing_record,AU,1927,1927 - History and Legends of the A.C.T. by John Gale,https://www.yowiehunters.com.au/media-clips/2163-1927-history-and-legends-of-the-a-c-t-by-john-gale,,expansion_1876_1969
+skipped,887,duplicate_existing_record,AU,1932,1932 - Northern Territory Times Yowie Article,https://www.yowiehunters.com.au/media-clips/2166-1932-northern-territory-times-yowie-article,,expansion_1876_1969
+skipped,888,duplicate_existing_record,AU,1964,1964 - Sydney Herald Yowie Article,https://www.yowiehunters.com.au/media-clips/2160-1964-sydney-herald-yowie-article,,expansion_1876_1969
+skipped,889,duplicate_existing_record,AU,1965,1965 - Sydney Sun Yowie Article,https://www.yowiehunters.com.au/media-clips/1747-1965-sydney-sun-yowie-article,,expansion_1876_1969
+inserted,1079,,AU,1969,1969 - People Magazine 24-09-69,https://www.yowiehunters.com.au/media-clips/2239-1969-people-magazine-24-09-69,Australia,expansion_1876_1969
+skipped,890,duplicate_existing_record,AU,1970,1970 - Courier Mail Yowie Article,https://www.yowiehunters.com.au/media-clips/2242-1970-courier-mail-yowie-article,,modern_1970_present
+skipped,891,duplicate_existing_record,AU,1970,1970's - Northern Star Re:1935 Lismore Yowie Sighting,https://www.yowiehunters.com.au/media-clips/1692-northern-star-regarding-1935-lismore-yowie-sighting,,modern_1970_present
+skipped,1032,duplicate_existing_record,AU,1973,1973 - Daily Telegraph Yowie Article,https://www.yowiehunters.com.au/media-clips/1757-1973-daily-telegraph-yowie-article,,modern_1970_present
+skipped,1033,duplicate_existing_record,AU,1973,1973 - Daily Telegraph Yowie Article 2,https://www.yowiehunters.com.au/media-clips/1758-1973-daily-telegraph-yowie-article-2,,modern_1970_present
+skipped,892,duplicate_existing_record,AU,1976,1976 - Macleay Argus Yowie Article,https://www.yowiehunters.com.au/media-clips/1771-1976-macleay-argus-yowie-article,,modern_1970_present
+skipped,1034,duplicate_existing_record,AU,1976,1976 - Sun Herald Yowie Article,https://www.yowiehunters.com.au/media-clips/1760-1976-sun-herald-yowie-article,,modern_1970_present
+skipped,893,duplicate_existing_record,AU,1976,1976 - Sydney Sun Yowie Article,https://www.yowiehunters.com.au/media-clips/1714-1976-sydney-sun-yowie-article,,modern_1970_present
+skipped,894,duplicate_existing_record,AU,1976,1976 - Telegraph Canberra area Yowie Article,https://www.yowiehunters.com.au/media-clips/1725-1976-telegraph-canberra-area-yowie-article,,modern_1970_present
+skipped,895,duplicate_existing_record,AU,1977,1977 - Gold Coast Bulletin Yowie Article,https://www.yowiehunters.com.au/media-clips/1727-1977-gold-coast-bulletin,,modern_1970_present
+skipped,896,duplicate_existing_record,AU,1977,1977 - Gold Coast Bulletin Yowie Article 2,https://www.yowiehunters.com.au/media-clips/1745-1977-gold-coast-bulletin-yowie-article-2,,modern_1970_present
+skipped,897,duplicate_existing_record,AU,1977,1977 - Lismore Northern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/1773-1977-lismore-northern-star-yowie-article,,modern_1970_present
+skipped,898,duplicate_existing_record,AU,1977,1977 - Lismore Nothern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/1761-1976-lismore-nothern-star-yowie-article,,modern_1970_present
+skipped,1035,duplicate_existing_record,AU,1977,1977 - Manning River Times Yowie (Betty Gee),https://www.yowiehunters.com.au/media-clips/1706-1977-manning-river-times-yowie-betty-gee,,modern_1970_present
+skipped,1036,duplicate_existing_record,AU,1977,1977 - Melba Cullen's 1930 Encounter at Crescent Head,https://www.yowiehunters.com.au/media-clips/1691-1977-report-pertaining-to-melba-cullen-crescent-head-1930,,modern_1970_present
+skipped,899,duplicate_existing_record,AU,1977,1977 - Tambarumba Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1749-1977-tambarumba-times-yowie-article,,modern_1970_present
+skipped,900,duplicate_existing_record,AU,1977,1977 - Unknown Origin. Re: Springbrook,https://www.yowiehunters.com.au/media-clips/1746-1977-unknown-origin-re-springbrook,,modern_1970_present
+skipped,901,duplicate_existing_record,AU,1978,1978 - Canberra Times,https://www.yowiehunters.com.au/media-clips/1908-1978-canberra-times,,modern_1970_present
+inserted,1080,,AU,1978,1978 - Daily News Yowie Article,https://www.yowiehunters.com.au/media-clips/1778-1978-daily-news-yowie-article,Australia,modern_1970_present
+skipped,902,duplicate_existing_record,AU,1978,1978 - Gold Coast Bulletin (Nerang) 25-08-1978,https://www.yowiehunters.com.au/media-clips/2053-1978-gold-coast-bulletin-nerang,,modern_1970_present
+skipped,903,duplicate_existing_record,AU,1978,1978 - Gold Coast Bulletin Yowie Article,https://www.yowiehunters.com.au/media-clips/1729-1978-gold-coast-bulletin-yowie-article,,modern_1970_present
+skipped,904,duplicate_existing_record,AU,1978,1978 - Gold Coast Bulletin Yowie Article,https://www.yowiehunters.com.au/media-clips/1754-1968-gold-coast-bulletin-yowie-article,,modern_1970_present
+skipped,905,duplicate_existing_record,AU,1978,1978 - Gold Coast Bulletin Yowie Article,https://www.yowiehunters.com.au/media-clips/2083-1978-gold-coast-bulletin-yowie-article-2,,modern_1970_present
+skipped,906,duplicate_existing_record,AU,1978,1978 - Moruya Examiner Yowie Article,https://www.yowiehunters.com.au/media-clips/2150-1978-moruya-examiner-yowie-article,,modern_1970_present
+skipped,1037,duplicate_existing_record,AU,1979,1979 - Bay Post Yowie Article,https://www.yowiehunters.com.au/media-clips/1753-1979-bay-post-yowie-article,,modern_1970_present
+skipped,907,duplicate_existing_record,AU,1979,1979 - Daily Telegraph Yowie Article,https://www.yowiehunters.com.au/media-clips/2157-1979-daily-telegraph-yowie-article,,modern_1970_present
+skipped,908,duplicate_existing_record,AU,1979,1979 - Gold Coast Bulletin Yowie Article,https://www.yowiehunters.com.au/media-clips/2146-1979-gold-coast-bulletin-yowie-article,,modern_1970_present
+skipped,909,duplicate_existing_record,AU,1979,1979 - Murgon Yowie Newspaper Article,https://www.yowiehunters.com.au/media-clips/1735-1979-murgon-yowie-newspaper-article,,modern_1970_present
+skipped,1038,duplicate_existing_record,AU,1979,1979 - Northern Miner Yowie Article,https://www.yowiehunters.com.au/media-clips/1732-1979-northern-miner-yowie-article,,modern_1970_present
+inserted,1081,,AU,1979,1979 - People Magazine Yowie Article - Liz James,https://www.yowiehunters.com.au/media-clips/1696-1979-people-magazine-yowie-article,Australia,modern_1970_present
+skipped,910,duplicate_existing_record,AU,1979,1979 - Pilliga/Coonabarabran Yowie Article,https://www.yowiehunters.com.au/media-clips/1699-1979-pilliga-coonabarabran-yowie-article,,modern_1970_present
+skipped,911,duplicate_existing_record,AU,1979,1979 - The Cronicle QLD Yowie Article,https://www.yowiehunters.com.au/media-clips/1720-1979-the-cronicle-qld-yowie-article,,modern_1970_present
+skipped,912,duplicate_existing_record,AU,1979,1979 - Townsville Daily Bulletin Yowie Article,https://www.yowiehunters.com.au/media-clips/1733-1979-townsville-daily-bulletin-yowie-article,,modern_1970_present
+skipped,913,duplicate_existing_record,AU,1979,1979 - Townsville Daily Bulletin Yowie Article 2,https://www.yowiehunters.com.au/media-clips/1755-1979-townsville-daily-bulletin-yowie-article-2,,modern_1970_present
+skipped,914,duplicate_existing_record,AU,1980,1980 - Canberra Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1728-1980-canberra-times-yowie-article,,modern_1970_present
+inserted,1082,,AU,1980,1980 - People Magazine Yowie Article,https://www.yowiehunters.com.au/media-clips/2151-1980-people-magazine-yowie-article,Australia,modern_1970_present
+inserted,1083,,AU,1980,1980 - Track Magazine Yowie Article,https://www.yowiehunters.com.au/media-clips/2244-1980-track-magazine-yowie-article,Australia,modern_1970_present
+inserted,1084,,AU,1980,1980's - (early) Yowie Articles - Unknown Source,https://www.yowiehunters.com.au/media-clips/1693-early-80-s-yowie-article-unknown-source,Australia,modern_1970_present
+skipped,915,duplicate_existing_record,AU,1980,1980's? - Macleay Argus Yowie Report,https://www.yowiehunters.com.au/media-clips/1705-1980-s-macleay-argus-yowie-report,,modern_1970_present
+skipped,916,duplicate_existing_record,AU,1981,1981 - Canberra Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1904-1981-canberra-times-yowie-article,,modern_1970_present
+skipped,917,duplicate_existing_record,AU,1981,1981 - Lismore Northern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/1756-1981-lismore-northern-star-yowie-article,,modern_1970_present
+skipped,918,duplicate_existing_record,AU,1981,1981 - Lismore Northern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/2147-1981-lismore-northern-star-yowie-article-2,,modern_1970_present
+skipped,919,duplicate_existing_record,AU,1981,1981 - Lismore Northern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/2148-1981-lismore-northern-star-yowie-article-3,,modern_1970_present
+skipped,920,duplicate_existing_record,AU,1983,1983 - Border Post Yowie Article,https://www.yowiehunters.com.au/media-clips/2145-1983-border-post-yowie-article,,modern_1970_present
+inserted,1085,,AU,1983,1983 - The Pinkney Report Yowie Article,https://www.yowiehunters.com.au/media-clips/1750-1983-the-pinkney-report-yowie-article,Australia,modern_1970_present
+skipped,921,duplicate_existing_record,AU,1987,1987 - Launceston Examiner 1987-01-06,https://www.yowiehunters.com.au/media-clips/2237-1987-unknown-source-15-03-1987,,modern_1970_present
+skipped,922,duplicate_existing_record,AU,1987,1987 - News Perth Ape Monster,https://www.yowiehunters.com.au/media-clips/1711-1987-news-perth-ape-monster,,modern_1970_present
+skipped,923,duplicate_existing_record,AU,1987,1987 - NT News Yowie Article,https://www.yowiehunters.com.au/media-clips/1752-1987-nt-news-yowie-article,,modern_1970_present
+skipped,924,duplicate_existing_record,AU,1987,1987 - People Magazine Yowie Report,https://www.yowiehunters.com.au/media-clips/1769-1987-people-magazine-yowie-report,,modern_1970_present
+skipped,925,duplicate_existing_record,AU,1987,1987 - Sunday Press Yowie Article,https://www.yowiehunters.com.au/media-clips/1765-1987-sunday-press-yowie-article,,modern_1970_present
+skipped,926,duplicate_existing_record,AU,1987,1987 - Sydney Mirror Woronora Yowie Article,https://www.yowiehunters.com.au/media-clips/1697-1987-sydney-mirror-woronora-yowie,,modern_1970_present
+skipped,927,duplicate_existing_record,AU,1987,1987 - Sydney Morning Herald. Woronora Yowie Article,https://www.yowiehunters.com.au/media-clips/1694-1987-july-sydney-morning-herald-woronora-yowie-article,,modern_1970_present
+skipped,928,duplicate_existing_record,AU,1987,1987 - Sydney Sun Yowie Article,https://www.yowiehunters.com.au/media-clips/2152-1987-sydney-sun-yowie-article,,modern_1970_present
+skipped,929,duplicate_existing_record,AU,1988,1988 - Unkown Origin of Emerald Encounter,https://www.yowiehunters.com.au/media-clips/1781-1988-unkown-origin-of-emerald-encounter,,modern_1970_present
+skipped,930,duplicate_existing_record,AU,1990,1990 - Grafton Examiner Yowie Article,https://www.yowiehunters.com.au/media-clips/1759-1990-grafton-examiner-yowie-article,,modern_1970_present
+skipped,931,duplicate_existing_record,AU,1990,1990 - Krambach Yowie Aricle,https://www.yowiehunters.com.au/media-clips/1768-1990-krambach-yowie-aricle,,modern_1970_present
+inserted,1086,,AU,1990,1990 - Treasure Islander Yowie Article,https://www.yowiehunters.com.au/media-clips/1770-1990-treasure-islander-yowie-article,Australia,modern_1970_present
+inserted,1087,,AU,1990,1990- People Magazine Yowie Article,https://www.yowiehunters.com.au/media-clips/2236-1990-people-magazine-yowie-article,Australia,modern_1970_present
+inserted,1088,,AU,1990,1990- People Magazine Yowie Article 27-02-1990,https://www.yowiehunters.com.au/media-clips/2253-1990-people-magazine-yowie-article-27-02-1990,Australia,modern_1970_present
+skipped,932,duplicate_existing_record,AU,1992,1992 - Lismore Northern Star Yowie Footprints,https://www.yowiehunters.com.au/media-clips/1712-1992-lismore-northern-star-yowie-footprints,,modern_1970_present
+skipped,933,duplicate_existing_record,AU,1992,1992 - Noosa News Yowie Report,https://www.yowiehunters.com.au/media-clips/1695-1992-noosa-news-yowie-report,,modern_1970_present
+skipped,934,duplicate_existing_record,AU,1992,1992 - Shark Bay / 40 Mile Yowie Article - Source Unknown,https://www.yowiehunters.com.au/media-clips/2168-1992-shark-bay-40-mile-yowie-article-source-unknown,,modern_1970_present
+skipped,935,duplicate_existing_record,AU,1993,1993 - Lismore Northern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/1723-1993-lismore-northern-star-yowie-article,,modern_1970_present
+inserted,1089,,AU,1993,1993 - Northern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/1782-1993-northern-star-yowie-article,Australia,modern_1970_present
+skipped,936,duplicate_existing_record,AU,1994,1994 - Brisbane Daily Yowie Article,https://www.yowiehunters.com.au/media-clips/1734-1994-brisbane-daily-yowie-article,,modern_1970_present
+skipped,937,duplicate_existing_record,AU,1994,1994 - Canberra Times Out Of Shadows Launch,https://www.yowiehunters.com.au/media-clips/1905-1994-canberra-times-out-of-shadows-launch,,modern_1970_present
+skipped,938,duplicate_existing_record,AU,1994,1994 - Sunshine Coast Magazine Yowie Article,https://www.yowiehunters.com.au/media-clips/1730-1994-sunshine-coast-magazine-yowie-article,,modern_1970_present
+skipped,939,duplicate_existing_record,AU,1995,1995 - Cairns Post Yowie Article,https://www.yowiehunters.com.au/media-clips/1748-1995-cairns-post-yowie-article,,modern_1970_present
+skipped,940,duplicate_existing_record,AU,1997,1997 - Litchfield Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1777-1997-litchfield-times-yowie-article,,modern_1970_present
+skipped,941,duplicate_existing_record,AU,1997,1997 - NT News Yowie Article,https://www.yowiehunters.com.au/media-clips/1766-1997-nt-news-yowie-article,,modern_1970_present
+skipped,942,duplicate_existing_record,AU,1998,1998 - Northern Territory News,https://www.yowiehunters.com.au/media-clips/1702-1998-northern-territory-news,,modern_1970_present
+skipped,943,duplicate_existing_record,AU,1999,1999 - Gold Coast Bulletin - 25-08-1999,https://www.yowiehunters.com.au/media-clips/2278-1999-gold-coast-bulletin-25-08-1999,,modern_1970_present
+skipped,944,duplicate_existing_record,AU,1999,1999 - Lismore Northern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/1772-1999-lismore-northern-star-yowie-article,,modern_1970_present
+inserted,1090,,AU,1999,1999 - Take 5 Yowie Article,https://www.yowiehunters.com.au/media-clips/1789-1999-thats-life-magazine-yowie-article-2,Australia,modern_1970_present
+skipped,945,duplicate_existing_record,AU,1999,1999 - Thats Life Magazine Yowie Article,https://www.yowiehunters.com.au/media-clips/1787-1999-thats-life-magazine-yowie-article,,modern_1970_present
+skipped,946,duplicate_existing_record,AU,2000,2000 - Daily Examiner Yowie Article,https://www.yowiehunters.com.au/media-clips/1791-2000-daily-examiner-yowie-article,,modern_1970_present
+skipped,947,duplicate_existing_record,AU,2000,2000 - Gold Coast Bulletin Yowiehunters,https://www.yowiehunters.com.au/media-clips/1715-2000-gold-coast-bulletin-yowiehunters,,modern_1970_present
+inserted,1091,,AU,2000,2000 - Insight Magazine Yowie Exp,https://www.yowiehunters.com.au/media-clips/1704-2000-insight-magazine-yowie-exp,Australia,modern_1970_present
+skipped,948,duplicate_existing_record,AU,2000,2000 - Northern Territory News,https://www.yowiehunters.com.au/media-clips/1710-2000-northern-territory-news,,modern_1970_present
+inserted,1092,,AU,2000,2000 - On the Road Magazine Yowie Article,https://www.yowiehunters.com.au/media-clips/1783-2000-on-the-road-magazine-yowie-article,Australia,modern_1970_present
+skipped,949,duplicate_existing_record,AU,2000,2000 - Queensland Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1794-2000-queensland-times-yowie-article,,modern_1970_present
+skipped,1039,duplicate_existing_record,AU,2000,2000 - Sunday Mail Yowie Article,https://www.yowiehunters.com.au/media-clips/1751-2000-sunday-mail-yowie-article,,modern_1970_present
+inserted,1093,,AU,2000,2000 - The Cronicle Yowie Article,https://www.yowiehunters.com.au/media-clips/1731-2000-the-cronicle-yowie-article,Australia,modern_1970_present
+inserted,1094,,AU,2001,2001 - Aussie Post Magazine - 17-11-2001,https://www.yowiehunters.com.au/media-clips/2277-2001-aussie-post-magazine-17-11-2001,Australia,modern_1970_present
+skipped,1040,duplicate_existing_record,AU,2001,2001 - Caboolture News Yowie Article,https://www.yowiehunters.com.au/media-clips/1767-2001-caboolture-news-yowie-article,,modern_1970_present
+skipped,1041,duplicate_existing_record,AU,2001,2001 - Caboolture News Yowie Article 2,https://www.yowiehunters.com.au/media-clips/1792-2001-caboolture-news-yowie-article-2,,modern_1970_present
+skipped,950,duplicate_existing_record,AU,2001,2001 - Gold Coast Bulletin Yowie Article,https://www.yowiehunters.com.au/media-clips/1764-2001-gold-coast-bulletin-yowie-article,,modern_1970_present
+skipped,951,duplicate_existing_record,AU,2001,2001 - Gold Coast Bulletin Yowie Article 2,https://www.yowiehunters.com.au/media-clips/1786-2001-gold-coast-bulletin-yowie-article-2,,modern_1970_present
+skipped,952,duplicate_existing_record,AU,2001,2001 - Queensland Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1788-2001-queensland-times-yowie-article,,modern_1970_present
+skipped,953,duplicate_existing_record,AU,2001,2001 - Queensland Times Yowie Article 2,https://www.yowiehunters.com.au/media-clips/1793-2001-queensland-times-yowie-article-2,,modern_1970_present
+skipped,954,duplicate_existing_record,AU,2002,2002 - Lismore Northern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/1722-2002-lismore-northern-star-yowie-article,,modern_1970_present
+skipped,1042,duplicate_existing_record,AU,2003,2003 - Herald Sun Yowie Article,https://www.yowiehunters.com.au/media-clips/1762-2003-herald-sun-yowie-article,,modern_1970_present
+skipped,955,duplicate_existing_record,AU,2005,2005 - Gold Coast Bulletin Yowie Article,https://www.yowiehunters.com.au/media-clips/1780-2005-gold-coast-bulletin-yowie-article,,modern_1970_present
+skipped,1043,duplicate_existing_record,AU,2006,2006 - Yarram Standard News,https://www.yowiehunters.com.au/media-clips/1870-2006-yarram-standard-news,,modern_1970_present
+skipped,956,duplicate_existing_record,AU,2007,2007 - Gold Coast Bulletin Yowie Article,https://www.yowiehunters.com.au/media-clips/1785-2007-gold-coast-bulletin-yowie-article,,modern_1970_present
+skipped,1044,duplicate_existing_record,AU,2007,2007 - Sunday Mail Yowie Article,https://www.yowiehunters.com.au/media-clips/1784-2007-sunday-mail,,modern_1970_present
+skipped,1045,duplicate_existing_record,AU,2009,2009 - CFZ Michael Hardcastle Re: Yowie Kempsey,https://www.yowiehunters.com.au/media-clips/1718-2009-cfz-michael-hardcastle-re-yowie-kempsey,,modern_1970_present
+skipped,957,duplicate_existing_record,AU,2009,2009 - Coonabarabran Times - Yowie Bus Inccident,https://www.yowiehunters.com.au/media-clips/1700-2009-coonabarabran-times,,modern_1970_present
+skipped,1046,duplicate_existing_record,AU,2009,2009 - Manning River Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1763-2009-manning-river-times-yowie-article,,modern_1970_present
+skipped,958,duplicate_existing_record,AU,2009,2009 - NT News Yowie Article,https://www.yowiehunters.com.au/media-clips/1906-2009-nt-news-yowie-article,,modern_1970_present
+skipped,1047,duplicate_existing_record,AU,2010,2010 - Armidale Express Yowie Article,https://www.yowiehunters.com.au/media-clips/1703-2010-armidale-express-yowie-article,,modern_1970_present
+inserted,1095,,AU,2010,2010 - Newscastle Herald Yowie Article,https://www.yowiehunters.com.au/media-clips/1922-2010-newscastle-herald-yowie-article,Australia,modern_1970_present
+skipped,959,duplicate_existing_record,AU,2011,2011 - Daily Examiner Yowie Article,https://www.yowiehunters.com.au/media-clips/1741-2011-daily-examiner-yowie-article,,modern_1970_present
+skipped,1048,duplicate_existing_record,AU,2012,2012 - Herald Sun Yowie Article,https://www.yowiehunters.com.au/media-clips/1915-2012-herald-sun-yowie-article,,modern_1970_present
+skipped,960,duplicate_existing_record,AU,2012,2012 - Sydney Telegraph Yowie Article,https://www.yowiehunters.com.au/media-clips/1776-2012-sydney-telegraph-yowie-article,,modern_1970_present
+skipped,961,duplicate_existing_record,AU,2012,2012- News.Com Yowie Article,https://www.yowiehunters.com.au/media-clips/1916-2012-news-com-yowie-article,,modern_1970_present
+inserted,1096,,AU,2013,2013 - Northern Star Yowie Article,https://www.yowiehunters.com.au/media-clips/1740-2013-northern-star-yowie-article,Australia,modern_1970_present
+skipped,962,duplicate_existing_record,AU,2013,2013 - Queensland Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1742-2013-queensland-times-yowie-article,,modern_1970_present
+inserted,1097,,AU,2014,2014 - ABC News Yowie Article,https://www.yowiehunters.com.au/media-clips/1739-2014-abc-news-yowie-article,Australia,modern_1970_present
+skipped,1049,duplicate_existing_record,AU,2014,2014 - ABC News Yowie Article 2,https://www.yowiehunters.com.au/media-clips/1798-2014-abc-news-yowie-article-2,,modern_1970_present
+skipped,963,duplicate_existing_record,AU,2014,2014 - Cairns Post Yowie Article,https://www.yowiehunters.com.au/media-clips/1736-2014-cairns-post-yowie-article,,modern_1970_present
+skipped,964,duplicate_existing_record,AU,2014,2014 - Cairns Post Yowie Article 2,https://www.yowiehunters.com.au/media-clips/1738-2014-cairns-post-yowie-article-2,,modern_1970_present
+skipped,965,duplicate_existing_record,AU,2014,"2014 - Canberra Times, Re: 1912 Braidwood",https://www.yowiehunters.com.au/media-clips/1726-2014-canberra-times-re-1912-braidwood,,modern_1970_present
+skipped,966,duplicate_existing_record,AU,2014,2014 - Gympie Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1743-2014-gympie-times-yowie-article,,modern_1970_present
+skipped,967,duplicate_existing_record,AU,2014,2014 - NT News Yowie Article,https://www.yowiehunters.com.au/media-clips/1737-2014-nt-news-yowie-article,,modern_1970_present
+skipped,1050,duplicate_existing_record,AU,2014,2014 - Pt Douglas Gazette Yowie Article,https://www.yowiehunters.com.au/media-clips/1744-2014-pt-douglas-gazette-yowie-article,,modern_1970_present
+inserted,1098,,AU,2015,2015 - Ancient Origins Yowie Article,https://www.yowiehunters.com.au/media-clips/1917-2015-ancient-origins-yowie-article,Australia,modern_1970_present
+skipped,968,duplicate_existing_record,AU,2015,2015 - Byron Shire News Yowie Article,https://www.yowiehunters.com.au/media-clips/1898-1025-byron-shire-news-yowie-article,,modern_1970_present
+skipped,969,duplicate_existing_record,AU,2015,2015 - Gympie Times Yowie Article,https://www.yowiehunters.com.au/media-clips/2135-2015-gympie-times-yowie-article,,modern_1970_present
+skipped,1051,duplicate_existing_record,AU,2015,2015 - Logan Reporter Yowie Article,https://www.yowiehunters.com.au/media-clips/1822-2015-logan-reporter,,modern_1970_present
+skipped,1052,duplicate_existing_record,AU,2015,2015 - Sunshine Valley Gazette Yowie Article,https://www.yowiehunters.com.au/media-clips/1821-2015-sunshine-valley-gazette,,modern_1970_present
+skipped,970,duplicate_existing_record,AU,2015,2015- Epoch Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1823-2015-epoch-times,,modern_1970_present
+skipped,1053,duplicate_existing_record,AU,2016,2016 - 9 News 06-09-2016,https://www.yowiehunters.com.au/media-clips/2234-2016-9-news-06-09-2016,,modern_1970_present
+inserted,1099,,AU,2016,2016 - ABC Yowie Article,https://www.yowiehunters.com.au/media-clips/1872-2016-abc-yowie-article,Australia,modern_1970_present
+skipped,971,duplicate_existing_record,AU,2016,2016 - Cairns Post Yowie Article,https://www.yowiehunters.com.au/media-clips/1978-2016-cairns-post,,modern_1970_present
+skipped,972,duplicate_existing_record,AU,2016,2016 - Chinchilla News Yowie Article,https://www.yowiehunters.com.au/media-clips/1885-chinchilla-news-2016,,modern_1970_present
+skipped,973,duplicate_existing_record,AU,2016,2016 - Daily Examiner Yowie Article,https://www.yowiehunters.com.au/media-clips/1881-2016-daily-examiner-yowie-article,,modern_1970_present
+skipped,974,duplicate_existing_record,AU,2016,2016 - Daily Mail UK Yowie Article,https://www.yowiehunters.com.au/media-clips/1877-2016-daily-mail-uk-yowie-article,,modern_1970_present
+skipped,975,duplicate_existing_record,AU,2016,2016 - Gympie Times Yowie Article,https://www.yowiehunters.com.au/media-clips/1880-gympie-times-yowie-article-2016,,modern_1970_present
+inserted,1100,,AU,2016,2016 - News.com.au Yowie Article,https://www.yowiehunters.com.au/media-clips/1878-2016-news-com-au-yowie-article,Australia,modern_1970_present
+skipped,1054,duplicate_existing_record,AU,2016,2016 - Toowoomba Cronicle Yowie Article,https://www.yowiehunters.com.au/media-clips/1876-2016-toowoomba-cronicle,,modern_1970_present
+skipped,976,duplicate_existing_record,AU,2016,2016- NRM Digital Media Yowie Article,https://www.yowiehunters.com.au/media-clips/2005-2016-nrm-digital-media-yowie-article,,modern_1970_present
+skipped,1055,duplicate_existing_record,AU,2017,2017 - Bendigo Advertiser Yowie Article 17-03-2017,https://www.yowiehunters.com.au/media-clips/1938-2017-bendigo-advertiser-yowie-article,,modern_1970_present
+inserted,1101,,AU,2017,2017 - Daily Examiner Yowie Article 04-02-2017,https://www.yowiehunters.com.au/media-clips/1897-2017-daily-examiner-yowie-article,Australia,modern_1970_present
+inserted,1102,,AU,2017,2017 - Daily Mail Yowie Article 18-12-2017,https://www.yowiehunters.com.au/media-clips/1962-2017-daily-mail-yowie-article,Australia,modern_1970_present
+skipped,977,duplicate_existing_record,AU,2017,2017 - Eden Magnet Yowie Article (2) 27-04-2017,https://www.yowiehunters.com.au/media-clips/1946-2017-eden-magnet-yowie-article-2,,modern_1970_present
+inserted,1103,,AU,2017,2017 - Eden Magnet Yowie Article (3) 27-04-2017,https://www.yowiehunters.com.au/media-clips/1948-2017-eden-magnet-3,Australia,modern_1970_present
+inserted,1104,,AU,2017,2017 - Eden Magnet Yowie Article 19-04-2017,https://www.yowiehunters.com.au/media-clips/1945-eden-magnet-yowie-article-2017,Australia,modern_1970_present
+skipped,978,duplicate_existing_record,AU,2017,2017 - Illawarra Mercury Yowie Article 02-05-2017,https://www.yowiehunters.com.au/media-clips/1949-2017-illawarra-mercury-yowie-article,,modern_1970_present
+skipped,979,duplicate_existing_record,AU,2017,2017 - News Mail & Queensland Times Yowie Article 04-02-2017,https://www.yowiehunters.com.au/media-clips/1896-2017-news-mail-queensland-times,,modern_1970_present
+skipped,980,duplicate_existing_record,AU,2017,2017 - Sunshine Coast Daily Yowie Article 13-12-2017,https://www.yowiehunters.com.au/media-clips/1963-2017-sunshine-coast-daily-yowie-article,,modern_1970_present
+inserted,1105,,AU,2017,2017- Daily Star Yowie Article 02-12-2017,https://www.yowiehunters.com.au/media-clips/1970-2017-daily-star-yowie-article,Australia,modern_1970_present
+inserted,1106,,AU,2017,2017- The Australian Yowie Article 18-03-2017,https://www.yowiehunters.com.au/media-clips/1941-2017-the-australian-yowie-article,Australia,modern_1970_present
+inserted,1107,,AU,2018,2018 - ABC Southern Yowie Article 21-04-2018,https://www.yowiehunters.com.au/media-clips/2228-2018-abc-southern-yowie-article-21-04-2018,Australia,modern_1970_present
+skipped,1056,duplicate_existing_record,AU,2018,2018 - Balonne Shire News Yowie Article 09-08-2018,https://www.yowiehunters.com.au/media-clips/1980-2018-balonne-shire-news,,modern_1970_present
+inserted,1108,,AU,2018,2018 - Daily Mail UK (3) 30-08-2018,https://www.yowiehunters.com.au/media-clips/1993-2018-daily-mail-uk-3,Australia,modern_1970_present
+inserted,1109,,AU,2018,2018 - Grey Nomads Yowie Article 10-09-2018,https://www.yowiehunters.com.au/media-clips/1997-grey-nomads-yowie-article-2018,Australia,modern_1970_present
+inserted,1110,,AU,2018,2018 - Herald Yowie article 02-08-2018,https://www.yowiehunters.com.au/media-clips/1979-2018-herald-yowie-article,Australia,modern_1970_present
+skipped,981,duplicate_existing_record,AU,2018,2018 - Northern Star Yowie Article 02-06-2018,https://www.yowiehunters.com.au/media-clips/1977-2018-northern-star-yowie-article,,modern_1970_present
+skipped,982,duplicate_existing_record,AU,2018,2018 - South Burnett Times Yowie Article,https://www.yowiehunters.com.au/media-clips/2019-2018-south-burnett-times-yowie-article,,modern_1970_present
+skipped,983,duplicate_existing_record,AU,2018,2018 - Sydney Morning Herald Yowie Article 10-11-2018,https://www.yowiehunters.com.au/media-clips/2020-2018-sydney-morning-herald-yowie-article,,modern_1970_present
+inserted,1111,,AU,2018,2018 - The Sun Yowie Article 06-03-2018,https://www.yowiehunters.com.au/media-clips/2021-2018-the-sun-yowie-article,Australia,modern_1970_present
+inserted,1112,,AU,2018,2018- ABC North Coast Yowie Article 22-11-2018,https://www.yowiehunters.com.au/media-clips/2024-2018-abc-north-coast-yowie-article,Australia,modern_1970_present
+inserted,1113,,AU,2018,2018- Daily Mail Yowie Article (2) 23-08-2018,https://www.yowiehunters.com.au/media-clips/1991-2018-daily-mail-yowie-article-2,Australia,modern_1970_present
+inserted,1114,,AU,2018,2018- Daily Mail Yowie Article 08-03-2018,https://www.yowiehunters.com.au/media-clips/1976-2018-daily-mail-yowie-article,Australia,modern_1970_present
+skipped,1057,duplicate_existing_record,AU,2018,2018- Herbert River Express Yowie Article 15-08-2018,https://www.yowiehunters.com.au/media-clips/2002-2018-herbert-river-express-yowie-article,,modern_1970_present
+inserted,1115,,AU,2018,2018- Northern Star (2) 22-08-2018,https://www.yowiehunters.com.au/media-clips/1992-2018-northern-star-2,Australia,modern_1970_present
+inserted,1116,,AU,2019,2019 - 9 News 24-01-2019,https://www.yowiehunters.com.au/media-clips/2233-2019-9-news-24-01-2019,Australia,modern_1970_present
+skipped,984,duplicate_existing_record,AU,2019,2019 - Courier Mail Yowie Article 15-07-2019,https://www.yowiehunters.com.au/media-clips/2097-2019-courier-mail-yowie-article,,modern_1970_present
+skipped,985,duplicate_existing_record,AU,2019,2019 - Daily Mail Yowie Article (Cairns) 07-02-2019,https://www.yowiehunters.com.au/media-clips/2047-2019-daily-mail-yowie-article-cairns,,modern_1970_present
+inserted,1117,,AU,2019,2019 - Daily Mail Yowie Article 02-08-2019,https://www.yowiehunters.com.au/media-clips/2105-2019-daily-mail-yowie-article-02-08-2019,Australia,modern_1970_present
+inserted,1118,,AU,2019,2019 - Daily Mail Yowie Article 02-09-2019,https://www.yowiehunters.com.au/media-clips/2111-2019-daily-mail-yowie-article-02-09-2019,Australia,modern_1970_present
+inserted,1119,,AU,2019,2019 - Daily Mail Yowie Article 04-09-2019,https://www.yowiehunters.com.au/media-clips/2112-2019-daily-mail-yowie-article-04-09-2019,Australia,modern_1970_present
+inserted,1120,,AU,2019,2019 - Daily Mail Yowie Article 07-08-2019,https://www.yowiehunters.com.au/media-clips/2106-2019-daily-mail-yowie-article-07-08-2019,Australia,modern_1970_present
+inserted,1121,,AU,2019,2019 - Daily Mail Yowie Article 15-07-2019,https://www.yowiehunters.com.au/media-clips/2096-2019-daily-mail-yowie-article,Australia,modern_1970_present
+inserted,1122,,AU,2019,2019 - Daily Mail Yowie Article 23-07-2019,https://www.yowiehunters.com.au/media-clips/2099-daily-mail-yowie-article-23-07-2019,Australia,modern_1970_present
+inserted,1123,,AU,2019,2019 - Daily Mail Yowie Article 23-07-2019 (2),https://www.yowiehunters.com.au/media-clips/2102-2019-daily-mail-yowie-article-23-07-2019-2,Australia,modern_1970_present
+inserted,1124,,AU,2019,2019 - Daily Mail Yowie Article 26-07-2019,https://www.yowiehunters.com.au/media-clips/2104-2019-daily-mail-yowie-article-26-07-2019,Australia,modern_1970_present
+skipped,986,duplicate_existing_record,AU,2019,2019 - Daily Mail Yowie Article 29-01-2019,https://www.yowiehunters.com.au/media-clips/2039-daily-mail-yowie-article,,modern_1970_present
+inserted,1125,,AU,2019,2019 - Daily Mail Yowie Article 31-09-2019,https://www.yowiehunters.com.au/media-clips/2126-2019-daily-mail-yowie-article-31-09-2019,Australia,modern_1970_present
+skipped,987,duplicate_existing_record,AU,2019,2019 - Gold Coast Bulletin Yowie Article (Various GC Based Information) 09-02-2019,https://www.yowiehunters.com.au/media-clips/2049-2019-gold-coast-bulletin-yowie-article-various-gc-based-information,,modern_1970_present
+skipped,988,duplicate_existing_record,AU,2019,2019 - Gold Coast Bulletin Yowie Article 09-02-2019,https://www.yowiehunters.com.au/media-clips/2101-2019-gold-coast-bulletin-yowie-article-09-02-2019,,modern_1970_present
+skipped,989,duplicate_existing_record,AU,2019,2019 - Gold Coast Bulletin Yowie Article 19-07-2019,https://www.yowiehunters.com.au/media-clips/2098-2019-gold-coast-bulletin-yowie-article-19-07-2019,,modern_1970_present
+skipped,990,duplicate_existing_record,AU,2019,2019 - Gold Coast Bulletin Yowie Article 24-01-2019,https://www.yowiehunters.com.au/media-clips/2037-2019-gold-coast-bulletin-yowie-article,,modern_1970_present
+skipped,991,duplicate_existing_record,AU,2019,2019 - Gympie Times Yowie Article 15-06-2019,https://www.yowiehunters.com.au/media-clips/2091-2019-gympie-times-yowie-article,,modern_1970_present
+inserted,1126,,AU,2019,2019 - Northern Daily Leader Yowie Article 30-06-2019,https://www.yowiehunters.com.au/media-clips/2092-2019-northern-daily-leader-yowie-article,Australia,modern_1970_present
+inserted,1127,,AU,2019,2019 - SBS Yowie Article 24-01-2019,https://www.yowiehunters.com.au/media-clips/2036-2019-sbs-yowie-article,Australia,modern_1970_present
+inserted,1128,,AU,2019,2019 - The Sun UK Yowie Article 11-02-2019,https://www.yowiehunters.com.au/media-clips/2056-2019-the-sun-uk-yowie-article,Australia,modern_1970_present
+skipped,992,duplicate_existing_record,AU,2019,2019- Gold Coast Bulletin Yowie Article 20-07-2019,https://www.yowiehunters.com.au/media-clips/2100-2019-gold-coast-bulletin-yowie-article-20-07-2019,,modern_1970_present
+skipped,993,duplicate_existing_record,AU,2019,2019- Gold Coast Bulletin Yowie Article 24-07-2019,https://www.yowiehunters.com.au/media-clips/2103-2019-gold-coast-bulletin-24-07-2019,,modern_1970_present
+skipped,994,duplicate_existing_record,AU,2019,2019- Gold Coast Bulletin Yowie Article 25-01-2019,https://www.yowiehunters.com.au/media-clips/2038-2019-gold-coast-bulletin,,modern_1970_present
+skipped,995,duplicate_existing_record,AU,2020,2020 - Coast to Coast Yowie Article 21-02-2020,https://www.yowiehunters.com.au/media-clips/2137-2020-coast-to-coast-21-02-2020,,modern_1970_present
+inserted,1129,,AU,2020,2020 - Daily Mail Yowie Article 29-09-2020,https://www.yowiehunters.com.au/media-clips/2197-2020-daily-mail-yowie-article-29-09-2020,Australia,modern_1970_present
+skipped,996,duplicate_existing_record,AU,2020,2020 - Gold Coast Bulletin Yowie Article 14-02-2020,https://www.yowiehunters.com.au/media-clips/2136-2020-gold-coast-bulletin-yowie-article-14-02-2020,,modern_1970_present
+skipped,997,duplicate_existing_record,AU,2020,2020 - Gold Coast Bulletin Yowie Article 18-07-2020,https://www.yowiehunters.com.au/media-clips/2201-2020-gold-coast-bulletin-yowie-18-07-2020,,modern_1970_present
+skipped,998,duplicate_existing_record,AU,2020,2020 - Gold Coast Bulletin Yowie Article 25-07-2020,https://www.yowiehunters.com.au/media-clips/2202-2020-gold-coast-bulletin-yowie-article-25-07-2020,,modern_1970_present
+skipped,999,duplicate_existing_record,AU,2020,2020 - News Mail Yowie Article 29-11-2020,https://www.yowiehunters.com.au/media-clips/2196-2020-news-mail-yowie-article-29-11-2020,,modern_1970_present
+skipped,1000,duplicate_existing_record,AU,2020,2020 - Stanthorpe Border Post Yowie Article 07-07-2020,https://www.yowiehunters.com.au/media-clips/2200-2020-stanthorpe-border-post-yowie-article-07-07-2020,,modern_1970_present
+skipped,1058,duplicate_existing_record,AU,2020,2020 - Toowoomba Chronicle Yowie Article 07-07-2020,https://www.yowiehunters.com.au/media-clips/2238-2020-toowoomba-chronicle-yowie-article-07-07-2020,,modern_1970_present
+inserted,1130,,AU,2020,2020- Daily Mail Yowie Article 22-07-2020,https://www.yowiehunters.com.au/media-clips/2198-2020-daily-mail-yowie-article-22-07-2020,Australia,modern_1970_present
+skipped,1001,duplicate_existing_record,AU,2021,2021 - Coast to Coast Radio Yowie Article 24-05-2021,https://www.yowiehunters.com.au/media-clips/2214-2021-coast-to-coast-radio-yowie-article-24-05-2021,,modern_1970_present
+skipped,1002,duplicate_existing_record,AU,2021,2021 - Coonabarabran Times Yowie Article 05-12-2021,https://www.yowiehunters.com.au/media-clips/2227-2021-coonabarabran-times-yowie-article-05-12-2021,,modern_1970_present
+skipped,1003,duplicate_existing_record,AU,2021,2021 - Courier Mail Yowie Article 07-02-2021,https://www.yowiehunters.com.au/media-clips/2205-2021-courier-mail-yowie-article-07-02-2021,,modern_1970_present
+skipped,1004,duplicate_existing_record,AU,2021,2021 - Daily Mail Yowie Article 22-05-2021,https://www.yowiehunters.com.au/media-clips/2208-2021-daily-mail-yowie-article-22-05-2021,,modern_1970_present
+inserted,1131,,AU,2021,2021 - Daily Mail Yowie Article 16-12-2021,https://www.yowiehunters.com.au/media-clips/2230-2021-daily-mail-yowie-article-16-12-2021,Australia,modern_1970_present
+skipped,1005,duplicate_existing_record,AU,2021,2021 - Fortean News Yowie Article 26-05-2021,https://www.yowiehunters.com.au/media-clips/2213-2021-fortean-news-yowie-article-26-05-2021,,modern_1970_present
+skipped,1006,duplicate_existing_record,AU,2021,2021 - Gold Coast Bulletin Yowie Article 06-02-2021,https://www.yowiehunters.com.au/media-clips/2203-2021-gold-coast-bulletin-yowie-article-06-02-2021,,modern_1970_present
+skipped,1007,duplicate_existing_record,AU,2021,2021 - Gold Coast Bulletin Yowie Article 01-01-2021,https://www.yowiehunters.com.au/media-clips/2207-2021-gold-coast-bulletin-yowie-article-01-01-2021,,modern_1970_present
+skipped,1008,duplicate_existing_record,AU,2021,2021 - Gold Coast Bulletin Yowie Article 06-02-2021,https://www.yowiehunters.com.au/media-clips/2215-2021-gold-coast-bulletin-yowie-article-06-02-2022,,modern_1970_present
+skipped,1009,duplicate_existing_record,AU,2021,2021 - News Mail Yowie Article 12-02-2021,https://www.yowiehunters.com.au/media-clips/2204-2021-news-mail-yowie-article-12-02-2021,,modern_1970_present
+skipped,1010,duplicate_existing_record,AU,2021,2021 - News Mail Yowie Article 11-02-2021,https://www.yowiehunters.com.au/media-clips/2235-2021-news-mail-yowie-article-11-02-2021,,modern_1970_present
+skipped,1011,duplicate_existing_record,AU,2021,2021 - News.com Yowie Article 24-05-2021,https://www.yowiehunters.com.au/media-clips/2211-2021-news-com-yowie-article-24-05-2021,,modern_1970_present
+skipped,1012,duplicate_existing_record,AU,2021,2021 - Paris Match Newspaper Yowie Article - 25-05-2021,https://www.yowiehunters.com.au/media-clips/2216-2021-paris-match-newspaper-yowie-article-25-05-2021,,modern_1970_present
+inserted,1132,,AU,2021,2021 - The Sun UK Yowie Article 14-12-2021,https://www.yowiehunters.com.au/media-clips/2231-2021-the-sun-uk-yowie-article-14-12-2021,Australia,modern_1970_present
+skipped,1013,duplicate_existing_record,AU,2021,2021- 7 News / Sunrise Yowie Article 24-05-2021,https://www.yowiehunters.com.au/media-clips/2209-2021-7-news-sunrise-24-05-2021,,modern_1970_present
+skipped,1014,duplicate_existing_record,AU,2021,2021- Mysterious Universe Yowie Article 25-05-2021,https://www.yowiehunters.com.au/media-clips/2212-2021-mysterious-universe-yowie-article-25-05-2021,,modern_1970_present
+skipped,1015,duplicate_existing_record,AU,2021,2021- Sydney News Today Yowie Article 23-05-2021,https://www.yowiehunters.com.au/media-clips/2210-2021-sydney-news-today-23-05-2021,,modern_1970_present
+skipped,1016,duplicate_existing_record,AU,2022,2022 - 7 News Yowie Article 26-02-2022,https://www.yowiehunters.com.au/media-clips/2229-2022-7-news-yowie-article-26-02-2022,,modern_1970_present
+inserted,1133,,AU,2022,2022 - 9 News Yowie Article 07-01-2022,https://www.yowiehunters.com.au/media-clips/2232-2022-9-news-yowie-article-07-01-2022,Australia,modern_1970_present
