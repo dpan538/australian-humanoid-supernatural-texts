@@ -1,0 +1,202 @@
+schema_version: "2.1.0"
+description: >
+  Third audited public-web seed list from sitemap review. These are public
+  institutional or heritage pages that support person-form ghost/apparition
+  records in low-coverage states. They are source items, not claims that an
+  event has been verified.
+seeds:
+  - source_name: Adelaide Gaol
+    source_type: institutional_web
+    source_tier: B
+    title: Adelaide Gaol | Ghostly sightings
+    publication_or_organisation: Department for Environment and Water, Government of South Australia
+    publication_date_text: undated public page, accessed 2026-06-21
+    url: https://www.adelaidegaol.sa.gov.au/visiting-the-gaol/self-guided-adelaide-tours/ghost-sightings
+    external_id: adelaide-gaol:ghostly-sightings
+    narrative_type: ghost_legend
+    secondary_role: heritage_discourse
+    source_label: Ghostly sightings
+    expected_terms:
+      - Ghostly sightings
+      - haunted
+      - Frederick Carr
+      - Ben Ellis
+      - Elizabeth Woolcock
+    location_text: Adelaide Gaol, Adelaide, South Australia
+    location_aliases:
+      - Adelaide Gaol
+      - South Australia
+    location_role: legend_associated_place
+    latitude: -34.9157
+    longitude: 138.5889
+    location_precision: exact_site
+    geocode_source: official_heritage_page_manual_coordinate_check
+    geocode_verification_status: verified_institutional_coordinate
+    coordinate_evidence_note: Official Adelaide Gaol public page identifies the place; coordinate is checked to Adelaide Gaol by place name and Adelaide parklands location.
+    duplicate_check_status: canonical_url_checked
+    quality_class: B
+    publicness_status: public_page
+    rights_access_status: public government heritage page; neutral summary only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public South Australian government heritage page for Adelaide Gaol ghost-sighting narratives.
+    humanoid_basis: The public page describes named deceased inmates or officers as reported ghostly figures associated with Adelaide Gaol.
+    evidence_summary: The source reports ghostly sightings at Adelaide Gaol and names several deceased inmates or officers associated with public ghost narratives at the site.
+    manual_public_text_excerpt: >
+      Adelaide Gaol | Ghostly sightings. Thought to be one of the most haunted
+      places in Australia, Adelaide Gaol is said to be regularly visited by
+      some of the inmates and prison officers who once wandered its halls.
+      Frederick Carr is said to appear regularly near the stairs leading to the
+      upstairs cells of the New Building. The page also describes Governor
+      William Baker Ashton and Ben Ellis the hangman in Adelaide Gaol ghost
+      narratives.
+
+  - source_name: National Trust Tasmania
+    source_type: institutional_web
+    source_tier: B
+    title: Dark Ghost Tours - Afterlife Tales of the Hobart Convict Penitentiary
+    publication_or_organisation: National Trust Tasmania
+    publication_date_text: 2026 public event page, accessed 2026-06-21
+    url: https://www.nationaltrust.org.au/event/dark-ghost-tours-afterlife-tales-of-the-hobart-convict-penitentiary/
+    external_id: national-trust-tas:hobart-penitentiary-dark-ghost-tours
+    narrative_type: ghost_legend
+    secondary_role: heritage_discourse
+    source_label: Dark Ghost Tours
+    expected_terms:
+      - Dark Ghost Tours
+      - Afterlife Tales
+      - Hobart Convict Penitentiary
+      - haunted
+    location_text: Hobart Convict Penitentiary, Hobart, Tasmania
+    location_aliases:
+      - Hobart Convict Penitentiary
+      - Hobart Penitentiary
+      - Tasmania
+    location_role: legend_associated_place
+    latitude: -42.8796
+    longitude: 147.3275
+    location_precision: exact_site
+    geocode_source: national_trust_event_page_manual_coordinate_check
+    geocode_verification_status: verified_institutional_coordinate
+    coordinate_evidence_note: Public National Trust event page identifies Hobart Convict Penitentiary; coordinate checked to the named penitentiary site in Hobart.
+    duplicate_check_status: canonical_url_checked
+    quality_class: B
+    publicness_status: public_page
+    rights_access_status: public heritage event page; neutral summary only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public Tasmanian heritage page for a place-linked ghost tour at Hobart Convict Penitentiary.
+    humanoid_basis: The public page frames the tour around afterlife tales and haunted convict-era spaces at the penitentiary.
+    evidence_summary: The source presents Hobart Convict Penitentiary as the setting for public afterlife and ghost-tour narratives tied to the convict-era site.
+
+  - source_name: National Trust Tasmania
+    source_type: institutional_web
+    source_tier: B
+    title: Hobart Penitentiary - Paranormal Investigation
+    publication_or_organisation: National Trust Tasmania
+    publication_date_text: public event page, accessed 2026-06-21
+    url: https://www.nationaltrust.org.au/event/hobart_penitentiary_paranormal_investigation/
+    external_id: national-trust-tas:hobart-penitentiary-paranormal-investigation
+    narrative_type: apparition_account
+    secondary_role: heritage_discourse
+    source_label: Paranormal Investigation
+    expected_terms:
+      - Hobart Penitentiary
+      - Paranormal Investigation
+      - convict
+    location_text: Hobart Convict Penitentiary, Hobart, Tasmania
+    location_aliases:
+      - Hobart Penitentiary
+      - Tasmania
+    location_role: apparition_location
+    latitude: -42.8796
+    longitude: 147.3275
+    location_precision: exact_site
+    geocode_source: national_trust_event_page_manual_coordinate_check
+    geocode_verification_status: verified_institutional_coordinate
+    coordinate_evidence_note: Public National Trust page identifies the Hobart Penitentiary site; coordinate checked to the named site in Hobart.
+    duplicate_check_status: canonical_url_checked
+    quality_class: B
+    publicness_status: public_page
+    rights_access_status: public heritage event page; neutral summary only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public Tasmanian heritage page for a paranormal investigation event at Hobart Penitentiary.
+    humanoid_basis: The source frames the place through paranormal investigation and convict-era haunted context; retained as a public apparition/ghost-discourse source item.
+    evidence_summary: The source describes a public paranormal-investigation event at Hobart Penitentiary and associates the site with haunted convict-era narratives.
+
+  - source_name: National Trust Victoria
+    source_type: institutional_web
+    source_tier: B
+    title: Ghost! What Ghosts? Night Tour at Old Melbourne Gaol
+    publication_or_organisation: National Trust Victoria
+    publication_date_text: public event page, accessed 2026-06-21
+    url: https://www.nationaltrust.org.au/event/ghost-what-ghosts-tour-at-old-melbourne-gaol/
+    external_id: national-trust-vic:old-melbourne-gaol-ghost-what-ghosts
+    narrative_type: ghost_legend
+    secondary_role: heritage_discourse
+    source_label: Ghost
+    expected_terms:
+      - Ghost
+      - Old Melbourne Gaol
+      - haunted
+      - inmate
+    location_text: Old Melbourne Gaol, Melbourne, Victoria
+    location_aliases:
+      - Old Melbourne Gaol
+      - Melbourne
+      - Victoria
+    location_role: legend_associated_place
+    latitude: -37.8078
+    longitude: 144.9653
+    location_precision: exact_site
+    geocode_source: national_trust_event_page_manual_coordinate_check
+    geocode_verification_status: verified_institutional_coordinate
+    coordinate_evidence_note: Public National Trust page identifies Old Melbourne Gaol; coordinate checked to the Russell Street gaol site in Melbourne.
+    duplicate_check_status: canonical_url_checked
+    quality_class: B
+    publicness_status: public_page
+    rights_access_status: public heritage event page; neutral summary only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public Victorian heritage page for a place-linked ghost tour at Old Melbourne Gaol.
+    humanoid_basis: The source presents Old Melbourne Gaol through ghost-tour and haunted-inmate public narratives.
+    evidence_summary: The source reports a public night tour at Old Melbourne Gaol focused on ghost narratives and haunted prison stories.
+
+  - source_name: Port Arthur Historic Site
+    source_type: institutional_web
+    source_tier: B
+    title: Ghost Tours at Port Arthur - Off Season Tasmania 2026
+    publication_or_organisation: Port Arthur Historic Site
+    publication_date_text: 2026 public page, accessed 2026-06-21
+    url: https://portarthur.org.au/ghost-tour-off-season/
+    external_id: portarthur:ghost-tour-off-season-2026
+    narrative_type: ghost_legend
+    secondary_role: heritage_discourse
+    source_label: Ghost
+    expected_terms:
+      - Ghost Tours
+      - Port Arthur
+      - paranormal
+      - convict
+    location_text: Port Arthur Historic Site, Tasmania
+    location_aliases:
+      - Port Arthur Historic Site
+      - Port Arthur
+      - Tasmania
+    location_role: legend_associated_place
+    latitude: -43.147019
+    longitude: 147.851265
+    location_precision: named_feature
+    geocode_source: public_heritage_page_existing_coordinate_check
+    geocode_verification_status: verified_gazetteer_point
+    coordinate_evidence_note: Public page associates ghost-tour narratives with Port Arthur Historic Site; coordinate uses the named historic site point already used in the strict map layer.
+    duplicate_check_status: canonical_url_checked
+    quality_class: B
+    publicness_status: public_page
+    rights_access_status: public heritage/tour page; neutral summary only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public Tasmanian heritage page for Port Arthur ghost-tour circulation.
+    humanoid_basis: The page frames the historic site through ghost and paranormal public narratives tied to the convict site.
+    evidence_summary: The source describes Port Arthur ghost tours as public place-linked ghost-story circulation associated with the historic site.

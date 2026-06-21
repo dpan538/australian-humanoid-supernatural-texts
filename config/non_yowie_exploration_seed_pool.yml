@@ -1,0 +1,82 @@
+schema_version: "2.1.0"
+description: >
+  Exploration pool for broad person-form public records. Rows here should be
+  promoted into audited seeded-web batches only after the exact URL has been
+  fetched or manually inspected. The pool intentionally broadens beyond Yowie:
+  person-form ghosts, apparitions, spirit-person records, giants, little people,
+  wild/hairy-person descriptors, public retellings, and institutional collection
+  descriptions.
+
+priority_axes:
+  low_coverage_states:
+    - WA
+    - NT
+    - SA
+    - TAS
+    - VIC
+  reduce_dominance:
+    - Yowie
+    - Yahoo
+  expand_person_form_terms:
+    - apparition
+    - ghost figure
+    - lady in white
+    - grey lady
+    - headless figure
+    - convict ghost
+    - spirit person
+    - ancestor figure
+    - giant
+    - little people
+    - dwarf people
+    - hairy man
+    - wild man
+    - ape-like man
+    - Australian gorilla
+    - Mimih
+    - Mimi spirits
+    - Wandjina
+    - Wanjina
+    - Quinkan
+    - Quinkin
+    - Nargun
+    - Puttikan
+    - Garkain
+    - Mokoi
+    - Mamu
+    - Pangkarlangu
+    - Tjangara
+
+source_routes:
+  institutional_collections:
+    - Art Gallery of New South Wales collection works
+    - Art Gallery of South Australia collection works
+    - Australian Screen / NFSA title and clip pages
+    - state library exhibition and collection pages
+    - National Trust place pages with manifested figure narratives
+    - parks and heritage authority pages
+  low_coverage_geo_routes:
+    WA:
+      - Fremantle Prison and Perth heritage ghost/person-form pages
+      - Kimberley Wandjina/Wanjina public institutional pages
+      - WA Museum / State Library WA public collection pages
+    NT:
+      - Mimih/Mimi public collection pages
+      - Garkain/Mokoi/Mamu/Pangkarlangu public institutional pages
+      - MAGNT, AIATSIS public, gallery, broadcaster pages
+    SA:
+      - Adelaide Gaol, heritage places, institutional collection pages
+      - Mamu/Tjangara public records where source text is public and non-restricted
+    TAS:
+      - Port Arthur and Tasmanian heritage person-form ghost accounts
+      - state library/local-history public pages with manifested figure narratives
+    VIC:
+      - Nargun/Puttikan public pages
+      - Old Melbourne Gaol, Princess Theatre/Federici, National Trust person-form pages
+
+acceptance_notes:
+  - Public display records may use broad geography and do not need latitude/longitude.
+  - Strict map records still require a verified coordinate and non-publication location role.
+  - Do not treat artwork production place as event location.
+  - Do not use Wikipedia, search snippets, or generic listicles as accepted final sources.
+  - Do not reproduce restricted or culturally controlled material; use neutral summaries.

@@ -15,6 +15,21 @@ The project should not be reduced to a Yowie archive. Yowie remains an important
 semantic cluster, but current collection actively prioritizes non-Yowie source
 labels and under-covered states/territories.
 
+## Widened Person-Form Boundary
+
+Current collection treats "humanoid" as an archive-facing person-form signal,
+not a biological category. A record may qualify when a public source describes,
+names, stages, depicts, or retells a human-shaped apparition, ghost figure,
+spirit person, ancestor figure, giant, ogre, little-person, wild man, hairy man,
+ape-like person, or other person-like supernatural/anomalous figure.
+
+This wider boundary is intended to prevent the corpus from becoming a narrow
+Yowie-only dataset. It does not mean every haunted place, monster, animal,
+light phenomenon, or vague supernatural atmosphere qualifies. A record still
+needs a public source item, a source label or narrative basis, an Australian
+relation, a neutral evidence summary, and a location role. Only coordinate-
+verified records enter the map.
+
 ## Current Targets
 
 - Public display corpus: 2500-3000 records.

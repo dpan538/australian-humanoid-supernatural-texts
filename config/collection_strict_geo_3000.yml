@@ -37,11 +37,6 @@ counting_rule:
     - source_label_where_present
     - location_role
     - location_text_as_printed
-    - latitude
-    - longitude
-    - geocode_source
-    - geocode_verification_status
-    - coordinate_evidence_note
     - ethics_review_status
     - cultural_sensitivity
     - duplicate_check_status
@@ -55,7 +50,25 @@ counting_rule:
     - longitude
     - verified_place_or_locality
     - location_role_not_publication_location
+    - geocode_source
+    - geocode_verification_status
     - coordinate_evidence_note
+  widened_humanoid_boundary:
+    accepted_person_form_signals:
+      - human-shaped apparition or ghost figure
+      - spirit person or ancestor figure described in public source language
+      - giant, ogre, dwarf, little-person, or person-like being
+      - wild man, hairy man, unknown humanoid, ape-like man, or Australian gorilla descriptor
+      - named local legend with a manifested person-like figure
+      - public retelling/adaptation using a humanoid or person-form supernatural label
+      - public institutional collection record whose title/description preserves a source label
+    not_enough_on_its_own:
+      - haunted place without a manifested person-like figure
+      - non-humanoid animal, light, sound, object, weather, or landscape phenomenon
+      - bare catalogue metadata with no public descriptive text
+      - search-result snippet only
+      - generic monster listicle with no source chain
+      - source page blocked by access controls
   strict_geography_gate:
     accepted_values:
       geocode_verification_status:
