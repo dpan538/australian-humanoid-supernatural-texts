@@ -10,16 +10,17 @@ place relationship.
 from __future__ import annotations
 
 import hashlib
+import html as html_lib
 import json
 import re
 from collections.abc import Iterable
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
 
 import requests
 import yaml
-from bs4 import BeautifulSoup
 
 from aus_humanoid.normalise import canonicalise_whitespace, normalise_alias
 from aus_humanoid.utils import PROJECT_ROOT, utc_now_iso
@@ -29,6 +30,31 @@ from .models import CollectionCandidate
 
 
 TEXT_MINIMUM_CHARS = 240
+
+
+class VisibleTextParser(HTMLParser):
+    """Small stdlib HTML text extractor for collector probes."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self._skip_depth = 0
+        self.parts: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() in {"script", "style", "noscript", "svg"}:
+            self._skip_depth += 1
+        elif tag.lower() in {"p", "div", "li", "br", "section", "article", "h1", "h2", "h3"}:
+            self.parts.append(" ")
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() in {"script", "style", "noscript", "svg"} and self._skip_depth:
+            self._skip_depth -= 1
+        elif tag.lower() in {"p", "div", "li", "section", "article", "h1", "h2", "h3"}:
+            self.parts.append(" ")
+
+    def handle_data(self, data: str) -> None:
+        if not self._skip_depth:
+            self.parts.append(data)
 
 
 def load_seed_rows(path: Path) -> list[dict[str, Any]]:
@@ -46,11 +72,10 @@ def host_key(url: str) -> str:
     return f"{host}-{path_hash}"
 
 
-def html_to_text(html: str) -> str:
-    soup = BeautifulSoup(html, "html.parser")
-    for tag in soup(["script", "style", "noscript", "svg"]):
-        tag.decompose()
-    return canonicalise_whitespace(soup.get_text(" "))
+def html_to_text(html_text: str) -> str:
+    parser = VisibleTextParser()
+    parser.feed(html_text)
+    return canonicalise_whitespace(html_lib.unescape(" ".join(parser.parts)))
 
 
 def fetch_public_text(url: str, cache_path: Path) -> tuple[str, str]:
