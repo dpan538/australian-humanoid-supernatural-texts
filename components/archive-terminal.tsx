@@ -823,7 +823,7 @@ function DashboardTrackNetwork({
         {tracks.map((record, index) => (
           <button className="track-row" key={record.record_id} type="button" onClick={() => onSelectRecord(record)}>
             <b>{String(index + 1).padStart(2, "0")}.</b>
-            <i>{dashboardTrackLabel(data, record, index)}</i>
+            <i>{dashboardTrackLabel(record)}</i>
           </button>
         ))}
       </div>
@@ -842,13 +842,15 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
     acc[query.query_type] = (acc[query.query_type] ?? 0) + 1;
     return acc;
   }, {});
-  const stateCounts = data.summary.state_record_counts;
-  const strictStateCounts = data.map_points.reduce<Record<string, number>>((acc, point) => {
-    if (point.state_territory) {
-      acc[point.state_territory] = (acc[point.state_territory] ?? 0) + 1;
-    }
-    return acc;
-  }, {});
+  const stateCounts = data.summary.corpus_state_counts ?? data.summary.state_record_counts;
+  const strictStateCounts =
+    data.summary.strict_state_counts ??
+    data.map_points.reduce<Record<string, number>>((acc, point) => {
+      if (point.state_territory) {
+        acc[point.state_territory] = (acc[point.state_territory] ?? 0) + 1;
+      }
+      return acc;
+    }, {});
   const figureCounts = data.records.reduce<Record<string, number>>((acc, record) => {
     const label = record.canonical_figure_guess || record.canonical_figure || "uncoded";
     acc[label] = (acc[label] ?? 0) + 1;
@@ -1074,21 +1076,20 @@ function ConsolePolyline({ values }: { values: Record<string, number> }) {
   );
 }
 
-function dashboardTrackLabel(data: FrontendData, record: RecordItem, index: number) {
-  const point = data.map_points.find((item) => item.record_id === record.record_id);
-  const state = point?.state_territory ?? record.location_summary?.match(/\b(WA|NT|SA|QLD|NSW|VIC|TAS|ACT)\b/)?.[1] ?? "AU";
+function dashboardTrackLabel(record: RecordItem) {
   const year = record.year ? String(record.year) : "----";
-  const tone = mapSourceTone(record).label.replace("AYR ", "");
-  const figure = record.canonical_figure_guess || record.canonical_figure || "record";
-  const title = figure === "Yowie" || index > 6 ? record.title || figure : figure;
-  return truncate(`${year} ${state} ${tone} / ${title}`, index > 10 ? 42 : 32);
+  const figure = record.canonical_figure_guess || record.canonical_figure || "";
+  const rawTitle = record.title || figure || `Record ${record.record_id}`;
+  const title = rawTitle
+    .replace(/^\s*(?:ca\.?\s*)?\d{4}\s*[-–:]\s*/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const label = title || figure || `Record ${record.record_id}`;
+  return `${truncate(label, 27)} (${year})`;
 }
 
 function dashboardTrackSample(data: FrontendData) {
-  const recordsById = new Map(data.records.map((record) => [record.record_id, record]));
-  const strictRecordIds = new Set(data.map_points.map((point) => point.record_id));
-  const base = data.records.filter((record) => strictRecordIds.has(record.record_id));
-  const pool = (base.length ? base : data.records).filter((record) => record.relevance_code !== "noise");
+  const pool = data.records.filter((record) => record.relevance_code !== "noise");
   const byYear = [...pool].sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.record_id - b.record_id);
   const selected: RecordItem[] = [];
   const seen = new Set<number>();
@@ -1118,8 +1119,7 @@ function dashboardTrackSample(data: FrontendData) {
   firstBy((record) => record.source_type || record.source_name, 4);
 
   for (const code of Object.keys(STATE_NAMES)) {
-    const point = data.map_points.find((item) => item.state_territory === code);
-    add(point ? recordsById.get(point.record_id) : undefined);
+    add(byYear.find((record) => record.state_territory === code));
   }
 
   for (const band of data.date_bands) {

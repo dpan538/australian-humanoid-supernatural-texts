@@ -2158,6 +2158,7 @@ a {
   gap: 6px;
   padding-right: 16px;
   min-height: 0;
+  max-height: min(560px, 58vh);
   overflow: hidden;
 }
 

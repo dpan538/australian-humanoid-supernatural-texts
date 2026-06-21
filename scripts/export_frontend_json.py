@@ -156,6 +156,9 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             item["year"] = safe_int(item.get("year"))
             item["date_band"] = year_to_band(item["year"])
             item["location_summary"] = location_summary(conn, int(item["record_id"])) if "record_locations" in tables else ""
+            item["state_territory"] = None
+            item["location_precision_status"] = "unmapped"
+            item["has_strict_map_point"] = False
             records.append(item)
 
         locations: list[dict[str, Any]] = []
@@ -241,6 +244,9 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                     "coding_notes": f"V2 accepted candidate {candidate_id}; map point {'verified' if has_strict_point else 'pending strict geocode'}; quality {candidate.get('quality_class') or 'ungraded'}.",
                     "date_band": year_to_band(year),
                     "location_summary": candidate.get("location_text") or "",
+                    "state_territory": state_code,
+                    "location_precision_status": candidate.get("location_precision") or ("precise_point" if has_strict_point else "unmapped"),
+                    "has_strict_map_point": has_strict_point,
                 }
                 records.append(record)
                 if has_strict_point:
@@ -400,6 +406,24 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         elif location.get("location_type") in {"broad_region", "state_or_territory", "country"}:
             broad_locations.append(location)
 
+    precise_record_ids = {int(point["record_id"]) for point in precise_points}
+    for record_id, location in first_location_by_record.items():
+        record = records_by_id.get(record_id)
+        if not record:
+            continue
+        record["state_territory"] = location.get("state_territory")
+        record["location_precision_status"] = location.get("location_type") or "mapped"
+        record["has_strict_map_point"] = record_id in precise_record_ids
+
+    corpus_state_record_ids: dict[str, set[int]] = {code: set() for code in STATE_CODES}
+    unmapped_record_count = 0
+    for record in records:
+        state = record.get("state_territory")
+        if state in corpus_state_record_ids:
+            corpus_state_record_ids[state].add(int(record["record_id"]))
+        else:
+            unmapped_record_count += 1
+
     map_clusters = [
         {
             "cluster_id": f"state:{code}",
@@ -480,6 +504,9 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             "earliest_year": min(years) if years else None,
             "latest_year": max(years) if years else None,
             "state_record_counts": {code: len(ids) for code, ids in state_record_ids.items()},
+            "corpus_state_counts": {code: len(ids) for code, ids in corpus_state_record_ids.items()},
+            "strict_state_counts": {code: sum(1 for point in precise_points if point.get("state_territory") == code) for code in STATE_CODES},
+            "unmapped_record_count": unmapped_record_count,
             "records_by_figure": dict(records_by_figure),
             "records_by_year": dict(sorted(records_by_year.items())),
             "ontology_counts": dict(ontology_counts),

@@ -27,6 +27,9 @@ export type Summary = {
   ethics_counts: Record<string, number>;
   source_type_counts: Record<string, number>;
   source_rollup: Record<string, { record_count: number; query_count: number }>;
+  corpus_state_counts?: Record<string, number>;
+  strict_state_counts?: Record<string, number>;
+  unmapped_record_count?: number;
 };
 
 export type RecordItem = {
@@ -65,6 +68,9 @@ export type RecordItem = {
   coding_notes: string | null;
   date_band: string;
   location_summary: string;
+  state_territory?: string | null;
+  location_precision_status?: string | null;
+  has_strict_map_point?: boolean;
 };
 
 export type LocationItem = {
