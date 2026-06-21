@@ -27224,6 +27224,66 @@
     }
   ],
   "Yambah Station, NT, Australia": [],
+  "Yambah, NT, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city_district": "Burt Plain",
+        "country": "Australia",
+        "country_code": "au",
+        "isolated_dwelling": "Yambah",
+        "postcode": "0872",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "isolated_dwelling",
+      "boundingbox": [
+        "-23.1267710",
+        "-23.1266710",
+        "133.8348377",
+        "133.8349377"
+      ],
+      "category": "place",
+      "display_name": "Yambah, Burt Plain, Northern Territory, 0872, Australia",
+      "importance": 0.10671521095597769,
+      "lat": "-23.1267210",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "133.8348877",
+      "name": "Yambah",
+      "osm_id": 3797553208,
+      "osm_type": "node",
+      "place_id": 28738678,
+      "place_rank": 22,
+      "type": "isolated_dwelling"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Mount Yambah",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-23.0971500",
+        "-23.0970500",
+        "133.8793800",
+        "133.8794800"
+      ],
+      "category": "natural",
+      "display_name": "Mount Yambah, Northern Territory, Australia",
+      "importance": 0.16004000076295108,
+      "lat": "-23.0971000",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "133.8794300",
+      "name": "Mount Yambah",
+      "osm_id": 3020053913,
+      "osm_type": "node",
+      "place_id": 28719601,
+      "place_rank": 18,
+      "type": "peak"
+    }
+  ],
   "Yanderra, NSW, Australia": [
     {
       "address": {
@@ -27468,6 +27528,36 @@
       "place_id": 27213242,
       "place_rank": 20,
       "type": "hamlet"
+    }
+  ],
+  "Yarrabilba, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "suburb": "Yarrabilba"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-27.8537670",
+        "-27.7935420",
+        "153.0972720",
+        "153.1586590"
+      ],
+      "category": "boundary",
+      "display_name": "Yarrabilba, Queensland, Australia",
+      "importance": 0.2844781372993679,
+      "lat": "-27.8030098",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1081584",
+      "name": "Yarrabilba",
+      "osm_id": 11677848,
+      "osm_type": "relation",
+      "place_id": 28127106,
+      "place_rank": 18,
+      "type": "administrative"
     }
   ],
   "Yarrabilllba, QLD, Australia": [],
