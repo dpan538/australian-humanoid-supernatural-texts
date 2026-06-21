@@ -41,6 +41,33 @@ STATE_NAMES = {
 
 STRICT_LOCATION_TYPES = {"locality", "town", "named_feature"}
 AU_BOUNDS = (-44.5, -9.0, 112.0, 154.5)
+STATE_SUFFIX_RE = __import__("re").compile(r",?\s+\b(ACT|NSW|NT|QLD|SA|TAS|VIC|WA)\b\.?$", __import__("re").I)
+NON_PLACE_HINTS = (
+    " article",
+    " news",
+    " sunrise",
+    " clip",
+    " media",
+    " interview",
+    " documentary",
+)
+
+QUERY_ALIASES = {
+    "Booreen Point, QLD": ["Boreen Point, QLD"],
+    "Buladelah, NSW": ["Bulahdelah, NSW"],
+    "Canarvon Gorge, QLD": ["Carnarvon Gorge, QLD"],
+    "Canarvon Gorge / Yellowbank, QLD": ["Carnarvon Gorge, QLD", "Yellowbank, Queensland"],
+    "Corel Bay, WA": ["Coral Bay, WA"],
+    "Cooranbong/Watigans, NSW": ["Cooranbong, NSW", "Watagans National Park, NSW"],
+    "Danger falls, NSW": ["Dangar Falls, NSW"],
+    "Harietville, VIC": ["Harrietville, VIC"],
+    "Kalamundra, WA": ["Kalamunda, WA"],
+    "Mount. Buller area, VIC": ["Mount Buller, VIC"],
+    "Otways – Beauchamp Falls, VIC": ["Beauchamp Falls, VIC"],
+    "Otways - Beauchamp Falls, VIC": ["Beauchamp Falls, VIC"],
+    "Princess Highway / Warrnambool, VIC": ["Warrnambool, VIC"],
+    "Tanima Desert, NT": ["Tanami Desert, NT"],
+}
 
 
 def load_cache() -> dict[str, Any]:
@@ -64,7 +91,12 @@ def state_matches(expected: str, result: dict[str, Any]) -> bool:
         return True
     accepted = STATE_NAMES.get(expected, {expected.lower()})
     address = result.get("address") or {}
-    values = {norm(address.get(key)).lower() for key in ("state", "state_code", "region")}
+    values = {
+        norm(address.get(key)).lower()
+        for key in ("state", "state_code", "region", "territory", "ISO3166-2-lvl4")
+    }
+    values.add(expected.lower())
+    values.add(f"au-{expected.lower()}")
     display = norm(result.get("display_name")).lower()
     return bool(accepted & values) or any(f", {name.lower()}," in f", {display}," for name in accepted)
 
@@ -116,6 +148,43 @@ def geocode(query: str, cache: dict[str, Any], sleep_seconds: float) -> list[dic
     write_cache(cache)
     time.sleep(sleep_seconds)
     return results
+
+
+def clean_place_query(place_name: str, state: str) -> str:
+    text = norm(place_name).replace("’", "'").replace("–", "-")
+    text = STATE_SUFFIX_RE.sub("", text).strip(" ,")
+    if state and state not in text:
+        text = f"{text}, {state}"
+    return text
+
+
+def query_variants(row: dict[str, Any]) -> list[tuple[str, str]]:
+    place = norm(row["place_name"])
+    state = norm(row["state_territory"])
+    if any(hint in place.lower() for hint in NON_PLACE_HINTS):
+        return []
+    variants: list[tuple[str, str]] = []
+    for alias in QUERY_ALIASES.get(place, []):
+        variants.append((alias, "configured_alias"))
+    cleaned = clean_place_query(place, state)
+    variants.append((cleaned, "source_text_cleaned"))
+    if "/" in cleaned and not cleaned.lower().startswith("between "):
+        for part in cleaned.split("/"):
+            part = part.strip(" ,")
+            if part:
+                variants.append((clean_place_query(part, state), "source_text_split"))
+    seen = set()
+    output = []
+    for query, reason in variants:
+        query = norm(query)
+        if not query or query.lower().startswith("between "):
+            continue
+        key = f"{query}, Australia"
+        if key in seen:
+            continue
+        seen.add(key)
+        output.append((key, reason))
+    return output
 
 
 def candidate_rows(conn, limit: int | None) -> list[dict[str, Any]]:
@@ -182,6 +251,7 @@ def write_report(stats: dict[str, Any], examples: list[dict[str, Any]], dry_run:
         f"- Queried locations: `{stats['queried']}`",
         f"- Accepted geocodes: `{stats['accepted']}`",
         f"- Rejected/no match: `{stats['rejected']}`",
+        f"- Query errors: `{stats['errors']}`",
         f"- Affected record-location links: `{stats['affected_records']}`",
         "",
         "## Policy",
@@ -190,13 +260,13 @@ def write_report(stats: dict[str, Any], examples: list[dict[str, Any]], dry_run:
         "",
         "## Accepted Examples",
         "",
-        "| location_id | place | state | records | latitude | longitude |",
-        "| --- | --- | --- | ---: | ---: | ---: |",
+        "| location_id | place | state | records | query basis | latitude | longitude |",
+        "| --- | --- | --- | ---: | --- | ---: | ---: |",
     ]
     for item in examples[:40]:
         lines.append(
             f"| {item['location_id']} | {item['place_name']} | {item['state_territory']} | "
-            f"{item['record_count']} | {item['latitude']:.6f} | {item['longitude']:.6f} |"
+            f"{item['record_count']} | {item['query_basis']} | {item['latitude']:.6f} | {item['longitude']:.6f} |"
         )
     lines.append("")
     REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
@@ -212,15 +282,24 @@ def main() -> None:
 
     cache = load_cache()
     accepted_examples: list[dict[str, Any]] = []
-    stats = {"queried": 0, "accepted": 0, "rejected": 0, "affected_records": 0}
+    stats = {"queried": 0, "accepted": 0, "rejected": 0, "errors": 0, "affected_records": 0}
 
     with connect(args.db) as conn:
         rows = candidate_rows(conn, args.limit or None)
         for row in rows:
-            query = f"{row['place_name']}, Australia"
             stats["queried"] += 1
-            results = geocode(query, cache, args.sleep)
-            result, reason = best_result(results, norm(row["state_territory"]))
+            result = None
+            query_basis = ""
+            for query, basis in query_variants(row):
+                try:
+                    results = geocode(query, cache, args.sleep)
+                except requests.RequestException:
+                    stats["errors"] += 1
+                    continue
+                result, reason = best_result(results, norm(row["state_territory"]))
+                if result is not None:
+                    query_basis = basis
+                    break
             if result is None:
                 stats["rejected"] += 1
                 continue
@@ -234,6 +313,7 @@ def main() -> None:
                     "latitude": latitude,
                     "longitude": longitude,
                     "reason": reason,
+                    "query_basis": query_basis,
                 }
             )
             if args.apply:

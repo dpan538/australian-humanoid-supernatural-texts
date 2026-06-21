@@ -165,6 +165,42 @@
     }
   ],
   "7 News / Sunrise Yowie Article 24-05, QLD, Australia": [],
+  "7 News, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Gold Coast",
+        "city_district": "Burleigh Waters",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "7",
+        "postcode": "4220",
+        "road": "Classic Way",
+        "shop": "Treetops News",
+        "state": "Queensland",
+        "suburb": "Burleigh Waters"
+      },
+      "addresstype": "shop",
+      "boundingbox": [
+        "-28.0998863",
+        "-28.0997863",
+        "153.4247608",
+        "153.4248608"
+      ],
+      "category": "shop",
+      "display_name": "Treetops News, 7, Classic Way, Burleigh Waters, Gold Coast, Queensland, 4220, Australia",
+      "importance": 6.701228351258133e-05,
+      "lat": "-28.0998363",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.4248108",
+      "name": "Treetops News",
+      "osm_id": 6131985263,
+      "osm_type": "node",
+      "place_id": 28481182,
+      "place_rank": 30,
+      "type": "newsagent"
+    }
+  ],
   "Aberfeldy, VIC, Australia": [
     {
       "address": {
@@ -1418,6 +1454,36 @@
       "place_id": 27840971,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Beauchamp Falls, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Victoria",
+        "waterfall": "Beauchamp Falls"
+      },
+      "addresstype": "waterfall",
+      "boundingbox": [
+        "-38.6494068",
+        "-38.6493068",
+        "143.6117205",
+        "143.6118205"
+      ],
+      "category": "waterway",
+      "display_name": "Beauchamp Falls, Victoria, Australia",
+      "importance": 0.1333806782635233,
+      "lat": "-38.6493568",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "143.6117705",
+      "name": "Beauchamp Falls",
+      "osm_id": 665740297,
+      "osm_type": "node",
+      "place_id": 19441543,
+      "place_rank": 20,
+      "type": "waterfall"
     }
   ],
   "Beechmont, QLD, Australia": [
@@ -2966,6 +3032,96 @@
       "type": "administrative"
     }
   ],
+  "Boreen Point, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Boreen Point",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4565",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.2967800",
+        "-26.2658080",
+        "152.9729430",
+        "152.9982490"
+      ],
+      "category": "boundary",
+      "display_name": "Boreen Point, Queensland, 4565, Australia",
+      "importance": 0.244781979759108,
+      "lat": "-26.2815525",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9845170",
+      "name": "Boreen Point",
+      "osm_id": 11676243,
+      "osm_type": "relation",
+      "place_id": 27536427,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "village": "Boreen Point"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-26.3039711",
+        "-26.2639711",
+        "152.9747269",
+        "153.0147269"
+      ],
+      "category": "place",
+      "display_name": "Boreen Point, Queensland, Australia",
+      "importance": 0.1467139963378347,
+      "lat": "-26.2839711",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9947269",
+      "name": "Boreen Point",
+      "osm_id": 249530579,
+      "osm_type": "node",
+      "place_id": 27510874,
+      "place_rank": 19,
+      "type": "village"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "cape": "Boreen Point",
+        "city_district": "Boreen Point",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4565",
+        "state": "Queensland",
+        "village": "Boreen Point"
+      },
+      "addresstype": "cape",
+      "boundingbox": [
+        "-26.2830026",
+        "-26.2829026",
+        "152.9973620",
+        "152.9974620"
+      ],
+      "category": "natural",
+      "display_name": "Boreen Point, Queensland, 4565, Australia",
+      "importance": 0.10671399633783472,
+      "lat": "-26.2829526",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9974120",
+      "name": "Boreen Point",
+      "osm_id": 13518669850,
+      "osm_type": "node",
+      "place_id": 27506076,
+      "place_rank": 22,
+      "type": "cape"
+    }
+  ],
   "Bourke, NSW, Australia": [
     {
       "address": {
@@ -4487,6 +4643,98 @@
       "type": "town"
     }
   ],
+  "Carnarvon Gorge, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Rewan",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4702",
+        "road": "Carnarvon Gorge Road",
+        "state": "Queensland"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-25.0109005",
+        "-24.9723392",
+        "148.3088536",
+        "148.3544109"
+      ],
+      "category": "highway",
+      "display_name": "Carnarvon Gorge Road, Rewan, Queensland, 4702, Australia",
+      "importance": 0.0533791676203555,
+      "lat": "-24.9943500",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.3337905",
+      "name": "Carnarvon Gorge Road",
+      "osm_id": 36953699,
+      "osm_type": "way",
+      "place_id": 28612547,
+      "place_rank": 26,
+      "type": "tertiary"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Carnarvon Park",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4702",
+        "road": "Carnarvon Gorge Road",
+        "state": "Queensland"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-25.0796745",
+        "-25.0699370",
+        "148.2578299",
+        "148.2724956"
+      ],
+      "category": "highway",
+      "display_name": "Carnarvon Gorge Road, Carnarvon Park, Queensland, 4702, Australia",
+      "importance": 0.0533791676203555,
+      "lat": "-25.0731025",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.2666229",
+      "name": "Carnarvon Gorge Road",
+      "osm_id": 1178042614,
+      "osm_type": "way",
+      "place_id": 28628129,
+      "place_rank": 26,
+      "type": "tertiary"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Carnarvon Park",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4702",
+        "road": "Carnarvon Gorge Road",
+        "state": "Queensland"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-25.0722774",
+        "-25.0642919",
+        "148.2440424",
+        "148.2456442"
+      ],
+      "category": "highway",
+      "display_name": "Carnarvon Gorge Road, Carnarvon Park, Queensland, 4702, Australia",
+      "importance": 0.0533791676203555,
+      "lat": "-25.0684129",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.2454144",
+      "name": "Carnarvon Gorge Road",
+      "osm_id": 142263380,
+      "osm_type": "way",
+      "place_id": 28616262,
+      "place_rank": 26,
+      "type": "unclassified"
+    }
+  ],
   "Casino, NSW, Australia": [
     {
       "address": {
@@ -5739,6 +5987,37 @@
     }
   ],
   "Cooperbung, NSW, Australia": [],
+  "Cooranbong, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2265",
+        "state": "New South Wales",
+        "suburb": "Cooranbong"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-33.1072046",
+        "-32.9978413",
+        "151.4139068",
+        "151.5220100"
+      ],
+      "category": "boundary",
+      "display_name": "Cooranbong, New South Wales, 2265, Australia",
+      "importance": 0.16005041199359119,
+      "lat": "-33.0758112",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.4539993",
+      "name": "Cooranbong",
+      "osm_id": 6039472,
+      "osm_type": "relation",
+      "place_id": 23296128,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Cooranbong/Watigans, NSW, Australia": [],
   "Cooyar, QLD, Australia": [
     {
@@ -5827,6 +6106,65 @@
       "place_id": 28602798,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Coral Bay, WA, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6701",
+        "state": "Western Australia",
+        "town": "Coral Bay"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-23.1516121",
+        "-23.1324610",
+        "113.7655750",
+        "113.7796429"
+      ],
+      "category": "boundary",
+      "display_name": "Coral Bay, Western Australia, 6701, Australia",
+      "importance": 0.30289193994832775,
+      "lat": "-23.1436752",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "113.7701650",
+      "name": "Coral Bay",
+      "osm_id": 11689992,
+      "osm_type": "relation",
+      "place_id": 33362103,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "beach": "Coral Bay",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Western Australia"
+      },
+      "addresstype": "beach",
+      "boundingbox": [
+        "-23.1284130",
+        "-23.1283130",
+        "113.7692140",
+        "113.7693140"
+      ],
+      "category": "natural",
+      "display_name": "Coral Bay, Western Australia, Australia",
+      "importance": 0.10671277103837641,
+      "lat": "-23.1283630",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "113.7692640",
+      "name": "Coral Bay",
+      "osm_id": 2053401222,
+      "osm_type": "node",
+      "place_id": 33763857,
+      "place_rank": 22,
+      "type": "beach"
     }
   ],
   "Corel Bay, WA, Australia": [],
@@ -6597,6 +6935,69 @@
       "type": "administrative"
     }
   ],
+  "Dangar Falls, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2453",
+        "state": "New South Wales",
+        "town": "Dorrigo",
+        "waterfall": "Dangar Falls"
+      },
+      "addresstype": "waterfall",
+      "boundingbox": [
+        "-30.3233123",
+        "-30.3232123",
+        "152.7142143",
+        "152.7143143"
+      ],
+      "category": "waterway",
+      "display_name": "Dangar Falls, Dorrigo, New South Wales, 2453, Australia",
+      "importance": 0.13338204089417866,
+      "lat": "-30.3232623",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7142643",
+      "name": "Dangar Falls",
+      "osm_id": 1833862102,
+      "osm_type": "node",
+      "place_id": 28204737,
+      "place_rank": 20,
+      "type": "waterfall"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "amenity": "Dangar Falls",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2453",
+        "road": "Dangar Falls Track",
+        "state": "New South Wales",
+        "town": "Dorrigo"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-30.3223967",
+        "-30.3222967",
+        "152.7145717",
+        "152.7146717"
+      ],
+      "category": "amenity",
+      "display_name": "Dangar Falls, Dangar Falls Track, Dorrigo, New South Wales, 2453, Australia",
+      "importance": 4.87075608453043e-05,
+      "lat": "-30.3223467",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7146217",
+      "name": "Dangar Falls",
+      "osm_id": 243932898,
+      "osm_type": "node",
+      "place_id": 28117651,
+      "place_rank": 30,
+      "type": "toilets"
+    }
+  ],
   "Danger falls, NSW, Australia": [],
   "Dargan, NSW, Australia": [
     {
@@ -7098,6 +7499,7 @@
       "type": "nature_reserve"
     }
   ],
+  "Dufty's Beach, VIC, Australia": [],
   "Dufty\u2019s Beach, VIC, Australia": [],
   "Dungay Creek, NSW, Australia": [
     {
@@ -9412,6 +9814,67 @@
     }
   ],
   "Grassy Head / Stuarts Point [Yarriabini National Park], NSW, Australia": [],
+  "Grassy Head, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Grassy Head",
+        "postcode": "2441",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-30.8010100",
+        "-30.7608851",
+        "152.9683187",
+        "153.0036528"
+      ],
+      "category": "boundary",
+      "display_name": "Grassy Head, New South Wales, 2441, Australia",
+      "importance": 0.16005500190737773,
+      "lat": "-30.7858622",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9887422",
+      "name": "Grassy Head",
+      "osm_id": 6063562,
+      "osm_type": "relation",
+      "place_id": 28573164,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "cape": "Grassy Head",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2441",
+        "state": "New South Wales",
+        "village": "Grassy Head"
+      },
+      "addresstype": "cape",
+      "boundingbox": [
+        "-30.7943809",
+        "-30.7942809",
+        "153.0021911",
+        "153.0022911"
+      ],
+      "category": "natural",
+      "display_name": "Grassy Head, New South Wales, 2441, Australia",
+      "importance": 0.10669136720836192,
+      "lat": "-30.7943309",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.0022411",
+      "name": "Grassy Head",
+      "osm_id": 3864651924,
+      "osm_type": "node",
+      "place_id": 28457789,
+      "place_rank": 22,
+      "type": "cape"
+    }
+  ],
   "Grays Point, NSW, Australia": [
     {
       "address": {
@@ -10884,6 +11347,65 @@
       "type": "administrative"
     }
   ],
+  "Kalamunda, WA, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Kalamunda",
+        "state": "Western Australia"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-32.0851590",
+        "-31.9224660",
+        "115.9771730",
+        "116.2889660"
+      ],
+      "category": "boundary",
+      "display_name": "City of Kalamunda, Western Australia, Australia",
+      "importance": 0.3943200352487266,
+      "lat": "-32.0038075",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "116.1022069",
+      "name": "City of Kalamunda",
+      "osm_id": 11689431,
+      "osm_type": "relation",
+      "place_id": 33630709,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6076",
+        "state": "Western Australia",
+        "suburb": "Kalamunda"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-31.9911090",
+        "-31.9573140",
+        "116.0309890",
+        "116.0865550"
+      ],
+      "category": "boundary",
+      "display_name": "Kalamunda, Western Australia, 6076, Australia",
+      "importance": 0.30663527500158994,
+      "lat": "-31.9721215",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "116.0581380",
+      "name": "Kalamunda",
+      "osm_id": 11689344,
+      "osm_type": "relation",
+      "place_id": 33523385,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Kalamundra, WA, Australia": [],
   "Karuah River, NSW, Australia": [
     {
@@ -11553,6 +12075,36 @@
     }
   ],
   "Kingsholme / Ormeau, QLD, Australia": [],
+  "Kingsholme, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "suburb": "Kingsholme"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-27.8584870",
+        "-27.7980160",
+        "153.2079880",
+        "153.2663510"
+      ],
+      "category": "boundary",
+      "display_name": "Kingsholme, Queensland, Australia",
+      "importance": 0.29823583006172555,
+      "lat": "-27.8182749",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2467766",
+      "name": "Kingsholme",
+      "osm_id": 11678048,
+      "osm_type": "relation",
+      "place_id": 28176292,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Korora Basin, NSW, Australia": [
     {
       "address": {
@@ -14189,6 +14741,37 @@
       "type": "residential"
     }
   ],
+  "Maudsland, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Gold Coast",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "suburb": "Maudsland"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-27.9757650",
+        "-27.9060330",
+        "153.2596690",
+        "153.3037950"
+      ],
+      "category": "boundary",
+      "display_name": "Maudsland, Gold Coast, Queensland, Australia",
+      "importance": 0.29823583006172555,
+      "lat": "-27.9280622",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2823303",
+      "name": "Maudsland",
+      "osm_id": 11678045,
+      "osm_type": "relation",
+      "place_id": 28016176,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Maudsland/Pacific Pines, QLD, Australia": [],
   "McPherson Ranges, QLD, Australia": [],
   "Medowie, NSW, Australia": [
@@ -15128,6 +15711,95 @@
       "place_id": 23839127,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Mount Buller, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Mount Buller",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3723",
+        "state": "Victoria"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-37.5362320",
+        "-37.0026420",
+        "146.2116930",
+        "146.6560380"
+      ],
+      "category": "boundary",
+      "display_name": "Mount Buller, Victoria, 3723, Australia",
+      "importance": 0.4141856465713948,
+      "lat": "-37.2694615",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.4008688",
+      "name": "Mount Buller",
+      "osm_id": 2556992,
+      "osm_type": "relation",
+      "place_id": 20416494,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Mount Buller",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3723",
+        "state": "Victoria",
+        "winter_sports": "Mount Buller"
+      },
+      "addresstype": "winter_sports",
+      "boundingbox": [
+        "-37.1609892",
+        "-37.1359588",
+        "146.4216696",
+        "146.4570839"
+      ],
+      "category": "landuse",
+      "display_name": "Mount Buller, Victoria, 3723, Australia",
+      "importance": 0.24782860043147328,
+      "lat": "-37.1481104",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.4384243",
+      "name": "Mount Buller",
+      "osm_id": 1225432526,
+      "osm_type": "way",
+      "place_id": 20426475,
+      "place_rank": 24,
+      "type": "winter_sports"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Mount Buller",
+        "state": "Victoria"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-37.1446816",
+        "-37.1445816",
+        "146.4258148",
+        "146.4259148"
+      ],
+      "category": "natural",
+      "display_name": "Mount Buller, Victoria, Australia",
+      "importance": 0.16004259327077133,
+      "lat": "-37.1446316",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.4258648",
+      "name": "Mount Buller",
+      "osm_id": 65619385,
+      "osm_type": "node",
+      "place_id": 20426987,
+      "place_rank": 18,
+      "type": "peak"
     }
   ],
   "Mount Cootha, QLD, Australia": [
@@ -16925,6 +17597,7 @@
     }
   ],
   "News.Com Yowie Article, NSW, Australia": [],
+  "Nightcap National Park - Whian Whian State Conservation Area, NSW, Australia": [],
   "Nightcap National Park \u2013 Whian Whian State Conservation Area, NSW, Australia": [],
   "Noojee, VIC, Australia": [
     {
@@ -21270,6 +21943,38 @@
     }
   ],
   "Tambarumba, NSW, Australia": [],
+  "Tanami Desert, NT, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city_district": "Tanami",
+        "country": "Australia",
+        "country_code": "au",
+        "desert": "Tanami Desert",
+        "postcode": "0872",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "desert",
+      "boundingbox": [
+        "-19.8100500",
+        "-19.8099500",
+        "130.3199500",
+        "130.3200500"
+      ],
+      "category": "natural",
+      "display_name": "Tanami Desert, Tanami, Northern Territory, 0872, Australia",
+      "importance": 0.48989724539856155,
+      "lat": "-19.8100000",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "130.3200000",
+      "name": "Tanami Desert",
+      "osm_id": 5329275021,
+      "osm_type": "node",
+      "place_id": 28905376,
+      "place_rank": 22,
+      "type": "desert"
+    }
+  ],
   "Tanima Desert, NT, Australia": [],
   "Tarampa, QLD, Australia": [
     {
@@ -22673,6 +23378,38 @@
       "type": "administrative"
     }
   ],
+  "Warneton, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Aldavilla",
+        "neighbourhood": "Warneton",
+        "postcode": "2440",
+        "state": "New South Wales"
+      },
+      "addresstype": "neighbourhood",
+      "boundingbox": [
+        "-31.0801491",
+        "-31.0601491",
+        "152.7682276",
+        "152.7882276"
+      ],
+      "category": "place",
+      "display_name": "Warneton, Aldavilla, New South Wales, 2440, Australia",
+      "importance": 0.0800550019073777,
+      "lat": "-31.0701491",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7782276",
+      "name": "Warneton",
+      "osm_id": 115071091,
+      "osm_type": "node",
+      "place_id": 420434594,
+      "place_rank": 24,
+      "type": "neighbourhood"
+    }
+  ],
   "Warneton/Belgrave, NSW, Australia": [],
   "Warragamba, NSW, Australia": [
     {
@@ -22825,6 +23562,37 @@
       "place_id": 23117763,
       "place_rank": 30,
       "type": "station"
+    }
+  ],
+  "Warrnambool, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city": "Warrnambool",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3280",
+        "state": "Victoria"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-38.4131670",
+        "-38.3264960",
+        "142.4362840",
+        "142.5572560"
+      ],
+      "category": "boundary",
+      "display_name": "Warrnambool, Victoria, 3280, Australia",
+      "importance": 0.48007215282335824,
+      "lat": "-38.3826242",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "142.4814199",
+      "name": "Warrnambool",
+      "osm_id": 3161053,
+      "osm_type": "relation",
+      "place_id": 19335577,
+      "place_rank": 18,
+      "type": "administrative"
     }
   ],
   "Watagans State Forest, NSW, Australia": [],

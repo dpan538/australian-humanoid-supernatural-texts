@@ -193,8 +193,6 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                 FROM collection_candidates_v2
                 WHERE candidate_status = 'accepted'
                   AND COALESCE(publicness_status, '') != 'restricted_excluded'
-                  AND latitude IS NOT NULL
-                  AND longitude IS NOT NULL
                 ORDER BY candidate_id
                 """
             ).fetchall()
@@ -204,6 +202,9 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                 record_id = 900000000 + candidate_id
                 year = safe_int(str(candidate.get("publication_date_text") or "")[:4])
                 state_code = state_code_from_text(candidate.get("location_text"))
+                latitude = float(candidate["latitude"]) if candidate.get("latitude") not in (None, "") else None
+                longitude = float(candidate["longitude"]) if candidate.get("longitude") not in (None, "") else None
+                has_strict_point = latitude is not None and longitude is not None
                 record = {
                     "record_id": record_id,
                     "source_id": 0,
@@ -218,7 +219,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                     "url": candidate.get("url"),
                     "snippet": candidate.get("evidence_summary"),
                     "publicness_level": candidate.get("publicness_status"),
-                    "ingestion_status": "strict_geo_candidate",
+                    "ingestion_status": "v2_accepted_candidate" if not has_strict_point else "strict_geo_candidate",
                     "source_name": candidate.get("source_name"),
                     "source_type": candidate.get("source_type"),
                     "canonical_figure": candidate.get("source_label"),
@@ -237,32 +238,33 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                     "publicness_code": candidate.get("publicness_status"),
                     "relevance_code": "relevant",
                     "ethics_flag": candidate.get("ethics_review_status"),
-                    "coding_notes": f"V2 strict geocoded candidate {candidate_id}; quality {candidate.get('quality_class') or 'ungraded'}.",
+                    "coding_notes": f"V2 accepted candidate {candidate_id}; map point {'verified' if has_strict_point else 'pending strict geocode'}; quality {candidate.get('quality_class') or 'ungraded'}.",
                     "date_band": year_to_band(year),
                     "location_summary": candidate.get("location_text") or "",
                 }
-                location = {
-                    "record_id": record_id,
-                    "relation_type": candidate.get("location_role"),
-                    "evidence_text": candidate.get("coordinate_evidence_note") or candidate.get("evidence_summary"),
-                    "confidence": candidate.get("quality_class"),
-                    "notes": "Accepted V2 strict-geography candidate.",
-                    "place_name": candidate.get("location_text") or candidate.get("title") or "Strict geocoded candidate",
-                    "region": None,
-                    "state_territory": state_code,
-                    "country": "Australia",
-                    "latitude": float(candidate["latitude"]),
-                    "longitude": float(candidate["longitude"]),
-                    "location_type": candidate.get("location_precision"),
-                    "geocode_source": candidate.get("geocode_source"),
-                    "verification_status": candidate.get("geocode_verification_status"),
-                    "year": year,
-                    "title": candidate.get("title"),
-                    "canonical_figure": candidate.get("source_label"),
-                    "date_band": year_to_band(year),
-                }
                 records.append(record)
-                locations.append(location)
+                if has_strict_point:
+                    location = {
+                        "record_id": record_id,
+                        "relation_type": candidate.get("location_role"),
+                        "evidence_text": candidate.get("coordinate_evidence_note") or candidate.get("evidence_summary"),
+                        "confidence": candidate.get("quality_class"),
+                        "notes": "Accepted V2 strict-geography candidate.",
+                        "place_name": candidate.get("location_text") or candidate.get("title") or "Strict geocoded candidate",
+                        "region": None,
+                        "state_territory": state_code,
+                        "country": "Australia",
+                        "latitude": latitude,
+                        "longitude": longitude,
+                        "location_type": candidate.get("location_precision"),
+                        "geocode_source": candidate.get("geocode_source"),
+                        "verification_status": candidate.get("geocode_verification_status"),
+                        "year": year,
+                        "title": candidate.get("title"),
+                        "canonical_figure": candidate.get("source_label"),
+                        "date_band": year_to_band(year),
+                    }
+                    locations.append(location)
 
         figure_rows = conn.execute(
             """
