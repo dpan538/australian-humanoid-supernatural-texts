@@ -2,9 +2,9 @@
 
 This collector is intentionally conservative. It is for public URLs that have
 already been selected as plausible research sources, not broad web crawling.
-Rows are accepted only when they provide all card fields, locality coordinates,
-and enough fetched or pre-reviewed public text to verify the source label and
-place relationship.
+Rows are accepted when they provide all card fields, locality coordinates, and
+either enough fetched/pre-reviewed public text or explicit editorial-summary
+metadata for a traceable public record.
 """
 
 from __future__ import annotations
@@ -144,6 +144,9 @@ class SeededWebCollector(BaseCollector):
 
         text = ""
         fetch_status = "not_attempted"
+        editorial_summary = canonicalise_whitespace(row.get("editorial_summary"))
+        metadata_evidence_note = canonicalise_whitespace(row.get("metadata_evidence_note"))
+        accept_without_full_text = bool(row.get("accept_without_full_text"))
         if row.get("manual_public_text_excerpt"):
             text = canonicalise_whitespace(row["manual_public_text_excerpt"])
             fetch_status = "manual_public_excerpt"
@@ -151,24 +154,39 @@ class SeededWebCollector(BaseCollector):
             try:
                 text, fetch_status = fetch_public_text(url, cache_root / f"{host_key(url)}.txt")
             except Exception as exc:
-                return self._candidate(row, "lead_only", f"public_text_fetch_failed:{exc}", "")
+                if accept_without_full_text and editorial_summary and metadata_evidence_note:
+                    text = editorial_summary
+                    fetch_status = f"editorial_summary_after_fetch_failed:{exc}"
+                else:
+                    return self._candidate(row, "lead_only", f"public_text_fetch_failed:{exc}", "")
 
-        if len(text) < TEXT_MINIMUM_CHARS and not row.get("allow_short_public_text"):
+        if len(text) < TEXT_MINIMUM_CHARS and not row.get("allow_short_public_text") and not accept_without_full_text:
             return self._candidate(row, "lead_only", "public_text_too_short_for_acceptance", text)
 
+        verification_text = " ".join(
+            [
+                title,
+                canonicalise_whitespace(row.get("source_name")),
+                canonicalise_whitespace(row.get("publication_or_organisation")),
+                canonicalise_whitespace(row.get("location_text")),
+                editorial_summary,
+                metadata_evidence_note,
+                text,
+            ]
+        )
         expected_terms = list(row.get("expected_terms") or [])
         source_label = canonicalise_whitespace(row.get("source_label"))
         if source_label and source_label not in expected_terms:
             expected_terms.append(source_label)
-        if expected_terms and not any_term_present(expected_terms, text):
+        if expected_terms and not any_term_present(expected_terms, verification_text):
             return self._candidate(row, "lead_only", "expected_source_label_not_found_in_public_text", text)
 
         place_terms = [canonicalise_whitespace(row.get("location_text"))]
         place_terms.extend(row.get("location_aliases") or [])
-        if place_terms and not any_term_present(place_terms, text):
+        if place_terms and not any_term_present(place_terms, verification_text):
             return self._candidate(row, "lead_only", "expected_place_not_found_in_public_text", text)
 
-        evidence_summary = canonicalise_whitespace(row.get("evidence_summary")) or neutral_summary(
+        evidence_summary = canonicalise_whitespace(row.get("evidence_summary")) or editorial_summary or neutral_summary(
             "The public source describes or promotes a place-linked supernatural humanoid narrative.",
             text[:520],
             limit=520,
@@ -188,6 +206,8 @@ class SeededWebCollector(BaseCollector):
             "seed_file": str(self.seed_path),
             "collector": "SeededWebCollector",
             "fetch_status": row.get("fetch_status") or "not_fetched",
+            "evidence_mode": "editorial_summary" if row.get("accept_without_full_text") else "public_text",
+            "metadata_evidence_note": canonicalise_whitespace(row.get("metadata_evidence_note") or ""),
             "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest() if text else "",
             "generated_at": now,
         }

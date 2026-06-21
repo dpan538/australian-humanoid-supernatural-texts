@@ -1,0 +1,28 @@
+schema_version: "1.0"
+source:
+  organisation: Australian Bureau of Statistics
+  publication: National, state and territory population, December 2025
+  table: 310104.xlsx, Table 4. Estimated Resident Population, States and Territories (Number)
+  url: https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/dec-2025
+  workbook_url: https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/dec-2025/310104.xlsx
+  extracted_series: Estimated Resident Population ; Persons
+  reference_date: "2025-12-01"
+  extracted_at: "2026-06-21"
+notes:
+  - Population values are ABS estimated resident population counts, not collection targets.
+  - Use these values only to audit geographic over- and under-representation in the public record corpus.
+  - A record-per-population ratio does not imply prevalence of beings, sightings, beliefs, or traditions.
+population:
+  NSW: 8641085
+  VIC: 7121913
+  QLD: 5712124
+  SA: 1910553
+  WA: 3076528
+  TAS: 579110
+  NT: 267478
+  ACT: 487202
+  AU: 27801023
+targets:
+  minimum_records_per_state: 100
+  strict_map_points_total: 1500
+  display_records_total: 3500

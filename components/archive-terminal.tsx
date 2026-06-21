@@ -1292,9 +1292,6 @@ const HISTORICAL_PUBLICATION_PATTERN =
 function mapSourceTone(record: RecordItem) {
   const text = [record.source_name, record.source_type, record.publication, record.title, record.url].filter(Boolean).join(" ");
   const lower = text.toLowerCase();
-  if (record.ingestion_status === "strict_geo_candidate") {
-    return { label: "STRICT CANDIDATE", className: "source-tone-candidate" };
-  }
   if (lower.includes("abc")) {
     return { label: "MEDIA", className: "source-tone-media" };
   }

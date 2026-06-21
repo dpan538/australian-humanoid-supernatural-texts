@@ -1,0 +1,9 @@
+state,population,display_records,strict_map_points,display_records_per_million,strict_points_per_million,gap_to_minimum_display_100,gap_to_minimum_strict_100,proportional_display_target_3500,gap_to_proportional_display_target,proportional_strict_target_1500,gap_to_proportional_strict_target
+WA,3076528,51,15,16.58,4.88,49,85,387,336,166,151
+NT,267478,27,17,100.94,63.56,73,83,34,7,14,0
+SA,1910553,14,10,7.33,5.23,86,90,241,227,103,93
+QLD,5712124,349,321,61.1,56.2,0,0,719,370,308,0
+NSW,8641085,482,463,55.78,53.58,0,0,1088,606,466,3
+VIC,7121913,96,82,13.48,11.51,4,18,897,801,384,302
+TAS,579110,11,10,18.99,17.27,89,90,73,62,31,21
+ACT,487202,17,10,34.89,20.53,83,90,61,44,26,16

@@ -1,0 +1,178 @@
+schema_version: "2.1.0"
+description: >
+  Fourth audited public-web seed list. This batch broadens beyond Yowie by
+  accepting person-form ghost/apparition public records where the public page
+  supplies enough metadata or text for a traceable record card. Full text is
+  not required when an editorial summary and metadata evidence note are present.
+seeds:
+  - source_name: J Ward Ararat
+    source_type: seeded_public_web
+    source_tier: C
+    title: The ghost of Governor Fiddimont
+    publication_or_organisation: Friends of J Ward Inc.
+    publication_date_text: undated public page, accessed 2026-06-21
+    url: http://www.jward.org.au/stories/george-fiddimont/
+    external_id: jward:george-fiddimont-ghost
+    narrative_type: apparition_account
+    secondary_role: heritage_discourse
+    source_label: ghost
+    expected_terms:
+      - ghost
+      - Governor Fiddimont
+      - George Fiddimont
+      - J Ward
+    location_text: J Ward, Girdlestone Street, Ararat, Victoria
+    location_aliases:
+      - J Ward
+      - Ararat
+      - Girdlestone Street
+    location_role: apparition_location
+    latitude: -37.2786058
+    longitude: 142.9304654
+    location_precision: exact_site
+    geocode_source: nominatim_openstreetmap_verified_place
+    geocode_verification_status: verified_gazetteer_point
+    coordinate_evidence_note: Nominatim returned J Ward, Girdlestone Street, Ararat, Victoria, as a tourism/attraction place for the public source location.
+    duplicate_check_status: canonical_url_checked
+    quality_class: C
+    publicness_status: public_page
+    rights_access_status: public heritage organisation page; neutral summary and short excerpt only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public Victorian heritage page for a J Ward story associated with Ararat.
+    humanoid_basis: The story concerns the reported ghost of a named former gaol governor and a person-like auditory apparition at J Ward.
+    evidence_summary: The source recounts a J Ward guide's story about Governor George Fiddimont and reports footsteps associated with the Old Underground Kitchen after Fiddimont's death at the gaol.
+    manual_public_text_excerpt: >
+      The ghost of Governor Fiddimont. George Fiddimont was the last Governor
+      of the gaol. The page says he died near the foot of the stairs in 1886
+      and recounts a guide and group hearing a person walking up and down the
+      steps when no other group or person was in J Ward.
+
+  - source_name: Asylum Ghost Tours
+    source_type: seeded_public_web
+    source_tier: C
+    title: Ghostly Encounters at Beechworth Asylum
+    publication_or_organisation: Asylum Ghost Tours
+    publication_date_text: 2024-2026 public page, accessed 2026-06-21
+    url: https://www.asylumghosttours.com/
+    external_id: asylum-ghost-tours:beechworth-asylum-ghostly-encounters
+    narrative_type: apparition_account
+    secondary_role: tourism_discourse
+    source_label: ghostly figure
+    expected_terms:
+      - Ghostly Encounters
+      - ghostly figure
+      - Beechworth Asylum
+      - haunted
+    location_text: 22 Kurrajong Way, Beechworth, Victoria
+    location_aliases:
+      - Beechworth Asylum
+      - Kurrajong Way
+      - Beechworth
+    location_role: apparition_location
+    latitude: -36.3696192
+    longitude: 146.6963614
+    location_precision: exact_site
+    geocode_source: nominatim_openstreetmap_address_point
+    geocode_verification_status: verified_gazetteer_point
+    coordinate_evidence_note: The public source prints 22 Kurrajong Way, Beechworth, Victoria; Nominatim returned that address point.
+    duplicate_check_status: canonical_url_checked
+    quality_class: C
+    publicness_status: public_page
+    rights_access_status: public tourism page; neutral summary only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public Victorian tourism page for Beechworth Asylum ghost and paranormal tours.
+    humanoid_basis: The page describes a ghostly figure in a tour-group image and haunted halls at Beechworth Asylum.
+    evidence_summary: The source promotes public ghost tours through Beechworth Asylum and describes a reported ghostly figure and haunted halls at the named site.
+    manual_public_text_excerpt: >
+      The page describes daytime history and night-time ghost tours through
+      Beechworth Asylum in North East Victoria, calling it one of Australia's
+      iconic haunted locations. It also describes an eerie photo showing a
+      ghostly figure lurking in the background.
+
+  - source_name: Adelaide Haunted Horizons
+    source_type: seeded_public_web
+    source_tier: C
+    title: Adelaide Arcade Ghost Tour
+    publication_or_organisation: Adelaide Haunted Horizons
+    publication_date_text: public page, accessed 2026-06-21
+    url: http://www.adelaidehauntedhorizons.com.au/adelaide-arcade-ghost-tour/
+    external_id: adelaide-haunted-horizons:adelaide-arcade-ghost-tour
+    narrative_type: ghost_legend
+    secondary_role: tourism_discourse
+    source_label: ghost
+    expected_terms:
+      - Adelaide Arcade Ghost Tour
+      - full-bodied apparitions
+      - Francis Cluney
+      - Adelaide Arcade
+    location_text: Adelaide Arcade, Adelaide, South Australia
+    location_aliases:
+      - Adelaide Arcade
+      - Adelaide
+    location_role: legend_associated_place
+    latitude: -34.9235218
+    longitude: 138.6038268
+    location_precision: exact_site
+    geocode_source: nominatim_openstreetmap_verified_place
+    geocode_verification_status: verified_gazetteer_point
+    coordinate_evidence_note: Nominatim returned Adelaide Arcade, Adelaide, South Australia, as a mall/place for the public source location.
+    duplicate_check_status: canonical_url_checked
+    quality_class: C
+    publicness_status: public_page
+    rights_access_status: public tourism page; neutral summary only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public South Australian tourism page for ghost narratives associated with Adelaide Arcade.
+    humanoid_basis: The page describes shadowy figures, full-bodied apparitions, and a little boy seen before vanishing at Adelaide Arcade.
+    evidence_summary: The source presents Adelaide Arcade as a ghost-tour setting and lists reports of full-bodied apparitions, shadow figures, footsteps, and a vanishing little boy.
+    manual_public_text_excerpt: >
+      The Adelaide Arcade Ghost Tour page asks whether the arcade is haunted,
+      describes three deaths since 1885, and lists reports including dark
+      shadowy figures, full-bodied apparitions, footsteps, and a little boy
+      seen standing close by before vanishing.
+
+  - source_name: Adelaide Haunted Horizons
+    source_type: seeded_public_web
+    source_tier: C
+    title: Old Tailem Town Ghost Tour
+    publication_or_organisation: Adelaide Haunted Horizons
+    publication_date_text: public page, accessed 2026-06-21
+    url: http://www.adelaidehauntedhorizons.com.au/old-tailem-town-ghost-tour/
+    external_id: adelaide-haunted-horizons:old-tailem-town-ghost-tour
+    narrative_type: ghost_legend
+    secondary_role: tourism_discourse
+    source_label: shadow figures
+    expected_terms:
+      - Old Tailem Town
+      - shadow figures
+      - haunted ghost town
+    location_text: Old Tailem Town Pioneer Village, South Australia
+    location_aliases:
+      - Old Tailem Town
+      - Tailem Town
+      - South Australia
+    location_role: legend_associated_place
+    location_precision: named_feature
+    geocode_source: source_page_place_name_coordinate_pending
+    geocode_verification_status: needs_review
+    coordinate_evidence_note: The public source identifies Old Tailem Town Pioneer Village; strict coordinates are pending a verified gazetteer match.
+    duplicate_check_status: canonical_url_checked
+    quality_class: C
+    publicness_status: public_page
+    rights_access_status: public tourism page; neutral summary only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Public South Australian tourism page for ghost-tour narratives at Old Tailem Town Pioneer Village.
+    humanoid_basis: The page describes solid shadow figures and haunted-building narratives at Old Tailem Town.
+    evidence_summary: The source describes Old Tailem Town as a public ghost-tour setting and reports solid shadow figures, touching sensations, and haunted-building narratives.
+    accept_without_full_text: true
+    allow_short_public_text: true
+    metadata_evidence_note: The public page title, source metadata, and pre-reviewed visible text identify Old Tailem Town Ghost Tour and describe solid shadow figures at Old Tailem Town Pioneer Village.
+    editorial_summary: The public page presents Old Tailem Town Pioneer Village as a ghost-tour setting and describes reports of solid shadow figures and haunted-building experiences; strict coordinates remain pending.
+    manual_public_text_excerpt: >
+      The Old Tailem Town Ghost Tour page calls the site a haunted ghost town
+      and describes reports including solid shadow figures, touching sensations,
+      and unsettling activity in original buildings moved into the pioneer
+      village.
