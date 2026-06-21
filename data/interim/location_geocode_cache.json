@@ -1,0 +1,47 @@
+{
+  "Augusta|WA": {
+    "class": "",
+    "display_name": "Augusta, Western Australia, 6290, Australia",
+    "generated_at": "2026-06-21T16:36:24+00:00",
+    "lat": -34.3156059,
+    "lon": 115.1605864,
+    "ok": true,
+    "query": "Augusta, Western Australia, Australia",
+    "type": "administrative"
+  },
+  "Billabong|VIC": {
+    "class": "",
+    "display_name": "Billabong, Victoria, 3858, Australia",
+    "generated_at": "2026-06-21T16:36:18+00:00",
+    "lat": -37.2516192,
+    "lon": 146.8168275,
+    "ok": true,
+    "query": "Billabong, Victoria, Australia",
+    "type": "administrative"
+  },
+  "Brindabella|ACT": {
+    "class": "",
+    "display_name": "Brindabella, Canberra, Australian Capital Territory, Australia",
+    "generated_at": "2026-06-21T16:36:22+00:00",
+    "lat": -35.3092958,
+    "lon": 149.0063023,
+    "ok": true,
+    "query": "Brindabella, Australian Capital Territory, Australia",
+    "type": "path"
+  },
+  "Darriman|VIC": {
+    "class": "",
+    "display_name": "Darriman, Victoria, 3851, Australia",
+    "generated_at": "2026-06-21T16:36:16+00:00",
+    "lat": -38.4096475,
+    "lon": 146.8987864,
+    "ok": true,
+    "query": "Darriman, Victoria, Australia",
+    "type": "administrative"
+  },
+  "Yarambulla|VIC": {
+    "generated_at": "2026-06-21T16:36:20+00:00",
+    "ok": false,
+    "query": "Yarambulla, Victoria, Australia"
+  }
+}
