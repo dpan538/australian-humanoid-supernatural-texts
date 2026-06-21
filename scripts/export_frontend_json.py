@@ -498,6 +498,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             "source_count": len(sources),
             "location_count": len(locations),
             "precise_point_count": len(precise_points),
+            "map_point_count": len(precise_points),
             "broad_location_count": len(broad_locations),
             "map_cluster_count": len(map_clusters),
             "map_flag_count": len(precise_points),

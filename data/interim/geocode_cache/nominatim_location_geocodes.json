@@ -773,6 +773,65 @@
       "type": "village"
     }
   ],
+  "Armidale, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Armidale",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2350",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-30.5839663",
+        "-30.4172103",
+        "151.5591816",
+        "151.7755931"
+      ],
+      "category": "boundary",
+      "display_name": "Armidale, New South Wales, 2350, Australia",
+      "importance": 0.4841484348781487,
+      "lat": "-30.5144881",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.6656564",
+      "name": "Armidale",
+      "osm_id": 6063353,
+      "osm_type": "relation",
+      "place_id": 28546667,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Armidale Regional Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-30.9310882",
+        "-29.9399438",
+        "151.2545437",
+        "152.4280784"
+      ],
+      "category": "boundary",
+      "display_name": "Armidale Regional Council, New South Wales, Australia",
+      "importance": 0.42674896514233895,
+      "lat": "-30.4355262",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.9540086",
+      "name": "Armidale Regional Council",
+      "osm_id": 6165969,
+      "osm_type": "relation",
+      "place_id": 28572002,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
   "Ashford, NSW, Australia": [
     {
       "address": {
@@ -958,6 +1017,36 @@
       "type": "administrative"
     }
   ],
+  "Balonne Shire, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Balonne Shire",
+        "state": "Queensland"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-28.9992381",
+        "-27.5701390",
+        "146.8632910",
+        "149.4892430"
+      ],
+      "category": "boundary",
+      "display_name": "Balonne Shire, Queensland, Australia",
+      "importance": 0.3767390548248983,
+      "lat": "-28.2858350",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.9436644",
+      "name": "Balonne Shire",
+      "osm_id": 11674851,
+      "osm_type": "relation",
+      "place_id": 28310819,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
   "Bangalow, NSW, Australia": [
     {
       "address": {
@@ -1016,6 +1105,65 @@
       "osm_id": 6058887,
       "osm_type": "relation",
       "place_id": 23112059,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Barcaldine, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Barcaldine Regional",
+        "state": "Queensland"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-24.4458090",
+        "-21.6582570",
+        "143.5831900",
+        "147.2838280"
+      ],
+      "category": "boundary",
+      "display_name": "Barcaldine Regional, Queensland, Australia",
+      "importance": 0.37777042313464865,
+      "lat": "-23.0528920",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.8209434",
+      "name": "Barcaldine Regional",
+      "osm_id": 11676690,
+      "osm_type": "relation",
+      "place_id": 27580612,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4725",
+        "state": "Queensland",
+        "town": "Barcaldine"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-24.1534130",
+        "-23.1043130",
+        "144.7755250",
+        "145.8747630"
+      ],
+      "category": "boundary",
+      "display_name": "Barcaldine, Queensland, 4725, Australia",
+      "importance": 0.3692588589939114,
+      "lat": "-23.5551551",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.2873236",
+      "name": "Barcaldine",
+      "osm_id": 11676691,
+      "osm_type": "relation",
+      "place_id": 27790703,
       "place_rank": 18,
       "type": "administrative"
     }
@@ -4394,6 +4542,68 @@
       "place_id": 28265535,
       "place_rank": 12,
       "type": "administrative"
+    }
+  ],
+  "Caboolture, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Caboolture",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4510",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-27.1059470",
+        "-27.0250118",
+        "152.8975010",
+        "153.0397940"
+      ],
+      "category": "boundary",
+      "display_name": "Caboolture, Queensland, 4510, Australia",
+      "importance": 0.42438157964431183,
+      "lat": "-27.0839336",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9510863",
+      "name": "Caboolture",
+      "osm_id": 11677915,
+      "osm_type": "relation",
+      "place_id": 27941268,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Brisbane",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4510",
+        "railway": "Caboolture",
+        "road": "Matthew Terrace",
+        "state": "Queensland"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-27.0879034",
+        "-27.0779034",
+        "152.9487941",
+        "152.9587941"
+      ],
+      "category": "railway",
+      "display_name": "Caboolture, Matthew Terrace, Brisbane, Queensland, 4510, Australia",
+      "importance": 0.33557113795112237,
+      "lat": "-27.0829034",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9537941",
+      "name": "Caboolture",
+      "osm_id": 124682385,
+      "osm_type": "node",
+      "place_id": 27859827,
+      "place_rank": 30,
+      "type": "station"
     }
   ],
   "Cairns, QLD, Australia": [
@@ -10551,6 +10761,156 @@
       "type": "hamlet"
     }
   ],
+  "Herbert River, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Herbert River",
+        "state": "Queensland"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-18.6382043",
+        "-17.6774407",
+        "145.1906068",
+        "146.2910444"
+      ],
+      "category": "waterway",
+      "display_name": "Herbert River, Queensland, Australia",
+      "importance": 0.38780733368428255,
+      "lat": "-18.2484306",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.6112083",
+      "name": "Herbert River",
+      "osm_id": 4674276,
+      "osm_type": "relation",
+      "place_id": 27419482,
+      "place_rank": 18,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Kirrama",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4872",
+        "river": "Herbert River",
+        "state": "Queensland"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-18.3503500",
+        "-18.3377750",
+        "145.7032595",
+        "145.7148670"
+      ],
+      "category": "waterway",
+      "display_name": "Herbert River, Kirrama, Queensland, 4872, Australia",
+      "importance": 0.14671748455024028,
+      "lat": "-18.3429166",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.7098072",
+      "name": "Herbert River",
+      "osm_id": 708157804,
+      "osm_type": "way",
+      "place_id": 27414231,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Innot Hot Springs",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4872",
+        "river": "Herbert River",
+        "state": "Queensland"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-17.7438260",
+        "-17.7355801",
+        "145.2071530",
+        "145.2163196"
+      ],
+      "category": "waterway",
+      "display_name": "Herbert River, Innot Hot Springs, Queensland, 4872, Australia",
+      "importance": 0.14671748455024028,
+      "lat": "-17.7425772",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.2099574",
+      "name": "Herbert River",
+      "osm_id": 655129579,
+      "osm_type": "way",
+      "place_id": 27339965,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Wairuna",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4872",
+        "river": "Herbert River",
+        "state": "Queensland"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-18.2693325",
+        "-18.2589025",
+        "145.6186485",
+        "145.6223555"
+      ],
+      "category": "waterway",
+      "display_name": "Herbert River, Wairuna, Queensland, 4872, Australia",
+      "importance": 0.14671748455024028,
+      "lat": "-18.2644823",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.6192613",
+      "name": "Herbert River",
+      "osm_id": 708162495,
+      "osm_type": "way",
+      "place_id": 27480429,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Abergowrie",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4850",
+        "river": "Herbert River",
+        "state": "Queensland"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-18.4631430",
+        "-18.4464650",
+        "145.8155463",
+        "145.8312890"
+      ],
+      "category": "waterway",
+      "display_name": "Herbert River, Abergowrie, Queensland, 4850, Australia",
+      "importance": 0.1467122384985122,
+      "lat": "-18.4488117",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.8274975",
+      "name": "Herbert River",
+      "osm_id": 707969973,
+      "osm_type": "way",
+      "place_id": 27473173,
+      "place_rank": 19,
+      "type": "river"
+    }
+  ],
   "Hickeys Falls, NSW, Australia": [
     {
       "address": {
@@ -11735,6 +12095,65 @@
       "osm_id": 6032452,
       "osm_type": "relation",
       "place_id": 20312257,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Kiama, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "The Council of the Municipality of Kiama",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-34.7925927",
+        "-34.5989491",
+        "150.5998842",
+        "150.8669671"
+      ],
+      "category": "boundary",
+      "display_name": "The Council of the Municipality of Kiama, New South Wales, Australia",
+      "importance": 0.4349345676509025,
+      "lat": "-34.6958202",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.7959123",
+      "name": "The Council of the Municipality of Kiama",
+      "osm_id": 6311642,
+      "osm_type": "relation",
+      "place_id": 23619330,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Kiama",
+        "postcode": "2533",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-34.6947658",
+        "-34.6476211",
+        "150.8262764",
+        "150.8669671"
+      ],
+      "category": "boundary",
+      "display_name": "Kiama, New South Wales, 2533, Australia",
+      "importance": 0.40363877862033115,
+      "lat": "-34.6715718",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8556251",
+      "name": "Kiama",
+      "osm_id": 6076648,
+      "osm_type": "relation",
+      "place_id": 23621773,
       "place_rank": 18,
       "type": "administrative"
     }
@@ -13831,6 +14250,36 @@
       "type": "administrative"
     }
   ],
+  "Logan, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Logan City",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-27.9386050",
+        "-27.5872233",
+        "152.7994800",
+        "153.2903510"
+      ],
+      "category": "boundary",
+      "display_name": "Logan City, Queensland, Australia",
+      "importance": 0.42968540285162854,
+      "lat": "-27.7631600",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.0027044",
+      "name": "Logan City",
+      "osm_id": 11675411,
+      "osm_type": "relation",
+      "place_id": 28171447,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
   "Lowanna, NSW, Australia": [
     {
       "address": {
@@ -14529,6 +14978,36 @@
       "place_id": 33939177,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Manning River, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Manning River",
+        "state": "New South Wales"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-31.9512548",
+        "-31.7840853",
+        "151.4510596",
+        "152.6967634"
+      ],
+      "category": "waterway",
+      "display_name": "Manning River, New South Wales, Australia",
+      "importance": 0.46562980374353397,
+      "lat": "-31.8517188",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.1004561",
+      "name": "Manning River",
+      "osm_id": 3752199,
+      "osm_type": "relation",
+      "place_id": 28530425,
+      "place_rank": 18,
+      "type": "river"
     }
   ],
   "Mansfield, VIC, Australia": [
@@ -15435,6 +15914,66 @@
       "osm_type": "relation",
       "place_id": 23108352,
       "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Monaro, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2626",
+        "region": "Monaro",
+        "state": "New South Wales",
+        "town": "Bredbo"
+      },
+      "addresstype": "region",
+      "boundingbox": [
+        "-36.9907471",
+        "-34.9907471",
+        "148.1064432",
+        "150.1064432"
+      ],
+      "category": "place",
+      "display_name": "Monaro, Bredbo, New South Wales, 2626, Australia",
+      "importance": 0.1600454360265507,
+      "lat": "-35.9907471",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1064432",
+      "name": "Monaro",
+      "osm_id": 304512479,
+      "osm_type": "node",
+      "place_id": 24020070,
+      "place_rank": 18,
+      "type": "region"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Snowy Monaro Regional Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-37.2631243",
+        "-35.5793103",
+        "148.2006859",
+        "149.6025250"
+      ],
+      "category": "boundary",
+      "display_name": "Snowy Monaro Regional Council, New South Wales, Australia",
+      "importance": 0.4210857630196239,
+      "lat": "-36.4213404",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.8932697",
+      "name": "Snowy Monaro Regional Council",
+      "osm_id": 6239422,
+      "osm_type": "relation",
+      "place_id": 20391136,
+      "place_rank": 12,
       "type": "administrative"
     }
   ],
@@ -19394,6 +19933,37 @@
       "type": "administrative"
     }
   ],
+  "Port Douglas, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4877",
+        "state": "Queensland",
+        "town": "Port Douglas"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-16.5300450",
+        "-16.4678000",
+        "145.4427680",
+        "145.4828360"
+      ],
+      "category": "boundary",
+      "display_name": "Port Douglas, Queensland, 4877, Australia",
+      "importance": 0.39696805131781304,
+      "lat": "-16.4845983",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.4636294",
+      "name": "Port Douglas",
+      "osm_id": 11677313,
+      "osm_type": "relation",
+      "place_id": 27450802,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Port Macquarie, NSW, Australia": [
     {
       "address": {
@@ -22469,6 +23039,65 @@
       "type": "nature_reserve"
     }
   ],
+  "Toowoomba, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Toowoomba",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4350",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-27.7210193",
+        "-27.4010193",
+        "151.7933510",
+        "152.1133510"
+      ],
+      "category": "place",
+      "display_name": "Toowoomba, Queensland, 4350, Australia",
+      "importance": 0.5433452631737544,
+      "lat": "-27.5610193",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.9533510",
+      "name": "Toowoomba",
+      "osm_id": 19949789,
+      "osm_type": "node",
+      "place_id": 28434431,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Toowoomba Regional",
+        "state": "Queensland"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-28.1923360",
+        "-26.7668070",
+        "150.7026720",
+        "152.2699900"
+      ],
+      "category": "boundary",
+      "display_name": "Toowoomba Regional, Queensland, Australia",
+      "importance": 0.43051382543298305,
+      "lat": "-27.4792610",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.5205467",
+      "name": "Toowoomba Regional",
+      "osm_id": 11675821,
+      "osm_type": "relation",
+      "place_id": 28329644,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
   "Torbanlea, QLD, Australia": [
     {
       "address": {
@@ -25463,6 +26092,37 @@
     }
   ],
   "Yarrabilllba, QLD, Australia": [],
+  "Yarram, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3971",
+        "state": "Victoria",
+        "village": "Yarram"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-38.6071290",
+        "-38.5158540",
+        "146.6160250",
+        "146.8286840"
+      ],
+      "category": "boundary",
+      "display_name": "Yarram, Victoria, 3971, Australia",
+      "importance": 0.29960026554141705,
+      "lat": "-38.5616717",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.6758870",
+      "name": "Yarram",
+      "osm_id": 2693247,
+      "osm_type": "relation",
+      "place_id": 20349691,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Yarrangobilly, NSW, Australia": [
     {
       "address": {
