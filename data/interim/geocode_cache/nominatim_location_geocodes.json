@@ -5641,6 +5641,67 @@
     }
   ],
   "Christmas Hills Reserve, TAS, Australia": [],
+  "Christmas Hills, TAS, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Christmas Hills",
+        "postcode": "7330",
+        "state": "Tasmania"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-41.0764910",
+        "-40.8579850",
+        "144.8875140",
+        "145.0684500"
+      ],
+      "category": "boundary",
+      "display_name": "Christmas Hills, Tasmania, 7330, Australia",
+      "importance": 0.18157831638402872,
+      "lat": "-40.9001100",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9947000",
+      "name": "Christmas Hills",
+      "osm_id": 10593524,
+      "osm_type": "relation",
+      "place_id": 23866696,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Weetah",
+        "locality": "Christmas Hills",
+        "postcode": "7304",
+        "state": "Tasmania"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-41.4665600",
+        "-41.4465600",
+        "146.6031400",
+        "146.6231400"
+      ],
+      "category": "place",
+      "display_name": "Christmas Hills, Weetah, Tasmania, 7304, Australia",
+      "importance": 0.06671238956282902,
+      "lat": "-41.4565600",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.6131400",
+      "name": "Christmas Hills",
+      "osm_id": 4290197185,
+      "osm_type": "node",
+      "place_id": 23899552,
+      "place_rank": 25,
+      "type": "locality"
+    }
+  ],
   "Circa, NSW, Australia": [
     {
       "address": {
@@ -6709,6 +6770,37 @@
       "place_id": 33763857,
       "place_rank": 22,
       "type": "beach"
+    }
+  ],
+  "Coramba, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2450",
+        "state": "New South Wales",
+        "village": "Coramba"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-30.2488304",
+        "-30.1473841",
+        "152.9831446",
+        "153.0909532"
+      ],
+      "category": "boundary",
+      "display_name": "Coramba, New South Wales, 2450, Australia",
+      "importance": 0.16005641336690316,
+      "lat": "-30.2208606",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.0148823",
+      "name": "Coramba",
+      "osm_id": 6063477,
+      "osm_type": "relation",
+      "place_id": 28092933,
+      "place_rank": 18,
+      "type": "administrative"
     }
   ],
   "Corel Bay, WA, Australia": [],
@@ -8043,6 +8135,38 @@
       "type": "nature_reserve"
     }
   ],
+  "Duffys Beach, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "beach": "Duffys Beach No. 1",
+        "city_district": "Burramine",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3730",
+        "state": "Victoria"
+      },
+      "addresstype": "beach",
+      "boundingbox": [
+        "-35.9732525",
+        "-35.9729757",
+        "145.8471946",
+        "145.8482671"
+      ],
+      "category": "natural",
+      "display_name": "Duffys Beach No. 1, Burramine, Victoria, 3730, Australia",
+      "importance": 0.10671640421149002,
+      "lat": "-35.9731123",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.8474714",
+      "name": "Duffys Beach No. 1",
+      "osm_id": 10990729,
+      "osm_type": "relation",
+      "place_id": 23177517,
+      "place_rank": 22,
+      "type": "beach"
+    }
+  ],
   "Dufty's Beach, VIC, Australia": [],
   "Dufty\u2019s Beach, VIC, Australia": [],
   "Dungay Creek, NSW, Australia": [
@@ -8533,6 +8657,102 @@
       "type": "administrative"
     }
   ],
+  "Emu Plains, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2750",
+        "state": "New South Wales",
+        "suburb": "Emu Plains",
+        "town": "Penrith"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-33.7642642",
+        "-33.7301784",
+        "150.6416915",
+        "150.6854279"
+      ],
+      "category": "boundary",
+      "display_name": "Emu Plains, Penrith, Sydney, New South Wales, 2750, Australia",
+      "importance": 0.3078369698940717,
+      "lat": "-33.7483333",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.6677778",
+      "name": "Emu Plains",
+      "osm_id": 5498063,
+      "osm_type": "relation",
+      "place_id": 23298257,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2750",
+        "railway": "Emu Plains",
+        "road": "Mackellar Street",
+        "state": "New South Wales",
+        "suburb": "Emu Plains",
+        "town": "Penrith"
+      },
+      "addresstype": "railway",
+      "boundingbox": [
+        "-33.7507008",
+        "-33.7407008",
+        "150.6665837",
+        "150.6765837"
+      ],
+      "category": "railway",
+      "display_name": "Emu Plains, Mackellar Street, Emu Plains, Penrith, Sydney, New South Wales, 2750, Australia",
+      "importance": 0.30723887866744215,
+      "lat": "-33.7457008",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.6715837",
+      "name": "Emu Plains",
+      "osm_id": 1886255294,
+      "osm_type": "node",
+      "place_id": 23295280,
+      "place_rank": 30,
+      "type": "station"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "farm": "Emu Plains",
+        "postcode": "2810",
+        "state": "New South Wales",
+        "town": "Grenfell"
+      },
+      "addresstype": "farm",
+      "boundingbox": [
+        "-34.0388675",
+        "-34.0188675",
+        "148.0091188",
+        "148.0291188"
+      ],
+      "category": "place",
+      "display_name": "Emu Plains, Grenfell, New South Wales, 2810, Australia",
+      "importance": 0.10671194247348742,
+      "lat": "-34.0288675",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.0191188",
+      "name": "Emu Plains",
+      "osm_id": 2304738723,
+      "osm_type": "node",
+      "place_id": 23891564,
+      "place_rank": 22,
+      "type": "farm"
+    }
+  ],
   "Engadine, NSW, Australia": [
     {
       "address": {
@@ -8600,7 +8820,100 @@
     }
   ],
   "Enogerra Creek, QLD, Australia": [],
+  "Enoggera Creek, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Brisbane",
+        "city_district": "Ashgrove",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Enoggera Creek",
+        "state": "Queensland"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-27.4518715",
+        "-27.4340133",
+        "152.9274423",
+        "153.0393771"
+      ],
+      "category": "waterway",
+      "display_name": "Enoggera Creek, Ashgrove, Brisbane, Queensland, Australia",
+      "importance": 0.2574973608523206,
+      "lat": "-27.4419106",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9826794",
+      "name": "Enoggera Creek",
+      "osm_id": 4715530,
+      "osm_type": "relation",
+      "place_id": 27936366,
+      "place_rank": 18,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Brisbane",
+        "city_district": "Enoggera Reservoir",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "stream": "Enoggera Creek",
+        "suburb": "Enoggera Reservoir"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-27.4395935",
+        "-27.4267117",
+        "152.8408944",
+        "152.8677408"
+      ],
+      "category": "waterway",
+      "display_name": "Enoggera Creek, Enoggera Reservoir, Brisbane, Queensland, Australia",
+      "importance": 0.10674360799572745,
+      "lat": "-27.4356529",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.8530557",
+      "name": "Enoggera Creek",
+      "osm_id": 486562917,
+      "osm_type": "way",
+      "place_id": 28089542,
+      "place_rank": 22,
+      "type": "stream"
+    }
+  ],
   "Epoch Times Yowie Article, NSW, Australia": [],
+  "Errinundra National Park, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "nature_reserve": "Errinundra National Park",
+        "state": "Victoria"
+      },
+      "addresstype": "nature_reserve",
+      "boundingbox": [
+        "-37.5500363",
+        "-37.1992409",
+        "148.6843745",
+        "149.0298476"
+      ],
+      "category": "leisure",
+      "display_name": "Errinundra National Park, Victoria, Australia",
+      "importance": 0.36541948668891217,
+      "lat": "-37.3746960",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.7899152",
+      "name": "Errinundra National Park",
+      "osm_id": 9267276,
+      "osm_type": "relation",
+      "place_id": 20470363,
+      "place_rank": 24,
+      "type": "nature_reserve"
+    }
+  ],
   "Esk, QLD, Australia": [
     {
       "address": {
@@ -9180,6 +9493,38 @@
       "place_id": 27301433,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Gallangowan State Forest, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Manumbar",
+        "country": "Australia",
+        "country_code": "au",
+        "forest": "Gallangowan State Forest",
+        "postcode": "4601",
+        "state": "Queensland"
+      },
+      "addresstype": "forest",
+      "boundingbox": [
+        "-26.4807773",
+        "-26.4012407",
+        "152.2652509",
+        "152.4000686"
+      ],
+      "category": "boundary",
+      "display_name": "Gallangowan State Forest, Manumbar, Queensland, 4601, Australia",
+      "importance": 0.06671393835355154,
+      "lat": "-26.4537713",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.3077508",
+      "name": "Gallangowan State Forest",
+      "osm_id": 1506579,
+      "osm_type": "relation",
+      "place_id": 27585348,
+      "place_rank": 25,
+      "type": "forest"
     }
   ],
   "Gallangowen State Forest, QLD, Australia": [],
@@ -13154,6 +13499,37 @@
     }
   ],
   "Kinglake West and Eden Park, VIC, Australia": [],
+  "Kinglake West, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3757",
+        "state": "Victoria",
+        "village": "Kinglake West"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-37.5449530",
+        "-37.4097290",
+        "145.1904210",
+        "145.3111480"
+      ],
+      "category": "boundary",
+      "display_name": "Kinglake West, Victoria, 3757, Australia",
+      "importance": 0.21584611680957558,
+      "lat": "-37.4502140",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.2584230",
+      "name": "Kinglake West",
+      "osm_id": 2423124,
+      "osm_type": "relation",
+      "place_id": 20681515,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Kings Canyon, NT, Australia": [
     {
       "address": {
@@ -13547,6 +13923,37 @@
       "place_id": 23869093,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Ku-ring-gai Chase National Park, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "nature_reserve": "Ku-ring-gai Chase National Park",
+        "state": "New South Wales"
+      },
+      "addresstype": "nature_reserve",
+      "boundingbox": [
+        "-33.7082030",
+        "-33.5481240",
+        "151.1181940",
+        "151.3355000"
+      ],
+      "category": "leisure",
+      "display_name": "Ku-ring-gai Chase National Park, Sydney, New South Wales, Australia",
+      "importance": 0.46579012336862585,
+      "lat": "-33.6282265",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.2293535",
+      "name": "Ku-ring-gai Chase National Park",
+      "osm_id": 5989782,
+      "osm_type": "relation",
+      "place_id": 23848622,
+      "place_rank": 24,
+      "type": "nature_reserve"
     }
   ],
   "Ku-ring-gai National Park, NSW, Australia": [],
@@ -16033,6 +16440,70 @@
     }
   ],
   "Maudsland/Pacific Pines, QLD, Australia": [],
+  "McPherson Range, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city_district": "Southern Lamington",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Limpinwood",
+        "postcode": "2484",
+        "road": "McPherson Range Walking Track",
+        "state": "New South Wales"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-28.3198041",
+        "-28.2947830",
+        "153.1241086",
+        "153.1660708"
+      ],
+      "category": "highway",
+      "display_name": "McPherson Range Walking Track, Limpinwood, Southern Lamington, New South Wales, 2484, Australia",
+      "importance": 0.040048413061722736,
+      "lat": "-28.3069019",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1430019",
+      "name": "McPherson Range Walking Track",
+      "osm_id": 77840034,
+      "osm_type": "way",
+      "place_id": 28606409,
+      "place_rank": 27,
+      "type": "path"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city_district": "O'Reilly",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Limpinwood",
+        "postcode": "2484",
+        "road": "McPherson Range Walking Track",
+        "state": "New South Wales"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-28.2947830",
+        "-28.2758863",
+        "153.1615994",
+        "153.1705586"
+      ],
+      "category": "highway",
+      "display_name": "McPherson Range Walking Track, Limpinwood, O'Reilly, New South Wales, 2484, Australia",
+      "importance": 0.040048413061722736,
+      "lat": "-28.2833425",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1637901",
+      "name": "McPherson Range Walking Track",
+      "osm_id": 38061384,
+      "osm_type": "way",
+      "place_id": 28570772,
+      "place_rank": 27,
+      "type": "path"
+    }
+  ],
   "McPherson Ranges, QLD, Australia": [],
   "Medowie, NSW, Australia": [
     {
@@ -18543,6 +19014,7 @@
     }
   ],
   "Mullundung State Forest, VIC, Australia": [],
+  "Mullungdung State Forest, VIC, Australia": [],
   "Mungay Creek, NSW, Australia": [
     {
       "address": {
@@ -18630,6 +19102,38 @@
       "place_id": 28284737,
       "place_rank": 22,
       "type": "stream"
+    }
+  ],
+  "Munmorah State Conservation Area, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "nature_reserve": "Munmorah State Conservation Area",
+        "postcode": "2262",
+        "state": "New South Wales",
+        "town": "Budgewoi"
+      },
+      "addresstype": "nature_reserve",
+      "boundingbox": [
+        "-33.2319080",
+        "-33.1305780",
+        "151.5713950",
+        "151.6445250"
+      ],
+      "category": "leisure",
+      "display_name": "Munmorah State Conservation Area, Budgewoi, New South Wales, 2262, Australia",
+      "importance": 0.3378692872294172,
+      "lat": "-33.1968475",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.6049395",
+      "name": "Munmorah State Conservation Area",
+      "osm_id": 5932455,
+      "osm_type": "relation",
+      "place_id": 23242914,
+      "place_rank": 24,
+      "type": "nature_reserve"
     }
   ],
   "Munmorah State Conservation Park, NSW, Australia": [],
@@ -18724,6 +19228,67 @@
     }
   ],
   "Myhree, VIC, Australia": [],
+  "Myrrhee, VIC, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Myrrhee",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3732",
+        "state": "Victoria"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-36.8297090",
+        "-36.6588120",
+        "146.2274150",
+        "146.3815050"
+      ],
+      "category": "boundary",
+      "display_name": "Myrrhee, Victoria, 3732, Australia",
+      "importance": 0.16004695887693599,
+      "lat": "-36.7442270",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.3048256",
+      "name": "Myrrhee",
+      "osm_id": 11692458,
+      "osm_type": "relation",
+      "place_id": 20518057,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Myrrhee",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Myrrhee",
+        "postcode": "3732",
+        "state": "Victoria"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-36.7511978",
+        "-36.7111978",
+        "146.3016418",
+        "146.3416418"
+      ],
+      "category": "place",
+      "display_name": "Myrrhee, Victoria, 3732, Australia",
+      "importance": 0.1333802922102693,
+      "lat": "-36.7311978",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.3216418",
+      "name": "Myrrhee",
+      "osm_id": 706094112,
+      "osm_type": "node",
+      "place_id": 20644131,
+      "place_rank": 20,
+      "type": "hamlet"
+    }
+  ],
   "Mysterious Universe Yowie Article 25-05, QLD, Australia": [],
   "NRM Digital Media Yowie Article, QLD, Australia": [],
   "Nanango, QLD, Australia": [
@@ -19783,6 +20348,67 @@
       "place_id": 20525397,
       "place_rank": 22,
       "type": "stream"
+    }
+  ],
+  "Numinbah Valley, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Numinbah Valley",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4211",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-28.2007010",
+        "-28.1029520",
+        "153.1919350",
+        "153.2958650"
+      ],
+      "category": "boundary",
+      "display_name": "Numinbah Valley, Queensland, 4211, Australia",
+      "importance": 0.3363461829037416,
+      "lat": "-28.1518255",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2224557",
+      "name": "Numinbah Valley",
+      "osm_id": 11675489,
+      "osm_type": "relation",
+      "place_id": 28353432,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Numinbah Valley",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Numinbah Valley",
+        "postcode": "4211",
+        "state": "Queensland"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.1491880",
+        "-28.1291880",
+        "153.2135133",
+        "153.2335133"
+      ],
+      "category": "place",
+      "display_name": "Numinbah Valley, Queensland, 4211, Australia",
+      "importance": 0.06673367895017929,
+      "lat": "-28.1391880",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2235133",
+      "name": "Numinbah Valley",
+      "osm_id": 4316601271,
+      "osm_type": "node",
+      "place_id": 28494807,
+      "place_rank": 25,
+      "type": "locality"
     }
   ],
   "Nunderi, NSW, Australia": [
@@ -23683,6 +24309,66 @@
     }
   ],
   "Tambarumba, NSW, Australia": [],
+  "Tamborine Mountain, QLD, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Tamborine Mountain",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4272",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-28.0024610",
+        "-27.8950020",
+        "153.1567710",
+        "153.2259290"
+      ],
+      "category": "boundary",
+      "display_name": "Tamborine Mountain, Queensland, 4272, Australia",
+      "importance": 0.3927108502588685,
+      "lat": "-27.9489195",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1929006",
+      "name": "Tamborine Mountain",
+      "osm_id": 11675426,
+      "osm_type": "relation",
+      "place_id": 28047048,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Tamborine Mountain",
+        "postcode": "4272",
+        "state": "Queensland"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-27.9229136",
+        "-27.9228136",
+        "153.1718481",
+        "153.1719481"
+      ],
+      "category": "natural",
+      "display_name": "Tamborine Mountain, Queensland, 4272, Australia",
+      "importance": 0.16004841306172274,
+      "lat": "-27.9228636",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.1718981",
+      "name": "Tamborine Mountain",
+      "osm_id": 2844714619,
+      "osm_type": "node",
+      "place_id": 28374551,
+      "place_rank": 18,
+      "type": "peak"
+    }
+  ],
   "Tamborine, QLD, Australia": [
     {
       "address": {
@@ -24083,6 +24769,38 @@
       "type": "tertiary"
     }
   ],
+  "The Spectacles Wetlands, WA, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6167",
+        "state": "Western Australia",
+        "suburb": "Mandogalup",
+        "water": "The Spectacles Wetlands"
+      },
+      "addresstype": "water",
+      "boundingbox": [
+        "-32.2221604",
+        "-32.2110865",
+        "115.8326293",
+        "115.8443237"
+      ],
+      "category": "natural",
+      "display_name": "The Spectacles Wetlands, Mandogalup, Western Australia, 6167, Australia",
+      "importance": 0.11734328469919902,
+      "lat": "-32.2160518",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.8384230",
+      "name": "The Spectacles Wetlands",
+      "osm_id": 629483897,
+      "osm_type": "way",
+      "place_id": 33691632,
+      "place_rank": 22,
+      "type": "water"
+    }
+  ],
   "Thomson Dam, VIC, Australia": [
     {
       "address": {
@@ -24144,6 +24862,38 @@
       "place_id": 20392609,
       "place_rank": 18,
       "type": "administrative"
+    }
+  ],
+  "Timmsvale, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Timmsvale",
+        "postcode": "2450",
+        "state": "New South Wales",
+        "village": "Ulong"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-30.2400329",
+        "-30.2000329",
+        "152.8513966",
+        "152.8913966"
+      ],
+      "category": "place",
+      "display_name": "Timmsvale, Ulong, New South Wales, 2450, Australia",
+      "importance": 0.13338833524071106,
+      "lat": "-30.2200329",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.8713966",
+      "name": "Timmsvale",
+      "osm_id": 116950662,
+      "osm_type": "node",
+      "place_id": 28594498,
+      "place_rank": 20,
+      "type": "hamlet"
     }
   ],
   "Timsvale, NSW, Australia": [],
@@ -24929,6 +25679,37 @@
       "type": "town"
     }
   ],
+  "Tumbarumba, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2653",
+        "state": "New South Wales",
+        "town": "Tumbarumba"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-35.8516525",
+        "-35.6008199",
+        "147.9265734",
+        "148.1482495"
+      ],
+      "category": "boundary",
+      "display_name": "Tumbarumba, New South Wales, 2653, Australia",
+      "importance": 0.40167951396006313,
+      "lat": "-35.7764898",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.0100620",
+      "name": "Tumbarumba",
+      "osm_id": 5975280,
+      "osm_type": "relation",
+      "place_id": 24184888,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
   "Tweed Heads, NSW, Australia": [
     {
       "address": {
@@ -25455,6 +26236,38 @@
       "type": "administrative"
     }
   ],
+  "Watagans National Park, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2325",
+        "state": "New South Wales",
+        "village": "Ellalong",
+        "wood": "Watagans National Park"
+      },
+      "addresstype": "wood",
+      "boundingbox": [
+        "-33.0593659",
+        "-32.9593750",
+        "151.2947382",
+        "151.4482640"
+      ],
+      "category": "natural",
+      "display_name": "Watagans National Park, Ellalong, New South Wales, 2325, Australia",
+      "importance": 0.4516681956131193,
+      "lat": "-33.0095237",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.3768922",
+      "name": "Watagans National Park",
+      "osm_id": 6056386,
+      "osm_type": "relation",
+      "place_id": 23419572,
+      "place_rank": 22,
+      "type": "wood"
+    }
+  ],
   "Watagans State Forest, NSW, Australia": [],
   "Watagans, NSW, Australia": [
     {
@@ -25768,6 +26581,38 @@
       "place_id": 27705240,
       "place_rank": 25,
       "type": "locality"
+    }
+  ],
+  "Whian Whian State Conservation Area, NSW, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2480",
+        "state": "New South Wales",
+        "village": "Dunoon",
+        "wood": "Whian Whian State Conservation Area"
+      },
+      "addresstype": "wood",
+      "boundingbox": [
+        "-28.6467682",
+        "-28.5671053",
+        "153.3237638",
+        "153.3943952"
+      ],
+      "category": "natural",
+      "display_name": "Whian Whian State Conservation Area, Dunoon, New South Wales, 2480, Australia",
+      "importance": 0.10671457465476461,
+      "lat": "-28.6027032",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3506066",
+      "name": "Whian Whian State Conservation Area",
+      "osm_id": 5928964,
+      "osm_type": "relation",
+      "place_id": 28331190,
+      "place_rank": 22,
+      "type": "wood"
     }
   ],
   "White Swamp, NSW, Australia": [
