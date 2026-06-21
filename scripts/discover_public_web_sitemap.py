@@ -113,6 +113,13 @@ DEFAULT_ROOTS = [
     "https://libraries.tas.gov.au/sitemap.xml",
     "https://www.narrynah.com.au/sitemap.xml",
     "https://www.qvmag.tas.gov.au/sitemap.xml",
+    "https://www.nma.gov.au/sitemap.xml",
+    "https://www.nfsa.gov.au/sitemap.xml",
+    "https://aso.gov.au/sitemap.xml",
+    "https://aiatsis.gov.au/sitemap.xml",
+    "https://www.naa.gov.au/sitemap.xml",
+    "https://www.samuseum.sa.gov.au/sitemap.xml",
+    "https://museumsvictoria.com.au/sitemap.xml",
 ]
 
 DISCOVERY_ONLY_TOURISM_ROOTS = [

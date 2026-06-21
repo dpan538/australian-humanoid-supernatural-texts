@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+import hashlib
 from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
@@ -45,7 +46,7 @@ SEARCH_SPECS: tuple[dict[str, str], ...] = (
     # while strict map eligibility still requires a verified place.
     {"label": "Ghost", "query": '("Australian ghost stories" OR "ghosts of Australia" OR "haunted Australia" OR "Australian ghosts")', "sensitivity": "low", "fallback_place": "Australia", "fallback_state": "AU"},
     {"label": "Ghost", "query": '("Tasmanian ghost" OR "Tasmania ghost stories" OR "haunted Tasmania")', "sensitivity": "low", "fallback_place": "Tasmania", "fallback_state": "TAS"},
-    {"label": "Ghost", "query": '("Victorian ghost" OR "Victoria ghost stories" OR "haunted Victoria Australia")', "sensitivity": "low", "fallback_place": "Victoria", "fallback_state": "VIC"},
+    {"label": "Ghost", "query": '("Victoria Australia ghost" OR "Victoria, Australia ghost" OR "haunted Victoria Australia" OR "Melbourne ghost stories" OR "Gippsland ghost stories")', "sensitivity": "low", "fallback_place": "Victoria", "fallback_state": "VIC"},
     {"label": "Ghost", "query": '("Western Australian ghost" OR "Western Australia ghost stories" OR "haunted Western Australia")', "sensitivity": "low", "fallback_place": "Western Australia", "fallback_state": "WA"},
     {"label": "Ghost", "query": '("South Australian ghost" OR "South Australia ghost stories" OR "haunted South Australia")', "sensitivity": "low", "fallback_place": "South Australia", "fallback_state": "SA"},
     {"label": "Ghost", "query": '("Northern Territory ghost" OR "Northern Territory ghost stories" OR "haunted Northern Territory")', "sensitivity": "low", "fallback_place": "Northern Territory", "fallback_state": "NT"},
@@ -205,13 +206,32 @@ def metadata_label_present(label: str, text: str) -> bool:
 
 def australian_metadata_signal(text: str, fallback_place: str = "") -> bool:
     norm = normalise_alias(" ".join([text, fallback_place]))
+    if re.search(r"\bvictorian\b", norm) and not any(
+        term in norm
+        for term in (
+            "australia",
+            "australian",
+            "victoria australia",
+            "melbourne",
+            "gippsland",
+            "beechworth",
+            "ararat",
+            "ballarat",
+        )
+    ):
+        return False
     return any(
         term in norm
         for term in (
             "australia",
             "australian",
             "tasmania",
-            "victoria",
+            "victoria australia",
+            "melbourne",
+            "gippsland",
+            "beechworth",
+            "ararat",
+            "ballarat",
             "western australia",
             "south australia",
             "northern territory",
@@ -328,7 +348,13 @@ class InternetArchiveCollector(BaseCollector):
                 ]
             )
         )
-        cache_name = normalise_alias(spec["label"]).replace(" ", "_").replace("/", "_")
+        # The same source label can be searched through multiple regional
+        # queries, especially for ghost/appartition books. Cache by label plus
+        # query fingerprint so state-specific searches do not collapse into a
+        # single stale result set.
+        label_key = normalise_alias(spec["label"]).replace(" ", "_").replace("/", "_")
+        query_key = hashlib.sha256(spec["query"].encode("utf-8")).hexdigest()[:12]
+        cache_name = f"{label_key}_{query_key}"
         return curl_json(search_url, cache_root / "search" / f"{cache_name}.json")
 
     def _candidate_from_doc(self, spec: dict[str, str], doc: dict[str, Any], cache_root: Path) -> CollectionCandidate:

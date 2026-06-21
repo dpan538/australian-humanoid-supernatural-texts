@@ -53,6 +53,13 @@ ARCHIVE_FIRST_DOMAIN_POLICY = {
     "ntl.nt.gov.au": ("Northern Territory Library", "institutional_web", "B"),
     "nla.gov.au": ("National Library of Australia", "institutional_web", "A"),
     "trove.nla.gov.au": ("Trove", "trove_newspaper", "A"),
+    "aiatsis.gov.au": ("AIATSIS Public Site", "aiatsis_public_catalogue", "A"),
+    "nma.gov.au": ("National Museum of Australia", "institutional_web", "B"),
+    "nfsa.gov.au": ("National Film and Sound Archive", "institutional_web", "B"),
+    "aso.gov.au": ("Australian Screen", "institutional_web", "B"),
+    "naa.gov.au": ("National Archives of Australia", "institutional_web", "A"),
+    "samuseum.sa.gov.au": ("South Australian Museum", "institutional_web", "B"),
+    "museumsvictoria.com.au": ("Museums Victoria", "institutional_web", "B"),
 }
 
 DISCOVERY_ONLY_HOST_FRAGMENTS = (
