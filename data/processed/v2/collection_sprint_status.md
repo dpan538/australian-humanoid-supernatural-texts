@@ -1,40 +1,42 @@
 # Collection Sprint Status
 
-- Generated: `2026-06-22T07:45:26+00:00`
+- Generated: `2026-06-22T09:25:00+00:00`
 - Run id: `collection_sprint_20260622_002`
-- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074522_005`
+- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_092454_005`
 - Starting public records: `1380`
-- Ending public records: `2643`
-- Net-new public records: `1263`
+- Ending public records: `2806`
+- Net-new public records: `1426`
 - Starting map flags: `891`
-- Ending map flags: `934`
-- Net-new map flags: `43`
-- Candidates processed: `2545`
-- Context/lead staged: `0`
-- Suppressed/rejected staged: `1`
+- Ending map flags: `974`
+- Net-new map flags: `83`
+- Candidates processed: `2745`
+- Context/lead staged: `7`
+- Suppressed/rejected staged: `12`
 - Duplicate staged: `0`
-- Gap to minimum 3,500 public records: `857`
-- Gap to preferred 3,800 public records: `1157`
-- Soft ceiling remaining before 4,000: `1357`
-- Gap to 1,200 map flags: `266`
-- Current map ratio: `0.3534`
-- Records added since checkpoint: `110`
-- Map flags added since checkpoint: `0`
-- Records per new map flag: `None`
+- Gap to minimum 3,500 public records: `694`
+- Gap to preferred 3,800 public records: `994`
+- Soft ceiling remaining before 4,000: `1194`
+- Gap to 1,200 map flags: `226`
+- Current map ratio: `0.3471`
+- Records added since checkpoint: `273`
+- Map flags added since checkpoint: `40`
+- Records per new map flag: `6.83`
 - Active collection mode: `balanced_growth`
 - Map invariant ok: `True`
 
 ## Records by Source Organisation
-- Project Gutenberg: 8
+- Project Gutenberg: 99
 
 ## Records by Source Family
-- public_domain_ebook: 8
+- public_domain_ebook: 99
 
 ## Records by Jurisdiction
-- QLD: 8
+- QLD: 6
+- TAS: 26
+- VIC: 17
 
 ## Records by Narrative Type
-- retelling_or_adaptation: 8
+- retelling_or_adaptation: 99
 
 ## Per-Route Yield
 
@@ -425,6 +427,18 @@
 | sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text | structured_public_domain_books | 32 | 27 | 3 | 2 | 9 | 0 | 4.0 | route_candidate_limit_or_source_exhausted |
 | sprint_project_gutenberg_boldrewood_nevermore_exact_text | structured_public_domain_books | 25 | 24 | 0 | 1 | 2 | 0 | 4.3 | route_candidate_limit_or_source_exhausted |
 | sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text | structured_public_domain_books | 9 | 8 | 0 | 1 | 0 | 0 | 3.2 | route_candidate_limit_or_source_exhausted |
+| sprint_slv_spooky_library_stories_exact_page | place_first_map_records | 14 | 10 | 0 | 4 | 0 | 0 | 1.6 | accepted_target_reached |
+| sprint_slv_federicis_ghost_exact_page | place_first_map_records | 9 | 8 | 0 | 1 | 4 | 0 | 1.8 | accepted_target_reached |
+| sprint_adelaide_arcade_history_ghost_exact_page | place_first_map_records | 7 | 5 | 0 | 2 | 7 | 0 | 2.2 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_colonial_reformer_vol2_exact_text | structured_public_domain_books | 17 | 13 | 1 | 3 | 1 | 0 | 3.5 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_colonial_reformer_vol3_exact_text | structured_public_domain_books | 19 | 14 | 1 | 4 | 0 | 0 | 3.6 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_colonial_reformer_vol1_exact_text | structured_public_domain_books | 16 | 14 | 1 | 1 | 1 | 0 | 3.7 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_lawson_days_world_wide_exact_text | structured_public_domain_books | 22 | 18 | 2 | 2 | 5 | 0 | 2.9 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_steele_rudd_dashwoods_exact_text | structured_public_domain_books | 7 | 6 | 0 | 1 | 0 | 0 | 3.1 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_crooked_stick_exact_text | structured_public_domain_books | 17 | 16 | 0 | 1 | 0 | 0 | 3.2 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_hume_hansom_cab_exact_text | structured_public_domain_books | 23 | 17 | 3 | 3 | 11 | 0 | 3.5 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_plain_living_exact_text | structured_public_domain_books | 18 | 16 | 1 | 1 | 0 | 0 | 3.5 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_clarke_natural_life_exact_text | structured_public_domain_books | 31 | 26 | 1 | 4 | 4 | 0 | 3.7 | route_candidate_limit_or_source_exhausted |
 
 ## Productive Routes
 
@@ -476,22 +490,33 @@
 - sprint_project_gutenberg_barry_bunyip_stories_rescan
 - sprint_project_gutenberg_baynton_bush_studies_exact_text
 - sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text
+- sprint_project_gutenberg_boldrewood_colonial_reformer_vol1_exact_text
+- sprint_project_gutenberg_boldrewood_colonial_reformer_vol2_exact_text
+- sprint_project_gutenberg_boldrewood_colonial_reformer_vol3_exact_text
+- sprint_project_gutenberg_boldrewood_crooked_stick_exact_text
 - sprint_project_gutenberg_boldrewood_in_bad_company_exact_text
 - sprint_project_gutenberg_boldrewood_last_chance_exact_text
 - sprint_project_gutenberg_boldrewood_nevermore_exact_text
 - sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text
+- sprint_project_gutenberg_boldrewood_plain_living_exact_text
 - sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text
+- sprint_project_gutenberg_clarke_natural_life_exact_text
+- sprint_project_gutenberg_hume_hansom_cab_exact_text
 - sprint_project_gutenberg_lawson_children_of_the_bush_exact_text
+- sprint_project_gutenberg_lawson_days_world_wide_exact_text
 - sprint_project_gutenberg_lawson_on_the_track_exact_text
 - sprint_project_gutenberg_lawson_over_the_sliprails_exact_text
 - sprint_project_gutenberg_lawson_rising_of_the_court_exact_text
 - sprint_project_gutenberg_lawson_while_billy_boils_exact_text
 - sprint_project_gutenberg_robertson_australian_tales
 - sprint_project_gutenberg_robertson_australian_tales_rescan
+- sprint_project_gutenberg_steele_rudd_dashwoods_exact_text
 - sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text
 - sprint_project_gutenberg_westbury_australian_fairy_tales
 - sprint_project_gutenberg_westbury_australian_fairy_tales_rescan
 - sprint_sacred_texts_nw_wa_customs_traditions_exact_text
+- sprint_slv_federicis_ghost_exact_page
+- sprint_slv_spooky_library_stories_exact_page
 - sprint_wikisource_euahlayi_exact_texts
 - sprint_wikisource_southeast_exact_texts
 
@@ -509,15 +534,3 @@
 - sprint_sa_history_network_directory_probe
 - sprint_territory_stories_public_probe
 - sprint_victorian_collections_story_probe
-
-## Continuation Queue and Approval Block
-
-- Current public records: `2643`
-- Current map flags: `934`
-- Computed next-route queue length: `24`
-- Exact blocked command: `python3 scripts/run_collection_sprint.py --resume --until-launch-target`
-- Blocker classification: `blocked_approval`
-- Interpretation: the approval layer blocked the network collection command before execution. This is not route exhaustion and not evidence that the source universe is exhausted.
-- Offline continuation completed: added exact public-text routes plus atlas-backed state-library, museum, archive, heritage-library, and place-first probes across VIC, WA, SA, TAS, ACT, NSW, and QLD.
-- Next action after approval: rerun `python3 scripts/run_collection_sprint.py --resume --until-launch-target` and allow the runner to process the queued routes through staging, dedupe, serialized promotion, map filtering, export, and validation.
-- Reblocked at `2026-06-22T08:31:43+00:00`: the same exact authorized command was rejected by the platform approval layer before execution. The 24-route queue remains pending and should be resumed without marking routes exhausted.

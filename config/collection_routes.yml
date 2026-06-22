@@ -2393,3 +2393,339 @@ routes:
     yield remain acceptable.
   next_action: Scale productive route
   route_status: productive
+- route_id: sprint_project_gutenberg_boldrewood_colonial_reformer_vol1_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW/VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 16
+  accepted_count: 14
+  duplicate_count: 1
+  lead_count: 2
+  rejected_count: 1
+  average_seconds_per_candidate: 0.229
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_boldrewood_colonial_reformer_vol2_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW/VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 17
+  accepted_count: 13
+  duplicate_count: 1
+  lead_count: 2
+  rejected_count: 3
+  average_seconds_per_candidate: 0.208
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_boldrewood_colonial_reformer_vol3_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW/VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 19
+  accepted_count: 14
+  duplicate_count: 0
+  lead_count: 2
+  rejected_count: 4
+  average_seconds_per_candidate: 0.189
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_slv_federicis_ghost_exact_page
+  source_name: State Library Victoria
+  organisation: State Library Victoria
+  domain: ''
+  jurisdiction: VIC
+  source_class: institutional_history_article
+  retrieval_method: exact_public_html_page
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 9
+  accepted_count: 8
+  duplicate_count: 4
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.203
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_slv_spooky_library_stories_exact_page
+  source_name: State Library Victoria
+  organisation: State Library Victoria
+  domain: ''
+  jurisdiction: VIC
+  source_class: institutional_history_article
+  retrieval_method: exact_public_html_page
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 14
+  accepted_count: 10
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 4
+  average_seconds_per_candidate: 0.114
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_adelaide_arcade_history_ghost_exact_page
+  source_name: Adelaide Arcade
+  organisation: Adelaide Arcade
+  domain: ''
+  jurisdiction: SA
+  source_class: institutional_history_page
+  retrieval_method: exact_public_html_page
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 7
+  accepted_count: 5
+  duplicate_count: 7
+  lead_count: 0
+  rejected_count: 2
+  average_seconds_per_candidate: 0.309
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_project_gutenberg_lawson_days_world_wide_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 22
+  accepted_count: 18
+  duplicate_count: 5
+  lead_count: 4
+  rejected_count: 2
+  average_seconds_per_candidate: 0.131
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_steele_rudd_dashwoods_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: QLD
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 7
+  accepted_count: 6
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.441
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_boldrewood_plain_living_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW/VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 18
+  accepted_count: 16
+  duplicate_count: 0
+  lead_count: 2
+  rejected_count: 1
+  average_seconds_per_candidate: 0.192
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_clarke_natural_life_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: TAS/VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 31
+  accepted_count: 26
+  duplicate_count: 4
+  lead_count: 2
+  rejected_count: 4
+  average_seconds_per_candidate: 0.121
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_boldrewood_crooked_stick_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW/VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 17
+  accepted_count: 16
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.191
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_hume_hansom_cab_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 23
+  accepted_count: 17
+  duplicate_count: 11
+  lead_count: 6
+  rejected_count: 3
+  average_seconds_per_candidate: 0.151
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive

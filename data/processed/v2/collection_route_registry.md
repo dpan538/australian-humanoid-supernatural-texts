@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T07:45:26+00:00`
+- Generated: `2026-06-22T09:24:59+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `85`
+- Routes: `97`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 18
+- `low_yield`: 19
 - `manual_only`: 1
-- `productive`: 63
+- `productive`: 74
 
 ## Stop Rule
 
@@ -105,3 +105,15 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text | low_yield | Project Gutenberg | exact_plain_text | 5 | 4 | 0 | 1 |  | Keep as probe/discovery route only |
 | sprint_project_gutenberg_baynton_bush_studies_exact_text | productive | Project Gutenberg | exact_plain_text | 9 | 7 | 2 | 1 |  | Scale productive route |
 | sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text | productive | Project Gutenberg | exact_plain_text | 9 | 8 | 0 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_colonial_reformer_vol1_exact_text | productive | Project Gutenberg | exact_plain_text | 16 | 14 | 1 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_colonial_reformer_vol2_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 13 | 1 | 3 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_colonial_reformer_vol3_exact_text | productive | Project Gutenberg | exact_plain_text | 19 | 14 | 0 | 4 |  | Scale productive route |
+| sprint_slv_federicis_ghost_exact_page | productive | State Library Victoria | exact_public_html_page | 9 | 8 | 4 | 1 |  | Scale productive route |
+| sprint_slv_spooky_library_stories_exact_page | productive | State Library Victoria | exact_public_html_page | 14 | 10 | 0 | 4 |  | Scale productive route |
+| sprint_adelaide_arcade_history_ghost_exact_page | low_yield | Adelaide Arcade | exact_public_html_page | 7 | 5 | 7 | 2 |  | Keep as probe/discovery route only |
+| sprint_project_gutenberg_lawson_days_world_wide_exact_text | productive | Project Gutenberg | exact_plain_text | 22 | 18 | 5 | 2 |  | Scale productive route |
+| sprint_project_gutenberg_steele_rudd_dashwoods_exact_text | productive | Project Gutenberg | exact_plain_text | 7 | 6 | 0 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_plain_living_exact_text | productive | Project Gutenberg | exact_plain_text | 18 | 16 | 0 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_clarke_natural_life_exact_text | productive | Project Gutenberg | exact_plain_text | 31 | 26 | 4 | 4 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_crooked_stick_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 16 | 0 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_hume_hansom_cab_exact_text | productive | Project Gutenberg | exact_plain_text | 23 | 17 | 11 | 3 |  | Scale productive route |
