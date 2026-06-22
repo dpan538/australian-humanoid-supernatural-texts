@@ -10,8 +10,8 @@
 - Baseline mapped-record count: `832`
 - Promoted staging candidates before new collection: `43`
 - Post-promotion canonical record count: `1140`
-- Net-new collected records: `30`
-- Post-collection total: `1170`
+- Net-new collected records: `60`
+- Post-collection total: `1200`
 - Post-collection mapped records: `832`
 - Public map invariant: `mapped_record_count == map_points.length == map_flag_count == 832`
 
@@ -19,14 +19,15 @@
 
 | source organisation | records |
 |---|---:|
-| Project Gutenberg Australia | 30 |
+| Project Gutenberg Australia | 60 |
 
 ## Records By Jurisdiction
 
 | jurisdiction | canonical public records |
 |---|---:|
-| NSW | 501 |
+| NSW | 506 |
 | QLD | 350 |
+| unmapped | 126 |
 | VIC | 97 |
 | WA | 51 |
 | NT | 27 |
@@ -41,13 +42,13 @@ Records without a state/territory-level public map or corpus assignment remain v
 | narrative type | canonical public records |
 |---|---:|
 | cryptid_style_apeman | 1028 |
+| traditional_narrative | 54 |
 | spirit_being | 31 |
-| traditional_narrative | 30 |
 | ancestral_being | 28 |
-| spirit_person_narrative | 21 |
+| spirit_person_narrative | 24 |
 | ghost_legend | 8 |
+| giant_or_ogre_narrative | 7 |
 | cautionary_being | 4 |
-| giant_or_ogre_narrative | 4 |
 | giant | 4 |
 | apparition_account | 3 |
 | descriptive_belief_record | 2 |
@@ -68,10 +69,10 @@ Records without a state/territory-level public map or corpus assignment remain v
 
 ## Productive Routes
 
-- `project_gutenberg_australia_exact_folklore`: 30 accepted records from exact public-domain full-text Australian folklore titles.
+- `project_gutenberg_australia_exact_folklore`: 60 accepted records from exact public-domain full-text Australian folklore titles across two capped batches.
 
 ## Next Three Recommended Batches
 
-1. Continue Project Gutenberg Australia exact-title extraction with additional Australian public-domain local-history and folklore books, capped at 30 reviewed story units per title route.
+1. Continue Project Gutenberg Australia exact-title extraction with additional Australian public-domain local-history and folklore books, capped at 30 reviewed story units per batch.
 2. Use Territory Stories only with narrower exact-title or person-form queries and item handles, not broad `ghost` searches.
 3. Revisit state-library or municipal digital collection item pages where full item text, stable identifiers, and source organisation metadata are exposed without authentication.
