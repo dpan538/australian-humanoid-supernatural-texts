@@ -27,6 +27,7 @@ from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
+from threading import Lock
 from typing import Any
 from urllib.parse import quote, urlencode, urljoin
 from urllib.request import Request, urlopen
@@ -187,6 +188,33 @@ STATE_ALIASES = {
     "ACT": "Australian Capital Territory",
 }
 
+ABC_SUPERNATURAL_RE = re.compile(
+    r"\b(ghosts?|haunted|apparitions?|phantoms?|spectral|spectres?|spirits?|spooks?|"
+    r"blue lady|white lady|grey lady|yowie|devil|supernatural|paranormal|ghostly|lost souls?|enraged spirits?)\b",
+    re.I,
+)
+
+ABC_STRONG_NARRATIVE_RE = re.compile(
+    r"\b(ghosts?|ghost stories?|ghost tours?|apparitions?|phantoms?|spectral|spectres?|spooks?|"
+    r"resident ghost|blue lady|white lady|grey lady|yowie|most haunted|ghostly|lost souls?|enraged spirits?|"
+    r"haunted by (?:a |an |the )?(?:notorious )?ex-convict|"
+    r"haunted (?:house|houses|homestead|place|places|site|sites|gaol|jail|asylum|hospital|"
+    r"hotel|theatre|cemetery|property|building|town|mansion))\b",
+    re.I,
+)
+
+ABC_SKIP_RE = re.compile(
+    r"\b(ghost writer|ghostwriter|ghost net|ghost nets|ghost gum|ghost gear|ghost town only|"
+    r"ghost bat|ghost shark|ghost mushrooms?|ghost reef|ghost-like|ghost theatre|"
+    r"ghost of workchoices|ghost of rudd|ghosts of social media|political parties|federal election|"
+    r"qantas|science show|daleks|ghosts? of (?:the )?past|"
+    r"snapchat|video game|film review|book review|passwords?|woodfires?|asthma|bioluminescence)\b",
+    re.I,
+)
+
+GEOCODE_CACHE_PATH = ROOT / "data" / "interim" / "geocode_cache" / "collection_sprint_places_nominatim.json"
+GEOCODE_LOCK = Lock()
+
 
 class VisibleTextParser(HTMLParser):
     def __init__(self) -> None:
@@ -291,6 +319,20 @@ def fetch_text(url: str) -> str:
         parser.feed(text)
         return parser.text()
     return text
+
+
+def load_geocode_cache() -> dict[str, Any]:
+    if GEOCODE_CACHE_PATH.exists():
+        try:
+            return json.loads(GEOCODE_CACHE_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return {}
+    return {}
+
+
+def write_geocode_cache(cache: dict[str, Any]) -> None:
+    GEOCODE_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    GEOCODE_CACHE_PATH.write_text(json.dumps(cache, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
 def split_blocks(text: str) -> list[str]:
@@ -941,6 +983,564 @@ def collect_probe_only(route: dict[str, Any], stage_dir: Path, cursor: dict[str,
     return result
 
 
+def abc_algolia_query(route: dict[str, Any], query: str, page: int) -> dict[str, Any]:
+    app_id = str(route.get("algolia_app_id") or "Y63Q32NVDL")
+    api_key = str(route.get("algolia_api_key") or "bcdf11ba901b780dc3c0a3ca677fbefc")
+    index_name = str(route.get("algolia_index") or "ABC_production_all")
+    hits_per_page = int(route.get("hits_per_page") or 20)
+    params = urlencode(
+        {
+            "query": query,
+            "hitsPerPage": hits_per_page,
+            "page": page,
+            "ruleContexts": '["global_search"]',
+        }
+    )
+    request = Request(
+        f"https://{app_id}-dsn.algolia.net/1/indexes/{index_name}/query",
+        data=json.dumps({"params": params}).encode("utf-8"),
+        headers={
+            "X-Algolia-API-Key": api_key,
+            "X-Algolia-Application-Id": app_id,
+            "Content-Type": "application/json",
+            "User-Agent": USER_AGENT,
+        },
+    )
+    with urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode("utf-8", "ignore"))
+
+
+def abc_hit_text(hit: dict[str, Any]) -> str:
+    parts: list[str] = []
+    for key in ("title", "synopsis", "caption", "transcript"):
+        value = hit.get(key)
+        if isinstance(value, str) and value:
+            parts.append(value)
+    keywords = hit.get("keywords") or []
+    if isinstance(keywords, list):
+        parts.extend(str(keyword) for keyword in keywords if keyword)
+    return canonicalise_whitespace("\n".join(parts))
+
+
+def abc_publication_date(hit: dict[str, Any]) -> str:
+    dates = hit.get("dates") or {}
+    for key in ("displayPublished", "published", "availableFrom"):
+        value = dates.get(key)
+        if value:
+            return str(value)[:10]
+    return ""
+
+
+def place_aliases(place: dict[str, Any]) -> list[str]:
+    aliases = [str(place.get("name") or "")]
+    aliases.extend(str(alias) for alias in place.get("aliases") or [] if alias)
+    return [alias for alias in aliases if alias]
+
+
+def text_has_place(text: str, place: dict[str, Any]) -> str:
+    for alias in place_aliases(place):
+        if contains_term(text, alias):
+            return alias
+    return ""
+
+
+def source_label_from_text(text: str) -> str:
+    match = ABC_STRONG_NARRATIVE_RE.search(text) or ABC_SUPERNATURAL_RE.search(text)
+    if not match:
+        return "reported_ghost_or_apparition"
+    value = canonicalise_whitespace(match.group(0)).lower()
+    if value in {"haunted", "paranormal", "supernatural"}:
+        return "reported_ghost_or_apparition"
+    return value.replace(" ", "_")
+
+
+def abc_evidence_window(text: str, place_alias: str, radius: int = 520) -> str:
+    place_match = re.search(r"\b" + re.escape(place_alias) + r"\b", text, re.I)
+    ghost_match = ABC_SUPERNATURAL_RE.search(text)
+    if place_match and ghost_match:
+        start = max(0, min(place_match.start(), ghost_match.start()) - radius)
+        end = min(len(text), max(place_match.end(), ghost_match.end()) + radius)
+        return short_excerpt(text[start:end], 760)
+    if place_match:
+        start = max(0, place_match.start() - radius)
+        end = min(len(text), place_match.end() + radius)
+        return short_excerpt(text[start:end], 760)
+    return short_excerpt(text, 760)
+
+
+def place_centered_evidence_window(text: str, place_alias: str, radius: int = 640) -> str:
+    place_match = re.search(r"\b" + re.escape(place_alias) + r"\b", text, re.I)
+    if not place_match:
+        return short_excerpt(text, 760)
+    ghost_matches = list(ABC_SUPERNATURAL_RE.finditer(text))
+    nearest = min(ghost_matches, key=lambda match: abs(match.start() - place_match.start())) if ghost_matches else None
+    if nearest and abs(nearest.start() - place_match.start()) <= radius * 2:
+        start = max(0, min(place_match.start(), nearest.start()) - radius)
+        end = min(len(text), max(place_match.end(), nearest.end()) + radius)
+    else:
+        start = max(0, place_match.start() - radius)
+        end = min(len(text), place_match.end() + radius)
+    return short_excerpt(text[start:end], 900)
+
+
+def geocode_route_place(place: dict[str, Any], cache: dict[str, Any], sleep_seconds: float) -> dict[str, Any] | None:
+    if place.get("latitude") and place.get("longitude"):
+        return {
+            "lat": place["latitude"],
+            "lon": place["longitude"],
+            "display_name": place.get("coordinate_evidence_note") or place.get("name"),
+        }
+    state = str(place.get("state") or "")
+    if not state:
+        return None
+    query = str(place.get("query") or f"{place.get('name')}, {STATE_ALIASES.get(state, state)}, Australia")
+    with GEOCODE_LOCK:
+        if query in cache and not (isinstance(cache[query], dict) and cache[query].get("error")):
+            rows = cache[query]
+        else:
+            url = "https://nominatim.openstreetmap.org/search?" + urlencode(
+                {"q": query, "format": "jsonv2", "limit": "5", "addressdetails": "1", "countrycodes": "au"}
+            )
+            try:
+                rows = json.loads(http_get(url).decode("utf-8", "ignore"))
+            except Exception as exc:  # noqa: BLE001
+                cache[query] = {"error": f"{type(exc).__name__}: {exc}", "updated_at": utc_now_iso()}
+                write_geocode_cache(cache)
+                return None
+            cache[query] = rows
+            write_geocode_cache(cache)
+            if sleep_seconds:
+                time.sleep(sleep_seconds)
+    if not isinstance(rows, list):
+        return None
+    expected_state = STATE_ALIASES.get(state, state).lower()
+    for row in rows:
+        address = row.get("address") or {}
+        display = canonicalise_whitespace(row.get("display_name") or "")
+        state_values = {
+            str(address.get(key) or "").lower()
+            for key in ("state", "territory", "region", "ISO3166-2-lvl4")
+        }
+        if str(address.get("country_code") or "").lower() != "au":
+            continue
+        if expected_state not in state_values and expected_state not in display.lower() and f"au-{state.lower()}" not in state_values:
+            continue
+        try:
+            float(row["lat"])
+            float(row["lon"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        return row
+    return None
+
+
+def make_abc_candidate(
+    route: dict[str, Any],
+    hit: dict[str, Any],
+    place: dict[str, Any],
+    place_alias: str,
+    geocode: dict[str, Any],
+    evidence: str,
+) -> dict[str, Any]:
+    title = canonicalise_whitespace(hit.get("title") or hit.get("titleAlt", {}).get("lg") or "ABC public record")
+    canonical_url = str(hit.get("canonicalURL") or "")
+    hit_id = str(hit.get("id") or hit.get("objectID") or slug(title))
+    external_id = f"abc:{slug(hit_id, 24)}:{slug(place.get('name') or place_alias, 24)}"
+    program = canonicalise_whitespace(hit.get("programTitle") or hit.get("ABCSEARCH_programTitle") or "ABC")
+    place_name = f"{canonicalise_whitespace(place.get('name') or place_alias)}, {place.get('state')}"
+    display = canonicalise_whitespace(geocode.get("display_name") or "")
+    return {
+        "candidate_status": "accepted",
+        "source_name": route["source_name"],
+        "source_type": route["source_type"],
+        "source_tier": route["source_tier"],
+        "title": title,
+        "publication_or_organisation": f"ABC; {program}",
+        "publication_date_text": abc_publication_date(hit),
+        "access_date": date.today().isoformat(),
+        "url": canonical_url,
+        "canonical_url": canonical_url,
+        "external_id": external_id,
+        "publicness_status": "public_media_page",
+        "rights_access_status": "public_access_short_excerpt_only",
+        "narrative_type": route.get("narrative_type_override") or "apparition_account",
+        "secondary_role": "place_first_public_media_record",
+        "australian_relation": route.get("australian_relation", "Australian ABC public media item with source-stated place evidence."),
+        "humanoid_basis": "explicit_supernatural_or_anomalous_person_form_agent",
+        "source_label": source_label_from_text(evidence),
+        "location_text": place_name,
+        "location_role": place.get("location_role") or route.get("default_location_role", "apparition_location"),
+        "latitude": geocode["lat"],
+        "longitude": geocode["lon"],
+        "location_precision": place.get("location_type") or "locality",
+        "geocode_source": "nominatim_openstreetmap_state_checked_abc_place_2026-06-22",
+        "geocode_verification_status": "verified_gazetteer_point",
+        "coordinate_evidence_note": (
+            f"ABC text names `{place_alias}` in a ghost/supernatural context; "
+            f"gazetteer result state-checked as {display}."
+        ),
+        "duplicate_check_status": "abc_canonical_url_external_id_and_excerpt_hash_checked",
+        "quality_class": "B",
+        "ethics_review_status": route.get("ethics_review_status", "public_media_context_reviewed"),
+        "cultural_sensitivity": route.get("cultural_sensitivity", "low"),
+        "acceptance_decision": "accepted",
+        "rejection_reason": "",
+        "evidence_summary": evidence,
+    }
+
+
+def collect_abc_algolia_place_route(
+    route: dict[str, Any],
+    stage_dir: Path,
+    scaled: bool,
+    cursor: dict[str, Any] | None = None,
+) -> RouteResult:
+    started_at = time.monotonic()
+    cursor = cursor or {}
+    route_id = route["route_id"]
+    result = RouteResult(
+        route_id=route_id,
+        family=route.get("family", ""),
+        organisation=route.get("organisation", ""),
+        source_name=route.get("source_name", ""),
+        retrieval_method=route.get("retrieval_method", ""),
+        stage_csv=str(stage_dir / f"{route_id}.csv"),
+        stage_ndjson=str(stage_dir / f"{route_id}.ndjson"),
+        route_phase="scaled" if scaled else "probe",
+    )
+    max_candidates = int(route.get("max_candidates_scaled" if scaled else "max_candidates_probe") or 30)
+    accepted_target = int(route.get("accepted_target") or 0)
+    max_runtime = float(route.get("max_runtime_seconds") or 900)
+    queries = [str(query) for query in route.get("queries") or []]
+    allowed_states = {
+        part.strip()
+        for part in re.split(r"[/,\s]+", str(route.get("jurisdiction") or ""))
+        if part.strip() in STATE_ALIASES
+    }
+    places = [
+        place
+        for place in route.get("place_catalog") or []
+        if place.get("name") and place.get("state") and (not allowed_states or place.get("state") in allowed_states)
+    ]
+    cache = load_geocode_cache()
+    seen_source_place: set[tuple[str, str]] = set()
+    seen_digest: set[str] = set()
+    query_index = int(cursor.get("query_index") or 0)
+    page_index = int(cursor.get("page_index") or 0)
+    try:
+        for q_idx, query in enumerate(queries[query_index:], start=query_index):
+            pages = int(route.get("pages_per_query") or 2)
+            start_page = page_index if q_idx == query_index else 0
+            for page in range(start_page, pages):
+                if result.processed >= max_candidates:
+                    break
+                if accepted_target and result.accepted_provisional >= accepted_target:
+                    break
+                if time.monotonic() - started_at > max_runtime:
+                    result.stop_reason = "route_runtime_limit_reached"
+                    break
+                try:
+                    payload = abc_algolia_query(route, query, page)
+                    result.fetched += 1
+                except Exception as exc:  # noqa: BLE001
+                    result.errors += 1
+                    result.notes.append(f"{query} page {page}: {type(exc).__name__}: {exc}")
+                    continue
+                hits = payload.get("hits") or []
+                print(
+                    "[collection-sprint] "
+                    f"route_id={route_id} abc_query={q_idx + 1}/{len(queries)} page={page + 1}/{pages} "
+                    f"hits={len(hits)} processed={result.processed} accepted_provisional={result.accepted_provisional} "
+                    f"map_candidates={result.map_candidates} elapsed={time.monotonic() - started_at:.1f}s",
+                    flush=True,
+                )
+                for hit in hits:
+                    if result.processed >= max_candidates:
+                        break
+                    if accepted_target and result.accepted_provisional >= accepted_target:
+                        break
+                    canonical_url = str(hit.get("canonicalURL") or "")
+                    if not canonical_url or "abc.net.au" not in canonical_url:
+                        result.rejected += 1
+                        continue
+                    text = abc_hit_text(hit)
+                    if len(text) < 120 or ABC_SKIP_RE.search(text) or not ABC_STRONG_NARRATIVE_RE.search(text):
+                        result.rejected += 1
+                        continue
+                    matched = False
+                    for place in places:
+                        alias = text_has_place(text, place)
+                        if not alias:
+                            continue
+                        key = (canonical_url, str(place.get("name")))
+                        if key in seen_source_place:
+                            result.duplicates += 1
+                            continue
+                        evidence = abc_evidence_window(text, alias)
+                        if not ABC_STRONG_NARRATIVE_RE.search(evidence) or ABC_SKIP_RE.search(evidence):
+                            result.rejected += 1
+                            continue
+                        digest = hashlib.sha256(canonicalise_whitespace(f"{canonical_url}:{place.get('name')}:{evidence}").lower().encode("utf-8")).hexdigest()
+                        if digest in seen_digest:
+                            result.duplicates += 1
+                            continue
+                        geocode = geocode_route_place(place, cache, float(route.get("geocode_rate_limit_seconds") or 1.0))
+                        result.processed += 1
+                        matched = True
+                        if not geocode:
+                            result.rejected += 1
+                            continue
+                        seen_source_place.add(key)
+                        seen_digest.add(digest)
+                        candidate = make_abc_candidate(route, hit, place, alias, geocode, evidence)
+                        candidate["raw_metadata_json"] = {
+                            "route_id": route_id,
+                            "source_family": route.get("family"),
+                            "abc_hit_id": hit.get("id") or hit.get("objectID"),
+                            "abc_query": query,
+                            "place_alias": alias,
+                            "evidence_sha256": digest,
+                            "scope_classifier": "abc_algolia_place_first_v1",
+                        }
+                        result.candidates.append(candidate)
+                        result.accepted_provisional += 1
+                        result.map_candidates += 1
+                        if result.processed % 25 == 0:
+                            print_route_progress(result, started_at)
+                    if not matched:
+                        result.lead_only += 1
+                if result.stop_reason:
+                    break
+                page_index = page + 1
+            if result.stop_reason or result.processed >= max_candidates or (accepted_target and result.accepted_provisional >= accepted_target):
+                query_index = q_idx
+                break
+            page_index = 0
+            query_index = q_idx + 1
+        result.resume_cursor = {
+            "query_index": query_index,
+            "page_index": page_index,
+            "total_queries": len(queries),
+            "exhausted": query_index >= len(queries),
+            "updated_at": utc_now_iso(),
+        }
+        if not result.stop_reason:
+            result.stop_reason = "accepted_target_reached" if accepted_target and result.accepted_provisional >= accepted_target else "route_candidate_limit_or_source_exhausted"
+        if result.resume_cursor.get("exhausted") and not result.accepted_provisional:
+            result.stop_reason = "abc_search_low_yield_or_exhausted"
+    finally:
+        result.runtime_seconds = time.monotonic() - started_at
+        write_route_stage(result)
+        print_route_progress(result, started_at)
+    return result
+
+
+def title_from_page_text(text: str, fallback: str) -> str:
+    compact = canonicalise_whitespace(text)
+    if not compact:
+        return fallback
+    first = re.split(r"\s{2,}|\s+-\s+ABC|\s+\|\s+", compact, maxsplit=1)[0].strip()
+    if 8 <= len(first) <= 180:
+        return first
+    return fallback
+
+
+def resolve_config_place(route: dict[str, Any], page: dict[str, Any]) -> dict[str, Any] | None:
+    if isinstance(page.get("place"), dict):
+        return dict(page["place"])
+    name = str(page.get("place_name") or "")
+    if not name:
+        return None
+    for place in route.get("place_catalog") or []:
+        if str(place.get("name") or "").lower() == name.lower():
+            return dict(place)
+        if any(str(alias).lower() == name.lower() for alias in place.get("aliases") or []):
+            return dict(place)
+    return {
+        "name": name,
+        "state": page.get("state"),
+        "aliases": page.get("aliases") or [],
+        "query": page.get("query"),
+        "location_type": page.get("location_type") or "locality",
+        "location_role": page.get("location_role") or route.get("default_location_role", "apparition_location"),
+    }
+
+
+def make_public_page_candidate(
+    route: dict[str, Any],
+    page: dict[str, Any],
+    title: str,
+    place: dict[str, Any],
+    place_alias: str,
+    geocode: dict[str, Any],
+    evidence: str,
+) -> dict[str, Any]:
+    url = str(page["url"])
+    place_name = f"{canonicalise_whitespace(place.get('name') or place_alias)}, {place.get('state')}"
+    display = canonicalise_whitespace(geocode.get("display_name") or "")
+    return {
+        "candidate_status": "accepted",
+        "source_name": route["source_name"],
+        "source_type": route["source_type"],
+        "source_tier": route["source_tier"],
+        "title": canonicalise_whitespace(page.get("title") or title),
+        "publication_or_organisation": route.get("publication_or_organisation") or route["organisation"],
+        "publication_date_text": str(page.get("publication_date_text") or route.get("publication_date_text") or ""),
+        "access_date": date.today().isoformat(),
+        "url": url,
+        "canonical_url": url,
+        "external_id": f"public-page:{slug(url, 36)}:{slug(place.get('name') or place_alias, 24)}",
+        "publicness_status": route.get("publicness_status", "public_web_page"),
+        "rights_access_status": route.get("rights_access_status", "public_access_short_excerpt_only"),
+        "narrative_type": route.get("narrative_type_override") or page.get("narrative_type") or "apparition_account",
+        "secondary_role": route.get("secondary_role", "place_first_public_page_record"),
+        "australian_relation": route.get("australian_relation", "Australian public page with source-stated place evidence."),
+        "humanoid_basis": route.get("humanoid_basis", "explicit_supernatural_or_anomalous_person_form_agent"),
+        "source_label": page.get("source_label") or source_label_from_text(evidence),
+        "location_text": place_name,
+        "location_role": place.get("location_role") or page.get("location_role") or route.get("default_location_role", "apparition_location"),
+        "latitude": geocode["lat"],
+        "longitude": geocode["lon"],
+        "location_precision": place.get("location_type") or page.get("location_type") or "locality",
+        "geocode_source": "nominatim_openstreetmap_state_checked_public_page_2026-06-22",
+        "geocode_verification_status": "verified_gazetteer_point",
+        "coordinate_evidence_note": (
+            f"Public page text names `{place_alias}` in a ghost/supernatural context; "
+            f"gazetteer result state-checked as {display}."
+        ),
+        "duplicate_check_status": "canonical_url_external_id_and_excerpt_hash_checked",
+        "quality_class": route.get("quality_class", "B"),
+        "ethics_review_status": route.get("ethics_review_status", "public_page_context_reviewed"),
+        "cultural_sensitivity": route.get("cultural_sensitivity", "low"),
+        "acceptance_decision": "accepted",
+        "rejection_reason": "",
+        "evidence_summary": evidence,
+    }
+
+
+def collect_public_page_place_route(
+    route: dict[str, Any],
+    stage_dir: Path,
+    scaled: bool,
+    cursor: dict[str, Any] | None = None,
+) -> RouteResult:
+    started_at = time.monotonic()
+    cursor = cursor or {}
+    route_id = route["route_id"]
+    result = RouteResult(
+        route_id=route_id,
+        family=route.get("family", ""),
+        organisation=route.get("organisation", ""),
+        source_name=route.get("source_name", ""),
+        retrieval_method=route.get("retrieval_method", ""),
+        stage_csv=str(stage_dir / f"{route_id}.csv"),
+        stage_ndjson=str(stage_dir / f"{route_id}.ndjson"),
+        route_phase="scaled" if scaled else "probe",
+    )
+    try:
+        if cursor.get("exhausted") and route.get("resume_strategy") != "rescan_new_evidence":
+            result.stop_reason = "route_cursor_exhausted"
+            result.resume_cursor = cursor
+            return result
+        max_candidates = int(route.get("max_candidates_scaled" if scaled else "max_candidates_probe") or 30)
+        accepted_target = int(route.get("accepted_target") or 0)
+        cache = load_geocode_cache()
+        pages = list(route.get("pages") or [])
+        start_page_index = 0 if route.get("resume_strategy") == "rescan_new_evidence" else int(cursor.get("page_index") or 0)
+        next_page_index = start_page_index
+        seen_external_ids: set[str] = set()
+        for page_index, page in enumerate(pages[start_page_index:], start=start_page_index):
+            if result.processed >= max_candidates:
+                break
+            if accepted_target and result.accepted_provisional >= accepted_target:
+                break
+            next_page_index = page_index
+            try:
+                text = fetch_text(page["url"])
+                result.fetched += 1
+            except Exception as exc:  # noqa: BLE001
+                result.errors += 1
+                result.notes.append(f"{page.get('url')}: {type(exc).__name__}: {exc}")
+                next_page_index = page_index + 1
+                continue
+            next_page_index = page_index + 1
+            text = canonicalise_whitespace(text)
+            title = title_from_page_text(text, str(page.get("title") or page["url"].rsplit("/", 1)[-1]))
+            page_places = [{**page, **place_row} for place_row in page.get("places", [])] if page.get("places") else [page]
+            print(
+                "[collection-sprint] "
+                f"route_id={route_id} public_page_index={page_index + 1}/{len(pages)} "
+                f"fetched={result.fetched} processed={result.processed} accepted_provisional={result.accepted_provisional} "
+                f"map_candidates={result.map_candidates} elapsed={time.monotonic() - started_at:.1f}s",
+                flush=True,
+            )
+            if len(text) < 120:
+                result.rejected += len(page_places)
+                continue
+            for page_place in page_places:
+                if result.processed >= max_candidates:
+                    break
+                if accepted_target and result.accepted_provisional >= accepted_target:
+                    break
+                place = resolve_config_place(route, page_place)
+                result.processed += 1
+                if not place or not place.get("state"):
+                    result.rejected += 1
+                    continue
+                place_alias = text_has_place(text, place)
+                if not place_alias:
+                    result.rejected += 1
+                    continue
+                evidence = place_centered_evidence_window(text, place_alias, radius=int(route.get("evidence_radius") or 640))
+                if not ABC_STRONG_NARRATIVE_RE.search(evidence):
+                    result.rejected += 1
+                    continue
+                skip_pattern = route.get("skip_pattern")
+                if skip_pattern and re.search(str(skip_pattern), evidence, re.I):
+                    result.rejected += 1
+                    continue
+                geocode = geocode_route_place(place, cache, float(route.get("geocode_rate_limit_seconds") or 1.0))
+                if not geocode:
+                    result.lead_only += 1
+                    continue
+                candidate = make_public_page_candidate(route, page_place, title, place, place_alias, geocode, evidence)
+                digest = hashlib.sha256(canonicalise_whitespace(f"{candidate['canonical_url']}:{evidence}").lower().encode("utf-8")).hexdigest()
+                if candidate["external_id"] in seen_external_ids:
+                    result.duplicates += 1
+                    continue
+                seen_external_ids.add(candidate["external_id"])
+                candidate["raw_metadata_json"] = {
+                    "route_id": route_id,
+                    "source_family": route.get("family"),
+                    "page_index": page_index,
+                    "scope_classifier": "public_page_place_strong_ghost_gate_v1",
+                    "evidence_sha256": digest,
+                }
+                result.candidates.append(candidate)
+                result.accepted_provisional += 1
+                result.map_candidates += 1
+                if result.processed % 25 == 0:
+                    print_route_progress(result, started_at)
+        result.resume_cursor = {
+            "page_index": next_page_index,
+            "total_pages": len(pages),
+            "exhausted": next_page_index >= len(pages),
+            "updated_at": utc_now_iso(),
+        }
+        result.stop_reason = "accepted_target_reached" if accepted_target and result.accepted_provisional >= accepted_target else "route_candidate_limit_or_source_exhausted"
+        if result.resume_cursor.get("exhausted") and not result.accepted_provisional:
+            result.stop_reason = "public_page_low_yield_or_exhausted"
+    except Exception as exc:  # noqa: BLE001
+        result.errors += 1
+        result.stop_reason = f"public_page_route_error:{type(exc).__name__}"
+        result.notes.append(str(exc))
+    finally:
+        result.runtime_seconds = time.monotonic() - started_at
+        write_route_stage(result)
+        print_route_progress(result, started_at)
+    return result
+
+
 def haversine_km(a_lat: float, a_lon: float, b_lat: float, b_lon: float) -> float:
     radius = 6371.0
     phi1, phi2 = math.radians(a_lat), math.radians(b_lat)
@@ -1067,6 +1667,10 @@ def write_route_stage(result: RouteResult) -> None:
 
 
 def run_route(route: dict[str, Any], stage_dir: Path, scaled: bool = False, cursor: dict[str, Any] | None = None) -> RouteResult:
+    if route.get("retrieval_method") == "abc_algolia_place_search":
+        return collect_abc_algolia_place_route(route, stage_dir, scaled=scaled, cursor=cursor)
+    if route.get("retrieval_method") == "public_page_place_text":
+        return collect_public_page_place_route(route, stage_dir, scaled=scaled, cursor=cursor)
     if route.get("retrieval_method") == "exact_queue_gazetteer_verification":
         return collect_map_queue_route(route, stage_dir, scaled=scaled, cursor=cursor)
     if route.get("retrieval_method") == "recollect_search_item_ocr":

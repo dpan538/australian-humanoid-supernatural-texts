@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T10:06:22+00:00`
+- Generated: `2026-06-22T11:50:36+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `155`
+- Routes: `195`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 41
+- `low_yield`: 65
 - `manual_only`: 1
-- `productive`: 110
+- `productive`: 126
 
 ## Stop Rule
 
@@ -175,3 +175,43 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains | low_yield | Project Gutenberg | exact_place_filtered_text | 2 | 1 | 0 | 1 |  | Keep as probe/discovery route only |
 | sprint_mapfirst_ia_lumholtz_herbert_river | productive | Internet Archive | exact_place_filtered_text | 7 | 6 | 13 | 0 |  | Scale productive route |
 | sprint_mapfirst_ia_lake_george_devil_exact_text | low_yield | Internet Archive | exact_place_filtered_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_mapfirst_gutenberg_hume_madame_midas_ballarat | low_yield | Project Gutenberg | exact_place_filtered_text | 12 | 0 | 0 | 12 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_mapfirst_gutenberg_hume_hansom_cab_melbourne | low_yield | Project Gutenberg | exact_place_filtered_text | 2 | 0 | 0 | 2 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_mapfirst_gutenberg_richardson_australia_felix_ballarat | low_yield | Project Gutenberg | exact_place_filtered_text | 5 | 1 | 0 | 4 |  | Keep as probe/discovery route only |
+| sprint_mapfirst_gutenberg_lawson_while_billy_bourke | low_yield | Project Gutenberg | exact_place_filtered_text | 2 | 1 | 0 | 1 |  | Keep as probe/discovery route only |
+| sprint_mapfirst_gutenberg_lawson_while_billy_mudgee | low_yield | Project Gutenberg | exact_place_filtered_text | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_mapfirst_gutenberg_lawson_on_track_gulgong | low_yield | Project Gutenberg | exact_place_filtered_text | 1 | 0 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_mapfirst_ia_lawson_joe_wilson_bathurst | low_yield | Internet Archive | exact_place_filtered_text | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_abc_placefirst_national_haunted_sites | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 64 | 16 | 17 | 58 |  | Scale productive route |
+| sprint_abc_placefirst_tasmania_port_arthur_hobart | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 15 | 10 | 0 | 14 |  | Scale productive route |
+| sprint_abc_placefirst_sa_vic_gaol_asylum_theatre | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 36 | 6 | 0 | 49 |  | Scale productive route |
+| sprint_abc_placefirst_wa_act_qld_nsw_sites | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 52 | 11 | 9 | 49 |  | Scale productive route |
+| sprint_abc_placefirst_wa_modern_haunted_sites_02 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 44 | 3 | 2 | 92 |  | Keep as probe/discovery route only |
+| sprint_abc_placefirst_nt_modern_haunted_sites_02 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 48 | 1 | 0 | 189 |  | Keep as probe/discovery route only |
+| sprint_abc_placefirst_sa_tas_modern_sites_02 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 48 | 5 | 2 | 120 |  | Keep as probe/discovery route only |
+| sprint_abc_exact_discovered_wa_sa_tas_modern_03 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 28 | 9 | 0 | 45 |  | Scale productive route |
+| sprint_abc_exact_discovered_national_modern_03 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 40 | 18 | 0 | 36 |  | Scale productive route |
+| sprint_abc_exact_wa_tas_additional_modern_04 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 3 | 1 | 1 | 8 |  | Keep as probe/discovery route only |
+| sprint_abc_exact_act_vic_tas_known_sites_04 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 16 | 16 | 2 | 5 |  | Scale productive route |
+| sprint_abc_exact_qld_nsw_known_sites_04 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 10 | 10 | 1 | 11 |  | Scale productive route |
+| sprint_abc_exact_wa_york_oakabella_retry_05 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 10 | 6 | 3 | 14 |  | Scale productive route |
+| sprint_abc_exact_sa_tas_known_sites_05 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 8 | 5 | 2 | 26 |  | Keep as probe/discovery route only |
+| sprint_abc_exact_nt_modern_sites_05 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 12 | 9 | 8 | 56 |  | Scale productive route |
+| sprint_abc_exact_modern_bonus_sites_05 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 18 | 16 | 7 | 9 |  | Scale productive route |
+| sprint_abc_exact_public_pages_06 | productive | Australian Broadcasting Corporation | public_page_place_text | 15 | 8 | 1 | 6 |  | Scale productive route |
+| sprint_abc_exact_public_pages_nt_qld_07 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 3 | 2 | 0 | 1 |  | Keep as probe/discovery route only |
+| sprint_abc_australias_most_haunted_places_08 | productive | Australian Broadcasting Corporation | public_page_place_text | 6 | 6 | 0 | 0 |  | Scale productive route |
+| sprint_abc_australias_most_haunted_places_rescan_09 | productive | Australian Broadcasting Corporation | public_page_place_text | 6 | 6 | 0 | 0 |  | Scale productive route |
+| sprint_abc_ghosthunters_picton_woodford_10 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_qld_ghostbuster_places_rescan_11 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 3 | 0 | 0 | 3 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_abc_exact_public_pages_rescan_12 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 3 | 2 | 0 | 1 |  | Keep as probe/discovery route only |
+| sprint_abc_exact_site_units_rescan_13 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 4 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_richmond_bridge_exact_14 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 1 | 0 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_abc_richmond_bridge_exact_15 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 1 | 0 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_abc_richmond_bridge_exact_16 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_adelaide_gaol_ghostly_sightings_exact_17 | productive | Adelaide Gaol |  | 12 | 8 | 8 | 4 |  | Scale productive route |
+| sprint_adelaide_gaol_william_ashton_section_18 | low_yield | Adelaide Gaol |  | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_modern_wa_tas_sa_site_units_19 | productive | Australian Broadcasting Corporation | public_page_place_text | 11 | 9 | 0 | 1 |  | Scale productive route |
+| sprint_abc_modern_wa_tas_sa_site_units_20 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 5 | 5 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_hobart_distinct_ghost_places_21 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 5 | 2 | 0 | 3 |  | Keep as probe/discovery route only |
+| sprint_abc_hobart_named_ghost_sections_22 | low_yield | Australian Broadcasting Corporation |  | 3 | 3 | 0 | 0 |  | Keep as probe/discovery route only |

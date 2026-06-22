@@ -4353,3 +4353,1123 @@ routes:
     yield remain acceptable.
   next_action: Keep as probe/discovery route only
   route_status: low_yield
+- route_id: sprint_mapfirst_gutenberg_hume_madame_midas_ballarat
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 12
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 12
+  average_seconds_per_candidate: 0.336
+  blocker: low_yield_or_discovery_only
+  failure_reason: route_cursor_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_mapfirst_gutenberg_hume_hansom_cab_melbourne
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 2
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 2
+  average_seconds_per_candidate: 1.938
+  blocker: low_yield_or_discovery_only
+  failure_reason: route_cursor_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_mapfirst_gutenberg_richardson_australia_felix_ballarat
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 5
+  accepted_count: 1
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 4
+  average_seconds_per_candidate: 0.841
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_mapfirst_gutenberg_lawson_while_billy_bourke
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW
+  source_class: public_domain_ebook
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 2
+  accepted_count: 1
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 2.146
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_mapfirst_gutenberg_lawson_while_billy_mudgee
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW
+  source_class: public_domain_ebook
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: route_cursor_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_mapfirst_gutenberg_lawson_on_track_gulgong
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW
+  source_class: public_domain_ebook
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 1
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 3.375
+  blocker: low_yield_or_discovery_only
+  failure_reason: route_cursor_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_mapfirst_ia_lawson_joe_wilson_bathurst
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: joewilsonandhis00lawsgoog
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: route_cursor_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_placefirst_national_haunted_sites
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: AU
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 64
+  accepted_count: 16
+  duplicate_count: 17
+  lead_count: 41
+  rejected_count: 58
+  average_seconds_per_candidate: 1.488
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_placefirst_tasmania_port_arthur_hobart
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: TAS
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 15
+  accepted_count: 10
+  duplicate_count: 0
+  lead_count: 5
+  rejected_count: 14
+  average_seconds_per_candidate: 4.499
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_placefirst_sa_vic_gaol_asylum_theatre
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: SA/VIC
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 36
+  accepted_count: 6
+  duplicate_count: 0
+  lead_count: 37
+  rejected_count: 49
+  average_seconds_per_candidate: 2.521
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_placefirst_wa_act_qld_nsw_sites
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: WA/ACT/QLD/NSW
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 52
+  accepted_count: 11
+  duplicate_count: 9
+  lead_count: 15
+  rejected_count: 49
+  average_seconds_per_candidate: 1.858
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_placefirst_wa_modern_haunted_sites_02
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: WA
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 44
+  accepted_count: 3
+  duplicate_count: 2
+  lead_count: 28
+  rejected_count: 92
+  average_seconds_per_candidate: 1.27
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_placefirst_nt_modern_haunted_sites_02
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: NT
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 48
+  accepted_count: 1
+  duplicate_count: 0
+  lead_count: 26
+  rejected_count: 189
+  average_seconds_per_candidate: 1.227
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_placefirst_sa_tas_modern_sites_02
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: SA/TAS
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 48
+  accepted_count: 5
+  duplicate_count: 2
+  lead_count: 52
+  rejected_count: 120
+  average_seconds_per_candidate: 1.177
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_exact_discovered_wa_sa_tas_modern_03
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: WA/SA/TAS
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 28
+  accepted_count: 9
+  duplicate_count: 0
+  lead_count: 14
+  rejected_count: 45
+  average_seconds_per_candidate: 4.343
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_exact_discovered_national_modern_03
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: NSW/QLD/TAS/SA/WA/ACT/VIC
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 40
+  accepted_count: 18
+  duplicate_count: 0
+  lead_count: 6
+  rejected_count: 36
+  average_seconds_per_candidate: 3.669
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_exact_wa_tas_additional_modern_04
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: WA/TAS
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 3
+  accepted_count: 1
+  duplicate_count: 1
+  lead_count: 2
+  rejected_count: 8
+  average_seconds_per_candidate: 3.539
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_exact_act_vic_tas_known_sites_04
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: ACT/VIC/TAS
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 16
+  accepted_count: 16
+  duplicate_count: 2
+  lead_count: 1
+  rejected_count: 5
+  average_seconds_per_candidate: 1.478
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_exact_qld_nsw_known_sites_04
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: QLD/NSW
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 10
+  accepted_count: 10
+  duplicate_count: 1
+  lead_count: 7
+  rejected_count: 11
+  average_seconds_per_candidate: 2.245
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_exact_wa_york_oakabella_retry_05
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: WA
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 10
+  accepted_count: 6
+  duplicate_count: 3
+  lead_count: 3
+  rejected_count: 14
+  average_seconds_per_candidate: 6.787
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_exact_sa_tas_known_sites_05
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: SA/TAS
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 8
+  accepted_count: 5
+  duplicate_count: 2
+  lead_count: 19
+  rejected_count: 26
+  average_seconds_per_candidate: 6.727
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_exact_nt_modern_sites_05
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: NT
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 12
+  accepted_count: 9
+  duplicate_count: 8
+  lead_count: 11
+  rejected_count: 56
+  average_seconds_per_candidate: 4.704
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_exact_modern_bonus_sites_05
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: QLD/VIC/ACT/TAS/WA/SA
+  source_class: institutional_media_page
+  retrieval_method: abc_algolia_place_search
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 18
+  accepted_count: 16
+  duplicate_count: 7
+  lead_count: 4
+  rejected_count: 9
+  average_seconds_per_candidate: 3.478
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_exact_public_pages_06
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: SA/TAS/QLD/NSW/VIC/ACT/WA
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 15
+  accepted_count: 8
+  duplicate_count: 1
+  lead_count: 0
+  rejected_count: 6
+  average_seconds_per_candidate: 1.701
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_exact_public_pages_nt_qld_07
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: NT/QLD
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 3
+  accepted_count: 2
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 2.436
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_australias_most_haunted_places_08
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: ACT/NSW/SA/WA/QLD
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 6
+  accepted_count: 6
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 2.241
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_australias_most_haunted_places_rescan_09
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: ACT/NSW/SA/WA/QLD
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 6
+  accepted_count: 6
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.071
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_ghosthunters_picton_woodford_10
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: NSW
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 2
+  accepted_count: 2
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.202
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_qld_ghostbuster_places_rescan_11
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: QLD
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 3
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 3
+  average_seconds_per_candidate: 0.356
+  blocker: low_yield_or_discovery_only
+  failure_reason: public_page_low_yield_or_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_exact_public_pages_rescan_12
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: QLD/NSW
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 3
+  accepted_count: 2
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.529
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_exact_site_units_rescan_13
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: WA/TAS
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 4
+  accepted_count: 2
+  duplicate_count: 0
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 2.812
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_richmond_bridge_exact_14
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: TAS
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 1
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.549
+  blocker: low_yield_or_discovery_only
+  failure_reason: public_page_low_yield_or_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_richmond_bridge_exact_15
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: TAS
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 1
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.432
+  blocker: low_yield_or_discovery_only
+  failure_reason: public_page_low_yield_or_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_richmond_bridge_exact_16
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: TAS
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 1
+  accepted_count: 1
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.828
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_adelaide_gaol_ghostly_sightings_exact_17
+  source_name: Adelaide Gaol
+  organisation: Adelaide Gaol
+  domain: ''
+  jurisdiction: SA
+  source_class: institutional_web
+  retrieval_method: ''
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 12
+  accepted_count: 8
+  duplicate_count: 8
+  lead_count: 0
+  rejected_count: 4
+  average_seconds_per_candidate: 0.0
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_adelaide_gaol_william_ashton_section_18
+  source_name: Adelaide Gaol
+  organisation: Adelaide Gaol
+  domain: ''
+  jurisdiction: SA
+  source_class: institutional_web
+  retrieval_method: ''
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 1
+  accepted_count: 1
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.001
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_modern_wa_tas_sa_site_units_19
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: WA/TAS/SA
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 11
+  accepted_count: 9
+  duplicate_count: 0
+  lead_count: 1
+  rejected_count: 1
+  average_seconds_per_candidate: 0.651
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_abc_modern_wa_tas_sa_site_units_20
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: WA/TAS/SA
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 5
+  accepted_count: 5
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.559
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_hobart_distinct_ghost_places_21
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: TAS
+  source_class: institutional_media_page
+  retrieval_method: public_page_place_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 5
+  accepted_count: 2
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 3
+  average_seconds_per_candidate: 0.341
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_abc_hobart_named_ghost_sections_22
+  source_name: Australian Broadcasting Corporation
+  organisation: Australian Broadcasting Corporation
+  domain: ''
+  jurisdiction: TAS
+  source_class: institutional_media_page
+  retrieval_method: ''
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 3
+  accepted_count: 3
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.0
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield

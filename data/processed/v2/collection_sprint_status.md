@@ -1,46 +1,40 @@
 # Collection Sprint Status
 
-- Generated: `2026-06-22T10:06:22+00:00`
+- Generated: `2026-06-22T11:50:37+00:00`
 - Run id: `collection_sprint_20260622_002`
-- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008`
+- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_115035_009`
 - Starting public records: `1380`
-- Ending public records: `3635`
-- Net-new public records: `2255`
+- Ending public records: `3699`
+- Net-new public records: `2319`
 - Starting map flags: `891`
-- Ending map flags: `1068`
-- Net-new map flags: `177`
-- Candidates processed: `3981`
-- Context/lead staged: `1`
-- Suppressed/rejected staged: `1`
+- Ending map flags: `1145`
+- Net-new map flags: `254`
+- Candidates processed: `4537`
+- Context/lead staged: `0`
+- Suppressed/rejected staged: `0`
 - Duplicate staged: `0`
 - Gap to minimum 3,500 public records: `0`
-- Gap to preferred 3,800 public records: `165`
-- Soft ceiling remaining before 4,000: `365`
-- Gap to 1,200 map flags: `132`
-- Current map ratio: `0.2938`
-- Records added since checkpoint: `11`
+- Gap to preferred 3,800 public records: `101`
+- Soft ceiling remaining before 4,000: `301`
+- Gap to 1,200 map flags: `55`
+- Current map ratio: `0.3095`
+- Records added since checkpoint: `64`
 - Map flags added since checkpoint: `77`
-- Records per new map flag: `0.14`
+- Records per new map flag: `0.83`
 - Active collection mode: `map_first`
 - Map invariant ok: `True`
 
 ## Records by Source Organisation
-- Internet Archive: 7
-- Project Gutenberg: 4
+- Australian Broadcasting Corporation: 3
 
 ## Records by Source Family
-- public_domain_ebook: 4
-- repository_full_text: 7
+- institutional_media_page: 3
 
 ## Records by Jurisdiction
-- NSW: 2
-- QLD: 6
 - TAS: 3
 
 ## Records by Narrative Type
 - apparition_account: 3
-- retelling_or_adaptation: 3
-- spirit_person_narrative: 5
 
 ## Per-Route Yield
 
@@ -501,9 +495,71 @@
 | sprint_mapfirst_ia_lumholtz_herbert_river | repository_institutional_full_text | 7 | 6 | 1 | 0 | 13 | 0 | 4.9 | route_candidate_limit_or_source_exhausted |
 | sprint_mapfirst_ia_lake_george_devil_exact_text | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 5.3 | route_candidate_limit_or_source_exhausted |
 | sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown | structured_public_domain_books | 0 | 0 | 0 | 0 | 2 | 0 | 6.4 | route_cursor_exhausted |
+| sprint_mapfirst_gutenberg_lawson_on_track_gulgong | structured_public_domain_books | 1 | 0 | 0 | 1 | 0 | 0 | 3.4 | route_cursor_exhausted |
+| sprint_mapfirst_gutenberg_hume_hansom_cab_melbourne | structured_public_domain_books | 2 | 0 | 0 | 2 | 0 | 0 | 3.9 | route_cursor_exhausted |
+| sprint_mapfirst_gutenberg_lawson_while_billy_mudgee | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 4.0 | route_cursor_exhausted |
+| sprint_mapfirst_gutenberg_hume_madame_midas_ballarat | structured_public_domain_books | 12 | 0 | 0 | 12 | 0 | 0 | 4.0 | route_cursor_exhausted |
+| sprint_mapfirst_gutenberg_richardson_australia_felix_ballarat | structured_public_domain_books | 5 | 1 | 0 | 4 | 0 | 0 | 4.2 | route_candidate_limit_or_source_exhausted |
+| sprint_mapfirst_gutenberg_lawson_while_billy_bourke | structured_public_domain_books | 2 | 1 | 0 | 1 | 0 | 0 | 4.3 | route_candidate_limit_or_source_exhausted |
+| sprint_mapfirst_ia_lawson_joe_wilson_bathurst | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 4.1 | route_cursor_exhausted |
+| sprint_abc_placefirst_national_haunted_sites | place_first_map_records | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_worker_error:HTTPError |
+| sprint_abc_placefirst_wa_act_qld_nsw_sites | place_first_map_records | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_worker_error:HTTPError |
+| sprint_abc_placefirst_tasmania_port_arthur_hobart | place_first_map_records | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_worker_error:HTTPError |
+| sprint_abc_placefirst_sa_vic_gaol_asylum_theatre | place_first_map_records | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_worker_error:HTTPError |
+| sprint_abc_placefirst_tasmania_port_arthur_hobart | place_first_map_records | 15 | 10 | 0 | 14 | 0 | 10 | 67.5 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_placefirst_sa_vic_gaol_asylum_theatre | place_first_map_records | 36 | 6 | 0 | 49 | 0 | 6 | 90.8 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_placefirst_national_haunted_sites | place_first_map_records | 64 | 16 | 0 | 58 | 17 | 16 | 95.2 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_placefirst_wa_act_qld_nsw_sites | place_first_map_records | 52 | 11 | 0 | 49 | 9 | 11 | 96.6 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_placefirst_wa_modern_haunted_sites_02 | place_first_map_records | 44 | 3 | 0 | 92 | 2 | 3 | 55.9 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_placefirst_sa_tas_modern_sites_02 | place_first_map_records | 48 | 5 | 0 | 120 | 2 | 5 | 56.5 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_placefirst_nt_modern_haunted_sites_02 | place_first_map_records | 48 | 1 | 0 | 189 | 0 | 1 | 58.9 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_discovered_national_modern_03 | place_first_map_records | 20 | 5 | 0 | 22 | 0 | 5 | 18.8 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_discovered_wa_sa_tas_modern_03 | place_first_map_records | 14 | 2 | 0 | 25 | 0 | 2 | 34.5 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_discovered_wa_sa_tas_modern_03 | place_first_map_records | 14 | 7 | 0 | 20 | 0 | 7 | 60.8 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_discovered_national_modern_03 | place_first_map_records | 20 | 13 | 0 | 14 | 0 | 13 | 73.4 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_wa_tas_additional_modern_04 | place_first_map_records | 3 | 1 | 0 | 8 | 1 | 1 | 10.6 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_act_vic_tas_known_sites_04 | place_first_map_records | 16 | 16 | 0 | 5 | 2 | 16 | 23.7 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_qld_nsw_known_sites_04 | place_first_map_records | 10 | 10 | 0 | 11 | 1 | 10 | 22.5 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_sa_tas_known_sites_05 | place_first_map_records | 8 | 5 | 0 | 26 | 2 | 5 | 53.8 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_nt_modern_sites_05 | place_first_map_records | 12 | 9 | 0 | 56 | 8 | 9 | 56.4 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_modern_bonus_sites_05 | place_first_map_records | 18 | 16 | 0 | 9 | 7 | 16 | 62.6 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_wa_york_oakabella_retry_05 | place_first_map_records | 10 | 6 | 0 | 14 | 3 | 6 | 67.9 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_public_pages_06 | place_first_map_records | 15 | 8 | 0 | 6 | 1 | 8 | 25.5 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_public_pages_nt_qld_07 | place_first_map_records | 3 | 2 | 0 | 1 | 0 | 2 | 7.3 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_australias_most_haunted_places_08 | place_first_map_records | 6 | 6 | 0 | 0 | 0 | 6 | 13.4 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_australias_most_haunted_places_rescan_09 | place_first_map_records | 6 | 6 | 0 | 0 | 0 | 6 | 0.4 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_ghosthunters_picton_woodford_10 | place_first_map_records | 2 | 2 | 0 | 0 | 0 | 2 | 0.4 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_qld_ghostbuster_places_rescan_11 | place_first_map_records | 3 | 0 | 0 | 3 | 0 | 0 | 1.1 | public_page_low_yield_or_exhausted |
+| sprint_abc_exact_public_pages_rescan_12 | place_first_map_records | 3 | 2 | 0 | 1 | 0 | 2 | 1.6 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_site_units_rescan_13 | place_first_map_records | 4 | 2 | 0 | 0 | 0 | 2 | 11.2 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_richmond_bridge_exact_14 | place_first_map_records | 1 | 0 | 0 | 1 | 0 | 0 | 0.5 | public_page_low_yield_or_exhausted |
+| sprint_abc_richmond_bridge_exact_15 | place_first_map_records | 1 | 0 | 0 | 1 | 0 | 0 | 0.4 | public_page_low_yield_or_exhausted |
+| sprint_abc_richmond_bridge_exact_16 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 1 | 0.8 | route_candidate_limit_or_source_exhausted |
+| sprint_adelaide_gaol_ghostly_sightings_exact_17 | place_first_map_records | 12 | 8 | 0 | 4 | 8 | 0 | 0.0 | accepted_target_reached |
+| sprint_adelaide_gaol_william_ashton_section_18 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_modern_wa_tas_sa_site_units_19 | place_first_map_records | 11 | 9 | 0 | 1 | 0 | 9 | 7.2 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_modern_wa_tas_sa_site_units_20 | place_first_map_records | 5 | 5 | 0 | 0 | 0 | 5 | 2.8 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_hobart_distinct_ghost_places_21 | place_first_map_records | 5 | 2 | 0 | 3 | 0 | 2 | 1.7 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_hobart_named_ghost_sections_22 | place_first_map_records | 3 | 3 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
 
 ## Productive Routes
 
+- sprint_abc_australias_most_haunted_places_08
+- sprint_abc_australias_most_haunted_places_rescan_09
+- sprint_abc_exact_act_vic_tas_known_sites_04
+- sprint_abc_exact_discovered_national_modern_03
+- sprint_abc_exact_discovered_wa_sa_tas_modern_03
+- sprint_abc_exact_modern_bonus_sites_05
+- sprint_abc_exact_nt_modern_sites_05
+- sprint_abc_exact_public_pages_06
+- sprint_abc_exact_qld_nsw_known_sites_04
+- sprint_abc_exact_wa_york_oakabella_retry_05
+- sprint_abc_modern_wa_tas_sa_site_units_19
+- sprint_abc_placefirst_national_haunted_sites
+- sprint_abc_placefirst_sa_vic_gaol_asylum_theatre
+- sprint_abc_placefirst_tasmania_port_arthur_hobart
+- sprint_abc_placefirst_wa_act_qld_nsw_sites
+- sprint_adelaide_gaol_ghostly_sightings_exact_17
 - sprint_internet_archive_beveridge_victoria_riverina_exact_text
 - sprint_internet_archive_booandik_sa_exact_text
 - sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text
@@ -620,6 +676,13 @@
 
 ## Exhausted or Discovery-Only Routes
 
+- sprint_abc_placefirst_national_haunted_sites
+- sprint_abc_placefirst_sa_vic_gaol_asylum_theatre
+- sprint_abc_placefirst_tasmania_port_arthur_hobart
+- sprint_abc_placefirst_wa_act_qld_nsw_sites
+- sprint_abc_qld_ghostbuster_places_rescan_11
+- sprint_abc_richmond_bridge_exact_14
+- sprint_abc_richmond_bridge_exact_15
 - sprint_act_heritage_library_probe
 - sprint_anu_open_research_folklore_probe
 - sprint_geelong_heritage_place_first_probe
@@ -629,6 +692,11 @@
 - sprint_internet_archive_roth_queensland_exact_text
 - sprint_libraries_tasmania_eheritage_probe
 - sprint_map_queue_geocode_verification
+- sprint_mapfirst_gutenberg_hume_hansom_cab_melbourne
+- sprint_mapfirst_gutenberg_hume_madame_midas_ballarat
+- sprint_mapfirst_gutenberg_lawson_on_track_gulgong
+- sprint_mapfirst_gutenberg_lawson_while_billy_mudgee
+- sprint_mapfirst_ia_lawson_joe_wilson_bathurst
 - sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown
 - sprint_marion_heritage_probe
 - sprint_moreton_bay_deception_bay_recollect_ocr

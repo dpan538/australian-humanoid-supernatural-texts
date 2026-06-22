@@ -4089,3 +4089,1594 @@ routes:
       - apparition
       - ghost
       - spirit
+  - route_id: sprint_mapfirst_gutenberg_hume_madame_midas_ballarat
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: B
+    jurisdiction: VIC
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: Madame Midas
+    source_author: Fergus Hume
+    publication_date_text: "1888"
+    australian_relation: Public-domain Australian fiction with source-stated Ballarat passages; accepted rows require scoped supernatural/person-form evidence.
+    default_location_text: Ballarat, VIC
+    default_location_role: narrative_setting
+    default_latitude: -37.5623013
+    default_longitude: 143.8605645
+    default_location_precision: town
+    default_geocode_source: nominatim_openstreetmap_named_town_crosscheck
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Ballarat; coordinate independently checked in Nominatim/OpenStreetMap.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Ballarat
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 50
+    pages:
+      - section_id: gutenberg-4946-madame-midas-ballarat
+        url: https://www.gutenberg.org/ebooks/4946.txt.utf-8
+        chapter: Madame Midas
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_mapfirst_gutenberg_hume_hansom_cab_melbourne
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: B
+    jurisdiction: VIC
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: The Mystery of a Hansom Cab
+    source_author: Fergus Hume
+    publication_date_text: "1886"
+    australian_relation: Public-domain Melbourne fiction with source-stated Melbourne passages; accepted rows require scoped supernatural/person-form evidence.
+    default_location_text: Melbourne, VIC
+    default_location_role: narrative_setting
+    default_latitude: -37.8142454
+    default_longitude: 144.9631732
+    default_location_precision: locality
+    default_geocode_source: nominatim_openstreetmap_verified_2026-06-22
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Melbourne; coordinate uses previously verified Melbourne locality row.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Melbourne
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 45
+    pages:
+      - section_id: gutenberg-4223-hansom-cab-melbourne
+        url: https://www.gutenberg.org/ebooks/4223.txt.utf-8
+        chapter: The Mystery of a Hansom Cab
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_mapfirst_gutenberg_richardson_australia_felix_ballarat
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: B
+    jurisdiction: VIC
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: Australia Felix
+    source_author: Henry Handel Richardson
+    publication_date_text: "1917"
+    australian_relation: Public-domain Victorian fiction with source-stated Ballarat district passages; accepted rows require scoped supernatural/person-form evidence.
+    default_location_text: Ballarat, VIC
+    default_location_role: narrative_setting
+    default_latitude: -37.5623013
+    default_longitude: 143.8605645
+    default_location_precision: town
+    default_geocode_source: nominatim_openstreetmap_named_town_crosscheck
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Ballarat; coordinate independently checked in Nominatim/OpenStreetMap.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Ballarat
+      - Mount Warrenheip
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 45
+    pages:
+      - section_id: gutenberg-3832-australia-felix-ballarat
+        url: https://www.gutenberg.org/ebooks/3832.txt.utf-8
+        chapter: Australia Felix
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_mapfirst_gutenberg_lawson_while_billy_bourke
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: While the Billy Boils
+    source_author: Henry Lawson
+    publication_date_text: "1896"
+    australian_relation: Public-domain New South Wales story collection with source-stated Bourke passages; accepted rows require scoped supernatural/person-form evidence.
+    default_location_text: Bourke, NSW
+    default_location_role: narrative_setting
+    default_latitude: -29.9960307
+    default_longitude: 145.2940392
+    default_location_precision: locality
+    default_geocode_source: nominatim_openstreetmap_state_matched
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Bourke; coordinate uses previously verified Bourke locality row.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Bourke
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 35
+    pages:
+      - section_id: gutenberg-7144-while-billy-bourke
+        url: https://www.gutenberg.org/ebooks/7144.txt.utf-8
+        chapter: While the Billy Boils
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_mapfirst_gutenberg_lawson_while_billy_mudgee
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: While the Billy Boils
+    source_author: Henry Lawson
+    publication_date_text: "1896"
+    australian_relation: Public-domain New South Wales story collection with source-stated Mudgee passages; accepted rows require scoped supernatural/person-form evidence.
+    default_location_text: Mudgee, NSW
+    default_location_role: narrative_setting
+    default_latitude: -32.5980702
+    default_longitude: 149.5886383
+    default_location_precision: locality
+    default_geocode_source: nominatim_openstreetmap_state_matched
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Mudgee; coordinate uses previously verified Mudgee locality row.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Mudgee
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 35
+    pages:
+      - section_id: gutenberg-7144-while-billy-mudgee
+        url: https://www.gutenberg.org/ebooks/7144.txt.utf-8
+        chapter: While the Billy Boils
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_mapfirst_gutenberg_lawson_on_track_gulgong
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: On the Track
+    source_author: Henry Lawson
+    publication_date_text: "1900"
+    australian_relation: Public-domain New South Wales story collection with source-stated Gulgong passages; accepted rows require scoped supernatural/person-form evidence.
+    default_location_text: Gulgong, NSW
+    default_location_role: narrative_setting
+    default_latitude: -32.3624999
+    default_longitude: 149.5335213
+    default_location_precision: locality
+    default_geocode_source: nominatim_openstreetmap_named_locality_crosscheck
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Gulgong; coordinate independently checked in Nominatim/OpenStreetMap.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Gulgong
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 35
+    pages:
+      - section_id: gutenberg-1231-on-track-gulgong
+        url: https://www.gutenberg.org/ebooks/1231.txt.utf-8
+        chapter: On the Track
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_mapfirst_ia_lawson_joe_wilson_bathurst
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: Joe Wilson and His Mates
+    source_author: Henry Lawson
+    publication_date_text: "1901"
+    australian_relation: Public-domain Australian story collection with source-stated Bathurst passages; accepted rows require scoped supernatural/person-form evidence.
+    default_location_text: Bathurst, NSW
+    default_location_role: narrative_setting
+    default_latitude: -33.4166482
+    default_longitude: 149.5803725
+    default_location_precision: town
+    default_geocode_source: nominatim_openstreetmap_record_evidence_2026-06-22
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Bathurst; coordinate uses previously verified Bathurst town row.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Bathurst
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 35
+    archive_identifier: joewilsonandhis00lawsgoog
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_abc_placefirst_national_haunted_sites
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: AU
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 80
+    max_candidates_probe: 30
+    max_candidates_scaled: 140
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: ABC public media item concerning Australian haunted/local-legend place evidence.
+    queries:
+      - "Australia's most haunted house ghost Monte Cristo Junee"
+      - "Australia's Most Haunted Tim the Yowie Man Monte Cristo Canberra"
+      - "ghost stories haunted places Australia ABC"
+      - "haunted house ghost apparition ABC Australia"
+      - "Fisher's Ghost Campbelltown ABC"
+      - "spooky Aussie folklore Fisher's Ghost"
+      - "haunted gaol ghost Australia ABC"
+      - "ghost tour guide old gaol asylum Australia ABC"
+    place_catalog: &abc_place_catalog
+      - {name: Monte Cristo Homestead, state: NSW, location_type: exact_site, aliases: [Monte Cristo, Monte Cristo Homestead in Junee], query: "Monte Cristo Homestead, Junee, New South Wales, Australia"}
+      - {name: Junee, state: NSW, location_type: town}
+      - {name: Campbelltown, state: NSW, location_type: town, aliases: ["Fisher's Ghost", Fishers Ghost], query: "Campbelltown, New South Wales, Australia"}
+      - {name: St John's Cemetery Campbelltown, state: NSW, location_type: exact_site, aliases: ["St John's Cemetery", "St Johns Cemetery"], query: "St John's Catholic Cemetery Campbelltown NSW Australia"}
+      - {name: Picton Tunnel, state: NSW, location_type: exact_site, aliases: [Picton tunnel, Redbank Range railway tunnel], query: "Picton Tunnel, New South Wales, Australia"}
+      - {name: Picton, state: NSW, location_type: town}
+      - {name: Quarantine Station Manly, state: NSW, location_type: exact_site, aliases: [Q Station, North Head Quarantine Station, Manly Quarantine Station], query: "North Head Quarantine Station, Manly, New South Wales, Australia"}
+      - {name: Woodford Academy, state: NSW, location_type: exact_site, query: "Woodford Academy, Woodford, New South Wales, Australia"}
+      - {name: Maitland Gaol, state: NSW, location_type: exact_site, aliases: [Maitland Jail], query: "Maitland Gaol, East Maitland, New South Wales, Australia"}
+      - {name: Parramatta Gaol, state: NSW, location_type: exact_site, aliases: [Parramatta Jail], query: "Parramatta Gaol, New South Wales, Australia"}
+      - {name: Port Arthur Historic Site, state: TAS, location_type: exact_site, aliases: [Port Arthur, Parsonage, "Blue Lady"], query: "Port Arthur Historic Site, Tasmania, Australia"}
+      - {name: Hobart, state: TAS, location_type: town}
+      - {name: Battery Point, state: TAS, location_type: locality, query: "Battery Point, Tasmania, Australia"}
+      - {name: Theatre Royal Hobart, state: TAS, location_type: exact_site, aliases: [Theatre Royal], query: "Theatre Royal, Hobart, Tasmania, Australia"}
+      - {name: Richmond Bridge, state: TAS, location_type: exact_site, query: "Richmond Bridge, Tasmania, Australia"}
+      - {name: Cascades Female Factory, state: TAS, location_type: exact_site, aliases: [Female Factory], query: "Cascades Female Factory, Hobart, Tasmania, Australia"}
+      - {name: Princess Theatre Melbourne, state: VIC, location_type: exact_site, aliases: [Princess Theatre, Federici], query: "Princess Theatre, Melbourne, Victoria, Australia"}
+      - {name: Old Melbourne Gaol, state: VIC, location_type: exact_site, aliases: [Old Melbourne Jail], query: "Old Melbourne Gaol, Victoria, Australia"}
+      - {name: Beechworth Asylum, state: VIC, location_type: exact_site, aliases: [Beechworth Lunatic Asylum, Mayday Hills], query: "Beechworth Asylum, Beechworth, Victoria, Australia"}
+      - {name: Aradale Asylum, state: VIC, location_type: exact_site, aliases: [Aradale, Ararat Lunatic Asylum], query: "Aradale Asylum, Ararat, Victoria, Australia"}
+      - {name: Ballarat, state: VIC, location_type: town}
+      - {name: Bendigo, state: VIC, location_type: town}
+      - {name: Z Ward Glenside, state: SA, location_type: exact_site, aliases: [Z Ward, Glenside Hospital, Glenside Asylum], query: "Z Ward, Glenside, South Australia, Australia"}
+      - {name: Adelaide Arcade, state: SA, location_type: exact_site, query: "Adelaide Arcade, Adelaide, South Australia, Australia"}
+      - {name: Kapunda, state: SA, location_type: town}
+      - {name: Old Tailem Town, state: SA, location_type: exact_site, query: "Old Tailem Town, Tailem Bend, South Australia, Australia"}
+      - {name: Gladstone Gaol, state: SA, location_type: exact_site, aliases: [Gladstone Jail], query: "Gladstone Gaol, South Australia, Australia"}
+      - {name: Fremantle Prison, state: WA, location_type: exact_site, aliases: [Fremantle Gaol], query: "Fremantle Prison, Western Australia, Australia"}
+      - {name: Fremantle, state: WA, location_type: town}
+      - {name: Toodyay, state: WA, location_type: town}
+      - {name: York, state: WA, location_type: town, query: "York, Western Australia, Australia"}
+      - {name: Boggo Road Gaol, state: QLD, location_type: exact_site, aliases: [Boggo Road Jail], query: "Boggo Road Gaol, Brisbane, Queensland, Australia"}
+      - {name: Ipswich, state: QLD, location_type: town, query: "Ipswich, Queensland, Australia"}
+      - {name: Toowong Cemetery, state: QLD, location_type: exact_site, query: "Toowong Cemetery, Brisbane, Queensland, Australia"}
+      - {name: Charters Towers, state: QLD, location_type: town}
+      - {name: Cooktown, state: QLD, location_type: town}
+      - {name: National Film and Sound Archive, state: ACT, location_type: exact_site, aliases: [NFSA], query: "National Film and Sound Archive, Canberra, Australian Capital Territory, Australia"}
+      - {name: Blundells Cottage, state: ACT, location_type: exact_site, query: "Blundells Cottage, Canberra, Australian Capital Territory, Australia"}
+      - {name: Canberra, state: ACT, location_type: town}
+      - {name: Fremantle Arts Centre, state: WA, location_type: exact_site, query: "Fremantle Arts Centre, Western Australia, Australia"}
+      - {name: Round House Fremantle, state: WA, location_type: exact_site, aliases: [Round House, The Round House], query: "Round House, Fremantle, Western Australia, Australia"}
+      - {name: Woodman Point Quarantine Station, state: WA, location_type: exact_site, aliases: [Woodman Point], query: "Woodman Point, Western Australia, Australia"}
+      - {name: Albany Convict Gaol, state: WA, location_type: exact_site, aliases: [Albany Gaol, Albany jail], query: "Albany Convict Gaol, Western Australia, Australia"}
+      - {name: Spectrum Theatre Albany, state: WA, location_type: exact_site, aliases: [Spectrum Theatre], query: "Spectrum Theatre, Albany, Western Australia, Australia"}
+      - {name: Old York Hospital, state: WA, location_type: exact_site, aliases: [York Hospital], query: "Old York Hospital, York, Western Australia, Australia"}
+      - {name: Castle Hotel York, state: WA, location_type: exact_site, aliases: [Castle Hotel], query: "Castle Hotel, York, Western Australia, Australia"}
+      - {name: Settlers House York, state: WA, location_type: exact_site, aliases: [Settlers Hotel, Settlers House], query: "Settlers House, York, Western Australia, Australia"}
+      - {name: Oakabella Homestead, state: WA, location_type: exact_site, aliases: [Oakabella], query: "Oakabella Homestead, Western Australia, Australia"}
+      - {name: Rottnest Island, state: WA, location_type: named_feature, aliases: [Rottnest], query: "Rottnest Island, Western Australia, Australia"}
+      - {name: Greenough, state: WA, location_type: town, query: "Greenough, Western Australia, Australia"}
+      - {name: Gwalia, state: WA, location_type: locality, query: "Gwalia, Western Australia, Australia"}
+      - {name: Fannie Bay Gaol, state: NT, location_type: exact_site, aliases: [Fannie Bay Jail], query: "Fannie Bay Gaol, Darwin, Northern Territory, Australia"}
+      - {name: Darwin, state: NT, location_type: town}
+      - {name: Adelaide River, state: NT, location_type: town, query: "Adelaide River, Northern Territory, Australia"}
+      - {name: Pine Creek, state: NT, location_type: town, query: "Pine Creek, Northern Territory, Australia"}
+      - {name: Tennant Creek, state: NT, location_type: town}
+      - {name: Alice Springs Telegraph Station, state: NT, location_type: exact_site, aliases: [Telegraph Station], query: "Alice Springs Telegraph Station, Northern Territory, Australia"}
+      - {name: Arltunga, state: NT, location_type: locality, query: "Arltunga, Northern Territory, Australia"}
+      - {name: Katherine, state: NT, location_type: town, query: "Katherine, Northern Territory, Australia"}
+      - {name: Old Adelaide Gaol, state: SA, location_type: exact_site, aliases: [Adelaide Gaol, Adelaide Jail], query: "Old Adelaide Gaol, South Australia, Australia"}
+      - {name: North Kapunda Hotel, state: SA, location_type: exact_site, query: "North Kapunda Hotel, Kapunda, South Australia, Australia"}
+      - {name: Martindale Hall, state: SA, location_type: exact_site, query: "Martindale Hall, South Australia, Australia"}
+      - {name: Burra, state: SA, location_type: town, query: "Burra, South Australia, Australia"}
+      - {name: Port Adelaide, state: SA, location_type: town}
+      - {name: Adelaide Gaol, state: SA, location_type: exact_site, aliases: [the gaol, Old Adelaide Gaol], query: "Old Adelaide Gaol, South Australia, Australia"}
+      - {name: Peterborough, state: SA, location_type: town, query: "Peterborough, South Australia, Australia"}
+      - {name: Willow Court, state: TAS, location_type: exact_site, aliases: [Willow Court Asylum], query: "Willow Court, New Norfolk, Tasmania, Australia"}
+      - {name: New Norfolk, state: TAS, location_type: town, query: "New Norfolk, Tasmania, Australia"}
+      - {name: Richmond Gaol, state: TAS, location_type: exact_site, aliases: [Richmond Jail], query: "Richmond Gaol, Tasmania, Australia"}
+      - {name: Sarah Island, state: TAS, location_type: named_feature, query: "Sarah Island, Tasmania, Australia"}
+      - {name: Penitentiary Chapel, state: TAS, location_type: exact_site, aliases: [Hobart Penitentiary, Campbell Street Gaol], query: "Penitentiary Chapel Historic Site, Hobart, Tasmania, Australia"}
+      - {name: Launceston, state: TAS, location_type: town}
+      - {name: Queenstown, state: TAS, location_type: town, query: "Queenstown, Tasmania, Australia"}
+      - {name: Runnymede House, state: TAS, location_type: exact_site, aliases: [Runnymede], query: "Runnymede House, Hobart, Tasmania, Australia"}
+      - {name: Sutton Forest, state: NSW, location_type: locality, query: "Sutton Forest, New South Wales, Australia"}
+      - {name: Brisbane, state: QLD, location_type: town}
+  - route_id: sprint_abc_placefirst_tasmania_port_arthur_hobart
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: ABC Tasmania public media item concerning source-stated haunted or apparition place evidence.
+    queries:
+      - "Hobart most famous ghost stories ABC Tasmania"
+      - "Port Arthur Historic Site ghost stories Blue Lady Parsonage ABC"
+      - "Tasmania ghost stories Hobart Richmond Bridge ABC"
+      - "Theatre Royal Hobart ghost ABC"
+      - "Battery Point ghost stories ABC Tasmania"
+      - "Cascades Female Factory ghost ABC Tasmania"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_placefirst_sa_vic_gaol_asylum_theatre
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: SA/VIC
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 130
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: ABC public media item concerning South Australian or Victorian haunted institutional place evidence.
+    queries:
+      - "Z Ward asylum ghost Adelaide ABC"
+      - "Adelaide Australia's most haunted town ABC"
+      - "Adelaide Arcade ghost ABC"
+      - "Kapunda haunted ghost ABC"
+      - "Old Melbourne Gaol ghost ABC"
+      - "Princess Theatre Federici ghost ABC"
+      - "Beechworth Asylum ghost ABC"
+      - "Aradale Asylum ghost ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_placefirst_wa_act_qld_nsw_sites
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/ACT/QLD/NSW
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 80
+    max_candidates_probe: 30
+    max_candidates_scaled: 150
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: ABC public media item concerning source-stated haunted or apparition place evidence outside the already saturated book lane.
+    queries:
+      - "Fremantle Prison ghost ABC"
+      - "Western Australia ghost stories haunted ABC"
+      - "Canberra haunted ghost NFSA Blundells Cottage ABC"
+      - "Boggo Road Gaol ghost ABC"
+      - "Toowong Cemetery ghost ABC"
+      - "Charters Towers ghost ABC"
+      - "Maitland Gaol ghost ABC"
+      - "Picton tunnel ghost ABC"
+      - "Quarantine Station Manly ghost ABC"
+      - "Woodford Academy ghost ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_placefirst_wa_modern_haunted_sites_02
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 140
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: ABC public media item with modern Western Australian named-place ghost or apparition evidence.
+    queries:
+      - "Fremantle Arts Centre ghost ABC"
+      - "Fremantle Prison haunted ghost ABC"
+      - "Round House Fremantle ghost ABC"
+      - "Albany Convict Gaol ghost ABC"
+      - "Old York Hospital ghost ABC"
+      - "Rottnest Island ghost stories ABC"
+      - "Woodman Point ghost ABC"
+      - "Greenough ghost ABC"
+      - "Gwalia ghost ABC"
+      - "Western Australia haunted places ghost ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_placefirst_nt_modern_haunted_sites_02
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: ABC public media item with modern Northern Territory named-place ghost, yowie, spirit-person, or apparition evidence.
+    queries:
+      - "Darwin ghost stories ABC Northern Territory"
+      - "Fannie Bay Gaol ghost ABC"
+      - "Northern Territory haunted ghost ABC"
+      - "Alice Springs ghost stories ABC"
+      - "Pine Creek ghost ABC Northern Territory"
+      - "Adelaide River ghost ABC Northern Territory"
+      - "Tennant Creek ghost devil ABC"
+      - "Katherine ghost story ABC Northern Territory"
+      - "Arltunga ghost ABC"
+      - "yowie Northern Territory ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_placefirst_sa_tas_modern_sites_02
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: SA/TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 80
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: ABC public media item with modern South Australian or Tasmanian named-place ghost or apparition evidence.
+    queries:
+      - "Willow Court ghost ABC Tasmania"
+      - "Richmond Gaol ghost ABC Tasmania"
+      - "Sarah Island ghost ABC Tasmania"
+      - "Penitentiary Chapel ghost Hobart ABC"
+      - "Launceston ghost stories ABC Tasmania"
+      - "North Kapunda Hotel ghost ABC"
+      - "Old Adelaide Gaol ghost ABC"
+      - "Martindale Hall ghost ABC"
+      - "Burra ghost stories ABC South Australia"
+      - "Port Adelaide ghost ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_discovered_wa_sa_tas_modern_03
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/SA/TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 80
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    hits_per_page: 10
+    pages_per_query: 2
+    geocode_rate_limit_seconds: 2.5
+    australian_relation: Exact ABC public media hits discovered during map-first search, restricted to WA, SA, and TAS place-stated ghost or haunted-site records.
+    queries:
+      - "Ghosts of Castle Settlers hotels Old York Hospital spook and delight tourists in WA town"
+      - "Oakabella Homestead lost souls enraged spirits ABC"
+      - "Richmond Bridge haunted notorious ex-convict ABC"
+      - "What are Hobart's most famous ghost stories ABC Tasmania"
+      - "Tour guide shares ghost stories Port Arthur Historic Site Blue Lady Parsonage ABC"
+      - "Adelaide Australia's most haunted town North Kapunda Hotel"
+      - "Old Adelaide Gaol ghost voices touched ABC"
+      - "Ghost hunting in the Grand one of SA's most haunted hotels ABC"
+      - "Willow Court ghost New Norfolk ABC"
+      - "Richmond Gaol ghost Tasmania ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_discovered_national_modern_03
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NSW/QLD/TAS/SA/WA/ACT/VIC
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    hits_per_page: 10
+    pages_per_query: 2
+    geocode_rate_limit_seconds: 2.5
+    australian_relation: Exact ABC public media hits naming Australian ghost-story locations; accepted rows require place text and strong ghost/apparition evidence.
+    queries:
+      - "The stories of Australia's ghosts haunted Brisbane lift ghostly black horse Sutton Forest"
+      - "Australian Ghost Stories Richard Davis haunted houses ABC"
+      - "I spent Halloween in one of Australia's most haunted buildings NFSA Canberra"
+      - "From yowies to UFOs to panthers Australia's urban legends ABC"
+      - "Uncovering the past of one of Queensland's most haunted towns Ipswich"
+      - "Faust's Ghost Princess Theatre Federici ABC"
+      - "The spooky Aussie folklore of Fisher's Ghost ABC"
+      - "Australia's most haunted house Monte Cristo ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_wa_tas_additional_modern_04
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 40
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    hits_per_page: 10
+    pages_per_query: 2
+    geocode_rate_limit_seconds: 2.5
+    australian_relation: Exact ABC public media items naming WA and TAS haunted historic sites.
+    queries:
+      - "Out damned spot Albany Spectrum Theatre convict ghost ABC"
+      - "Spectrum Theatre Albany convict ghost restoration ABC"
+      - "The History of Port Arthur gaol ghosts gothic allure ABC"
+      - "Port Arthur historian Andrew Smith gaol ghosts gothic allure ABC"
+      - "Richmond Bridge haunted notorious ex-convict conservation ABC"
+      - "Hobart famous ghost stories Tasmania ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_act_vic_tas_known_sites_04
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: ACT/VIC/TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    hits_per_page: 10
+    pages_per_query: 2
+    geocode_rate_limit_seconds: 2.5
+    australian_relation: Exact ABC public media items naming ACT, VIC, or TAS haunted institutional sites.
+    queries:
+      - "National Film and Sound Archive one of Australia's most haunted buildings"
+      - "I spent Halloween in one of Australia's most haunted buildings NFSA Canberra"
+      - "Ghost hunters haunt old mental asylum Aradale ABC"
+      - "Ghost tales grisly histories haunted buildings Aradale Beechworth ABC"
+      - "dark tourism Beechworth ghost tour operator ABC"
+      - "The History of Port Arthur gaol ghosts gothic allure ABC"
+      - "Richmond Bridge haunted notorious ex-convict ABC"
+      - "Faust's Ghost Princess Theatre Federici ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_qld_nsw_known_sites_04
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: QLD/NSW
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    hits_per_page: 10
+    pages_per_query: 2
+    geocode_rate_limit_seconds: 2.5
+    australian_relation: Exact ABC public media items naming Queensland and New South Wales haunted towns, gaols, and ghost-story sites.
+    queries:
+      - "Uncovering the past of one of Queensland's most haunted towns Ipswich"
+      - "Ipswich haunted ghost stories ABC"
+      - "Ghost tales grisly histories haunted buildings Parramatta Gaol ABC"
+      - "haunted house abandoned jail disused psychiatric institution Parramatta Gaol ABC"
+      - "Boggo Road Gaol ghost stories ABC"
+      - "Maitland Gaol ghost stories ABC"
+      - "Picton tunnel ghost stories ABC"
+      - "Quarantine Station Manly ghost stories ABC"
+      - "Woodford Academy ghost stories ABC"
+      - "Toowong Cemetery ghost stories ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_wa_york_oakabella_retry_05
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    hits_per_page: 10
+    pages_per_query: 2
+    geocode_rate_limit_seconds: 4.0
+    australian_relation: Exact ABC public media items naming Western Australian haunted hotels, hospitals, homesteads, theatres, or gaols.
+    queries:
+      - "Ghosts of Castle Settlers hotels Old York Hospital spook and delight tourists in WA town"
+      - "Ghosts of York WA haunt locals tourists ABC"
+      - "Oakabella Homestead lost souls enraged spirits ABC"
+      - "The tourist attraction dropping its ghostly status Oakabella Homestead ABC"
+      - "Out damned spot Albany Spectrum Theatre convict ghost ABC"
+      - "Spectrum Theatre Albany convict ghost restoration ABC"
+      - "Albany Convict Gaol ghost ABC"
+      - "Round House Fremantle ghost ABC"
+      - "Fremantle Arts Centre ghost ABC"
+      - "Woodman Point ghost ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_sa_tas_known_sites_05
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: SA/TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    hits_per_page: 10
+    pages_per_query: 2
+    geocode_rate_limit_seconds: 3.0
+    australian_relation: Exact ABC public media items naming South Australian and Tasmanian haunted towns, gaols, asylums, bridges, and historic sites.
+    queries:
+      - "Adelaide Australia's most haunted town North Kapunda Hotel ABC"
+      - "Old Adelaide Gaol ghost voices touched ABC"
+      - "Ghost hunting in the Grand one of SA's most haunted hotels ABC"
+      - "Kapunda ghost stories ABC South Australia"
+      - "Port Adelaide ghost stories ABC"
+      - "What are Hobart's most famous ghost stories ABC Tasmania"
+      - "Richmond Bridge haunted notorious ex-convict ABC"
+      - "Richmond Gaol ghost Tasmania ABC"
+      - "Sarah Island ghost Tasmania ABC"
+      - "Penitentiary Chapel ghost Hobart ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_nt_modern_sites_05
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    hits_per_page: 10
+    pages_per_query: 2
+    geocode_rate_limit_seconds: 3.0
+    australian_relation: Exact ABC public media items naming Northern Territory ghost, apparition, yowie, or spirit-person places.
+    queries:
+      - "Fannie Bay Gaol ghost ABC"
+      - "Darwin ghost stories ABC Northern Territory"
+      - "Arltunga ghost stories ABC"
+      - "Pine Creek ghost stories ABC Northern Territory"
+      - "Alice Springs Telegraph Station ghost ABC"
+      - "Katherine ghost stories ABC Northern Territory"
+      - "Tennant Creek devil ghost ABC"
+      - "Adelaide River ghost stories ABC Northern Territory"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_modern_bonus_sites_05
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: QLD/VIC/ACT/TAS/WA/SA
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    hits_per_page: 10
+    pages_per_query: 2
+    geocode_rate_limit_seconds: 3.0
+    australian_relation: Exact ABC public media items with modern named-place ghost, apparition, or haunted-site evidence outside broad crawling.
+    queries:
+      - "Uncovering the past of one of Queensland's most haunted towns Ipswich ABC"
+      - "Boggo Road Gaol ghost stories ABC Brisbane"
+      - "Maitland Gaol ghost stories ABC"
+      - "Beechworth Asylum ghost tales ABC"
+      - "Aradale Asylum ghost tales ABC"
+      - "National Film and Sound Archive haunted building ABC"
+      - "Willow Court ghost New Norfolk ABC"
+      - "Port Arthur ghost stories Blue Lady ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_public_pages_06
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: SA/TAS/QLD/NSW/VIC/ACT/WA
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 40
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    geocode_rate_limit_seconds: 2.5
+    evidence_radius: 760
+    australian_relation: Exact ABC public pages with source-stated Australian ghost, apparition, or haunted-site place evidence.
+    pages:
+      - url: "https://www.abc.net.au/news/2017-07-31/hunting-the-ghosts-of-the-grand-hotel/8752610"
+        title: "Ghost hunting in the Grand, one of SA's most haunted hotels"
+        publication_date_text: "2017-07-31"
+        place_name: "Grand Hotel Millicent"
+        state: "SA"
+        aliases: ["Grand Hotel"]
+        query: "Grand Hotel, Millicent, South Australia, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/news/2014-11-12/adelaides-z-ward-asylum-opens-for-after-dark-ghost-tours/5886308"
+        title: "Adelaide's notorious Z Ward asylum opens for after-dark ghost tours"
+        publication_date_text: "2014-11-12"
+        place_name: "Z Ward Glenside"
+        state: "SA"
+        aliases: ["Z Ward", "Glenside Hospital", "Glenside Asylum"]
+        query: "Z Ward, Glenside, South Australia, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/news/2019-04-04/curious-hobart-famous-ghost-stories-tasmania/10962200"
+        title: "What are Hobart's most famous ghost stories?"
+        publication_date_text: "2019-04-04"
+        places:
+          - place_name: "Hobart"
+            state: "TAS"
+            location_type: "town"
+          - place_name: "Battery Point"
+            state: "TAS"
+            aliases: ["Battery Point ghost"]
+            query: "Battery Point, Hobart, Tasmania, Australia"
+            location_type: "locality"
+          - place_name: "Theatre Royal Hobart"
+            state: "TAS"
+            aliases: ["Theatre Royal"]
+            query: "Theatre Royal, Hobart, Tasmania, Australia"
+            location_type: "exact_site"
+      - url: "https://www.abc.net.au/news/2017-03-12/richmond-bridge-conservation-works-tasmania/8347030"
+        title: "Richmond Bridge works begin to preserve convict-era landmark"
+        publication_date_text: "2017-03-12"
+        place_name: "Richmond Bridge"
+        state: "TAS"
+        aliases: ["Australia's oldest bridge"]
+        query: "Richmond Bridge, Tasmania, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/radionational/programs/archived/bookshow/nathan-curnows-ghost-poetry/3159852"
+        title: "Nathan Curnow's Ghost Poetry"
+        publication_date_text: "2008-12-30"
+        place_name: "Port Arthur Historic Site"
+        state: "TAS"
+        aliases: ["Port Arthur", "prison"]
+        query: "Port Arthur Historic Site, Tasmania, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/radionational/programs/archived/bookshow/emerging-writers---nathan-curnows-ghost-poetry/3200744"
+        title: "Emerging writers - Nathan Curnow's Ghost Poetry"
+        publication_date_text: "2008-08-18"
+        place_name: "Port Arthur Historic Site"
+        state: "TAS"
+        aliases: ["Port Arthur", "prison"]
+        query: "Port Arthur Historic Site, Tasmania, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/news/2015-01-06/queensland-set-for-ghostbuster-tour/6002230"
+        title: "Queensland towns get set for ghostbuster tour"
+        publication_date_text: "2015-01-06"
+        places:
+          - place_name: "Brisbane"
+            state: "QLD"
+            location_type: "town"
+          - place_name: "Charters Towers"
+            state: "QLD"
+            location_type: "town"
+          - place_name: "Sunshine Coast"
+            state: "QLD"
+            query: "Sunshine Coast, Queensland, Australia"
+            location_type: "locality"
+      - url: "https://www.abc.net.au/listen/programs/overnights/the-stories-of-australian-ghosts/102927054"
+        title: "The stories of Australia's ghosts"
+        publication_date_text: "2023-09-26"
+        places:
+          - place_name: "Sutton Forest"
+            state: "NSW"
+            query: "Sutton Forest, New South Wales, Australia"
+            location_type: "locality"
+          - place_name: "Picton"
+            state: "NSW"
+            query: "Picton, New South Wales, Australia"
+            location_type: "town"
+          - place_name: "Brisbane"
+            state: "QLD"
+            location_type: "town"
+          - place_name: "Port Arthur Historic Site"
+            state: "TAS"
+            aliases: ["Port Arthur"]
+            query: "Port Arthur Historic Site, Tasmania, Australia"
+            location_type: "exact_site"
+  - route_id: sprint_abc_exact_public_pages_nt_qld_07
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NT/QLD
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 20
+    max_candidates_probe: 30
+    max_candidates_scaled: 40
+    geocode_rate_limit_seconds: 2.5
+    evidence_radius: 760
+    australian_relation: Exact ABC public pages with source-stated Northern Territory or Queensland ghost, apparition, or haunted-site place evidence.
+    pages:
+      - url: "https://www.abc.net.au/news/2018-04-10/who-was-darwins-mysterious-poinciana-woman-urban-legend-myth/9596398"
+        title: "Urban legend, Asian myth, or historical figure: Who was the ghostly Poinciana Woman?"
+        publication_date_text: "2018-04-10"
+        place_name: "East Point Reserve"
+        state: "NT"
+        aliases: ["East Point Reserve", "East Point", "Darwin"]
+        query: "East Point Reserve, Darwin, Northern Territory, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/listen/programs/brisbane-sundaymorning/uncovering-the-past-of-one-of-queenslands-most-haunted-towns/13298112"
+        title: "Uncovering the past of one of Queensland's most haunted towns"
+        publication_date_text: "2021-04-11"
+        place_name: "Ipswich"
+        state: "QLD"
+        query: "Ipswich, Queensland, Australia"
+        location_type: "town"
+      - url: "https://www.abc.net.au/news/2021-06-03/lappa-lappa-up-for-sale-far-north-queensland/100185538"
+        title: "Lappa's run-down pub and historic railway junction for sale in Far North Queensland"
+        publication_date_text: "2021-06-03"
+        place_name: "Lappa"
+        state: "QLD"
+        aliases: ["Lappa Junction", "Lappa pub", "Uncle Bill"]
+        query: "Lappa, Queensland, Australia"
+        location_type: "locality"
+  - route_id: sprint_abc_australias_most_haunted_places_08
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: ACT/NSW/SA/WA/QLD
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 60
+    geocode_rate_limit_seconds: 2.0
+    evidence_radius: 820
+    australian_relation: ABC Radio National transcript containing distinct source-stated Australian haunted-place narrative units.
+    pages:
+      - url: "https://www.abc.net.au/listen/programs/ark/australias-most-haunted/3360028"
+        title: "Australia's Most Haunted"
+        publication_date_text: "2006-11-12"
+        places:
+          - place_name: "Hotel Kurrajong"
+            state: "ACT"
+            aliases: ["Kurrajong", "Chifley suite"]
+            query: "Hotel Kurrajong, Canberra, ACT, Australia"
+            location_type: "exact_site"
+          - place_name: "Old Parliament House"
+            state: "ACT"
+            query: "Old Parliament House, Canberra, ACT, Australia"
+            location_type: "exact_site"
+          - place_name: "Picton Tunnel"
+            state: "NSW"
+            aliases: ["Redbank Range Tunnel", "disused tunnel"]
+            query: "Picton Tunnel, New South Wales, Australia"
+            location_type: "exact_site"
+          - place_name: "Adelaide Gaol"
+            state: "SA"
+            aliases: ["old Adelaide Jail", "old Adelaide Gaol"]
+            query: "Adelaide Gaol, Adelaide, South Australia, Australia"
+            location_type: "exact_site"
+          - place_name: "Fremantle Prison"
+            state: "WA"
+            query: "Fremantle Prison, Western Australia, Australia"
+            location_type: "exact_site"
+          - place_name: "St Helena Island"
+            state: "QLD"
+            aliases: ["St Helena"]
+            query: "St Helena Island, Moreton Bay, Queensland, Australia"
+            location_type: "exact_site"
+  - route_id: sprint_abc_australias_most_haunted_places_rescan_09
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: ACT/NSW/SA/WA/QLD
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 60
+    geocode_rate_limit_seconds: 2.0
+    evidence_radius: 820
+    australian_relation: ABC Radio National transcript containing distinct source-stated Australian haunted-place narrative units, rescanned with place-centred evidence excerpts.
+    pages:
+      - url: "https://www.abc.net.au/listen/programs/ark/australias-most-haunted/3360028"
+        title: "Australia's Most Haunted"
+        publication_date_text: "2006-11-12"
+        places:
+          - place_name: "Hotel Kurrajong"
+            state: "ACT"
+            aliases: ["Kurrajong", "Chifley suite"]
+            query: "Hotel Kurrajong, Canberra, ACT, Australia"
+            location_type: "exact_site"
+          - place_name: "Old Parliament House"
+            state: "ACT"
+            query: "Old Parliament House, Canberra, ACT, Australia"
+            location_type: "exact_site"
+          - place_name: "Picton Tunnel"
+            state: "NSW"
+            aliases: ["Redbank Range Tunnel", "disused tunnel"]
+            query: "Picton Tunnel, New South Wales, Australia"
+            location_type: "exact_site"
+          - place_name: "Adelaide Gaol"
+            state: "SA"
+            aliases: ["old Adelaide Jail", "old Adelaide Gaol"]
+            query: "Adelaide Gaol, Adelaide, South Australia, Australia"
+            location_type: "exact_site"
+          - place_name: "Fremantle Prison"
+            state: "WA"
+            query: "Fremantle Prison, Western Australia, Australia"
+            location_type: "exact_site"
+          - place_name: "St Helena Island"
+            state: "QLD"
+            aliases: ["St Helena"]
+            query: "St Helena Island, Moreton Bay, Queensland, Australia"
+            location_type: "exact_site"
+  - route_id: sprint_abc_ghosthunters_picton_woodford_10
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 10
+    max_candidates_probe: 30
+    max_candidates_scaled: 20
+    geocode_rate_limit_seconds: 2.0
+    evidence_radius: 760
+    australian_relation: ABC Radio National transcript naming Picton ghost tours and Woodford Academy as haunted public places.
+    pages:
+      - url: "https://www.abc.net.au/listen/programs/streetstories/the-ghosthunters/3440124"
+        title: "The Ghosthunters"
+        publication_date_text: "2005-03-09"
+        places:
+          - place_name: "Picton"
+            state: "NSW"
+            aliases: ["Picton NSW"]
+            query: "Picton, New South Wales, Australia"
+            location_type: "town"
+          - place_name: "Woodford Academy"
+            state: "NSW"
+            aliases: ["Woodford Academy", "Blue Mountains"]
+            query: "Woodford Academy, Woodford, New South Wales, Australia"
+            location_type: "exact_site"
+  - route_id: sprint_abc_qld_ghostbuster_places_rescan_11
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: QLD
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 10
+    max_candidates_probe: 30
+    max_candidates_scaled: 20
+    geocode_rate_limit_seconds: 2.0
+    evidence_radius: 760
+    australian_relation: ABC News article naming Queensland towns and landmarks investigated for paranormal activity.
+    pages:
+      - url: "https://www.abc.net.au/news/2015-01-06/queensland-set-for-ghostbuster-tour/6002230"
+        title: "Queensland towns get set for ghostbuster tour"
+        publication_date_text: "2015-01-06"
+        places:
+          - place_name: "Brisbane"
+            state: "QLD"
+            query: "Brisbane, Queensland, Australia"
+            location_type: "town"
+          - place_name: "Sunshine Coast"
+            state: "QLD"
+            query: "Sunshine Coast, Queensland, Australia"
+            location_type: "locality"
+          - place_name: "Charters Towers"
+            state: "QLD"
+            query: "Charters Towers, Queensland, Australia"
+            location_type: "town"
+  - route_id: sprint_abc_exact_public_pages_rescan_12
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: QLD/NSW
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 10
+    max_candidates_probe: 30
+    max_candidates_scaled: 20
+    geocode_rate_limit_seconds: 2.0
+    evidence_radius: 760
+    australian_relation: Exact ABC public pages rescanned with place-centred evidence excerpts for source-stated ghost-place units.
+    pages:
+      - url: "https://www.abc.net.au/news/2021-06-03/lappa-lappa-up-for-sale-far-north-queensland/100185538"
+        title: "Lappa's run-down pub and historic railway junction for sale in Far North Queensland"
+        publication_date_text: "2021-06-03"
+        place_name: "Lappa"
+        state: "QLD"
+        aliases: ["Lappa Junction", "Lappa pub", "Uncle Bill"]
+        query: "Lappa, Queensland, Australia"
+        location_type: "locality"
+      - url: "https://www.abc.net.au/listen/programs/overnights/the-stories-of-australian-ghosts/102927054"
+        title: "The stories of Australia's ghosts"
+        publication_date_text: "2023-09-26"
+        places:
+          - place_name: "Brisbane"
+            state: "QLD"
+            query: "Brisbane, Queensland, Australia"
+            location_type: "town"
+          - place_name: "Sutton Forest"
+            state: "NSW"
+            query: "Sutton Forest, New South Wales, Australia"
+            location_type: "locality"
+  - route_id: sprint_abc_exact_site_units_rescan_13
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/TAS
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 12
+    max_candidates_probe: 30
+    max_candidates_scaled: 30
+    geocode_rate_limit_seconds: 2.0
+    evidence_radius: 760
+    resume_strategy: rescan_new_evidence
+    australian_relation: Exact ABC public pages rescanned for distinct source-stated site-level ghost narrative units in WA and TAS.
+    pages:
+      - url: "https://www.abc.net.au/news/2022-05-19/ghosts-of-york-wa-haunt-locals-tourists/101082076"
+        title: "Ghosts of Castle, Settlers hotels and Old York Hospital spook and delight tourists in WA town"
+        publication_date_text: "2022-05-19"
+        places:
+          - place_name: "Old York Hospital"
+            state: "WA"
+            aliases: ["Old York Hospital", "most haunted places in WA"]
+            query: "Old York Hospital, York, Western Australia, Australia"
+            location_type: "exact_site"
+          - place_name: "Castle Hotel York"
+            state: "WA"
+            aliases: ["Castle Hotel", "The Castle Hotel"]
+            query: "Castle Hotel, York, Western Australia, Australia"
+            location_type: "exact_site"
+          - place_name: "Settlers House York"
+            state: "WA"
+            aliases: ["Settlers Hotel", "Settlers House", "Basil Craig"]
+            query: "Settlers House, York, Western Australia, Australia"
+            location_type: "exact_site"
+      - url: "https://www.abc.net.au/news/2019-04-04/curious-hobart-famous-ghost-stories-tasmania/10962200"
+        title: "What are Hobart's most famous ghost stories?"
+        publication_date_text: "2019-04-04"
+        places:
+          - place_name: "Arthur Circus"
+            state: "TAS"
+            aliases: ["Battery Point's historic Arthur Circus", "Arthur Circus", "female ghost"]
+            query: "Arthur Circus, Battery Point, Tasmania, Australia"
+            location_type: "exact_site"
+  - route_id: sprint_abc_richmond_bridge_exact_16
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 5
+    max_candidates_probe: 10
+    max_candidates_scaled: 10
+    geocode_rate_limit_seconds: 2.0
+    evidence_radius: 820
+    resume_strategy: rescan_new_evidence
+    australian_relation: Exact ABC public page naming Richmond Bridge as the setting of a source-stated Tasmanian ghost legend.
+    pages:
+      - url: "https://www.abc.net.au/news/2017-03-12/richmond-bridge-conservation-works-tasmania/8347030"
+        title: "Richmond Bridge works begin to preserve convict-era landmark"
+        publication_date_text: "2017-03-12"
+        place_name: "Richmond Bridge"
+        state: "TAS"
+        aliases: ["Richmond Bridge", "ghost of George Grover", "haunt the bridge"]
+        query: "Richmond Bridge, Tasmania, Australia"
+        location_type: "exact_site"
+  - route_id: sprint_adelaide_gaol_ghostly_sightings_exact_17
+    enabled: true
+    family: place_first_map_records
+    organisation: Adelaide Gaol
+    source_name: Adelaide Gaol
+    source_type: institutional_web
+    source_tier: B
+    jurisdiction: SA
+    scaled: true
+    map_capable: true
+    accepted_target: 8
+    max_candidates_probe: 10
+    max_candidates_scaled: 12
+    term_hit_limit: 3
+    narrative_type_override: apparition_account
+    external_id_strategy: evidence_hash
+    publication_date_text: "official public page, accessed 2026-06-22"
+    australian_relation: Official Adelaide Gaol public page with source-stated named ghost/person-form accounts at a verified South Australian historic site.
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    source_title: Adelaide Gaol Ghostly sightings
+    source_author: Department for Environment and Water, South Australia
+    default_location_text: Adelaide Gaol, SA
+    default_location_role: apparition_location
+    default_location_precision: exact_site
+    default_latitude: -34.9157
+    default_longitude: 138.5889
+    default_geocode_source: institutional_coordinate_known_site_state_checked_2026-06-22
+    default_geocode_verification_status: verified_institutional_coordinate
+    default_coordinate_evidence_note: Official Adelaide Gaol page names Adelaide Gaol as the ghost-sighting setting; coordinates use the known Adelaide Gaol public historic site location in South Australia.
+    entity_terms:
+      - "Frederick Carr"
+      - "Fred"
+      - "William Baker Ashton"
+      - "Ben Ellis"
+      - "restless spirit"
+      - "happy spirit"
+      - "disturbed spirit"
+    pages:
+      - section_id: adelaide-gaol-ghostly-sightings
+        chapter: Ghostly sightings
+        url: "https://www.adelaidegaol.sa.gov.au/visiting-the-gaol/self-guided-adelaide-tours/ghost-sightings"
+        text: >-
+          Adelaide Gaol | Ghostly sightings. Thought to be one of the most haunted places in Australia, Adelaide Gaol is said to be regularly visited by some of the inmates and prison officers who once wandered its halls. Frederick Carr. Frederick 'Fred' Carr was hanged at Adelaide Gaol on 12 November 1929 for the murder of his wife, Maude. He protested his innocence, even up until the final moments before his death. Carr is said to have exclaimed, while in the condemned cell, 'the law requires my body, but it cannot have my soul, as I am innocent.' Fred is said to appear regularly near the stairs leading to the upstairs cells of the New Building. He is reported as a happy spirit, always neatly dressed in dark clothes and taking a polite interest in visitors wandering through his former 'home'. Governor William Baker Ashton. William Baker Ashton was the first Governor of the Adelaide Gaol and despite being a reasonably fair man, he was accused of wrong-doing. The ensuing scandal is said to have hastened his demise. William was a very large man and when he died in office in 1854, his body could not be manipulated down his apartment's steep, narrow staircase. Instead, he was unceremoniously lowered out of the front window to the undertakers waiting below. Three months after his death, William was exonerated. Too little, too late to pacify a disturbed spirit. On warm, still nights with a hint of thunder in the air, his footsteps are said to be heard through walls of solid stone as he struggles to move furniture in an empty room. Ben Ellis - the hangman. Ben Ellis was the Adelaide Gaol hangman for 10 years, from the mid-1860s to the mid-1870s. He lived at Adelaide Gaol in a small apartment below what became the female dormitory. Ben took pride in his work and approached each task with complete professionalism and never questioned the right or wrong of his profession until 30 December 1873, when he was required to hang a female prisoner, Elizabeth Woolcock. She was to be the first and only woman executed in South Australia. This event changed the way Ben viewed his profession forever. Ben's restless spirit is said to appear often throughout Adelaide Gaol.
+  - route_id: sprint_adelaide_gaol_william_ashton_section_18
+    enabled: true
+    family: place_first_map_records
+    organisation: Adelaide Gaol
+    source_name: Adelaide Gaol
+    source_type: institutional_web
+    source_tier: B
+    jurisdiction: SA
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 5
+    max_candidates_scaled: 5
+    term_hit_limit: 1
+    narrative_type_override: apparition_account
+    external_id_strategy: evidence_hash
+    publication_date_text: "official public page, accessed 2026-06-22"
+    australian_relation: Official Adelaide Gaol public page with source-stated William Baker Ashton apparition/spirit account at a verified South Australian historic site.
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    source_title: Adelaide Gaol Ghostly sightings
+    source_author: Department for Environment and Water, South Australia
+    default_location_text: Adelaide Gaol, SA
+    default_location_role: apparition_location
+    default_location_precision: exact_site
+    default_latitude: -34.9157
+    default_longitude: 138.5889
+    default_geocode_source: institutional_coordinate_known_site_state_checked_2026-06-22
+    default_geocode_verification_status: verified_institutional_coordinate
+    default_coordinate_evidence_note: Official Adelaide Gaol page names Adelaide Gaol as the ghost-sighting setting; coordinates use the known Adelaide Gaol public historic site location in South Australia.
+    entity_terms:
+      - "William Baker Ashton"
+    pages:
+      - section_id: adelaide-gaol-william-baker-ashton
+        chapter: Ghostly sightings
+        url: "https://www.adelaidegaol.sa.gov.au/visiting-the-gaol/self-guided-adelaide-tours/ghost-sightings#william-baker-ashton"
+        text: >-
+          Governor William Baker Ashton. William Baker Ashton was the first Governor of the Adelaide Gaol and despite being a reasonably fair man, he was accused of wrong-doing. The ensuing scandal is said to have hastened his demise. William was a very large man and when he died in office in 1854, his body could not be manipulated down his apartment's steep, narrow staircase. Instead, he was unceremoniously lowered out of the front window to the undertakers waiting below. Three months after his death, William was exonerated. Too little, too late to pacify a disturbed spirit. On warm, still nights with a hint of thunder in the air, his footsteps are said to be heard through walls of solid stone as he struggles to move furniture in an empty room.
+  - route_id: sprint_abc_modern_wa_tas_sa_site_units_19
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/TAS/SA
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 16
+    max_candidates_probe: 30
+    max_candidates_scaled: 30
+    geocode_rate_limit_seconds: 1.5
+    evidence_radius: 920
+    australian_relation: Exact ABC public pages naming modern, place-linked ghost, apparition, and paranormal narratives in underrepresented jurisdictions.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - url: "https://www.abc.net.au/news/2022-05-04/fremantle-lunatic-asylum-womens-home-now-arts-centre/101033894"
+        title: "Fremantle Arts Centre director calls for stories to explore history of former lunatic asylum"
+        publication_date_text: "2022-05-04"
+        place_name: "Fremantle Arts Centre"
+        state: "WA"
+        aliases: ["Fremantle Arts Centre site", "historic building where the temperature is known to drop"]
+        query: "Fremantle Arts Centre, Fremantle, Western Australia, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/perth/programs/breakfast/perth-tradies-turned-paranormal-hunters/8665796"
+        title: "Perth tradies turned paranormal hunters"
+        publication_date_text: "2017-06-30"
+        place_name: "Swan View Tunnel"
+        state: "WA"
+        aliases: ["Swan View Tunnel", "old railway tunnel", "tragic train accident"]
+        query: "Swan View Tunnel, Western Australia, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/news/2015-11-20/spectrum-theatre-albany-wa-restoration/6958836"
+        title: "Albany's Spectrum Theatre restoration to deal with damp"
+        publication_date_text: "2015-11-20"
+        place_name: "Spectrum Theatre Albany"
+        state: "WA"
+        aliases: ["Spectrum Theatre", "old Albany Post Office", "convict ghost"]
+        query: "Spectrum Theatre, Albany, Western Australia, Australia"
+        latitude: -35.0256
+        longitude: 117.8840
+        location_type: "exact_site"
+        coordinate_evidence_note: "ABC page identifies Spectrum Theatre in the old Albany Post Office; coordinates use the old Albany Post Office/Spectrum Theatre site in Albany, Western Australia, cross-checked against public gazetteer/map data."
+      - url: "https://www.abc.net.au/news/2020-09-02/tasmania-ghost-tours-live-streamed-to-thousands/12615942"
+        title: "Meet the woman taking Tasmania's most haunted sites to the social media masses"
+        publication_date_text: "2020-09-02"
+        places:
+          - place_name: "Willow Court Asylum"
+            state: "TAS"
+            aliases: ["Willow Court Asylum", "Willow Court"]
+            query: "Willow Court, New Norfolk, Tasmania, Australia"
+            location_type: "exact_site"
+          - place_name: "Gaiety Theatre Zeehan"
+            state: "TAS"
+            aliases: ["Gaiety Theatre", "Gaiety Theatre in Zeehan", "Ava"]
+            query: "Gaiety Theatre, Zeehan, Tasmania, Australia"
+            location_type: "exact_site"
+          - place_name: "Penghana Bed and Breakfast"
+            state: "TAS"
+            aliases: ["Penghana Bed and Breakfast", "Penghana"]
+            query: "Penghana Bed and Breakfast, Queenstown, Tasmania, Australia"
+            location_type: "exact_site"
+      - url: "https://www.abc.net.au/news/2020-11-17/princess-theatre-celebrates-50-years-launceston-history/12886618"
+        title: "Launceston's Princess Theatre celebrates colourful history"
+        publication_date_text: "2020-11-17"
+        place_name: "Princess Theatre Launceston"
+        state: "TAS"
+        aliases: ["Princess Theatre", "ghost in the theatre"]
+        query: "Princess Theatre, Launceston, Tasmania, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/news/2013-07-08/ghostbusters-check-colonial-house-for-bumps-in-the-night/4804354"
+        title: "Ghost hunters check Tasmania's Franklin House for bumps in the night"
+        publication_date_text: "2013-07-08"
+        place_name: "Franklin House"
+        state: "TAS"
+        aliases: ["Franklin House", "National Trust home"]
+        query: "Franklin House, Launceston, Tasmania, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/listen/programs/hobart-your-afternoon/ghost-stories-port-arthur-historic-site/105699390"
+        title: "Tour guide shares ghost stories and chilling experiences from Port Arthur Historic Site"
+        publication_date_text: "2025-08-26"
+        place_name: "Port Arthur Historic Site"
+        state: "TAS"
+        aliases: ["Port Arthur Historic Site", "The Parsonage", "Blue Lady"]
+        query: "Port Arthur Historic Site, Tasmania, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/listen/programs/adelaide-afternoons/ghost-tours/104542916"
+        title: "Adelaide - Australia's most haunted town"
+        publication_date_text: "2024-10-30"
+        place_name: "North Kapunda Hotel"
+        state: "SA"
+        aliases: ["North Kapunda Hotel", "Australia's most haunted pub"]
+        query: "North Kapunda Hotel, Kapunda, South Australia, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/listen/programs/adelaide-breakfast/haunted-port/104541506"
+        title: "Thirsty ghosts haunt Port Adelaide's pubs"
+        publication_date_text: "2024-10-31"
+        place_name: "Port Adelaide"
+        state: "SA"
+        aliases: ["Port Adelaide", "pub-dwelling ghosts", "intoxicated opera singer"]
+        query: "Port Adelaide, South Australia, Australia"
+        location_type: "locality"
+  - route_id: sprint_abc_modern_wa_tas_sa_site_units_20
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/TAS/SA
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 12
+    max_candidates_probe: 30
+    max_candidates_scaled: 30
+    geocode_rate_limit_seconds: 1.5
+    evidence_radius: 940
+    australian_relation: Exact ABC public pages naming additional modern ghost and haunted-place narratives in WA, Tasmania, and South Australia.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - url: "https://www.abc.net.au/listen/programs/lifematters/dumbleyung-pub/6875282"
+        title: "Dumbleyung Pub"
+        publication_date_text: "2015-10-22"
+        place_name: "Grand Olde Dumbleyung Inn"
+        state: "WA"
+        aliases: ["Grand Olde Dumbleyung Inn", "Dumbleyung", "friendly resident ghost"]
+        query: "Grand Olde Dumbleyung Inn, Dumbleyung, Western Australia, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/listen/programs/adelaide-breakfast/haunted-house/104084330"
+        title: "Haunted house sells for record price in Cowandilla"
+        publication_date_text: "2024-07-11"
+        place_name: "Cowandilla"
+        state: "SA"
+        aliases: ["Cowandilla House", "Cowandilla", "ghost of a young girl"]
+        query: "Cowandilla, South Australia, Australia"
+        location_type: "locality"
+      - url: "https://www.abc.net.au/news/2015-05-14/syfy-ghost-buster-ben-hansen-investigates-adelaides-haunts/6467530"
+        title: "TV ghost buster Ben Hansen investigates Adelaide's popular haunts"
+        publication_date_text: "2015-05-14"
+        place_name: "Old Tailem Town"
+        state: "SA"
+        aliases: ["Old Tailem Town", "Tailem Town", "paranormally active sites"]
+        query: "Old Tailem Town, Tailem Bend, South Australia, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/hobart/air:-gae-williams-theatre-royal/10048768"
+        title: "Celebrating the history of the Theatre Royal"
+        publication_date_text: "2018-07-29"
+        place_name: "Theatre Royal Hobart"
+        state: "TAS"
+        aliases: ["Theatre Royal", "Fred", "resident ghost"]
+        query: "Theatre Royal, Hobart, Tasmania, Australia"
+        location_type: "exact_site"
+      - url: "https://www.abc.net.au/news/2004-01-02/dig-to-unearth-tas-convict-ghost-tales/114104"
+        title: "Dig to unearth Tas convict ghost tales"
+        publication_date_text: "2004-01-02"
+        place_name: "Isle of the Dead"
+        state: "TAS"
+        aliases: ["Isle of the Dead", "Port Arthur", "ghost stories"]
+        query: "Isle of the Dead, Port Arthur, Tasmania, Australia"
+        location_type: "exact_site"
+  - route_id: sprint_abc_hobart_distinct_ghost_places_21
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 8
+    max_candidates_probe: 30
+    max_candidates_scaled: 30
+    geocode_rate_limit_seconds: 1.5
+    evidence_radius: 940
+    resume_strategy: rescan_new_evidence
+    australian_relation: ABC Curious Hobart page with distinct, source-stated Hobart ghost-place narrative units.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - url: "https://www.abc.net.au/news/2019-04-04/curious-hobart-famous-ghost-stories-tasmania/10962200"
+        title: "What are Hobart's most famous ghost stories?"
+        publication_date_text: "2019-04-04"
+        places:
+          - place_name: "Drunken Admiral"
+            state: "TAS"
+            aliases: ["Drunken Admiral", "Henry Jones himself", "gentleman with a grey beard"]
+            query: "Drunken Admiral, Hobart, Tasmania, Australia"
+            location_type: "exact_site"
+          - place_name: "Lenna of Hobart Hotel"
+            state: "TAS"
+            aliases: ["Lenna of Hobart Hotel", "Lenna", "Alex", "Harriet"]
+            query: "Lenna of Hobart, Battery Point, Tasmania, Australia"
+            location_type: "exact_site"
+          - place_name: "Narryna Heritage Museum"
+            state: "TAS"
+            aliases: ["Narryna", "Polly", "longest-serving ghost"]
+            query: "Narryna Heritage Museum, Battery Point, Tasmania, Australia"
+            location_type: "exact_site"
+          - place_name: "Princes Park"
+            state: "TAS"
+            aliases: ["Princes Park", "Edward", "ghost hang out"]
+            query: "Princes Park, Battery Point, Hobart, Tasmania, Australia"
+            location_type: "exact_site"
+          - place_name: "Hobart Convict Penitentiary"
+            state: "TAS"
+            aliases: ["Hobart Convict Penitentiary", "The Penitentiary", "shadow figures"]
+            query: "Hobart Penitentiary, Hobart, Tasmania, Australia"
+            location_type: "exact_site"
+  - route_id: sprint_abc_hobart_named_ghost_sections_22
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    scaled: true
+    map_capable: true
+    accepted_target: 3
+    max_candidates_probe: 10
+    max_candidates_scaled: 10
+    term_hit_limit: 1
+    narrative_type_override: apparition_account
+    external_id_strategy: evidence_hash
+    publication_date_text: "2019-04-04"
+    australian_relation: ABC Curious Hobart page with separately bounded, named ghost-person accounts at verified Hobart sites.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    source_title: "What are Hobart's most famous ghost stories?"
+    source_author: Australian Broadcasting Corporation
+    default_location_role: apparition_location
+    default_geocode_source: nominatim_openstreetmap_state_checked_public_page_2026-06-22
+    default_geocode_verification_status: verified_gazetteer_point
+    person_form_terms:
+      - "Henry Jones"
+      - "Alex"
+      - "Polly"
+    entity_terms:
+      - "Henry Jones"
+      - "Alex"
+      - "Polly"
+    pages:
+      - section_id: hobart-drunken-admiral-henry-jones
+        chapter: Drunken Admiral Henry Jones apparition
+        url: "https://www.abc.net.au/news/2019-04-04/curious-hobart-famous-ghost-stories-tasmania/10962200#drunken-admiral"
+        location_text: "Drunken Admiral, TAS"
+        latitude: -42.8811591
+        longitude: 147.3349313
+        location_precision: exact_site
+        coordinate_evidence_note: "ABC page names the Drunken Admiral on Hobart's waterfront; coordinates use the state-checked OSM/Nominatim Drunken Admiral point."
+        text: >-
+          The Drunken Admiral sits on Hobart's waterfront. A customer from Canada said she had a number of experiences while dining at the restaurant. She said there was a gentleman with a grey beard who was very upset about what was happening at the restaurant. Jacques Imbriotis said he went home, researched the report, and identified the apparition as Henry Jones himself.
+      - section_id: hobart-lenna-alex-harriet
+        chapter: Lenna of Hobart Alex and Harriet
+        url: "https://www.abc.net.au/news/2019-04-04/curious-hobart-famous-ghost-stories-tasmania/10962200#lenna"
+        location_text: "Lenna of Hobart Hotel, TAS"
+        latitude: -42.8873486
+        longitude: 147.3357623
+        location_precision: exact_site
+        coordinate_evidence_note: "ABC page names the Lenna of Hobart Hotel; coordinates use the state-checked OSM/Nominatim Lenna of Hobart point."
+        text: >-
+          The Lenna of Hobart Hotel was built in 1873 and owned by ship builder and merchant Alexander McGregor. Mr McGregor died in 1896 at his home, and some believe he still haunts the now-hotel with his wife Harriet. Jacques Imbriotis said Alex still hangs around there and treats it like his castle on top the hill, despite being dead for over a century.
+      - section_id: hobart-narryna-polly
+        chapter: Narryna Polly ghost
+        url: "https://www.abc.net.au/news/2019-04-04/curious-hobart-famous-ghost-stories-tasmania/10962200#narryna"
+        location_text: "Narryna Heritage Museum, TAS"
+        latitude: -42.8892857
+        longitude: 147.3315508
+        location_precision: exact_site
+        coordinate_evidence_note: "ABC page names Narryna in Battery Point; coordinates use the state-checked OSM/Nominatim Narryna Heritage Museum point."
+        text: >-
+          Narryna in Battery Point is an 1830s merchant's house that now operates as a museum. It apparently has the area's longest-serving ghost, a young convict girl named Polly. Jacques Imbriotis said Polly was a young convict staff member who died when she was pregnant, either pushed or fallen down the stairs.
