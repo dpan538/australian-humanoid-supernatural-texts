@@ -772,7 +772,7 @@ routes:
     accepted_target: 70
     max_candidates_probe: 30
     max_candidates_scaled: 180
-    source_title: The Australian Race, volume 2
+    source_title: The Australian Race, volume 1
     source_author: Edward Micklethwaite Curr
     publication_date_text: "1886"
     australian_relation: Public-domain Australian ethnographic compilation exposed through an exact Internet Archive item.
@@ -803,7 +803,7 @@ routes:
     accepted_target: 60
     max_candidates_probe: 30
     max_candidates_scaled: 160
-    source_title: The Australian Race, volume 1
+    source_title: The Australian Race, volume 2
     source_author: Edward Micklethwaite Curr
     publication_date_text: "1886"
     australian_relation: Public-domain Australian ethnographic compilation exposed through an exact Internet Archive item.
@@ -1042,6 +1042,538 @@ routes:
       - devil
       - wizard
       - giant
+  - route_id: sprint_internet_archive_ridley_kamilaroi_languages_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW/QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: Kámilarói, and Other Australian Languages
+    source_author: William Ridley
+    publication_date_text: "1875"
+    australian_relation: Public-domain Australian language and belief source exposed through an exact Internet Archive item.
+    default_location_text: Kamilaroi country, NSW/QLD
+    default_location_role: cultural_association_region
+    archive_identifier: kmilariother00ridlrich
+    entity_terms:
+      - Baiame
+      - Baia-me
+      - ghost
+      - ghosts
+      - spirit
+      - spirits
+      - devil
+      - supernatural
+    person_form_terms:
+      - Baiame
+      - Baia-me
+  - route_id: sprint_internet_archive_hill_thornton_notes_nsw_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 10
+    max_candidates_probe: 20
+    max_candidates_scaled: 30
+    source_title: Notes on the Aborigines of New South Wales
+    source_author: Richard Hill and George Thornton
+    publication_date_text: "1892"
+    australian_relation: Public-domain New South Wales historical and belief source exposed through an exact Internet Archive item.
+    default_location_text: Sydney, Botany, and southern districts, NSW
+    default_location_role: cultural_association_region
+    archive_identifier: notesonaborigine00hill
+    entity_terms:
+      - evil spirit
+      - Devil Devils
+      - phantom
+      - Boonbolong
+      - spirit
+      - spirits
+      - devil
+    person_form_terms:
+      - evil spirit
+      - Devil Devils
+      - Boonbolong
+  - route_id: sprint_internet_archive_nicolay_notes_wa_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 14
+    max_candidates_probe: 20
+    max_candidates_scaled: 40
+    source_title: Notes on the Aborigines of Western Australia
+    source_author: C. G. Nicolay
+    publication_date_text: "1886"
+    australian_relation: Public-domain Western Australian belief and local-history source exposed through an exact Internet Archive item.
+    default_location_text: Western Australia
+    default_location_role: cultural_association_region
+    archive_identifier: notesonaborigin00nicogoog
+    entity_terms:
+      - evil spirit
+      - Ginga
+      - spirit
+      - spirits
+      - haunted
+      - wizard
+    person_form_terms:
+      - evil spirit
+      - Ginga
+  - route_id: sprint_internet_archive_moore_wa_vocabulary_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 18
+    max_candidates_probe: 20
+    max_candidates_scaled: 50
+    source_title: A Descriptive Vocabulary of the Language in Common Use Amongst the Aborigines of Western Australia
+    source_author: George Fletcher Moore
+    publication_date_text: "1842"
+    australian_relation: Public-domain Western Australian vocabulary and belief source exposed through an exact Internet Archive item.
+    default_location_text: Western Australia
+    default_location_role: cultural_association_region
+    archive_identifier: adescriptivevoc00moorgoog
+    entity_terms:
+      - Boylya
+      - Boylyagadak
+      - wizard
+      - magician
+      - spirit
+      - spirits
+      - evil spirit
+      - witchcraft
+    person_form_terms:
+      - Boylya
+      - Boylyagadak
+      - wizard
+      - magician
+      - evil spirit
+  - route_id: sprint_internet_archive_roth_garson_tasmania_1890_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: TAS
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: The Aborigines of Tasmania
+    source_author: H. Ling Roth, J. G. Garson, and contributors
+    publication_date_text: "1890"
+    australian_relation: Public-domain Tasmanian ethnographic source exposed through an exact Internet Archive item.
+    default_location_text: Tasmania
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginestasma00garsgoog
+    entity_terms:
+      - Warrawah
+      - ghost
+      - spirits
+      - spirit
+      - apparition
+      - evil spirit
+      - devil
+    person_form_terms:
+      - Warrawah
+      - evil spirit
+  - route_id: sprint_internet_archive_roth_nq_burial_ceremonies_exact_article
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text_article
+    source_tier: B
+    jurisdiction: QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 20
+    max_candidates_probe: 20
+    max_candidates_scaled: 50
+    source_title: North Queensland Ethnography. Bulletin No. 9. Burial ceremonies, and disposal of the dead
+    source_author: Walter E. Roth
+    publication_date_text: "1907"
+    australian_relation: Public OCR article on North Queensland burial and spirit beliefs exposed through an exact Internet Archive/BioStor item.
+    default_location_text: North Queensland
+    default_location_role: cultural_association_region
+    archive_identifier: biostor-52904
+    entity_terms:
+      - spirit of the dead
+      - spirits
+      - spirit
+      - dead
+      - devil
+    person_form_terms:
+      - spirit of the dead
+  - route_id: sprint_internet_archive_miles_demigods_daemonia_exact_article
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text_article
+    source_tier: B
+    jurisdiction: VIC/SA/NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 18
+    max_candidates_probe: 20
+    max_candidates_scaled: 45
+    source_title: How did the Natives of Australia become Acquainted with the Demigods and Daemonia, and with the Superstitions of the Ancient Races?
+    source_author: W. Augustus Miles
+    publication_date_text: "1854"
+    australian_relation: Public OCR article discussing Australian Aboriginal daemonia, spirits, and comparative supernatural beliefs.
+    default_location_text: Australia
+    default_location_role: cultural_association_region
+    archive_identifier: jstor-3014132
+    entity_terms:
+      - daemonia
+      - demon
+      - evil spirit
+      - phantom
+      - ghosts
+      - spirits
+      - spirit
+      - supernatural
+      - Boyl-ya
+    person_form_terms:
+      - daemonia
+      - demon
+      - evil spirit
+      - Boyl-ya
+  - route_id: sprint_internet_archive_lawson_joe_wilson_ghost_stories_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW/QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    source_title: Joe Wilson and His Mates
+    source_author: Henry Lawson
+    publication_date_text: "1901"
+    australian_relation: Public-domain Australian story collection exposed through an exact Internet Archive item.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    archive_identifier: joewilsonandhis00lawsgoog
+    entity_terms:
+      - The Ghost of Mary's Sacrifice
+      - The Chinaman's Ghost
+      - ghost
+      - ghosts
+      - haunted
+      - phantom
+      - fairy
+      - fairies
+      - supernatural
+    person_form_terms:
+      - The Ghost of Mary's Sacrifice
+      - The Chinaman's Ghost
+  - route_id: sprint_project_gutenberg_lawson_on_the_track_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/QLD
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 14
+    max_candidates_probe: 20
+    max_candidates_scaled: 45
+    source_title: On the Track
+    source_author: Henry Lawson
+    publication_date_text: "1900"
+    australian_relation: Public-domain Australian story collection distributed by Project Gutenberg.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: gutenberg-1231-lawson-on-the-track, url: "https://www.gutenberg.org/ebooks/1231.txt.utf-8", chapter: On the Track}
+    entity_terms:
+      - ghost
+      - ghosts
+      - haunted
+      - spirit
+      - spirits
+      - Dave
+    person_form_terms:
+      - Dave
+  - route_id: sprint_project_gutenberg_lawson_children_of_the_bush_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/QLD
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 20
+    max_candidates_probe: 25
+    max_candidates_scaled: 55
+    source_title: Children of the Bush
+    source_author: Henry Lawson
+    publication_date_text: "1902"
+    australian_relation: Public-domain Australian story collection distributed by Project Gutenberg.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: gutenberg-7065-lawson-children-of-the-bush, url: "https://www.gutenberg.org/ebooks/7065.txt.utf-8", chapter: Children of the Bush}
+    entity_terms:
+      - The Ghosts of Many Christmases
+      - ghost
+      - ghosts
+      - haunted
+      - devil
+      - fairy
+      - fairies
+    person_form_terms:
+      - The Ghosts of Many Christmases
+  - route_id: sprint_sacred_texts_nw_wa_customs_traditions_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Internet Sacred Text Archive
+    source_name: Internet Sacred Text Archive
+    source_type: public_domain_transcribed_book
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_full_text_html
+    scaled: true
+    accepted_target: 18
+    max_candidates_probe: 20
+    max_candidates_scaled: 45
+    source_title: The Customs and Traditions of the Aboriginal Natives of North Western Australia
+    source_author: John G. Withnell
+    publication_date_text: "1901"
+    australian_relation: Public-domain north-western Western Australian ethnographic and belief text.
+    default_location_text: North Western Australia
+    default_location_role: cultural_association_region
+    pages:
+      - {section_id: sacred-texts-cat-full, url: "https://sacred-texts.com/aus/cat/cat.htm", chapter: Customs and Traditions of the Aboriginal Natives of North Western Australia}
+    entity_terms:
+      - evil spirit
+      - spirits
+      - spirit
+      - malign spirits
+      - ghost
+    person_form_terms:
+      - evil spirit
+      - malign spirits
+  - route_id: sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: QLD/NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: The Crime of the Under Seas
+    source_author: Guy Boothby
+    publication_date_text: "1905"
+    australian_relation: Public-domain story collection by Australian author Guy Boothby, exposed through an exact Internet Archive item.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    archive_identifier: crimeofunderseas00bootrich
+    entity_terms:
+      - The Phantom Stockman
+      - phantom
+      - ghost
+      - ghosts
+      - apparition
+      - haunted
+      - devil
+    person_form_terms:
+      - The Phantom Stockman
+  - route_id: sprint_internet_archive_nisbet_colonial_tramp_beliefs_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: WA/SA/VIC
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 22
+    max_candidates_probe: 30
+    max_candidates_scaled: 65
+    source_title: A Colonial Tramp
+    source_author: Hume Nisbet
+    publication_date_text: "1891"
+    australian_relation: Public-domain Australian travel narrative exposed through an exact Internet Archive item; accepted rows are limited to explicit supernatural person-form belief passages.
+    default_location_text: Australia
+    default_location_role: cultural_association_region
+    archive_identifier: acolonialtrampt00nisbgoog
+    entity_terms:
+      - wraiths
+      - ghosts
+      - ghost
+      - devils
+      - witches
+      - evil spirits
+      - supernatural
+    person_form_terms:
+      - wraiths
+      - devils
+      - witches
+      - evil spirits
+  - route_id: sprint_internet_archive_eden_fifth_continent_beliefs_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: WA/NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 18
+    max_candidates_probe: 25
+    max_candidates_scaled: 55
+    source_title: The Fifth Continent
+    source_author: C. H. Eden
+    publication_date_text: "1877"
+    australian_relation: Public-domain Australian descriptive text exposed through an exact Internet Archive item; accepted rows are limited to explicit ghost/devil-devil belief passages.
+    default_location_text: Australia
+    default_location_role: cultural_association_region
+    archive_identifier: fifthcontinentwi00eden
+    entity_terms:
+      - devil-devil
+      - ghosts
+      - ghost
+      - bunyip
+      - supernatural
+    person_form_terms:
+      - devil-devil
+  - route_id: sprint_pga_cambridge_at_midnight_haunted_house_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg Australia
+    source_name: Project Gutenberg Australia
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 75
+    source_title: At Midnight and Other Stories
+    source_author: Ada Cambridge
+    publication_date_text: "1897"
+    australian_relation: Public-domain Australian story collection by Ada Cambridge, distributed by Project Gutenberg Australia.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: pga-cambridge-at-midnight, url: "https://gutenberg.net.au/ebooks02/0200651.txt", chapter: At Midnight and Other Stories}
+    entity_terms:
+      - ghost in the window
+      - ghost
+      - ghosts
+      - haunted
+      - apparition
+      - phantom
+      - spirit
+      - spirits
+      - supernatural
+    person_form_terms:
+      - ghost in the window
+  - route_id: sprint_pga_clarke_human_repetends_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg Australia
+    source_name: Project Gutenberg Australia
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 8
+    max_candidates_probe: 12
+    max_candidates_scaled: 20
+    source_title: Human Repetends
+    source_author: Marcus Clarke
+    publication_date_text: "1872"
+    australian_relation: Public-domain short story by Australian colonial writer Marcus Clarke, distributed by Project Gutenberg Australia.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: pga-clarke-human-repetends, url: "https://gutenberg.net.au/ebooks06/0601221.txt", chapter: Human Repetends}
+    entity_terms:
+      - embodied ghost
+      - ghost
+      - haunted
+      - spirit
+      - spirits
+    person_form_terms:
+      - embodied ghost
+  - route_id: sprint_pga_clarke_australian_tales_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg Australia
+    source_name: Project Gutenberg Australia
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC/NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 18
+    max_candidates_probe: 25
+    max_candidates_scaled: 55
+    source_title: Australian Tales
+    source_author: Marcus Clarke
+    publication_date_text: "1896"
+    australian_relation: Public-domain Australian tale collection by Marcus Clarke, distributed by Project Gutenberg Australia.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: pga-clarke-australian-tales, url: "https://gutenberg.net.au/ebooks04/0400711.txt", chapter: Australian Tales}
+    entity_terms:
+      - ghost
+      - ghosts
+      - apparition
+      - phantom
+      - haunted
+      - witch
+      - giant
+      - fairy
+      - spirit
+      - spirits
   - route_id: sprint_map_queue_geocode_verification
     enabled: true
     family: place_first_map_records

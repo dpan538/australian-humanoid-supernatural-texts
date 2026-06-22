@@ -1,19 +1,19 @@
 {
-  "accepted_records": 592,
+  "accepted_records": 851,
   "active_routes": [
-    "sprint_internet_archive_swan_tales_australian_life_exact_text",
-    "sprint_internet_archive_suttor_australian_stories_retold_exact_text"
+    "sprint_pga_clarke_human_repetends_exact_text",
+    "sprint_pga_clarke_australian_tales_exact_text"
   ],
   "blocked_routes": [
     "sprint_victorian_collections_story_probe"
   ],
-  "candidates_processed": 656,
-  "checkpoint_index": 2,
-  "context_records": 11,
+  "candidates_processed": 932,
+  "checkpoint_index": 3,
+  "context_records": 20,
   "created_at": "2026-06-22T05:12:16+00:00",
   "current_map_flag_count": 910,
-  "current_public_record_count": 1972,
-  "duplicates": 91,
+  "current_public_record_count": 2231,
+  "duplicates": 230,
   "exhausted_routes": [
     "sprint_map_queue_geocode_verification",
     "sprint_sa_history_network_directory_probe",
@@ -110,9 +110,81 @@
       "processed": 29,
       "public_records": 1972,
       "run_id": "collection_sprint_launch_20260622_054044_002"
+    },
+    {
+      "accepted": 80,
+      "completed_at": "2026-06-22T05:45:30+00:00",
+      "map_flags": 910,
+      "map_updates": 0,
+      "processed": 82,
+      "public_records": 2052,
+      "run_id": "collection_sprint_launch_20260622_054522_003"
+    },
+    {
+      "accepted": 32,
+      "completed_at": "2026-06-22T05:47:52+00:00",
+      "map_flags": 910,
+      "map_updates": 0,
+      "processed": 34,
+      "public_records": 2084,
+      "run_id": "collection_sprint_launch_20260622_054748_003"
+    },
+    {
+      "accepted": 27,
+      "completed_at": "2026-06-22T05:53:15+00:00",
+      "map_flags": 910,
+      "map_updates": 0,
+      "processed": 28,
+      "public_records": 2111,
+      "run_id": "collection_sprint_launch_20260622_055309_003"
+    },
+    {
+      "accepted": 28,
+      "completed_at": "2026-06-22T05:55:51+00:00",
+      "map_flags": 910,
+      "map_updates": 0,
+      "processed": 31,
+      "public_records": 2139,
+      "run_id": "collection_sprint_launch_20260622_055545_003"
+    },
+    {
+      "accepted": 12,
+      "completed_at": "2026-06-22T05:59:39+00:00",
+      "map_flags": 910,
+      "map_updates": 0,
+      "processed": 12,
+      "public_records": 2151,
+      "run_id": "collection_sprint_launch_20260622_055937_003"
+    },
+    {
+      "accepted": 38,
+      "completed_at": "2026-06-22T06:05:30+00:00",
+      "map_flags": 910,
+      "map_updates": 0,
+      "processed": 39,
+      "public_records": 2189,
+      "run_id": "collection_sprint_launch_20260622_060524_003"
+    },
+    {
+      "accepted": 21,
+      "completed_at": "2026-06-22T06:08:26+00:00",
+      "map_flags": 910,
+      "map_updates": 0,
+      "processed": 27,
+      "public_records": 2210,
+      "run_id": "collection_sprint_launch_20260622_060822_003"
+    },
+    {
+      "accepted": 21,
+      "completed_at": "2026-06-22T06:10:09+00:00",
+      "map_flags": 910,
+      "map_updates": 0,
+      "processed": 23,
+      "public_records": 2231,
+      "run_id": "collection_sprint_launch_20260622_061005_003"
     }
   ],
-  "last_completed_checkpoint": "collection_sprint_launch_20260622_054044_002",
+  "last_completed_checkpoint": "collection_sprint_launch_20260622_061005_003",
   "launch_start_map_flag_count": 891,
   "launch_start_public_record_count": 1380,
   "map_candidates": 37,
@@ -121,19 +193,29 @@
   "next_route_queue": [],
   "productive_routes": [
     "sprint_internet_archive_beveridge_victoria_riverina_exact_text",
+    "sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text",
     "sprint_internet_archive_curr_australian_race_vol1_exact_text",
     "sprint_internet_archive_curr_australian_race_vol2_exact_text",
     "sprint_internet_archive_curr_australian_race_vol3_exact_text",
     "sprint_internet_archive_dawson_victoria_exact_text",
     "sprint_internet_archive_eaglehawk_crow_exact_text",
     "sprint_internet_archive_fraser_nsw_exact_text",
+    "sprint_internet_archive_hill_thornton_notes_nsw_exact_text",
     "sprint_internet_archive_kamilaroi_kurnai_exact_text",
     "sprint_internet_archive_lang_queensland_exact_text",
+    "sprint_internet_archive_lawson_joe_wilson_ghost_stories_exact_text",
     "sprint_internet_archive_lumholtz_queensland_exact_text",
+    "sprint_internet_archive_miles_demigods_daemonia_exact_article",
     "sprint_internet_archive_moore_wa_diary_exact_text",
+    "sprint_internet_archive_moore_wa_vocabulary_exact_text",
     "sprint_internet_archive_native_tribes_south_australia_exact_text",
+    "sprint_internet_archive_nicolay_notes_wa_exact_text",
+    "sprint_internet_archive_nisbet_colonial_tramp_beliefs_exact_text",
     "sprint_internet_archive_northern_tribes_central_australia_exact_text",
     "sprint_internet_archive_peck_australian_legends_exact_text",
+    "sprint_internet_archive_ridley_kamilaroi_languages_exact_text",
+    "sprint_internet_archive_roth_garson_tasmania_1890_exact_text",
+    "sprint_internet_archive_roth_nq_burial_ceremonies_exact_article",
     "sprint_internet_archive_roth_queensland_exact_text",
     "sprint_internet_archive_roth_tasmania_exact_text",
     "sprint_internet_archive_sa_folklore_manners_customs_exact_text",
@@ -145,23 +227,34 @@
     "sprint_ista_northern_australia_exact_texts",
     "sprint_map_queue_geocode_verification",
     "sprint_pga_australian_fairy_tales_exact_texts",
+    "sprint_pga_cambridge_at_midnight_haunted_house_exact_text",
+    "sprint_pga_clarke_australian_tales_exact_text",
     "sprint_pga_clarke_old_tales_young_country_exact_text",
     "sprint_pga_favenc_austral_tropics_exact_text",
     "sprint_project_gutenberg_barry_bunyip_stories",
+    "sprint_project_gutenberg_lawson_children_of_the_bush_exact_text",
+    "sprint_project_gutenberg_lawson_on_the_track_exact_text",
     "sprint_project_gutenberg_robertson_australian_tales",
     "sprint_project_gutenberg_westbury_australian_fairy_tales",
+    "sprint_sacred_texts_nw_wa_customs_traditions_exact_text",
     "sprint_wikisource_euahlayi_exact_texts",
     "sprint_wikisource_southeast_exact_texts"
   ],
-  "record_gap": 828,
-  "records_at_last_checkpoint": 1972,
-  "rejected_rows": 30,
+  "record_gap": 569,
+  "records_at_last_checkpoint": 2231,
+  "rejected_rows": 46,
   "resume_cursor_per_route": {
     "sprint_internet_archive_beveridge_victoria_riverina_exact_text": {
       "exhausted": true,
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T05:26:13+00:00"
+    },
+    "sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T06:05:29+00:00"
     },
     "sprint_internet_archive_curr_australian_race_vol1_exact_text": {
       "exhausted": true,
@@ -193,11 +286,23 @@
       "total_pages": 1,
       "updated_at": "2026-06-22T05:20:15+00:00"
     },
+    "sprint_internet_archive_eden_fifth_continent_beliefs_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T06:05:27+00:00"
+    },
     "sprint_internet_archive_fraser_nsw_exact_text": {
       "exhausted": true,
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T05:26:12+00:00"
+    },
+    "sprint_internet_archive_hill_thornton_notes_nsw_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:45:25+00:00"
     },
     "sprint_internet_archive_kamilaroi_kurnai_exact_text": {
       "exhausted": true,
@@ -211,11 +316,23 @@
       "total_pages": 1,
       "updated_at": "2026-06-22T05:26:12+00:00"
     },
+    "sprint_internet_archive_lawson_joe_wilson_ghost_stories_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:53:14+00:00"
+    },
     "sprint_internet_archive_lumholtz_queensland_exact_text": {
       "exhausted": true,
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T05:26:12+00:00"
+    },
+    "sprint_internet_archive_miles_demigods_daemonia_exact_article": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:47:51+00:00"
     },
     "sprint_internet_archive_moore_wa_diary_exact_text": {
       "exhausted": true,
@@ -223,11 +340,29 @@
       "total_pages": 1,
       "updated_at": "2026-06-22T05:23:19+00:00"
     },
+    "sprint_internet_archive_moore_wa_vocabulary_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:45:29+00:00"
+    },
     "sprint_internet_archive_native_tribes_south_australia_exact_text": {
       "exhausted": true,
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T05:20:13+00:00"
+    },
+    "sprint_internet_archive_nicolay_notes_wa_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:45:26+00:00"
+    },
+    "sprint_internet_archive_nisbet_colonial_tramp_beliefs_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T06:05:30+00:00"
     },
     "sprint_internet_archive_northern_tribes_central_australia_exact_text": {
       "exhausted": true,
@@ -240,6 +375,24 @@
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T05:36:16+00:00"
+    },
+    "sprint_internet_archive_ridley_kamilaroi_languages_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:45:27+00:00"
+    },
+    "sprint_internet_archive_roth_garson_tasmania_1890_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:45:25+00:00"
+    },
+    "sprint_internet_archive_roth_nq_burial_ceremonies_exact_article": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:47:51+00:00"
     },
     "sprint_internet_archive_roth_queensland_exact_text": {
       "bootstrap_from": "collection_sprint_status",
@@ -313,6 +466,24 @@
       "total_pages": 6,
       "updated_at": "2026-06-22T05:12:22+00:00"
     },
+    "sprint_pga_cambridge_at_midnight_haunted_house_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T06:08:25+00:00"
+    },
+    "sprint_pga_clarke_australian_tales_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T06:10:08+00:00"
+    },
+    "sprint_pga_clarke_human_repetends_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T06:10:06+00:00"
+    },
     "sprint_pga_clarke_old_tales_young_country_exact_text": {
       "exhausted": true,
       "page_index": 1,
@@ -331,6 +502,18 @@
       "total_pages": 1,
       "updated_at": "2026-06-22T05:16:57+00:00"
     },
+    "sprint_project_gutenberg_lawson_children_of_the_bush_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:55:50+00:00"
+    },
+    "sprint_project_gutenberg_lawson_on_the_track_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:55:49+00:00"
+    },
     "sprint_project_gutenberg_robertson_australian_tales": {
       "exhausted": true,
       "page_index": 1,
@@ -346,6 +529,12 @@
     "sprint_sa_history_network_directory_probe": {
       "exhausted": true,
       "updated_at": "2026-06-22T05:12:18+00:00"
+    },
+    "sprint_sacred_texts_nw_wa_customs_traditions_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:59:38+00:00"
     },
     "sprint_territory_stories_public_probe": {
       "exhausted": true,
@@ -373,6 +562,16 @@
       "latest_acceptance_rate": 1.0,
       "map_candidates": 0,
       "processed": 11,
+      "rejected": 0
+    },
+    "sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text": {
+      "accepted": 22,
+      "context": 0,
+      "duplicates": 8,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 22,
       "rejected": 0
     },
     "sprint_internet_archive_curr_australian_race_vol1_exact_text": {
@@ -425,6 +624,16 @@
       "processed": 26,
       "rejected": 1
     },
+    "sprint_internet_archive_eden_fifth_continent_beliefs_exact_text": {
+      "accepted": 5,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 5,
+      "rejected": 0
+    },
     "sprint_internet_archive_fraser_nsw_exact_text": {
       "accepted": 27,
       "context": 0,
@@ -433,6 +642,16 @@
       "latest_acceptance_rate": 1.0,
       "map_candidates": 0,
       "processed": 27,
+      "rejected": 0
+    },
+    "sprint_internet_archive_hill_thornton_notes_nsw_exact_text": {
+      "accepted": 8,
+      "context": 0,
+      "duplicates": 31,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 8,
       "rejected": 0
     },
     "sprint_internet_archive_kamilaroi_kurnai_exact_text": {
@@ -455,6 +674,16 @@
       "processed": 27,
       "rejected": 0
     },
+    "sprint_internet_archive_lawson_joe_wilson_ghost_stories_exact_text": {
+      "accepted": 27,
+      "context": 1,
+      "duplicates": 14,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9642857142857143,
+      "map_candidates": 0,
+      "processed": 28,
+      "rejected": 0
+    },
     "sprint_internet_archive_lumholtz_queensland_exact_text": {
       "accepted": 23,
       "context": 0,
@@ -463,6 +692,16 @@
       "latest_acceptance_rate": 1.0,
       "map_candidates": 0,
       "processed": 23,
+      "rejected": 0
+    },
+    "sprint_internet_archive_miles_demigods_daemonia_exact_article": {
+      "accepted": 18,
+      "context": 1,
+      "duplicates": 7,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9473684210526315,
+      "map_candidates": 0,
+      "processed": 19,
       "rejected": 0
     },
     "sprint_internet_archive_moore_wa_diary_exact_text": {
@@ -475,6 +714,16 @@
       "processed": 19,
       "rejected": 0
     },
+    "sprint_internet_archive_moore_wa_vocabulary_exact_text": {
+      "accepted": 17,
+      "context": 0,
+      "duplicates": 13,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 17,
+      "rejected": 0
+    },
     "sprint_internet_archive_native_tribes_south_australia_exact_text": {
       "accepted": 21,
       "context": 0,
@@ -484,6 +733,26 @@
       "map_candidates": 0,
       "processed": 21,
       "rejected": 0
+    },
+    "sprint_internet_archive_nicolay_notes_wa_exact_text": {
+      "accepted": 8,
+      "context": 0,
+      "duplicates": 3,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 8,
+      "rejected": 0
+    },
+    "sprint_internet_archive_nisbet_colonial_tramp_beliefs_exact_text": {
+      "accepted": 11,
+      "context": 0,
+      "duplicates": 5,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9166666666666666,
+      "map_candidates": 0,
+      "processed": 12,
+      "rejected": 1
     },
     "sprint_internet_archive_northern_tribes_central_australia_exact_text": {
       "accepted": 29,
@@ -504,6 +773,36 @@
       "map_candidates": 0,
       "processed": 21,
       "rejected": 2
+    },
+    "sprint_internet_archive_ridley_kamilaroi_languages_exact_text": {
+      "accepted": 23,
+      "context": 0,
+      "duplicates": 7,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9583333333333334,
+      "map_candidates": 0,
+      "processed": 24,
+      "rejected": 1
+    },
+    "sprint_internet_archive_roth_garson_tasmania_1890_exact_text": {
+      "accepted": 24,
+      "context": 1,
+      "duplicates": 13,
+      "errors": 0,
+      "latest_acceptance_rate": 0.96,
+      "map_candidates": 0,
+      "processed": 25,
+      "rejected": 0
+    },
+    "sprint_internet_archive_roth_nq_burial_ceremonies_exact_article": {
+      "accepted": 14,
+      "context": 0,
+      "duplicates": 9,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9333333333333333,
+      "map_candidates": 0,
+      "processed": 15,
+      "rejected": 1
     },
     "sprint_internet_archive_roth_queensland_exact_text": {
       "accepted": 30,
@@ -625,6 +924,36 @@
       "processed": 58,
       "rejected": 0
     },
+    "sprint_pga_cambridge_at_midnight_haunted_house_exact_text": {
+      "accepted": 21,
+      "context": 3,
+      "duplicates": 9,
+      "errors": 0,
+      "latest_acceptance_rate": 0.7777777777777778,
+      "map_candidates": 0,
+      "processed": 27,
+      "rejected": 3
+    },
+    "sprint_pga_clarke_australian_tales_exact_text": {
+      "accepted": 18,
+      "context": 1,
+      "duplicates": 1,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9473684210526315,
+      "map_candidates": 0,
+      "processed": 19,
+      "rejected": 0
+    },
+    "sprint_pga_clarke_human_repetends_exact_text": {
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 1,
+      "errors": 0,
+      "latest_acceptance_rate": 0.75,
+      "map_candidates": 0,
+      "processed": 4,
+      "rejected": 1
+    },
     "sprint_pga_clarke_old_tales_young_country_exact_text": {
       "accepted": 12,
       "context": 1,
@@ -655,6 +984,26 @@
       "processed": 20,
       "rejected": 0
     },
+    "sprint_project_gutenberg_lawson_children_of_the_bush_exact_text": {
+      "accepted": 17,
+      "context": 2,
+      "duplicates": 6,
+      "errors": 0,
+      "latest_acceptance_rate": 0.85,
+      "map_candidates": 0,
+      "processed": 20,
+      "rejected": 1
+    },
+    "sprint_project_gutenberg_lawson_on_the_track_exact_text": {
+      "accepted": 11,
+      "context": 0,
+      "duplicates": 4,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 11,
+      "rejected": 0
+    },
     "sprint_project_gutenberg_robertson_australian_tales": {
       "accepted": 22,
       "context": 0,
@@ -683,6 +1032,16 @@
       "latest_acceptance_rate": 0.0,
       "map_candidates": 0,
       "processed": 3,
+      "rejected": 0
+    },
+    "sprint_sacred_texts_nw_wa_customs_traditions_exact_text": {
+      "accepted": 12,
+      "context": 0,
+      "duplicates": 6,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 12,
       "rejected": 0
     },
     "sprint_territory_stories_public_probe": {
@@ -737,6 +1096,16 @@
       "processed": 11,
       "rejected": 0
     },
+    "sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text": {
+      "accepted": 22,
+      "context": 0,
+      "duplicates": 8,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 22,
+      "rejected": 0
+    },
     "sprint_internet_archive_curr_australian_race_vol1_exact_text": {
       "accepted": 21,
       "context": 1,
@@ -787,6 +1156,16 @@
       "processed": 26,
       "rejected": 1
     },
+    "sprint_internet_archive_eden_fifth_continent_beliefs_exact_text": {
+      "accepted": 5,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 5,
+      "rejected": 0
+    },
     "sprint_internet_archive_fraser_nsw_exact_text": {
       "accepted": 27,
       "context": 0,
@@ -795,6 +1174,16 @@
       "latest_acceptance_rate": 1.0,
       "map_candidates": 0,
       "processed": 27,
+      "rejected": 0
+    },
+    "sprint_internet_archive_hill_thornton_notes_nsw_exact_text": {
+      "accepted": 8,
+      "context": 0,
+      "duplicates": 31,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 8,
       "rejected": 0
     },
     "sprint_internet_archive_kamilaroi_kurnai_exact_text": {
@@ -817,6 +1206,16 @@
       "processed": 27,
       "rejected": 0
     },
+    "sprint_internet_archive_lawson_joe_wilson_ghost_stories_exact_text": {
+      "accepted": 27,
+      "context": 1,
+      "duplicates": 14,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9642857142857143,
+      "map_candidates": 0,
+      "processed": 28,
+      "rejected": 0
+    },
     "sprint_internet_archive_lumholtz_queensland_exact_text": {
       "accepted": 23,
       "context": 0,
@@ -825,6 +1224,16 @@
       "latest_acceptance_rate": 1.0,
       "map_candidates": 0,
       "processed": 23,
+      "rejected": 0
+    },
+    "sprint_internet_archive_miles_demigods_daemonia_exact_article": {
+      "accepted": 18,
+      "context": 1,
+      "duplicates": 7,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9473684210526315,
+      "map_candidates": 0,
+      "processed": 19,
       "rejected": 0
     },
     "sprint_internet_archive_moore_wa_diary_exact_text": {
@@ -837,6 +1246,16 @@
       "processed": 19,
       "rejected": 0
     },
+    "sprint_internet_archive_moore_wa_vocabulary_exact_text": {
+      "accepted": 17,
+      "context": 0,
+      "duplicates": 13,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 17,
+      "rejected": 0
+    },
     "sprint_internet_archive_native_tribes_south_australia_exact_text": {
       "accepted": 21,
       "context": 0,
@@ -846,6 +1265,26 @@
       "map_candidates": 0,
       "processed": 21,
       "rejected": 0
+    },
+    "sprint_internet_archive_nicolay_notes_wa_exact_text": {
+      "accepted": 8,
+      "context": 0,
+      "duplicates": 3,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 8,
+      "rejected": 0
+    },
+    "sprint_internet_archive_nisbet_colonial_tramp_beliefs_exact_text": {
+      "accepted": 11,
+      "context": 0,
+      "duplicates": 5,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9166666666666666,
+      "map_candidates": 0,
+      "processed": 12,
+      "rejected": 1
     },
     "sprint_internet_archive_northern_tribes_central_australia_exact_text": {
       "accepted": 29,
@@ -866,6 +1305,36 @@
       "map_candidates": 0,
       "processed": 21,
       "rejected": 2
+    },
+    "sprint_internet_archive_ridley_kamilaroi_languages_exact_text": {
+      "accepted": 23,
+      "context": 0,
+      "duplicates": 7,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9583333333333334,
+      "map_candidates": 0,
+      "processed": 24,
+      "rejected": 1
+    },
+    "sprint_internet_archive_roth_garson_tasmania_1890_exact_text": {
+      "accepted": 24,
+      "context": 1,
+      "duplicates": 13,
+      "errors": 0,
+      "latest_acceptance_rate": 0.96,
+      "map_candidates": 0,
+      "processed": 25,
+      "rejected": 0
+    },
+    "sprint_internet_archive_roth_nq_burial_ceremonies_exact_article": {
+      "accepted": 14,
+      "context": 0,
+      "duplicates": 9,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9333333333333333,
+      "map_candidates": 0,
+      "processed": 15,
+      "rejected": 1
     },
     "sprint_internet_archive_roth_queensland_exact_text": {
       "accepted": 30,
@@ -987,6 +1456,36 @@
       "processed": 58,
       "rejected": 0
     },
+    "sprint_pga_cambridge_at_midnight_haunted_house_exact_text": {
+      "accepted": 21,
+      "context": 3,
+      "duplicates": 9,
+      "errors": 0,
+      "latest_acceptance_rate": 0.7777777777777778,
+      "map_candidates": 0,
+      "processed": 27,
+      "rejected": 3
+    },
+    "sprint_pga_clarke_australian_tales_exact_text": {
+      "accepted": 18,
+      "context": 1,
+      "duplicates": 1,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9473684210526315,
+      "map_candidates": 0,
+      "processed": 19,
+      "rejected": 0
+    },
+    "sprint_pga_clarke_human_repetends_exact_text": {
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 1,
+      "errors": 0,
+      "latest_acceptance_rate": 0.75,
+      "map_candidates": 0,
+      "processed": 4,
+      "rejected": 1
+    },
     "sprint_pga_clarke_old_tales_young_country_exact_text": {
       "accepted": 12,
       "context": 1,
@@ -1017,6 +1516,26 @@
       "processed": 20,
       "rejected": 0
     },
+    "sprint_project_gutenberg_lawson_children_of_the_bush_exact_text": {
+      "accepted": 17,
+      "context": 2,
+      "duplicates": 6,
+      "errors": 0,
+      "latest_acceptance_rate": 0.85,
+      "map_candidates": 0,
+      "processed": 20,
+      "rejected": 1
+    },
+    "sprint_project_gutenberg_lawson_on_the_track_exact_text": {
+      "accepted": 11,
+      "context": 0,
+      "duplicates": 4,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 11,
+      "rejected": 0
+    },
     "sprint_project_gutenberg_robertson_australian_tales": {
       "accepted": 22,
       "context": 0,
@@ -1045,6 +1564,16 @@
       "latest_acceptance_rate": 0.0,
       "map_candidates": 0,
       "processed": 3,
+      "rejected": 0
+    },
+    "sprint_sacred_texts_nw_wa_customs_traditions_exact_text": {
+      "accepted": 12,
+      "context": 0,
+      "duplicates": 6,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 12,
       "rejected": 0
     },
     "sprint_territory_stories_public_probe": {
@@ -1092,6 +1621,6 @@
   "suppressed_rows": 0,
   "target_map_flags": 1200,
   "target_public_records": 2800,
-  "updated_at": "2026-06-22T05:40:49+00:00",
+  "updated_at": "2026-06-22T06:10:09+00:00",
   "verified_map_flags": 37
 }

@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T05:40:48+00:00`
+- Generated: `2026-06-22T06:10:08+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `47`
+- Routes: `64`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 9
+- `low_yield`: 11
 - `manual_only`: 1
-- `productive`: 34
+- `productive`: 49
 
 ## Stop Rule
 
@@ -67,3 +67,20 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_internet_archive_suttor_fishers_ghost_exact_section | low_yield | Internet Archive | exact_item_metadata_djvu_text_section_slice | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_internet_archive_suttor_australian_stories_retold_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 16 | 12 | 10 | 1 |  | Scale productive route |
 | sprint_internet_archive_swan_tales_australian_life_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 13 | 12 | 1 | 0 |  | Scale productive route |
+| sprint_internet_archive_ridley_kamilaroi_languages_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 24 | 23 | 7 | 1 |  | Scale productive route |
+| sprint_internet_archive_hill_thornton_notes_nsw_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 8 | 8 | 31 | 0 |  | Scale productive route |
+| sprint_internet_archive_nicolay_notes_wa_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 8 | 8 | 3 | 0 |  | Scale productive route |
+| sprint_internet_archive_moore_wa_vocabulary_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 17 | 13 | 0 |  | Scale productive route |
+| sprint_internet_archive_roth_garson_tasmania_1890_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 25 | 24 | 13 | 0 |  | Scale productive route |
+| sprint_internet_archive_roth_nq_burial_ceremonies_exact_article | productive | Internet Archive | exact_item_metadata_and_djvu_text | 15 | 14 | 9 | 1 |  | Scale productive route |
+| sprint_internet_archive_miles_demigods_daemonia_exact_article | productive | Internet Archive | exact_item_metadata_and_djvu_text | 19 | 18 | 7 | 0 |  | Scale productive route |
+| sprint_internet_archive_lawson_joe_wilson_ghost_stories_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 28 | 27 | 14 | 0 |  | Scale productive route |
+| sprint_project_gutenberg_lawson_on_the_track_exact_text | productive | Project Gutenberg | exact_plain_text | 11 | 11 | 4 | 0 |  | Scale productive route |
+| sprint_project_gutenberg_lawson_children_of_the_bush_exact_text | productive | Project Gutenberg | exact_plain_text | 20 | 17 | 6 | 1 |  | Scale productive route |
+| sprint_sacred_texts_nw_wa_customs_traditions_exact_text | productive | Internet Sacred Text Archive | exact_full_text_html | 12 | 12 | 6 | 0 |  | Scale productive route |
+| sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 22 | 22 | 8 | 0 |  | Scale productive route |
+| sprint_internet_archive_nisbet_colonial_tramp_beliefs_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 12 | 11 | 5 | 1 |  | Scale productive route |
+| sprint_internet_archive_eden_fifth_continent_beliefs_exact_text | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 5 | 5 | 2 | 0 |  | Keep as probe/discovery route only |
+| sprint_pga_cambridge_at_midnight_haunted_house_exact_text | productive | Project Gutenberg Australia | exact_plain_text | 27 | 21 | 9 | 3 |  | Scale productive route |
+| sprint_pga_clarke_human_repetends_exact_text | low_yield | Project Gutenberg Australia | exact_plain_text | 4 | 3 | 1 | 1 |  | Keep as probe/discovery route only |
+| sprint_pga_clarke_australian_tales_exact_text | productive | Project Gutenberg Australia | exact_plain_text | 19 | 18 | 1 | 0 |  | Scale productive route |
