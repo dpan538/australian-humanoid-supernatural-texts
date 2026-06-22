@@ -13,6 +13,7 @@ import argparse
 import csv
 import gzip
 import hashlib
+import html
 import json
 import math
 import re
@@ -27,7 +28,7 @@ from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote, urlencode
+from urllib.parse import quote, urlencode, urljoin
 from urllib.request import Request, urlopen
 
 import yaml
@@ -361,12 +362,25 @@ def classify_block(term: str, block: str, route: dict[str, Any]) -> tuple[str, s
     return "first_class", "spirit_person_narrative", "explicit_supernatural_or_anomalous_person_form_agent", "accepted"
 
 
-def make_candidate(route: dict[str, Any], page: dict[str, Any], term: str, block: str, index: int) -> dict[str, Any]:
+def make_candidate(
+    route: dict[str, Any],
+    page: dict[str, Any],
+    term: str,
+    block: str,
+    index: int,
+    digest: str = "",
+) -> dict[str, Any]:
     outcome, narrative_type, humanoid_basis, candidate_status = classify_block(term, block, route)
+    if outcome == "first_class" and route.get("narrative_type_override"):
+        narrative_type = str(route["narrative_type_override"])
     chapter = canonicalise_whitespace(page.get("chapter") or page.get("section_id") or "section")
     title = f"{canonicalise_whitespace(term)} in {chapter}"
     source_title = canonicalise_whitespace(route.get("source_title") or route.get("source_name"))
-    external_id = f"{slug(route['route_id'], 28)}:{slug(page.get('section_id') or page.get('url'), 28)}:{slug(term, 28)}:{index:03d}"
+    if route.get("external_id_strategy") == "evidence_hash" and digest:
+        external_suffix = digest[:16]
+    else:
+        external_suffix = f"{index:03d}"
+    external_id = f"{slug(route['route_id'], 28)}:{slug(page.get('section_id') or page.get('url'), 28)}:{slug(term, 28)}:{external_suffix}"
     evidence = short_excerpt(block)
     return {
         "candidate_status": candidate_status if outcome == "first_class" else ("lead_only" if outcome == "context" else "rejected"),
@@ -397,12 +411,40 @@ def make_candidate(route: dict[str, Any], page: dict[str, Any], term: str, block
         "coordinate_evidence_note": page.get("coordinate_evidence_note", ""),
         "duplicate_check_status": "source_url_external_id_and_excerpt_hash_checked",
         "quality_class": "B" if outcome == "first_class" else "reviewed_context",
-        "ethics_review_status": "public_context_reviewed",
-        "cultural_sensitivity": "moderate",
+        "ethics_review_status": route.get("ethics_review_status", "public_context_reviewed"),
+        "cultural_sensitivity": route.get("cultural_sensitivity", "moderate"),
         "acceptance_decision": "accepted" if outcome == "first_class" else "not_accepted",
         "rejection_reason": "" if outcome == "first_class" else outcome,
         "evidence_summary": evidence,
     }
+
+
+def existing_evidence_hashes_for_urls(urls: set[str]) -> set[str]:
+    if not urls:
+        return set()
+    placeholders = ",".join("?" for _ in urls)
+    hashes: set[str] = set()
+    with connect(DEFAULT_DB_PATH) as conn:
+        rows = conn.execute(
+            f"""
+            SELECT raw_metadata_json
+            FROM collection_candidates_v2
+            WHERE canonical_url IN ({placeholders})
+            """,
+            tuple(sorted(urls)),
+        ).fetchall()
+    for row in rows:
+        raw = row["raw_metadata_json"]
+        if not raw:
+            continue
+        try:
+            metadata = json.loads(raw)
+        except json.JSONDecodeError:
+            continue
+        digest = metadata.get("evidence_sha256")
+        if digest:
+            hashes.add(str(digest))
+    return hashes
 
 
 def print_route_progress(result: RouteResult, started_at: float) -> None:
@@ -464,7 +506,7 @@ def collect_text_route(
     )
     pages = list(route.get("pages") or [])
     if route.get("archive_identifier"):
-        if cursor.get("exhausted"):
+        if cursor.get("exhausted") and route.get("resume_strategy") != "rescan_new_evidence":
             result.stop_reason = "route_cursor_exhausted"
             result.resume_cursor = cursor
             write_route_stage(result)
@@ -472,9 +514,12 @@ def collect_text_route(
             return result
         text_url, text = fetch_archive_text(route)
         pages = [{"section_id": route["archive_identifier"], "url": text_url, "chapter": route.get("source_title", "full text"), "text": text}]
+    existing_hashes: set[str] = set()
+    if route.get("resume_strategy") == "rescan_new_evidence":
+        existing_hashes = existing_evidence_hashes_for_urls({str(page.get("url") or "") for page in pages})
     seen_hashes: set[str] = set()
     term_hits: Counter[str] = Counter()
-    start_page_index = int(cursor.get("page_index") or 0)
+    start_page_index = 0 if route.get("resume_strategy") == "rescan_new_evidence" else int(cursor.get("page_index") or 0)
     next_page_index = start_page_index
     try:
         for page_index, page in enumerate(pages[start_page_index:], start=start_page_index):
@@ -504,13 +549,16 @@ def collect_text_route(
                     if term_hits[term.lower()] >= 4:
                         continue
                     digest = hashlib.sha256(canonicalise_whitespace(block).lower().encode("utf-8")).hexdigest()
+                    if digest in existing_hashes:
+                        result.duplicates += 1
+                        continue
                     if digest in seen_hashes:
                         result.duplicates += 1
                         continue
                     seen_hashes.add(digest)
                     term_hits[term.lower()] += 1
                     result.processed += 1
-                    candidate = make_candidate(route, page, term, block, result.processed)
+                    candidate = make_candidate(route, page, term, block, result.processed, digest)
                     candidate["raw_metadata_json"] = {
                         "route_id": route_id,
                         "source_family": route.get("family"),
@@ -544,6 +592,220 @@ def collect_text_route(
         result.stop_reason = "accepted_target_reached" if accepted_target and result.accepted_provisional >= accepted_target else "route_candidate_limit_or_source_exhausted"
         if result.resume_cursor.get("exhausted") and not result.accepted_provisional:
             result.stop_reason = "route_cursor_exhausted"
+    finally:
+        result.runtime_seconds = time.monotonic() - started_at
+        write_route_stage(result)
+        print_route_progress(result, started_at)
+    return result
+
+
+def html_to_visible_text(fragment: str) -> str:
+    parser = VisibleTextParser()
+    parser.feed(html.unescape(fragment))
+    return parser.text()
+
+
+def recollect_search_urls(route: dict[str, Any]) -> list[str]:
+    base_url = route["base_url"].rstrip("/") + "/"
+    urls: list[str] = []
+    seen: set[str] = set()
+    for url in route.get("item_urls") or []:
+        absolute = urljoin(base_url, str(url))
+        if absolute not in seen:
+            seen.add(absolute)
+            urls.append(absolute)
+    search_path = str(route.get("search_path") or "nodes/search")
+    max_items = int(route.get("max_search_items") or 80)
+    for term in route.get("search_terms") or route.get("entity_terms") or []:
+        if len(urls) >= max_items:
+            break
+        search_url = urljoin(base_url, search_path) + "?" + urlencode({"keywords": term})
+        try:
+            search_html = http_get(search_url).decode("utf-8", "ignore")
+        except Exception:
+            continue
+        for href in re.findall(r'href=["\']([^"\']*?/nodes/view/\d+[^"\']*)["\']', search_html):
+            absolute = urljoin(base_url, href.split("#", 1)[0])
+            absolute = absolute.split("?", 1)[0]
+            if absolute not in seen:
+                seen.add(absolute)
+                urls.append(absolute)
+                if len(urls) >= max_items:
+                    break
+    return urls
+
+
+def fetch_recollect_item_ocr(route: dict[str, Any], item_url: str) -> tuple[str, str, list[str]]:
+    raw_html = http_get(item_url).decode("utf-8", "ignore")
+    title_match = re.search(r"<title[^>]*>(.*?)</title>", raw_html, flags=re.IGNORECASE | re.DOTALL)
+    title = canonicalise_whitespace(html.unescape(title_match.group(1))) if title_match else item_url.rsplit("/", 1)[-1]
+    title = re.sub(r"\s*\|\s*.*$", "", title).strip() or item_url.rsplit("/", 1)[-1]
+    asset_ids: list[str] = []
+    for tag in re.findall(r"<img\b[^>]*>", raw_html, flags=re.IGNORECASE):
+        if not re.search(r"\bhasOCR=[\"']?1[\"']?", tag, flags=re.IGNORECASE):
+            continue
+        match = re.search(r"\bidx=[\"']?(\d+)[\"']?", tag, flags=re.IGNORECASE)
+        if match and match.group(1) not in asset_ids:
+            asset_ids.append(match.group(1))
+    max_assets = int(route.get("max_assets_per_item") or 12)
+    texts: list[str] = []
+    for asset_id in asset_ids[:max_assets]:
+        text_url = urljoin(item_url, f"/nodes/gettxt/OCR/{asset_id}")
+        try:
+            fragment = http_get(text_url).decode("utf-8", "ignore")
+        except Exception:
+            continue
+        text = html_to_visible_text(fragment)
+        if text:
+            texts.append(text)
+        sleep_seconds = float(route.get("asset_rate_limit_seconds") or 0)
+        if sleep_seconds:
+            time.sleep(sleep_seconds)
+    return title, "\n".join(texts), asset_ids
+
+
+def collect_recollect_ocr_route(
+    route: dict[str, Any],
+    stage_dir: Path,
+    scaled: bool,
+    cursor: dict[str, Any] | None = None,
+) -> RouteResult:
+    started_at = time.monotonic()
+    cursor = cursor or {}
+    route_id = route["route_id"]
+    max_candidates = int(route.get("max_candidates_scaled" if scaled else "max_candidates_probe") or 30)
+    accepted_target = int(route.get("accepted_target") or 0)
+    result = RouteResult(
+        route_id=route_id,
+        family=route.get("family", ""),
+        organisation=route.get("organisation", ""),
+        source_name=route.get("source_name", ""),
+        retrieval_method=route.get("retrieval_method", ""),
+        stage_csv=str(stage_dir / f"{route_id}.csv"),
+        stage_ndjson=str(stage_dir / f"{route_id}.ndjson"),
+        route_phase="scaled" if scaled else "probe",
+    )
+    try:
+        if cursor.get("exhausted") and route.get("resume_strategy") != "rescan_new_evidence":
+            result.stop_reason = "route_cursor_exhausted"
+            result.resume_cursor = cursor
+            return result
+        item_urls = recollect_search_urls(route)
+        max_runtime = float(route.get("max_runtime_seconds") or 600)
+        print(
+            "[collection-sprint] "
+            f"route_id={route_id} recollect_discovered_items={len(item_urls)} "
+            f"elapsed={time.monotonic() - started_at:.1f}s",
+            flush=True,
+        )
+        start_item_index = 0 if route.get("resume_strategy") == "rescan_new_evidence" else int(cursor.get("item_index") or 0)
+        existing_hashes = existing_evidence_hashes_for_urls(set(item_urls)) if route.get("resume_strategy") == "rescan_new_evidence" else set()
+        seen_hashes: set[str] = set()
+        next_item_index = start_item_index
+        required_place_terms = [str(term) for term in route.get("required_place_terms") or []]
+        for item_index, item_url in enumerate(item_urls[start_item_index:], start=start_item_index):
+            if time.monotonic() - started_at > max_runtime:
+                result.stop_reason = "route_runtime_limit_reached"
+                break
+            if result.processed >= max_candidates:
+                break
+            if accepted_target and result.accepted_provisional >= accepted_target:
+                break
+            next_item_index = item_index
+            try:
+                item_title, item_text, asset_ids = fetch_recollect_item_ocr(route, item_url)
+                result.fetched += 1
+            except Exception as exc:  # noqa: BLE001
+                result.errors += 1
+                result.notes.append(f"{item_url}: {type(exc).__name__}: {exc}")
+                continue
+            next_item_index = item_index + 1
+            print(
+                "[collection-sprint] "
+                f"route_id={route_id} recollect_item_index={item_index + 1}/{len(item_urls)} "
+                f"fetched={result.fetched} processed={result.processed} accepted_provisional={result.accepted_provisional} "
+                f"map_candidates={result.map_candidates} elapsed={time.monotonic() - started_at:.1f}s",
+                flush=True,
+            )
+            if not item_text or len(canonicalise_whitespace(item_text)) < 120:
+                result.rejected += 1
+                continue
+            searchable_place_text = f"{item_title}\n{item_text}"
+            place_matched = not required_place_terms or any(contains_term(searchable_place_text, term) for term in required_place_terms)
+            if route.get("require_place_match_for_acceptance") and not place_matched:
+                result.lead_only += 1
+                continue
+            page = {
+                "section_id": item_url.rstrip("/").rsplit("/", 1)[-1],
+                "url": item_url,
+                "chapter": item_title,
+            }
+            if place_matched and route.get("default_location_text"):
+                page.update(
+                    {
+                        "location_text": route.get("default_location_text"),
+                        "location_role": route.get("default_location_role", "legend_associated_place"),
+                        "latitude": route.get("default_latitude", ""),
+                        "longitude": route.get("default_longitude", ""),
+                        "location_precision": route.get("default_location_precision", "locality"),
+                        "geocode_source": route.get("default_geocode_source", ""),
+                        "geocode_verification_status": route.get("default_geocode_verification_status", ""),
+                        "coordinate_evidence_note": route.get("default_coordinate_evidence_note", ""),
+                    }
+                )
+            blocks = split_blocks(item_text)
+            blocks.extend(term_windows(item_text, list(route.get("entity_terms", []))))
+            for block in blocks:
+                if result.processed >= max_candidates:
+                    break
+                if accepted_target and result.accepted_provisional >= accepted_target:
+                    break
+                matching_terms = [term for term in route.get("entity_terms", []) if contains_term(block, term)]
+                if not matching_terms:
+                    continue
+                digest = hashlib.sha256(canonicalise_whitespace(f"{item_url}:{block}").lower().encode("utf-8")).hexdigest()
+                if digest in existing_hashes or digest in seen_hashes:
+                    result.duplicates += 1
+                    continue
+                seen_hashes.add(digest)
+                term = matching_terms[0]
+                result.processed += 1
+                candidate = make_candidate(route, page, term, block, result.processed, digest)
+                candidate["raw_metadata_json"] = {
+                    "route_id": route_id,
+                    "source_family": route.get("family"),
+                    "item_title": item_title,
+                    "item_url": item_url,
+                    "asset_ids": asset_ids,
+                    "scope_classifier": "recollect_ocr_term_and_person_form_gate_v1",
+                    "evidence_sha256": digest,
+                }
+                result.candidates.append(candidate)
+                if candidate["candidate_status"] == "accepted":
+                    result.accepted_provisional += 1
+                    if candidate.get("latitude") and candidate.get("longitude"):
+                        result.map_candidates += 1
+                elif candidate["candidate_status"] == "lead_only":
+                    result.context_provisional += 1
+                    result.lead_only += 1
+                else:
+                    result.rejected += 1
+                if result.processed % 25 == 0:
+                    print_route_progress(result, started_at)
+        result.resume_cursor = {
+            "item_index": next_item_index,
+            "total_items": len(item_urls),
+            "exhausted": next_item_index >= len(item_urls),
+            "updated_at": utc_now_iso(),
+        }
+        if not result.stop_reason:
+            result.stop_reason = "accepted_target_reached" if accepted_target and result.accepted_provisional >= accepted_target else "route_candidate_limit_or_source_exhausted"
+        if result.resume_cursor.get("exhausted") and not result.accepted_provisional:
+            result.stop_reason = "metadata_only_or_no_scope_ocr"
+    except Exception as exc:  # noqa: BLE001
+        result.errors += 1
+        result.stop_reason = f"recollect_route_error:{type(exc).__name__}"
+        result.notes.append(str(exc))
     finally:
         result.runtime_seconds = time.monotonic() - started_at
         write_route_stage(result)
@@ -723,6 +985,8 @@ def write_route_stage(result: RouteResult) -> None:
 def run_route(route: dict[str, Any], stage_dir: Path, scaled: bool = False, cursor: dict[str, Any] | None = None) -> RouteResult:
     if route.get("retrieval_method") == "exact_queue_gazetteer_verification":
         return collect_map_queue_route(route, stage_dir, scaled=scaled, cursor=cursor)
+    if route.get("retrieval_method") == "recollect_search_item_ocr":
+        return collect_recollect_ocr_route(route, stage_dir, scaled=scaled, cursor=cursor)
     if route.get("pages") or route.get("archive_identifier"):
         return collect_text_route(route, stage_dir, scaled=scaled, cursor=cursor)
     return collect_probe_only(route, stage_dir, cursor=cursor)
@@ -939,21 +1203,66 @@ def map_invariant() -> dict[str, int | bool]:
     }
 
 
+def launch_targets(config: dict[str, Any]) -> dict[str, int]:
+    active = config.get("launch_targets") or {}
+    legacy = config.get("targets") or {}
+    minimum_records = int(active.get("minimum_public_records") or legacy.get("public_records") or 3500)
+    preferred_records = int(active.get("preferred_public_records") or max(3800, minimum_records))
+    soft_maximum_records = int(active.get("soft_maximum_public_records") or max(4000, preferred_records))
+    minimum_map_flags = int(active.get("minimum_map_flags") or legacy.get("map_flags") or 1200)
+    return {
+        "minimum_public_records": minimum_records,
+        "preferred_public_records": preferred_records,
+        "soft_maximum_public_records": soft_maximum_records,
+        "minimum_map_flags": minimum_map_flags,
+    }
+
+
+def active_collection_mode(public_records: int, map_flags: int, targets: dict[str, int]) -> str:
+    if public_records >= targets["minimum_public_records"] and map_flags >= targets["minimum_map_flags"]:
+        return "complete"
+    if public_records >= targets["minimum_public_records"] and map_flags < targets["minimum_map_flags"]:
+        return "map_first"
+    if map_flags >= targets["minimum_map_flags"] and public_records < targets["minimum_public_records"]:
+        return "record_growth"
+    return "balanced_growth"
+
+
+def target_progress_fields(public_records: int, map_flags: int, state: dict[str, Any], targets: dict[str, int]) -> dict[str, Any]:
+    records_since_checkpoint = public_records - int(state.get("records_at_last_checkpoint") or public_records)
+    maps_since_checkpoint = map_flags - int(state.get("map_flags_at_last_checkpoint") or map_flags)
+    return {
+        "target_public_records": targets["minimum_public_records"],
+        "target_preferred_public_records": targets["preferred_public_records"],
+        "target_soft_maximum_public_records": targets["soft_maximum_public_records"],
+        "target_map_flags": targets["minimum_map_flags"],
+        "current_public_records": public_records,
+        "current_public_record_count": public_records,
+        "gap_to_minimum_3500": max(0, targets["minimum_public_records"] - public_records),
+        "gap_to_preferred_3800": max(0, targets["preferred_public_records"] - public_records),
+        "soft_ceiling_remaining": max(0, targets["soft_maximum_public_records"] - public_records),
+        "current_map_flags": map_flags,
+        "current_map_flag_count": map_flags,
+        "gap_to_map_1200": max(0, targets["minimum_map_flags"] - map_flags),
+        "current_map_ratio": round(map_flags / public_records, 4) if public_records else 0,
+        "records_added_since_checkpoint": records_since_checkpoint,
+        "map_flags_added_since_checkpoint": maps_since_checkpoint,
+        "records_per_new_map_flag": round(records_since_checkpoint / maps_since_checkpoint, 2) if maps_since_checkpoint else None,
+        "active_collection_mode": active_collection_mode(public_records, map_flags, targets),
+        "record_gap": max(0, targets["minimum_public_records"] - public_records),
+        "map_gap": max(0, targets["minimum_map_flags"] - map_flags),
+    }
+
+
 def fresh_state(config: dict[str, Any]) -> dict[str, Any]:
     counts = load_export_counts()
-    targets = config.get("targets", {})
+    targets = launch_targets(config)
     state = {
         "schema_version": "collection-sprint-state/v1",
         "created_at": utc_now_iso(),
         "updated_at": utc_now_iso(),
-        "target_public_records": int(targets.get("public_records") or 2800),
-        "target_map_flags": int(targets.get("map_flags") or 1200),
         "launch_start_public_record_count": counts["public_records"],
         "launch_start_map_flag_count": counts["map_flags"],
-        "current_public_record_count": counts["public_records"],
-        "current_map_flag_count": counts["map_flags"],
-        "record_gap": max(0, int(targets.get("public_records") or 2800) - counts["public_records"]),
-        "map_gap": max(0, int(targets.get("map_flags") or 1200) - counts["map_flags"]),
         "active_routes": [],
         "productive_routes": [],
         "exhausted_routes": [],
@@ -975,6 +1284,7 @@ def fresh_state(config: dict[str, Any]) -> dict[str, Any]:
         "route_totals": {},
         "history": [],
     }
+    state.update(target_progress_fields(counts["public_records"], counts["map_flags"], state, targets))
     if STATUS_JSON.exists():
         try:
             status = json.loads(STATUS_JSON.read_text(encoding="utf-8"))
@@ -1040,6 +1350,8 @@ def load_state(config: dict[str, Any], resume: bool) -> dict[str, Any]:
     state.setdefault("route_totals", {})
     state.setdefault("routes", state.get("route_totals", {}))
     state.setdefault("history", [])
+    counts = load_export_counts()
+    state.update(target_progress_fields(counts["public_records"], counts["map_flags"], state, launch_targets(config)))
     return state
 
 
@@ -1056,10 +1368,23 @@ def route_is_blocked(route: dict[str, Any], state: dict[str, Any]) -> bool:
 def rank_routes(config: dict[str, Any], state: dict[str, Any]) -> list[dict[str, Any]]:
     routes = [route for route in config.get("routes", []) if route.get("enabled", True)]
     productive = set(state.get("productive_routes") or [])
+    mode = state.get("active_collection_mode") or "balanced_growth"
+    if mode == "map_first":
+        routes = [
+            route
+            for route in routes
+            if route.get("family") == "place_first_map_records"
+            or route.get("map_target")
+            or route.get("map_capable")
+            or route.get("default_location_role") in {"apparition_location", "legend_associated_place", "narrative_setting"}
+            and any((page.get("latitude") and page.get("longitude")) for page in route.get("pages", []))
+        ]
 
     def score(route: dict[str, Any]) -> tuple[int, str]:
         family = str(route.get("family") or "")
         bonus = 0
+        if mode == "balanced_growth" and (route.get("family") == "place_first_map_records" or route.get("map_target") or route.get("map_capable")):
+            bonus -= 25
         if route["route_id"] in productive or route.get("scaled"):
             bonus -= 40
         if family in {"local_archive_historical_society", "repository_institutional_full_text", "place_first_map_records"}:
@@ -1078,14 +1403,9 @@ def update_state_after_checkpoint(
     final_export: dict[str, int],
     applied_map_updates: int,
 ) -> None:
-    targets = config.get("targets", {})
-    target_records = int(targets.get("public_records") or 2800)
-    target_maps = int(targets.get("map_flags") or 1200)
+    targets = launch_targets(config)
     state["updated_at"] = utc_now_iso()
-    state["current_public_record_count"] = final_export["public_records"]
-    state["current_map_flag_count"] = final_export["map_flags"]
-    state["record_gap"] = max(0, target_records - final_export["public_records"])
-    state["map_gap"] = max(0, target_maps - final_export["map_flags"])
+    state.update(target_progress_fields(final_export["public_records"], final_export["map_flags"], state, targets))
     state["candidates_processed"] = int(state.get("candidates_processed") or 0) + sum(result.processed for result in results)
     state["accepted_records"] = int(state.get("accepted_records") or 0) + int(imported.get("accepted", 0))
     state["context_records"] = int(state.get("context_records") or 0) + int(imported.get("lead_only", 0))
@@ -1111,6 +1431,7 @@ def update_state_after_checkpoint(
                 "errors": 0,
                 "map_candidates": 0,
                 "latest_acceptance_rate": 0,
+                "last_accepted": 0,
             },
         )
         total["processed"] += result.processed
@@ -1121,6 +1442,7 @@ def update_state_after_checkpoint(
         total["errors"] += result.errors
         total["map_candidates"] += result.map_candidates
         total["latest_acceptance_rate"] = result.accepted_provisional / result.processed if result.processed else 0
+        total["last_accepted"] = result.accepted_provisional
         if result.resume_cursor:
             cursors[result.route_id] = result.resume_cursor
         if result.accepted_provisional >= 6 or result.map_candidates >= 6:
@@ -1168,11 +1490,20 @@ def commit_and_push_checkpoint(state: dict[str, Any]) -> str | None:
     state["records_at_last_checkpoint"] = state["current_public_record_count"]
     state["map_flags_at_last_checkpoint"] = state["current_map_flag_count"]
     STATE_JSON.write_text(json.dumps(state, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
+    stage_paths = [
+        f"data/interim/collection_sprint/{entry['run_id']}"
+        for entry in state.get("history", [])
+        if entry.get("run_id")
+        and (
+            int(entry.get("processed") or 0) > 0
+            or int(entry.get("accepted") or 0) > 0
+            or int(entry.get("map_updates") or 0) > 0
+        )
+    ]
     paths = [
         "config/collection_routes.yml",
         "config/collection_sprint.yml",
         "data/exports/v2/map_geocode_verification_queue.csv",
-        "data/interim/collection_sprint",
         "data/processed/australian_humanoid_figures.sqlite",
         "data/processed/v2/collection_route_registry.csv",
         "data/processed/v2/collection_route_registry.md",
@@ -1182,6 +1513,7 @@ def commit_and_push_checkpoint(state: dict[str, Any]) -> str | None:
         "data/processed/v2/validation_v2_report.md",
         "public/data/frontend-data.json",
         "scripts/run_collection_sprint.py",
+        *stage_paths,
     ]
     run_subprocess(["git", "add", *paths])
     diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT)
@@ -1265,14 +1597,32 @@ def write_status(
     build_ok: bool,
     previous_status: dict[str, Any] | None = None,
 ) -> None:
-    public_target = int(config.get("targets", {}).get("public_records") or 2800)
-    map_target = int(config.get("targets", {}).get("map_flags") or 1200)
+    targets = launch_targets(config)
     previous_status = previous_status or {}
     previous_results = previous_status.get("route_results") or []
     current_results = [result.as_dict() for result in results]
     combined_results = previous_results + current_results
     previous_processed = int(previous_status.get("candidates_processed") or 0)
     previous_map_updates = int(previous_status.get("map_queue_updates_applied") or 0)
+    checkpoint_state = {}
+    if STATE_JSON.exists():
+        try:
+            checkpoint_state = json.loads(STATE_JSON.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            checkpoint_state = {}
+    status_progress = target_progress_fields(
+        final_export["public_records"],
+        final_export["map_flags"],
+        {
+            "records_at_last_checkpoint": checkpoint_state.get("records_at_last_checkpoint")
+            or previous_status.get("records_at_last_checkpoint")
+            or baseline_export["public_records"],
+            "map_flags_at_last_checkpoint": checkpoint_state.get("map_flags_at_last_checkpoint")
+            or previous_status.get("map_flags_at_last_checkpoint")
+            or baseline_export["map_flags"],
+        },
+        targets,
+    )
     status = {
         "generated_at": utc_now_iso(),
         "run_id": config.get("run_id"),
@@ -1292,11 +1642,13 @@ def write_status(
         "route_results": combined_results,
         "productive_routes": sorted({row["route_id"] for row in combined_results if int(row.get("accepted_provisional") or 0) >= 6}),
         "exhausted_routes": sorted({row["route_id"] for row in combined_results if not int(row.get("accepted_provisional") or 0)}),
-        "remaining_gap_to_2800": max(0, public_target - final_export["public_records"]),
-        "remaining_gap_to_1200": max(0, map_target - final_export["map_flags"]),
+        "launch_targets": targets,
+        "records_at_last_checkpoint": status_progress["current_public_records"] - status_progress["records_added_since_checkpoint"],
+        "map_flags_at_last_checkpoint": status_progress["current_map_flags"] - status_progress["map_flags_added_since_checkpoint"],
         "map_invariant": map_invariant(),
         "validation_ok": validation_ok,
         "build_ok": build_ok,
+        **status_progress,
         **breakdowns,
     }
     STATUS_JSON.parent.mkdir(parents=True, exist_ok=True)
@@ -1317,8 +1669,15 @@ def write_status(
         f"- Context/lead staged: `{imported.get('lead_only', 0)}`",
         f"- Suppressed/rejected staged: `{imported.get('rejected', 0)}`",
         f"- Duplicate staged: `{imported.get('duplicate', 0)}`",
-        f"- Remaining gap to 2800: `{status['remaining_gap_to_2800']}`",
-        f"- Remaining gap to 1200 map flags: `{status['remaining_gap_to_1200']}`",
+        f"- Gap to minimum 3,500 public records: `{status['gap_to_minimum_3500']}`",
+        f"- Gap to preferred 3,800 public records: `{status['gap_to_preferred_3800']}`",
+        f"- Soft ceiling remaining before 4,000: `{status['soft_ceiling_remaining']}`",
+        f"- Gap to 1,200 map flags: `{status['gap_to_map_1200']}`",
+        f"- Current map ratio: `{status['current_map_ratio']}`",
+        f"- Records added since checkpoint: `{status['records_added_since_checkpoint']}`",
+        f"- Map flags added since checkpoint: `{status['map_flags_added_since_checkpoint']}`",
+        f"- Records per new map flag: `{status['records_per_new_map_flag']}`",
+        f"- Active collection mode: `{status['active_collection_mode']}`",
         f"- Map invariant ok: `{status['map_invariant']['ok']}`",
         "",
         "## Records by Source Organisation",
@@ -1478,9 +1837,13 @@ def main() -> None:
     loops = 0
     while True:
         counts = load_export_counts()
-        target_records = int(config.get("targets", {}).get("public_records") or 2800)
-        target_maps = int(config.get("targets", {}).get("map_flags") or 1200)
-        launch_ready = counts["public_records"] >= target_records and counts["map_flags"] >= target_maps and counts["map_points"] == counts["map_flags"]
+        targets = launch_targets(config)
+        state.update(target_progress_fields(counts["public_records"], counts["map_flags"], state, targets))
+        launch_ready = (
+            counts["public_records"] >= targets["minimum_public_records"]
+            and counts["map_flags"] >= targets["minimum_map_flags"]
+            and counts["map_points"] == counts["map_flags"]
+        )
         if launch_ready:
             print("[collection-sprint] launch targets reached; final build/export/report can run", flush=True)
             if not args.skip_build:

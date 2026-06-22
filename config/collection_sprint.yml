@@ -12,8 +12,13 @@ frontend_export_interval: 150
 retry_count: 1
 rate_limit_seconds: 1.0
 targets:
-  public_records: 2800
+  public_records: 3500
   map_flags: 1200
+launch_targets:
+  minimum_public_records: 3500
+  preferred_public_records: 3800
+  soft_maximum_public_records: 4000
+  minimum_map_flags: 1200
 stop_conditions:
   probe_zero_accept_after: 30
   scale_min_accept_after_60: 5
@@ -1574,6 +1579,579 @@ routes:
       - fairy
       - spirit
       - spirits
+  - route_id: sprint_pga_gaunt_moving_finger_trotting_cob_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg Australia
+    source_name: Project Gutenberg Australia
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC/NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 22
+    max_candidates_probe: 25
+    max_candidates_scaled: 60
+    source_title: The Moving Finger
+    source_author: Mary Gaunt
+    publication_date_text: "1895"
+    australian_relation: Public-domain Australian-author story collection distributed by Project Gutenberg Australia; accepted rows are limited to ghost/haunted passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: pga-gaunt-moving-finger, url: "https://gutenberg.net.au/ebooks/e00082.txt", chapter: The Moving Finger}
+    entity_terms:
+      - Trotting Cob
+      - ghost
+      - ghosts
+      - haunted
+      - devil
+      - little man
+    person_form_terms:
+      - Trotting Cob
+  - route_id: sprint_pga_dyson_below_and_on_top_mine_ghosts_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg Australia
+    source_name: Project Gutenberg Australia
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 40
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    source_title: Below And On Top and Other Stories
+    source_author: Edward Dyson
+    publication_date_text: "1898"
+    australian_relation: Public-domain Australian story collection by Edward Dyson, distributed by Project Gutenberg Australia; accepted rows are constrained to ghost, apparition, haunted, and related mine-spirit passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: pga-dyson-below-and-on-top, url: "https://gutenberg.net.au/ebooks05/0501011.txt", chapter: Below And On Top and Other Stories}
+    entity_terms:
+      - ghost
+      - ghosts
+      - apparition
+      - spectre
+      - haunted
+      - spirits of the mine
+      - spirit
+      - spirits
+      - bunyip
+      - supernatural
+    person_form_terms:
+      - spirits of the mine
+  - route_id: sprint_pga_hume_cook_dandenongs_rescan_exact_texts
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg Australia
+    source_name: Project Gutenberg Australia
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_title_html_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    accepted_target: 120
+    max_candidates_probe: 30
+    max_candidates_scaled: 220
+    source_title: Tales of the Dandenongs
+    source_author: Hume Cook
+    publication_date_text: "1925"
+    australian_relation: Australian public-domain fairy-tale series explicitly set around the Dandenong Ranges, distributed by Project Gutenberg Australia.
+    default_location_text: Dandenong Ranges, VIC
+    default_location_role: narrative_setting
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: hume-cook-dandenongs-first-rescan, url: "https://gutenberg.net.au/ebooks21/2100371h.html", chapter: Tales of the Dandenongs First Series, location_text: "Dandenong Ranges, VIC", location_role: narrative_setting, latitude: -37.8333, longitude: 145.35, location_precision: named_feature, geocode_source: "GeoNames Dandenong Ranges / public gazetteer cross-check", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source title explicitly names the Dandenongs; representative public coordinate is for Dandenong Ranges, Victoria."}
+      - {section_id: hume-cook-dandenongs-second-rescan, url: "https://gutenberg.net.au/ebooks21/2100341h.html", chapter: Tales of the Dandenongs Second Series, location_text: "Dandenong Ranges, VIC", location_role: narrative_setting, latitude: -37.8333, longitude: 145.35, location_precision: named_feature, geocode_source: "GeoNames Dandenong Ranges / public gazetteer cross-check", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source title explicitly names the Dandenongs; representative public coordinate is for Dandenong Ranges, Victoria."}
+      - {section_id: hume-cook-dandenongs-third-rescan, url: "https://gutenberg.net.au/ebooks21/2100481h.html", chapter: Tales of the Dandenongs Third Series, location_text: "Dandenong Ranges, VIC", location_role: narrative_setting, latitude: -37.8333, longitude: 145.35, location_precision: named_feature, geocode_source: "GeoNames Dandenong Ranges / public gazetteer cross-check", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source title explicitly names the Dandenongs; representative public coordinate is for Dandenong Ranges, Victoria."}
+      - {section_id: hume-cook-dandenongs-fourth-rescan, url: "https://gutenberg.net.au/ebooks21/2100381h.html", chapter: Tales of the Dandenongs Fourth Series, location_text: "Dandenong Ranges, VIC", location_role: narrative_setting, latitude: -37.8333, longitude: 145.35, location_precision: named_feature, geocode_source: "GeoNames Dandenong Ranges / public gazetteer cross-check", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source title explicitly names the Dandenongs; representative public coordinate is for Dandenong Ranges, Victoria."}
+    entity_terms:
+      - fairy
+      - fairies
+      - giant
+      - giants
+      - witch
+      - witches
+      - magician
+      - enchanter
+      - spirit
+      - spirits
+      - ghost
+      - ghosts
+      - apparition
+      - phantom
+      - devil
+      - little man
+      - little woman
+  - route_id: sprint_project_gutenberg_westbury_australian_fairy_tales_rescan
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC/NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    accepted_target: 90
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: Australian fairy tales
+    source_author: Atha Westbury
+    publication_date_text: "1897"
+    australian_relation: Australian public-domain fairy-tale collection distributed by Project Gutenberg.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-68225-westbury-australian-fairy-tales-rescan, url: "https://www.gutenberg.org/files/68225/68225-0.txt", chapter: Australian fairy tales}
+    entity_terms:
+      - fairy
+      - fairies
+      - giant
+      - giants
+      - witch
+      - witches
+      - ghost
+      - ghosts
+      - phantom
+      - haunted
+      - bunyip
+      - spirit
+      - spirits
+      - devil
+      - magician
+      - enchanter
+  - route_id: sprint_project_gutenberg_robertson_australian_tales_rescan
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: QLD/NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    accepted_target: 50
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: Nuggets in the Devil's Punch Bowl, and Other Australian Tales
+    source_author: Andrew Robertson
+    publication_date_text: "1894"
+    australian_relation: Public-domain Australian tale collection distributed by Project Gutenberg.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-54415-robertson-australian-tales-rescan, url: "https://www.gutenberg.org/files/54415/54415-0.txt", chapter: Nuggets in the Devil's Punch Bowl, and Other Australian Tales}
+    entity_terms:
+      - ghost
+      - ghosts
+      - haunted
+      - spirit
+      - spirits
+      - bunyip
+      - devil
+      - witch
+      - fairy
+      - giant
+      - apparition
+      - phantom
+  - route_id: sprint_project_gutenberg_barry_bunyip_stories_rescan
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 140
+    source_title: Steve Brown's Bunyip, and Other Stories
+    source_author: L. C. Barry
+    publication_date_text: "1924"
+    australian_relation: Public-domain Australian story collection distributed by Project Gutenberg; accepted rows are limited to person-form supernatural or anomalous passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-60482-barry-bunyip-stories-rescan, url: "https://www.gutenberg.org/files/60482/60482-0.txt", chapter: Steve Brown's Bunyip, and Other Stories}
+    entity_terms:
+      - ghost
+      - ghosts
+      - spirit
+      - spirits
+      - bunyip
+      - devil
+      - witch
+      - fairy
+      - giant
+      - apparition
+      - phantom
+      - supernatural
+  - route_id: sprint_pga_dyson_below_and_on_top_rescan_02
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg Australia
+    source_name: Project Gutenberg Australia
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    accepted_target: 50
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: Below And On Top and Other Stories
+    source_author: Edward Dyson
+    publication_date_text: "1898"
+    australian_relation: Public-domain Australian story collection by Edward Dyson, distributed by Project Gutenberg Australia; accepted rows are constrained to ghost, apparition, haunted, and related mine-spirit passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: pga-dyson-below-and-on-top-rescan-02, url: "https://gutenberg.net.au/ebooks05/0501011.txt", chapter: Below And On Top and Other Stories}
+    entity_terms:
+      - ghost
+      - ghosts
+      - apparition
+      - spectre
+      - haunted
+      - spirits of the mine
+      - spirit
+      - spirits
+      - bunyip
+      - supernatural
+      - little man
+    person_form_terms:
+      - spirits of the mine
+  - route_id: sprint_project_gutenberg_australian_legendary_tales_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    accepted_target: 90
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: "Australian Legendary Tales: folk-lore of the Noongahburrahs as told to the Piccaninnies"
+    source_author: K. Langloh Parker
+    publication_date_text: "1896; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian legendary-tale collection with north-western New South Wales cultural relationship; accepted rows are constrained to supernatural or anomalous person-form agents as substantive subjects.
+    default_location_text: North-western New South Wales
+    default_location_role: cultural_association_region
+    ethics_review_status: public_ethnographic_text_reviewed
+    cultural_sensitivity: high
+    pages:
+      - {section_id: gutenberg-3833-australian-legendary-tales, url: "https://www.gutenberg.org/files/3833/3833-8.txt", chapter: Australian Legendary Tales}
+    entity_terms:
+      - Byamee
+      - Baiame
+      - Birrahgnooloo
+      - Oolah
+      - Yhi
+      - Wurrunnah
+      - Mullyangah
+      - Moodai
+      - Wayambeh
+      - spirit
+      - spirits
+      - ghost
+      - ghosts
+      - devil
+      - wizard
+      - witch
+      - medicine man
+      - old man
+      - old woman
+      - giant
+    person_form_terms:
+      - Byamee
+      - Baiame
+      - Birrahgnooloo
+      - Oolah
+      - Yhi
+      - Wurrunnah
+      - Mullyangah
+      - Moodai
+      - Wayambeh
+  - route_id: sprint_moreton_bay_deception_bay_recollect_ocr
+    enabled: true
+    family: place_first_map_records
+    organisation: City of Moreton Bay Libraries
+    source_name: Moreton Bay Our Story
+    source_type: municipal_local_history_ocr
+    source_tier: A
+    jurisdiction: QLD
+    retrieval_method: recollect_search_item_ocr
+    scaled: true
+    map_capable: true
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 60
+    max_search_items: 12
+    max_assets_per_item: 4
+    max_runtime_seconds: 240
+    asset_rate_limit_seconds: 0.2
+    base_url: https://ourstory.moretonbay.qld.gov.au/
+    search_path: nodes/search
+    source_title: Moreton Bay Our Story OCR item pages
+    source_author: City of Moreton Bay Libraries
+    publication_date_text: public item page; OCR text accessed 2026-06-22
+    australian_relation: Municipal local-history OCR item pages concerning Deception Bay and Moreton Bay, Queensland.
+    default_location_text: Deception Bay, QLD
+    default_location_role: legend_associated_place
+    default_latitude: "-27.1934"
+    default_longitude: "153.0260"
+    default_location_precision: locality
+    default_geocode_source: Nominatim OpenStreetMap; Deception Bay, Moreton Bay Region, Queensland, Australia; checked 2026-06-22
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Source item title/OCR names Deception Bay; coordinates independently verified against Nominatim locality result for Deception Bay, Moreton Bay Region, Queensland.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Deception Bay
+    search_terms:
+      - "Deception Bay ghost"
+      - "Deception Bay haunted"
+      - "Deception Bay spirit"
+      - "Deception Bay apparition"
+      - "Moreton Bay ghost"
+      - "Moreton Bay haunted"
+    entity_terms:
+      - ghost
+      - ghosts
+      - haunted
+      - apparition
+      - phantom
+      - spectre
+      - spirit
+      - spirits
+      - supernatural
+    ethics_review_status: public_local_history_reviewed
+    cultural_sensitivity: low
+  - route_id: sprint_project_gutenberg_lawson_while_billy_boils_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    source_title: While the Billy Boils
+    source_author: Henry Lawson
+    publication_date_text: "1896; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian story collection by Henry Lawson; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-7144-while-the-billy-boils, url: "https://www.gutenberg.org/ebooks/7144.txt.utf-8", chapter: While the Billy Boils}
+    entity_terms:
+      - ghost
+      - ghosts
+      - haunted
+      - apparition
+      - phantom
+      - spirit
+      - spirits
+      - supernatural
+      - devil
+      - witch
+      - wizard
+      - giant
+  - route_id: sprint_project_gutenberg_lawson_over_the_sliprails_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    source_title: Over the Sliprails
+    source_author: Henry Lawson
+    publication_date_text: "1900; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian story collection by Henry Lawson; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-1313-over-the-sliprails, url: "https://www.gutenberg.org/ebooks/1313.txt.utf-8", chapter: Over the Sliprails}
+    entity_terms:
+      - ghost
+      - ghosts
+      - haunted
+      - apparition
+      - phantom
+      - spirit
+      - spirits
+      - supernatural
+      - devil
+      - witch
+      - wizard
+      - giant
+  - route_id: sprint_project_gutenberg_lawson_rising_of_the_court_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 25
+    max_candidates_probe: 30
+    max_candidates_scaled: 70
+    source_title: The Rising of the Court
+    source_author: Henry Lawson
+    publication_date_text: "1910; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian story collection by Henry Lawson; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-7447-rising-of-the-court, url: "https://www.gutenberg.org/ebooks/7447.txt.utf-8", chapter: The Rising of the Court}
+    entity_terms:
+      - ghost
+      - ghosts
+      - haunted
+      - apparition
+      - phantom
+      - spirit
+      - spirits
+      - supernatural
+      - devil
+      - witch
+      - wizard
+      - giant
+  - route_id: sprint_project_gutenberg_boldrewood_in_bad_company_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    source_title: In Bad Company, and other stories
+    source_author: Rolf Boldrewood
+    publication_date_text: "1901; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian story collection by Rolf Boldrewood; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-51314-in-bad-company, url: "https://www.gutenberg.org/ebooks/51314.txt.utf-8", chapter: In Bad Company, and other stories}
+    entity_terms:
+      - ghost
+      - ghosts
+      - haunted
+      - apparition
+      - phantom
+      - spirit
+      - spirits
+      - supernatural
+      - devil
+      - witch
+      - wizard
+      - giant
+  - route_id: sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 70
+    source_title: Old Melbourne Memories
+    source_author: Rolf Boldrewood
+    publication_date_text: "1884; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian memoir/local-history text by Rolf Boldrewood; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Melbourne, VIC
+    default_location_role: narrative_setting
+    latitude: -37.8142
+    longitude: 144.9631
+    location_precision: town
+    geocode_source: "Nominatim OpenStreetMap; Melbourne, Victoria, Australia; checked 2026-06-22"
+    geocode_verification_status: verified_gazetteer_point
+    coordinate_evidence_note: Source title and text concern Melbourne memories; representative location is Melbourne locality, not a precise event site.
+    narrative_type_override: descriptive_belief_record
+    ethics_review_status: public_local_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-53784-old-melbourne-memories, url: "https://www.gutenberg.org/ebooks/53784.txt.utf-8", chapter: Old Melbourne Memories, location_text: "Melbourne, VIC", location_role: narrative_setting, latitude: -37.8142, longitude: 144.9631, location_precision: town, geocode_source: "Nominatim OpenStreetMap; Melbourne, Victoria, Australia; checked 2026-06-22", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source title and text concern Melbourne memories; representative location is Melbourne locality."}
+    entity_terms:
+      - ghost
+      - ghosts
+      - haunted
+      - apparition
+      - phantom
+      - spirit
+      - spirits
+      - supernatural
+      - devil
+      - witch
+      - wizard
+      - giant
   - route_id: sprint_map_queue_geocode_verification
     enabled: true
     family: place_first_map_records

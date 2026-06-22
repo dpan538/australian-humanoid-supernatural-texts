@@ -1,35 +1,41 @@
 # Collection Sprint Status
 
-- Generated: `2026-06-22T06:10:09+00:00`
+- Generated: `2026-06-22T07:42:09+00:00`
 - Run id: `collection_sprint_20260622_002`
-- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_061005_003`
+- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074203_004`
 - Starting public records: `1380`
-- Ending public records: `2231`
-- Net-new public records: `851`
+- Ending public records: `2533`
+- Net-new public records: `1153`
 - Starting map flags: `891`
-- Ending map flags: `910`
-- Net-new map flags: `19`
-- Candidates processed: `1415`
-- Context/lead staged: `1`
-- Suppressed/rejected staged: `1`
+- Ending map flags: `934`
+- Net-new map flags: `43`
+- Candidates processed: `2415`
+- Context/lead staged: `5`
+- Suppressed/rejected staged: `6`
 - Duplicate staged: `0`
-- Remaining gap to 2800: `569`
-- Remaining gap to 1200 map flags: `290`
+- Gap to minimum 3,500 public records: `967`
+- Gap to preferred 3,800 public records: `1267`
+- Soft ceiling remaining before 4,000: `1467`
+- Gap to 1,200 map flags: `266`
+- Current map ratio: `0.3687`
+- Records added since checkpoint: `302`
+- Map flags added since checkpoint: `24`
+- Records per new map flag: `12.58`
+- Active collection mode: `balanced_growth`
 - Map invariant ok: `True`
 
 ## Records by Source Organisation
-- Project Gutenberg Australia: 21
+- Project Gutenberg: 86
 
 ## Records by Source Family
-- public_domain_ebook: 21
+- public_domain_ebook: 86
 
 ## Records by Jurisdiction
+- VIC: 13
 
 ## Records by Narrative Type
-- apparition_account: 5
-- giant_or_ogre_narrative: 4
-- retelling_or_adaptation: 4
-- spirit_person_narrative: 8
+- descriptive_belief_record: 13
+- retelling_or_adaptation: 73
 
 ## Per-Route Yield
 
@@ -116,6 +122,303 @@
 | sprint_pga_cambridge_at_midnight_haunted_house_exact_text | structured_public_domain_books | 27 | 21 | 3 | 3 | 9 | 0 | 2.7 | route_candidate_limit_or_source_exhausted |
 | sprint_pga_clarke_human_repetends_exact_text | structured_public_domain_books | 4 | 3 | 0 | 1 | 1 | 0 | 1.5 | route_candidate_limit_or_source_exhausted |
 | sprint_pga_clarke_australian_tales_exact_text | structured_public_domain_books | 19 | 18 | 1 | 0 | 1 | 0 | 2.7 | accepted_target_reached |
+| sprint_pga_gaunt_moving_finger_trotting_cob_exact_text | structured_public_domain_books | 18 | 17 | 0 | 1 | 5 | 0 | 2.4 | route_candidate_limit_or_source_exhausted |
+| sprint_pga_dyson_below_and_on_top_mine_ghosts_exact_text | structured_public_domain_books | 36 | 35 | 0 | 1 | 6 | 0 | 2.9 | route_candidate_limit_or_source_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 12 | 11 | 0 | 1 | 11 | 0 | 7.8 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 50 | 45 | 3 | 2 | 6 | 0 | 2.2 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 25 | 19 | 2 | 4 | 1 | 0 | 2.2 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 22 | 18 | 2 | 2 | 2 | 0 | 2.4 | route_candidate_limit_or_source_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 26 | 21 | 1 | 4 | 56 | 0 | 2.7 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | structured_public_domain_books | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_moreton_bay_deception_bay_recollect_ocr | place_first_map_records | 0 | 0 | 0 | 3 | 0 | 0 | 92.0 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.7 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.8 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.7 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.8 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.8 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.8 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.8 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.9 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.8 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.9 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.8 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 1.8 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 2.2 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | structured_public_domain_books | 51 | 50 | 0 | 1 | 15 | 0 | 2.4 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_lawson_over_the_sliprails_exact_text | structured_public_domain_books | 17 | 15 | 1 | 1 | 3 | 0 | 3.3 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_lawson_rising_of_the_court_exact_text | structured_public_domain_books | 19 | 17 | 1 | 1 | 10 | 0 | 3.5 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_lawson_while_billy_boils_exact_text | structured_public_domain_books | 18 | 17 | 0 | 1 | 1 | 0 | 3.6 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text | structured_public_domain_books | 17 | 13 | 3 | 1 | 1 | 0 | 3.7 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_in_bad_company_exact_text | structured_public_domain_books | 26 | 24 | 0 | 2 | 1 | 0 | 4.4 | route_candidate_limit_or_source_exhausted |
 
 ## Productive Routes
 
@@ -157,12 +460,25 @@
 - sprint_pga_cambridge_at_midnight_haunted_house_exact_text
 - sprint_pga_clarke_australian_tales_exact_text
 - sprint_pga_clarke_old_tales_young_country_exact_text
+- sprint_pga_dyson_below_and_on_top_mine_ghosts_exact_text
+- sprint_pga_dyson_below_and_on_top_rescan_02
 - sprint_pga_favenc_austral_tropics_exact_text
+- sprint_pga_gaunt_moving_finger_trotting_cob_exact_text
+- sprint_pga_hume_cook_dandenongs_rescan_exact_texts
+- sprint_project_gutenberg_australian_legendary_tales_exact_text
 - sprint_project_gutenberg_barry_bunyip_stories
+- sprint_project_gutenberg_barry_bunyip_stories_rescan
+- sprint_project_gutenberg_boldrewood_in_bad_company_exact_text
+- sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text
 - sprint_project_gutenberg_lawson_children_of_the_bush_exact_text
 - sprint_project_gutenberg_lawson_on_the_track_exact_text
+- sprint_project_gutenberg_lawson_over_the_sliprails_exact_text
+- sprint_project_gutenberg_lawson_rising_of_the_court_exact_text
+- sprint_project_gutenberg_lawson_while_billy_boils_exact_text
 - sprint_project_gutenberg_robertson_australian_tales
+- sprint_project_gutenberg_robertson_australian_tales_rescan
 - sprint_project_gutenberg_westbury_australian_fairy_tales
+- sprint_project_gutenberg_westbury_australian_fairy_tales_rescan
 - sprint_sacred_texts_nw_wa_customs_traditions_exact_text
 - sprint_wikisource_euahlayi_exact_texts
 - sprint_wikisource_southeast_exact_texts
@@ -171,7 +487,13 @@
 
 - sprint_internet_archive_roth_queensland_exact_text
 - sprint_map_queue_geocode_verification
+- sprint_moreton_bay_deception_bay_recollect_ocr
 - sprint_pga_australian_fairy_tales_exact_texts
+- sprint_pga_dyson_below_and_on_top_rescan_02
+- sprint_pga_hume_cook_dandenongs_rescan_exact_texts
+- sprint_project_gutenberg_barry_bunyip_stories_rescan
+- sprint_project_gutenberg_robertson_australian_tales_rescan
+- sprint_project_gutenberg_westbury_australian_fairy_tales_rescan
 - sprint_sa_history_network_directory_probe
 - sprint_territory_stories_public_probe
 - sprint_victorian_collections_story_probe

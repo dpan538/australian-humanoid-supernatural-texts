@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T06:10:08+00:00`
+- Generated: `2026-06-22T07:42:08+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `64`
+- Routes: `78`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 11
+- `low_yield`: 17
 - `manual_only`: 1
-- `productive`: 49
+- `productive`: 57
 
 ## Stop Rule
 
@@ -84,3 +84,17 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_pga_cambridge_at_midnight_haunted_house_exact_text | productive | Project Gutenberg Australia | exact_plain_text | 27 | 21 | 9 | 3 |  | Scale productive route |
 | sprint_pga_clarke_human_repetends_exact_text | low_yield | Project Gutenberg Australia | exact_plain_text | 4 | 3 | 1 | 1 |  | Keep as probe/discovery route only |
 | sprint_pga_clarke_australian_tales_exact_text | productive | Project Gutenberg Australia | exact_plain_text | 19 | 18 | 1 | 0 |  | Scale productive route |
+| sprint_pga_gaunt_moving_finger_trotting_cob_exact_text | productive | Project Gutenberg Australia | exact_plain_text | 18 | 17 | 5 | 1 |  | Scale productive route |
+| sprint_pga_dyson_below_and_on_top_mine_ghosts_exact_text | productive | Project Gutenberg Australia | exact_plain_text | 36 | 35 | 6 | 1 |  | Scale productive route |
+| sprint_pga_hume_cook_dandenongs_rescan_exact_texts | low_yield | Project Gutenberg Australia | exact_title_html_text | 12 | 11 | 11 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_project_gutenberg_westbury_australian_fairy_tales_rescan | low_yield | Project Gutenberg | exact_plain_text | 50 | 45 | 6 | 2 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_project_gutenberg_robertson_australian_tales_rescan | low_yield | Project Gutenberg | exact_plain_text | 22 | 18 | 2 | 2 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_project_gutenberg_barry_bunyip_stories_rescan | low_yield | Project Gutenberg | exact_plain_text | 25 | 19 | 1 | 4 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_pga_dyson_below_and_on_top_rescan_02 | low_yield | Project Gutenberg Australia | exact_plain_text | 26 | 21 | 56 | 4 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_moreton_bay_deception_bay_recollect_ocr | low_yield | City of Moreton Bay Libraries | recollect_search_item_ocr | 0 | 0 | 0 | 3 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_project_gutenberg_australian_legendary_tales_exact_text | productive | Project Gutenberg | exact_plain_text | 714 | 700 | 210 | 14 |  | Scale productive route |
+| sprint_project_gutenberg_lawson_while_billy_boils_exact_text | productive | Project Gutenberg | exact_plain_text | 18 | 17 | 1 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_lawson_over_the_sliprails_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 15 | 3 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_lawson_rising_of_the_court_exact_text | productive | Project Gutenberg | exact_plain_text | 19 | 17 | 10 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_in_bad_company_exact_text | productive | Project Gutenberg | exact_plain_text | 26 | 24 | 1 | 2 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 13 | 1 | 1 |  | Scale productive route |
