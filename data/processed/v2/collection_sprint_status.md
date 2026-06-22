@@ -1,47 +1,46 @@
 # Collection Sprint Status
 
-- Generated: `2026-06-22T09:51:32+00:00`
+- Generated: `2026-06-22T09:54:06+00:00`
 - Run id: `collection_sprint_20260622_002`
-- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_095106_006`
+- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_095355_007`
 - Starting public records: `1380`
-- Ending public records: `3183`
-- Net-new public records: `1803`
+- Ending public records: `3624`
+- Net-new public records: `2244`
 - Starting map flags: `891`
 - Ending map flags: `991`
 - Net-new map flags: `100`
-- Candidates processed: `3508`
-- Context/lead staged: `9`
-- Suppressed/rejected staged: `8`
+- Candidates processed: `3968`
+- Context/lead staged: `3`
+- Suppressed/rejected staged: `2`
 - Duplicate staged: `0`
-- Gap to minimum 3,500 public records: `317`
-- Gap to preferred 3,800 public records: `617`
-- Soft ceiling remaining before 4,000: `817`
+- Gap to minimum 3,500 public records: `0`
+- Gap to preferred 3,800 public records: `176`
+- Soft ceiling remaining before 4,000: `376`
 - Gap to 1,200 map flags: `209`
-- Current map ratio: `0.3113`
-- Records added since checkpoint: `377`
-- Map flags added since checkpoint: `17`
-- Records per new map flag: `22.18`
-- Active collection mode: `balanced_growth`
+- Current map ratio: `0.2735`
+- Records added since checkpoint: `441`
+- Map flags added since checkpoint: `0`
+- Records per new map flag: `None`
+- Active collection mode: `map_first`
 - Map invariant ok: `True`
 
 ## Records by Source Organisation
-- Internet Archive: 301
+- Internet Archive: 221
 
 ## Records by Source Family
-- repository_full_text: 301
+- repository_full_text: 221
 
 ## Records by Jurisdiction
-- NSW: 32
-- QLD: 15
-- SA: 30
-- VIC: 137
+- NT: 85
+- QLD: 32
+- TAS: 46
 
 ## Records by Narrative Type
-- apparition_account: 51
-- descriptive_belief_record: 29
-- giant_or_ogre_narrative: 2
-- retelling_or_adaptation: 20
-- spirit_person_narrative: 199
+- apparition_account: 6
+- descriptive_belief_record: 35
+- giant_or_ogre_narrative: 17
+- retelling_or_adaptation: 3
+- spirit_person_narrative: 160
 
 ## Per-Route Yield
 
@@ -486,29 +485,47 @@
 | sprint_internet_archive_northern_tribes_central_australia_rescan_02 | repository_institutional_full_text | 87 | 87 | 0 | 0 | 34 | 0 | 5.6 | route_candidate_limit_or_source_exhausted |
 | sprint_internet_archive_kamilaroi_kurnai_rescan_02 | repository_institutional_full_text | 32 | 32 | 0 | 0 | 53 | 0 | 6.0 | route_candidate_limit_or_source_exhausted |
 | sprint_internet_archive_smyth_victoria_vol1_rescan_02 | repository_institutional_full_text | 119 | 107 | 7 | 5 | 7 | 0 | 22.2 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_smyth_victoria_vol2_rescan_02 | repository_institutional_full_text | 47 | 46 | 0 | 1 | 35 | 0 | 6.9 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_booandik_sa_exact_text | repository_institutional_full_text | 40 | 38 | 0 | 2 | 5 | 0 | 3.8 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_eaglehawk_crow_rescan_02 | repository_institutional_full_text | 17 | 17 | 0 | 0 | 31 | 0 | 4.5 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_fraser_nsw_rescan_02 | repository_institutional_full_text | 68 | 66 | 0 | 2 | 43 | 0 | 6.9 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_canberra_history_legends_exact_text | repository_institutional_full_text | 8 | 7 | 0 | 1 | 1 | 0 | 6.9 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_moore_wa_diary_rescan_02 | repository_institutional_full_text | 38 | 32 | 1 | 5 | 16 | 0 | 7.7 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_lang_queensland_rescan_02 | repository_institutional_full_text | 16 | 14 | 1 | 1 | 26 | 0 | 10.7 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_peck_australian_legends_rescan_02 | repository_institutional_full_text | 60 | 58 | 0 | 2 | 29 | 0 | 4.4 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_native_tribes_nt_rescan_02 | repository_institutional_full_text | 86 | 85 | 1 | 0 | 5 | 0 | 6.2 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_roth_tasmania_rescan_02 | repository_institutional_full_text | 48 | 46 | 2 | 0 | 40 | 0 | 6.4 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_ridley_kamilaroi_rescan_02 | repository_institutional_full_text | 32 | 32 | 0 | 0 | 39 | 0 | 6.4 | route_candidate_limit_or_source_exhausted |
 
 ## Productive Routes
 
 - sprint_internet_archive_beveridge_victoria_riverina_exact_text
+- sprint_internet_archive_booandik_sa_exact_text
 - sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text
+- sprint_internet_archive_canberra_history_legends_exact_text
 - sprint_internet_archive_curr_australian_race_vol1_exact_text
 - sprint_internet_archive_curr_australian_race_vol2_exact_text
 - sprint_internet_archive_curr_australian_race_vol3_exact_text
 - sprint_internet_archive_dawson_victoria_exact_text
 - sprint_internet_archive_dawson_victoria_rescan_02
 - sprint_internet_archive_eaglehawk_crow_exact_text
+- sprint_internet_archive_eaglehawk_crow_rescan_02
 - sprint_internet_archive_fraser_nsw_exact_text
+- sprint_internet_archive_fraser_nsw_rescan_02
 - sprint_internet_archive_hill_thornton_notes_nsw_exact_text
 - sprint_internet_archive_kamilaroi_kurnai_exact_text
 - sprint_internet_archive_kamilaroi_kurnai_rescan_02
 - sprint_internet_archive_lang_queensland_exact_text
+- sprint_internet_archive_lang_queensland_rescan_02
 - sprint_internet_archive_lawson_joe_wilson_ghost_stories_exact_text
 - sprint_internet_archive_lumholtz_queensland_exact_text
 - sprint_internet_archive_miles_demigods_daemonia_exact_article
 - sprint_internet_archive_moore_wa_diary_exact_text
+- sprint_internet_archive_moore_wa_diary_rescan_02
 - sprint_internet_archive_moore_wa_vocabulary_exact_text
 - sprint_internet_archive_more_australian_legendary_tales_exact_text
 - sprint_internet_archive_more_australian_legendary_tales_rescan_02
+- sprint_internet_archive_native_tribes_nt_rescan_02
 - sprint_internet_archive_native_tribes_sa_rescan_02
 - sprint_internet_archive_native_tribes_south_australia_exact_text
 - sprint_internet_archive_nicolay_notes_wa_exact_text
@@ -516,16 +533,20 @@
 - sprint_internet_archive_northern_tribes_central_australia_exact_text
 - sprint_internet_archive_northern_tribes_central_australia_rescan_02
 - sprint_internet_archive_peck_australian_legends_exact_text
+- sprint_internet_archive_peck_australian_legends_rescan_02
 - sprint_internet_archive_ridley_kamilaroi_languages_exact_text
+- sprint_internet_archive_ridley_kamilaroi_rescan_02
 - sprint_internet_archive_roth_garson_tasmania_1890_exact_text
 - sprint_internet_archive_roth_nq_burial_ceremonies_exact_article
 - sprint_internet_archive_roth_queensland_exact_text
 - sprint_internet_archive_roth_queensland_rescan_02
 - sprint_internet_archive_roth_tasmania_exact_text
+- sprint_internet_archive_roth_tasmania_rescan_02
 - sprint_internet_archive_sa_folklore_manners_customs_exact_text
 - sprint_internet_archive_smyth_victoria_vol1_exact_text
 - sprint_internet_archive_smyth_victoria_vol1_rescan_02
 - sprint_internet_archive_smyth_victoria_vol2_exact_text
+- sprint_internet_archive_smyth_victoria_vol2_rescan_02
 - sprint_internet_archive_spencer_across_australia_vol1_exact_text
 - sprint_internet_archive_spencer_across_australia_vol1_rescan_02
 - sprint_internet_archive_spencer_across_australia_vol2_exact_text

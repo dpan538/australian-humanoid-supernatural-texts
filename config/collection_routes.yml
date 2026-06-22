@@ -3905,3 +3905,311 @@ routes:
     yield remain acceptable.
   next_action: Scale productive route
   route_status: productive
+- route_id: sprint_internet_archive_smyth_victoria_vol2_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: aboriginesofvict02smyt
+  jurisdiction: VIC/TAS
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 47
+  accepted_count: 46
+  duplicate_count: 35
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.147
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_eaglehawk_crow_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: eaglehawkcrowstu00math
+  jurisdiction: AU
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 17
+  accepted_count: 17
+  duplicate_count: 31
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.267
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_moore_wa_diary_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: diaryoftenyearse00mooriala
+  jurisdiction: WA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 38
+  accepted_count: 32
+  duplicate_count: 16
+  lead_count: 2
+  rejected_count: 5
+  average_seconds_per_candidate: 0.203
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_fraser_nsw_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: aboriginesnewso00frasgoog
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 68
+  accepted_count: 66
+  duplicate_count: 43
+  lead_count: 0
+  rejected_count: 2
+  average_seconds_per_candidate: 0.101
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_lang_queensland_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: queenslandaustr00langgoog
+  jurisdiction: QLD
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 16
+  accepted_count: 14
+  duplicate_count: 26
+  lead_count: 2
+  rejected_count: 1
+  average_seconds_per_candidate: 0.666
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_booandik_sa_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: booandiktribeso00smitgoog
+  jurisdiction: SA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 40
+  accepted_count: 38
+  duplicate_count: 5
+  lead_count: 0
+  rejected_count: 2
+  average_seconds_per_candidate: 0.096
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_canberra_history_legends_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: b13748130
+  jurisdiction: ACT
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 8
+  accepted_count: 7
+  duplicate_count: 1
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.868
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_roth_tasmania_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: aboriginestasma00tylogoog
+  jurisdiction: TAS
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 48
+  accepted_count: 46
+  duplicate_count: 40
+  lead_count: 4
+  rejected_count: 0
+  average_seconds_per_candidate: 0.133
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_peck_australian_legends_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: australian-legends
+  jurisdiction: AU
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 60
+  accepted_count: 58
+  duplicate_count: 29
+  lead_count: 0
+  rejected_count: 2
+  average_seconds_per_candidate: 0.073
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_ridley_kamilaroi_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: kmilariother00ridlrich
+  jurisdiction: NSW/QLD
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 32
+  accepted_count: 32
+  duplicate_count: 39
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.201
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_native_tribes_nt_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: cu31924028623076
+  jurisdiction: NT
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 86
+  accepted_count: 85
+  duplicate_count: 5
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 0.072
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive

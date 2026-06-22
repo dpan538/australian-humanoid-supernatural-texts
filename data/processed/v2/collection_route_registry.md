@@ -1,8 +1,8 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T09:51:32+00:00`
+- Generated: `2026-06-22T09:54:05+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `139`
+- Routes: `150`
 
 ## Status Counts
 - `blocked_auth`: 1
@@ -10,7 +10,7 @@
 - `exhausted`: 1
 - `low_yield`: 37
 - `manual_only`: 1
-- `productive`: 98
+- `productive`: 109
 
 ## Stop Rule
 
@@ -159,3 +159,14 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_internet_archive_kamilaroi_kurnai_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 32 | 53 | 0 |  | Scale productive route |
 | sprint_internet_archive_native_tribes_sa_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 31 | 30 | 32 | 0 |  | Scale productive route |
 | sprint_internet_archive_roth_queensland_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 15 | 9 | 1 |  | Scale productive route |
+| sprint_internet_archive_smyth_victoria_vol2_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 47 | 46 | 35 | 1 |  | Scale productive route |
+| sprint_internet_archive_eaglehawk_crow_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 17 | 31 | 0 |  | Scale productive route |
+| sprint_internet_archive_moore_wa_diary_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 38 | 32 | 16 | 5 |  | Scale productive route |
+| sprint_internet_archive_fraser_nsw_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 68 | 66 | 43 | 2 |  | Scale productive route |
+| sprint_internet_archive_lang_queensland_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 16 | 14 | 26 | 1 |  | Scale productive route |
+| sprint_internet_archive_booandik_sa_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 40 | 38 | 5 | 2 |  | Scale productive route |
+| sprint_internet_archive_canberra_history_legends_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 8 | 7 | 1 | 1 |  | Scale productive route |
+| sprint_internet_archive_roth_tasmania_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 48 | 46 | 40 | 0 |  | Scale productive route |
+| sprint_internet_archive_peck_australian_legends_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 60 | 58 | 29 | 2 |  | Scale productive route |
+| sprint_internet_archive_ridley_kamilaroi_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 32 | 39 | 0 |  | Scale productive route |
+| sprint_internet_archive_native_tribes_nt_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 86 | 85 | 5 | 0 |  | Scale productive route |

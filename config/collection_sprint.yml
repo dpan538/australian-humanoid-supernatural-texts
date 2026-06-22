@@ -3653,3 +3653,243 @@ routes:
     accepted_target: 0
     max_candidates_probe: 30
     search_url: "https://territorystories.nt.gov.au/"
+  - route_id: sprint_internet_archive_eaglehawk_crow_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: AU
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 90
+    max_candidates_probe: 30
+    max_candidates_scaled: 220
+    source_title: Eaglehawk and Crow
+    source_author: John Mathew
+    publication_date_text: "1899"
+    australian_relation: Public-domain Australian ethnographic study; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Australia
+    default_location_role: cultural_association_region
+    archive_identifier: eaglehawkcrowstu00math
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 24
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_moore_wa_diary_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 90
+    max_candidates_probe: 30
+    max_candidates_scaled: 220
+    source_title: Diary of ten years eventful life of an early settler in Western Australia
+    source_author: George Fletcher Moore
+    publication_date_text: "1884"
+    australian_relation: Public-domain Western Australian local-history and vocabulary source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Western Australia
+    default_location_role: cultural_association_region
+    archive_identifier: diaryoftenyearse00mooriala
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 24
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_roth_tasmania_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: TAS
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 90
+    max_candidates_probe: 30
+    max_candidates_scaled: 220
+    source_title: The Aborigines of Tasmania
+    source_author: H. Ling Roth, Marion E. Butler, James Backhouse Walker, J. G. Garson, E. B. Tylor
+    publication_date_text: "1899"
+    australian_relation: Public-domain Tasmanian ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Tasmania
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginestasma00tylogoog
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 24
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_fraser_nsw_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 110
+    max_candidates_probe: 30
+    max_candidates_scaled: 260
+    source_title: The Aborigines of New South Wales
+    source_author: John Fraser
+    publication_date_text: "1892"
+    australian_relation: Public-domain New South Wales ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: New South Wales
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginesnewso00frasgoog
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 28
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_lang_queensland_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 110
+    max_candidates_probe: 30
+    max_candidates_scaled: 260
+    source_title: Queensland, Australia
+    source_author: John Dunmore Lang
+    publication_date_text: "1861"
+    australian_relation: Public-domain Queensland source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Queensland
+    default_location_role: cultural_association_region
+    archive_identifier: queenslandaustr00langgoog
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 28
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_peck_australian_legends_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: AU
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 120
+    max_candidates_probe: 30
+    max_candidates_scaled: 280
+    source_title: Australian Legends
+    source_author: C. W. Peck
+    publication_date_text: "1925"
+    australian_relation: Public-domain Australian legend collection; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Australia
+    default_location_role: cultural_association_region
+    archive_identifier: australian-legends
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 30
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_ridley_kamilaroi_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW/QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 80
+    max_candidates_probe: 30
+    max_candidates_scaled: 200
+    source_title: Kamilaroi, and other Australian languages
+    source_author: William Ridley
+    publication_date_text: "1875"
+    australian_relation: Public-domain Australian language and belief source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: New South Wales and Queensland
+    default_location_role: cultural_association_region
+    archive_identifier: kmilariother00ridlrich
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 24
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_native_tribes_nt_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NT
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 120
+    max_candidates_probe: 30
+    max_candidates_scaled: 280
+    source_title: Native Tribes of the Northern Territory of Australia
+    source_author: Baldwin Spencer
+    publication_date_text: "1914"
+    australian_relation: Public-domain Northern Territory ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence and are deduped against Sacred Texts and earlier Internet Archive transcriptions.
+    default_location_text: Northern Territory
+    default_location_role: cultural_association_region
+    archive_identifier: cu31924028623076
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 30
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_booandik_sa_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: SA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 80
+    max_candidates_probe: 30
+    max_candidates_scaled: 200
+    source_title: The Booandik Tribe of South Australian Aborigines
+    source_author: Christina Smith
+    publication_date_text: "1880"
+    australian_relation: Public-domain South Australian ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: South Australia
+    default_location_role: cultural_association_region
+    archive_identifier: booandiktribeso00smitgoog
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 24
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_canberra_history_legends_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: ACT
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: Canberra history and legends
+    source_author: John Gale
+    publication_date_text: "1927"
+    australian_relation: Public-domain or public-access ACT local-history item exposed through an exact Internet Archive item; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Canberra, ACT
+    default_location_role: cultural_association_region
+    archive_identifier: b13748130
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 22
+    entity_terms: *ethnographic_person_form_terms
