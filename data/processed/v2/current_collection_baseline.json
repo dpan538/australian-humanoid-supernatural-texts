@@ -1,17 +1,18 @@
 {
-  "generated_at": "2026-06-22T02:46:18+00:00",
+  "generated_at": "2026-06-22T03:11:54+00:00",
   "db_path": "data/processed/australian_humanoid_figures.sqlite",
   "frontend_json_path": "/Users/jarlgiovanni/Desktop/bigfoot_research/public/data/frontend-data.json",
   "database": {
-    "legacy_records_total": 1140,
-    "legacy_records_public_exportable": 1140,
-    "sources_total": 30,
+    "legacy_records_total": 1170,
+    "legacy_records_public_exportable": 1170,
+    "sources_total": 31,
     "queries_total": 328,
-    "source_items_total": 1028,
+    "source_items_total": 1058,
     "source_items_by_source_type": {
       "modern_web": 905,
       "academic_metadata": 67,
       "internet_archive_metadata": 36,
+      "project_gutenberg_australia_book": 30,
       "institutional_web": 18,
       "seeded_public_web": 1,
       "community_controlled_public_web": 1
@@ -19,7 +20,10 @@
     "source_items_by_organisation": {
       "Australian Yowie Research": 898,
       "Internet Archive": 13,
+      "Australian Legendary Tales / Project Gutenberg Australia": 13,
+      "Australian Legends / Project Gutenberg Australia": 11,
       "OpenAlex": 7,
+      "More Australian Legendary Tales / Project Gutenberg Australia": 6,
       "English Wikipedia": 6,
       "Wrightson, Patricia": 4,
       "Australian Screen / NFSA": 4,
@@ -53,37 +57,38 @@
       "Reed, A. W. (Alexander Wyclif), 1908-1979": 1,
       "Parks Victoria": 1,
       "Palaeontology": 1,
-      "Oxford Art Online": 1,
-      "Old Melbourne Gaol / National Trust of Australia (Victoria)": 1,
-      "Oceania": 1,
-      "ORGANON": 1
+      "Oxford Art Online": 1
     },
-    "narrative_units_total": 959,
+    "narrative_units_total": 989,
     "narrative_units_by_type": {
       "encounter_account": 910,
-      "traditional_narrative": 17,
-      "spirit_person_narrative": 14,
+      "traditional_narrative": 33,
+      "spirit_person_narrative": 25,
       "ghost_legend": 8,
+      "giant_or_ogre_narrative": 4,
       "apparition_account": 3,
       "retelling_or_adaptation": 2,
       "local_legend": 2,
-      "descriptive_belief_record": 2,
-      "giant_or_ogre_narrative": 1
+      "descriptive_belief_record": 2
     },
-    "collection_candidates_total": 1319,
+    "collection_candidates_total": 1349,
     "collection_candidates_by_status": {
-      "accepted": 43,
+      "accepted": 73,
       "duplicate": 59,
       "lead_only": 1151,
       "rejected": 66
     },
     "accepted_candidates_by_source_type": {
+      "project_gutenberg_australia_book": 30,
       "internet_archive_metadata": 23,
       "institutional_web": 18,
       "seeded_public_web": 1,
       "community_controlled_public_web": 1
     },
     "accepted_candidates_by_organisation": {
+      "Australian Legendary Tales / Project Gutenberg Australia": 13,
+      "Australian Legends / Project Gutenberg Australia": 11,
+      "More Australian Legendary Tales / Project Gutenberg Australia": 6,
       "Wrightson, Patricia": 4,
       "Australian Screen / NFSA": 4,
       "Trezise, P. J. (Percy J.)": 2,
@@ -122,14 +127,17 @@
   },
   "frontend": {
     "schema_version": "frontend-data/v1",
-    "total_accepted_display_records": 1140,
-    "unique_public_records": 1140,
+    "total_accepted_display_records": 1170,
+    "unique_public_records": 1170,
     "duplicate_frontend_record_ids": 0,
     "mapped_public_records": 832,
     "record_count_by_source_organisation": {
       "Australian Yowie Research": 1010,
       "Internet Archive": 13,
+      "Australian Legendary Tales / Project Gutenberg Australia": 13,
+      "Australian Legends / Project Gutenberg Australia": 11,
       "OpenAlex": 7,
+      "More Australian Legendary Tales / Project Gutenberg Australia": 6,
       "English Wikipedia": 6,
       "Australian Screen / NFSA": 4,
       "Wrightson, Patricia": 4,
@@ -163,15 +171,13 @@
       "Arden, Harvey": 1,
       "Cowan, James, 1942-2018": 1,
       "Figshare": 1,
-      "Forest, Heather": 1,
-      "Archaeology in Oceania/Archæology & physical anthropology in Oceania": 1,
-      "Journal of Paleontology": 1,
-      "Children's Literature Association Quarterly": 1
+      "Forest, Heather": 1
     },
     "record_count_by_source_type": {
       "modern_web": 1017,
       "academic_metadata": 67,
       "internet_archive_metadata": 36,
+      "project_gutenberg_australia_book": 30,
       "institutional_web": 18,
       "community_controlled_public_web": 1,
       "seeded_public_web": 1
@@ -179,11 +185,12 @@
     "record_count_by_narrative_type": {
       "cryptid_style_apeman": 1028,
       "spirit_being": 31,
+      "traditional_narrative": 30,
       "ancestral_being": 28,
-      "traditional_narrative": 14,
-      "spirit_person_narrative": 10,
+      "spirit_person_narrative": 21,
       "ghost_legend": 8,
       "cautionary_being": 4,
+      "giant_or_ogre_narrative": 4,
       "giant": 4,
       "apparition_account": 3,
       "retelling_or_adaptation": 2,
@@ -191,14 +198,13 @@
       "local_legend": 2,
       "encounter_account": 1,
       "non_humanoid_control": 1,
-      "satire": 1,
-      "giant_or_ogre_narrative": 1
+      "satire": 1
     },
     "record_count_by_state_or_territory": {
-      "NSW": 482,
+      "NSW": 501,
       "QLD": 350,
+      "unmapped": 101,
       "VIC": 97,
-      "unmapped": 90,
       "WA": 51,
       "NT": 27,
       "ACT": 17,
@@ -216,8 +222,8 @@
       "SA": 9
     },
     "record_count_by_date_band": {
-      "modern_1991_2010": 376,
-      "contemporary_2011_present": 344,
+      "modern_1991_2010": 387,
+      "contemporary_2011_present": 363,
       "modern_1970_1990": 248,
       "expansion_1876_1969": 138,
       "anchor_1842_1875": 29,
