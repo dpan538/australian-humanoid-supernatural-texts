@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T07:42:08+00:00`
+- Generated: `2026-06-22T07:45:26+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `78`
+- Routes: `85`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 17
+- `low_yield`: 18
 - `manual_only`: 1
-- `productive`: 57
+- `productive`: 63
 
 ## Stop Rule
 
@@ -98,3 +98,10 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_project_gutenberg_lawson_rising_of_the_court_exact_text | productive | Project Gutenberg | exact_plain_text | 19 | 17 | 10 | 1 |  | Scale productive route |
 | sprint_project_gutenberg_boldrewood_in_bad_company_exact_text | productive | Project Gutenberg | exact_plain_text | 26 | 24 | 1 | 2 |  | Scale productive route |
 | sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 13 | 1 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text | productive | Project Gutenberg | exact_plain_text | 20 | 16 | 1 | 4 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_last_chance_exact_text | productive | Project Gutenberg | exact_plain_text | 30 | 24 | 2 | 6 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text | productive | Project Gutenberg | exact_plain_text | 32 | 27 | 9 | 2 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_nevermore_exact_text | productive | Project Gutenberg | exact_plain_text | 25 | 24 | 2 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text | low_yield | Project Gutenberg | exact_plain_text | 5 | 4 | 0 | 1 |  | Keep as probe/discovery route only |
+| sprint_project_gutenberg_baynton_bush_studies_exact_text | productive | Project Gutenberg | exact_plain_text | 9 | 7 | 2 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text | productive | Project Gutenberg | exact_plain_text | 9 | 8 | 0 | 1 |  | Scale productive route |

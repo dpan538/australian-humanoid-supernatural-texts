@@ -1,31 +1,38 @@
 {
   "active_collection_mode": "balanced_growth",
+  "blocked_commands": [
+    {
+      "blocked_at": "2026-06-22T08:00:26+00:00",
+      "blocker": "blocked_approval",
+      "command": "python3 scripts/run_collection_sprint.py --resume --until-launch-target",
+      "note": "Approval layer rejected network collection command before execution; sources are not exhausted and queued routes remain available."
+    }
+  ],
   "build_ok": true,
   "by_jurisdiction": {
-    "VIC": 13
+    "QLD": 8
   },
   "by_narrative_type": {
-    "descriptive_belief_record": 13,
-    "retelling_or_adaptation": 73
+    "retelling_or_adaptation": 8
   },
   "by_source_family": {
-    "public_domain_ebook": 86
+    "public_domain_ebook": 8
   },
   "by_source_organisation": {
-    "Project Gutenberg": 86
+    "Project Gutenberg": 8
   },
-  "candidates_processed": 2415,
+  "candidates_processed": 2545,
   "current_map_flag_count": 934,
   "current_map_flags": 934,
-  "current_map_ratio": 0.3687,
-  "current_public_record_count": 2533,
-  "current_public_records": 2533,
+  "current_map_ratio": 0.3534,
+  "current_public_record_count": 2643,
+  "current_public_records": 2643,
   "ending_db": {
-    "db_public_records": 2533,
-    "db_records": 2546
+    "db_public_records": 2643,
+    "db_records": 2656
   },
   "ending_map_flags": 934,
-  "ending_public_records": 2533,
+  "ending_public_records": 2643,
   "exhausted_routes": [
     "sprint_internet_archive_roth_queensland_exact_text",
     "sprint_map_queue_geocode_verification",
@@ -41,17 +48,17 @@
     "sprint_victorian_collections_story_probe"
   ],
   "gap_to_map_1200": 266,
-  "gap_to_minimum_3500": 967,
-  "gap_to_preferred_3800": 1267,
-  "generated_at": "2026-06-22T07:42:09+00:00",
+  "gap_to_minimum_3500": 857,
+  "gap_to_preferred_3800": 1157,
+  "generated_at": "2026-06-22T07:45:26+00:00",
   "launch_targets": {
     "minimum_map_flags": 1200,
     "minimum_public_records": 3500,
     "preferred_public_records": 3800,
     "soft_maximum_public_records": 4000
   },
-  "map_flags_added_since_checkpoint": 24,
-  "map_flags_at_last_checkpoint": 910,
+  "map_flags_added_since_checkpoint": 0,
+  "map_flags_at_last_checkpoint": 934,
   "map_gap": 266,
   "map_invariant": {
     "map_flags_length": 934,
@@ -61,7 +68,33 @@
   },
   "map_queue_updates_applied": 62,
   "net_new_map_flags": 43,
-  "net_new_public_records": 1153,
+  "net_new_public_records": 1263,
+  "next_route_queue": [
+    "sprint_adelaide_arcade_history_ghost_exact_page",
+    "sprint_slv_federicis_ghost_exact_page",
+    "sprint_slv_spooky_library_stories_exact_page",
+    "sprint_project_gutenberg_boldrewood_colonial_reformer_vol1_exact_text",
+    "sprint_project_gutenberg_boldrewood_colonial_reformer_vol2_exact_text",
+    "sprint_project_gutenberg_boldrewood_colonial_reformer_vol3_exact_text",
+    "sprint_project_gutenberg_boldrewood_crooked_stick_exact_text",
+    "sprint_project_gutenberg_boldrewood_plain_living_exact_text",
+    "sprint_project_gutenberg_clarke_natural_life_exact_text",
+    "sprint_project_gutenberg_hume_hansom_cab_exact_text",
+    "sprint_project_gutenberg_lawson_days_world_wide_exact_text",
+    "sprint_project_gutenberg_steele_rudd_dashwoods_exact_text",
+    "sprint_act_heritage_library_probe",
+    "sprint_anu_open_research_folklore_probe",
+    "sprint_geelong_heritage_place_first_probe",
+    "sprint_libraries_tasmania_eheritage_probe",
+    "sprint_marion_heritage_probe",
+    "sprint_museums_victoria_history_probe",
+    "sprint_prov_collection_place_first_probe",
+    "sprint_slsa_place_first_probe",
+    "sprint_slv_catalogue_place_first_probe",
+    "sprint_slwa_battye_place_first_probe",
+    "sprint_state_records_sa_archivessearch_probe",
+    "sprint_wa_museum_maritime_place_first_probe"
+  ],
   "productive_routes": [
     "sprint_internet_archive_beveridge_victoria_riverina_exact_text",
     "sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text",
@@ -109,8 +142,13 @@
     "sprint_project_gutenberg_australian_legendary_tales_exact_text",
     "sprint_project_gutenberg_barry_bunyip_stories",
     "sprint_project_gutenberg_barry_bunyip_stories_rescan",
+    "sprint_project_gutenberg_baynton_bush_studies_exact_text",
+    "sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text",
     "sprint_project_gutenberg_boldrewood_in_bad_company_exact_text",
+    "sprint_project_gutenberg_boldrewood_last_chance_exact_text",
+    "sprint_project_gutenberg_boldrewood_nevermore_exact_text",
     "sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text",
+    "sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text",
     "sprint_project_gutenberg_lawson_children_of_the_bush_exact_text",
     "sprint_project_gutenberg_lawson_on_the_track_exact_text",
     "sprint_project_gutenberg_lawson_over_the_sliprails_exact_text",
@@ -118,6 +156,7 @@
     "sprint_project_gutenberg_lawson_while_billy_boils_exact_text",
     "sprint_project_gutenberg_robertson_australian_tales",
     "sprint_project_gutenberg_robertson_australian_tales_rescan",
+    "sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text",
     "sprint_project_gutenberg_westbury_australian_fairy_tales",
     "sprint_project_gutenberg_westbury_australian_fairy_tales_rescan",
     "sprint_sacred_texts_nw_wa_customs_traditions_exact_text",
@@ -125,14 +164,14 @@
     "sprint_wikisource_southeast_exact_texts"
   ],
   "promotion": {
-    "accepted_candidates": 1449,
-    "already_mapped": 1363,
-    "promoted": 86
+    "accepted_candidates": 1559,
+    "already_mapped": 1551,
+    "promoted": 8
   },
-  "record_gap": 967,
-  "records_added_since_checkpoint": 302,
-  "records_at_last_checkpoint": 2231,
-  "records_per_new_map_flag": 12.58,
+  "record_gap": 857,
+  "records_added_since_checkpoint": 110,
+  "records_at_last_checkpoint": 2533,
+  "records_per_new_map_flag": null,
   "route_results": [
     {
       "acceptance_rate": 1.0,
@@ -11290,19 +11329,228 @@
       "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074203_004/sprint_project_gutenberg_boldrewood_in_bad_company_exact_text.ndjson",
       "stop_reason": "route_candidate_limit_or_source_exhausted",
       "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0.8,
+      "accepted_provisional": 4,
+      "context_provisional": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 0,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Project Gutenberg",
+      "processed": 5,
+      "rejected": 1,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T07:45:19+00:00"
+      },
+      "retrieval_method": "exact_plain_text",
+      "route_id": "sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text",
+      "route_phase": "scaled",
+      "runtime_seconds": 2.9,
+      "source_name": "Project Gutenberg",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0.7778,
+      "accepted_provisional": 7,
+      "context_provisional": 1,
+      "duplicates": 2,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 1,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Project Gutenberg",
+      "processed": 9,
+      "rejected": 1,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T07:45:20+00:00"
+      },
+      "retrieval_method": "exact_plain_text",
+      "route_id": "sprint_project_gutenberg_baynton_bush_studies_exact_text",
+      "route_phase": "scaled",
+      "runtime_seconds": 3.3,
+      "source_name": "Project Gutenberg",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_baynton_bush_studies_exact_text.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_baynton_bush_studies_exact_text.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0.8,
+      "accepted_provisional": 24,
+      "context_provisional": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 0,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Project Gutenberg",
+      "processed": 30,
+      "rejected": 6,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T07:45:20+00:00"
+      },
+      "retrieval_method": "exact_plain_text",
+      "route_id": "sprint_project_gutenberg_boldrewood_last_chance_exact_text",
+      "route_phase": "scaled",
+      "runtime_seconds": 3.6,
+      "source_name": "Project Gutenberg",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_last_chance_exact_text.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_last_chance_exact_text.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0.8,
+      "accepted_provisional": 16,
+      "context_provisional": 0,
+      "duplicates": 1,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 0,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Project Gutenberg",
+      "processed": 20,
+      "rejected": 4,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T07:45:21+00:00"
+      },
+      "retrieval_method": "exact_plain_text",
+      "route_id": "sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text",
+      "route_phase": "scaled",
+      "runtime_seconds": 4.0,
+      "source_name": "Project Gutenberg",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0.8438,
+      "accepted_provisional": 27,
+      "context_provisional": 3,
+      "duplicates": 9,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 3,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Project Gutenberg",
+      "processed": 32,
+      "rejected": 2,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T07:45:21+00:00"
+      },
+      "retrieval_method": "exact_plain_text",
+      "route_id": "sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text",
+      "route_phase": "scaled",
+      "runtime_seconds": 4.0,
+      "source_name": "Project Gutenberg",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0.96,
+      "accepted_provisional": 24,
+      "context_provisional": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 0,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Project Gutenberg",
+      "processed": 25,
+      "rejected": 1,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T07:45:21+00:00"
+      },
+      "retrieval_method": "exact_plain_text",
+      "route_id": "sprint_project_gutenberg_boldrewood_nevermore_exact_text",
+      "route_phase": "scaled",
+      "runtime_seconds": 4.3,
+      "source_name": "Project Gutenberg",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_nevermore_exact_text.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074516_005/sprint_project_gutenberg_boldrewood_nevermore_exact_text.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0.8889,
+      "accepted_provisional": 8,
+      "context_provisional": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 0,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Project Gutenberg",
+      "processed": 9,
+      "rejected": 1,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T07:45:26+00:00"
+      },
+      "retrieval_method": "exact_plain_text",
+      "route_id": "sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text",
+      "route_phase": "scaled",
+      "runtime_seconds": 3.2,
+      "source_name": "Project Gutenberg",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074522_005/sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074522_005/sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
     }
   ],
   "run_id": "collection_sprint_20260622_002",
-  "soft_ceiling_remaining": 1467,
-  "stage_dir": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074203_004",
+  "soft_ceiling_remaining": 1357,
+  "stage_dir": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074522_005",
   "staged_import_counts": {
-    "accepted": 86,
-    "lead_only": 5,
-    "rejected": 6
+    "accepted": 8,
+    "rejected": 1
   },
   "starting_db": {
-    "db_public_records": 2447,
-    "db_records": 2460
+    "db_public_records": 2635,
+    "db_records": 2648
   },
   "starting_map_flags": 891,
   "starting_public_records": 1380,

@@ -1,26 +1,30 @@
 {
-  "accepted_records": 1153,
+  "accepted_records": 1263,
   "active_collection_mode": "balanced_growth",
   "active_routes": [
-    "sprint_project_gutenberg_lawson_over_the_sliprails_exact_text",
-    "sprint_project_gutenberg_lawson_rising_of_the_court_exact_text",
-    "sprint_project_gutenberg_lawson_while_billy_boils_exact_text",
-    "sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text",
-    "sprint_project_gutenberg_boldrewood_in_bad_company_exact_text"
+    "sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text"
+  ],
+  "blocked_commands": [
+    {
+      "blocked_at": "2026-06-22T08:00:26+00:00",
+      "blocker": "blocked_approval",
+      "command": "python3 scripts/run_collection_sprint.py --resume --until-launch-target",
+      "note": "Approval layer rejected network collection command before execution; sources are not exhausted and queued routes remain available."
+    }
   ],
   "blocked_routes": [
     "sprint_victorian_collections_story_probe"
   ],
-  "candidates_processed": 1932,
+  "candidates_processed": 2062,
   "checkpoint_index": 4,
-  "context_records": 33,
+  "context_records": 37,
   "created_at": "2026-06-22T05:12:16+00:00",
   "current_map_flag_count": 934,
   "current_map_flags": 934,
-  "current_map_ratio": 0.3687,
-  "current_public_record_count": 2533,
-  "current_public_records": 2533,
-  "duplicates": 1193,
+  "current_map_ratio": 0.3534,
+  "current_public_record_count": 2643,
+  "current_public_records": 2643,
+  "duplicates": 1209,
   "exhausted_routes": [
     "sprint_map_queue_geocode_verification",
     "sprint_moreton_bay_deception_bay_recollect_ocr",
@@ -34,8 +38,8 @@
     "sprint_victorian_collections_story_probe"
   ],
   "gap_to_map_1200": 266,
-  "gap_to_minimum_3500": 967,
-  "gap_to_preferred_3800": 1267,
+  "gap_to_minimum_3500": 857,
+  "gap_to_preferred_3800": 1157,
   "history": [
     {
       "accepted": 73,
@@ -864,9 +868,27 @@
       "processed": 97,
       "public_records": 2533,
       "run_id": "collection_sprint_launch_20260622_074203_004"
+    },
+    {
+      "accepted": 102,
+      "completed_at": "2026-06-22T07:45:22+00:00",
+      "map_flags": 934,
+      "map_updates": 0,
+      "processed": 121,
+      "public_records": 2635,
+      "run_id": "collection_sprint_launch_20260622_074516_005"
+    },
+    {
+      "accepted": 8,
+      "completed_at": "2026-06-22T07:45:26+00:00",
+      "map_flags": 934,
+      "map_updates": 0,
+      "processed": 9,
+      "public_records": 2643,
+      "run_id": "collection_sprint_launch_20260622_074522_005"
     }
   ],
-  "last_completed_checkpoint": "collection_sprint_launch_20260622_074203_004",
+  "last_completed_checkpoint": "collection_sprint_launch_20260622_074522_005",
   "launch_start_map_flag_count": 891,
   "launch_start_public_record_count": 1380,
   "launch_targets": {
@@ -876,10 +898,35 @@
     "soft_maximum_public_records": 4000
   },
   "map_candidates": 37,
-  "map_flags_added_since_checkpoint": 24,
+  "map_flags_added_since_checkpoint": 0,
   "map_flags_at_last_checkpoint": 934,
   "map_gap": 266,
-  "next_route_queue": [],
+  "next_route_queue": [
+    "sprint_adelaide_arcade_history_ghost_exact_page",
+    "sprint_slv_federicis_ghost_exact_page",
+    "sprint_slv_spooky_library_stories_exact_page",
+    "sprint_project_gutenberg_boldrewood_colonial_reformer_vol1_exact_text",
+    "sprint_project_gutenberg_boldrewood_colonial_reformer_vol2_exact_text",
+    "sprint_project_gutenberg_boldrewood_colonial_reformer_vol3_exact_text",
+    "sprint_project_gutenberg_boldrewood_crooked_stick_exact_text",
+    "sprint_project_gutenberg_boldrewood_plain_living_exact_text",
+    "sprint_project_gutenberg_clarke_natural_life_exact_text",
+    "sprint_project_gutenberg_hume_hansom_cab_exact_text",
+    "sprint_project_gutenberg_lawson_days_world_wide_exact_text",
+    "sprint_project_gutenberg_steele_rudd_dashwoods_exact_text",
+    "sprint_act_heritage_library_probe",
+    "sprint_anu_open_research_folklore_probe",
+    "sprint_geelong_heritage_place_first_probe",
+    "sprint_libraries_tasmania_eheritage_probe",
+    "sprint_marion_heritage_probe",
+    "sprint_museums_victoria_history_probe",
+    "sprint_prov_collection_place_first_probe",
+    "sprint_slsa_place_first_probe",
+    "sprint_slv_catalogue_place_first_probe",
+    "sprint_slwa_battye_place_first_probe",
+    "sprint_state_records_sa_archivessearch_probe",
+    "sprint_wa_museum_maritime_place_first_probe"
+  ],
   "productive_routes": [
     "sprint_internet_archive_beveridge_victoria_riverina_exact_text",
     "sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text",
@@ -927,8 +974,13 @@
     "sprint_project_gutenberg_australian_legendary_tales_exact_text",
     "sprint_project_gutenberg_barry_bunyip_stories",
     "sprint_project_gutenberg_barry_bunyip_stories_rescan",
+    "sprint_project_gutenberg_baynton_bush_studies_exact_text",
+    "sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text",
     "sprint_project_gutenberg_boldrewood_in_bad_company_exact_text",
+    "sprint_project_gutenberg_boldrewood_last_chance_exact_text",
+    "sprint_project_gutenberg_boldrewood_nevermore_exact_text",
     "sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text",
+    "sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text",
     "sprint_project_gutenberg_lawson_children_of_the_bush_exact_text",
     "sprint_project_gutenberg_lawson_on_the_track_exact_text",
     "sprint_project_gutenberg_lawson_over_the_sliprails_exact_text",
@@ -936,17 +988,18 @@
     "sprint_project_gutenberg_lawson_while_billy_boils_exact_text",
     "sprint_project_gutenberg_robertson_australian_tales",
     "sprint_project_gutenberg_robertson_australian_tales_rescan",
+    "sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text",
     "sprint_project_gutenberg_westbury_australian_fairy_tales",
     "sprint_project_gutenberg_westbury_australian_fairy_tales_rescan",
     "sprint_sacred_texts_nw_wa_customs_traditions_exact_text",
     "sprint_wikisource_euahlayi_exact_texts",
     "sprint_wikisource_southeast_exact_texts"
   ],
-  "record_gap": 967,
-  "records_added_since_checkpoint": 302,
+  "record_gap": 857,
+  "records_added_since_checkpoint": 110,
   "records_at_last_checkpoint": 2533,
-  "records_per_new_map_flag": 12.58,
-  "rejected_rows": 119,
+  "records_per_new_map_flag": null,
+  "rejected_rows": 151,
   "resume_cursor_per_route": {
     "sprint_internet_archive_beveridge_victoria_riverina_exact_text": {
       "exhausted": true,
@@ -1248,17 +1301,53 @@
       "total_pages": 1,
       "updated_at": "2026-06-22T06:27:21+00:00"
     },
+    "sprint_project_gutenberg_baynton_bush_studies_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T07:45:20+00:00"
+    },
+    "sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T07:45:21+00:00"
+    },
     "sprint_project_gutenberg_boldrewood_in_bad_company_exact_text": {
       "exhausted": true,
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T07:42:07+00:00"
     },
+    "sprint_project_gutenberg_boldrewood_last_chance_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T07:45:20+00:00"
+    },
+    "sprint_project_gutenberg_boldrewood_nevermore_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T07:45:21+00:00"
+    },
     "sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text": {
       "exhausted": true,
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T07:42:06+00:00"
+    },
+    "sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T07:45:21+00:00"
+    },
+    "sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T07:45:19+00:00"
     },
     "sprint_project_gutenberg_lawson_children_of_the_bush_exact_text": {
       "exhausted": true,
@@ -1301,6 +1390,12 @@
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T06:27:21+00:00"
+    },
+    "sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T07:45:26+00:00"
     },
     "sprint_project_gutenberg_westbury_australian_fairy_tales": {
       "exhausted": true,
@@ -1847,6 +1942,28 @@
       "processed": 25,
       "rejected": 4
     },
+    "sprint_project_gutenberg_baynton_bush_studies_exact_text": {
+      "accepted": 7,
+      "context": 1,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 7,
+      "latest_acceptance_rate": 0.7777777777777778,
+      "map_candidates": 0,
+      "processed": 9,
+      "rejected": 1
+    },
+    "sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text": {
+      "accepted": 27,
+      "context": 3,
+      "duplicates": 9,
+      "errors": 0,
+      "last_accepted": 27,
+      "latest_acceptance_rate": 0.84375,
+      "map_candidates": 0,
+      "processed": 32,
+      "rejected": 2
+    },
     "sprint_project_gutenberg_boldrewood_in_bad_company_exact_text": {
       "accepted": 24,
       "context": 0,
@@ -1858,6 +1975,28 @@
       "processed": 26,
       "rejected": 2
     },
+    "sprint_project_gutenberg_boldrewood_last_chance_exact_text": {
+      "accepted": 24,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 24,
+      "latest_acceptance_rate": 0.8,
+      "map_candidates": 0,
+      "processed": 30,
+      "rejected": 6
+    },
+    "sprint_project_gutenberg_boldrewood_nevermore_exact_text": {
+      "accepted": 24,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 24,
+      "latest_acceptance_rate": 0.96,
+      "map_candidates": 0,
+      "processed": 25,
+      "rejected": 1
+    },
     "sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text": {
       "accepted": 13,
       "context": 3,
@@ -1867,6 +2006,28 @@
       "latest_acceptance_rate": 0.7647058823529411,
       "map_candidates": 0,
       "processed": 17,
+      "rejected": 1
+    },
+    "sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text": {
+      "accepted": 16,
+      "context": 0,
+      "duplicates": 1,
+      "errors": 0,
+      "last_accepted": 16,
+      "latest_acceptance_rate": 0.8,
+      "map_candidates": 0,
+      "processed": 20,
+      "rejected": 4
+    },
+    "sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text": {
+      "accepted": 4,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 4,
+      "latest_acceptance_rate": 0.8,
+      "map_candidates": 0,
+      "processed": 5,
       "rejected": 1
     },
     "sprint_project_gutenberg_lawson_children_of_the_bush_exact_text": {
@@ -1942,6 +2103,17 @@
       "map_candidates": 0,
       "processed": 22,
       "rejected": 2
+    },
+    "sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text": {
+      "accepted": 8,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 8,
+      "latest_acceptance_rate": 0.8888888888888888,
+      "map_candidates": 0,
+      "processed": 9,
+      "rejected": 1
     },
     "sprint_project_gutenberg_westbury_australian_fairy_tales": {
       "accepted": 32,
@@ -2531,6 +2703,28 @@
       "processed": 25,
       "rejected": 4
     },
+    "sprint_project_gutenberg_baynton_bush_studies_exact_text": {
+      "accepted": 7,
+      "context": 1,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 7,
+      "latest_acceptance_rate": 0.7777777777777778,
+      "map_candidates": 0,
+      "processed": 9,
+      "rejected": 1
+    },
+    "sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text": {
+      "accepted": 27,
+      "context": 3,
+      "duplicates": 9,
+      "errors": 0,
+      "last_accepted": 27,
+      "latest_acceptance_rate": 0.84375,
+      "map_candidates": 0,
+      "processed": 32,
+      "rejected": 2
+    },
     "sprint_project_gutenberg_boldrewood_in_bad_company_exact_text": {
       "accepted": 24,
       "context": 0,
@@ -2542,6 +2736,28 @@
       "processed": 26,
       "rejected": 2
     },
+    "sprint_project_gutenberg_boldrewood_last_chance_exact_text": {
+      "accepted": 24,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 24,
+      "latest_acceptance_rate": 0.8,
+      "map_candidates": 0,
+      "processed": 30,
+      "rejected": 6
+    },
+    "sprint_project_gutenberg_boldrewood_nevermore_exact_text": {
+      "accepted": 24,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 24,
+      "latest_acceptance_rate": 0.96,
+      "map_candidates": 0,
+      "processed": 25,
+      "rejected": 1
+    },
     "sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text": {
       "accepted": 13,
       "context": 3,
@@ -2551,6 +2767,28 @@
       "latest_acceptance_rate": 0.7647058823529411,
       "map_candidates": 0,
       "processed": 17,
+      "rejected": 1
+    },
+    "sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text": {
+      "accepted": 16,
+      "context": 0,
+      "duplicates": 1,
+      "errors": 0,
+      "last_accepted": 16,
+      "latest_acceptance_rate": 0.8,
+      "map_candidates": 0,
+      "processed": 20,
+      "rejected": 4
+    },
+    "sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text": {
+      "accepted": 4,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 4,
+      "latest_acceptance_rate": 0.8,
+      "map_candidates": 0,
+      "processed": 5,
       "rejected": 1
     },
     "sprint_project_gutenberg_lawson_children_of_the_bush_exact_text": {
@@ -2626,6 +2864,17 @@
       "map_candidates": 0,
       "processed": 22,
       "rejected": 2
+    },
+    "sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text": {
+      "accepted": 8,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 8,
+      "latest_acceptance_rate": 0.8888888888888888,
+      "map_candidates": 0,
+      "processed": 9,
+      "rejected": 1
     },
     "sprint_project_gutenberg_westbury_australian_fairy_tales": {
       "accepted": 32,
@@ -2710,12 +2959,12 @@
     }
   },
   "schema_version": "collection-sprint-state/v1",
-  "soft_ceiling_remaining": 1467,
+  "soft_ceiling_remaining": 1357,
   "suppressed_rows": 0,
   "target_map_flags": 1200,
   "target_preferred_public_records": 3800,
   "target_public_records": 3500,
   "target_soft_maximum_public_records": 4000,
-  "updated_at": "2026-06-22T07:42:09+00:00",
+  "updated_at": "2026-06-22T08:00:26+00:00",
   "verified_map_flags": 37
 }

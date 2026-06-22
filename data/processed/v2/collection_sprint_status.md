@@ -1,41 +1,40 @@
 # Collection Sprint Status
 
-- Generated: `2026-06-22T07:42:09+00:00`
+- Generated: `2026-06-22T07:45:26+00:00`
 - Run id: `collection_sprint_20260622_002`
-- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074203_004`
+- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_074522_005`
 - Starting public records: `1380`
-- Ending public records: `2533`
-- Net-new public records: `1153`
+- Ending public records: `2643`
+- Net-new public records: `1263`
 - Starting map flags: `891`
 - Ending map flags: `934`
 - Net-new map flags: `43`
-- Candidates processed: `2415`
-- Context/lead staged: `5`
-- Suppressed/rejected staged: `6`
+- Candidates processed: `2545`
+- Context/lead staged: `0`
+- Suppressed/rejected staged: `1`
 - Duplicate staged: `0`
-- Gap to minimum 3,500 public records: `967`
-- Gap to preferred 3,800 public records: `1267`
-- Soft ceiling remaining before 4,000: `1467`
+- Gap to minimum 3,500 public records: `857`
+- Gap to preferred 3,800 public records: `1157`
+- Soft ceiling remaining before 4,000: `1357`
 - Gap to 1,200 map flags: `266`
-- Current map ratio: `0.3687`
-- Records added since checkpoint: `302`
-- Map flags added since checkpoint: `24`
-- Records per new map flag: `12.58`
+- Current map ratio: `0.3534`
+- Records added since checkpoint: `110`
+- Map flags added since checkpoint: `0`
+- Records per new map flag: `None`
 - Active collection mode: `balanced_growth`
 - Map invariant ok: `True`
 
 ## Records by Source Organisation
-- Project Gutenberg: 86
+- Project Gutenberg: 8
 
 ## Records by Source Family
-- public_domain_ebook: 86
+- public_domain_ebook: 8
 
 ## Records by Jurisdiction
-- VIC: 13
+- QLD: 8
 
 ## Records by Narrative Type
-- descriptive_belief_record: 13
-- retelling_or_adaptation: 73
+- retelling_or_adaptation: 8
 
 ## Per-Route Yield
 
@@ -419,6 +418,13 @@
 | sprint_project_gutenberg_lawson_while_billy_boils_exact_text | structured_public_domain_books | 18 | 17 | 0 | 1 | 1 | 0 | 3.6 | route_candidate_limit_or_source_exhausted |
 | sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text | structured_public_domain_books | 17 | 13 | 3 | 1 | 1 | 0 | 3.7 | route_candidate_limit_or_source_exhausted |
 | sprint_project_gutenberg_boldrewood_in_bad_company_exact_text | structured_public_domain_books | 26 | 24 | 0 | 2 | 1 | 0 | 4.4 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text | structured_public_domain_books | 5 | 4 | 0 | 1 | 0 | 0 | 2.9 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_baynton_bush_studies_exact_text | structured_public_domain_books | 9 | 7 | 1 | 1 | 2 | 0 | 3.3 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_last_chance_exact_text | structured_public_domain_books | 30 | 24 | 0 | 6 | 2 | 0 | 3.6 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text | structured_public_domain_books | 20 | 16 | 0 | 4 | 1 | 0 | 4.0 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text | structured_public_domain_books | 32 | 27 | 3 | 2 | 9 | 0 | 4.0 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_boldrewood_nevermore_exact_text | structured_public_domain_books | 25 | 24 | 0 | 1 | 2 | 0 | 4.3 | route_candidate_limit_or_source_exhausted |
+| sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text | structured_public_domain_books | 9 | 8 | 0 | 1 | 0 | 0 | 3.2 | route_candidate_limit_or_source_exhausted |
 
 ## Productive Routes
 
@@ -468,8 +474,13 @@
 - sprint_project_gutenberg_australian_legendary_tales_exact_text
 - sprint_project_gutenberg_barry_bunyip_stories
 - sprint_project_gutenberg_barry_bunyip_stories_rescan
+- sprint_project_gutenberg_baynton_bush_studies_exact_text
+- sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text
 - sprint_project_gutenberg_boldrewood_in_bad_company_exact_text
+- sprint_project_gutenberg_boldrewood_last_chance_exact_text
+- sprint_project_gutenberg_boldrewood_nevermore_exact_text
 - sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text
+- sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text
 - sprint_project_gutenberg_lawson_children_of_the_bush_exact_text
 - sprint_project_gutenberg_lawson_on_the_track_exact_text
 - sprint_project_gutenberg_lawson_over_the_sliprails_exact_text
@@ -477,6 +488,7 @@
 - sprint_project_gutenberg_lawson_while_billy_boils_exact_text
 - sprint_project_gutenberg_robertson_australian_tales
 - sprint_project_gutenberg_robertson_australian_tales_rescan
+- sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text
 - sprint_project_gutenberg_westbury_australian_fairy_tales
 - sprint_project_gutenberg_westbury_australian_fairy_tales_rescan
 - sprint_sacred_texts_nw_wa_customs_traditions_exact_text
@@ -497,3 +509,14 @@
 - sprint_sa_history_network_directory_probe
 - sprint_territory_stories_public_probe
 - sprint_victorian_collections_story_probe
+
+## Continuation Queue and Approval Block
+
+- Current public records: `2643`
+- Current map flags: `934`
+- Computed next-route queue length: `24`
+- Exact blocked command: `python3 scripts/run_collection_sprint.py --resume --until-launch-target`
+- Blocker classification: `blocked_approval`
+- Interpretation: the approval layer blocked the network collection command before execution. This is not route exhaustion and not evidence that the source universe is exhausted.
+- Offline continuation completed: added exact public-text routes plus atlas-backed state-library, museum, archive, heritage-library, and place-first probes across VIC, WA, SA, TAS, ACT, NSW, and QLD.
+- Next action after approval: rerun `python3 scripts/run_collection_sprint.py --resume --until-launch-target` and allow the runner to process the queued routes through staging, dedupe, serialized promotion, map filtering, export, and validation.

@@ -2152,6 +2152,690 @@ routes:
       - witch
       - wizard
       - giant
+  - route_id: sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: "Robbery under Arms: A Story of Life and Adventure in the Bush and in the Australian Goldfields"
+    source_author: Rolf Boldrewood
+    publication_date_text: "1888; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian novel set in bush and goldfields contexts; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-1198-robbery-under-arms, url: "https://www.gutenberg.org/ebooks/1198.txt.utf-8", chapter: Robbery under Arms}
+    entity_terms: &fiction_supernatural_terms
+      - ghost
+      - ghosts
+      - haunted
+      - apparition
+      - phantom
+      - spectre
+      - spirit
+      - spirits
+      - supernatural
+      - devil
+      - witch
+      - wizard
+      - giant
+      - little man
+      - little woman
+  - route_id: sprint_project_gutenberg_boldrewood_last_chance_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: "The Last Chance: A Tale of the Golden West"
+    source_author: Rolf Boldrewood
+    publication_date_text: "1905; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian novel with Western Australian goldfields relation; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Western Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-61385-last-chance-golden-west, url: "https://www.gutenberg.org/ebooks/61385.txt.utf-8", chapter: The Last Chance}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    source_title: Babes in the Bush
+    source_author: Rolf Boldrewood
+    publication_date_text: "1900; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian bush novel; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-51209-babes-in-the-bush, url: "https://www.gutenberg.org/ebooks/51209.txt.utf-8", chapter: Babes in the Bush}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_boldrewood_nevermore_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: Nevermore
+    source_author: Rolf Boldrewood
+    publication_date_text: "1892; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian novel; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-34240-nevermore, url: "https://www.gutenberg.org/ebooks/34240.txt.utf-8", chapter: Nevermore}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 20
+    max_candidates_probe: 30
+    max_candidates_scaled: 60
+    source_title: Shearing in the Riverina, New South Wales
+    source_author: Rolf Boldrewood
+    publication_date_text: "1872; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian sketch explicitly concerning the Riverina, New South Wales; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Riverina, NSW
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-4221-shearing-riverina, url: "https://www.gutenberg.org/ebooks/4221.txt.utf-8", chapter: Shearing in the Riverina}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: QLD
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 25
+    max_candidates_probe: 30
+    max_candidates_scaled: 70
+    source_title: On Our Selection
+    source_author: Steele Rudd
+    publication_date_text: "1899; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian bush sketch collection; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Queensland
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-3677-on-our-selection, url: "https://www.gutenberg.org/ebooks/3677.txt.utf-8", chapter: On Our Selection}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_baynton_bush_studies_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 20
+    max_candidates_probe: 30
+    max_candidates_scaled: 60
+    source_title: Bush Studies
+    source_author: Barbara Baynton
+    publication_date_text: "1902; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian story collection; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: New South Wales
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-78420-bush-studies, url: "https://www.gutenberg.org/ebooks/78420.txt.utf-8", chapter: Bush Studies}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_lawson_days_world_wide_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 25
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    source_title: In the Days When the World Was Wide and Other Verses
+    source_author: Henry Lawson
+    publication_date_text: "1896; Project Gutenberg public-domain transcription"
+    australian_relation: Public-domain Australian verse collection by Henry Lawson; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-214-lawson-days-world-wide, url: "https://www.gutenberg.org/ebooks/214.txt.utf-8", chapter: In the Days When the World Was Wide and Other Verses}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_steele_rudd_dashwoods_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: QLD
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: The Dashwoods
+    source_author: Steele Rudd
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian fiction by Steele Rudd, associated with Queensland rural-settler settings; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Queensland
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-78216-steele-rudd-dashwoods, url: "https://www.gutenberg.org/ebooks/78216.txt.utf-8", chapter: The Dashwoods}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_boldrewood_colonial_reformer_vol1_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: A Colonial Reformer, Volume 1
+    source_author: Rolf Boldrewood
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian colonial fiction by Rolf Boldrewood; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-54067-boldrewood-colonial-reformer-vol1, url: "https://www.gutenberg.org/ebooks/54067.txt.utf-8", chapter: A Colonial Reformer Volume 1}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_boldrewood_colonial_reformer_vol2_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: A Colonial Reformer, Volume 2
+    source_author: Rolf Boldrewood
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian colonial fiction by Rolf Boldrewood; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-55652-boldrewood-colonial-reformer-vol2, url: "https://www.gutenberg.org/ebooks/55652.txt.utf-8", chapter: A Colonial Reformer Volume 2}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_boldrewood_colonial_reformer_vol3_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: A Colonial Reformer, Volume 3
+    source_author: Rolf Boldrewood
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian colonial fiction by Rolf Boldrewood; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-54366-boldrewood-colonial-reformer-vol3, url: "https://www.gutenberg.org/ebooks/54366.txt.utf-8", chapter: A Colonial Reformer Volume 3}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_boldrewood_plain_living_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: Plain Living
+    source_author: Rolf Boldrewood
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian bush fiction by Rolf Boldrewood; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-51404-boldrewood-plain-living, url: "https://www.gutenberg.org/ebooks/51404.txt.utf-8", chapter: Plain Living}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_clarke_natural_life_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: TAS/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 130
+    source_title: For the Term of His Natural Life
+    source_author: Marcus Clarke
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian convict fiction with Tasmanian and Victorian settings; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Tasmania
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-3424-clarke-natural-life, url: "https://www.gutenberg.org/ebooks/3424.txt.utf-8", chapter: For the Term of His Natural Life}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_slv_federicis_ghost_exact_page
+    enabled: true
+    family: place_first_map_records
+    organisation: State Library Victoria
+    source_name: State Library Victoria
+    source_type: institutional_history_article
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_public_html_page
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 8
+    max_candidates_probe: 30
+    max_candidates_scaled: 40
+    source_title: Federici's ghost
+    source_author: Sarah Matthews
+    publication_date_text: "2017 State Library Victoria blog article"
+    australian_relation: State Library Victoria public institutional article documenting the Princess Theatre apparition tradition in Melbourne.
+    default_location_text: Princess Theatre, Melbourne, VIC
+    default_location_role: apparition_location
+    map_capable: true
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: slv-federicis-ghost, url: "https://blogs.slv.vic.gov.au/such-was-life/federicis-ghost/", chapter: Federici's ghost, location_text: "Princess Theatre, Melbourne, VIC", location_role: apparition_location, latitude: -37.8109, longitude: 144.9724, location_precision: exact_site, geocode_source: "OpenStreetMap/official address cross-check for Princess Theatre, 163 Spring Street, Melbourne", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source explicitly names Princess Theatre in Melbourne; representative coordinate is the theatre site at 163 Spring Street."}
+    entity_terms:
+      - Federici
+      - ghost
+      - apparition
+      - spectral
+      - figure
+      - Mephistopheles
+      - Satan
+  - route_id: sprint_slv_spooky_library_stories_exact_page
+    enabled: true
+    family: place_first_map_records
+    organisation: State Library Victoria
+    source_name: State Library Victoria
+    source_type: institutional_history_article
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_public_html_page
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 10
+    max_candidates_probe: 30
+    max_candidates_scaled: 40
+    source_title: Spooky stories from the Library
+    source_author: Tess McLaughlan
+    publication_date_text: "2021 State Library Victoria blog article"
+    australian_relation: State Library Victoria public institutional article collecting staff apparition accounts in the library building.
+    default_location_text: State Library Victoria, Melbourne, VIC
+    default_location_role: apparition_location
+    map_capable: true
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: slv-spooky-library-stories, url: "https://blogs.slv.vic.gov.au/news/spooky-stories-from-the-library/", chapter: Spooky stories from the Library, location_text: "State Library Victoria, Melbourne, VIC", location_role: apparition_location, latitude: -37.8098, longitude: 144.9652, location_precision: exact_site, geocode_source: "OpenStreetMap/official address cross-check for State Library Victoria, Swanston Street, Melbourne", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source explicitly locates the narratives in State Library Victoria and Ian Potter Queen's Hall; representative coordinate is the library site."}
+    entity_terms:
+      - ghosts
+      - ghost
+      - apparition
+      - transparent figure
+      - presence
+      - haunted
+      - spooky
+      - supernatural
+  - route_id: sprint_adelaide_arcade_history_ghost_exact_page
+    enabled: true
+    family: place_first_map_records
+    organisation: Adelaide Arcade
+    source_name: Adelaide Arcade
+    source_type: institutional_history_page
+    source_tier: B
+    jurisdiction: SA
+    retrieval_method: exact_public_html_page
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 6
+    max_candidates_probe: 30
+    max_candidates_scaled: 30
+    source_title: Adelaide Arcade history
+    source_author: Adelaide Arcade
+    publication_date_text: "undated public institutional history page; accessed 2026-06-22"
+    australian_relation: Public Adelaide Arcade institutional history page noting the resident caretaker ghost tradition.
+    default_location_text: Adelaide Arcade, Adelaide, SA
+    default_location_role: legend_associated_place
+    map_capable: true
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: adelaide-arcade-history-ghost, url: "https://adelaidearcade.com.au/history/", chapter: Adelaide Arcade history, location_text: "Adelaide Arcade, Adelaide, SA", location_role: legend_associated_place, latitude: -34.9225, longitude: 138.6040, location_precision: exact_site, geocode_source: "OpenStreetMap/official address cross-check for Adelaide Arcade, Rundle Mall/Grenfell Street, Adelaide", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source explicitly names Adelaide Arcade and its resident ghost; representative coordinate is the arcade site."}
+    entity_terms:
+      - ghost
+      - haunted
+      - resident ghost
+      - caretaker
+  - route_id: sprint_project_gutenberg_boldrewood_crooked_stick_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: The Crooked Stick
+    source_author: Rolf Boldrewood
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian colonial fiction by Rolf Boldrewood; accepted rows are constrained to supernatural, apparition, ghost, or anomalous person-form passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-35165-boldrewood-crooked-stick, url: "https://www.gutenberg.org/ebooks/35165.txt.utf-8", chapter: The Crooked Stick}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_hume_hansom_cab_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: The Mystery of a Hansom Cab
+    source_author: Fergus Hume
+    publication_date_text: "1886 public-domain Melbourne fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Melbourne crime novel by Fergus Hume; accepted rows are constrained to supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Melbourne, VIC
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-4223-hume-hansom-cab, url: "https://www.gutenberg.org/ebooks/4223.txt.utf-8", chapter: The Mystery of a Hansom Cab}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_slv_catalogue_place_first_probe
+    enabled: true
+    family: local_archive_historical_society
+    organisation: State Library Victoria
+    source_name: State Library Victoria
+    source_type: state_library_catalogue
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://find.slv.vic.gov.au/discovery/search?query=any,contains,ghost%20Victoria&tab=searchProfile&search_scope=MyInst_and_CI&vid=61SLV_INST:SLV"
+  - route_id: sprint_museums_victoria_history_probe
+    enabled: true
+    family: local_archive_historical_society
+    organisation: Museums Victoria
+    source_name: Museums Victoria Collections
+    source_type: museum_collection_portal
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://collections.museumsvictoria.com.au/search?query=ghost"
+  - route_id: sprint_geelong_heritage_place_first_probe
+    enabled: true
+    family: local_archive_historical_society
+    organisation: Geelong Regional Libraries
+    source_name: Geelong Heritage Centre
+    source_type: regional_heritage_portal
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://www.grlc.vic.gov.au/geelong-heritage-centre"
+  - route_id: sprint_prov_collection_place_first_probe
+    enabled: true
+    family: local_archive_historical_society
+    organisation: Public Record Office Victoria
+    source_name: Public Record Office Victoria
+    source_type: state_archive_catalogue
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://prov.vic.gov.au/explore-collection/explore-topic"
+  - route_id: sprint_slwa_battye_place_first_probe
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: State Library of Western Australia
+    source_name: State Library of Western Australia
+    source_type: state_library_catalogue
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://encore.slwa.wa.gov.au/iii/encore/search/C__Sghost%20western%20australia__Orightresult__U"
+  - route_id: sprint_wa_museum_maritime_place_first_probe
+    enabled: true
+    family: local_archive_historical_society
+    organisation: Western Australian Museum
+    source_name: Western Australian Museum Maritime Archaeology Databases
+    source_type: museum_database
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://museum.wa.gov.au/maritime-archaeology-db/"
+  - route_id: sprint_slsa_place_first_probe
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: State Library of South Australia
+    source_name: State Library of South Australia
+    source_type: state_library_catalogue
+    source_tier: A
+    jurisdiction: SA
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://www.slsa.sa.gov.au/collections/south-australian-heritage"
+  - route_id: sprint_state_records_sa_archivessearch_probe
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: State Records of South Australia
+    source_name: State Records of South Australia ArchivesSearch
+    source_type: state_archive_catalogue
+    source_tier: A
+    jurisdiction: SA
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://archives.sa.gov.au/finding-information/discover-our-collection"
+  - route_id: sprint_marion_heritage_probe
+    enabled: true
+    family: local_archive_historical_society
+    organisation: City of Marion
+    source_name: Marion Heritage Research Centre
+    source_type: municipal_heritage_centre
+    source_tier: A
+    jurisdiction: SA
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://www.marion.sa.gov.au/services-we-offer/libraries/heritage"
+  - route_id: sprint_libraries_tasmania_eheritage_probe
+    enabled: true
+    family: local_archive_historical_society
+    organisation: Libraries Tasmania
+    source_name: eHeritage Tasmania
+    source_type: digital_heritage_portal
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://eheritage.libraries.tas.gov.au/"
+  - route_id: sprint_act_heritage_library_probe
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Libraries ACT
+    source_name: ACT Heritage Library
+    source_type: heritage_library_catalogue
+    source_tier: A
+    jurisdiction: ACT
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://www.library.act.gov.au/find/history"
+  - route_id: sprint_anu_open_research_folklore_probe
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Australian National University
+    source_name: ANU Open Research
+    source_type: repository_full_text
+    source_tier: A
+    jurisdiction: ACT/National
+    retrieval_method: public_search_page_probe
+    scaled: false
+    accepted_target: 0
+    max_candidates_probe: 30
+    search_url: "https://openresearch-repository.anu.edu.au/"
   - route_id: sprint_map_queue_geocode_verification
     enabled: true
     family: place_first_map_records
