@@ -1,0 +1,321 @@
+{
+  "browser": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "counts": {
+    "records": 3752,
+    "summary_record_count": 3752,
+    "map_flags": 1200,
+    "map_points": 1200,
+    "mapped_record_count": 1200,
+    "date_band_total": 3752,
+    "source_rollup_total": 3752
+  },
+  "routes": {
+    "/": {
+      "status": 200,
+      "url": "http://127.0.0.1:3000/dashboard"
+    },
+    "/dashboard": {
+      "status": 200,
+      "url": "http://127.0.0.1:3000/dashboard"
+    },
+    "/map": {
+      "status": 200,
+      "url": "http://127.0.0.1:3000/map"
+    },
+    "/density": {
+      "status": 200,
+      "url": "http://127.0.0.1:3000/density"
+    },
+    "/source": {
+      "status": 200,
+      "url": "http://127.0.0.1:3000/source"
+    },
+    "/about": {
+      "status": 200,
+      "url": "http://127.0.0.1:3000/about"
+    }
+  },
+  "viewports": {
+    "desktop": {
+      "/dashboard": {
+        "contains_record_count": true,
+        "contains_map_count": true,
+        "contains_undated": true,
+        "horizontal_overflow": false,
+        "button_count": 35,
+        "link_count": 3,
+        "has_undefined_or_null_text": false,
+        "text_length": 1587,
+        "text_head": ">\nSOURCE\nPERIOD\nNARRATIVE\nPLACE\nRepository...\n1,509\nModern web\n1,017\nPublic-dom...\n933\nPublic ins...\n142\nScholarly ...\n67\n1803-1841\n3\n1842-1875\n194\n1876-1969\n2,368\n1970-1990\n249\n1991-2010\n422\n2011-present\n482\nUndated\n34\nSpirit-per...\n1,283\nHairy huma...\n1,028\nGhost / ap...\n557\nRetellings\n514\nBelief rec...\n160\nGiant / og...\n132\nNSW\n883\nQLD\n505\nVIC\n480\nNT\n188\nWA\n185\nSOURCE STYLE\nrepository\npublic-domain\nmodern web\nacademic\nTRACKS \u00b7 Repository text / 1876-1969...\n01.\nsupernatural in The Fif...\n02.\nsupernatural in The Fif...\n03.\ndevil in The aborigines...\n04.\ndevil in The aborigines...\n05.\ndevil in The aborigines...\n06.\ndevil in The aborigines...\n07.\nspirit in The aborigine...\n08.\nspirit in The aborigine...\nPUBLIC DATA FIELD\n3752 RECORDS\n1200 MAPPED\n<\nPUBLIC FIELD:\nAU HUMANOID SIGNAL\n3752\n1200\n13\nRECORDS\nGEO FIELD\nSOURCE FIELD\nSOURCE TYPES\n13\nTOP FAMILY\n1509\nsource family x period\n1\n2\n3\n4\n5\n6\n7\nRepository...\nModern web\nPublic dom...\nPublic ins...\nScholarly ...\nArchive me...\nTIME CUTTER / ALL PUBLIC RECORDS\n1\n2\n3\n4\n5\n6\n7\nRepository ...\n1509\nModern web\n1017\nPublic doma...\n933\nPublic inst...\n142\nScholarly m...\n67\nArchive met...\n36\nRepository ...\n32\ninstitution...\n8\nSource family signal / complete archive\n0\n755\n1,509\nSOURCE COMPOSITION\nRepository text\n1,509 / 40%\nModern web\n1,017 / 27%\nPublic domain books\n933 / 25%\nPublic institutions\n142 / 4%\nScholarly metadata\n67 / 2%\nArchive metadata\n36 / 1%\nRepository text\nModern web\nPublic domai...\nPublic insti...\nScholarly me...\nArchive meta...\nWA\n185\nNT\n188\nSA\n151\nQLD\n505\nNSW\n883\nVIC\n480\nTAS\n156\nACT\n33\nAbout\nSource\nDashboard\nMap"
+      },
+      "/map": {
+        "contains_record_count": true,
+        "contains_map_count": true,
+        "contains_undated": false,
+        "horizontal_overflow": false,
+        "button_count": 8,
+        "link_count": 3,
+        "has_undefined_or_null_text": false,
+        "text_length": 393,
+        "text_head": "BOUNDARY: Highcharts Maps Australia subdivisions GeoJSON\nTERRAIN: 31 LANDFORM CUES / STATE-CLIPPED\n+\n+\n+\n@\n@\n@\n#\n#\n#\no\no\no\n.\n.\n.\n_\n_\n_\n$\n$\n$\nWA\nNT\nSA\nQLD\nNSW\nVIC\nTAS\nACT\n++\nRANGE\n@@\nPLATEAU\n##\nUPLAND\noo\nLOWLAND\n..\nDESERT\n__\nPLAIN\n$$\nBASIN\nREGION\nAustralia\n1,200\nrecords\nWA\n37\nNT\n30\nSA\n42\nQLD\n345\nNSW\n497\nVIC\n174\nTAS\n55\nACT\n20\nPOINT GEO\n1200\nmapped records / 3752 total\nAbout\nSource\nMap\nDensity"
+      },
+      "/density": {
+        "contains_record_count": false,
+        "contains_map_count": true,
+        "contains_undated": true,
+        "horizontal_overflow": false,
+        "button_count": 8,
+        "link_count": 3,
+        "has_undefined_or_null_text": false,
+        "text_length": 992,
+        "text_head": "TIME DENSITY / NONLINEAR BANDS\n1825-2026 / 1200 MAPPED\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n1803-1841\n3\nQ 48\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n1842-1875\n194\nQ 54\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n1876-1969\n2,368\nQ 54\n+\n+\n+\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n1970-1990\n249\nQ 162\n#\n#\n#\n#\n#\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n1991-2010\n422\nQ 167\n#\n#\n#\n#\n#\n#\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n2011-present\n482\nQ 172\n#\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\nUndated\n34\nQ 0\nSOURCE FIELD\nrepository_full...\n1509\nmodern_web\n1017\npublic_domain_e...\n691\npublic_domain_t...\n165\ninstitutional_m...\n89\nLOCATION HEALTH\nlocations_total\n3990\nbroad_or_review\n2552\nmap_flags\n1200\nundated_records\n34\nFIGURE SIGNAL\nYowie:1032\nspirit:596\nghost:288\nspirits:273\ndevil:200\nghosts:116\ngiant:115\nmedicin...:102\nQUERY TYPES\nexact_phrase 200 / constrain... 70 / negative_... 48\nAbout\nSource\nDensity\nDashboard"
+      },
+      "/source": {
+        "contains_record_count": true,
+        "contains_map_count": false,
+        "contains_undated": false,
+        "horizontal_overflow": false,
+        "button_count": 0,
+        "link_count": 4,
+        "has_undefined_or_null_text": false,
+        "text_length": 4545,
+        "text_head": "SOURCE REGISTER\nPUBLIC SOURCE FIELD\n48\n3752\n328\nROLLUP\nrepository_full_text\nR 1509\nQ 0\nmodern_web\nR 1017\nQ 27\npublic_domain_ebook\nR 691\nQ 0\npublic_domain_transcribed_book\nR 165\nQ 0\ninstitutional_media_page\nR 89\nQ 0\nacademic_metadata\nR 67\nQ 0\nproject_gutenberg_australia_book\nR 47\nQ 0\ninternet_archive_metadata\nR 36\nQ 0\nrepository_full_text_article\nR 32\nQ 0\ninstitutional_history_article\nR 27\nQ 0\ninstitutional_web\nR 21\nQ 0\ninternet_sacred_texts_public_domain_book\nR 20\nQ 0\nwikisource_public_domain_book\nR 10\nQ 0\ninstitutional_history_and_media_pages\nR 8\nQ 0\ninstitutional_history_page\nR 5\nQ 0\npublic_repository_ocr_text\nR 3\nQ 0\npublic_repository_newsletter_ocr_text\nR 2\nQ 0\ncommunity_controlled_public_web\nR 1\nQ 0\nmunicipal_local_history_pdf\nR 1\nQ 0\nseeded_public_web\nR 1\nQ 0\naiatsis_public_catalogue\nR 0\nQ 27\nandc\nR 0\nQ 27\ngoogle_trends\nR 0\nQ 5\nnla_catalogue\nR 0\nQ 27\ntrove_magazine\nR 0\nQ 105\ntrove_newspaper\nR 0\nQ 105\nwikimedia_pageviews\nR 0\nQ 5\nETHICS FLAG\npublic_context_reviewed\n1974\nok_public\n1043\npublic_fiction_reviewed\n358\ncaution_indigenous_related_public_retelling\n77\npublic_media_context_reviewed\n72\ncaution_indigenous_knowledge\n69\npublic_ethnographic_text_reviewed\n50\npublic_institutional_history_reviewed\n35\nneeds_human_ethics_review\n28\npublic_page_context_reviewed\n19\npublic_local_history_reviewed\n14\npublic_institutional_or_media_context_reviewed\n8\npublic_institutional_newsletter_reviewed\n2\npublic_memoir_reviewed\n2\npublic_media_and_local_history_reviewed\n1\nREPOSITORY\nGITHUB / DPAN538\nAUSTRALIAN-HUMANOID-SUPERNATURAL-TEXTS\nREGISTERED SOURCES\nCrossref\nacademic_metadata\npublic_metad"
+      },
+      "/about": {
+        "contains_record_count": false,
+        "contains_map_count": false,
+        "contains_undated": false,
+        "horizontal_overflow": false,
+        "button_count": 0,
+        "link_count": 4,
+        "has_undefined_or_null_text": false,
+        "text_length": 678,
+        "text_head": "ABOUT / PUBLIC DATA TERMINAL\nAUSTRALIAN HUMANOID SUPERNATURAL TEXTS\n\nThis project presents a research database and public display system for tracing how humanoid or humanoid-adjacent supernatural figures appear in Australian public texts.\n\nRecords are organised by figure, source, period, query pathway, publication context, and available location evidence so later analysis can separate discourse patterns from collection noise.\n\nThe corpus is limited to public, published, openly discoverable material. Source voice, publicness, mediation, and ethics flags are retained as research variables rather than flattened into a single folklore category.\n\nMAP\nDASHBOARD\nDENSITY\nSOURCE"
+      }
+    },
+    "mobile": {
+      "/dashboard": {
+        "contains_record_count": true,
+        "contains_map_count": true,
+        "contains_undated": true,
+        "horizontal_overflow": false,
+        "button_count": 35,
+        "link_count": 3,
+        "has_undefined_or_null_text": false,
+        "text_length": 1241,
+        "text_head": ">\nTRACKS\nRepository text / 1876-1969 / Spirit-person...\n840 records \u00b7 ordered by year\n01.\nsupernatural in The Fifth C...\n02.\nsupernatural in The Fifth C...\n03.\ndevil in The aborigines of ...\n04.\ndevil in The aborigines of ...\n05.\ndevil in The aborigines of ...\n06.\ndevil in The aborigines of ...\nPUBLIC DATA FIELD\n3752 RECORDS\n1200 MAPPED\n<\nPUBLIC FIELD:\nAU HUMANOID SIGNAL\n3752\n1200\n13\nRECORDS\nGEO FIELD\nSOURCE FIELD\nSOURCE TYPES\n13\nTOP FAMILY\n1509\nsource family x period\n1\n2\n3\n4\n5\n6\n7\nRepository...\nModern web\nPublic dom...\nPublic ins...\nScholarly ...\nArchive me...\nTIME CUTTER / ALL PUBLIC RECORDS\n1\n1803-1841\n2\n1842-1875\n3\n1876-1969\n4\n1970-1990\n5\n1991-2010\n6\n2011-present\n7\nUndated\nRepository ...\n1509\nModern web\n1017\nPublic doma...\n933\nPublic inst...\n142\nScholarly m...\n67\nArchive met...\n36\nRepository ...\n32\ninstitution...\n8\nSource family signal / complete archive\n0\n755\n1,509\nSOURCE COMPOSITION\nRepository text\n1,509 / 40%\nModern web\n1,017 / 27%\nPublic domain books\n933 / 25%\nPublic institutions\n142 / 4%\nScholarly metadata\n67 / 2%\nArchive metadata\n36 / 1%\nRepository text\nModern web\nPublic domai...\nPublic insti...\nScholarly me...\nArchive meta...\nWA\n185\nNT\n188\nSA\n151\nQLD\n505\nNSW\n883\nVIC\n480\nTAS\n156\nACT\n33\nAbout\nSource\nDashboard\nMap"
+      },
+      "/map": {
+        "contains_record_count": true,
+        "contains_map_count": true,
+        "contains_undated": false,
+        "horizontal_overflow": false,
+        "button_count": 8,
+        "link_count": 3,
+        "has_undefined_or_null_text": false,
+        "text_length": 393,
+        "text_head": "BOUNDARY: Highcharts Maps Australia subdivisions GeoJSON\nTERRAIN: 31 LANDFORM CUES / STATE-CLIPPED\n+\n+\n+\n@\n@\n@\n#\n#\n#\no\no\no\n.\n.\n.\n_\n_\n_\n$\n$\n$\nWA\nNT\nSA\nQLD\nNSW\nVIC\nTAS\nACT\n++\nRANGE\n@@\nPLATEAU\n##\nUPLAND\noo\nLOWLAND\n..\nDESERT\n__\nPLAIN\n$$\nBASIN\nREGION\nAustralia\n1,200\nrecords\nWA\n37\nNT\n30\nSA\n42\nQLD\n345\nNSW\n497\nVIC\n174\nTAS\n55\nACT\n20\nPOINT GEO\n1200\nmapped records / 3752 total\nAbout\nSource\nMap\nDensity"
+      },
+      "/density": {
+        "contains_record_count": false,
+        "contains_map_count": true,
+        "contains_undated": true,
+        "horizontal_overflow": false,
+        "button_count": 8,
+        "link_count": 3,
+        "has_undefined_or_null_text": false,
+        "text_length": 992,
+        "text_head": "TIME DENSITY / NONLINEAR BANDS\n1825-2026 / 1200 MAPPED\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n1803-1841\n3\nQ 48\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n1842-1875\n194\nQ 54\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n1876-1969\n2,368\nQ 54\n+\n+\n+\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n1970-1990\n249\nQ 162\n#\n#\n#\n#\n#\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n1991-2010\n422\nQ 167\n#\n#\n#\n#\n#\n#\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n2011-present\n482\nQ 172\n#\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\nUndated\n34\nQ 0\nSOURCE FIELD\nrepository_full...\n1509\nmodern_web\n1017\npublic_domain_e...\n691\npublic_domain_t...\n165\ninstitutional_m...\n89\nLOCATION HEALTH\nlocations_total\n3990\nbroad_or_review\n2552\nmap_flags\n1200\nundated_records\n34\nFIGURE SIGNAL\nYowie:1032\nspirit:596\nghost:288\nspirits:273\ndevil:200\nghosts:116\ngiant:115\nmedicin...:102\nQUERY TYPES\nexact_phrase 200 / constrain... 70 / negative_... 48\nAbout\nSource\nDensity\nDashboard"
+      },
+      "/source": {
+        "contains_record_count": true,
+        "contains_map_count": false,
+        "contains_undated": false,
+        "horizontal_overflow": false,
+        "button_count": 0,
+        "link_count": 4,
+        "has_undefined_or_null_text": false,
+        "text_length": 4545,
+        "text_head": "SOURCE REGISTER\nPUBLIC SOURCE FIELD\n48\n3752\n328\nROLLUP\nrepository_full_text\nR 1509\nQ 0\nmodern_web\nR 1017\nQ 27\npublic_domain_ebook\nR 691\nQ 0\npublic_domain_transcribed_book\nR 165\nQ 0\ninstitutional_media_page\nR 89\nQ 0\nacademic_metadata\nR 67\nQ 0\nproject_gutenberg_australia_book\nR 47\nQ 0\ninternet_archive_metadata\nR 36\nQ 0\nrepository_full_text_article\nR 32\nQ 0\ninstitutional_history_article\nR 27\nQ 0\ninstitutional_web\nR 21\nQ 0\ninternet_sacred_texts_public_domain_book\nR 20\nQ 0\nwikisource_public_domain_book\nR 10\nQ 0\ninstitutional_history_and_media_pages\nR 8\nQ 0\ninstitutional_history_page\nR 5\nQ 0\npublic_repository_ocr_text\nR 3\nQ 0\npublic_repository_newsletter_ocr_text\nR 2\nQ 0\ncommunity_controlled_public_web\nR 1\nQ 0\nmunicipal_local_history_pdf\nR 1\nQ 0\nseeded_public_web\nR 1\nQ 0\naiatsis_public_catalogue\nR 0\nQ 27\nandc\nR 0\nQ 27\ngoogle_trends\nR 0\nQ 5\nnla_catalogue\nR 0\nQ 27\ntrove_magazine\nR 0\nQ 105\ntrove_newspaper\nR 0\nQ 105\nwikimedia_pageviews\nR 0\nQ 5\nETHICS FLAG\npublic_context_reviewed\n1974\nok_public\n1043\npublic_fiction_reviewed\n358\ncaution_indigenous_related_public_retelling\n77\npublic_media_context_reviewed\n72\ncaution_indigenous_knowledge\n69\npublic_ethnographic_text_reviewed\n50\npublic_institutional_history_reviewed\n35\nneeds_human_ethics_review\n28\npublic_page_context_reviewed\n19\npublic_local_history_reviewed\n14\npublic_institutional_or_media_context_reviewed\n8\npublic_institutional_newsletter_reviewed\n2\npublic_memoir_reviewed\n2\npublic_media_and_local_history_reviewed\n1\nREPOSITORY\nGITHUB / DPAN538\nAUSTRALIAN-HUMANOID-SUPERNATURAL-TEXTS\nREGISTERED SOURCES\nCrossref\nacademic_metadata\npublic_metad"
+      },
+      "/about": {
+        "contains_record_count": false,
+        "contains_map_count": false,
+        "contains_undated": false,
+        "horizontal_overflow": false,
+        "button_count": 0,
+        "link_count": 4,
+        "has_undefined_or_null_text": false,
+        "text_length": 678,
+        "text_head": "ABOUT / PUBLIC DATA TERMINAL\nAUSTRALIAN HUMANOID SUPERNATURAL TEXTS\n\nThis project presents a research database and public display system for tracing how humanoid or humanoid-adjacent supernatural figures appear in Australian public texts.\n\nRecords are organised by figure, source, period, query pathway, publication context, and available location evidence so later analysis can separate discourse patterns from collection noise.\n\nThe corpus is limited to public, published, openly discoverable material. Source voice, publicness, mediation, and ethics flags are retained as research variables rather than flattened into a single folklore category.\n\nMAP\nDASHBOARD\nDENSITY\nSOURCE"
+      }
+    }
+  },
+  "interaction": {
+    "dashboard_overlay": true,
+    "escape_closes": true,
+    "next_prev_controls": true,
+    "map_overlay_samples": 20,
+    "map_button_count": 9,
+    "source_scrollable": true,
+    "density_undated_visible": true,
+    "mobile_nav": true,
+    "previous_next_controls_changed_record": true,
+    "map_flag_dom_count": 1200,
+    "map_click_sample": {
+      "map_flag_dom_count": 1200,
+      "sampled_map_flag_overlays_opened": 20,
+      "sampled_map_flag_overlay_record_ids_reference_public_records": true,
+      "sample_labels": [
+        "Open mapped record 1825 - Richmond River Herald 06-03-1825",
+        "Open mapped record 1847 - Geelong Advertiser",
+        "Open mapped record spirit in How did the Natives of Australia become Acquainted with the Demigods and Daemonia, and with the Superstitions of the Ancient Races?",
+        "Open mapped record supernatural in Queensland, Australia",
+        "Open mapped record spirits in Queensland, Australia",
+        "Open mapped record 1866 - Sydney Morning Herald",
+        "Open mapped record Warneton, New South Wales 1871",
+        "Open mapped record 1871 - Illustrated Australian News",
+        "Open mapped record 1871 (2) - Empire, Sydney",
+        "Open mapped record 1871 - Sydney Herald Yowie Article",
+        "Open mapped record 1874 - Cooma Express",
+        "Open mapped record ghosts in For the Term of His Natural Life",
+        "Open mapped record ghost in K\u00e1milar\u00f3i, and Other Australian Languages",
+        "Open mapped record spirit in Kamilaroi, and other Australian languages",
+        "Open mapped record spirits in Kamilaroi, and other Australian languages",
+        "Open mapped record 1876 - Illawarra Mercury Yowie Article",
+        "Open mapped record 1877 - Maitland Mercury",
+        "Open mapped record 1878 - Freemans Journal Article, Pyramul",
+        "Open mapped record 1878 - Freemans Journal Pyramul Hairyman",
+        "Open mapped record supernatural in The aborigines of Victoria, volume 2"
+      ],
+      "escape_closed_after_map_overlay": true,
+      "previous_next_controls_present": true,
+      "previous_next_controls_changed_record": true
+    }
+  },
+  "samples": {
+    "twenty_map_flags_reference_records": true,
+    "twenty_map_flag_record_ids": [
+      853,
+      637,
+      638,
+      640,
+      641,
+      44,
+      2116,
+      855,
+      1760,
+      1768,
+      1769,
+      1778,
+      3720,
+      3724,
+      643,
+      644,
+      84,
+      646,
+      604,
+      647
+    ],
+    "map_flags_unique_record_ids": true,
+    "map_flags_all_reference_public_records": true,
+    "sampled_unmapped_records": [
+      854,
+      636,
+      1059,
+      2085,
+      2086,
+      2087,
+      2088,
+      2089,
+      2090,
+      2091,
+      2092,
+      2093,
+      2094,
+      2095,
+      2096,
+      2097,
+      2098,
+      2099,
+      2100,
+      2101
+    ],
+    "source_org_sample": [
+      "Australian Yowie Research",
+      "Internet Archive",
+      "Project Gutenberg Australia",
+      "Project Gutenberg",
+      "Marriner Group",
+      "Internet Sacred Text Archive",
+      "Wikisource",
+      "OpenAlex"
+    ],
+    "narrative_family_count": 17,
+    "narrative_family_sample": [
+      "cryptid_style_apeman",
+      "retelling_or_adaptation",
+      "spirit_person_narrative",
+      "apparition_account",
+      "giant_or_ogre_narrative",
+      "descriptive_belief_record",
+      "traditional_narrative",
+      "ancestral_being",
+      "spirit_being",
+      "local_legend",
+      "encounter_account",
+      "ghost_legend",
+      "cautionary_being",
+      "rumour_account",
+      "giant",
+      "non_humanoid_control",
+      "satire"
+    ],
+    "represented_states": [
+      "NSW",
+      "WA",
+      "VIC",
+      "QLD",
+      "TAS",
+      "SA",
+      "ACT",
+      "NT"
+    ],
+    "high_sensitivity_sample_count": 5
+  },
+  "console_errors": [],
+  "routes_curl": {
+    "/": 307,
+    "/dashboard": 200,
+    "/map": 200,
+    "/density": 200,
+    "/source": 200,
+    "/about": 200
+  },
+  "localhost": {
+    "url": "http://localhost:3000",
+    "pid": 97225,
+    "start_time": "Mon Jun 22 23:33:18 2026",
+    "log_path": "data/processed/v2/localhost_dev_server.log",
+    "reachable": true
+  },
+  "defects_fixed": [
+    "Added explicit undated date band to frontend export so date-band totals reconcile with 3,752 public records."
+  ],
+  "unresolved_defects": [],
+  "checks": {
+    "dashboard_total_matches_export": true,
+    "map_count_matches_flags": true,
+    "map_lengths_match": true,
+    "density_totals_reconcile": true,
+    "source_totals_reconcile": true,
+    "no_console_errors": true,
+    "no_horizontal_overflow": true,
+    "no_undefined_or_null_text": true,
+    "overlay_opens_closes": true,
+    "previous_next_controls_work": true,
+    "mobile_navigation_usable": true,
+    "sample_20_map_flags_open": true
+  },
+  "passed": true
+}

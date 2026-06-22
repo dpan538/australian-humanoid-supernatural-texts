@@ -1,0 +1,236 @@
+route_id,source_organisation,source_family,jurisdiction,status,processed,accepted,duplicates,leads,rejected,acceptance_rate,last_stop_reason,next_action
+trove_api_without_key,National Library of Australia,archival_api,AU,blocked_auth,0,0,0,0,0,,Official API returned no-key response; automated use requires TROVE_API_KEY.,Wait for supplied API key or use manually exported article records.
+trove_nla_article_text_endpoints,National Library of Australia,archival_html,AU,manual_only,0,0,0,0,0,,"Public probes produced bot checks, 404s, or unstable text renditions.",Do not probe alternative unauthenticated article text URLs.
+openalex_crossref_current_terms,OpenAlex / Crossref,scholarly_metadata,global,low_yield,80,0,0,0,80,0.0000,Current term set produced little or no net-new substantive public narrative material.,Pause broad scholarly metadata reruns.
+ayr_broad_crawl,Australian Yowie Research,private_paranormal_aggregator,AU,exhausted,985,0,900,0,85,0.0000,Broad archive/sitemap candidates are overwhelmingly already present or duplicates.,"Use only for verification, source-chain enrichment, or specific modern witness pages."
+generic_institution_sitemap_scans,multiple,institutional_web,AU,low_yield,200,0,0,0,200,0.0000,"Full-site scans produced navigation, contact, charter, FAQ, and generic spirit false positives.",Replace broad scans with section-specific probes.
+internet_archive_broad_ghost,Internet Archive,digitized_books,global,low_yield,100,0,0,0,100,0.0000,Broad ghost searches produced non-Australian and literary-period Victorian false positives.,Use only item-level Australian relationship filters and public OCR verification.
+tourism_ghost_sites,multiple,tourism_web,AU,discovery_only,0,0,0,0,0,,Tourism pages reduce corpus credibility when used as primary evidence.,Use only for discovery and source-chain tracing.
+marriner_princess_theatre_history,Marriner Group,institutional_web,VIC,productive,1,1,0,0,0,1.0000,,"Use as a model for section-specific, source-verified institutional seeds."
+project_gutenberg_australia_exact_folklore,Project Gutenberg Australia,digitized_books,AU,productive,30,30,0,0,0,1.0000,,Continue exact-title book-level extraction; avoid broad global ghost searches.
+internet_sacred_texts_exact_ethnography,Internet Sacred Text Archive,public_domain_transcribed_books,NT/SA,productive,20,20,0,0,0,1.0000,,Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching.
+wikisource_australian_ethnography_exact_text,Wikisource,public_domain_transcribed_books,VIC/SA/NSW,productive,10,10,0,0,0,1.0000,,Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching.
+sprint_ista_central_australia_exact_texts,Internet Sacred Text Archive,public_domain_transcribed_book,NT,productive,44,42,3,0,2,0.9545,,Scale productive route
+sprint_ista_northern_australia_exact_texts,Internet Sacred Text Archive,public_domain_transcribed_book,NT,productive,16,16,5,0,0,1.0000,,Scale productive route
+sprint_wikisource_southeast_exact_texts,Wikisource,public_domain_transcribed_book,VIC/SA/NSW,low_yield,66,63,10,0,3,0.9545,,Keep as probe/discovery route only
+sprint_internet_archive_roth_queensland_exact_text,Internet Archive,repository_full_text,QLD,productive,15,15,2,0,0,1.0000,,Scale productive route
+sprint_pga_australian_fairy_tales_exact_texts,Project Gutenberg Australia,public_domain_ebook,VIC/NSW,productive,36,36,3,0,0,1.0000,,Scale productive route
+sprint_map_queue_geocode_verification,OpenStreetMap Nominatim,geocode_verification_queue,NSW/QLD/VIC,low_yield,87,87,0,0,0,1.0000,queue_limit_or_unverified_rows,Keep as probe/discovery route only
+sprint_victorian_collections_story_probe,Victorian Collections,institutional_web,VIC,low_yield,0,0,0,0,0,,probe_error:HTTPError,Keep as probe/discovery route only
+sprint_sa_history_network_directory_probe,History Trust of South Australia,community_history_directory,SA,low_yield,3,0,0,3,0,0.0000,probe_directory_or_search_page_discovery_only,Keep as probe/discovery route only
+sprint_territory_stories_public_probe,Library & Archives NT,digital_repository,NT,low_yield,0,0,0,0,0,,probe_directory_or_search_page_discovery_only,Keep as probe/discovery route only
+sprint_wikisource_euahlayi_exact_texts,Wikisource,public_domain_transcribed_book,NSW/QLD,productive,62,62,12,0,0,1.0000,,Scale productive route
+sprint_project_gutenberg_westbury_australian_fairy_tales,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,32,32,0,0,0,1.0000,,Scale productive route
+sprint_project_gutenberg_robertson_australian_tales,Project Gutenberg,public_domain_ebook,QLD,productive,22,22,4,0,0,1.0000,,Scale productive route
+sprint_project_gutenberg_barry_bunyip_stories,Project Gutenberg,public_domain_ebook,AU,productive,20,20,2,0,0,1.0000,,Scale productive route
+sprint_internet_archive_kamilaroi_kurnai_exact_text,Internet Archive,repository_full_text,NSW/VIC,productive,28,28,6,0,0,1.0000,,Scale productive route
+sprint_internet_archive_sa_folklore_manners_customs_exact_text,Internet Archive,repository_full_text,SA,productive,16,16,2,0,0,1.0000,,Scale productive route
+sprint_internet_archive_native_tribes_south_australia_exact_text,Internet Archive,repository_full_text,SA,productive,21,21,1,0,0,1.0000,,Scale productive route
+sprint_internet_archive_eaglehawk_crow_exact_text,Internet Archive,repository_full_text,AU,productive,26,22,7,6,1,0.8462,,Scale productive route
+sprint_internet_archive_moore_wa_diary_exact_text,Internet Archive,repository_full_text,WA,productive,19,18,2,2,0,0.9474,,Scale productive route
+sprint_internet_archive_dawson_victoria_exact_text,Internet Archive,repository_full_text,VIC,productive,25,25,9,0,0,1.0000,,Scale productive route
+sprint_internet_archive_smyth_victoria_vol1_exact_text,Internet Archive,repository_full_text,VIC/TAS,productive,32,29,0,0,3,0.9062,,Scale productive route
+sprint_internet_archive_smyth_victoria_vol2_exact_text,Internet Archive,repository_full_text,VIC/TAS,productive,30,30,4,0,0,1.0000,,Scale productive route
+sprint_internet_archive_roth_tasmania_exact_text,Internet Archive,repository_full_text,TAS,productive,25,25,5,0,0,1.0000,,Scale productive route
+sprint_internet_archive_beveridge_victoria_riverina_exact_text,Internet Archive,repository_full_text,VIC/NSW,productive,11,11,2,0,0,1.0000,,Scale productive route
+sprint_internet_archive_fraser_nsw_exact_text,Internet Archive,repository_full_text,NSW,productive,27,27,2,0,0,1.0000,,Scale productive route
+sprint_internet_archive_lumholtz_queensland_exact_text,Internet Archive,repository_full_text,QLD,productive,23,23,0,0,0,1.0000,,Scale productive route
+sprint_internet_archive_lang_queensland_exact_text,Internet Archive,repository_full_text,QLD,productive,27,27,6,0,0,1.0000,,Scale productive route
+sprint_internet_archive_northern_tribes_central_australia_exact_text,Internet Archive,repository_full_text,NT/SA,productive,29,29,9,0,0,1.0000,,Scale productive route
+sprint_internet_archive_curr_australian_race_vol2_exact_text,Internet Archive,repository_full_text,NSW/VIC,productive,24,24,3,0,0,1.0000,,Scale productive route
+sprint_internet_archive_curr_australian_race_vol3_exact_text,Internet Archive,repository_full_text,NSW/QLD,productive,27,27,3,0,0,1.0000,,Scale productive route
+sprint_internet_archive_peck_australian_legends_exact_text,Internet Archive,repository_full_text,NSW,productive,21,19,6,0,2,0.9048,,Scale productive route
+sprint_pga_favenc_austral_tropics_exact_text,Project Gutenberg Australia,public_domain_ebook,QLD/NT,productive,21,18,2,2,2,0.8571,,Scale productive route
+sprint_pga_clarke_old_tales_young_country_exact_text,Project Gutenberg Australia,public_domain_ebook,NSW/TAS/VIC,productive,18,12,1,2,5,0.6667,,Scale productive route
+sprint_internet_archive_curr_australian_race_vol1_exact_text,Internet Archive,repository_full_text,SA/QLD,productive,23,21,0,2,1,0.9130,,Scale productive route
+sprint_internet_archive_suttor_fishers_ghost_exact_section,Internet Archive,repository_full_text,NSW,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_internet_archive_suttor_australian_stories_retold_exact_text,Internet Archive,repository_full_text,NSW/TAS,productive,16,12,10,6,1,0.7500,,Scale productive route
+sprint_internet_archive_swan_tales_australian_life_exact_text,Internet Archive,repository_full_text,VIC/NSW,productive,13,12,1,2,0,0.9231,,Scale productive route
+sprint_internet_archive_ridley_kamilaroi_languages_exact_text,Internet Archive,repository_full_text,NSW/QLD,productive,24,23,7,0,1,0.9583,,Scale productive route
+sprint_internet_archive_hill_thornton_notes_nsw_exact_text,Internet Archive,repository_full_text,NSW,productive,8,8,31,0,0,1.0000,,Scale productive route
+sprint_internet_archive_nicolay_notes_wa_exact_text,Internet Archive,repository_full_text,WA,productive,8,8,3,0,0,1.0000,,Scale productive route
+sprint_internet_archive_moore_wa_vocabulary_exact_text,Internet Archive,repository_full_text,WA,productive,17,17,13,0,0,1.0000,,Scale productive route
+sprint_internet_archive_roth_garson_tasmania_1890_exact_text,Internet Archive,repository_full_text,TAS,productive,25,24,13,2,0,0.9600,,Scale productive route
+sprint_internet_archive_roth_nq_burial_ceremonies_exact_article,Internet Archive,repository_full_text_article,QLD,productive,15,14,9,0,1,0.9333,,Scale productive route
+sprint_internet_archive_miles_demigods_daemonia_exact_article,Internet Archive,repository_full_text_article,VIC/SA/NSW,productive,19,18,7,2,0,0.9474,,Scale productive route
+sprint_internet_archive_lawson_joe_wilson_ghost_stories_exact_text,Internet Archive,repository_full_text,NSW/QLD,productive,28,27,14,2,0,0.9643,,Scale productive route
+sprint_project_gutenberg_lawson_on_the_track_exact_text,Project Gutenberg,public_domain_ebook,NSW/QLD,productive,11,11,4,0,0,1.0000,,Scale productive route
+sprint_project_gutenberg_lawson_children_of_the_bush_exact_text,Project Gutenberg,public_domain_ebook,NSW/QLD,productive,20,17,6,4,1,0.8500,,Scale productive route
+sprint_sacred_texts_nw_wa_customs_traditions_exact_text,Internet Sacred Text Archive,public_domain_transcribed_book,WA,productive,12,12,6,0,0,1.0000,,Scale productive route
+sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text,Internet Archive,repository_full_text,QLD/NSW,productive,22,22,8,0,0,1.0000,,Scale productive route
+sprint_internet_archive_nisbet_colonial_tramp_beliefs_exact_text,Internet Archive,repository_full_text,WA/SA/VIC,productive,12,11,5,0,1,0.9167,,Scale productive route
+sprint_internet_archive_eden_fifth_continent_beliefs_exact_text,Internet Archive,repository_full_text,WA/NSW,low_yield,5,5,2,0,0,1.0000,,Keep as probe/discovery route only
+sprint_pga_cambridge_at_midnight_haunted_house_exact_text,Project Gutenberg Australia,public_domain_ebook,VIC,productive,27,21,9,6,3,0.7778,,Scale productive route
+sprint_pga_clarke_human_repetends_exact_text,Project Gutenberg Australia,public_domain_ebook,VIC,low_yield,4,3,1,0,1,0.7500,,Keep as probe/discovery route only
+sprint_pga_clarke_australian_tales_exact_text,Project Gutenberg Australia,public_domain_ebook,VIC/NSW,productive,19,18,1,2,0,0.9474,,Scale productive route
+sprint_pga_gaunt_moving_finger_trotting_cob_exact_text,Project Gutenberg Australia,public_domain_ebook,VIC/NSW,productive,18,17,5,0,1,0.9444,,Scale productive route
+sprint_pga_dyson_below_and_on_top_mine_ghosts_exact_text,Project Gutenberg Australia,public_domain_ebook,VIC,productive,36,35,6,0,1,0.9722,,Scale productive route
+sprint_pga_hume_cook_dandenongs_rescan_exact_texts,Project Gutenberg Australia,public_domain_ebook,VIC,low_yield,12,11,11,0,1,0.9167,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_project_gutenberg_westbury_australian_fairy_tales_rescan,Project Gutenberg,public_domain_ebook,VIC/NSW,low_yield,50,45,6,6,2,0.9000,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_project_gutenberg_robertson_australian_tales_rescan,Project Gutenberg,public_domain_ebook,QLD/NSW,low_yield,22,18,2,4,2,0.8182,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_project_gutenberg_barry_bunyip_stories_rescan,Project Gutenberg,public_domain_ebook,NSW,low_yield,25,19,1,4,4,0.7600,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_pga_dyson_below_and_on_top_rescan_02,Project Gutenberg Australia,public_domain_ebook,VIC,low_yield,26,21,56,2,4,0.8077,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_moreton_bay_deception_bay_recollect_ocr,City of Moreton Bay Libraries,municipal_local_history_ocr,QLD,low_yield,0,0,0,6,3,,route_candidate_limit_or_source_exhausted,Keep as probe/discovery route only
+sprint_project_gutenberg_australian_legendary_tales_exact_text,Project Gutenberg,public_domain_ebook,NSW,productive,714,700,210,0,14,0.9804,,Scale productive route
+sprint_project_gutenberg_lawson_while_billy_boils_exact_text,Project Gutenberg,public_domain_ebook,NSW,productive,18,17,1,0,1,0.9444,,Scale productive route
+sprint_project_gutenberg_lawson_over_the_sliprails_exact_text,Project Gutenberg,public_domain_ebook,NSW,productive,17,15,3,2,1,0.8824,,Scale productive route
+sprint_project_gutenberg_lawson_rising_of_the_court_exact_text,Project Gutenberg,public_domain_ebook,NSW,productive,19,17,10,2,1,0.8947,,Scale productive route
+sprint_project_gutenberg_boldrewood_in_bad_company_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,26,24,1,0,2,0.9231,,Scale productive route
+sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,17,13,1,6,1,0.7647,,Scale productive route
+sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,20,16,1,0,4,0.8000,,Scale productive route
+sprint_project_gutenberg_boldrewood_last_chance_exact_text,Project Gutenberg,public_domain_ebook,WA,productive,30,24,2,0,6,0.8000,,Scale productive route
+sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,32,27,9,6,2,0.8438,,Scale productive route
+sprint_project_gutenberg_boldrewood_nevermore_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,25,24,2,0,1,0.9600,,Scale productive route
+sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text,Project Gutenberg,public_domain_ebook,NSW,low_yield,5,4,0,0,1,0.8000,,Keep as probe/discovery route only
+sprint_project_gutenberg_baynton_bush_studies_exact_text,Project Gutenberg,public_domain_ebook,NSW,productive,9,7,2,2,1,0.7778,,Scale productive route
+sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text,Project Gutenberg,public_domain_ebook,QLD,productive,9,8,0,0,1,0.8889,,Scale productive route
+sprint_project_gutenberg_boldrewood_colonial_reformer_vol1_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,16,14,1,2,1,0.8750,,Scale productive route
+sprint_project_gutenberg_boldrewood_colonial_reformer_vol2_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,17,13,1,2,3,0.7647,,Scale productive route
+sprint_project_gutenberg_boldrewood_colonial_reformer_vol3_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,19,14,0,2,4,0.7368,,Scale productive route
+sprint_slv_federicis_ghost_exact_page,State Library Victoria,institutional_history_article,VIC,productive,9,8,4,0,1,0.8889,,Scale productive route
+sprint_slv_spooky_library_stories_exact_page,State Library Victoria,institutional_history_article,VIC,productive,14,10,0,0,4,0.7143,,Scale productive route
+sprint_adelaide_arcade_history_ghost_exact_page,Adelaide Arcade,institutional_history_page,SA,low_yield,7,5,7,0,2,0.7143,,Keep as probe/discovery route only
+sprint_project_gutenberg_lawson_days_world_wide_exact_text,Project Gutenberg,public_domain_ebook,NSW,productive,22,18,5,4,2,0.8182,,Scale productive route
+sprint_project_gutenberg_steele_rudd_dashwoods_exact_text,Project Gutenberg,public_domain_ebook,QLD,productive,7,6,0,0,1,0.8571,,Scale productive route
+sprint_project_gutenberg_boldrewood_plain_living_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,18,16,0,2,1,0.8889,,Scale productive route
+sprint_project_gutenberg_clarke_natural_life_exact_text,Project Gutenberg,public_domain_ebook,TAS/VIC,productive,31,26,4,2,4,0.8387,,Scale productive route
+sprint_project_gutenberg_boldrewood_crooked_stick_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,17,16,0,0,1,0.9412,,Scale productive route
+sprint_project_gutenberg_hume_hansom_cab_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,23,17,11,6,3,0.7391,,Scale productive route
+sprint_museums_victoria_history_probe,Museums Victoria,museum_collection_portal,VIC,low_yield,0,0,0,0,0,,probe_error:HTTPError,Keep as probe/discovery route only
+sprint_geelong_heritage_place_first_probe,Geelong Regional Libraries,regional_heritage_portal,VIC,low_yield,0,0,0,0,0,,probe_error:HTTPError,Keep as probe/discovery route only
+sprint_marion_heritage_probe,City of Marion,municipal_heritage_centre,SA,low_yield,0,0,0,0,0,,probe_directory_or_search_page_discovery_only,Keep as probe/discovery route only
+sprint_libraries_tasmania_eheritage_probe,Libraries Tasmania,digital_heritage_portal,TAS,low_yield,5,0,0,5,0,0.0000,probe_directory_or_search_page_discovery_only,Keep as probe/discovery route only
+sprint_act_heritage_library_probe,Libraries ACT,heritage_library_catalogue,ACT,low_yield,0,0,0,0,0,,probe_error:HTTPError,Keep as probe/discovery route only
+sprint_anu_open_research_folklore_probe,Australian National University,repository_full_text,ACT/National,low_yield,0,0,0,0,0,,probe_error:RemoteDisconnected,Keep as probe/discovery route only
+sprint_slv_catalogue_place_first_probe,State Library Victoria,state_library_catalogue,VIC,low_yield,0,0,0,0,0,,probe_directory_or_search_page_discovery_only,Keep as probe/discovery route only
+sprint_prov_collection_place_first_probe,Public Record Office Victoria,state_archive_catalogue,VIC,low_yield,0,0,0,0,0,,probe_error:HTTPError,Keep as probe/discovery route only
+sprint_slwa_battye_place_first_probe,State Library of Western Australia,state_library_catalogue,WA,low_yield,0,0,0,0,0,,probe_error:URLError,Keep as probe/discovery route only
+sprint_wa_museum_maritime_place_first_probe,Western Australian Museum,museum_database,WA,low_yield,2,0,0,2,0,0.0000,probe_directory_or_search_page_discovery_only,Keep as probe/discovery route only
+sprint_slsa_place_first_probe,State Library of South Australia,state_library_catalogue,SA,low_yield,30,0,0,30,0,0.0000,probe_directory_or_search_page_discovery_only,Keep as probe/discovery route only
+sprint_state_records_sa_archivessearch_probe,State Records of South Australia,state_archive_catalogue,SA,low_yield,1,0,0,1,0,0.0000,probe_directory_or_search_page_discovery_only,Keep as probe/discovery route only
+sprint_project_gutenberg_franklin_my_brilliant_career_exact_text,Project Gutenberg,public_domain_ebook,NSW,productive,23,19,1,2,3,0.8261,,Scale productive route
+sprint_project_gutenberg_cambridge_thirty_years_australia_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,13,10,1,0,3,0.7692,,Scale productive route
+sprint_project_gutenberg_cambridge_three_miss_kings_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,23,17,2,2,5,0.7391,,Scale productive route
+sprint_project_gutenberg_cambridge_sisters_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,13,11,0,0,2,0.8462,,Scale productive route
+sprint_project_gutenberg_dyson_gold_stealers_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,16,15,1,2,0,0.9375,,Scale productive route
+sprint_project_gutenberg_dyson_roaring_fifties_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,21,18,2,2,2,0.8571,,Scale productive route
+sprint_project_gutenberg_furphy_such_is_life_exact_text,Project Gutenberg,public_domain_ebook,NSW/VIC,productive,26,23,1,4,1,0.8846,,Scale productive route
+sprint_project_gutenberg_franklin_some_everyday_folk_exact_text,Project Gutenberg,public_domain_ebook,NSW,productive,19,18,0,0,1,0.9474,,Scale productive route
+sprint_project_gutenberg_hume_madame_midas_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,21,16,1,2,4,0.7619,,Scale productive route
+sprint_project_gutenberg_richardson_australia_felix_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,33,26,0,2,6,0.7879,,Scale productive route
+sprint_project_gutenberg_richardson_getting_wisdom_exact_text,Project Gutenberg,public_domain_ebook,VIC,productive,22,17,2,2,4,0.7727,,Scale productive route
+sprint_project_gutenberg_turner_wonder_child_exact_text,Project Gutenberg,public_domain_ebook,NSW,productive,13,10,0,0,3,0.7692,,Scale productive route
+sprint_internet_archive_more_australian_legendary_tales_exact_text,Internet Archive,repository_full_text,NSW,productive,17,16,2,2,0,0.9412,,Scale productive route
+sprint_internet_archive_spencer_across_australia_vol1_exact_text,Internet Archive,repository_full_text,NT/SA/WA,productive,16,16,4,0,0,1.0000,,Scale productive route
+sprint_internet_archive_mathews_notes_nsw_exact_text,Internet Archive,repository_full_text,NSW,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_internet_archive_calvert_aborigines_wa_exact_text,Internet Archive,repository_full_text,WA,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_internet_archive_calvert_wa_google_exact_text,Internet Archive,repository_full_text,WA,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_internet_archive_mathews_sociology_wa_exact_article,Internet Archive,repository_full_text_article,WA,low_yield,0,0,0,0,0,,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_internet_archive_spencer_across_australia_vol2_exact_text,Internet Archive,repository_full_text,NT/SA/WA,productive,17,16,5,2,0,0.9412,,Scale productive route
+sprint_internet_archive_more_australian_legendary_tales_rescan_02,Internet Archive,repository_full_text,NSW,productive,29,21,28,8,4,0.7241,,Scale productive route
+sprint_internet_archive_spencer_across_australia_vol1_rescan_02,Internet Archive,repository_full_text,NT/SA/WA,productive,11,11,21,0,0,1.0000,,Scale productive route
+sprint_internet_archive_spencer_across_australia_vol2_rescan_02,Internet Archive,repository_full_text,NT/SA/WA,productive,68,67,34,2,0,0.9853,,Scale productive route
+sprint_internet_archive_mathews_notes_nsw_rescan_02,Internet Archive,repository_full_text,NSW,low_yield,0,0,2,0,0,,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_internet_archive_calvert_wa_rescan_02,Internet Archive,repository_full_text,WA,low_yield,0,0,2,0,0,,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_internet_archive_dawson_victoria_rescan_02,Internet Archive,repository_full_text,VIC,productive,32,30,49,0,2,0.9375,,Scale productive route
+sprint_internet_archive_smyth_victoria_vol1_rescan_02,Internet Archive,repository_full_text,VIC/TAS,productive,119,107,7,14,5,0.8992,,Scale productive route
+sprint_internet_archive_northern_tribes_central_australia_rescan_02,Internet Archive,repository_full_text,NT,productive,87,87,34,0,0,1.0000,,Scale productive route
+sprint_internet_archive_kamilaroi_kurnai_rescan_02,Internet Archive,repository_full_text,NSW/VIC,productive,32,32,53,0,0,1.0000,,Scale productive route
+sprint_internet_archive_native_tribes_sa_rescan_02,Internet Archive,repository_full_text,SA,productive,31,30,32,2,0,0.9677,,Scale productive route
+sprint_internet_archive_roth_queensland_rescan_02,Internet Archive,repository_full_text,QLD,productive,17,15,9,2,1,0.8824,,Scale productive route
+sprint_internet_archive_smyth_victoria_vol2_rescan_02,Internet Archive,repository_full_text,VIC/TAS,productive,47,46,35,0,1,0.9787,,Scale productive route
+sprint_internet_archive_eaglehawk_crow_rescan_02,Internet Archive,repository_full_text,AU,productive,17,17,31,0,0,1.0000,,Scale productive route
+sprint_internet_archive_moore_wa_diary_rescan_02,Internet Archive,repository_full_text,WA,productive,38,32,16,2,5,0.8421,,Scale productive route
+sprint_internet_archive_fraser_nsw_rescan_02,Internet Archive,repository_full_text,NSW,productive,68,66,43,0,2,0.9706,,Scale productive route
+sprint_internet_archive_lang_queensland_rescan_02,Internet Archive,repository_full_text,QLD,productive,16,14,26,2,1,0.8750,,Scale productive route
+sprint_internet_archive_booandik_sa_exact_text,Internet Archive,repository_full_text,SA,productive,40,38,5,0,2,0.9500,,Scale productive route
+sprint_internet_archive_canberra_history_legends_exact_text,Internet Archive,repository_full_text,ACT,productive,8,7,1,0,1,0.8750,,Scale productive route
+sprint_internet_archive_roth_tasmania_rescan_02,Internet Archive,repository_full_text,TAS,productive,48,46,40,4,0,0.9583,,Scale productive route
+sprint_internet_archive_peck_australian_legends_rescan_02,Internet Archive,repository_full_text,AU,productive,60,58,29,0,2,0.9667,,Scale productive route
+sprint_internet_archive_ridley_kamilaroi_rescan_02,Internet Archive,repository_full_text,NSW/QLD,productive,32,32,39,0,0,1.0000,,Scale productive route
+sprint_internet_archive_native_tribes_nt_rescan_02,Internet Archive,repository_full_text,NT,productive,86,85,5,2,0,0.9884,,Scale productive route
+sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur,Project Gutenberg,public_domain_ebook,TAS,low_yield,3,3,2,0,0,1.0000,,Keep as probe/discovery route only
+sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown,Internet Archive,repository_full_text,NSW,low_yield,0,0,2,0,0,,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains,Project Gutenberg,public_domain_ebook,NSW,low_yield,2,1,0,0,1,0.5000,,Keep as probe/discovery route only
+sprint_mapfirst_ia_lumholtz_herbert_river,Internet Archive,repository_full_text,QLD,productive,7,6,13,2,0,0.8571,,Scale productive route
+sprint_mapfirst_ia_lake_george_devil_exact_text,Internet Archive,repository_full_text,NSW,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_mapfirst_gutenberg_hume_madame_midas_ballarat,Project Gutenberg,public_domain_ebook,VIC,low_yield,12,0,0,0,12,0.0000,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_mapfirst_gutenberg_hume_hansom_cab_melbourne,Project Gutenberg,public_domain_ebook,VIC,low_yield,2,0,0,0,2,0.0000,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_mapfirst_gutenberg_richardson_australia_felix_ballarat,Project Gutenberg,public_domain_ebook,VIC,low_yield,5,1,0,0,4,0.2000,,Keep as probe/discovery route only
+sprint_mapfirst_gutenberg_lawson_while_billy_bourke,Project Gutenberg,public_domain_ebook,NSW,low_yield,2,1,0,0,1,0.5000,,Keep as probe/discovery route only
+sprint_mapfirst_gutenberg_lawson_while_billy_mudgee,Project Gutenberg,public_domain_ebook,NSW,low_yield,0,0,0,0,0,,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_mapfirst_gutenberg_lawson_on_track_gulgong,Project Gutenberg,public_domain_ebook,NSW,low_yield,1,0,0,0,1,0.0000,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_mapfirst_ia_lawson_joe_wilson_bathurst,Internet Archive,repository_full_text,NSW,low_yield,0,0,0,0,0,,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_abc_placefirst_national_haunted_sites,Australian Broadcasting Corporation,institutional_media_page,AU,productive,64,16,17,41,58,0.2500,,Scale productive route
+sprint_abc_placefirst_tasmania_port_arthur_hobart,Australian Broadcasting Corporation,institutional_media_page,TAS,productive,15,10,0,5,14,0.6667,,Scale productive route
+sprint_abc_placefirst_sa_vic_gaol_asylum_theatre,Australian Broadcasting Corporation,institutional_media_page,SA/VIC,productive,36,6,0,37,49,0.1667,,Scale productive route
+sprint_abc_placefirst_wa_act_qld_nsw_sites,Australian Broadcasting Corporation,institutional_media_page,WA/ACT/QLD/NSW,productive,52,11,9,15,49,0.2115,,Scale productive route
+sprint_abc_placefirst_wa_modern_haunted_sites_02,Australian Broadcasting Corporation,institutional_media_page,WA,low_yield,44,3,2,28,92,0.0682,,Keep as probe/discovery route only
+sprint_abc_placefirst_nt_modern_haunted_sites_02,Australian Broadcasting Corporation,institutional_media_page,NT,low_yield,48,1,0,26,189,0.0208,,Keep as probe/discovery route only
+sprint_abc_placefirst_sa_tas_modern_sites_02,Australian Broadcasting Corporation,institutional_media_page,SA/TAS,low_yield,48,5,2,52,120,0.1042,,Keep as probe/discovery route only
+sprint_abc_exact_discovered_wa_sa_tas_modern_03,Australian Broadcasting Corporation,institutional_media_page,WA/SA/TAS,productive,28,9,0,14,45,0.3214,,Scale productive route
+sprint_abc_exact_discovered_national_modern_03,Australian Broadcasting Corporation,institutional_media_page,NSW/QLD/TAS/SA/WA/ACT/VIC,productive,40,18,0,6,36,0.4500,,Scale productive route
+sprint_abc_exact_wa_tas_additional_modern_04,Australian Broadcasting Corporation,institutional_media_page,WA/TAS,low_yield,3,1,1,2,8,0.3333,,Keep as probe/discovery route only
+sprint_abc_exact_act_vic_tas_known_sites_04,Australian Broadcasting Corporation,institutional_media_page,ACT/VIC/TAS,productive,16,16,2,1,5,1.0000,,Scale productive route
+sprint_abc_exact_qld_nsw_known_sites_04,Australian Broadcasting Corporation,institutional_media_page,QLD/NSW,productive,10,10,1,7,11,1.0000,,Scale productive route
+sprint_abc_exact_wa_york_oakabella_retry_05,Australian Broadcasting Corporation,institutional_media_page,WA,productive,10,6,3,3,14,0.6000,,Scale productive route
+sprint_abc_exact_sa_tas_known_sites_05,Australian Broadcasting Corporation,institutional_media_page,SA/TAS,low_yield,8,5,2,19,26,0.6250,,Keep as probe/discovery route only
+sprint_abc_exact_nt_modern_sites_05,Australian Broadcasting Corporation,institutional_media_page,NT,productive,12,9,8,11,56,0.7500,,Scale productive route
+sprint_abc_exact_modern_bonus_sites_05,Australian Broadcasting Corporation,institutional_media_page,QLD/VIC/ACT/TAS/WA/SA,productive,18,16,7,4,9,0.8889,,Scale productive route
+sprint_abc_exact_public_pages_06,Australian Broadcasting Corporation,institutional_media_page,SA/TAS/QLD/NSW/VIC/ACT/WA,productive,15,8,1,0,6,0.5333,,Scale productive route
+sprint_abc_exact_public_pages_nt_qld_07,Australian Broadcasting Corporation,institutional_media_page,NT/QLD,low_yield,3,2,0,0,1,0.6667,,Keep as probe/discovery route only
+sprint_abc_australias_most_haunted_places_08,Australian Broadcasting Corporation,institutional_media_page,ACT/NSW/SA/WA/QLD,productive,6,6,0,0,0,1.0000,,Scale productive route
+sprint_abc_australias_most_haunted_places_rescan_09,Australian Broadcasting Corporation,institutional_media_page,ACT/NSW/SA/WA/QLD,productive,6,6,0,0,0,1.0000,,Scale productive route
+sprint_abc_ghosthunters_picton_woodford_10,Australian Broadcasting Corporation,institutional_media_page,NSW,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_qld_ghostbuster_places_rescan_11,Australian Broadcasting Corporation,institutional_media_page,QLD,low_yield,3,0,0,0,3,0.0000,public_page_low_yield_or_exhausted,Keep as probe/discovery route only
+sprint_abc_exact_public_pages_rescan_12,Australian Broadcasting Corporation,institutional_media_page,QLD/NSW,low_yield,3,2,0,0,1,0.6667,,Keep as probe/discovery route only
+sprint_abc_exact_site_units_rescan_13,Australian Broadcasting Corporation,institutional_media_page,WA/TAS,low_yield,4,2,0,2,0,0.5000,,Keep as probe/discovery route only
+sprint_abc_richmond_bridge_exact_14,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,1,0,0,0,1,0.0000,public_page_low_yield_or_exhausted,Keep as probe/discovery route only
+sprint_abc_richmond_bridge_exact_15,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,1,0,0,0,1,0.0000,public_page_low_yield_or_exhausted,Keep as probe/discovery route only
+sprint_abc_richmond_bridge_exact_16,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_adelaide_gaol_ghostly_sightings_exact_17,Adelaide Gaol,institutional_web,SA,productive,12,8,8,0,4,0.6667,,Scale productive route
+sprint_adelaide_gaol_william_ashton_section_18,Adelaide Gaol,institutional_web,SA,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_modern_wa_tas_sa_site_units_19,Australian Broadcasting Corporation,institutional_media_page,WA/TAS/SA,productive,11,9,0,1,1,0.8182,,Scale productive route
+sprint_abc_modern_wa_tas_sa_site_units_20,Australian Broadcasting Corporation,institutional_media_page,WA/TAS/SA,low_yield,5,5,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_hobart_distinct_ghost_places_21,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,5,2,0,0,3,0.4000,,Keep as probe/discovery route only
+sprint_abc_hobart_named_ghost_sections_22,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,3,3,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_most_haunted_additional_sites_23,Australian Broadcasting Corporation,institutional_media_page,NSW/ACT,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_modern_underrepresented_place_units_24,Australian Broadcasting Corporation,institutional_media_page,WA/TAS/SA/VIC/ACT,low_yield,7,4,0,1,2,0.5714,,Keep as probe/discovery route only
+sprint_abc_modern_named_place_units_25,Australian Broadcasting Corporation,institutional_media_page,TAS/QLD/NSW,productive,6,6,0,0,0,1.0000,,Scale productive route
+sprint_territory_stories_litchfield_yowie_26,Library & Archives NT,public_repository_ocr_text,NT,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_territory_stories_acacia_hills_yowie_27,Library & Archives NT,public_repository_ocr_text,NT,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_territory_stories_darwin_ambulance_ghost_28,St John Ambulance Australia (NT) / Library & Archives NT,public_repository_newsletter_ocr_text,NT,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_york_wa_distinct_ghost_units_29,Australian Broadcasting Corporation,institutional_media_page,WA,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_albany_spectrum_convict_ghost_30,Australian Broadcasting Corporation,institutional_media_page,WA,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_territory_stories_palmerston_centre_ghost_31,St John Ambulance Australia (NT) / Library & Archives NT,public_repository_newsletter_ocr_text,NT,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_territory_stories_mix1049_darwin_ghost_32,News Corp Australia / Library & Archives NT,public_repository_ocr_text,NT,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_aso_his_masters_ghost_montsalvat_33,National Film and Sound Archive,institutional_media_page,VIC,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_gawler_dead_mans_pass_tree_ghost_34,Town of Gawler Council,municipal_local_history_pdf,SA,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_z_ward_glenside_ghost_sounds_35,Australian Broadcasting Corporation,institutional_media_page,SA,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_willow_court_sarah_spirit_36,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_willow_court_doctor_spirit_37,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_willow_court_documentary_context_38,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,1,0,0,0,1,0.0000,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_abc_bayview_hotel_stanley_ghost_39,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_majestic_theatre_pomona_woman_40,Australian Broadcasting Corporation,institutional_media_page,QLD,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_exact_public_place_wave_42,National Trust / Australian Broadcasting Corporation,institutional_history_and_media_pages,WA/TAS/VIC/NSW,low_yield,8,5,0,0,3,0.6250,,Keep as probe/discovery route only
+sprint_exact_public_place_reviewed_snippets_43,National Trust / Australian Broadcasting Corporation,institutional_history_and_media_pages,TAS/VIC,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_exact_public_place_reviewed_snippets_44,National Trust / Australian Broadcasting Corporation,institutional_history_and_media_pages,TAS/VIC,low_yield,3,3,2,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_wa_nt_sa_tas_map_gap_wave_45,Australian Broadcasting Corporation,institutional_media_page,WA/NT/SA/TAS,productive,10,7,5,26,23,0.7000,,Scale productive route
+sprint_abc_modern_undercovered_map_gap_wave_46,Australian Broadcasting Corporation,institutional_media_page,WA/NT/SA/TAS/VIC/ACT,low_yield,5,5,3,7,6,1.0000,,Keep as probe/discovery route only
+sprint_abc_place_exact_nt_wa_gap_wave_47,Australian Broadcasting Corporation,institutional_media_page,NT/WA,productive,19,19,7,22,39,1.0000,,Scale productive route
+sprint_abc_place_exact_sa_tas_gap_wave_48,Australian Broadcasting Corporation,institutional_media_page,SA/TAS,productive,14,12,1,118,61,0.8571,,Scale productive route
+sprint_abc_exact_site_map_gap_wave_49,Australian Broadcasting Corporation,institutional_media_page,WA/NT/SA/TAS/VIC/ACT,low_yield,8,5,0,52,87,0.6250,,Keep as probe/discovery route only
+sprint_abc_curious_canberra_public_page_wave_50,Australian Broadcasting Corporation,institutional_media_page,ACT,low_yield,4,3,0,0,1,0.7500,,Keep as probe/discovery route only
+sprint_national_trust_heritage_haunts_public_page_wave_51,National Trust of Australia,institutional_history_and_media_pages,NSW/VIC,low_yield,11,0,0,0,11,0.0000,public_page_low_yield_or_exhausted,Keep as probe/discovery route only
+sprint_national_trust_spooky_stories_nsw_wave_52,National Trust of Australia (NSW),institutional_history_article,NSW,low_yield,4,4,4,0,0,1.0000,,Keep as probe/discovery route only
+sprint_national_trust_spooky_stories_nsw_wave_53,National Trust of Australia (NSW),institutional_history_article,NSW,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_modern_institutional_place_ghosts_wave_54,Australian Broadcasting Corporation / State Library Victoria,institutional_history_and_media_pages,WA/SA/VIC,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_slv_crowther_christmas_ghost_wave_55,State Library Victoria,institutional_history_article,VIC,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_slv_iolanthe_spiritualist_record_wave_56,State Library Victoria,institutional_history_article,VIC,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_fremantle_arts_centre_wave_57,Australian Broadcasting Corporation,institutional_media_page,WA,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_old_adelaide_gaol_invisible_man_wave_58,Australian Broadcasting Corporation,institutional_media_page,SA,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_slv_black_rock_house_spirit_wave_59,State Library Victoria,institutional_history_article,VIC,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_tas_east_coast_piermont_alice_wave_60,Australian Broadcasting Corporation / Glamorgan Spring Bay Historical Society,institutional_media_page,TAS,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_tas_livestream_distinct_figures_wave_61,Australian Broadcasting Corporation,institutional_media_page,TAS,low_yield,2,2,0,0,0,1.0000,,Keep as probe/discovery route only
+sprint_abc_sylvania_station_spirits_41,Australian Broadcasting Corporation,institutional_media_page,WA,low_yield,1,0,0,0,1,0.0000,route_cursor_exhausted,Keep as probe/discovery route only
+sprint_abc_sylvania_station_spirits_corrected_wave_62,Australian Broadcasting Corporation,institutional_media_page,WA,low_yield,1,1,0,0,0,1.0000,,Keep as probe/discovery route only

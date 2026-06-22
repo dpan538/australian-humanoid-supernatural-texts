@@ -5680,3 +5680,2014 @@ routes:
         coordinate_evidence_note: "ABC page names Narryna in Battery Point; coordinates use the state-checked OSM/Nominatim Narryna Heritage Museum point."
         text: >-
           Narryna in Battery Point is an 1830s merchant's house that now operates as a museum. It apparently has the area's longest-serving ghost, a young convict girl named Polly. Jacques Imbriotis said Polly was a young convict staff member who died when she was pregnant, either pushed or fallen down the stairs.
+  - route_id: sprint_abc_most_haunted_additional_sites_23
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NSW/ACT
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 4
+    max_candidates_probe: 10
+    max_candidates_scaled: 10
+    geocode_rate_limit_seconds: 1.5
+    evidence_radius: 920
+    resume_strategy: rescan_new_evidence
+    australian_relation: ABC Radio National transcript naming additional Australian haunted-site narratives with verified exact places.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - url: "https://www.abc.net.au/listen/programs/ark/australias-most-haunted/3360028"
+        title: "Australia's Most Haunted"
+        publication_date_text: "2006-11-12"
+        places:
+          - place_name: "Monte Cristo Homestead"
+            state: "NSW"
+            aliases: ["Monte Cristo Homestead", "phantom piano playing", "apparitions at the foot of the bed"]
+            query: "Monte Cristo Homestead, Junee, New South Wales, Australia"
+            location_type: "exact_site"
+          - place_name: "National Film and Sound Archive"
+            state: "ACT"
+            aliases: ["National Film and Sound Archive", "most haunted building", "Ghost Tour"]
+            query: "National Film and Sound Archive, Canberra, ACT, Australia"
+            location_type: "exact_site"
+  - route_id: sprint_abc_modern_underrepresented_place_units_24
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/TAS/SA/VIC/ACT
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 10
+    max_candidates_probe: 20
+    max_candidates_scaled: 20
+    geocode_rate_limit_seconds: 1.5
+    evidence_radius: 940
+    resume_strategy: rescan_new_evidence
+    australian_relation: Exact ABC public media pages naming modern, place-linked ghost or apparition narratives, prioritising underrepresented jurisdictions and post-1970 coverage.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - url: "https://www.abc.net.au/listen/programs/perth-focus/8411088"
+        title: "Paranormal investigator claims to have recorded the voice of a ghost who haunts the Cuballing Tavern"
+        publication_date_text: "2017-04-03"
+        place_name: "Cuballing Tavern"
+        state: "WA"
+        aliases: ["Cuballing Tavern", "ghost of Ted Leighton", "Ted Leighton", "well known ghost"]
+        query: "Cuballing Tavern, Cuballing, Western Australia, Australia"
+        location_type: "exact_site"
+        source_label: "Ted Leighton"
+      - url: "https://www.abc.net.au/listen/programs/northtas-drive/ghost-stories/10986996"
+        title: "On Drive with Piia; Ghost stories, adulting app and mental health"
+        publication_date_text: "2019-04-16"
+        place_name: "St Andrews Inn"
+        state: "TAS"
+        aliases: ["St Andrews Inn", "ghost Lucy", "Lucy"]
+        query: "St Andrews Inn, Cleveland, Tasmania, Australia"
+        location_type: "exact_site"
+        source_label: "Lucy"
+      - url: "https://www.abc.net.au/news/2022-06-16/gladstone-gaol-overnight-stay-closed-sa-history/101158748"
+        title: "Gladstone Gaol caretakers hang up their keys as 'haunted' building succumbs to lack of volunteers and visitors"
+        publication_date_text: "2022-06-16"
+        place_name: "Gladstone Gaol"
+        state: "SA"
+        aliases: ["Gladstone Gaol", "haunted building", "historic prison"]
+        query: "Gladstone Gaol, Gladstone, South Australia, Australia"
+        location_type: "exact_site"
+        source_label: "reported_ghost_or_apparition"
+      - url: "https://www.abc.net.au/news/2017-09-01/spooky-after-dark-ghost-tours-at-old-parliament-house/8858870"
+        title: "Old Parliament House and its spooky past creating high demand for ghost tours"
+        publication_date_text: "2017-09-01"
+        place_name: "Old Parliament House"
+        state: "ACT"
+        aliases: ["Old Parliament House", "spooky past", "ghost tours"]
+        query: "Old Parliament House, Canberra, Australian Capital Territory, Australia"
+        location_type: "exact_site"
+        source_label: "reported_ghost_or_apparition"
+      - url: "https://www.abc.net.au/news/2025-10-30/halloween-old-melbourne-gaol-pentridge-prison-labassa-mansion/105948238"
+        title: "Melbourne sites with horrific histories embrace a little spookiness this Halloween"
+        publication_date_text: "2025-10-30"
+        places:
+          - place_name: "Old Melbourne Gaol"
+            state: "VIC"
+            aliases: ["Old Melbourne Gaol", "haunted cell", "spookiness"]
+            query: "Old Melbourne Gaol, Melbourne, Victoria, Australia"
+            location_type: "exact_site"
+            source_label: "reported_ghost_or_apparition"
+          - place_name: "Pentridge Prison"
+            state: "VIC"
+            aliases: ["Pentridge Prison", "Pentridge", "former prisons"]
+            query: "Pentridge Prison, Coburg, Victoria, Australia"
+            location_type: "exact_site"
+            source_label: "reported_ghost_or_apparition"
+          - place_name: "Labassa Mansion"
+            state: "VIC"
+            aliases: ["Labassa Mansion", "Labassa", "spookiness"]
+            query: "Labassa Mansion, Caulfield North, Victoria, Australia"
+            location_type: "exact_site"
+            source_label: "reported_ghost_or_apparition"
+  - route_id: sprint_abc_modern_named_place_units_25
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS/QLD/NSW
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 8
+    max_candidates_probe: 20
+    max_candidates_scaled: 20
+    geocode_rate_limit_seconds: 1.5
+    evidence_radius: 980
+    resume_strategy: rescan_new_evidence
+    australian_relation: Exact ABC public media pages with source-stated post-1970 ghost, yowie, and local-legend narratives tied to named Australian towns or sites.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - url: "https://www.abc.net.au/listen/programs/hobart-saturdays/east-coast-tasmania-ghost-stories-noel-stanley/105824130"
+        title: "The 'haunted' historic houses of Tasmania's east coast"
+        publication_date_text: "2025-09-27"
+        place_name: "Swansea"
+        state: "TAS"
+        aliases: ["Meredith House in Swansea", "Swansea", "Harry the ghost"]
+        query: "Swansea, Tasmania, Australia"
+        location_type: "town"
+        source_label: "Harry"
+        narrative_type: "ghost_legend"
+      - url: "https://www.abc.net.au/listen/programs/hobart-evenings/ghosts/12299586"
+        title: "Imagine being grabbed around the ankle when there's no-one else in the room. Ghosts?"
+        publication_date_text: "2020-05-28"
+        place_name: "Port Arthur Historic Site"
+        state: "TAS"
+        aliases: ["Port Arthur Historic Site", "blue lady", "The Parsonage", "ghost at The Parsonage"]
+        query: "Port Arthur Historic Site, Tasmania, Australia"
+        location_type: "exact_site"
+        source_label: "Blue Lady and Parsonage ghost"
+        narrative_type: "apparition_account"
+      - url: "https://www.abc.net.au/radio/programs/overnights/kilcoy/11080898"
+        title: "Spot on the map: Kilcoy, Queensland"
+        publication_date_text: "2019-05-05"
+        place_name: "Kilcoy"
+        state: "QLD"
+        aliases: ["Kilcoy", "Yowie sightings", "Yowie capital of Australia"]
+        query: "Kilcoy, Queensland, Australia"
+        location_type: "town"
+        source_label: "Yowie"
+        narrative_type: "local_legend"
+      - url: "https://www.abc.net.au/listen/programs/south-queensland-drive/yowies/13676682"
+        title: "Sighting of mythical 'Yowie' turns Queensland forest workers into believers"
+        publication_date_text: "2021-12-14"
+        place_name: "Jimna"
+        state: "QLD"
+        aliases: ["Jimna", "Yowie", "giant terrifying shape"]
+        query: "Jimna, Queensland, Australia"
+        location_type: "locality"
+        source_label: "Yowie"
+        narrative_type: "encounter_account"
+      - url: "https://www.abc.net.au/news/2018-11-22/woodenbong-and-history-of-yowie-country-curious-north-coast/10505204"
+        title: "Woodenbong in Yowie Country is a good place to start if you're looking for Australia's Big Foot"
+        publication_date_text: "2018-11-22"
+        place_name: "Woodenbong"
+        state: "NSW"
+        aliases: ["Woodenbong", "Yowie Country", "mysterious man-like beasts"]
+        query: "Woodenbong, New South Wales, Australia"
+        location_type: "town"
+        source_label: "Yowie"
+        narrative_type: "local_legend"
+      - url: "https://www.abc.net.au/news/2017-06-01/south-sea-islander-community-confronts-fears-of-yowies-ghosts/8572418"
+        title: "South Sea Islander community confronts fears of yowies and ghosts with night walk"
+        publication_date_text: "2017-06-01"
+        place_name: "Joskeleigh"
+        state: "QLD"
+        aliases: ["Joskeleigh", "stories of yowies", "resident ghosts", "hairy men"]
+        query: "Joskeleigh, Queensland, Australia"
+        location_type: "locality"
+        source_label: "Yowie and resident ghosts"
+        narrative_type: "local_legend"
+  - route_id: sprint_territory_stories_litchfield_yowie_26
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Library & Archives NT
+    source_name: Territory Stories
+    source_title: The Northern Territory News, 11 January 2025
+    source_author: News Corp Australia / Library & Archives NT
+    source_type: public_repository_ocr_text
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2025-01-11"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: rumour_account
+    person_form_terms: ["Yowie", "Hairy Man"]
+    australian_relation: Territory Stories OCR from an NT newspaper item explicitly naming Litchfield National Park and yowie/Hairy Man speculation.
+    publicness_status: public_repository_ocr_text
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: nt-news-2025-litchfield-yowie
+        chapter: Litchfield National Park yowie speculation
+        url: "https://hdl.handle.net/10070/988600"
+        location_text: "Litchfield National Park, NT"
+        location_role: "reported_place"
+        latitude: -13.2755716
+        longitude: 130.9006256
+        location_precision: named_feature
+        geocode_source: "nominatim_openstreetmap_state_checked_territory_stories_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "Territory Stories OCR names Litchfield National Park in the yowie report; coordinates use the state-checked OSM/Nominatim Litchfield National Park result."
+        text: >-
+          I am wookiee hear me roar Tales of Bigfoot, Yowies and the Hairy Man have long been rumoured in the Territory. Now, one visitor to Litchfield National Park reports of hearing 'Wookiee-like screams' have caught the attention of Yowie researchers. 'Horrific screams' in Litchfield spark fresh Yowie speculation.
+    entity_terms: ["Yowie", "Hairy Man"]
+  - route_id: sprint_territory_stories_acacia_hills_yowie_27
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Library & Archives NT
+    source_name: Territory Stories
+    source_title: The Northern Territory News, 17 October 2014
+    source_author: News Corp Australia / Library & Archives NT
+    source_type: public_repository_ocr_text
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2014-10-17"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: rumour_account
+    person_form_terms: ["Yowie"]
+    australian_relation: Territory Stories OCR from an NT newspaper item explicitly naming Acacia Hills and yowie sightings or damage speculation.
+    publicness_status: public_repository_ocr_text
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: nt-news-2014-acacia-hills-yowie
+        chapter: Acacia Hills yowie sightings and damage speculation
+        url: "https://hdl.handle.net/10070/534950"
+        location_text: "Acacia Hills, NT"
+        location_role: "reported_place"
+        latitude: -12.7588199
+        longitude: 131.1496296
+        location_precision: town
+        geocode_source: "nominatim_openstreetmap_state_checked_territory_stories_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "Territory Stories OCR names yowie sightings in the Acacia Hills region; coordinates use the state-checked OSM/Nominatim Acacia Hills town result."
+        text: >-
+          Yowie! Let's hope the bark worse than bite. It's hard to imagine what could cause this sort of damage. A Yowie expert, who preferred to remain anonymous, has examined the photos and recognised the distinctive marking on the trees. "It could be a Yowie, there's certainly some strange things that live" in a way very similar to what has happened here. "Yowies are not really know for climbing but they do have a powerful leap." Yowie sightings have been long documented in the Acacia Hills region.
+    entity_terms: ["Yowie"]
+  - route_id: sprint_territory_stories_darwin_ambulance_ghost_28
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: St John Ambulance Australia (NT) / Library & Archives NT
+    source_name: Territory Stories
+    source_title: Vollie News, 8 August 2013
+    source_author: St John Ambulance Australia (NT)
+    source_type: public_repository_newsletter_ocr_text
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2013-08-08"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: Public St John Ambulance NT newsletter in Territory Stories naming the Darwin Ambulance Centre on Ross Smith Avenue as having a resident ghost.
+    publicness_status: public_repository_ocr_text
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_newsletter_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: vollie-news-2013-darwin-ambulance-ghost
+        chapter: Darwin Ambulance Centre resident ghost
+        url: "https://hdl.handle.net/10070/583757"
+        location_text: "Darwin Ambulance Centre, Parap, NT"
+        location_role: "apparition_location"
+        latitude: -12.42858
+        longitude: 130.8431037
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_territory_stories_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "Vollie News OCR names the Darwin Ambulance Centre on Ross Smith Avenue as having a resident ghost; coordinates use the state-checked OSM/Nominatim Darwin Ambulance Centre result."
+        text: >-
+          Ghost Story - Part 2. A couple of years ago Vollie News ran a story about the ghost in the old Palmerston Ambulance Centre. The Darwin Ambulance Centre on Ross Smith Avenue also has its resident ghost. Paramedic reports on this story suggested that the ghost was a fiction, although Renee Caldwell-Harris says that it still has taken up residence at Parap Station.
+    entity_terms: ["ghost"]
+  - route_id: sprint_abc_z_ward_glenside_ghost_sounds_35
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Adelaide's notorious Z Ward asylum opens for after-dark ghost tours
+    source_author: 891 ABC Adelaide
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: SA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2014-11-12"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: apparition_account
+    australian_relation: ABC public article naming Z Ward at Glenside and reporting paranormal investigation claims tied to the asylum building.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: z-ward-glenside-footsteps-key-sounds
+        chapter: Z Ward footsteps and key sounds
+        url: "https://www.abc.net.au/news/2014-11-12/adelaides-z-ward-asylum-opens-for-after-dark-ghost-tours/5886308"
+        location_text: "Z Ward, Glenside, SA"
+        location_role: "apparition_location"
+        latitude: -34.9428535
+        longitude: 138.6323835
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Z Ward at Glenside as the paranormal investigation site; coordinates use the state-checked OSM/Nominatim Z Ward point."
+        text: >-
+          ABC reported that Z Ward at Glenside had opened for after-dark ghost tours and that tour staff conducted preliminary investigations. The article says several members heard what they believed were footsteps ascending the building's steel staircase, and Alison Oborn reported hearing what sounded like a key turning in a door lock while photographing the site.
+    entity_terms: ["ghost", "footsteps", "key"]
+  - route_id: sprint_abc_willow_court_sarah_spirit_36
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Ghost hunters conduct global seance via Facebook at Australia's oldest mental hospital
+    source_author: ABC News Tasmania
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2017-10-02"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: apparition_account
+    australian_relation: ABC public article with a distinct named spirit claim at Willow Court in New Norfolk, Tasmania.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: willow-court-sarah-spirit-chair
+        chapter: Willow Court Sarah spirit
+        url: "https://www.abc.net.au/news/2017-10-02/ghost-hunters-hold-facebook-seance-at-willow-court-tasmania/9005448#sarah"
+        location_text: "Willow Court Historic Site, New Norfolk, TAS"
+        location_role: "apparition_location"
+        latitude: -42.7854275
+        longitude: 147.0636218
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Willow Court in New Norfolk and describes spirit claims at the site; coordinates use the state-checked OSM/Nominatim Willow Court Historic Site point."
+        text: >-
+          ABC reported on a global seance at Willow Court in New Norfolk. Ghost hunter Emma Percey said Willow Court was home to several spirits connected to objects and areas at the site, including a spirit named Sarah attached to the abortion chair, which she said had been verified by three psychic mediums.
+    entity_terms: ["Sarah", "spirit"]
+  - route_id: sprint_abc_willow_court_doctor_spirit_37
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Ghost hunters conduct global seance via Facebook at Australia's oldest mental hospital
+    source_author: ABC News Tasmania
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2017-10-02"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: apparition_account
+    australian_relation: ABC public article with a distinct doctor-spirit claim attached to the Willow Court morgue in New Norfolk, Tasmania.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: willow-court-morgue-doctor-spirit
+        chapter: Willow Court morgue doctor spirit
+        url: "https://www.abc.net.au/news/2017-10-02/ghost-hunters-hold-facebook-seance-at-willow-court-tasmania/9005448#doctor"
+        location_text: "Willow Court Historic Site, New Norfolk, TAS"
+        location_role: "apparition_location"
+        latitude: -42.7854275
+        longitude: 147.0636218
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Willow Court in New Norfolk and the morgue spirit claim; coordinates use the state-checked OSM/Nominatim Willow Court Historic Site point."
+        text: >-
+          ABC reported that the Willow Court morgue was believed by the ghost-hunting group to be home to the spirit of an unnamed doctor. Stan Herd said he had experienced negative encounters with the doctor and felt extremely angry and uncomfortable in the spirit's presence.
+    entity_terms: ["doctor", "spirit"]
+  - route_id: sprint_abc_willow_court_documentary_context_38
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Drama over ghost documentary
+    source_author: ABC News Tasmania
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2013-02-22"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC public report on public discourse around paranormal activity at the former mental health asylum at New Norfolk.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: willow-court-ghost-documentary-context
+        chapter: Willow Court ghost documentary
+        url: "https://www.abc.net.au/news/2013-02-22/drama-over-ghost-documentary/4535132"
+        location_text: "Willow Court Historic Site, New Norfolk, TAS"
+        location_role: "source_visible_place"
+        latitude: -42.7854275
+        longitude: 147.0636218
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page describes a documentary about paranormal activity at the former mental health asylum at New Norfolk; coordinates use the state-checked OSM/Nominatim Willow Court Historic Site point."
+        text: >-
+          ABC reported that Tasmania's anti-discrimination commissioner was investigating a documentary about paranormal activity at a former mental health asylum after complaints that it may discriminate against former patients. The public item identifies the New Norfolk asylum context and the paranormal documentary as the subject of the dispute.
+    entity_terms: ["paranormal activity"]
+  - route_id: sprint_abc_bayview_hotel_stanley_ghost_39
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Stanley's Bayview Hotel - tales of a ghost, Joe Lyons and the quest for original artefacts
+    source_author: ABC Northern Tasmania
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2015-02-11"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC public article naming Stanley's Bayview Hotel and a distinct young-woman ghost tradition attached to the historic hotel.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: stanley-bayview-hotel-young-woman-ghost
+        chapter: Bayview Hotel young woman ghost
+        url: "https://www.abc.net.au/news/2015-02-11/bayview-hotel-restored-in-stanley/6083410"
+        location_text: "Stanley, TAS"
+        location_role: "legend_associated_place"
+        latitude: -40.7605718
+        longitude: 145.2945184
+        location_precision: town
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Stanley's Bayview Hotel and the ghost tradition; exact hotel point did not verify independently, so the representative public flag uses the state-checked OSM/Nominatim Stanley town result."
+        text: >-
+          ABC reported on Stanley's historic Bayview Hotel and said the restorers had been told many tales of the hotel's past, including ghost stories. Sandra Parker said everyone calls the ghost a she and that she had heard stories about a young woman who fell from the original top balcony, adding that if there is a ghost she is apparently friendly.
+    entity_terms: ["ghost", "young woman"]
+  - route_id: sprint_abc_majestic_theatre_pomona_woman_40
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Queensland towns on the Sunshine Coast and in north Queensland get set for ghostbuster tour
+    source_author: 612 ABC Brisbane
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: QLD
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2015-01-06"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: apparition_account
+    australian_relation: ABC public article naming the Majestic Theatre in Pomona and a reported woman-presence/ghost claim at the theatre.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: majestic-theatre-pomona-woman-presence
+        chapter: Majestic Theatre woman presence
+        url: "https://www.abc.net.au/news/2015-01-06/queensland-set-for-ghostbuster-tour/6002230#majestic-theatre"
+        location_text: "Majestic Theatre, Pomona, QLD"
+        location_role: "apparition_location"
+        latitude: -26.3656737
+        longitude: 152.8574720
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names the Majestic Theatre in Pomona as a paranormal investigation site; coordinates use the state-checked OSM/Nominatim Majestic Theatre point."
+        text: >-
+          ABC reported that the Majestic Theatre in Pomona was among Queensland locations to be investigated for paranormal activity. Kade Jones said there were strange happenings at the theatre, that apparently there is a woman there, and that reported phenomena included voices, shadow figures, and touching of people's shoulders while a movie was on.
+    entity_terms: ["woman", "shadow figures", "ghost"]
+  - route_id: sprint_abc_sylvania_station_spirits_41
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Hungry spirits haunt station store room
+    source_author: ABC Rural
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2013-11-01"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: apparition_account
+    australian_relation: ABC Rural public article with a distinct Western Australian pastoral-station spirit account from Sylvania Station.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: sylvania-station-store-room-spirits
+        chapter: Sylvania Station store room spirits
+        url: "https://www.abc.net.au/news/rural/2013-11-01/rural-spooky-station-stories/5060410"
+        text: >-
+          ABC Rural reported that Western Australia's remote pastoral stations can be spooky places. Darlene, the cook at Sylvania Station in WA's Pilbara region, said she often hears music around the homestead and described two very nice spirits in blue shirts who hang out in her store room and usually sit up on top.
+    entity_terms: ["spirits"]
+  - route_id: sprint_exact_public_place_wave_42
+    enabled: true
+    family: place_first_map_records
+    organisation: National Trust / Australian Broadcasting Corporation
+    source_name: National Trust and ABC public pages
+    source_type: institutional_history_and_media_pages
+    source_tier: A
+    jurisdiction: WA/TAS/VIC/NSW
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 8
+    max_candidates_probe: 12
+    max_candidates_scaled: 12
+    geocode_rate_limit_seconds: 1.0
+    evidence_radius: 1500
+    resume_strategy: rescan_new_evidence
+    australian_relation: Exact public institutional and ABC pages naming post-1970 or current place-linked ghost, haunted-site, and apparition legends at verified Australian places.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_or_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - url: "https://www.nationaltrust.org.au/event/dark-ghost-tours-afterlife-tales-of-the-hobart-convict-penitentiary/"
+        title: "Dark Ghost Tours - Afterlife Tales of the Hobart Convict Penitentiary"
+        publication_date_text: "current public page, accessed 2026-06-22"
+        place_name: "Hobart Convict Penitentiary"
+        state: "TAS"
+        aliases: ["Hobart Convict Penitentiary", "haunted tunnels", "disembodied footsteps"]
+        latitude: -42.8773197
+        longitude: 147.3275298
+        location_type: "exact_site"
+        source_label: "unnamed_penitentiary_ghosts"
+        narrative_type: "ghost_legend"
+      - url: "https://www.nationaltrust.org.au/event/greenough-ghost-tour-sleepover/"
+        title: "Greenough ghost tour and sleepover"
+        publication_date_text: "2023 public event page, accessed 2026-06-22"
+        place_name: "Greenough"
+        state: "WA"
+        aliases: ["Historic township of Greenough", "Greenough ghost tour", "ghost hunt"]
+        latitude: -28.9199695
+        longitude: 114.7172748
+        location_type: "locality"
+        source_label: "unnamed_greenough_ghosts"
+        narrative_type: "ghost_legend"
+      - url: "https://www.nationaltrust.org.au/ahf/vic/australian-heritage-festival-events-that-go-bump-in-the-night/"
+        title: "Australian Heritage Festival Events that Go Bump in the Night"
+        publication_date_text: "public festival page, accessed 2026-06-22"
+        place_name: "Altona Homestead"
+        state: "VIC"
+        aliases: ["Altona Homestead", "long reputation for hauntings", "alive with activity"]
+        latitude: -37.8694488
+        longitude: 144.8292539
+        location_type: "exact_site"
+        source_label: "unnamed_altona_homestead_ghosts"
+        narrative_type: "ghost_legend"
+      - url: "https://www.nationaltrust.org.au/ahf/vic/australian-heritage-festival-events-that-go-bump-in-the-night/"
+        title: "Australian Heritage Festival Events that Go Bump in the Night"
+        publication_date_text: "public festival page, accessed 2026-06-22"
+        place_name: "Point Cook Homestead"
+        state: "VIC"
+        aliases: ["Point Cook Homestead", "secluded, haunted 25-acre property", "haunted 25-acre property"]
+        latitude: -37.9261016
+        longitude: 144.7929218
+        location_type: "exact_site"
+        source_label: "unnamed_point_cook_homestead_ghosts"
+        narrative_type: "ghost_legend"
+      - url: "https://www.nationaltrust.org.au/event/paranormal-nights-at-old-government-house/"
+        title: "Paranormal Nights at Old Government House"
+        publication_date_text: "current public page, accessed 2026-06-22"
+        place_name: "Old Government House"
+        state: "NSW"
+        aliases: ["Old Government House", "reported phenomena", "spirits in the governors bedroom"]
+        latitude: -33.8121098
+        longitude: 150.9973605
+        location_type: "exact_site"
+        source_label: "unnamed_old_government_house_spirits"
+        narrative_type: "ghost_legend"
+      - url: "https://www.abc.net.au/listen/programs/hobart-drive/tasmanian-urban-myths/103995500"
+        title: "Old Zincy and other tall tales: Tasmania's weirdest urban myths"
+        publication_date_text: "2024-06-18"
+        place_name: "Village Cinemas Launceston"
+        state: "TAS"
+        aliases: ["Launceston Village Cinema", "Ghost of Cinema 2", "Village Cinema's Ghost of Cinema 2"]
+        latitude: -41.4390338
+        longitude: 147.1367680
+        location_type: "exact_site"
+        source_label: "Ghost of Cinema 2"
+        narrative_type: "ghost_legend"
+      - url: "https://www.abc.net.au/listen/programs/hobart-drive/tasmanian-urban-myths/103995500"
+        title: "Old Zincy and other tall tales: Tasmania's weirdest urban myths"
+        publication_date_text: "2024-06-18"
+        place_name: "Kelly's Steps"
+        state: "TAS"
+        aliases: ["Kelly Steps", "Kelly's Steps", "Ghost of Kelly Steps"]
+        latitude: -42.8871651
+        longitude: 147.3340274
+        location_type: "exact_site"
+        source_label: "Ghost of Kelly Steps"
+        narrative_type: "ghost_legend"
+      - url: "https://www.abc.net.au/listen/programs/hobart-drive/tasmanian-urban-myths/103995500"
+        title: "Old Zincy and other tall tales: Tasmania's weirdest urban myths"
+        publication_date_text: "2024-06-18"
+        place_name: "Sulphur Creek"
+        state: "TAS"
+        aliases: ["Sulphur Creek", "Serendipity Fun Park", "fun park was haunted"]
+        latitude: -41.0945112
+        longitude: 146.0247310
+        location_type: "locality"
+        source_label: "unnamed_serendipity_fun_park_ghost"
+        narrative_type: "ghost_legend"
+  - route_id: sprint_exact_public_place_reviewed_snippets_43
+    enabled: true
+    family: place_first_map_records
+    organisation: National Trust / Australian Broadcasting Corporation
+    source_name: National Trust and ABC public pages
+    source_title: Reviewed exact public place snippets
+    source_author: National Trust / Australian Broadcasting Corporation
+    source_type: institutional_history_and_media_pages
+    source_tier: A
+    jurisdiction: TAS/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 3
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: Reviewed exact public excerpts naming place-linked ghost or haunted-site legends at verified Australian sites.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_or_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: altona-homestead-ghost-tour
+        chapter: Altona Homestead Ghost Tour
+        url: "https://www.nationaltrust.org.au/ahf/vic/australian-heritage-festival-events-that-go-bump-in-the-night/#altona-homestead"
+        location_text: "Altona Homestead, VIC"
+        location_role: "legend_associated_place"
+        latitude: -37.8694488
+        longitude: 144.8292539
+        location_precision: "exact_site"
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust page names Altona Homestead and describes a long reputation for hauntings; coordinates use the state-checked OSM/Nominatim Altona Homestead point."
+        text: >-
+          National Trust Australian Heritage Festival page lists Altona Homestead Ghost Tour and says this particular homestead has had a long reputation for hauntings and has been the centre of paranormal investigations. The Langhorne family are long deceased but, given their colourful history and the births, deaths and heartaches linked with the building, the page says it is no surprise that the Homestead is alive with activity.
+      - section_id: point-cook-homestead-ghost-tour
+        chapter: Point Cook Homestead Ghost Tour
+        url: "https://www.nationaltrust.org.au/ahf/vic/australian-heritage-festival-events-that-go-bump-in-the-night/#point-cook-homestead"
+        location_text: "Point Cook Homestead, VIC"
+        location_role: "legend_associated_place"
+        latitude: -37.9261016
+        longitude: 144.7929218
+        location_precision: "exact_site"
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust page names Point Cook Homestead and describes it as a secluded haunted property; coordinates use the state-checked OSM/Nominatim Point Cook Homestead point."
+        text: >-
+          National Trust Australian Heritage Festival page lists Point Cook Homestead Ghost Tour. It describes the home of the Chirnside family and says visitors discover the 1850s homestead, outbuildings and family secrets on a secluded, haunted 25-acre property at Point Cook Homestead.
+      - section_id: kelly-steps-ghost
+        chapter: Ghost of Kelly Steps
+        url: "https://www.abc.net.au/listen/programs/hobart-drive/tasmanian-urban-myths/103995500#kelly-steps"
+        location_text: "Kelly's Steps, TAS"
+        location_role: "legend_associated_place"
+        latitude: -42.8871651
+        longitude: 147.3340274
+        location_precision: "exact_site"
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC transcript names Kelly Steps in a ghost-legend exchange; coordinates use the state-checked OSM/Nominatim Kelly's Steps point."
+        text: >-
+          ABC Hobart Drive's Tasmanian urban myths transcript includes a listener reference to the Ghost of Kelly Steps. Lyndon Riggall responded that he had heard the story, had lived in the Battery Point area, and had been told to be very careful on Kelly Steps at night, with a murder and possible haunting forming part of the local legend.
+    entity_terms:
+      - "Ghost Tour"
+      - "Ghost of Kelly Steps"
+  - route_id: sprint_exact_public_place_reviewed_snippets_44
+    enabled: true
+    family: place_first_map_records
+    organisation: National Trust / Australian Broadcasting Corporation
+    source_name: National Trust and ABC public pages
+    source_title: Reviewed exact public place snippets
+    source_author: National Trust / Australian Broadcasting Corporation
+    source_type: institutional_history_and_media_pages
+    source_tier: A
+    jurisdiction: TAS/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 3
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "reviewed public pages, accessed 2026-06-22"
+    term_hit_limit: 3
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: Reviewed exact public excerpts naming place-linked ghost or haunted-site legends at verified Australian sites.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_or_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: altona-homestead-ghost-tour-reviewed
+        chapter: Altona Homestead Ghost Tour
+        url: "https://www.nationaltrust.org.au/ahf/vic/australian-heritage-festival-events-that-go-bump-in-the-night/#altona-homestead-reviewed"
+        location_text: "Altona Homestead, VIC"
+        location_role: "legend_associated_place"
+        latitude: -37.8694488
+        longitude: 144.8292539
+        location_precision: "exact_site"
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust page names Altona Homestead and describes a long reputation for hauntings; coordinates use the state-checked OSM/Nominatim Altona Homestead point."
+        text: >-
+          National Trust Australian Heritage Festival page lists Altona Homestead Ghost Tour and says this particular homestead has had a long reputation for hauntings and has been the centre of paranormal investigations. The Langhorne family are long deceased but, given their colourful history and the births, deaths and heartaches linked with the building, the page says it is no surprise that the Homestead is alive with activity.
+      - section_id: point-cook-homestead-ghost-tour-reviewed
+        chapter: Point Cook Homestead Ghost Tour
+        url: "https://www.nationaltrust.org.au/ahf/vic/australian-heritage-festival-events-that-go-bump-in-the-night/#point-cook-homestead-reviewed"
+        location_text: "Point Cook Homestead, VIC"
+        location_role: "legend_associated_place"
+        latitude: -37.9261016
+        longitude: 144.7929218
+        location_precision: "exact_site"
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust page names Point Cook Homestead and describes it as a secluded haunted property; coordinates use the state-checked OSM/Nominatim Point Cook Homestead point."
+        text: >-
+          National Trust Australian Heritage Festival page lists Point Cook Homestead Ghost Tour. It describes the home of the Chirnside family and says visitors discover the 1850s homestead, outbuildings and family secrets on a secluded, haunted 25-acre property at Point Cook Homestead.
+      - section_id: kelly-steps-ghost-reviewed
+        chapter: Ghost of Kelly Steps
+        url: "https://www.abc.net.au/listen/programs/hobart-drive/tasmanian-urban-myths/103995500#kelly-steps-reviewed"
+        location_text: "Kelly's Steps, TAS"
+        location_role: "legend_associated_place"
+        latitude: -42.8871651
+        longitude: 147.3340274
+        location_precision: "exact_site"
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC transcript names Kelly Steps in a ghost-legend exchange; coordinates use the state-checked OSM/Nominatim Kelly's Steps point."
+        text: >-
+          ABC Hobart Drive's Tasmanian urban myths transcript includes a listener reference to the Ghost of Kelly Steps. Lyndon Riggall responded that he had heard the story, had lived in the Battery Point area, and had been told to be very careful on Kelly Steps at night, with a murder and possible haunting forming part of the local legend.
+    entity_terms:
+      - "Ghost Tour"
+      - "Ghost of Kelly Steps"
+  - route_id: sprint_abc_york_wa_distinct_ghost_units_29
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Ghosts of Castle, Settlers hotels and Old York Hospital spook and delight tourists in WA town
+    source_author: ABC Midwest & Wheatbelt
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 2
+    max_candidates_probe: 4
+    max_candidates_scaled: 4
+    publication_date_text: "2022-05-19"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC public article with distinct source-stated ghost narratives attached to named sites in York, Western Australia.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: york-settlers-mrs-inkpen
+        chapter: Settlers Inn Mrs Inkpen ghost
+        url: "https://www.abc.net.au/news/2022-05-19/ghosts-of-york-wa-haunt-locals-tourists/101082076#settlers"
+        location_text: "Settlers Inn, York, WA"
+        location_role: "apparition_location"
+        latitude: -31.8887729
+        longitude: 116.7679705
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Settlers Hotel in York as the site of Mrs Inkpen's ghost; coordinates use the state-checked OSM/Nominatim Settlers Inn result."
+        text: >-
+          Just down the road from Basil and his castle, guests at the Settlers Hotel have experienced their fair share of paranormal activity. The hotel's general manager, Stacey Slater, says long-time resident Mrs Inkpen likes to play tricks on staff. "We have a doorbell for the kitchen that goes off for orders, and it will go off late at night when no one's here," she said. Settlers Hotel in York is believed to be home to the ghost of Mrs Inkpen.
+      - section_id: york-old-york-hospital-figures
+        chapter: Old York Hospital paranormal figures
+        url: "https://www.abc.net.au/news/2022-05-19/ghosts-of-york-wa-haunt-locals-tourists/101082076#old-york-hospital"
+        location_text: "York, WA"
+        location_role: "reported_place"
+        latitude: -31.8889034
+        longitude: 116.7691483
+        location_precision: town
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Old York Hospital in York and reports paranormal figures there; exact hospital coordinate did not verify, so the representative public flag uses the state-checked York town result."
+        text: >-
+          Old York Hospital sits just around the corner from Basil and Mrs Inkpen, and is said to be one of the most haunted buildings in WA. Staff who worked there when it was operational were reportedly too frightened to walk upstairs alone. It was eventually turned into a hostel, and people who stayed there during the 1980s reported being set-upon by paranormal figures.
+    entity_terms: ["ghost", "figures"]
+    person_form_terms: ["figures"]
+  - route_id: sprint_abc_albany_spectrum_convict_ghost_30
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Out, damned spot! Albany's Spectrum Theatre restoration to deal with damp
+    source_author: ABC Great Southern
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2015-11-20"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC public article naming Albany's historic Spectrum Theatre and a convict ghost as part of the site's fabric.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: albany-spectrum-theatre-convict-ghost
+        chapter: Spectrum Theatre convict ghost
+        url: "https://www.abc.net.au/news/2015-11-20/spectrum-theatre-albany-wa-restoration/6958836"
+        location_text: "Albany Port Theatre, Albany, WA"
+        location_role: "apparition_location"
+        latitude: -35.0297984
+        longitude: 117.8894525
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Albany's Spectrum Theatre and a convict ghost; coordinates use the state-checked OSM/Nominatim Albany Port Theater result for the theatre site."
+        text: >-
+          Frequent flooding and a convict ghost are all a part of the fabric of Albany's historic Spectrum Theatre, which has received a grant to undergo extensive restoration works.
+    entity_terms: ["ghost"]
+  - route_id: sprint_territory_stories_palmerston_centre_ghost_31
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: St John Ambulance Australia (NT) / Library & Archives NT
+    source_name: Territory Stories
+    source_title: Vollie News, 26 May 2011
+    source_author: St John Ambulance Australia (NT)
+    source_type: public_repository_newsletter_ocr_text
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2011-05-26"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: Public St John Ambulance NT newsletter in Territory Stories naming ghost stories attached to the old Palmerston Centre.
+    publicness_status: public_repository_ocr_text
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_newsletter_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: vollie-news-2011-old-palmerston-centre-ghosts
+        chapter: Ghosts in the old Palmerston Centre
+        url: "https://hdl.handle.net/10070/664952"
+        location_text: "Palmerston, NT"
+        location_role: "reported_place"
+        latitude: -12.4799608
+        longitude: 130.9844108
+        location_precision: town
+        geocode_source: "nominatim_openstreetmap_state_checked_territory_stories_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "Vollie News names the old Palmerston Centre and Rolyat Street centre in the ghost-story section; exact former-centre point was not used, so the representative flag uses the state-checked OSM/Nominatim Palmerston town result."
+        text: >-
+          Vollie News Thursday 26th May 2011 included "Ghosts in the old Palmerston Centre" and "Another ghost story". Peter Poole asked whether the old Palmerston Centre was haunted and said he never had trouble sleeping there. Dawn Bat recalled hearing stories about the "ghosts" at Palmerston Centre when she was Cadet Superintendent, and the item referred to stories about the ghost mainly from Comms and the old Rolyat Street centre.
+    entity_terms: ["ghosts"]
+  - route_id: sprint_territory_stories_mix1049_darwin_ghost_32
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: News Corp Australia / Library & Archives NT
+    source_name: Territory Stories
+    source_title: The Northern Territory News
+    source_author: News Corp Australia / Library & Archives NT
+    source_type: public_repository_ocr_text
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "Northern Territory News item, accessed 2026-06-22"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: Territory Stories OCR from an NT newspaper item naming a ghost haunting the Mix 104.9 FM studios and Darwin's Most Haunted.
+    publicness_status: public_repository_ocr_text
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: nt-news-mix1049-darwin-ghost
+        chapter: Mix 104.9 FM studios ghost
+        url: "https://hdl.handle.net/10070/483467"
+        location_text: "Darwin, NT"
+        location_role: "reported_place"
+        latitude: -12.46044
+        longitude: 130.8410469
+        location_precision: town
+        geocode_source: "nominatim_openstreetmap_state_checked_territory_stories_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "Territory Stories OCR names the Mix 104.9 FM studios and Darwin's Most Haunted; exact studio coordinate did not verify, so the representative flag uses the state-checked OSM/Nominatim Darwin town result."
+        text: >-
+          The Northern Territory News item reported that announcers would be joined by Darwin's Most Haunted, broadcasting to find the ghosts haunting the building. It added that the ghost haunting the Mix 104.9 FM studios gets to listen to music all day and mentioned the station's headquarters and ghost insurance.
+    entity_terms: ["ghost"]
+  - route_id: sprint_aso_his_masters_ghost_montsalvat_33
+    enabled: true
+    family: institutional_public_media_records
+    organisation: National Film and Sound Archive
+    source_name: Australian Screen Online
+    source_title: More Winners - His Master's Ghost
+    source_author: Australian Children's Television Foundation / Australian Screen Online
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "1990; ASO public item page accessed 2026-06-22"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: retelling_or_adaptation
+    australian_relation: Australian Screen Online/NFSA public item page for an Australian television ghost-story adaptation with an explicit Victorian setting.
+    publicness_status: public_institutional_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: aso-more-winners-his-masters-ghost-montsalvat
+        chapter: His Master's Ghost at Montsalvat
+        url: "https://aso.gov.au/titles/tv/more-winners-his-masters-ghost/"
+        location_text: "Montsalvat, Eltham, VIC"
+        location_role: "narrative_setting"
+        latitude: -37.7280499
+        longitude: 145.1525699
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_aso_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ASO page states that the setting of More Winners - His Master's Ghost is Montsalvat; coordinates use the state-checked OSM/Nominatim Montsalvat result."
+        text: >-
+          Australian Screen Online describes More Winners - His Master's Ghost (1990) as a mystery-comedy about a group of kids on a music camp in a spooky old mansion. The page states that the setting of Montsalvat, a gothic mansion and former artists' colony, is perfect for this ghost-story narrative.
+    entity_terms: ["ghost"]
+  - route_id: sprint_gawler_dead_mans_pass_tree_ghost_34
+    enabled: true
+    family: local_archive_historical_society
+    organisation: Town of Gawler Council
+    source_name: Town of Gawler Council
+    source_title: Self-Drive Tour of Gawler
+    source_author: Town of Gawler Council
+    source_type: municipal_local_history_pdf
+    source_tier: A
+    jurisdiction: SA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "public local-history PDF, accessed 2026-06-22"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: Public Town of Gawler local-history self-drive tour PDF naming Dead Man's Pass and the tree ghost tradition.
+    publicness_status: public_municipal_local_history_pdf
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_local_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: gawler-dead-mans-pass-tree-ghost
+        chapter: Dead Man's Pass tree ghost
+        url: "https://www.gawler.sa.gov.au/__data/assets/pdf_file/0024/727710/Driving-Tour-web.pdf"
+        location_text: "Dead Mans Pass Reserve, Gawler, SA"
+        location_role: "legend_associated_place"
+        latitude: -34.6101243
+        longitude: 138.7521001
+        location_precision: named_feature
+        geocode_source: "nominatim_openstreetmap_state_checked_gawler_pdf_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "Town of Gawler self-drive tour names Dead Man's Pass and says it is haunted by the tree ghost; coordinates use the state-checked OSM/Nominatim Dead Mans Pass Reserve result."
+        text: >-
+          The Town of Gawler self-drive tour states that Gawler Terrace passes the famous area known as Dead Man's Pass. The history behind the name came from Colonel Light and his surveyor discovering a body in a tree. The PDF adds that Dead Man's Pass is said to be haunted by the tree ghost and notes the ghost stories associated with the riverside place.
+    entity_terms: ["ghost"]
+  - route_id: sprint_abc_wa_nt_sa_tas_map_gap_wave_45
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/NT/SA/TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 28
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: Targeted ABC public media items naming place-linked ghost, haunted-site, apparition, yowie, or paranormal narratives in WA, NT, SA, or TAS.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "ghost haunted Western Australia ABC Rottnest Woodman Point Fremantle Arts Centre"
+      - "ghost haunted Western Australia ABC Oakabella York Greenough Gwalia"
+      - "ghost haunted Northern Territory ABC Fannie Bay Gaol Pine Creek Adelaide River"
+      - "yowie ghost Northern Territory ABC Litchfield Acacia Hills Katherine Darwin"
+      - "ghost haunted South Australia ABC Martindale Hall Burra Peterborough Kapunda"
+      - "ghost haunted Tasmania ABC Runnymede Richmond Gaol Sarah Island Cascades Female Factory"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_modern_undercovered_map_gap_wave_46
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/NT/SA/TAS/VIC/ACT
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    hits_per_page: 20
+    pages_per_query: 5
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: Targeted modern ABC public media items naming explicit Australian sites for ghost, haunted-place, apparition, yowie, or paranormal narratives.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "2010 2011 2012 2013 ghost haunted ABC Tasmania Willow Court Richmond Gaol"
+      - "2014 2015 2016 2017 ghost haunted ABC South Australia gaol asylum hotel"
+      - "2018 2019 2020 ghost haunted ABC Western Australia prison tunnel homestead"
+      - "2021 2022 2023 2024 ghost haunted ABC Tasmania South Australia Western Australia"
+      - "ABC regional ghost stories haunted buildings Western Australia Tasmania South Australia"
+      - "ABC listen ghost stories haunted sites WA NT SA TAS"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_place_exact_nt_wa_gap_wave_47
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NT/WA
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 24
+    max_candidates_probe: 30
+    max_candidates_scaled: 70
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: Exact-place ABC public media search for NT and WA place-linked ghost, yowie, haunted-site, or apparition records.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "site ghost Fannie Bay Gaol Darwin ABC"
+      - "site ghost Pine Creek Northern Territory ABC"
+      - "site yowie Litchfield Acacia Hills Northern Territory ABC"
+      - "site ghost Round House Fremantle ABC"
+      - "site ghost Fremantle Arts Centre ABC"
+      - "site ghost Woodman Point Rottnest Island ABC"
+      - "site ghost Albany Convict Gaol Spectrum Theatre ABC"
+      - "site ghost York Oakabella Western Australia ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_place_exact_sa_tas_gap_wave_48
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: SA/TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 24
+    max_candidates_probe: 30
+    max_candidates_scaled: 70
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: Exact-place ABC public media search for SA and TAS place-linked ghost, haunted-site, or apparition records.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "site ghost Adelaide Gaol Z Ward Glenside ABC"
+      - "site ghost North Kapunda Hotel Martindale Hall ABC"
+      - "site ghost Burra Peterborough South Australia ABC"
+      - "site ghost Port Adelaide pubs ABC"
+      - "site ghost Runnymede House Hobart ABC"
+      - "site ghost Cascades Female Factory Hobart ABC"
+      - "site ghost Sarah Island Richmond Gaol ABC"
+      - "site ghost Richmond Bridge Tasmania ABC"
+    place_catalog: *abc_place_catalog
+  - route_id: sprint_abc_exact_site_map_gap_wave_49
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/NT/SA/TAS/VIC/ACT
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 22
+    max_candidates_probe: 30
+    max_candidates_scaled: 70
+    hits_per_page: 20
+    pages_per_query: 4
+    geocode_rate_limit_seconds: 1.0
+    australian_relation: Exact-site ABC public media search for named Australian haunted, ghost, apparition, yowie, or paranormal places, using only unambiguous place aliases.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "Fannie Bay Gaol ghost ABC"
+      - "Alice Springs Telegraph Station ghost ABC"
+      - "Arltunga ghost ABC"
+      - "Pine Creek ghost ABC"
+      - "Round House Fremantle ghost ABC"
+      - "Fremantle Arts Centre ghost ABC"
+      - "Woodman Point Quarantine Station ghost ABC"
+      - "Albany Convict Gaol ghost ABC"
+      - "Martindale Hall ghost ABC"
+      - "Burra ghost ABC"
+      - "Peterborough ghost ABC"
+      - "Runnymede House ghost ABC"
+      - "Cascades Female Factory ghost ABC"
+      - "Sarah Island ghost ABC"
+      - "Richmond Gaol ghost ABC"
+      - "Oak House Richmond ghost ABC"
+      - "National Film and Sound Archive ghost ABC"
+      - "Blundells Cottage ghost ABC"
+    place_catalog:
+      - {name: Fannie Bay Gaol, state: NT, location_type: exact_site, aliases: [Fannie Bay Gaol, Fannie Bay Jail], query: "Fannie Bay Gaol, Darwin, Northern Territory, Australia"}
+      - {name: Alice Springs Telegraph Station, state: NT, location_type: exact_site, aliases: [Alice Springs Telegraph Station, Telegraph Station], query: "Alice Springs Telegraph Station, Northern Territory, Australia"}
+      - {name: Arltunga, state: NT, location_type: locality, aliases: [Arltunga], query: "Arltunga, Northern Territory, Australia"}
+      - {name: Pine Creek, state: NT, location_type: town, aliases: [Pine Creek], query: "Pine Creek, Northern Territory, Australia"}
+      - {name: Round House Fremantle, state: WA, location_type: exact_site, aliases: [Round House Fremantle, The Round House], query: "Round House, Fremantle, Western Australia, Australia"}
+      - {name: Fremantle Arts Centre, state: WA, location_type: exact_site, aliases: [Fremantle Arts Centre], query: "Fremantle Arts Centre, Western Australia, Australia"}
+      - {name: Woodman Point Quarantine Station, state: WA, location_type: exact_site, aliases: [Woodman Point Quarantine Station, Woodman Point], query: "Woodman Point, Western Australia, Australia"}
+      - {name: Albany Convict Gaol, state: WA, location_type: exact_site, aliases: [Albany Convict Gaol, Albany Gaol], query: "Albany Convict Gaol, Western Australia, Australia"}
+      - {name: Martindale Hall, state: SA, location_type: exact_site, aliases: [Martindale Hall], query: "Martindale Hall, South Australia, Australia"}
+      - {name: Burra, state: SA, location_type: town, aliases: [Burra], query: "Burra, South Australia, Australia"}
+      - {name: Peterborough, state: SA, location_type: town, aliases: [Peterborough], query: "Peterborough, South Australia, Australia"}
+      - {name: Runnymede House, state: TAS, location_type: exact_site, aliases: [Runnymede House, Runnymede], query: "Runnymede House, Hobart, Tasmania, Australia"}
+      - {name: Cascades Female Factory, state: TAS, location_type: exact_site, aliases: [Cascades Female Factory, Female Factory], query: "Cascades Female Factory, Hobart, Tasmania, Australia"}
+      - {name: Sarah Island, state: TAS, location_type: named_feature, aliases: [Sarah Island], query: "Sarah Island, Tasmania, Australia"}
+      - {name: Richmond Gaol, state: TAS, location_type: exact_site, aliases: [Richmond Gaol, Richmond Jail], query: "Richmond Gaol, Tasmania, Australia"}
+      - {name: Oak House Richmond, state: TAS, location_type: exact_site, aliases: [Oak House, Oak House in Richmond], query: "Oak House, Richmond, Tasmania, Australia"}
+      - {name: National Film and Sound Archive, state: ACT, location_type: exact_site, aliases: [National Film and Sound Archive, NFSA], query: "National Film and Sound Archive, Canberra, Australian Capital Territory, Australia"}
+      - {name: Blundells Cottage, state: ACT, location_type: exact_site, aliases: [Blundells Cottage], query: "Blundells Cottage, Canberra, Australian Capital Territory, Australia"}
+  - route_id: sprint_abc_curious_canberra_public_page_wave_50
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: ACT
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 4
+    max_candidates_probe: 8
+    max_candidates_scaled: 8
+    geocode_rate_limit_seconds: 1.0
+    evidence_radius: 1800
+    australian_relation: ABC Curious Canberra public page with distinct haunted-place units in Canberra.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - url: "https://www.abc.net.au/news/specials/curious-canberra/2018-08-27/curous-canberra-most-haunted-places/10164596"
+        title: "What are Canberra's most haunted places?"
+        publication_date_text: "2018-08-27"
+        places:
+          - place_name: "Blundells Cottage"
+            state: "ACT"
+            aliases: ["Blundells Cottage"]
+            query: "Blundells Cottage, Canberra, Australian Capital Territory, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_blundells_cottage_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Hotel Kurrajong"
+            state: "ACT"
+            aliases: ["Hotel Kurrajong", "Kurrajong"]
+            query: "Hotel Kurrajong, Canberra, Australian Capital Territory, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_hotel_kurrajong_ghost"
+            narrative_type: "ghost_legend"
+          - place_name: "National Film and Sound Archive"
+            state: "ACT"
+            aliases: ["National Film and Sound Archive", "NFSA"]
+            query: "National Film and Sound Archive, Canberra, Australian Capital Territory, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_nfsa_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Old Parliament House"
+            state: "ACT"
+            aliases: ["Old Parliament House"]
+            query: "Old Parliament House, Canberra, Australian Capital Territory, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_old_parliament_house_ghosts"
+            narrative_type: "ghost_legend"
+  - route_id: sprint_national_trust_heritage_haunts_public_page_wave_51
+    enabled: true
+    family: local_archive_historical_society
+    organisation: National Trust of Australia
+    source_name: National Trust of Australia
+    source_type: institutional_history_and_media_pages
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: public_page_place_text
+    scaled: true
+    map_capable: true
+    accepted_target: 12
+    max_candidates_probe: 30
+    max_candidates_scaled: 30
+    geocode_rate_limit_seconds: 1.0
+    evidence_radius: 1800
+    australian_relation: National Trust public pages listing heritage haunts and ghost-story programs at named Australian heritage places.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - url: "https://www.nationaltrust.org.au/blog/five-heritage-haunts-in-new-south-wales-that-millennials-will-love/"
+        title: "Five heritage haunts in New South Wales that Millennials will love"
+        publication_date_text: "2017-09-30"
+        places:
+          - place_name: "Old Government House"
+            state: "NSW"
+            aliases: ["Old Government House"]
+            query: "Old Government House, Parramatta, New South Wales, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_old_government_house_spirits"
+            narrative_type: "ghost_legend"
+          - place_name: "Experiment Farm Cottage"
+            state: "NSW"
+            aliases: ["Experiment Farm Cottage"]
+            query: "Experiment Farm Cottage, Harris Park, New South Wales, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_experiment_farm_cottage_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Woodford Academy"
+            state: "NSW"
+            aliases: ["Woodford Academy"]
+            query: "Woodford Academy, Woodford, New South Wales, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_woodford_academy_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Miss Traill's House"
+            state: "NSW"
+            aliases: ["Miss Traill's House", "Miss Traills House"]
+            query: "Miss Traill's House, Bathurst, New South Wales, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_miss_traills_house_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Everglades House"
+            state: "NSW"
+            aliases: ["Everglades House", "Everglades House and Gardens"]
+            query: "Everglades House and Gardens, Leura, New South Wales, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_everglades_house_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Dundullimal Homestead"
+            state: "NSW"
+            aliases: ["Dundullimal Homestead"]
+            query: "Dundullimal Homestead, Dubbo, New South Wales, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_dundullimal_homestead_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Grossmann House"
+            state: "NSW"
+            aliases: ["Grossmann House"]
+            query: "Grossmann House, Maitland, New South Wales, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_grossmann_house_ghosts"
+            narrative_type: "ghost_legend"
+      - url: "https://www.nationaltrust.org.au/event/ghosts-of-a-bygone-era/"
+        title: "Ghosts of a Bygone Era"
+        publication_date_text: "public event page, accessed 2026-06-22"
+        places:
+          - place_name: "Tasma Terrace"
+            state: "VIC"
+            aliases: ["Tasma Terrace"]
+            query: "Tasma Terrace, Melbourne, Victoria, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_tasma_terrace_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Labassa Mansion"
+            state: "VIC"
+            aliases: ["Labassa Mansion", "Labassa"]
+            query: "Labassa Mansion, Caulfield North, Victoria, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_labassa_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Como House"
+            state: "VIC"
+            aliases: ["Como House"]
+            query: "Como House, South Yarra, Victoria, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_como_house_ghosts"
+            narrative_type: "ghost_legend"
+          - place_name: "Rippon Lea Estate"
+            state: "VIC"
+            aliases: ["Rippon Lea Estate", "Rippon Lea"]
+            query: "Rippon Lea Estate, Elsternwick, Victoria, Australia"
+            location_type: "exact_site"
+            source_label: "unnamed_rippon_lea_ghosts"
+            narrative_type: "ghost_legend"
+  - route_id: sprint_national_trust_spooky_stories_nsw_wave_52
+    enabled: true
+    family: local_archive_historical_society
+    organisation: National Trust of Australia (NSW)
+    source_name: National Trust of Australia (NSW)
+    source_title: Spooky stories at the National Trust
+    source_author: National Trust NSW Editor
+    source_type: institutional_history_article
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 4
+    max_candidates_probe: 4
+    max_candidates_scaled: 4
+    publication_date_text: "2024-09-24"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: National Trust NSW public institutional article with first-hand and historically framed supernatural accounts attached to named house museums.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: national-trust-spooky-woodford-lady-in-white
+        chapter: Woodford Academy Lady in White
+        url: "https://www.nationaltrust.org.au/blog/spooky-stories-at-the-national-trust/#woodford-lady-in-white"
+        location_text: "Woodford Academy, NSW"
+        location_role: "apparition_location"
+        latitude: -33.7339396
+        longitude: 150.4827476
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust NSW page names Woodford Academy and describes the Lady in White / Mary James ghost tradition; coordinates use the state-checked OSM/Nominatim Woodford Academy point."
+        text: >-
+          National Trust NSW says Woodford Academy is the oldest complex of colonial buildings in the Blue Mountains and that local myth suggests the house may be visited by two female ghosts. The first is known as the Lady in White, identified as Mary James. The page says Mary James' legacy has evolved into that of a troubled spirit who lingers around Woodford Academy, occasionally appearing in the attic window and frightening visitors.
+      - section_id: national-trust-spooky-woodford-lady-in-black
+        chapter: Woodford Academy Lady in Black
+        url: "https://www.nationaltrust.org.au/blog/spooky-stories-at-the-national-trust/#woodford-lady-in-black"
+        location_text: "Woodford Academy, NSW"
+        location_role: "apparition_location"
+        latitude: -33.7339396
+        longitude: 150.4827476
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust NSW page names Woodford Academy and separately describes the Lady in Black / Caroline ghost tradition; coordinates use the state-checked OSM/Nominatim Woodford Academy point."
+        text: >-
+          National Trust NSW reports that another local myth around Woodford Academy concerns Mary James' daughter Caroline, known as the Lady in Black. The page connects Caroline's tragic local history with reports that the Lady in White and the Lady in Black are ghosts at the Academy, while staff discuss curtains twitching in the attic and whether the ghosts are quiet because their stories are being told.
+      - section_id: national-trust-spooky-old-government-house-mary
+        chapter: Old Government House Mary apparition
+        url: "https://www.nationaltrust.org.au/blog/spooky-stories-at-the-national-trust/#old-government-house-mary"
+        location_text: "Old Government House, NSW"
+        location_role: "apparition_location"
+        latitude: -33.8111394
+        longitude: 150.9996668
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust NSW page names Old Government House in Parramatta Park and describes a woman in period costume / Mary Bligh apparition account; coordinates use the state-checked OSM/Nominatim Old Government House point."
+        text: >-
+          National Trust NSW says Old Government House has spooky stories including footsteps, cigar smoke, and multiple sightings of a woman in period costume standing at the bottom of the grand staircase. The page says staff have spotted a woman on the second floor wearing a long blue dress; when asked her name, she said Mary, as in Mary Bligh, and said she was looking after the house.
+      - section_id: national-trust-spooky-saumarez-elsie-white
+        chapter: Saumarez Homestead Elsie White ghost
+        url: "https://www.nationaltrust.org.au/blog/spooky-stories-at-the-national-trust/#saumarez-elsie-white"
+        location_text: "Saumarez Homestead, NSW"
+        location_role: "apparition_location"
+        latitude: -30.5300620
+        longitude: 151.6606465
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust NSW page names Saumarez Homestead in Armidale and identifies the purported ghost as Elsie White; coordinates use the state-checked OSM/Nominatim Saumarez Homestead point."
+        text: >-
+          National Trust NSW asks whether Saumarez Homestead is haunted and quotes Sally-Anne Prado describing curious moments when the upstairs occupant made its presence felt. The page says the ghost likes to sit on beds, occasionally plays a few piano keys, and is purported to be Elsie White, who spent almost all of her 97 years at Saumarez Homestead in Armidale.
+    entity_terms:
+      - Lady in White
+      - Lady in Black
+      - Mary
+      - Elsie White
+  - route_id: sprint_national_trust_spooky_stories_nsw_wave_53
+    enabled: true
+    family: local_archive_historical_society
+    organisation: National Trust of Australia (NSW)
+    source_name: National Trust of Australia (NSW)
+    source_title: Spooky stories at the National Trust
+    source_author: National Trust NSW Editor
+    source_type: institutional_history_article
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 2
+    max_candidates_probe: 2
+    max_candidates_scaled: 2
+    publication_date_text: "2024-09-24"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: National Trust NSW public institutional article with distinct source-stated ghost-tour accounts at Old Government House.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: national-trust-spooky-old-government-house-little-girl
+        chapter: Old Government House little girl by the tree
+        url: "https://www.nationaltrust.org.au/blog/spooky-stories-at-the-national-trust/#old-government-house-little-girl"
+        location_text: "Old Government House, NSW"
+        location_role: "apparition_location"
+        latitude: -33.8121519
+        longitude: 150.9973594
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust NSW page names Old Government House and Parramatta Park and describes tour visitors seeing a little girl by the tree; coordinates use the state-checked OSM/Nominatim Old Government House point."
+        text: >-
+          National Trust NSW says Rodney Holman has led ghost tours at Old Government House for 12 years. He describes a tree in Parramatta Park near Old Government House that consistently lights up a Ghost Meter, and says a few tour visitors reported seeing a little girl by the tree near the obelisk marking where Lady Mary Fitzroy received fatal injuries.
+      - section_id: national-trust-spooky-old-government-house-stair-whisper
+        chapter: Old Government House staircase whisper
+        url: "https://www.nationaltrust.org.au/blog/spooky-stories-at-the-national-trust/#old-government-house-staircase"
+        location_text: "Old Government House, NSW"
+        location_role: "apparition_location"
+        latitude: -33.8121519
+        longitude: 150.9973594
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_public_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "National Trust NSW page names Old Government House and describes two children hearing a cranky woman whisper on the stairs during a ghost tour; coordinates use the state-checked OSM/Nominatim Old Government House point."
+        text: >-
+          National Trust NSW says Old Government House runs kid-friendly ghost tours and that on one tour two twelve-year-old boys had their photo taken on the stairs and heard a cranky woman whispering in their ears, "get off the stairs." The page frames this as one of the house's cranky ghost accounts.
+    entity_terms:
+      - little girl
+      - cranky woman
+    person_form_terms:
+      - little girl
+      - cranky woman
+    person_form_terms:
+      - Lady in White
+      - Lady in Black
+      - Mary
+      - Elsie White
+  - route_id: sprint_modern_institutional_place_ghosts_wave_54
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation / State Library Victoria
+    source_name: ABC and State Library Victoria public pages
+    source_title: Modern institutional place-linked ghost records
+    source_author: ABC / State Library Victoria
+    source_type: institutional_history_and_media_pages
+    source_tier: A
+    jurisdiction: WA/SA/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 3
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: Modern Australian public media and state-library pages with substantive place-linked ghost or haunted-site evidence.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_or_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-fremantle-arts-centre-haunted-claims
+        chapter: Fremantle Arts Centre haunted claims
+        url: "https://www.abc.net.au/news/2022-05-04/fremantle-lunatic-asylum-womens-home-now-arts-centre/101033894"
+        location_text: "Fremantle Arts Centre, WA"
+        location_role: "legend_associated_place"
+        latitude: -32.0476763
+        longitude: 115.7539837
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Fremantle Arts Centre and discusses haunted claims and paranormal experiences there; coordinates use the state-checked OSM/Nominatim Fremantle Arts Centre result."
+        text: >-
+          ABC News reported in 2022 that the imposing hallways and dark staircases of the Fremantle Arts Centre building had long sparked public curiosity, including claims it is haunted and stories of paranormal experiences. The article says the former asylum and women's home had sections known by staff to change temperature without explanation, while the director said she did not want to sensationalise the spirits it was rumoured to house.
+      - section_id: abc-old-adelaide-gaol-invisible-man
+        chapter: Old Adelaide Gaol invisible man
+        url: "https://www.abc.net.au/listen/programs/weekendswithdeb/gaol-stories/103869128"
+        location_text: "Adelaide Gaol, SA"
+        location_role: "apparition_location"
+        latitude: -34.9179424
+        longitude: 138.5848489
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC Listen page names Old Adelaide Gaol and says Gary Joyce from National Parks and Wildlife Service SA shared stories of an invisible man there; coordinates use the state-checked OSM/Nominatim Adelaide Gaol result."
+        text: >-
+          ABC Listen's 2024 item Unexplained stories from the Old Adelaide Gaol says places where bad things happened can retain unsettling energy. It says Gary Joyce from National Parks and Wildlife Service SA shared stories from the Old Adelaide Gaol of a dropping plate and an invisible man with Deb Tribe.
+      - section_id: slv-black-rock-house-tortured-spirit
+        chapter: Black Rock House tortured spirit legend
+        url: "https://blogs.slv.vic.gov.au/our-stories/the-secrets-of-black-rock-house/"
+        location_text: "Black Rock, VIC"
+        location_role: "legend_associated_place"
+        latitude: -37.9706564
+        longitude: 145.0212822
+        location_precision: locality
+        geocode_source: "nominatim_openstreetmap_state_checked_slv_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "State Library Victoria page names Black Rock House and the Black Rock locality; exact house coordinates did not verify in Nominatim, so the representative flag uses the state-checked Black Rock locality result."
+        text: >-
+          State Library Victoria's Black Rock House article says the house was once known as the Haunted Castle. The page reports that school girls in 1910 asked to visit the Haunted Castle because they believed it was haunted by the tortured spirit of its previous mistress, and says modern visitors can still attend ghost tours at Black Rock House.
+    entity_terms:
+      - Fremantle Arts Centre spirits
+      - invisible man
+      - tortured spirit
+    person_form_terms:
+      - Fremantle Arts Centre spirits
+      - invisible man
+      - tortured spirit
+  - route_id: sprint_slv_crowther_christmas_ghost_wave_55
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: State Library Victoria
+    source_name: State Library Victoria
+    source_title: A ghost story for Christmas
+    source_author: State Library Victoria
+    source_type: institutional_history_article
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2024-12-19"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: retelling_or_adaptation
+    australian_relation: State Library Victoria public article discussing an Australian Christmas ghost story with an explicit Melbourne setting.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: slv-crowthers-christmas-ghost-spencer-street
+        chapter: Crowther's Christmas ghost at Spencer Street
+        url: "https://blogs.slv.vic.gov.au/our-stories/a-ghost-story-for-christmas/"
+        location_text: "Southern Cross Station, Melbourne, VIC"
+        location_role: "narrative_setting"
+        latitude: -37.8191925
+        longitude: 144.9533975
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_slv_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "State Library Victoria page says Crowther's Christmas ghost begins at Spencer Street before a journey from Melbourne; coordinates use the state-checked OSM/Nominatim Southern Cross Station / former Spencer Street Station result."
+        text: >-
+          State Library Victoria discusses Edward Dyson's Australian Christmas ghost-story setting and says Crowther's Christmas ghost begins with Crowther throwing his luggage at a porter at Spencer Street before embarking on a hot and dusty journey from Melbourne to his hometown and the haunts of his youth.
+    entity_terms:
+      - Crowther's Christmas ghost
+    person_form_terms:
+      - Crowther's Christmas ghost
+  - route_id: sprint_slv_iolanthe_spiritualist_record_wave_56
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: State Library Victoria
+    source_name: State Library Victoria
+    source_title: "Sherlock Holmes and spiritualism: Sir Arthur Conan Doyle in Victoria"
+    source_author: State Library Victoria
+    source_type: institutional_history_article
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2025-05-22"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: State Library Victoria public article describing a Victorian spiritualist account linked to Port Phillip Bay.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: slv-iolanthe-spirit-contact-port-phillip
+        chapter: Iolanthe spirit contact in Port Phillip Bay
+        url: "https://blogs.slv.vic.gov.au/such-was-life/people-professions/sherlock-holmes-and-spiritualism-sir-arthur-conan-doyle-in-victoria/"
+        location_text: "Port Phillip Bay, VIC"
+        location_role: "reported_place"
+        latitude: -38.1046482
+        longitude: 144.7798547
+        location_precision: named_feature
+        geocode_source: "nominatim_openstreetmap_state_checked_slv_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "State Library Victoria page says the brothers went out on the boat Iolanthe into Port Phillip Bay and describes a medium's spirit contact account; coordinates use the state-checked OSM/Nominatim Port Phillip Bay named-feature result."
+        text: >-
+          State Library Victoria recounts that in 1883 two brothers went out on the boat Iolanthe into Port Phillip Bay and never returned. Their spiritualist parents employed the medium George Spriggs, who reportedly made contact with a brother's spirit and was told that the boat had capsized, but that the brothers were now at peace.
+    entity_terms:
+      - brother's spirit
+    person_form_terms:
+      - brother's spirit
+  - route_id: sprint_abc_fremantle_arts_centre_wave_57
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Fremantle Arts Centre director calls for stories to explore history of former lunatic asylum
+    source_author: ABC Radio Perth
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2022-05-04"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC public media article with source-stated haunted claims attached to Fremantle Arts Centre in Western Australia.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-fremantle-arts-centre-haunted-claims-dated
+        chapter: Fremantle Arts Centre haunted claims
+        url: "https://www.abc.net.au/news/2022-05-04/fremantle-lunatic-asylum-womens-home-now-arts-centre/101033894#haunted-claims"
+        location_text: "Fremantle Arts Centre, WA"
+        location_role: "legend_associated_place"
+        latitude: -32.0476763
+        longitude: 115.7539837
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Fremantle Arts Centre and discusses haunted claims and paranormal experiences there; coordinates use the state-checked OSM/Nominatim Fremantle Arts Centre result."
+        text: >-
+          ABC News reported in 2022 that the imposing hallways and dark staircases of the Fremantle Arts Centre building had long sparked public curiosity, including claims it is haunted and stories of paranormal experiences. The article says the former asylum and women's home had sections known by staff to change temperature without explanation, while the director said she did not want to sensationalise the spirits it was rumoured to house.
+    entity_terms:
+      - spirits
+    person_form_terms:
+      - spirits
+  - route_id: sprint_abc_old_adelaide_gaol_invisible_man_wave_58
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Unexplained stories from the Old Adelaide Gaol
+    source_author: 891 ABC Adelaide
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: SA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2024-05-18"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC Listen page with source-stated unexplained person-form story attached to Old Adelaide Gaol.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-old-adelaide-gaol-invisible-man-dated
+        chapter: Old Adelaide Gaol invisible man
+        url: "https://www.abc.net.au/listen/programs/weekendswithdeb/gaol-stories/103869128#invisible-man"
+        location_text: "Adelaide Gaol, SA"
+        location_role: "apparition_location"
+        latitude: -34.9179424
+        longitude: 138.5848489
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC Listen page names Old Adelaide Gaol and says Gary Joyce from National Parks and Wildlife Service SA shared stories of an invisible man there; coordinates use the state-checked OSM/Nominatim Adelaide Gaol result."
+        text: >-
+          ABC Listen's 2024 item Unexplained stories from the Old Adelaide Gaol says places where bad things happened can retain unsettling energy. It says Gary Joyce from National Parks and Wildlife Service SA shared stories from the Old Adelaide Gaol of a dropping plate and an invisible man with Deb Tribe.
+    entity_terms:
+      - invisible man
+    person_form_terms:
+      - invisible man
+  - route_id: sprint_slv_black_rock_house_spirit_wave_59
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: State Library Victoria
+    source_name: State Library Victoria
+    source_title: The secrets of Black Rock House
+    source_author: State Library Victoria
+    source_type: institutional_history_article
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2020-09-29"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: State Library Victoria public article with source-stated Black Rock House haunted-castle tradition.
+    publicness_status: public_web_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_institutional_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: slv-black-rock-house-tortured-spirit-dated
+        chapter: Black Rock House tortured spirit legend
+        url: "https://blogs.slv.vic.gov.au/our-stories/the-secrets-of-black-rock-house/#tortured-spirit"
+        location_text: "Black Rock, VIC"
+        location_role: "legend_associated_place"
+        latitude: -37.9706564
+        longitude: 145.0212822
+        location_precision: locality
+        geocode_source: "nominatim_openstreetmap_state_checked_slv_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "State Library Victoria page names Black Rock House and the Black Rock locality; exact house coordinates did not verify in Nominatim, so the representative flag uses the state-checked Black Rock locality result."
+        text: >-
+          State Library Victoria's Black Rock House article says the house was once known as the Haunted Castle. The page reports that school girls in 1910 asked to visit the Haunted Castle because they believed it was haunted by the tortured spirit of its previous mistress, and says modern visitors can still attend ghost tours at Black Rock House.
+    entity_terms:
+      - tortured spirit
+    person_form_terms:
+      - tortured spirit
+  - route_id: sprint_tas_east_coast_piermont_alice_wave_60
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation / Glamorgan Spring Bay Historical Society
+    source_name: Australian Broadcasting Corporation
+    source_title: The haunted historic houses of Tasmania's east coast
+    source_author: ABC Hobart / Glamorgan Spring Bay Historical Society
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2025-09-27"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC Tasmania interview with the Glamorgan Spring Bay Historical Society treasurer describing an east-coast Tasmania house ghost story at a named, verified place.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_and_local_history_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-east-coast-piermont-alice-maria-king
+        chapter: Piermont Alice Maria King ghost story
+        url: "https://www.abc.net.au/listen/programs/hobart-saturdays/east-coast-tasmania-ghost-stories-noel-stanley/105824130#piermont-alice"
+        location_text: "Piermont Retreat, Swansea, TAS"
+        location_role: "apparition_location"
+        latitude: -42.1541194
+        longitude: 148.0746678
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC transcript names Piermont in the Alice Maria King ghost story; coordinates use the state-checked OSM/Nominatim Piermont Retreat and Restaurant result."
+        text: >-
+          ABC Tasmania's interview with Noel Stanley of the Glamorgan Spring Bay Historical Society says Piermont was home to a story in which a little girl repeatedly went upstairs to play with a family and then asked for a doctor on the anniversary of Alice Maria King's death. Stanley links the Piermont stairs to Alice Maria King, who died after falling while running for a letter from her fiance, and says this would fit the bill for unrequited love and a ghost to wander around.
+    entity_terms:
+      - Alice Maria King
+    person_form_terms:
+      - Alice Maria King
+  - route_id: sprint_abc_tas_livestream_distinct_figures_wave_61
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Meet the woman taking Tasmania's most haunted sites to the social media masses
+    source_author: ABC Northern Tasmania
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 2
+    max_candidates_probe: 2
+    max_candidates_scaled: 2
+    publication_date_text: "2020-09-02"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC Northern Tasmania public article with distinct named or typed apparition reports at verified Tasmanian historic sites.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-gaiety-theatre-ava-vision
+        chapter: Gaiety Theatre Ava apparition
+        url: "https://www.abc.net.au/news/2020-09-02/tasmania-ghost-tours-live-streamed-to-thousands/12615942#ava-gaiety-theatre"
+        location_text: "Gaiety Theatre, Zeehan, TAS"
+        location_role: "apparition_location"
+        latitude: -41.8819768
+        longitude: 145.3353375
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Gaiety Theatre in Zeehan and describes viewers seeing the young girl Ava there; coordinates use the state-checked OSM/Nominatim Gaiety Theatre result."
+        text: >-
+          ABC Northern Tasmania reported that Sharmaine Mansfield hosted live paranormal investigations at the Gaiety Theatre in Zeehan. Mansfield said that at the Gaiety Theatre many viewers picked up on a presence of a young girl named Ava, apparently a caretaker's daughter from many years ago, and were seeing the vision of this little girl.
+      - section_id: abc-willow-court-nurse-period-dress
+        chapter: Willow Court nurse in period dress
+        url: "https://www.abc.net.au/news/2020-09-02/tasmania-ghost-tours-live-streamed-to-thousands/12615942#willow-court-nurse"
+        location_text: "Willow Court Asylum, TAS"
+        location_role: "apparition_location"
+        latitude: -42.7854275
+        longitude: 147.0636218
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-22"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names Willow Court Asylum and describes Mansfield experiencing a ghostly nurse figure there; coordinates use the state-checked OSM/Nominatim Willow Court Historic Site result."
+        text: >-
+          ABC Northern Tasmania reported that although Mansfield's equipment had not captured an apparition on camera, viewers had reported seeing ghostly things on their own screens. Mansfield said she experienced the ghostly figure of a nurse wearing period dress while conducting ghost tours at the Willow Court Asylum.
+    entity_terms:
+      - Ava
+      - ghostly figure of a nurse
+    person_form_terms:
+      - Ava
+      - ghostly figure of a nurse
+  - route_id: sprint_abc_sylvania_station_spirits_corrected_wave_62
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Hungry spirits haunt station store room
+    source_author: ABC Rural
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2013-11-01"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: apparition_account
+    australian_relation: ABC Rural public article with a distinct Western Australian pastoral-station spirit account from Sylvania Station.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: sylvania-station-store-room-spirits-corrected
+        chapter: Sylvania Station store room spirits
+        url: "https://www.abc.net.au/news/rural/2013-11-01/rural-spooky-station-stories/5060410#store-room-spirits"
+        location_text: "Sylvania Station, WA"
+        location_role: "reported_place"
+        text: >-
+          ABC Rural reported that Western Australia's remote pastoral stations can be spooky places. Darlene, the cook at Sylvania Station in WA's Pilbara region, said she often hears music around the homestead and described two guys there: very nice spirits in blue shirts who hang out in her store room and usually sit up on top.
+    entity_terms:
+      - spirits
+    person_form_terms:
+      - spirits

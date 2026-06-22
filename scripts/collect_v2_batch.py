@@ -6,7 +6,9 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import sys
+import time
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
@@ -21,6 +23,8 @@ from aus_humanoid.collectors.trove import TroveCollector
 from aus_humanoid.db import DEFAULT_DB_PATH, connect
 from aus_humanoid.normalise import canonicalise_whitespace
 from aus_humanoid.utils import PROJECT_ROOT, utc_now_iso
+
+import update_collection_route_registry
 
 
 DEFAULT_REPORT = PROJECT_ROOT / "data" / "processed" / "v2" / "collection_500_progress.md"
@@ -39,6 +43,8 @@ STRICT_GEO_ACCEPTED_PRECISIONS = {
     "locality",
     "named_feature",
 }
+
+PROGRESS_EVERY_CANDIDATES = 25
 
 STRICT_GEO_REJECTED_LOCATION_ROLES = {
     "publication_location",
@@ -134,6 +140,39 @@ def strict_geo_gate(row: dict[str, Any]) -> tuple[bool, str]:
     if canonicalise_whitespace(row.get("quality_class")) not in {"A", "B", "C"}:
         return False, "strict_geo_quality_class_not_countable"
     return True, ""
+
+
+def progress_line(route_id: str, processed: int, counts: dict[str, int], failed: int, started_at: float) -> str:
+    accepted = counts.get("accepted", 0)
+    runtime = max(0.001, time.monotonic() - started_at)
+    acceptance_rate = accepted / processed if processed else 0.0
+    return (
+        f"[collect-v2] route_id={route_id or 'unregistered'} processed={processed} "
+        f"accepted={accepted} duplicates={counts.get('duplicate', 0)} "
+        f"leads={counts.get('lead_only', 0)} rejected={counts.get('rejected', 0)} "
+        f"requests_failed={failed} runtime={runtime:.1f}s acceptance_rate={acceptance_rate:.3f}"
+    )
+
+
+def maybe_print_progress(route_id: str, processed: int, counts: dict[str, int], failed: int, started_at: float) -> None:
+    if processed and processed % PROGRESS_EVERY_CANDIDATES == 0:
+        print(progress_line(route_id, processed, counts, failed, started_at), flush=True)
+
+
+def enforce_route_registry(route_id: str, registry_csv: Path) -> None:
+    if not route_id:
+        return
+    routes = update_collection_route_registry.registry_by_id(registry_csv)
+    route = routes.get(route_id)
+    if route is None:
+        raise SystemExit(
+            f"Route `{route_id}` is not registered. Add it to config/collection_routes.yml and run scripts/update_collection_route_registry.py."
+        )
+    allowed, reason = update_collection_route_registry.route_allows_probe(route)
+    if not allowed:
+        if route_id == "trove_api_without_key" and not canonicalise_whitespace(os.environ.get("TROVE_API_KEY")):
+            raise SystemExit(reason)
+        raise SystemExit(reason)
 
 
 def has_required_acceptance_fields(row: dict[str, Any], strict_geo_only: bool = False) -> tuple[bool, str]:
@@ -342,51 +381,74 @@ def insert_candidate(conn, data: dict[str, Any], strict_geo_only: bool = False) 
     return status
 
 
-def stage_manual_csv(conn, path: Path, run_id: str, strict_geo_only: bool = False) -> dict[str, int]:
+def stage_manual_csv(conn, path: Path, run_id: str, strict_geo_only: bool = False, route_id: str = "") -> dict[str, int]:
     counts = {"accepted": 0, "rejected": 0, "duplicate": 0, "lead_only": 0}
+    started_at = time.monotonic()
+    processed = 0
     with path.open("r", encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
         missing = [field for field in REQUIRED_MANUAL_COLUMNS if field not in (reader.fieldnames or [])]
         if missing:
             raise SystemExit(f"Manual CSV missing columns: {', '.join(missing)}")
         for raw in reader:
+            processed += 1
             raw["run_id"] = run_id
             raw.setdefault("candidate_status", "accepted")
             status = insert_candidate(conn, raw, strict_geo_only=strict_geo_only)
             counts[status] = counts.get(status, 0) + 1
+            maybe_print_progress(route_id, processed, counts, 0, started_at)
+    print(progress_line(route_id, processed, counts, 0, started_at), flush=True)
     return counts
 
 
-def stage_trove_leads(conn, run_id: str, limit: int, strict_geo_only: bool = False) -> dict[str, int]:
+def stage_trove_leads(conn, run_id: str, limit: int, strict_geo_only: bool = False, route_id: str = "") -> dict[str, int]:
     counts = {"accepted": 0, "rejected": 0, "duplicate": 0, "lead_only": 0}
+    started_at = time.monotonic()
+    processed = 0
+    failed = 0
     collector = TroveCollector(run_id=run_id, limit=limit)
     for candidate in collector.collect():
+        processed += 1
         row = candidate.as_row()
         row["raw_metadata_json"] = candidate.raw_metadata_json
         status = insert_candidate(conn, row, strict_geo_only=strict_geo_only)
         counts[status] = counts.get(status, 0) + 1
+        maybe_print_progress(route_id, processed, counts, failed, started_at)
+    print(progress_line(route_id, processed, counts, failed, started_at), flush=True)
     return counts
 
 
-def stage_internet_archive(conn, run_id: str, limit: int, strict_geo_only: bool = False) -> dict[str, int]:
+def stage_internet_archive(conn, run_id: str, limit: int, strict_geo_only: bool = False, route_id: str = "") -> dict[str, int]:
     counts = {"accepted": 0, "rejected": 0, "duplicate": 0, "lead_only": 0}
+    started_at = time.monotonic()
+    processed = 0
+    failed = 0
     collector = InternetArchiveCollector(run_id=run_id, limit=limit)
     for candidate in collector.collect():
+        processed += 1
         row = candidate.as_row()
         row["raw_metadata_json"] = candidate.raw_metadata_json
         status = insert_candidate(conn, row, strict_geo_only=strict_geo_only)
         counts[status] = counts.get(status, 0) + 1
+        maybe_print_progress(route_id, processed, counts, failed, started_at)
+    print(progress_line(route_id, processed, counts, failed, started_at), flush=True)
     return counts
 
 
-def stage_seeded_web(conn, run_id: str, seed_path: Path, limit: int, strict_geo_only: bool = False) -> dict[str, int]:
+def stage_seeded_web(conn, run_id: str, seed_path: Path, limit: int, strict_geo_only: bool = False, route_id: str = "") -> dict[str, int]:
     counts = {"accepted": 0, "rejected": 0, "duplicate": 0, "lead_only": 0}
+    started_at = time.monotonic()
+    processed = 0
+    failed = 0
     collector = SeededWebCollector(run_id=run_id, seed_path=seed_path, limit=limit)
     for candidate in collector.collect():
+        processed += 1
         row = candidate.as_row()
         row["raw_metadata_json"] = candidate.raw_metadata_json
         status = insert_candidate(conn, row, strict_geo_only=strict_geo_only)
         counts[status] = counts.get(status, 0) + 1
+        maybe_print_progress(route_id, processed, counts, failed, started_at)
+    print(progress_line(route_id, processed, counts, failed, started_at), flush=True)
     return counts
 
 
@@ -442,7 +504,15 @@ def main() -> None:
     parser.add_argument("--report", default=str(DEFAULT_REPORT), help="Progress report path")
     parser.add_argument("--target", type=int, default=500, help="Accepted source-item target for progress reporting")
     parser.add_argument("--strict-geo-only", action="store_true", help="Require verified coordinates and quality class A/B/C for accepted candidates")
+    parser.add_argument("--route-id", default="", help="Registered route id for this collection run")
+    parser.add_argument(
+        "--route-registry",
+        default=str(update_collection_route_registry.DEFAULT_CSV),
+        help="Rendered collection route registry CSV",
+    )
     args = parser.parse_args()
+
+    enforce_route_registry(args.route_id, Path(args.route_registry))
 
     with connect(args.db) as conn:
         if "collection_candidates_v2" not in {row["name"] for row in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}:
@@ -450,16 +520,16 @@ def main() -> None:
         ensure_candidate_geo_columns(conn)
         counts = {"accepted": 0, "rejected": 0, "duplicate": 0, "lead_only": 0}
         if args.manual_csv:
-            for key, value in stage_manual_csv(conn, Path(args.manual_csv), args.run_id, strict_geo_only=args.strict_geo_only).items():
+            for key, value in stage_manual_csv(conn, Path(args.manual_csv), args.run_id, strict_geo_only=args.strict_geo_only, route_id=args.route_id).items():
                 counts[key] = counts.get(key, 0) + value
         if args.trove_leads or (not args.manual_csv and not args.internet_archive and not args.seeded_web):
-            for key, value in stage_trove_leads(conn, args.run_id, args.limit, strict_geo_only=args.strict_geo_only).items():
+            for key, value in stage_trove_leads(conn, args.run_id, args.limit, strict_geo_only=args.strict_geo_only, route_id=args.route_id).items():
                 counts[key] = counts.get(key, 0) + value
         if args.internet_archive:
-            for key, value in stage_internet_archive(conn, args.run_id, args.limit, strict_geo_only=args.strict_geo_only).items():
+            for key, value in stage_internet_archive(conn, args.run_id, args.limit, strict_geo_only=args.strict_geo_only, route_id=args.route_id).items():
                 counts[key] = counts.get(key, 0) + value
         if args.seeded_web:
-            for key, value in stage_seeded_web(conn, args.run_id, Path(args.seeded_web), args.limit, strict_geo_only=args.strict_geo_only).items():
+            for key, value in stage_seeded_web(conn, args.run_id, Path(args.seeded_web), args.limit, strict_geo_only=args.strict_geo_only, route_id=args.route_id).items():
                 counts[key] = counts.get(key, 0) + value
         conn.commit()
         write_progress(conn, Path(args.report), args.target, strict_geo_only=args.strict_geo_only)

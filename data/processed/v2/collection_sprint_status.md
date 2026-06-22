@@ -1,40 +1,40 @@
 # Collection Sprint Status
 
-- Generated: `2026-06-22T11:50:37+00:00`
+- Generated: `2026-06-22T15:29:28+00:00`
 - Run id: `collection_sprint_20260622_002`
-- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_115035_009`
+- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_post_map_20260622_152927_010`
 - Starting public records: `1380`
-- Ending public records: `3699`
-- Net-new public records: `2319`
+- Ending public records: `3752`
+- Net-new public records: `2372`
 - Starting map flags: `891`
-- Ending map flags: `1145`
-- Net-new map flags: `254`
-- Candidates processed: `4537`
+- Ending map flags: `1200`
+- Net-new map flags: `309`
+- Candidates processed: `4670`
 - Context/lead staged: `0`
 - Suppressed/rejected staged: `0`
 - Duplicate staged: `0`
 - Gap to minimum 3,500 public records: `0`
-- Gap to preferred 3,800 public records: `101`
-- Soft ceiling remaining before 4,000: `301`
-- Gap to 1,200 map flags: `55`
-- Current map ratio: `0.3095`
-- Records added since checkpoint: `64`
-- Map flags added since checkpoint: `77`
-- Records per new map flag: `0.83`
-- Active collection mode: `map_first`
+- Gap to preferred 3,800 public records: `48`
+- Soft ceiling remaining before 4,000: `248`
+- Gap to 1,200 map flags: `0`
+- Current map ratio: `0.3198`
+- Records added since checkpoint: `53`
+- Map flags added since checkpoint: `55`
+- Records per new map flag: `0.96`
+- Active collection mode: `complete`
 - Map invariant ok: `True`
 
 ## Records by Source Organisation
-- Australian Broadcasting Corporation: 3
+- Australian Broadcasting Corporation: 1
 
 ## Records by Source Family
-- institutional_media_page: 3
+- institutional_media_page: 1
 
 ## Records by Jurisdiction
-- TAS: 3
+- WA: 1
 
 ## Records by Narrative Type
-- apparition_account: 3
+- apparition_account: 1
 
 ## Per-Route Yield
 
@@ -541,6 +541,46 @@
 | sprint_abc_modern_wa_tas_sa_site_units_20 | place_first_map_records | 5 | 5 | 0 | 0 | 0 | 5 | 2.8 | route_candidate_limit_or_source_exhausted |
 | sprint_abc_hobart_distinct_ghost_places_21 | place_first_map_records | 5 | 2 | 0 | 3 | 0 | 2 | 1.7 | route_candidate_limit_or_source_exhausted |
 | sprint_abc_hobart_named_ghost_sections_22 | place_first_map_records | 3 | 3 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_most_haunted_additional_sites_23 | place_first_map_records | 2 | 2 | 0 | 0 | 0 | 2 | 0.4 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_modern_underrepresented_place_units_24 | place_first_map_records | 7 | 4 | 0 | 2 | 0 | 4 | 17.2 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_modern_named_place_units_25 | place_first_map_records | 6 | 6 | 0 | 0 | 0 | 6 | 15.4 | route_candidate_limit_or_source_exhausted |
+| sprint_territory_stories_acacia_hills_yowie_27 | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_territory_stories_darwin_ambulance_ghost_28 | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_territory_stories_litchfield_yowie_26 | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_york_wa_distinct_ghost_units_29 | place_first_map_records | 2 | 2 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_albany_spectrum_convict_ghost_30 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_aso_his_masters_ghost_montsalvat_33 | institutional_public_media_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_territory_stories_mix1049_darwin_ghost_32 | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_territory_stories_palmerston_centre_ghost_31 | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_gawler_dead_mans_pass_tree_ghost_34 | local_archive_historical_society | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_willow_court_doctor_spirit_37 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_bayview_hotel_stanley_ghost_39 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_majestic_theatre_pomona_woman_40 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_willow_court_sarah_spirit_36 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_z_ward_glenside_ghost_sounds_35 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_willow_court_documentary_context_38 | place_first_map_records | 1 | 0 | 0 | 1 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_exact_public_place_wave_42 | place_first_map_records | 8 | 5 | 0 | 3 | 0 | 5 | 16.2 | route_candidate_limit_or_source_exhausted |
+| sprint_exact_public_place_reviewed_snippets_43 | place_first_map_records | 2 | 2 | 0 | 0 | 0 | 0 | 0.0 | route_candidate_limit_or_source_exhausted |
+| sprint_exact_public_place_reviewed_snippets_44 | place_first_map_records | 3 | 3 | 0 | 0 | 2 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_wa_nt_sa_tas_map_gap_wave_45 | place_first_map_records | 10 | 7 | 0 | 23 | 5 | 7 | 28.3 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_modern_undercovered_map_gap_wave_46 | place_first_map_records | 5 | 5 | 0 | 6 | 3 | 5 | 29.7 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_place_exact_nt_wa_gap_wave_47 | place_first_map_records | 19 | 19 | 0 | 39 | 7 | 19 | 39.3 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_place_exact_sa_tas_gap_wave_48 | place_first_map_records | 14 | 12 | 0 | 61 | 1 | 12 | 44.7 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_exact_site_map_gap_wave_49 | place_first_map_records | 8 | 5 | 0 | 87 | 0 | 5 | 72.9 | route_candidate_limit_or_source_exhausted |
+| sprint_abc_curious_canberra_public_page_wave_50 | place_first_map_records | 4 | 3 | 0 | 1 | 0 | 3 | 2.8 | route_candidate_limit_or_source_exhausted |
+| sprint_national_trust_heritage_haunts_public_page_wave_51 | local_archive_historical_society | 11 | 0 | 0 | 11 | 0 | 0 | 3.5 | public_page_low_yield_or_exhausted |
+| sprint_national_trust_spooky_stories_nsw_wave_52 | local_archive_historical_society | 4 | 4 | 0 | 0 | 4 | 0 | 0.0 | accepted_target_reached |
+| sprint_national_trust_spooky_stories_nsw_wave_53 | local_archive_historical_society | 2 | 2 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_slv_crowther_christmas_ghost_wave_55 | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_slv_iolanthe_spiritualist_record_wave_56 | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_modern_institutional_place_ghosts_wave_54 | place_first_map_records | 2 | 2 | 0 | 0 | 0 | 0 | 0.0 | route_candidate_limit_or_source_exhausted |
+| sprint_slv_black_rock_house_spirit_wave_59 | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_old_adelaide_gaol_invisible_man_wave_58 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_fremantle_arts_centre_wave_57 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_tas_livestream_distinct_figures_wave_61 | place_first_map_records | 2 | 2 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_tas_east_coast_piermont_alice_wave_60 | place_first_map_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
+| sprint_abc_sylvania_station_spirits_41 | institutional_public_media_records | 1 | 0 | 0 | 1 | 0 | 0 | 0.0 | route_cursor_exhausted |
+| sprint_abc_sylvania_station_spirits_corrected_wave_62 | institutional_public_media_records | 1 | 1 | 0 | 0 | 0 | 0 | 0.0 | accepted_target_reached |
 
 ## Productive Routes
 
@@ -554,11 +594,15 @@
 - sprint_abc_exact_public_pages_06
 - sprint_abc_exact_qld_nsw_known_sites_04
 - sprint_abc_exact_wa_york_oakabella_retry_05
+- sprint_abc_modern_named_place_units_25
 - sprint_abc_modern_wa_tas_sa_site_units_19
+- sprint_abc_place_exact_nt_wa_gap_wave_47
+- sprint_abc_place_exact_sa_tas_gap_wave_48
 - sprint_abc_placefirst_national_haunted_sites
 - sprint_abc_placefirst_sa_vic_gaol_asylum_theatre
 - sprint_abc_placefirst_tasmania_port_arthur_hobart
 - sprint_abc_placefirst_wa_act_qld_nsw_sites
+- sprint_abc_wa_nt_sa_tas_map_gap_wave_45
 - sprint_adelaide_gaol_ghostly_sightings_exact_17
 - sprint_internet_archive_beveridge_victoria_riverina_exact_text
 - sprint_internet_archive_booandik_sa_exact_text
@@ -683,6 +727,8 @@
 - sprint_abc_qld_ghostbuster_places_rescan_11
 - sprint_abc_richmond_bridge_exact_14
 - sprint_abc_richmond_bridge_exact_15
+- sprint_abc_sylvania_station_spirits_41
+- sprint_abc_willow_court_documentary_context_38
 - sprint_act_heritage_library_probe
 - sprint_anu_open_research_folklore_probe
 - sprint_geelong_heritage_place_first_probe
@@ -701,6 +747,7 @@
 - sprint_marion_heritage_probe
 - sprint_moreton_bay_deception_bay_recollect_ocr
 - sprint_museums_victoria_history_probe
+- sprint_national_trust_heritage_haunts_public_page_wave_51
 - sprint_pga_australian_fairy_tales_exact_texts
 - sprint_pga_dyson_below_and_on_top_rescan_02
 - sprint_pga_hume_cook_dandenongs_rescan_exact_texts

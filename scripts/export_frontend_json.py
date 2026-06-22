@@ -299,6 +299,9 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                 JOIN records r ON r.record_id = rl.record_id
                 LEFT JOIN figures f ON f.figure_id = r.figure_id
                 LEFT JOIN coding c ON c.record_id = r.record_id
+                WHERE COALESCE(r.publicness_level, '') != 'restricted_excluded'
+                  AND COALESCE(c.publicness_code, '') != 'restricted_excluded'
+                  AND COALESCE(c.relevance_code, '') != 'scope_excluded'
                 ORDER BY COALESCE(r.year, 9999), rl.record_id, l.place_name
                 """
             ).fetchall()
@@ -425,7 +428,9 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
     for location in locations:
         state = location.get("state_territory")
         record_id = int(location["record_id"])
-        linked_record = records_by_id.get(record_id, {})
+        linked_record = records_by_id.get(record_id)
+        if linked_record is None:
+            continue
         location["source_name"] = linked_record.get("source_name")
         location["source_type"] = linked_record.get("source_type")
         location["publication"] = linked_record.get("publication")
@@ -529,6 +534,18 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                 **band,
                 "record_count": int(record_band_counts.get(str(band["id"]), 0)),
                 "planned_query_count": int(planned_query_count),
+            }
+        )
+    if record_band_counts.get("undated"):
+        date_band_summaries.append(
+            {
+                "id": "undated",
+                "label": "Undated",
+                "start": None,
+                "end": None,
+                "role": "public records with no defensible publication or event year in the source metadata",
+                "record_count": int(record_band_counts.get("undated", 0)),
+                "planned_query_count": 0,
             }
         )
 

@@ -1,8 +1,8 @@
 {
-  "accepted_records": 2631,
-  "active_collection_mode": "map_first",
+  "accepted_records": 2711,
+  "active_collection_mode": "complete",
   "active_routes": [
-    "sprint_abc_hobart_named_ghost_sections_22"
+    "sprint_abc_sylvania_station_spirits_corrected_wave_62"
   ],
   "blocked_commands": [
     {
@@ -27,20 +27,22 @@
     "sprint_slwa_battye_place_first_probe",
     "sprint_victorian_collections_story_probe"
   ],
-  "candidates_processed": 4054,
+  "candidates_processed": 4187,
   "checkpoint_index": 9,
   "context_records": 78,
   "created_at": "2026-06-22T05:12:16+00:00",
-  "current_map_flag_count": 1145,
-  "current_map_flags": 1145,
-  "current_map_ratio": 0.3095,
-  "current_public_record_count": 3699,
-  "current_public_records": 3699,
-  "duplicates": 1912,
+  "current_map_flag_count": 1200,
+  "current_map_flags": 1200,
+  "current_map_ratio": 0.3198,
+  "current_public_record_count": 3752,
+  "current_public_records": 3752,
+  "duplicates": 1942,
   "exhausted_routes": [
     "sprint_abc_qld_ghostbuster_places_rescan_11",
     "sprint_abc_richmond_bridge_exact_14",
     "sprint_abc_richmond_bridge_exact_15",
+    "sprint_abc_sylvania_station_spirits_41",
+    "sprint_abc_willow_court_documentary_context_38",
     "sprint_internet_archive_calvert_wa_rescan_02",
     "sprint_internet_archive_mathews_notes_nsw_rescan_02",
     "sprint_internet_archive_mathews_sociology_wa_exact_article",
@@ -54,6 +56,7 @@
     "sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown",
     "sprint_marion_heritage_probe",
     "sprint_moreton_bay_deception_bay_recollect_ocr",
+    "sprint_national_trust_heritage_haunts_public_page_wave_51",
     "sprint_pga_dyson_below_and_on_top_rescan_02",
     "sprint_pga_hume_cook_dandenongs_rescan_exact_texts",
     "sprint_project_gutenberg_barry_bunyip_stories_rescan",
@@ -67,9 +70,9 @@
     "sprint_victorian_collections_story_probe",
     "sprint_wa_museum_maritime_place_first_probe"
   ],
-  "gap_to_map_1200": 55,
+  "gap_to_map_1200": 0,
   "gap_to_minimum_3500": 0,
-  "gap_to_preferred_3800": 101,
+  "gap_to_preferred_3800": 48,
   "history": [
     {
       "accepted": 73,
@@ -1294,9 +1297,198 @@
       "processed": 3,
       "public_records": 3699,
       "run_id": "collection_sprint_launch_20260622_115035_009"
+    },
+    {
+      "accepted": 2,
+      "completed_at": "2026-06-22T11:51:45+00:00",
+      "map_flags": 1147,
+      "map_updates": 0,
+      "processed": 2,
+      "public_records": 3701,
+      "run_id": "collection_sprint_launch_20260622_115143_010"
+    },
+    {
+      "accepted": 4,
+      "completed_at": "2026-06-22T11:55:36+00:00",
+      "map_flags": 1151,
+      "map_updates": 0,
+      "processed": 7,
+      "public_records": 3705,
+      "run_id": "collection_sprint_launch_20260622_115517_010"
+    },
+    {
+      "accepted": 6,
+      "completed_at": "2026-06-22T12:06:33+00:00",
+      "map_flags": 1157,
+      "map_updates": 0,
+      "processed": 6,
+      "public_records": 3711,
+      "run_id": "collection_sprint_launch_20260622_120616_010"
+    },
+    {
+      "accepted": 3,
+      "completed_at": "2026-06-22T12:20:10+00:00",
+      "map_flags": 1158,
+      "map_updates": 0,
+      "processed": 3,
+      "public_records": 3714,
+      "run_id": "collection_sprint_launch_20260622_122008_010"
+    },
+    {
+      "accepted": 3,
+      "completed_at": "2026-06-22T12:28:19+00:00",
+      "map_flags": 1163,
+      "map_updates": 0,
+      "processed": 3,
+      "public_records": 3717,
+      "run_id": "collection_sprint_launch_20260622_122817_010"
+    },
+    {
+      "accepted": 3,
+      "completed_at": "2026-06-22T12:55:47+00:00",
+      "map_flags": 1166,
+      "map_updates": 0,
+      "processed": 3,
+      "public_records": 3720,
+      "run_id": "collection_sprint_launch_20260622_125546_010"
+    },
+    {
+      "accepted": 1,
+      "completed_at": "2026-06-22T12:59:15+00:00",
+      "map_flags": 1167,
+      "map_updates": 0,
+      "processed": 1,
+      "public_records": 3721,
+      "run_id": "collection_sprint_launch_20260622_125913_010"
+    },
+    {
+      "accepted": 5,
+      "completed_at": "2026-06-22T13:26:06+00:00",
+      "map_flags": 1172,
+      "map_updates": 0,
+      "processed": 6,
+      "public_records": 3726,
+      "run_id": "collection_sprint_launch_20260622_132605_010"
+    },
+    {
+      "accepted": 5,
+      "completed_at": "2026-06-22T13:48:13+00:00",
+      "map_flags": 1176,
+      "map_updates": 0,
+      "processed": 8,
+      "public_records": 3730,
+      "run_id": "collection_sprint_launch_20260622_134755_010"
+    },
+    {
+      "accepted": 0,
+      "completed_at": "2026-06-22T13:51:52+00:00",
+      "map_flags": 1176,
+      "map_updates": 0,
+      "processed": 2,
+      "public_records": 3730,
+      "run_id": "collection_sprint_launch_20260622_135151_010"
+    },
+    {
+      "accepted": 3,
+      "completed_at": "2026-06-22T13:52:50+00:00",
+      "map_flags": 1179,
+      "map_updates": 0,
+      "processed": 3,
+      "public_records": 3733,
+      "run_id": "collection_sprint_launch_20260622_135249_010"
+    },
+    {
+      "accepted": 24,
+      "completed_at": "2026-06-22T14:28:25+00:00",
+      "map_flags": 1206,
+      "map_updates": 0,
+      "processed": 48,
+      "public_records": 3757,
+      "run_id": "collection_sprint_launch_20260622_142738_010"
+    },
+    {
+      "accepted": 3,
+      "completed_at": "2026-06-22T14:33:07+00:00",
+      "map_flags": 1186,
+      "map_updates": 0,
+      "processed": 8,
+      "public_records": 3737,
+      "run_id": "collection_sprint_launch_20260622_143153_010"
+    },
+    {
+      "accepted": 3,
+      "completed_at": "2026-06-22T14:37:24+00:00",
+      "map_flags": 1187,
+      "map_updates": 0,
+      "processed": 15,
+      "public_records": 3738,
+      "run_id": "collection_sprint_launch_20260622_143719_010"
+    },
+    {
+      "accepted": 4,
+      "completed_at": "2026-06-22T14:46:18+00:00",
+      "map_flags": 1190,
+      "map_updates": 0,
+      "processed": 4,
+      "public_records": 3741,
+      "run_id": "collection_sprint_launch_20260622_144617_010"
+    },
+    {
+      "accepted": 2,
+      "completed_at": "2026-06-22T14:48:28+00:00",
+      "map_flags": 1192,
+      "map_updates": 0,
+      "processed": 2,
+      "public_records": 3743,
+      "run_id": "collection_sprint_launch_20260622_144826_010"
+    },
+    {
+      "accepted": 2,
+      "completed_at": "2026-06-22T15:21:50+00:00",
+      "map_flags": 1194,
+      "map_updates": 0,
+      "processed": 4,
+      "public_records": 3745,
+      "run_id": "collection_sprint_launch_20260622_152149_010"
+    },
+    {
+      "accepted": 3,
+      "completed_at": "2026-06-22T15:24:08+00:00",
+      "map_flags": 1197,
+      "map_updates": 0,
+      "processed": 3,
+      "public_records": 3748,
+      "run_id": "collection_sprint_launch_20260622_152406_010"
+    },
+    {
+      "accepted": 3,
+      "completed_at": "2026-06-22T15:27:27+00:00",
+      "map_flags": 1200,
+      "map_updates": 0,
+      "processed": 3,
+      "public_records": 3751,
+      "run_id": "collection_sprint_launch_20260622_152726_010"
+    },
+    {
+      "accepted": 0,
+      "completed_at": "2026-06-22T15:28:49+00:00",
+      "map_flags": 1200,
+      "map_updates": 0,
+      "processed": 1,
+      "public_records": 3751,
+      "run_id": "collection_sprint_post_map_20260622_152847_010"
+    },
+    {
+      "accepted": 1,
+      "completed_at": "2026-06-22T15:29:28+00:00",
+      "map_flags": 1200,
+      "map_updates": 0,
+      "processed": 1,
+      "public_records": 3752,
+      "run_id": "collection_sprint_post_map_20260622_152927_010"
     }
   ],
-  "last_completed_checkpoint": "collection_sprint_launch_20260622_115035_009",
+  "last_completed_checkpoint": "collection_sprint_post_map_20260622_152927_010",
   "launch_start_map_flag_count": 891,
   "launch_start_public_record_count": 1380,
   "launch_targets": {
@@ -1305,10 +1497,10 @@
     "preferred_public_records": 3800,
     "soft_maximum_public_records": 4000
   },
-  "map_candidates": 224,
-  "map_flags_added_since_checkpoint": 77,
+  "map_candidates": 292,
+  "map_flags_added_since_checkpoint": 55,
   "map_flags_at_last_checkpoint": 1145,
-  "map_gap": 55,
+  "map_gap": 0,
   "next_route_queue": [],
   "productive_routes": [
     "sprint_abc_australias_most_haunted_places_08",
@@ -1321,11 +1513,15 @@
     "sprint_abc_exact_public_pages_06",
     "sprint_abc_exact_qld_nsw_known_sites_04",
     "sprint_abc_exact_wa_york_oakabella_retry_05",
+    "sprint_abc_modern_named_place_units_25",
     "sprint_abc_modern_wa_tas_sa_site_units_19",
+    "sprint_abc_place_exact_nt_wa_gap_wave_47",
+    "sprint_abc_place_exact_sa_tas_gap_wave_48",
     "sprint_abc_placefirst_national_haunted_sites",
     "sprint_abc_placefirst_sa_vic_gaol_asylum_theatre",
     "sprint_abc_placefirst_tasmania_port_arthur_hobart",
     "sprint_abc_placefirst_wa_act_qld_nsw_sites",
+    "sprint_abc_wa_nt_sa_tas_map_gap_wave_45",
     "sprint_adelaide_gaol_ghostly_sightings_exact_17",
     "sprint_internet_archive_beveridge_victoria_riverina_exact_text",
     "sprint_internet_archive_booandik_sa_exact_text",
@@ -1442,11 +1638,17 @@
     "sprint_wikisource_southeast_exact_texts"
   ],
   "record_gap": 0,
-  "records_added_since_checkpoint": 64,
+  "records_added_since_checkpoint": 53,
   "records_at_last_checkpoint": 3699,
-  "records_per_new_map_flag": 0.83,
-  "rejected_rows": 1173,
+  "records_per_new_map_flag": 0.96,
+  "rejected_rows": 1414,
   "resume_cursor_per_route": {
+    "sprint_abc_albany_spectrum_convict_ghost_30": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T12:28:17+00:00"
+    },
     "sprint_abc_australias_most_haunted_places_08": {
       "exhausted": true,
       "page_index": 1,
@@ -1458,6 +1660,18 @@
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T11:11:01+00:00"
+    },
+    "sprint_abc_bayview_hotel_stanley_ghost_39": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T13:26:05+00:00"
+    },
+    "sprint_abc_curious_canberra_public_page_wave_50": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T14:37:22+00:00"
     },
     "sprint_abc_exact_act_vic_tas_known_sites_04": {
       "exhausted": true,
@@ -1526,6 +1740,13 @@
       "total_queries": 10,
       "updated_at": "2026-06-22T10:44:47+00:00"
     },
+    "sprint_abc_exact_site_map_gap_wave_49": {
+      "exhausted": true,
+      "page_index": 0,
+      "query_index": 18,
+      "total_queries": 18,
+      "updated_at": "2026-06-22T14:33:06+00:00"
+    },
     "sprint_abc_exact_site_units_rescan_13": {
       "exhausted": true,
       "page_index": 2,
@@ -1546,6 +1767,12 @@
       "total_queries": 10,
       "updated_at": "2026-06-22T10:45:01+00:00"
     },
+    "sprint_abc_fremantle_arts_centre_wave_57": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T15:24:06+00:00"
+    },
     "sprint_abc_ghosthunters_picton_woodford_10": {
       "exhausted": true,
       "page_index": 1,
@@ -1564,6 +1791,31 @@
       "total_pages": 3,
       "updated_at": "2026-06-22T11:50:35+00:00"
     },
+    "sprint_abc_majestic_theatre_pomona_woman_40": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T13:26:05+00:00"
+    },
+    "sprint_abc_modern_named_place_units_25": {
+      "exhausted": true,
+      "page_index": 6,
+      "total_pages": 6,
+      "updated_at": "2026-06-22T12:06:32+00:00"
+    },
+    "sprint_abc_modern_undercovered_map_gap_wave_46": {
+      "exhausted": true,
+      "page_index": 0,
+      "query_index": 6,
+      "total_queries": 6,
+      "updated_at": "2026-06-22T14:28:08+00:00"
+    },
+    "sprint_abc_modern_underrepresented_place_units_24": {
+      "exhausted": true,
+      "page_index": 5,
+      "total_pages": 5,
+      "updated_at": "2026-06-22T11:55:34+00:00"
+    },
     "sprint_abc_modern_wa_tas_sa_site_units_19": {
       "exhausted": true,
       "page_index": 9,
@@ -1575,6 +1827,32 @@
       "page_index": 5,
       "total_pages": 5,
       "updated_at": "2026-06-22T11:47:15+00:00"
+    },
+    "sprint_abc_most_haunted_additional_sites_23": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T11:51:44+00:00"
+    },
+    "sprint_abc_old_adelaide_gaol_invisible_man_wave_58": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T15:24:06+00:00"
+    },
+    "sprint_abc_place_exact_nt_wa_gap_wave_47": {
+      "exhausted": true,
+      "page_index": 0,
+      "query_index": 8,
+      "total_queries": 8,
+      "updated_at": "2026-06-22T14:28:18+00:00"
+    },
+    "sprint_abc_place_exact_sa_tas_gap_wave_48": {
+      "exhausted": true,
+      "page_index": 0,
+      "query_index": 8,
+      "total_queries": 8,
+      "updated_at": "2026-06-22T14:28:23+00:00"
     },
     "sprint_abc_placefirst_national_haunted_sites": {
       "exhausted": true,
@@ -1649,6 +1927,61 @@
       "total_pages": 1,
       "updated_at": "2026-06-22T11:26:23+00:00"
     },
+    "sprint_abc_sylvania_station_spirits_41": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T15:28:47+00:00"
+    },
+    "sprint_abc_sylvania_station_spirits_corrected_wave_62": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T15:29:27+00:00"
+    },
+    "sprint_abc_tas_livestream_distinct_figures_wave_61": {
+      "exhausted": true,
+      "page_index": 2,
+      "total_pages": 2,
+      "updated_at": "2026-06-22T15:27:26+00:00"
+    },
+    "sprint_abc_wa_nt_sa_tas_map_gap_wave_45": {
+      "exhausted": true,
+      "page_index": 0,
+      "query_index": 6,
+      "total_queries": 6,
+      "updated_at": "2026-06-22T14:28:07+00:00"
+    },
+    "sprint_abc_willow_court_doctor_spirit_37": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T13:26:05+00:00"
+    },
+    "sprint_abc_willow_court_documentary_context_38": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T13:26:05+00:00"
+    },
+    "sprint_abc_willow_court_sarah_spirit_36": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T13:26:05+00:00"
+    },
+    "sprint_abc_york_wa_distinct_ghost_units_29": {
+      "exhausted": true,
+      "page_index": 2,
+      "total_pages": 2,
+      "updated_at": "2026-06-22T12:28:17+00:00"
+    },
+    "sprint_abc_z_ward_glenside_ghost_sounds_35": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T13:26:05+00:00"
+    },
     "sprint_adelaide_arcade_history_ghost_exact_page": {
       "exhausted": true,
       "page_index": 1,
@@ -1666,6 +1999,36 @@
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T11:31:53+00:00"
+    },
+    "sprint_aso_his_masters_ghost_montsalvat_33": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T12:55:46+00:00"
+    },
+    "sprint_exact_public_place_reviewed_snippets_43": {
+      "exhausted": true,
+      "page_index": 3,
+      "total_pages": 3,
+      "updated_at": "2026-06-22T13:51:51+00:00"
+    },
+    "sprint_exact_public_place_reviewed_snippets_44": {
+      "exhausted": true,
+      "page_index": 3,
+      "total_pages": 3,
+      "updated_at": "2026-06-22T13:52:49+00:00"
+    },
+    "sprint_exact_public_place_wave_42": {
+      "exhausted": true,
+      "page_index": 8,
+      "total_pages": 8,
+      "updated_at": "2026-06-22T13:48:11+00:00"
+    },
+    "sprint_gawler_dead_mans_pass_tree_ghost_34": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T12:59:14+00:00"
     },
     "sprint_internet_archive_beveridge_victoria_riverina_exact_text": {
       "exhausted": true,
@@ -2137,11 +2500,35 @@
       "exhausted": true,
       "updated_at": "2026-06-22T09:25:13+00:00"
     },
+    "sprint_modern_institutional_place_ghosts_wave_54": {
+      "exhausted": true,
+      "page_index": 3,
+      "total_pages": 3,
+      "updated_at": "2026-06-22T15:21:49+00:00"
+    },
     "sprint_moreton_bay_deception_bay_recollect_ocr": {
       "exhausted": true,
       "item_index": 12,
       "total_items": 12,
       "updated_at": "2026-06-22T07:04:19+00:00"
+    },
+    "sprint_national_trust_heritage_haunts_public_page_wave_51": {
+      "exhausted": true,
+      "page_index": 2,
+      "total_pages": 2,
+      "updated_at": "2026-06-22T14:37:23+00:00"
+    },
+    "sprint_national_trust_spooky_stories_nsw_wave_52": {
+      "exhausted": true,
+      "page_index": 4,
+      "total_pages": 4,
+      "updated_at": "2026-06-22T14:46:17+00:00"
+    },
+    "sprint_national_trust_spooky_stories_nsw_wave_53": {
+      "exhausted": true,
+      "page_index": 2,
+      "total_pages": 2,
+      "updated_at": "2026-06-22T14:48:26+00:00"
     },
     "sprint_pga_australian_fairy_tales_exact_texts": {
       "exhausted": true,
@@ -2469,15 +2856,33 @@
       "exhausted": true,
       "updated_at": "2026-06-22T09:25:20+00:00"
     },
+    "sprint_slv_black_rock_house_spirit_wave_59": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T15:24:06+00:00"
+    },
     "sprint_slv_catalogue_place_first_probe": {
       "exhausted": true,
       "updated_at": "2026-06-22T09:25:19+00:00"
+    },
+    "sprint_slv_crowther_christmas_ghost_wave_55": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T15:21:49+00:00"
     },
     "sprint_slv_federicis_ghost_exact_page": {
       "exhausted": true,
       "page_index": 1,
       "total_pages": 1,
       "updated_at": "2026-06-22T09:24:51+00:00"
+    },
+    "sprint_slv_iolanthe_spiritualist_record_wave_56": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T15:21:49+00:00"
     },
     "sprint_slv_spooky_library_stories_exact_page": {
       "exhausted": true,
@@ -2488,6 +2893,42 @@
     "sprint_state_records_sa_archivessearch_probe": {
       "exhausted": true,
       "updated_at": "2026-06-22T09:25:21+00:00"
+    },
+    "sprint_tas_east_coast_piermont_alice_wave_60": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T15:27:26+00:00"
+    },
+    "sprint_territory_stories_acacia_hills_yowie_27": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T12:20:09+00:00"
+    },
+    "sprint_territory_stories_darwin_ambulance_ghost_28": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T12:20:09+00:00"
+    },
+    "sprint_territory_stories_litchfield_yowie_26": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T12:20:09+00:00"
+    },
+    "sprint_territory_stories_mix1049_darwin_ghost_32": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T12:55:46+00:00"
+    },
+    "sprint_territory_stories_palmerston_centre_ghost_31": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T12:55:46+00:00"
     },
     "sprint_territory_stories_public_probe": {
       "exhausted": true,
@@ -2511,6 +2952,17 @@
     }
   },
   "route_totals": {
+    "sprint_abc_albany_spectrum_convict_ghost_30": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
     "sprint_abc_australias_most_haunted_places_08": {
       "accepted": 6,
       "context": 0,
@@ -2532,6 +2984,28 @@
       "map_candidates": 6,
       "processed": 6,
       "rejected": 0
+    },
+    "sprint_abc_bayview_hotel_stanley_ghost_39": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_curious_canberra_public_page_wave_50": {
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 3,
+      "latest_acceptance_rate": 0.75,
+      "map_candidates": 3,
+      "processed": 4,
+      "rejected": 1
     },
     "sprint_abc_exact_act_vic_tas_known_sites_04": {
       "accepted": 16,
@@ -2643,6 +3117,17 @@
       "processed": 8,
       "rejected": 26
     },
+    "sprint_abc_exact_site_map_gap_wave_49": {
+      "accepted": 5,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 5,
+      "latest_acceptance_rate": 0.625,
+      "map_candidates": 5,
+      "processed": 8,
+      "rejected": 87
+    },
     "sprint_abc_exact_site_units_rescan_13": {
       "accepted": 2,
       "context": 0,
@@ -2675,6 +3160,17 @@
       "map_candidates": 6,
       "processed": 10,
       "rejected": 14
+    },
+    "sprint_abc_fremantle_arts_centre_wave_57": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
     },
     "sprint_abc_ghosthunters_picton_woodford_10": {
       "accepted": 2,
@@ -2709,6 +3205,50 @@
       "processed": 3,
       "rejected": 0
     },
+    "sprint_abc_majestic_theatre_pomona_woman_40": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_modern_named_place_units_25": {
+      "accepted": 6,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 6,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 6,
+      "processed": 6,
+      "rejected": 0
+    },
+    "sprint_abc_modern_undercovered_map_gap_wave_46": {
+      "accepted": 5,
+      "context": 0,
+      "duplicates": 3,
+      "errors": 0,
+      "last_accepted": 5,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 5,
+      "processed": 5,
+      "rejected": 6
+    },
+    "sprint_abc_modern_underrepresented_place_units_24": {
+      "accepted": 4,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 4,
+      "latest_acceptance_rate": 0.5714285714285714,
+      "map_candidates": 4,
+      "processed": 7,
+      "rejected": 2
+    },
     "sprint_abc_modern_wa_tas_sa_site_units_19": {
       "accepted": 9,
       "context": 0,
@@ -2730,6 +3270,50 @@
       "map_candidates": 5,
       "processed": 5,
       "rejected": 0
+    },
+    "sprint_abc_most_haunted_additional_sites_23": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 2,
+      "processed": 2,
+      "rejected": 0
+    },
+    "sprint_abc_old_adelaide_gaol_invisible_man_wave_58": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_place_exact_nt_wa_gap_wave_47": {
+      "accepted": 19,
+      "context": 0,
+      "duplicates": 7,
+      "errors": 0,
+      "last_accepted": 19,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 19,
+      "processed": 19,
+      "rejected": 39
+    },
+    "sprint_abc_place_exact_sa_tas_gap_wave_48": {
+      "accepted": 12,
+      "context": 0,
+      "duplicates": 1,
+      "errors": 0,
+      "last_accepted": 12,
+      "latest_acceptance_rate": 0.8571428571428571,
+      "map_candidates": 12,
+      "processed": 14,
+      "rejected": 61
     },
     "sprint_abc_placefirst_national_haunted_sites": {
       "accepted": 16,
@@ -2852,6 +3436,105 @@
       "processed": 1,
       "rejected": 0
     },
+    "sprint_abc_sylvania_station_spirits_41": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 0,
+      "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 1
+    },
+    "sprint_abc_sylvania_station_spirits_corrected_wave_62": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_tas_livestream_distinct_figures_wave_61": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 0
+    },
+    "sprint_abc_wa_nt_sa_tas_map_gap_wave_45": {
+      "accepted": 7,
+      "context": 0,
+      "duplicates": 5,
+      "errors": 0,
+      "last_accepted": 7,
+      "latest_acceptance_rate": 0.7,
+      "map_candidates": 7,
+      "processed": 10,
+      "rejected": 23
+    },
+    "sprint_abc_willow_court_doctor_spirit_37": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_willow_court_documentary_context_38": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 0,
+      "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 1
+    },
+    "sprint_abc_willow_court_sarah_spirit_36": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_york_wa_distinct_ghost_units_29": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 0
+    },
+    "sprint_abc_z_ward_glenside_ghost_sounds_35": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
     "sprint_act_heritage_library_probe": {
       "accepted": 0,
       "context": 0,
@@ -2905,6 +3588,61 @@
       "latest_acceptance_rate": 0,
       "map_candidates": 0,
       "processed": 0,
+      "rejected": 0
+    },
+    "sprint_aso_his_masters_ghost_montsalvat_33": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_exact_public_place_reviewed_snippets_43": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 0
+    },
+    "sprint_exact_public_place_reviewed_snippets_44": {
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 3,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 3,
+      "rejected": 0
+    },
+    "sprint_exact_public_place_wave_42": {
+      "accepted": 5,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 5,
+      "latest_acceptance_rate": 0.625,
+      "map_candidates": 5,
+      "processed": 8,
+      "rejected": 3
+    },
+    "sprint_gawler_dead_mans_pass_tree_ghost_34": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
       "rejected": 0
     },
     "sprint_geelong_heritage_place_first_probe": {
@@ -3751,6 +4489,17 @@
       "processed": 0,
       "rejected": 0
     },
+    "sprint_modern_institutional_place_ghosts_wave_54": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 0
+    },
     "sprint_moreton_bay_deception_bay_recollect_ocr": {
       "accepted": 0,
       "context": 0,
@@ -3771,6 +4520,39 @@
       "latest_acceptance_rate": 0,
       "map_candidates": 0,
       "processed": 0,
+      "rejected": 0
+    },
+    "sprint_national_trust_heritage_haunts_public_page_wave_51": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 0,
+      "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 11,
+      "rejected": 11
+    },
+    "sprint_national_trust_spooky_stories_nsw_wave_52": {
+      "accepted": 4,
+      "context": 0,
+      "duplicates": 4,
+      "errors": 0,
+      "last_accepted": 4,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 4,
+      "rejected": 0
+    },
+    "sprint_national_trust_spooky_stories_nsw_wave_53": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
       "rejected": 0
     },
     "sprint_pga_australian_fairy_tales_exact_texts": {
@@ -4374,6 +5156,17 @@
       "processed": 30,
       "rejected": 0
     },
+    "sprint_slv_black_rock_house_spirit_wave_59": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
     "sprint_slv_catalogue_place_first_probe": {
       "accepted": 0,
       "context": 0,
@@ -4383,6 +5176,17 @@
       "latest_acceptance_rate": 0,
       "map_candidates": 0,
       "processed": 0,
+      "rejected": 0
+    },
+    "sprint_slv_crowther_christmas_ghost_wave_55": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
       "rejected": 0
     },
     "sprint_slv_federicis_ghost_exact_page": {
@@ -4395,6 +5199,17 @@
       "map_candidates": 0,
       "processed": 9,
       "rejected": 1
+    },
+    "sprint_slv_iolanthe_spiritualist_record_wave_56": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
     },
     "sprint_slv_spooky_library_stories_exact_page": {
       "accepted": 10,
@@ -4425,6 +5240,72 @@
       "errors": 0,
       "last_accepted": 0,
       "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_tas_east_coast_piermont_alice_wave_60": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_acacia_hills_yowie_27": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_darwin_ambulance_ghost_28": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_litchfield_yowie_26": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_mix1049_darwin_ghost_32": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_palmerston_centre_ghost_31": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
       "map_candidates": 0,
       "processed": 1,
       "rejected": 0
@@ -4482,6 +5363,17 @@
     }
   },
   "routes": {
+    "sprint_abc_albany_spectrum_convict_ghost_30": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
     "sprint_abc_australias_most_haunted_places_08": {
       "accepted": 6,
       "context": 0,
@@ -4503,6 +5395,28 @@
       "map_candidates": 6,
       "processed": 6,
       "rejected": 0
+    },
+    "sprint_abc_bayview_hotel_stanley_ghost_39": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_curious_canberra_public_page_wave_50": {
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 3,
+      "latest_acceptance_rate": 0.75,
+      "map_candidates": 3,
+      "processed": 4,
+      "rejected": 1
     },
     "sprint_abc_exact_act_vic_tas_known_sites_04": {
       "accepted": 16,
@@ -4614,6 +5528,17 @@
       "processed": 8,
       "rejected": 26
     },
+    "sprint_abc_exact_site_map_gap_wave_49": {
+      "accepted": 5,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 5,
+      "latest_acceptance_rate": 0.625,
+      "map_candidates": 5,
+      "processed": 8,
+      "rejected": 87
+    },
     "sprint_abc_exact_site_units_rescan_13": {
       "accepted": 2,
       "context": 0,
@@ -4646,6 +5571,17 @@
       "map_candidates": 6,
       "processed": 10,
       "rejected": 14
+    },
+    "sprint_abc_fremantle_arts_centre_wave_57": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
     },
     "sprint_abc_ghosthunters_picton_woodford_10": {
       "accepted": 2,
@@ -4680,6 +5616,50 @@
       "processed": 3,
       "rejected": 0
     },
+    "sprint_abc_majestic_theatre_pomona_woman_40": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_modern_named_place_units_25": {
+      "accepted": 6,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 6,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 6,
+      "processed": 6,
+      "rejected": 0
+    },
+    "sprint_abc_modern_undercovered_map_gap_wave_46": {
+      "accepted": 5,
+      "context": 0,
+      "duplicates": 3,
+      "errors": 0,
+      "last_accepted": 5,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 5,
+      "processed": 5,
+      "rejected": 6
+    },
+    "sprint_abc_modern_underrepresented_place_units_24": {
+      "accepted": 4,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 4,
+      "latest_acceptance_rate": 0.5714285714285714,
+      "map_candidates": 4,
+      "processed": 7,
+      "rejected": 2
+    },
     "sprint_abc_modern_wa_tas_sa_site_units_19": {
       "accepted": 9,
       "context": 0,
@@ -4701,6 +5681,50 @@
       "map_candidates": 5,
       "processed": 5,
       "rejected": 0
+    },
+    "sprint_abc_most_haunted_additional_sites_23": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 2,
+      "processed": 2,
+      "rejected": 0
+    },
+    "sprint_abc_old_adelaide_gaol_invisible_man_wave_58": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_place_exact_nt_wa_gap_wave_47": {
+      "accepted": 19,
+      "context": 0,
+      "duplicates": 7,
+      "errors": 0,
+      "last_accepted": 19,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 19,
+      "processed": 19,
+      "rejected": 39
+    },
+    "sprint_abc_place_exact_sa_tas_gap_wave_48": {
+      "accepted": 12,
+      "context": 0,
+      "duplicates": 1,
+      "errors": 0,
+      "last_accepted": 12,
+      "latest_acceptance_rate": 0.8571428571428571,
+      "map_candidates": 12,
+      "processed": 14,
+      "rejected": 61
     },
     "sprint_abc_placefirst_national_haunted_sites": {
       "accepted": 16,
@@ -4823,6 +5847,105 @@
       "processed": 1,
       "rejected": 0
     },
+    "sprint_abc_sylvania_station_spirits_41": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 0,
+      "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 1
+    },
+    "sprint_abc_sylvania_station_spirits_corrected_wave_62": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_tas_livestream_distinct_figures_wave_61": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 0
+    },
+    "sprint_abc_wa_nt_sa_tas_map_gap_wave_45": {
+      "accepted": 7,
+      "context": 0,
+      "duplicates": 5,
+      "errors": 0,
+      "last_accepted": 7,
+      "latest_acceptance_rate": 0.7,
+      "map_candidates": 7,
+      "processed": 10,
+      "rejected": 23
+    },
+    "sprint_abc_willow_court_doctor_spirit_37": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_willow_court_documentary_context_38": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 0,
+      "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 1
+    },
+    "sprint_abc_willow_court_sarah_spirit_36": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_abc_york_wa_distinct_ghost_units_29": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 0
+    },
+    "sprint_abc_z_ward_glenside_ghost_sounds_35": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
     "sprint_act_heritage_library_probe": {
       "accepted": 0,
       "context": 0,
@@ -4876,6 +5999,61 @@
       "latest_acceptance_rate": 0,
       "map_candidates": 0,
       "processed": 0,
+      "rejected": 0
+    },
+    "sprint_aso_his_masters_ghost_montsalvat_33": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_exact_public_place_reviewed_snippets_43": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 0
+    },
+    "sprint_exact_public_place_reviewed_snippets_44": {
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 3,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 3,
+      "rejected": 0
+    },
+    "sprint_exact_public_place_wave_42": {
+      "accepted": 5,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 5,
+      "latest_acceptance_rate": 0.625,
+      "map_candidates": 5,
+      "processed": 8,
+      "rejected": 3
+    },
+    "sprint_gawler_dead_mans_pass_tree_ghost_34": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
       "rejected": 0
     },
     "sprint_geelong_heritage_place_first_probe": {
@@ -5722,6 +6900,17 @@
       "processed": 0,
       "rejected": 0
     },
+    "sprint_modern_institutional_place_ghosts_wave_54": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 0
+    },
     "sprint_moreton_bay_deception_bay_recollect_ocr": {
       "accepted": 0,
       "context": 0,
@@ -5742,6 +6931,39 @@
       "latest_acceptance_rate": 0,
       "map_candidates": 0,
       "processed": 0,
+      "rejected": 0
+    },
+    "sprint_national_trust_heritage_haunts_public_page_wave_51": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 0,
+      "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 11,
+      "rejected": 11
+    },
+    "sprint_national_trust_spooky_stories_nsw_wave_52": {
+      "accepted": 4,
+      "context": 0,
+      "duplicates": 4,
+      "errors": 0,
+      "last_accepted": 4,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 4,
+      "rejected": 0
+    },
+    "sprint_national_trust_spooky_stories_nsw_wave_53": {
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 2,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 2,
       "rejected": 0
     },
     "sprint_pga_australian_fairy_tales_exact_texts": {
@@ -6345,6 +7567,17 @@
       "processed": 30,
       "rejected": 0
     },
+    "sprint_slv_black_rock_house_spirit_wave_59": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
     "sprint_slv_catalogue_place_first_probe": {
       "accepted": 0,
       "context": 0,
@@ -6354,6 +7587,17 @@
       "latest_acceptance_rate": 0,
       "map_candidates": 0,
       "processed": 0,
+      "rejected": 0
+    },
+    "sprint_slv_crowther_christmas_ghost_wave_55": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
       "rejected": 0
     },
     "sprint_slv_federicis_ghost_exact_page": {
@@ -6366,6 +7610,17 @@
       "map_candidates": 0,
       "processed": 9,
       "rejected": 1
+    },
+    "sprint_slv_iolanthe_spiritualist_record_wave_56": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
     },
     "sprint_slv_spooky_library_stories_exact_page": {
       "accepted": 10,
@@ -6396,6 +7651,72 @@
       "errors": 0,
       "last_accepted": 0,
       "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_tas_east_coast_piermont_alice_wave_60": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_acacia_hills_yowie_27": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_darwin_ambulance_ghost_28": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_litchfield_yowie_26": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_mix1049_darwin_ghost_32": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_territory_stories_palmerston_centre_ghost_31": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
       "map_candidates": 0,
       "processed": 1,
       "rejected": 0
@@ -6453,12 +7774,12 @@
     }
   },
   "schema_version": "collection-sprint-state/v1",
-  "soft_ceiling_remaining": 301,
+  "soft_ceiling_remaining": 248,
   "suppressed_rows": 0,
   "target_map_flags": 1200,
   "target_preferred_public_records": 3800,
   "target_public_records": 3500,
   "target_soft_maximum_public_records": 4000,
-  "updated_at": "2026-06-22T11:50:37+00:00",
+  "updated_at": "2026-06-22T15:29:28+00:00",
   "verified_map_flags": 37
 }

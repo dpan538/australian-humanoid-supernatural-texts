@@ -1,0 +1,1201 @@
+flag_id,record_id,title,state_territory,x,y,source_location_type,confidence
+mapped:853,853,1825 - Richmond River Herald 06-03-1825,NSW,153.0823096,-28.8632035,locality,medium
+mapped:637,637,1843 - Sydney Morning Herald,NSW,151.2082848,-33.8698439,locality,medium
+mapped:638,638,1843 - Sydney Morning Herald 2,NSW,151.2082848,-33.8698439,locality,medium
+mapped:640,640,1847 - Geelong Advertiser,VIC,144.3598241,-38.1493248,locality,medium
+mapped:641,641,1847 - Sydney Morning Herald Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:44,44,"Phillip Island, Victoria 1849",VIC,145.1888103,-38.507178,locality,high
+mapped:2116,2116,"spirit in How did the Natives of Australia become Acquainted with the Demigods and Daemonia, and with the Superstitions of the Ancient Races?",WA,115.9190544,-31.9319845,named_feature,high
+mapped:855,855,1861 - The Argus Yowie Article,VIC,144.9631732,-37.8142454,locality,medium
+mapped:1760,1760,"spirit in Queensland, Australia",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:1768,1768,"supernatural in Queensland, Australia",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:1769,1769,"devil in Queensland, Australia",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:1778,1778,"giant in Queensland, Australia",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:3720,3720,"spirits in Queensland, Australia",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:3724,3724,"spirit in Queensland, Australia",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:643,643,"1866 - Peter Harris Diary, Toowareenah NSW",NSW,148.9093839,-31.4403083,locality,high
+mapped:644,644,1866 - Sydney Morning Herald,NSW,151.2082848,-33.8698439,locality,medium
+mapped:84,84,"Braidwood, New South Wales 1870",NSW,149.7955552,-35.4388907,town,high
+mapped:646,646,1870 - The Naturalist Article,NSW,149.7955552,-35.4388907,town,high
+mapped:604,604,"Warneton, New South Wales 1871",NSW,152.7782276,-31.0701491,locality,high
+mapped:647,647,1871 - Darling Downa Gazette,QLD,148.5825667,-20.2330678,named_feature,high
+mapped:648,648,1871 - Illawarra Mercury Article,NSW,150.790409,-34.4614504,locality,medium
+mapped:649,649,1871 - Illustrated Australian News,NSW,150.7327778,-34.5230556,locality,high
+mapped:650,650,"1871 - Queanbeyan Age, Jingera Sighted",NSW,149.2337634,-35.3524518,locality,medium
+mapped:652,652,"1871 (1) - Empire, Sydney",NSW,151.2082848,-33.8698439,locality,medium
+mapped:653,653,"1871 (2) - Empire, Sydney",NSW,151.2082848,-33.8698439,locality,medium
+mapped:654,654,1871 (2) - Illawarra Mercury Article,NSW,150.790409,-34.4614504,locality,medium
+mapped:655,655,"1871 (3) - Empire, Sydney",NSW,151.2082848,-33.8698439,locality,medium
+mapped:856,856,1871 - Sydney Herald Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:1022,1022,1871 - Manaro Mercury Article,NSW,149.1064432,-35.9907471,locality,medium
+mapped:656,656,1872 - Monaro Mercury,NSW,149.2389375,-36.9113175,locality,medium
+mapped:657,657,1874 - Cooma Express,NSW,149.7955552,-35.4388907,locality,medium
+mapped:857,857,1874 - Pyramul Hairyman Article,NSW,149.6179,-32.8818,locality,medium
+mapped:3952,3952,ghosts in For the Term of His Natural Life,TAS,147.8694003,-43.1531346,exact_site,B
+mapped:3953,3953,ghosts in For the Term of His Natural Life,TAS,147.8694003,-43.1531346,exact_site,B
+mapped:3954,3954,apparition in For the Term of His Natural Life,TAS,147.8694003,-43.1531346,exact_site,B
+mapped:2076,2076,"spirits in Kámilarói, and Other Australian Languages",NSW,151.7795348,-32.9192953,town,high
+mapped:2077,2077,"ghost in Kámilarói, and Other Australian Languages",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:2078,2078,"ghost in Kámilarói, and Other Australian Languages",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:2080,2080,"spirit in Kámilarói, and Other Australian Languages",NSW,150.893054,-34.4278083,town,high
+mapped:3919,3919,"spirit in Kamilaroi, and other Australian languages",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:3920,3920,"spirit in Kamilaroi, and other Australian languages",QLD,153.2539994,-27.2397819,named_feature,high
+mapped:3923,3923,"spirit in Kamilaroi, and other Australian languages",NSW,150.893054,-34.4278083,town,high
+mapped:3924,3924,"spirits in Kamilaroi, and other Australian languages",NSW,151.7795348,-32.9192953,town,high
+mapped:630,630,"Wyangala Dam, New South Wales 1876",NSW,148.9497239,-33.9747352,locality,high
+mapped:658,658,"1876 - Portland Guardian, Victoria",NSW,148.8844444,-33.8483333,named_feature,high
+mapped:858,858,1876 - Illawarra Mercury Yowie Article,NSW,150.790409,-34.4614504,locality,medium
+mapped:1023,1023,"1876 - Freemans Journal, Walla Walla",NSW,151.2082848,-33.8698439,locality,medium
+mapped:1024,1024,1876 - Town and Country Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:660,660,1877 - Maitland Mercury,NSW,151.5511123,-32.7316683,locality,medium
+mapped:661,661,1877 - Sydney Morning Herald Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:859,859,1877 - Sydney Morning Herald Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:662,662,"1878 - Freemans Journal Article, Pyramul",NSW,149.6179,-32.8818,locality,medium
+mapped:663,663,1878 - Lismore Star Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:664,664,"1878 - Singleton Argus, Yowie Sighted",NSW,151.1132887,-32.602355,locality,medium
+mapped:860,860,1878 - Freemans Journal Pyramul Hairyman,NSW,149.6179,-32.8818,locality,medium
+mapped:861,861,1878 - Northern Star Lismore Yowie Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:1694,1694,"supernatural in The aborigines of Victoria, volume 2",SA,140.7842627,-37.8301386,town,high
+mapped:1695,1695,"supernatural in The aborigines of Victoria, volume 2",SA,140.7842627,-37.8301386,town,high
+mapped:1750,1750,"ghost in The aborigines of Victoria, volume 1",NSW,149.7198009,-34.7523871,town,high
+mapped:3437,3437,"spirits in The Aborigines of Victoria, volume 1",SA,135.8592218,-34.7211905,town,high
+mapped:3467,3467,"spirit in The Aborigines of Victoria, volume 1",NSW,149.7198009,-34.7523871,town,high
+mapped:3476,3476,"ghosts in The Aborigines of Victoria, volume 1",NSW,149.7198009,-34.7523871,town,high
+mapped:3525,3525,"spirit in The Aborigines of Victoria, volume 2",WA,115.9190544,-31.9319845,named_feature,high
+mapped:3529,3529,"spirit in The Aborigines of Victoria, volume 2",WA,115.9190544,-31.9319845,named_feature,high
+mapped:3532,3532,"spirit in The Aborigines of Victoria, volume 2",WA,115.9190544,-31.9319845,named_feature,high
+mapped:3533,3533,"spirit in The Aborigines of Victoria, volume 2",WA,115.9190544,-31.9319845,named_feature,high
+mapped:3961,3961,"devil in The Aborigines of Victoria, volume 1",NSW,149.4208438,-35.0916656,locality,B
+mapped:666,666,"1880 - Gippsland Times, 7ft Yowie",VIC,146.9111788,-37.8744827,locality,medium
+mapped:667,667,1880 - Melbourne Argus,VIC,144.9631732,-37.8142454,locality,medium
+mapped:668,668,1880 - Southland Times (NZ),SA,137.6987969,-34.44304,named_feature,high
+mapped:669,669,1880 - Sydney Morning Herald,NSW,151.2082848,-33.8698439,locality,medium
+mapped:671,671,1880's - Arthur Bicknell ' Wood Devil ' Story,QLD,153.041873,-27.4923416,locality,medium
+mapped:1611,1611,supernatural in Kamilaroi and Kurnai,VIC,144.7798547,-38.1046482,named_feature,high
+mapped:3560,3560,spirit in The Booandik Tribe of South Australian Aborigines,SA,140.7842627,-37.8301386,town,high
+mapped:3570,3570,spirit in The Booandik Tribe of South Australian Aborigines,SA,140.7842627,-37.8301386,town,high
+mapped:3226,3226,"spirits in Australian Aborigines: the languages and customs of several tribes of aborigines in the western district of Victoria, Australia",VIC,144.7798547,-38.1046482,named_feature,high
+mapped:673,673,1882 - Colac Herald,NSW,152.5299305,-32.4361913,locality,high
+mapped:674,674,"1882 - Illawarra Mercury, Australian Gorilla",NSW,150.790409,-34.4614504,locality,medium
+mapped:862,862,1882 - The West Australian Yowie Article,WA,115.1605864,-34.3156059,locality,medium
+mapped:678,678,1883 - Illawarra Mercury Article,NSW,150.790409,-34.4614504,locality,medium
+mapped:2546,2546,ghosts in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2547,2547,haunted in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2548,2548,haunted in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2549,2549,haunted in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2550,2550,spirit in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2551,2551,devil in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2552,2552,devil in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2553,2553,devil in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2554,2554,devil in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2555,2555,giant in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2556,2556,giant in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2557,2557,giant in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:2558,2558,giant in Old Melbourne Memories,VIC,144.9631732,-37.8142454,locality,B
+mapped:3691,3691,spirit in Diary of ten years eventful life of an early settler in Western Australia,WA,115.8605784,-31.9558967,town,high
+mapped:3697,3697,spirits in Diary of ten years eventful life of an early settler in Western Australia,WA,115.7586172,-32.0534086,town,high
+mapped:3709,3709,spirit in Diary of ten years eventful life of an early settler in Western Australia,WA,115.8605784,-31.9558967,town,high
+mapped:3712,3712,spirit in Diary of ten years eventful life of an early settler in Western Australia,WA,115.9190544,-31.9319845,named_feature,high
+mapped:1030,1030,1885 - Australian Town and Country Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:679,679,1886 - Brisbane Courier,QLD,153.0235009,-27.4689623,locality,medium
+mapped:680,680,1886 - Queanbeyan Age,NSW,149.2337634,-35.3524518,locality,medium
+mapped:1880,1880,"ghost in The Australian Race, volume 1",NSW,149.7198009,-34.7523871,town,high
+mapped:1886,1886,"spirit in The Australian Race, volume 1",WA,115.8605784,-31.9558967,town,high
+mapped:1893,1893,"spirit in The Australian Race, volume 1",SA,137.2979051,-28.4803638,named_feature,high
+mapped:1978,1978,"ghosts in The Australian Race, volume 2",SA,135.8592218,-34.7211905,town,high
+mapped:2797,2797,ghost in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:2798,2798,ghost in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:2799,2799,ghost in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:2800,2800,ghost in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:2801,2801,ghosts in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:2802,2802,haunted in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:2805,2805,spirits in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:2806,2806,spirit in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:2810,2810,witch in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:2811,2811,witch in The Mystery of a Hansom Cab,VIC,144.9631732,-37.8142454,locality,B
+mapped:1976,1976,Fisher's Ghost in Fisher's Ghost,NSW,150.8167,-34.0667,town,B
+mapped:1176,1176,Princess Theatre History - Federici,VIC,144.972658,-37.810997,exact_site,B
+mapped:2956,2956,ghost in Madame Midas,VIC,143.8605645,-37.5623013,town,B
+mapped:2960,2960,spirit in Madame Midas,VIC,143.8605645,-37.5623013,town,B
+mapped:682,682,"1889 - Bowral Free Press, Australian Gorilla",NSW,150.4177868,-34.4816626,locality,medium
+mapped:1025,1025,1889 - Kiama Independent,NSW,150.7959123,-34.6958202,locality,medium
+mapped:1797,1797,devil in Among cannibals,QLD,153.2539994,-27.2397819,named_feature,high
+mapped:1807,1807,giant in Among cannibals,QLD,153.2539994,-27.2397819,named_feature,high
+mapped:3955,3955,spirits in Among Cannibals,QLD,145.6112083,-18.2484306,locality,B
+mapped:3956,3956,devil in Among Cannibals,QLD,145.6112083,-18.2484306,locality,B
+mapped:3957,3957,devil in Among Cannibals,QLD,145.6112083,-18.2484306,locality,B
+mapped:3958,3958,devil in Among Cannibals,QLD,145.6112083,-18.2484306,locality,B
+mapped:3959,3959,devil in Among Cannibals,QLD,145.6112083,-18.2484306,locality,B
+mapped:3960,3960,wizard in Among Cannibals,QLD,145.6112083,-18.2484306,locality,B
+mapped:684,684,1891 - Bathurst Times Article,NSW,150.1004909,-33.9802583,named_feature,high
+mapped:685,685,1892 - Maitland Mercury,NSW,151.5511123,-32.7316683,locality,medium
+mapped:863,863,1892 - Sydney Mail Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:2024,2024,evil spirit in Notes on the Aborigines of New South Wales,NSW,151.7795348,-32.9192953,town,high
+mapped:2028,2028,Boonbolong in Notes on the Aborigines of New South Wales,NSW,151.7795348,-32.9192953,town,high
+mapped:686,686,1893 - Goulburn Penny Post Article,NSW,149.7198009,-34.7523871,town,medium
+mapped:687,687,1893 (2) - Goulburn Penny Post Article,NSW,149.7198009,-34.7523871,town,medium
+mapped:688,688,1894 - Queanbeyan Observer Article,NSW,149.2337634,-35.3524518,locality,medium
+mapped:864,864,1894 - Queanbeyan Observer Yowie Article,NSW,149.2337634,-35.3524518,locality,medium
+mapped:865,865,1895 - Bowral Free Press Yowie Article,NSW,150.4177868,-34.4816626,locality,medium
+mapped:3963,3963,ghost in While the Billy Boils,NSW,145.2940392,-29.9960307,locality,B
+mapped:1491,1491,ghost in Australian fairy tales,NSW,150.4052237,-33.609741,named_feature,high
+mapped:1494,1494,ghost in Australian fairy tales,NSW,150.4052237,-33.609741,named_feature,high
+mapped:2366,2366,giants in Australian fairy tales,NSW,150.4052237,-33.609741,named_feature,high
+mapped:2368,2368,ghosts in Australian fairy tales,NSW,150.4052237,-33.609741,named_feature,high
+mapped:3951,3951,ghosts in Australian Fairy Tales,NSW,150.4052237,-33.609741,named_feature,B
+mapped:2437,2437,ghosts in Below And On Top and Other Stories,VIC,144.2826718,-36.7590183,town,high
+mapped:1582,1582,Baiame in Eaglehawk and Crow,NSW,150.790409,-34.4614504,locality,high
+mapped:1722,1722,witch in The Aborigines of Tasmania,TAS,147.3281233,-42.8825088,town,high
+mapped:1724,1724,giant in The Aborigines of Tasmania,TAS,147.3281233,-42.8825088,town,high
+mapped:3902,3902,spirits in The Aborigines of Tasmania,TAS,147.1373496,-41.4340813,town,high
+mapped:2559,2559,ghost in In Bad Company,VIC,144.2826718,-36.7590183,town,high
+mapped:348,348,"Byron Bay, New South Wales 1902",NSW,153.6177778,-28.6483333,locality,high
+mapped:866,866,1902 - Blue Mountains Yowie Article,NSW,150.4052237,-33.609741,named_feature,medium
+mapped:691,691,"1903 - Nepean Times, Penrith",NSW,150.6941711,-33.7511954,locality,medium
+mapped:692,692,1903 - Queanbeyan Age,NSW,149.2337634,-35.3524518,locality,medium
+mapped:694,694,1903 (1) - Queanbeyan Observer Article,NSW,149.2337634,-35.3524518,locality,medium
+mapped:695,695,1903 (2) - Queanbeyan Observer Article,NSW,149.2337634,-35.3524518,locality,medium
+mapped:696,696,1903 (3) - Queanbeyan Obsever Article,NSW,149.2337634,-35.3524518,locality,medium
+mapped:867,867,1903 - Delegate Argus Yowie Article,VIC,144.9631732,-37.8142454,locality,medium
+mapped:868,868,1903 - Queanbeyan Observer Yowie Article 07-08-1903,NSW,149.2337634,-35.3524518,locality,medium
+mapped:3289,3289,spirit in The Northern Tribes of Central Australia,SA,137.2979051,-28.4803638,named_feature,high
+mapped:697,697,1905 - Casino and Kyogle Advertiser Yowie Article,NSW,153.0483736,-28.8629114,locality,medium
+mapped:869,869,1905 - Molong Express Yowie Article,NSW,148.8638613,-33.0923817,locality,medium
+mapped:870,870,1905 - Narromine News Yowie Article,NSW,147.9528517,-32.2317016,locality,medium
+mapped:1026,1026,1905 - Western Champion,QLD,145.8209434,-23.052892,locality,medium
+mapped:698,698,1906 - Singleton Argus,NSW,151.1132887,-32.602355,locality,medium
+mapped:871,871,1906 - Bega Budget Yowie Article,NSW,149.8408283,-36.6780983,locality,medium
+mapped:872,872,1906 - Cowan NSW Yowie Article,NSW,151.1698568,-33.5888297,locality,medium
+mapped:873,873,1906 - Gippsland Times Yowie Article,VIC,146.9111788,-37.8744827,locality,medium
+mapped:874,874,1906 - Tenterfield Courrier Yowie Article,NSW,152.2813166,-28.83843,locality,medium
+mapped:700,700,1907 - The Hairyman by Henry Lawson,NSW,150.4052237,-33.609741,named_feature,high
+mapped:3074,3074,spirit in Notes on the Aborigines of New South Wales,SA,135.8592218,-34.7211905,town,high
+mapped:701,701,1909 - Brisbane Workers Newspaper,QLD,153.0235009,-27.4689623,locality,medium
+mapped:875,875,1909 - Bundaberg Mail & Burnett Advtertiser Yowie Article 10-09-1909,QLD,152.3516785,-24.8653253,locality,medium
+mapped:876,876,1909 - Richmond River Herald Yowie Article,NSW,153.0823096,-28.8632035,locality,medium
+mapped:1077,1077,1909 - Northern Districts Advertiser 28-06-1909,NSW,149.3752778,-32.8175,locality,medium
+mapped:2995,2995,ghosts in The Getting of Wisdom,VIC,144.9631732,-37.8142454,locality,B
+mapped:2996,2996,ghosts in The Getting of Wisdom,VIC,144.9631732,-37.8142454,locality,B
+mapped:2997,2997,ghost in The Getting of Wisdom,VIC,144.9631732,-37.8142454,locality,B
+mapped:3003,3003,ghosts in The Getting of Wisdom,VIC,144.9631732,-37.8142454,locality,B
+mapped:308,308,"Bombala, New South Wales 1912",NSW,149.2389375,-36.9113175,locality,high
+mapped:703,703,1912 - Goulburn Penny Post Article,NSW,149.7198009,-34.7523871,town,medium
+mapped:704,704,1912 - Queanbeyan Age Article,NSW,149.2337634,-35.3524518,locality,medium
+mapped:705,705,1912 - Sydney Morning Herald,NSW,151.2082848,-33.8698439,locality,medium
+mapped:706,706,1912 - Sydney Morning Herald Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:708,708,1912 (2) - Sydney Sun Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:877,877,1912 - Adelaide Chronicle Yowie Article,SA,138.5999312,-34.9281805,locality,medium
+mapped:881,881,1912 - Sydney Morning Heald Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:882,882,1912- Bega Budget Yowie Article,NSW,149.8408283,-36.6780983,locality,medium
+mapped:1031,1031,1912 - Sunday Mail Yowie Article,QLD,153.0235009,-27.4689623,locality,medium
+mapped:3059,3059,"spirits in Across Australia, volume 1",SA,137.2979051,-28.4803638,named_feature,high
+mapped:3060,3060,"spirits in Across Australia, volume 1",SA,137.2979051,-28.4803638,named_feature,high
+mapped:3061,3061,"spirit in Across Australia, volume 1",SA,137.2979051,-28.4803638,named_feature,high
+mapped:3070,3070,"magic man in Across Australia, volume 1",SA,137.2979051,-28.4803638,named_feature,high
+mapped:3095,3095,"spirits in Across Australia, volume 2",NT,133.8812885,-23.6983884,town,high
+mapped:3142,3142,"spirits in Across Australia, volume 2",NT,133.6838744,-24.9214046,named_feature,high
+mapped:3149,3149,"devil in Across Australia, volume 2",NT,133.6838744,-24.9214046,named_feature,high
+mapped:3153,3153,"medicine man in Across Australia, volume 2",NT,133.8812885,-23.6983884,town,high
+mapped:3155,3155,"medicine man in Across Australia, volume 2",NT,133.8812885,-23.6983884,town,high
+mapped:3163,3163,"medicine man in Across Australia, volume 2",NT,133.6838744,-24.9214046,named_feature,high
+mapped:883,883,1913 - Bombala Times Yowie Article,NSW,149.2389375,-36.9113175,locality,medium
+mapped:884,884,1913 - Maitland Daily Mercury Yowie Article,NSW,151.5511123,-32.7316683,locality,medium
+mapped:3818,3818,spirit in Native Tribes of the Northern Territory of Australia,NSW,149.5803725,-33.4166482,town,high
+mapped:3824,3824,spirits in Native Tribes of the Northern Territory of Australia,NT,134.3765274,-14.6873399,named_feature,high
+mapped:3825,3825,spirits in Native Tribes of the Northern Territory of Australia,NT,134.3765274,-14.6873399,named_feature,high
+mapped:3962,3962,ghost in Australia Felix,VIC,143.8605645,-37.5623013,town,B
+mapped:85,85,"Charlton, New South Wales 1923",NSW,149.6215064,-33.6770642,locality,high
+mapped:1414,1414,little woman in Tales of the Dandenongs First Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1457,1457,fairy in Tales of the Dandenongs Second Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1458,1458,spirit in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1459,1459,spirit in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1460,1460,witch in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1461,1461,witch in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1462,1462,witch in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1463,1463,witch in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1464,1464,spirit in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1465,1465,spirit in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1466,1466,giant in Tales of the Dandenongs Fourth Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1467,1467,ghost in Tales of the Dandenongs Fourth Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1468,1468,little woman in Tales of the Dandenongs Fourth Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1469,1469,little woman in Tales of the Dandenongs Fourth Series,VIC,145.35,-37.8333,named_feature,B
+mapped:1470,1470,little woman in Tales of the Dandenongs Fourth Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2333,2333,fairy in Tales of the Dandenongs First Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2334,2334,giant in Tales of the Dandenongs First Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2335,2335,giant in Tales of the Dandenongs First Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2336,2336,spirit in Tales of the Dandenongs First Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2337,2337,giant in Tales of the Dandenongs First Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2338,2338,spirit in Tales of the Dandenongs First Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2339,2339,devil in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2340,2340,devil in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2341,2341,devil in Tales of the Dandenongs Third Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2342,2342,spirit in Tales of the Dandenongs Fourth Series,VIC,145.35,-37.8333,named_feature,B
+mapped:2343,2343,spirit in Tales of the Dandenongs Fourth Series,VIC,145.35,-37.8333,named_feature,B
+mapped:710,710,"1927 - Brindabella Article, John Gale",ACT,149.0063023,-35.3092958,locality,medium
+mapped:711,711,"1927 - History of ACT Legends, John Gale",ACT,149.1012676,-35.2975906,town,high
+mapped:885,885,1927 - Canberra History & Legends by J. Gale,ACT,149.1012676,-35.2975906,town,medium
+mapped:886,886,1927 - History and Legends of the A.C.T. by John Gale,ACT,149.0063023,-35.3092958,locality,medium
+mapped:712,712,1928 - Brisbane Courier,QLD,153.0235009,-27.4689623,locality,medium
+mapped:382,382,"Crescent Head, New South Wales 1930",NSW,152.9761111,-31.19,locality,high
+mapped:149,149,"Charters Towers, Queensland 1932",QLD,146.2709824,-20.0714089,locality,high
+mapped:457,457,"Stanthorpe, Queensland 1934",QLD,151.9338265,-28.6559947,locality,high
+mapped:713,713,"1932 - Stanthorpe, Queensland",QLD,151.9338265,-28.6559947,locality,high
+mapped:714,714,1934 - The Cairns Post,QLD,145.7721854,-16.9206657,locality,medium
+mapped:514,514,"Lismore, New South wales 1935",NSW,153.2791883,-28.8077608,locality,high
+mapped:824,824,1935 - Sydney Morning Herald,NSW,151.2082848,-33.8698439,locality,medium
+mapped:405,405,"Nanango, Queensland 1938",QLD,151.9851744,-26.6764195,town,high
+mapped:825,825,"1938 - Nanango, Yowie Report",QLD,151.9851744,-26.6764195,town,high
+mapped:150,150,"Aramara, Queensland 1950",QLD,152.3346752,-25.5514395,locality,high
+mapped:256,256,"Moe, Victoria 1950",VIC,146.2477028,-38.1855104,locality,high
+mapped:634,634,"Young, New South Wales 1955",NSW,148.2955025,-34.3129164,locality,high
+mapped:543,543,"Mungay Creek, New South Wales 1960",NSW,152.6762,-30.9068,locality,high
+mapped:86,86,"Dungay Creek, New South Wales 1962",NSW,152.6117998,-31.0815329,locality,high
+mapped:400,400,"Dungay Creek, New South Wales 1962",NSW,152.6117998,-31.0815329,locality,high
+mapped:402,402,"Dungay Creek, New South Wales 1962",NSW,152.6117998,-31.0815329,locality,high
+mapped:827,827,"1962 - Macleay Argus, Dungay Creek Yowie Article",NSW,152.6117998,-31.0815329,locality,high
+mapped:888,888,1964 - Sydney Herald Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:465,465,"Tewantin, Queensland 1965",QLD,153.0391832,-26.3920057,locality,high
+mapped:509,509,"Wyandra, Queensland 1965",QLD,146.0871592,-27.27195,locality,high
+mapped:889,889,1965 - Sydney Sun Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:556,556,"Oxley Island, New South Wales 1967",NSW,152.5666119,-31.9132089,locality,high
+mapped:87,87,"Woy Woy, New South Wales 1968",NSW,151.3274925,-33.4880548,locality,high
+mapped:482,482,"Kempsey, New South Wales 1968",NSW,152.5228021,-30.9056457,town,high
+mapped:227,227,"Bangalow, New South Wales 1969",NSW,153.5177778,-28.6816667,locality,high
+mapped:45,45,"Sherbrooke Forest, Victoria 1970",VIC,145.3176068,-37.8904969,locality,high
+mapped:251,251,"Bathurst, New South Wales 1970",NSW,149.5803725,-33.4166482,town,high
+mapped:525,525,"Mogo, New South Wales 1977",NSW,150.1426078,-35.7830222,locality,high
+mapped:890,890,1970 - Courier Mail Yowie Article,QLD,153.0235009,-27.4689623,locality,medium
+mapped:891,891,1970's - Northern Star Re:1935 Lismore Yowie Sighting,NSW,153.2791883,-28.8077608,locality,medium
+mapped:531,531,"Mount Lindesay, New South Wales 1972",NSW,150.1451144,-30.2028986,locality,high
+mapped:88,88,"Middle Brother Mountain, New South Wales 1973",NSW,149.2936532,-33.2675463,locality,high
+mapped:151,151,"Burleigh, Queensland 1973",QLD,143.0410557,-20.314865,locality,high
+mapped:275,275,"Bexhill, New South Wales 1973",NSW,153.3480115,-28.7631637,locality,high
+mapped:524,524,"Minto, New South Wales 1973",NSW,150.8511111,-34.0316667,locality,high
+mapped:1032,1032,1973 - Daily Telegraph Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:1033,1033,1973 - Daily Telegraph Yowie Article 2,NSW,151.2082848,-33.8698439,locality,medium
+mapped:354,354,"Casino, New South Wales 1974",NSW,153.0483736,-28.8629114,locality,high
+mapped:430,430,"Grafton, New South Wales 1974",NSW,152.9336357,-29.6816773,locality,medium
+mapped:89,89,"Katoomba, New South Wales 1975",NSW,150.3121633,-33.713759,locality,high
+mapped:296,296,"Blue Knob, New South Wales 1975",NSW,152.55604,-30.6984,locality,high
+mapped:374,374,"Cooma, New South Wales 1976",NSW,149.1261779,-36.2356785,locality,high
+mapped:504,504,"Lake George, New South Wales 1976",NSW,149.4208438,-35.0916656,locality,high
+mapped:560,560,"Pilliga, New South Wales 1976",NSW,148.8888022,-30.351605,locality,high
+mapped:621,621,"Woodenbong, New South Wales 1976",NSW,152.6120214,-28.3913455,locality,high
+mapped:828,828,1976 - Macleay Argus Yowie Article,NSW,152.5228021,-30.9056457,town,high
+mapped:892,892,1976 - Macleay Argus Yowie Article,NSW,152.590455,-30.9064024,locality,medium
+mapped:893,893,1976 - Sydney Sun Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:894,894,1976 - Telegraph Canberra area Yowie Article,ACT,149.1012676,-35.2975906,town,medium
+mapped:1034,1034,1976 - Sun Herald Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:90,90,"Bateman's Bay, New South Wales 1977",NSW,150.178289,-35.7072183,locality,high
+mapped:91,91,"Talingbo, New South Wales 1977",NSW,148.3029977,-35.5819244,locality,high
+mapped:443,443,"Springbrook, Queensland 1977",QLD,153.2715593,-28.185749,locality,high
+mapped:474,474,"Karuah River, New South Wales 1977",NSW,151.8837462,-32.2925234,locality,high
+mapped:557,557,"Oxley Island, New South Wales 1977",NSW,152.5666119,-31.9132089,locality,high
+mapped:558,558,"Pambula, New South Wales 1977",NSW,149.8752844,-36.928848,locality,high
+mapped:593,593,"Timsvale, New South Wales 1977",NSW,152.8713966,-30.2200329,locality,high
+mapped:622,622,"Woodenbong, New South Wales 1977",NSW,152.6120214,-28.3913455,locality,high
+mapped:895,895,1977 - Gold Coast Bulletin Yowie Article,QLD,153.4145987,-28.0023731,locality,medium
+mapped:896,896,1977 - Gold Coast Bulletin Yowie Article 2,QLD,153.4145987,-28.0023731,locality,medium
+mapped:897,897,1977 - Lismore Northern Star Yowie Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:898,898,1977 - Lismore Nothern Star Yowie Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:899,899,1977 - Tambarumba Times Yowie Article,NSW,148.3029977,-35.5819244,locality,medium
+mapped:900,900,1977 - Unknown Origin. Re: Springbrook,QLD,153.2715593,-28.185749,locality,medium
+mapped:1035,1035,1977 - Manning River Times Yowie (Betty Gee),NSW,152.1004561,-31.8517188,locality,medium
+mapped:1036,1036,1977 - Melba Cullen's 1930 Encounter at Crescent Head,NSW,152.9761111,-31.19,locality,medium
+mapped:92,92,"Mogo, New South Wales 1978",NSW,150.1426078,-35.7830222,locality,high
+mapped:152,152,"Canungra, Queensland 1978",QLD,153.1419128,-28.0385865,locality,high
+mapped:153,153,"Nerang, Queensland 1978",QLD,153.3365942,-27.9896566,locality,high
+mapped:265,265,"Mount Warrenheip, Victoria 1978",VIC,143.9582352,-37.5765814,locality,high
+mapped:288,288,"Coomera, Queensland 1978",QLD,153.247946,-27.9534104,locality,high
+mapped:307,307,"Currumbin, Queensland 1978",QLD,153.4799277,-28.1369655,locality,high
+mapped:445,445,"Springbrook, Queensland 1978",QLD,153.2715593,-28.185749,locality,high
+mapped:447,447,"Springbrook, Queensland 1978",QLD,153.2715593,-28.185749,locality,high
+mapped:462,462,"Jackadgery, New South Wales 1978",NSW,152.5511068,-29.5816646,locality,high
+mapped:540,540,"Mudgee - Ulan, New South Wales 1978",NSW,149.5886383,-32.5980702,locality,high
+mapped:547,547,"Narooma, New South Wales 1978",NSW,150.1317243,-36.2190152,locality,high
+mapped:561,561,"Pilliga, New South Wales 1978",NSW,148.8888022,-30.351605,locality,high
+mapped:598,598,"Tweed Heads, New South Wales 1978",NSW,153.5369986,-28.1786639,locality,high
+mapped:831,831,"1978 - Bilambil Yowie Article, Daily News",NSW,153.4659475,-28.2245935,locality,medium
+mapped:901,901,1978 - Canberra Times,ACT,149.1012676,-35.2975906,town,medium
+mapped:902,902,1978 - Gold Coast Bulletin (Nerang) 25-08-1978,QLD,153.4145987,-28.0023731,locality,medium
+mapped:903,903,1978 - Gold Coast Bulletin Yowie Article,QLD,153.4145987,-28.0023731,locality,medium
+mapped:904,904,1978 - Gold Coast Bulletin Yowie Article,QLD,153.4145987,-28.0023731,locality,medium
+mapped:905,905,1978 - Gold Coast Bulletin Yowie Article,QLD,153.4145987,-28.0023731,locality,medium
+mapped:906,906,1978 - Moruya Examiner Yowie Article,NSW,150.0820002,-35.9098127,locality,medium
+mapped:1080,1080,1978 - Daily News Yowie Article,NSW,153.4659475,-28.2245935,locality,medium
+mapped:31,31,"Darwin (Fannie Bay), Northern Territory 1979",NT,130.8378317,-12.4354118,locality,high
+mapped:93,93,"Bateman's Bay, New South Wales 1979",NSW,150.178289,-35.7072183,locality,high
+mapped:94,94,"Wentworth Falls, New South Wales 1979",NSW,150.3740633,-33.72802,locality,high
+mapped:154,154,"Charters Towers, Queensland 1979 (2)",QLD,146.2709824,-20.0714089,locality,high
+mapped:155,155,"Mt. Isa, Queensland 1979",QLD,139.4931522,-20.7289898,locality,high
+mapped:273,273,"Charters Towers, Queensland 1979 (1)",QLD,146.2709824,-20.0714089,locality,high
+mapped:317,317,"Enoggera Creek, Queensland 1977",QLD,152.9826794,-27.4419106,locality,high
+mapped:353,353,"Kilkivan, Queensland 1979",QLD,152.2473652,-26.080292,locality,high
+mapped:389,389,"Mt. Cootha, Queensland 1979",QLD,152.9589108,-27.4850319,locality,high
+mapped:427,427,"Palm Beach, Queensland 1979",QLD,153.4583936,-28.1155325,locality,high
+mapped:502,502,"Lake Cargelligo, New South Wales 1979",NSW,146.3734587,-33.2981001,locality,high
+mapped:548,548,"Narromine, New South Wales 1979",NSW,147.9528517,-32.2317016,locality,high
+mapped:562,562,"Pilliga, New South Wales 1979",NSW,148.8888022,-30.351605,locality,high
+mapped:563,563,"Pilliga, New South Wales 1979",NSW,148.8888022,-30.351605,locality,high
+mapped:632,632,"Yarrangobilly, New South Wales 1979",NSW,148.4677778,-35.6483333,locality,high
+mapped:832,832,1979 - Kilkivan Yowie Article,QLD,152.2473652,-26.080292,locality,medium
+mapped:907,907,1979 - Daily Telegraph Yowie Article,NSW,150.3740633,-33.72802,locality,medium
+mapped:908,908,1979 - Gold Coast Bulletin Yowie Article,QLD,153.4145987,-28.0023731,locality,medium
+mapped:909,909,1979 - Murgon Yowie Newspaper Article,QLD,151.936075,-26.2441735,locality,medium
+mapped:910,910,1979 - Pilliga/Coonabarabran Yowie Article,NSW,149.2733225,-31.2728076,locality,medium
+mapped:912,912,1979 - Townsville Daily Bulletin Yowie Article,QLD,146.8239537,-19.2569391,locality,medium
+mapped:913,913,1979 - Townsville Daily Bulletin Yowie Article 2,NSW,149.2733225,-31.2728076,locality,medium
+mapped:1037,1037,1979 - Bay Post Yowie Article,NSW,150.178289,-35.7072183,locality,medium
+mapped:1038,1038,1979 - Northern Miner Yowie Article,QLD,146.2709824,-20.0714089,locality,medium
+mapped:46,46,"Colac, Victoria 1980",VIC,143.5858537,-38.3399766,locality,high
+mapped:95,95,"Coffs Harbour, New South Wales 1980",NSW,153.1094116,-30.2985996,locality,high
+mapped:96,96,"Wee Jasper & Uki, New South Wales 1980",NSW,153.3305556,-28.4152778,locality,medium
+mapped:156,156,"Kilcoy, Queensland 1980",QLD,152.561157,-26.9417175,town,high
+mapped:157,157,"Springbrook, Queensland 1980",QLD,153.2715593,-28.185749,locality,high
+mapped:221,221,"Ashford, New South Wales 1980",NSW,151.0945365,-29.3257299,locality,high
+mapped:234,234,"Beerwah, Queensland 1980",QLD,152.9604137,-26.8573095,locality,high
+mapped:245,245,"Baryulgil, New South Wales 1980",NSW,152.6041527,-29.2193959,locality,high
+mapped:262,262,"Mount Buller, Victoria 1980's",VIC,146.4008688,-37.2694615,locality,high
+mapped:362,362,"Clyde Mountain, New South Wales 1980",NSW,149.9501548,-35.5536851,locality,high
+mapped:364,364,"Coffs Harbour, New South Wales 1980",NSW,153.1094116,-30.2985996,locality,high
+mapped:395,395,"Mt. Tamborine, Queensland 1980",QLD,153.1967792,-27.9684035,locality,high
+mapped:441,441,"Slacks Creek, Queensland 1980",QLD,153.1287129,-27.638501,locality,high
+mapped:485,485,"Wauchope, New South Wales 1980",NSW,152.734664,-31.4557879,locality,high
+mapped:486,486,"Kiandra, New South Wales 1980",NSW,148.4957535,-35.8754308,locality,high
+mapped:490,490,"Korora Basin, New South Wales 1980",NSW,153.1344444,-30.2483333,locality,high
+mapped:501,501,"Wongawallen, Queensland 1980",QLD,153.1095731,-27.9024629,locality,medium
+mapped:594,594,"Torrington, New South Wales 1980",NSW,151.6967475,-29.3112985,locality,high
+mapped:914,914,1980 - Canberra Times Yowie Article,ACT,149.1012676,-35.2975906,town,medium
+mapped:915,915,1980's? - Macleay Argus Yowie Report,NSW,152.590455,-30.9064024,locality,medium
+mapped:1082,1082,1980 - People Magazine Yowie Article,QLD,152.6144617,-26.9071836,named_feature,high
+mapped:1083,1083,1980 - Track Magazine Yowie Article,NSW,152.734664,-31.4557879,locality,medium
+mapped:158,158,"Cunninghams Gap, Queensland 1981",QLD,152.3945729,-28.0498514,locality,high
+mapped:376,376,"Cooma, New South Wales 1981",NSW,149.1261779,-36.2356785,locality,high
+mapped:404,404,"Dunoon, New South Wales 1981",NSW,153.3154089,-28.6840311,locality,medium
+mapped:916,916,1981 - Canberra Times Yowie Article,ACT,149.1012676,-35.2975906,town,medium
+mapped:917,917,1981 - Lismore Northern Star Yowie Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:918,918,1981 - Lismore Northern Star Yowie Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:919,919,1981 - Lismore Northern Star Yowie Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:48,48,"Cranbourne, Victoria 1982",VIC,145.2807256,-38.0997308,locality,high
+mapped:97,97,"Ophir, New South Wales 1982",NSW,149.2429,-33.1285,locality,high
+mapped:159,159,"Worongary, Queensland 1982",QLD,153.339128,-28.0360735,locality,high
+mapped:228,228,"Beachmere, Queensland 1982",QLD,153.0520041,-27.1303586,locality,high
+mapped:250,250,"Macclesfield, Victoria 1982",VIC,145.475186,-37.887001,locality,high
+mapped:318,318,"Bowen Mountain, New South Wales 1982",NSW,150.6256438,-33.5735614,locality,high
+mapped:332,332,"Broken Hill, New South Wales 1982",NSW,141.4511111,-31.965,locality,high
+mapped:449,449,"Springbrook, Queensland 1982",QLD,153.2715593,-28.185749,locality,high
+mapped:481,481,"Tully, Queensland 1985",QLD,145.9285816,-17.9429225,locality,high
+mapped:566,566,"Pilliga, New South Wales 2010",NSW,148.8888022,-30.351605,locality,high
+mapped:584,584,"Sunny Corner, New South Wales 1982",NSW,149.8884022,-33.3842823,locality,high
+mapped:602,602,"Walgett, New South Wales 1982",NSW,148.2389866,-29.7882659,locality,high
+mapped:633,633,"Yarrangobilly, New South Wales 1982",NSW,148.4677778,-35.6483333,locality,high
+mapped:14,14,"Kalamundra, Western Australia 1983",WA,116.1022069,-32.0038075,locality,high
+mapped:53,53,"Cranbourne, Victoria 1987",VIC,145.2807256,-38.0997308,locality,high
+mapped:98,98,"Evans Head, New South Wales 1983",NSW,153.4312097,-29.1174093,locality,high
+mapped:321,321,"Fraser Island, Queensland 1983",QLD,153.1468044,-25.24672,locality,high
+mapped:352,352,"Canberra, A.C.T. 1983",ACT,149.1012676,-35.2975906,locality,high
+mapped:533,533,"Mt. Kembla, New South Wales 1983",NSW,150.8067132,-34.4421839,locality,high
+mapped:552,552,"Oberon, New South Wales 1983",NSW,149.8326162,-33.8455931,locality,high
+mapped:920,920,1983 - Border Post Yowie Article,QLD,151.9338265,-28.6559947,locality,medium
+mapped:1085,1085,1983 - The Pinkney Report Yowie Article,WA,116.1022069,-32.0038075,locality,medium
+mapped:49,49,"Noojee, Victoria 1984",VIC,145.9443211,-37.8352675,locality,high
+mapped:50,50,"Toolangi, Victoria 1984",VIC,145.5117704,-37.4898686,locality,high
+mapped:99,99,"Brooklyn, New South Wales 1984",NSW,151.2260175,-33.5479285,locality,high
+mapped:160,160,"Springbrook, Queensland 1984",QLD,153.2715593,-28.185749,locality,high
+mapped:254,254,"Bathurst, New South Wales 1984",NSW,149.5803725,-33.4166482,town,high
+mapped:261,261,"Canarvon Gorge, Queensland 1984",QLD,148.3337905,-24.99435,locality,high
+mapped:271,271,"Noojee, Victoria 1984",VIC,145.9443211,-37.8352675,locality,high
+mapped:299,299,"Blue Mountains, New South Wales 1984",NSW,150.4052237,-33.609741,named_feature,high
+mapped:342,342,"Bundanoon, New South Wales 1984",NSW,150.2997071,-34.6562168,locality,high
+mapped:344,344,"Bundarra, New South Wales 1984",NSW,151.0739435,-30.1697551,locality,high
+mapped:479,479,"Tugun, Queensland 1984",QLD,153.4904018,-28.148821,locality,high
+mapped:499,499,"Wongawallan, Queensland 1984",QLD,153.235785,-27.8886104,locality,high
+mapped:574,574,"Royal National Park, New South Wales 1984",NSW,151.0267269,-34.1121995,locality,high
+mapped:47,47,"Kinglake West & Eden Park, Victoria late 1980's",VIC,145.258423,-37.450214,locality,high
+mapped:51,51,"Avonsleigh, Victoria 1985",VIC,145.4688212,-37.9208356,locality,high
+mapped:52,52,"Darriman, Victoria 1985",VIC,146.8987864,-38.4096475,locality,medium
+mapped:100,100,"Sunny Corner, New South Wales 1985",NSW,149.8884022,-33.3842823,locality,high
+mapped:161,161,"Gympie (East), Queensland 1985",QLD,152.7329612,-26.1791812,locality,high
+mapped:162,162,"Worongary, Queensland 1985",QLD,153.339128,-28.0360735,locality,high
+mapped:216,216,"Advancetown, Queensland 1985",QLD,153.27813,-28.061915,locality,high
+mapped:217,217,"Benambra, Victoria 1985",VIC,147.8016192,-36.889754,locality,high
+mapped:420,420,"Glenreagh, New South Wales 1985",NSW,152.9787186,-30.0512038,locality,high
+mapped:459,459,"Stanthorpe, Queensland 1985",QLD,151.9338265,-28.6559947,locality,high
+mapped:595,595,"Torrington, New South Wales 1985",NSW,151.6967475,-29.3112985,locality,high
+mapped:626,626,"Woollamia, New South Wales 1985",NSW,150.6597209,-35.018794,locality,high
+mapped:163,163,"Mt. Superbus, Queensland 1986",QLD,152.4603351,-28.2184485,locality,high
+mapped:222,222,"Atherton, Queensland 1986",QLD,145.4768923,-17.2667108,locality,high
+mapped:241,241,"Harrietville, Victoria 1986",VIC,147.0638695,-36.8923168,locality,high
+mapped:267,267,"Canungra, Queensland 1986",QLD,153.1419128,-28.0385865,locality,high
+mapped:426,426,"Gosford, New South Wales 1986",NSW,151.3511111,-33.415,locality,high
+mapped:431,431,"Redbank Plains, Queensland 1986",QLD,152.8479458,-27.6513182,locality,high
+mapped:534,534,"Mt. Kembla, New South Wales 1986",NSW,150.8067132,-34.4421839,locality,high
+mapped:32,32,"Yambah Station, Northern Territory 1987",NT,133.8348877,-23.126721,locality,medium
+mapped:40,40,"Lake Dulverton, Tasmania 1987 (1)",TAS,147.3763267,-42.3040616,locality,high
+mapped:41,41,"Lake Dulverton, Tasmania 1987 (2)",TAS,147.1373496,-41.4340813,town,high
+mapped:54,54,"Lyndhurst, Victoria 1987",VIC,145.2307493,-38.0685384,locality,high
+mapped:101,101,"Border Ranges and Blue Knob, New South Wales 1987 & 2015",NSW,153.0672222,-28.3944444,locality,high
+mapped:229,229,"Dufty's Beach - Murray River, Victoria 1987",VIC,145.8474714,-35.9731123,locality,high
+mapped:410,410,"Engadine, New South Wales 1987",NSW,151.0138225,-34.0650134,locality,high
+mapped:484,484,"Kiah, New South Wales 1987",NSW,149.8555282,-37.1481965,locality,high
+mapped:613,613,"Wee Jasper, New South Wales 1987",NSW,148.6759186,-35.1105708,locality,high
+mapped:620,620,"Wombeyan Caves, New South Wales 1987",NSW,149.9688296,-34.3084619,locality,high
+mapped:834,834,1987 - Yambah Station Yowie Article,NT,133.8348877,-23.126721,locality,medium
+mapped:921,921,1987 - Launceston Examiner 1987-01-06,TAS,147.1373496,-41.4340813,town,medium
+mapped:922,922,1987 - News Perth Ape Monster,WA,115.8605784,-31.9558967,town,medium
+mapped:923,923,1987 - NT News Yowie Article,NT,133.8348877,-23.126721,locality,medium
+mapped:924,924,1987 - People Magazine Yowie Report,TAS,147.3763267,-42.3040616,locality,medium
+mapped:925,925,1987 - Sunday Press Yowie Article,NT,133.8348877,-23.126721,locality,medium
+mapped:926,926,1987 - Sydney Mirror Woronora Yowie Article,NSW,151.0454079,-34.0248014,locality,medium
+mapped:927,927,1987 - Sydney Morning Herald. Woronora Yowie Article,NSW,151.0454079,-34.0248014,locality,medium
+mapped:928,928,1987 - Sydney Sun Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:55,55,"Emerald, Victoria 1988",VIC,145.4407282,-37.9321282,locality,high
+mapped:102,102,"Mt. Kembla, New South Wales 1988",NSW,150.8067132,-34.4421839,locality,high
+mapped:253,253,"Mansfield, Victoria 1988",VIC,146.1463677,-36.9242155,locality,high
+mapped:369,369,"Lamington NP, Queensland 1988",QLD,153.1573088,-28.2440481,locality,high
+mapped:550,550,"Nowra, New South Wales 1988",NSW,150.6004709,-34.8741198,locality,high
+mapped:601,601,"Vulcan State Forest, New South Wales 1988",NSW,149.8249296,-33.8857125,locality,high
+mapped:607,607,"Watagans, New South Wales 1988",NSW,151.4539993,-33.0758112,locality,high
+mapped:929,929,1988 - Unkown Origin of Emerald Encounter,QLD,148.1618622,-23.5263118,locality,medium
+mapped:164,164,"Gympie (East), Queensland 1989",QLD,152.6600256,-26.1900447,locality,high
+mapped:433,433,"Redbank Plains, Queensland 1989",QLD,152.8724921,-27.5994539,locality,high
+mapped:494,494,"Kowmung River, New South Wales 1989",NSW,150.2020591,-34.0039056,locality,high
+mapped:56,56,"Dellicknora, Victoria 1990",VIC,148.697021,-37.0960487,locality,high
+mapped:58,58,"Hepburn Springs, Victoria 1993",VIC,144.1467627,-37.3161925,locality,high
+mapped:103,103,"Bateman's Bay, New South Wales 1990",NSW,150.1947997,-35.7293379,locality,high
+mapped:104,104,"Fingal Head, New South Wales 1990",NSW,153.5668,-28.203,locality,high
+mapped:105,105,"Tallong, New South Wales 1990",NSW,150.0863205,-34.7192248,locality,high
+mapped:165,165,"Eudlo, Queensland 1990",QLD,152.9390644,-26.730535,locality,high
+mapped:252,252,"Cairns, Queensland 1990",QLD,145.7721854,-16.9206657,locality,high
+mapped:257,257,"Bathurst, New South Wales 1990",NSW,149.5803725,-33.4166482,town,high
+mapped:268,268,"Myrrhee, Victoria 1990",VIC,146.3048256,-36.744227,locality,high
+mapped:302,302,"Blue Mountains, New South Wales 1990",NSW,150.4052237,-33.609741,named_feature,high
+mapped:324,324,"Brisbane National Water Park, New South Wales 1990",NSW,151.2697774,-33.5157145,locality,high
+mapped:334,334,"Brown Mountain, New South Wales 1990",NSW,149.38325,-36.59732,locality,high
+mapped:391,391,"Mt. Glorious, Queensland 1990",QLD,152.7643027,-27.322891,locality,high
+mapped:464,464,"Jackadgery, New South Wales 1990",NSW,152.5511068,-29.5816646,locality,high
+mapped:470,470,"Jenolan Caves, New South Wales 1990",NSW,150.9530285,-33.7460183,locality,high
+mapped:471,471,"Tomson River, Queensland 1990",QLD,151.6370233,-25.6268775,locality,medium
+mapped:496,496,"Krambach, New South Wales 1990",NSW,152.2606101,-32.0521151,locality,high
+mapped:553,553,"Oberon, New South Wales 1990",NSW,149.8326162,-33.8455931,locality,high
+mapped:588,588,"Tenterfield, New South Wales 1990",NSW,152.2813166,-28.83843,locality,high
+mapped:930,930,1990 - Grafton Examiner Yowie Article,NSW,152.9336357,-29.6816773,locality,medium
+mapped:931,931,1990 - Krambach Yowie Aricle,NSW,152.2606101,-32.0521151,locality,medium
+mapped:1086,1086,1990 - Treasure Islander Yowie Article,TAS,147.3763267,-42.3040616,locality,medium
+mapped:1088,1088,1990- People Magazine Yowie Article 27-02-1990,NT,131.36449,-23.28883,locality,medium
+mapped:4079,4079,ghost in His Master's Ghost at Montsalvat,VIC,145.1525699,-37.7280499,exact_site,B
+mapped:15,15,"Australind, Western Australia 1991",WA,115.7204483,-33.2807362,locality,high
+mapped:57,57,"Lake Buffalo, Victoria 1991",VIC,146.6567954,-36.7375936,locality,high
+mapped:166,166,"Canungra, Queensland 1991",QLD,153.1419128,-28.0385865,locality,high
+mapped:301,301,"Yarambulla, Victoria 1991",VIC,146.7728946,-36.7673752,named_feature,high
+mapped:387,387,"Mt Nathan, Queensland 1991",QLD,153.2654056,-27.9801695,locality,high
+mapped:408,408,"Emu Plains, New South Wales 1991",NSW,150.6677778,-33.7483333,locality,high
+mapped:554,554,"Oberon, New South Wales 1991",NSW,149.8326162,-33.8455931,locality,high
+mapped:597,597,"Tuglow, New South Wales 1991",NSW,149.9344444,-33.9483333,locality,high
+mapped:24,24,"Willunga, South Australia 1992",SA,138.5554231,-35.2711681,locality,high
+mapped:25,25,"Yalata, South Australia 1993",SA,131.8426235,-31.4803513,locality,high
+mapped:42,42,"Smithton, Tasmania 1992",TAS,145.1282245,-40.8415455,locality,high
+mapped:106,106,"Callala Bay, New South Wales 1992",NSW,150.7178837,-34.9950846,locality,high
+mapped:167,167,"Tin Can Bay, Queensland 1992 (1)",QLD,152.9133105,-25.9497504,locality,high
+mapped:397,397,"Mt. Tamborine, Queensland 1992",QLD,153.1967792,-27.9684035,locality,high
+mapped:460,460,"Ingleburn, New South Wales 1992",NSW,150.8511111,-33.9983333,locality,high
+mapped:932,932,1992 - Lismore Northern Star Yowie Footprints,NSW,153.2791883,-28.8077608,locality,medium
+mapped:933,933,1992 - Noosa News Yowie Report,QLD,152.9307975,-26.3182442,locality,medium
+mapped:934,934,1992 - Shark Bay / 40 Mile Yowie Article - Source Unknown,WA,113.7540291,-25.52149,locality,medium
+mapped:16,16,"Exmouth, Western Australia 1993",WA,114.1258094,-21.9324401,locality,high
+mapped:107,107,"Leeville, New South Wales 1993",NSW,153.0011111,-28.9483333,locality,high
+mapped:168,168,"Kilcoy, Queensland 1993",QLD,152.5784605,-26.851381,locality,high
+mapped:236,236,"Barrington Tops, New South Wales 1993",NSW,151.4844444,-32.0233333,locality,high
+mapped:264,264,"Canarvon Gorge, Queensland 1993",QLD,148.3337905,-24.99435,locality,high
+mapped:416,416,"Glenfield, New South Wales 1993",NSW,150.8930882,-33.9722422,locality,high
+mapped:458,458,"Ingalba, New South Wales 1993",NSW,152.8044049,-30.8498661,locality,high
+mapped:535,535,"Mt. Kembla, New South Wales 1993",NSW,150.8067132,-34.4421839,locality,high
+mapped:836,836,"1993 - Mt Spurgeon, Yowie Article",QLD,145.2,-16.4333333,named_feature,high
+mapped:935,935,1993 - Lismore Northern Star Yowie Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:108,108,"Mulgoa, New South Wales 1994",NSW,150.6504013,-33.8371562,locality,high
+mapped:269,269,"Bellingen, New South Wales 1994",NSW,152.71921,-30.3739913,locality,high
+mapped:444,444,"Hazelbrook, New South Wales 1994",NSW,150.4534122,-33.7219948,locality,high
+mapped:448,448,"Helensburgh, New South Wales 1994",NSW,150.9822187,-34.1908519,locality,high
+mapped:936,936,1994 - Brisbane Daily Yowie Article,QLD,153.0235009,-27.4689623,locality,medium
+mapped:937,937,1994 - Canberra Times Out Of Shadows Launch,ACT,149.1012676,-35.2975906,town,medium
+mapped:938,938,1994 - Sunshine Coast Magazine Yowie Article,QLD,152.8508329,-26.7079095,locality,medium
+mapped:26,26,"Roxby Downs, South Australia 1995",SA,136.8941825,-30.5652584,locality,high
+mapped:33,33,"Berry Springs, Northern Territory 1995",NT,131.0048008,-12.7220385,locality,high
+mapped:109,109,"Kempsey, New Sout Wales 1995",NSW,152.5228021,-30.9056457,town,high
+mapped:169,169,"McPherson Ranges, Queensland 1995",QLD,153.1430019,-28.3069019,locality,high
+mapped:170,170,"Rockhampton, Queensland 1995",QLD,150.5134227,-23.3782137,locality,high
+mapped:259,259,"Moe, Victoria 1995",VIC,146.2619888,-38.177049,locality,high
+mapped:260,260,"Bathurst, New South Wales 1995",NSW,149.5803725,-33.4166482,town,high
+mapped:312,312,"Bonalbo, New South Wales 1995",NSW,152.6214537,-28.7356087,locality,high
+mapped:315,315,"Eagle Heights, Queensland 1995",QLD,153.2034386,-27.9218796,locality,high
+mapped:322,322,"Braidwood, New South Wales 1995",NSW,149.7955552,-35.4388907,town,high
+mapped:366,366,"Coffs Harbour, New South Wales 1995",NSW,153.1094116,-30.2985996,locality,high
+mapped:383,383,"Millaa Millaa, Queensland 1995 (1)",QLD,145.6304622,-17.493974,locality,high
+mapped:385,385,"Millaa Millaa, Queensland 1995 (2)",QLD,145.6304622,-17.493974,locality,high
+mapped:399,399,"Mt. Tamborine, Queensland 1995",QLD,153.1967792,-27.9684035,locality,high
+mapped:475,475,"Torbanlea, Queensland 1995",QLD,152.5732725,-25.358621,locality,high
+mapped:508,508,"Leura, New South Wales 1995",NSW,150.3317665,-33.7156888,locality,high
+mapped:526,526,"Mogo, New South Wales 1995",NSW,150.1426078,-35.7830222,locality,high
+mapped:627,627,"Woy Woy, New South Wales 1995",NSW,151.3274925,-33.4880548,locality,high
+mapped:939,939,1995 - Cairns Post Yowie Article,QLD,145.7721854,-16.9206657,locality,medium
+mapped:59,59,"Aberfeldy, Victoria 1996",VIC,146.3790538,-37.7021795,locality,high
+mapped:110,110,"Cessnock, New South Wales 1996",NSW,151.3511111,-32.8316667,locality,high
+mapped:171,171,"Molendinar, Queensland 1996",QLD,153.3754344,-27.9745778,locality,high
+mapped:255,255,"Cairns, Queensland 1996",QLD,145.7721854,-16.9206657,locality,high
+mapped:310,310,"Bombala, New South Wales 1996",NSW,149.2389375,-36.9113175,locality,high
+mapped:439,439,"Sarina, Queensland 1996",QLD,149.1645943,-21.435808,locality,high
+mapped:483,483,"Upper Coomera, Queensland 2006",QLD,153.2982761,-27.8529809,locality,high
+mapped:542,542,"Mullumbimby, New South Wales 1996",NSW,153.5011111,-28.5483333,locality,high
+mapped:34,34,"Acacia Hills, Northern Territory 1997 (1)",NT,131.141951,-12.768419,locality,high
+mapped:35,35,"Acacia Hills, Northern Territory 1997 (2)",NT,131.141951,-12.768419,locality,high
+mapped:60,60,"Warnambool, Victoria 1997",VIC,142.4814199,-38.3826242,locality,high
+mapped:111,111,"Hawkesbury River, New South Wales 1997",NSW,150.9274931,-33.5038702,locality,high
+mapped:172,172,"Camira, Queensland 1997",QLD,152.9199269,-27.634499,locality,high
+mapped:173,173,"Ormeau, Queensland 1997",QLD,153.2520815,-27.774813,locality,high
+mapped:218,218,"Alstonville, New South Wales 1997",NSW,153.4405813,-28.8412757,locality,high
+mapped:237,237,"Beerwah, Queensland 1997",QLD,152.9604137,-26.8573095,locality,high
+mapped:294,294,"Cowley Beach, Queensland 1997",QLD,146.1321886,-17.653566,locality,high
+mapped:335,335,"Gootchie, Queensland 1997",QLD,152.5810076,-25.8781265,locality,high
+mapped:346,346,"Bundarra, New South Wales 1997",NSW,151.0739435,-30.1697551,locality,high
+mapped:368,368,"Colo River, New South Wales 1997",NSW,150.6487565,-33.3778079,locality,high
+mapped:451,451,"Springbrook, Queensland 1997",NSW,150.5655467,-33.7017613,locality,high
+mapped:473,473,"Toowoomba, Queensland 1997",QLD,151.9866561,-27.5790131,locality,high
+mapped:476,476,"Katoomba, New South Wales 1997",NSW,150.3121633,-33.713759,locality,high
+mapped:585,585,"Tabulam, New South wales 1997",NSW,152.5683651,-28.8872866,locality,medium
+mapped:940,940,1997 - Litchfield Times Yowie Article,NT,130.4926909,-13.428281,locality,medium
+mapped:36,36,"Acacia Hills & Humpty Doo, Northern Territory 1998",NT,131.141951,-12.768419,locality,high
+mapped:37,37,"Adelaide River, Northern Territory 1998",NT,131.1070072,-13.2387657,town,high
+mapped:38,38,"Tanima Desert, Northern Territory 1998",NT,130.32,-19.81,locality,high
+mapped:112,112,"Faulconbridge, New South Wales 1998",NSW,150.535599,-33.7005603,locality,high
+mapped:113,113,"Mudgee, New South Wales 1998",NSW,149.5886383,-32.5980702,locality,high
+mapped:174,174,"Bribie Island, Queensland 1998",QLD,153.120238,-26.9644799,locality,high
+mapped:175,175,"Kenilworth, Queensland 1998",QLD,152.6166379,-26.6352315,locality,high
+mapped:176,176,"Scotchy Pocket, Queensland 1998",QLD,152.522897,-26.0031875,locality,high
+mapped:187,187,"Canarvon Gorge, Queensland 2005",QLD,148.3337905,-24.99435,locality,high
+mapped:242,242,"Barwon River, New South Wales 1998",NSW,147.8988558,-30.0172608,locality,high
+mapped:270,270,"Canungra, Queensland 1998",QLD,153.1419128,-28.0385865,locality,high
+mapped:325,325,"Gatton, Queensland 1998",QLD,152.2791353,-27.5615314,locality,high
+mapped:406,406,"Eden, New South Wales 1998",NSW,149.9035118,-37.0640494,locality,high
+mapped:409,409,"Ormeau, Queensland 1998",QLD,153.2520815,-27.774813,locality,high
+mapped:411,411,"Ormeau, Queensland 1998",QLD,153.2520815,-27.774813,locality,high
+mapped:424,424,"Goonoo Forest, New South Wales 1998",NSW,148.8761111,-32.0066667,locality,high
+mapped:434,434,"Grassy Head / Stuarts Point, New South Wales 1998",NSW,152.9887422,-30.7858622,locality,high
+mapped:453,453,"Springbrook, Queensland 1998",QLD,153.2715593,-28.185749,locality,high
+mapped:455,455,"Springbrook, Queensland 1998",QLD,153.2715593,-28.185749,locality,high
+mapped:469,469,"Tin Can Bay, Queensland 1998",QLD,152.9461788,-25.8828544,locality,high
+mapped:480,480,"Keiraville, New South Wales 1998",NSW,150.8729729,-34.4092539,locality,high
+mapped:520,520,"Macquarie Feilds, New South Wales 1998",NSW,150.8849303,-33.9904477,locality,high
+mapped:587,587,"Taree, New South Wales 1998",NSW,152.4608481,-31.912864,locality,high
+mapped:617,617,"Wiangaree, New South Wales 1998",NSW,152.9652769,-28.5083827,locality,high
+mapped:623,623,"Woodenbong, New South Wales 1998",NSW,152.6120214,-28.3913455,locality,high
+mapped:631,631,"Yanderra, New South Wales 1998",NSW,150.5724825,-34.3209918,locality,high
+mapped:841,841,1998 - NT News Article,NT,131.1070072,-13.2387657,town,high
+mapped:61,61,"Wilsons Promontory, Victoria 1999",VIC,146.3514784,-38.9567021,locality,high
+mapped:114,114,"Bourke, New South Wales 1999",NSW,145.2940392,-29.9960307,locality,high
+mapped:115,115,"Mt. Kembla, New South Wales 1999",NSW,150.8067132,-34.4421839,locality,high
+mapped:116,116,"Leura, New South Wales 2000",NSW,150.3317665,-33.7156888,locality,high
+mapped:177,177,"Daisy Hill, Queensland 1999",QLD,153.1538113,-27.643611,locality,high
+mapped:235,235,"Falls Creek, Victoria 1999",VIC,147.2441791,-36.878683,locality,high
+mapped:392,392,"Dargan, New South Wales 1999",NSW,150.2511111,-33.4816667,locality,high
+mapped:413,413,"Ormeau, Queensland 1999",QLD,153.2520815,-27.774813,locality,high
+mapped:478,478,"Katoomba, New South Wales 1999",NSW,150.3121633,-33.713759,locality,high
+mapped:506,506,"Lake Macquarie, New South Wales 1999",NSW,151.5294684,-33.0374325,locality,high
+mapped:522,522,"Medowie, New South Wales 1999",NSW,151.8511111,-32.7316667,locality,high
+mapped:624,624,"Woodford, New South Wales 1999",NSW,150.4810891,-33.7349677,locality,high
+mapped:943,943,1999 - Gold Coast Bulletin - 25-08-1999,QLD,153.4145987,-28.0023731,locality,medium
+mapped:944,944,1999 - Lismore Northern Star Yowie Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:945,945,1999 - Thats Life Magazine Yowie Article,QLD,153.4145987,-28.0023731,locality,high
+mapped:3978,3978,Kimberley's Wedding / Favourite Haunt,NSW,147.5758032,-34.8682927,exact_site,B
+mapped:17,17,"Coral Bay, Western Australia 2000",WA,113.770165,-23.1436752,locality,high
+mapped:18,18,"Lancedin, Western Australia 2000",WA,115.3301909,-31.0225285,locality,high
+mapped:117,117,"Yowrie, New South Wales 2000",NSW,149.7393829,-36.3194678,locality,high
+mapped:178,178,"Booreen Point, Queensland 2000",QLD,152.984517,-26.2815525,locality,high
+mapped:179,179,"Gayndah, Queensland 2000 (2)",QLD,151.6370233,-25.6268775,locality,high
+mapped:180,180,"Kilcoy, Queensland 2000",QLD,152.561157,-26.9417175,town,high
+mapped:181,181,"Tully, Queensland 2000",QLD,145.9285816,-17.9429225,locality,high
+mapped:215,215,"Aboriginal P.O.V, New South Wales 2001",NSW,151.2997832,-33.701014,locality,high
+mapped:223,223,"Billabong, Victoria 2000",VIC,146.8168275,-37.2516192,locality,medium
+mapped:243,243,"Blackbutt, Queensland 2000",QLD,152.1011195,-26.8830175,locality,high
+mapped:248,248,"Bateman's Bay, New South Wales 2000",NSW,150.1947997,-35.7293379,locality,high
+mapped:319,319,"Esk, Queensland 2000",QLD,152.4220194,-27.2398683,locality,high
+mapped:329,329,"Gayndah, Queensland 2000 (1)",QLD,151.6370233,-25.6268775,locality,high
+mapped:331,331,"Gayndah, Queensland 2000 (3)",QLD,151.6370233,-25.6268775,locality,high
+mapped:333,333,"Gogango, Queensland 2000",QLD,149.9135601,-23.5599195,locality,high
+mapped:375,375,"Malanda, Queensland 2000",QLD,145.5959372,-17.352837,locality,high
+mapped:415,415,"Ormeau, Queensland 2000",QLD,153.2520815,-27.774813,locality,high
+mapped:440,440,"Hannam Vale, New South Wales 2000",NSW,152.5943307,-31.7124928,locality,high
+mapped:468,468,"Jamison Valley, New South Wales 2000",NSW,150.3270177,-33.75431,locality,high
+mapped:516,516,"Lithgow, New South Wales 2000",NSW,150.1564887,-33.481536,locality,high
+mapped:559,559,"Pickett Hill, New South Wales 2000",NSW,152.9953574,-30.5728234,locality,high
+mapped:619,619,"Wollar, New South Wales 2000",NSW,149.9483663,-32.3581121,locality,high
+mapped:845,845,2000 - Gold Coast Bulletin,QLD,153.4145987,-28.0023731,locality,medium
+mapped:846,846,2000 - Townsville Bulletin Yowie Article,QLD,146.8239537,-19.2569391,locality,medium
+mapped:946,946,2000 - Daily Examiner Yowie Article,NSW,152.9336357,-29.6816773,locality,medium
+mapped:947,947,2000 - Gold Coast Bulletin Yowiehunters,QLD,153.4145987,-28.0023731,locality,medium
+mapped:949,949,2000 - Queensland Times Yowie Article,QLD,152.2791353,-27.5615314,locality,medium
+mapped:1028,1028,2000 - Batemans Bay Post Yowie Article,NSW,150.178289,-35.7072183,locality,medium
+mapped:1039,1039,2000 - Sunday Mail Yowie Article,QLD,153.0235009,-27.4689623,locality,medium
+mapped:39,39,"Kings Canyon, Northern Territory 2001",NT,131.5779445,-24.2503097,locality,high
+mapped:118,118,"Lismore, New South Wales 2001",NSW,153.2791883,-28.8077608,locality,high
+mapped:182,182,"Laidley, Queensland 2001 (2)",QLD,152.4132894,-27.6395345,locality,high
+mapped:337,337,"Hinze Dam, Queensland 2001",QLD,153.2801969,-28.0502971,locality,high
+mapped:363,363,"Laidley, Queensland 2001 (1)",QLD,152.4132894,-27.6395345,locality,high
+mapped:365,365,"Laidley, Queensland 2001 (3)",QLD,152.4132894,-27.6395345,locality,high
+mapped:401,401,"Mt. Tamborine, Queensland 2001",QLD,153.1929006,-27.9489195,locality,high
+mapped:446,446,"Hazelbrook, New South Wales 2001",NSW,150.4534122,-33.7219948,locality,high
+mapped:488,488,"Koreelah Forest, New South Wales 2001",NSW,152.5077778,-28.2808333,locality,high
+mapped:512,512,"Lightning Ridge, New South Wales 2001",NSW,147.9779283,-29.4285482,locality,high
+mapped:564,564,"Pilliga, New South Wales 2001",NSW,148.8888022,-30.351605,locality,high
+mapped:575,575,"Scotts Head, New South Wales 2001",NSW,152.9963024,-30.7460493,locality,high
+mapped:625,625,"Woodford, New South Wales 2001",NSW,150.4810891,-33.7349677,locality,high
+mapped:847,847,2001 - Yowiehunters News Article,QLD,152.2473652,-26.080292,locality,medium
+mapped:950,950,2001 - Gold Coast Bulletin Yowie Article,QLD,153.4145987,-28.0023731,locality,medium
+mapped:951,951,2001 - Gold Coast Bulletin Yowie Article 2,QLD,153.4145987,-28.0023731,locality,medium
+mapped:952,952,2001 - Queensland Times Yowie Article,QLD,152.4220194,-27.2398683,locality,medium
+mapped:953,953,2001 - Queensland Times Yowie Article 2,QLD,152.4220194,-27.2398683,locality,medium
+mapped:1040,1040,2001 - Caboolture News Yowie Article,QLD,152.9510863,-27.0839336,locality,medium
+mapped:1041,1041,2001 - Caboolture News Yowie Article 2,QLD,152.9510863,-27.0839336,locality,medium
+mapped:62,62,"Licola, Victoria 2002",VIC,146.5695668,-37.6029585,locality,high
+mapped:119,119,"Glossodia, New South Wales 2002",NSW,150.7853962,-33.5334431,locality,high
+mapped:120,120,"Wollemi National Park, New South Wales 2002",NSW,150.4210458,-32.9409962,locality,high
+mapped:183,183,"Beerwah, Queensland 2002",QLD,152.9604137,-26.8573095,locality,high
+mapped:246,246,"Blackbutt, Queensland 2002",QLD,152.1011195,-26.8830175,locality,high
+mapped:370,370,"Colo River, New South Wales 2002",NSW,150.6487565,-33.3778079,locality,high
+mapped:403,403,"Mt. Tamborine, Queensland 2002",QLD,153.1967792,-27.9684035,locality,high
+mapped:422,422,"Goodradigbee River, New South Wales 2002",NSW,148.7432707,-35.3727483,locality,high
+mapped:450,450,"Helensburgh, New South Wales 2002",NSW,150.9822187,-34.1908519,locality,high
+mapped:452,452,"Helensburgh, New South Wales 2002",NSW,150.9822187,-34.1908519,locality,high
+mapped:618,618,"Wolgan Valley, New South Wales 2002",NSW,150.1541179,-33.2635587,locality,high
+mapped:954,954,2002 - Lismore Northern Star Yowie Article,NSW,153.2791883,-28.8077608,locality,medium
+mapped:121,121,"Gunnedah, New South Wales 2003",NSW,150.2036527,-31.0237593,locality,high
+mapped:122,122,"Rosebank, New South Wales 2003",NSW,153.4011111,-28.665,locality,high
+mapped:123,123,"Wentworth Falls, New South Falls 2003",NSW,150.3740633,-33.72802,locality,high
+mapped:184,184,"Glasshouse Mtns, Queensland 2003",QLD,152.9302177,-26.9043015,locality,high
+mapped:185,185,"Tin Can Bay, Queensland 2003",QLD,152.9133105,-25.9497504,locality,high
+mapped:239,239,"Barrington Tops, New South Wales 2003",NSW,151.4844444,-32.0233333,locality,high
+mapped:283,283,"Riddells Creek, Victoria 2003",VIC,144.6776503,-37.4587733,locality,high
+mapped:338,338,"Bulahdelah, New South Wales 2003",NSW,152.2075678,-32.4128925,locality,high
+mapped:350,350,"Byron Shire, New South Wales 2003",NSW,153.4783551,-28.6134277,locality,high
+mapped:417,417,"Ormeau, Queensland 2003",QLD,153.2520815,-27.774813,locality,high
+mapped:418,418,"Glenorie, New South Wales 2003",NSW,151.0105163,-33.6020739,locality,high
+mapped:419,419,"Ormeau, Queensland 2003",QLD,153.2520815,-27.774813,locality,high
+mapped:472,472,"Jiggi, New South Wales 2003",NSW,153.1844444,-28.6816667,locality,high
+mapped:491,491,"Withcott, Queensland 2003",QLD,152.0168658,-27.5387055,locality,high
+mapped:541,541,"Mulgoa, New South Wales 2003",NSW,150.6504013,-33.8371562,locality,high
+mapped:565,565,"Pilliga, New South Wales 2003",NSW,148.8888022,-30.351605,locality,high
+mapped:567,567,"Port Macquarie, New South Wales 2003",NSW,152.9103525,-31.4299499,locality,high
+mapped:590,590,"Tharwa, New South Wales 2003",NSW,149.2208702,-35.3585986,locality,high
+mapped:603,603,"Wanaaring, New South Wales 2003",NSW,144.1490336,-29.7045217,locality,high
+mapped:605,605,"Warragamba, New South Wales 2003",NSW,150.6039175,-33.8890386,locality,high
+mapped:608,608,"Watagans, New South Wales 2003",NSW,151.3768922,-33.0095237,locality,high
+mapped:1042,1042,2003 - Herald Sun Yowie Article,VIC,144.9631732,-37.8142454,locality,medium
+mapped:63,63,"Robinvale, Victoria 2004",VIC,142.7739356,-34.5840409,locality,high
+mapped:186,186,"Lamington NP, Queensland 2004",QLD,153.1573088,-28.2440481,locality,high
+mapped:276,276,"Childers, Queensland 2004",QLD,152.2608358,-25.246446,locality,high
+mapped:347,347,"Jimbour, Queensland 2004",QLD,151.2131105,-26.9607242,locality,high
+mapped:394,394,"Deepwater, New South Wales 2004",NSW,151.8451012,-29.4433982,locality,high
+mapped:421,421,"Ormeau, Queensland 2004",QLD,153.2520815,-27.774813,locality,high
+mapped:436,436,"Grays Point, New South Wales 2004",NSW,151.0786995,-34.0591451,locality,high
+mapped:517,517,"Lithgow, New South Wales 2004",NSW,150.1564887,-33.481536,locality,high
+mapped:609,609,"Watagans, New South Wales 2004",NSW,151.3768922,-33.0095237,locality,high
+mapped:4055,4055,Dig to unearth Tas convict ghost tales,TAS,147.8675721,-43.1492718,exact_site,B
+mapped:124,124,"Blue Knob, New South Wales 2005",NSW,152.55604,-30.6984,locality,high
+mapped:125,125,"Thredbo, New South Wales 2005",NSW,148.3057091,-36.5047751,locality,high
+mapped:188,188,"Ormeau, Queensland 2005",QLD,153.2520815,-27.774813,locality,high
+mapped:258,258,"Cairns, Queensland 2005",QLD,145.7721854,-16.9206657,locality,high
+mapped:340,340,"Bulahdelah, New South Wales 2005",NSW,152.2075678,-32.4128925,locality,high
+mapped:349,349,"Kenilworth, Queensland 2005",QLD,152.6166379,-26.6352315,locality,high
+mapped:423,423,"Ormeau, Queensland 2005",QLD,153.2520815,-27.774813,locality,high
+mapped:477,477,"Torrens Creek, Queensland 2005",QLD,145.0419268,-21.137345,locality,high
+mapped:545,545,"Murwillumbah, New South Wales 2005",NSW,153.3971541,-28.3267617,locality,high
+mapped:569,569,"Richmond Range, New South Wales 2005",NSW,152.9977378,-29.3285389,locality,high
+mapped:576,576,"Springwood, New South Wales 2005",NSW,150.5655467,-33.7017613,locality,high
+mapped:606,606,"Warrimoo, New South Wales 2005",NSW,150.6012161,-33.723551,locality,high
+mapped:955,955,2005 - Gold Coast Bulletin Yowie Article,QLD,153.4145987,-28.0023731,locality,medium
+mapped:4027,4027,The Ghosthunters,NSW,150.6114983,-34.1693445,town,B
+mapped:4028,4028,The Ghosthunters,NSW,150.4736891,-33.733114,exact_site,B
+mapped:64,64,"Mansfield, Victoria 2006",VIC,146.0881445,-37.0521177,locality,high
+mapped:126,126,"Colo Heights, New South Wales 2006",NSW,150.7177778,-33.365,locality,high
+mapped:189,189,"Mapleton, Queensland 2006",QLD,152.8611681,-26.628843,locality,high
+mapped:284,284,"Blackheath, New South Wales 2006",NSW,150.2847222,-33.6338889,locality,high
+mapped:287,287,"Blackheath, New South Wales 2006",NSW,150.2847222,-33.6338889,locality,high
+mapped:292,292,"Thomson Dam, Victoria 2006",VIC,146.4023044,-37.8407882,locality,high
+mapped:351,351,"Kenilworth, Queensland 2006",QLD,152.6166379,-26.6352315,locality,high
+mapped:358,358,"Cessnock, New South Wales 2006",NSW,151.3511111,-32.8316667,locality,high
+mapped:412,412,"Glen Innes, New South Wales 2006",NSW,152.9336357,-29.6816773,locality,medium
+mapped:515,515,"Yarrabilba, Queensland 2006",QLD,153.1081584,-27.8030098,locality,high
+mapped:523,523,"Megalong Valley, New South Wales 2006",NSW,150.2316021,-33.7054371,locality,high
+mapped:544,544,"Munmorah, New South Wales 2012",NSW,151.5697213,-33.2145467,locality,high
+mapped:551,551,"Nunderi, New South Wales 2006",NSW,153.4633068,-28.3226712,locality,high
+mapped:591,591,"Tharwa, New South Wales 2006",NSW,149.2208702,-35.3585986,locality,high
+mapped:1043,1043,2006 - Yarram Standard News,VIC,146.675887,-38.5616717,locality,medium
+mapped:3970,3970,Australia's Most Haunted,NSW,147.5758032,-34.8682927,exact_site,B
+mapped:3991,3991,Australia's Most Haunted,TAS,147.8694003,-43.1531346,exact_site,B
+mapped:4021,4021,Australia's Most Haunted,ACT,149.134539,-35.3075211,exact_site,B
+mapped:4022,4022,Australia's Most Haunted,ACT,149.1300176,-35.3023519,exact_site,B
+mapped:4023,4023,Australia's Most Haunted,NSW,150.6050677,-34.1723581,exact_site,B
+mapped:4024,4024,Australia's Most Haunted,SA,138.5848489,-34.9179424,exact_site,B
+mapped:4025,4025,Australia's Most Haunted,WA,115.7534563,-32.0553437,exact_site,B
+mapped:4026,4026,Australia's Most Haunted,QLD,153.2352829,-27.387429,exact_site,B
+mapped:4061,4061,Australia's Most Haunted,NSW,147.5758032,-34.8682927,exact_site,B
+mapped:4062,4062,Australia's Most Haunted,ACT,149.1209536,-35.2828643,exact_site,B
+mapped:65,65,"Barmah Forest (Murray River), Victoria 2007",VIC,145.204306,-36.0603113,locality,high
+mapped:66,66,"Nowa Nowa, Victoria 2007",VIC,148.0910062,-37.7318356,locality,high
+mapped:127,127,"Hartley, New South Wales 2007",NSW,150.1844444,-33.5483333,locality,high
+mapped:190,190,"Alpha, Queensland 2007",QLD,146.7535478,-23.524547,locality,high
+mapped:191,191,Uki Qld 2007,QLD,153.3793401,-27.9967999,locality,high
+mapped:214,214,"Bemm River, Victoria 2007",VIC,148.8869984,-37.639909,locality,high
+mapped:291,291,"Cooyar, Queensland 2007",QLD,151.8315732,-26.9823903,locality,high
+mapped:339,339,"Howard, Queensland 2007",QLD,152.536403,-25.3383285,locality,high
+mapped:570,570,"Richmond Range, New South Wales 2007",NSW,152.72,-28.7336111,locality,high
+mapped:599,599,"Uki, New South Wales 2007",NSW,153.3305556,-28.4152778,locality,high
+mapped:956,956,2007 - Gold Coast Bulletin Yowie Article,QLD,153.4145987,-28.0023731,locality,medium
+mapped:1044,1044,2007 - Sunday Mail Yowie Article,QLD,153.0235009,-27.4689623,locality,medium
+mapped:19,19,"Greenbushes, Western Australia 2008",WA,116.0595868,-33.8494245,locality,high
+mapped:67,67,"Redbank, Victoria 2008 (2)",VIC,143.3281606,-36.9388754,locality,high
+mapped:68,68,"Robinvale, Victoria 2008",VIC,142.7739356,-34.5840409,locality,high
+mapped:128,128,"Bongil Bongil, New South Wales 2008",NSW,153.0654709,-30.4125822,locality,high
+mapped:192,192,"Leyburn, Queensland 2008",QLD,151.5975812,-28.017406,locality,high
+mapped:224,224,"Ashford, New South Wales 2008",NSW,151.0945365,-29.3257299,locality,high
+mapped:249,249,"Blackbutt, Queensland 2008",QLD,152.0200753,-27.0400466,named_feature,high
+mapped:280,280,"Redbank, Victoria 2008",VIC,143.3281606,-36.9388754,locality,high
+mapped:297,297,"Cowley Beach, Queensland 2008",QLD,146.1321886,-17.653566,locality,high
+mapped:314,314,"Bongil Bongil, New South Wales 2008",NSW,153.0654709,-30.4125822,locality,high
+mapped:384,384,"Cudgen, New South Wales 2008",NSW,153.5505103,-28.2734276,locality,high
+mapped:442,442,"Hartley, New South Wales 2015",NSW,150.1844444,-33.5483333,locality,high
+mapped:467,467,"Tin Can Bay, Queensland 1992 (2)",QLD,152.9133105,-25.9497504,locality,high
+mapped:492,492,"Kosciuszko, New South Wales 2008",NSW,148.2346,-36.4485,locality,high
+mapped:503,503,"Woolooga, Queensland 2008",QLD,152.3704487,-26.0171915,locality,high
+mapped:579,579,"Stanwell Tops, New South Wales 2008",NSW,150.97997,-34.2206247,locality,high
+mapped:851,851,"2008 - NSW Glendonbrook, NSW",NSW,151.4328063,-32.4807435,locality,high
+mapped:4017,4017,Nathan Curnow's Ghost Poetry,TAS,147.8694003,-43.1531346,exact_site,B
+mapped:129,129,"Coonabarabran, New South Wales 2009",NSW,149.2733225,-31.2728076,locality,high
+mapped:193,193,"Kilkivan, Queensland 2009",QLD,152.2473652,-26.080292,locality,high
+mapped:225,225,"Bahrs Scrub, Queensland 2009",QLD,153.1723698,-27.7375909,locality,high
+mapped:286,286,"Robinvale, Victoria 2009",VIC,142.7739356,-34.5840409,locality,high
+mapped:290,290,"Blackheath, New South Wales 2009",NSW,150.2847222,-33.6338889,locality,high
+mapped:300,300,"Cressbrook Creek, Queensland 2009",QLD,152.16722,-27.23722,locality,high
+mapped:388,388,"Dairyville, New South Wales 2009",NSW,152.9677778,-30.265,locality,high
+mapped:435,435,"Rockhampton, Queensland 2009",QLD,150.5134227,-23.3782137,locality,high
+mapped:510,510,"Leura, New South Wales 2009",NSW,150.3317665,-33.7156888,locality,high
+mapped:532,532,"Mt. George, New South Wales 2009",NSW,151.52501,-32.54077,locality,high
+mapped:555,555,"Oberon, New South Wales 2009",NSW,149.8326162,-33.8455931,locality,high
+mapped:957,957,2009 - Coonabarabran Times - Yowie Bus Inccident,NSW,149.2733225,-31.2728076,locality,medium
+mapped:958,958,2009 - NT News Yowie Article,NT,131.141951,-12.768419,locality,medium
+mapped:1045,1045,2009 - CFZ Michael Hardcastle Re: Yowie Kempsey,NSW,152.5228021,-30.9056457,town,medium
+mapped:1046,1046,2009 - Manning River Times Yowie Article,NSW,152.1004561,-31.8517188,locality,medium
+mapped:69,69,"Aberfeldy, Victoria 2010",VIC,146.3790538,-37.7021795,locality,high
+mapped:70,70,"Briagolong, Victoria 2010",VIC,147.0851711,-37.809138,locality,high
+mapped:130,130,"Broken Hill, New South Wales 2010",NSW,141.4511111,-31.965,locality,high
+mapped:131,131,"Macquarie Pass - Robertson, New South Wales 2010",NSW,150.6408333,-34.5591667,locality,high
+mapped:194,194,"Eumundi - Yandina, Queensland 2010",QLD,152.9539454,-26.5582222,locality,high
+mapped:195,195,"Oak Beach, Queensland 2010",QLD,145.5234384,-16.5861445,locality,high
+mapped:220,220,"Bendigo (area), Victoria 2010",VIC,144.2972658,-36.7771067,locality,high
+mapped:231,231,"Beechmont, Queensland 2010",QLD,153.1951742,-28.126238,locality,high
+mapped:277,277,"Otways, Victoria 2010",VIC,143.6117705,-38.6493568,locality,high
+mapped:357,357,"Killarney, Queensland 2010",QLD,152.2999152,-28.348427,locality,high
+mapped:372,372,"Colo, New South Wales 2010",NSW,150.8234906,-33.4250653,locality,high
+mapped:390,390,"Danger Falls, New South Wales 2010",NSW,152.7142643,-30.3232623,locality,high
+mapped:393,393,"Mt. Glorious, Queensland 2010",QLD,152.7643027,-27.322891,locality,high
+mapped:454,454,"Hickeys Falls, New South Wales 2010",NSW,149.0677356,-31.4305209,locality,high
+mapped:500,500,"Ku-ring-gai National Park, New South Wales 2010",NSW,151.2293535,-33.6282265,locality,high
+mapped:511,511,"Yandina, Queensland 2010",QLD,152.9596114,-26.5658945,locality,high
+mapped:577,577,"Springwood, New South Wales 2010",NSW,150.5655467,-33.7017613,locality,high
+mapped:586,586,"Tallong, New South Wales 2010",NSW,150.0863205,-34.7192248,locality,high
+mapped:610,610,"Watagans, New South Wales 2010",NSW,151.3768922,-33.0095237,locality,medium
+mapped:612,612,"Wauchope, New South Wales 2010",NSW,152.734664,-31.4557879,locality,high
+mapped:615,615,"Wellingrove - Dundee, New South Wales 2010",NSW,151.5667558,-29.6396266,locality,high
+mapped:1047,1047,2010 - Armidale Express Yowie Article,NSW,151.6656564,-30.5144881,locality,medium
+mapped:1095,1095,2010 - Newscastle Herald Yowie Article,NSW,149.7955552,-35.4388907,locality,medium
+mapped:20,20,"Donnybrook, Western Australia 2011",WA,115.8251293,-33.5773757,locality,high
+mapped:21,21,"Mandurah, Western Australia 2011",WA,115.7208782,-32.5302495,locality,high
+mapped:71,71,"Bendigo (area), Victoria 2011",VIC,144.2826718,-36.7590183,town,high
+mapped:72,72,"Falls Creek, Victoria 2011",VIC,147.2441791,-36.878683,locality,high
+mapped:73,73,"Yarra Valley, Victoria 2011",VIC,145.522537,-37.7549851,locality,high
+mapped:132,132,"Watagans, New South Wales 2010",NSW,151.3768922,-33.0095237,locality,high
+mapped:133,133,"Dorrigo, New South Wales 2011",NSW,152.7120341,-30.3399677,locality,high
+mapped:134,134,"Wentworth Falls, New South Wales 2011",NSW,150.3740633,-33.72802,locality,high
+mapped:196,196,"Koumala Range, Queensland 2011",QLD,149.080723,-21.6102815,locality,high
+mapped:232,232,"Emerald, Victoria 2011",VIC,145.4407282,-37.9321282,locality,high
+mapped:263,263,"Belbora, New South Wales 2011",NSW,152.1511111,-31.9733333,locality,high
+mapped:279,279,"Clear Mountain, Queensland 2011",QLD,152.890919,-27.3186825,locality,high
+mapped:386,386,"Cudgen, New South Wales 2011",NSW,153.5505103,-28.2734276,locality,high
+mapped:432,432,"Grafton, New South Wales 2011",NSW,152.9336357,-29.6816773,locality,high
+mapped:498,498,"Krambach, New South Wales 2011",NSW,152.2606101,-32.0521151,locality,high
+mapped:513,513,"Yarrabah, Queensland 2011",QLD,145.8746489,-17.0172815,locality,high
+mapped:519,519,"Lowanna, New South Wales 2011",NSW,152.8994609,-30.2115911,locality,high
+mapped:582,582,"Stuarts Point, New South Wales 2011",NSW,152.9933138,-30.8209314,locality,high
+mapped:959,959,2011 - Daily Examiner Yowie Article,NSW,152.9336357,-29.6816773,locality,medium
+mapped:3992,3992,Ghost hunters haunt old mental asylum,TAS,147.0636218,-42.7854275,exact_site,B
+mapped:4081,4081,ghosts in Ghosts in the old Palmerston Centre,NT,130.9844108,-12.4799608,town,B
+mapped:135,135,"Munmorah, New South Wales 2012",NSW,151.6049395,-33.1968475,locality,high
+mapped:197,197,"Miriam Vale, Queensland 2012",QLD,151.5648363,-24.33462,locality,high
+mapped:274,274,"Noojee, Victoria 2012",VIC,145.9443211,-37.8352675,locality,high
+mapped:345,345,"Jimboomba, Queensland 2012",QLD,153.0227538,-27.8318573,locality,high
+mapped:456,456,"Hornsby Heights, New South Wales 2012",NSW,151.1021935,-33.6630602,locality,high
+mapped:497,497,"Wolvi, Queensland 2012",QLD,152.8442704,-26.1448875,locality,high
+mapped:505,505,"Woolooga, Queensland 2012",QLD,152.3704487,-26.0171915,locality,high
+mapped:536,536,"Mt. Kembla, New South Wales 2012",NSW,150.8067132,-34.4421839,locality,high
+mapped:539,539,"Mt. Warning, New South Wales 2012",NSW,153.2846,-28.3818,locality,high
+mapped:568,568,"Providence Portal, New South Wales 2012",NSW,148.6346,-35.9485,locality,high
+mapped:583,583,"Stuarts Point, New South Wales 2012",NSW,152.9933138,-30.8209314,locality,high
+mapped:589,589,"Tenterfield, New South Wales 2012",NSW,152.2813166,-28.83843,locality,high
+mapped:611,611,"Watagans, New South Wales 2012",NSW,151.3768922,-33.0095237,locality,high
+mapped:960,960,2012 - Sydney Telegraph Yowie Article,NSW,151.2082848,-33.8698439,locality,medium
+mapped:961,961,2012- News.Com Yowie Article,NSW,150.5288182,-33.496492,locality,medium
+mapped:1048,1048,2012 - Herald Sun Yowie Article,VIC,144.9631732,-37.8142454,locality,medium
+mapped:74,74,"Bemm River, Victoria 2013",VIC,148.8869984,-37.639909,locality,high
+mapped:75,75,"Healesville, Victoria 2013",VIC,145.5161533,-37.6537218,locality,high
+mapped:136,136,"Wingello, New South Wales 2012",NSW,150.1660245,-34.7032044,locality,high
+mapped:137,137,"Hawkesburry River, New South Wales 2013",NSW,150.9274931,-33.5038702,locality,high
+mapped:138,138,"Parkes, New South Wales 2013",NSW,147.9761363,-32.8225409,town,high
+mapped:139,139,"Tucabia, New South Wales 2013",NSW,153.1064755,-29.6681594,locality,high
+mapped:198,198,"Bribie Island, Queensland 2013",QLD,153.120238,-26.9644799,locality,high
+mapped:199,199,"Laidley, Queensland 2013",QLD,152.4132894,-27.6395345,locality,high
+mapped:226,226,"Colac, Victoria 2013",VIC,143.5858537,-38.3399766,locality,high
+mapped:278,278,"Bexhill, New South Wales 2013",NSW,153.3480115,-28.7631637,locality,high
+mapped:293,293,"Blaxland, New South Wales 2013",NSW,150.6092697,-33.7460755,locality,high
+mapped:309,309,"Daisy Hill, Queensland 2013",QLD,153.1538113,-27.643611,locality,high
+mapped:311,311,"Dalby, Queensland 2013",QLD,151.2634168,-27.1822593,locality,high
+mapped:379,379,"Maudsland, Queensland 2013",QLD,153.2823303,-27.9280622,locality,high
+mapped:414,414,"Glenbrook, New South Wales 2013",NSW,150.622492,-33.7670661,locality,high
+mapped:438,438,"Grenfell, New South Wales 2013",NSW,148.160764,-33.8967902,locality,high
+mapped:461,461,"Tarampa, Queensland 2013",QLD,152.5442582,-27.4934865,locality,high
+mapped:466,466,"Jackadgery, New South Wales 2013",NSW,152.5511068,-29.5816646,locality,high
+mapped:528,528,"Mongarlowe, New South Wales 2013",NSW,149.9390471,-35.4217586,locality,high
+mapped:529,529,"Mooney Mooney, New South Wales 2013",NSW,151.2177778,-33.465,locality,high
+mapped:537,537,"Mt. Kembla, New South Wales 2013",NSW,150.8067132,-34.4421839,locality,high
+mapped:572,572,"Roseberg State Forest, New South Wales 2013",NSW,149.0473509,-33.8225728,locality,medium
+mapped:573,573,"Roseberg State Forest, New South Wales 2013",NSW,149.0473509,-33.8225728,locality,high
+mapped:578,578,"Stannifer, New South Wales 2013",NSW,151.2179078,-29.8807245,locality,high
+mapped:596,596,"Torrington, New South Wales 2013",NSW,151.6967475,-29.3112985,locality,high
+mapped:962,962,2013 - Queensland Times Yowie Article,QLD,152.2791353,-27.5615314,locality,medium
+mapped:1096,1096,2013 - Northern Star Yowie Article,NSW,153.3480115,-28.7631637,locality,medium
+mapped:3997,3997,Faust's Ghost,VIC,144.9723167,-37.8106911,exact_site,B
+mapped:4047,4047,Ghost hunters check Tasmania's Franklin House for bumps in the night,TAS,147.1683193,-41.4900176,exact_site,B
+mapped:4074,4074,ghost in Darwin Ambulance Centre resident ghost,NT,130.8431037,-12.42858,exact_site,B
+mapped:27,27,"Wilpena Pound, South Australia 2014",SA,138.606148,-31.5264564,locality,high
+mapped:140,140,"Nemingha, New South Wales 2014",NSW,150.9888808,-31.1212156,locality,high
+mapped:200,200,"Deepwater National Park, Queensland 2014",QLD,151.9379523,-24.3082663,locality,high
+mapped:281,281,"Bilpin, New South Wales 2014",NSW,150.5288182,-33.496492,locality,high
+mapped:289,289,"Rokewood, Victoria 2014",VIC,143.7198039,-37.9015846,locality,high
+mapped:343,343,"Jacobs Well, Queensland 2014",QLD,153.3548782,-27.781997,locality,high
+mapped:360,360,"Cessnock, New South Wales 2014",NSW,151.3511111,-32.8316667,locality,high
+mapped:378,378,"Cooperbung, New South Wales 2014",NSW,152.7844444,-31.2816667,locality,high
+mapped:428,428,"Grafton - Coutts Crossing, New South Wales 2014",NSW,152.9336357,-29.6816773,locality,high
+mapped:963,963,2014 - Cairns Post Yowie Article,QLD,145.7721854,-16.9206657,locality,medium
+mapped:964,964,2014 - Cairns Post Yowie Article 2,QLD,145.7721854,-16.9206657,locality,medium
+mapped:965,965,"2014 - Canberra Times, Re: 1912 Braidwood",ACT,149.1012676,-35.2975906,town,medium
+mapped:966,966,2014 - Gympie Times Yowie Article,QLD,152.6600256,-26.1900447,locality,medium
+mapped:1049,1049,2014 - ABC News Yowie Article 2,NSW,149.7955552,-35.4388907,locality,medium
+mapped:1050,1050,2014 - Pt Douglas Gazette Yowie Article,QLD,145.4636294,-16.4845983,locality,medium
+mapped:1097,1097,2014 - ABC News Yowie Article,QLD,152.6166379,-26.6352315,locality,medium
+mapped:4015,4015,Adelaide's notorious Z Ward asylum opens for after-dark ghost tours,SA,138.6323835,-34.9428535,exact_site,B
+mapped:4073,4073,Yowie in Acacia Hills yowie sightings and damage speculation,NT,131.141951,-12.768419,locality,B
+mapped:28,28,"Sixth Creek - Adelaide Hills, South Australia 2015",SA,138.7798387,-34.9060729,locality,high
+mapped:76,76,"Harrietville, Victoria 2015",VIC,147.0638695,-36.8923168,locality,high
+mapped:77,77,"Mount Hotham, Victoria 2015",VIC,147.1280943,-36.9752998,locality,high
+mapped:141,141,"Coramba, New South Wales 2015",NSW,153.0148823,-30.2208606,locality,high
+mapped:142,142,"Mt. Keira, New South Wales 2015",NSW,150.8520661,-34.403077,locality,high
+mapped:201,201,"Nanango, Queensland 2015",QLD,151.9851744,-26.6764195,town,high
+mapped:203,203,"Ormeau Hills, Queensland 2016",QLD,153.2337463,-27.800612,locality,high
+mapped:266,266,"Belbora, New South Wales 2015",NSW,152.1511111,-31.9733333,locality,high
+mapped:295,295,"Trentham, Victoria 2015",VIC,144.3263388,-37.3900875,locality,high
+mapped:304,304,"Bocoble, New South Wales 2015",NSW,149.7177778,-32.7983333,locality,high
+mapped:326,326,"Brisbane Water National Park, New South Wales 2015",NSW,151.3274925,-33.4880548,locality,high
+mapped:328,328,"Broke, New South Wales 2015",NSW,151.102302,-32.7477265,locality,high
+mapped:367,367,"Lake Tinaroo, Queensland 1995",QLD,145.5740538,-17.1964585,locality,high
+mapped:377,377,"Manumbar, Queensland 2015",QLD,152.2800721,-26.370452,locality,high
+mapped:396,396,"Dorrigo, New South Wales 2015",NSW,152.7120341,-30.3399677,locality,high
+mapped:493,493,"Witheren, Queensland 2015",QLD,153.1877059,-28.0506572,locality,high
+mapped:521,521,"Maldon, New South Wales 2015",NSW,150.6372344,-34.1984323,locality,high
+mapped:530,530,"Morton NP, New South Wales 2015",NSW,150.2110148,-35.2321015,locality,high
+mapped:546,546,"Narara, New South Wales 2015",NSW,151.3355556,-33.3955556,locality,high
+mapped:628,628,"Woy Woy, New South Wales 2015",NSW,151.3274925,-33.4880548,locality,high
+mapped:968,968,2015 - Byron Shire News Yowie Article,QLD,152.7608348,-27.6160323,locality,medium
+mapped:969,969,2015 - Gympie Times Yowie Article,QLD,152.6600256,-26.1900447,locality,medium
+mapped:970,970,2015- Epoch Times Yowie Article,NSW,150.5655467,-33.7017613,locality,high
+mapped:1051,1051,2015 - Logan Reporter Yowie Article,QLD,153.0027044,-27.76316,locality,medium
+mapped:1052,1052,2015 - Sunshine Valley Gazette Yowie Article,QLD,152.8508329,-26.7079095,locality,medium
+mapped:4051,4051,Dumbleyung Pub,WA,117.7417032,-33.3158771,exact_site,B
+mapped:4053,4053,TV ghost buster Ben Hansen investigates Adelaide's popular haunts,SA,139.4214197,-35.224964,exact_site,B
+mapped:4078,4078,ghost in Spectrum Theatre convict ghost,WA,117.8894525,-35.0297984,exact_site,B
+mapped:4084,4084,ghost in Bayview Hotel young woman ghost,TAS,145.2945184,-40.7605718,town,B
+mapped:4085,4085,woman in Majestic Theatre woman presence,QLD,152.857472,-26.3656737,exact_site,B
+mapped:29,29,"Loxton, South Australia 2016",SA,140.5696644,-34.4511348,locality,high
+mapped:30,30,"Poochera, South Australia 2016",SA,134.8385447,-32.7203096,locality,high
+mapped:78,78,"Goongerah, Victoria 2016",VIC,148.7899152,-37.374696,locality,high
+mapped:79,79,"Noojee, Victoria 2016",VIC,145.9443211,-37.8352675,locality,high
+mapped:143,143,"Kiah, New South Wales 2016",NSW,149.8555282,-37.1481965,locality,high
+mapped:202,202,"Glenbar, Queensland 2016",QLD,152.3437658,-25.764955,locality,high
+mapped:204,204,"Yandina, Queensland 2016",QLD,152.9596114,-26.5658945,locality,high
+mapped:238,238,"Grampians, Victoria 2016",VIC,142.2209509,-36.718805,locality,high
+mapped:240,240,"Bellthorpe, Queensland 2016",QLD,152.7274089,-26.85239,locality,high
+mapped:298,298,"Werribee, Victoria 2016",VIC,144.6609036,-37.8995007,locality,high
+mapped:320,320,"Bowen Mountain, New South Wales 2016",NSW,150.6256438,-33.5735614,locality,high
+mapped:327,327,"Gatton, Queensland 2016",QLD,152.2791353,-27.5615314,locality,high
+mapped:330,330,"Broke, New South Wales 2016",NSW,151.102302,-32.7477265,locality,high
+mapped:341,341,"Howard, Queensland 2016",QLD,152.536403,-25.3383285,locality,high
+mapped:381,381,"Miles, Queensland 2016",QLD,150.1520205,-26.7296445,town,high
+mapped:463,463,"Tarzali, Queensland 2016",QLD,145.6038006,-17.4246226,locality,high
+mapped:487,487,"Weyba Downs, Queensland 2016",QLD,153.044541,-26.4502994,locality,high
+mapped:971,971,2016 - Cairns Post Yowie Article,QLD,145.7721854,-16.9206657,locality,medium
+mapped:972,972,2016 - Chinchilla News Yowie Article,NSW,152.9336357,-29.6816773,locality,medium
+mapped:973,973,2016 - Daily Examiner Yowie Article,QLD,152.2473652,-26.080292,locality,medium
+mapped:974,974,2016 - Daily Mail UK Yowie Article,QLD,152.2473652,-26.080292,locality,medium
+mapped:975,975,2016 - Gympie Times Yowie Article,QLD,152.6600256,-26.1900447,locality,medium
+mapped:976,976,2016- NRM Digital Media Yowie Article,QLD,152.2473652,-26.080292,locality,medium
+mapped:1053,1053,2016 - 9 News 06-09-2016,QLD,151.953351,-27.5610193,locality,medium
+mapped:1054,1054,2016 - Toowoomba Cronicle Yowie Article,QLD,151.953351,-27.5610193,locality,medium
+mapped:1099,1099,2016 - ABC Yowie Article,NSW,149.7955552,-35.4388907,locality,medium
+mapped:1100,1100,2016 - News.com.au Yowie Article,QLD,153.2520815,-27.774813,locality,medium
+mapped:3988,3988,The History of Port Arthur,TAS,147.8694003,-43.1531346,exact_site,B
+mapped:3989,3989,National Film and Sound Archive one of Australia's 'most haunted buildings',ACT,149.1209536,-35.2828643,exact_site,B
+mapped:144,144,"Lawrence, New South Wales 2017",NSW,153.1003352,-29.5009847,locality,high
+mapped:145,145,"Wingello, New South Wales 2017",NSW,150.1660245,-34.7032044,locality,high
+mapped:205,205,"Ormeau / Kingsholme, Queensland 2017",QLD,153.2147611,-27.8479219,locality,high
+mapped:316,316,"Border Ranges, New South Wales 2017",NSW,153.0672222,-28.3944444,locality,high
+mapped:336,336,"Bucca, New South Wales 2017",NSW,153.0941667,-30.1469444,locality,high
+mapped:356,356,"Cattai, New South Wales 2017",NSW,150.9164045,-33.5482394,locality,high
+mapped:361,361,"Kingsholme / Ormeau, Queensland 2017",QLD,153.2467766,-27.8182749,locality,high
+mapped:373,373,"Logan Village, Queensland 2017",QLD,153.1070052,-27.7675482,locality,high
+mapped:380,380,"Cooperbung, New South Wales 2017",NSW,152.7844444,-31.2816667,locality,high
+mapped:425,425,"Owens Creek, Queensland 2017",QLD,148.7057421,-21.1005285,locality,high
+mapped:429,429,"Quaids Dam, Queensland 2017",QLD,145.5618517,-17.4098776,named_feature,high
+mapped:538,538,"Mt. Warning - Tyalgum, New South Wales 2017",NSW,153.2846,-28.3818,locality,high
+mapped:580,580,"Strickland, New South Wales 2017",NSW,151.2682802,-33.8558957,locality,high
+mapped:592,592,"Tharwa, New South Wales 2017",NSW,149.2208702,-35.3585986,locality,high
+mapped:614,614,"Wee Jasper, New South Wales 2017",NSW,148.6759186,-35.1105708,locality,high
+mapped:977,977,2017 - Eden Magnet Yowie Article (2) 27-04-2017,NSW,149.9035118,-37.0640494,locality,medium
+mapped:978,978,2017 - Illawarra Mercury Yowie Article 02-05-2017,NSW,150.790409,-34.4614504,locality,medium
+mapped:980,980,2017 - Sunshine Coast Daily Yowie Article 13-12-2017,QLD,152.8508329,-26.7079095,locality,medium
+mapped:1055,1055,2017 - Bendigo Advertiser Yowie Article 17-03-2017,VIC,144.2826718,-36.7590183,town,medium
+mapped:1101,1101,2017 - Daily Examiner Yowie Article 04-02-2017,QLD,152.7608348,-27.6160323,locality,medium
+mapped:1103,1103,2017 - Eden Magnet Yowie Article (3) 27-04-2017,NSW,149.9035118,-37.0640494,locality,medium
+mapped:1104,1104,2017 - Eden Magnet Yowie Article 19-04-2017,NSW,149.9035118,-37.0640494,locality,medium
+mapped:2703,2703,Federici in Federici's ghost,VIC,144.9724,-37.8109,exact_site,B
+mapped:2704,2704,Federici in Federici's ghost,VIC,144.9724,-37.8109,exact_site,B
+mapped:2705,2705,Federici in Federici's ghost,VIC,144.9724,-37.8109,exact_site,B
+mapped:2706,2706,ghost in Federici's ghost,VIC,144.9724,-37.8109,exact_site,B
+mapped:2707,2707,ghost in Federici's ghost,VIC,144.9724,-37.8109,exact_site,B
+mapped:2708,2708,ghost in Federici's ghost,VIC,144.9724,-37.8109,exact_site,B
+mapped:2709,2709,ghost in Federici's ghost,VIC,144.9724,-37.8109,exact_site,B
+mapped:2710,2710,Mephistopheles in Federici's ghost,VIC,144.9724,-37.8109,exact_site,B
+mapped:3990,3990,I spent Halloween in one of Australia's 'most haunted buildings',ACT,149.1209536,-35.2828643,exact_site,B
+mapped:4014,4014,"Ghost hunting in the Grand, one of SA's most haunted hotels",SA,140.3540571,-37.5949239,exact_site,B
+mapped:4032,4032,Richmond Bridge works begin to preserve convict-era landmark,TAS,147.4399809,-42.7338298,exact_site,B
+mapped:4042,4042,Perth tradies turned paranormal hunters,WA,116.0695475,-31.8831486,exact_site,B
+mapped:4063,4063,Paranormal investigator claims to have recorded the voice of a ghost who haunts the Cuballing Tavern,WA,117.1789178,-32.819972,exact_site,B
+mapped:4066,4066,Old Parliament House and its spooky past creating high demand for ghost tours,ACT,149.1300176,-35.3023519,exact_site,B
+mapped:4072,4072,South Sea Islander community confronts fears of yowies and ghosts with night walk,QLD,150.8040757,-23.378726,locality,B
+mapped:4083,4083,doctor in Willow Court morgue doctor spirit,TAS,147.0636218,-42.7854275,exact_site,B
+mapped:4086,4086,Sarah in Willow Court Sarah spirit,TAS,147.0636218,-42.7854275,exact_site,B
+mapped:4116,4116,Haunted in Hobart,TAS,147.4384839,-42.7359665,town,medium
+mapped:6,6,Yowie country: Queensland town revamps tourism brand as a prime spot for mythological creature,QLD,152.565,-26.943,town,medium
+mapped:80,80,"Bunyip, Victoria 2018",VIC,145.7208993,-38.0971242,locality,high
+mapped:146,146,"Grafton, New South Wales 2018",NSW,152.9336357,-29.6816773,locality,high
+mapped:206,206,"Agnes Waters, Queensland 2018",QLD,151.9005473,-24.2112376,locality,high
+mapped:207,207,"Nunimbah Valley, Queensland 2018",QLD,153.3365942,-27.9896566,locality,medium
+mapped:208,208,"Witheren, Queensland 2018",QLD,153.1877059,-28.0506572,locality,high
+mapped:219,219,"Aratula, Queensland 2018",QLD,152.5391088,-27.9830985,locality,high
+mapped:230,230,"Bara, New South Wales 2018",NSW,149.8344444,-32.565,locality,high
+mapped:272,272,"Bellingen, New South Wales 2018",NSW,152.71921,-30.3739913,locality,high
+mapped:282,282,"Conondale, Queensland 2018",QLD,152.6710401,-26.743368,locality,high
+mapped:306,306,"Bocoble, New South Wales 2018",NSW,149.7177778,-32.7983333,locality,high
+mapped:398,398,"Dorrigo, New South Wales 2018",NSW,152.7120341,-30.3399677,locality,high
+mapped:437,437,"Roma, Queensland 2018",QLD,148.7868137,-26.5710356,locality,high
+mapped:489,489,"Widgee, Queensland 2018",QLD,152.4034957,-26.240797,locality,high
+mapped:518,518,"Lithgow, New South Wales 2018",NSW,150.1564887,-33.481536,locality,high
+mapped:571,571,"Richmond Range, New South Wales 2018",NSW,152.9977378,-29.3285389,locality,high
+mapped:600,600,"Uki, New South Wales 2018",NSW,153.3305556,-28.4152778,locality,high
+mapped:981,981,2018 - Northern Star Yowie Article 02-06-2018,NSW,153.3480115,-28.7631637,locality,medium
+mapped:982,982,2018 - South Burnett Times Yowie Article,QLD,151.9851744,-26.6764195,town,high
+mapped:983,983,2018 - Sydney Morning Herald Yowie Article 10-11-2018,NSW,151.2082848,-33.8698439,locality,medium
+mapped:1056,1056,2018 - Balonne Shire News Yowie Article 09-08-2018,QLD,147.9436644,-28.285835,locality,medium
+mapped:1057,1057,2018- Herbert River Express Yowie Article 15-08-2018,QLD,145.6112083,-18.2484306,locality,medium
+mapped:1109,1109,2018 - Grey Nomads Yowie Article 10-09-2018,NSW,153.3305556,-28.4152778,locality,medium
+mapped:1110,1110,2018 - Herald Yowie article 02-08-2018,QLD,148.7868137,-26.5710356,locality,medium
+mapped:1111,1111,2018 - The Sun Yowie Article 06-03-2018,QLD,151.8153509,-26.8501432,locality,medium
+mapped:1114,1114,2018- Daily Mail Yowie Article 08-03-2018,QLD,151.8153509,-26.8501432,locality,medium
+mapped:1115,1115,2018- Northern Star (2) 22-08-2018,NSW,153.3305556,-28.4152778,locality,medium
+mapped:3968,3968,Celebrating the history of the Theatre Royal.,TAS,147.3281233,-42.8825088,town,B
+mapped:4012,4012,"The tourist attraction dropping its ghostly status, because it is scaring people off",WA,114.5996739,-28.5001294,exact_site,B
+mapped:4019,4019,"Urban legend, Asian myth, or historical figure: Who was the ghostly Poinciana Woman?",NT,130.8254206,-12.4077106,exact_site,B
+mapped:4054,4054,Celebrating the history of the Theatre Royal,TAS,147.3311803,-42.8795092,exact_site,B
+mapped:4071,4071,Woodenbong in Yowie Country is a good place to start if you're looking for Australia's Big Foot,NSW,152.6120214,-28.3913455,locality,B
+mapped:4122,4122,What are Canberra's most haunted places?,ACT,149.1209536,-35.2828643,exact_site,B
+mapped:4123,4123,What are Canberra's most haunted places?,ACT,149.1417718,-35.2927998,exact_site,B
+mapped:4124,4124,What are Canberra's most haunted places?,ACT,149.134539,-35.3075211,exact_site,B
+mapped:81,81,"Blackwood, Victoria 2019",VIC,144.2868937,-37.488796,locality,high
+mapped:147,147,"Wingen, New South Wales 2019",NSW,150.8775387,-31.8909675,locality,high
+mapped:209,209,"Currumbin Valley, Queensland 2019 (3)",QLD,153.3980364,-28.204048,locality,high
+mapped:210,210,"Kilkivan, Queensland 2019",QLD,152.2473652,-26.080292,locality,high
+mapped:244,244,"Hepburn Springs, Victoria 2019",VIC,144.1467627,-37.3161925,locality,high
+mapped:285,285,"Cooktown, Queensland 2019",QLD,144.9028573,-15.3718125,locality,high
+mapped:303,303,"Currumbin Valley, Queensland 2019",QLD,153.3980364,-28.204048,locality,high
+mapped:305,305,"Currumbin Valley, Queensland 2019 (2)",QLD,153.3980364,-28.204048,locality,high
+mapped:313,313,"Deepwater, Queensland 2019",QLD,151.9390051,-24.3716505,locality,high
+mapped:323,323,"Gallangowan State Forest, Queensland 2019",QLD,152.3077508,-26.4537713,locality,high
+mapped:355,355,"Kilkivan, Queensland 2019",QLD,152.2473652,-26.080292,locality,high
+mapped:407,407,"Nunimbah Valley, Queensland 2019",QLD,153.2224557,-28.1518255,locality,high
+mapped:549,549,"Newry State Forest, New South Wales 2019",NSW,152.965781,-30.539809,locality,high
+mapped:629,629,"Woy Woy, New South Wales 2019",NSW,151.3274925,-33.4880548,locality,high
+mapped:984,984,2019 - Courier Mail Yowie Article 15-07-2019,QLD,153.0235009,-27.4689623,locality,medium
+mapped:985,985,2019 - Daily Mail Yowie Article (Cairns) 07-02-2019,QLD,145.7721854,-16.9206657,locality,medium
+mapped:986,986,2019 - Daily Mail Yowie Article 29-01-2019,QLD,153.1951742,-28.126238,locality,medium
+mapped:987,987,2019 - Gold Coast Bulletin Yowie Article (Various GC Based Information) 09-02-2019,QLD,153.4145987,-28.0023731,locality,medium
+mapped:988,988,2019 - Gold Coast Bulletin Yowie Article 09-02-2019,QLD,153.4145987,-28.0023731,locality,medium
+mapped:989,989,2019 - Gold Coast Bulletin Yowie Article 19-07-2019,QLD,153.4145987,-28.0023731,locality,medium
+mapped:990,990,2019 - Gold Coast Bulletin Yowie Article 24-01-2019,QLD,153.4145987,-28.0023731,locality,medium
+mapped:991,991,2019 - Gympie Times Yowie Article 15-06-2019,QLD,152.6600256,-26.1900447,locality,medium
+mapped:992,992,2019- Gold Coast Bulletin Yowie Article 20-07-2019,QLD,153.4145987,-28.0023731,locality,medium
+mapped:993,993,2019- Gold Coast Bulletin Yowie Article 24-07-2019,QLD,153.4145987,-28.0023731,locality,medium
+mapped:994,994,2019- Gold Coast Bulletin Yowie Article 25-01-2019,QLD,153.4145987,-28.0023731,locality,medium
+mapped:1116,1116,2019 - 9 News 24-01-2019,QLD,153.1877059,-28.0506572,locality,medium
+mapped:1117,1117,2019 - Daily Mail Yowie Article 02-08-2019,NSW,150.234389,-33.1810592,locality,medium
+mapped:1118,1118,2019 - Daily Mail Yowie Article 02-09-2019,NSW,150.4315419,-34.0115925,locality,medium
+mapped:1120,1120,2019 - Daily Mail Yowie Article 07-08-2019,QLD,153.1095731,-27.9024629,locality,medium
+mapped:1121,1121,2019 - Daily Mail Yowie Article 15-07-2019,QLD,145.6038006,-17.4246226,locality,medium
+mapped:1123,1123,2019 - Daily Mail Yowie Article 23-07-2019 (2),QLD,145.6038006,-17.4246226,locality,medium
+mapped:1126,1126,2019 - Northern Daily Leader Yowie Article 30-06-2019,QLD,151.7621472,-25.698345,locality,medium
+mapped:1127,1127,2019 - SBS Yowie Article 24-01-2019,QLD,153.1951742,-28.126238,locality,medium
+mapped:3998,3998,Faust — more than we bargained for?,VIC,144.9723167,-37.8106911,exact_site,B
+mapped:4016,4016,What are Hobart's most famous ghost stories?,TAS,147.3281233,-42.8825088,town,B
+mapped:4031,4031,What are Hobart's most famous ghost stories?,TAS,147.3351286,-42.8889972,exact_site,B
+mapped:4056,4056,What are Hobart's most famous ghost stories?,TAS,147.3370428,-42.8876,exact_site,B
+mapped:4057,4057,What are Hobart's most famous ghost stories?,TAS,147.3275298,-42.8773197,exact_site,B
+mapped:4058,4058,Henry Jones in Drunken Admiral Henry Jones apparition,TAS,147.3349313,-42.8811591,exact_site,B
+mapped:4059,4059,Alex in Lenna of Hobart Alex and Harriet,TAS,147.3357623,-42.8873486,exact_site,B
+mapped:4060,4060,Polly in Narryna Polly ghost,TAS,147.3315508,-42.8892857,exact_site,B
+mapped:4064,4064,"On Drive with Piia; Ghost stories, adulting app and mental health",TAS,147.4039171,-41.8048849,exact_site,B
+mapped:4069,4069,"Spot on the map: Kilcoy, Queensland",QLD,152.561157,-26.9417175,town,B
+mapped:22,22,"Jarrahdale, Western Australia 2020",WA,116.066177,-32.3393559,locality,high
+mapped:82,82,"Creswick, Victoria 2020",VIC,143.8939669,-37.4245857,locality,high
+mapped:211,211,"Bellbird Grove, Queensland 2020",QLD,152.903316,-27.4238044,locality,high
+mapped:247,247,"Hepburn Springs, Victoria 2020",VIC,144.1467627,-37.3161925,locality,high
+mapped:359,359,"Kinbombi Falls, Queensland - 2020",QLD,152.1514665,-26.2212465,locality,high
+mapped:371,371,"Landsborough, Queensland 2020",QLD,152.9907408,-26.809659,locality,high
+mapped:581,581,"Strickland, New South Wales 2020",NSW,151.2682802,-33.8558957,locality,high
+mapped:616,616,"Wentworth Falls, New South Wales 2020",NSW,150.3740633,-33.72802,locality,high
+mapped:995,995,2020 - Coast to Coast Yowie Article 21-02-2020,QLD,153.4145987,-28.0023731,locality,medium
+mapped:996,996,2020 - Gold Coast Bulletin Yowie Article 14-02-2020,QLD,153.4145987,-28.0023731,locality,medium
+mapped:997,997,2020 - Gold Coast Bulletin Yowie Article 18-07-2020,QLD,153.4145987,-28.0023731,locality,medium
+mapped:998,998,2020 - Gold Coast Bulletin Yowie Article 25-07-2020,QLD,153.4145987,-28.0023731,locality,medium
+mapped:999,999,2020 - News Mail Yowie Article 29-11-2020,QLD,152.3516785,-24.8653253,locality,medium
+mapped:1000,1000,2020 - Stanthorpe Border Post Yowie Article 07-07-2020,QLD,151.9338265,-28.6559947,locality,medium
+mapped:1058,1058,2020 - Toowoomba Chronicle Yowie Article 07-07-2020,QLD,151.953351,-27.5610193,locality,medium
+mapped:1129,1129,2020 - Daily Mail Yowie Article 29-09-2020,QLD,144.0936324,-18.5139714,locality,medium
+mapped:1130,1130,2020- Daily Mail Yowie Article 22-07-2020,NSW,148.2346,-36.4485,locality,medium
+mapped:3993,3993,Ghost tales and grisly histories give 'haunted' buildings their scary appeal. Here's how,VIC,142.9581683,-37.2775765,exact_site,B
+mapped:3999,3999,Ghost tales and grisly histories give 'haunted' buildings their scary appeal. Here's how,NSW,151.0007621,-33.7989451,exact_site,B
+mapped:4043,4043,Meet the woman taking Tasmania's most haunted sites to the social media masses,TAS,147.0636218,-42.7854275,exact_site,B
+mapped:4044,4044,Meet the woman taking Tasmania's most haunted sites to the social media masses,TAS,145.3353375,-41.8819768,exact_site,B
+mapped:4045,4045,Meet the woman taking Tasmania's most haunted sites to the social media masses,TAS,145.5517178,-42.0777582,exact_site,B
+mapped:4046,4046,Launceston's Princess Theatre celebrates colourful history,TAS,147.1413958,-41.436237,exact_site,B
+mapped:4068,4068,Imagine being grabbed around the ankle when there's no-one else in the room. Ghosts?,TAS,147.8694003,-43.1531346,exact_site,B
+mapped:4134,4134,tortured spirit in Black Rock House tortured spirit legend,VIC,145.0212822,-37.9706564,locality,B
+mapped:4137,4137,Ava in Gaiety Theatre Ava apparition,TAS,145.3353375,-41.8819768,exact_site,B
+mapped:4138,4138,ghostly figure of a nurse in Willow Court nurse in period dress,TAS,147.0636218,-42.7854275,exact_site,B
+mapped:148,148,"Nightcap NP, New South Wales 2022",NSW,153.3506066,-28.6027032,locality,high
+mapped:212,212,"Moore Park Beach / Bundaberg, Queensland 2021",QLD,152.3516785,-24.8653253,locality,medium
+mapped:527,527,"Molong, New South Wales 2021",NSW,148.8638613,-33.0923817,locality,high
+mapped:1001,1001,2021 - Coast to Coast Radio Yowie Article 24-05-2021,QLD,153.2715593,-28.185749,locality,high
+mapped:1002,1002,2021 - Coonabarabran Times Yowie Article 05-12-2021,NSW,149.2733225,-31.2728076,locality,medium
+mapped:1003,1003,2021 - Courier Mail Yowie Article 07-02-2021,QLD,153.0235009,-27.4689623,locality,medium
+mapped:1004,1004,2021 - Daily Mail Yowie Article 22-05-2021,QLD,153.4145987,-28.0023731,locality,medium
+mapped:1005,1005,2021 - Fortean News Yowie Article 26-05-2021,QLD,153.2715593,-28.185749,locality,high
+mapped:1006,1006,2021 - Gold Coast Bulletin Yowie Article 06-02-2021,QLD,153.4145987,-28.0023731,locality,medium
+mapped:1007,1007,2021 - Gold Coast Bulletin Yowie Article 01-01-2021,QLD,153.4145987,-28.0023731,locality,medium
+mapped:1008,1008,2021 - Gold Coast Bulletin Yowie Article 06-02-2021,QLD,153.4145987,-28.0023731,locality,medium
+mapped:1009,1009,2021 - News Mail Yowie Article 12-02-2021,QLD,152.3516785,-24.8653253,locality,medium
+mapped:1010,1010,2021 - News Mail Yowie Article 11-02-2021,QLD,152.3516785,-24.8653253,locality,medium
+mapped:1011,1011,2021 - News.com Yowie Article 24-05-2021,QLD,153.4145987,-28.0023731,locality,medium
+mapped:1012,1012,2021 - Paris Match Newspaper Yowie Article - 25-05-2021,QLD,153.2715593,-28.185749,locality,high
+mapped:1013,1013,2021- 7 News / Sunrise Yowie Article 24-05-2021,QLD,153.4145987,-28.0023731,locality,medium
+mapped:1014,1014,2021- Mysterious Universe Yowie Article 25-05-2021,QLD,153.2715593,-28.185749,locality,high
+mapped:1015,1015,2021- Sydney News Today Yowie Article 23-05-2021,QLD,153.2715593,-28.185749,locality,high
+mapped:1131,1131,2021 - Daily Mail Yowie Article 16-12-2021,QLD,152.5099119,-26.701463,locality,medium
+mapped:1132,1132,2021 - The Sun UK Yowie Article 14-12-2021,QLD,152.5099119,-26.701463,locality,medium
+mapped:2693,2693,ghosts in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:2694,2694,ghost in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:2695,2695,ghost in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:2696,2696,ghosts in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:2697,2697,ghost in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:2698,2698,ghost in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:2699,2699,ghosts in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:2700,2700,ghosts in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:2701,2701,spooky in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:2702,2702,supernatural in Spooky stories from the Library,VIC,144.9652,-37.8098,exact_site,B
+mapped:3976,3976,On a hill in Junee sits Monte Christo: Australia's most haunted house,NSW,147.672675,-34.8150256,town,B
+mapped:4020,4020,Uncovering the past of one of Queensland's most haunted towns,QLD,152.7608348,-27.6160323,town,B
+mapped:4070,4070,Sighting of mythical 'Yowie' turns Queensland forest workers into believers,QLD,152.5099119,-26.701463,locality,B
+mapped:23,23,"Alcoa Wetlands, Western Australia 2022",WA,115.838423,-32.2160518,locality,high
+mapped:495,495,"Witheren, Queensland 2022",QLD,153.1877059,-28.0506572,locality,high
+mapped:507,507,"Woolooga, Queensland 2022",QLD,152.3704487,-26.0171915,locality,high
+mapped:1016,1016,2022 - 7 News Yowie Article 26-02-2022,QLD,153.2715593,-28.185749,locality,high
+mapped:1017,1017,2022 - Gold Coast Bulletin Yowie Article 22-06-2022,QLD,153.4145987,-28.0023731,locality,medium
+mapped:1018,1018,2022 - Gold Coast Bulletin Yowie Article 25-06-2022,QLD,153.4145987,-28.0023731,locality,medium
+mapped:4010,4010,"Ghosts of Castle, Settlers hotels and Old York Hospital spook and delight tourists in WA town",WA,116.7691483,-31.8889034,town,B
+mapped:4030,4030,"Ghosts of Castle, Settlers hotels and Old York Hospital spook and delight tourists in WA town",WA,116.7682163,-31.8898416,exact_site,B
+mapped:4065,4065,Gladstone Gaol caretakers hang up their keys as 'haunted' building succumbs to lack of volunteers and visitors,SA,138.3558523,-33.2617877,exact_site,B
+mapped:4076,4076,ghost in Settlers Inn Mrs Inkpen ghost,WA,116.7679705,-31.8887729,exact_site,B
+mapped:4077,4077,figures in Old York Hospital paranormal figures,WA,116.7691483,-31.8889034,town,B
+mapped:4136,4136,spirits in Fremantle Arts Centre haunted claims,WA,115.7539837,-32.0476763,exact_site,B
+mapped:83,83,"Mitta Mitta, Victoria 2023",VIC,147.3283168,-36.625397,locality,high
+mapped:213,213,"Mount Nebo, Queensland 2023",QLD,152.7790189,-27.3752485,locality,high
+mapped:1019,1019,2023 - Gold Coast Bulletin Yowie Article 01-10-2023,QLD,153.4145987,-28.0023731,locality,medium
+mapped:3986,3986,'What is ethical and appropriate?': Should ghost tours be allowed at a former Tasmanian asylum?,TAS,147.0636218,-42.7854275,exact_site,B
+mapped:4018,4018,The stories of Australia's ghosts,NSW,150.3212358,-34.5672546,locality,B
+mapped:4029,4029,The stories of Australia's ghosts,QLD,153.0235009,-27.4689623,locality,B
+mapped:4089,4089,Greenough ghost tour and sleepover,WA,114.7172748,-28.9199695,locality,B
+mapped:43,43,"Christmas Hills Reserve, Tasmania 2024",TAS,144.9947,-40.90011,locality,high
+mapped:3985,3985,Adelaide - Australia's most haunted town,SA,138.915863,-34.339951,town,B
+mapped:4049,4049,Adelaide - Australia's most haunted town,SA,138.9157143,-34.3407794,exact_site,B
+mapped:4050,4050,Thirsty ghosts haunt Port Adelaide's pubs,SA,138.5123548,-34.8342755,locality,B
+mapped:4052,4052,Haunted house sells for record price in Cowandilla,SA,138.5569406,-34.9324599,locality,B
+mapped:4091,4091,Old Zincy and other tall tales: Tasmania's weirdest urban myths,TAS,147.136768,-41.4390338,exact_site,B
+mapped:4092,4092,Old Zincy and other tall tales: Tasmania's weirdest urban myths,TAS,146.024731,-41.0945112,locality,B
+mapped:4126,4126,Lady in White in Woodford Academy Lady in White,NSW,150.4736891,-33.733114,exact_site,B
+mapped:4127,4127,Lady in Black in Woodford Academy Lady in Black,NSW,150.4736891,-33.733114,exact_site,B
+mapped:4128,4128,Mary in Old Government House Mary apparition,NSW,150.9973594,-33.8121519,exact_site,B
+mapped:4129,4129,Elsie White in Saumarez Homestead Elsie White ghost,NSW,151.6606465,-30.530062,exact_site,B
+mapped:4130,4130,little girl in Old Government House little girl by the tree,NSW,150.9973594,-33.8121519,exact_site,B
+mapped:4131,4131,cranky woman in Old Government House staircase whisper,NSW,150.9973594,-33.8121519,exact_site,B
+mapped:4132,4132,Crowther's Christmas ghost in Crowther's Christmas ghost at Spencer Street,VIC,144.9533975,-37.8191925,exact_site,B
+mapped:4135,4135,invisible man in Old Adelaide Gaol invisible man,SA,138.5848489,-34.9179424,exact_site,B
+mapped:3966,3966,Tour guide shares ghost stories and chilling experiences from Port Arthur Historic Site,TAS,147.3281233,-42.8825088,town,B
+mapped:3975,3975,Small town behind Australia's 'most haunted house' hopes next buyer will honour legacy,NSW,147.5758032,-34.8682927,exact_site,B
+mapped:3994,3994,Dark tourism on the rise in regional Australia,VIC,146.69093,-36.35165,exact_site,high
+mapped:4048,4048,Tour guide shares ghost stories and chilling experiences from Port Arthur Historic Site,TAS,147.8694003,-43.1531346,exact_site,B
+mapped:4067,4067,The 'haunted' historic houses of Tasmania's east coast,TAS,148.0757326,-42.124933,town,B
+mapped:4075,4075,Yowie in Litchfield National Park yowie speculation,NT,130.9006256,-13.2755716,named_feature,B
+mapped:4133,4133,brother's spirit in Iolanthe spirit contact in Port Phillip Bay,VIC,144.7798547,-38.1046482,named_feature,B
+mapped:4139,4139,Alice Maria King in Piermont Alice Maria King ghost story,TAS,148.0746678,-42.1541194,exact_site,B
+mapped:1134,1134,Den of Nargun,VIC,147.355978,-37.70211,named_feature,B
+mapped:1137,1137,Mitchell River National Park,VIC,147.355978,-37.70211,named_feature,B
+mapped:1141,1141,Ghost Tour - Port Arthur Historic Site,TAS,147.851265,-43.147019,named_feature,B
+mapped:1147,1147,Adelaide Gaol | Ghostly sightings,SA,138.5889,-34.9157,exact_site,B
+mapped:1148,1148,Dark Ghost Tours - Afterlife Tales of the Hobart Convict Penitentiary,TAS,147.3275,-42.8796,exact_site,B
+mapped:1149,1149,Hobart Penitentiary - Paranormal Investigation,TAS,147.3275,-42.8796,exact_site,B
+mapped:1150,1150,Ghost! What Ghosts? Night Tour at Old Melbourne Gaol,VIC,144.9653,-37.8078,exact_site,B
+mapped:1151,1151,Ghost Tours at Port Arthur - Off Season Tasmania 2026,TAS,147.851265,-43.147019,named_feature,B
+mapped:1152,1152,The ghost of Governor Fiddimont,VIC,142.9304654,-37.2786058,exact_site,C
+mapped:2711,2711,ghost in Adelaide Arcade history,SA,138.604,-34.9225,exact_site,B
+mapped:2712,2712,ghost in Adelaide Arcade history,SA,138.604,-34.9225,exact_site,B
+mapped:2713,2713,ghost in Adelaide Arcade history,SA,138.604,-34.9225,exact_site,B
+mapped:2714,2714,ghost in Adelaide Arcade history,SA,138.604,-34.9225,exact_site,B
+mapped:2715,2715,haunted in Adelaide Arcade history,SA,138.604,-34.9225,exact_site,B
+mapped:3980,3980,The spooky Aussie folklore of Fisher's Ghost,NSW,150.8167,-34.0667,town,B
+mapped:4035,4035,Frederick Carr in Ghostly sightings,SA,138.5848489,-34.9179424,exact_site,B
+mapped:4038,4038,Ben Ellis in Ghostly sightings,SA,138.5848489,-34.9179424,exact_site,B
+mapped:4041,4041,William Baker Ashton in Ghostly sightings,SA,138.5848489,-34.9179424,exact_site,B
+mapped:4080,4080,ghost in Mix 104.9 FM studios ghost,NT,130.8410469,-12.46044,town,B
+mapped:4082,4082,ghost in Dead Man's Pass tree ghost,SA,138.7521001,-34.6101243,named_feature,B
+mapped:4088,4088,Dark Ghost Tours - Afterlife Tales of the Hobart Convict Penitentiary,TAS,147.3275298,-42.8773197,exact_site,B
+mapped:4090,4090,Paranormal Nights at Old Government House,NSW,150.9973594,-33.8121519,exact_site,B
+mapped:4093,4093,Ghost Tour in Altona Homestead Ghost Tour,VIC,144.8292539,-37.8694488,exact_site,B
+mapped:4094,4094,Ghost Tour in Point Cook Homestead Ghost Tour,VIC,144.7929218,-37.9261016,exact_site,B
+mapped:4095,4095,Ghost of Kelly Steps in Ghost of Kelly Steps,TAS,147.3340274,-42.8871651,exact_site,B
+mapped:1135,1135,Ghosts? What Ghosts? - Night Tour,VIC,144.9652682,-37.8078185,exact_site,B
+mapped:1136,1136,Torchlight Tour,WA,115.7534563,-32.0553437,exact_site,B
+mapped:2850,2850,ghosts in For the Term of His Natural Life,TAS,147.8694003,-43.1531346,exact_site,high

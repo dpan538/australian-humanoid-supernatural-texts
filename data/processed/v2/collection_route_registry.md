@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T11:50:36+00:00`
+- Generated: `2026-06-22T15:29:28+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `195`
+- Routes: `235`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 65
+- `low_yield`: 101
 - `manual_only`: 1
-- `productive`: 126
+- `productive`: 130
 
 ## Stop Rule
 
@@ -215,3 +215,43 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_abc_modern_wa_tas_sa_site_units_20 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 5 | 5 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_abc_hobart_distinct_ghost_places_21 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 5 | 2 | 0 | 3 |  | Keep as probe/discovery route only |
 | sprint_abc_hobart_named_ghost_sections_22 | low_yield | Australian Broadcasting Corporation |  | 3 | 3 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_most_haunted_additional_sites_23 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_modern_underrepresented_place_units_24 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 7 | 4 | 0 | 2 |  | Keep as probe/discovery route only |
+| sprint_abc_modern_named_place_units_25 | productive | Australian Broadcasting Corporation | public_page_place_text | 6 | 6 | 0 | 0 |  | Scale productive route |
+| sprint_territory_stories_litchfield_yowie_26 | low_yield | Library & Archives NT | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_territory_stories_acacia_hills_yowie_27 | low_yield | Library & Archives NT | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_territory_stories_darwin_ambulance_ghost_28 | low_yield | St John Ambulance Australia (NT) / Library & Archives NT | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_york_wa_distinct_ghost_units_29 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_albany_spectrum_convict_ghost_30 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_territory_stories_palmerston_centre_ghost_31 | low_yield | St John Ambulance Australia (NT) / Library & Archives NT | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_territory_stories_mix1049_darwin_ghost_32 | low_yield | News Corp Australia / Library & Archives NT | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_aso_his_masters_ghost_montsalvat_33 | low_yield | National Film and Sound Archive | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_gawler_dead_mans_pass_tree_ghost_34 | low_yield | Town of Gawler Council | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_z_ward_glenside_ghost_sounds_35 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_willow_court_sarah_spirit_36 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_willow_court_doctor_spirit_37 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_willow_court_documentary_context_38 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 0 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_abc_bayview_hotel_stanley_ghost_39 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_majestic_theatre_pomona_woman_40 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_exact_public_place_wave_42 | low_yield | National Trust / Australian Broadcasting Corporation | public_page_place_text | 8 | 5 | 0 | 3 |  | Keep as probe/discovery route only |
+| sprint_exact_public_place_reviewed_snippets_43 | low_yield | National Trust / Australian Broadcasting Corporation | exact_plain_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_exact_public_place_reviewed_snippets_44 | low_yield | National Trust / Australian Broadcasting Corporation | exact_plain_text | 3 | 3 | 2 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_wa_nt_sa_tas_map_gap_wave_45 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 10 | 7 | 5 | 23 |  | Scale productive route |
+| sprint_abc_modern_undercovered_map_gap_wave_46 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 5 | 5 | 3 | 6 |  | Keep as probe/discovery route only |
+| sprint_abc_place_exact_nt_wa_gap_wave_47 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 19 | 19 | 7 | 39 |  | Scale productive route |
+| sprint_abc_place_exact_sa_tas_gap_wave_48 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 14 | 12 | 1 | 61 |  | Scale productive route |
+| sprint_abc_exact_site_map_gap_wave_49 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 8 | 5 | 0 | 87 |  | Keep as probe/discovery route only |
+| sprint_abc_curious_canberra_public_page_wave_50 | low_yield | Australian Broadcasting Corporation | public_page_place_text | 4 | 3 | 0 | 1 |  | Keep as probe/discovery route only |
+| sprint_national_trust_heritage_haunts_public_page_wave_51 | low_yield | National Trust of Australia | public_page_place_text | 11 | 0 | 0 | 11 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_national_trust_spooky_stories_nsw_wave_52 | low_yield | National Trust of Australia (NSW) | exact_plain_text | 4 | 4 | 4 | 0 |  | Keep as probe/discovery route only |
+| sprint_national_trust_spooky_stories_nsw_wave_53 | low_yield | National Trust of Australia (NSW) | exact_plain_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_modern_institutional_place_ghosts_wave_54 | low_yield | Australian Broadcasting Corporation / State Library Victoria | exact_plain_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_slv_crowther_christmas_ghost_wave_55 | low_yield | State Library Victoria | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_slv_iolanthe_spiritualist_record_wave_56 | low_yield | State Library Victoria | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_fremantle_arts_centre_wave_57 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_old_adelaide_gaol_invisible_man_wave_58 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_slv_black_rock_house_spirit_wave_59 | low_yield | State Library Victoria | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_tas_east_coast_piermont_alice_wave_60 | low_yield | Australian Broadcasting Corporation / Glamorgan Spring Bay Historical Society | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_tas_livestream_distinct_figures_wave_61 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_abc_sylvania_station_spirits_41 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 0 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_abc_sylvania_station_spirits_corrected_wave_62 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |

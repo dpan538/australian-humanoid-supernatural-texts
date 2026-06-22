@@ -1,7 +1,10 @@
 "use client";
 
 import { CSSProperties, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { RefObject } from "react";
 import Link from "next/link";
+import { createTimeline, stagger } from "animejs";
+import type { Timeline } from "animejs";
 import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
@@ -51,6 +54,48 @@ const SOURCE_TONE: Record<string, { label: string; className: string }> = {
   manual: { label: "MANUAL", className: "source-tone-manual" },
 };
 
+const SOURCE_PUBLIC_LABELS: Record<string, string> = {
+  trove_newspaper: "Historic newspapers",
+  trove_magazine: "Historic magazines",
+  nla_catalogue: "Library catalogues",
+  aiatsis_public_catalogue: "Public catalogues",
+  andc: "Research metadata",
+  academic_metadata: "Scholarly metadata",
+  internet_archive_metadata: "Archive metadata",
+  institutional_web: "Public institutions",
+  seeded_public_web: "Public web",
+  modern_web: "Modern web",
+  public_domain_ebook: "Public-domain books",
+  repository_full_text: "Repository text",
+  repository_full_text_article: "Repository articles",
+  repository_institutional_full_text: "Institutional repositories",
+  project_gutenberg_australia_book: "Public-domain books",
+  public_domain_transcribed_book: "Public-domain books",
+  wikisource_public_domain_book: "Public-domain books",
+  internet_sacred_texts_public_domain_book: "Public-domain books",
+  institutional_media_page: "Public institutions",
+  institutional_history_article: "Public institutions",
+  institutional_history_page: "Public institutions",
+  community_controlled_public_web: "Community public web",
+  google_trends: "Public attention",
+  wikimedia_pageviews: "Pageviews",
+  manual: "Manual review",
+};
+
+const NARRATIVE_TYPE_LABELS: Record<string, string> = {
+  cryptid_style_apeman: "Hairy humanoid reports",
+  encounter_account: "Encounter accounts",
+  apparition_account: "Ghost / apparition",
+  ghost_legend: "Ghost / apparition",
+  local_legend: "Local legends",
+  rumour_account: "Rumours",
+  traditional_narrative: "Traditional narratives",
+  spirit_person_narrative: "Spirit-person narratives",
+  giant_or_ogre_narrative: "Giant / ogre narratives",
+  descriptive_belief_record: "Belief records",
+  retelling_or_adaptation: "Retellings",
+};
+
 const DENSITY_CHARS = [" ", ".", ":", "+", "#"];
 const TERRAIN_SYMBOLS = {
   range: "+",
@@ -63,6 +108,49 @@ const TERRAIN_SYMBOLS = {
 } as const;
 
 type TerrainKind = keyof typeof TERRAIN_SYMBOLS;
+type DashboardLayout = "balanced" | "left-expanded" | "right-expanded";
+type ConsoleMode = "records" | "locations" | "sources";
+type ConsoleChartPoint = {
+  key: string;
+  label: string;
+  value: number;
+};
+type TimelineLayerPoint = ConsoleChartPoint & {
+  mapped: number;
+  diversity: number;
+};
+type RelationLane = "source" | "period" | "narrative" | "place";
+type RelationNode = {
+  id: string;
+  lane: RelationLane;
+  key: string;
+  label: string;
+  count: number;
+  x: number;
+  y: number;
+  relationKey: string;
+  sourceClass?: string;
+};
+type RelationEdge = {
+  key: string;
+  from: string;
+  to: string;
+  kind: "source-period" | "period-narrative" | "narrative-place";
+  count: number;
+  sourceLabel?: string;
+};
+type RelationGroup = {
+  key: string;
+  source: string;
+  periodId: string;
+  periodLabel: string;
+  narrative: string;
+  place: string;
+  count: number;
+  records: RecordItem[];
+  placeCounts: Record<string, number>;
+};
+const DASHBOARD_STATE_ORDER = ["WA", "NT", "SA", "QLD", "NSW", "VIC", "TAS", "ACT"] as const;
 
 const TERRAIN_KINDS = Object.keys(TERRAIN_SYMBOLS) as TerrainKind[];
 const TERRAIN_LABELS: Record<TerrainKind, string> = {
@@ -210,13 +298,107 @@ function truncate(value: string | null | undefined, length: number) {
   return value.length > length ? `${value.slice(0, length - 3)}...` : value;
 }
 
+function compactChartLabel(value: string, mode: ConsoleMode) {
+  if (mode === "records") {
+    const years = value.match(/\d{4}/g);
+    if (!years?.length) {
+      return value;
+    }
+    return years.length > 1 ? `${years[0]}-${years[years.length - 1].slice(2)}` : years[0];
+  }
+  if (mode === "locations") {
+    return value;
+  }
+  const words = value.replace(/[_-]+/g, " ").split(/\s+/).filter(Boolean);
+  if (words.length <= 1) {
+    return truncate(value, 8);
+  }
+  return words.slice(0, 2).map((word) => word.slice(0, 4)).join(" ");
+}
+
+function relationKey(source: string, periodId: string, narrative: string) {
+  return `${source}::${periodId}::${narrative}`;
+}
+
+function recordPeriod(data: FrontendData, record: RecordItem) {
+  const band = data.date_bands.find((item) => item.id === record.date_band);
+  return {
+    id: record.date_band || "undated",
+    label: band?.label ?? "Undated",
+  };
+}
+
+function recordRelationParts(data: FrontendData, record: RecordItem) {
+  const period = recordPeriod(data, record);
+  const source = publicSourceLabel(record.source_type);
+  const narrative = narrativeGroupLabel(record);
+  const place = record.state_territory || "Broad / unmapped";
+  return {
+    source,
+    periodId: period.id,
+    periodLabel: period.label,
+    narrative,
+    place,
+    key: relationKey(source, period.id, narrative),
+  };
+}
+
+function sourceGraphClass(label: string) {
+  const normalized = label.toLowerCase();
+  if (/repository|institutional/.test(normalized)) {
+    return "source-repository";
+  }
+  if (/public-domain|book|gutenberg/.test(normalized)) {
+    return "source-public-domain";
+  }
+  if (/modern|web/.test(normalized)) {
+    return "source-modern-web";
+  }
+  if (/academic|scholarly|metadata|catalogue/.test(normalized)) {
+    return "source-academic";
+  }
+  if (/community/.test(normalized)) {
+    return "source-community";
+  }
+  return "source-other";
+}
+
+function sourceGraphColor(label: string) {
+  const sourceClass = sourceGraphClass(label);
+  if (sourceClass === "source-repository" || sourceClass === "source-public-domain") {
+    return "#69d7d0";
+  }
+  if (sourceClass === "source-academic") {
+    return "#9580cf";
+  }
+  if (sourceClass === "source-community") {
+    return "#d6a650";
+  }
+  if (sourceClass === "source-modern-web") {
+    return "#eceae2";
+  }
+  return "rgba(236, 234, 226, 0.72)";
+}
+
+function relationPath(from: RelationNode | undefined, to: RelationNode | undefined) {
+  if (!from || !to) {
+    return "";
+  }
+  const startX = from.x + 56;
+  const startY = from.y;
+  const endX = to.x - 56;
+  const endY = to.y;
+  const control = (startX + endX) / 2;
+  return `M ${startX} ${startY} C ${control} ${startY}, ${control} ${endY}, ${endX} ${endY}`;
+}
+
 function entriesDescending(values: Record<string, number>, limit?: number) {
   const entries = Object.entries(values).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
   return limit ? entries.slice(0, limit) : entries;
 }
 
 function conicGradient(values: Record<string, number>) {
-  const palette = ["#f2f2ed", "#a7ff63", "#8ed8ff", "#d7d0c6", "#7f858a", "#5f9361", "#b0b7bc", "#2f3031"];
+  const palette = ["#f2f2ed", "#9fe36b", "#8ed8ff", "#d9a854", "#9480cf", "#7f858a", "#4b4f50"];
   const entries = entriesDescending(values);
   const total = entries.reduce((sum, [, value]) => sum + value, 0) || 1;
   let cursor = 0;
@@ -303,7 +485,7 @@ function createFrontendDerivedData(data: FrontendData): FrontendDerivedData {
     firstRecordByDateBand,
     dateBandActualCounts,
     sourceRows: Object.entries(data.summary.source_rollup).sort(
-      (a, b) => b[1].query_count - a[1].query_count || b[1].record_count - a[1].record_count,
+      (a, b) => b[1].record_count - a[1].record_count || a[0].localeCompare(b[0]),
     ),
     ethicsRows: entriesDescending(data.summary.ethics_counts),
     dashboardTracks: dashboardTrackSample(data),
@@ -1142,151 +1324,691 @@ function DashboardView({
   derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
+  const rootRef = useRef<HTMLDivElement | null>(null);
+  const [layout, setLayout] = useState<DashboardLayout>("balanced");
+
+  useDashboardLayoutMotion(rootRef, layout);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setLayout("balanced");
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root || typeof ResizeObserver === "undefined") {
+      return;
+    }
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const target = entry.target as HTMLElement;
+        target.style.setProperty("--dashboard-panel-width", `${Math.round(entry.contentRect.width)}px`);
+      }
+    });
+    root.querySelectorAll<HTMLElement>(".dashboard-track-network, .dashboard-console").forEach((panel) => observer.observe(panel));
+    return () => observer.disconnect();
+  }, []);
+
+  const toggleLayout = useCallback((side: "left" | "right") => {
+    setLayout((current) => {
+      const next: DashboardLayout = side === "left" ? "left-expanded" : "right-expanded";
+      return current === next ? "balanced" : next;
+    });
+  }, []);
+
   return (
-    <div className="dashboard-view">
-      <DashboardTrackNetwork data={data} derived={derived} onSelectRecord={onSelectRecord} />
-      <DashboardControlConsole data={data} derived={derived} />
+    <div ref={rootRef} className="dashboard-view" data-dashboard-layout={layout}>
+      <DashboardTrackNetwork
+        data={data}
+        derived={derived}
+        layout={layout}
+        onToggle={() => toggleLayout("left")}
+        onSelectRecord={onSelectRecord}
+      />
+      <DashboardControlConsole
+        data={data}
+        derived={derived}
+        layout={layout}
+        onToggle={() => toggleLayout("right")}
+      />
     </div>
   );
+}
+
+function DashboardExpandButton({
+  side,
+  expanded,
+  onToggle,
+}: {
+  side: "left" | "right";
+  expanded: boolean;
+  onToggle: () => void;
+}) {
+  const title = side === "left" ? "record network" : "corpus console";
+  const glyph = expanded ? "×" : side === "left" ? ">" : "<";
+
+  return (
+    <button
+      className={`dashboard-expand-control dashboard-expand-${side}`}
+      type="button"
+      aria-expanded={expanded}
+      aria-label={expanded ? `Collapse ${title}` : `Expand ${title}`}
+      onClick={(event) => {
+        event.stopPropagation();
+        onToggle();
+      }}
+    >
+      {glyph}
+    </button>
+  );
+}
+
+const DASHBOARD_LAYOUT_TARGETS: Record<DashboardLayout, { left: string; right: string }> = {
+  balanced: { left: "54%", right: "46%" },
+  "left-expanded": { left: "74%", right: "26%" },
+  "right-expanded": { left: "26%", right: "74%" },
+};
+
+function useDashboardLayoutMotion(rootRef: RefObject<HTMLDivElement | null>, layout: DashboardLayout) {
+  const reducedMotion = usePrefersReducedMotion();
+  const timelineRef = useRef<Timeline | null>(null);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) {
+      return;
+    }
+    const leftPanel = root.querySelector<HTMLElement>('[data-dashboard-panel="left"]');
+    const rightPanel = root.querySelector<HTMLElement>('[data-dashboard-panel="right"]');
+    if (!leftPanel || !rightPanel) {
+      return;
+    }
+
+    timelineRef.current?.cancel();
+    timelineRef.current = null;
+
+    const target = DASHBOARD_LAYOUT_TARGETS[layout];
+    if (reducedMotion) {
+      leftPanel.style.flexBasis = target.left;
+      rightPanel.style.flexBasis = target.right;
+      resetDashboardMotion(root);
+      return;
+    }
+
+    prepareDashboardDrawPaths(root);
+
+    const timeline = createTimeline({
+      defaults: {
+        ease: "inOutCubic",
+        composition: "replace",
+      },
+    });
+
+    timeline
+      .add(leftPanel, { flexBasis: target.left, duration: layout === "balanced" ? 380 : 520 }, 0)
+      .add(rightPanel, { flexBasis: target.right, duration: layout === "balanced" ? 380 : 520 }, 0)
+      .add(root.querySelectorAll(".dashboard-draw-path, .console-polyline polyline"), { strokeDashoffset: 0, duration: 860, delay: stagger(22) }, 120)
+      .add(root.querySelectorAll(".network-slot-label, .track-row small, .console-effect-grid span, .source-wheel-list span"), {
+        opacity: [0, 1],
+        translateY: [4, 0],
+        duration: 420,
+        delay: stagger(22),
+      }, 180)
+      .add(root.querySelectorAll(".dashboard-highlight-point"), {
+        filter: [
+          "drop-shadow(0 0 0 rgba(159, 227, 107, 0))",
+          "drop-shadow(0 0 10px rgba(159, 227, 107, .58))",
+          "drop-shadow(0 0 2px rgba(159, 227, 107, .2))",
+        ],
+        duration: 420,
+        delay: stagger(90),
+      }, 620);
+
+    timelineRef.current = timeline;
+
+    return () => {
+      timeline.cancel();
+    };
+  }, [layout, reducedMotion, rootRef]);
+
+  useEffect(() => {
+    return () => {
+      timelineRef.current?.cancel();
+      timelineRef.current = null;
+    };
+  }, []);
+}
+
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  return reduced;
+}
+
+function prepareDashboardDrawPaths(root: HTMLElement) {
+  root.querySelectorAll<SVGGeometryElement>(".dashboard-draw-path, .console-polyline polyline").forEach((path) => {
+    const length = Math.max(1, path.getTotalLength());
+    path.style.strokeDasharray = String(length);
+    path.style.strokeDashoffset = String(length);
+  });
+}
+
+function resetDashboardMotion(root: HTMLElement) {
+  root.querySelectorAll<SVGGeometryElement>(".dashboard-draw-path, .console-polyline polyline").forEach((path) => {
+    path.style.strokeDasharray = "";
+    path.style.strokeDashoffset = "";
+  });
+  root.querySelectorAll<HTMLElement>(".network-slot-label, .track-row small, .console-effect-grid span, .source-wheel-list span").forEach((element) => {
+    element.style.opacity = "";
+    element.style.transform = "";
+  });
 }
 
 function DashboardTrackNetwork({
   data,
   derived,
+  layout,
+  onToggle,
   onSelectRecord,
 }: {
   data: FrontendData;
   derived: FrontendDerivedData;
+  layout: DashboardLayout;
+  onToggle: () => void;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const tracks = derived.dashboardTracks;
-  const nodes = tracks.map((record, index) => ({
-    record,
-    x: index % 3 === 0 ? 58 : index % 3 === 1 ? 174 : 274,
-    y: 74 + index * 27,
-    tx: 446,
-    ty: 132 + index * 23,
-  }));
+  const expanded = layout === "left-expanded";
+  const contracted = layout === "right-expanded";
+  const [activeTrackIndex, setActiveTrackIndex] = useState<number | null>(null);
+  const [hoverRelationKey, setHoverRelationKey] = useState<string | null>(null);
+  const [lockedRelationKey, setLockedRelationKey] = useState<string | null>(null);
+  const graph = useMemo(() => {
+    const records = data.records;
+    const relationMap = new Map<string, RelationGroup>();
+    const sourceCounts: Record<string, number> = {};
+    const periodCounts: Record<string, number> = {};
+    const narrativeCounts: Record<string, number> = {};
+    const placeCounts: Record<string, number> = {};
+    const recordRelationKeys = new Map<number, string>();
+
+    for (const record of records) {
+      const parts = recordRelationParts(data, record);
+      sourceCounts[parts.source] = (sourceCounts[parts.source] ?? 0) + 1;
+      periodCounts[parts.periodId] = (periodCounts[parts.periodId] ?? 0) + 1;
+      narrativeCounts[parts.narrative] = (narrativeCounts[parts.narrative] ?? 0) + 1;
+      placeCounts[parts.place] = (placeCounts[parts.place] ?? 0) + 1;
+      recordRelationKeys.set(record.record_id, parts.key);
+
+      const existing = relationMap.get(parts.key);
+      if (existing) {
+        existing.records.push(record);
+        existing.count += 1;
+        existing.placeCounts[parts.place] = (existing.placeCounts[parts.place] ?? 0) + 1;
+      } else {
+        relationMap.set(parts.key, {
+          key: parts.key,
+          source: parts.source,
+          periodId: parts.periodId,
+          periodLabel: parts.periodLabel,
+          narrative: parts.narrative,
+          place: parts.place,
+          count: 1,
+          records: [record],
+          placeCounts: { [parts.place]: 1 },
+        });
+      }
+    }
+
+    const relations = [...relationMap.values()]
+      .map((relation) => {
+        relation.records.sort(
+          (a, b) =>
+            (a.year ?? 9999) - (b.year ?? 9999) ||
+            (a.publication || a.source_name || "").localeCompare(b.publication || b.source_name || "") ||
+            (a.title || "").localeCompare(b.title || ""),
+        );
+        const topPlace = entriesDescending(relation.placeCounts, 1)[0]?.[0] ?? relation.place;
+        return { ...relation, place: topPlace };
+      })
+      .sort((a, b) => b.count - a.count || a.source.localeCompare(b.source) || a.periodLabel.localeCompare(b.periodLabel));
+
+    const strongestRelationFor = (predicate: (relation: RelationGroup) => boolean) => relations.find(predicate)?.key ?? relations[0]?.key ?? "";
+    const laneX: Record<RelationLane, number> = {
+      source: expanded ? 104 : 92,
+      period: expanded ? 282 : 266,
+      narrative: expanded ? 464 : 454,
+      place: expanded ? 642 : 628,
+    };
+    const laneY = (index: number, total: number) => {
+      const min = expanded ? 76 : 84;
+      const max = expanded ? 396 : 382;
+      return total <= 1 ? (min + max) / 2 : min + (index / (total - 1)) * (max - min);
+    };
+    const sourceEntries = entriesDescending(sourceCounts, expanded ? 7 : 5);
+    const periodEntries = data.date_bands.map((band) => [band.id, periodCounts[band.id] ?? 0, band.label] as const);
+    const narrativeEntries = entriesDescending(narrativeCounts, expanded ? 8 : 6);
+    const orderedPlaceEntries = DASHBOARD_STATE_ORDER.map((state) => [state, placeCounts[state] ?? 0] as const)
+      .filter(([, value]) => value > 0)
+      .sort((a, b) => b[1] - a[1]);
+    const broadPlace = placeCounts["Broad / unmapped"] ? [["Broad / unmapped", placeCounts["Broad / unmapped"]] as const] : [];
+    const placeEntries = [...orderedPlaceEntries, ...broadPlace].slice(0, expanded ? 8 : 5);
+    const nodes: RelationNode[] = [
+      ...sourceEntries.map(([label, count], index) => ({
+        id: `source:${label}`,
+        lane: "source" as const,
+        key: label,
+        label,
+        count,
+        x: laneX.source,
+        y: laneY(index, sourceEntries.length),
+        relationKey: strongestRelationFor((relation) => relation.source === label),
+        sourceClass: sourceGraphClass(label),
+      })),
+      ...periodEntries.map(([id, count, label], index) => ({
+        id: `period:${id}`,
+        lane: "period" as const,
+        key: id,
+        label,
+        count,
+        x: laneX.period,
+        y: laneY(index, periodEntries.length),
+        relationKey: strongestRelationFor((relation) => relation.periodId === id),
+      })),
+      ...narrativeEntries.map(([label, count], index) => ({
+        id: `narrative:${label}`,
+        lane: "narrative" as const,
+        key: label,
+        label,
+        count,
+        x: laneX.narrative,
+        y: laneY(index, narrativeEntries.length),
+        relationKey: strongestRelationFor((relation) => relation.narrative === label),
+      })),
+      ...placeEntries.map(([label, count], index) => ({
+        id: `place:${label}`,
+        lane: "place" as const,
+        key: label,
+        label,
+        count,
+        x: laneX.place,
+        y: laneY(index, placeEntries.length),
+        relationKey: strongestRelationFor((relation) => relation.place === label || Boolean(relation.placeCounts[label])),
+      })),
+    ];
+    const nodeById = new Map(nodes.map((node) => [node.id, node]));
+    const edgeCounts = new Map<string, RelationEdge>();
+    const bumpEdge = (from: string, to: string, kind: RelationEdge["kind"], sourceLabel?: string) => {
+      if (!nodeById.has(from) || !nodeById.has(to)) {
+        return;
+      }
+      const key = `${kind}:${from}->${to}`;
+      const edge = edgeCounts.get(key);
+      if (edge) {
+        edge.count += 1;
+      } else {
+        edgeCounts.set(key, { key, from, to, kind, count: 1, sourceLabel });
+      }
+    };
+
+    for (const record of records) {
+      const parts = recordRelationParts(data, record);
+      bumpEdge(`source:${parts.source}`, `period:${parts.periodId}`, "source-period", parts.source);
+      bumpEdge(`period:${parts.periodId}`, `narrative:${parts.narrative}`, "period-narrative");
+      bumpEdge(`narrative:${parts.narrative}`, `place:${parts.place}`, "narrative-place");
+    }
+
+    return {
+      relations,
+      nodes,
+      nodeById,
+      edges: [...edgeCounts.values()],
+      recordRelationKeys,
+    };
+  }, [data, expanded]);
+  const activeRelationKey = lockedRelationKey || hoverRelationKey || graph.relations[0]?.key || "";
+  const activeRelation = graph.relations.find((relation) => relation.key === activeRelationKey) ?? graph.relations[0];
+  const activeNodeIds = activeRelation
+    ? new Set([
+        `source:${activeRelation.source}`,
+        `period:${activeRelation.periodId}`,
+        `narrative:${activeRelation.narrative}`,
+        `place:${activeRelation.place}`,
+      ])
+    : new Set<string>();
+  const visibleTracks = activeRelation?.records.slice(0, expanded ? 30 : 14) ?? dashboardTrackSample(data, expanded ? 30 : 14);
+  const relationTitle = activeRelation
+    ? `${activeRelation.source} / ${activeRelation.periodLabel} / ${activeRelation.narrative}`
+    : "Representative public relations";
+  const setHoverRelation = (key: string | null) => {
+    if (!lockedRelationKey) {
+      setHoverRelationKey(key);
+    }
+  };
 
   return (
-    <section className="dashboard-track-network dash-hover-zone" aria-label="Record network and track list">
+    <section
+      className={`dashboard-track-network dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
+      data-dashboard-panel="left"
+      aria-label="Record network and track list"
+    >
+      <DashboardExpandButton side="left" expanded={expanded} onToggle={onToggle} />
       <svg className="network-svg" viewBox="0 0 760 520" role="img" aria-label="Archive record signal network">
-        <path className="corner-mark top-left" d="M136 28 h-18 v18 M136 28 v-24" />
-        <path className="corner-mark top-right" d="M596 28 h18 v18 M596 28 v-24" />
-        <path className="corner-mark bottom-left" d="M136 492 h-18 v-18 M136 492 v24" />
-        <path className="corner-mark bottom-right" d="M596 492 h18 v-18 M596 492 v24" />
-        <rect className="network-wave-box" x="250" y="70" width="146" height="132" />
-        {["0A", "0B", "0C", "0D", "0E"].map((pass, passIndex) => (
-          <g key={pass} transform={`translate(262 ${84 + passIndex * 23})`}>
-            <text className="network-micro-text" x="0" y="8">
-              PASS/{pass}
-            </text>
-            {Array.from({ length: 42 }).map((_, barIndex) => {
-              const source = tracks[(barIndex + passIndex) % Math.max(tracks.length, 1)];
-              const height = 2 + (((source?.year ?? 1800) + barIndex * 7) % 17);
-              return <rect key={barIndex} className="network-wave-bar" x={50 + barIndex * 2.1} y={18 - height} width="1.1" height={height} />;
+        <path className="corner-mark top-left" d="M72 34 h-20 v20 M72 34 v-22" />
+        <path className="corner-mark top-right" d="M690 34 h20 v20 M690 34 v-22" />
+        <path className="corner-mark bottom-left" d="M72 486 h-20 v-20 M72 486 v22" />
+        <path className="corner-mark bottom-right" d="M690 486 h20 v-20 M690 486 v22" />
+        <rect className="network-wave-box network-field-box" x="42" y="58" width="676" height="396" />
+        {(["source", "period", "narrative", "place"] as RelationLane[]).map((lane) => {
+          const node = graph.nodes.find((item) => item.lane === lane);
+          return (
+            <g className={`relation-lane relation-lane-${lane}`} key={lane}>
+              <line x1={node?.x ?? 0} x2={node?.x ?? 0} y1="62" y2="444" />
+              <text x={(node?.x ?? 0) - 52} y="48">{lane.toUpperCase()}</text>
+            </g>
+          );
+        })}
+        {graph.edges.map((edge) => {
+          const from = graph.nodeById.get(edge.from);
+          const to = graph.nodeById.get(edge.to);
+          const path = relationPath(from, to);
+          const isActive =
+            activeRelation
+            && ((edge.kind === "source-period" && edge.from === `source:${activeRelation.source}` && edge.to === `period:${activeRelation.periodId}`)
+              || (edge.kind === "period-narrative" && edge.from === `period:${activeRelation.periodId}` && edge.to === `narrative:${activeRelation.narrative}`)
+              || (edge.kind === "narrative-place" && edge.from === `narrative:${activeRelation.narrative}` && edge.to === `place:${activeRelation.place}`));
+          const isRelated = activeNodeIds.has(edge.from) || activeNodeIds.has(edge.to);
+          return (
+            <path
+              className={`relation-edge relation-edge-${edge.kind} ${sourceGraphClass(edge.sourceLabel ?? "")}${isActive ? " is-active" : isRelated ? " is-related" : ""} dashboard-draw-path`}
+              d={path}
+              key={edge.key}
+              style={{ "--edge-weight": String(Math.min(2.4, 0.7 + Math.sqrt(edge.count) / 18)) } as CSSProperties}
+            />
+          );
+        })}
+        {activeRelation ? (
+          <g className="relation-active-path">
+            {[
+              [`source:${activeRelation.source}`, `period:${activeRelation.periodId}`],
+              [`period:${activeRelation.periodId}`, `narrative:${activeRelation.narrative}`],
+              [`narrative:${activeRelation.narrative}`, `place:${activeRelation.place}`],
+            ].map(([from, to]) => {
+              const path = relationPath(graph.nodeById.get(from), graph.nodeById.get(to));
+              return path ? <path className="relation-edge-halo" d={path} key={`${from}-${to}`} /> : null;
             })}
           </g>
-        ))}
-        <rect className="network-average" x="220" y="248" width="186" height="56" />
-        <text className="network-micro-text" x="228" y="266">
-          AVERAGE
-        </text>
-        <text className="network-micro-text" x="228" y="292">
-          TOTAL TIME: {data.summary.earliest_year}-{data.summary.latest_year}
-        </text>
-        {nodes.map((node, index) => (
-          <g key={`line-${node.record.record_id}`}>
-            <line className="network-wire" x1={node.x + 32} y1={node.y + 8} x2={318} y2={276} />
-            <line className="network-wire pale" x1={318} y1={276} x2={node.tx - 16} y2={node.ty} />
-            {index % 4 === 0 ? <line className="network-wire long" x1={node.x + 20} y1={node.y + 8} x2={48 + index * 8} y2={438 - index * 11} /> : null}
-          </g>
-        ))}
-        {nodes.map((node) => (
+        ) : null}
+        {graph.nodes.map((node) => (
           <g
-            key={node.record.record_id}
-            className="network-record-target"
-            onClick={() => onSelectRecord(node.record)}
+            key={node.id}
+            className={`relation-node relation-node-${node.lane} ${node.sourceClass ?? ""}${activeNodeIds.has(node.id) ? " is-active" : ""}`}
+            onMouseEnter={() => setHoverRelation(node.relationKey)}
+            onMouseLeave={() => setHoverRelation(null)}
+            onFocus={() => setHoverRelation(node.relationKey)}
+            onBlur={() => setHoverRelation(null)}
+            onClick={() => setLockedRelationKey((current) => current === node.relationKey ? null : node.relationKey)}
             onKeyDown={(event) => {
               if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault();
-                onSelectRecord(node.record);
+                setLockedRelationKey((current) => current === node.relationKey ? null : node.relationKey);
               }
             }}
             role="button"
             tabIndex={0}
-            aria-label={`Open record ${node.record.title ?? node.record.record_id}`}
+            aria-label={`${node.lane} node ${node.label}, ${node.count} records`}
           >
-            <rect className="network-slot" x={node.x} y={node.y} width="52" height="15" />
-            <rect className="network-slot-fill" x={node.x + 8} y={node.y + 4} width="33" height="7" />
-            <circle className="network-dot" cx={node.x - 8} cy={node.y + 8} r="3" />
-            <text className="network-slot-label" x={node.x + 58} y={node.y + 11}>
-              SLOT_{String(node.record.record_id).padStart(2, "0")}
+            <rect className="relation-node-hitbox" x={node.x - 68} y={node.y - 18} width="136" height="36" />
+            <circle className="relation-node-anchor" cx={node.x - 62} cy={node.y} r="3.5" />
+            <rect className="relation-node-box" x={node.x - 54} y={node.y - 15} width="108" height="30" />
+            <text className="relation-node-label" x={node.x - 48} y={node.y - 2}>
+              {truncate(node.label, expanded ? 19 : 13)}
+            </text>
+            <text className="relation-node-count" x={node.x - 48} y={node.y + 10}>
+              {numberFormat(node.count)}
             </text>
           </g>
         ))}
-        <circle className="network-big-dot" cx="382" cy="448" r="8" />
-        <rect className="network-bottom-mark" x="402" y="443" width="9" height="9" />
-        <rect className="network-bottom-mark" x="548" y="446" width="7" height="7" />
+        <g className="relation-style-legend">
+          <text x="54" y="474">SOURCE STYLE</text>
+          <line className="source-repository" x1="154" y1="471" x2="190" y2="471" />
+          <text x="196" y="474">repository</text>
+          <line className="source-public-domain" x1="294" y1="471" x2="330" y2="471" />
+          <text x="336" y="474">public-domain</text>
+          <line className="source-modern-web" x1="468" y1="471" x2="504" y2="471" />
+          <text x="510" y="474">modern web</text>
+          <line className="source-academic" x1="616" y1="471" x2="652" y2="471" />
+          <text x="658" y="474">academic</text>
+        </g>
       </svg>
+      <div className="mobile-track-snapshot" aria-label="Compact track relation preview">
+        <div className="mobile-track-snapshot-header">
+          <b>TRACKS</b>
+          <span>{truncate(relationTitle, 46)}</span>
+          <small>{numberFormat(activeRelation?.count ?? visibleTracks.length)} records · ordered by year</small>
+        </div>
+        <div className="mobile-track-snapshot-field">
+          <svg viewBox="0 0 320 250" aria-hidden="true">
+            <path className="mobile-snapshot-frame" d="M12 18 h44 v-10 M12 18 v36 M308 232 h-44 v10 M308 232 v-36" />
+            <circle className="mobile-snapshot-core" cx="82" cy="126" r="5" />
+            {visibleTracks.slice(0, 6).map((record, index) => {
+              const y = 38 + index * 34;
+              const parts = recordRelationParts(data, record);
+              return (
+                <path
+                  className={`mobile-snapshot-wire ${sourceGraphClass(parts.source)}`}
+                  d={`M86 126 C128 ${80 + index * 7}, 144 ${y}, 184 ${y}`}
+                  key={record.record_id}
+                />
+              );
+            })}
+          </svg>
+          <div className="mobile-track-notes">
+            {visibleTracks.slice(0, 6).map((record, index) => {
+              const parts = recordRelationParts(data, record);
+              const relation = graph.recordRelationKeys.get(record.record_id) ?? parts.key;
+              return (
+                <button
+                  className="mobile-track-note"
+                  key={record.record_id}
+                  type="button"
+                  style={{ "--track-source-color": sourceGraphColor(parts.source) } as CSSProperties}
+                  title={`${dashboardTrackTitle(record, 84)} / ${dashboardTrackMeta(record)}`}
+                  onMouseEnter={() => {
+                    setActiveTrackIndex(index);
+                    setHoverRelation(relation);
+                  }}
+                  onMouseLeave={() => {
+                    setActiveTrackIndex(null);
+                    setHoverRelation(null);
+                  }}
+                  onFocus={() => {
+                    setActiveTrackIndex(index);
+                    setHoverRelation(relation);
+                  }}
+                  onBlur={() => {
+                    setActiveTrackIndex(null);
+                    setHoverRelation(null);
+                  }}
+                  onClick={() => {
+                    setLockedRelationKey(relation);
+                    onSelectRecord(record);
+                  }}
+                >
+                  <b>{String(index + 1).padStart(2, "0")}.</b>
+                  <span>{dashboardTrackTitle(record, 30)}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
       <div className="track-list">
-        <span>TRACKS</span>
-        {tracks.map((record, index) => (
-          <button className="track-row" key={record.record_id} type="button" onClick={() => onSelectRecord(record)}>
-            <b>{String(index + 1).padStart(2, "0")}.</b>
-            <i>{dashboardTrackLabel(record)}</i>
-          </button>
-        ))}
+        <div className="track-list-header">
+          <span>TRACKS · {truncate(relationTitle, expanded ? 82 : 30)}</span>
+          {lockedRelationKey ? <button type="button" onClick={() => setLockedRelationKey(null)}>CLEAR</button> : null}
+          <small>{numberFormat(activeRelation?.count ?? visibleTracks.length)} records · ordered by year / source / title</small>
+        </div>
+        <div className="track-list-rows">
+          {visibleTracks.map((record, index) => {
+            const parts = recordRelationParts(data, record);
+            const relation = graph.recordRelationKeys.get(record.record_id) ?? parts.key;
+            return (
+              <button
+                className={`track-row${activeTrackIndex === index ? " is-active" : ""}`}
+                key={record.record_id}
+                type="button"
+                style={{ "--track-source-color": sourceGraphColor(parts.source) } as CSSProperties}
+                title={`${dashboardTrackTitle(record, 84)} / ${dashboardTrackMeta(record)} / ${parts.narrative}`}
+                aria-label={`Open record ${String(index + 1).padStart(2, "0")}: ${dashboardTrackTitle(record, 84)}. ${dashboardTrackMeta(record)}. ${parts.narrative}.`}
+                onMouseEnter={() => {
+                  setActiveTrackIndex(index);
+                  setHoverRelation(relation);
+                }}
+                onMouseLeave={() => {
+                  setActiveTrackIndex(null);
+                  setHoverRelation(null);
+                }}
+                onFocus={() => {
+                  setActiveTrackIndex(index);
+                  setHoverRelation(relation);
+                }}
+                onBlur={() => {
+                  setActiveTrackIndex(null);
+                  setHoverRelation(null);
+                }}
+                onClick={() => {
+                  setLockedRelationKey(relation);
+                  onSelectRecord(record);
+                }}
+              >
+                <b>{String(index + 1).padStart(2, "0")}.</b>
+                <i>
+                  <span>{dashboardTrackTitle(record, expanded ? 64 : 26)}</span>
+                  <small>{dashboardTrackMeta(record)} / {parts.narrative}</small>
+                </i>
+              </button>
+            );
+          })}
+        </div>
       </div>
       <div className="network-footer">
         <span>PUBLIC DATA FIELD</span>
         <span>{data.summary.record_count} RECORDS</span>
-        <span>{data.summary.query_count} QUERIES</span>
+        <span>{derived.mapFlags.length} MAPPED</span>
       </div>
     </section>
   );
 }
 
-function DashboardControlConsole({ data, derived }: { data: FrontendData; derived: FrontendDerivedData }) {
-  const [mode, setMode] = useState<"records" | "locations" | "queries">("queries");
-  const queryTypes = derived.queryTypeCounts;
-  const stateCounts = data.summary.corpus_state_counts ?? data.summary.state_record_counts;
-  const mappedStateCounts = derived.mappedStateCounts;
-  const figureCounts = derived.figureCounts;
-  const sourceRows = derived.sourceRows.slice(0, 6);
+function DashboardControlConsole({
+  data,
+  derived,
+  layout,
+  onToggle,
+}: {
+  data: FrontendData;
+  derived: FrontendDerivedData;
+  layout: DashboardLayout;
+  onToggle: () => void;
+}) {
+  const [mode, setMode] = useState<ConsoleMode>("sources");
+  const expanded = layout === "right-expanded";
+  const contracted = layout === "left-expanded";
+  const [selectedBandId, setSelectedBandId] = useState<string>("all");
+  const selectedBand = data.date_bands.find((band) => band.id === selectedBandId) ?? null;
+  const scopedRecords = useMemo(
+    () => (selectedBand ? data.records.filter((record) => record.date_band === selectedBand.id) : data.records),
+    [data.records, selectedBand],
+  );
+  const scopedMapFlags = useMemo(
+    () => (selectedBand ? derived.mapFlags.filter((flag) => flag.record.date_band === selectedBand.id) : derived.mapFlags),
+    [derived.mapFlags, selectedBand],
+  );
+  const scopedFigureCounts = useMemo(
+    () => countRecordValues(scopedRecords, (record) => narrativeGroupLabel(record)),
+    [scopedRecords],
+  );
+  const scopedSourceTypeCounts = useMemo(
+    () => countRecordValues(scopedRecords, (record) => publicSourceLabel(record.source_type)),
+    [scopedRecords],
+  );
+  const scopedStateCounts = useMemo(
+    () => countRecordValues(scopedRecords, (record) => record.state_territory || "Unmapped"),
+    [scopedRecords],
+  );
+  const scopedMappedStateCounts = useMemo(
+    () => scopedMapFlags.reduce<Record<string, number>>((acc, flag) => {
+      acc[flag.state_territory] = (acc[flag.state_territory] ?? 0) + 1;
+      return acc;
+    }, {}),
+    [scopedMapFlags],
+  );
+  const scopedRecordsByYear = useMemo(() => recordsByYear(scopedRecords), [scopedRecords]);
+  const timelineLayers = useMemo(() => buildTimelineLayerPoints(scopedRecords, scopedMapFlags, expanded ? 28 : 18), [expanded, scopedMapFlags, scopedRecords]);
+  const sourceFamilyRows = entriesDescending(scopedSourceTypeCounts, 6);
   const activeValues =
-    mode === "records" ? figureCounts : mode === "locations" ? mappedStateCounts : queryTypes;
+    mode === "records" ? scopedFigureCounts : mode === "locations" ? scopedMappedStateCounts : scopedSourceTypeCounts;
+  const chartPoints = useMemo(
+    () =>
+      buildConsoleChartPoints({
+        mode,
+        recordsByYear: scopedRecordsByYear,
+        timelineLayers,
+        sourceCounts: scopedSourceTypeCounts,
+        stateEntries: DASHBOARD_STATE_ORDER.map((state) => [state, mode === "locations" ? scopedMappedStateCounts[state] ?? 0 : scopedStateCounts[state] ?? 0] as const),
+        limit: expanded ? 28 : 18,
+      }),
+    [expanded, mode, scopedMappedStateCounts, scopedRecordsByYear, scopedSourceTypeCounts, scopedStateCounts, timelineLayers],
+  );
   const activeTabs = [
     { id: "records" as const, label: "RECORDS" },
     { id: "locations" as const, label: "GEO FIELD" },
-    { id: "queries" as const, label: "QUERY FIELD" },
+    { id: "sources" as const, label: "SOURCE FIELD" },
   ];
+  const topSource = sourceFamilyRows[0];
   const topMetrics =
     mode === "records"
       ? [
-          ["CARD READY", data.summary.record_count],
-          ["FIGURES", data.summary.figure_count],
+          ["CARD READY", scopedRecords.length],
+          ["FIGURES", Object.keys(scopedFigureCounts).length],
         ]
       : mode === "locations"
         ? [
-            ["MAPPED", derived.mapFlags.length],
-            ["BROAD", data.summary.broad_location_count],
+            ["MAPPED", scopedMapFlags.length],
+            ["BROAD", Math.max(0, scopedRecords.length - scopedMapFlags.length)],
           ]
         : [
-            ["QUERIES", data.summary.query_count],
-            ["EXACT", queryTypes.exact_phrase ?? 0],
+            ["SOURCE TYPES", Object.keys(scopedSourceTypeCounts).length],
+            ["TOP FAMILY", topSource?.[1] ?? 0],
           ];
   const outputValues = [
-    { id: "records" as const, value: data.summary.record_count, label: "Card-ready records" },
-    { id: "locations" as const, value: derived.mapFlags.length, label: "Mapped records" },
-    { id: "queries" as const, value: data.summary.query_count, label: "Planned queries" },
+    { id: "records" as const, value: scopedRecords.length, label: "Card-ready records" },
+    { id: "locations" as const, value: scopedMapFlags.length, label: "Mapped records" },
+    { id: "sources" as const, value: Object.keys(scopedSourceTypeCounts).length, label: "Source families" },
   ];
-  const stateOrder = ["WA", "NT", "SA", "QLD", "NSW", "VIC", "TAS", "ACT"];
-  const stateEntries = stateOrder.map((state) => [state, mode === "locations" ? mappedStateCounts[state] ?? 0 : stateCounts[state] ?? 0] as const);
+  const stateEntries = DASHBOARD_STATE_ORDER.map((state) => [state, mode === "locations" ? scopedMappedStateCounts[state] ?? 0 : scopedStateCounts[state] ?? 0] as const);
   const maxStateCount = Math.max(...stateEntries.map(([, value]) => value), 1);
 
   return (
-    <section className="dashboard-console dash-hover-zone" aria-label="Database control console">
+    <section
+      className={`dashboard-console dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
+      data-dashboard-panel="right"
+      aria-label="Public corpus control console"
+    >
+      <DashboardExpandButton side="right" expanded={expanded} onToggle={onToggle} />
       <header className="console-header">
         <div>
           <span>PUBLIC FIELD:</span>
@@ -1326,38 +2048,50 @@ function DashboardControlConsole({ data, derived }: { data: FrontendData; derive
       <div className="console-grid-top">
         <MiniControl label={topMetrics[0][0] as string} value={topMetrics[0][1] as number} />
         <MiniControl label={topMetrics[1][0] as string} value={topMetrics[1][1] as number} />
-        <ConsoleWave records={data.records} />
+        <ConsoleAggregateMap mode={mode} records={scopedRecords} mapFlags={scopedMapFlags} dateBands={data.date_bands} />
       </div>
 
       <div className="console-sequencer">
-        <span className="tiny-label">TIME CUTTER</span>
+        <span className="tiny-label">TIME CUTTER {selectedBand ? `/ ${selectedBand.label}` : "/ ALL PUBLIC RECORDS"}</span>
         <div>
           {data.date_bands.map((band, index) => (
-            <span key={band.id} className={band.record_count > 0 ? "lit" : ""}>
-              {index + 1}
-            </span>
+            <button
+              key={band.id}
+              type="button"
+              className={`${band.record_count > 0 ? "lit" : ""}${selectedBand?.id === band.id ? " active" : ""}`}
+              onClick={() => setSelectedBandId((current) => current === band.id ? "all" : band.id)}
+              aria-pressed={selectedBand?.id === band.id}
+              aria-label={`${selectedBand?.id === band.id ? "Clear" : "Show"} ${band.label} records`}
+              title={`${band.label}: ${band.record_count} archive records`}
+            >
+              <b>{index + 1}</b>
+              <small>{band.label}</small>
+            </button>
           ))}
         </div>
       </div>
 
-      <div className="console-effect-grid">
+      <div className="console-effect-grid" aria-label={mode === "records" ? "Top narrative groups in selected period" : "Selected public aggregate values"}>
         {entriesDescending(activeValues, 8).map(([label, value]) => (
           <span key={label}>
-            {truncate(label, 14)} <b>{value}</b>
+            {truncate(publicDashboardValueLabel(label, mode), 14)} <b>{value}</b>
           </span>
         ))}
       </div>
 
-      <div className="console-mid-row">
-        <SourceWheel values={data.summary.source_type_counts} />
-        <ConsolePolyline values={data.summary.records_by_year} />
+      <div className="console-primary-chart">
+        <ConsolePolyline mode={mode} points={chartPoints} timelineLayers={timelineLayers} scopeLabel={selectedBand?.label ?? "complete archive"} />
+      </div>
+
+      <div className="console-source-section">
+        <SourceWheel values={scopedSourceTypeCounts} />
       </div>
 
       <div className="console-source-grid">
-        {sourceRows.map(([label, counts]) => (
+        {sourceFamilyRows.map(([label, value]) => (
           <div key={label}>
-            <span>{truncate(label, 15)}</span>
-            <i style={{ "--source-meter": `${Math.max(8, Math.min(100, counts.query_count))}%` } as CSSProperties} />
+            <span>{truncate(publicSourceLabel(label), 15)}</span>
+            <i style={{ "--source-meter": `${Math.max(8, Math.min(100, value / Math.max(1, sourceFamilyRows[0]?.[1] ?? value) * 100))}%` } as CSSProperties} />
           </div>
         ))}
       </div>
@@ -1387,16 +2121,86 @@ function MiniControl({ label, value }: { label: string; value: number }) {
   );
 }
 
-function ConsoleWave({ records }: { records: RecordItem[] }) {
-  const points = records.slice(0, 16).map((record, index) => {
-    const x = 6 + index * 12;
-    const y = 38 - (((record.year ?? 1842) % 29) / 29) * 30;
-    return `${x},${y.toFixed(1)}`;
-  });
+function ConsoleAggregateMap({
+  mode,
+  records,
+  mapFlags,
+  dateBands,
+}: {
+  mode: ConsoleMode;
+  records: readonly RecordItem[];
+  mapFlags: readonly MapFlagRenderItem[];
+  dateBands: readonly DateBand[];
+}) {
+  const groups = useMemo(() => {
+    if (mode === "locations") {
+      return DASHBOARD_STATE_ORDER.map((state) => ({ key: state, label: state }));
+    }
+    const values =
+      mode === "records"
+        ? countRecordValues(records, (record) => narrativeGroupLabel(record))
+        : countRecordValues(records, (record) => publicSourceLabel(record.source_type));
+    return entriesDescending(values, mode === "records" ? 5 : 6).map(([key]) => ({
+      key,
+      label: publicDashboardValueLabel(key, mode),
+    }));
+  }, [mode, records]);
+
+  const cells = useMemo(() => {
+    const counts = new Map<string, number>();
+    if (mode === "locations") {
+      for (const flag of mapFlags) {
+        const band = flag.record.date_band;
+        const key = `${flag.state_territory}::${band}`;
+        counts.set(key, (counts.get(key) ?? 0) + 1);
+      }
+    } else {
+      for (const record of records) {
+        const group = mode === "records" ? narrativeGroupLabel(record) : publicSourceLabel(record.source_type);
+        const key = `${group}::${record.date_band}`;
+        counts.set(key, (counts.get(key) ?? 0) + 1);
+      }
+    }
+    return counts;
+  }, [mapFlags, mode, records]);
+
+  const max = Math.max(...Array.from(cells.values()), 1);
+  const bandWidth = 144 / Math.max(1, dateBands.length);
+  const rowHeight = 32 / Math.max(1, groups.length);
 
   return (
-    <svg className="console-wave" viewBox="0 0 200 48" role="img" aria-label="Record waveform">
-      <polyline points={points.join(" ")} />
+    <svg className={`console-field-map console-field-map-${mode}`} viewBox="0 0 200 48" role="img" aria-label={`${consoleModeLabel(mode)} aggregate matrix`}>
+      <text className="console-field-title" x="8" y="8" fontSize="5">
+        {mode === "records" ? "narrative group x period" : mode === "locations" ? "mapped state x period" : "source family x period"}
+      </text>
+      {dateBands.map((band, index) => (
+        <text key={band.id} className="console-field-band" x={52 + index * bandWidth + bandWidth / 2} y="46" fontSize="3.6">
+          {String(index + 1)}
+        </text>
+      ))}
+      {groups.map((group, rowIndex) => (
+        <g key={group.key}>
+          <text className="console-field-label" x="8" y={16 + rowIndex * rowHeight + rowHeight / 2} fontSize="3.8">
+            {truncate(group.label, 13)}
+          </text>
+          {dateBands.map((band, bandIndex) => {
+            const value = cells.get(`${group.key}::${band.id}`) ?? 0;
+            const intensity = value / max;
+            const size = 2.4 + intensity * Math.min(8, rowHeight - 1);
+            return (
+              <rect
+                key={`${group.key}-${band.id}`}
+                className={value === max ? "console-field-cell dashboard-highlight-point" : "console-field-cell"}
+                x={52 + bandIndex * bandWidth + bandWidth / 2 - size / 2}
+                y={14 + rowIndex * rowHeight + rowHeight / 2 - size / 2}
+                width={size}
+                height={size}
+                style={{ "--cell-alpha": String(0.16 + intensity * 0.72) } as CSSProperties}
+              />
+            );
+          })}
+        </g>
+      ))}
     </svg>
   );
 }
@@ -1421,10 +2225,11 @@ function RadialMeter({ label, values }: { label: string; values: Record<string, 
 function SourceWheel({ values }: { values: Record<string, number> }) {
   const entries = entriesDescending(values, 6);
   const max = Math.max(...entries.map(([, value]) => value), 1);
+  const total = Object.values(values).reduce((sum, value) => sum + value, 0) || 1;
 
   return (
     <div className="source-wheel-module">
-      <span className="tiny-label">SOURCE</span>
+      <span className="tiny-label">SOURCE COMPOSITION</span>
       <div className="source-wheel" style={{ "--source-wheel": conicGradient(values) } as CSSProperties}>
         <i />
       </div>
@@ -1432,7 +2237,8 @@ function SourceWheel({ values }: { values: Record<string, number> }) {
         {entries.map(([label, value]) => (
           <span key={label}>
             <b style={{ "--source-dot": `${Math.max(22, (value / max) * 100)}%` } as CSSProperties} />
-            {truncate(label, 12)}
+            <i>{publicSourceLabel(label)}</i>
+            <em>{numberFormat(value)} / {Math.round((value / total) * 100)}%</em>
           </span>
         ))}
       </div>
@@ -1440,39 +2246,229 @@ function SourceWheel({ values }: { values: Record<string, number> }) {
   );
 }
 
-function ConsolePolyline({ values }: { values: Record<string, number> }) {
-  const rawEntries = Object.entries(values)
-    .map(([year, value]) => [Number(year), value] as const)
-    .filter(([year]) => Number.isFinite(year))
-    .sort(([a], [b]) => a - b);
-  const entries = aggregateYearValues(rawEntries, 28);
-  const max = Math.max(...entries.map(([, value]) => value), 1);
-  const xFor = (index: number) => (entries.length <= 1 ? 110 : 10 + (index / (entries.length - 1)) * 200);
-  const yFor = (value: number) => 70 - (value / max) * 52;
-  const points = entries.map(([, value], index) => `${xFor(index).toFixed(1)},${yFor(value).toFixed(1)}`).join(" ");
+function ConsolePolyline({
+  mode,
+  points,
+  timelineLayers,
+  scopeLabel,
+}: {
+  mode: ConsoleMode;
+  points: ConsoleChartPoint[];
+  timelineLayers: TimelineLayerPoint[];
+  scopeLabel: string;
+}) {
+  const max = Math.max(...points.map((point) => point.value), 1);
+  const xFor = (index: number) => (points.length <= 1 ? 110 : 12 + (index / (points.length - 1)) * 196);
+  const yFor = (value: number) => 66 - (value / max) * 44;
+  const barWidth = Math.max(3.5, Math.min(11, 112 / Math.max(1, points.length)));
+  const linePoints = points.map((point, index) => `${xFor(index).toFixed(1)},${yFor(point.value).toFixed(1)}`).join(" ");
+  const mappedPoints = timelineLayers.map((point, index) => `${xFor(index).toFixed(1)},${yFor(point.mapped).toFixed(1)}`).join(" ");
+  const maxDiversity = Math.max(...timelineLayers.map((point) => point.diversity), 1);
+  const labelStep = mode === "records" ? Math.max(1, Math.ceil(points.length / 5)) : Math.max(1, Math.ceil(points.length / (mode === "sources" ? 5 : 8)));
+  const isTimeSeries = mode === "records";
+  const peakIndexes = new Set(
+    isTimeSeries
+      ? [...points]
+          .map((point, index) => ({ index, value: point.value }))
+          .sort((a, b) => b.value - a.value)
+          .slice(0, 2)
+          .map((point) => point.index)
+      : [],
+  );
 
   return (
-    <svg className="console-polyline" viewBox="0 0 220 82" role="img" aria-label="Year counts polyline">
-      {entries.map(([label, value], index) => (
+    <svg className={`console-polyline console-polyline-${mode}`} viewBox="0 0 220 92" role="img" aria-label={`${consoleModeLabel(mode)} values for ${scopeLabel}`}>
+      <text className="console-chart-label" x="10" y="11">
+        {consoleModeLabel(mode)} / {scopeLabel}
+      </text>
+      {[0, 0.5, 1].map((tick) => (
+        <g key={tick}>
+          <line className="timeline-grid-line" x1="12" x2="208" y1={yFor(max * tick)} y2={yFor(max * tick)} />
+          <text className="console-axis-value" x="4" y={yFor(max * tick) + 1.4}>
+            {tick === 0 ? "0" : tick === 1 ? numberFormat(max) : numberFormat(Math.round(max / 2))}
+          </text>
+        </g>
+      ))}
+      {points.map((point, index) => (
         <rect
-          key={`bar-${label}`}
+          key={`bar-${point.key}`}
           className="console-density-bar"
-          x={xFor(index) - 2.8}
-          y={yFor(value)}
-          width="5.6"
-          height={72 - yFor(value)}
+          x={xFor(index) - barWidth / 2}
+          y={yFor(point.value)}
+          width={barWidth}
+          height={68 - yFor(point.value)}
         />
       ))}
-      <polyline points={points} />
-      {entries.map(([label, value], index) => (
-        <circle key={label} cx={xFor(index)} cy={yFor(value)} r={Math.max(1.4, Math.min(2.6, 1.2 + value / max * 1.8))} />
+      {isTimeSeries ? (
+        <>
+          <polyline className="timeline-total-line" points={linePoints} />
+          <polyline className="timeline-mapped-line" points={mappedPoints} />
+          {timelineLayers.map((point, index) => (
+            <rect
+              key={`${point.key}-diversity`}
+              className="timeline-diversity-ribbon"
+              x={xFor(index) - barWidth / 2}
+              y={72 - (point.diversity / maxDiversity) * 7}
+              width={barWidth}
+              height={(point.diversity / maxDiversity) * 7}
+            />
+          ))}
+          <g className="timeline-legend">
+            <line className="timeline-total-line" x1="124" y1="10" x2="142" y2="10" />
+            <text x="146" y="12">records</text>
+            <line className="timeline-mapped-line" x1="172" y1="10" x2="190" y2="10" />
+            <text x="194" y="12">mapped</text>
+            <rect className="timeline-diversity-ribbon" x="124" y="15" width="18" height="3" />
+            <text x="146" y="18">typed diversity</text>
+          </g>
+        </>
+      ) : null}
+      {points.map((point, index) => (
+        <circle
+          key={`${point.key}-point`}
+          className={point.value === max || index === points.length - 1 ? "dashboard-highlight-point" : undefined}
+          cx={xFor(index)}
+          cy={yFor(point.value)}
+          r={Math.max(1.6, Math.min(3.4, 1.3 + point.value / max * 2.2))}
+        />
       ))}
+      {isTimeSeries
+        ? points.map((point, index) =>
+            peakIndexes.has(index) ? (
+              <text key={`${point.key}-peak`} className="timeline-peak-label" x={Math.min(194, xFor(index) + 4)} y={Math.max(18, yFor(point.value) - 4)}>
+                {numberFormat(point.value)}
+              </text>
+            ) : null,
+          )
+        : null}
+      {mode === "sources"
+        ? null
+        : points.map((point, index) => index % labelStep === 0 || index === points.length - 1 ? (
+          <text key={`${point.key}-label`} className="console-axis-label" x={xFor(index)} y="85">
+            {compactChartLabel(point.label, mode)}
+          </text>
+        ) : null)}
     </svg>
   );
 }
 
+function consoleModeLabel(mode: ConsoleMode) {
+  if (mode === "records") {
+    return "Record time signal";
+  }
+  if (mode === "locations") {
+    return "Mapped place signal";
+  }
+  return "Source family signal";
+}
+
+function countRecordValues(records: readonly RecordItem[], getKey: (record: RecordItem) => string | null | undefined) {
+  return records.reduce<Record<string, number>>((acc, record) => {
+    const key = getKey(record);
+    if (!key) {
+      return acc;
+    }
+    acc[key] = (acc[key] ?? 0) + 1;
+    return acc;
+  }, {});
+}
+
+function recordsByYear(records: readonly RecordItem[]) {
+  return records.reduce<Record<string, number>>((acc, record) => {
+    if (record.year === null || record.year === undefined) {
+      return acc;
+    }
+    const key = String(record.year);
+    acc[key] = (acc[key] ?? 0) + 1;
+    return acc;
+  }, {});
+}
+
+function buildConsoleChartPoints({
+  mode,
+  recordsByYear,
+  timelineLayers,
+  sourceCounts,
+  stateEntries,
+  limit,
+}: {
+  mode: ConsoleMode;
+  recordsByYear: Record<string, number>;
+  timelineLayers: TimelineLayerPoint[];
+  sourceCounts: Record<string, number>;
+  stateEntries: readonly (readonly [string, number])[];
+  limit: number;
+}): ConsoleChartPoint[] {
+  if (mode === "records") {
+    void recordsByYear;
+    void limit;
+    return timelineLayers;
+  }
+  if (mode === "locations") {
+    return stateEntries.map(([label, value]) => ({
+      key: `state-${label}`,
+      label,
+      value,
+    }));
+  }
+  return entriesDescending(sourceCounts, Math.min(10, limit)).map(([label, value]) => ({
+    key: `source-${label}`,
+    label: publicSourceLabel(label),
+    value,
+  }));
+}
+
+function buildTimelineLayerPoints(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[], targetBins: number): TimelineLayerPoint[] {
+  const years = records
+    .map((record) => record.year)
+    .filter((year): year is number => typeof year === "number" && Number.isFinite(year))
+    .sort((a, b) => a - b);
+  if (!years.length) {
+    return [];
+  }
+  const minYear = years[0];
+  const maxYear = years[years.length - 1];
+  const span = Math.max(1, maxYear - minYear + 1);
+  const binCount = Math.min(targetBins, span);
+  const bins = Array.from({ length: binCount }, (_, index) => {
+    const start = Math.round(minYear + (index / binCount) * span);
+    const end = Math.round(minYear + ((index + 1) / binCount) * span - 1);
+    return {
+      key: `year-${start}-${end}`,
+      label: start === end ? String(start) : `${start}-${end}`,
+      value: 0,
+      mapped: 0,
+      diversitySet: new Set<string>(),
+    };
+  });
+  const binIndexForYear = (year: number) => Math.min(binCount - 1, Math.max(0, Math.floor(((year - minYear) / span) * binCount)));
+  for (const record of records) {
+    if (typeof record.year !== "number" || !Number.isFinite(record.year)) {
+      continue;
+    }
+    const bin = bins[binIndexForYear(record.year)];
+    bin.value += 1;
+    bin.diversitySet.add(narrativeGroupLabel(record));
+  }
+  for (const flag of mapFlags) {
+    const year = flag.record.year;
+    if (typeof year !== "number" || !Number.isFinite(year)) {
+      continue;
+    }
+    bins[binIndexForYear(year)].mapped += 1;
+  }
+  return bins.map(({ diversitySet, ...bin }) => ({
+    ...bin,
+    diversity: diversitySet.size,
+  }));
+}
+
 function dashboardTrackLabel(record: RecordItem) {
   const year = record.year ? String(record.year) : "----";
+  return `${dashboardTrackTitle(record, 26)} (${year})`;
+}
+
+function dashboardTrackTitle(record: RecordItem, limit: number) {
   const figure = record.canonical_figure_guess || record.canonical_figure || "";
   const rawTitle = record.title || figure || `Record ${record.record_id}`;
   const title = rawTitle
@@ -1489,16 +2485,67 @@ function dashboardTrackLabel(record: RecordItem) {
       : figure && !genericFigure.has(figureNorm)
         ? figure
         : title || figure || `Record ${record.record_id}`;
-  return `${truncate(label, 26)} (${year})`;
+  return truncate(label, limit);
 }
 
-function dashboardTrackSample(data: FrontendData) {
+function dashboardTrackMeta(record: RecordItem) {
+  const year = record.year ? String(record.year) : "----";
+  const source = record.publication || record.source_name || publicSourceLabel(record.source_type);
+  const place = record.map_place_name || record.location_summary?.replace(/\s*:\s*(?:high|medium|low|broad).*$/i, "") || record.state_territory || "place pending";
+  return `${year} / ${truncate(source, 24)} / ${truncate(place, 24)}`;
+}
+
+function trackMicroLabel(record: RecordItem) {
+  const year = record.year ? String(record.year) : "----";
+  const source = publicSourceLabel(record.source_type);
+  return `${truncate(source, 8)} ${year}`;
+}
+
+function publicDashboardValueLabel(label: string, mode: ConsoleMode) {
+  if (mode === "sources") {
+    return publicSourceLabel(label);
+  }
+  return label.replace(/[_-]+/g, " ");
+}
+
+function narrativeGroupLabel(record: RecordItem) {
+  const key = record.ontology_code || record.genre || record.canonical_figure_guess || record.canonical_figure || "other";
+  if (NARRATIVE_TYPE_LABELS[key]) {
+    return NARRATIVE_TYPE_LABELS[key];
+  }
+  const normalized = key.toLowerCase().replace(/[_-]+/g, " ");
+  if (/\byow|hairy|apeman|wild ?man\b/.test(normalized)) {
+    return "Hairy humanoid reports";
+  }
+  if (/\bghost|apparition|spirit\b/.test(normalized)) {
+    return "Ghost / apparition";
+  }
+  if (/\bgiant|ogre\b/.test(normalized)) {
+    return "Giant / ogre narratives";
+  }
+  if (/\bretell|adapt/.test(normalized)) {
+    return "Retellings";
+  }
+  if (/\btradition|myth|belief\b/.test(normalized)) {
+    return "Traditional narratives";
+  }
+  return "Other typed context";
+}
+
+function publicSourceLabel(sourceType: string | null | undefined) {
+  if (!sourceType) {
+    return "Public source";
+  }
+  return SOURCE_PUBLIC_LABELS[sourceType] ?? SOURCE_TONE[sourceType]?.label ?? sourceType.replace(/[_-]+/g, " ");
+}
+
+function dashboardTrackSample(data: FrontendData, limit = 14) {
   const pool = data.records.filter((record) => record.relevance_code !== "noise");
   const byYear = [...pool].sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.record_id - b.record_id);
   const selected: RecordItem[] = [];
   const seen = new Set<number>();
   const add = (record: RecordItem | undefined) => {
-    if (record && !seen.has(record.record_id) && selected.length < 14) {
+    if (record && !seen.has(record.record_id) && selected.length < limit) {
       selected.push(record);
       seen.add(record.record_id);
     }
@@ -1513,7 +2560,7 @@ function dashboardTrackSample(data: FrontendData) {
       }
       keys.add(key);
       add(record);
-      if (keys.size >= limit || selected.length >= 14) {
+      if (keys.size >= limit || selected.length >= limit) {
         break;
       }
     }
@@ -1523,7 +2570,7 @@ function dashboardTrackSample(data: FrontendData) {
   const nonDominant = byYear.filter((record) => !/^yowie$/i.test(figureOf(record)));
   for (const record of nonDominant) {
     add(record);
-    if (selected.length >= 9) {
+    if (selected.length >= Math.min(14, limit)) {
       break;
     }
   }
