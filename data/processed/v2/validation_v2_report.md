@@ -1,6 +1,6 @@
 # V2 Validation Report
 
-- Generated: `2026-06-22T04:18:44+00:00`
+- Generated: `2026-06-22T04:54:37+00:00`
 - Schema version: `2.0.0`
 - Result: PASS
 
@@ -9,7 +9,7 @@
 - PASS: legacy_mapping_count_matches_legacy_source_items - 985/985
 - PASS: legacy_mappings_reference_records - 0
 - PASS: no_duplicate_legacy_mappings - 0
-- PASS: accepted_candidates_promoted - 133/133
+- PASS: accepted_candidates_promoted - 296/296
 - PASS: candidate_mappings_reference_records - 0
 - PASS: automation_did_not_set_analysis_ready - 0
 - PASS: no_leads_count_as_accepted_candidates - 0

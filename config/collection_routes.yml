@@ -1,314 +1,603 @@
 schema_version: collection-routes/v1
-generated_policy_note: >
-  Route registry for the Australian public supernatural humanoid narrative
-  archive. Collectors must consult this registry before probing sources and
-  must not retry blocked or exhausted routes unless the retry_condition has
-  changed.
+generated_policy_note: 'Route registry for the Australian public supernatural humanoid
+  narrative archive. Collectors must consult this registry before probing sources
+  and must not retry blocked or exhausted routes unless the retry_condition has changed.
+
+  '
 routes:
-  - route_id: trove_api_without_key
-    source_name: Trove API
-    organisation: National Library of Australia
-    domain: api.trove.nla.gov.au
-    jurisdiction: AU
-    source_class: archival_api
-    retrieval_method: api
-    endpoint_or_seed_url: https://api.trove.nla.gov.au/v3/result
-    authentication_required: true
-    credentials_available: false
-    robots_status: not_checked
-    terms_status: official_api_requires_key
-    publicness_status: public_metadata_when_authorized
-    first_attempted_at: "2026-06-22"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 1
-    candidates_seen: 0
-    accepted_count: 0
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 0
-    average_seconds_per_candidate:
-    blocker: missing_api_key
-    failure_reason: Official API returned no-key response; automated use requires TROVE_API_KEY.
-    retry_condition: TROVE_API_KEY is present in the environment.
-    next_action: Wait for supplied API key or use manually exported article records.
-    route_status: blocked_auth
-
-  - route_id: trove_nla_article_text_endpoints
-    source_name: Trove/NLA article text endpoints
-    organisation: National Library of Australia
-    domain: trove.nla.gov.au
-    jurisdiction: AU
-    source_class: archival_html
-    retrieval_method: public_html_or_text_probe
-    endpoint_or_seed_url: https://trove.nla.gov.au/newspaper/rendition/{article_id}.txt
-    authentication_required: false
-    credentials_available: false
-    robots_status: not_checked
-    terms_status: access_controls_respected
-    publicness_status: public_page_but_automated_text_unavailable
-    first_attempted_at: "2026-06-22"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 3
-    candidates_seen: 0
-    accepted_count: 0
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 0
-    average_seconds_per_candidate:
-    blocker: access_control_or_unavailable_text
-    failure_reason: Public probes produced bot checks, 404s, or unstable text renditions.
-    retry_condition: Documented public endpoint becomes available, article export supplied manually, or TROVE_API_KEY is present.
-    next_action: Do not probe alternative unauthenticated article text URLs.
-    route_status: manual_only
-
-  - route_id: openalex_crossref_current_terms
-    source_name: OpenAlex and Crossref current query set
-    organisation: OpenAlex / Crossref
-    domain: openalex.org;api.crossref.org
-    jurisdiction: global
-    source_class: scholarly_metadata
-    retrieval_method: api
-    endpoint_or_seed_url: configured metadata collectors
-    authentication_required: false
-    credentials_available: true
-    robots_status: api_allowed
-    terms_status: public_metadata
-    publicness_status: metadata_only
-    first_attempted_at: "2026-06-22"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 2
-    candidates_seen: 80
-    accepted_count: 0
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 80
-    average_seconds_per_candidate:
-    blocker: low_relevance_metadata_only
-    failure_reason: Current term set produced little or no net-new substantive public narrative material.
-    retry_condition: Query design materially changes, new vocabulary is supplied, or a specific scholarly target list is produced.
-    next_action: Pause broad scholarly metadata reruns.
-    route_status: low_yield
-
-  - route_id: ayr_broad_crawl
-    source_name: Australian Yowie Research broad crawl
-    organisation: Australian Yowie Research
-    domain: yowiehunters.com.au
-    jurisdiction: AU
-    source_class: private_paranormal_aggregator
-    retrieval_method: sitemap_or_archive_crawl
-    endpoint_or_seed_url: site archive and sitemap candidates
-    authentication_required: false
-    credentials_available: true
-    robots_status: not_checked
-    terms_status: public_pages_discovery_only
-    publicness_status: public_page
-    first_attempted_at: "2026-06-21"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 3
-    candidates_seen: 985
-    accepted_count: 0
-    duplicate_count: 900
-    lead_count: 0
-    rejected_count: 85
-    average_seconds_per_candidate:
-    blocker: duplicate_dominated
-    failure_reason: Broad archive/sitemap candidates are overwhelmingly already present or duplicates.
-    retry_condition: Specific missing AYR records or source-chain enrichment targets are supplied.
-    next_action: Use only for verification, source-chain enrichment, or specific modern witness pages.
-    route_status: exhausted
-
-  - route_id: generic_institution_sitemap_scans
-    source_name: Generic institution sitemap scanning
-    organisation: multiple
-    domain: multiple
-    jurisdiction: AU
-    source_class: institutional_web
-    retrieval_method: whole_site_sitemap_scan
-    endpoint_or_seed_url: broad institutional sitemaps
-    authentication_required: false
-    credentials_available: true
-    robots_status: mixed_not_checked
-    terms_status: mixed
-    publicness_status: public_pages
-    first_attempted_at: "2026-06-21"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 2
-    candidates_seen: 200
-    accepted_count: 0
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 200
-    average_seconds_per_candidate:
-    blocker: high_navigation_noise
-    failure_reason: Full-site scans produced navigation, contact, charter, FAQ, and generic spirit false positives.
-    retry_condition: Source-specific collection/history/archive paths are identified and a small probe shows acceptable yield.
-    next_action: Replace broad scans with section-specific probes.
-    route_status: low_yield
-
-  - route_id: internet_archive_broad_ghost
-    source_name: Internet Archive broad ghost searches
-    organisation: Internet Archive
-    domain: archive.org
-    jurisdiction: global
-    source_class: digitized_books
-    retrieval_method: metadata_and_ocr_api
-    endpoint_or_seed_url: https://archive.org/advancedsearch.php
-    authentication_required: false
-    credentials_available: true
-    robots_status: public_api
-    terms_status: public_metadata_and_text_when_available
-    publicness_status: public_metadata_and_public_text_mixed
-    first_attempted_at: "2026-06-21"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 2
-    candidates_seen: 100
-    accepted_count: 0
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 100
-    average_seconds_per_candidate:
-    blocker: high_noise_non_australian
-    failure_reason: Broad ghost searches produced non-Australian and literary-period Victorian false positives.
-    retry_condition: Title-specific or collection-specific Australian queries are configured.
-    next_action: Use only item-level Australian relationship filters and public OCR verification.
-    route_status: low_yield
-
-  - route_id: tourism_ghost_sites
-    source_name: Tourism and ghost-tour sites
-    organisation: multiple
-    domain: multiple
-    jurisdiction: AU
-    source_class: tourism_web
-    retrieval_method: public_html
-    endpoint_or_seed_url: route-specific
-    authentication_required: false
-    credentials_available: true
-    robots_status: not_checked
-    terms_status: discovery_only
-    publicness_status: public_page
-    first_attempted_at: "2026-06-21"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 1
-    candidates_seen: 0
-    accepted_count: 0
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 0
-    average_seconds_per_candidate:
-    blocker: weak_source_tier
-    failure_reason: Tourism pages reduce corpus credibility when used as primary evidence.
-    retry_condition: A tourism page supplies a source citation to an archive, newspaper, book, institution, or authoritative heritage page.
-    next_action: Use only for discovery and source-chain tracing.
-    route_status: discovery_only
-
-  - route_id: marriner_princess_theatre_history
-    source_name: Princess Theatre History
-    organisation: Marriner Group
-    domain: marrinergroup.com.au
-    jurisdiction: VIC
-    source_class: institutional_web
-    retrieval_method: seeded_public_page
-    endpoint_or_seed_url: https://marrinergroup.com.au/theatres/princess-theatre/history
-    authentication_required: false
-    credentials_available: true
-    robots_status: not_checked
-    terms_status: public_page
-    publicness_status: public_page
-    first_attempted_at: "2026-06-22"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 1
-    candidates_seen: 1
-    accepted_count: 1
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 0
-    average_seconds_per_candidate:
-    blocker:
-    failure_reason:
-    retry_condition: More source sections or corroborating institutional/newspaper sources are identified.
-    next_action: Use as a model for section-specific, source-verified institutional seeds.
-    route_status: productive
-
-  - route_id: project_gutenberg_australia_exact_folklore
-    source_name: Project Gutenberg Australia exact folklore titles
-    organisation: Project Gutenberg Australia
-    domain: gutenberg.net.au
-    jurisdiction: AU
-    source_class: digitized_books
-    retrieval_method: exact_title_html_text
-    endpoint_or_seed_url: https://gutenberg.net.au/pgaus.html
-    authentication_required: false
-    credentials_available: true
-    robots_status: public_catalogue_checked
-    terms_status: public_domain_ebook_access
-    publicness_status: public_domain_public_web
-    first_attempted_at: "2026-06-22"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 1
-    candidates_seen: 30
-    accepted_count: 30
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 0
-    average_seconds_per_candidate:
-    blocker:
-    failure_reason:
-    retry_condition: Additional exact Australian local-history, folklore, or public-domain titles are manually identified.
-    next_action: Continue exact-title book-level extraction; avoid broad global ghost searches.
-    route_status: productive
-
-  - route_id: internet_sacred_texts_exact_ethnography
-    source_name: Internet Sacred Text Archive exact Australian ethnographic texts
-    organisation: Internet Sacred Text Archive
-    domain: sacred-texts.com
-    jurisdiction: NT/SA
-    source_class: public_domain_transcribed_books
-    retrieval_method: exact_chapter_html_text
-    endpoint_or_seed_url: https://sacred-texts.com/aus/
-    authentication_required: false
-    credentials_available: true
-    robots_status: exact_public_pages_checked
-    terms_status: public_domain_text_access
-    publicness_status: public_domain_public_web
-    first_attempted_at: "2026-06-22"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 1
-    candidates_seen: 20
-    accepted_count: 20
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 0
-    average_seconds_per_candidate:
-    blocker:
-    failure_reason:
-    retry_condition: Additional exact Australian public-domain chapters are manually identified and pass scope review.
-    next_action: Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching.
-    route_status: productive
-
-  - route_id: wikisource_australian_ethnography_exact_text
-    source_name: Wikisource Australian ethnography exact text
-    organisation: Wikisource
-    domain: en.wikisource.org
-    jurisdiction: VIC/SA/NSW
-    source_class: public_domain_transcribed_books
-    retrieval_method: exact_chapter_html_text
-    endpoint_or_seed_url: https://en.wikisource.org/wiki/Native_Tribes_of_South-East_Australia
-    authentication_required: false
-    credentials_available: true
-    robots_status: exact_public_pages_checked
-    terms_status: public_domain_text_access
-    publicness_status: public_domain_public_web
-    first_attempted_at: "2026-06-22"
-    last_attempted_at: "2026-06-22"
-    attempt_count: 1
-    candidates_seen: 10
-    accepted_count: 10
-    duplicate_count: 0
-    lead_count: 0
-    rejected_count: 0
-    average_seconds_per_candidate:
-    blocker:
-    failure_reason:
-    retry_condition: Additional exact Australian public-domain chapters are manually identified and pass scope review.
-    next_action: Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching.
-    route_status: productive
+- route_id: trove_api_without_key
+  source_name: Trove API
+  organisation: National Library of Australia
+  domain: api.trove.nla.gov.au
+  jurisdiction: AU
+  source_class: archival_api
+  retrieval_method: api
+  endpoint_or_seed_url: https://api.trove.nla.gov.au/v3/result
+  authentication_required: true
+  credentials_available: false
+  robots_status: not_checked
+  terms_status: official_api_requires_key
+  publicness_status: public_metadata_when_authorized
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: null
+  blocker: missing_api_key
+  failure_reason: Official API returned no-key response; automated use requires TROVE_API_KEY.
+  retry_condition: TROVE_API_KEY is present in the environment.
+  next_action: Wait for supplied API key or use manually exported article records.
+  route_status: blocked_auth
+- route_id: trove_nla_article_text_endpoints
+  source_name: Trove/NLA article text endpoints
+  organisation: National Library of Australia
+  domain: trove.nla.gov.au
+  jurisdiction: AU
+  source_class: archival_html
+  retrieval_method: public_html_or_text_probe
+  endpoint_or_seed_url: https://trove.nla.gov.au/newspaper/rendition/{article_id}.txt
+  authentication_required: false
+  credentials_available: false
+  robots_status: not_checked
+  terms_status: access_controls_respected
+  publicness_status: public_page_but_automated_text_unavailable
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 3
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: null
+  blocker: access_control_or_unavailable_text
+  failure_reason: Public probes produced bot checks, 404s, or unstable text renditions.
+  retry_condition: Documented public endpoint becomes available, article export supplied
+    manually, or TROVE_API_KEY is present.
+  next_action: Do not probe alternative unauthenticated article text URLs.
+  route_status: manual_only
+- route_id: openalex_crossref_current_terms
+  source_name: OpenAlex and Crossref current query set
+  organisation: OpenAlex / Crossref
+  domain: openalex.org;api.crossref.org
+  jurisdiction: global
+  source_class: scholarly_metadata
+  retrieval_method: api
+  endpoint_or_seed_url: configured metadata collectors
+  authentication_required: false
+  credentials_available: true
+  robots_status: api_allowed
+  terms_status: public_metadata
+  publicness_status: metadata_only
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 80
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 80
+  average_seconds_per_candidate: null
+  blocker: low_relevance_metadata_only
+  failure_reason: Current term set produced little or no net-new substantive public
+    narrative material.
+  retry_condition: Query design materially changes, new vocabulary is supplied, or
+    a specific scholarly target list is produced.
+  next_action: Pause broad scholarly metadata reruns.
+  route_status: low_yield
+- route_id: ayr_broad_crawl
+  source_name: Australian Yowie Research broad crawl
+  organisation: Australian Yowie Research
+  domain: yowiehunters.com.au
+  jurisdiction: AU
+  source_class: private_paranormal_aggregator
+  retrieval_method: sitemap_or_archive_crawl
+  endpoint_or_seed_url: site archive and sitemap candidates
+  authentication_required: false
+  credentials_available: true
+  robots_status: not_checked
+  terms_status: public_pages_discovery_only
+  publicness_status: public_page
+  first_attempted_at: '2026-06-21'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 3
+  candidates_seen: 985
+  accepted_count: 0
+  duplicate_count: 900
+  lead_count: 0
+  rejected_count: 85
+  average_seconds_per_candidate: null
+  blocker: duplicate_dominated
+  failure_reason: Broad archive/sitemap candidates are overwhelmingly already present
+    or duplicates.
+  retry_condition: Specific missing AYR records or source-chain enrichment targets
+    are supplied.
+  next_action: Use only for verification, source-chain enrichment, or specific modern
+    witness pages.
+  route_status: exhausted
+- route_id: generic_institution_sitemap_scans
+  source_name: Generic institution sitemap scanning
+  organisation: multiple
+  domain: multiple
+  jurisdiction: AU
+  source_class: institutional_web
+  retrieval_method: whole_site_sitemap_scan
+  endpoint_or_seed_url: broad institutional sitemaps
+  authentication_required: false
+  credentials_available: true
+  robots_status: mixed_not_checked
+  terms_status: mixed
+  publicness_status: public_pages
+  first_attempted_at: '2026-06-21'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 200
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 200
+  average_seconds_per_candidate: null
+  blocker: high_navigation_noise
+  failure_reason: Full-site scans produced navigation, contact, charter, FAQ, and
+    generic spirit false positives.
+  retry_condition: Source-specific collection/history/archive paths are identified
+    and a small probe shows acceptable yield.
+  next_action: Replace broad scans with section-specific probes.
+  route_status: low_yield
+- route_id: internet_archive_broad_ghost
+  source_name: Internet Archive broad ghost searches
+  organisation: Internet Archive
+  domain: archive.org
+  jurisdiction: global
+  source_class: digitized_books
+  retrieval_method: metadata_and_ocr_api
+  endpoint_or_seed_url: https://archive.org/advancedsearch.php
+  authentication_required: false
+  credentials_available: true
+  robots_status: public_api
+  terms_status: public_metadata_and_text_when_available
+  publicness_status: public_metadata_and_public_text_mixed
+  first_attempted_at: '2026-06-21'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 100
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 100
+  average_seconds_per_candidate: null
+  blocker: high_noise_non_australian
+  failure_reason: Broad ghost searches produced non-Australian and literary-period
+    Victorian false positives.
+  retry_condition: Title-specific or collection-specific Australian queries are configured.
+  next_action: Use only item-level Australian relationship filters and public OCR
+    verification.
+  route_status: low_yield
+- route_id: tourism_ghost_sites
+  source_name: Tourism and ghost-tour sites
+  organisation: multiple
+  domain: multiple
+  jurisdiction: AU
+  source_class: tourism_web
+  retrieval_method: public_html
+  endpoint_or_seed_url: route-specific
+  authentication_required: false
+  credentials_available: true
+  robots_status: not_checked
+  terms_status: discovery_only
+  publicness_status: public_page
+  first_attempted_at: '2026-06-21'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: null
+  blocker: weak_source_tier
+  failure_reason: Tourism pages reduce corpus credibility when used as primary evidence.
+  retry_condition: A tourism page supplies a source citation to an archive, newspaper,
+    book, institution, or authoritative heritage page.
+  next_action: Use only for discovery and source-chain tracing.
+  route_status: discovery_only
+- route_id: marriner_princess_theatre_history
+  source_name: Princess Theatre History
+  organisation: Marriner Group
+  domain: marrinergroup.com.au
+  jurisdiction: VIC
+  source_class: institutional_web
+  retrieval_method: seeded_public_page
+  endpoint_or_seed_url: https://marrinergroup.com.au/theatres/princess-theatre/history
+  authentication_required: false
+  credentials_available: true
+  robots_status: not_checked
+  terms_status: public_page
+  publicness_status: public_page
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 1
+  accepted_count: 1
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: null
+  blocker: null
+  failure_reason: null
+  retry_condition: More source sections or corroborating institutional/newspaper sources
+    are identified.
+  next_action: Use as a model for section-specific, source-verified institutional
+    seeds.
+  route_status: productive
+- route_id: project_gutenberg_australia_exact_folklore
+  source_name: Project Gutenberg Australia exact folklore titles
+  organisation: Project Gutenberg Australia
+  domain: gutenberg.net.au
+  jurisdiction: AU
+  source_class: digitized_books
+  retrieval_method: exact_title_html_text
+  endpoint_or_seed_url: https://gutenberg.net.au/pgaus.html
+  authentication_required: false
+  credentials_available: true
+  robots_status: public_catalogue_checked
+  terms_status: public_domain_ebook_access
+  publicness_status: public_domain_public_web
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 30
+  accepted_count: 30
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: null
+  blocker: null
+  failure_reason: null
+  retry_condition: Additional exact Australian local-history, folklore, or public-domain
+    titles are manually identified.
+  next_action: Continue exact-title book-level extraction; avoid broad global ghost
+    searches.
+  route_status: productive
+- route_id: internet_sacred_texts_exact_ethnography
+  source_name: Internet Sacred Text Archive exact Australian ethnographic texts
+  organisation: Internet Sacred Text Archive
+  domain: sacred-texts.com
+  jurisdiction: NT/SA
+  source_class: public_domain_transcribed_books
+  retrieval_method: exact_chapter_html_text
+  endpoint_or_seed_url: https://sacred-texts.com/aus/
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_domain_text_access
+  publicness_status: public_domain_public_web
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 20
+  accepted_count: 20
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: null
+  blocker: null
+  failure_reason: null
+  retry_condition: Additional exact Australian public-domain chapters are manually
+    identified and pass scope review.
+  next_action: Continue only exact chapter-level extraction with named supernatural/person-form
+    entities; avoid broad site searching.
+  route_status: productive
+- route_id: wikisource_australian_ethnography_exact_text
+  source_name: Wikisource Australian ethnography exact text
+  organisation: Wikisource
+  domain: en.wikisource.org
+  jurisdiction: VIC/SA/NSW
+  source_class: public_domain_transcribed_books
+  retrieval_method: exact_chapter_html_text
+  endpoint_or_seed_url: https://en.wikisource.org/wiki/Native_Tribes_of_South-East_Australia
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_domain_text_access
+  publicness_status: public_domain_public_web
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 10
+  accepted_count: 10
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: null
+  blocker: null
+  failure_reason: null
+  retry_condition: Additional exact Australian public-domain chapters are manually
+    identified and pass scope review.
+  next_action: Continue only exact chapter-level extraction with named supernatural/person-form
+    entities; avoid broad site searching.
+  route_status: productive
+- route_id: sprint_ista_central_australia_exact_texts
+  source_name: Internet Sacred Text Archive
+  organisation: Internet Sacred Text Archive
+  domain: https://sacred-texts.com/aus/ntca/
+  jurisdiction: NT
+  source_class: public_domain_transcribed_book
+  retrieval_method: exact_chapter_html_text
+  endpoint_or_seed_url: https://sacred-texts.com/aus/ntca/
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 44
+  accepted_count: 42
+  duplicate_count: 3
+  lead_count: 0
+  rejected_count: 2
+  average_seconds_per_candidate: 0.05
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_ista_northern_australia_exact_texts
+  source_name: Internet Sacred Text Archive
+  organisation: Internet Sacred Text Archive
+  domain: https://sacred-texts.com/aus/ntna/
+  jurisdiction: NT
+  source_class: public_domain_transcribed_book
+  retrieval_method: exact_chapter_html_text
+  endpoint_or_seed_url: https://sacred-texts.com/aus/ntna/
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 16
+  accepted_count: 16
+  duplicate_count: 5
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.079
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_wikisource_southeast_exact_texts
+  source_name: Wikisource
+  organisation: Wikisource
+  domain: ''
+  jurisdiction: VIC/SA/NSW
+  source_class: public_domain_transcribed_book
+  retrieval_method: exact_chapter_html_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 62
+  accepted_count: 59
+  duplicate_count: 10
+  lead_count: 0
+  rejected_count: 3
+  average_seconds_per_candidate: 0.047
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_roth_queensland_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: McGillLibrary-rbsc_ethnological-studies-queensland-aborigines_GN667Q8R8-30670
+  jurisdiction: QLD
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 15
+  accepted_count: 15
+  duplicate_count: 2
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.221
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_pga_australian_fairy_tales_exact_texts
+  source_name: Project Gutenberg Australia
+  organisation: Project Gutenberg Australia
+  domain: ''
+  jurisdiction: VIC/NSW
+  source_class: public_domain_ebook
+  retrieval_method: exact_title_html_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 22
+  accepted_count: 22
+  duplicate_count: 3
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.279
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_map_queue_geocode_verification
+  source_name: Map geocode verification queue
+  organisation: OpenStreetMap Nominatim
+  domain: ''
+  jurisdiction: NSW/QLD/VIC
+  source_class: geocode_verification_queue
+  retrieval_method: exact_queue_gazetteer_verification
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 50
+  accepted_count: 50
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 1.255
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_victorian_collections_story_probe
+  source_name: Victorian Collections
+  organisation: Victorian Collections
+  domain: https://victoriancollections.net.au/search?query=ghost
+  jurisdiction: VIC
+  source_class: institutional_web
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://victoriancollections.net.au/search?query=ghost
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_error:HTTPError
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_sa_history_network_directory_probe
+  source_name: South Australian History Network
+  organisation: History Trust of South Australia
+  domain: https://explore.history.sa.gov.au/directory/
+  jurisdiction: SA
+  source_class: community_history_directory
+  retrieval_method: directory_seed_probe
+  endpoint_or_seed_url: https://explore.history.sa.gov.au/directory/
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 2
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 1.445
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_directory_or_search_page_discovery_only
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_territory_stories_public_probe
+  source_name: Territory Stories
+  organisation: Library & Archives NT
+  domain: https://territorystories.nt.gov.au/
+  jurisdiction: NT
+  source_class: digital_repository
+  retrieval_method: public_repository_probe
+  endpoint_or_seed_url: https://territorystories.nt.gov.au/
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 2
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_directory_or_search_page_discovery_only
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_wikisource_euahlayi_exact_texts
+  source_name: Wikisource
+  organisation: Wikisource
+  domain: ''
+  jurisdiction: NSW/QLD
+  source_class: public_domain_transcribed_book
+  retrieval_method: exact_chapter_html_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 39
+  accepted_count: 39
+  duplicate_count: 8
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.077
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
