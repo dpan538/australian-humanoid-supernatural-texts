@@ -1,4 +1,2 @@
-import type { FrontendData } from "@/lib/types";
-import data from "@/public/data/frontend-data.json";
-
-export const frontendData = data as FrontendData;
+export const FRONTEND_DATA_URL = "/data/frontend-data.json";
+export const FRONTEND_DATA_SCHEMA = "frontend-data/v1";

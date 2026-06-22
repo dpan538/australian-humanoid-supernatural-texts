@@ -1,9 +1,10 @@
 "use client";
 
-import { CSSProperties, useEffect, useState } from "react";
+import { CSSProperties, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import type { DateBand, FrontendData, RecordItem } from "@/lib/types";
+import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
+import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
 
@@ -137,6 +138,60 @@ const LAMBERT_AU = {
   lon0: 134,
 } as const;
 
+let frontendDataCache: FrontendData | null = null;
+let frontendDataPromise: Promise<FrontendData> | null = null;
+
+type MapFlagRenderItem = {
+  flag_id: string;
+  record_id: number;
+  state_territory: string;
+  x: number;
+  y: number;
+  title: string | null;
+  year: number | null;
+  canonical_figure: string | null;
+  record: RecordItem;
+  toneClass: string;
+};
+
+type FrontendDerivedData = {
+  recordsById: Map<number, RecordItem>;
+  sortedRecords: RecordItem[];
+  navigationRecordsByState: Map<string, RecordItem[]>;
+  mapFlags: MapFlagRenderItem[];
+  mapFlagRecordLookup: Map<number, MapFlagRenderItem>;
+  mappedStateCounts: Record<string, number>;
+  queryTypeCounts: Record<string, number>;
+  figureCounts: Record<string, number>;
+  figureSamples: Map<string, RecordItem>;
+  firstRecordByDateBand: Map<string, RecordItem>;
+  dateBandActualCounts: Record<string, number>;
+  sourceRows: Array<[string, { record_count: number; query_count: number }]>;
+  ethicsRows: Array<[string, number]>;
+  dashboardTracks: RecordItem[];
+  undatedRecordCount: number;
+};
+
+function loadFrontendData() {
+  if (frontendDataCache) {
+    return Promise.resolve(frontendDataCache);
+  }
+  if (!frontendDataPromise) {
+    frontendDataPromise = fetch(FRONTEND_DATA_URL, { cache: "force-cache" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Frontend data request failed: ${response.status}`);
+        }
+        return response.json() as Promise<FrontendData>;
+      })
+      .then((payload) => {
+        frontendDataCache = payload;
+        return payload;
+      });
+  }
+  return frontendDataPromise;
+}
+
 function numberFormat(value: number | null | undefined) {
   if (value === null || value === undefined) {
     return "--";
@@ -172,6 +227,220 @@ function conicGradient(values: Record<string, number>) {
       return `${palette[index % palette.length]} ${start}% ${cursor}%`;
     })
     .join(", ");
+}
+
+function compareRecordsByDate(a: RecordItem, b: RecordItem) {
+  const yearA = a.year ?? 9999;
+  const yearB = b.year ?? 9999;
+  return yearA - yearB || (a.title ?? "").localeCompare(b.title ?? "") || a.record_id - b.record_id;
+}
+
+function createFrontendDerivedData(data: FrontendData): FrontendDerivedData {
+  const recordsById = new Map<number, RecordItem>();
+  const navigationRecordsByState = new Map<string, RecordItem[]>();
+  const queryTypeCounts: Record<string, number> = {};
+  const figureCounts: Record<string, number> = {};
+  const figureSamples = new Map<string, RecordItem>();
+  const firstRecordByDateBand = new Map<string, RecordItem>();
+  const dateBandActualCounts: Record<string, number> = {};
+  let undatedRecordCount = 0;
+
+  for (const record of data.records) {
+    recordsById.set(record.record_id, record);
+    const figure = record.canonical_figure_guess || record.canonical_figure || "uncoded";
+    figureCounts[figure] = (figureCounts[figure] ?? 0) + 1;
+    if (!figureSamples.has(figure)) {
+      figureSamples.set(figure, record);
+    }
+    if (!firstRecordByDateBand.has(record.date_band)) {
+      firstRecordByDateBand.set(record.date_band, record);
+    }
+    dateBandActualCounts[record.date_band] = (dateBandActualCounts[record.date_band] ?? 0) + 1;
+    if (record.year === null || record.year === undefined) {
+      undatedRecordCount += 1;
+    }
+    if (record.has_strict_map_point && record.state_territory) {
+      const stateRecords = navigationRecordsByState.get(record.state_territory) ?? [];
+      stateRecords.push(record);
+      navigationRecordsByState.set(record.state_territory, stateRecords);
+    }
+  }
+
+  for (const query of data.queries) {
+    queryTypeCounts[query.query_type] = (queryTypeCounts[query.query_type] ?? 0) + 1;
+  }
+
+  const mapFlags = buildMapFlags(data, recordsById);
+  for (const flag of mapFlags) {
+    if (recordsById.has(flag.record_id)) {
+      continue;
+    }
+    recordsById.set(flag.record_id, flag.record);
+    const stateRecords = navigationRecordsByState.get(flag.state_territory) ?? [];
+    stateRecords.push(flag.record);
+    navigationRecordsByState.set(flag.state_territory, stateRecords);
+  }
+  const sortedRecords = [...recordsById.values()].sort(compareRecordsByDate);
+  for (const records of navigationRecordsByState.values()) {
+    records.sort(compareRecordsByDate);
+  }
+  const mappedStateCounts = mapFlags.reduce<Record<string, number>>((acc, flag) => {
+    acc[flag.state_territory] = (acc[flag.state_territory] ?? 0) + 1;
+    return acc;
+  }, {});
+  const mapFlagRecordLookup = new Map(mapFlags.map((flag) => [flag.record_id, flag]));
+
+  return {
+    recordsById,
+    sortedRecords,
+    navigationRecordsByState,
+    mapFlags,
+    mapFlagRecordLookup,
+    mappedStateCounts,
+    queryTypeCounts,
+    figureCounts,
+    figureSamples,
+    firstRecordByDateBand,
+    dateBandActualCounts,
+    sourceRows: Object.entries(data.summary.source_rollup).sort(
+      (a, b) => b[1].query_count - a[1].query_count || b[1].record_count - a[1].record_count,
+    ),
+    ethicsRows: entriesDescending(data.summary.ethics_counts),
+    dashboardTracks: dashboardTrackSample(data),
+    undatedRecordCount,
+  };
+}
+
+function buildMapFlags(data: FrontendData, recordsById: Map<number, RecordItem>) {
+  const seenRecordIds = new Set<number>();
+  const flags: MapFlagRenderItem[] = [];
+  const sourceFlags = data.map_flags?.length ? data.map_flags : createFallbackMapFlags(data.records);
+
+  for (const flag of sourceFlags) {
+    const record = recordsById.get(flag.record_id) ?? createRecordFromMapFlag(flag, data.date_bands);
+    const coordinates = mapFlagCoordinates(flag, record);
+    if (!coordinates || seenRecordIds.has(flag.record_id)) {
+      continue;
+    }
+    seenRecordIds.add(flag.record_id);
+    flags.push({
+      flag_id: flag.flag_id,
+      record_id: flag.record_id,
+      state_territory: flag.state_territory || record.state_territory || "AU",
+      x: coordinates.x,
+      y: coordinates.y,
+      title: flag.title ?? record.title,
+      year: flag.year ?? record.year,
+      canonical_figure: flag.canonical_figure ?? record.canonical_figure_guess ?? record.canonical_figure,
+      record,
+      toneClass: mapSourceTone(record).className,
+    });
+  }
+
+  return flags;
+}
+
+function createRecordFromMapFlag(flag: MapFlagItem, dateBands: DateBand[]): RecordItem {
+  const dateBand = dateBandForYear(flag.year, dateBands);
+  return {
+    record_id: flag.record_id,
+    source_id: 0,
+    query_id: null,
+    figure_id: null,
+    external_id: null,
+    title: flag.title ?? `Mapped record ${flag.record_id}`,
+    publication: null,
+    author: null,
+    date_published: flag.year ? String(flag.year) : null,
+    year: flag.year,
+    url: null,
+    snippet: null,
+    publicness_level: "summary-only",
+    ingestion_status: "map_flag_only",
+    source_name: "map flag index",
+    source_type: flag.source_location_type ?? "map_flag",
+    canonical_figure: flag.canonical_figure,
+    cluster: null,
+    tier: null,
+    include_status: null,
+    figure_humanoid_degree: null,
+    ontology_default: null,
+    involves_indigenous_knowledge: null,
+    canonical_figure_guess: flag.canonical_figure,
+    figure_name_as_printed: flag.canonical_figure,
+    ontology_code: null,
+    humanoid_degree_code: null,
+    source_voice: "map flag metadata",
+    genre: null,
+    publicness_code: "summary_only",
+    relevance_code: "map_flag_only",
+    ethics_flag: null,
+    coding_notes: "Map flag has no matching public record row in frontend-data records.",
+    date_band: dateBand,
+    location_summary: STATE_NAMES[flag.state_territory] ?? flag.state_territory,
+    state_territory: flag.state_territory,
+    location_precision_status: flag.display_precision,
+    has_strict_map_point: true,
+    map_latitude: flag.y,
+    map_longitude: flag.x,
+    map_place_name: flag.title,
+    map_location_role: null,
+    map_location_type: flag.source_location_type,
+    map_geocode_source: null,
+    map_verification_status: null,
+    map_confidence: flag.confidence,
+    map_evidence_text: null,
+  };
+}
+
+function dateBandForYear(year: number | null, dateBands: DateBand[]) {
+  if (year === null) {
+    return "undated";
+  }
+  return dateBands.find((band) => year >= band.start && (band.end === null || year <= band.end))?.id ?? "undated";
+}
+
+function mapFlagCoordinates(flag: MapFlagItem, record: RecordItem) {
+  if (Number.isFinite(flag.x) && Number.isFinite(flag.y)) {
+    if (flag.x >= 110 && flag.x <= 160 && flag.y >= -45 && flag.y <= -8) {
+      const projected = projectPoint(flag.y, flag.x);
+      return { x: svgCoord(projected.x), y: svgCoord(projected.y) };
+    }
+    if (flag.x >= 0 && flag.x <= MAP_VIEWBOX.width && flag.y >= 0 && flag.y <= MAP_VIEWBOX.height) {
+      return { x: svgCoord(flag.x), y: svgCoord(flag.y) };
+    }
+  }
+  if (record.map_latitude != null && record.map_longitude != null) {
+    const projected = projectPoint(record.map_latitude, record.map_longitude);
+    return { x: svgCoord(projected.x), y: svgCoord(projected.y) };
+  }
+  return null;
+}
+
+function createFallbackMapFlags(records: RecordItem[]): MapFlagItem[] {
+  return records.flatMap((record, index) => {
+    if (!record.has_strict_map_point || record.map_latitude == null || record.map_longitude == null) {
+      return [];
+    }
+    const projected = projectPoint(record.map_latitude, record.map_longitude);
+    return [
+      {
+        flag_id: `record-${record.record_id}-${index}`,
+        record_id: record.record_id,
+        state_territory: record.state_territory ?? "AU",
+        x: projected.x,
+        y: projected.y,
+        stem_dx: 0,
+        stem_dy: 0,
+        display_precision: record.location_precision_status ?? "strict",
+        source_location_type: record.map_location_type ?? null,
+        confidence: record.map_confidence ?? null,
+        title: record.title,
+        year: record.year,
+        canonical_figure: record.canonical_figure_guess ?? record.canonical_figure,
+      },
+    ];
+  });
 }
 
 function projectPoint(latitude: number, longitude: number) {
@@ -223,19 +492,73 @@ function projectLambertConformalConic(latitude: number, longitude: number) {
   };
 }
 
-export function ArchiveTerminal({ data, view }: { data: FrontendData; view: ViewMode }) {
-  const nextView = getNextView(view);
-  const [selectedRecord, setSelectedRecord] = useState<RecordItem | null>(null);
-  const overlayNavigation = selectedRecord ? recordNavigationContext(data, selectedRecord) : null;
+export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
+  const [data, setData] = useState<FrontendData | null>(frontendDataCache);
+  const [error, setError] = useState<string | null>(null);
 
-  function showAdjacentRecord(direction: 1 | -1) {
+  useEffect(() => {
+    let cancelled = false;
+    loadFrontendData()
+      .then((payload) => {
+        if (!cancelled) {
+          setData(payload);
+          setError(null);
+        }
+      })
+      .catch((loadError: Error) => {
+        if (!cancelled) {
+          setError(loadError.message);
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (data) {
+    return <ArchiveTerminal data={data} view={view} />;
+  }
+
+  return (
+    <ArchiveTerminalShell view={view}>
+      <div className="terminal-loading-state" role={error ? "alert" : "status"} aria-live="polite">
+        <span>{error ? "DATA LOAD ERROR" : "LOADING PUBLIC ARCHIVE DATA"}</span>
+        <b>{error ? error : FRONTEND_DATA_SCHEMA}</b>
+        <small>{FRONTEND_DATA_URL}</small>
+      </div>
+    </ArchiveTerminalShell>
+  );
+}
+
+export function ArchiveTerminal({ data, view }: { data: FrontendData; view: ViewMode }) {
+  const derived = useMemo(() => createFrontendDerivedData(data), [data]);
+  const [selectedRecord, setSelectedRecord] = useState<RecordItem | null>(null);
+  const lastActiveElementRef = useRef<HTMLElement | SVGElement | null>(null);
+  const overlayNavigation = selectedRecord ? recordNavigationContext(derived, selectedRecord) : null;
+
+  const openRecord = useCallback((record: RecordItem) => {
+    lastActiveElementRef.current =
+      document.activeElement instanceof HTMLElement || document.activeElement instanceof SVGElement
+        ? document.activeElement
+        : null;
+    setSelectedRecord(record);
+  }, []);
+
+  const closeRecord = useCallback(() => {
+    setSelectedRecord(null);
+    window.requestAnimationFrame(() => {
+      lastActiveElementRef.current?.focus();
+    });
+  }, []);
+
+  const showAdjacentRecord = useCallback((direction: 1 | -1) => {
     if (!overlayNavigation || overlayNavigation.records.length < 2) {
       return;
     }
     const nextIndex =
       (overlayNavigation.currentIndex + direction + overlayNavigation.records.length) % overlayNavigation.records.length;
     setSelectedRecord(overlayNavigation.records[nextIndex]);
-  }
+  }, [overlayNavigation]);
 
   useEffect(() => {
     if (!selectedRecord) {
@@ -243,7 +566,7 @@ export function ArchiveTerminal({ data, view }: { data: FrontendData; view: View
     }
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setSelectedRecord(null);
+        closeRecord();
       }
       if (event.key === "ArrowRight" || event.key === "ArrowDown") {
         event.preventDefault();
@@ -256,24 +579,58 @@ export function ArchiveTerminal({ data, view }: { data: FrontendData; view: View
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [selectedRecord, overlayNavigation]);
+  }, [closeRecord, selectedRecord, showAdjacentRecord]);
+
+  return (
+    <ArchiveTerminalShell
+      view={view}
+      overlay={
+        selectedRecord ? (
+          <RecordCardOverlay
+            record={selectedRecord}
+            navigation={overlayNavigation}
+            onClose={closeRecord}
+            onNavigate={showAdjacentRecord}
+          />
+        ) : null
+      }
+    >
+      {view === "map" ? <MapView data={data} derived={derived} onSelectRecord={openRecord} /> : null}
+      {view === "density" ? <DensityView data={data} derived={derived} onSelectRecord={openRecord} /> : null}
+      {view === "dashboard" ? <DashboardView data={data} derived={derived} onSelectRecord={openRecord} /> : null}
+      {view === "source" ? <SourceView data={data} derived={derived} /> : null}
+    </ArchiveTerminalShell>
+  );
+}
+
+function ArchiveTerminalShell({
+  view,
+  children,
+  overlay,
+}: {
+  view: ViewMode;
+  children: React.ReactNode;
+  overlay?: React.ReactNode;
+}) {
+  const nextView = getNextView(view);
 
   return (
     <main className="terminal-shell">
       <div className="noise-layer" aria-hidden="true" />
       <div className="terminal-stage">
         <section className={`view-area view-area-${view}`} aria-label={`${view} data view`}>
-          {view === "map" ? <MapView data={data} onSelectRecord={setSelectedRecord} /> : null}
-          {view === "density" ? <DensityView data={data} onSelectRecord={setSelectedRecord} /> : null}
-          {view === "dashboard" ? <DashboardView data={data} onSelectRecord={setSelectedRecord} /> : null}
-          {view === "source" ? <SourceView data={data} /> : null}
+          {children}
         </section>
 
         <div className="external-control-dock" aria-label="Fixed external controls">
           <Link className="dock-button about-button" href="/about">
             About
           </Link>
-          <Link className={view === "source" ? "dock-button source-button active" : "dock-button source-button"} href="/source" aria-current={view === "source" ? "page" : undefined}>
+          <Link
+            className={view === "source" ? "dock-button source-button active" : "dock-button source-button"}
+            href="/source"
+            aria-current={view === "source" ? "page" : undefined}
+          >
             Source
           </Link>
           <Link
@@ -287,14 +644,7 @@ export function ArchiveTerminal({ data, view }: { data: FrontendData; view: View
           </Link>
         </div>
       </div>
-      {selectedRecord ? (
-        <RecordCardOverlay
-          record={selectedRecord}
-          navigation={overlayNavigation}
-          onClose={() => setSelectedRecord(null)}
-          onNavigate={showAdjacentRecord}
-        />
-      ) : null}
+      {overlay}
     </main>
   );
 }
@@ -307,21 +657,75 @@ function getNextView(view: ViewMode) {
   return VIEW_SEQUENCE[(index + 1) % VIEW_SEQUENCE.length];
 }
 
-function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
+function flagTargetFromEvent(event: React.SyntheticEvent<SVGGElement>) {
+  const target = event.target;
+  if (!(target instanceof Element)) {
+    return null;
+  }
+  return target.closest("[data-record-id]");
+}
+
+function MapView({
+  data,
+  derived,
+  onSelectRecord,
+}: {
+  data: FrontendData;
+  derived: FrontendDerivedData;
+  onSelectRecord: (record: RecordItem) => void;
+}) {
   const [hoverState, setHoverState] = useState<string | null>(null);
-  const [hoverRecord, setHoverRecord] = useState<RecordItem | null>(null);
+  const [hoverRecordId, setHoverRecordId] = useState<number | null>(null);
   const stateCounts = data.summary.corpus_state_counts ?? data.summary.state_record_counts;
-  const mapRecords = data.records.filter(
-    (record) => record.has_strict_map_point && record.map_latitude !== null && record.map_longitude !== null,
-  );
-  const preciseStateCounts = mapRecords.reduce<Record<string, number>>((acc, record) => {
-    if (record.state_territory) {
-      acc[record.state_territory] = (acc[record.state_territory] ?? 0) + 1;
-    }
-    return acc;
-  }, {});
+  const mapFlags = derived.mapFlags;
+  const preciseStateCounts = derived.mappedStateCounts;
   const activeState = hoverState ? STATE_NAMES[hoverState] : "Australia";
-  const activeCount = hoverState ? preciseStateCounts[hoverState] ?? 0 : mapRecords.length;
+  const activeCount = hoverState ? preciseStateCounts[hoverState] ?? 0 : mapFlags.length;
+  const largeFlagSet = mapFlags.length > 800;
+
+  const hoverFlagFromEvent = useCallback((event: React.SyntheticEvent<SVGGElement>) => {
+    const element = flagTargetFromEvent(event);
+    const recordId = Number(element?.getAttribute("data-record-id"));
+    const flag = Number.isFinite(recordId) ? derived.mapFlagRecordLookup.get(recordId) : null;
+    if (!flag) {
+      return;
+    }
+    setHoverRecordId(flag.record_id);
+    setHoverState(flag.state_territory);
+  }, [derived.mapFlagRecordLookup]);
+
+  const clearFlagHover = useCallback(() => {
+    setHoverRecordId(null);
+    setHoverState(null);
+  }, []);
+
+  const clearFlagFocus = useCallback((event: React.FocusEvent<SVGGElement>) => {
+    if (event.relatedTarget instanceof Node && event.currentTarget.contains(event.relatedTarget)) {
+      return;
+    }
+    clearFlagHover();
+  }, [clearFlagHover]);
+
+  const selectFlagFromEvent = useCallback((event: React.SyntheticEvent<SVGGElement>) => {
+    const element = flagTargetFromEvent(event);
+    const recordId = Number(element?.getAttribute("data-record-id"));
+    const flag = Number.isFinite(recordId) ? derived.mapFlagRecordLookup.get(recordId) : null;
+    if (flag) {
+      onSelectRecord(flag.record);
+    }
+  }, [derived.mapFlagRecordLookup, onSelectRecord]);
+
+  const handleFlagKeyDown = useCallback((event: React.KeyboardEvent<SVGGElement>) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+    const element = flagTargetFromEvent(event);
+    if (!element) {
+      return;
+    }
+    event.preventDefault();
+    selectFlagFromEvent(event);
+  }, [selectFlagFromEvent]);
 
   return (
     <div className="map-view">
@@ -356,62 +760,27 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
             );
           })}
           <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
-          <g className={`record-flag-layer ${hoverRecord ? "has-hover" : ""}`} aria-label="Strict geocoded public record flags">
-            {mapRecords.map((record, index) => {
-              const projected = projectPoint(record.map_latitude as number, record.map_longitude as number);
-              const x = svgCoord(projected.x);
-              const y = svgCoord(projected.y);
-              const flagDelay = mapRecords.length > 1 ? (index / Math.max(1, mapRecords.length - 1)) * 820 : 0;
-              const selected = hoverRecord?.record_id === record.record_id;
-              const stateLinked = hoverState === record.state_territory;
-              const toneClass = mapSourceTone(record).className;
-              const className = ["record-flag", "precise", toneClass, selected ? "active" : "", stateLinked ? "state-linked" : ""]
-                .filter(Boolean)
-                .join(" ");
-              return (
-                <g
-                  key={`${record.record_id}-${record.map_place_name ?? "strict"}-${index}`}
-                  className={className}
-                  style={{ "--flag-delay": `${flagDelay.toFixed(1)}ms` } as CSSProperties}
-                  onMouseEnter={() => {
-                    setHoverRecord(record);
-                    setHoverState(record.state_territory ?? null);
-                  }}
-                  onMouseLeave={() => {
-                    setHoverRecord(null);
-                    setHoverState(null);
-                  }}
-                  onFocus={() => {
-                    setHoverRecord(record);
-                    setHoverState(record.state_territory ?? null);
-                  }}
-                  onBlur={() => {
-                    setHoverRecord(null);
-                    setHoverState(null);
-                  }}
-                  onClick={() => {
-                    onSelectRecord(record);
-                  }}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      event.preventDefault();
-                      onSelectRecord(record);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`Open strict geocoded record ${record.title ?? record.map_place_name}`}
-                >
-                  <circle className="record-flag-hit" cx={x} cy={y} r="10" />
-                  <circle className="record-flag-dot" cx={x} cy={y} r={selected ? 5.2 : stateLinked ? 3.9 : 3.25} />
-                  {selected ? (
-                    <text className="record-flag-label" x={Math.min(x + 12, MAP_VIEWBOX.width - 150)} y={Math.max(y - 10, 26)}>
-                      {record.year ?? "--"} / {truncate(record.canonical_figure_guess ?? record.canonical_figure ?? record.title, 24)}
-                    </text>
-                  ) : null}
-                </g>
-              );
-            })}
+          <g
+            className={`record-flag-layer ${hoverRecordId ? "has-hover" : ""} ${largeFlagSet ? "large-flag-set" : ""}`}
+            aria-label="Strict geocoded public record flags"
+            onPointerOver={hoverFlagFromEvent}
+            onPointerLeave={clearFlagHover}
+            onFocus={hoverFlagFromEvent}
+            onBlur={clearFlagFocus}
+            onClick={selectFlagFromEvent}
+            onKeyDown={handleFlagKeyDown}
+          >
+            {mapFlags.map((flag, index) => (
+              <MapFlagMarker
+                key={flag.flag_id}
+                flag={flag}
+                index={index}
+                total={mapFlags.length}
+                active={hoverRecordId === flag.record_id}
+                stateLinked={hoverState === flag.state_territory}
+                largeSet={largeFlagSet}
+              />
+            ))}
           </g>
           <g className="state-label-layer" aria-hidden="true">
             {STATE_SHAPES.map((state) => {
@@ -441,7 +810,8 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
         </div>
         <div className="readout-grid">
           {Object.entries(STATE_NAMES).map(([code]) => (
-            <div
+            <button
+              type="button"
               className={hoverState === code ? "state-mini active" : "state-mini"}
               key={code}
               onMouseEnter={() => setHoverState(code)}
@@ -450,22 +820,67 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
               onPointerLeave={() => setHoverState(null)}
               onFocus={() => setHoverState(code)}
               onBlur={() => setHoverState(null)}
-              tabIndex={0}
             >
               <span>{code}</span>
               <b>{preciseStateCounts[code] ?? 0}</b>
-            </div>
+            </button>
           ))}
         </div>
         <div className="map-health-note">
           <span>POINT GEO</span>
-          <b>{mapRecords.length}</b>
+          <b>{mapFlags.length}</b>
           <small>mapped records / {data.summary.record_count} total</small>
         </div>
       </aside>
     </div>
   );
 }
+
+const MapFlagMarker = memo(function MapFlagMarker({
+  flag,
+  index,
+  total,
+  active,
+  stateLinked,
+  largeSet,
+}: {
+  flag: MapFlagRenderItem;
+  index: number;
+  total: number;
+  active: boolean;
+  stateLinked: boolean;
+  largeSet: boolean;
+}) {
+  const flagDelay = !largeSet && total > 1 ? (index / Math.max(1, total - 1)) * 820 : 0;
+  const className = ["record-flag", "precise", flag.toneClass, active ? "active" : "", stateLinked ? "state-linked" : ""]
+    .filter(Boolean)
+    .join(" ");
+  const label = flag.title || flag.canonical_figure || `Record ${flag.record_id}`;
+
+  return (
+    <g
+      className={className}
+      style={{ "--flag-delay": `${flagDelay.toFixed(1)}ms` } as CSSProperties}
+      data-record-id={flag.record_id}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open mapped record ${label}`}
+    >
+      <circle className="record-flag-hit" cx={flag.x} cy={flag.y} r="10" />
+      <circle className="record-flag-dot" cx={flag.x} cy={flag.y} r={active ? 5.2 : stateLinked ? 3.9 : 3.25} />
+      {active ? (
+        <text className="record-flag-label" x={Math.min(flag.x + 12, MAP_VIEWBOX.width - 150)} y={Math.max(flag.y - 10, 26)}>
+          {flag.year ?? "--"} / {truncate(flag.canonical_figure ?? label, 24)}
+        </text>
+      ) : null}
+    </g>
+  );
+}, (prev, next) => (
+  prev.flag === next.flag &&
+  prev.active === next.active &&
+  prev.stateLinked === next.stateLinked &&
+  prev.largeSet === next.largeSet
+));
 
 function TerrainLegend() {
   const frameWidth = 242;
@@ -559,16 +974,21 @@ function TerrainSurfaceLayer({ hoverState }: { hoverState: string | null }) {
   );
 }
 
-function DensityView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
+function DensityView({
+  data,
+  derived,
+  onSelectRecord,
+}: {
+  data: FrontendData;
+  derived: FrontendDerivedData;
+  onSelectRecord: (record: RecordItem) => void;
+}) {
   const maxRecords = Math.max(...data.date_bands.map((band) => band.record_count), 1);
   const maxQueries = Math.max(...data.date_bands.map((band) => band.planned_query_count), 1);
-  const queryTypes = data.queries.reduce<Record<string, number>>((acc, query) => {
-    acc[query.query_type] = (acc[query.query_type] ?? 0) + 1;
-    return acc;
-  }, {});
   const locationHealth = {
-    mapped_records: data.summary.mapped_record_count,
-    broad_or_review: Math.max(0, data.summary.record_count - data.summary.mapped_record_count),
+    map_flags: derived.mapFlags.length,
+    broad_or_review: Math.max(0, data.summary.record_count - derived.mapFlags.length),
+    undated_records: derived.undatedRecordCount,
     locations_total: data.summary.location_count,
   };
 
@@ -588,7 +1008,7 @@ function DensityView({ data, onSelectRecord }: { data: FrontendData; onSelectRec
             index={index}
             maxRecords={maxRecords}
             maxQueries={maxQueries}
-            records={data.records}
+            firstRecord={derived.firstRecordByDateBand.get(band.id) ?? null}
             onSelectRecord={onSelectRecord}
           />
         ))}
@@ -596,12 +1016,12 @@ function DensityView({ data, onSelectRecord }: { data: FrontendData; onSelectRec
       <div className="density-aux-grid">
         <DensitySignal title="SOURCE FIELD" values={data.summary.source_type_counts} />
         <DensitySignal title="LOCATION HEALTH" values={locationHealth} />
-        <DensityFigureRail records={data.records} onSelectRecord={onSelectRecord} />
+        <DensityFigureRail derived={derived} onSelectRecord={onSelectRecord} />
       </div>
       <div className="density-footer">
         <div className="density-note">
           <span>QUERY TYPES</span>
-          <b>{entriesDescending(queryTypes, 3).map(([label, value]) => `${truncate(label, 12)} ${value}`).join(" / ")}</b>
+          <b>{entriesDescending(derived.queryTypeCounts, 3).map(([label, value]) => `${truncate(label, 12)} ${value}`).join(" / ")}</b>
         </div>
       </div>
     </div>
@@ -613,20 +1033,19 @@ function DensityBand({
   index,
   maxRecords,
   maxQueries,
-  records,
+  firstRecord,
   onSelectRecord,
 }: {
   band: DateBand;
   index: number;
   maxRecords: number;
   maxQueries: number;
-  records: RecordItem[];
+  firstRecord: RecordItem | null;
   onSelectRecord: (record: RecordItem) => void;
 }) {
   const recordLevel = Math.ceil((band.record_count / maxRecords) * 28);
   const queryLevel = Math.ceil((band.planned_query_count / maxQueries) * 28);
   const char = DENSITY_CHARS[Math.min(DENSITY_CHARS.length - 1, index)];
-  const firstRecord = records.find((record) => record.date_band === band.id);
   return (
     <section
       className={firstRecord ? "density-band clickable-record" : "density-band"}
@@ -682,18 +1101,13 @@ function DensitySignal({ title, values }: { title: string; values: Record<string
 }
 
 function DensityFigureRail({
-  records,
+  derived,
   onSelectRecord,
 }: {
-  records: RecordItem[];
+  derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const figures = records.reduce<Record<string, number>>((acc, record) => {
-    const key = record.canonical_figure_guess || record.canonical_figure || "uncoded";
-    acc[key] = (acc[key] ?? 0) + 1;
-    return acc;
-  }, {});
-  const entries = entriesDescending(figures, 8);
+  const entries = entriesDescending(derived.figureCounts, 8);
 
   return (
     <section className="density-figure-rail">
@@ -705,7 +1119,7 @@ function DensityFigureRail({
             type="button"
             className={index % 3 === 0 ? "rail-mark strong" : "rail-mark"}
             onClick={() => {
-              const record = records.find((item) => (item.canonical_figure_guess || item.canonical_figure || "uncoded") === figure);
+              const record = derived.figureSamples.get(figure);
               if (record) {
                 onSelectRecord(record);
               }
@@ -719,23 +1133,33 @@ function DensityFigureRail({
   );
 }
 
-function DashboardView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord: (record: RecordItem) => void }) {
+function DashboardView({
+  data,
+  derived,
+  onSelectRecord,
+}: {
+  data: FrontendData;
+  derived: FrontendDerivedData;
+  onSelectRecord: (record: RecordItem) => void;
+}) {
   return (
     <div className="dashboard-view">
-      <DashboardTrackNetwork data={data} onSelectRecord={onSelectRecord} />
-      <DashboardControlConsole data={data} />
+      <DashboardTrackNetwork data={data} derived={derived} onSelectRecord={onSelectRecord} />
+      <DashboardControlConsole data={data} derived={derived} />
     </div>
   );
 }
 
 function DashboardTrackNetwork({
   data,
+  derived,
   onSelectRecord,
 }: {
   data: FrontendData;
+  derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const tracks = dashboardTrackSample(data);
+  const tracks = derived.dashboardTracks;
   const nodes = tracks.map((record, index) => ({
     record,
     x: index % 3 === 0 ? 58 : index % 3 === 1 ? 174 : 274,
@@ -823,29 +1247,13 @@ function DashboardTrackNetwork({
   );
 }
 
-function DashboardControlConsole({ data }: { data: FrontendData }) {
+function DashboardControlConsole({ data, derived }: { data: FrontendData; derived: FrontendDerivedData }) {
   const [mode, setMode] = useState<"records" | "locations" | "queries">("queries");
-  const queryTypes = data.queries.reduce<Record<string, number>>((acc, query) => {
-    acc[query.query_type] = (acc[query.query_type] ?? 0) + 1;
-    return acc;
-  }, {});
+  const queryTypes = derived.queryTypeCounts;
   const stateCounts = data.summary.corpus_state_counts ?? data.summary.state_record_counts;
-  const mappedStateCounts =
-    data.summary.mapped_state_counts ??
-    data.records.reduce<Record<string, number>>((acc, record) => {
-      if (record.has_strict_map_point && record.state_territory) {
-        acc[record.state_territory] = (acc[record.state_territory] ?? 0) + 1;
-      }
-      return acc;
-    }, {});
-  const figureCounts = data.records.reduce<Record<string, number>>((acc, record) => {
-    const label = record.canonical_figure_guess || record.canonical_figure || "uncoded";
-    acc[label] = (acc[label] ?? 0) + 1;
-    return acc;
-  }, {});
-  const sourceRows = Object.entries(data.summary.source_rollup)
-    .sort((a, b) => b[1].query_count - a[1].query_count || b[1].record_count - a[1].record_count)
-    .slice(0, 6);
+  const mappedStateCounts = derived.mappedStateCounts;
+  const figureCounts = derived.figureCounts;
+  const sourceRows = derived.sourceRows.slice(0, 6);
   const activeValues =
     mode === "records" ? figureCounts : mode === "locations" ? mappedStateCounts : queryTypes;
   const activeTabs = [
@@ -861,7 +1269,7 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
         ]
       : mode === "locations"
         ? [
-            ["MAPPED", data.summary.mapped_record_count],
+            ["MAPPED", derived.mapFlags.length],
             ["BROAD", data.summary.broad_location_count],
           ]
         : [
@@ -870,7 +1278,7 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
           ];
   const outputValues = [
     { id: "records" as const, value: data.summary.record_count, label: "Card-ready records" },
-    { id: "locations" as const, value: data.summary.mapped_record_count, label: "Mapped records" },
+    { id: "locations" as const, value: derived.mapFlags.length, label: "Mapped records" },
     { id: "queries" as const, value: data.summary.query_count, label: "Planned queries" },
   ];
   const stateOrder = ["WA", "NT", "SA", "QLD", "NSW", "VIC", "TAS", "ACT"];
@@ -1315,7 +1723,17 @@ function recordDisplayTitle(record: RecordItem) {
   return record.canonical_figure_guess || record.canonical_figure || record.title || "Uncoded public record";
 }
 
+function isSummaryOnlyRecord(record: RecordItem) {
+  const values = [record.ethics_flag, record.publicness_code, record.publicness_level, record.ingestion_status].filter(Boolean).join(" ");
+  return /summary|restricted|caution_indigenous_knowledge|sensitive/i.test(values);
+}
+
 function recordBody(record: RecordItem) {
+  if (isSummaryOnlyRecord(record)) {
+    const source = record.publication || record.source_name || "a public source";
+    const date = record.date_published || (record.year ? String(record.year) : "date unknown");
+    return `Summary-only public record from ${source} (${date}). This card keeps the display at metadata level because the item carries publicness or sensitivity restrictions.`;
+  }
   if (record.snippet) {
     return record.snippet;
   }
@@ -1331,22 +1749,10 @@ type RecordNavigationContext = {
   regionLabel: string;
 };
 
-function recordNavigationContext(data: FrontendData, record: RecordItem): RecordNavigationContext {
+function recordNavigationContext(derived: FrontendDerivedData, record: RecordItem): RecordNavigationContext {
   const state = record.has_strict_map_point ? record.state_territory : null;
-  const strictPointRecords = data.records.filter(
-    (item) => Boolean(state) && item.has_strict_map_point && item.state_territory === state,
-  );
-  const unique = strictPointRecords.sort((a, b) => {
-    const yearA = a.year ?? 9999;
-    const yearB = b.year ?? 9999;
-    return yearA - yearB || (a.title ?? "").localeCompare(b.title ?? "") || a.record_id - b.record_id;
-  });
-  const fallback = [...data.records].sort((a, b) => {
-    const yearA = a.year ?? 9999;
-    const yearB = b.year ?? 9999;
-    return yearA - yearB || (a.title ?? "").localeCompare(b.title ?? "") || a.record_id - b.record_id;
-  });
-  const records = unique.length ? unique : fallback;
+  const stateRecords = state ? derived.navigationRecordsByState.get(state) ?? [] : [];
+  const records = stateRecords.length ? stateRecords : derived.sortedRecords;
   const currentIndex = Math.max(
     0,
     records.findIndex((item) => item.record_id === record.record_id),
@@ -1370,14 +1776,19 @@ function RecordCardOverlay({
   onNavigate: (direction: 1 | -1) => void;
 }) {
   const tone = mapSourceTone(record);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const location = record.location_summary || "location unverified";
   const sourceName = record.source_name || record.publication || "public source";
   const sourceClass = tone.className;
   const year = record.year ?? "----";
-  const title = record.title || recordDisplayTitle(record);
   const body = recordBody(record);
   const canNavigate = Boolean(navigation && navigation.records.length > 1);
   const navPosition = navigation ? `${navigation.currentIndex + 1} / ${navigation.records.length}` : "1 / 1";
+  const titleId = `record-card-title-${record.record_id}`;
+
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+  }, [record.record_id]);
 
   return (
     <div className="record-overlay" role="presentation" onClick={onClose}>
@@ -1412,13 +1823,13 @@ function RecordCardOverlay({
           className={`record-card ${sourceClass}`}
           role="dialog"
           aria-modal="true"
-          aria-label={`Record ${title}`}
+          aria-labelledby={titleId}
         >
         <section className="record-card-table" aria-label="Record metadata">
           <div className="record-card-table-top">
             <span>aus humanoid record</span>
             <span>{navigation?.regionLabel ?? "archive"} / {navPosition}</span>
-            <button type="button" onClick={onClose} aria-label="Close record card">
+            <button ref={closeButtonRef} type="button" onClick={onClose} aria-label="Close record card">
               CLOSE
             </button>
           </div>
@@ -1448,7 +1859,7 @@ function RecordCardOverlay({
 
         <section className="record-card-title-block">
           <div className="record-card-year">{year}</div>
-          <h2>{recordDisplayTitle(record)}</h2>
+          <h2 id={titleId}>{recordDisplayTitle(record)}</h2>
         </section>
 
         <section className="record-card-body">
@@ -1472,9 +1883,9 @@ function RecordCardOverlay({
   );
 }
 
-function SourceView({ data }: { data: FrontendData }) {
-  const sourceRows = Object.entries(data.summary.source_rollup).sort((a, b) => b[1].query_count - a[1].query_count);
-  const ethicsRows = entriesDescending(data.summary.ethics_counts);
+function SourceView({ data, derived }: { data: FrontendData; derived: FrontendDerivedData }) {
+  const sourceRows = derived.sourceRows;
+  const ethicsRows = derived.ethicsRows;
   return (
     <div className="source-view" aria-label="Sources">
       <div className="source-display">

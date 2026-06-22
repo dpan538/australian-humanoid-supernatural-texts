@@ -1,6 +1,5 @@
-import { ArchiveTerminal } from "@/components/archive-terminal";
-import { frontendData } from "@/lib/frontend-data";
+import { ArchiveTerminalRoute } from "@/components/archive-terminal";
 
 export default function DensityPage() {
-  return <ArchiveTerminal data={frontendData} view="density" />;
+  return <ArchiveTerminalRoute view="density" />;
 }

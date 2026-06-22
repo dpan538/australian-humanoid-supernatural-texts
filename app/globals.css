@@ -27,6 +27,7 @@ html,
 body {
   margin: 0;
   min-height: 100%;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--ink);
   font-family: "Courier New", "SFMono-Regular", Consolas, monospace;
@@ -35,6 +36,13 @@ body {
 button {
   color: inherit;
   font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: 1px solid rgba(159, 224, 255, 0.82);
+  outline-offset: 3px;
 }
 
 a {
@@ -209,6 +217,34 @@ a {
   font-size: 0.76rem;
   line-height: 1;
   text-transform: uppercase;
+}
+
+.terminal-loading-state {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  min-height: 320px;
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  padding: 28px;
+  text-align: center;
+}
+
+.terminal-loading-state span {
+  color: var(--blue);
+  font-size: 0.78rem;
+}
+
+.terminal-loading-state b {
+  color: var(--ink);
+  font-size: clamp(1.4rem, 3vw, 2.5rem);
+  font-weight: 400;
+}
+
+.terminal-loading-state small {
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 .map-view,
@@ -411,6 +447,10 @@ a {
   transition: opacity 140ms ease, filter 140ms ease;
   animation: record-flag-arrive 760ms steps(7, end) both;
   animation-delay: var(--flag-delay, 0ms);
+}
+
+.record-flag-layer.large-flag-set .record-flag {
+  animation: none;
 }
 
 @keyframes record-flag-arrive {
@@ -672,7 +712,10 @@ a {
   padding: 8px;
   display: grid;
   align-content: space-between;
-  cursor: default;
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
   transition: color 140ms ease, background 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
 }
 
@@ -2486,12 +2529,55 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .map-view {
+    grid-template-rows: minmax(420px, 1fr) auto;
+    padding-right: 18px;
+  }
+
+  .map-source-block {
+    top: 20px;
+    right: 20px;
+    width: min(520px, 54vw);
+    font-size: 0.8rem;
+  }
+
+  .map-readout {
+    max-width: none;
+    transform: none;
+  }
+
+  .dashboard-view {
+    gap: 22px;
+    align-items: start;
+  }
+
+  .dashboard-track-network {
+    height: 390px;
+  }
+
+  .dashboard-console {
+    max-height: none;
+  }
+
   .signal-square {
     max-width: 420px;
   }
 
   .density-bands {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .density-aux-grid,
+  .source-display-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .source-display {
+    height: min(760px, calc(100svh - 146px));
+  }
+
+  .source-register-scroll {
+    max-height: 320px;
   }
 }
 
@@ -2515,12 +2601,120 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .map-view {
+    grid-template-rows: auto minmax(320px, 46svh) auto;
+    gap: 12px;
+  }
+
+  .map-source-block {
+    position: static;
+    width: 100%;
+    text-align: left;
+    font-size: 0.68rem;
+  }
+
+  .map-canvas {
+    min-height: 320px;
+  }
+
   .map-readout {
     align-self: stretch;
   }
 
+  .readout-block {
+    min-height: 104px;
+  }
+
+  .readout-number {
+    font-size: 2.8rem;
+  }
+
   .density-bands {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .density-header {
+    display: grid;
+    gap: 8px;
+  }
+
+  .density-header b {
+    font-size: 1rem;
+  }
+
+  .density-aux-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-track-network {
+    height: 360px;
+  }
+
+  .track-list {
+    top: 92px;
+    left: 42%;
+    right: 4px;
+  }
+
+  .track-list > span {
+    margin-left: 0;
+  }
+
+  .track-row {
+    grid-template-columns: 30px minmax(0, 1fr);
+  }
+
+  .track-row i {
+    max-width: 100%;
+  }
+
+  .console-mid-row,
+  .console-source-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .source-display {
+    width: 100%;
+    height: min(820px, calc(100svh - 146px));
+    gap: 12px;
+  }
+
+  .source-display::before {
+    inset: -12px;
+  }
+
+  .source-display-header h2 {
+    font-size: clamp(1.28rem, 7vw, 1.9rem);
+  }
+
+  .source-display-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .source-display-section {
+    padding-inline: 12px;
+  }
+
+  .source-display-row,
+  .source-register-section .source-display-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .source-display-row span {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .source-display-row b,
+  .source-register-row div {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .source-register-scroll {
+    max-height: 280px;
   }
 
   .metric-row,
@@ -2531,6 +2725,78 @@ a {
 
   .external-control-dock {
     align-self: flex-end;
+    max-width: 100%;
+    gap: 6px;
+  }
+
+  .dock-button {
+    min-width: 78px;
+    padding: 0 10px;
+  }
+
+  .view-cycle-button {
+    min-width: 116px;
+  }
+
+  .record-overlay {
+    place-items: start center;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  .record-card-shell {
+    width: 100%;
+  }
+
+  .record-card {
+    min-height: auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  .record-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .record-card-grid div {
+    min-height: 58px;
+    padding-right: 8px;
+  }
+
+  .record-card-year {
+    font-size: clamp(3.2rem, 18vw, 4.8rem);
+  }
+
+  .record-card-title-block h2 {
+    font-size: clamp(2rem, 12vw, 3.2rem);
+  }
+
+  .record-card-body {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .record-card-body footer {
+    justify-self: stretch;
+    min-width: 0;
+  }
+
+  .record-card-nav {
+    top: auto;
+    bottom: -54px;
+    width: 48px;
+    height: 44px;
+    border: 1px solid rgba(242, 242, 237, 0.22);
+    background: rgba(5, 6, 6, 0.72);
+    transform: none;
+  }
+
+  .record-card-nav-prev {
+    left: 0;
+  }
+
+  .record-card-nav-next {
+    right: 0;
   }
 }
 
