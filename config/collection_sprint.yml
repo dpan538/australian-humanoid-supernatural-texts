@@ -1,10 +1,12 @@
 schema_version: collection-sprint/v1
 run_id: collection_sprint_20260622_002
-worker_count: 4
+worker_count: 6
 maximum_candidates_per_route: 30
 maximum_runtime_per_route_seconds: 600
-scaled_maximum_candidates_per_route: 300
-scaled_accepted_target_per_route: 100
+scaled_maximum_candidates_per_route: 500
+scaled_accepted_target_per_route: 200
+checkpoint_record_interval: 250
+checkpoint_map_interval: 75
 checkpoint_interval: 50
 frontend_export_interval: 150
 retry_count: 1
@@ -33,6 +35,7 @@ routes:
     jurisdiction: NT
     retrieval_method: exact_chapter_html_text
     scaled: true
+    bootstrap_consumed_pages: 5
     accepted_target: 40
     max_candidates_probe: 30
     max_candidates_scaled: 90
@@ -72,6 +75,7 @@ routes:
     jurisdiction: NT
     retrieval_method: exact_chapter_html_text
     scaled: true
+    bootstrap_consumed_pages: 3
     accepted_target: 25
     max_candidates_probe: 30
     max_candidates_scaled: 70
@@ -105,6 +109,7 @@ routes:
     jurisdiction: VIC/SA/NSW
     retrieval_method: exact_chapter_html_text
     scaled: true
+    bootstrap_consumed_pages: 3
     accepted_target: 35
     max_candidates_probe: 30
     max_candidates_scaled: 90
@@ -118,6 +123,7 @@ routes:
       - {section_id: ntsea-ch9, url: "https://en.wikisource.org/wiki/Native_Tribes_of_South-East_Australia/Chapter_9", chapter: Initiation Ceremonies}
       - {section_id: ntsea-ch10, url: "https://en.wikisource.org/wiki/Native_Tribes_of_South-East_Australia/Chapter_10", chapter: Ceremonies and Beliefs}
       - {section_id: ntsea-ch11, url: "https://en.wikisource.org/wiki/Native_Tribes_of_South-East_Australia/Chapter_11", chapter: Legends}
+      - {section_id: ntsea-ch12, url: "https://en.wikisource.org/wiki/Native_Tribes_of_South-East_Australia/Chapter_12", chapter: Tales and Beliefs}
     entity_terms:
       - Daramulun
       - Tharamulun
@@ -141,6 +147,7 @@ routes:
     jurisdiction: NSW/QLD
     retrieval_method: exact_chapter_html_text
     scaled: true
+    bootstrap_consumed_pages: 8
     accepted_target: 40
     max_candidates_probe: 30
     max_candidates_scaled: 100
@@ -159,6 +166,14 @@ routes:
       - {section_id: euahlayi-ch9, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_9", chapter: The Making of Medicine Men}
       - {section_id: euahlayi-ch11, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_11", chapter: Legends and Spirit Figures}
       - {section_id: euahlayi-ch16, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_16", chapter: Glossary and Belief Terms}
+      - {section_id: euahlayi-ch1, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_1", chapter: Introductory Belief Context}
+      - {section_id: euahlayi-ch6, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_6", chapter: Spirits and Wirreenun}
+      - {section_id: euahlayi-ch7, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_7", chapter: Spirit Beliefs}
+      - {section_id: euahlayi-ch10, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_10", chapter: Spirit Stories}
+      - {section_id: euahlayi-ch12, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_12", chapter: Byamee and Giant References}
+      - {section_id: euahlayi-ch13, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_13", chapter: Byamee and Wirreenun}
+      - {section_id: euahlayi-ch14, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_14", chapter: Medicine Man Notes}
+      - {section_id: euahlayi-ch15, url: "https://en.wikisource.org/wiki/The_Euahlayi_Tribe/Chapter_15", chapter: Spirit and Devil Beliefs}
     entity_terms:
       - Byamee
       - Baiame
@@ -209,6 +224,7 @@ routes:
     jurisdiction: VIC/NSW
     retrieval_method: exact_title_html_text
     scaled: true
+    bootstrap_consumed_pages: 3
     accepted_target: 24
     max_candidates_probe: 30
     max_candidates_scaled: 45
@@ -221,7 +237,10 @@ routes:
     pages:
       - {section_id: hume-cook-australian-fairy-tales, url: "https://gutenberg.net.au/ebooks21/2100331h.html", chapter: Australian Fairy Tales}
       - {section_id: buckland-fairy-tales-from-australia, url: "https://gutenberg.net.au/ebooks21/2100071h.html", chapter: Fairy Tales from Australia}
-      - {section_id: hume-cook-dandenongs-first, url: "https://gutenberg.net.au/ebooks21/2100371h.html", chapter: Tales of the Dandenongs First Series}
+      - {section_id: hume-cook-dandenongs-first, url: "https://gutenberg.net.au/ebooks21/2100371h.html", chapter: Tales of the Dandenongs First Series, location_text: "Dandenong Ranges, VIC", location_role: narrative_setting, latitude: -37.8333, longitude: 145.35, location_precision: named_feature, geocode_source: "GeoNames Dandenong Ranges / public gazetteer cross-check", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source title explicitly names the Dandenongs; representative public coordinate is for Dandenong Ranges, Victoria."}
+      - {section_id: hume-cook-dandenongs-second, url: "https://gutenberg.net.au/ebooks21/2100341h.html", chapter: Tales of the Dandenongs Second Series, location_text: "Dandenong Ranges, VIC", location_role: narrative_setting, latitude: -37.8333, longitude: 145.35, location_precision: named_feature, geocode_source: "GeoNames Dandenong Ranges / public gazetteer cross-check", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source title explicitly names the Dandenongs; representative public coordinate is for Dandenong Ranges, Victoria."}
+      - {section_id: hume-cook-dandenongs-third, url: "https://gutenberg.net.au/ebooks21/2100481h.html", chapter: Tales of the Dandenongs Third Series, location_text: "Dandenong Ranges, VIC", location_role: narrative_setting, latitude: -37.8333, longitude: 145.35, location_precision: named_feature, geocode_source: "GeoNames Dandenong Ranges / public gazetteer cross-check", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source title explicitly names the Dandenongs; representative public coordinate is for Dandenong Ranges, Victoria."}
+      - {section_id: hume-cook-dandenongs-fourth, url: "https://gutenberg.net.au/ebooks21/2100381h.html", chapter: Tales of the Dandenongs Fourth Series, location_text: "Dandenong Ranges, VIC", location_role: narrative_setting, latitude: -37.8333, longitude: 145.35, location_precision: named_feature, geocode_source: "GeoNames Dandenong Ranges / public gazetteer cross-check", geocode_verification_status: verified_gazetteer_point, coordinate_evidence_note: "Source title explicitly names the Dandenongs; representative public coordinate is for Dandenong Ranges, Victoria."}
     entity_terms:
       - fairy
       - fairies
@@ -237,6 +256,360 @@ routes:
       - little old woman
       - little man
       - little woman
+  - route_id: sprint_project_gutenberg_westbury_australian_fairy_tales
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 40
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: Australian fairy tales
+    source_author: Atha Westbury
+    publication_date_text: "1897"
+    australian_relation: Australian public-domain fairy-tale collection by an Australian author, distributed by Project Gutenberg.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: gutenberg-68225-westbury-australian-fairy-tales, url: "https://www.gutenberg.org/files/68225/68225-0.txt", chapter: Australian fairy tales}
+    entity_terms:
+      - fairy
+      - fairies
+      - witch
+      - giant
+      - spirit
+      - ghost
+      - magician
+      - enchanter
+      - little man
+      - little woman
+  - route_id: sprint_project_gutenberg_robertson_australian_tales
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: QLD
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: Nuggets in the Devil's Punch Bowl, and Other Australian Tales
+    source_author: Andrew Robertson
+    publication_date_text: "1894"
+    australian_relation: Public-domain Australian tale collection distributed by Project Gutenberg.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: gutenberg-54415-robertson-australian-tales, url: "https://www.gutenberg.org/files/54415/54415-0.txt", chapter: Nuggets in the Devil's Punch Bowl, and Other Australian Tales}
+    entity_terms:
+      - ghost
+      - ghosts
+      - spirit
+      - devil
+      - witch
+      - fairy
+      - giant
+      - little man
+  - route_id: sprint_project_gutenberg_barry_bunyip_stories
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: AU
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: Steve Brown's Bunyip, and Other Stories
+    source_author: John Arthur Barry
+    publication_date_text: "1893"
+    australian_relation: Public-domain Australian story collection distributed by Project Gutenberg; classifier must accept only person-form supernatural passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: gutenberg-60482-barry-bunyip-stories, url: "https://www.gutenberg.org/files/60482/60482-0.txt", chapter: Steve Brown's Bunyip, and Other Stories}
+    entity_terms:
+      - ghost
+      - ghosts
+      - spirit
+      - devil
+      - witch
+      - fairy
+      - giant
+      - little man
+  - route_id: sprint_internet_archive_kamilaroi_kurnai_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: Kamilaroi and Kurnai
+    source_author: Lorimer Fison and A. W. Howitt
+    publication_date_text: "1880"
+    australian_relation: Public-domain Australian ethnographic book exposed through an exact Internet Archive item.
+    default_location_text: New South Wales and Victoria
+    default_location_role: cultural_association_region
+    archive_identifier: kamilaroikurnaig00fiso
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - wizard
+      - witch
+      - supernatural
+      - Bunjil
+      - Kurnai
+      - Baiame
+      - Daramulun
+  - route_id: sprint_internet_archive_sa_folklore_manners_customs_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: SA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: The folklore, manners, customs, and languages of the South Australian aborigines
+    source_author: George Taplin
+    publication_date_text: "1879"
+    australian_relation: Public-domain South Australian ethnographic book exposed through an exact Internet Archive item.
+    default_location_text: South Australia
+    default_location_role: cultural_association_region
+    archive_identifier: folkloremannersc00taplrich
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - wizard
+      - witch
+      - supernatural
+      - Mura-mura
+      - medicine man
+  - route_id: sprint_internet_archive_native_tribes_south_australia_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: SA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: The Native Tribes of South Australia
+    source_author: George Taplin, James Dominick Woods, William Wyatt, H. A. E. Meyer, C. W. Schürmann, Samuel Gason, J. W. O. Bennett
+    publication_date_text: "1879"
+    australian_relation: Public-domain South Australian ethnographic book exposed through an exact Internet Archive item.
+    default_location_text: South Australia
+    default_location_role: cultural_association_region
+    archive_identifier: nativetribessou00benngoog
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - witch
+      - giant
+      - supernatural
+      - Mura-mura
+      - medicine man
+  - route_id: sprint_internet_archive_eaglehawk_crow_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: AU
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 50
+    max_candidates_probe: 30
+    max_candidates_scaled: 140
+    source_title: Eaglehawk and Crow
+    source_author: John Mathew
+    publication_date_text: "1899"
+    australian_relation: Public-domain Australian ethnographic study exposed through an exact Internet Archive item.
+    default_location_text: Australia
+    default_location_role: cultural_association_region
+    archive_identifier: eaglehawkcrowstu00math
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - witch
+      - supernatural
+      - Baiame
+      - Bunjil
+      - Kurnai
+      - fairy
+  - route_id: sprint_internet_archive_moore_wa_diary_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: Diary of ten years eventful life of an early settler in Western Australia
+    source_author: George Fletcher Moore
+    publication_date_text: "1884"
+    australian_relation: Public-domain Western Australian local-history and vocabulary source exposed through an exact Internet Archive item.
+    default_location_text: Western Australia
+    default_location_role: cultural_association_region
+    archive_identifier: diaryoftenyearse00mooriala
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - wizard
+      - witch
+      - giant
+      - supernatural
+  - route_id: sprint_internet_archive_dawson_victoria_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: VIC
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: "Australian Aborigines: the languages and customs of several tribes of aborigines in the western district of Victoria, Australia"
+    source_author: James Dawson
+    publication_date_text: "1881"
+    australian_relation: Public-domain western Victorian ethnographic source exposed through an exact Internet Archive item.
+    default_location_text: Western District, VIC
+    default_location_role: cultural_association_region
+    archive_identifier: australianaborig81daws
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - witch
+      - giant
+      - supernatural
+      - fairy
+  - route_id: sprint_internet_archive_smyth_victoria_vol1_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: VIC/TAS
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: The aborigines of Victoria, volume 1
+    source_author: R. Brough Smyth
+    publication_date_text: "1878"
+    australian_relation: Public-domain Victorian and Tasmanian ethnographic source exposed through an exact Internet Archive item.
+    default_location_text: Victoria and Tasmania
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginesofvict01smyt
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - wizard
+      - witch
+      - giant
+      - supernatural
+      - fairy
+  - route_id: sprint_internet_archive_smyth_victoria_vol2_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: VIC/TAS
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: The aborigines of Victoria, volume 2
+    source_author: R. Brough Smyth
+    publication_date_text: "1878"
+    australian_relation: Public-domain Victorian and Tasmanian ethnographic source exposed through an exact Internet Archive item.
+    default_location_text: Victoria and Tasmania
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginesofvict02smyt
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - witch
+      - giant
+      - supernatural
+      - Baiame
+      - fairy
+      - apparition
+  - route_id: sprint_internet_archive_roth_tasmania_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: TAS
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: The Aborigines of Tasmania
+    source_author: H. Ling Roth, Marion E. Butler, James Backhouse Walker, J. G. Garson, E. B. Tylor
+    publication_date_text: "1899"
+    australian_relation: Public-domain Tasmanian ethnographic source exposed through an exact Internet Archive item.
+    default_location_text: Tasmania
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginestasma00tylogoog
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - witch
+      - giant
+      - fairy
+      - apparition
   - route_id: sprint_map_queue_geocode_verification
     enabled: true
     family: place_first_map_records

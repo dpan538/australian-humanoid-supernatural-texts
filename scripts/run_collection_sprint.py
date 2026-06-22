@@ -48,6 +48,9 @@ CONFIG_PATH = ROOT / "config" / "collection_sprint.yml"
 ROUTES_PATH = ROOT / "config" / "collection_routes.yml"
 STATUS_MD = ROOT / "data" / "processed" / "v2" / "collection_sprint_status.md"
 STATUS_JSON = ROOT / "data" / "processed" / "v2" / "collection_sprint_status.json"
+STATE_JSON = ROOT / "data" / "processed" / "v2" / "collection_sprint_state.json"
+FINAL_STATUS_MD = ROOT / "data" / "processed" / "v2" / "launch_collection_final_status.md"
+FINAL_STATUS_JSON = ROOT / "data" / "processed" / "v2" / "launch_collection_final_status.json"
 FRONTEND_DATA = ROOT / "public" / "data" / "frontend-data.json"
 USER_AGENT = "AustralianHumanoidTexts/collection-sprint contact: local research"
 
@@ -193,6 +196,7 @@ class RouteResult:
     candidates: list[dict[str, Any]] = field(default_factory=list)
     map_updates: list[dict[str, Any]] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
+    resume_cursor: dict[str, Any] = field(default_factory=dict)
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -218,6 +222,7 @@ class RouteResult:
             "stop_reason": self.stop_reason,
             "route_phase": self.route_phase,
             "notes": self.notes,
+            "resume_cursor": self.resume_cursor,
         }
 
 
@@ -335,14 +340,14 @@ def make_candidate(route: dict[str, Any], page: dict[str, Any], term: str, block
         "australian_relation": route.get("australian_relation", ""),
         "humanoid_basis": humanoid_basis,
         "source_label": canonicalise_whitespace(term),
-        "location_text": route.get("default_location_text", ""),
-        "location_role": route.get("default_location_role", "cultural_association_region"),
-        "latitude": "",
-        "longitude": "",
-        "location_precision": "region" if route.get("default_location_text") else "",
-        "geocode_source": "",
-        "geocode_verification_status": "",
-        "coordinate_evidence_note": "",
+        "location_text": page.get("location_text") or route.get("default_location_text", ""),
+        "location_role": page.get("location_role") or route.get("default_location_role", "cultural_association_region"),
+        "latitude": page.get("latitude", ""),
+        "longitude": page.get("longitude", ""),
+        "location_precision": page.get("location_precision") or ("region" if route.get("default_location_text") else ""),
+        "geocode_source": page.get("geocode_source", ""),
+        "geocode_verification_status": page.get("geocode_verification_status", ""),
+        "coordinate_evidence_note": page.get("coordinate_evidence_note", ""),
         "duplicate_check_status": "source_url_external_id_and_excerpt_hash_checked",
         "quality_class": "B" if outcome == "first_class" else "reviewed_context",
         "ethics_review_status": "public_context_reviewed",
@@ -389,8 +394,14 @@ def fetch_archive_text(route: dict[str, Any]) -> tuple[str, str]:
     return text_url, fetch_text(text_url)
 
 
-def collect_text_route(route: dict[str, Any], stage_dir: Path, scaled: bool) -> RouteResult:
+def collect_text_route(
+    route: dict[str, Any],
+    stage_dir: Path,
+    scaled: bool,
+    cursor: dict[str, Any] | None = None,
+) -> RouteResult:
     started_at = time.monotonic()
+    cursor = cursor or {}
     route_id = route["route_id"]
     max_candidates = int(route.get("max_candidates_scaled" if scaled else "max_candidates_probe") or 30)
     accepted_target = int(route.get("accepted_target") or 0)
@@ -406,14 +417,23 @@ def collect_text_route(route: dict[str, Any], stage_dir: Path, scaled: bool) -> 
     )
     pages = list(route.get("pages") or [])
     if route.get("archive_identifier"):
+        if cursor.get("exhausted"):
+            result.stop_reason = "route_cursor_exhausted"
+            result.resume_cursor = cursor
+            write_route_stage(result)
+            print_route_progress(result, started_at)
+            return result
         text_url, text = fetch_archive_text(route)
         pages = [{"section_id": route["archive_identifier"], "url": text_url, "chapter": route.get("source_title", "full text"), "text": text}]
     seen_hashes: set[str] = set()
     term_hits: Counter[str] = Counter()
+    start_page_index = int(cursor.get("page_index") or 0)
+    next_page_index = start_page_index
     try:
-        for page in pages:
+        for page_index, page in enumerate(pages[start_page_index:], start=start_page_index):
             if result.processed >= max_candidates:
                 break
+            next_page_index = page_index
             try:
                 text = page.get("text") or fetch_text(page["url"])
                 result.fetched += 1
@@ -463,7 +483,19 @@ def collect_text_route(route: dict[str, Any], stage_dir: Path, scaled: bool) -> 
                         print_route_progress(result, started_at)
                 if accepted_target and result.accepted_provisional >= accepted_target:
                     break
+            next_page_index = page_index + 1
+        exhausted = next_page_index >= len(pages)
+        result.resume_cursor = {
+            "page_index": next_page_index,
+            "total_pages": len(pages),
+            "exhausted": exhausted,
+            "updated_at": utc_now_iso(),
+        }
+        if route.get("archive_identifier"):
+            result.resume_cursor["exhausted"] = True
         result.stop_reason = "accepted_target_reached" if accepted_target and result.accepted_provisional >= accepted_target else "route_candidate_limit_or_source_exhausted"
+        if result.resume_cursor.get("exhausted") and not result.accepted_provisional:
+            result.stop_reason = "route_cursor_exhausted"
     finally:
         result.runtime_seconds = time.monotonic() - started_at
         write_route_stage(result)
@@ -471,7 +503,7 @@ def collect_text_route(route: dict[str, Any], stage_dir: Path, scaled: bool) -> 
     return result
 
 
-def collect_probe_only(route: dict[str, Any], stage_dir: Path) -> RouteResult:
+def collect_probe_only(route: dict[str, Any], stage_dir: Path, cursor: dict[str, Any] | None = None) -> RouteResult:
     started_at = time.monotonic()
     route_id = route["route_id"]
     result = RouteResult(
@@ -485,6 +517,10 @@ def collect_probe_only(route: dict[str, Any], stage_dir: Path) -> RouteResult:
         route_phase="probe",
     )
     try:
+        if (cursor or {}).get("exhausted"):
+            result.stop_reason = "route_cursor_exhausted"
+            result.resume_cursor = cursor or {}
+            return result
         url = route.get("search_url")
         if url:
             text = fetch_text(url)
@@ -499,6 +535,7 @@ def collect_probe_only(route: dict[str, Any], stage_dir: Path) -> RouteResult:
                 if result.processed % 25 == 0:
                     print_route_progress(result, started_at)
         result.stop_reason = "probe_directory_or_search_page_discovery_only"
+        result.resume_cursor = {"exhausted": True, "updated_at": utc_now_iso()}
     except Exception as exc:  # noqa: BLE001
         result.errors += 1
         result.stop_reason = f"probe_error:{type(exc).__name__}"
@@ -535,7 +572,12 @@ def verify_with_nominatim(place: str, state: str) -> dict[str, Any] | None:
     return None
 
 
-def collect_map_queue_route(route: dict[str, Any], stage_dir: Path, scaled: bool) -> RouteResult:
+def collect_map_queue_route(
+    route: dict[str, Any],
+    stage_dir: Path,
+    scaled: bool,
+    cursor: dict[str, Any] | None = None,
+) -> RouteResult:
     started_at = time.monotonic()
     route_id = route["route_id"]
     result = RouteResult(
@@ -602,6 +644,12 @@ def collect_map_queue_route(route: dict[str, Any], stage_dir: Path, scaled: bool
         if result.processed % 25 == 0:
             print_route_progress(result, started_at)
     result.stop_reason = "map_target_reached" if target and result.map_candidates >= target else "queue_limit_or_unverified_rows"
+    remaining = sum(1 for row in rows if row.get("promotion_status") in {"not_promoted", "pending", ""})
+    result.resume_cursor = {
+        "remaining_queue_rows": remaining,
+        "exhausted": remaining == 0,
+        "updated_at": utc_now_iso(),
+    }
     result.runtime_seconds = time.monotonic() - started_at
     write_route_stage(result)
     print_route_progress(result, started_at)
@@ -624,12 +672,12 @@ def write_route_stage(result: RouteResult) -> None:
             writer.writerow({field: candidate.get(field, "") for field in CSV_FIELDS})
 
 
-def run_route(route: dict[str, Any], stage_dir: Path, scaled: bool = False) -> RouteResult:
+def run_route(route: dict[str, Any], stage_dir: Path, scaled: bool = False, cursor: dict[str, Any] | None = None) -> RouteResult:
     if route.get("retrieval_method") == "exact_queue_gazetteer_verification":
-        return collect_map_queue_route(route, stage_dir, scaled=scaled)
+        return collect_map_queue_route(route, stage_dir, scaled=scaled, cursor=cursor)
     if route.get("pages") or route.get("archive_identifier"):
-        return collect_text_route(route, stage_dir, scaled=scaled)
-    return collect_probe_only(route, stage_dir)
+        return collect_text_route(route, stage_dir, scaled=scaled, cursor=cursor)
+    return collect_probe_only(route, stage_dir, cursor=cursor)
 
 
 def load_export_counts() -> dict[str, int]:
@@ -735,6 +783,32 @@ def apply_map_updates_serial(updates: list[dict[str, Any]]) -> int:
             )
             applied += 1
         conn.commit()
+    if applied:
+        queue_path = ROOT / "data" / "exports" / "v2" / "map_geocode_verification_queue.csv"
+        if queue_path.exists():
+            by_record = {str(update["record_id"]): update for update in updates}
+            with queue_path.open("r", encoding="utf-8", newline="") as handle:
+                reader = csv.DictReader(handle)
+                rows = list(reader)
+                fieldnames = list(reader.fieldnames or [])
+            changed = False
+            for row in rows:
+                update = by_record.get(row.get("record_id", ""))
+                if not update:
+                    continue
+                row["required_source_place_confirmation"] = "passed"
+                row["required_gazetteer_coordinate_verification"] = "passed"
+                row["required_state_match_check"] = "passed"
+                row["required_not_publication_place_check"] = "passed"
+                row["required_verification_status_update"] = "passed"
+                row["promotion_status"] = "promoted"
+                row["review_note"] = update["evidence"]
+                changed = True
+            if changed:
+                with queue_path.open("w", encoding="utf-8", newline="") as handle:
+                    writer = csv.DictWriter(handle, fieldnames=fieldnames)
+                    writer.writeheader()
+                    writer.writerows(rows)
     return applied
 
 
@@ -815,6 +889,255 @@ def map_invariant() -> dict[str, int | bool]:
         "map_flags_length": counts["map_flags"],
         "ok": counts["map_points"] == counts["map_flags"],
     }
+
+
+def fresh_state(config: dict[str, Any]) -> dict[str, Any]:
+    counts = load_export_counts()
+    targets = config.get("targets", {})
+    state = {
+        "schema_version": "collection-sprint-state/v1",
+        "created_at": utc_now_iso(),
+        "updated_at": utc_now_iso(),
+        "target_public_records": int(targets.get("public_records") or 2800),
+        "target_map_flags": int(targets.get("map_flags") or 1200),
+        "launch_start_public_record_count": counts["public_records"],
+        "launch_start_map_flag_count": counts["map_flags"],
+        "current_public_record_count": counts["public_records"],
+        "current_map_flag_count": counts["map_flags"],
+        "record_gap": max(0, int(targets.get("public_records") or 2800) - counts["public_records"]),
+        "map_gap": max(0, int(targets.get("map_flags") or 1200) - counts["map_flags"]),
+        "active_routes": [],
+        "productive_routes": [],
+        "exhausted_routes": [],
+        "blocked_routes": [],
+        "next_route_queue": [],
+        "candidates_processed": 0,
+        "accepted_records": 0,
+        "context_records": 0,
+        "suppressed_rows": 0,
+        "duplicates": 0,
+        "rejected_rows": 0,
+        "map_candidates": 0,
+        "verified_map_flags": 0,
+        "last_completed_checkpoint": "",
+        "checkpoint_index": 0,
+        "records_at_last_checkpoint": counts["public_records"],
+        "map_flags_at_last_checkpoint": counts["map_flags"],
+        "resume_cursor_per_route": {},
+        "route_totals": {},
+        "history": [],
+    }
+    if STATUS_JSON.exists():
+        try:
+            status = json.loads(STATUS_JSON.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            status = {}
+        route_yield = status.get("aggregated_route_yield") or []
+        route_by_id = {route["route_id"]: route for route in config.get("routes", [])}
+        productive: set[str] = set()
+        exhausted: set[str] = set()
+        blocked: set[str] = set()
+        for row in route_yield:
+            route_id = row.get("route_id")
+            if not route_id:
+                continue
+            accepted = int(row.get("accepted_provisional") or 0)
+            total = {
+                "processed": int(row.get("processed") or 0),
+                "accepted": accepted,
+                "context": int(row.get("context_provisional") or 0),
+                "duplicates": int(row.get("duplicates") or 0),
+                "rejected": int(row.get("rejected") or 0),
+                "errors": 0,
+                "map_candidates": int(row.get("map_candidates") or 0),
+                "latest_acceptance_rate": accepted / int(row.get("processed") or 1),
+            }
+            state["route_totals"][route_id] = total
+            route = route_by_id.get(route_id) or {}
+            pages = route.get("pages") or []
+            if pages:
+                consumed_pages = int(route.get("bootstrap_consumed_pages") or len(pages))
+                state["resume_cursor_per_route"][route_id] = {
+                    "page_index": min(consumed_pages, len(pages)),
+                    "total_pages": len(pages),
+                    "exhausted": consumed_pages >= len(pages),
+                    "updated_at": utc_now_iso(),
+                    "bootstrap_from": "collection_sprint_status",
+                }
+            elif route.get("archive_identifier"):
+                state["resume_cursor_per_route"][route_id] = {
+                    "exhausted": True,
+                    "updated_at": utc_now_iso(),
+                    "bootstrap_from": "collection_sprint_status",
+                }
+            if accepted >= 6:
+                productive.add(route_id)
+            if accepted == 0:
+                exhausted.add(route_id)
+            if "probe_error" in str(row.get("stop_reason") or ""):
+                blocked.add(route_id)
+        state["productive_routes"] = sorted(productive)
+        state["exhausted_routes"] = sorted(exhausted)
+        state["blocked_routes"] = sorted(blocked)
+    state["next_route_queue"] = [route["route_id"] for route in rank_routes(config, state)]
+    return state
+
+
+def load_state(config: dict[str, Any], resume: bool) -> dict[str, Any]:
+    if resume and STATE_JSON.exists():
+        state = json.loads(STATE_JSON.read_text(encoding="utf-8"))
+    else:
+        state = fresh_state(config)
+    state.setdefault("resume_cursor_per_route", {})
+    state.setdefault("route_totals", {})
+    state.setdefault("history", [])
+    return state
+
+
+def route_is_blocked(route: dict[str, Any], state: dict[str, Any]) -> bool:
+    route_id = route["route_id"]
+    cursor = state.get("resume_cursor_per_route", {}).get(route_id) or {}
+    if cursor.get("exhausted"):
+        return True
+    if route_id in set(state.get("blocked_routes") or []):
+        return True
+    return False
+
+
+def rank_routes(config: dict[str, Any], state: dict[str, Any]) -> list[dict[str, Any]]:
+    routes = [route for route in config.get("routes", []) if route.get("enabled", True)]
+    productive = set(state.get("productive_routes") or [])
+
+    def score(route: dict[str, Any]) -> tuple[int, str]:
+        family = str(route.get("family") or "")
+        bonus = 0
+        if route["route_id"] in productive or route.get("scaled"):
+            bonus -= 40
+        if family in {"local_archive_historical_society", "repository_institutional_full_text", "place_first_map_records"}:
+            bonus -= 10
+        return (bonus, route["route_id"])
+
+    return sorted([route for route in routes if not route_is_blocked(route, state)], key=score)
+
+
+def update_state_after_checkpoint(
+    state: dict[str, Any],
+    config: dict[str, Any],
+    run_id: str,
+    results: list[RouteResult],
+    imported: Counter[str],
+    final_export: dict[str, int],
+    applied_map_updates: int,
+) -> None:
+    targets = config.get("targets", {})
+    target_records = int(targets.get("public_records") or 2800)
+    target_maps = int(targets.get("map_flags") or 1200)
+    state["updated_at"] = utc_now_iso()
+    state["current_public_record_count"] = final_export["public_records"]
+    state["current_map_flag_count"] = final_export["map_flags"]
+    state["record_gap"] = max(0, target_records - final_export["public_records"])
+    state["map_gap"] = max(0, target_maps - final_export["map_flags"])
+    state["candidates_processed"] = int(state.get("candidates_processed") or 0) + sum(result.processed for result in results)
+    state["accepted_records"] = int(state.get("accepted_records") or 0) + int(imported.get("accepted", 0))
+    state["context_records"] = int(state.get("context_records") or 0) + int(imported.get("lead_only", 0))
+    state["suppressed_rows"] = int(state.get("suppressed_rows") or 0) + sum(result.suppressed for result in results)
+    state["duplicates"] = int(state.get("duplicates") or 0) + int(imported.get("duplicate", 0)) + sum(result.duplicates for result in results)
+    state["rejected_rows"] = int(state.get("rejected_rows") or 0) + int(imported.get("rejected", 0)) + sum(result.rejected for result in results)
+    state["map_candidates"] = int(state.get("map_candidates") or 0) + sum(result.map_candidates for result in results)
+    state["verified_map_flags"] = int(state.get("verified_map_flags") or 0) + applied_map_updates
+    route_totals = state.setdefault("route_totals", {})
+    cursors = state.setdefault("resume_cursor_per_route", {})
+    productive: set[str] = set(state.get("productive_routes") or [])
+    exhausted: set[str] = set(state.get("exhausted_routes") or [])
+    blocked: set[str] = set(state.get("blocked_routes") or [])
+    for result in results:
+        total = route_totals.setdefault(
+            result.route_id,
+            {
+                "processed": 0,
+                "accepted": 0,
+                "context": 0,
+                "duplicates": 0,
+                "rejected": 0,
+                "errors": 0,
+                "map_candidates": 0,
+                "latest_acceptance_rate": 0,
+            },
+        )
+        total["processed"] += result.processed
+        total["accepted"] += result.accepted_provisional
+        total["context"] += result.context_provisional
+        total["duplicates"] += result.duplicates
+        total["rejected"] += result.rejected
+        total["errors"] += result.errors
+        total["map_candidates"] += result.map_candidates
+        total["latest_acceptance_rate"] = result.accepted_provisional / result.processed if result.processed else 0
+        if result.resume_cursor:
+            cursors[result.route_id] = result.resume_cursor
+        if result.accepted_provisional >= 6 or result.map_candidates >= 6:
+            productive.add(result.route_id)
+            exhausted.discard(result.route_id)
+        if result.resume_cursor.get("exhausted") and result.accepted_provisional == 0:
+            exhausted.add(result.route_id)
+        if result.errors and not result.processed:
+            blocked.add(result.route_id)
+    queue = [route["route_id"] for route in rank_routes(config, state)]
+    state["active_routes"] = [result.route_id for result in results]
+    state["productive_routes"] = sorted(productive)
+    state["exhausted_routes"] = sorted(exhausted)
+    state["blocked_routes"] = sorted(blocked)
+    state["next_route_queue"] = queue
+    state["last_completed_checkpoint"] = run_id
+    state["history"].append(
+        {
+            "run_id": run_id,
+            "completed_at": utc_now_iso(),
+            "public_records": final_export["public_records"],
+            "map_flags": final_export["map_flags"],
+            "processed": sum(result.processed for result in results),
+            "accepted": int(imported.get("accepted", 0)),
+            "map_updates": applied_map_updates,
+        }
+    )
+    STATE_JSON.parent.mkdir(parents=True, exist_ok=True)
+    STATE_JSON.write_text(json.dumps(state, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def checkpoint_due(state: dict[str, Any]) -> bool:
+    records_delta = int(state["current_public_record_count"]) - int(state.get("records_at_last_checkpoint") or 0)
+    map_delta = int(state["current_map_flag_count"]) - int(state.get("map_flags_at_last_checkpoint") or 0)
+    return records_delta >= 250 or map_delta >= 75
+
+
+def commit_and_push_checkpoint(state: dict[str, Any]) -> str | None:
+    index = int(state.get("checkpoint_index") or 0) + 1
+    message = f"collection sprint checkpoint {index:02d}"
+    state["checkpoint_index"] = index
+    state["records_at_last_checkpoint"] = state["current_public_record_count"]
+    state["map_flags_at_last_checkpoint"] = state["current_map_flag_count"]
+    STATE_JSON.write_text(json.dumps(state, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
+    paths = [
+        "config/collection_routes.yml",
+        "config/collection_sprint.yml",
+        "data/exports/v2/map_geocode_verification_queue.csv",
+        "data/interim/collection_sprint",
+        "data/processed/australian_humanoid_figures.sqlite",
+        "data/processed/v2/collection_route_registry.csv",
+        "data/processed/v2/collection_route_registry.md",
+        "data/processed/v2/collection_sprint_status.json",
+        "data/processed/v2/collection_sprint_status.md",
+        "data/processed/v2/collection_sprint_state.json",
+        "data/processed/v2/validation_v2_report.md",
+        "public/data/frontend-data.json",
+        "scripts/run_collection_sprint.py",
+    ]
+    run_subprocess(["git", "add", *paths])
+    diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT)
+    if diff.returncode == 0:
+        return None
+    run_subprocess(["git", "commit", "-m", message])
+    run_subprocess(["git", "push", "origin", "main"])
+    return message
 
 
 def update_route_registry(config: dict[str, Any], results: list[RouteResult], imported: Counter[str]) -> None:
@@ -988,52 +1311,51 @@ def write_status(
     STATUS_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", default=str(CONFIG_PATH))
-    parser.add_argument("--skip-build", action="store_true", help="Skip final npm production build")
-    args = parser.parse_args()
-
-    config = yaml.safe_load(Path(args.config).read_text(encoding="utf-8"))
-    run_id = str(config.get("run_id") or f"collection_sprint_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}")
+def run_collection_iteration(
+    config: dict[str, Any],
+    state: dict[str, Any],
+    run_id: str,
+    skip_build: bool,
+) -> tuple[dict[str, Any], int, int]:
     stage_dir = ROOT / "data" / "interim" / "collection_sprint" / run_id
     stage_dir.mkdir(parents=True, exist_ok=True)
     previous_status = json.loads(STATUS_JSON.read_text(encoding="utf-8")) if STATUS_JSON.exists() else {}
-    baseline_export = load_export_counts()
+    live_export = load_export_counts()
+    baseline_export = {
+        "public_records": int(state.get("launch_start_public_record_count") or live_export["public_records"]),
+        "map_points": int(state.get("launch_start_map_flag_count") or live_export["map_points"]),
+        "map_flags": int(state.get("launch_start_map_flag_count") or live_export["map_flags"]),
+    }
     baseline_db = db_public_counts()
-    if previous_status.get("starting_public_records") is not None:
-        baseline_export = {
-            "public_records": int(previous_status["starting_public_records"]),
-            "map_points": int(previous_status.get("starting_map_flags", baseline_export["map_points"])),
-            "map_flags": int(previous_status.get("starting_map_flags", baseline_export["map_flags"])),
-        }
     with connect(DEFAULT_DB_PATH) as conn:
         max_record_id = int(conn.execute("SELECT COALESCE(MAX(record_id), 0) AS n FROM records").fetchone()["n"])
 
-    routes = [route for route in config.get("routes", []) if route.get("enabled", True)]
-    worker_count = min(int(config.get("worker_count") or 4), 4)
-    probe_results: list[RouteResult] = []
-    live_export = load_export_counts()
-    print(f"[collection-sprint] run_id={run_id} baseline_public_records={baseline_export['public_records']} live_public_records={live_export['public_records']} baseline_map_flags={baseline_export['map_flags']} live_map_flags={live_export['map_flags']}", flush=True)
-    with ThreadPoolExecutor(max_workers=worker_count) as executor:
-        futures = {executor.submit(run_route, route, stage_dir, False): route["route_id"] for route in routes}
-        for future in as_completed(futures):
-            probe_results.append(future.result())
+    routes = rank_routes(config, state)
+    worker_count = min(int(config.get("worker_count") or 4), 6)
+    selected_routes = routes[:worker_count]
+    if not selected_routes:
+        print("[collection-sprint] no active routes remain", flush=True)
+        return state, 0, 0
+    state["next_route_queue"] = [route["route_id"] for route in routes]
+    state["active_routes"] = [route["route_id"] for route in selected_routes]
+    STATE_JSON.write_text(json.dumps(state, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
 
-    productive_route_ids = {
-        result.route_id
-        for result in probe_results
-        if result.accepted_provisional >= 6
-        or (result.retrieval_method == "exact_queue_gazetteer_verification" and result.map_candidates >= 6)
-    }
-    scaled_routes = [route for route in routes if route.get("scaled") and route["route_id"] in productive_route_ids]
-    scaled_results: list[RouteResult] = []
+    print(
+        f"[collection-sprint] run_id={run_id} live_public_records={live_export['public_records']} "
+        f"live_map_flags={live_export['map_flags']} active_routes={','.join(state['active_routes'])}",
+        flush=True,
+    )
+    results: list[RouteResult] = []
+    cursors = state.get("resume_cursor_per_route", {})
     with ThreadPoolExecutor(max_workers=worker_count) as executor:
-        futures = {executor.submit(run_route, route, stage_dir, True): route["route_id"] for route in scaled_routes}
+        futures = {}
+        for route in selected_routes:
+            route_cursor = cursors.get(route["route_id"]) or {}
+            scaled = bool(route.get("scaled") or route["route_id"] in set(state.get("productive_routes") or []))
+            futures[executor.submit(run_route, route, stage_dir, scaled, route_cursor)] = route["route_id"]
         for future in as_completed(futures):
-            scaled_results.append(future.result())
+            results.append(future.result())
 
-    results = probe_results + scaled_results
     all_candidates = [candidate for result in results for candidate in result.candidates]
     deduped_candidates, staged_duplicates = dedupe_candidates(all_candidates)
     if staged_duplicates:
@@ -1050,15 +1372,14 @@ def main() -> None:
     except subprocess.CalledProcessError:
         validation_ok = False
     build_ok = True
-    if not args.skip_build:
+    if not skip_build:
         try:
             run_subprocess(["npm", "run", "build"])
         except subprocess.CalledProcessError:
             build_ok = False
     final_export = load_export_counts()
     final_db = db_public_counts()
-    run_prefix = "_".join(run_id.split("_")[:-1]) if "_" in run_id else run_id
-    breakdowns = source_breakdowns(max_record_id, run_prefix=run_prefix)
+    breakdowns = source_breakdowns(max_record_id)
     write_status(
         config,
         stage_dir,
@@ -1075,13 +1396,66 @@ def main() -> None:
         build_ok,
         previous_status,
     )
+    records_added = final_export["public_records"] - live_export["public_records"]
+    maps_added = final_export["map_flags"] - live_export["map_flags"]
+    update_state_after_checkpoint(state, config, run_id, results, imported, final_export, applied_map_updates)
     print(
-        "[collection-sprint] complete "
-        f"net_new_records={final_export['public_records'] - baseline_export['public_records']} "
-        f"net_new_map_flags={final_export['map_flags'] - baseline_export['map_flags']} "
-        f"status_md={STATUS_MD}",
+        "[collection-sprint] iteration_complete "
+        f"records_added={records_added} map_flags_added={maps_added} "
+        f"public_records={final_export['public_records']} map_flags={final_export['map_flags']}",
         flush=True,
     )
+    return state, records_added, maps_added
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", default=str(CONFIG_PATH))
+    parser.add_argument("--skip-build", action="store_true", help="Skip final npm production build")
+    parser.add_argument("--resume", action="store_true", help="Resume from collection_sprint_state.json")
+    parser.add_argument("--until-launch-target", action="store_true", help="Continue until public launch record and map targets are met")
+    parser.add_argument("--max-loops", type=int, default=1, help="Safety cap for non-launch runs")
+    args = parser.parse_args()
+
+    config = yaml.safe_load(Path(args.config).read_text(encoding="utf-8"))
+    state = load_state(config, resume=args.resume or args.until_launch_target)
+    if not STATE_JSON.exists():
+        STATE_JSON.parent.mkdir(parents=True, exist_ok=True)
+        STATE_JSON.write_text(json.dumps(state, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
+
+    loops = 0
+    while True:
+        counts = load_export_counts()
+        target_records = int(config.get("targets", {}).get("public_records") or 2800)
+        target_maps = int(config.get("targets", {}).get("map_flags") or 1200)
+        launch_ready = counts["public_records"] >= target_records and counts["map_flags"] >= target_maps and counts["map_points"] == counts["map_flags"]
+        if launch_ready:
+            print("[collection-sprint] launch targets reached; final build/export/report can run", flush=True)
+            if not args.skip_build:
+                run_subprocess(["python3", "scripts/export_frontend_json.py"])
+                run_subprocess(["python3", "scripts/validate_v2.py"])
+                run_subprocess(["npm", "run", "build"])
+            break
+        if not args.until_launch_target and loops >= args.max_loops:
+            break
+        loops += 1
+        checkpoint_next = int(state.get("checkpoint_index") or 0) + 1
+        run_id = f"collection_sprint_launch_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}_{checkpoint_next:03d}"
+        state, records_added, maps_added = run_collection_iteration(
+            config,
+            state,
+            run_id,
+            skip_build=True if args.until_launch_target else args.skip_build,
+        )
+        if checkpoint_due(state):
+            commit_and_push_checkpoint(state)
+        if records_added == 0 and maps_added == 0:
+            active = rank_routes(config, state)
+            if not active:
+                print("[collection-sprint] hard stop: no active usable routes remain", flush=True)
+                break
+        if not args.until_launch_target and loops >= args.max_loops:
+            break
 
 
 if __name__ == "__main__":

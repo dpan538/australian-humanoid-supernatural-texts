@@ -1,0 +1,465 @@
+{
+  "accepted_records": 329,
+  "active_routes": [
+    "sprint_internet_archive_dawson_victoria_exact_text",
+    "sprint_internet_archive_moore_wa_diary_exact_text",
+    "sprint_internet_archive_smyth_victoria_vol2_exact_text",
+    "sprint_internet_archive_roth_tasmania_exact_text",
+    "sprint_internet_archive_smyth_victoria_vol1_exact_text"
+  ],
+  "blocked_routes": [
+    "sprint_victorian_collections_story_probe"
+  ],
+  "candidates_processed": 375,
+  "checkpoint_index": 1,
+  "context_records": 4,
+  "created_at": "2026-06-22T05:12:16+00:00",
+  "current_map_flag_count": 909,
+  "current_public_record_count": 1709,
+  "duplicates": 46,
+  "exhausted_routes": [
+    "sprint_map_queue_geocode_verification",
+    "sprint_sa_history_network_directory_probe",
+    "sprint_territory_stories_public_probe",
+    "sprint_victorian_collections_story_probe"
+  ],
+  "history": [
+    {
+      "accepted": 73,
+      "completed_at": "2026-06-22T05:12:49+00:00",
+      "map_flags": 894,
+      "map_updates": 25,
+      "processed": 99,
+      "public_records": 1453,
+      "run_id": "collection_sprint_launch_20260622_051216_001"
+    },
+    {
+      "accepted": 0,
+      "completed_at": "2026-06-22T05:13:05+00:00",
+      "map_flags": 894,
+      "map_updates": 12,
+      "processed": 12,
+      "public_records": 1453,
+      "run_id": "collection_sprint_launch_20260622_051249_001"
+    },
+    {
+      "accepted": 0,
+      "completed_at": "2026-06-22T05:13:05+00:00",
+      "map_flags": 894,
+      "map_updates": 0,
+      "processed": 0,
+      "public_records": 1453,
+      "run_id": "collection_sprint_launch_20260622_051305_001"
+    },
+    {
+      "accepted": 42,
+      "completed_at": "2026-06-22T05:16:58+00:00",
+      "map_flags": 909,
+      "map_updates": 0,
+      "processed": 42,
+      "public_records": 1495,
+      "run_id": "collection_sprint_launch_20260622_051646_001"
+    },
+    {
+      "accepted": 87,
+      "completed_at": "2026-06-22T05:20:21+00:00",
+      "map_flags": 909,
+      "map_updates": 0,
+      "processed": 91,
+      "public_records": 1582,
+      "run_id": "collection_sprint_launch_20260622_052010_001"
+    },
+    {
+      "accepted": 127,
+      "completed_at": "2026-06-22T05:23:27+00:00",
+      "map_flags": 909,
+      "map_updates": 0,
+      "processed": 131,
+      "public_records": 1709,
+      "run_id": "collection_sprint_launch_20260622_052313_001"
+    }
+  ],
+  "last_completed_checkpoint": "collection_sprint_launch_20260622_052313_001",
+  "launch_start_map_flag_count": 891,
+  "launch_start_public_record_count": 1380,
+  "map_candidates": 37,
+  "map_flags_at_last_checkpoint": 909,
+  "map_gap": 291,
+  "next_route_queue": [],
+  "productive_routes": [
+    "sprint_internet_archive_dawson_victoria_exact_text",
+    "sprint_internet_archive_eaglehawk_crow_exact_text",
+    "sprint_internet_archive_kamilaroi_kurnai_exact_text",
+    "sprint_internet_archive_moore_wa_diary_exact_text",
+    "sprint_internet_archive_native_tribes_south_australia_exact_text",
+    "sprint_internet_archive_roth_queensland_exact_text",
+    "sprint_internet_archive_roth_tasmania_exact_text",
+    "sprint_internet_archive_sa_folklore_manners_customs_exact_text",
+    "sprint_internet_archive_smyth_victoria_vol1_exact_text",
+    "sprint_internet_archive_smyth_victoria_vol2_exact_text",
+    "sprint_ista_central_australia_exact_texts",
+    "sprint_ista_northern_australia_exact_texts",
+    "sprint_map_queue_geocode_verification",
+    "sprint_pga_australian_fairy_tales_exact_texts",
+    "sprint_project_gutenberg_barry_bunyip_stories",
+    "sprint_project_gutenberg_robertson_australian_tales",
+    "sprint_project_gutenberg_westbury_australian_fairy_tales",
+    "sprint_wikisource_euahlayi_exact_texts",
+    "sprint_wikisource_southeast_exact_texts"
+  ],
+  "record_gap": 1091,
+  "records_at_last_checkpoint": 1709,
+  "rejected_rows": 8,
+  "resume_cursor_per_route": {
+    "sprint_internet_archive_dawson_victoria_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:23:17+00:00"
+    },
+    "sprint_internet_archive_eaglehawk_crow_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:20:15+00:00"
+    },
+    "sprint_internet_archive_kamilaroi_kurnai_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:20:15+00:00"
+    },
+    "sprint_internet_archive_moore_wa_diary_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:23:19+00:00"
+    },
+    "sprint_internet_archive_native_tribes_south_australia_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:20:13+00:00"
+    },
+    "sprint_internet_archive_roth_queensland_exact_text": {
+      "bootstrap_from": "collection_sprint_status",
+      "exhausted": true,
+      "updated_at": "2026-06-22T05:12:16+00:00"
+    },
+    "sprint_internet_archive_roth_tasmania_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:23:22+00:00"
+    },
+    "sprint_internet_archive_sa_folklore_manners_customs_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:20:20+00:00"
+    },
+    "sprint_internet_archive_smyth_victoria_vol1_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:23:26+00:00"
+    },
+    "sprint_internet_archive_smyth_victoria_vol2_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:23:19+00:00"
+    },
+    "sprint_ista_central_australia_exact_texts": {
+      "bootstrap_from": "collection_sprint_status",
+      "exhausted": true,
+      "page_index": 5,
+      "total_pages": 5,
+      "updated_at": "2026-06-22T05:12:16+00:00"
+    },
+    "sprint_ista_northern_australia_exact_texts": {
+      "bootstrap_from": "collection_sprint_status",
+      "exhausted": true,
+      "page_index": 3,
+      "total_pages": 3,
+      "updated_at": "2026-06-22T05:12:16+00:00"
+    },
+    "sprint_map_queue_geocode_verification": {
+      "exhausted": true,
+      "remaining_queue_rows": 0,
+      "updated_at": "2026-06-22T05:13:05+00:00"
+    },
+    "sprint_pga_australian_fairy_tales_exact_texts": {
+      "exhausted": true,
+      "page_index": 6,
+      "total_pages": 6,
+      "updated_at": "2026-06-22T05:12:22+00:00"
+    },
+    "sprint_project_gutenberg_barry_bunyip_stories": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:16:57+00:00"
+    },
+    "sprint_project_gutenberg_robertson_australian_tales": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:16:57+00:00"
+    },
+    "sprint_project_gutenberg_westbury_australian_fairy_tales": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T05:12:26+00:00"
+    },
+    "sprint_sa_history_network_directory_probe": {
+      "exhausted": true,
+      "updated_at": "2026-06-22T05:12:18+00:00"
+    },
+    "sprint_territory_stories_public_probe": {
+      "exhausted": true,
+      "updated_at": "2026-06-22T05:12:50+00:00"
+    },
+    "sprint_wikisource_euahlayi_exact_texts": {
+      "exhausted": true,
+      "page_index": 16,
+      "total_pages": 16,
+      "updated_at": "2026-06-22T05:12:19+00:00"
+    },
+    "sprint_wikisource_southeast_exact_texts": {
+      "exhausted": true,
+      "page_index": 4,
+      "total_pages": 4,
+      "updated_at": "2026-06-22T05:12:17+00:00"
+    }
+  },
+  "route_totals": {
+    "sprint_internet_archive_dawson_victoria_exact_text": {
+      "accepted": 25,
+      "context": 0,
+      "duplicates": 9,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 25,
+      "rejected": 0
+    },
+    "sprint_internet_archive_eaglehawk_crow_exact_text": {
+      "accepted": 22,
+      "context": 3,
+      "duplicates": 7,
+      "errors": 0,
+      "latest_acceptance_rate": 0.8461538461538461,
+      "map_candidates": 0,
+      "processed": 26,
+      "rejected": 1
+    },
+    "sprint_internet_archive_kamilaroi_kurnai_exact_text": {
+      "accepted": 28,
+      "context": 0,
+      "duplicates": 6,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 28,
+      "rejected": 0
+    },
+    "sprint_internet_archive_moore_wa_diary_exact_text": {
+      "accepted": 18,
+      "context": 1,
+      "duplicates": 2,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9473684210526315,
+      "map_candidates": 0,
+      "processed": 19,
+      "rejected": 0
+    },
+    "sprint_internet_archive_native_tribes_south_australia_exact_text": {
+      "accepted": 21,
+      "context": 0,
+      "duplicates": 1,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 21,
+      "rejected": 0
+    },
+    "sprint_internet_archive_roth_queensland_exact_text": {
+      "accepted": 30,
+      "context": 0,
+      "duplicates": 4,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 30,
+      "rejected": 0
+    },
+    "sprint_internet_archive_roth_tasmania_exact_text": {
+      "accepted": 25,
+      "context": 0,
+      "duplicates": 5,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 25,
+      "rejected": 0
+    },
+    "sprint_internet_archive_sa_folklore_manners_customs_exact_text": {
+      "accepted": 16,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 16,
+      "rejected": 0
+    },
+    "sprint_internet_archive_smyth_victoria_vol1_exact_text": {
+      "accepted": 29,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "latest_acceptance_rate": 0.90625,
+      "map_candidates": 0,
+      "processed": 32,
+      "rejected": 3
+    },
+    "sprint_internet_archive_smyth_victoria_vol2_exact_text": {
+      "accepted": 30,
+      "context": 0,
+      "duplicates": 4,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 30,
+      "rejected": 0
+    },
+    "sprint_ista_central_australia_exact_texts": {
+      "accepted": 84,
+      "context": 0,
+      "duplicates": 6,
+      "errors": 0,
+      "latest_acceptance_rate": 0.9545454545454546,
+      "map_candidates": 0,
+      "processed": 88,
+      "rejected": 4
+    },
+    "sprint_ista_northern_australia_exact_texts": {
+      "accepted": 32,
+      "context": 0,
+      "duplicates": 10,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 32,
+      "rejected": 0
+    },
+    "sprint_map_queue_geocode_verification": {
+      "accepted": 62,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "latest_acceptance_rate": 0,
+      "map_candidates": 62,
+      "processed": 137,
+      "rejected": 0
+    },
+    "sprint_pga_australian_fairy_tales_exact_texts": {
+      "accepted": 58,
+      "context": 0,
+      "duplicates": 6,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 58,
+      "rejected": 0
+    },
+    "sprint_project_gutenberg_barry_bunyip_stories": {
+      "accepted": 20,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 20,
+      "rejected": 0
+    },
+    "sprint_project_gutenberg_robertson_australian_tales": {
+      "accepted": 22,
+      "context": 0,
+      "duplicates": 4,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 22,
+      "rejected": 0
+    },
+    "sprint_project_gutenberg_westbury_australian_fairy_tales": {
+      "accepted": 32,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 32,
+      "rejected": 0
+    },
+    "sprint_sa_history_network_directory_probe": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 3,
+      "rejected": 0
+    },
+    "sprint_territory_stories_public_probe": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "latest_acceptance_rate": 0,
+      "map_candidates": 0,
+      "processed": 0,
+      "rejected": 0
+    },
+    "sprint_victorian_collections_story_probe": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "latest_acceptance_rate": 0.0,
+      "map_candidates": 0,
+      "processed": 0,
+      "rejected": 0
+    },
+    "sprint_wikisource_euahlayi_exact_texts": {
+      "accepted": 92,
+      "context": 0,
+      "duplicates": 20,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 92,
+      "rejected": 0
+    },
+    "sprint_wikisource_southeast_exact_texts": {
+      "accepted": 116,
+      "context": 0,
+      "duplicates": 20,
+      "errors": 0,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 122,
+      "rejected": 6
+    }
+  },
+  "schema_version": "collection-sprint-state/v1",
+  "suppressed_rows": 0,
+  "target_map_flags": 1200,
+  "target_public_records": 2800,
+  "updated_at": "2026-06-22T05:23:27+00:00",
+  "verified_map_flags": 37
+}

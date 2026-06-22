@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T04:54:26+00:00`
+- Generated: `2026-06-22T05:23:27+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `21`
+- Routes: `33`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 6
+- `low_yield`: 8
 - `manual_only`: 1
-- `productive`: 11
+- `productive`: 21
 
 ## Stop Rule
 
@@ -33,11 +33,23 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | wikisource_australian_ethnography_exact_text | productive | Wikisource | exact_chapter_html_text | 10 | 10 | 0 | 0 |  | Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching. |
 | sprint_ista_central_australia_exact_texts | productive | Internet Sacred Text Archive | exact_chapter_html_text | 44 | 42 | 3 | 2 |  | Scale productive route |
 | sprint_ista_northern_australia_exact_texts | productive | Internet Sacred Text Archive | exact_chapter_html_text | 16 | 16 | 5 | 0 |  | Scale productive route |
-| sprint_wikisource_southeast_exact_texts | productive | Wikisource | exact_chapter_html_text | 62 | 59 | 10 | 3 |  | Scale productive route |
+| sprint_wikisource_southeast_exact_texts | low_yield | Wikisource | exact_chapter_html_text | 66 | 63 | 10 | 3 |  | Keep as probe/discovery route only |
 | sprint_internet_archive_roth_queensland_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 15 | 15 | 2 | 0 |  | Scale productive route |
-| sprint_pga_australian_fairy_tales_exact_texts | productive | Project Gutenberg Australia | exact_title_html_text | 22 | 22 | 3 | 0 |  | Scale productive route |
-| sprint_map_queue_geocode_verification | productive | OpenStreetMap Nominatim | exact_queue_gazetteer_verification | 50 | 50 | 0 | 0 |  | Scale productive route |
+| sprint_pga_australian_fairy_tales_exact_texts | productive | Project Gutenberg Australia | exact_title_html_text | 36 | 36 | 3 | 0 |  | Scale productive route |
+| sprint_map_queue_geocode_verification | low_yield | OpenStreetMap Nominatim | exact_queue_gazetteer_verification | 87 | 87 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_victorian_collections_story_probe | low_yield | Victorian Collections | public_search_page_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
-| sprint_sa_history_network_directory_probe | low_yield | History Trust of South Australia | directory_seed_probe | 2 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_sa_history_network_directory_probe | low_yield | History Trust of South Australia | directory_seed_probe | 3 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_territory_stories_public_probe | low_yield | Library & Archives NT | public_repository_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
-| sprint_wikisource_euahlayi_exact_texts | productive | Wikisource | exact_chapter_html_text | 39 | 39 | 8 | 0 |  | Scale productive route |
+| sprint_wikisource_euahlayi_exact_texts | productive | Wikisource | exact_chapter_html_text | 62 | 62 | 12 | 0 |  | Scale productive route |
+| sprint_project_gutenberg_westbury_australian_fairy_tales | productive | Project Gutenberg | exact_plain_text | 32 | 32 | 0 | 0 |  | Scale productive route |
+| sprint_project_gutenberg_robertson_australian_tales | productive | Project Gutenberg | exact_plain_text | 22 | 22 | 4 | 0 |  | Scale productive route |
+| sprint_project_gutenberg_barry_bunyip_stories | productive | Project Gutenberg | exact_plain_text | 20 | 20 | 2 | 0 |  | Scale productive route |
+| sprint_internet_archive_kamilaroi_kurnai_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 28 | 28 | 6 | 0 |  | Scale productive route |
+| sprint_internet_archive_sa_folklore_manners_customs_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 16 | 16 | 2 | 0 |  | Scale productive route |
+| sprint_internet_archive_native_tribes_south_australia_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 21 | 21 | 1 | 0 |  | Scale productive route |
+| sprint_internet_archive_eaglehawk_crow_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 26 | 22 | 7 | 1 |  | Scale productive route |
+| sprint_internet_archive_moore_wa_diary_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 19 | 18 | 2 | 0 |  | Scale productive route |
+| sprint_internet_archive_dawson_victoria_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 25 | 25 | 9 | 0 |  | Scale productive route |
+| sprint_internet_archive_smyth_victoria_vol1_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 29 | 0 | 3 |  | Scale productive route |
+| sprint_internet_archive_smyth_victoria_vol2_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 30 | 30 | 4 | 0 |  | Scale productive route |
+| sprint_internet_archive_roth_tasmania_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 25 | 25 | 5 | 0 |  | Scale productive route |
