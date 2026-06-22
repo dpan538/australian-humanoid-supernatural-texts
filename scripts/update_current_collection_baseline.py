@@ -65,6 +65,7 @@ def build_baseline(db_path: Path, frontend_json_path: Path) -> dict[str, Any]:
                 LEFT JOIN coding c ON c.record_id = r.record_id
                 WHERE COALESCE(r.publicness_level, '') != 'restricted_excluded'
                   AND COALESCE(c.publicness_code, '') != 'restricted_excluded'
+                  AND COALESCE(c.relevance_code, '') != 'scope_excluded'
                 """,
             ),
             "sources_total": scalar(conn, "SELECT COUNT(*) FROM sources"),

@@ -1,8 +1,8 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T03:11:05+00:00`
+- Generated: `2026-06-22T04:16:47+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `9`
+- Routes: `11`
 
 ## Status Counts
 - `blocked_auth`: 1
@@ -10,7 +10,7 @@
 - `exhausted`: 1
 - `low_yield`: 3
 - `manual_only`: 1
-- `productive`: 2
+- `productive`: 4
 
 ## Stop Rule
 
@@ -29,3 +29,5 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | tourism_ghost_sites | discovery_only | multiple | public_html | 0 | 0 | 0 | 0 | weak_source_tier | Use only for discovery and source-chain tracing. |
 | marriner_princess_theatre_history | productive | Marriner Group | seeded_public_page | 1 | 1 | 0 | 0 |  | Use as a model for section-specific, source-verified institutional seeds. |
 | project_gutenberg_australia_exact_folklore | productive | Project Gutenberg Australia | exact_title_html_text | 30 | 30 | 0 | 0 |  | Continue exact-title book-level extraction; avoid broad global ghost searches. |
+| internet_sacred_texts_exact_ethnography | productive | Internet Sacred Text Archive | exact_chapter_html_text | 20 | 20 | 0 | 0 |  | Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching. |
+| wikisource_australian_ethnography_exact_text | productive | Wikisource | exact_chapter_html_text | 10 | 10 | 0 | 0 |  | Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching. |

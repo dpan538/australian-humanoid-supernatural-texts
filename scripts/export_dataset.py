@@ -41,6 +41,7 @@ def export_all(conn, export_dir: Path = EXPORT_DIR) -> None:
         LEFT JOIN coding c ON c.record_id = r.record_id
         WHERE COALESCE(r.publicness_level, '') != 'restricted_excluded'
           AND COALESCE(c.publicness_code, '') != 'restricted_excluded'
+          AND COALESCE(c.relevance_code, '') != 'scope_excluded'
         ORDER BY r.year, r.record_id
         """
     ).fetchall()

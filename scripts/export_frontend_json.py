@@ -107,7 +107,6 @@ PUBLIC_MAP_LOCATION_ROLES = {
     "narrative_setting",
     "legend_associated_place",
     "rumour_circulation_place",
-    "cultural_association_region",
     "reported_place",
     "source_visible_place",
     "source_visible_place_hint",
@@ -259,6 +258,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             LEFT JOIN coding c ON c.record_id = r.record_id
             WHERE COALESCE(r.publicness_level, '') != 'restricted_excluded'
               AND COALESCE(c.publicness_code, '') != 'restricted_excluded'
+              AND COALESCE(c.relevance_code, '') != 'scope_excluded'
             ORDER BY COALESCE(r.year, 9999), r.record_id
             """
         ).fetchall()

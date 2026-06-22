@@ -256,3 +256,59 @@ routes:
     retry_condition: Additional exact Australian local-history, folklore, or public-domain titles are manually identified.
     next_action: Continue exact-title book-level extraction; avoid broad global ghost searches.
     route_status: productive
+
+  - route_id: internet_sacred_texts_exact_ethnography
+    source_name: Internet Sacred Text Archive exact Australian ethnographic texts
+    organisation: Internet Sacred Text Archive
+    domain: sacred-texts.com
+    jurisdiction: NT/SA
+    source_class: public_domain_transcribed_books
+    retrieval_method: exact_chapter_html_text
+    endpoint_or_seed_url: https://sacred-texts.com/aus/
+    authentication_required: false
+    credentials_available: true
+    robots_status: exact_public_pages_checked
+    terms_status: public_domain_text_access
+    publicness_status: public_domain_public_web
+    first_attempted_at: "2026-06-22"
+    last_attempted_at: "2026-06-22"
+    attempt_count: 1
+    candidates_seen: 20
+    accepted_count: 20
+    duplicate_count: 0
+    lead_count: 0
+    rejected_count: 0
+    average_seconds_per_candidate:
+    blocker:
+    failure_reason:
+    retry_condition: Additional exact Australian public-domain chapters are manually identified and pass scope review.
+    next_action: Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching.
+    route_status: productive
+
+  - route_id: wikisource_australian_ethnography_exact_text
+    source_name: Wikisource Australian ethnography exact text
+    organisation: Wikisource
+    domain: en.wikisource.org
+    jurisdiction: VIC/SA/NSW
+    source_class: public_domain_transcribed_books
+    retrieval_method: exact_chapter_html_text
+    endpoint_or_seed_url: https://en.wikisource.org/wiki/Native_Tribes_of_South-East_Australia
+    authentication_required: false
+    credentials_available: true
+    robots_status: exact_public_pages_checked
+    terms_status: public_domain_text_access
+    publicness_status: public_domain_public_web
+    first_attempted_at: "2026-06-22"
+    last_attempted_at: "2026-06-22"
+    attempt_count: 1
+    candidates_seen: 10
+    accepted_count: 10
+    duplicate_count: 0
+    lead_count: 0
+    rejected_count: 0
+    average_seconds_per_candidate:
+    blocker:
+    failure_reason:
+    retry_condition: Additional exact Australian public-domain chapters are manually identified and pass scope review.
+    next_action: Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching.
+    route_status: productive

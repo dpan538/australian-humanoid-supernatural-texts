@@ -10,29 +10,33 @@
 - Baseline mapped-record count: `832`
 - Promoted staging candidates before new collection: `43`
 - Post-promotion canonical record count: `1140`
-- Net-new collected records: `60`
-- Post-collection total: `1200`
+- Net-new collected records: `90`
+- Post-collection total: `1217`
 - Post-collection mapped records: `832`
 - Public map invariant: `mapped_record_count == map_points.length == map_flag_count == 832`
 
 ## Source Organisations Added
 
-| source organisation | records |
+| source organisation | public-exported records |
 |---|---:|
-| Project Gutenberg Australia | 60 |
+| Project Gutenberg Australia | 47 |
+| Internet Sacred Text Archive | 20 |
+| Wikisource | 10 |
+
+PGA audit note: 60 canonical PGA records remain auditable; 13 are scope-suppressed from public export counts.
 
 ## Records By Jurisdiction
 
 | jurisdiction | canonical public records |
 |---|---:|
-| NSW | 506 |
+| NSW | 500 |
 | QLD | 350 |
-| unmapped | 126 |
-| VIC | 97 |
+| unmapped | 122 |
+| VIC | 102 |
 | WA | 51 |
-| NT | 27 |
+| NT | 47 |
 | ACT | 17 |
-| SA | 14 |
+| SA | 16 |
 | TAS | 12 |
 
 Records without a state/territory-level public map or corpus assignment remain valid display records when their source evidence is broad, book-level, or culturally sensitive.
@@ -42,18 +46,18 @@ Records without a state/territory-level public map or corpus assignment remain v
 | narrative type | canonical public records |
 |---|---:|
 | cryptid_style_apeman | 1028 |
-| traditional_narrative | 54 |
+| spirit_person_narrative | 58 |
+| traditional_narrative | 35 |
 | spirit_being | 31 |
 | ancestral_being | 28 |
-| spirit_person_narrative | 24 |
 | ghost_legend | 8 |
-| giant_or_ogre_narrative | 7 |
+| apparition_account | 5 |
+| giant_or_ogre_narrative | 5 |
+| descriptive_belief_record | 4 |
 | cautionary_being | 4 |
 | giant | 4 |
-| apparition_account | 3 |
-| descriptive_belief_record | 2 |
-| local_legend | 2 |
 | retelling_or_adaptation | 2 |
+| local_legend | 2 |
 | encounter_account | 1 |
 | non_humanoid_control | 1 |
 | satire | 1 |
@@ -69,10 +73,12 @@ Records without a state/territory-level public map or corpus assignment remain v
 
 ## Productive Routes
 
-- `project_gutenberg_australia_exact_folklore`: 60 accepted records from exact public-domain full-text Australian folklore titles across two capped batches.
+- `project_gutenberg_australia_exact_folklore`: 60 accepted records from exact public-domain full-text Australian folklore titles across two capped batches; 13 are now scope-suppressed after audit.
+- `internet_sacred_texts_exact_ethnography`: 20 accepted records from exact public-domain Australian ethnographic chapters.
+- `wikisource_australian_ethnography_exact_text`: 10 accepted records from exact public-domain south-east Australian ethnographic chapters.
 
 ## Next Three Recommended Batches
 
-1. Continue Project Gutenberg Australia exact-title extraction with additional Australian public-domain local-history and folklore books, capped at 30 reviewed story units per batch.
+1. Prioritize municipal/state library item pages and local-history PDFs in VIC, WA, SA, TAS, NT, and ACT with stable public identifiers.
 2. Use Territory Stories only with narrower exact-title or person-form queries and item handles, not broad `ghost` searches.
-3. Revisit state-library or municipal digital collection item pages where full item text, stable identifiers, and source organisation metadata are exposed without authentication.
+3. Continue exact public-domain non-PGA chapters only where named supernatural/person-form evidence is explicit and culturally appropriate for public summary display.
