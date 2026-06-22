@@ -474,12 +474,12 @@ def make_candidate(
         "source_label": canonicalise_whitespace(term),
         "location_text": page.get("location_text") or route.get("default_location_text", ""),
         "location_role": page.get("location_role") or route.get("default_location_role", "cultural_association_region"),
-        "latitude": page.get("latitude", ""),
-        "longitude": page.get("longitude", ""),
-        "location_precision": page.get("location_precision") or ("region" if route.get("default_location_text") else ""),
-        "geocode_source": page.get("geocode_source", ""),
-        "geocode_verification_status": page.get("geocode_verification_status", ""),
-        "coordinate_evidence_note": page.get("coordinate_evidence_note", ""),
+        "latitude": page.get("latitude", route.get("default_latitude", "")),
+        "longitude": page.get("longitude", route.get("default_longitude", "")),
+        "location_precision": page.get("location_precision") or route.get("default_location_precision") or ("region" if route.get("default_location_text") else ""),
+        "geocode_source": page.get("geocode_source", route.get("default_geocode_source", "")),
+        "geocode_verification_status": page.get("geocode_verification_status", route.get("default_geocode_verification_status", "")),
+        "coordinate_evidence_note": page.get("coordinate_evidence_note", route.get("default_coordinate_evidence_note", "")),
         "duplicate_check_status": "source_url_external_id_and_excerpt_hash_checked",
         "quality_class": "B" if outcome == "first_class" else "reviewed_context",
         "ethics_review_status": route.get("ethics_review_status", "public_context_reviewed"),
@@ -598,6 +598,7 @@ def collect_text_route(
     seen_hashes: set[str] = set()
     term_hits: Counter[str] = Counter()
     term_hit_limit = int(route.get("term_hit_limit") or 4)
+    required_place_terms = [str(term) for term in route.get("required_place_terms") or []]
     start_page_index = 0 if route.get("resume_strategy") == "rescan_new_evidence" else int(cursor.get("page_index") or 0)
     next_page_index = start_page_index
     try:
@@ -625,6 +626,10 @@ def collect_text_route(
                         break
                     if accepted_target and result.accepted_provisional >= accepted_target:
                         break
+                    if route.get("require_place_match_for_acceptance") and required_place_terms and not any(
+                        contains_term(block, place_term) for place_term in required_place_terms
+                    ):
+                        continue
                     if term_hits[term.lower()] >= term_hit_limit:
                         continue
                     digest = hashlib.sha256(canonicalise_whitespace(block).lower().encode("utf-8")).hexdigest()

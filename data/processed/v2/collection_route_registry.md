@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T09:54:05+00:00`
+- Generated: `2026-06-22T10:06:22+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `150`
+- Routes: `155`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 37
+- `low_yield`: 41
 - `manual_only`: 1
-- `productive`: 109
+- `productive`: 110
 
 ## Stop Rule
 
@@ -170,3 +170,8 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_internet_archive_peck_australian_legends_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 60 | 58 | 29 | 2 |  | Scale productive route |
 | sprint_internet_archive_ridley_kamilaroi_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 32 | 39 | 0 |  | Scale productive route |
 | sprint_internet_archive_native_tribes_nt_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 86 | 85 | 5 | 0 |  | Scale productive route |
+| sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur | low_yield | Project Gutenberg | exact_place_filtered_text | 3 | 3 | 2 | 0 |  | Keep as probe/discovery route only |
+| sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown | low_yield | Internet Archive | exact_place_filtered_text | 0 | 0 | 2 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains | low_yield | Project Gutenberg | exact_place_filtered_text | 2 | 1 | 0 | 1 |  | Keep as probe/discovery route only |
+| sprint_mapfirst_ia_lumholtz_herbert_river | productive | Internet Archive | exact_place_filtered_text | 7 | 6 | 13 | 0 |  | Scale productive route |
+| sprint_mapfirst_ia_lake_george_devil_exact_text | low_yield | Internet Archive | exact_place_filtered_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |

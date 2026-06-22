@@ -3893,3 +3893,199 @@ routes:
     external_id_strategy: evidence_hash
     term_hit_limit: 22
     entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: B
+    jurisdiction: TAS
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 50
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: For the Term of His Natural Life
+    source_author: Marcus Clarke
+    publication_date_text: "1874"
+    australian_relation: Public-domain Australian fiction and convict-site retelling with source-stated Port Arthur passages.
+    default_location_text: Port Arthur Historic Site, TAS
+    default_location_role: narrative_setting
+    default_latitude: -43.147019
+    default_longitude: 147.851265
+    default_location_precision: named_feature
+    default_geocode_source: public_heritage_site_gazetteer_crosscheck
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Port Arthur; coordinate is the named Port Arthur Historic Site point.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Port Arthur
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 40
+    pages:
+      - section_id: gutenberg-3424-clarke-natural-life-port-arthur
+        url: https://www.gutenberg.org/ebooks/3424.txt.utf-8
+        chapter: For the Term of His Natural Life
+    entity_terms:
+      - ghost
+      - ghosts
+      - spirit
+      - spirits
+      - apparition
+      - phantom
+      - haunted
+  - route_id: sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: Australian Stories Retold and Sketches of Country Life
+    source_author: William Henry Suttor
+    publication_date_text: "1887"
+    australian_relation: Public-domain Australian story collection with source-stated Fisher's Ghost / Campbelltown passages.
+    default_location_text: Campbelltown, NSW
+    default_location_role: apparition_location
+    default_latitude: -34.067
+    default_longitude: 150.814
+    default_location_precision: town
+    default_geocode_source: nominatim_openstreetmap_named_town_crosscheck
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Campbelltown in the Fisher's Ghost account; coordinate is the named town centroid.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Campbelltown
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 35
+    pages:
+      - section_id: ia-suttor-fishers-ghost-campbelltown
+        url: https://archive.org/download/australianstorie00suttiala/australianstorie00suttiala_djvu.txt
+        chapter: Fisher's Ghost
+    entity_terms:
+      - Fisher's Ghost
+      - ghost
+      - supernatural
+      - apparition
+  - route_id: sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 50
+    max_candidates_probe: 30
+    max_candidates_scaled: 140
+    source_title: Australian Fairy Tales
+    source_author: Atha Westbury
+    publication_date_text: "1897"
+    australian_relation: Public-domain Australian fairy-tale collection with source-stated Blue Mountains passages.
+    default_location_text: Blue Mountains, NSW
+    default_location_role: narrative_setting
+    default_latitude: -33.7181
+    default_longitude: 150.3106
+    default_location_precision: named_feature
+    default_geocode_source: nominatim_openstreetmap_named_feature_crosscheck
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names the Blue Mountains; coordinate is a named-feature centroid for public map display.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Blue Mountains
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 35
+    pages:
+      - section_id: gutenberg-68225-australian-fairy-tales-blue-mountains
+        url: https://www.gutenberg.org/files/68225/68225-0.txt
+        chapter: Australian Fairy Tales
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_mapfirst_ia_lumholtz_herbert_river
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: QLD
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 40
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: Among Cannibals
+    source_author: Carl Lumholtz
+    publication_date_text: "1889"
+    australian_relation: Public-domain Queensland ethnographic/travel text with source-stated Herbert River passages; accepted rows require substantive supernatural/person-form evidence.
+    default_location_text: Herbert River, QLD
+    default_location_role: narrative_setting
+    default_latitude: -18.585
+    default_longitude: 146.122
+    default_location_precision: named_feature
+    default_geocode_source: nominatim_openstreetmap_named_feature_crosscheck
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Herbert River; coordinate is a named river/locality point for public map display.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Herbert River
+      - Herbert Vale
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 30
+    archive_identifier: amongcannibalsac1889lumh
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_mapfirst_ia_lake_george_devil_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_place_filtered_text
+    scaled: true
+    map_capable: true
+    accepted_target: 25
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    source_title: The Aborigines of Victoria, volume 1
+    source_author: Robert Brough Smyth
+    publication_date_text: "1878"
+    australian_relation: Public-domain Australian ethnographic text with source-stated Lake George devil/anomalous-creature note.
+    default_location_text: Lake George, NSW
+    default_location_role: narrative_setting
+    default_latitude: -35.1667
+    default_longitude: 149.4167
+    default_location_precision: named_feature
+    default_geocode_source: nominatim_openstreetmap_named_feature_crosscheck
+    default_geocode_verification_status: verified_gazetteer_point
+    default_coordinate_evidence_note: Exact text block names Lake George and the devil/anomalous-creature note; coordinate is the named lake point.
+    require_place_match_for_acceptance: true
+    required_place_terms:
+      - Lake George
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 20
+    archive_identifier: aboriginesofvict01smyt
+    entity_terms:
+      - devil
+      - supernatural
+      - apparition
+      - ghost
+      - spirit

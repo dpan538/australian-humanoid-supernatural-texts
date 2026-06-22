@@ -2,35 +2,35 @@
   "active_collection_mode": "map_first",
   "build_ok": true,
   "by_jurisdiction": {
-    "NT": 85,
-    "QLD": 32,
-    "TAS": 46
+    "NSW": 2,
+    "QLD": 6,
+    "TAS": 3
   },
   "by_narrative_type": {
-    "apparition_account": 6,
-    "descriptive_belief_record": 35,
-    "giant_or_ogre_narrative": 17,
+    "apparition_account": 3,
     "retelling_or_adaptation": 3,
-    "spirit_person_narrative": 160
+    "spirit_person_narrative": 5
   },
   "by_source_family": {
-    "repository_full_text": 221
+    "public_domain_ebook": 4,
+    "repository_full_text": 7
   },
   "by_source_organisation": {
-    "Internet Archive": 221
+    "Internet Archive": 7,
+    "Project Gutenberg": 4
   },
-  "candidates_processed": 3968,
-  "current_map_flag_count": 991,
-  "current_map_flags": 991,
-  "current_map_ratio": 0.2735,
-  "current_public_record_count": 3624,
-  "current_public_records": 3624,
+  "candidates_processed": 3981,
+  "current_map_flag_count": 1068,
+  "current_map_flags": 1068,
+  "current_map_ratio": 0.2938,
+  "current_public_record_count": 3635,
+  "current_public_records": 3635,
   "ending_db": {
-    "db_public_records": 3624,
-    "db_records": 3914
+    "db_public_records": 3635,
+    "db_records": 3925
   },
-  "ending_map_flags": 991,
-  "ending_public_records": 3624,
+  "ending_map_flags": 1068,
+  "ending_public_records": 3635,
   "exhausted_routes": [
     "sprint_act_heritage_library_probe",
     "sprint_anu_open_research_folklore_probe",
@@ -41,6 +41,7 @@
     "sprint_internet_archive_roth_queensland_exact_text",
     "sprint_libraries_tasmania_eheritage_probe",
     "sprint_map_queue_geocode_verification",
+    "sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown",
     "sprint_marion_heritage_probe",
     "sprint_moreton_bay_deception_bay_recollect_ocr",
     "sprint_museums_victoria_history_probe",
@@ -60,28 +61,28 @@
     "sprint_victorian_collections_story_probe",
     "sprint_wa_museum_maritime_place_first_probe"
   ],
-  "gap_to_map_1200": 209,
+  "gap_to_map_1200": 132,
   "gap_to_minimum_3500": 0,
-  "gap_to_preferred_3800": 176,
-  "generated_at": "2026-06-22T09:54:06+00:00",
+  "gap_to_preferred_3800": 165,
+  "generated_at": "2026-06-22T10:06:22+00:00",
   "launch_targets": {
     "minimum_map_flags": 1200,
     "minimum_public_records": 3500,
     "preferred_public_records": 3800,
     "soft_maximum_public_records": 4000
   },
-  "map_flags_added_since_checkpoint": 0,
+  "map_flags_added_since_checkpoint": 77,
   "map_flags_at_last_checkpoint": 991,
-  "map_gap": 209,
+  "map_gap": 132,
   "map_invariant": {
-    "map_flags_length": 991,
-    "map_points_length": 991,
-    "mapped_record_count": 991,
+    "map_flags_length": 1068,
+    "map_points_length": 1068,
+    "mapped_record_count": 1068,
     "ok": true
   },
   "map_queue_updates_applied": 62,
-  "net_new_map_flags": 100,
-  "net_new_public_records": 2244,
+  "net_new_map_flags": 177,
+  "net_new_public_records": 2255,
   "productive_routes": [
     "sprint_internet_archive_beveridge_victoria_riverina_exact_text",
     "sprint_internet_archive_booandik_sa_exact_text",
@@ -140,6 +141,7 @@
     "sprint_ista_central_australia_exact_texts",
     "sprint_ista_northern_australia_exact_texts",
     "sprint_map_queue_geocode_verification",
+    "sprint_mapfirst_ia_lumholtz_herbert_river",
     "sprint_pga_australian_fairy_tales_exact_texts",
     "sprint_pga_cambridge_at_midnight_haunted_house_exact_text",
     "sprint_pga_clarke_australian_tales_exact_text",
@@ -197,14 +199,14 @@
     "sprint_wikisource_southeast_exact_texts"
   ],
   "promotion": {
-    "accepted_candidates": 2817,
-    "already_mapped": 2596,
-    "promoted": 221
+    "accepted_candidates": 2828,
+    "already_mapped": 2817,
+    "promoted": 11
   },
   "record_gap": 0,
-  "records_added_since_checkpoint": 441,
-  "records_at_last_checkpoint": 3183,
-  "records_per_new_map_flag": null,
+  "records_added_since_checkpoint": 11,
+  "records_at_last_checkpoint": 3624,
+  "records_per_new_map_flag": 0.14,
   "route_results": [
     {
       "acceptance_rate": 1.0,
@@ -13492,19 +13494,169 @@
       "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_095355_007/sprint_internet_archive_ridley_kamilaroi_rescan_02.ndjson",
       "stop_reason": "route_candidate_limit_or_source_exhausted",
       "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0.5,
+      "accepted_provisional": 1,
+      "context_provisional": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 0,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Project Gutenberg",
+      "processed": 2,
+      "rejected": 1,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T10:06:17+00:00"
+      },
+      "retrieval_method": "exact_place_filtered_text",
+      "route_id": "sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains",
+      "route_phase": "scaled",
+      "runtime_seconds": 2.0,
+      "source_name": "Project Gutenberg",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 1.0,
+      "accepted_provisional": 3,
+      "context_provisional": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 0,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Project Gutenberg",
+      "processed": 3,
+      "rejected": 0,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T10:06:19+00:00"
+      },
+      "retrieval_method": "exact_place_filtered_text",
+      "route_id": "sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur",
+      "route_phase": "scaled",
+      "runtime_seconds": 3.7,
+      "source_name": "Project Gutenberg",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0.8571,
+      "accepted_provisional": 6,
+      "context_provisional": 1,
+      "duplicates": 13,
+      "errors": 0,
+      "family": "repository_institutional_full_text",
+      "fetched": 1,
+      "lead_only": 1,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Internet Archive",
+      "processed": 7,
+      "rejected": 0,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T10:06:20+00:00"
+      },
+      "retrieval_method": "exact_place_filtered_text",
+      "route_id": "sprint_mapfirst_ia_lumholtz_herbert_river",
+      "route_phase": "scaled",
+      "runtime_seconds": 4.9,
+      "source_name": "Internet Archive",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_ia_lumholtz_herbert_river.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_ia_lumholtz_herbert_river.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 1.0,
+      "accepted_provisional": 1,
+      "context_provisional": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "family": "repository_institutional_full_text",
+      "fetched": 1,
+      "lead_only": 0,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Internet Archive",
+      "processed": 1,
+      "rejected": 0,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T10:06:20+00:00"
+      },
+      "retrieval_method": "exact_place_filtered_text",
+      "route_id": "sprint_mapfirst_ia_lake_george_devil_exact_text",
+      "route_phase": "scaled",
+      "runtime_seconds": 5.3,
+      "source_name": "Internet Archive",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_ia_lake_george_devil_exact_text.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_ia_lake_george_devil_exact_text.ndjson",
+      "stop_reason": "route_candidate_limit_or_source_exhausted",
+      "suppressed": 0
+    },
+    {
+      "acceptance_rate": 0,
+      "accepted_provisional": 0,
+      "context_provisional": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "family": "structured_public_domain_books",
+      "fetched": 1,
+      "lead_only": 0,
+      "map_candidates": 0,
+      "notes": [],
+      "organisation": "Internet Archive",
+      "processed": 0,
+      "rejected": 0,
+      "resume_cursor": {
+        "exhausted": true,
+        "page_index": 1,
+        "total_pages": 1,
+        "updated_at": "2026-06-22T10:06:21+00:00"
+      },
+      "retrieval_method": "exact_place_filtered_text",
+      "route_id": "sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown",
+      "route_phase": "scaled",
+      "runtime_seconds": 6.4,
+      "source_name": "Internet Archive",
+      "stage_csv": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown.csv",
+      "stage_ndjson": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008/sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown.ndjson",
+      "stop_reason": "route_cursor_exhausted",
+      "suppressed": 0
     }
   ],
   "run_id": "collection_sprint_20260622_002",
-  "soft_ceiling_remaining": 376,
-  "stage_dir": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_095355_007",
+  "soft_ceiling_remaining": 365,
+  "stage_dir": "/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008",
   "staged_import_counts": {
-    "accepted": 221,
-    "lead_only": 3,
-    "rejected": 2
+    "accepted": 11,
+    "lead_only": 1,
+    "rejected": 1
   },
   "starting_db": {
-    "db_public_records": 3403,
-    "db_records": 3693
+    "db_public_records": 3624,
+    "db_records": 3914
   },
   "starting_map_flags": 891,
   "starting_public_records": 1380,

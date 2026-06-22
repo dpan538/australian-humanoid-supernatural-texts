@@ -4213,3 +4213,143 @@ routes:
     yield remain acceptable.
   next_action: Scale productive route
   route_status: productive
+- route_id: sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: TAS
+  source_class: public_domain_ebook
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 3
+  accepted_count: 3
+  duplicate_count: 2
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 1.245
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: ''
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 2
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: route_cursor_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW
+  source_class: public_domain_ebook
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 2
+  accepted_count: 1
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.984
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_mapfirst_ia_lumholtz_herbert_river
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: amongcannibalsac1889lumh
+  jurisdiction: QLD
+  source_class: repository_full_text
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 7
+  accepted_count: 6
+  duplicate_count: 13
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 0.702
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_mapfirst_ia_lake_george_devil_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: aboriginesofvict01smyt
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_place_filtered_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 1
+  accepted_count: 1
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 5.335
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield

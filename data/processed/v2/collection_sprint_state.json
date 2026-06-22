@@ -1,11 +1,12 @@
 {
-  "accepted_records": 2521,
+  "accepted_records": 2532,
   "active_collection_mode": "map_first",
   "active_routes": [
-    "sprint_internet_archive_peck_australian_legends_rescan_02",
-    "sprint_internet_archive_native_tribes_nt_rescan_02",
-    "sprint_internet_archive_roth_tasmania_rescan_02",
-    "sprint_internet_archive_ridley_kamilaroi_rescan_02"
+    "sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains",
+    "sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur",
+    "sprint_mapfirst_ia_lumholtz_herbert_river",
+    "sprint_mapfirst_ia_lake_george_devil_exact_text",
+    "sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown"
   ],
   "blocked_commands": [
     {
@@ -30,22 +31,23 @@
     "sprint_slwa_battye_place_first_probe",
     "sprint_victorian_collections_story_probe"
   ],
-  "candidates_processed": 3485,
-  "checkpoint_index": 7,
-  "context_records": 77,
+  "candidates_processed": 3498,
+  "checkpoint_index": 8,
+  "context_records": 78,
   "created_at": "2026-06-22T05:12:16+00:00",
-  "current_map_flag_count": 991,
-  "current_map_flags": 991,
-  "current_map_ratio": 0.2735,
-  "current_public_record_count": 3624,
-  "current_public_records": 3624,
-  "duplicates": 1805,
+  "current_map_flag_count": 1068,
+  "current_map_flags": 1068,
+  "current_map_ratio": 0.2938,
+  "current_public_record_count": 3635,
+  "current_public_records": 3635,
+  "duplicates": 1822,
   "exhausted_routes": [
     "sprint_internet_archive_calvert_wa_rescan_02",
     "sprint_internet_archive_mathews_notes_nsw_rescan_02",
     "sprint_internet_archive_mathews_sociology_wa_exact_article",
     "sprint_libraries_tasmania_eheritage_probe",
     "sprint_map_queue_geocode_verification",
+    "sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown",
     "sprint_marion_heritage_probe",
     "sprint_moreton_bay_deception_bay_recollect_ocr",
     "sprint_pga_dyson_below_and_on_top_rescan_02",
@@ -61,9 +63,9 @@
     "sprint_victorian_collections_story_probe",
     "sprint_wa_museum_maritime_place_first_probe"
   ],
-  "gap_to_map_1200": 209,
+  "gap_to_map_1200": 132,
   "gap_to_minimum_3500": 0,
-  "gap_to_preferred_3800": 176,
+  "gap_to_preferred_3800": 165,
   "history": [
     {
       "accepted": 73,
@@ -1027,9 +1029,18 @@
       "processed": 226,
       "public_records": 3624,
       "run_id": "collection_sprint_launch_20260622_095355_007"
+    },
+    {
+      "accepted": 11,
+      "completed_at": "2026-06-22T10:06:22+00:00",
+      "map_flags": 1068,
+      "map_updates": 0,
+      "processed": 13,
+      "public_records": 3635,
+      "run_id": "collection_sprint_launch_20260622_100615_008"
     }
   ],
-  "last_completed_checkpoint": "collection_sprint_launch_20260622_095355_007",
+  "last_completed_checkpoint": "collection_sprint_launch_20260622_100615_008",
   "launch_start_map_flag_count": 891,
   "launch_start_public_record_count": 1380,
   "launch_targets": {
@@ -1039,9 +1050,9 @@
     "soft_maximum_public_records": 4000
   },
   "map_candidates": 37,
-  "map_flags_added_since_checkpoint": 0,
-  "map_flags_at_last_checkpoint": 991,
-  "map_gap": 209,
+  "map_flags_added_since_checkpoint": 77,
+  "map_flags_at_last_checkpoint": 1068,
+  "map_gap": 132,
   "next_route_queue": [],
   "productive_routes": [
     "sprint_internet_archive_beveridge_victoria_riverina_exact_text",
@@ -1101,6 +1112,7 @@
     "sprint_ista_central_australia_exact_texts",
     "sprint_ista_northern_australia_exact_texts",
     "sprint_map_queue_geocode_verification",
+    "sprint_mapfirst_ia_lumholtz_herbert_river",
     "sprint_pga_australian_fairy_tales_exact_texts",
     "sprint_pga_cambridge_at_midnight_haunted_house_exact_text",
     "sprint_pga_clarke_australian_tales_exact_text",
@@ -1158,10 +1170,10 @@
     "sprint_wikisource_southeast_exact_texts"
   ],
   "record_gap": 0,
-  "records_added_since_checkpoint": 441,
-  "records_at_last_checkpoint": 3624,
-  "records_per_new_map_flag": null,
-  "rejected_rows": 325,
+  "records_added_since_checkpoint": 11,
+  "records_at_last_checkpoint": 3635,
+  "records_per_new_map_flag": 0.14,
+  "rejected_rows": 327,
   "resume_cursor_per_route": {
     "sprint_adelaide_arcade_history_ghost_exact_page": {
       "exhausted": true,
@@ -1562,6 +1574,36 @@
       "exhausted": true,
       "remaining_queue_rows": 0,
       "updated_at": "2026-06-22T05:13:05+00:00"
+    },
+    "sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T10:06:17+00:00"
+    },
+    "sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T10:06:19+00:00"
+    },
+    "sprint_mapfirst_ia_lake_george_devil_exact_text": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T10:06:20+00:00"
+    },
+    "sprint_mapfirst_ia_lumholtz_herbert_river": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T10:06:20+00:00"
+    },
+    "sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown": {
+      "exhausted": true,
+      "page_index": 1,
+      "total_pages": 1,
+      "updated_at": "2026-06-22T10:06:21+00:00"
     },
     "sprint_marion_heritage_probe": {
       "exhausted": true,
@@ -2673,6 +2715,61 @@
       "latest_acceptance_rate": 0,
       "map_candidates": 62,
       "processed": 137,
+      "rejected": 0
+    },
+    "sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 0.5,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 1
+    },
+    "sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur": {
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 3,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 3,
+      "rejected": 0
+    },
+    "sprint_mapfirst_ia_lake_george_devil_exact_text": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_mapfirst_ia_lumholtz_herbert_river": {
+      "accepted": 6,
+      "context": 1,
+      "duplicates": 13,
+      "errors": 0,
+      "last_accepted": 6,
+      "latest_acceptance_rate": 0.8571428571428571,
+      "map_candidates": 0,
+      "processed": 7,
+      "rejected": 0
+    },
+    "sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 0,
+      "latest_acceptance_rate": 0,
+      "map_candidates": 0,
+      "processed": 0,
       "rejected": 0
     },
     "sprint_marion_heritage_probe": {
@@ -4151,6 +4248,61 @@
       "processed": 137,
       "rejected": 0
     },
+    "sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 0.5,
+      "map_candidates": 0,
+      "processed": 2,
+      "rejected": 1
+    },
+    "sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur": {
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 3,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 3,
+      "rejected": 0
+    },
+    "sprint_mapfirst_ia_lake_george_devil_exact_text": {
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "last_accepted": 1,
+      "latest_acceptance_rate": 1.0,
+      "map_candidates": 0,
+      "processed": 1,
+      "rejected": 0
+    },
+    "sprint_mapfirst_ia_lumholtz_herbert_river": {
+      "accepted": 6,
+      "context": 1,
+      "duplicates": 13,
+      "errors": 0,
+      "last_accepted": 6,
+      "latest_acceptance_rate": 0.8571428571428571,
+      "map_candidates": 0,
+      "processed": 7,
+      "rejected": 0
+    },
+    "sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown": {
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 2,
+      "errors": 0,
+      "last_accepted": 0,
+      "latest_acceptance_rate": 0,
+      "map_candidates": 0,
+      "processed": 0,
+      "rejected": 0
+    },
     "sprint_marion_heritage_probe": {
       "accepted": 0,
       "context": 0,
@@ -4893,12 +5045,12 @@
     }
   },
   "schema_version": "collection-sprint-state/v1",
-  "soft_ceiling_remaining": 376,
+  "soft_ceiling_remaining": 365,
   "suppressed_rows": 0,
   "target_map_flags": 1200,
   "target_preferred_public_records": 3800,
   "target_public_records": 3500,
   "target_soft_maximum_public_records": 4000,
-  "updated_at": "2026-06-22T09:54:06+00:00",
+  "updated_at": "2026-06-22T10:06:22+00:00",
   "verified_map_flags": 37
 }

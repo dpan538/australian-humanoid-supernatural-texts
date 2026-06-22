@@ -1,46 +1,46 @@
 # Collection Sprint Status
 
-- Generated: `2026-06-22T09:54:06+00:00`
+- Generated: `2026-06-22T10:06:22+00:00`
 - Run id: `collection_sprint_20260622_002`
-- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_095355_007`
+- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_100615_008`
 - Starting public records: `1380`
-- Ending public records: `3624`
-- Net-new public records: `2244`
+- Ending public records: `3635`
+- Net-new public records: `2255`
 - Starting map flags: `891`
-- Ending map flags: `991`
-- Net-new map flags: `100`
-- Candidates processed: `3968`
-- Context/lead staged: `3`
-- Suppressed/rejected staged: `2`
+- Ending map flags: `1068`
+- Net-new map flags: `177`
+- Candidates processed: `3981`
+- Context/lead staged: `1`
+- Suppressed/rejected staged: `1`
 - Duplicate staged: `0`
 - Gap to minimum 3,500 public records: `0`
-- Gap to preferred 3,800 public records: `176`
-- Soft ceiling remaining before 4,000: `376`
-- Gap to 1,200 map flags: `209`
-- Current map ratio: `0.2735`
-- Records added since checkpoint: `441`
-- Map flags added since checkpoint: `0`
-- Records per new map flag: `None`
+- Gap to preferred 3,800 public records: `165`
+- Soft ceiling remaining before 4,000: `365`
+- Gap to 1,200 map flags: `132`
+- Current map ratio: `0.2938`
+- Records added since checkpoint: `11`
+- Map flags added since checkpoint: `77`
+- Records per new map flag: `0.14`
 - Active collection mode: `map_first`
 - Map invariant ok: `True`
 
 ## Records by Source Organisation
-- Internet Archive: 221
+- Internet Archive: 7
+- Project Gutenberg: 4
 
 ## Records by Source Family
-- repository_full_text: 221
+- public_domain_ebook: 4
+- repository_full_text: 7
 
 ## Records by Jurisdiction
-- NT: 85
-- QLD: 32
-- TAS: 46
+- NSW: 2
+- QLD: 6
+- TAS: 3
 
 ## Records by Narrative Type
-- apparition_account: 6
-- descriptive_belief_record: 35
-- giant_or_ogre_narrative: 17
+- apparition_account: 3
 - retelling_or_adaptation: 3
-- spirit_person_narrative: 160
+- spirit_person_narrative: 5
 
 ## Per-Route Yield
 
@@ -496,6 +496,11 @@
 | sprint_internet_archive_native_tribes_nt_rescan_02 | repository_institutional_full_text | 86 | 85 | 1 | 0 | 5 | 0 | 6.2 | route_candidate_limit_or_source_exhausted |
 | sprint_internet_archive_roth_tasmania_rescan_02 | repository_institutional_full_text | 48 | 46 | 2 | 0 | 40 | 0 | 6.4 | route_candidate_limit_or_source_exhausted |
 | sprint_internet_archive_ridley_kamilaroi_rescan_02 | repository_institutional_full_text | 32 | 32 | 0 | 0 | 39 | 0 | 6.4 | route_candidate_limit_or_source_exhausted |
+| sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains | structured_public_domain_books | 2 | 1 | 0 | 1 | 0 | 0 | 2.0 | route_candidate_limit_or_source_exhausted |
+| sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur | structured_public_domain_books | 3 | 3 | 0 | 0 | 2 | 0 | 3.7 | route_candidate_limit_or_source_exhausted |
+| sprint_mapfirst_ia_lumholtz_herbert_river | repository_institutional_full_text | 7 | 6 | 1 | 0 | 13 | 0 | 4.9 | route_candidate_limit_or_source_exhausted |
+| sprint_mapfirst_ia_lake_george_devil_exact_text | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 5.3 | route_candidate_limit_or_source_exhausted |
+| sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown | structured_public_domain_books | 0 | 0 | 0 | 0 | 2 | 0 | 6.4 | route_cursor_exhausted |
 
 ## Productive Routes
 
@@ -556,6 +561,7 @@
 - sprint_ista_central_australia_exact_texts
 - sprint_ista_northern_australia_exact_texts
 - sprint_map_queue_geocode_verification
+- sprint_mapfirst_ia_lumholtz_herbert_river
 - sprint_pga_australian_fairy_tales_exact_texts
 - sprint_pga_cambridge_at_midnight_haunted_house_exact_text
 - sprint_pga_clarke_australian_tales_exact_text
@@ -623,6 +629,7 @@
 - sprint_internet_archive_roth_queensland_exact_text
 - sprint_libraries_tasmania_eheritage_probe
 - sprint_map_queue_geocode_verification
+- sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown
 - sprint_marion_heritage_probe
 - sprint_moreton_bay_deception_bay_recollect_ocr
 - sprint_museums_victoria_history_probe
