@@ -10,6 +10,12 @@
       "blocker": "blocked_approval",
       "command": "python3 scripts/run_collection_sprint.py --resume --until-launch-target",
       "note": "Approval layer rejected network collection command before execution; sources are not exhausted and queued routes remain available."
+    },
+    {
+      "blocked_at": "2026-06-22T08:31:43+00:00",
+      "blocker": "blocked_approval",
+      "command": "python3 scripts/run_collection_sprint.py --resume --until-launch-target",
+      "note": "Platform approval layer rejected the exact authorized network collection command before execution; routes are not exhausted and the configured 24-route queue remains pending."
     }
   ],
   "blocked_routes": [
@@ -2965,6 +2971,6 @@
   "target_preferred_public_records": 3800,
   "target_public_records": 3500,
   "target_soft_maximum_public_records": 4000,
-  "updated_at": "2026-06-22T08:00:26+00:00",
+  "updated_at": "2026-06-22T08:31:43+00:00",
   "verified_map_flags": 37
 }

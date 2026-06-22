@@ -520,3 +520,4 @@
 - Interpretation: the approval layer blocked the network collection command before execution. This is not route exhaustion and not evidence that the source universe is exhausted.
 - Offline continuation completed: added exact public-text routes plus atlas-backed state-library, museum, archive, heritage-library, and place-first probes across VIC, WA, SA, TAS, ACT, NSW, and QLD.
 - Next action after approval: rerun `python3 scripts/run_collection_sprint.py --resume --until-launch-target` and allow the runner to process the queued routes through staging, dedupe, serialized promotion, map filtering, export, and validation.
+- Reblocked at `2026-06-22T08:31:43+00:00`: the same exact authorized command was rejected by the platform approval layer before execution. The 24-route queue remains pending and should be resumed without marking routes exhausted.
