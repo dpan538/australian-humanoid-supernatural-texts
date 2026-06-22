@@ -2680,6 +2680,770 @@ routes:
     pages:
       - {section_id: gutenberg-4223-hume-hansom-cab, url: "https://www.gutenberg.org/ebooks/4223.txt.utf-8", chapter: The Mystery of a Hansom Cab}
     entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_furphy_such_is_life_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: Such Is Life
+    source_author: Joseph Furphy
+    publication_date_text: "1903 public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian novel by Joseph Furphy with Riverina and inland pastoral settings; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-3470-furphy-such-is-life, url: "https://www.gutenberg.org/ebooks/3470.txt.utf-8", chapter: Such Is Life}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_franklin_my_brilliant_career_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: My Brilliant Career
+    source_author: Miles Franklin
+    publication_date_text: "1901 public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian novel by Miles Franklin; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: New South Wales
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-11620-franklin-my-brilliant-career, url: "https://www.gutenberg.org/ebooks/11620.txt.utf-8", chapter: My Brilliant Career}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_franklin_some_everyday_folk_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: Some Everyday Folk and Dawn
+    source_author: Miles Franklin
+    publication_date_text: "1909 public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian novel by Miles Franklin; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: New South Wales
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-21659-franklin-some-everyday-folk, url: "https://www.gutenberg.org/ebooks/21659.txt.utf-8", chapter: Some Everyday Folk and Dawn}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_cambridge_thirty_years_australia_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 130
+    source_title: Thirty Years in Australia
+    source_author: Ada Cambridge
+    publication_date_text: "1903 public-domain memoir; Project Gutenberg transcription"
+    australian_relation: Public-domain memoir of Australian colonial life by Ada Cambridge; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Victoria
+    default_location_role: narrative_setting
+    narrative_type_override: descriptive_belief_record
+    ethics_review_status: public_memoir_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-37825-cambridge-thirty-years-australia, url: "https://www.gutenberg.org/ebooks/37825.txt.utf-8", chapter: Thirty Years in Australia}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_cambridge_three_miss_kings_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 100
+    source_title: "The Three Miss Kings: An Australian Story"
+    source_author: Ada Cambridge
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian novel by Ada Cambridge; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Victoria
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-50476-cambridge-three-miss-kings, url: "https://www.gutenberg.org/ebooks/50476.txt.utf-8", chapter: The Three Miss Kings}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_cambridge_sisters_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: Sisters
+    source_author: Ada Cambridge
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian novel by Ada Cambridge; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Victoria
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-4218-cambridge-sisters, url: "https://www.gutenberg.org/ebooks/4218.txt.utf-8", chapter: Sisters}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_hume_madame_midas_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: Madame Midas
+    source_author: Fergus Hume
+    publication_date_text: "1888 public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Victorian goldfields novel by Fergus Hume; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Ballarat, VIC
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-4946-hume-madame-midas, url: "https://www.gutenberg.org/ebooks/4946.txt.utf-8", chapter: Madame Midas}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_richardson_australia_felix_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: Australia Felix
+    source_author: Henry Handel Richardson
+    publication_date_text: "1917 public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Victorian goldfields novel by Henry Handel Richardson; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Victoria
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-3832-richardson-australia-felix, url: "https://www.gutenberg.org/ebooks/3832.txt.utf-8", chapter: Australia Felix}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_richardson_getting_wisdom_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: The Getting of Wisdom
+    source_author: Henry Handel Richardson
+    publication_date_text: "1910 public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Melbourne school novel by Henry Handel Richardson; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Melbourne, VIC
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-3728-richardson-getting-wisdom, url: "https://www.gutenberg.org/ebooks/3728.txt.utf-8", chapter: The Getting of Wisdom}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_dyson_gold_stealers_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: The Gold-Stealers
+    source_author: Edward Dyson
+    publication_date_text: "1901 public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian goldfields novel by Edward Dyson; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Victoria
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-16903-dyson-gold-stealers, url: "https://www.gutenberg.org/ebooks/16903.txt.utf-8", chapter: The Gold-Stealers}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_dyson_roaring_fifties_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: In the Roaring Fifties
+    source_author: Edward Dyson
+    publication_date_text: "1906 public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian goldfields novel by Edward Dyson; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: Victoria
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-17045-dyson-roaring-fifties, url: "https://www.gutenberg.org/ebooks/17045.txt.utf-8", chapter: In the Roaring Fifties}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_project_gutenberg_turner_wonder_child_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg
+    source_name: Project Gutenberg
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    external_id_strategy: evidence_hash
+    accepted_target: 25
+    max_candidates_probe: 30
+    max_candidates_scaled: 80
+    source_title: "The Wonder-Child: An Australian Story"
+    source_author: Ethel Turner
+    publication_date_text: "public-domain Australian fiction; Project Gutenberg transcription"
+    australian_relation: Public-domain Australian story by Ethel Turner; accepted rows are constrained to substantive supernatural, apparition, ghost, anomalous person-form, or discourse passages.
+    default_location_text: New South Wales
+    default_location_role: narrative_setting
+    narrative_type_override: retelling_or_adaptation
+    ethics_review_status: public_fiction_reviewed
+    cultural_sensitivity: low
+    pages:
+      - {section_id: gutenberg-45683-turner-wonder-child, url: "https://www.gutenberg.org/ebooks/45683.txt.utf-8", chapter: The Wonder-Child}
+    entity_terms: *fiction_supernatural_terms
+  - route_id: sprint_internet_archive_more_australian_legendary_tales_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 90
+    max_candidates_probe: 30
+    max_candidates_scaled: 220
+    source_title: More Australian Legendary Tales
+    source_author: K. Langloh Parker
+    publication_date_text: "1898 public-domain folklore collection exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Australian folklore collection from K. Langloh Parker; section records require substantive supernatural/person-form narrative evidence.
+    default_location_text: New South Wales
+    default_location_role: cultural_association_region
+    archive_identifier: moreaustralianl00parkgoog
+    entity_terms: &ethnographic_person_form_terms
+      - spirit
+      - spirits
+      - ghost
+      - ghosts
+      - devil
+      - devil-devil
+      - wizard
+      - witch
+      - medicine man
+      - magic man
+      - supernatural
+      - Baiame
+      - Byamee
+      - Daramulun
+      - giant
+      - ogre
+      - ancestral being
+  - route_id: sprint_internet_archive_spencer_across_australia_vol1_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NT/SA/WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: Across Australia, volume 1
+    source_author: Baldwin Spencer and F. J. Gillen
+    publication_date_text: "1912 public-domain travel and ethnographic text exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Australian interior travel and ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Central Australia
+    default_location_role: cultural_association_region
+    archive_identifier: acrossaustralia01spenuoft
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_spencer_across_australia_vol2_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NT/SA/WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: Across Australia, volume 2
+    source_author: Baldwin Spencer and F. J. Gillen
+    publication_date_text: "1912 public-domain travel and ethnographic text exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Australian interior travel and ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Central Australia
+    default_location_role: cultural_association_region
+    archive_identifier: acrossaustralia02spen
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_mathews_notes_nsw_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 130
+    source_title: Notes on the Aborigines of New South Wales
+    source_author: R. H. Mathews
+    publication_date_text: "1907 public-domain ethnographic text exposed through an exact Internet Archive item"
+    australian_relation: Public-domain New South Wales ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: New South Wales
+    default_location_role: cultural_association_region
+    archive_identifier: notesonaborigine00math
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_calvert_aborigines_wa_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 130
+    source_title: The Aborigines of Western Australia
+    source_author: Albert Frederick Calvert
+    publication_date_text: "1894 public-domain Western Australian text exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Western Australian source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Western Australia
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginesofwest00calv
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_calvert_wa_google_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 130
+    source_title: The Aborigines of Western Australia
+    source_author: Albert Frederick Calvert
+    publication_date_text: "1894 public-domain Western Australian text exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Western Australian source; accepted rows require substantive supernatural/person-form narrative or discourse evidence; narrative dedupe prevents duplicate passages across editions.
+    default_location_text: Western Australia
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginesweste00calvgoog
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_mathews_sociology_wa_exact_article
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text_article
+    source_tier: B
+    jurisdiction: WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: Sociology of the Aborigines of Western Australia
+    source_author: R. H. Mathews
+    publication_date_text: "1905 public-domain article exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Western Australian ethnographic article; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Western Australia
+    default_location_role: cultural_association_region
+    archive_identifier: biostor-203790
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_more_australian_legendary_tales_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 24
+    accepted_target: 120
+    max_candidates_probe: 30
+    max_candidates_scaled: 260
+    source_title: More Australian Legendary Tales
+    source_author: K. Langloh Parker
+    publication_date_text: "1898 public-domain folklore collection exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Australian folklore collection from K. Langloh Parker; section records require substantive supernatural/person-form narrative evidence.
+    default_location_text: New South Wales
+    default_location_role: cultural_association_region
+    archive_identifier: moreaustralianl00parkgoog
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_spencer_across_australia_vol1_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NT/SA/WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 24
+    accepted_target: 100
+    max_candidates_probe: 30
+    max_candidates_scaled: 240
+    source_title: Across Australia, volume 1
+    source_author: Baldwin Spencer and F. J. Gillen
+    publication_date_text: "1912 public-domain travel and ethnographic text exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Australian interior travel and ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Central Australia
+    default_location_role: cultural_association_region
+    archive_identifier: acrossaustralia01spenuoft
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_spencer_across_australia_vol2_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NT/SA/WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 24
+    accepted_target: 100
+    max_candidates_probe: 30
+    max_candidates_scaled: 240
+    source_title: Across Australia, volume 2
+    source_author: Baldwin Spencer and F. J. Gillen
+    publication_date_text: "1912 public-domain travel and ethnographic text exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Australian interior travel and ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Central Australia
+    default_location_role: cultural_association_region
+    archive_identifier: acrossaustralia02spen
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_mathews_notes_nsw_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 20
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: Notes on the Aborigines of New South Wales
+    source_author: R. H. Mathews
+    publication_date_text: "1907 public-domain ethnographic text exposed through an exact Internet Archive item"
+    australian_relation: Public-domain New South Wales ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: New South Wales
+    default_location_role: cultural_association_region
+    archive_identifier: notesonaborigine00math
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_calvert_wa_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: WA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 20
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: The Aborigines of Western Australia
+    source_author: Albert Frederick Calvert
+    publication_date_text: "1894 public-domain Western Australian text exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Western Australian source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Western Australia
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginesofwest00calv
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_dawson_victoria_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: VIC
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 28
+    accepted_target: 120
+    max_candidates_probe: 30
+    max_candidates_scaled: 260
+    source_title: "Australian Aborigines: the languages and customs of several tribes of aborigines in the western district of Victoria, Australia"
+    source_author: James Dawson
+    publication_date_text: "1881 public-domain western Victorian ethnographic source exposed through an exact Internet Archive item"
+    australian_relation: Public-domain western Victorian ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Western District, VIC
+    default_location_role: cultural_association_region
+    archive_identifier: australianaborig81daws
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_smyth_victoria_vol1_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: VIC/TAS
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 28
+    accepted_target: 140
+    max_candidates_probe: 30
+    max_candidates_scaled: 300
+    source_title: The Aborigines of Victoria, volume 1
+    source_author: R. Brough Smyth
+    publication_date_text: "1878 public-domain Victorian and Tasmanian ethnographic source exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Victorian and Tasmanian ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Victoria and Tasmania
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginesofvict01smyt
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_smyth_victoria_vol2_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: VIC/TAS
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 28
+    accepted_target: 140
+    max_candidates_probe: 30
+    max_candidates_scaled: 300
+    source_title: The Aborigines of Victoria, volume 2
+    source_author: R. Brough Smyth
+    publication_date_text: "1878 public-domain Victorian and Tasmanian ethnographic source exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Victorian and Tasmanian ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Victoria and Tasmania
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginesofvict02smyt
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_northern_tribes_central_australia_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NT
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 28
+    accepted_target: 140
+    max_candidates_probe: 30
+    max_candidates_scaled: 300
+    source_title: The Northern Tribes of Central Australia
+    source_author: Baldwin Spencer and F. J. Gillen
+    publication_date_text: "1904 public-domain Central Australian ethnographic source exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Central Australian ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: Central Australia
+    default_location_role: cultural_association_region
+    archive_identifier: northerntribesof00spen
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_kamilaroi_kurnai_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 28
+    accepted_target: 120
+    max_candidates_probe: 30
+    max_candidates_scaled: 260
+    source_title: Kamilaroi and Kurnai
+    source_author: Lorimer Fison and A. W. Howitt
+    publication_date_text: "1880 public-domain Australian ethnographic book exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Australian ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: New South Wales and Victoria
+    default_location_role: cultural_association_region
+    archive_identifier: kamilaroikurnaig00fiso
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_native_tribes_sa_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: SA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 28
+    accepted_target: 120
+    max_candidates_probe: 30
+    max_candidates_scaled: 260
+    source_title: The Native Tribes of South Australia
+    source_author: George Taplin, James Dominick Woods, William Wyatt, H. A. E. Meyer, C. W. Schürmann, Samuel Gason, J. W. O. Bennett
+    publication_date_text: "1879 public-domain South Australian ethnographic book exposed through an exact Internet Archive item"
+    australian_relation: Public-domain South Australian ethnographic source; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: South Australia
+    default_location_role: cultural_association_region
+    archive_identifier: nativetribessou00benngoog
+    entity_terms: *ethnographic_person_form_terms
+  - route_id: sprint_internet_archive_roth_queensland_rescan_02
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    resume_strategy: rescan_new_evidence
+    external_id_strategy: evidence_hash
+    term_hit_limit: 24
+    accepted_target: 90
+    max_candidates_probe: 30
+    max_candidates_scaled: 220
+    source_title: Ethnological studies among the north-west-central Queensland aborigines
+    source_author: Walter E. Roth
+    publication_date_text: "1897 public-domain Queensland ethnological study exposed through an exact Internet Archive item"
+    australian_relation: Public-domain Queensland ethnological study; accepted rows require substantive supernatural/person-form narrative or discourse evidence.
+    default_location_text: North-west-central Queensland, QLD
+    default_location_role: cultural_association_region
+    archive_identifier: McGillLibrary-rbsc_ethnological-studies-queensland-aborigines_GN667Q8R8-30670
+    entity_terms: *ethnographic_person_form_terms
   - route_id: sprint_slv_catalogue_place_first_probe
     enabled: true
     family: local_archive_historical_society

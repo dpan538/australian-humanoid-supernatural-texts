@@ -2729,3 +2729,1179 @@ routes:
     yield remain acceptable.
   next_action: Scale productive route
   route_status: productive
+- route_id: sprint_museums_victoria_history_probe
+  source_name: Museums Victoria Collections
+  organisation: Museums Victoria
+  domain: https://collections.museumsvictoria.com.au/search?query=ghost
+  jurisdiction: VIC
+  source_class: museum_collection_portal
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://collections.museumsvictoria.com.au/search?query=ghost
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_error:HTTPError
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_geelong_heritage_place_first_probe
+  source_name: Geelong Heritage Centre
+  organisation: Geelong Regional Libraries
+  domain: https://www.grlc.vic.gov.au/geelong-heritage-centre
+  jurisdiction: VIC
+  source_class: regional_heritage_portal
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://www.grlc.vic.gov.au/geelong-heritage-centre
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_error:HTTPError
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_marion_heritage_probe
+  source_name: Marion Heritage Research Centre
+  organisation: City of Marion
+  domain: https://www.marion.sa.gov.au/services-we-offer/libraries/heritage
+  jurisdiction: SA
+  source_class: municipal_heritage_centre
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://www.marion.sa.gov.au/services-we-offer/libraries/heritage
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_directory_or_search_page_discovery_only
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_libraries_tasmania_eheritage_probe
+  source_name: eHeritage Tasmania
+  organisation: Libraries Tasmania
+  domain: https://eheritage.libraries.tas.gov.au/
+  jurisdiction: TAS
+  source_class: digital_heritage_portal
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://eheritage.libraries.tas.gov.au/
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 5
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 5
+  rejected_count: 0
+  average_seconds_per_candidate: 0.183
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_directory_or_search_page_discovery_only
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_act_heritage_library_probe
+  source_name: ACT Heritage Library
+  organisation: Libraries ACT
+  domain: https://www.library.act.gov.au/find/history
+  jurisdiction: ACT
+  source_class: heritage_library_catalogue
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://www.library.act.gov.au/find/history
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_error:HTTPError
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_anu_open_research_folklore_probe
+  source_name: ANU Open Research
+  organisation: Australian National University
+  domain: https://openresearch-repository.anu.edu.au/
+  jurisdiction: ACT/National
+  source_class: repository_full_text
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://openresearch-repository.anu.edu.au/
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_error:RemoteDisconnected
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_slv_catalogue_place_first_probe
+  source_name: State Library Victoria
+  organisation: State Library Victoria
+  domain: https://find.slv.vic.gov.au/discovery/search?query=any,contains,ghost%20Victoria&tab=searchProfile&search_scope=MyInst_and_CI&vid=61SLV_INST:SLV
+  jurisdiction: VIC
+  source_class: state_library_catalogue
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://find.slv.vic.gov.au/discovery/search?query=any,contains,ghost%20Victoria&tab=searchProfile&search_scope=MyInst_and_CI&vid=61SLV_INST:SLV
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_directory_or_search_page_discovery_only
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_prov_collection_place_first_probe
+  source_name: Public Record Office Victoria
+  organisation: Public Record Office Victoria
+  domain: https://prov.vic.gov.au/explore-collection/explore-topic
+  jurisdiction: VIC
+  source_class: state_archive_catalogue
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://prov.vic.gov.au/explore-collection/explore-topic
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_error:HTTPError
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_slwa_battye_place_first_probe
+  source_name: State Library of Western Australia
+  organisation: State Library of Western Australia
+  domain: https://encore.slwa.wa.gov.au/iii/encore/search/C__Sghost%20western%20australia__Orightresult__U
+  jurisdiction: WA
+  source_class: state_library_catalogue
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://encore.slwa.wa.gov.au/iii/encore/search/C__Sghost%20western%20australia__Orightresult__U
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_error:URLError
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_wa_museum_maritime_place_first_probe
+  source_name: Western Australian Museum Maritime Archaeology Databases
+  organisation: Western Australian Museum
+  domain: https://museum.wa.gov.au/maritime-archaeology-db/
+  jurisdiction: WA
+  source_class: museum_database
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://museum.wa.gov.au/maritime-archaeology-db/
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 2
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 0.317
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_directory_or_search_page_discovery_only
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_slsa_place_first_probe
+  source_name: State Library of South Australia
+  organisation: State Library of South Australia
+  domain: https://www.slsa.sa.gov.au/collections/south-australian-heritage
+  jurisdiction: SA
+  source_class: state_library_catalogue
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://www.slsa.sa.gov.au/collections/south-australian-heritage
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 30
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 30
+  rejected_count: 0
+  average_seconds_per_candidate: 0.043
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_directory_or_search_page_discovery_only
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_state_records_sa_archivessearch_probe
+  source_name: State Records of South Australia ArchivesSearch
+  organisation: State Records of South Australia
+  domain: https://archives.sa.gov.au/finding-information/discover-our-collection
+  jurisdiction: SA
+  source_class: state_archive_catalogue
+  retrieval_method: public_search_page_probe
+  endpoint_or_seed_url: https://archives.sa.gov.au/finding-information/discover-our-collection
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 1
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 1
+  rejected_count: 0
+  average_seconds_per_candidate: 2.562
+  blocker: low_yield_or_discovery_only
+  failure_reason: probe_directory_or_search_page_discovery_only
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_project_gutenberg_franklin_my_brilliant_career_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 23
+  accepted_count: 19
+  duplicate_count: 1
+  lead_count: 2
+  rejected_count: 3
+  average_seconds_per_candidate: 0.169
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_cambridge_thirty_years_australia_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 13
+  accepted_count: 10
+  duplicate_count: 1
+  lead_count: 0
+  rejected_count: 3
+  average_seconds_per_candidate: 0.295
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_cambridge_three_miss_kings_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 23
+  accepted_count: 17
+  duplicate_count: 2
+  lead_count: 2
+  rejected_count: 5
+  average_seconds_per_candidate: 0.176
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_cambridge_sisters_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 13
+  accepted_count: 11
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 2
+  average_seconds_per_candidate: 0.291
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_dyson_gold_stealers_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 16
+  accepted_count: 15
+  duplicate_count: 1
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 0.214
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_dyson_roaring_fifties_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 21
+  accepted_count: 18
+  duplicate_count: 2
+  lead_count: 2
+  rejected_count: 2
+  average_seconds_per_candidate: 0.175
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_furphy_such_is_life_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW/VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 26
+  accepted_count: 23
+  duplicate_count: 1
+  lead_count: 4
+  rejected_count: 1
+  average_seconds_per_candidate: 0.155
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_franklin_some_everyday_folk_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 19
+  accepted_count: 18
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 1
+  average_seconds_per_candidate: 0.223
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_hume_madame_midas_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 21
+  accepted_count: 16
+  duplicate_count: 1
+  lead_count: 2
+  rejected_count: 4
+  average_seconds_per_candidate: 0.166
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_richardson_australia_felix_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 33
+  accepted_count: 26
+  duplicate_count: 0
+  lead_count: 2
+  rejected_count: 6
+  average_seconds_per_candidate: 0.127
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_richardson_getting_wisdom_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 22
+  accepted_count: 17
+  duplicate_count: 2
+  lead_count: 2
+  rejected_count: 4
+  average_seconds_per_candidate: 0.19
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_project_gutenberg_turner_wonder_child_exact_text
+  source_name: Project Gutenberg
+  organisation: Project Gutenberg
+  domain: ''
+  jurisdiction: NSW
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 13
+  accepted_count: 10
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 3
+  average_seconds_per_candidate: 0.24
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_more_australian_legendary_tales_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: moreaustralianl00parkgoog
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 17
+  accepted_count: 16
+  duplicate_count: 2
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 0.433
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_spencer_across_australia_vol1_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: acrossaustralia01spenuoft
+  jurisdiction: NT/SA/WA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 16
+  accepted_count: 16
+  duplicate_count: 4
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.292
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_mathews_notes_nsw_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: notesonaborigine00math
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 2
+  accepted_count: 2
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 2.555
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_internet_archive_calvert_aborigines_wa_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: aboriginesofwest00calv
+  jurisdiction: WA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 2
+  accepted_count: 2
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 2.053
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_internet_archive_calvert_wa_google_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: aboriginesweste00calvgoog
+  jurisdiction: WA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 2
+  accepted_count: 2
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 3.457
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_internet_archive_mathews_sociology_wa_exact_article
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: biostor-203790
+  jurisdiction: WA
+  source_class: repository_full_text_article
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: route_cursor_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_internet_archive_spencer_across_australia_vol2_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: acrossaustralia02spen
+  jurisdiction: NT/SA/WA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 17
+  accepted_count: 16
+  duplicate_count: 5
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 0.284
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_more_australian_legendary_tales_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: moreaustralianl00parkgoog
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 29
+  accepted_count: 21
+  duplicate_count: 28
+  lead_count: 8
+  rejected_count: 4
+  average_seconds_per_candidate: 0.146
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_spencer_across_australia_vol1_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: acrossaustralia01spenuoft
+  jurisdiction: NT/SA/WA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 11
+  accepted_count: 11
+  duplicate_count: 21
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.38
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_spencer_across_australia_vol2_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: acrossaustralia02spen
+  jurisdiction: NT/SA/WA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 68
+  accepted_count: 67
+  duplicate_count: 34
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 0.052
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_mathews_notes_nsw_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: notesonaborigine00math
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 2
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: route_cursor_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_internet_archive_calvert_wa_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: aboriginesofwest00calv
+  jurisdiction: WA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 0
+  accepted_count: 0
+  duplicate_count: 2
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: ''
+  blocker: low_yield_or_discovery_only
+  failure_reason: route_cursor_exhausted
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_internet_archive_dawson_victoria_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: australianaborig81daws
+  jurisdiction: VIC
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 32
+  accepted_count: 30
+  duplicate_count: 49
+  lead_count: 0
+  rejected_count: 2
+  average_seconds_per_candidate: 0.127
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_smyth_victoria_vol1_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: aboriginesofvict01smyt
+  jurisdiction: VIC/TAS
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 119
+  accepted_count: 107
+  duplicate_count: 7
+  lead_count: 14
+  rejected_count: 5
+  average_seconds_per_candidate: 0.187
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_northern_tribes_central_australia_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: northerntribesof00spen
+  jurisdiction: NT
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 87
+  accepted_count: 87
+  duplicate_count: 34
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.064
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_kamilaroi_kurnai_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: kamilaroikurnaig00fiso
+  jurisdiction: NSW/VIC
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 32
+  accepted_count: 32
+  duplicate_count: 53
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.188
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_native_tribes_sa_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: nativetribessou00benngoog
+  jurisdiction: SA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 31
+  accepted_count: 30
+  duplicate_count: 32
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 0.154
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_roth_queensland_rescan_02
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: McGillLibrary-rbsc_ethnological-studies-queensland-aborigines_GN667Q8R8-30670
+  jurisdiction: QLD
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 17
+  accepted_count: 15
+  duplicate_count: 9
+  lead_count: 2
+  rejected_count: 1
+  average_seconds_per_candidate: 0.232
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive

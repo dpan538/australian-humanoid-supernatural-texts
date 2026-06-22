@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T09:24:59+00:00`
+- Generated: `2026-06-22T09:51:32+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `97`
+- Routes: `139`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 19
+- `low_yield`: 37
 - `manual_only`: 1
-- `productive`: 74
+- `productive`: 98
 
 ## Stop Rule
 
@@ -117,3 +117,45 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_project_gutenberg_clarke_natural_life_exact_text | productive | Project Gutenberg | exact_plain_text | 31 | 26 | 4 | 4 |  | Scale productive route |
 | sprint_project_gutenberg_boldrewood_crooked_stick_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 16 | 0 | 1 |  | Scale productive route |
 | sprint_project_gutenberg_hume_hansom_cab_exact_text | productive | Project Gutenberg | exact_plain_text | 23 | 17 | 11 | 3 |  | Scale productive route |
+| sprint_museums_victoria_history_probe | low_yield | Museums Victoria | public_search_page_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_geelong_heritage_place_first_probe | low_yield | Geelong Regional Libraries | public_search_page_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_marion_heritage_probe | low_yield | City of Marion | public_search_page_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_libraries_tasmania_eheritage_probe | low_yield | Libraries Tasmania | public_search_page_probe | 5 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_act_heritage_library_probe | low_yield | Libraries ACT | public_search_page_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_anu_open_research_folklore_probe | low_yield | Australian National University | public_search_page_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_slv_catalogue_place_first_probe | low_yield | State Library Victoria | public_search_page_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_prov_collection_place_first_probe | low_yield | Public Record Office Victoria | public_search_page_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_slwa_battye_place_first_probe | low_yield | State Library of Western Australia | public_search_page_probe | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_wa_museum_maritime_place_first_probe | low_yield | Western Australian Museum | public_search_page_probe | 2 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_slsa_place_first_probe | low_yield | State Library of South Australia | public_search_page_probe | 30 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_state_records_sa_archivessearch_probe | low_yield | State Records of South Australia | public_search_page_probe | 1 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_project_gutenberg_franklin_my_brilliant_career_exact_text | productive | Project Gutenberg | exact_plain_text | 23 | 19 | 1 | 3 |  | Scale productive route |
+| sprint_project_gutenberg_cambridge_thirty_years_australia_exact_text | productive | Project Gutenberg | exact_plain_text | 13 | 10 | 1 | 3 |  | Scale productive route |
+| sprint_project_gutenberg_cambridge_three_miss_kings_exact_text | productive | Project Gutenberg | exact_plain_text | 23 | 17 | 2 | 5 |  | Scale productive route |
+| sprint_project_gutenberg_cambridge_sisters_exact_text | productive | Project Gutenberg | exact_plain_text | 13 | 11 | 0 | 2 |  | Scale productive route |
+| sprint_project_gutenberg_dyson_gold_stealers_exact_text | productive | Project Gutenberg | exact_plain_text | 16 | 15 | 1 | 0 |  | Scale productive route |
+| sprint_project_gutenberg_dyson_roaring_fifties_exact_text | productive | Project Gutenberg | exact_plain_text | 21 | 18 | 2 | 2 |  | Scale productive route |
+| sprint_project_gutenberg_furphy_such_is_life_exact_text | productive | Project Gutenberg | exact_plain_text | 26 | 23 | 1 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_franklin_some_everyday_folk_exact_text | productive | Project Gutenberg | exact_plain_text | 19 | 18 | 0 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_hume_madame_midas_exact_text | productive | Project Gutenberg | exact_plain_text | 21 | 16 | 1 | 4 |  | Scale productive route |
+| sprint_project_gutenberg_richardson_australia_felix_exact_text | productive | Project Gutenberg | exact_plain_text | 33 | 26 | 0 | 6 |  | Scale productive route |
+| sprint_project_gutenberg_richardson_getting_wisdom_exact_text | productive | Project Gutenberg | exact_plain_text | 22 | 17 | 2 | 4 |  | Scale productive route |
+| sprint_project_gutenberg_turner_wonder_child_exact_text | productive | Project Gutenberg | exact_plain_text | 13 | 10 | 0 | 3 |  | Scale productive route |
+| sprint_internet_archive_more_australian_legendary_tales_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 16 | 2 | 0 |  | Scale productive route |
+| sprint_internet_archive_spencer_across_australia_vol1_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 16 | 16 | 4 | 0 |  | Scale productive route |
+| sprint_internet_archive_mathews_notes_nsw_exact_text | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_internet_archive_calvert_aborigines_wa_exact_text | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_internet_archive_calvert_wa_google_exact_text | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_internet_archive_mathews_sociology_wa_exact_article | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 0 | 0 | 0 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_internet_archive_spencer_across_australia_vol2_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 16 | 5 | 0 |  | Scale productive route |
+| sprint_internet_archive_more_australian_legendary_tales_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 29 | 21 | 28 | 4 |  | Scale productive route |
+| sprint_internet_archive_spencer_across_australia_vol1_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 11 | 11 | 21 | 0 |  | Scale productive route |
+| sprint_internet_archive_spencer_across_australia_vol2_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 68 | 67 | 34 | 0 |  | Scale productive route |
+| sprint_internet_archive_mathews_notes_nsw_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 0 | 0 | 2 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_internet_archive_calvert_wa_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 0 | 0 | 2 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_internet_archive_dawson_victoria_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 30 | 49 | 2 |  | Scale productive route |
+| sprint_internet_archive_smyth_victoria_vol1_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 119 | 107 | 7 | 5 |  | Scale productive route |
+| sprint_internet_archive_northern_tribes_central_australia_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 87 | 87 | 34 | 0 |  | Scale productive route |
+| sprint_internet_archive_kamilaroi_kurnai_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 32 | 53 | 0 |  | Scale productive route |
+| sprint_internet_archive_native_tribes_sa_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 31 | 30 | 32 | 0 |  | Scale productive route |
+| sprint_internet_archive_roth_queensland_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 15 | 9 | 1 |  | Scale productive route |

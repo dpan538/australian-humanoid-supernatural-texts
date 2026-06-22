@@ -140,6 +140,42 @@ IDIOMATIC_NON_SCOPE_PATTERNS = {
     "poor devil",
 }
 
+FICTION_STRICT_SOURCE_TYPES = {"public_domain_ebook"}
+FICTION_STRONG_PERSON_FORM_TERMS = {
+    "apparition",
+    "fairies",
+    "fairy",
+    "ghost",
+    "ghosts",
+    "haunted",
+    "magician",
+    "phantom",
+    "spectral",
+    "spectre",
+    "supernatural",
+    "witch",
+    "wizard",
+}
+FICTION_SUPERNATURAL_SIGNALS = {
+    "apparition",
+    "dead",
+    "evil spirit",
+    "fairies",
+    "fairy",
+    "ghost",
+    "ghosts",
+    "haunted",
+    "legend",
+    "myth",
+    "phantom",
+    "spectral",
+    "spectre",
+    "spirit being",
+    "supernatural",
+    "witch",
+    "wizard",
+}
+
 STATE_ALIASES = {
     "NSW": "New South Wales",
     "QLD": "Queensland",
@@ -329,10 +365,43 @@ def apply_text_boundaries(text: str, page: dict[str, Any]) -> str:
 def classify_block(term: str, block: str, route: dict[str, Any]) -> tuple[str, str, str, str]:
     lower = block.lower()
     term_lower = term.lower()
+    is_strict_fiction = route.get("source_type") in FICTION_STRICT_SOURCE_TYPES or route.get("ethics_review_status") == "public_fiction_reviewed"
     if any(pattern in lower for pattern in IDIOMATIC_NON_SCOPE_PATTERNS) and not any(
         signal in lower for signal in {"apparition", "haunted", "supernatural", "spook", "spectral"}
     ):
         return "rejected", "descriptive_belief_record", "idiomatic_or_non_scope_term_use", "insufficient_evidence"
+    if is_strict_fiction:
+        has_signal = any(signal in lower for signal in FICTION_SUPERNATURAL_SIGNALS)
+        if term_lower in {"little man", "little woman", "little old man", "little old woman"} and not has_signal:
+            return "rejected", "descriptive_belief_record", "ordinary_human_description_in_fiction", "insufficient_evidence"
+        if term_lower in {"spirit", "spirits"} and not any(
+            signal in lower
+            for signal in {
+                "apparition",
+                "dead",
+                "evil spirit",
+                "ghost",
+                "haunted",
+                "spirit being",
+                "spirit person",
+                "supernatural",
+                "witch",
+                "wizard",
+            }
+        ):
+            return "rejected", "descriptive_belief_record", "idiomatic_or_mood_spirit_in_fiction", "insufficient_evidence"
+        if term_lower == "devil" and not any(
+            signal in lower for signal in {"devil-devil", "evil spirit", "ghost", "phantom", "supernatural", "witch", "wizard"}
+        ):
+            return "rejected", "descriptive_belief_record", "idiomatic_or_expletive_devil_in_fiction", "insufficient_evidence"
+        if term_lower == "giant" and not any(
+            signal in lower for signal in {"fairy", "giant man", "giant-person", "legend", "myth", "ogre", "supernatural"}
+        ):
+            return "rejected", "descriptive_belief_record", "ordinary_or_metaphorical_giant_in_fiction", "insufficient_evidence"
+        if term_lower in {"apparition", "phantom", "haunted"} and not any(
+            signal in lower for signal in {"apparition", "ghost", "haunted house", "phantom", "spectral", "spectre", "supernatural"}
+        ):
+            return "rejected", "descriptive_belief_record", "non_supernatural_appearance_term_in_fiction", "insufficient_evidence"
     person_form = contains_term(block, term) and any(contains_term(block, word) for word in PERSON_FORM_WORDS)
     route_person_terms = {str(item).lower() for item in route.get("person_form_terms", [])}
     if term_lower in route_person_terms:
@@ -341,6 +410,8 @@ def classify_block(term: str, block: str, route: dict[str, Any]) -> tuple[str, s
         person_form = True
     if term_lower in {"fairy", "fairies", "witch", "wizard", "magician", "enchanter", "giant", "ghost", "ghosts", "apparition", "phantom", "water-sprite"}:
         person_form = True
+    if is_strict_fiction and term_lower in {"little man", "little woman", "little old man", "little old woman"}:
+        person_form = person_form and any(signal in lower for signal in FICTION_STRONG_PERSON_FORM_TERMS)
     if term_lower in {"spirit", "spirits", "devil"} and any(
         signal in lower for signal in {"dead", "ghost", "apparition", "supernatural", "being", "beings", "ancestor", "ancestral", "medicine", "wizard", "witch", "evil spirit", "devil-devil"}
     ):
@@ -465,22 +536,29 @@ def fetch_archive_text(route: dict[str, Any]) -> tuple[str, str]:
     identifier = route["archive_identifier"]
     metadata_url = f"https://archive.org/metadata/{quote(identifier)}"
     metadata = json.loads(http_get(metadata_url).decode("utf-8", "ignore"))
-    text_name = ""
+    text_names: list[str] = []
     for file_row in metadata.get("files", []):
         name = str(file_row.get("name") or "")
-        if name.endswith("_djvu.txt"):
-            text_name = name
-            break
-    if not text_name:
-        for file_row in metadata.get("files", []):
-            name = str(file_row.get("name") or "")
-            if name.endswith("_hocr_searchtext.txt.gz"):
-                text_name = name
-                break
-    if not text_name:
+        if name.endswith("_djvu.txt") and name not in text_names:
+            text_names.append(name)
+    for file_row in metadata.get("files", []):
+        name = str(file_row.get("name") or "")
+        if name.endswith("_hocr_searchtext.txt.gz") and name not in text_names:
+            text_names.append(name)
+    for file_row in metadata.get("files", []):
+        name = str(file_row.get("name") or "")
+        if name.endswith(".txt") and name not in text_names:
+            text_names.append(name)
+    if not text_names:
         raise RuntimeError(f"No public OCR text file found for {identifier}")
-    text_url = f"https://archive.org/download/{quote(identifier)}/{quote(text_name)}"
-    return text_url, fetch_text(text_url)
+    errors: list[str] = []
+    for text_name in text_names:
+        text_url = f"https://archive.org/download/{quote(identifier)}/{quote(text_name)}"
+        try:
+            return text_url, fetch_text(text_url)
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"{text_name}: {type(exc).__name__}: {exc}")
+    raise RuntimeError(f"No readable public OCR text file found for {identifier}; attempts={'; '.join(errors[:4])}")
 
 
 def collect_text_route(
@@ -519,6 +597,7 @@ def collect_text_route(
         existing_hashes = existing_evidence_hashes_for_urls({str(page.get("url") or "") for page in pages})
     seen_hashes: set[str] = set()
     term_hits: Counter[str] = Counter()
+    term_hit_limit = int(route.get("term_hit_limit") or 4)
     start_page_index = 0 if route.get("resume_strategy") == "rescan_new_evidence" else int(cursor.get("page_index") or 0)
     next_page_index = start_page_index
     try:
@@ -546,7 +625,7 @@ def collect_text_route(
                         break
                     if accepted_target and result.accepted_provisional >= accepted_target:
                         break
-                    if term_hits[term.lower()] >= 4:
+                    if term_hits[term.lower()] >= term_hit_limit:
                         continue
                     digest = hashlib.sha256(canonicalise_whitespace(block).lower().encode("utf-8")).hexdigest()
                     if digest in existing_hashes:
@@ -990,6 +1069,27 @@ def run_route(route: dict[str, Any], stage_dir: Path, scaled: bool = False, curs
     if route.get("pages") or route.get("archive_identifier"):
         return collect_text_route(route, stage_dir, scaled=scaled, cursor=cursor)
     return collect_probe_only(route, stage_dir, cursor=cursor)
+
+
+def failed_route_result(route: dict[str, Any], stage_dir: Path, exc: BaseException, scaled: bool) -> RouteResult:
+    result = RouteResult(
+        route_id=route["route_id"],
+        family=route.get("family", ""),
+        organisation=route.get("organisation", ""),
+        source_name=route.get("source_name", ""),
+        retrieval_method=route.get("retrieval_method", ""),
+        stage_csv=str(stage_dir / f"{route['route_id']}.csv"),
+        stage_ndjson=str(stage_dir / f"{route['route_id']}.ndjson"),
+        route_phase="scaled" if scaled else "probe",
+        errors=1,
+        runtime_seconds=0.0,
+        stop_reason=f"route_worker_error:{type(exc).__name__}",
+        notes=[str(exc)],
+        resume_cursor={"blocked": True, "updated_at": utc_now_iso()},
+    )
+    write_route_stage(result)
+    print_route_progress(result, time.monotonic())
+    return result
 
 
 def load_export_counts() -> dict[str, int]:
@@ -1763,9 +1863,18 @@ def run_collection_iteration(
         for route in selected_routes:
             route_cursor = cursors.get(route["route_id"]) or {}
             scaled = bool(route.get("scaled") or route["route_id"] in set(state.get("productive_routes") or []))
-            futures[executor.submit(run_route, route, stage_dir, scaled, route_cursor)] = route["route_id"]
+            futures[executor.submit(run_route, route, stage_dir, scaled, route_cursor)] = (route, scaled)
         for future in as_completed(futures):
-            results.append(future.result())
+            route, scaled = futures[future]
+            try:
+                results.append(future.result())
+            except Exception as exc:  # noqa: BLE001
+                print(
+                    "[collection-sprint] "
+                    f"route_id={route['route_id']} worker_error={type(exc).__name__}: {exc}",
+                    flush=True,
+                )
+                results.append(failed_route_result(route, stage_dir, exc, scaled))
 
     all_candidates = [candidate for result in results for candidate in result.candidates]
     deduped_candidates, staged_duplicates = dedupe_candidates(all_candidates)
