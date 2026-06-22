@@ -94,6 +94,48 @@ STATE_NAME_TO_CODE = {
     "tasmania": "TAS",
     "australian capital territory": "ACT",
 }
+SITE_NAME_TO_CODE = {
+    "mitchell river national park": "VIC",
+    "den of nargun": "VIC",
+    "port arthur": "TAS",
+    "port arthur historic site": "TAS",
+    "princess theatre": "VIC",
+}
+PUBLIC_MAP_LOCATION_ROLES = {
+    "alleged_event_location",
+    "apparition_location",
+    "narrative_setting",
+    "legend_associated_place",
+    "rumour_circulation_place",
+    "cultural_association_region",
+    "reported_place",
+    "source_visible_place",
+    "source_visible_place_hint",
+    "mentioned_place",
+}
+PUBLIC_MAP_LOCATION_TYPES = {
+    "exact_site",
+    "road_segment",
+    "named_feature",
+    "town",
+    "locality",
+    "precise_point",
+}
+PUBLIC_MAP_VERIFICATION_STATUSES = {
+    "verified_place",
+    "verified_locality",
+    "verified_gazetteer_point",
+    "verified_institutional_coordinate",
+}
+PUBLIC_MAP_REJECTED_ROLES = {"publication_location", "source_collection_location"}
+PUBLIC_MAP_TYPE_PRIORITY = {
+    "exact_site": 0,
+    "precise_point": 1,
+    "road_segment": 2,
+    "named_feature": 3,
+    "locality": 4,
+    "town": 5,
+}
 
 def row_dict(row: Any) -> dict[str, Any]:
     return {key: row[key] for key in row.keys()}
@@ -152,6 +194,9 @@ def safe_int(value: Any) -> int | None:
 
 def state_code_from_text(text: str | None) -> str | None:
     normalized = (text or "").lower()
+    for site_name, code in SITE_NAME_TO_CODE.items():
+        if site_name in normalized:
+            return code
     for state_name, code in STATE_NAME_TO_CODE.items():
         if state_name in normalized:
             return code
@@ -159,6 +204,34 @@ def state_code_from_text(text: str | None) -> str | None:
         if f" {code.lower()} " in f" {normalized} ":
             return code
     return None
+
+
+def is_public_map_location(location: dict[str, Any]) -> bool:
+    role = str(location.get("relation_type") or "")
+    location_type = str(location.get("location_type") or "")
+    verification = str(location.get("verification_status") or "")
+    state = location.get("state_territory")
+    country = str(location.get("country") or "Australia").lower()
+    if role in PUBLIC_MAP_REJECTED_ROLES or role not in PUBLIC_MAP_LOCATION_ROLES:
+        return False
+    if location_type not in PUBLIC_MAP_LOCATION_TYPES:
+        return False
+    if verification not in PUBLIC_MAP_VERIFICATION_STATUSES:
+        return False
+    if location.get("latitude") is None or location.get("longitude") is None:
+        return False
+    if country != "australia" or state not in STATE_CODES:
+        return False
+    if not str(location.get("evidence_text") or "").strip():
+        return False
+    return True
+
+
+def map_location_priority(location: dict[str, Any]) -> tuple[int, str]:
+    return (
+        PUBLIC_MAP_TYPE_PRIORITY.get(str(location.get("location_type") or ""), 99),
+        str(location.get("place_name") or ""),
+    )
 
 
 def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Path = FRONTEND_DATA_PATH) -> Path:
@@ -236,99 +309,6 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                 item["longitude"] = float(item["longitude"]) if item.get("longitude") not in (None, "") else None
                 item["date_band"] = year_to_band(item["year"])
                 locations.append(item)
-
-        accepted_candidate_rows = []
-        if "collection_candidates_v2" in tables:
-            accepted_candidate_rows = conn.execute(
-                """
-                SELECT *
-                FROM collection_candidates_v2
-                WHERE candidate_status = 'accepted'
-                  AND COALESCE(publicness_status, '') != 'restricted_excluded'
-                ORDER BY candidate_id
-                """
-            ).fetchall()
-            for row in accepted_candidate_rows:
-                candidate = row_dict(row)
-                candidate_id = int(candidate["candidate_id"])
-                record_id = 900000000 + candidate_id
-                year = safe_int(str(candidate.get("publication_date_text") or "")[:4])
-                state_code = state_code_from_text(candidate.get("location_text"))
-                latitude = float(candidate["latitude"]) if candidate.get("latitude") not in (None, "") else None
-                longitude = float(candidate["longitude"]) if candidate.get("longitude") not in (None, "") else None
-                has_strict_point = latitude is not None and longitude is not None
-                record = {
-                    "record_id": record_id,
-                    "source_id": 0,
-                    "query_id": None,
-                    "figure_id": None,
-                    "external_id": candidate.get("external_id"),
-                    "title": candidate.get("title"),
-                    "publication": candidate.get("publication_or_organisation"),
-                    "author": None,
-                    "date_published": candidate.get("publication_date_text"),
-                    "year": year,
-                    "url": candidate.get("url"),
-                    "snippet": candidate.get("evidence_summary"),
-                    "publicness_level": candidate.get("publicness_status"),
-                    "ingestion_status": "v2_accepted_candidate" if not has_strict_point else "strict_geo_candidate",
-                    "source_name": candidate.get("source_name"),
-                    "source_type": candidate.get("source_type"),
-                    "canonical_figure": candidate.get("source_label"),
-                    "cluster": "strict_geo_collection",
-                    "tier": candidate.get("source_tier"),
-                    "include_status": "include_v2_candidate",
-                    "figure_humanoid_degree": candidate.get("humanoid_basis"),
-                    "ontology_default": candidate.get("narrative_type"),
-                    "involves_indigenous_knowledge": candidate.get("ethics_review_status") == "caution_indigenous_knowledge",
-                    "canonical_figure_guess": candidate.get("source_label"),
-                    "figure_name_as_printed": candidate.get("source_label"),
-                    "ontology_code": candidate.get("narrative_type"),
-                    "humanoid_degree_code": candidate.get("humanoid_basis"),
-                    "source_voice": candidate.get("secondary_role"),
-                    "genre": candidate.get("source_type"),
-                    "publicness_code": candidate.get("publicness_status"),
-                    "relevance_code": "relevant",
-                    "ethics_flag": candidate.get("ethics_review_status"),
-                    "coding_notes": f"V2 accepted candidate {candidate_id}; map point {'verified' if has_strict_point else 'pending strict geocode'}; quality {candidate.get('quality_class') or 'ungraded'}.",
-                    "date_band": year_to_band(year),
-                    "location_summary": candidate.get("location_text") or "",
-                    "state_territory": state_code,
-                    "location_precision_status": candidate.get("location_precision") or ("precise_point" if has_strict_point else "unmapped"),
-                    "has_strict_map_point": has_strict_point,
-                    "map_latitude": latitude if has_strict_point else None,
-                    "map_longitude": longitude if has_strict_point else None,
-                    "map_place_name": candidate.get("location_text") if has_strict_point else None,
-                    "map_location_role": candidate.get("location_role") if has_strict_point else None,
-                    "map_location_type": candidate.get("location_precision") if has_strict_point else None,
-                    "map_geocode_source": candidate.get("geocode_source") if has_strict_point else None,
-                    "map_verification_status": candidate.get("geocode_verification_status") if has_strict_point else None,
-                    "map_confidence": candidate.get("quality_class") if has_strict_point else None,
-                    "map_evidence_text": candidate.get("coordinate_evidence_note") if has_strict_point else None,
-                }
-                records.append(record)
-                if has_strict_point:
-                    location = {
-                        "record_id": record_id,
-                        "relation_type": candidate.get("location_role"),
-                        "evidence_text": candidate.get("coordinate_evidence_note") or candidate.get("evidence_summary"),
-                        "confidence": candidate.get("quality_class"),
-                        "notes": "Accepted V2 strict-geography candidate.",
-                        "place_name": candidate.get("location_text") or candidate.get("title") or "Strict geocoded candidate",
-                        "region": None,
-                        "state_territory": state_code,
-                        "country": "Australia",
-                        "latitude": latitude,
-                        "longitude": longitude,
-                        "location_type": candidate.get("location_precision"),
-                        "geocode_source": candidate.get("geocode_source"),
-                        "verification_status": candidate.get("geocode_verification_status"),
-                        "year": year,
-                        "title": candidate.get("title"),
-                        "canonical_figure": candidate.get("source_label"),
-                        "date_band": year_to_band(year),
-                    }
-                    locations.append(location)
 
         figure_rows = conn.execute(
             """
@@ -439,8 +419,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
     state_record_ids: dict[str, set[int]] = {code: set() for code in STATE_CODES}
     state_representative_records: dict[str, int] = {}
     first_location_by_record: dict[int, dict[str, Any]] = {}
-    strict_location_by_record: dict[int, dict[str, Any]] = {}
-    precise_locations = []
+    representative_map_location_by_record: dict[int, dict[str, Any]] = {}
     broad_locations = []
     records_by_id = {int(record["record_id"]): record for record in records}
     for location in locations:
@@ -460,39 +439,38 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         if state in state_record_ids:
             state_record_ids[state].add(record_id)
             state_representative_records.setdefault(state, record_id)
-        if location.get("latitude") is not None and location.get("longitude") is not None:
-            precise_locations.append(location)
-            strict_location_by_record.setdefault(record_id, location)
+        if is_public_map_location(location):
+            existing = representative_map_location_by_record.get(record_id)
+            if existing is None or map_location_priority(location) < map_location_priority(existing):
+                representative_map_location_by_record[record_id] = location
         elif location.get("location_type") in {"broad_region", "state_or_territory", "country"}:
             broad_locations.append(location)
 
-    # Frontend map policy: one explicit point flag per record. Some legacy
-    # records carry multiple precise location rows; those remain in `locations`
-    # for audit/review, but the public map receives only the representative
-    # strict location selected above so the headline count, clickable flags, and
-    # record cards remain one-to-one.
-    precise_points = list(strict_location_by_record.values())
-    precise_record_ids = set(strict_location_by_record)
+    # Frontend map policy: one explicit public flag per canonical record. All
+    # location relationships stay exportable for audit/review, but public map
+    # points are a derived subset selected from eligible representative rows.
+    map_points = list(representative_map_location_by_record.values())
+    mapped_record_ids = set(representative_map_location_by_record)
     for record_id, location in first_location_by_record.items():
         record = records_by_id.get(record_id)
         if not record:
             continue
         record["state_territory"] = location.get("state_territory")
         record["location_precision_status"] = location.get("location_type") or "mapped"
-        record["has_strict_map_point"] = record_id in precise_record_ids
+        record["has_strict_map_point"] = record_id in mapped_record_ids
         if record["has_strict_map_point"]:
-            strict_location = strict_location_by_record[record_id]
-            record["state_territory"] = strict_location.get("state_territory") or record.get("state_territory")
-            record["location_precision_status"] = strict_location.get("location_type") or record.get("location_precision_status")
-            record["map_latitude"] = strict_location.get("latitude")
-            record["map_longitude"] = strict_location.get("longitude")
-            record["map_place_name"] = strict_location.get("place_name")
-            record["map_location_role"] = strict_location.get("relation_type")
-            record["map_location_type"] = strict_location.get("location_type")
-            record["map_geocode_source"] = strict_location.get("geocode_source")
-            record["map_verification_status"] = strict_location.get("verification_status")
-            record["map_confidence"] = strict_location.get("confidence")
-            record["map_evidence_text"] = strict_location.get("evidence_text")
+            map_location = representative_map_location_by_record[record_id]
+            record["state_territory"] = map_location.get("state_territory") or record.get("state_territory")
+            record["location_precision_status"] = map_location.get("location_type") or record.get("location_precision_status")
+            record["map_latitude"] = map_location.get("latitude")
+            record["map_longitude"] = map_location.get("longitude")
+            record["map_place_name"] = map_location.get("place_name")
+            record["map_location_role"] = map_location.get("relation_type")
+            record["map_location_type"] = map_location.get("location_type")
+            record["map_geocode_source"] = map_location.get("geocode_source")
+            record["map_verification_status"] = map_location.get("verification_status")
+            record["map_confidence"] = map_location.get("confidence")
+            record["map_evidence_text"] = map_location.get("evidence_text")
 
     corpus_state_record_ids: dict[str, set[int]] = {code: set() for code in STATE_CODES}
     unmapped_record_count = 0
@@ -519,12 +497,11 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         if record_ids
     ]
 
-    # Strict map policy: only verified records with public latitude/longitude become map flags.
     # State-level or broad locations remain reviewable location data, but are not rendered as points.
-    # Keep map_flags in lockstep with map_points so every displayed strict point remains auditable.
+    # Keep map_flags in lockstep with map_points so every displayed point remains auditable.
     map_flags: list[dict[str, Any]] = [
         {
-            "flag_id": f"strict:{point['record_id']}:{index}",
+            "flag_id": f"mapped:{point['record_id']}",
             "record_id": point["record_id"],
             "state_territory": point.get("state_territory"),
             "x": point.get("longitude"),
@@ -538,7 +515,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             "year": point.get("year"),
             "canonical_figure": point.get("canonical_figure"),
         }
-        for index, point in enumerate(precise_points)
+        for point in map_points
     ]
 
     records_by_figure = Counter((record.get("canonical_figure_guess") or record.get("canonical_figure") or "uncoded") for record in records)
@@ -577,17 +554,15 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             "query_count": len(queries),
             "source_count": len(sources),
             "location_count": len(locations),
-            "precise_point_count": len(precise_points),
-            "strict_map_record_count": len(precise_record_ids),
-            "map_point_count": len(precise_points),
+            "mapped_record_count": len(mapped_record_ids),
             "broad_location_count": len(broad_locations),
             "map_cluster_count": len(map_clusters),
-            "map_flag_count": len(precise_points),
+            "map_flag_count": len(map_flags),
             "earliest_year": min(years) if years else None,
             "latest_year": max(years) if years else None,
             "state_record_counts": {code: len(ids) for code, ids in state_record_ids.items()},
             "corpus_state_counts": {code: len(ids) for code, ids in corpus_state_record_ids.items()},
-            "strict_state_counts": {code: sum(1 for point in precise_points if point.get("state_territory") == code) for code in STATE_CODES},
+            "mapped_state_counts": {code: sum(1 for point in map_points if point.get("state_territory") == code) for code in STATE_CODES},
             "unmapped_record_count": unmapped_record_count,
             "records_by_figure": dict(records_by_figure),
             "records_by_year": dict(sorted(records_by_year.items())),
@@ -599,7 +574,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         "date_bands": date_band_summaries,
         "records": records,
         "locations": locations,
-        "map_points": precise_points,
+        "map_points": map_points,
         "map_flags": map_flags,
         "map_clusters": map_clusters,
         "broad_locations": broad_locations,

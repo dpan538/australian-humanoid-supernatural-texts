@@ -33,12 +33,16 @@ human-supplied source list.
 
 ## Frontend Count Note
 
-The map page distinguishes:
+The public map is a derived subset of canonical records, not a second record
+database.
 
-- `record_count`: all display records used by Dashboard and Density.
-- `strict_map_record_count`: records with at least one strict map location.
-- `map_point_count`: strict location points; this can exceed strict record count
-  when one record has multiple verified locations.
+- `record_count`: all canonical public display records exported from `records`.
+- `mapped_record_count`: canonical records with one eligible representative
+  public map location.
+- `map_flag_count`: public map flags; this must equal `mapped_record_count`.
+- `map_points.length`: public map point rows; this must equal
+  `mapped_record_count`.
 
-The map should display strict records as the headline count and expose point
-count as a secondary health metric.
+Internal records may retain multiple `record_locations` rows for provenance and
+review, but only one representative eligible location is exported as the public
+map flag for a canonical record.

@@ -49,11 +49,11 @@ def load_yaml(path: Path) -> dict[str, Any]:
 def build_rows(frontend_data: dict[str, Any], population_cfg: dict[str, Any]) -> list[dict[str, Any]]:
     summary = frontend_data.get("summary", {})
     display_counts = summary.get("corpus_state_counts") or summary.get("state_record_counts") or {}
-    strict_counts = summary.get("strict_state_counts") or {}
+    mapped_counts = summary.get("mapped_state_counts") or {}
     populations = population_cfg["population"]
     targets = population_cfg.get("targets", {})
     min_per_state = int(targets.get("minimum_records_per_state", 100))
-    strict_target_total = int(targets.get("strict_map_points_total", 1500))
+    mapped_target_total = int(targets.get("mapped_records_total", targets.get("strict_map_points_total", 1500)))
     display_target_total = int(targets.get("display_records_total", 3500))
     total_population = int(populations.get("AU") or sum(int(populations[code]) for code in STATE_CODES))
 
@@ -61,23 +61,23 @@ def build_rows(frontend_data: dict[str, Any], population_cfg: dict[str, Any]) ->
     for code in STATE_CODES:
         population = int(populations[code])
         display = int(display_counts.get(code, 0))
-        strict = int(strict_counts.get(code, 0))
+        mapped = int(mapped_counts.get(code, 0))
         display_prop_target = proportional_target(population, total_population, display_target_total)
-        strict_prop_target = proportional_target(population, total_population, strict_target_total)
+        mapped_prop_target = proportional_target(population, total_population, mapped_target_total)
         rows.append(
             {
                 "state": code,
                 "population": population,
                 "display_records": display,
-                "strict_map_points": strict,
+                "mapped_records": mapped,
                 "display_records_per_million": round(per_million(display, population), 2),
-                "strict_points_per_million": round(per_million(strict, population), 2),
+                "mapped_records_per_million": round(per_million(mapped, population), 2),
                 "gap_to_minimum_display_100": max(0, min_per_state - display),
-                "gap_to_minimum_strict_100": max(0, min_per_state - strict),
+                "gap_to_minimum_mapped_100": max(0, min_per_state - mapped),
                 "proportional_display_target_3500": display_prop_target,
                 "gap_to_proportional_display_target": max(0, display_prop_target - display),
-                "proportional_strict_target_1500": strict_prop_target,
-                "gap_to_proportional_strict_target": max(0, strict_prop_target - strict),
+                "proportional_mapped_target_1500": mapped_prop_target,
+                "gap_to_proportional_mapped_target": max(0, mapped_prop_target - mapped),
             }
         )
     return rows
@@ -100,11 +100,11 @@ def write_report(path: Path, rows: list[dict[str, Any]], frontend_data: dict[str
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     totals = {
         "display_records": sum(int(row["display_records"]) for row in rows),
-        "strict_map_points": sum(int(row["strict_map_points"]) for row in rows),
+        "mapped_records": sum(int(row["mapped_records"]) for row in rows),
         "gap_min_display": sum(int(row["gap_to_minimum_display_100"]) for row in rows),
-        "gap_min_strict": sum(int(row["gap_to_minimum_strict_100"]) for row in rows),
+        "gap_min_mapped": sum(int(row["gap_to_minimum_mapped_100"]) for row in rows),
         "gap_prop_display": sum(int(row["gap_to_proportional_display_target"]) for row in rows),
-        "gap_prop_strict": sum(int(row["gap_to_proportional_strict_target"]) for row in rows),
+        "gap_prop_mapped": sum(int(row["gap_to_proportional_mapped_target"]) for row in rows),
     }
 
     lines = [
@@ -112,7 +112,7 @@ def write_report(path: Path, rows: list[dict[str, Any]], frontend_data: dict[str
         "",
         f"- Generated: `{generated_at}`",
         f"- Frontend data record count: `{summary.get('record_count')}`",
-        f"- Strict map point count: `{summary.get('precise_point_count')}`",
+        f"- Mapped record count: `{summary.get('mapped_record_count')}`",
         f"- Population source: {source.get('organisation')} — {source.get('publication')}",
         f"- Population table: `{source.get('table')}`",
         f"- Reference date: `{source.get('reference_date')}`",
@@ -125,20 +125,20 @@ def write_report(path: Path, rows: list[dict[str, Any]], frontend_data: dict[str
         "## Summary",
         "",
         f"- Display records assigned to a state/territory: `{totals['display_records']}`",
-        f"- Strict map points assigned to a state/territory: `{totals['strict_map_points']}`",
+        f"- Mapped records assigned to a state/territory: `{totals['mapped_records']}`",
         f"- Additional display records needed for every state/territory to reach 100: `{totals['gap_min_display']}`",
-        f"- Additional strict map points needed for every state/territory to reach 100: `{totals['gap_min_strict']}`",
+        f"- Additional mapped records needed for every state/territory to reach 100: `{totals['gap_min_mapped']}`",
         f"- Additional display records needed to approach a 3,500-record population-proportional target: `{totals['gap_prop_display']}`",
-        f"- Additional strict map points needed to approach a 1,500-point population-proportional target: `{totals['gap_prop_strict']}`",
+        f"- Additional mapped records needed to approach a 1,500-record population-proportional target: `{totals['gap_prop_mapped']}`",
         "",
         "## State/Territory Coverage",
         "",
-        "| State | Population | Display | Strict map | Display / 1m | Strict / 1m | Gap to 100 display | Gap to 100 strict | 3,500 display proportional target | Gap | 1,500 strict proportional target | Gap |",
+        "| State | Population | Display | Mapped | Display / 1m | Mapped / 1m | Gap to 100 display | Gap to 100 mapped | 3,500 display proportional target | Gap | 1,500 mapped proportional target | Gap |",
         "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for row in rows:
         lines.append(
-            "| {state} | {population} | {display_records} | {strict_map_points} | {display_records_per_million} | {strict_points_per_million} | {gap_to_minimum_display_100} | {gap_to_minimum_strict_100} | {proportional_display_target_3500} | {gap_to_proportional_display_target} | {proportional_strict_target_1500} | {gap_to_proportional_strict_target} |".format(
+            "| {state} | {population} | {display_records} | {mapped_records} | {display_records_per_million} | {mapped_records_per_million} | {gap_to_minimum_display_100} | {gap_to_minimum_mapped_100} | {proportional_display_target_3500} | {gap_to_proportional_display_target} | {proportional_mapped_target_1500} | {gap_to_proportional_mapped_target} |".format(
                 **row
             )
         )
@@ -147,7 +147,7 @@ def write_report(path: Path, rows: list[dict[str, Any]], frontend_data: dict[str
             "",
             "## Collection Implication",
             "",
-            "- WA, NT, SA, TAS, ACT, and VIC remain the priority states for strict geocoded collection.",
+            "- WA, NT, SA, TAS, ACT, and VIC remain the priority states for mapped-record collection.",
             "- NSW and QLD are already overrepresented relative to the current corpus and should receive only high-quality non-duplicative additions in the next collection pass.",
             "- Broad or unresolved geography can still support dashboard and density views, but it should not be counted as a strict map point.",
         ]

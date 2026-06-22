@@ -368,6 +368,23 @@ V2_SCHEMA_STATEMENTS = [
         UNIQUE(run_id, canonical_url, external_id)
     )
     """,
+    """
+    CREATE TABLE IF NOT EXISTS collection_candidate_record_mappings (
+        candidate_id INTEGER PRIMARY KEY,
+        record_id INTEGER NOT NULL UNIQUE,
+        source_item_id INTEGER,
+        narrative_id INTEGER,
+        collection_run_id INTEGER,
+        promotion_status TEXT NOT NULL,
+        promotion_notes TEXT,
+        promoted_at TEXT NOT NULL,
+        FOREIGN KEY (candidate_id) REFERENCES collection_candidates_v2(candidate_id),
+        FOREIGN KEY (record_id) REFERENCES records(record_id),
+        FOREIGN KEY (source_item_id) REFERENCES source_items(source_item_id),
+        FOREIGN KEY (narrative_id) REFERENCES narrative_units(narrative_id),
+        FOREIGN KEY (collection_run_id) REFERENCES collection_runs(collection_run_id)
+    )
+    """,
 ]
 
 V2_INDEX_STATEMENTS = [
@@ -380,6 +397,7 @@ V2_INDEX_STATEMENTS = [
     "CREATE INDEX IF NOT EXISTS idx_entity_labels_text ON entity_labels(normalized_text)",
     "CREATE INDEX IF NOT EXISTS idx_narrative_locations_role ON narrative_locations(location_role)",
     "CREATE INDEX IF NOT EXISTS idx_collection_candidates_status ON collection_candidates_v2(candidate_status)",
+    "CREATE INDEX IF NOT EXISTS idx_candidate_record_mappings_record ON collection_candidate_record_mappings(record_id)",
 ]
 
 V2_TABLES = [
@@ -397,4 +415,5 @@ V2_TABLES = [
     "exclusions",
     "legacy_record_mappings",
     "collection_candidates_v2",
+    "collection_candidate_record_mappings",
 ]

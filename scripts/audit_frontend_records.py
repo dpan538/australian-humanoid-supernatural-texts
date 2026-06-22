@@ -107,8 +107,8 @@ def write_report(data: dict[str, Any], sample_size: int, output: Path) -> Path:
         f"- Frontend schema: `{data.get('schema_version', 'unknown')}`",
         f"- Total records: `{len(records)}`",
         f"- Sample size: `{len(sample)}`",
-        f"- Precise map points: `{summary.get('precise_point_count', 0)}`",
-        f"- Strict geocoded record flags: `{summary.get('map_flag_count', 0)}`",
+        f"- Mapped records: `{summary.get('mapped_record_count', 0)}`",
+        f"- Public map flags: `{summary.get('map_flag_count', 0)}`",
         f"- State/territory map clusters: `{summary.get('map_cluster_count', 0)}` (summary data only)",
         "",
         "## Sample Card Readiness",
@@ -122,7 +122,7 @@ def write_report(data: dict[str, Any], sample_size: int, output: Path) -> Path:
             "",
             "## Whole-Corpus Map Display Coverage",
             "",
-            "Only records with verified latitude/longitude are expected to map as individual flags. Card-ready records without strict public coordinates are reported as `not_mapped` and should not be treated as frontend failures.",
+            "Only records with an eligible representative location are expected to map as individual flags. Card-ready records without public map coordinates are reported as `not_mapped` and should not be treated as frontend failures.",
             "",
         ]
     )

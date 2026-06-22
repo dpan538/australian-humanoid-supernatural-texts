@@ -567,8 +567,8 @@ function DensityView({ data, onSelectRecord }: { data: FrontendData; onSelectRec
     return acc;
   }, {});
   const locationHealth = {
-    strict_geo: data.summary.precise_point_count,
-    broad_or_review: Math.max(0, data.summary.record_count - data.summary.precise_point_count),
+    mapped_records: data.summary.mapped_record_count,
+    broad_or_review: Math.max(0, data.summary.record_count - data.summary.mapped_record_count),
     locations_total: data.summary.location_count,
   };
 
@@ -577,7 +577,7 @@ function DensityView({ data, onSelectRecord }: { data: FrontendData; onSelectRec
       <header className="density-header">
         <span>TIME DENSITY / NONLINEAR BANDS</span>
         <b>
-          {data.summary.earliest_year}-{data.summary.latest_year} / {data.summary.precise_point_count} GEO
+          {data.summary.earliest_year}-{data.summary.latest_year} / {data.summary.mapped_record_count} MAPPED
         </b>
       </header>
       <div className="density-bands">
@@ -830,8 +830,8 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
     return acc;
   }, {});
   const stateCounts = data.summary.corpus_state_counts ?? data.summary.state_record_counts;
-  const strictStateCounts =
-    data.summary.strict_state_counts ??
+  const mappedStateCounts =
+    data.summary.mapped_state_counts ??
     data.records.reduce<Record<string, number>>((acc, record) => {
       if (record.has_strict_map_point && record.state_territory) {
         acc[record.state_territory] = (acc[record.state_territory] ?? 0) + 1;
@@ -847,7 +847,7 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
     .sort((a, b) => b[1].query_count - a[1].query_count || b[1].record_count - a[1].record_count)
     .slice(0, 6);
   const activeValues =
-    mode === "records" ? figureCounts : mode === "locations" ? strictStateCounts : queryTypes;
+    mode === "records" ? figureCounts : mode === "locations" ? mappedStateCounts : queryTypes;
   const activeTabs = [
     { id: "records" as const, label: "RECORDS" },
     { id: "locations" as const, label: "GEO FIELD" },
@@ -861,7 +861,7 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
         ]
       : mode === "locations"
         ? [
-            ["STRICT", data.summary.precise_point_count],
+            ["MAPPED", data.summary.mapped_record_count],
             ["BROAD", data.summary.broad_location_count],
           ]
         : [
@@ -870,11 +870,11 @@ function DashboardControlConsole({ data }: { data: FrontendData }) {
           ];
   const outputValues = [
     { id: "records" as const, value: data.summary.record_count, label: "Card-ready records" },
-    { id: "locations" as const, value: data.summary.precise_point_count, label: "Strict geocoded map points" },
+    { id: "locations" as const, value: data.summary.mapped_record_count, label: "Mapped records" },
     { id: "queries" as const, value: data.summary.query_count, label: "Planned queries" },
   ];
   const stateOrder = ["WA", "NT", "SA", "QLD", "NSW", "VIC", "TAS", "ACT"];
-  const stateEntries = stateOrder.map((state) => [state, mode === "locations" ? strictStateCounts[state] ?? 0 : stateCounts[state] ?? 0] as const);
+  const stateEntries = stateOrder.map((state) => [state, mode === "locations" ? mappedStateCounts[state] ?? 0 : stateCounts[state] ?? 0] as const);
   const maxStateCount = Math.max(...stateEntries.map(([, value]) => value), 1);
 
   return (

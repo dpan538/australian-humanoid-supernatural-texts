@@ -37,15 +37,24 @@ def validate(db_path: str | Path) -> list[dict[str, str | bool]]:
         if missing:
             return checks
 
-        legacy_count = scalar(conn, "SELECT COUNT(*) FROM records")
         mapping_count = scalar(conn, "SELECT COUNT(*) FROM legacy_record_mappings")
-        unmapped = scalar(
+        legacy_source_items = scalar(
             conn,
             """
             SELECT COUNT(*)
-            FROM records r
-            LEFT JOIN legacy_record_mappings m ON m.legacy_record_id = r.record_id
-            WHERE m.legacy_record_id IS NULL
+            FROM source_items si
+            LEFT JOIN collection_candidate_record_mappings cm ON cm.source_item_id = si.source_item_id
+            WHERE si.legacy_record_id IS NOT NULL
+              AND cm.source_item_id IS NULL
+            """,
+        )
+        legacy_mappings_without_record = scalar(
+            conn,
+            """
+            SELECT COUNT(*)
+            FROM legacy_record_mappings m
+            LEFT JOIN records r ON r.record_id = m.legacy_record_id
+            WHERE r.record_id IS NULL
             """,
         )
         duplicate_mappings = scalar(
@@ -79,6 +88,17 @@ def validate(db_path: str | Path) -> list[dict[str, str | bool]]:
               AND COALESCE(source_type, '') IN ('academic_metadata')
             """,
         )
+        accepted_candidates = scalar(conn, "SELECT COUNT(*) FROM collection_candidates_v2 WHERE candidate_status = 'accepted'")
+        promoted_candidates = scalar(conn, "SELECT COUNT(*) FROM collection_candidate_record_mappings WHERE promotion_status = 'promoted'")
+        promoted_without_record = scalar(
+            conn,
+            """
+            SELECT COUNT(*)
+            FROM collection_candidate_record_mappings m
+            LEFT JOIN records r ON r.record_id = m.record_id
+            WHERE r.record_id IS NULL
+            """,
+        )
         duplicate_urls = scalar(
             conn,
             """
@@ -87,7 +107,15 @@ def validate(db_path: str | Path) -> list[dict[str, str | bool]]:
               SELECT canonical_url, COUNT(*) AS c
               FROM source_items
               WHERE COALESCE(canonical_url, '') != ''
+                AND COALESCE(external_id, '') = ''
               GROUP BY canonical_url
+              HAVING c > 1
+              UNION ALL
+              SELECT canonical_url || '#' || external_id, COUNT(*) AS c
+              FROM source_items
+              WHERE COALESCE(canonical_url, '') != ''
+                AND COALESCE(external_id, '') != ''
+              GROUP BY canonical_url, external_id
               HAVING c > 1
             )
             """,
@@ -124,9 +152,11 @@ def validate(db_path: str | Path) -> list[dict[str, str | bool]]:
         )
         checks.extend(
             [
-                check("legacy_mapping_count_matches_records", mapping_count == legacy_count, f"{mapping_count}/{legacy_count}"),
-                check("no_unmapped_legacy_records", unmapped == 0, str(unmapped)),
+                check("legacy_mapping_count_matches_legacy_source_items", mapping_count == legacy_source_items, f"{mapping_count}/{legacy_source_items}"),
+                check("legacy_mappings_reference_records", legacy_mappings_without_record == 0, str(legacy_mappings_without_record)),
                 check("no_duplicate_legacy_mappings", duplicate_mappings == 0, str(duplicate_mappings)),
+                check("accepted_candidates_promoted", promoted_candidates == accepted_candidates, f"{promoted_candidates}/{accepted_candidates}"),
+                check("candidate_mappings_reference_records", promoted_without_record == 0, str(promoted_without_record)),
                 check("automation_did_not_set_analysis_ready", analysis_ready == 0, str(analysis_ready)),
                 check("no_leads_count_as_accepted_candidates", lead_accepted == 0, str(lead_accepted)),
                 check("metadata_only_not_accepted_candidates", metadata_accepted == 0, str(metadata_accepted)),

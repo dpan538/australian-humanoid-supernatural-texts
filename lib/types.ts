@@ -14,8 +14,7 @@ export type Summary = {
   query_count: number;
   source_count: number;
   location_count: number;
-  precise_point_count: number;
-  strict_map_record_count?: number;
+  mapped_record_count: number;
   broad_location_count: number;
   map_cluster_count?: number;
   map_flag_count?: number;
@@ -29,7 +28,7 @@ export type Summary = {
   source_type_counts: Record<string, number>;
   source_rollup: Record<string, { record_count: number; query_count: number }>;
   corpus_state_counts?: Record<string, number>;
-  strict_state_counts?: Record<string, number>;
+  mapped_state_counts?: Record<string, number>;
   unmapped_record_count?: number;
 };
 
