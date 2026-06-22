@@ -127,6 +127,18 @@ CONTEXT_ONLY_WORDS = {
     "totem",
 }
 
+IDIOMATIC_NON_SCOPE_PATTERNS = {
+    "ghost of a chance",
+    "white as a ghost",
+    "spirit of adventure",
+    "spirit of enterprise",
+    "spirit of the age",
+    "spirit of improvement",
+    "spirit of inquiry",
+    "devil of a",
+    "poor devil",
+}
+
 STATE_ALIASES = {
     "NSW": "New South Wales",
     "QLD": "Queensland",
@@ -277,6 +289,16 @@ def term_windows(text: str, terms: list[str], window: int = 360) -> list[str]:
     return windows
 
 
+def contains_term(text: str, term: str) -> bool:
+    term = canonicalise_whitespace(term)
+    if not term:
+        return False
+    escaped = re.escape(term)
+    if term[0].isalnum() and term[-1].isalnum():
+        escaped = rf"\b{escaped}\b"
+    return re.search(escaped, text, flags=re.IGNORECASE) is not None
+
+
 def slug(value: str, max_len: int = 60) -> str:
     cleaned = re.sub(r"[^a-z0-9]+", "-", canonicalise_whitespace(value).lower()).strip("-")
     return cleaned[:max_len].strip("-") or "item"
@@ -289,13 +311,38 @@ def short_excerpt(text: str, limit: int = 640) -> str:
     return text[: limit - 1].rsplit(" ", 1)[0] + "."
 
 
+def apply_text_boundaries(text: str, page: dict[str, Any]) -> str:
+    start_marker = page.get("start_marker")
+    end_marker = page.get("end_marker")
+    if start_marker:
+        start = text.lower().find(str(start_marker).lower())
+        if start >= 0:
+            text = text[start:]
+    if end_marker:
+        end = text.lower().find(str(end_marker).lower())
+        if end > 0:
+            text = text[:end]
+    return text
+
+
 def classify_block(term: str, block: str, route: dict[str, Any]) -> tuple[str, str, str, str]:
     lower = block.lower()
     term_lower = term.lower()
-    person_form = term_lower in lower and any(word in lower for word in PERSON_FORM_WORDS)
+    if any(pattern in lower for pattern in IDIOMATIC_NON_SCOPE_PATTERNS) and not any(
+        signal in lower for signal in {"apparition", "haunted", "supernatural", "spook", "spectral"}
+    ):
+        return "rejected", "descriptive_belief_record", "idiomatic_or_non_scope_term_use", "insufficient_evidence"
+    person_form = contains_term(block, term) and any(contains_term(block, word) for word in PERSON_FORM_WORDS)
+    route_person_terms = {str(item).lower() for item in route.get("person_form_terms", [])}
+    if term_lower in route_person_terms:
+        person_form = True
     if term_lower in {"medicine man", "medicine-man", "magic man", "little old man", "little old woman"}:
         person_form = True
-    if term_lower in {"fairy", "fairies", "witch", "wizard", "magician", "enchanter", "giant", "ghost", "spirit", "devil", "water-sprite"}:
+    if term_lower in {"fairy", "fairies", "witch", "wizard", "magician", "enchanter", "giant", "ghost", "ghosts", "apparition", "phantom", "water-sprite"}:
+        person_form = True
+    if term_lower in {"spirit", "spirits", "devil"} and any(
+        signal in lower for signal in {"dead", "ghost", "apparition", "supernatural", "being", "beings", "ancestor", "ancestral", "medicine", "wizard", "witch", "evil spirit", "devil-devil"}
+    ):
         person_form = True
     if term_lower in {"byamee", "baiame", "wirreenun", "daramulun", "mullyan", "wurrunnah", "yhi"}:
         person_form = True
@@ -436,6 +483,7 @@ def collect_text_route(
             next_page_index = page_index
             try:
                 text = page.get("text") or fetch_text(page["url"])
+                text = apply_text_boundaries(text, page)
                 result.fetched += 1
             except Exception as exc:  # noqa: BLE001
                 result.errors += 1
@@ -445,7 +493,7 @@ def collect_text_route(
             blocks.extend(term_windows(text, list(route.get("entity_terms", []))))
             for block in blocks:
                 lower = block.lower()
-                matching_terms = [term for term in route.get("entity_terms", []) if term.lower() in lower]
+                matching_terms = [term for term in route.get("entity_terms", []) if contains_term(block, term)]
                 if not matching_terms:
                     continue
                 for term in matching_terms:
@@ -990,6 +1038,7 @@ def load_state(config: dict[str, Any], resume: bool) -> dict[str, Any]:
         state = fresh_state(config)
     state.setdefault("resume_cursor_per_route", {})
     state.setdefault("route_totals", {})
+    state.setdefault("routes", state.get("route_totals", {}))
     state.setdefault("history", [])
     return state
 
@@ -1087,6 +1136,7 @@ def update_state_after_checkpoint(
     state["exhausted_routes"] = sorted(exhausted)
     state["blocked_routes"] = sorted(blocked)
     state["next_route_queue"] = queue
+    state["routes"] = route_totals
     state["last_completed_checkpoint"] = run_id
     state["history"].append(
         {
@@ -1103,10 +1153,12 @@ def update_state_after_checkpoint(
     STATE_JSON.write_text(json.dumps(state, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def checkpoint_due(state: dict[str, Any]) -> bool:
+def checkpoint_due(state: dict[str, Any], config: dict[str, Any]) -> bool:
+    record_interval = int(config.get("checkpoint_record_interval") or 250)
+    map_interval = int(config.get("checkpoint_map_interval") or 75)
     records_delta = int(state["current_public_record_count"]) - int(state.get("records_at_last_checkpoint") or 0)
     map_delta = int(state["current_map_flag_count"]) - int(state.get("map_flags_at_last_checkpoint") or 0)
-    return records_delta >= 250 or map_delta >= 75
+    return records_delta >= record_interval or map_delta >= map_interval
 
 
 def commit_and_push_checkpoint(state: dict[str, Any]) -> str | None:
@@ -1447,7 +1499,7 @@ def main() -> None:
             run_id,
             skip_build=True if args.until_launch_target else args.skip_build,
         )
-        if checkpoint_due(state):
+        if checkpoint_due(state, config):
             commit_and_push_checkpoint(state)
         if records_added == 0 and maps_added == 0:
             active = rank_routes(config, state)

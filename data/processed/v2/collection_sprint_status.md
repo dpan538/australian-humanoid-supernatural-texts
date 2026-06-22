@@ -1,38 +1,33 @@
 # Collection Sprint Status
 
-- Generated: `2026-06-22T05:23:27+00:00`
+- Generated: `2026-06-22T05:40:49+00:00`
 - Run id: `collection_sprint_20260622_002`
-- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_052313_001`
+- Stage directory: `/Users/jarlgiovanni/Desktop/bigfoot_research/data/interim/collection_sprint/collection_sprint_launch_20260622_054044_002`
 - Starting public records: `1380`
-- Ending public records: `1709`
-- Net-new public records: `329`
+- Ending public records: `1972`
+- Net-new public records: `592`
 - Starting map flags: `891`
-- Ending map flags: `909`
-- Net-new map flags: `18`
-- Candidates processed: `858`
-- Context/lead staged: `1`
-- Suppressed/rejected staged: `3`
+- Ending map flags: `910`
+- Net-new map flags: `19`
+- Candidates processed: `1139`
+- Context/lead staged: `4`
+- Suppressed/rejected staged: `1`
 - Duplicate staged: `0`
-- Remaining gap to 2800: `1091`
-- Remaining gap to 1200 map flags: `291`
+- Remaining gap to 2800: `828`
+- Remaining gap to 1200 map flags: `290`
 - Map invariant ok: `True`
 
 ## Records by Source Organisation
-- Internet Archive: 127
+- Internet Archive: 24
 
 ## Records by Source Family
-- repository_full_text: 127
+- repository_full_text: 24
 
 ## Records by Jurisdiction
-- TAS: 25
-- VIC: 84
-- WA: 18
 
 ## Records by Narrative Type
-- apparition_account: 26
-- giant_or_ogre_narrative: 7
-- retelling_or_adaptation: 40
-- spirit_person_narrative: 54
+- apparition_account: 19
+- spirit_person_narrative: 5
 
 ## Per-Route Yield
 
@@ -88,23 +83,50 @@
 | sprint_internet_archive_smyth_victoria_vol2_exact_text | repository_institutional_full_text | 30 | 30 | 0 | 0 | 4 | 0 | 5.8 | route_candidate_limit_or_source_exhausted |
 | sprint_internet_archive_roth_tasmania_exact_text | repository_institutional_full_text | 25 | 25 | 0 | 0 | 5 | 0 | 9.1 | route_candidate_limit_or_source_exhausted |
 | sprint_internet_archive_smyth_victoria_vol1_exact_text | repository_institutional_full_text | 32 | 29 | 0 | 3 | 0 | 0 | 12.9 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_lang_queensland_exact_text | repository_institutional_full_text | 27 | 27 | 0 | 0 | 6 | 0 | 4.0 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_lumholtz_queensland_exact_text | repository_institutional_full_text | 23 | 23 | 0 | 0 | 0 | 0 | 4.1 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_fraser_nsw_exact_text | repository_institutional_full_text | 27 | 27 | 0 | 0 | 2 | 0 | 4.4 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_beveridge_victoria_riverina_exact_text | repository_institutional_full_text | 11 | 11 | 0 | 0 | 2 | 0 | 5.0 | route_candidate_limit_or_source_exhausted |
+| sprint_pga_favenc_austral_tropics_exact_text | structured_public_domain_books | 21 | 18 | 1 | 2 | 2 | 0 | 2.5 | route_candidate_limit_or_source_exhausted |
+| sprint_pga_clarke_old_tales_young_country_exact_text | structured_public_domain_books | 18 | 12 | 1 | 5 | 1 | 0 | 2.9 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_curr_australian_race_vol2_exact_text | repository_institutional_full_text | 24 | 24 | 0 | 0 | 3 | 0 | 4.5 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_peck_australian_legends_exact_text | repository_institutional_full_text | 21 | 19 | 0 | 2 | 6 | 0 | 5.4 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_northern_tribes_central_australia_exact_text | repository_institutional_full_text | 29 | 29 | 0 | 0 | 9 | 0 | 5.4 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_curr_australian_race_vol3_exact_text | repository_institutional_full_text | 27 | 27 | 0 | 0 | 3 | 0 | 5.6 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_suttor_fishers_ghost_exact_section | repository_institutional_full_text | 1 | 1 | 0 | 0 | 0 | 0 | 2.7 | accepted_target_reached |
+| sprint_internet_archive_curr_australian_race_vol1_exact_text | repository_institutional_full_text | 23 | 21 | 1 | 1 | 0 | 0 | 5.6 | route_candidate_limit_or_source_exhausted |
+| sprint_internet_archive_swan_tales_australian_life_exact_text | repository_institutional_full_text | 13 | 12 | 1 | 0 | 1 | 0 | 3.0 | accepted_target_reached |
+| sprint_internet_archive_suttor_australian_stories_retold_exact_text | repository_institutional_full_text | 16 | 12 | 3 | 1 | 10 | 0 | 3.9 | route_candidate_limit_or_source_exhausted |
 
 ## Productive Routes
 
+- sprint_internet_archive_beveridge_victoria_riverina_exact_text
+- sprint_internet_archive_curr_australian_race_vol1_exact_text
+- sprint_internet_archive_curr_australian_race_vol2_exact_text
+- sprint_internet_archive_curr_australian_race_vol3_exact_text
 - sprint_internet_archive_dawson_victoria_exact_text
 - sprint_internet_archive_eaglehawk_crow_exact_text
+- sprint_internet_archive_fraser_nsw_exact_text
 - sprint_internet_archive_kamilaroi_kurnai_exact_text
+- sprint_internet_archive_lang_queensland_exact_text
+- sprint_internet_archive_lumholtz_queensland_exact_text
 - sprint_internet_archive_moore_wa_diary_exact_text
 - sprint_internet_archive_native_tribes_south_australia_exact_text
+- sprint_internet_archive_northern_tribes_central_australia_exact_text
+- sprint_internet_archive_peck_australian_legends_exact_text
 - sprint_internet_archive_roth_queensland_exact_text
 - sprint_internet_archive_roth_tasmania_exact_text
 - sprint_internet_archive_sa_folklore_manners_customs_exact_text
 - sprint_internet_archive_smyth_victoria_vol1_exact_text
 - sprint_internet_archive_smyth_victoria_vol2_exact_text
+- sprint_internet_archive_suttor_australian_stories_retold_exact_text
+- sprint_internet_archive_swan_tales_australian_life_exact_text
 - sprint_ista_central_australia_exact_texts
 - sprint_ista_northern_australia_exact_texts
 - sprint_map_queue_geocode_verification
 - sprint_pga_australian_fairy_tales_exact_texts
+- sprint_pga_clarke_old_tales_young_country_exact_text
+- sprint_pga_favenc_austral_tropics_exact_text
 - sprint_project_gutenberg_barry_bunyip_stories
 - sprint_project_gutenberg_robertson_australian_tales
 - sprint_project_gutenberg_westbury_australian_fairy_tales

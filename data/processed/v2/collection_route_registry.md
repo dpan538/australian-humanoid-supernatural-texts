@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T05:23:27+00:00`
+- Generated: `2026-06-22T05:40:48+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `33`
+- Routes: `47`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 8
+- `low_yield`: 9
 - `manual_only`: 1
-- `productive`: 21
+- `productive`: 34
 
 ## Stop Rule
 
@@ -53,3 +53,17 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_internet_archive_smyth_victoria_vol1_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 29 | 0 | 3 |  | Scale productive route |
 | sprint_internet_archive_smyth_victoria_vol2_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 30 | 30 | 4 | 0 |  | Scale productive route |
 | sprint_internet_archive_roth_tasmania_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 25 | 25 | 5 | 0 |  | Scale productive route |
+| sprint_internet_archive_beveridge_victoria_riverina_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 11 | 11 | 2 | 0 |  | Scale productive route |
+| sprint_internet_archive_fraser_nsw_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 27 | 27 | 2 | 0 |  | Scale productive route |
+| sprint_internet_archive_lumholtz_queensland_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 23 | 23 | 0 | 0 |  | Scale productive route |
+| sprint_internet_archive_lang_queensland_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 27 | 27 | 6 | 0 |  | Scale productive route |
+| sprint_internet_archive_northern_tribes_central_australia_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 29 | 29 | 9 | 0 |  | Scale productive route |
+| sprint_internet_archive_curr_australian_race_vol2_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 24 | 24 | 3 | 0 |  | Scale productive route |
+| sprint_internet_archive_curr_australian_race_vol3_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 27 | 27 | 3 | 0 |  | Scale productive route |
+| sprint_internet_archive_peck_australian_legends_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 21 | 19 | 6 | 2 |  | Scale productive route |
+| sprint_pga_favenc_austral_tropics_exact_text | productive | Project Gutenberg Australia | exact_plain_text | 21 | 18 | 2 | 2 |  | Scale productive route |
+| sprint_pga_clarke_old_tales_young_country_exact_text | productive | Project Gutenberg Australia | exact_plain_text | 18 | 12 | 1 | 5 |  | Scale productive route |
+| sprint_internet_archive_curr_australian_race_vol1_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 23 | 21 | 0 | 1 |  | Scale productive route |
+| sprint_internet_archive_suttor_fishers_ghost_exact_section | low_yield | Internet Archive | exact_item_metadata_djvu_text_section_slice | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_internet_archive_suttor_australian_stories_retold_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 16 | 12 | 10 | 1 |  | Scale productive route |
+| sprint_internet_archive_swan_tales_australian_life_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 13 | 12 | 1 | 0 |  | Scale productive route |

@@ -937,3 +937,395 @@ routes:
     yield remain acceptable.
   next_action: Scale productive route
   route_status: productive
+- route_id: sprint_internet_archive_beveridge_victoria_riverina_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: TheAboriginesOfVictoriaAndRiverina
+  jurisdiction: VIC/NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 11
+  accepted_count: 11
+  duplicate_count: 2
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.454
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_fraser_nsw_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: aboriginesnewso00frasgoog
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 27
+  accepted_count: 27
+  duplicate_count: 2
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.163
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_lumholtz_queensland_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: amongcannibalsac1889lumh
+  jurisdiction: QLD
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 23
+  accepted_count: 23
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.18
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_lang_queensland_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: queenslandaustr00langgoog
+  jurisdiction: QLD
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 27
+  accepted_count: 27
+  duplicate_count: 6
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.149
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_northern_tribes_central_australia_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: northerntribesof00spen
+  jurisdiction: NT/SA
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 29
+  accepted_count: 29
+  duplicate_count: 9
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.185
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_curr_australian_race_vol2_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: australianracei01currgoog
+  jurisdiction: NSW/VIC
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 24
+  accepted_count: 24
+  duplicate_count: 3
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.186
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_curr_australian_race_vol3_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: australianracei02currgoog
+  jurisdiction: NSW/QLD
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 27
+  accepted_count: 27
+  duplicate_count: 3
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 0.206
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_peck_australian_legends_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: australian-legends
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 21
+  accepted_count: 19
+  duplicate_count: 6
+  lead_count: 0
+  rejected_count: 2
+  average_seconds_per_candidate: 0.256
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_pga_favenc_austral_tropics_exact_text
+  source_name: Project Gutenberg Australia
+  organisation: Project Gutenberg Australia
+  domain: ''
+  jurisdiction: QLD/NT
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 21
+  accepted_count: 18
+  duplicate_count: 2
+  lead_count: 2
+  rejected_count: 2
+  average_seconds_per_candidate: 0.121
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_pga_clarke_old_tales_young_country_exact_text
+  source_name: Project Gutenberg Australia
+  organisation: Project Gutenberg Australia
+  domain: ''
+  jurisdiction: NSW/TAS/VIC
+  source_class: public_domain_ebook
+  retrieval_method: exact_plain_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 18
+  accepted_count: 12
+  duplicate_count: 1
+  lead_count: 2
+  rejected_count: 5
+  average_seconds_per_candidate: 0.159
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_curr_australian_race_vol1_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: australianracei00currgoog
+  jurisdiction: SA/QLD
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 23
+  accepted_count: 21
+  duplicate_count: 0
+  lead_count: 2
+  rejected_count: 1
+  average_seconds_per_candidate: 0.242
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_suttor_fishers_ghost_exact_section
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: ''
+  jurisdiction: NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_djvu_text_section_slice
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 1
+  accepted_count: 1
+  duplicate_count: 0
+  lead_count: 0
+  rejected_count: 0
+  average_seconds_per_candidate: 2.743
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Keep as probe/discovery route only
+  route_status: low_yield
+- route_id: sprint_internet_archive_suttor_australian_stories_retold_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: australianstorie00suttiala
+  jurisdiction: NSW/TAS
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 16
+  accepted_count: 12
+  duplicate_count: 10
+  lead_count: 6
+  rejected_count: 1
+  average_seconds_per_candidate: 0.246
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive
+- route_id: sprint_internet_archive_swan_tales_australian_life_exact_text
+  source_name: Internet Archive
+  organisation: Internet Archive
+  domain: talesaustralian00swangoog
+  jurisdiction: VIC/NSW
+  source_class: repository_full_text
+  retrieval_method: exact_item_metadata_and_djvu_text
+  endpoint_or_seed_url: ''
+  authentication_required: false
+  credentials_available: true
+  robots_status: exact_public_pages_checked
+  terms_status: public_access_text_or_discovery_page
+  publicness_status: public
+  first_attempted_at: '2026-06-22'
+  last_attempted_at: '2026-06-22'
+  attempt_count: 1
+  candidates_seen: 13
+  accepted_count: 12
+  duplicate_count: 1
+  lead_count: 2
+  rejected_count: 0
+  average_seconds_per_candidate: 0.233
+  blocker: ''
+  failure_reason: ''
+  retry_condition: Continue exact route scaling while stable public text and scope
+    yield remain acceptable.
+  next_action: Scale productive route
+  route_status: productive

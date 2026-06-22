@@ -610,6 +610,438 @@ routes:
       - giant
       - fairy
       - apparition
+  - route_id: sprint_internet_archive_beveridge_victoria_riverina_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: VIC/NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 45
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    source_title: The Aborigines of Victoria and Riverina
+    source_author: Peter Beveridge
+    publication_date_text: "1889"
+    australian_relation: Public-domain Victoria and Riverina source exposed through an exact Internet Archive item.
+    default_location_text: Victoria and Riverina
+    default_location_role: cultural_association_region
+    archive_identifier: TheAboriginesOfVictoriaAndRiverina
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - witch
+      - giant
+      - supernatural
+  - route_id: sprint_internet_archive_fraser_nsw_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: The Aborigines of New South Wales
+    source_author: John Fraser
+    publication_date_text: "1892"
+    australian_relation: Public-domain New South Wales ethnographic source exposed through an exact Internet Archive item.
+    default_location_text: New South Wales
+    default_location_role: cultural_association_region
+    archive_identifier: aboriginesnewso00frasgoog
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - wizard
+      - medicine man
+      - witch
+      - giant
+      - supernatural
+  - route_id: sprint_internet_archive_lumholtz_queensland_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: Among cannibals
+    source_author: Carl Lumholtz
+    publication_date_text: "1889"
+    australian_relation: Public-domain Queensland travel/local ethnographic source exposed through an exact Internet Archive item.
+    default_location_text: Queensland
+    default_location_role: cultural_association_region
+    archive_identifier: amongcannibalsac1889lumh
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - wizard
+      - witch
+      - giant
+      - supernatural
+  - route_id: sprint_internet_archive_lang_queensland_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: Queensland, Australia
+    source_author: John Dunmore Lang
+    publication_date_text: "1861"
+    australian_relation: Public-domain Queensland historical source exposed through an exact Internet Archive item.
+    default_location_text: Queensland
+    default_location_role: cultural_association_region
+    archive_identifier: queenslandaustr00langgoog
+    entity_terms:
+      - spirit
+      - ghost
+      - devil
+      - wizard
+      - witch
+      - giant
+      - supernatural
+      - Baiame
+      - apparition
+  - route_id: sprint_internet_archive_northern_tribes_central_australia_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NT/SA
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 90
+    max_candidates_probe: 30
+    max_candidates_scaled: 240
+    source_title: The Northern Tribes of Central Australia
+    source_author: Baldwin Spencer and F. J. Gillen
+    publication_date_text: "1904"
+    australian_relation: Public-domain Central Australian ethnographic source exposed through an exact Internet Archive item.
+    default_location_text: Central Australia, NT/SA
+    default_location_role: cultural_association_region
+    archive_identifier: northerntribesof00spen
+    entity_terms:
+      - spirit ancestor
+      - spirit
+      - spirits
+      - ghost
+      - medicine man
+      - wizard
+      - Baiame
+      - Daramulun
+      - Mura-mura
+    person_form_terms:
+      - spirit ancestor
+      - Baiame
+      - Daramulun
+      - Mura-mura
+  - route_id: sprint_internet_archive_curr_australian_race_vol2_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW/VIC
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 70
+    max_candidates_probe: 30
+    max_candidates_scaled: 180
+    source_title: The Australian Race, volume 2
+    source_author: Edward Micklethwaite Curr
+    publication_date_text: "1886"
+    australian_relation: Public-domain Australian ethnographic compilation exposed through an exact Internet Archive item.
+    default_location_text: Eastern Australia
+    default_location_role: cultural_association_region
+    archive_identifier: australianracei01currgoog
+    entity_terms:
+      - ghost
+      - ghosts
+      - spirit
+      - spirits
+      - supernatural
+      - wizard
+      - witch
+      - Baiame
+    person_form_terms:
+      - Baiame
+  - route_id: sprint_internet_archive_curr_australian_race_vol1_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: SA/QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 60
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    source_title: The Australian Race, volume 1
+    source_author: Edward Micklethwaite Curr
+    publication_date_text: "1886"
+    australian_relation: Public-domain Australian ethnographic compilation exposed through an exact Internet Archive item.
+    default_location_text: Australia
+    default_location_role: cultural_association_region
+    archive_identifier: australianracei00currgoog
+    entity_terms:
+      - ghost
+      - ghosts
+      - spirit
+      - spirits
+      - supernatural
+      - devil
+      - giant
+    person_form_terms:
+      - Mooramoora
+  - route_id: sprint_internet_archive_curr_australian_race_vol3_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW/QLD
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 80
+    max_candidates_probe: 30
+    max_candidates_scaled: 200
+    source_title: The Australian Race, volume 3
+    source_author: Edward Micklethwaite Curr
+    publication_date_text: "1886"
+    australian_relation: Public-domain Australian ethnographic compilation exposed through an exact Internet Archive item.
+    default_location_text: Eastern Australia
+    default_location_role: cultural_association_region
+    archive_identifier: australianracei02currgoog
+    entity_terms:
+      - ghost
+      - ghosts
+      - spirit
+      - spirits
+      - apparition
+      - supernatural
+      - witch
+      - giant
+      - fairy
+      - fairies
+      - Baiame
+    person_form_terms:
+      - Baiame
+  - route_id: sprint_internet_archive_peck_australian_legends_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 90
+    max_candidates_probe: 30
+    max_candidates_scaled: 220
+    source_title: Australian Legends
+    source_author: C. W. Peck
+    publication_date_text: "1925"
+    australian_relation: Public-domain Australian legend collection exposed through an exact Internet Archive item.
+    default_location_text: New South Wales
+    default_location_role: cultural_association_region
+    archive_identifier: australian-legends
+    entity_terms:
+      - spirit
+      - spirits
+      - giant
+      - fairy
+      - supernatural
+      - medicine man
+    person_form_terms:
+      - human-shaped ancestral figure
+  - route_id: sprint_pga_favenc_austral_tropics_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg Australia
+    source_name: Project Gutenberg Australia
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: QLD/NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: Tales of the Austral Tropics
+    source_author: Ernest Favenc
+    publication_date_text: "1893"
+    australian_relation: Australian public-domain tropical tale collection by an Australian writer.
+    default_location_text: Northern Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: pga-favenc-austral-tropics, url: "https://gutenberg.net.au/ebooks06/0600691.txt", chapter: Tales of the Austral Tropics}
+    entity_terms:
+      - ghost
+      - ghosts
+      - phantom
+      - haunted
+      - spirit
+      - spirits
+      - devil
+      - giant
+      - little woman
+  - route_id: sprint_pga_clarke_old_tales_young_country_exact_text
+    enabled: true
+    family: structured_public_domain_books
+    organisation: Project Gutenberg Australia
+    source_name: Project Gutenberg Australia
+    source_type: public_domain_ebook
+    source_tier: A
+    jurisdiction: NSW/TAS/VIC
+    retrieval_method: exact_plain_text
+    scaled: true
+    accepted_target: 35
+    max_candidates_probe: 30
+    max_candidates_scaled: 90
+    source_title: Old Tales of a Young Country
+    source_author: Marcus Clarke
+    publication_date_text: "1871"
+    australian_relation: Australian public-domain historical tale collection by an Australian colonial writer.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    pages:
+      - {section_id: pga-clarke-old-tales-young-country, url: "https://gutenberg.net.au/ebooks06/0602691.txt", chapter: Old Tales of a Young Country}
+    entity_terms:
+      - ghost
+      - ghosts
+      - phantom
+      - spirit
+      - spirits
+      - devil
+      - giant
+      - wild man
+  - route_id: sprint_internet_archive_suttor_fishers_ghost_exact_section
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW
+    retrieval_method: exact_item_metadata_djvu_text_section_slice
+    scaled: true
+    accepted_target: 1
+    max_candidates_probe: 8
+    max_candidates_scaled: 8
+    source_title: Australian Stories Retold and Sketches of Country Life
+    source_author: William Henry Suttor
+    publication_date_text: "1887"
+    australian_relation: Public-domain Australian story collection exposed through an exact Internet Archive item; this route slices only the Fisher's Ghost section.
+    default_location_text: Campbelltown, NSW
+    default_location_role: apparition_location
+    pages:
+      - section_id: suttor-fishers-ghost
+        url: "https://archive.org/download/australianstorie00suttiala/australianstorie00suttiala_djvu.txt"
+        chapter: Fisher's Ghost
+        start_marker: "FISHER'S GHOST"
+        end_marker: "VENGEANCE FOR IPPITHA"
+        location_text: "Campbelltown, NSW"
+        location_role: apparition_location
+        latitude: -34.0667
+        longitude: 150.8167
+        location_precision: town
+        geocode_source: "Geoscience Australia / public gazetteer cross-check"
+        geocode_verification_status: verified_gazetteer_point
+        coordinate_evidence_note: "The Fisher's Ghost tradition is source-stated as the named Fisher's Ghost story associated with Campbelltown; representative coordinate is for Campbelltown, NSW."
+    entity_terms:
+      - Fisher's Ghost
+      - ghost
+      - ghosts
+      - spirit-land
+      - apparition
+    person_form_terms:
+      - Fisher's Ghost
+  - route_id: sprint_internet_archive_suttor_australian_stories_retold_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: NSW/TAS
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 16
+    max_candidates_probe: 30
+    max_candidates_scaled: 45
+    source_title: Australian Stories Retold and Sketches of Country Life
+    source_author: William Henry Suttor
+    publication_date_text: "1887"
+    australian_relation: Public-domain Australian story collection exposed through an exact Internet Archive item.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    archive_identifier: australianstorie00suttiala
+    entity_terms:
+      - Fisher's Ghost
+      - ghost
+      - ghosts
+      - spirit-land
+      - supernatural
+      - haunted
+    person_form_terms:
+      - Fisher's Ghost
+  - route_id: sprint_internet_archive_swan_tales_australian_life_exact_text
+    enabled: true
+    family: repository_institutional_full_text
+    organisation: Internet Archive
+    source_name: Internet Archive
+    source_type: repository_full_text
+    source_tier: B
+    jurisdiction: VIC/NSW
+    retrieval_method: exact_item_metadata_and_djvu_text
+    scaled: true
+    accepted_target: 12
+    max_candidates_probe: 30
+    max_candidates_scaled: 40
+    source_title: Tales of Australian Life
+    source_author: Nathaniel Walter Swan
+    publication_date_text: "1875"
+    australian_relation: Public-domain Australian story collection exposed through an exact Internet Archive item.
+    default_location_text: Australia
+    default_location_role: narrative_setting
+    archive_identifier: talesaustralian00swangoog
+    entity_terms:
+      - ghost
+      - ghosts
+      - haunted
+      - supernatural
+      - devil
+      - wizard
+      - giant
   - route_id: sprint_map_queue_geocode_verification
     enabled: true
     family: place_first_map_records
