@@ -458,9 +458,9 @@ function MapView({ data, onSelectRecord }: { data: FrontendData; onSelectRecord:
           ))}
         </div>
         <div className="map-health-note">
-          <span>STRICT GEO</span>
+          <span>POINT GEO</span>
           <b>{mapRecords.length}</b>
-          <small>verified map points / {data.summary.record_count} records</small>
+          <small>mapped records / {data.summary.record_count} total</small>
         </div>
       </aside>
     </div>

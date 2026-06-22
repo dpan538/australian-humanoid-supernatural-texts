@@ -440,7 +440,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
     state_representative_records: dict[str, int] = {}
     first_location_by_record: dict[int, dict[str, Any]] = {}
     strict_location_by_record: dict[int, dict[str, Any]] = {}
-    precise_points = []
+    precise_locations = []
     broad_locations = []
     records_by_id = {int(record["record_id"]): record for record in records}
     for location in locations:
@@ -461,11 +461,17 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             state_record_ids[state].add(record_id)
             state_representative_records.setdefault(state, record_id)
         if location.get("latitude") is not None and location.get("longitude") is not None:
-            precise_points.append(location)
+            precise_locations.append(location)
             strict_location_by_record.setdefault(record_id, location)
         elif location.get("location_type") in {"broad_region", "state_or_territory", "country"}:
             broad_locations.append(location)
 
+    # Frontend map policy: one explicit point flag per record. Some legacy
+    # records carry multiple precise location rows; those remain in `locations`
+    # for audit/review, but the public map receives only the representative
+    # strict location selected above so the headline count, clickable flags, and
+    # record cards remain one-to-one.
+    precise_points = list(strict_location_by_record.values())
     precise_record_ids = set(strict_location_by_record)
     for record_id, location in first_location_by_record.items():
         record = records_by_id.get(record_id)

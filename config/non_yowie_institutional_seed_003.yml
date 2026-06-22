@@ -1,0 +1,49 @@
+schema_version: "2.1.0"
+description: >
+  Audited public institutional/local-history seed batch. Rows in this file are
+  selected from official or stable public pages and are intended to add
+  non-Yowie, place-linked person-form narratives without relying on Wikipedia
+  or generic tourism listicles.
+seeds:
+  - source_name: Marriner Group
+    source_type: institutional_web
+    source_tier: B
+    title: Princess Theatre History - Federici
+    publication_or_organisation: Marriner Group
+    publication_date_text: 1888 event account on public history page, accessed 2026-06-22
+    url: https://marrinergroup.com.au/princess-theatre-history
+    external_id: marriner:princess-theatre-history:federici
+    narrative_type: apparition_account
+    secondary_role: heritage_discourse
+    source_label: Federici
+    expected_terms:
+      - Federici
+      - Princess
+      - sightings
+    location_text: Princess Theatre, Melbourne, Victoria
+    location_aliases:
+      - Princess Theatre
+      - Melbourne
+      - Victoria
+    location_role: apparition_location
+    latitude: -37.810997
+    longitude: 144.972658
+    location_precision: exact_site
+    geocode_source: seeded_official_theatre_history_coordinate_crosscheck
+    geocode_verification_status: verified_gazetteer_point
+    coordinate_evidence_note: Marriner Group's official Princess Theatre History page associates Federici's death, curtain-call sighting, and later sightings with Princess Theatre, Melbourne.
+    duplicate_check_status: canonical_url_external_id_checked
+    quality_class: B
+    publicness_status: public_page
+    rights_access_status: public official history page; neutral summary and short excerpt only
+    ethics_review_status: ok_public
+    cultural_sensitivity: low
+    australian_relation: Official Melbourne theatre history page with a place-linked public apparition account.
+    humanoid_basis: The page describes the actor Federici as being seen on stage after his death and reports continuing sightings and mysterious occurrences.
+    evidence_summary: The official Princess Theatre history page reports that Frederick Baker, known as Federici, died during a performance of Faust and that the cast said they saw him on stage for the curtain call, with later sightings associated with the theatre.
+    manual_public_text_excerpt: >
+      The official history page says Federici died on the spot after descending
+      through a trap door during Faust. It reports that the cast were later in
+      disbelief because they had just seen him on stage for the curtain call,
+      and says Federici continues to reside in the Princess with regular
+      sightings and mysterious occurrences.

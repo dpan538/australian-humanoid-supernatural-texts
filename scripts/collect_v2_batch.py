@@ -168,27 +168,58 @@ def has_required_acceptance_fields(row: dict[str, Any], strict_geo_only: bool = 
     return True, ""
 
 
-def existing_urls(conn, current_run_id: str = "") -> set[str]:
-    urls = {
-        row[0]
-        for row in conn.execute(
-            "SELECT canonical_url FROM source_items WHERE COALESCE(canonical_url, '') != ''"
-        ).fetchall()
-    }
-    urls.update(
-        row[0]
-        for row in conn.execute(
-            """
-            SELECT canonical_url
-            FROM collection_candidates_v2
-            WHERE candidate_status = 'accepted'
-              AND COALESCE(canonical_url, '') != ''
-              AND COALESCE(run_id, '') != ?
-            """,
-            (current_run_id,),
-        ).fetchall()
-    )
-    return urls
+def existing_candidate_keys(conn, current_run_id: str = "") -> tuple[set[str], set[tuple[str, str]]]:
+    """Return existing accepted source keys.
+
+    A single public page may contain multiple distinct narrative records. When
+    callers provide a stable external_id, use (canonical_url, external_id) as
+    the duplicate key; otherwise fall back to canonical_url alone. This keeps
+    exact source duplicates out while allowing audited multi-record source
+    pages such as local-history articles with several place-linked accounts.
+    """
+
+    url_only: set[str] = set()
+    url_external: set[tuple[str, str]] = set()
+    for row in conn.execute(
+        """
+        SELECT canonical_url, external_id
+        FROM source_items
+        WHERE COALESCE(canonical_url, '') != ''
+        """
+    ).fetchall():
+        url = row["canonical_url"]
+        external_id = canonicalise_whitespace(row["external_id"])
+        if external_id:
+            url_external.add((url, external_id))
+        else:
+            url_only.add(url)
+    for row in conn.execute(
+        """
+        SELECT canonical_url, external_id
+        FROM collection_candidates_v2
+        WHERE candidate_status = 'accepted'
+          AND COALESCE(canonical_url, '') != ''
+          AND COALESCE(run_id, '') != ?
+        """,
+        (current_run_id,),
+    ).fetchall():
+        url = row["canonical_url"]
+        external_id = canonicalise_whitespace(row["external_id"])
+        if external_id:
+            url_external.add((url, external_id))
+        else:
+            url_only.add(url)
+    return url_only, url_external
+
+
+def is_duplicate_candidate(conn, canonical_url: str, external_id: str, current_run_id: str = "") -> bool:
+    if not canonical_url:
+        return False
+    url_only, url_external = existing_candidate_keys(conn, current_run_id)
+    clean_external_id = canonicalise_whitespace(external_id)
+    if clean_external_id:
+        return (canonical_url, clean_external_id) in url_external
+    return canonical_url in url_only
 
 
 def insert_candidate(conn, data: dict[str, Any], strict_geo_only: bool = False) -> str:
@@ -196,7 +227,12 @@ def insert_candidate(conn, data: dict[str, Any], strict_geo_only: bool = False) 
     canonical_url = canonicalize_url(data.get("canonical_url") or data.get("url") or "")
     data["canonical_url"] = canonical_url
     ok, reason = has_required_acceptance_fields(data, strict_geo_only=strict_geo_only)
-    if canonical_url and canonical_url in existing_urls(conn, str(data.get("run_id") or "")):
+    if is_duplicate_candidate(
+        conn,
+        canonical_url,
+        canonicalise_whitespace(data.get("external_id")),
+        str(data.get("run_id") or ""),
+    ):
         status = "duplicate"
         decision = "not_accepted"
         rejection = "duplicate_canonical_url"
@@ -230,6 +266,33 @@ def insert_candidate(conn, data: dict[str, Any], strict_geo_only: bool = False) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(run_id, canonical_url, external_id) DO UPDATE SET
             candidate_status=excluded.candidate_status,
+            source_name=excluded.source_name,
+            source_type=excluded.source_type,
+            source_tier=excluded.source_tier,
+            title=excluded.title,
+            publication_or_organisation=excluded.publication_or_organisation,
+            publication_date_text=excluded.publication_date_text,
+            access_date=excluded.access_date,
+            url=excluded.url,
+            publicness_status=excluded.publicness_status,
+            rights_access_status=excluded.rights_access_status,
+            narrative_type=excluded.narrative_type,
+            secondary_role=excluded.secondary_role,
+            australian_relation=excluded.australian_relation,
+            humanoid_basis=excluded.humanoid_basis,
+            source_label=excluded.source_label,
+            location_text=excluded.location_text,
+            location_role=excluded.location_role,
+            latitude=excluded.latitude,
+            longitude=excluded.longitude,
+            location_precision=excluded.location_precision,
+            geocode_source=excluded.geocode_source,
+            geocode_verification_status=excluded.geocode_verification_status,
+            coordinate_evidence_note=excluded.coordinate_evidence_note,
+            duplicate_check_status=excluded.duplicate_check_status,
+            quality_class=excluded.quality_class,
+            ethics_review_status=excluded.ethics_review_status,
+            cultural_sensitivity=excluded.cultural_sensitivity,
             acceptance_decision=excluded.acceptance_decision,
             rejection_reason=excluded.rejection_reason,
             evidence_summary=excluded.evidence_summary,

@@ -1,11 +1,11 @@
 # Frontend Record Card Sample Audit
 
-- Generated at: `2026-06-21T01:09:05+00:00`
+- Generated at: `2026-06-22T01:21:29+00:00`
 - Frontend schema: `frontend-data/v1`
-- Total records: `986`
+- Total records: `1139`
 - Sample size: `50`
-- Precise map points: `722`
-- Strict geocoded record flags: `722`
+- Precise map points: `893`
+- Strict geocoded record flags: `893`
 - State/territory map clusters: `8` (summary data only)
 
 ## Sample Card Readiness
@@ -16,60 +16,60 @@
 
 Only records with verified latitude/longitude are expected to map as individual flags. Card-ready records without strict public coordinates are reported as `not_mapped` and should not be treated as frontend failures.
 
-- not_mapped: `264`
-- precise_point: `722`
+- not_mapped: `246`
+- precise_point: `893`
 
 ## Sample Rows
 
 | record_id | year | title/label | source | map_status | issues |
 | --- | --- | --- | --- | --- | --- |
 | 853 | 1825 | 1825 - Richmond River Herald 06-03-1825 | Australian Yowie Research | precise_point | ok |
-| 650 | 1871 | 1871 - Queanbeyan Age, Jingera Sighted | Australian Yowie Research | precise_point | ok |
-| 860 | 1878 | 1878 - Freemans Journal Pyramul Hairyman | Australian Yowie Research | precise_point | ok |
-| 682 | 1889 | 1889 - Bowral Free Press, Australian Gorilla | Australian Yowie Research | precise_point | ok |
-| 867 | 1903 | 1903 - Delegate Argus Yowie Article | Australian Yowie Research | precise_point | ok |
-| 707 | 1912 | 1912 - Sydney Sun Article | Australian Yowie Research | not_mapped | ok |
-| 457 | 1934 | Stanthorpe, Queensland 1934 | Australian Yowie Research | precise_point | ok |
-| 889 | 1965 | 1965 - Sydney Sun Yowie Article | Australian Yowie Research | precise_point | ok |
-| 430 | 1974 | Grafton, New South Wales 1974 | Australian Yowie Research | not_mapped | ok |
-| 830 | 1977 | 1977 - Hairy Man of South East Australia | Australian Yowie Research | not_mapped | ok |
-| 598 | 1978 | Tweed Heads, New South Wales 1978 | Australian Yowie Research | precise_point | ok |
-| 562 | 1979 | Pilliga, New South Wales 1979 | Australian Yowie Research | precise_point | ok |
-| 262 | 1980 | Mount Buller, Victoria 1980's | Australian Yowie Research | not_mapped | ok |
-| 97 | 1982 | Ophir, New South Wales 1982 | Australian Yowie Research | precise_point | ok |
-| 49 | 1984 | Noojee, Victoria 1984 | Australian Yowie Research | precise_point | ok |
-| 420 | 1985 | Glenreagh, New South Wales 1985 | Australian Yowie Research | precise_point | ok |
-| 613 | 1987 | Wee Jasper, New South Wales 1987 | Australian Yowie Research | not_mapped | ok |
-| 164 | 1989 | Gympie (East), Queensland 1989 | Australian Yowie Research | precise_point | ok |
-| 471 | 1990 | Tomson River, Queensland 1990 | Australian Yowie Research | not_mapped | ok |
-| 460 | 1992 | Ingleburn, New South Wales 1992 | Australian Yowie Research | precise_point | ok |
-| 936 | 1994 | 1994 - Brisbane Daily Yowie Article | Australian Yowie Research | precise_point | ok |
-| 627 | 1995 | Woy Woy, New South Wales 1995 | Australian Yowie Research | precise_point | ok |
-| 60 | 1997 | Warnambool, Victoria 1997 | Australian Yowie Research | not_mapped | ok |
-| 37 | 1998 | Adelaide River, Northern Territory 1998 | Australian Yowie Research | precise_point | ok |
-| 520 | 1998 | Macquarie Feilds, New South Wales 1998 | Australian Yowie Research | precise_point | ok |
-| 844 | 1999 | 1999 (2) - Yowiehunters News Article | Australian Yowie Research | not_mapped | ok |
-| 415 | 2000 | Ormeau, Queensland 2000 | Australian Yowie Research | precise_point | ok |
-| 488 | 2001 | Koreelah Forest, New South Wales 2001 | Australian Yowie Research | precise_point | ok |
-| 618 | 2002 | Wolgan Valley, New South Wales 2002 | Australian Yowie Research | precise_point | ok |
-| 590 | 2003 | Tharwa, New South Wales 2003 | Australian Yowie Research | precise_point | ok |
-| 125 | 2005 | Thredbo, New South Wales 2005 | Australian Yowie Research | precise_point | ok |
-| 358 | 2006 | Cessnock, New South Wales 2006 | Australian Yowie Research | precise_point | ok |
-| 730 | 2007 | Dr George Musgrave 1920-2006 | OpenAlex | not_mapped | ok |
-| 739 | 2008 | Painting and Repainting in the West Kimberley | OpenAlex | not_mapped | ok |
+| 652 | 1871 | 1871 (1) - Empire, Sydney | Australian Yowie Research | precise_point | ok |
+| 665 | 1880 | 1880 - Clarence Examiner, Hairyman Search | Australian Yowie Research | not_mapped | ok |
+| 1076 | 1891 | 1891 - Indiana Democrat Yowie Article | Australian Yowie Research | not_mapped | ok |
+| 870 | 1905 | 1905 - Narromine News Yowie Article | Australian Yowie Research | precise_point | ok |
+| 879 | 1912 | 1912 - Otago Daily Times Yowie Article | Australian Yowie Research | not_mapped | ok |
+| 824 | 1935 | 1935 - Sydney Morning Herald | Australian Yowie Research | precise_point | ok |
+| 45 | 1970 | Sherbrooke Forest, Victoria 1970 | Australian Yowie Research | precise_point | ok |
+| 828 | 1976 | 1976 - Macleay Argus Yowie Article | Australian Yowie Research | not_mapped | ok |
+| 92 | 1978 | Mogo, New South Wales 1978 | Australian Yowie Research | precise_point | ok |
+| 93 | 1979 | Bateman's Bay, New South Wales 1979 | Australian Yowie Research | precise_point | ok |
+| 1037 | 1979 | 1979 - Bay Post Yowie Article | Australian Yowie Research | precise_point | ok |
+| 1083 | 1980 | 1980 - Track Magazine Yowie Article | Australian Yowie Research | precise_point | ok |
+| 14 | 1983 | Kalamundra, Western Australia 1983 | Australian Yowie Research | precise_point | ok |
+| 47 | 1985 | Kinglake West & Eden Park, Victoria late 1980's | Australian Yowie Research | precise_point | ok |
+| 41 | 1987 | Lake Dulverton, Tasmania 1987 (2) | Australian Yowie Research | precise_point | ok |
+| 736 | 1988 | Repainting of images on rock in Australia and the maintenance of Aboriginal cult | OpenAlex | not_mapped | ok |
+| 471 | 1990 | Tomson River, Queensland 1990 | Australian Yowie Research | precise_point | ok |
+| 397 | 1992 | Mt. Tamborine, Queensland 1992 | Australian Yowie Research | precise_point | ok |
+| 937 | 1994 | 1994 - Canberra Times Out Of Shadows Launch | Australian Yowie Research | precise_point | ok |
+| 766 | 1995 | Dyirbal song poetry : the oral literature of an Australian rainforest people | OpenAlex | not_mapped | ok |
+| 294 | 1997 | Cowley Beach, Queensland 1997 | Australian Yowie Research | precise_point | ok |
+| 270 | 1998 | Canungra, Queensland 1998 | Australian Yowie Research | precise_point | ok |
+| 177 | 1999 | Daisy Hill, Queensland 1999 | Australian Yowie Research | precise_point | ok |
+| 215 | 2000 | Aboriginal P.O.V, New South Wales 2001 | Australian Yowie Research | precise_point | ok |
+| 1091 | 2000 | 2000 - Insight Magazine Yowie Exp | Australian Yowie Research | not_mapped | ok |
+| 1071 | 2001 | 2001 - Aboriginal Legends Watun Goori | Australian Yowie Research | not_mapped | ok |
+| 338 | 2003 | Bulahdelah, New South Wales 2003 | Australian Yowie Research | precise_point | ok |
+| 347 | 2004 | Jimbour, Queensland 2004 | Australian Yowie Research | precise_point | ok |
+| 284 | 2006 | Blackheath, New South Wales 2006 | Australian Yowie Research | precise_point | ok |
+| 570 | 2007 | Richmond Range, New South Wales 2007 | Australian Yowie Research | precise_point | ok |
+| 720 | 2008 | A new species of velvet gecko (Diplodactylidae: Oedura) from north-east Queensla | OpenAlex | not_mapped | ok |
 | 70 | 2010 | Briagolong, Victoria 2010 | Australian Yowie Research | precise_point | ok |
-| 754 | 2010 | Obituary: Patricia Wrightson (1921-2010): Australian Synthesiser of Settler and  | OpenAlex | not_mapped | ok |
-| 959 | 2011 | 2011 - Daily Examiner Yowie Article | Australian Yowie Research | not_mapped | ok |
-| 74 | 2013 | Bemm River, Victoria 2013 | Australian Yowie Research | precise_point | ok |
-| 537 | 2013 | Mt. Kembla, New South Wales 2013 | Australian Yowie Research | precise_point | ok |
-| 745 | 2014 | Joseph Bradshaw's 'Lost' Watercolours Found | OpenAlex | not_mapped | ok |
-| 326 | 2015 | Brisbane Water National Park, New South Wales 2015 | Australian Yowie Research | precise_point | ok |
-| 238 | 2016 | Grampians, Victoria 2016 | Australian Yowie Research | precise_point | ok |
-| 316 | 2017 | Border Ranges, New South Wales 2017 | Australian Yowie Research | precise_point | ok |
-| 146 | 2018 | Grafton, New South Wales 2018 | Australian Yowie Research | precise_point | ok |
-| 147 | 2019 | Wingen, New South Wales 2019 | Australian Yowie Research | precise_point | ok |
-| 991 | 2019 | 2019 - Gympie Times Yowie Article 15-06-2019 | Australian Yowie Research | not_mapped | ok |
-| 999 | 2020 | 2020 - News Mail Yowie Article 29-11-2020 | Australian Yowie Research | not_mapped | ok |
-| 1011 | 2021 | 2021 - News.com Yowie Article 24-05-2021 | Australian Yowie Research | not_mapped | ok |
-| 822 | 2023 | Strange Lore: Yara Ma Yha Who | Internet Archive | not_mapped | ok |
-| 900000019 |  | Den of Nargun | Parks Victoria | precise_point | ok |
+| 1047 | 2010 | 2010 - Armidale Express Yowie Article | Australian Yowie Research | precise_point | ok |
+| 345 | 2012 | Jimboomba, Queensland 2012 | Australian Yowie Research | precise_point | ok |
+| 198 | 2013 | Bribie Island, Queensland 2013 | Australian Yowie Research | precise_point | ok |
+| 962 | 2013 | 2013 - Queensland Times Yowie Article | Australian Yowie Research | precise_point | ok |
+| 1050 | 2014 | 2014 - Pt Douglas Gazette Yowie Article | Australian Yowie Research | precise_point | ok |
+| 970 | 2015 | 2015- Epoch Times Yowie Article | Australian Yowie Research | not_mapped | ok |
+| 972 | 2016 | 2016 - Chinchilla News Yowie Article | Australian Yowie Research | precise_point | ok |
+| 614 | 2017 | Wee Jasper, New South Wales 2017 | Australian Yowie Research | precise_point | ok |
+| 282 | 2018 | Conondale, Queensland 2018 | Australian Yowie Research | precise_point | ok |
+| 81 | 2019 | Blackwood, Victoria 2019 | Australian Yowie Research | precise_point | ok |
+| 993 | 2019 | 2019- Gold Coast Bulletin Yowie Article 24-07-2019 | Australian Yowie Research | precise_point | ok |
+| 743 | 2020 | Evaluating human responses to ENSO driven climate change during the Holocene in  | OpenAlex | not_mapped | ok |
+| 1003 | 2021 | 2021 - Courier Mail Yowie Article 07-02-2021 | Australian Yowie Research | precise_point | ok |
+| 1017 | 2022 | 2022 - Gold Coast Bulletin Yowie Article 22-06-2022 | Australian Yowie Research | precise_point | ok |
+| 3 | 2026 | Wandjina | English Wikipedia | not_mapped | ok |
+| 900000225 |  | The ghost of Governor Fiddimont | J Ward Ararat | precise_point | ok |
+| 900001244 | 2016 | Maralinga's long shadow : Yvonne's story | Internet Archive | not_mapped | ok |
