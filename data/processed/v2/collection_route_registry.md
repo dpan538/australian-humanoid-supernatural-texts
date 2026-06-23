@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T15:29:28+00:00`
+- Generated: `2026-06-23T00:37:00+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `235`
+- Routes: `260`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 101
+- `low_yield`: 141
 - `manual_only`: 1
-- `productive`: 130
+- `productive`: 115
 
 ## Stop Rule
 
@@ -31,8 +31,8 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | project_gutenberg_australia_exact_folklore | productive | Project Gutenberg Australia | exact_title_html_text | 30 | 30 | 0 | 0 |  | Continue exact-title book-level extraction; avoid broad global ghost searches. |
 | internet_sacred_texts_exact_ethnography | productive | Internet Sacred Text Archive | exact_chapter_html_text | 20 | 20 | 0 | 0 |  | Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching. |
 | wikisource_australian_ethnography_exact_text | productive | Wikisource | exact_chapter_html_text | 10 | 10 | 0 | 0 |  | Continue only exact chapter-level extraction with named supernatural/person-form entities; avoid broad site searching. |
-| sprint_ista_central_australia_exact_texts | productive | Internet Sacred Text Archive | exact_chapter_html_text | 44 | 42 | 3 | 2 |  | Scale productive route |
-| sprint_ista_northern_australia_exact_texts | productive | Internet Sacred Text Archive | exact_chapter_html_text | 16 | 16 | 5 | 0 |  | Scale productive route |
+| sprint_ista_central_australia_exact_texts | low_yield | Internet Sacred Text Archive | exact_chapter_html_text | 59 | 54 | 51 | 4 |  | Keep as probe/discovery route only |
+| sprint_ista_northern_australia_exact_texts | low_yield | Internet Sacred Text Archive | exact_chapter_html_text | 24 | 24 | 53 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_wikisource_southeast_exact_texts | low_yield | Wikisource | exact_chapter_html_text | 66 | 63 | 10 | 3 |  | Keep as probe/discovery route only |
 | sprint_internet_archive_roth_queensland_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 15 | 15 | 2 | 0 |  | Scale productive route |
 | sprint_pga_australian_fairy_tales_exact_texts | productive | Project Gutenberg Australia | exact_title_html_text | 36 | 36 | 3 | 0 |  | Scale productive route |
@@ -70,14 +70,14 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_internet_archive_ridley_kamilaroi_languages_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 24 | 23 | 7 | 1 |  | Scale productive route |
 | sprint_internet_archive_hill_thornton_notes_nsw_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 8 | 8 | 31 | 0 |  | Scale productive route |
 | sprint_internet_archive_nicolay_notes_wa_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 8 | 8 | 3 | 0 |  | Scale productive route |
-| sprint_internet_archive_moore_wa_vocabulary_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 17 | 13 | 0 |  | Scale productive route |
+| sprint_internet_archive_moore_wa_vocabulary_exact_text | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 22 | 22 | 38 | 0 |  | Keep as probe/discovery route only |
 | sprint_internet_archive_roth_garson_tasmania_1890_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 25 | 24 | 13 | 0 |  | Scale productive route |
 | sprint_internet_archive_roth_nq_burial_ceremonies_exact_article | productive | Internet Archive | exact_item_metadata_and_djvu_text | 15 | 14 | 9 | 1 |  | Scale productive route |
 | sprint_internet_archive_miles_demigods_daemonia_exact_article | productive | Internet Archive | exact_item_metadata_and_djvu_text | 19 | 18 | 7 | 0 |  | Scale productive route |
 | sprint_internet_archive_lawson_joe_wilson_ghost_stories_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 28 | 27 | 14 | 0 |  | Scale productive route |
 | sprint_project_gutenberg_lawson_on_the_track_exact_text | productive | Project Gutenberg | exact_plain_text | 11 | 11 | 4 | 0 |  | Scale productive route |
 | sprint_project_gutenberg_lawson_children_of_the_bush_exact_text | productive | Project Gutenberg | exact_plain_text | 20 | 17 | 6 | 1 |  | Scale productive route |
-| sprint_sacred_texts_nw_wa_customs_traditions_exact_text | productive | Internet Sacred Text Archive | exact_full_text_html | 12 | 12 | 6 | 0 |  | Scale productive route |
+| sprint_sacred_texts_nw_wa_customs_traditions_exact_text | low_yield | Internet Sacred Text Archive | exact_full_text_html | 16 | 15 | 58 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_boothby_crime_under_seas_phantom_stockman_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 22 | 22 | 8 | 0 |  | Scale productive route |
 | sprint_internet_archive_nisbet_colonial_tramp_beliefs_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 12 | 11 | 5 | 1 |  | Scale productive route |
 | sprint_internet_archive_eden_fifth_continent_beliefs_exact_text | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 5 | 5 | 2 | 0 |  | Keep as probe/discovery route only |
@@ -93,26 +93,26 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_pga_dyson_below_and_on_top_rescan_02 | low_yield | Project Gutenberg Australia | exact_plain_text | 26 | 21 | 56 | 4 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_moreton_bay_deception_bay_recollect_ocr | low_yield | City of Moreton Bay Libraries | recollect_search_item_ocr | 0 | 0 | 0 | 3 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_project_gutenberg_australian_legendary_tales_exact_text | productive | Project Gutenberg | exact_plain_text | 714 | 700 | 210 | 14 |  | Scale productive route |
-| sprint_project_gutenberg_lawson_while_billy_boils_exact_text | productive | Project Gutenberg | exact_plain_text | 18 | 17 | 1 | 1 |  | Scale productive route |
-| sprint_project_gutenberg_lawson_over_the_sliprails_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 15 | 3 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_lawson_while_billy_boils_exact_text | low_yield | Project Gutenberg | exact_plain_text | 18 | 17 | 1 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_project_gutenberg_lawson_over_the_sliprails_exact_text | low_yield | Project Gutenberg | exact_plain_text | 21 | 19 | 3 | 1 |  | Keep as probe/discovery route only |
 | sprint_project_gutenberg_lawson_rising_of_the_court_exact_text | productive | Project Gutenberg | exact_plain_text | 19 | 17 | 10 | 1 |  | Scale productive route |
-| sprint_project_gutenberg_boldrewood_in_bad_company_exact_text | productive | Project Gutenberg | exact_plain_text | 26 | 24 | 1 | 2 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_in_bad_company_exact_text | low_yield | Project Gutenberg | exact_plain_text | 26 | 24 | 1 | 2 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_project_gutenberg_boldrewood_old_melbourne_memories_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 13 | 1 | 1 |  | Scale productive route |
 | sprint_project_gutenberg_boldrewood_robbery_under_arms_exact_text | productive | Project Gutenberg | exact_plain_text | 20 | 16 | 1 | 4 |  | Scale productive route |
-| sprint_project_gutenberg_boldrewood_last_chance_exact_text | productive | Project Gutenberg | exact_plain_text | 30 | 24 | 2 | 6 |  | Scale productive route |
+| sprint_project_gutenberg_boldrewood_last_chance_exact_text | low_yield | Project Gutenberg | exact_plain_text | 37 | 29 | 2 | 8 |  | Keep as probe/discovery route only |
 | sprint_project_gutenberg_boldrewood_babes_in_bush_exact_text | productive | Project Gutenberg | exact_plain_text | 32 | 27 | 9 | 2 |  | Scale productive route |
 | sprint_project_gutenberg_boldrewood_nevermore_exact_text | productive | Project Gutenberg | exact_plain_text | 25 | 24 | 2 | 1 |  | Scale productive route |
 | sprint_project_gutenberg_boldrewood_shearing_riverina_exact_text | low_yield | Project Gutenberg | exact_plain_text | 5 | 4 | 0 | 1 |  | Keep as probe/discovery route only |
-| sprint_project_gutenberg_baynton_bush_studies_exact_text | productive | Project Gutenberg | exact_plain_text | 9 | 7 | 2 | 1 |  | Scale productive route |
-| sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text | productive | Project Gutenberg | exact_plain_text | 9 | 8 | 0 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_baynton_bush_studies_exact_text | low_yield | Project Gutenberg | exact_plain_text | 9 | 7 | 2 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text | low_yield | Project Gutenberg | exact_plain_text | 18 | 9 | 0 | 9 |  | Keep as probe/discovery route only |
 | sprint_project_gutenberg_boldrewood_colonial_reformer_vol1_exact_text | productive | Project Gutenberg | exact_plain_text | 16 | 14 | 1 | 1 |  | Scale productive route |
 | sprint_project_gutenberg_boldrewood_colonial_reformer_vol2_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 13 | 1 | 3 |  | Scale productive route |
 | sprint_project_gutenberg_boldrewood_colonial_reformer_vol3_exact_text | productive | Project Gutenberg | exact_plain_text | 19 | 14 | 0 | 4 |  | Scale productive route |
 | sprint_slv_federicis_ghost_exact_page | productive | State Library Victoria | exact_public_html_page | 9 | 8 | 4 | 1 |  | Scale productive route |
 | sprint_slv_spooky_library_stories_exact_page | productive | State Library Victoria | exact_public_html_page | 14 | 10 | 0 | 4 |  | Scale productive route |
 | sprint_adelaide_arcade_history_ghost_exact_page | low_yield | Adelaide Arcade | exact_public_html_page | 7 | 5 | 7 | 2 |  | Keep as probe/discovery route only |
-| sprint_project_gutenberg_lawson_days_world_wide_exact_text | productive | Project Gutenberg | exact_plain_text | 22 | 18 | 5 | 2 |  | Scale productive route |
-| sprint_project_gutenberg_steele_rudd_dashwoods_exact_text | productive | Project Gutenberg | exact_plain_text | 7 | 6 | 0 | 1 |  | Scale productive route |
+| sprint_project_gutenberg_lawson_days_world_wide_exact_text | low_yield | Project Gutenberg | exact_plain_text | 22 | 18 | 5 | 2 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_project_gutenberg_steele_rudd_dashwoods_exact_text | low_yield | Project Gutenberg | exact_plain_text | 7 | 6 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_project_gutenberg_boldrewood_plain_living_exact_text | productive | Project Gutenberg | exact_plain_text | 18 | 16 | 0 | 1 |  | Scale productive route |
 | sprint_project_gutenberg_clarke_natural_life_exact_text | productive | Project Gutenberg | exact_plain_text | 31 | 26 | 4 | 4 |  | Scale productive route |
 | sprint_project_gutenberg_boldrewood_crooked_stick_exact_text | productive | Project Gutenberg | exact_plain_text | 17 | 16 | 0 | 1 |  | Scale productive route |
@@ -155,21 +155,21 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_internet_archive_calvert_wa_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 0 | 0 | 2 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_dawson_victoria_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 30 | 49 | 2 |  | Scale productive route |
 | sprint_internet_archive_smyth_victoria_vol1_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 119 | 107 | 7 | 5 |  | Scale productive route |
-| sprint_internet_archive_northern_tribes_central_australia_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 87 | 87 | 34 | 0 |  | Scale productive route |
+| sprint_internet_archive_northern_tribes_central_australia_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 95 | 95 | 90 | 0 |  | Scale productive route |
 | sprint_internet_archive_kamilaroi_kurnai_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 32 | 53 | 0 |  | Scale productive route |
-| sprint_internet_archive_native_tribes_sa_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 31 | 30 | 32 | 0 |  | Scale productive route |
+| sprint_internet_archive_native_tribes_sa_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 31 | 30 | 158 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_roth_queensland_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 15 | 9 | 1 |  | Scale productive route |
 | sprint_internet_archive_smyth_victoria_vol2_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 47 | 46 | 35 | 1 |  | Scale productive route |
 | sprint_internet_archive_eaglehawk_crow_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 17 | 31 | 0 |  | Scale productive route |
-| sprint_internet_archive_moore_wa_diary_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 38 | 32 | 16 | 5 |  | Scale productive route |
+| sprint_internet_archive_moore_wa_diary_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 38 | 32 | 124 | 5 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_fraser_nsw_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 68 | 66 | 43 | 2 |  | Scale productive route |
 | sprint_internet_archive_lang_queensland_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 16 | 14 | 26 | 1 |  | Scale productive route |
-| sprint_internet_archive_booandik_sa_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 40 | 38 | 5 | 2 |  | Scale productive route |
+| sprint_internet_archive_booandik_sa_exact_text | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 42 | 40 | 101 | 2 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_canberra_history_legends_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 8 | 7 | 1 | 1 |  | Scale productive route |
-| sprint_internet_archive_roth_tasmania_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 48 | 46 | 40 | 0 |  | Scale productive route |
+| sprint_internet_archive_roth_tasmania_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 53 | 51 | 233 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_peck_australian_legends_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 60 | 58 | 29 | 2 |  | Scale productive route |
 | sprint_internet_archive_ridley_kamilaroi_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 32 | 39 | 0 |  | Scale productive route |
-| sprint_internet_archive_native_tribes_nt_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 86 | 85 | 5 | 0 |  | Scale productive route |
+| sprint_internet_archive_native_tribes_nt_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 110 | 109 | 142 | 0 |  | Scale productive route |
 | sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur | low_yield | Project Gutenberg | exact_place_filtered_text | 3 | 3 | 2 | 0 |  | Keep as probe/discovery route only |
 | sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown | low_yield | Internet Archive | exact_place_filtered_text | 0 | 0 | 2 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains | low_yield | Project Gutenberg | exact_place_filtered_text | 2 | 1 | 0 | 1 |  | Keep as probe/discovery route only |
@@ -230,7 +230,7 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_abc_z_ward_glenside_ghost_sounds_35 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_abc_willow_court_sarah_spirit_36 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_abc_willow_court_doctor_spirit_37 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
-| sprint_abc_willow_court_documentary_context_38 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 0 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_abc_willow_court_documentary_context_38 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 2 | 0 | 0 | 2 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_abc_bayview_hotel_stanley_ghost_39 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_abc_majestic_theatre_pomona_woman_40 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_exact_public_place_wave_42 | low_yield | National Trust / Australian Broadcasting Corporation | public_page_place_text | 8 | 5 | 0 | 3 |  | Keep as probe/discovery route only |
@@ -255,3 +255,28 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_abc_tas_livestream_distinct_figures_wave_61 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_abc_sylvania_station_spirits_41 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 0 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_abc_sylvania_station_spirits_corrected_wave_62 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_wa_modern_places_63 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 4 | 4 | 1 | 8 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_nt_modern_places_64 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 2 | 2 | 0 | 5 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_sa_modern_places_65 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 2 | 0 | 0 | 24 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_tas_modern_places_66 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 3 | 3 | 1 | 23 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_underrep_modern_broad_67 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 2 | 2 | 1 | 18 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_modern_1970_present_68 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 8 | 8 | 8 | 4 |  | Scale productive route |
+| sprint_postlaunch_abc_sylvania_friendly_ghost_69 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_alison_oborn_adelaide_gaol_70 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_australian_ghost_stories_71 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_yahoo_creek_bigfoot_72 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_arthur_marrin_hairy_man_73 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_urban_legends_yowies_74 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_ngabaya_spirit_people_75 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_shadow_trackers_indigenous_ghosts_76 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_indigenous_ghost_stories_darkside_77 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_wa_graham_seal_ghost_stories_78 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_tamar_valley_tales_ghost_blog_79 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_port_arthur_ghost_stories_80 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_sirius_resident_ghost_81 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_monte_cristo_lawrence_ryan_82 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_burnie_arts_centre_ghost_83 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_djimubarn_mimih_context_84 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_cleverman_hairy_people_context_85 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 3 | 3 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_jawoyn_mimi_spirit_people_86 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_fanny_balbuk_spirit_places_87 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |

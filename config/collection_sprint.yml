@@ -7691,3 +7691,991 @@ routes:
       - spirits
     person_form_terms:
       - spirits
+  - route_id: sprint_postlaunch_abc_wa_modern_places_63
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    hits_per_page: 20
+    pages_per_query: 5
+    geocode_rate_limit_seconds: 0.8
+    australian_relation: Targeted post-launch ABC public media searches for modern Western Australian ghost, apparition, yowie, and haunted-site narratives tied to named places.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "ghost haunted Western Australia ABC Fremantle Prison Round House Rottnest"
+      - "ghost haunted Western Australia ABC York Greenough Gwalia Albany"
+      - "spirit apparition Western Australia ABC Broome Guildford Kalamunda cemetery"
+      - "yowie Western Australia ABC Pilbara Kimberley Wheatbelt modern"
+      - "haunted hotel theatre hospital Western Australia ABC regional"
+    place_catalog:
+      - {name: "Fremantle Prison", state: "WA", location_type: "exact_site", aliases: ["Fremantle Gaol", "Fremantle jail"], query: "Fremantle Prison, Western Australia, Australia"}
+      - {name: "Round House Fremantle", state: "WA", location_type: "exact_site", aliases: ["Round House", "The Round House"], query: "Round House, Fremantle, Western Australia, Australia"}
+      - {name: "Rottnest Island", state: "WA", location_type: "named_feature", aliases: ["Rottnest", "Wadjemup"], query: "Rottnest Island, Western Australia, Australia"}
+      - {name: "Greenough", state: "WA", location_type: "town", query: "Greenough, Western Australia, Australia"}
+      - {name: "Gwalia", state: "WA", location_type: "locality", query: "Gwalia, Western Australia, Australia"}
+      - {name: "Albany Convict Gaol", state: "WA", location_type: "exact_site", aliases: ["Albany Gaol", "Albany jail"], query: "Albany Convict Gaol, Western Australia, Australia"}
+      - {name: "Guildford", state: "WA", location_type: "town", query: "Guildford, Western Australia, Australia"}
+      - {name: "Kalamunda", state: "WA", location_type: "town", query: "Kalamunda, Western Australia, Australia"}
+      - {name: "Broome", state: "WA", location_type: "town", query: "Broome, Western Australia, Australia"}
+      - {name: "York", state: "WA", location_type: "town", query: "York, Western Australia, Australia"}
+      - {name: "Oakabella Homestead", state: "WA", location_type: "exact_site", aliases: ["Oakabella"], query: "Oakabella Homestead, Western Australia, Australia"}
+      - {name: "Sylvania Station", state: "WA", location_type: "locality", query: "Sylvania Station, Western Australia, Australia"}
+  - route_id: sprint_postlaunch_abc_nt_modern_places_64
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    hits_per_page: 20
+    pages_per_query: 5
+    geocode_rate_limit_seconds: 0.8
+    australian_relation: Targeted post-launch ABC public media searches for modern Northern Territory ghost, yowie, apparition, and haunted-site narratives tied to named places.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "ghost haunted Northern Territory ABC Fannie Bay Gaol Darwin Pine Creek"
+      - "yowie Northern Territory ABC Litchfield Katherine Adelaide River"
+      - "spirit apparition Northern Territory ABC Alice Springs Tennant Creek Arltunga"
+      - "haunted station pub Northern Territory ABC Daly Waters Mataranka Elsey"
+      - "ghost story Northern Territory ABC modern public history"
+    place_catalog:
+      - {name: "Fannie Bay Gaol", state: "NT", location_type: "exact_site", aliases: ["Fannie Bay Jail"], query: "Fannie Bay Gaol, Darwin, Northern Territory, Australia"}
+      - {name: "Darwin", state: "NT", location_type: "town"}
+      - {name: "Pine Creek", state: "NT", location_type: "town", query: "Pine Creek, Northern Territory, Australia"}
+      - {name: "Adelaide River", state: "NT", location_type: "town", query: "Adelaide River, Northern Territory, Australia"}
+      - {name: "Katherine", state: "NT", location_type: "town", query: "Katherine, Northern Territory, Australia"}
+      - {name: "Litchfield National Park", state: "NT", location_type: "named_feature", aliases: ["Litchfield"], query: "Litchfield National Park, Northern Territory, Australia"}
+      - {name: "Alice Springs Telegraph Station", state: "NT", location_type: "exact_site", aliases: ["Telegraph Station"], query: "Alice Springs Telegraph Station, Northern Territory, Australia"}
+      - {name: "Tennant Creek", state: "NT", location_type: "town", query: "Tennant Creek, Northern Territory, Australia"}
+      - {name: "Arltunga", state: "NT", location_type: "locality", query: "Arltunga, Northern Territory, Australia"}
+      - {name: "Daly Waters", state: "NT", location_type: "locality", query: "Daly Waters, Northern Territory, Australia"}
+      - {name: "Mataranka", state: "NT", location_type: "town", query: "Mataranka, Northern Territory, Australia"}
+      - {name: "Elsey Station", state: "NT", location_type: "locality", aliases: ["Elsey"], query: "Elsey Station, Northern Territory, Australia"}
+  - route_id: sprint_postlaunch_abc_sa_modern_places_65
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: SA
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    hits_per_page: 20
+    pages_per_query: 5
+    geocode_rate_limit_seconds: 0.8
+    australian_relation: Targeted post-launch ABC public media searches for modern South Australian ghost, apparition, haunted-gaol, and local-legend narratives tied to named places.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "ghost haunted South Australia ABC Adelaide Gaol Z Ward Glenside"
+      - "ghost haunted South Australia ABC Kapunda Burra Martindale Hall"
+      - "apparition spirit South Australia ABC Peterborough Port Adelaide Gawler"
+      - "haunted hotel theatre hospital South Australia ABC regional"
+      - "ghost story South Australia ABC 1970 present"
+    place_catalog:
+      - {name: "Old Adelaide Gaol", state: "SA", location_type: "exact_site", aliases: ["Adelaide Gaol", "Adelaide Jail"], query: "Old Adelaide Gaol, South Australia, Australia"}
+      - {name: "Z Ward Glenside", state: "SA", location_type: "exact_site", aliases: ["Z Ward", "Glenside Hospital", "Glenside Asylum"], query: "Z Ward, Glenside, South Australia, Australia"}
+      - {name: "Kapunda", state: "SA", location_type: "town", query: "Kapunda, South Australia, Australia"}
+      - {name: "North Kapunda Hotel", state: "SA", location_type: "exact_site", aliases: ["North Kapunda"], query: "North Kapunda Hotel, Kapunda, South Australia, Australia"}
+      - {name: "Burra", state: "SA", location_type: "town", query: "Burra, South Australia, Australia"}
+      - {name: "Martindale Hall", state: "SA", location_type: "exact_site", query: "Martindale Hall, South Australia, Australia"}
+      - {name: "Peterborough", state: "SA", location_type: "town", query: "Peterborough, South Australia, Australia"}
+      - {name: "Port Adelaide", state: "SA", location_type: "town", query: "Port Adelaide, South Australia, Australia"}
+      - {name: "Gawler", state: "SA", location_type: "town", query: "Gawler, South Australia, Australia"}
+      - {name: "Dead Man's Pass", state: "SA", location_type: "named_feature", aliases: ["Dead Mans Pass"], query: "Dead Man's Pass, Gawler, South Australia, Australia"}
+      - {name: "Gladstone Gaol", state: "SA", location_type: "exact_site", aliases: ["Gladstone Jail"], query: "Gladstone Gaol, South Australia, Australia"}
+      - {name: "Old Tailem Town", state: "SA", location_type: "exact_site", query: "Old Tailem Town, Tailem Bend, South Australia, Australia"}
+  - route_id: sprint_postlaunch_abc_tas_modern_places_66
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 30
+    max_candidates_probe: 30
+    max_candidates_scaled: 120
+    hits_per_page: 20
+    pages_per_query: 5
+    geocode_rate_limit_seconds: 0.8
+    australian_relation: Targeted post-launch ABC public media searches for modern Tasmanian ghost, apparition, haunted-house, asylum, and convict-site narratives tied to named places.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "ghost haunted Tasmania ABC Port Arthur Willow Court Richmond"
+      - "apparition spirit Tasmania ABC Swansea East Coast historic house"
+      - "haunted Tasmania ABC Hobart Runnymede Theatre Royal Penitentiary"
+      - "ghost story Tasmania ABC Stanley Queenstown Launceston"
+      - "haunted asylum gaol Tasmania ABC 1970 present"
+    place_catalog:
+      - {name: "Port Arthur Historic Site", state: "TAS", location_type: "exact_site", aliases: ["Port Arthur", "Parsonage", "Blue Lady"], query: "Port Arthur Historic Site, Tasmania, Australia"}
+      - {name: "Willow Court", state: "TAS", location_type: "exact_site", aliases: ["Willow Court Asylum"], query: "Willow Court, New Norfolk, Tasmania, Australia"}
+      - {name: "Richmond Gaol", state: "TAS", location_type: "exact_site", aliases: ["Richmond Jail"], query: "Richmond Gaol, Tasmania, Australia"}
+      - {name: "Richmond Bridge", state: "TAS", location_type: "exact_site", query: "Richmond Bridge, Tasmania, Australia"}
+      - {name: "Swansea", state: "TAS", location_type: "town", query: "Swansea, Tasmania, Australia"}
+      - {name: "Piermont", state: "TAS", location_type: "exact_site", aliases: ["Piermont Retreat"], query: "Piermont, Swansea, Tasmania, Australia"}
+      - {name: "Runnymede House", state: "TAS", location_type: "exact_site", aliases: ["Runnymede"], query: "Runnymede House, Hobart, Tasmania, Australia"}
+      - {name: "Theatre Royal Hobart", state: "TAS", location_type: "exact_site", aliases: ["Theatre Royal"], query: "Theatre Royal, Hobart, Tasmania, Australia"}
+      - {name: "Penitentiary Chapel", state: "TAS", location_type: "exact_site", aliases: ["Hobart Penitentiary", "Campbell Street Gaol"], query: "Penitentiary Chapel Historic Site, Hobart, Tasmania, Australia"}
+      - {name: "Stanley", state: "TAS", location_type: "town", query: "Stanley, Tasmania, Australia"}
+      - {name: "Queenstown", state: "TAS", location_type: "town", query: "Queenstown, Tasmania, Australia"}
+      - {name: "Launceston", state: "TAS", location_type: "town", query: "Launceston, Tasmania, Australia"}
+  - route_id: sprint_postlaunch_abc_underrep_modern_broad_67
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/NT/SA/TAS
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 40
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    hits_per_page: 20
+    pages_per_query: 6
+    geocode_rate_limit_seconds: 0.8
+    australian_relation: Broader post-launch ABC public media search for post-1970 supernatural humanoid narratives in underrepresented jurisdictions, constrained to named places.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "ABC ghost stories Western Australia Northern Territory South Australia Tasmania"
+      - "ABC haunted places WA NT SA TAS ghost apparition"
+      - "ABC yowie WA NT SA TAS modern encounter"
+      - "ABC paranormal ghost tour WA NT SA TAS"
+      - "ABC local legend ghost WA NT SA TAS"
+    place_catalog:
+      - {name: "Fremantle", state: "WA", location_type: "town", query: "Fremantle, Western Australia, Australia"}
+      - {name: "York", state: "WA", location_type: "town", query: "York, Western Australia, Australia"}
+      - {name: "Darwin", state: "NT", location_type: "town"}
+      - {name: "Katherine", state: "NT", location_type: "town", query: "Katherine, Northern Territory, Australia"}
+      - {name: "Kapunda", state: "SA", location_type: "town", query: "Kapunda, South Australia, Australia"}
+      - {name: "Adelaide", state: "SA", location_type: "town", query: "Adelaide, South Australia, Australia"}
+      - {name: "Hobart", state: "TAS", location_type: "town"}
+      - {name: "Port Arthur", state: "TAS", location_type: "town", query: "Port Arthur, Tasmania, Australia"}
+      - {name: "New Norfolk", state: "TAS", location_type: "town", query: "New Norfolk, Tasmania, Australia"}
+      - {name: "Swansea", state: "TAS", location_type: "town", query: "Swansea, Tasmania, Australia"}
+  - route_id: sprint_postlaunch_abc_modern_1970_present_68
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA/NT/SA/TAS/VIC/ACT
+    retrieval_method: abc_algolia_place_search
+    scaled: true
+    map_capable: true
+    accepted_target: 40
+    max_candidates_probe: 30
+    max_candidates_scaled: 160
+    hits_per_page: 20
+    pages_per_query: 6
+    geocode_rate_limit_seconds: 0.8
+    australian_relation: Broader post-launch ABC public media search for 1970-present public supernatural humanoid records, weighted toward states and territories with lower modern coverage.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    queries:
+      - "ABC 1970 ghost haunted Australia regional"
+      - "ABC 1980 ghost haunted Australia regional"
+      - "ABC 1990 ghost haunted Australia regional"
+      - "ABC 2000 ghost haunted Australia regional"
+      - "ABC 2010 ghost haunted Australia regional"
+      - "ABC 2020 ghost haunted Australia regional"
+      - "ABC yowie sighting modern regional Australia"
+    place_catalog:
+      - {name: "Perth", state: "WA", location_type: "town", query: "Perth, Western Australia, Australia"}
+      - {name: "Fremantle", state: "WA", location_type: "town", query: "Fremantle, Western Australia, Australia"}
+      - {name: "Darwin", state: "NT", location_type: "town"}
+      - {name: "Alice Springs", state: "NT", location_type: "town", query: "Alice Springs, Northern Territory, Australia"}
+      - {name: "Adelaide", state: "SA", location_type: "town", query: "Adelaide, South Australia, Australia"}
+      - {name: "Mount Gambier", state: "SA", location_type: "town", query: "Mount Gambier, South Australia, Australia"}
+      - {name: "Hobart", state: "TAS", location_type: "town"}
+      - {name: "Launceston", state: "TAS", location_type: "town", query: "Launceston, Tasmania, Australia"}
+      - {name: "Melbourne", state: "VIC", location_type: "town", query: "Melbourne, Victoria, Australia"}
+      - {name: "Canberra", state: "ACT", location_type: "town"}
+  - route_id: sprint_postlaunch_abc_sylvania_friendly_ghost_69
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Spooky sightings at Sylvania station
+    source_author: ABC Rural
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2013-11-01"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: apparition_account
+    australian_relation: ABC Rural public audio page reporting a distinct friendly ghost account at Sylvania Station in Western Australia.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    default_location_text: "Sylvania Station, WA"
+    default_location_role: apparition_location
+    default_latitude: -23.4461
+    default_longitude: 119.7534
+    pages:
+      - section_id: sylvania-station-friendly-ghost
+        chapter: Sylvania Station friendly ghost
+        url: "https://www.abc.net.au/news/rural/2013-11-01/station-spook/5060236"
+        location_text: "Sylvania Station, WA"
+        location_role: "apparition_location"
+    entity_terms:
+      - friendly ghost
+      - ghost
+    person_form_terms:
+      - friendly ghost
+      - ghost
+  - route_id: sprint_postlaunch_abc_alison_oborn_adelaide_gaol_70
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Paranormal investigator Alison Oborn has seen and heard very strange things
+    source_author: ABC Conversations
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: SA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2012-05-08"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Conversations public page describing local ghost stories and Adelaide Gaol ghosts through Alison Oborn's paranormal fieldwork.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    default_location_text: "Old Adelaide Gaol, SA"
+    default_location_role: apparition_location
+    default_latitude: -34.915274
+    default_longitude: 138.594466
+    pages:
+      - section_id: adelaide-gaol-alison-oborn-ghost-stories
+        chapter: Alison Oborn Adelaide Gaol ghost stories
+        url: "https://www.abc.net.au/listen/programs/conversations/paranormal-investigator-alison-oborn-has-seen-and-heard-very-str/7757318"
+        location_text: "Old Adelaide Gaol, SA"
+        location_role: "apparition_location"
+    entity_terms:
+      - local ghost stories
+      - ghosts
+      - paranormal
+    person_form_terms:
+      - ghosts
+  - route_id: sprint_postlaunch_abc_australian_ghost_stories_71
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Australian Ghost Stories
+    source_author: ABC Overnights / Richard Davis
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: AU
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2014-09-25"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Overnights public discussion of Australian ghost traditions and haunted houses with Richard Davis, author of Great Australian Ghost Stories.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-overnights-australian-ghost-stories
+        chapter: Australian Ghost Stories
+        url: "https://www.abc.net.au/listen/programs/overnights/australian-ghost-stories/7726920"
+        text: >-
+          ABC Overnights asked whether listeners had seen a ghost, whether Australia is teeming with them, what ghosts have been seen throughout Australian history, who Australia's most famous ghost is, and where Australia's haunted houses are, in a discussion with Richard Davis, author of Great Australian Ghost Stories.
+    entity_terms:
+      - ghost
+    person_form_terms:
+      - ghost
+  - route_id: sprint_postlaunch_abc_yahoo_creek_bigfoot_72
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Is the Yahoo Australia's bigfoot?
+    source_author: ABC Nightlife / Tohby Riddle
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NSW/VIC/QLD
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2019-03-11"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: giant_or_ogre_narrative
+    australian_relation: ABC Nightlife public interview describing the Australian Yahoo or hairy man tradition along the Great Dividing Range.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-nightlife-yahoo-hairy-man-great-dividing-range
+        chapter: Yahoo Creek hairy man tradition
+        url: "https://www.abc.net.au/listen/programs/nightlife/history-yahoo-creek/10897114"
+        text: >-
+          ABC Nightlife described the mythical creature known as the Yahoo or hairy man as being frequently spotted along the Great Dividing Range as settlers pushed into the Australian hinterland, in an interview with Tohby Riddle, author of Yahoo Creek: An Australian Mystery.
+    entity_terms:
+      - Yahoo
+      - hairy man
+    person_form_terms:
+      - Yahoo
+      - hairy man
+  - route_id: sprint_postlaunch_abc_arthur_marrin_hairy_man_73
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: "'Hairy man' encountered by Arthur Marrin 123 years ago still unidentified"
+    source_author: ABC News
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2016-08-05"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: encounter_account
+    australian_relation: ABC News public article recounting the Arthur Marrin hairy-man/Yahoo encounter tradition near Braidwood, New South Wales.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-arthur-marrin-braidwood-hairy-man
+        chapter: Arthur Marrin Braidwood hairy man
+        url: "https://www.abc.net.au/news/2016-08-05/the-story-of-arthur-marrin-and-the-hairy-man/7693462"
+        location_text: "Braidwood, NSW"
+        location_role: "reported_place"
+        latitude: -35.4388907
+        longitude: 149.7955552
+        location_precision: town
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-23"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC page names the Arthur Marrin creature account near the NSW town of Braidwood; coordinates use the state-checked OSM/Nominatim Braidwood locality result."
+        text: >-
+          ABC News reported that the story of Arthur Marrin and his encounter with a hairy man in 1893 is part of the folklore of the New South Wales Southern Highlands. Historian Graham Joyner wrote that reports from south-eastern Australia described an unidentified animal variously called the Yahoo, Australian ape or Australian gorilla, and named Marrin's Braidwood account as one of the best-known examples.
+    entity_terms:
+      - hairy man
+      - Yahoo
+    person_form_terms:
+      - hairy man
+      - Yahoo
+  - route_id: sprint_postlaunch_abc_urban_legends_yowies_74
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: From yowies to UFOs to panthers, what's the real story behind Australia's urban legends?
+    source_author: ABC Religion & Ethics / God Forbid
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: AU
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2021-08-01"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Religion & Ethics public article discussing Australian urban legends, including yowies and ghost-story belief.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-urban-legends-yowies-ghost-stories
+        chapter: Australian urban legends and ghost stories
+        url: "https://www.abc.net.au/news/2021-08-01/the-real-story-behind-australias-urban-legends/100332654"
+        text: >-
+          ABC Religion & Ethics discussed Australian urban legends, including yowies and ghost stories. The article says Yowie stories were shoehorned into a Western hairy-man narrative after the Yeti story of the 1950s, and quotes Dr David Waldron saying ghost stories tell communities about experiences, trauma, risk, behaviour, and injustice.
+    entity_terms:
+      - yowies
+      - ghost stories
+    person_form_terms:
+      - yowies
+      - ghost stories
+  - route_id: sprint_postlaunch_abc_ngabaya_spirit_people_75
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: "Ngabaya: Spirit People"
+    source_author: ABC Education
+    source_type: institutional_education_page
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2022-03-30"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: traditional_narrative
+    australian_relation: ABC Education public media resource presenting the Ngabaya Spirit People story from the Wurdaliya clan of the Yanyuwa people.
+    publicness_status: public_education_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_abc_education_source_reviewed_summary_only
+    cultural_sensitivity: high_public_source_summary_only
+    pages:
+      - section_id: abc-education-ngabaya-spirit-people
+        chapter: Ngabaya Spirit People
+        url: "https://www.abc.net.au/education/ngabaya-spirit-people/13819506"
+        location_text: "Borroloola region, NT"
+        location_role: "cultural_association_region"
+        text: >-
+          ABC Education's public Ngabaya: Spirit People resource presents a transcript in which Wanjarrarra is described as a small island where there were many Spirit People. The story names one old Spirit Man as their leader, says he told the other Spirit People to return south to Liwarrinya, and says the Spirit People later heard other Spirit People calling from Sandy Head.
+    entity_terms:
+      - Spirit People
+      - Spirit Man
+    person_form_terms:
+      - Spirit People
+      - Spirit Man
+  - route_id: sprint_postlaunch_abc_shadow_trackers_indigenous_ghosts_76
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: "Shadow Trackers: the spooky stories of Aboriginal Australia"
+    source_author: ABC Life Matters
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: AU
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2016-10-27"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Life Matters public interview about Shadow Trackers and real-life ghost stories of Indigenous Australia.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_abc_media_source_reviewed_summary_only
+    cultural_sensitivity: high_public_source_summary_only
+    pages:
+      - section_id: abc-shadow-trackers-indigenous-australia-ghost-stories
+        chapter: Shadow Trackers Indigenous Australia ghost stories
+        url: "https://www.abc.net.au/radionational/programs/lifematters/shadow-trackers:-the-spooky-stories-of-aboriginal-australia/7969924"
+        text: >-
+          ABC Life Matters described the Australian documentary Shadow Trackers as following two adventurers who go in search of real-life ghost stories of Indigenous Australia and tell listeners what they saw.
+    entity_terms:
+      - ghost stories
+    person_form_terms:
+      - ghost stories
+  - route_id: sprint_postlaunch_abc_indigenous_ghost_stories_darkside_77
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Indigenous ghost stories
+    source_author: ABC Books and Arts / Warwick Thornton
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: AU
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2013-10-31"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: retelling_or_adaptation
+    australian_relation: ABC Books and Arts public interview about Warwick Thornton's The Darkside, a collection of true ghost tales from across Australia.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_abc_media_source_reviewed_summary_only
+    cultural_sensitivity: high_public_source_summary_only
+    pages:
+      - section_id: abc-indigenous-ghost-stories-darkside
+        chapter: The Darkside Indigenous ghost stories
+        url: "https://www.abc.net.au/radionational/programs/archived/booksandarts/indigenous-ghost-stories/5059880"
+        text: >-
+          ABC Books and Arts described Aboriginal culture as having a rich tradition of spirit lives and discussed Warwick Thornton's The Darkside as a collection of poignant, sad, funny, and absurd true ghost tales from across Australia, performed by Australian actors as storytellers.
+    entity_terms:
+      - ghost tales
+      - spirit lives
+    person_form_terms:
+      - ghost tales
+      - spirit lives
+  - route_id: sprint_postlaunch_abc_wa_graham_seal_ghost_stories_78
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: WA Afternoons
+    source_author: ABC Radio Perth / Graham Seal
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2025-09-17"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Radio Perth public program item with folklorist Graham Seal discussing Australian ghost stories, hauntings, apparitions, and unexplained phenomena.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-wa-afternoons-graham-seal-ghost-stories
+        chapter: Graham Seal Australian ghost stories
+        url: "https://www.abc.net.au/listen/programs/wa-afternoons/afternoons/105771306"
+        text: >-
+          ABC Radio Perth's WA Afternoons listed Emeritus Professor of Folklore at Curtin University Graham Seal discussing real and perplexing phenomena in Australia and his book Best Australian Ghost Stories: Spine-chilling tales of hauntings, apparitions and the unexplained.
+    entity_terms:
+      - ghost stories
+      - apparitions
+    person_form_terms:
+      - ghost stories
+      - apparitions
+  - route_id: sprint_postlaunch_abc_tamar_valley_tales_ghost_blog_79
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Tasmanian blog explores quirky history, from ghost stories to pigeons and penguins
+    source_author: ABC Hobart / Jodie Lee
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2025-11-29"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Hobart public program item about a Tasmanian history blog covering folklore and ghost stories.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-hobart-tamar-valley-tales-ghost-stories
+        chapter: Tamar Valley Tales ghost stories
+        url: "https://www.abc.net.au/listen/programs/hobart-saturdays/history-blog-tamar-valley-tales/106090704"
+        text: >-
+          ABC Hobart reported that Tamar Valley resident Jodie Lee had started Tamar Valley Tales, a blog with Tasmanian history ranging from folklore to ghost stories and extending beyond the Tamar Valley from small bites of hidden history to longer reads.
+    entity_terms:
+      - ghost stories
+      - folklore
+    person_form_terms:
+      - ghost stories
+  - route_id: sprint_postlaunch_abc_port_arthur_ghost_stories_80
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Ghost stories from one of Australia's most haunted places
+    source_author: ABC Hobart / Port Arthur Historic Site
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2025-08-26"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC Hobart public program item naming Port Arthur and a ghost-stories segment from one of Australia's most haunted places.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-hobart-port-arthur-ghost-stories
+        chapter: Port Arthur ghost stories
+        url: "https://www.abc.net.au/listen/programs/hobart-your-afternoon/afternoons/105688410"
+        location_text: "Port Arthur Historic Site, TAS"
+        location_role: "legend_associated_place"
+        latitude: -43.1531346
+        longitude: 147.8694003
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-23"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC Hobart item names Port Arthur in a ghost-stories segment from one of Australia's most haunted places; coordinates use the state-checked OSM/Nominatim Port Arthur Historic Site result."
+        text: >-
+          ABC Hobart's Afternoons program listed Jake Bradshaw, Guiding Manager at Port Arthur, in a segment titled Ghost stories from one of Australia's most haunted places, with Port Arthur presented as the source-stated haunted place for the ghost-stories discussion.
+    entity_terms:
+      - Ghost stories
+    person_form_terms:
+      - Ghost stories
+  - route_id: sprint_postlaunch_abc_sirius_resident_ghost_81
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Myra Demetriou's life in Millers Point
+    source_author: ABC Sydney Weekend Mornings
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2017-06-11"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: apparition_account
+    australian_relation: ABC Sydney public oral-history style interview describing a resident ghost in the Sirius building at The Rocks.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-sirius-building-resident-ghost
+        chapter: Sirius building resident ghost
+        url: "https://www.abc.net.au/listen/programs/sydney-weekendmornings/sunday-brunch-myra-demetriou/8608112"
+        location_text: "Sirius building, The Rocks, NSW"
+        location_role: "reported_place"
+        text: >-
+          ABC Sydney reported that Myra Demetriou, one of the remaining social housing residents in the Sirius building at The Rocks, had lived there for a decade and was happy cohabiting with a resident ghost.
+    entity_terms:
+      - resident ghost
+    person_form_terms:
+      - resident ghost
+  - route_id: sprint_postlaunch_abc_monte_cristo_lawrence_ryan_82
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: The daredevil of Monte Cristo
+    source_author: ABC Conversations / Lawrence Ryan
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NSW
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2020-06-24"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC Conversations public interview describing Monte Cristo Homestead at Junee as Australia's most haunted house.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-monte-cristo-most-haunted-house
+        chapter: Monte Cristo most haunted house
+        url: "https://www.abc.net.au/listen/programs/conversations/lawrence-ryan/12366984"
+        location_text: "Monte Cristo Homestead, NSW"
+        location_role: "legend_associated_place"
+        latitude: -34.8682927
+        longitude: 147.5758032
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-23"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC Conversations page says Lawrence Ryan grew up in Monte Cristo Homestead at Junee and that it bills itself as Australia's most haunted house; coordinates use the state-checked OSM/Nominatim Monte Cristo Homestead result."
+        text: >-
+          ABC Conversations said Lawrence Ryan grew up in the famous Victorian-era Monte Cristo Homestead in Junee, country New South Wales. The page says his father restored the burnt-out mansion, the family learnt its history, and it now bills itself as Australia's most haunted house.
+    entity_terms:
+      - haunted house
+    person_form_terms:
+      - haunted house
+  - route_id: sprint_postlaunch_abc_burnie_arts_centre_ghost_83
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Burnie's arts centre celebrates 40 years of great shows and ghost stories
+    source_author: ABC Northern Tasmania / Rick Eaves
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2016-11-14"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC Northern Tasmania public article describing ghost stories associated with the Burnie Arts and Function Centre.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-burnie-arts-centre-ghost-stories
+        chapter: Burnie Arts Centre ghost stories
+        url: "https://www.abc.net.au/news/2016-11-14/burnie-arts-centre-celebrates-40-years-of-shows,-ghost-stories/8018528"
+        location_text: "Burnie Arts and Function Centre, TAS"
+        location_role: "legend_associated_place"
+        latitude: -41.0509798
+        longitude: 145.902639
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-23"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC Northern Tasmania page names the Burnie Civic Centre / Burnie Arts and Function Centre as the theatre with early ghost-story reports; coordinates use the state-checked OSM/Nominatim Burnie Arts & Function Centre theatre result."
+        text: >-
+          ABC Northern Tasmania reported that most theatres have a ghost and that the Burnie Civic Centre, now the Burnie Arts and Function Centre, had a catalogue of strange happenings within a couple of years of opening in 1976.
+    entity_terms:
+      - ghost
+      - strange happenings
+    person_form_terms:
+      - ghost
+  - route_id: sprint_postlaunch_abc_djimubarn_mimih_context_84
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: "This Place: Djimubarn, sacred rock art shelter"
+    source_author: ABC Education / Merrill Girrabul
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2025-03-11"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: traditional_narrative
+    australian_relation: ABC Education public transcript from an Aboriginal and Torres Strait Islander education resource that explicitly discusses mimih spirits and human-figure rock art at Djimubarn.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_education_context_summary_only
+    cultural_sensitivity: high
+    pages:
+      - section_id: abc-education-djimubarn-mimih-context
+        chapter: Djimubarn mimih spirit rock art context
+        url: "https://www.abc.net.au/education/this-place-djimubarn-sacred-rock-art-shelter/105036078"
+        text: >-
+          ABC Education's public transcript for This Place: Djimubarn says a rock-art image looks like a mimih spirit, discusses a human figure and man's face in the shelter, and says some of the very old paintings were maybe done by mimih spirits.
+    entity_terms:
+      - mimih spirit
+      - mimih spirits
+    person_form_terms:
+      - mimih spirit
+  - route_id: sprint_postlaunch_abc_cleverman_hairy_people_context_85
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: The Moral Compass Cleverman Special
+    source_author: ABC Religion & Ethics / Geraldine Doogue
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: AU
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 3
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2016-06-19"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: retelling_or_adaptation
+    australian_relation: ABC Religion & Ethics public transcript discussing the ABC television series Cleverman and its use of Hairy people, hairy mob, and yuuri men narrative material.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_summary_only
+    cultural_sensitivity: high
+    pages:
+      - section_id: abc-cleverman-hairy-stories
+        chapter: Cleverman hairy stories context
+        url: "https://www.abc.net.au/religion/watch/compass/the-moral-compass-cleverman-special/10142274"
+        text: >-
+          ABC Religion & Ethics' Cleverman special includes Leah Purcell discussing hairy stories from the South Burnett and Wide Bay region, including the yowie and mountain mob, in a conversation about how Cleverman draws on Aboriginal spirituality, mythology, and storytelling.
+      - section_id: abc-cleverman-yuuri-men
+        chapter: Cleverman yuuri men context
+        url: "https://www.abc.net.au/religion/watch/compass/the-moral-compass-cleverman-special/10142274"
+        text: >-
+          In the ABC Religion & Ethics Cleverman special, Stan Grant says he was told stories of yuuri men, hairy men who lived underground and marked boundaries, and links those stories to modern ghost-story adaptation.
+      - section_id: abc-cleverman-hairy-people-adaptation
+        chapter: Cleverman Hairy people adaptation
+        url: "https://www.abc.net.au/religion/watch/compass/the-moral-compass-cleverman-special/10142274"
+        text: >-
+          Cleverman creator Ryan Griffen explains in the ABC Religion & Ethics transcript that the series uses the Hairy people to teach about the other, while Leah Purcell describes family yarns of the hairy mob, little hairy men, and big ones.
+    entity_terms:
+      - hairy stories
+      - yuuri men
+      - Hairy people
+    person_form_terms:
+      - hairy stories
+      - yuuri men
+      - Hairy people
+  - route_id: sprint_postlaunch_abc_jawoyn_mimi_spirit_people_86
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: No Accounting
+    source_author: ABC Four Corners / Matthew Carney
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2013-10-15"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Four Corners public transcript from the Northern Territory naming Mimi spirit people in a rock-art-place discussion.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_summary_only
+    cultural_sensitivity: high
+    pages:
+      - section_id: abc-four-corners-jawoyn-mimi-spirit-people
+        chapter: Jawoyn Mimi spirit people context
+        url: "https://www.abc.net.au/news/2013-10-15/no-accounting/5022874"
+        text: >-
+          In ABC Four Corners' No Accounting transcript, Margaret Katherine identifies a Mimi image and describes Mimi as spirit people who live deep inside the cave and look after the land and the painting.
+    entity_terms:
+      - Mimi
+      - spirit people
+    person_form_terms:
+      - spirit people
+  - route_id: sprint_postlaunch_abc_fanny_balbuk_spirit_places_87
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: "Restricted Rights and Freedoms: Fanny Balbuk Yooreel"
+    source_author: ABC Education
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2022-06-23"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Education public transcript about Fanny Balbuk Yooreel that preserves source-grounded discourse about spirit-haunted places and spirit baby stones in Perth Noongar country.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_education_context_summary_only
+    cultural_sensitivity: high
+    pages:
+      - section_id: abc-education-fanny-balbuk-spirit-places
+        chapter: Fanny Balbuk spirit-haunted place context
+        url: "https://www.abc.net.au/education/restricted-rights-and-freedoms-fanny-balbuk-yooreel/13922236"
+        text: >-
+          ABC Education's Fanny Balbuk Yooreel transcript says every magic spot, every spirit haunted place, and every spirit baby stone, rock, or cave were known to Balbuk, and that her knowledge of her tribe's folklore was intimate and extensive.
+    entity_terms:
+      - spirit haunted place
+      - spirit baby stone
+    person_form_terms:
+      - spirit haunted place
