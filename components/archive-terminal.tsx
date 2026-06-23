@@ -8,6 +8,7 @@ import type { Timeline } from "animejs";
 import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
+import { SourceView } from "@/components/source/source-view";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
 
@@ -344,7 +345,7 @@ function loadFrontendData() {
     return Promise.resolve(frontendDataCache);
   }
   if (!frontendDataPromise) {
-    frontendDataPromise = fetch(FRONTEND_DATA_URL, { cache: "force-cache" })
+    frontendDataPromise = fetch(FRONTEND_DATA_URL, { cache: "no-store" })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Frontend data request failed: ${response.status}`);
@@ -859,7 +860,7 @@ export function ArchiveTerminal({ data, view }: { data: FrontendData; view: View
       {view === "map" ? <MapView data={data} derived={derived} onSelectRecord={openRecord} /> : null}
       {view === "density" ? <DensityView data={data} derived={derived} onSelectRecord={openRecord} /> : null}
       {view === "dashboard" ? <DashboardView data={data} derived={derived} onSelectRecord={openRecord} /> : null}
-      {view === "source" ? <SourceView data={data} derived={derived} /> : null}
+      {view === "source" ? <SourceView data={data} /> : null}
     </ArchiveTerminalShell>
   );
 }
@@ -900,8 +901,8 @@ function ArchiveTerminalShell({
             aria-label={`Current view ${VIEW_LABELS[view]}; switch to ${VIEW_LABELS[nextView]}`}
             title={`Switch to ${VIEW_LABELS[nextView]}`}
           >
-            <span className="view-label-current">{VIEW_LABELS[view]}</span>
-            <span className="view-label-next">{VIEW_LABELS[nextView]}</span>
+            <span className="view-label-current">{view === "source" ? VIEW_LABELS[nextView] : VIEW_LABELS[view]}</span>
+            <span className="view-label-next">{view === "source" ? null : VIEW_LABELS[nextView]}</span>
           </Link>
         </div>
       </div>
@@ -3733,76 +3734,6 @@ function RecordCardOverlay({
           </footer>
         </section>
         </article>
-      </div>
-    </div>
-  );
-}
-
-function SourceView({ data, derived }: { data: FrontendData; derived: FrontendDerivedData }) {
-  const sourceRows = derived.sourceRows;
-  const ethicsRows = derived.ethicsRows;
-  return (
-    <div className="source-view" aria-label="Sources">
-      <div className="source-display">
-        <header className="source-display-header">
-          <span>SOURCE REGISTER</span>
-          <h2>PUBLIC SOURCE FIELD</h2>
-          <div>
-            <b>{data.summary.source_count}</b>
-            <b>{data.summary.record_count}</b>
-            <b>{data.summary.query_count}</b>
-          </div>
-        </header>
-
-        <div className="source-display-grid">
-          <div className="source-display-column">
-            <section className="source-display-section source-rollup-section" aria-label="Source rollup">
-              <div className="source-section-kicker">ROLLUP</div>
-              {sourceRows.map(([sourceType, counts]) => (
-                <div className="source-display-row" key={sourceType}>
-                  <span>{sourceType}</span>
-                  <b>R {counts.record_count}</b>
-                  <b>Q {counts.query_count}</b>
-                </div>
-              ))}
-            </section>
-
-            <section className="source-display-section source-ethics-section" aria-label="Ethics flags">
-              <div className="source-section-kicker">ETHICS FLAG</div>
-              {ethicsRows.map(([label, count]) => (
-                <div className="source-display-row" key={label}>
-                  <span>{label}</span>
-                  <b>{count}</b>
-                </div>
-              ))}
-            </section>
-
-            <section className="source-display-section source-repo-section" aria-label="Repository">
-              <div className="source-section-kicker">REPOSITORY</div>
-              <a href="https://github.com/dpan538/australian-humanoid-supernatural-texts" target="_blank" rel="noreferrer">
-                GITHUB / DPAN538
-                <span>AUSTRALIAN-HUMANOID-SUPERNATURAL-TEXTS</span>
-              </a>
-            </section>
-          </div>
-
-          <section className="source-display-section source-register-section" aria-label="Registered sources">
-            <div className="source-section-kicker">REGISTERED SOURCES</div>
-            <div className="source-register-scroll">
-              {data.sources.map((source) => (
-                <div className="source-display-row source-register-row" key={source.source_id}>
-                  <span>{source.source_name}</span>
-                  <div>
-                    <b>{source.source_type}</b>
-                    <b>{source.publicness_level}</b>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-
-        <p className="source-display-note">{data.scope.ethical_note}</p>
       </div>
     </div>
   );
