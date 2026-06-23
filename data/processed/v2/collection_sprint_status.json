@@ -1,25 +1,25 @@
 {
-  "updated_at": "2026-06-23T00:34:30.809093Z",
+  "updated_at": "2026-06-23T00:38:18.808217Z",
   "stage_dir": "multiple post-launch staged route directories",
   "starting_public_records": 3752,
-  "ending_public_records": 3802,
-  "net_new_public_records": 50,
+  "ending_public_records": 3809,
+  "net_new_public_records": 57,
   "starting_map_flags": 1200,
   "ending_map_flags": 1206,
   "net_new_map_flags": 6,
-  "current_public_records": 3802,
+  "current_public_records": 3809,
   "gap_to_minimum_3500": 0,
   "gap_to_preferred_3800": 0,
-  "soft_ceiling_remaining": 198,
+  "soft_ceiling_remaining": 191,
   "current_map_flags": 1206,
   "gap_to_map_1200": 0,
-  "current_map_ratio": 0.3172,
-  "records_added_since_checkpoint": 35,
-  "map_flags_added_since_checkpoint": 1,
-  "records_per_new_map_flag": 35.0,
+  "current_map_ratio": 0.3166,
+  "records_added_since_checkpoint": 7,
+  "map_flags_added_since_checkpoint": 0,
+  "records_per_new_map_flag": null,
   "active_collection_mode": "complete",
-  "candidates_processed": 110,
-  "postlaunch_records_reviewed_or_suppressed": 110,
+  "candidates_processed": 118,
+  "postlaunch_records_reviewed_or_suppressed": 118,
   "suppressed_scope_qa_record_ids": [
     4158,
     4159,
@@ -38,28 +38,29 @@
     4202,
     4203,
     4204,
-    4205
+    4205,
+    4211
   ],
   "by_source_organisation": {
+    "Internet Archive": 27,
     "Australian Broadcasting Corporation": 21,
-    "Internet Archive": 20,
     "Internet Sacred Text Archive": 8
   },
   "by_source_family": {
+    "repository_institutional_full_text": 27,
     "institutional_public_media_records": 21,
-    "repository_institutional_full_text": 20,
     "structured_public_domain_books": 8
   },
   "by_jurisdiction": {
+    "NT": 26,
     "unmapped/broad": 20,
-    "NT": 19,
     "WA": 4,
     "NSW": 3,
     "TAS": 2,
     "SA": 1
   },
   "by_narrative_type": {
-    "repository_full_text": 20,
+    "repository_full_text": 27,
     "institutional_media_page": 20,
     "public_domain_transcribed_book": 8,
     "institutional_education_page": 1
@@ -237,8 +238,8 @@
       "map_candidates": 0
     },
     "sprint_internet_archive_native_tribes_nt_rescan_02": {
-      "processed": 16,
-      "accepted": 16,
+      "processed": 24,
+      "accepted": 24,
       "context": 0,
       "duplicates": 0,
       "rejected": 0,

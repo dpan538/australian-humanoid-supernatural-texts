@@ -1,6 +1,6 @@
 # Collection Route Registry
 
-- Generated: `2026-06-23T00:33:35+00:00`
+- Generated: `2026-06-23T00:37:00+00:00`
 - Schema version: `collection-routes/v1`
 - Routes: `260`
 
@@ -8,9 +8,9 @@
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 142
+- `low_yield`: 141
 - `manual_only`: 1
-- `productive`: 114
+- `productive`: 115
 
 ## Stop Rule
 
@@ -157,19 +157,19 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_internet_archive_smyth_victoria_vol1_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 119 | 107 | 7 | 5 |  | Scale productive route |
 | sprint_internet_archive_northern_tribes_central_australia_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 95 | 95 | 90 | 0 |  | Scale productive route |
 | sprint_internet_archive_kamilaroi_kurnai_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 32 | 53 | 0 |  | Scale productive route |
-| sprint_internet_archive_native_tribes_sa_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 31 | 30 | 95 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_internet_archive_native_tribes_sa_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 31 | 30 | 158 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_roth_queensland_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 15 | 9 | 1 |  | Scale productive route |
 | sprint_internet_archive_smyth_victoria_vol2_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 47 | 46 | 35 | 1 |  | Scale productive route |
 | sprint_internet_archive_eaglehawk_crow_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 17 | 17 | 31 | 0 |  | Scale productive route |
 | sprint_internet_archive_moore_wa_diary_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 38 | 32 | 124 | 5 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_fraser_nsw_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 68 | 66 | 43 | 2 |  | Scale productive route |
 | sprint_internet_archive_lang_queensland_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 16 | 14 | 26 | 1 |  | Scale productive route |
-| sprint_internet_archive_booandik_sa_exact_text | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 42 | 40 | 52 | 2 |  | Keep as probe/discovery route only |
+| sprint_internet_archive_booandik_sa_exact_text | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 42 | 40 | 101 | 2 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_canberra_history_legends_exact_text | productive | Internet Archive | exact_item_metadata_and_djvu_text | 8 | 7 | 1 | 1 |  | Scale productive route |
 | sprint_internet_archive_roth_tasmania_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 53 | 51 | 233 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_internet_archive_peck_australian_legends_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 60 | 58 | 29 | 2 |  | Scale productive route |
 | sprint_internet_archive_ridley_kamilaroi_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 32 | 32 | 39 | 0 |  | Scale productive route |
-| sprint_internet_archive_native_tribes_nt_rescan_02 | low_yield | Internet Archive | exact_item_metadata_and_djvu_text | 102 | 101 | 81 | 0 |  | Keep as probe/discovery route only |
+| sprint_internet_archive_native_tribes_nt_rescan_02 | productive | Internet Archive | exact_item_metadata_and_djvu_text | 110 | 109 | 142 | 0 |  | Scale productive route |
 | sprint_mapfirst_gutenberg_clarke_natural_life_port_arthur | low_yield | Project Gutenberg | exact_place_filtered_text | 3 | 3 | 2 | 0 |  | Keep as probe/discovery route only |
 | sprint_mapfirst_ia_suttor_fishers_ghost_campbelltown | low_yield | Internet Archive | exact_place_filtered_text | 0 | 0 | 2 | 0 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_mapfirst_gutenberg_australian_fairy_tales_blue_mountains | low_yield | Project Gutenberg | exact_place_filtered_text | 2 | 1 | 0 | 1 |  | Keep as probe/discovery route only |

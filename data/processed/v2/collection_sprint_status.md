@@ -3,43 +3,43 @@
 ## Post-Launch Information Capture Checkpoint
 
 - Starting public records: `3752`
-- Current public records: `3802`
-- Net-new public records since launch baseline: `50`
+- Current public records: `3809`
+- Net-new public records since launch baseline: `57`
 - Starting map flags: `1200`
 - Current map flags: `1206`
 - Net-new map flags since launch baseline: `6`
 - Map invariant ok: `True`
 - Gap to preferred 3,800: `0`
-- Soft ceiling remaining before 4,000: `198`
-- Records added since prior post-launch checkpoint: `35`
-- Map flags added since prior post-launch checkpoint: `1`
+- Soft ceiling remaining before 4,000: `191`
+- Records added since prior checkpoint: `7`
+- Map flags added since prior checkpoint: `0`
 - Active collection mode: `complete`
 
 ## Scope QA
 
-- Suppressed weak post-launch rows: `4158, 4159, 4175, 4176, 4177, 4178, 4179, 4182, 4184, 4187, 4196, 4199, 4200, 4201, 4202, 4203, 4204, 4205`
+- Suppressed weak post-launch rows: `4158, 4159, 4175, 4176, 4177, 4178, 4179, 4182, 4184, 4187, 4196, 4199, 4200, 4201, 4202, 4203, 4204, 4205, 4211`
 - Latest validation: `python3 scripts/validate_v2.py` passed with 13 checks and 0 failures.
 
 ## Records by Source Organisation
+- Internet Archive: 27
 - Australian Broadcasting Corporation: 21
-- Internet Archive: 20
 - Internet Sacred Text Archive: 8
 
 ## Records by Source Family
+- repository_institutional_full_text: 27
 - institutional_public_media_records: 21
-- repository_institutional_full_text: 20
 - structured_public_domain_books: 8
 
 ## Records by Jurisdiction
+- NT: 26
 - unmapped/broad: 20
-- NT: 19
 - WA: 4
 - NSW: 3
 - TAS: 2
 - SA: 1
 
 ## Records by Narrative Type
-- repository_full_text: 20
+- repository_full_text: 27
 - institutional_media_page: 20
 - public_domain_transcribed_book: 8
 - institutional_education_page: 1
@@ -51,7 +51,7 @@
 | sprint_abc_willow_court_documentary_context_38 | 1 | 0 | 0 | 1 | 0 |
 | sprint_internet_archive_booandik_sa_exact_text | 2 | 2 | 0 | 0 | 0 |
 | sprint_internet_archive_moore_wa_vocabulary_exact_text | 5 | 4 | 0 | 0 | 1 |
-| sprint_internet_archive_native_tribes_nt_rescan_02 | 16 | 16 | 0 | 0 | 0 |
+| sprint_internet_archive_native_tribes_nt_rescan_02 | 24 | 24 | 0 | 0 | 0 |
 | sprint_internet_archive_northern_tribes_central_australia_rescan_02 | 8 | 8 | 0 | 0 | 0 |
 | sprint_internet_archive_roth_tasmania_rescan_02 | 5 | 5 | 0 | 0 | 0 |
 | sprint_ista_central_australia_exact_texts | 15 | 6 | 0 | 0 | 9 |
