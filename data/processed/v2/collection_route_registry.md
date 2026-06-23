@@ -1,16 +1,16 @@
 # Collection Route Registry
 
-- Generated: `2026-06-22T15:29:28+00:00`
+- Generated: `2026-06-23T00:05:03+00:00`
 - Schema version: `collection-routes/v1`
-- Routes: `235`
+- Routes: `255`
 
 ## Status Counts
 - `blocked_auth`: 1
 - `discovery_only`: 1
 - `exhausted`: 1
-- `low_yield`: 101
+- `low_yield`: 120
 - `manual_only`: 1
-- `productive`: 130
+- `productive`: 131
 
 ## Stop Rule
 
@@ -230,7 +230,7 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_abc_z_ward_glenside_ghost_sounds_35 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_abc_willow_court_sarah_spirit_36 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_abc_willow_court_doctor_spirit_37 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
-| sprint_abc_willow_court_documentary_context_38 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 0 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_abc_willow_court_documentary_context_38 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 2 | 0 | 0 | 2 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_abc_bayview_hotel_stanley_ghost_39 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_abc_majestic_theatre_pomona_woman_40 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_exact_public_place_wave_42 | low_yield | National Trust / Australian Broadcasting Corporation | public_page_place_text | 8 | 5 | 0 | 3 |  | Keep as probe/discovery route only |
@@ -255,3 +255,23 @@ Collectors must not retry routes marked `exhausted`, `blocked_auth`, `blocked_ro
 | sprint_abc_tas_livestream_distinct_figures_wave_61 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 2 | 2 | 0 | 0 |  | Keep as probe/discovery route only |
 | sprint_abc_sylvania_station_spirits_41 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 0 | 0 | 1 | low_yield_or_discovery_only | Keep as probe/discovery route only |
 | sprint_abc_sylvania_station_spirits_corrected_wave_62 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_wa_modern_places_63 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 4 | 4 | 1 | 8 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_nt_modern_places_64 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 2 | 2 | 0 | 5 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_sa_modern_places_65 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 2 | 0 | 0 | 24 | low_yield_or_discovery_only | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_tas_modern_places_66 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 3 | 3 | 1 | 23 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_underrep_modern_broad_67 | low_yield | Australian Broadcasting Corporation | abc_algolia_place_search | 2 | 2 | 1 | 18 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_modern_1970_present_68 | productive | Australian Broadcasting Corporation | abc_algolia_place_search | 8 | 8 | 8 | 4 |  | Scale productive route |
+| sprint_postlaunch_abc_sylvania_friendly_ghost_69 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_alison_oborn_adelaide_gaol_70 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_australian_ghost_stories_71 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_yahoo_creek_bigfoot_72 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_arthur_marrin_hairy_man_73 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_urban_legends_yowies_74 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_ngabaya_spirit_people_75 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_shadow_trackers_indigenous_ghosts_76 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_indigenous_ghost_stories_darkside_77 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_wa_graham_seal_ghost_stories_78 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_tamar_valley_tales_ghost_blog_79 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_port_arthur_ghost_stories_80 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_sirius_resident_ghost_81 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
+| sprint_postlaunch_abc_monte_cristo_lawrence_ryan_82 | low_yield | Australian Broadcasting Corporation | exact_plain_text | 1 | 1 | 0 | 0 |  | Keep as probe/discovery route only |
