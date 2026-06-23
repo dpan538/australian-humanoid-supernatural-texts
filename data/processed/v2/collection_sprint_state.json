@@ -1,600 +1,441 @@
 {
-  "accepted_records": 15,
-  "active_collection_mode": "complete",
-  "active_routes": [],
-  "blocked_routes": [],
-  "candidates_processed": 25,
-  "checkpoint_index": 0,
-  "context_records": 0,
-  "created_at": "2026-06-23T00:07:25Z",
-  "current_map_flag_count": 1205,
-  "current_map_flags": 1205,
-  "current_map_ratio": 0.3199,
-  "current_public_record_count": 3767,
-  "current_public_records": 3767,
-  "duplicates": 7,
-  "exhausted_routes": [
-    "sprint_abc_willow_court_documentary_context_38",
-    "sprint_postlaunch_abc_nt_modern_places_64",
-    "sprint_postlaunch_abc_tas_modern_places_66",
-    "sprint_postlaunch_abc_underrep_modern_broad_67"
-  ],
-  "gap_to_map_1200": 0,
+  "updated_at": "2026-06-23T00:34:30.809093Z",
+  "stage_dir": "multiple post-launch staged route directories",
+  "starting_public_records": 3752,
+  "ending_public_records": 3802,
+  "net_new_public_records": 50,
+  "starting_map_flags": 1200,
+  "ending_map_flags": 1206,
+  "net_new_map_flags": 6,
+  "current_public_records": 3802,
   "gap_to_minimum_3500": 0,
-  "gap_to_preferred_3800": 33,
-  "history": [
-    {
-      "accepted": 15,
-      "completed_at": "2026-06-23T00:07:25Z",
-      "map_flags": 1205,
-      "map_updates": 5,
-      "processed": 25,
-      "public_records": 3767,
-      "run_id": "collection_sprint_postlaunch_20260623_cumulative"
-    }
+  "gap_to_preferred_3800": 0,
+  "soft_ceiling_remaining": 198,
+  "current_map_flags": 1206,
+  "gap_to_map_1200": 0,
+  "current_map_ratio": 0.3172,
+  "records_added_since_checkpoint": 35,
+  "map_flags_added_since_checkpoint": 1,
+  "records_per_new_map_flag": 35.0,
+  "active_collection_mode": "complete",
+  "candidates_processed": 110,
+  "postlaunch_records_reviewed_or_suppressed": 110,
+  "suppressed_scope_qa_record_ids": [
+    4158,
+    4159,
+    4175,
+    4176,
+    4177,
+    4178,
+    4179,
+    4182,
+    4184,
+    4187,
+    4196,
+    4199,
+    4200,
+    4201,
+    4202,
+    4203,
+    4204,
+    4205
   ],
-  "last_completed_checkpoint": "collection_sprint_postlaunch_20260623_cumulative",
-  "launch_start_map_flag_count": 1200,
-  "launch_start_public_record_count": 3752,
-  "launch_targets": {
-    "minimum_map_flags": 1200,
-    "minimum_public_records": 3500,
-    "preferred_public_records": 3800,
-    "soft_maximum_public_records": 4000
+  "by_source_organisation": {
+    "Australian Broadcasting Corporation": 21,
+    "Internet Archive": 20,
+    "Internet Sacred Text Archive": 8
   },
-  "map_candidates": 5,
-  "map_flags_added_since_checkpoint": 5,
-  "map_flags_at_last_checkpoint": 1200,
-  "map_gap": 0,
-  "next_route_queue": [],
-  "productive_routes": [
-    "sprint_postlaunch_abc_alison_oborn_adelaide_gaol_70",
-    "sprint_postlaunch_abc_arthur_marrin_hairy_man_73",
-    "sprint_postlaunch_abc_australian_ghost_stories_71",
-    "sprint_postlaunch_abc_indigenous_ghost_stories_darkside_77",
-    "sprint_postlaunch_abc_monte_cristo_lawrence_ryan_82",
-    "sprint_postlaunch_abc_ngabaya_spirit_people_75",
-    "sprint_postlaunch_abc_port_arthur_ghost_stories_80",
-    "sprint_postlaunch_abc_shadow_trackers_indigenous_ghosts_76",
-    "sprint_postlaunch_abc_sirius_resident_ghost_81",
-    "sprint_postlaunch_abc_sylvania_friendly_ghost_69",
-    "sprint_postlaunch_abc_tamar_valley_tales_ghost_blog_79",
-    "sprint_postlaunch_abc_urban_legends_yowies_74",
-    "sprint_postlaunch_abc_wa_graham_seal_ghost_stories_78",
-    "sprint_postlaunch_abc_wa_modern_places_63",
-    "sprint_postlaunch_abc_yahoo_creek_bigfoot_72"
-  ],
-  "record_gap": 0,
-  "records_added_since_checkpoint": 15,
-  "records_at_last_checkpoint": 3752,
-  "records_per_new_map_flag": 3.0,
-  "rejected_rows": 3,
-  "resume_cursor_per_route": {
-    "sprint_abc_willow_court_documentary_context_38": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_alison_oborn_adelaide_gaol_70": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_arthur_marrin_hairy_man_73": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_australian_ghost_stories_71": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_indigenous_ghost_stories_darkside_77": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_monte_cristo_lawrence_ryan_82": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_ngabaya_spirit_people_75": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_nt_modern_places_64": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_port_arthur_ghost_stories_80": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_shadow_trackers_indigenous_ghosts_76": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_sirius_resident_ghost_81": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_sylvania_friendly_ghost_69": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_tamar_valley_tales_ghost_blog_79": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_tas_modern_places_66": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_underrep_modern_broad_67": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_urban_legends_yowies_74": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_wa_graham_seal_ghost_stories_78": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_wa_modern_places_63": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    },
-    "sprint_postlaunch_abc_yahoo_creek_bigfoot_72": {
-      "exhausted": true,
-      "source": "postlaunch_cumulative_status",
-      "updated_at": "2026-06-23T00:07:25Z"
-    }
+  "by_source_family": {
+    "institutional_public_media_records": 21,
+    "repository_institutional_full_text": 20,
+    "structured_public_domain_books": 8
+  },
+  "by_jurisdiction": {
+    "unmapped/broad": 20,
+    "NT": 19,
+    "WA": 4,
+    "NSW": 3,
+    "TAS": 2,
+    "SA": 1
+  },
+  "by_narrative_type": {
+    "repository_full_text": 20,
+    "institutional_media_page": 20,
+    "public_domain_transcribed_book": 8,
+    "institutional_education_page": 1
   },
   "route_totals": {
-    "sprint_abc_willow_court_documentary_context_38": {
+    "sprint_postlaunch_abc_wa_modern_places_63": {
+      "processed": 1,
       "accepted": 0,
       "context": 0,
       "duplicates": 0,
+      "rejected": 1,
       "errors": 0,
-      "last_accepted": 0,
-      "latest_acceptance_rate": 0.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 1
-    },
-    "sprint_postlaunch_abc_alison_oborn_adelaide_gaol_70": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_arthur_marrin_hairy_man_73": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_australian_ghost_stories_71": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_indigenous_ghost_stories_darkside_77": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_monte_cristo_lawrence_ryan_82": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_ngabaya_spirit_people_75": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_nt_modern_places_64": {
-      "accepted": 0,
-      "context": 0,
-      "duplicates": 2,
-      "errors": 0,
-      "last_accepted": 0,
-      "latest_acceptance_rate": 0.0,
-      "map_candidates": 0,
-      "processed": 2,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_port_arthur_ghost_stories_80": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_shadow_trackers_indigenous_ghosts_76": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_sirius_resident_ghost_81": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_sylvania_friendly_ghost_69": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_tamar_valley_tales_ghost_blog_79": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
+      "map_candidates": 0
     },
     "sprint_postlaunch_abc_tas_modern_places_66": {
+      "processed": 3,
       "accepted": 0,
       "context": 0,
       "duplicates": 2,
+      "rejected": 1,
       "errors": 0,
-      "last_accepted": 0,
-      "latest_acceptance_rate": 0.0,
-      "map_candidates": 0,
-      "processed": 3,
-      "rejected": 1
+      "map_candidates": 0
     },
     "sprint_postlaunch_abc_underrep_modern_broad_67": {
+      "processed": 1,
       "accepted": 0,
       "context": 0,
       "duplicates": 1,
+      "rejected": 0,
       "errors": 0,
-      "last_accepted": 0,
-      "latest_acceptance_rate": 0.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_urban_legends_yowies_74": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_wa_graham_seal_ghost_stories_78": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_wa_modern_places_63": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 2,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 0.25,
-      "map_candidates": 0,
-      "processed": 4,
-      "rejected": 1
-    },
-    "sprint_postlaunch_abc_yahoo_creek_bigfoot_72": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    }
-  },
-  "routes": {
-    "sprint_abc_willow_court_documentary_context_38": {
-      "accepted": 0,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 0,
-      "latest_acceptance_rate": 0.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 1
+      "map_candidates": 0
     },
     "sprint_postlaunch_abc_alison_oborn_adelaide_gaol_70": {
+      "processed": 1,
       "accepted": 1,
       "context": 0,
       "duplicates": 0,
+      "rejected": 0,
       "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_arthur_marrin_hairy_man_73": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_australian_ghost_stories_71": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_indigenous_ghost_stories_darkside_77": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_monte_cristo_lawrence_ryan_82": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_ngabaya_spirit_people_75": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_nt_modern_places_64": {
-      "accepted": 0,
-      "context": 0,
-      "duplicates": 2,
-      "errors": 0,
-      "last_accepted": 0,
-      "latest_acceptance_rate": 0.0,
-      "map_candidates": 0,
-      "processed": 2,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_port_arthur_ghost_stories_80": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_shadow_trackers_indigenous_ghosts_76": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_sirius_resident_ghost_81": {
-      "accepted": 1,
-      "context": 0,
-      "duplicates": 0,
-      "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
+      "map_candidates": 0
     },
     "sprint_postlaunch_abc_sylvania_friendly_ghost_69": {
+      "processed": 1,
       "accepted": 1,
       "context": 0,
       "duplicates": 0,
+      "rejected": 0,
       "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
+      "map_candidates": 0
     },
-    "sprint_postlaunch_abc_tamar_valley_tales_ghost_blog_79": {
+    "sprint_postlaunch_abc_arthur_marrin_hairy_man_73": {
+      "processed": 1,
       "accepted": 1,
       "context": 0,
       "duplicates": 0,
+      "rejected": 0,
       "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
-    },
-    "sprint_postlaunch_abc_tas_modern_places_66": {
-      "accepted": 0,
-      "context": 0,
-      "duplicates": 2,
-      "errors": 0,
-      "last_accepted": 0,
-      "latest_acceptance_rate": 0.0,
-      "map_candidates": 0,
-      "processed": 3,
-      "rejected": 1
-    },
-    "sprint_postlaunch_abc_underrep_modern_broad_67": {
-      "accepted": 0,
-      "context": 0,
-      "duplicates": 1,
-      "errors": 0,
-      "last_accepted": 0,
-      "latest_acceptance_rate": 0.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
+      "map_candidates": 0
     },
     "sprint_postlaunch_abc_urban_legends_yowies_74": {
+      "processed": 1,
       "accepted": 1,
       "context": 0,
       "duplicates": 0,
+      "rejected": 0,
       "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
+      "map_candidates": 0
     },
-    "sprint_postlaunch_abc_wa_graham_seal_ghost_stories_78": {
+    "sprint_abc_willow_court_documentary_context_38": {
+      "processed": 1,
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 1,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_ngabaya_spirit_people_75": {
+      "processed": 1,
       "accepted": 1,
       "context": 0,
       "duplicates": 0,
+      "rejected": 0,
       "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
-      "processed": 1,
-      "rejected": 0
+      "map_candidates": 0
     },
-    "sprint_postlaunch_abc_wa_modern_places_63": {
+    "sprint_postlaunch_abc_australian_ghost_stories_71": {
+      "processed": 1,
       "accepted": 1,
       "context": 0,
-      "duplicates": 2,
+      "duplicates": 0,
+      "rejected": 0,
       "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 0.25,
-      "map_candidates": 0,
-      "processed": 4,
-      "rejected": 1
+      "map_candidates": 0
     },
     "sprint_postlaunch_abc_yahoo_creek_bigfoot_72": {
+      "processed": 1,
       "accepted": 1,
       "context": 0,
       "duplicates": 0,
+      "rejected": 0,
       "errors": 0,
-      "last_accepted": 1,
-      "latest_acceptance_rate": 1.0,
-      "map_candidates": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_shadow_trackers_indigenous_ghosts_76": {
       "processed": 1,
-      "rejected": 0
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_indigenous_ghost_stories_darkside_77": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_port_arthur_ghost_stories_80": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_monte_cristo_lawrence_ryan_82": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_sirius_resident_ghost_81": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_tamar_valley_tales_ghost_blog_79": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_wa_graham_seal_ghost_stories_78": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_internet_archive_booandik_sa_exact_text": {
+      "processed": 2,
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_internet_archive_native_tribes_nt_rescan_02": {
+      "processed": 16,
+      "accepted": 16,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_sacred_texts_nw_wa_customs_traditions_exact_text": {
+      "processed": 4,
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 1,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_internet_archive_roth_tasmania_rescan_02": {
+      "processed": 5,
+      "accepted": 5,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_burnie_arts_centre_ghost_83": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_djimubarn_mimih_context_84": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_ista_northern_australia_exact_texts": {
+      "processed": 8,
+      "accepted": 2,
+      "context": 0,
+      "duplicates": 6,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_ista_central_australia_exact_texts": {
+      "processed": 15,
+      "accepted": 6,
+      "context": 0,
+      "duplicates": 9,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_internet_archive_northern_tribes_central_australia_rescan_02": {
+      "processed": 8,
+      "accepted": 8,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_internet_archive_moore_wa_vocabulary_exact_text": {
+      "processed": 5,
+      "accepted": 4,
+      "context": 0,
+      "duplicates": 1,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_project_gutenberg_boldrewood_last_chance_exact_text": {
+      "processed": 7,
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 6,
+      "rejected": 1,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_project_gutenberg_lawson_over_the_sliprails_exact_text": {
+      "processed": 4,
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 4,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text": {
+      "processed": 9,
+      "accepted": 0,
+      "context": 0,
+      "duplicates": 8,
+      "rejected": 1,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_cleverman_hairy_people_context_85": {
+      "processed": 3,
+      "accepted": 3,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_fanny_balbuk_spirit_places_87": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
+    },
+    "sprint_postlaunch_abc_jawoyn_mimi_spirit_people_86": {
+      "processed": 1,
+      "accepted": 1,
+      "context": 0,
+      "duplicates": 0,
+      "rejected": 0,
+      "errors": 0,
+      "map_candidates": 0
     }
   },
-  "schema_version": "collection-sprint-state/v1",
-  "soft_ceiling_remaining": 233,
-  "suppressed_rows": 2,
-  "target_map_flags": 1200,
-  "target_preferred_public_records": 3800,
-  "target_public_records": 3500,
-  "target_soft_maximum_public_records": 4000,
-  "updated_at": "2026-06-23T00:07:25Z",
-  "verified_map_flags": 5
+  "productive_routes": [
+    "sprint_postlaunch_abc_alison_oborn_adelaide_gaol_70",
+    "sprint_postlaunch_abc_sylvania_friendly_ghost_69",
+    "sprint_postlaunch_abc_arthur_marrin_hairy_man_73",
+    "sprint_postlaunch_abc_urban_legends_yowies_74",
+    "sprint_postlaunch_abc_ngabaya_spirit_people_75",
+    "sprint_postlaunch_abc_australian_ghost_stories_71",
+    "sprint_postlaunch_abc_yahoo_creek_bigfoot_72",
+    "sprint_postlaunch_abc_shadow_trackers_indigenous_ghosts_76",
+    "sprint_postlaunch_abc_indigenous_ghost_stories_darkside_77",
+    "sprint_postlaunch_abc_port_arthur_ghost_stories_80",
+    "sprint_postlaunch_abc_monte_cristo_lawrence_ryan_82",
+    "sprint_postlaunch_abc_sirius_resident_ghost_81",
+    "sprint_postlaunch_abc_tamar_valley_tales_ghost_blog_79",
+    "sprint_postlaunch_abc_wa_graham_seal_ghost_stories_78",
+    "sprint_internet_archive_booandik_sa_exact_text",
+    "sprint_internet_archive_native_tribes_nt_rescan_02",
+    "sprint_sacred_texts_nw_wa_customs_traditions_exact_text",
+    "sprint_internet_archive_roth_tasmania_rescan_02",
+    "sprint_postlaunch_abc_burnie_arts_centre_ghost_83",
+    "sprint_postlaunch_abc_djimubarn_mimih_context_84",
+    "sprint_ista_northern_australia_exact_texts",
+    "sprint_ista_central_australia_exact_texts",
+    "sprint_internet_archive_northern_tribes_central_australia_rescan_02",
+    "sprint_internet_archive_moore_wa_vocabulary_exact_text",
+    "sprint_postlaunch_abc_cleverman_hairy_people_context_85",
+    "sprint_postlaunch_abc_fanny_balbuk_spirit_places_87",
+    "sprint_postlaunch_abc_jawoyn_mimi_spirit_people_86"
+  ],
+  "exhausted_routes": [
+    "sprint_postlaunch_abc_wa_modern_places_63",
+    "sprint_postlaunch_abc_tas_modern_places_66",
+    "sprint_postlaunch_abc_underrep_modern_broad_67",
+    "sprint_abc_willow_court_documentary_context_38",
+    "sprint_project_gutenberg_boldrewood_last_chance_exact_text",
+    "sprint_project_gutenberg_lawson_over_the_sliprails_exact_text",
+    "sprint_project_gutenberg_steele_rudd_on_our_selection_exact_text"
+  ],
+  "map_invariant": {
+    "ok": true,
+    "map_flags": 1206,
+    "map_points": 1206,
+    "mapped_record_count": 1206
+  },
+  "validation_ok": true,
+  "build_run": false,
+  "notes": [
+    "Post-launch information capture continued after launch targets; frontend build intentionally not rerun for this data checkpoint.",
+    "WA/NT/SA/TAS and 1970-present institutional media/context routes were prioritized where source evidence was available."
+  ],
+  "schema_version": 2,
+  "launch_targets": {
+    "minimum_public_records": 3500,
+    "preferred_public_records": 3800,
+    "soft_maximum_public_records": 4000,
+    "minimum_map_flags": 1200
+  },
+  "current_public_record_count": 3802,
+  "current_map_flag_count": 1206,
+  "accepted_records": 50,
+  "verified_map_flags": 6,
+  "records_at_last_checkpoint": 3802,
+  "map_flags_at_last_checkpoint": 1206,
+  "next_route_queue": [],
+  "active_routes": [],
+  "blocked_routes": []
 }

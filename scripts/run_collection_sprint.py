@@ -2412,9 +2412,9 @@ def write_status(
     lines.append("|---|---|---:|---:|---:|---:|---:|---:|---:|---|")
     for row in combined_results:
         lines.append(
-            f"| {row['route_id']} | {row['family']} | {row['processed']} | {row['accepted_provisional']} | "
-            f"{row['context_provisional']} | {row['rejected']} | {row['duplicates']} | {row['map_candidates']} | "
-            f"{row['runtime_seconds']} | {row['stop_reason']} |"
+            f"| {row.get('route_id', '')} | {row.get('family', '')} | {row.get('processed', 0)} | {row.get('accepted_provisional', row.get('accepted', 0))} | "
+            f"{row.get('context_provisional', row.get('context', 0))} | {row.get('rejected', 0)} | {row.get('duplicates', 0)} | {row.get('map_candidates', 0)} | "
+            f"{row.get('runtime_seconds', 0)} | {row.get('stop_reason', '')} |"
         )
     lines.extend(
         [

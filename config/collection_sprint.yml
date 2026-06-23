@@ -8478,3 +8478,204 @@ routes:
       - haunted house
     person_form_terms:
       - haunted house
+  - route_id: sprint_postlaunch_abc_burnie_arts_centre_ghost_83
+    enabled: true
+    family: place_first_map_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: Burnie's arts centre celebrates 40 years of great shows and ghost stories
+    source_author: ABC Northern Tasmania / Rick Eaves
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: TAS
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: true
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2016-11-14"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: ghost_legend
+    australian_relation: ABC Northern Tasmania public article describing ghost stories associated with the Burnie Arts and Function Centre.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_reviewed
+    cultural_sensitivity: low
+    pages:
+      - section_id: abc-burnie-arts-centre-ghost-stories
+        chapter: Burnie Arts Centre ghost stories
+        url: "https://www.abc.net.au/news/2016-11-14/burnie-arts-centre-celebrates-40-years-of-shows,-ghost-stories/8018528"
+        location_text: "Burnie Arts and Function Centre, TAS"
+        location_role: "legend_associated_place"
+        latitude: -41.0509798
+        longitude: 145.902639
+        location_precision: exact_site
+        geocode_source: "nominatim_openstreetmap_state_checked_abc_page_2026-06-23"
+        geocode_verification_status: "verified_gazetteer_point"
+        coordinate_evidence_note: "ABC Northern Tasmania page names the Burnie Civic Centre / Burnie Arts and Function Centre as the theatre with early ghost-story reports; coordinates use the state-checked OSM/Nominatim Burnie Arts & Function Centre theatre result."
+        text: >-
+          ABC Northern Tasmania reported that most theatres have a ghost and that the Burnie Civic Centre, now the Burnie Arts and Function Centre, had a catalogue of strange happenings within a couple of years of opening in 1976.
+    entity_terms:
+      - ghost
+      - strange happenings
+    person_form_terms:
+      - ghost
+  - route_id: sprint_postlaunch_abc_djimubarn_mimih_context_84
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: "This Place: Djimubarn, sacred rock art shelter"
+    source_author: ABC Education / Merrill Girrabul
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2025-03-11"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: traditional_narrative
+    australian_relation: ABC Education public transcript from an Aboriginal and Torres Strait Islander education resource that explicitly discusses mimih spirits and human-figure rock art at Djimubarn.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_education_context_summary_only
+    cultural_sensitivity: high
+    pages:
+      - section_id: abc-education-djimubarn-mimih-context
+        chapter: Djimubarn mimih spirit rock art context
+        url: "https://www.abc.net.au/education/this-place-djimubarn-sacred-rock-art-shelter/105036078"
+        text: >-
+          ABC Education's public transcript for This Place: Djimubarn says a rock-art image looks like a mimih spirit, discusses a human figure and man's face in the shelter, and says some of the very old paintings were maybe done by mimih spirits.
+    entity_terms:
+      - mimih spirit
+      - mimih spirits
+    person_form_terms:
+      - mimih spirit
+  - route_id: sprint_postlaunch_abc_cleverman_hairy_people_context_85
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: The Moral Compass Cleverman Special
+    source_author: ABC Religion & Ethics / Geraldine Doogue
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: AU
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 3
+    max_candidates_probe: 3
+    max_candidates_scaled: 3
+    publication_date_text: "2016-06-19"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: retelling_or_adaptation
+    australian_relation: ABC Religion & Ethics public transcript discussing the ABC television series Cleverman and its use of Hairy people, hairy mob, and yuuri men narrative material.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_summary_only
+    cultural_sensitivity: high
+    pages:
+      - section_id: abc-cleverman-hairy-stories
+        chapter: Cleverman hairy stories context
+        url: "https://www.abc.net.au/religion/watch/compass/the-moral-compass-cleverman-special/10142274"
+        text: >-
+          ABC Religion & Ethics' Cleverman special includes Leah Purcell discussing hairy stories from the South Burnett and Wide Bay region, including the yowie and mountain mob, in a conversation about how Cleverman draws on Aboriginal spirituality, mythology, and storytelling.
+      - section_id: abc-cleverman-yuuri-men
+        chapter: Cleverman yuuri men context
+        url: "https://www.abc.net.au/religion/watch/compass/the-moral-compass-cleverman-special/10142274"
+        text: >-
+          In the ABC Religion & Ethics Cleverman special, Stan Grant says he was told stories of yuuri men, hairy men who lived underground and marked boundaries, and links those stories to modern ghost-story adaptation.
+      - section_id: abc-cleverman-hairy-people-adaptation
+        chapter: Cleverman Hairy people adaptation
+        url: "https://www.abc.net.au/religion/watch/compass/the-moral-compass-cleverman-special/10142274"
+        text: >-
+          Cleverman creator Ryan Griffen explains in the ABC Religion & Ethics transcript that the series uses the Hairy people to teach about the other, while Leah Purcell describes family yarns of the hairy mob, little hairy men, and big ones.
+    entity_terms:
+      - hairy stories
+      - yuuri men
+      - Hairy people
+    person_form_terms:
+      - hairy stories
+      - yuuri men
+      - Hairy people
+  - route_id: sprint_postlaunch_abc_jawoyn_mimi_spirit_people_86
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: No Accounting
+    source_author: ABC Four Corners / Matthew Carney
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: NT
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2013-10-15"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Four Corners public transcript from the Northern Territory naming Mimi spirit people in a rock-art-place discussion.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_media_context_summary_only
+    cultural_sensitivity: high
+    pages:
+      - section_id: abc-four-corners-jawoyn-mimi-spirit-people
+        chapter: Jawoyn Mimi spirit people context
+        url: "https://www.abc.net.au/news/2013-10-15/no-accounting/5022874"
+        text: >-
+          In ABC Four Corners' No Accounting transcript, Margaret Katherine identifies a Mimi image and describes Mimi as spirit people who live deep inside the cave and look after the land and the painting.
+    entity_terms:
+      - Mimi
+      - spirit people
+    person_form_terms:
+      - spirit people
+  - route_id: sprint_postlaunch_abc_fanny_balbuk_spirit_places_87
+    enabled: true
+    family: institutional_public_media_records
+    organisation: Australian Broadcasting Corporation
+    source_name: Australian Broadcasting Corporation
+    source_title: "Restricted Rights and Freedoms: Fanny Balbuk Yooreel"
+    source_author: ABC Education
+    source_type: institutional_media_page
+    source_tier: A
+    jurisdiction: WA
+    retrieval_method: exact_plain_text
+    scaled: true
+    map_capable: false
+    accepted_target: 1
+    max_candidates_probe: 1
+    max_candidates_scaled: 1
+    publication_date_text: "2022-06-23"
+    term_hit_limit: 1
+    external_id_strategy: evidence_hash
+    narrative_type_override: descriptive_belief_record
+    australian_relation: ABC Education public transcript about Fanny Balbuk Yooreel that preserves source-grounded discourse about spirit-haunted places and spirit baby stones in Perth Noongar country.
+    publicness_status: public_media_page
+    rights_access_status: public_access_short_excerpt_only
+    ethics_review_status: public_education_context_summary_only
+    cultural_sensitivity: high
+    pages:
+      - section_id: abc-education-fanny-balbuk-spirit-places
+        chapter: Fanny Balbuk spirit-haunted place context
+        url: "https://www.abc.net.au/education/restricted-rights-and-freedoms-fanny-balbuk-yooreel/13922236"
+        text: >-
+          ABC Education's Fanny Balbuk Yooreel transcript says every magic spot, every spirit haunted place, and every spirit baby stone, rock, or cave were known to Balbuk, and that her knowledge of her tribe's folklore was intimate and extensive.
+    entity_terms:
+      - spirit haunted place
+      - spirit baby stone
+    person_form_terms:
+      - spirit haunted place
