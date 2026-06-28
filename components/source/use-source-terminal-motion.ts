@@ -36,6 +36,9 @@ export function useSourceTerminalMotion({
         opacity: [0.38, 0.62],
         scale: [1, 1.025],
       }, 0);
+      addIfTargets(timeline, root.querySelectorAll(".source-terminal-divider > span"), {
+        opacity: [0.3, 0.5],
+      }, 420);
     };
     const stop = () => {
       timeline?.cancel();

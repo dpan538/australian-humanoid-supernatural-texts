@@ -1089,6 +1089,59 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
   }, []);
 }
 
+function useMapAmbientMotion(rootRef: RefObject<HTMLElement | null>) {
+  const reducedMotion = usePrefersReducedMotion();
+  const timelineRef = useRef<Timeline | null>(null);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root || reducedMotion) {
+      return;
+    }
+
+    const start = () => {
+      timelineRef.current?.cancel();
+      const timeline = createTimeline({
+        loop: true,
+        alternate: true,
+        defaults: {
+          ease: "inOutSine",
+          duration: 4600,
+          composition: "replace",
+        },
+      });
+      addIfTargets(timeline, root.querySelectorAll(".map-readout-led, .map-source-block-indicator"), {
+        opacity: [0.36, 0.66],
+        scale: [1, 1.018],
+      }, 0);
+      addIfTargets(timeline, root.querySelectorAll(".map-source-legend-row svg"), {
+        opacity: [0.42, 0.68],
+        scale: [1, 1.014],
+      }, 520);
+      timelineRef.current = timeline;
+    };
+
+    const stop = () => {
+      timelineRef.current?.cancel();
+      timelineRef.current = null;
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === "visible") {
+        start();
+      } else {
+        stop();
+      }
+    };
+
+    start();
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      stop();
+    };
+  }, [reducedMotion, rootRef]);
+}
+
 function MapView({
   data,
   derived,
@@ -1098,6 +1151,7 @@ function MapView({
   derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
+  const mapRootRef = useRef<HTMLDivElement | null>(null);
   const mapLayerRef = useRef<SVGGElement | null>(null);
   const [hoverState, setHoverState] = useState<string | null>(null);
   const [hoverRecordId, setHoverRecordId] = useState<number | null>(null);
@@ -1111,6 +1165,7 @@ function MapView({
   const sourceLegend = useMemo(() => buildMapSourceLegend(mapFlags), [mapFlags]);
 
   useMapFlagGrowth(mapLayerRef, flagSignature);
+  useMapAmbientMotion(mapRootRef);
 
   const hoverFlagFromEvent = useCallback((event: React.SyntheticEvent<SVGGElement>) => {
     const element = flagTargetFromEvent(event);
@@ -1158,8 +1213,9 @@ function MapView({
   }, [selectFlagFromEvent]);
 
   return (
-    <div className="map-view">
+    <div className="map-view" ref={mapRootRef}>
       <div className="map-source-block" aria-label="Map boundary and terrain source">
+        <i className="map-source-block-indicator" aria-hidden="true" />
         <span>BOUNDARY: {MAP_BOUNDARY_SOURCE.name}</span>
         <span>TERRAIN: {TERRAIN_TILES.length} LANDFORM CUES / STATE-CLIPPED</span>
       </div>
@@ -1231,6 +1287,7 @@ function MapView({
 
       <aside className="map-readout">
         <div className="readout-block">
+          <i className="map-readout-led" aria-hidden="true" />
           <span className="tiny-label">REGION</span>
           <strong>{activeState}</strong>
           <span className="readout-number">{mapCount(activeCount)}</span>
