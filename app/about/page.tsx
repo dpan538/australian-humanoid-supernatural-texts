@@ -1,7 +1,7 @@
 import Link from "next/link";
 import frontendData from "@/public/data/frontend-data.json";
 import { AboutAmbientMotion } from "@/components/about/about-ambient-motion";
-import { SignalGainControl } from "@/components/signal-gain-control";
+import { DisplayControls } from "@/components/signal-gain-control";
 import type { FrontendData } from "@/lib/types";
 
 const data = frontendData as FrontendData;
@@ -147,7 +147,9 @@ export default function AboutPage() {
             </nav>
           </div>
         </section>
-        <SignalGainControl />
+        <div className="terminal-footer-controls">
+          <DisplayControls />
+        </div>
       </div>
     </main>
   );

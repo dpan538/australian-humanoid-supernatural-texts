@@ -9,7 +9,7 @@ import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/type
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { SourceView } from "@/components/source/source-view";
-import { SignalGainControl } from "@/components/signal-gain-control";
+import { DisplayControls } from "@/components/signal-gain-control";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
 
@@ -1029,28 +1029,30 @@ function ArchiveTerminalShell({
         <section className={`view-area view-area-${view}`} aria-label={`${view} data view`}>
           {children}
         </section>
-        <SignalGainControl />
+        <div className="terminal-footer-controls">
+          <DisplayControls />
 
-        <div className="external-control-dock" aria-label="Fixed external controls">
-          <Link className="dock-button about-button" href="/about">
-            About
-          </Link>
-          <Link
-            className={view === "source" ? "dock-button source-button active" : "dock-button source-button"}
-            href="/source"
-            aria-current={view === "source" ? "page" : undefined}
-          >
-            Source
-          </Link>
-          <Link
-            className="dock-button view-cycle-button"
-            href={VIEW_PATHS[nextView]}
-            aria-label={`Current view ${VIEW_LABELS[view]}; switch to ${VIEW_LABELS[nextView]}`}
-            title={`Switch to ${VIEW_LABELS[nextView]}`}
-          >
-            <span className="view-label-current">{view === "source" ? VIEW_LABELS[nextView] : VIEW_LABELS[view]}</span>
-            <span className="view-label-next">{view === "source" ? null : VIEW_LABELS[nextView]}</span>
-          </Link>
+          <div className="external-control-dock" aria-label="Fixed external controls">
+            <Link className="dock-button about-button" href="/about">
+              About
+            </Link>
+            <Link
+              className={view === "source" ? "dock-button source-button active" : "dock-button source-button"}
+              href="/source"
+              aria-current={view === "source" ? "page" : undefined}
+            >
+              Source
+            </Link>
+            <Link
+              className="dock-button view-cycle-button"
+              href={VIEW_PATHS[nextView]}
+              aria-label={`Current view ${VIEW_LABELS[view]}; switch to ${VIEW_LABELS[nextView]}`}
+              title={`Switch to ${VIEW_LABELS[nextView]}`}
+            >
+              <span className="view-label-current">{view === "source" ? VIEW_LABELS[nextView] : VIEW_LABELS[view]}</span>
+              <span className="view-label-next">{view === "source" ? null : VIEW_LABELS[nextView]}</span>
+            </Link>
+          </div>
         </div>
       </div>
       {overlay}
@@ -1129,9 +1131,9 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
     });
 
     let position = 300;
-    const chunkSize = 12;
-    const chunkInterval = 84;
-    const bucketGap = 300;
+    const chunkSize = 40;
+    const chunkInterval = 32;
+    const bucketGap = 120;
 
     for (let bucket = 0; bucket < MAP_FLAG_GROWTH_BUCKETS.length; bucket += 1) {
       const bucketGlyphs = [...(bucketGroups.get(String(bucket)) ?? [])].sort((a, b) => (

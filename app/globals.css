@@ -31,6 +31,43 @@
   --stage-edge: clamp(42px, 7svh, 96px);
   --dock-height: 46px;
   --dock-gap: 12px;
+  --control-bg: rgba(7, 9, 8, 0.86);
+  --control-border: rgba(120, 228, 220, 0.32);
+  --control-shadow: rgba(0, 0, 0, 0.7);
+  --control-text: rgba(244, 241, 232, 0.72);
+  --terminal-scanline: rgba(255, 255, 255, 0.035);
+  --terminal-grid-line: rgba(255, 255, 255, 0.025);
+}
+
+:root[data-theme="light"] {
+  --bg: #f3f1e8;
+  --panel: #ebe7dc;
+  --panel-2: #ded8ca;
+  --ink: #161817;
+  --muted: rgba(22, 24, 23, 0.68);
+  --muted-2: rgba(22, 24, 23, 0.5);
+  --ash: #2c302e;
+  --dim: #b5ad9e;
+  --line: rgba(22, 24, 23, 0.34);
+  --green: #2f7d32;
+  --blue: #006d75;
+  --dashboard-amber: #9a6718;
+  --dashboard-violet: #5a4c96;
+  --dash-cyan: #006d75;
+  --dash-amber: #9a6718;
+  --dash-violet: #5a4c96;
+  --dash-green: #2f7d32;
+  --dash-ivory: #161817;
+  --dash-muted: rgba(22, 24, 23, 0.52);
+  --warn: #4b4b43;
+  --shadow-green: rgba(47, 125, 50, 0.16);
+  --shadow-blue: rgba(0, 109, 117, 0.14);
+  --control-bg: rgba(235, 231, 220, 0.92);
+  --control-border: rgba(0, 109, 117, 0.38);
+  --control-shadow: rgba(22, 24, 23, 0.18);
+  --control-text: rgba(22, 24, 23, 0.76);
+  --terminal-scanline: rgba(22, 24, 23, 0.045);
+  --terminal-grid-line: rgba(22, 24, 23, 0.035);
 }
 
 :root[data-signal-gain="high"] {
@@ -51,6 +88,24 @@
   --dash-green: #b8ff7d;
   --dash-ivory: #fffaf0;
   --dash-muted: rgba(255, 250, 240, 0.62);
+}
+
+:root[data-theme="light"][data-signal-gain="high"] {
+  --bg: #efeadf;
+  --panel: #e3dccf;
+  --panel-2: #d6cdbd;
+  --ink: #101211;
+  --muted: rgba(16, 18, 17, 0.78);
+  --muted-2: rgba(16, 18, 17, 0.6);
+  --green: #236d25;
+  --blue: #005d66;
+  --dash-cyan: #005d66;
+  --dash-amber: #855811;
+  --dash-violet: #4c4084;
+  --dash-green: #236d25;
+  --dash-muted: rgba(16, 18, 17, 0.66);
+  --control-border: rgba(16, 18, 17, 0.42);
+  --control-text: rgba(16, 18, 17, 0.88);
 }
 
 * {
@@ -98,7 +153,7 @@ a {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.035) 1px, transparent 1px, transparent 5px);
+  background: repeating-linear-gradient(0deg, var(--terminal-scanline), var(--terminal-scanline) 1px, transparent 1px, transparent 5px);
   mix-blend-mode: screen;
   opacity: 0.18;
   z-index: 3;
@@ -109,8 +164,8 @@ a {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(90deg, var(--terminal-grid-line) 1px, transparent 1px),
+    linear-gradient(0deg, var(--terminal-grid-line) 1px, transparent 1px);
   background-size: 23px 23px, 11px 11px;
   opacity: 0.065;
   z-index: 1;
@@ -145,6 +200,29 @@ a {
     var(--panel);
   box-shadow: 0 0 34px rgba(0, 0, 0, 0.72);
   overflow: hidden;
+}
+
+:root[data-theme="light"] .terminal-shell {
+  background:
+    linear-gradient(180deg, rgba(22, 24, 23, 0.035), transparent 16%, transparent 72%, rgba(22, 24, 23, 0.025)),
+    var(--bg);
+}
+
+:root[data-theme="light"] .terminal-shell::before {
+  mix-blend-mode: multiply;
+  opacity: 0.1;
+}
+
+:root[data-theme="light"] .view-area {
+  border-color: rgba(22, 24, 23, 0.18);
+  background:
+    linear-gradient(90deg, rgba(47, 125, 50, 0.055), transparent 18%, transparent 72%, rgba(0, 109, 117, 0.045)),
+    var(--panel);
+  box-shadow: 0 0 28px rgba(22, 24, 23, 0.16);
+}
+
+:root[data-theme="light"] .view-area::after {
+  opacity: 0.22;
 }
 
 .view-area::before {
@@ -191,51 +269,62 @@ a {
 
 .external-control-dock {
   height: var(--dock-height);
-  margin-top: var(--dock-gap);
   display: flex;
   align-items: stretch;
   gap: 8px;
   align-self: flex-end;
 }
 
-.signal-gain-control {
-  position: absolute;
-  left: 70px;
-  bottom: 0;
+.terminal-footer-controls {
+  min-height: var(--dock-height);
+  margin-top: var(--dock-gap);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.display-control-group {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.display-control-button {
   height: var(--dock-height);
-  min-width: 118px;
+  min-width: 108px;
   padding: 6px 10px;
   display: grid;
   align-content: center;
   gap: 3px;
-  border: 1px solid rgba(120, 228, 220, 0.32);
-  color: rgba(244, 241, 232, 0.72);
-  background: rgba(7, 9, 8, 0.86);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.7) inset;
+  border: 1px solid var(--control-border);
+  color: var(--control-text);
+  background: var(--control-bg);
+  box-shadow: 0 0 0 1px var(--control-shadow) inset;
   cursor: pointer;
   z-index: 10;
 }
 
-.signal-gain-control span {
+.display-control-button span {
   color: var(--blue);
   font-size: 0.62rem;
   line-height: 1;
 }
 
-.signal-gain-control b {
+.display-control-button b {
   font-size: 0.82rem;
   font-weight: 400;
   line-height: 1;
 }
 
-.signal-gain-control[data-mode="high"] {
+.signal-gain-control[data-mode="high"],
+.theme-mode-control[data-mode="light"] {
   border-color: rgba(168, 255, 106, 0.64);
   color: var(--ink);
-  background: rgba(10, 16, 13, 0.94);
 }
 
-.signal-gain-control:hover,
-.signal-gain-control:focus-visible {
+.display-control-button:hover,
+.display-control-button:focus-visible {
   border-color: rgba(244, 241, 232, 0.72);
   color: var(--ink);
   outline: none;
@@ -243,9 +332,9 @@ a {
 
 .dock-button {
   height: var(--dock-height);
-  border: 1px solid rgba(242, 242, 237, 0.62);
-  background: #090a0a;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.75) inset;
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  box-shadow: 0 0 0 1px var(--control-shadow) inset;
 }
 
 .dock-button {
@@ -264,6 +353,16 @@ a {
   background: var(--ink);
   outline: none;
   box-shadow: 0 0 18px rgba(242, 242, 237, 0.22);
+}
+
+:root[data-theme="light"] .dock-button:hover,
+:root[data-theme="light"] .dock-button:focus-visible,
+:root[data-theme="light"] .dock-button.active,
+:root[data-theme="light"] .display-control-button:hover,
+:root[data-theme="light"] .display-control-button:focus-visible {
+  color: var(--bg);
+  background: var(--ink);
+  box-shadow: 0 0 14px rgba(22, 24, 23, 0.18);
 }
 
 .view-cycle-button {
@@ -4307,6 +4406,19 @@ a {
     align-self: flex-end;
     max-width: 100%;
     gap: 6px;
+  }
+
+  .terminal-footer-controls {
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .display-control-group {
+    flex-wrap: wrap;
+  }
+
+  .display-control-button {
+    min-width: 98px;
   }
 
   .dock-button {

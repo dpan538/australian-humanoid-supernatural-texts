@@ -1,0 +1,13 @@
+data/raw/
+data/interim/
+data/releases/
+data/exports/
+data/processed/*.sqlite
+data/processed/*.sqlite-*
+data/processed/**/collection_cache/
+data/processed/**/raw/
+*.db
+*.sqlite
+*.sqlite-*
+*.log
+.DS_Store
