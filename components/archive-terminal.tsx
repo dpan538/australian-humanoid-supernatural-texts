@@ -8,6 +8,8 @@ import type { Timeline } from "animejs";
 import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
+import { buildDensityPeriodSchemes, periodContainsYear } from "@/lib/density-periods";
+import type { DensityPeriod, DensityPeriodScheme, DensityPeriodSchemeId } from "@/lib/density-periods";
 import { SourceView } from "@/components/source/source-view";
 import { DisplayControls } from "@/components/signal-gain-control";
 
@@ -217,6 +219,25 @@ type MatrixCell = {
 type NarrativePeriodRow = {
   label: string;
   values: MatrixCell[];
+};
+type DensityAnalysisTab = "temporal_narrative" | "source_bias" | "map_coverage" | "regional_profile";
+type DensityPeriodSummary = {
+  period: DensityPeriod;
+  records: RecordItem[];
+  mappedCount: number;
+  topNarrative: string;
+  topSourceFamily: string;
+  firstRecord: RecordItem | null;
+};
+type DensityNarrativeCard = {
+  label: string;
+  records: RecordItem[];
+  mappedCount: number;
+  topSourceFamily: string;
+  dateSpan: string;
+  description: string;
+  glyph: string;
+  sensitivityNote: string;
 };
 type StateCoverageRow = {
   state: string;
@@ -1567,87 +1588,106 @@ function DensityView({
   derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const maxRecords = Math.max(...data.date_bands.map((band) => band.record_count), 1);
-  const maxQueries = Math.max(...data.date_bands.map((band) => band.planned_query_count), 1);
-  const locationHealth = {
-    map_flags: derived.mapFlags.length,
-    broad_or_review: Math.max(0, data.summary.record_count - derived.mapFlags.length),
-    undated_records: derived.undatedRecordCount,
-    locations_total: data.summary.location_count,
-  };
+  const [analysisSchemeId, setAnalysisSchemeId] = useState<DensityPeriodSchemeId>("historical_context");
+  const [analysisTab, setAnalysisTab] = useState<DensityAnalysisTab>("temporal_narrative");
+  const [selectedPeriodId, setSelectedPeriodId] = useState<string | null>(null);
+  const periodSchemes = useMemo(() => buildDensityPeriodSchemes(data.records), [data.records]);
+  const overviewScheme = periodSchemes.find((scheme) => scheme.id === "historical_context") ?? periodSchemes[0];
+  const analysisScheme = periodSchemes.find((scheme) => scheme.id === analysisSchemeId) ?? overviewScheme;
+  const overviewSummaries = useMemo(
+    () => buildDensityPeriodSummaries(overviewScheme, data.records, derived.mapFlags),
+    [data.records, derived.mapFlags, overviewScheme],
+  );
+  const analysisSummaries = useMemo(
+    () => buildDensityPeriodSummaries(analysisScheme, data.records, derived.mapFlags),
+    [analysisScheme, data.records, derived.mapFlags],
+  );
+  const selectedPeriod =
+    overviewSummaries.find((summary) => summary.period.id === selectedPeriodId) ??
+    [...overviewSummaries].sort((a, b) => b.records.length - a.records.length)[0] ??
+    null;
+  const narrativeCards = useMemo(() => buildDensityNarrativeCards(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
 
   return (
     <div className="density-view">
       <header className="density-header">
-        <span>TIME DENSITY / NONLINEAR BANDS</span>
+        <span>DENSITY FIELD / PUBLIC-TEXT PERIOD LENSES</span>
         <b>
-          {data.summary.earliest_year}-{data.summary.latest_year} / {data.summary.mapped_record_count} MAPPED
+          {data.summary.earliest_year}-{data.summary.latest_year} / {data.summary.record_count} PUBLIC / {data.summary.mapped_record_count} MAPPED
         </b>
       </header>
-      <div className="density-bands">
-        {data.date_bands.map((band, index) => (
-          <DensityBand
-            key={band.id}
-            band={band}
-            index={index}
-            maxRecords={maxRecords}
-            maxQueries={maxQueries}
-            firstRecord={derived.firstRecordByDateBand.get(band.id) ?? null}
-            onSelectRecord={onSelectRecord}
-          />
-        ))}
-      </div>
-      <div className="density-aux-grid">
-        <DensitySignal title="SOURCE FIELD" values={data.summary.source_type_counts} />
-        <DensitySignal title="LOCATION HEALTH" values={locationHealth} />
-        <DensityFigureRail derived={derived} onSelectRecord={onSelectRecord} />
-      </div>
-      <div className="density-footer">
-        <div className="density-note">
-          <span>QUERY TYPES</span>
-          <b>{entriesDescending(derived.queryTypeCounts, 3).map(([label, value]) => `${truncate(label, 12)} ${value}`).join(" / ")}</b>
-        </div>
+      <div className="density-field-stack">
+        <section className="density-field density-field-overview" id="density-field-overview" aria-label="Density overview">
+          <div className="density-field-heading">
+            <span>FIELD 01</span>
+            <b>DENSITY OVERVIEW</b>
+            <p>Default periods are historical/public-text context bands. They help interpret source and publication environments; they do not imply causation.</p>
+          </div>
+          <div className="density-period-row">
+            {overviewSummaries.map((summary, index) => (
+              <DensityPeriodCard
+                key={summary.period.id}
+                summary={summary}
+                index={index}
+                maxRecords={Math.max(...overviewSummaries.map((item) => item.records.length), 1)}
+                selected={selectedPeriod?.period.id === summary.period.id}
+                onSelect={() => setSelectedPeriodId(summary.period.id)}
+                onSelectRecord={onSelectRecord}
+              />
+            ))}
+          </div>
+          <div className="density-overview-grid">
+            <DensityNarrativeCards cards={narrativeCards} onSelectRecord={onSelectRecord} />
+            <DensitySelectedPeriodSummary summary={selectedPeriod} undatedCount={derived.undatedRecordCount} />
+          </div>
+        </section>
+
+        <section className="density-field density-field-method" id="density-field-method" aria-label="Period method comparator">
+          <div className="density-field-heading">
+            <span>FIELD 02</span>
+            <b>PERIOD METHOD COMPARATOR</b>
+            <p>The archive can be sliced in several defensible ways. Historical context bands preserve publication and public-text context. Equal-duration bands test uneven period widths. Equal-record bands test composition without letting one dense period dominate the display.</p>
+          </div>
+          <DensityMethodComparator schemes={periodSchemes} records={data.records} mapFlags={derived.mapFlags} />
+          <p className="density-method-note">
+            Period lenses are interpretive display tools. They organise public records for reading; they do not establish real-world frequency or causation. Equal-record bins are a comparison tool and can hide real temporal concentration.
+          </p>
+        </section>
+
+        <section className="density-field density-field-analysis" id="density-field-analysis" aria-label="Analytical field">
+          <div className="density-field-heading density-analysis-heading">
+            <span>FIELD 03</span>
+            <b>ANALYTICAL FIELD</b>
+            <p>Charts use the selected period lens and show archive record density, source coverage, and map eligibility patterns.</p>
+          </div>
+          <DensityAnalysisControls selectedSchemeId={analysisScheme.id} selectedTab={analysisTab} onSchemeChange={setAnalysisSchemeId} onTabChange={setAnalysisTab} />
+          <DensityAnalysisField tab={analysisTab} scheme={analysisScheme} summaries={analysisSummaries} records={data.records} mapFlags={derived.mapFlags} />
+        </section>
       </div>
     </div>
   );
 }
 
-function DensityBand({
-  band,
+function DensityPeriodCard({
+  summary,
   index,
   maxRecords,
-  maxQueries,
-  firstRecord,
+  selected,
+  onSelect,
   onSelectRecord,
 }: {
-  band: DateBand;
+  summary: DensityPeriodSummary;
   index: number;
   maxRecords: number;
-  maxQueries: number;
-  firstRecord: RecordItem | null;
+  selected: boolean;
+  onSelect: () => void;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const recordLevel = Math.ceil((band.record_count / maxRecords) * 28);
-  const queryLevel = Math.ceil((band.planned_query_count / maxQueries) * 28);
+  const recordLevel = Math.ceil((summary.records.length / maxRecords) * 28);
   const char = DENSITY_CHARS[Math.min(DENSITY_CHARS.length - 1, index)];
+  const mappedShare = formatPercent(summary.mappedCount, summary.records.length);
   return (
-    <section
-      className={firstRecord ? "density-band clickable-record" : "density-band"}
-      onClick={() => {
-        if (firstRecord) {
-          onSelectRecord(firstRecord);
-        }
-      }}
-      onKeyDown={(event) => {
-        if (firstRecord && (event.key === "Enter" || event.key === " ")) {
-          event.preventDefault();
-          onSelectRecord(firstRecord);
-        }
-      }}
-      role={firstRecord ? "button" : undefined}
-      tabIndex={firstRecord ? 0 : undefined}
-      aria-label={firstRecord ? `Open sample record for ${band.label}` : undefined}
-    >
+    <section className={`density-band density-period-card${selected ? " selected" : ""}`}>
       <div className="density-matrix" aria-hidden="true">
         {Array.from({ length: 28 }).map((_, cellIndex) => (
           <span key={cellIndex} className={cellIndex < recordLevel ? "matrix-cell lit" : "matrix-cell"}>
@@ -1656,65 +1696,461 @@ function DensityBand({
         ))}
       </div>
       <div className="band-meta">
-        <span>{band.label}</span>
-        <b>{numberFormat(band.record_count)}</b>
-        <small style={{ "--query-level": `${Math.max(6, queryLevel * 3)}%` } as CSSProperties}>Q {band.planned_query_count}</small>
+        <span>{summary.period.shortLabel}</span>
+        <strong>{summary.period.label}</strong>
+        <b>{numberFormat(summary.records.length)}</b>
+        <small style={{ "--query-level": `${Math.max(5, Math.round((summary.mappedCount / Math.max(1, summary.records.length)) * 100))}%` } as CSSProperties}>
+          mapped {summary.mappedCount} / {mappedShare}
+        </small>
+      </div>
+      <dl className="density-period-metrics">
+        <div>
+          <dt>Narrative</dt>
+          <dd>{summary.topNarrative}</dd>
+        </div>
+        <div>
+          <dt>Source</dt>
+          <dd>{summary.topSourceFamily}</dd>
+        </div>
+      </dl>
+      <div className="density-card-actions">
+        <button type="button" onClick={onSelect} aria-pressed={selected}>
+          inspect
+        </button>
+        <button
+          type="button"
+          disabled={!summary.firstRecord}
+          onClick={() => {
+            if (summary.firstRecord) {
+              onSelectRecord(summary.firstRecord);
+            }
+          }}
+        >
+          sample
+        </button>
       </div>
     </section>
   );
 }
 
-function DensitySignal({ title, values }: { title: string; values: Record<string, number> }) {
-  const entries = entriesDescending(values, 5);
-  const max = Math.max(...entries.map(([, value]) => value), 1);
+function DensityNarrativeCards({ cards, onSelectRecord }: { cards: DensityNarrativeCard[]; onSelectRecord: (record: RecordItem) => void }) {
+  const [selectedLabel, setSelectedLabel] = useState<string | null>(cards[0]?.label ?? null);
+  const selectedCard = cards.find((card) => card.label === selectedLabel) ?? cards[0] ?? null;
 
   return (
-    <section className="density-signal">
-      <span className="tiny-label">{title}</span>
-      <div className="density-signal-bars">
-        {entries.map(([label, value]) => (
-          <div key={label} className="density-signal-row">
-            <span>{truncate(label, 18)}</span>
-            <i style={{ "--signal-width": `${Math.max(8, (value / max) * 100)}%` } as CSSProperties} />
-            <b>{value}</b>
-          </div>
+    <section className="density-narrative-panel">
+      <div className="density-panel-heading">
+        <span>FIGURE / NARRATIVE SIGNAL</span>
+        <b>PUBLIC-TEXT FAMILIES</b>
+      </div>
+      <div className="density-narrative-grid">
+        {cards.slice(0, 6).map((card) => (
+          <article className="density-narrative-card" key={card.label}>
+            <i aria-hidden="true">{card.glyph}</i>
+            <div>
+              <span>{card.label}</span>
+              <b>{numberFormat(card.records.length)} records / {numberFormat(card.mappedCount)} mapped</b>
+              <small>{card.dateSpan} / {card.topSourceFamily}</small>
+            </div>
+            <p>{card.description}</p>
+            <em>{card.sensitivityNote}</em>
+            <button
+              type="button"
+              aria-pressed={selectedCard?.label === card.label}
+              onClick={() => setSelectedLabel(card.label)}
+            >
+              inspect
+            </button>
+          </article>
         ))}
       </div>
-    </section>
-  );
-}
-
-function DensityFigureRail({
-  derived,
-  onSelectRecord,
-}: {
-  derived: FrontendDerivedData;
-  onSelectRecord: (record: RecordItem) => void;
-}) {
-  const entries = entriesDescending(derived.figureCounts, 8);
-
-  return (
-    <section className="density-figure-rail">
-      <span className="tiny-label">FIGURE SIGNAL</span>
-      <div>
-        {entries.map(([figure, value], index) => (
+      {selectedCard ? (
+        <aside className="density-figure-inspector">
+          <div>
+            <span>FIGURE-CARD INSPECTOR</span>
+            <b>{selectedCard.label}</b>
+          </div>
+          <p>{selectedCard.description}</p>
+          <dl>
+            <div>
+              <dt>Records</dt>
+              <dd>{numberFormat(selectedCard.records.length)}</dd>
+            </div>
+            <div>
+              <dt>Mapped</dt>
+              <dd>{numberFormat(selectedCard.mappedCount)}</dd>
+            </div>
+            <div>
+              <dt>Date span</dt>
+              <dd>{selectedCard.dateSpan}</dd>
+            </div>
+            <div>
+              <dt>Top source</dt>
+              <dd>{selectedCard.topSourceFamily}</dd>
+            </div>
+          </dl>
+          <em>{selectedCard.sensitivityNote}</em>
           <button
-            key={figure}
             type="button"
-            className={index % 3 === 0 ? "rail-mark strong" : "rail-mark"}
+            disabled={!selectedCard.records[0]}
             onClick={() => {
-              const record = derived.figureSamples.get(figure);
-              if (record) {
-                onSelectRecord(record);
+              if (selectedCard.records[0]) {
+                onSelectRecord(selectedCard.records[0]);
               }
             }}
           >
-            {truncate(figure, 10)}:{value}
+            sample record
+          </button>
+        </aside>
+      ) : null}
+    </section>
+  );
+}
+
+function DensitySelectedPeriodSummary({ summary, undatedCount }: { summary: DensityPeriodSummary | null; undatedCount: number }) {
+  return (
+    <section className="density-selected-panel">
+      <div className="density-panel-heading">
+        <span>SELECTED PERIOD SUMMARY</span>
+        <b>{summary ? summary.period.shortLabel : "No period selected"}</b>
+      </div>
+      {summary ? (
+        <div className="density-selected-grid">
+          <div>
+            <span>YEARS</span>
+            <b>{summary.period.label}</b>
+          </div>
+          <div>
+            <span>PUBLIC RECORDS</span>
+            <b>{numberFormat(summary.records.length)}</b>
+          </div>
+          <div>
+            <span>MAPPED</span>
+            <b>{numberFormat(summary.mappedCount)} / {formatPercent(summary.mappedCount, summary.records.length)}</b>
+          </div>
+          <div>
+            <span>TOP NARRATIVE</span>
+            <b>{summary.topNarrative}</b>
+          </div>
+          <div>
+            <span>TOP SOURCE</span>
+            <b>{summary.topSourceFamily}</b>
+          </div>
+        </div>
+      ) : null}
+      <p>{summary?.period.anchorNote ?? "Select a period card to inspect the contextual band."}</p>
+      <small>UNDATED: {numberFormat(undatedCount)} public records. Undated records are not forced into a false period.</small>
+    </section>
+  );
+}
+
+function DensityMethodComparator({
+  schemes,
+  records,
+  mapFlags,
+}: {
+  schemes: DensityPeriodScheme[];
+  records: readonly RecordItem[];
+  mapFlags: readonly MapFlagRenderItem[];
+}) {
+  const rows = schemes.map((scheme) => ({
+    scheme,
+    summaries: buildDensityPeriodSummaries(scheme, records, mapFlags),
+  }));
+  const max = Math.max(...rows.flatMap((row) => row.summaries.map((summary) => summary.records.length)), 1);
+
+  return (
+    <div className="density-method-comparator">
+      {rows.map(({ scheme, summaries }) => (
+        <section className="density-method-row" key={scheme.id}>
+          <header>
+            <span>{scheme.label.toUpperCase()}</span>
+            <small>{scheme.description}</small>
+          </header>
+          <div className="density-method-blocks">
+            {summaries.map((summary) => {
+              const intensity = summary.records.length / max;
+              return (
+                <div className="density-method-block" key={summary.period.id} style={{ "--period-intensity": String(0.12 + intensity * 0.78) } as CSSProperties}>
+                  <b>{summary.period.shortLabel}</b>
+                  <span>{summary.period.label}</span>
+                  <i style={{ "--mapped-share": `${Math.max(3, (summary.mappedCount / Math.max(1, summary.records.length)) * 100)}%` } as CSSProperties} />
+                  <em>{numberFormat(summary.records.length)}</em>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function DensityAnalysisControls({
+  selectedSchemeId,
+  selectedTab,
+  onSchemeChange,
+  onTabChange,
+}: {
+  selectedSchemeId: DensityPeriodSchemeId;
+  selectedTab: DensityAnalysisTab;
+  onSchemeChange: (id: DensityPeriodSchemeId) => void;
+  onTabChange: (id: DensityAnalysisTab) => void;
+}) {
+  const schemes: Array<{ id: DensityPeriodSchemeId; label: string }> = [
+    { id: "historical_context", label: "Historical Context" },
+    { id: "equal_duration", label: "Equal Duration" },
+    { id: "equal_record_count", label: "Equal Record Count" },
+  ];
+  const tabs: Array<{ id: DensityAnalysisTab; label: string }> = [
+    { id: "temporal_narrative", label: "TEMPORAL × NARRATIVE" },
+    { id: "source_bias", label: "SOURCE BIAS" },
+    { id: "map_coverage", label: "MAP COVERAGE" },
+    { id: "regional_profile", label: "REGIONAL PROFILE" },
+  ];
+
+  return (
+    <div className="density-analysis-controls">
+      <div>
+        <span>PERIOD LENS</span>
+        {schemes.map((scheme) => (
+          <button key={scheme.id} type="button" className={selectedSchemeId === scheme.id ? "active" : ""} onClick={() => onSchemeChange(scheme.id)}>
+            {scheme.label}
           </button>
         ))}
       </div>
+      <div>
+        <span>ANALYSIS</span>
+        {tabs.map((tab) => (
+          <button key={tab.id} type="button" className={selectedTab === tab.id ? "active" : ""} onClick={() => onTabChange(tab.id)}>
+            {tab.label}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DensityAnalysisField({
+  tab,
+  scheme,
+  summaries,
+  records,
+  mapFlags,
+}: {
+  tab: DensityAnalysisTab;
+  scheme: DensityPeriodScheme;
+  summaries: DensityPeriodSummary[];
+  records: readonly RecordItem[];
+  mapFlags: readonly MapFlagRenderItem[];
+}) {
+  if (tab === "source_bias") {
+    return (
+      <DensityAnalysisMatrix
+        title="SOURCE FAMILY x PERIOD"
+        note="Dense periods may reflect source availability or collection history rather than more narratives in the world."
+        rows={SOURCE_FAMILIES.map((family) => ({
+          label: family.label,
+          values: summaries.map((summary) => summary.records.filter((record) => sourceFamilyFor(record.source_type).id === family.id).length),
+        }))}
+        periods={scheme.periods}
+      />
+    );
+  }
+  if (tab === "map_coverage") {
+    return <DensityMapCoverageChart summaries={summaries} />;
+  }
+  if (tab === "regional_profile") {
+    return <DensityRegionalProfile records={records} mapFlags={mapFlags} periods={scheme.periods} />;
+  }
+  return (
+    <DensityAnalysisMatrix
+      title="NARRATIVE FAMILY x PERIOD"
+      note="This view shows which narrative families are represented in each period. It shows archive record density, not real-world frequency."
+      rows={NARRATIVE_MATRIX_LABELS.map((label) => ({
+        label,
+        values: summaries.map((summary) => summary.records.filter((record) => displayNarrativeGroupLabel(record) === label).length),
+      }))}
+      periods={scheme.periods}
+    />
+  );
+}
+
+function DensityAnalysisMatrix({
+  title,
+  note,
+  rows,
+  periods,
+}: {
+  title: string;
+  note: string;
+  rows: Array<{ label: string; values: number[] }>;
+  periods: readonly DensityPeriod[];
+}) {
+  const max = Math.max(...rows.flatMap((row) => row.values), 1);
+
+  return (
+    <section className="density-analysis-panel">
+      <div className="density-panel-heading">
+        <span>{title}</span>
+        <b>{periods.map((period) => period.shortLabel).join(" / ")}</b>
+      </div>
+      <div className="density-analysis-matrix" style={{ "--matrix-cols": periods.length } as CSSProperties}>
+        <span />
+        {periods.map((period) => <b key={period.id}>{period.shortLabel}</b>)}
+        {rows.map((row) => (
+          <div className="density-analysis-row" key={row.label}>
+            <span>{row.label}</span>
+            {row.values.map((value, index) => (
+              <i key={`${row.label}-${periods[index]?.id}`} style={{ "--heat": String(value / max) } as CSSProperties} title={`${row.label}, ${periods[index]?.label}: ${numberFormat(value)}`}>
+                {value > 0 ? numberFormat(value) : ""}
+              </i>
+            ))}
+          </div>
+        ))}
+      </div>
+      <p>{note}</p>
     </section>
   );
+}
+
+function DensityMapCoverageChart({ summaries }: { summaries: DensityPeriodSummary[] }) {
+  const max = Math.max(...summaries.map((summary) => summary.records.length), 1);
+  return (
+    <section className="density-analysis-panel density-map-coverage">
+      <div className="density-panel-heading">
+        <span>MAPPED / UNMAPPED BY PERIOD</span>
+        <b>MAP ELIGIBILITY RATIO</b>
+      </div>
+      <div className="density-coverage-bars">
+        {summaries.map((summary) => {
+          const unmapped = Math.max(0, summary.records.length - summary.mappedCount);
+          return (
+            <div key={summary.period.id} className="density-coverage-row">
+              <span>{summary.period.shortLabel}</span>
+              <i>
+                <b style={{ "--bar-width": `${Math.max(2, (summary.mappedCount / max) * 100)}%` } as CSSProperties} />
+                <em style={{ "--bar-width": `${Math.max(2, (unmapped / max) * 100)}%` } as CSSProperties} />
+              </i>
+              <strong>{numberFormat(summary.mappedCount)} / {formatPercent(summary.mappedCount, summary.records.length)}</strong>
+            </div>
+          );
+        })}
+      </div>
+      <p>A record can be source-grounded but remain unmapped if it lacks a verified display location or should remain broad, sensitive, or summary-only.</p>
+    </section>
+  );
+}
+
+function DensityRegionalProfile({
+  records,
+  mapFlags,
+  periods,
+}: {
+  records: readonly RecordItem[];
+  mapFlags: readonly MapFlagRenderItem[];
+  periods: readonly DensityPeriod[];
+}) {
+  const rows = DASHBOARD_STATE_ORDER.map((state) => ({
+    label: state,
+    values: periods.map((period) => records.filter((record) => record.state_territory === state && periodContainsYear(period, record.year)).length),
+    mapped: periods.map((period) => mapFlags.filter((flag) => flag.state_territory === state && periodContainsYear(period, flag.record.year)).length),
+  }));
+  const max = Math.max(...rows.flatMap((row) => row.values), 1);
+  return (
+    <section className="density-analysis-panel">
+      <div className="density-panel-heading">
+        <span>JURISDICTION x PERIOD</span>
+        <b>PUBLIC RECORDS / MAPPED SIGNAL</b>
+      </div>
+      <div className="density-regional-grid" style={{ "--matrix-cols": periods.length } as CSSProperties}>
+        <span />
+        {periods.map((period) => <b key={period.id}>{period.shortLabel}</b>)}
+        {rows.map((row) => (
+          <div className="density-regional-row" key={row.label}>
+            <span>{row.label}</span>
+            {row.values.map((value, index) => (
+              <i key={`${row.label}-${periods[index]?.id}`} style={{ "--heat": String(value / max), "--mapped-share": `${Math.max(3, (row.mapped[index] / Math.max(1, value)) * 100)}%` } as CSSProperties}>
+                {value ? numberFormat(value) : ""}
+              </i>
+            ))}
+          </div>
+        ))}
+      </div>
+      <p>Regional density reflects source coverage and map eligibility. It is not a verified distribution of supernatural beings or events.</p>
+    </section>
+  );
+}
+
+function buildDensityPeriodSummaries(
+  scheme: DensityPeriodScheme,
+  records: readonly RecordItem[],
+  mapFlags: readonly MapFlagRenderItem[],
+): DensityPeriodSummary[] {
+  return scheme.periods.map((period) => {
+    const periodRecords = records.filter((record) => periodContainsYear(period, record.year));
+    const mappedCount = mapFlags.filter((flag) => periodContainsYear(period, flag.record.year)).length;
+    return {
+      period,
+      records: periodRecords,
+      mappedCount,
+      topNarrative: topLabel(periodRecords, (record) => displayNarrativeGroupLabel(record)),
+      topSourceFamily: topLabel(periodRecords, (record) => sourceFamilyFor(record.source_type).label),
+      firstRecord: [...periodRecords].sort(compareRecordsByDate)[0] ?? null,
+    };
+  });
+}
+
+function buildDensityNarrativeCards(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): DensityNarrativeCard[] {
+  const mappedIds = new Set(mapFlags.map((flag) => flag.record_id));
+  const descriptions: Record<string, string> = {
+    "Hairy humanoid reports": "Reports and retellings using hairy-human or wild-person language in public sources.",
+    "Spirit-person narratives": "Public records involving spirit-person or culturally specific narrative language, handled as source-context records.",
+    "Ghost / apparition records": "Apparition and ghost records where the public text presents a humanoid or person-like figure.",
+    "Traditional narratives": "Public-source traditional narrative records requiring careful terminology and contextual reading.",
+    "Retellings and adaptations": "Later adaptations, summaries, or retellings that show circulation rather than primary evidence.",
+    "Giant / ogre narratives": "Giant, ogre, or large humanoid narrative records in public textual circulation.",
+    "Local legends": "Place-attached legend records and local public-history narratives.",
+    "Encounter accounts": "Reported encounter-style public records, not verification of an event.",
+    "Other typed context": "Typed contextual records that support source history or classification.",
+  };
+  const glyphs = ["++", "::", "[]", "//", "<>", "##", "..", "||", "--"];
+
+  return NARRATIVE_MATRIX_LABELS.map((label, index) => {
+    const familyRecords = records.filter((record) => displayNarrativeGroupLabel(record) === label);
+    const years = familyRecords
+      .map((record) => record.year)
+      .filter((year): year is number => typeof year === "number" && Number.isFinite(year))
+      .sort((a, b) => a - b);
+    const mappedCount = familyRecords.filter((record) => mappedIds.has(record.record_id)).length;
+    const involvesCulturalContext = familyRecords.some((record) => Boolean(record.involves_indigenous_knowledge));
+    return {
+      label,
+      records: familyRecords.sort(compareRecordsByDate),
+      mappedCount,
+      topSourceFamily: topLabel(familyRecords, (record) => sourceFamilyFor(record.source_type).label),
+      dateSpan: years.length ? `${years[0]}-${years[years.length - 1]}` : "undated only",
+      description: descriptions[label] ?? descriptions["Other typed context"],
+      glyph: glyphs[index % glyphs.length],
+      sensitivityNote: involvesCulturalContext
+        ? "Culturally specific public records need source context; publicness is not permission."
+        : "Public-text grouping only; not a claim about real-world frequency.",
+    };
+  }).sort((a, b) => b.records.length - a.records.length || a.label.localeCompare(b.label));
+}
+
+function topLabel(records: readonly RecordItem[], labelFor: (record: RecordItem) => string) {
+  if (!records.length) {
+    return "No dated records";
+  }
+  return entriesDescending(
+    records.reduce<Record<string, number>>((acc, record) => {
+      const label = labelFor(record);
+      acc[label] = (acc[label] ?? 0) + 1;
+      return acc;
+    }, {}),
+    1,
+  )[0]?.[0] ?? "No dated records";
 }
 
 function DashboardView({
