@@ -43,6 +43,7 @@ export function DisplayControls() {
     }
     document.documentElement.dataset.signalGain = gain;
     window.localStorage.setItem(SIGNAL_STORAGE_KEY, gain);
+    window.dispatchEvent(new CustomEvent("archive-display-change", { detail: { signalGain: gain } }));
   }, [gain, hydrated]);
 
   useEffect(() => {
@@ -51,6 +52,7 @@ export function DisplayControls() {
     }
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    window.dispatchEvent(new CustomEvent("archive-display-change", { detail: { theme } }));
   }, [theme, hydrated]);
 
   return (
