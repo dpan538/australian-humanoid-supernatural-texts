@@ -538,22 +538,23 @@ a {
 }
 
 .record-flag-connector {
-  stroke: color-mix(in srgb, var(--flag-tone, rgba(244, 241, 232, 0.82)) 60%, transparent);
-  stroke-width: 0.5;
-  opacity: 0.18;
+  display: none;
+  stroke: transparent;
+  stroke-width: 0;
+  opacity: 0;
   pointer-events: none;
   vector-effect: non-scaling-stroke;
 }
 
 .record-flag-dot {
   fill: var(--flag-tone, rgba(168, 255, 106, 0.94));
-  stroke: rgba(0, 0, 0, 0.68);
-  stroke-width: 0.58;
-  opacity: 0.93;
+  stroke: none;
+  stroke-width: 0;
+  opacity: 1;
   transform-box: fill-box;
   transform-origin: center;
   vector-effect: non-scaling-stroke;
-  transition: opacity 120ms ease, fill 120ms ease, stroke 120ms ease;
+  transition: opacity 120ms ease, fill 120ms ease, r 120ms ease;
 }
 
 .record-flag-hit {
@@ -567,7 +568,7 @@ a {
 
 .record-flag.state-linked .record-flag-dot {
   opacity: 1;
-  stroke-width: 0.64;
+  stroke-width: 0;
 }
 
 .record-flag.active {
@@ -576,8 +577,8 @@ a {
 
 .record-flag.active .record-flag-dot {
   fill: color-mix(in srgb, var(--flag-tone, rgba(244, 241, 232, 0.98)) 70%, rgba(244, 241, 232, 0.98));
-  stroke: rgba(244, 241, 232, 0.9);
-  stroke-width: 0.7;
+  stroke: none;
+  stroke-width: 0;
   opacity: 1;
 }
 
@@ -597,7 +598,7 @@ a {
 
 .record-flag.unplaced .record-flag-dot {
   fill: rgba(176, 183, 188, 0.58);
-  stroke: rgba(244, 241, 232, 0.36);
+  stroke: none;
 }
 
 @keyframes record-flag-active-bloom {
@@ -952,7 +953,8 @@ a {
 
 :root[data-signal-gain="high"] .record-flag-dot {
   opacity: 1;
-  stroke: rgba(0, 0, 0, 0.78);
+  stroke: none;
+  stroke-width: 0;
 }
 
 :root[data-signal-gain="high"] .map-health-note,
@@ -4438,8 +4440,8 @@ a {
 
   .record-flag-dot {
     opacity: 1;
-    stroke: rgba(0, 0, 0, 0.84);
-    stroke-width: 0.7;
+    stroke: none;
+    stroke-width: 0;
   }
 }
 

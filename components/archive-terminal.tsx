@@ -92,7 +92,16 @@ const MAP_SOURCE_LEGEND_GROUPS = [
   { id: "other", label: "Other public source", className: "source-tone-default" },
 ] as const;
 
-const MAP_FLAG_BUCKET_COUNT = 12;
+const MAP_FLAG_GROWTH_BUCKETS = [
+  { start: -Infinity, end: 1841 },
+  { start: 1842, end: 1875 },
+  { start: 1876, end: 1900 },
+  { start: 1901, end: 1950 },
+  { start: 1951, end: 1969 },
+  { start: 1970, end: 1990 },
+  { start: 1991, end: 2010 },
+  { start: 2011, end: Infinity },
+] as const;
 
 const NARRATIVE_TYPE_LABELS: Record<string, string> = {
   cryptid_style_apeman: "Hairy humanoid reports",
@@ -640,13 +649,10 @@ function buildMapFlags(data: FrontendData, recordsById: Map<number, RecordItem>)
 }
 
 function prepareMapFlagPresentation(flags: MapFlagRenderItem[]) {
-  const minX = Math.min(...flags.map((flag) => flag.x));
-  const maxX = Math.max(...flags.map((flag) => flag.x));
-  const rangeX = Math.max(1, maxX - minX);
   const collisionGroups = new Map<string, MapFlagRenderItem[]>();
 
   for (const flag of flags) {
-    flag.growthBucket = clamp(Math.floor(((flag.x - minX) / rangeX) * (MAP_FLAG_BUCKET_COUNT - 1)), 0, MAP_FLAG_BUCKET_COUNT - 1);
+    flag.growthBucket = chronologicalGrowthBucket(flag);
     const collisionKey = `${flag.x.toFixed(3)}:${flag.y.toFixed(3)}`;
     const group = collisionGroups.get(collisionKey) ?? [];
     group.push(flag);
@@ -658,17 +664,47 @@ function prepareMapFlagPresentation(flags: MapFlagRenderItem[]) {
       continue;
     }
     const ordered = [...group].sort((a, b) => a.record_id - b.record_id);
-    const radius = group.length === 2 ? 2.6 : group.length === 3 ? 3.25 : 4;
-    const rotation = ((ordered[0]?.record_id ?? 0) % 11) * 0.09;
     ordered.forEach((flag, index) => {
-      const angle = rotation + (index / ordered.length) * Math.PI * 2;
-      flag.displayX = flag.x + Math.cos(angle) * radius;
-      flag.displayY = flag.y + Math.sin(angle) * radius;
+      const offset = collisionMicroJitter(flag.record_id, index);
+      flag.displayX = flag.x + offset.x;
+      flag.displayY = flag.y + offset.y;
       flag.collisionOffset = true;
     });
   }
 
   return flags;
+}
+
+function chronologicalGrowthBucket(flag: MapFlagRenderItem) {
+  if (typeof flag.year === "number" && Number.isFinite(flag.year)) {
+    const bucketIndex = MAP_FLAG_GROWTH_BUCKETS.findIndex((bucket) => flag.year !== null && flag.year >= bucket.start && flag.year <= bucket.end);
+    return bucketIndex >= 0 ? bucketIndex : MAP_FLAG_GROWTH_BUCKETS.length - 1;
+  }
+  const bandOrder = ["backsearch_1803_1841", "anchor_1842_1875", "expansion_1876_1969", "modern_1970_1990", "modern_1991_2010", "contemporary_2011_present"];
+  const bandIndex = bandOrder.indexOf(flag.record.date_band);
+  if (bandIndex < 0) {
+    return MAP_FLAG_GROWTH_BUCKETS.length - 1;
+  }
+  return Math.round((bandIndex / Math.max(1, bandOrder.length - 1)) * (MAP_FLAG_GROWTH_BUCKETS.length - 1));
+}
+
+function stableUnit(seed: number) {
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
+}
+
+function collisionMicroJitter(recordId: number, collisionIndex: number) {
+  if (collisionIndex === 0) {
+    return { x: 0, y: 0 };
+  }
+  const xUnit = stableUnit(recordId + collisionIndex * 97);
+  const yUnit = stableUnit(recordId * 3 + collisionIndex * 193);
+  const x = (xUnit - 0.5) * 4.2;
+  const y = (yUnit - 0.5) * 3.8;
+  return {
+    x: svgCoord(clamp(x, -2.1, 2.1)),
+    y: svgCoord(clamp(y, -1.9, 1.9)),
+  };
 }
 
 function buildMapSourceLegend(mapFlags: readonly MapFlagRenderItem[]): MapSourceLegendItem[] {
@@ -1062,7 +1098,7 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
       },
     });
 
-    for (let bucket = 0; bucket < MAP_FLAG_BUCKET_COUNT; bucket += 1) {
+    for (let bucket = 0; bucket < MAP_FLAG_GROWTH_BUCKETS.length; bucket += 1) {
       const bucketGlyphs = glyphs.filter((glyph) => glyph.dataset.growthBucket === String(bucket));
       if (!bucketGlyphs.length) {
         continue;
@@ -1070,12 +1106,12 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
       timeline.add(bucketGlyphs, {
         opacity: [0, 1],
         scale: [0.16, 1],
-        duration: 340,
+        duration: 320,
         delay: (_element: unknown, index: number) => (index % 6) * 3,
-      }, 100 + bucket * 64);
+      }, 100 + bucket * 150);
     }
 
-    timeline.add(glyphs, { opacity: 1, scale: 1, duration: 1 }, 1320);
+    timeline.add(glyphs, { opacity: 1, scale: 1, duration: 1 }, 1520);
     timelineRef.current = timeline;
 
     return () => {
@@ -1338,7 +1374,7 @@ const MapFlagMarker = memo(function MapFlagMarker({
     .filter(Boolean)
     .join(" ");
   const label = flag.title || flag.canonical_figure || `Record ${flag.record_id}`;
-  const dotRadius = active ? 5.2 : stateLinked ? 3.7 : 2.8;
+  const dotRadius = active ? 5.2 : stateLinked ? 3.8 : 3.6;
 
   return (
     <g
@@ -1348,9 +1384,6 @@ const MapFlagMarker = memo(function MapFlagMarker({
       tabIndex={0}
       aria-label={`Open mapped record ${label}`}
     >
-      {flag.collisionOffset ? (
-        <line className="record-flag-connector" x1={flag.x} y1={flag.y} x2={flag.displayX} y2={flag.displayY} />
-      ) : null}
       <circle className="record-flag-hit" cx={flag.displayX} cy={flag.displayY} r="10" />
       <circle className="record-flag-dot" cx={flag.displayX} cy={flag.displayY} r={dotRadius} data-growth-bucket={flag.growthBucket} />
       {active ? <circle className="record-flag-active-ring" cx={flag.displayX} cy={flag.displayY} r="8.1" /> : null}
