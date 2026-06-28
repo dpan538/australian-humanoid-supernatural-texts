@@ -7,6 +7,8 @@ import { createTimeline, stagger } from "animejs";
 import type { Timeline } from "animejs";
 import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
+import { figureProfileFor } from "@/lib/figure-profiles";
+import type { FigureProfile } from "@/lib/figure-profiles";
 import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { SourceView } from "@/components/source/source-view";
 import { DisplayControls } from "@/components/signal-gain-control";
@@ -232,13 +234,30 @@ type PeriodBoxPlotStat = {
   total: number;
   mapped: number;
 };
-type FigureSignalItem = {
+type DensityChartMode = "temporal" | "distribution" | "figures" | "sources" | "regions" | "cross";
+type DensityChartDatum = {
+  key: string;
   label: string;
+  value: number;
+  secondary?: number;
+};
+type DensityCrossRow = {
+  figure: string;
+  values: MatrixCell[];
+  total: number;
+};
+type FigureSignalItem = {
+  slug: string;
+  label: string;
+  profile: FigureProfile;
   records: RecordItem[];
   mappedCount: number;
   dateSpan: string;
+  earliestYear: number | null;
+  latestYear: number | null;
   topSourceFamily: string;
   topRegion: string;
+  topNarrativeFamily: string;
   note: string;
 };
 type StateCoverageRow = {
@@ -1590,7 +1609,7 @@ function DensityView({
   derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const [selectedFigure, setSelectedFigure] = useState<FigureSignalItem | null>(null);
+  const [selectedFigureIndex, setSelectedFigureIndex] = useState<number | null>(null);
   const periodBands = useMemo(() => data.date_bands.filter((band) => band.id !== "undated"), [data.date_bands]);
   const maxRecords = Math.max(...periodBands.map((band) => band.record_count), 1);
   const maxQueries = Math.max(...periodBands.map((band) => band.planned_query_count), 1);
@@ -1598,12 +1617,22 @@ function DensityView({
   const annualSeries = useMemo(() => buildAnnualDensitySeries(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
   const boxStats = useMemo(() => buildPeriodBoxPlotStats(periodBands, data.records, derived.mapFlags), [periodBands, data.records, derived.mapFlags]);
   const figureSignals = useMemo(() => buildFigureSignalItems(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const figureFrequency = useMemo(() => figureSignals.slice(0, 8).map((figure) => ({
+    key: figure.slug,
+    label: figure.label,
+    value: figure.records.length,
+    secondary: figure.mappedCount,
+  })), [figureSignals]);
+  const sourceComposition = useMemo(() => buildSourceComposition(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const regionConcentration = useMemo(() => buildRegionConcentration(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const figurePeriodMatrix = useMemo(() => buildFigurePeriodMatrix(figureSignals, periodBands), [figureSignals, periodBands]);
   const locationHealth = {
     map_flags: derived.mapFlags.length,
     broad_or_review: Math.max(0, data.summary.record_count - derived.mapFlags.length),
     undated_records: derived.undatedRecordCount,
     locations_total: data.summary.location_count,
   };
+  const selectedFigure = selectedFigureIndex === null ? null : figureSignals[selectedFigureIndex] ?? null;
 
   return (
     <div className="density-view">
@@ -1629,19 +1658,30 @@ function DensityView({
           />
         ))}
       </div>
-      <DensityChartPanel annualSeries={annualSeries} boxStats={boxStats} />
+      <DensityChartPanel
+        annualSeries={annualSeries}
+        boxStats={boxStats}
+        figureFrequency={figureFrequency}
+        sourceComposition={sourceComposition}
+        regionConcentration={regionConcentration}
+        figurePeriodMatrix={figurePeriodMatrix}
+        periodBands={periodBands}
+      />
       <div className="density-aux-grid">
-        <DensitySignal title="SOURCE FIELD" values={data.summary.source_type_counts} />
         <DensitySignal title="LOCATION HEALTH" values={locationHealth} />
-        <DensityFigureRail figures={figureSignals} onSelectFigure={setSelectedFigure} />
+        <DensityFigureRail figures={figureSignals} onSelectFigure={setSelectedFigureIndex} />
       </div>
       {selectedFigure ? (
         <FigureCardOverlay
+          figures={figureSignals}
           figure={selectedFigure}
-          onClose={() => setSelectedFigure(null)}
-          onOpenRecord={(record) => {
-            setSelectedFigure(null);
-            onSelectRecord(record);
+          figureIndex={selectedFigureIndex ?? 0}
+          onClose={() => setSelectedFigureIndex(null)}
+          onNavigate={(direction) => {
+            setSelectedFigureIndex((current) => {
+              const index = current ?? 0;
+              return (index + direction + figureSignals.length) % figureSignals.length;
+            });
           }}
         />
       ) : null}
@@ -1709,19 +1749,64 @@ function DensityBand({
   );
 }
 
-function DensityChartPanel({ annualSeries, boxStats }: { annualSeries: AnnualDensityPoint[]; boxStats: PeriodBoxPlotStat[] }) {
+const DENSITY_CHART_MODES: Array<{ id: DensityChartMode; label: string }> = [
+  { id: "temporal", label: "Temporal" },
+  { id: "distribution", label: "Distribution" },
+  { id: "figures", label: "Figures" },
+  { id: "sources", label: "Sources" },
+  { id: "regions", label: "Regions" },
+  { id: "cross", label: "Cross-analysis" },
+];
+
+function DensityChartPanel({
+  annualSeries,
+  boxStats,
+  figureFrequency,
+  sourceComposition,
+  regionConcentration,
+  figurePeriodMatrix,
+  periodBands,
+}: {
+  annualSeries: AnnualDensityPoint[];
+  boxStats: PeriodBoxPlotStat[];
+  figureFrequency: DensityChartDatum[];
+  sourceComposition: DensityChartDatum[];
+  regionConcentration: DensityChartDatum[];
+  figurePeriodMatrix: DensityCrossRow[];
+  periodBands: DateBand[];
+}) {
+  const [mode, setMode] = useState<DensityChartMode>("temporal");
+
   return (
     <section className="density-chart-panel" aria-label="Density charts">
-      <DensityAnnualLineChart series={annualSeries} />
-      <DensityPeriodBoxPlot stats={boxStats} />
+      <div className="density-chart-switcher" role="tablist" aria-label="Density chart mode">
+        {DENSITY_CHART_MODES.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            role="tab"
+            aria-selected={mode === item.id}
+            className={mode === item.id ? "is-active" : undefined}
+            onClick={() => setMode(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+      {mode === "temporal" ? <DensityAnnualLineChart series={annualSeries} /> : null}
+      {mode === "distribution" ? <DensityPeriodBoxPlot stats={boxStats} /> : null}
+      {mode === "figures" ? <DensityRankedBarChart title="FIGURE FREQUENCY" subtitle="Top public-text figure labels" data={figureFrequency} secondaryLabel="mapped" /> : null}
+      {mode === "sources" ? <DensityRankedBarChart title="SOURCE COMPOSITION" subtitle="Source families shaping the archive" data={sourceComposition} secondaryLabel="mapped" /> : null}
+      {mode === "regions" ? <DensityRankedBarChart title="REGIONAL CONCENTRATION" subtitle="Public and mapped records by state or territory" data={regionConcentration} secondaryLabel="mapped" /> : null}
+      {mode === "cross" ? <DensityFigurePeriodHeatmap rows={figurePeriodMatrix} periods={periodBands} /> : null}
     </section>
   );
 }
 
 function DensityAnnualLineChart({ series }: { series: AnnualDensityPoint[] }) {
-  const width = 760;
-  const height = 210;
-  const margin = { top: 18, right: 30, bottom: 36, left: 56 };
+  const width = 1500;
+  const height = 240;
+  const margin = { top: 18, right: 36, bottom: 38, left: 60 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
   const minYear = series[0]?.year ?? 0;
@@ -1771,9 +1856,9 @@ function DensityAnnualLineChart({ series }: { series: AnnualDensityPoint[] }) {
 }
 
 function DensityPeriodBoxPlot({ stats }: { stats: PeriodBoxPlotStat[] }) {
-  const width = 760;
-  const rowHeight = 27;
-  const margin = { top: 20, right: 36, bottom: 30, left: 138 };
+  const width = 1500;
+  const rowHeight = 30;
+  const margin = { top: 22, right: 60, bottom: 34, left: 156 };
   const height = margin.top + margin.bottom + stats.length * rowHeight;
   const innerWidth = width - margin.left - margin.right;
   const maxValue = Math.max(...stats.map((stat) => stat.max), 1);
@@ -1818,6 +1903,122 @@ function DensityPeriodBoxPlot({ stats }: { stats: PeriodBoxPlotStat[] }) {
   );
 }
 
+function DensityRankedBarChart({
+  title,
+  subtitle,
+  data,
+  secondaryLabel,
+}: {
+  title: string;
+  subtitle: string;
+  data: DensityChartDatum[];
+  secondaryLabel?: string;
+}) {
+  const width = 1500;
+  const rowHeight = 26;
+  const margin = { top: 18, right: 140, bottom: 28, left: 230 };
+  const height = margin.top + margin.bottom + Math.max(1, data.length) * rowHeight;
+  const maxValue = Math.max(...data.map((row) => Math.max(row.value, row.secondary ?? 0)), 1);
+  const xFor = (value: number) => margin.left + (value / maxValue) * (width - margin.left - margin.right);
+  const ticks = buildLinearTicks(0, maxValue, 5).map((tick) => Math.round(tick));
+
+  return (
+    <article className="density-chart-card density-chart-card-main">
+      <header>
+        <span>{title}</span>
+        <b>{subtitle}</b>
+      </header>
+      <svg className="density-bar-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${title} ranked bar chart`}>
+        {ticks.map((tick) => (
+          <g key={tick}>
+            <line className="density-chart-grid" x1={xFor(tick)} x2={xFor(tick)} y1={margin.top - 8} y2={height - margin.bottom} />
+            <text className="density-chart-axis" x={xFor(tick)} y={height - 10} textAnchor="middle">
+              {tick}
+            </text>
+          </g>
+        ))}
+        {data.map((row, index) => {
+          const y = margin.top + index * rowHeight;
+          const secondaryWidth = xFor(row.secondary ?? 0) - margin.left;
+          const primaryWidth = xFor(row.value) - margin.left;
+          return (
+            <g key={row.key}>
+              <text className="density-box-label" x={margin.left - 14} y={y + 18} textAnchor="end">
+                {truncate(row.label, 22)}
+              </text>
+              {row.secondary ? <rect className="density-bar-secondary" x={margin.left} y={y + 12} width={Math.max(1, secondaryWidth)} height="6" /> : null}
+              <rect className="density-bar-primary" x={margin.left} y={y + 3} width={Math.max(1, primaryWidth)} height="9" />
+              <text className="density-box-count" x={width - margin.right + 70} y={y + 14} textAnchor="end">
+                {numberFormat(row.value)}
+                {typeof row.secondary === "number" ? ` / ${numberFormat(row.secondary)} ${secondaryLabel ?? ""}` : ""}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </article>
+  );
+}
+
+function DensityFigurePeriodHeatmap({ rows, periods }: { rows: DensityCrossRow[]; periods: DateBand[] }) {
+  const width = 1500;
+  const cellWidth = 190;
+  const rowHeight = 26;
+  const margin = { top: 42, right: 62, bottom: 22, left: 220 };
+  const height = margin.top + margin.bottom + Math.max(1, rows.length) * rowHeight;
+  const maxValue = Math.max(...rows.flatMap((row) => row.values.map((cell) => cell.value)), 1);
+
+  return (
+    <article className="density-chart-card density-chart-card-main">
+      <header>
+        <span>CROSS-ANALYSIS</span>
+        <b>Top figures across archive periods</b>
+      </header>
+      <svg className="density-heatmap-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Figure by period heatmap">
+        {periods.map((period, index) => (
+          <text key={period.id} className="density-chart-axis" x={margin.left + index * cellWidth + cellWidth / 2} y="24" textAnchor="middle">
+            {period.label.replace("present", "now")}
+          </text>
+        ))}
+        {rows.map((row, rowIndex) => {
+          const y = margin.top + rowIndex * rowHeight;
+          return (
+            <g key={row.figure}>
+              <text className="density-box-label" x={margin.left - 14} y={y + 19} textAnchor="end">
+                {truncate(row.figure, 20)}
+              </text>
+              {periods.map((period, columnIndex) => {
+                const value = row.values.find((cell) => cell.bandId === period.id)?.value ?? 0;
+                const intensity = value / maxValue;
+                return (
+                  <g key={`${row.figure}-${period.id}`}>
+                    <rect
+                      className="density-heatmap-cell"
+                      x={margin.left + columnIndex * cellWidth + 5}
+                      y={y + 3}
+                      width={cellWidth - 10}
+                      height="18"
+                      style={{ "--cell-opacity": String(0.14 + intensity * 0.78) } as CSSProperties}
+                    />
+                    {value > 0 ? (
+                      <text className="density-heatmap-value" x={margin.left + columnIndex * cellWidth + cellWidth / 2} y={y + 17} textAnchor="middle">
+                        {numberFormat(value)}
+                      </text>
+                    ) : null}
+                  </g>
+                );
+              })}
+              <text className="density-box-count" x={width - margin.right} y={y + 19} textAnchor="end">
+                {numberFormat(row.total)}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </article>
+  );
+}
+
 function DensitySignal({ title, values }: { title: string; values: Record<string, number> }) {
   const entries = entriesDescending(values, 5);
   const max = Math.max(...entries.map(([, value]) => value), 1);
@@ -1843,18 +2044,18 @@ function DensityFigureRail({
   onSelectFigure,
 }: {
   figures: FigureSignalItem[];
-  onSelectFigure: (figure: FigureSignalItem) => void;
+  onSelectFigure: (index: number) => void;
 }) {
   return (
     <section className="density-figure-rail">
-      <span className="tiny-label">CHARACTER / FIGURE SIGNAL</span>
+      <span className="tiny-label">FIGURE SIGNAL</span>
       <div>
         {figures.slice(0, 8).map((figure, index) => (
           <button
-            key={figure.label}
+            key={figure.slug}
             type="button"
             className={index % 3 === 0 ? "rail-mark strong" : "rail-mark"}
-            onClick={() => onSelectFigure(figure)}
+            onClick={() => onSelectFigure(index)}
           >
             <b>{truncate(figure.label, 18)}</b>
             <span>{numberFormat(figure.records.length)}</span>
@@ -1866,85 +2067,94 @@ function DensityFigureRail({
 }
 
 function FigureCardOverlay({
+  figures,
   figure,
+  figureIndex,
   onClose,
-  onOpenRecord,
+  onNavigate,
 }: {
+  figures: FigureSignalItem[];
   figure: FigureSignalItem;
+  figureIndex: number;
   onClose: () => void;
-  onOpenRecord: (record: RecordItem) => void;
+  onNavigate: (direction: -1 | 1) => void;
 }) {
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const titleId = `figure-card-title-${slugForId(figure.label)}`;
-  const samples = figure.records.slice(0, 5);
+  const statRows = [
+    ["Total records", numberFormat(figure.records.length)],
+    ["Mapped records", numberFormat(figure.mappedCount)],
+    ["First seen", figure.earliestYear ? String(figure.earliestYear) : "undated"],
+    ["Date span", figure.dateSpan],
+    ["Common region", figure.topRegion],
+    ["Top source", figure.topSourceFamily],
+    ["Narrative family", figure.topNarrativeFamily],
+  ];
 
   useEffect(() => {
     closeButtonRef.current?.focus();
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         onClose();
+      } else if (event.key === "ArrowLeft") {
+        onNavigate(-1);
+      } else if (event.key === "ArrowRight") {
+        onNavigate(1);
       }
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [onClose]);
+  }, [onClose, onNavigate]);
 
   return (
     <div className="record-overlay figure-overlay" role="presentation" onClick={onClose}>
-      <div className="record-card-shell figure-card-shell" onClick={(event) => event.stopPropagation()}>
-        <article className="record-card figure-card" role="dialog" aria-modal="true" aria-labelledby={titleId}>
-          <section className="record-card-table" aria-label="Figure metadata">
-            <div className="record-card-table-top">
-              <span>character / figure signal</span>
-              <span>{numberFormat(figure.records.length)} public records</span>
+      <div className="figure-card-shell" onClick={(event) => event.stopPropagation()}>
+        <button className="record-card-nav record-card-nav-prev figure-card-nav" type="button" onClick={(event) => { event.stopPropagation(); onNavigate(-1); }} aria-label="Previous figure">
+          ‹
+        </button>
+        <button className="record-card-nav record-card-nav-next figure-card-nav" type="button" onClick={(event) => { event.stopPropagation(); onNavigate(1); }} aria-label="Next figure">
+          ›
+        </button>
+        <article className="figure-profile-card" role="dialog" aria-modal="true" aria-labelledby={titleId}>
+          <section className="figure-profile-left">
+            <div className="figure-profile-kicker">
+              <span>FIGURE PROFILE</span>
+              <b>
+                {numberFormat(figureIndex + 1)} / {numberFormat(figures.length)}
+              </b>
+            </div>
+            <p>{figure.profile.shortDescription || figure.note}</p>
+            {figure.profile.notes ? <p>{figure.profile.notes}</p> : null}
+            <p className="figure-profile-note">
+              Archive context: this card combines a static public-reference profile with computed corpus statistics. Counts describe public source records, not real-world frequency.
+            </p>
+            <a className="figure-reference-link" href={figure.profile.externalUrl} target="_blank" rel="noreferrer">
+              {figure.profile.referenceLabel?.toUpperCase().includes("WIKIPEDIA") ? "OPEN ENCYCLOPAEDIA" : "OPEN REFERENCE"}
+            </a>
+          </section>
+          <section className="figure-profile-right">
+            <div className="figure-profile-topline">
+              <span>ARCHIVE FIGURE</span>
               <button ref={closeButtonRef} type="button" onClick={onClose} aria-label="Close figure card">
                 CLOSE
               </button>
             </div>
-            <div className="record-card-grid figure-card-grid">
-              <div>
-                <span>TOTAL</span>
-                <b>{numberFormat(figure.records.length)}</b>
-              </div>
-              <div>
-                <span>MAPPED</span>
-                <b>{numberFormat(figure.mappedCount)}</b>
-              </div>
-              <div>
-                <span>DATE SPAN</span>
-                <b>{figure.dateSpan}</b>
-              </div>
-              <div>
-                <span>TOP SOURCE</span>
-                <b>{truncate(figure.topSourceFamily, 34)}</b>
-              </div>
-              <div>
-                <span>TOP REGION</span>
-                <b>{figure.topRegion}</b>
-              </div>
+            <h2 id={titleId}>{figure.profile.label || figure.label}</h2>
+            <div className="figure-profile-alias">
+              {figure.profile.aliases?.length ? `aliases: ${figure.profile.aliases.slice(0, 5).join(", ")}` : "public-text category"}
             </div>
-          </section>
-
-          <section className="record-card-title-block figure-title-block">
-            <div className="record-card-year">{numberFormat(figure.records.length)}</div>
-            <h2 id={titleId}>{figure.label}</h2>
-          </section>
-
-          <section className="figure-card-body">
-            <p>{figure.note}</p>
-            <div className="figure-sample-list">
-              {samples.map((record) => (
-                <button key={record.record_id} type="button" onClick={() => onOpenRecord(record)}>
-                  <span>{record.year ?? "----"}</span>
-                  <b>{truncate(recordDisplayTitle(record), 54)}</b>
-                </button>
+            <dl className="figure-profile-stats">
+              {statRows.map(([label, value]) => (
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </div>
               ))}
+            </dl>
+            <div className="figure-profile-reference">
+              <span>REFERENCE</span>
+              <b>{figure.profile.referenceLabel}</b>
             </div>
-            {samples[0] ? (
-              <button className="figure-open-sample" type="button" onClick={() => onOpenRecord(samples[0])}>
-                OPEN SAMPLE RECORD
-              </button>
-            ) : null}
           </section>
         </article>
       </div>
@@ -2014,15 +2224,18 @@ function buildPeriodBoxPlotStats(
 
 function buildFigureSignalItems(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): FigureSignalItem[] {
   const mappedIds = new Set(mapFlags.map((flag) => flag.record_id));
-  const grouped = new Map<string, RecordItem[]>();
+  const grouped = new Map<string, { profile: FigureProfile; records: RecordItem[] }>();
   for (const record of records) {
-    const label = record.canonical_figure_guess || record.canonical_figure || "uncoded";
-    const rows = grouped.get(label) ?? [];
-    rows.push(record);
-    grouped.set(label, rows);
+    const rawLabel = record.canonical_figure_guess || record.canonical_figure || "uncoded";
+    const profile = figureProfileFor(rawLabel);
+    const row = grouped.get(profile.slug) ?? { profile, records: [] };
+    row.records.push(record);
+    grouped.set(profile.slug, row);
   }
   return [...grouped.entries()]
-    .map(([label, figureRecords]) => {
+    .map(([slug, group]) => {
+      const { profile } = group;
+      const figureRecords = group.records;
       const sortedRecords = [...figureRecords].sort(compareRecordsByDate);
       const years = sortedRecords
         .map((record) => record.year)
@@ -2043,17 +2256,87 @@ function buildFigureSignalItems(records: readonly RecordItem[], mapFlags: readon
         }, {}),
         1,
       )[0]?.[0] ?? "Public sources";
+      const topNarrativeFamily = entriesDescending(
+        sortedRecords.reduce<Record<string, number>>((acc, record) => {
+          const narrative = narrativeGroupLabel(record);
+          acc[narrative] = (acc[narrative] ?? 0) + 1;
+          return acc;
+        }, {}),
+        1,
+      )[0]?.[0] ?? "Other typed context";
+      const earliestYear = years.length ? Math.min(...years) : null;
+      const latestYear = years.length ? Math.max(...years) : null;
       return {
-        label,
+        slug,
+        label: profile.label,
+        profile,
         records: sortedRecords,
         mappedCount: sortedRecords.filter((record) => mappedIds.has(record.record_id)).length,
-        dateSpan: years.length ? `${Math.min(...years)}-${Math.max(...years)}` : "undated only",
+        dateSpan: earliestYear && latestYear ? `${earliestYear}-${latestYear}` : "undated only",
+        earliestYear,
+        latestYear,
         topSourceFamily,
         topRegion,
-        note: "This figure card summarises public source records in the archive. It is a source-context view, not a claim about real-world frequency.",
+        topNarrativeFamily,
+        note: profile.shortDescription,
       };
     })
     .sort((a, b) => b.records.length - a.records.length || a.label.localeCompare(b.label));
+}
+
+function buildSourceComposition(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): DensityChartDatum[] {
+  const mappedIds = new Set(mapFlags.map((flag) => flag.record_id));
+  const groups = new Map<string, { label: string; total: number; mapped: number }>();
+  for (const record of records) {
+    const family = sourceFamilyFor(record.source_type);
+    const row = groups.get(family.id) ?? { label: family.label, total: 0, mapped: 0 };
+    row.total += 1;
+    if (mappedIds.has(record.record_id)) {
+      row.mapped += 1;
+    }
+    groups.set(family.id, row);
+  }
+  return [...groups.entries()]
+    .map(([key, row]) => ({ key, label: row.label, value: row.total, secondary: row.mapped }))
+    .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
+    .slice(0, 8);
+}
+
+function buildRegionConcentration(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): DensityChartDatum[] {
+  const totals = new Map<string, { total: number; mapped: number }>();
+  for (const record of records) {
+    const code = record.state_territory || "Unspecified";
+    const row = totals.get(code) ?? { total: 0, mapped: 0 };
+    row.total += 1;
+    totals.set(code, row);
+  }
+  for (const flag of mapFlags) {
+    const code = flag.state_territory || flag.record.state_territory || "Unspecified";
+    const row = totals.get(code) ?? { total: 0, mapped: 0 };
+    row.mapped += 1;
+    totals.set(code, row);
+  }
+  return [...totals.entries()]
+    .map(([key, row]) => ({ key, label: STATE_NAMES[key] ?? key, value: row.total, secondary: row.mapped }))
+    .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label));
+}
+
+function buildFigurePeriodMatrix(figures: readonly FigureSignalItem[], periods: readonly DateBand[]): DensityCrossRow[] {
+  return figures.slice(0, 7).map((figure) => {
+    const periodCounts = figure.records.reduce<Record<string, number>>((acc, record) => {
+      acc[record.date_band] = (acc[record.date_band] ?? 0) + 1;
+      return acc;
+    }, {});
+    return {
+      figure: figure.label,
+      total: figure.records.length,
+      values: periods.map((period) => ({
+        bandId: period.id,
+        bandLabel: period.label,
+        value: periodCounts[period.id] ?? 0,
+      })),
+    };
+  });
 }
 
 function quantile(values: readonly number[], q: number) {

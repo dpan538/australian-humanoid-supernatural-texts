@@ -33,6 +33,7 @@ const FORBIDDEN_PUBLIC_LABELS = [
   "FIELD 03",
   "PERIOD METHOD COMPARATOR",
   "ANALYTICAL FIELD",
+  "SOURCE FIELD",
 ];
 
 async function openDensity(browser: Browser, viewport: DensityViewport, mode: DensityMode) {

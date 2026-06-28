@@ -32,6 +32,7 @@ Public UI must not expose engineering or process labels, including:
 - `FIELD 03`
 - `PERIOD METHOD COMPARATOR`
 - `ANALYTICAL FIELD`
+- `SOURCE FIELD`
 
 ## Chart Readability
 
