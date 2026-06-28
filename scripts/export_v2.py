@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aus_humanoid.db import DEFAULT_DB_PATH, connect, table_names
+from aus_humanoid.time_periods import build_public_date_bands, year_to_public_period_id
 from aus_humanoid.utils import PROJECT_ROOT, utc_now_iso
 from aus_humanoid.v2_schema import SCHEMA_VERSION
 
@@ -36,26 +37,17 @@ def fetch_dicts(conn, sql: str, params: tuple[Any, ...] = ()) -> list[dict[str, 
     return [dict(row) for row in conn.execute(sql, params).fetchall()]
 
 
-def date_band(value: str | None) -> str:
+def safe_year(value: str | None) -> int | None:
     if not value:
-        return "undated / circulation period only"
+        return None
     try:
-        year = int(str(value)[:4])
+        return int(str(value)[:4])
     except ValueError:
-        return "undated / circulation period only"
-    if year < 1842:
-        return "before 1842"
-    if year <= 1875:
-        return "1842-1875"
-    if year <= 1918:
-        return "1876-1918"
-    if year <= 1945:
-        return "1919-1945"
-    if year <= 1969:
-        return "1946-1969"
-    if year <= 1999:
-        return "1970-1999"
-    return "2000-present"
+        return None
+
+
+def date_band(value: str | None, date_bands: list[dict[str, Any]]) -> str:
+    return year_to_public_period_id(safe_year(value), date_bands)
 
 
 def export_csvs(conn, export_dir: Path) -> dict[str, int]:
@@ -220,6 +212,12 @@ def frontend_payload(conn) -> dict[str, Any]:
     concepts = fetch_dicts(conn, "SELECT * FROM entity_concepts")
     links = fetch_dicts(conn, "SELECT * FROM narrative_source_links")
     candidates = fetch_dicts(conn, "SELECT * FROM collection_candidates_v2")
+    narrative_years = [safe_year(row.get("earliest_attestation_start")) for row in narratives]
+    dated_narrative_years = [year for year in narrative_years if year is not None]
+    date_bands = build_public_date_bands(
+        min(dated_narrative_years) if dated_narrative_years else None,
+        max(dated_narrative_years) if dated_narrative_years else None,
+    )
 
     narrative_type_counts = Counter(row.get("narrative_type") or row.get("secondary_role") or "untyped" for row in narratives)
     analysis_counts = Counter(row.get("analysis_status") or "unknown" for row in narratives)
@@ -228,7 +226,7 @@ def frontend_payload(conn) -> dict[str, Any]:
     source_org_counts = Counter(row.get("publication_or_organisation") or "unknown" for row in source_items)
     location_role_counts = Counter(row.get("location_role") or "unknown" for row in locations)
     state_counts = Counter((row.get("state_territory") or "AU_UNSPECIFIED") for row in locations)
-    date_counts = Counter(date_band(row.get("earliest_attestation_start")) for row in narratives)
+    date_counts = Counter(date_band(row.get("earliest_attestation_start"), date_bands) for row in narratives)
 
     map_layers: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in locations:
@@ -271,6 +269,7 @@ def frontend_payload(conn) -> dict[str, Any]:
             "date_bands": dict(date_counts),
             "collection_candidates": dict(Counter(row.get("candidate_status") or "unknown" for row in candidates)),
         },
+        "date_bands": date_bands,
         "map_layers": map_layers,
         "timeline_fields": [
             "event_date",

@@ -1,10 +1,17 @@
 export type DateBand = {
   id: string;
   label: string;
-  start: number;
+  short_label?: string;
+  start: number | null;
   end: number | null;
   role: string;
+  context?: string;
+  open_display_label?: string | null;
   record_count: number;
+  mapped_count?: number;
+  mapped_share?: number;
+  span_years?: number | null;
+  records_per_year?: number | null;
   planned_query_count: number;
 };
 
@@ -15,6 +22,8 @@ export type Summary = {
   source_count: number;
   location_count: number;
   mapped_record_count: number;
+  dated_record_count?: number;
+  undated_record_count?: number;
   broad_location_count: number;
   map_cluster_count?: number;
   map_flag_count?: number;
@@ -197,6 +206,13 @@ export type FrontendData = {
   };
   summary: Summary;
   date_bands: DateBand[];
+  attention_windows?: Array<{
+    id: string;
+    label: string;
+    start: number;
+    end: number | null;
+    role: string;
+  }>;
   records: RecordItem[];
   locations: LocationItem[];
   map_points: LocationItem[];
