@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-06-28T02:17:31+00:00",
+  "branch": "release/v1-readiness",
+  "commit": "4f4001977ce3d33048bd3d5004d6c152aa7df37e",
+  "public_record_count": 3809,
+  "mapped_record_count": 1206,
+  "source_audit_result": {
+    "needs_review_count": 7,
+    "largest_source_organisation_share": 0.4211,
+    "largest_source_family_share": 0.413
+  },
+  "map_invariant_result": true,
+  "readme_status": "updated for current title, project scope, citation, and split licensing",
+  "licensing_status": "split MIT and custom visual-interface license documented",
+  "validation_status": "pass",
+  "build_status": "passed",
+  "test_status": "passed",
+  "performance_summary": {
+    "frontend_json_size_bytes": 20717839,
+    "route_js_sizes": {
+      "available": true,
+      "routes": {
+        "/_global-error": {
+          "server_js_path": ".next/server/app/_global-error/page.js",
+          "server_js_bytes": 593
+        },
+        "/_not-found": {
+          "server_js_path": ".next/server/app/_not-found/page.js",
+          "server_js_bytes": 810
+        },
+        "/about": {
+          "server_js_path": ".next/server/app/about/page.js",
+          "server_js_bytes": 937
+        },
+        "/dashboard": {
+          "server_js_path": ".next/server/app/dashboard/page.js",
+          "server_js_bytes": 906
+        },
+        "/density": {
+          "server_js_path": ".next/server/app/density/page.js",
+          "server_js_bytes": 902
+        },
+        "/map": {
+          "server_js_path": ".next/server/app/map/page.js",
+          "server_js_bytes": 894
+        },
+        "/": {
+          "server_js_path": ".next/server/app/page.js",
+          "server_js_bytes": 922
+        },
+        "/source": {
+          "server_js_path": ".next/server/app/source/page.js",
+          "server_js_bytes": 900
+        }
+      }
+    }
+  },
+  "mobile_assessment_summary": "desktop-first and small-screen usable; not a dedicated mobile product",
+  "deployment_blockers": [],
+  "recommended_release_decision": "ready_for_first_release"
+}

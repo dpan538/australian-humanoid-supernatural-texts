@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "errors": [],
+  "warnings": [
+    {
+      "check": "warning_only_scope",
+      "message": "source page UI aggregate totals require frontend runtime execution; static source IDs and source rollups were reconciled instead."
+    },
+    {
+      "check": "warning_only_scope",
+      "message": "stable identifier requirements vary by source family; this validator checks URL or external_id where present in the public export."
+    }
+  ],
+  "metrics": {
+    "public_record_count": 3809,
+    "mapped_record_count": 1206,
+    "map_points_length": 1206,
+    "map_flags_length": 1206,
+    "source_count": 49,
+    "date_band_total": 3809
+  }
+}

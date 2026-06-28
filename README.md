@@ -35,7 +35,7 @@ This project is not:
 
 Public discoverability is not treated as unrestricted permission. Indigenous-related records require particular care around terminology, publicness, source voice, sensitivity, and display mode.
 
-## Current public interface
+## Public interface
 
 The frontend is a restrained archive-terminal research display. It uses a dark terminal palette, source and narrative typing, state-outline geography, dense dashboard panels, source registers, and public-data status modules.
 
@@ -77,6 +77,16 @@ Preferred source families include archives, libraries, newspapers, public-domain
 Tourism pages and unsourced paranormal aggregators may be useful as discovery leads, but they are not treated as primary evidence without stronger source support.
 
 Public catalogue metadata is not permission to extract restricted content. Records involving Aboriginal and Torres Strait Islander peoples, communities, or culturally specific figures require stronger caution around terminology, publicness, cultural sensitivity, and display mode. Sensitive public material may be summary-only or suppressed from public display.
+
+See also `docs/release/SOURCE_POLICY.md`.
+
+## Map and location policy
+
+The public map shows verified display locations for public records. A map flag is not proof of an event, a habitat, a population distribution, or cultural authority.
+
+One public record can produce zero or one public map flag. Publication locations, archive custody locations, source institution addresses, author residences, inferred state-only locations, and broad cultural regions without display clearance are not valid public map flags.
+
+See also `docs/release/MAP_ELIGIBILITY.md`.
 
 ## Running locally
 
@@ -223,3 +233,5 @@ This repository uses a split license:
 - Third-party source texts, catalogue records, web pages, images, and map data retain their original rights.
 
 GitHub may show multiple or unknown licenses because of the custom visual-interface license. Do not remove the visual license merely to simplify the GitHub sidebar.
+
+See also `docs/LICENSING.md`.

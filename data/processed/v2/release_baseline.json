@@ -1,0 +1,161 @@
+{
+  "generated_at": "2026-06-28T02:17:31+00:00",
+  "database": "data/processed/australian_humanoid_figures.sqlite",
+  "frontend_json": "public/data/frontend-data.json",
+  "public_record_count": 3809,
+  "mapped_record_count": 1206,
+  "map_points_length": 1206,
+  "map_flags_length": 1206,
+  "map_invariant_passes": true,
+  "source_organisation_count": 33,
+  "source_type_counts": {
+    "repository_full_text": 1536,
+    "modern_web": 1017,
+    "public_domain_ebook": 691,
+    "public_domain_transcribed_book": 173,
+    "institutional_media_page": 110,
+    "academic_metadata": 67,
+    "project_gutenberg_australia_book": 47,
+    "internet_archive_metadata": 36,
+    "repository_full_text_article": 32,
+    "institutional_history_article": 27,
+    "institutional_web": 21,
+    "internet_sacred_texts_public_domain_book": 20,
+    "wikisource_public_domain_book": 10,
+    "institutional_history_and_media_pages": 8,
+    "institutional_history_page": 5,
+    "public_repository_ocr_text": 3,
+    "public_repository_newsletter_ocr_text": 2,
+    "institutional_education_page": 1,
+    "community_controlled_public_web": 1,
+    "seeded_public_web": 1,
+    "municipal_local_history_pdf": 1
+  },
+  "source_family_counts": {
+    "repository_texts": 1573,
+    "modern_public_web": 1018,
+    "public_domain_books": 941,
+    "institutional_or_local_studies": 173,
+    "academic_catalogue_metadata": 103,
+    "community_controlled_public": 1
+  },
+  "narrative_type_counts": {
+    "spirit_person_narrative": 1317,
+    "encounter_account": 912,
+    "retelling_or_adaptation": 519,
+    "apparition_account": 490,
+    "descriptive_belief_record": 172,
+    "giant_or_ogre_narrative": 129,
+    "cryptid_style_apeman": 119,
+    "ghost_legend": 42,
+    "traditional_narrative": 40,
+    "spirit_being": 30,
+    "ancestral_being": 24,
+    "local_legend": 5,
+    "giant": 4,
+    "cautionary_being": 2,
+    "rumour_account": 2,
+    "non_humanoid_control": 1,
+    "satire": 1
+  },
+  "date_span": {
+    "earliest_year": 1825,
+    "latest_year": 2026
+  },
+  "mapped_record_share": 0.3166,
+  "unmapped_public_records": 2603,
+  "records_by_jurisdiction": {
+    "WA": 190,
+    "NT": 214,
+    "SA": 152,
+    "QLD": 505,
+    "NSW": 886,
+    "VIC": 480,
+    "TAS": 158,
+    "ACT": 33
+  },
+  "mapped_records_by_jurisdiction": {
+    "WA": 38,
+    "NT": 30,
+    "SA": 43,
+    "QLD": 345,
+    "NSW": 499,
+    "VIC": 174,
+    "TAS": 57,
+    "ACT": 20
+  },
+  "source_concentration": {
+    "Internet Archive": 1604,
+    "Australian Yowie Research": 1010,
+    "Project Gutenberg": 499,
+    "Project Gutenberg Australia": 239,
+    "Wikisource": 118,
+    "Australian Broadcasting Corporation": 110,
+    "Internet Sacred Text Archive": 85,
+    "OpenAlex": 56,
+    "State Library Victoria": 21,
+    "Crossref": 11,
+    "National Trust and ABC public pages": 8,
+    "National Trust of Australia (NSW)": 6,
+    "English Wikipedia": 6,
+    "Territory Stories": 5,
+    "Adelaide Arcade": 5
+  },
+  "largest_source_organisation_share": {
+    "source_name": "Internet Archive",
+    "record_count": 1604,
+    "share": 0.4211
+  },
+  "largest_source_family_share": {
+    "source_family": "repository_texts",
+    "record_count": 1573,
+    "share": 0.413
+  },
+  "sensitive_summary_only_records": 127,
+  "suppressed_records": 13,
+  "excluded_records": 2,
+  "narrative_display_modes": {
+    "full": 3861,
+    "summary_only": 127,
+    "suppressed": 13
+  },
+  "frontend_json_size_bytes": 20717839,
+  "route_js_sizes": {
+    "available": true,
+    "routes": {
+      "/_global-error": {
+        "server_js_path": ".next/server/app/_global-error/page.js",
+        "server_js_bytes": 593
+      },
+      "/_not-found": {
+        "server_js_path": ".next/server/app/_not-found/page.js",
+        "server_js_bytes": 810
+      },
+      "/about": {
+        "server_js_path": ".next/server/app/about/page.js",
+        "server_js_bytes": 937
+      },
+      "/dashboard": {
+        "server_js_path": ".next/server/app/dashboard/page.js",
+        "server_js_bytes": 906
+      },
+      "/density": {
+        "server_js_path": ".next/server/app/density/page.js",
+        "server_js_bytes": 902
+      },
+      "/map": {
+        "server_js_path": ".next/server/app/map/page.js",
+        "server_js_bytes": 894
+      },
+      "/": {
+        "server_js_path": ".next/server/app/page.js",
+        "server_js_bytes": 922
+      },
+      "/source": {
+        "server_js_path": ".next/server/app/source/page.js",
+        "server_js_bytes": 900
+      }
+    }
+  },
+  "localhost_127_0_0_1_3000_running": false
+}
