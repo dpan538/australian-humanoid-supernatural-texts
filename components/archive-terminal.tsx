@@ -83,6 +83,16 @@ const SOURCE_PUBLIC_LABELS: Record<string, string> = {
   manual: "Manual review",
 };
 
+const MAP_SOURCE_LEGEND_GROUPS = [
+  { id: "repository", label: "Repository / archive", className: "source-tone-archive" },
+  { id: "public-domain", label: "Public-domain text", className: "source-tone-candidate" },
+  { id: "modern-web", label: "Modern public web", className: "source-tone-web" },
+  { id: "institution", label: "Public institution", className: "source-tone-institutional" },
+  { id: "other", label: "Other public source", className: "source-tone-default" },
+] as const;
+
+const MAP_FLAG_BUCKET_COUNT = 12;
+
 const NARRATIVE_TYPE_LABELS: Record<string, string> = {
   cryptid_style_apeman: "Hairy humanoid reports",
   encounter_account: "Encounter accounts",
@@ -315,11 +325,22 @@ type MapFlagRenderItem = {
   state_territory: string;
   x: number;
   y: number;
+  displayX: number;
+  displayY: number;
+  collisionOffset: boolean;
+  growthBucket: number;
   title: string | null;
   year: number | null;
   canonical_figure: string | null;
   record: RecordItem;
   toneClass: string;
+};
+
+type MapSourceLegendItem = {
+  id: string;
+  label: string;
+  className: string;
+  count: number;
 };
 
 type FrontendDerivedData = {
@@ -365,6 +386,17 @@ function numberFormat(value: number | null | undefined) {
     return "--";
   }
   return new Intl.NumberFormat("en-AU").format(value);
+}
+
+function mapCount(value: number | null | undefined) {
+  if (value === null || value === undefined || !Number.isFinite(value)) {
+    return "--";
+  }
+  return String(Math.trunc(value));
+}
+
+function clamp(value: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, value));
 }
 
 function svgCoord(value: number) {
@@ -591,6 +623,10 @@ function buildMapFlags(data: FrontendData, recordsById: Map<number, RecordItem>)
       state_territory: flag.state_territory || record.state_territory || "AU",
       x: coordinates.x,
       y: coordinates.y,
+      displayX: coordinates.x,
+      displayY: coordinates.y,
+      collisionOffset: false,
+      growthBucket: 0,
       title: flag.title ?? record.title,
       year: flag.year ?? record.year,
       canonical_figure: flag.canonical_figure ?? record.canonical_figure_guess ?? record.canonical_figure,
@@ -599,7 +635,69 @@ function buildMapFlags(data: FrontendData, recordsById: Map<number, RecordItem>)
     });
   }
 
+  return prepareMapFlagPresentation(flags);
+}
+
+function prepareMapFlagPresentation(flags: MapFlagRenderItem[]) {
+  const minX = Math.min(...flags.map((flag) => flag.x));
+  const maxX = Math.max(...flags.map((flag) => flag.x));
+  const rangeX = Math.max(1, maxX - minX);
+  const collisionGroups = new Map<string, MapFlagRenderItem[]>();
+
+  for (const flag of flags) {
+    flag.growthBucket = clamp(Math.floor(((flag.x - minX) / rangeX) * (MAP_FLAG_BUCKET_COUNT - 1)), 0, MAP_FLAG_BUCKET_COUNT - 1);
+    const collisionKey = `${flag.x.toFixed(3)}:${flag.y.toFixed(3)}`;
+    const group = collisionGroups.get(collisionKey) ?? [];
+    group.push(flag);
+    collisionGroups.set(collisionKey, group);
+  }
+
+  for (const group of collisionGroups.values()) {
+    if (group.length < 2) {
+      continue;
+    }
+    const ordered = [...group].sort((a, b) => a.record_id - b.record_id);
+    const radius = group.length === 2 ? 2.8 : group.length === 3 ? 3.6 : 4.4;
+    const rotation = ((ordered[0]?.record_id ?? 0) % 11) * 0.09;
+    ordered.forEach((flag, index) => {
+      const angle = rotation + (index / ordered.length) * Math.PI * 2;
+      flag.displayX = flag.x + Math.cos(angle) * radius;
+      flag.displayY = flag.y + Math.sin(angle) * radius;
+      flag.collisionOffset = true;
+    });
+  }
+
   return flags;
+}
+
+function buildMapSourceLegend(mapFlags: readonly MapFlagRenderItem[]): MapSourceLegendItem[] {
+  const counts = new Map<string, number>();
+  for (const flag of mapFlags) {
+    const group = mapSourceLegendGroup(flag.record);
+    counts.set(group.id, (counts.get(group.id) ?? 0) + 1);
+  }
+
+  return MAP_SOURCE_LEGEND_GROUPS.map((group) => ({
+    ...group,
+    count: counts.get(group.id) ?? 0,
+  })).filter((group) => group.count > 0);
+}
+
+function mapSourceLegendGroup(record: RecordItem) {
+  const text = [record.source_type, record.source_name, record.publication, record.url].filter(Boolean).join(" ").toLowerCase();
+  if (/public_domain|gutenberg|wikisource|sacred_texts/.test(text)) {
+    return MAP_SOURCE_LEGEND_GROUPS[1];
+  }
+  if (/institutional|municipal|museum|library|catalogue|aiatsis|abc|parks victoria/.test(text)) {
+    return MAP_SOURCE_LEGEND_GROUPS[3];
+  }
+  if (/repository|archive|trove|newspaper|magazine/.test(text)) {
+    return MAP_SOURCE_LEGEND_GROUPS[0];
+  }
+  if (/modern_web|seeded_public_web|yowie research|public_web|web/.test(text)) {
+    return MAP_SOURCE_LEGEND_GROUPS[2];
+  }
+  return MAP_SOURCE_LEGEND_GROUPS[4];
 }
 
 function createRecordFromMapFlag(flag: MapFlagItem, dateBands: DateBand[]): RecordItem {
@@ -927,6 +1025,70 @@ function flagTargetFromEvent(event: React.SyntheticEvent<SVGGElement>) {
   return target.closest("[data-record-id]");
 }
 
+function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature: string) {
+  const reducedMotion = usePrefersReducedMotion();
+  const timelineRef = useRef<Timeline | null>(null);
+
+  useEffect(() => {
+    const layer = layerRef.current;
+    if (!layer) {
+      return;
+    }
+    const glyphs = Array.from(layer.querySelectorAll<SVGGElement>(".record-flag-glyph"));
+    timelineRef.current?.cancel();
+    timelineRef.current = null;
+
+    if (!glyphs.length || reducedMotion) {
+      glyphs.forEach((glyph) => {
+        glyph.style.opacity = "1";
+        glyph.style.transform = "scale(1)";
+      });
+      layer.classList.add("flags-grown");
+      return;
+    }
+
+    layer.classList.remove("flags-grown");
+    glyphs.forEach((glyph) => {
+      glyph.style.opacity = "0";
+      glyph.style.transform = "scale(0.16)";
+    });
+
+    const timeline = createTimeline({
+      defaults: {
+        ease: "outCubic",
+        composition: "replace",
+      },
+    });
+
+    for (let bucket = 0; bucket < MAP_FLAG_BUCKET_COUNT; bucket += 1) {
+      const bucketGlyphs = glyphs.filter((glyph) => glyph.dataset.growthBucket === String(bucket));
+      if (!bucketGlyphs.length) {
+        continue;
+      }
+      timeline.add(bucketGlyphs, {
+        opacity: [0, 1],
+        scale: [0.16, 1],
+        duration: 340,
+        delay: (_element: unknown, index: number) => (index % 6) * 3,
+      }, 100 + bucket * 64);
+    }
+
+    timeline.add(glyphs, { opacity: 1, scale: 1, duration: 1 }, 1320);
+    timelineRef.current = timeline;
+
+    return () => {
+      timeline.cancel();
+    };
+  }, [flagSignature, layerRef, reducedMotion]);
+
+  useEffect(() => {
+    return () => {
+      timelineRef.current?.cancel();
+      timelineRef.current = null;
+    };
+  }, []);
+}
+
 function MapView({
   data,
   derived,
@@ -936,14 +1098,19 @@ function MapView({
   derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
+  const mapLayerRef = useRef<SVGGElement | null>(null);
   const [hoverState, setHoverState] = useState<string | null>(null);
   const [hoverRecordId, setHoverRecordId] = useState<number | null>(null);
+  const [selectedRecordId, setSelectedRecordId] = useState<number | null>(null);
   const stateCounts = data.summary.corpus_state_counts ?? data.summary.state_record_counts;
   const mapFlags = derived.mapFlags;
   const preciseStateCounts = derived.mappedStateCounts;
   const activeState = hoverState ? STATE_NAMES[hoverState] : "Australia";
   const activeCount = hoverState ? preciseStateCounts[hoverState] ?? 0 : mapFlags.length;
-  const largeFlagSet = mapFlags.length > 800;
+  const flagSignature = `${mapFlags.length}:${mapFlags[0]?.flag_id ?? "none"}:${mapFlags.at(-1)?.flag_id ?? "none"}`;
+  const sourceLegend = useMemo(() => buildMapSourceLegend(mapFlags), [mapFlags]);
+
+  useMapFlagGrowth(mapLayerRef, flagSignature);
 
   const hoverFlagFromEvent = useCallback((event: React.SyntheticEvent<SVGGElement>) => {
     const element = flagTargetFromEvent(event);
@@ -973,6 +1140,7 @@ function MapView({
     const recordId = Number(element?.getAttribute("data-record-id"));
     const flag = Number.isFinite(recordId) ? derived.mapFlagRecordLookup.get(recordId) : null;
     if (flag) {
+      setSelectedRecordId(flag.record_id);
       onSelectRecord(flag.record);
     }
   }, [derived.mapFlagRecordLookup, onSelectRecord]);
@@ -1023,7 +1191,8 @@ function MapView({
           })}
           <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
           <g
-            className={`record-flag-layer ${hoverRecordId ? "has-hover" : ""} ${largeFlagSet ? "large-flag-set" : ""}`}
+            ref={mapLayerRef}
+            className={`record-flag-layer ${hoverState ? "has-state-hover" : ""} ${hoverRecordId ? "has-hover" : ""}`}
             aria-label="Strict geocoded public record flags"
             onPointerOver={hoverFlagFromEvent}
             onPointerLeave={clearFlagHover}
@@ -1032,15 +1201,12 @@ function MapView({
             onClick={selectFlagFromEvent}
             onKeyDown={handleFlagKeyDown}
           >
-            {mapFlags.map((flag, index) => (
+            {mapFlags.map((flag) => (
               <MapFlagMarker
                 key={flag.flag_id}
                 flag={flag}
-                index={index}
-                total={mapFlags.length}
-                active={hoverRecordId === flag.record_id}
+                active={hoverRecordId === flag.record_id || selectedRecordId === flag.record_id}
                 stateLinked={hoverState === flag.state_territory}
-                largeSet={largeFlagSet}
               />
             ))}
           </g>
@@ -1067,8 +1233,8 @@ function MapView({
         <div className="readout-block">
           <span className="tiny-label">REGION</span>
           <strong>{activeState}</strong>
-          <span className="readout-number">{numberFormat(activeCount)}</span>
-          <span className="readout-tail">records</span>
+          <span className="readout-number">{mapCount(activeCount)}</span>
+          <span className="readout-tail">mapped records</span>
         </div>
         <div className="readout-grid">
           {Object.entries(STATE_NAMES).map(([code]) => (
@@ -1084,15 +1250,17 @@ function MapView({
               onBlur={() => setHoverState(null)}
             >
               <span>{code}</span>
-              <b>{preciseStateCounts[code] ?? 0}</b>
+              <b>{mapCount(preciseStateCounts[code] ?? 0)}</b>
             </button>
           ))}
         </div>
         <div className="map-health-note">
-          <span>POINT GEO</span>
-          <b>{mapFlags.length}</b>
-          <small>mapped records / {data.summary.record_count} total</small>
+          <span>MAPPED RECORDS</span>
+          <b>{mapCount(mapFlags.length)}</b>
+          <small>{mapCount(mapFlags.length)} mapped / {mapCount(data.summary.record_count)} public records</small>
+          <em>one flag per verified public record</em>
         </div>
+        <MapSourceLegend items={sourceLegend} />
       </aside>
     </div>
   );
@@ -1100,38 +1268,41 @@ function MapView({
 
 const MapFlagMarker = memo(function MapFlagMarker({
   flag,
-  index,
-  total,
   active,
   stateLinked,
-  largeSet,
 }: {
   flag: MapFlagRenderItem;
-  index: number;
-  total: number;
   active: boolean;
   stateLinked: boolean;
-  largeSet: boolean;
 }) {
-  const flagDelay = !largeSet && total > 1 ? (index / Math.max(1, total - 1)) * 820 : 0;
   const className = ["record-flag", "precise", flag.toneClass, active ? "active" : "", stateLinked ? "state-linked" : ""]
     .filter(Boolean)
     .join(" ");
   const label = flag.title || flag.canonical_figure || `Record ${flag.record_id}`;
+  const ringRadius = active ? 8.2 : stateLinked ? 5.2 : 4.3;
+  const coreRadius = active ? 5.1 : stateLinked ? 2.9 : 2.35;
 
   return (
     <g
       className={className}
-      style={{ "--flag-delay": `${flagDelay.toFixed(1)}ms` } as CSSProperties}
       data-record-id={flag.record_id}
       role="button"
       tabIndex={0}
       aria-label={`Open mapped record ${label}`}
     >
-      <circle className="record-flag-hit" cx={flag.x} cy={flag.y} r="10" />
-      <circle className="record-flag-dot" cx={flag.x} cy={flag.y} r={active ? 5.2 : stateLinked ? 3.9 : 3.25} />
+      {flag.collisionOffset ? (
+        <line className="record-flag-connector" x1={flag.x} y1={flag.y} x2={flag.displayX} y2={flag.displayY} />
+      ) : null}
+      <circle className="record-flag-hit" cx={flag.displayX} cy={flag.displayY} r="10" />
+      <g className="record-flag-glyph" data-growth-bucket={flag.growthBucket}>
+        <g className="record-flag-symbol">
+          <circle className="record-flag-under-ring" cx={flag.displayX} cy={flag.displayY} r={ringRadius + 1.1} />
+          <circle className="record-flag-ring" cx={flag.displayX} cy={flag.displayY} r={ringRadius} />
+          <circle className="record-flag-core" cx={flag.displayX} cy={flag.displayY} r={coreRadius} />
+        </g>
+      </g>
       {active ? (
-        <text className="record-flag-label" x={Math.min(flag.x + 12, MAP_VIEWBOX.width - 150)} y={Math.max(flag.y - 10, 26)}>
+        <text className="record-flag-label" x={Math.min(flag.displayX + 12, MAP_VIEWBOX.width - 150)} y={Math.max(flag.displayY - 10, 26)}>
           {flag.year ?? "--"} / {truncate(flag.canonical_figure ?? label, 24)}
         </text>
       ) : null}
@@ -1140,9 +1311,27 @@ const MapFlagMarker = memo(function MapFlagMarker({
 }, (prev, next) => (
   prev.flag === next.flag &&
   prev.active === next.active &&
-  prev.stateLinked === next.stateLinked &&
-  prev.largeSet === next.largeSet
+  prev.stateLinked === next.stateLinked
 ));
+
+function MapSourceLegend({ items }: { items: MapSourceLegendItem[] }) {
+  return (
+    <div className="map-source-legend" aria-label="Flag source categories">
+      <span>FLAG SOURCE</span>
+      {items.map((item) => (
+        <div className={`map-source-legend-row record-flag ${item.className}`} key={item.id}>
+          <svg viewBox="0 0 18 18" aria-hidden="true">
+            <circle className="record-flag-under-ring" cx="9" cy="9" r="5.4" />
+            <circle className="record-flag-ring" cx="9" cy="9" r="4.4" />
+            <circle className="record-flag-core" cx="9" cy="9" r="2.5" />
+          </svg>
+          <b>{item.label}</b>
+          <small>{mapCount(item.count)}</small>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function TerrainLegend() {
   const frameWidth = 242;
@@ -3551,6 +3740,12 @@ const HISTORICAL_PUBLICATION_PATTERN =
 function mapSourceTone(record: RecordItem) {
   const text = [record.source_name, record.source_type, record.publication, record.title, record.url].filter(Boolean).join(" ");
   const lower = text.toLowerCase();
+  if (/public_domain|gutenberg|wikisource|sacred_texts/.test(lower)) {
+    return { label: "PUBLIC DOMAIN", className: "source-tone-candidate" };
+  }
+  if (/repository|trove|newspaper|magazine/.test(lower)) {
+    return { label: "REPOSITORY", className: "source-tone-archive" };
+  }
   if (lower.includes("abc")) {
     return { label: "MEDIA", className: "source-tone-media" };
   }
