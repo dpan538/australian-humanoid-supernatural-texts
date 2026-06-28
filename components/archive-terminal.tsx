@@ -918,7 +918,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
 
   return (
     <ArchiveTerminalShell view={view}>
-      <div className="terminal-loading-state" role={error ? "alert" : "status"} aria-live="polite">
+      <div className={`terminal-loading-state ${view === "map" ? "map-loading-state" : ""}`} role={error ? "alert" : "status"} aria-live="polite">
         <span>{error ? "DATA LOAD ERROR" : "LOADING PUBLIC ARCHIVE DATA"}</span>
         <b>{error ? error : FRONTEND_DATA_SCHEMA}</b>
         <small>{FRONTEND_DATA_URL}</small>
@@ -1088,33 +1088,53 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
     layer.classList.remove("flags-grown");
     glyphs.forEach((glyph) => {
       glyph.style.opacity = "0";
-      glyph.style.transform = "scale(0.16)";
+      glyph.style.transform = "scale(0.12)";
     });
 
+    const bucketGroups = new Map<string, SVGCircleElement[]>();
+    for (const glyph of glyphs) {
+      const bucket = glyph.dataset.growthBucket ?? "0";
+      const group = bucketGroups.get(bucket) ?? [];
+      group.push(glyph);
+      bucketGroups.set(bucket, group);
+    }
+
+    const finishGrowth = () => {
+      glyphs.forEach((glyph) => {
+        glyph.style.opacity = "1";
+        glyph.style.transform = "scale(1)";
+      });
+      layer.classList.remove("flags-growing");
+      layer.classList.add("flags-grown");
+    };
+
+    layer.classList.add("flags-growing");
     const timeline = createTimeline({
       defaults: {
-        ease: "outCubic",
+        ease: "outQuad",
         composition: "replace",
       },
+      onComplete: finishGrowth,
     });
 
     for (let bucket = 0; bucket < MAP_FLAG_GROWTH_BUCKETS.length; bucket += 1) {
-      const bucketGlyphs = glyphs.filter((glyph) => glyph.dataset.growthBucket === String(bucket));
+      const bucketGlyphs = bucketGroups.get(String(bucket)) ?? [];
       if (!bucketGlyphs.length) {
         continue;
       }
       timeline.add(bucketGlyphs, {
         opacity: [0, 1],
-        scale: [0.16, 1],
-        duration: 320,
-        delay: (_element: unknown, index: number) => (index % 6) * 3,
-      }, 100 + bucket * 150);
+        scale: [0.12, 1],
+        duration: 560,
+        delay: (_element: unknown, index: number) => (index % 10) * 4,
+      }, 180 + bucket * 220);
     }
 
-    timeline.add(glyphs, { opacity: 1, scale: 1, duration: 1 }, 1520);
+    timeline.add(glyphs, { opacity: 1, scale: 1, duration: 1 }, 2350);
     timelineRef.current = timeline;
 
     return () => {
+      layer.classList.remove("flags-growing");
       timeline.cancel();
     };
   }, [flagSignature, layerRef, reducedMotion]);

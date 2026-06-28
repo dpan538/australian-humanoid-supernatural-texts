@@ -333,6 +333,11 @@ a {
   font-size: 0.8rem;
 }
 
+.view-area-map .map-loading-state {
+  min-height: 100%;
+  background: transparent;
+}
+
 .map-view,
 .dashboard-view,
 .density-view {
@@ -557,6 +562,14 @@ a {
   transition: opacity 120ms ease, fill 120ms ease, r 120ms ease;
 }
 
+.record-flag-layer.flags-growing .record-flag-dot {
+  will-change: opacity, transform;
+}
+
+.record-flag-layer.flags-grown .record-flag-dot {
+  will-change: auto;
+}
+
 .record-flag-hit {
   fill: transparent;
   stroke: transparent;
@@ -756,7 +769,7 @@ a {
   width: auto;
   max-width: min(560px, 42vw);
   display: grid;
-  grid-template-columns: 9px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   justify-content: end;
   gap: 5px;
   color: rgba(142, 216, 255, 0.68);
@@ -767,13 +780,7 @@ a {
 }
 
 .map-source-block-indicator {
-  grid-row: 1 / span 2;
-  align-self: center;
-  width: 7px;
-  height: 7px;
-  border: 1px solid rgba(152, 223, 99, 0.88);
-  background: rgba(152, 223, 99, 0.34);
-  box-shadow: 0 0 8px rgba(152, 223, 99, 0.18);
+  display: none;
 }
 
 .map-source-block span {
