@@ -1,13 +1,13 @@
 import type { FrontendData, RecordItem, SourceItem } from "@/lib/types";
 
 export const SOURCE_FAMILY_STYLES = {
-  repository: { label: "Repository texts", marker: "bar", color: "#41bdb7", role: "Repository source" },
-  modern_web: { label: "Modern public web", marker: "square", color: "#2f6fd6", role: "Public web source" },
-  public_domain: { label: "Public-domain books", marker: "tick", color: "#d49a33", role: "Public-domain source" },
-  institutions: { label: "Public institutions", marker: "square", color: "#78c84f", role: "Institutional source" },
-  academic: { label: "Academic / catalogue sources", marker: "dot", color: "#8a72d6", role: "Metadata source" },
-  community: { label: "Community-controlled public sources", marker: "hollow", color: "#5b94e8", role: "Community source" },
-  other: { label: "Other public sources", marker: "hollow", color: "#7f858a", role: "Public source" },
+  repository: { label: "Repository / archive", marker: "bar", color: "#008F78", role: "Repository source" },
+  modern_web: { label: "Modern public web", marker: "square", color: "#0047FF", role: "Public web source" },
+  public_domain: { label: "Public-domain text", marker: "tick", color: "#D97706", role: "Public-domain source" },
+  institutions: { label: "Public institution", marker: "square", color: "#7C3AED", role: "Institutional source" },
+  academic: { label: "Academic / catalogue metadata", marker: "dot", color: "#6B5FD3", role: "Metadata source" },
+  community: { label: "Community-controlled public source", marker: "hollow", color: "#0284C7", role: "Community source" },
+  other: { label: "Other public source", marker: "hollow", color: "#6B7280", role: "Public source" },
 } as const;
 
 export type SourceFamilyId = keyof typeof SOURCE_FAMILY_STYLES;
@@ -246,7 +246,7 @@ export function sourceFamilyId(sourceType: string | null | undefined): SourceFam
   if (/community/.test(source)) {
     return "community";
   }
-  if (/repository/.test(source)) {
+  if (/repository|archive|trove|newspaper|magazine/.test(source)) {
     return "repository";
   }
   if (/modern_web|seeded_public_web/.test(source)) {

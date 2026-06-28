@@ -159,7 +159,7 @@ function SourceRollupPane({ rows, typeRows, totalRecords }: { rows: SourceRollup
         {typeRows.length > 0 ? (
           <>
             <div className="source-rollup-subhead" aria-hidden="true">
-              <span>TYPE SIGNAL</span>
+              <span>TYPE MIX</span>
               <small>TOP PUBLIC DISPLAY TYPES</small>
             </div>
             {typeRows.map((row) => (

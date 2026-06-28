@@ -35,15 +35,12 @@ export default function RootLayout({
             __html: `
 try {
   var theme = localStorage.getItem("aus-archive-theme");
-  var signal = localStorage.getItem("aus-archive-signal-gain");
   if (theme !== "dark" && theme !== "light") {
     theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
   }
   document.documentElement.dataset.theme = theme;
-  document.documentElement.dataset.signalGain = signal === "high" ? "high" : "normal";
 } catch (error) {
   document.documentElement.dataset.theme = "dark";
-  document.documentElement.dataset.signalGain = "normal";
 }
             `,
           }}
