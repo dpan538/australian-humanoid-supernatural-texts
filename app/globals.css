@@ -559,15 +559,7 @@ a {
   transform-box: fill-box;
   transform-origin: center;
   vector-effect: non-scaling-stroke;
-  transition: opacity 120ms ease, fill 120ms ease, r 120ms ease;
-}
-
-.record-flag-layer.flags-growing .record-flag-dot {
-  will-change: transform;
-}
-
-.record-flag-layer.flags-grown .record-flag-dot {
-  will-change: auto;
+  transition: fill 120ms ease, r 120ms ease;
 }
 
 .record-flag-hit {

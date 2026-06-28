@@ -339,6 +339,7 @@ type MapFlagRenderItem = {
   displayY: number;
   collisionOffset: boolean;
   growthBucket: number;
+  growthOrder: number;
   title: string | null;
   year: number | null;
   canonical_figure: string | null;
@@ -637,6 +638,7 @@ function buildMapFlags(data: FrontendData, recordsById: Map<number, RecordItem>)
       displayY: coordinates.y,
       collisionOffset: false,
       growthBucket: 0,
+      growthOrder: 0,
       title: flag.title ?? record.title,
       year: flag.year ?? record.year,
       canonical_figure: flag.canonical_figure ?? record.canonical_figure_guess ?? record.canonical_figure,
@@ -658,6 +660,15 @@ function prepareMapFlagPresentation(flags: MapFlagRenderItem[]) {
     group.push(flag);
     collisionGroups.set(collisionKey, group);
   }
+
+  const chronologicalFlags = [...flags].sort((a, b) => (
+    a.growthBucket - b.growthBucket ||
+    (a.year ?? Number.MAX_SAFE_INTEGER) - (b.year ?? Number.MAX_SAFE_INTEGER) ||
+    a.record_id - b.record_id
+  ));
+  chronologicalFlags.forEach((flag, index) => {
+    flag.growthOrder = index;
+  });
 
   for (const group of collisionGroups.values()) {
     if (group.length < 2) {
@@ -1087,8 +1098,8 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
 
     layer.classList.remove("flags-grown");
     glyphs.forEach((glyph) => {
-      glyph.style.opacity = "1";
-      glyph.style.transform = "scale(0.01)";
+      glyph.style.opacity = "0";
+      glyph.style.transform = "scale(1)";
     });
 
     const bucketGroups = new Map<string, SVGCircleElement[]>();
@@ -1117,18 +1128,29 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
       onComplete: finishGrowth,
     });
 
+    let position = 300;
+    const chunkSize = 12;
+    const chunkInterval = 84;
+    const bucketGap = 300;
+
     for (let bucket = 0; bucket < MAP_FLAG_GROWTH_BUCKETS.length; bucket += 1) {
-      const bucketGlyphs = bucketGroups.get(String(bucket)) ?? [];
+      const bucketGlyphs = [...(bucketGroups.get(String(bucket)) ?? [])].sort((a, b) => (
+        Number(a.dataset.growthOrder ?? 0) - Number(b.dataset.growthOrder ?? 0)
+      ));
       if (!bucketGlyphs.length) {
         continue;
       }
-      timeline.add(bucketGlyphs, {
-        scale: [0.01, 1],
-        duration: 960,
-      }, 220 + bucket * 380);
+      for (let index = 0; index < bucketGlyphs.length; index += chunkSize) {
+        timeline.add(bucketGlyphs.slice(index, index + chunkSize), {
+          opacity: 1,
+          duration: 1,
+        }, position);
+        position += chunkInterval;
+      }
+      position += bucketGap;
     }
 
-    timeline.add(glyphs, { opacity: 1, scale: 1, duration: 1 }, 3920);
+    timeline.add(glyphs, { opacity: 1, scale: 1, duration: 1 }, position);
     timelineRef.current = timeline;
 
     return () => {
@@ -1403,7 +1425,14 @@ const MapFlagMarker = memo(function MapFlagMarker({
       aria-label={`Open mapped record ${label}`}
     >
       <circle className="record-flag-hit" cx={flag.displayX} cy={flag.displayY} r="10" />
-      <circle className="record-flag-dot" cx={flag.displayX} cy={flag.displayY} r={dotRadius} data-growth-bucket={flag.growthBucket} />
+      <circle
+        className="record-flag-dot"
+        cx={flag.displayX}
+        cy={flag.displayY}
+        r={dotRadius}
+        data-growth-bucket={flag.growthBucket}
+        data-growth-order={flag.growthOrder}
+      />
       {active ? <circle className="record-flag-active-ring" cx={flag.displayX} cy={flag.displayY} r="8.1" /> : null}
       {active ? (
         <text className="record-flag-label" x={Math.min(flag.displayX + 12, MAP_VIEWBOX.width - 150)} y={Math.max(flag.displayY - 10, 26)}>
