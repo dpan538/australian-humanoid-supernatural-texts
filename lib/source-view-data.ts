@@ -1,12 +1,12 @@
 import type { FrontendData, RecordItem, SourceItem } from "@/lib/types";
 
 export const SOURCE_FAMILY_STYLES = {
-  repository: { label: "Repository texts", marker: "bar", color: "#69d7d0", role: "Repository source" },
-  modern_web: { label: "Modern public web", marker: "square", color: "#eceae2", role: "Public web source" },
-  public_domain: { label: "Public-domain books", marker: "tick", color: "#d9a854", role: "Public-domain source" },
-  institutions: { label: "Public institutions", marker: "square", color: "#98df63", role: "Institutional source" },
-  academic: { label: "Academic / catalogue sources", marker: "dot", color: "#9580cf", role: "Metadata source" },
-  community: { label: "Community-controlled public sources", marker: "hollow", color: "#7fb8ff", role: "Community source" },
+  repository: { label: "Repository texts", marker: "bar", color: "#41bdb7", role: "Repository source" },
+  modern_web: { label: "Modern public web", marker: "square", color: "#2f6fd6", role: "Public web source" },
+  public_domain: { label: "Public-domain books", marker: "tick", color: "#d49a33", role: "Public-domain source" },
+  institutions: { label: "Public institutions", marker: "square", color: "#78c84f", role: "Institutional source" },
+  academic: { label: "Academic / catalogue sources", marker: "dot", color: "#8a72d6", role: "Metadata source" },
+  community: { label: "Community-controlled public sources", marker: "hollow", color: "#5b94e8", role: "Community source" },
   other: { label: "Other public sources", marker: "hollow", color: "#7f858a", role: "Public source" },
 } as const;
 

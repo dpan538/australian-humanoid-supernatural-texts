@@ -191,12 +191,12 @@ const PLACE_ROLE_LABELS = [
   "Rumour circulation place",
 ] as const;
 const SOURCE_FAMILIES = [
-  { id: "repository", label: "Repository texts", color: "#69d7d0" },
-  { id: "modern_web", label: "Modern public web", color: "#eceae2" },
-  { id: "public_domain", label: "Public-domain books", color: "#d9a854" },
-  { id: "institutions", label: "Public institutions", color: "#98df63" },
-  { id: "academic", label: "Academic / catalogue sources", color: "#9580cf" },
-  { id: "community", label: "Community-controlled public sources", color: "#7fb8ff" },
+  { id: "repository", label: "Repository texts", color: "#41bdb7" },
+  { id: "modern_web", label: "Modern public web", color: "#2f6fd6" },
+  { id: "public_domain", label: "Public-domain books", color: "#d49a33" },
+  { id: "institutions", label: "Public institutions", color: "#78c84f" },
+  { id: "academic", label: "Academic / catalogue sources", color: "#8a72d6" },
+  { id: "community", label: "Community-controlled public sources", color: "#5b94e8" },
   { id: "other", label: "Other", color: "#7f858a" },
 ] as const;
 
@@ -1926,8 +1926,8 @@ function DensityRankedBarChart({
   secondaryLabel?: string;
 }) {
   const width = 1500;
-  const rowHeight = 31;
-  const margin = { top: 22, right: 318, bottom: 34, left: 292 };
+  const rowHeight = 38;
+  const margin = { top: 26, right: 360, bottom: 42, left: 330 };
   const height = margin.top + margin.bottom + Math.max(1, data.length) * rowHeight;
   const maxValue = Math.max(...data.map((row) => Math.max(row.value, row.secondary ?? 0)), 1);
   const xFor = (value: number) => margin.left + (value / maxValue) * (width - margin.left - margin.right);
@@ -1944,7 +1944,7 @@ function DensityRankedBarChart({
         {ticks.map((tick) => (
           <g key={tick}>
             <line className="density-chart-grid" x1={xFor(tick)} x2={xFor(tick)} y1={margin.top - 8} y2={height - margin.bottom} />
-            <text className="density-chart-axis" x={xFor(tick)} y={height - 10} textAnchor="middle">
+            <text className="density-chart-axis" x={xFor(tick)} y={height - 12} textAnchor="middle">
               {tick}
             </text>
           </g>
@@ -1955,12 +1955,12 @@ function DensityRankedBarChart({
           const primaryWidth = xFor(row.value) - margin.left;
           return (
             <g key={row.key}>
-              <text className="density-box-label" x={margin.left - 18} y={y + 21} textAnchor="end">
+              <text className="density-box-label" x={margin.left - 20} y={y + 25} textAnchor="end">
                 {truncate(row.label, 22)}
               </text>
-              {row.secondary ? <rect className="density-bar-secondary" x={margin.left} y={y + 15} width={Math.max(1, secondaryWidth)} height="7" /> : null}
-              <rect className="density-bar-primary" x={margin.left} y={y + 4} width={Math.max(1, primaryWidth)} height="11" />
-              <text className="density-box-count" x={valueLabelX} y={y + 18} textAnchor="end">
+              {row.secondary ? <rect className="density-bar-secondary" x={margin.left} y={y + 18} width={Math.max(1, secondaryWidth)} height="8" /> : null}
+              <rect className="density-bar-primary" x={margin.left} y={y + 5} width={Math.max(1, primaryWidth)} height="13" />
+              <text className="density-box-count" x={valueLabelX} y={y + 22} textAnchor="end">
                 {numberFormat(row.value)}
                 {typeof row.secondary === "number" ? ` / ${numberFormat(row.secondary)} ${secondaryLabel ?? ""}` : ""}
               </text>
@@ -2468,8 +2468,8 @@ function DashboardExpandButton({
 
 const DASHBOARD_LAYOUT_TARGETS: Record<DashboardLayout, { left: string; right: string }> = {
   balanced: { left: "54%", right: "46%" },
-  "left-expanded": { left: "74%", right: "26%" },
-  "right-expanded": { left: "26%", right: "74%" },
+  "left-expanded": { left: "100%", right: "0%" },
+  "right-expanded": { left: "0%", right: "100%" },
 };
 
 function useDashboardLayoutMotion(rootRef: RefObject<HTMLDivElement | null>, layout: DashboardLayout) {
@@ -2828,13 +2828,13 @@ function DashboardTrackNetwork({
             tabIndex={0}
             aria-label={`${node.lane} node ${node.label}, ${node.count} records`}
           >
-            <rect className="relation-node-hitbox" x={node.x - 68} y={node.y - 18} width="136" height="36" />
-            <circle className="relation-node-anchor" cx={node.x - 62} cy={node.y} r="3.5" />
-            <rect className="relation-node-box" x={node.x - 54} y={node.y - 15} width="108" height="30" />
-            <text className="relation-node-label" x={node.x - 48} y={node.y - 2}>
-              {truncate(node.label, expanded ? 19 : 13)}
+            <rect className="relation-node-hitbox" x={node.x - 78} y={node.y - 18} width="156" height="36" />
+            <circle className="relation-node-anchor" cx={node.x - 72} cy={node.y} r="3.5" />
+            <rect className="relation-node-box" x={node.x - 66} y={node.y - 15} width="132" height="30" />
+            <text className="relation-node-label" x={node.x - 58} y={node.y - 2}>
+              {truncate(node.label, expanded ? 22 : 18)}
             </text>
-            <text className="relation-node-count" x={node.x - 48} y={node.y + 10}>
+            <text className="relation-node-count" x={node.x - 58} y={node.y + 10}>
               {numberFormat(node.count)}
             </text>
           </g>
@@ -3567,7 +3567,7 @@ function SourceDonut({ families, compact = false }: { families: SourceFamilyAggr
         {!compact ? (
           <div className="source-donut-legend">
             {visibleFamilies.map((family) => (
-              <span key={family.id}>
+              <span key={family.id} data-source-family={family.id}>
                 <b style={{ "--source-color": family.color } as CSSProperties} />
                 <i>{family.label}</i>
                 <em>{numberFormat(family.count)} · {formatPercent(family.count, total)}</em>
@@ -3595,7 +3595,7 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
         {rows.map((family) => {
           const profileMax = Math.max(...bands.map((band) => family.byBand[band.id] ?? 0), 1);
           return (
-            <div className="source-rank-row" data-animate="source-bar" key={family.id}>
+            <div className="source-rank-row" data-animate="source-bar" data-source-family={family.id} key={family.id}>
               <span>{family.label}</span>
               <b>{numberFormat(family.count)} · {formatPercent(family.count, total)}</b>
               <i style={{ "--source-meter": `${Math.max(4, (family.count / max) * 100)}%`, "--source-color": family.color } as CSSProperties} />
