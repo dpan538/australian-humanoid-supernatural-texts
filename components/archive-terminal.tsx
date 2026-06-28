@@ -1130,9 +1130,9 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
       onComplete: finishGrowth,
     });
 
-    let position = 300;
-    const chunkSize = 40;
-    const chunkInterval = 32;
+    let position = 260;
+    const chunkSize = 30;
+    const chunkInterval = 42;
     const bucketGap = 120;
 
     for (let bucket = 0; bucket < MAP_FLAG_GROWTH_BUCKETS.length; bucket += 1) {
