@@ -1477,7 +1477,7 @@ a {
 .density-band-stats dt,
 .density-band-action {
   color: var(--blue);
-  font-size: 0.86rem;
+  font-size: 0.875rem;
 }
 
 .density-band-stats dd {
@@ -5186,11 +5186,11 @@ a {
 
   .density-line-chart,
   .density-box-chart {
-    min-width: 640px;
+    min-width: 0;
   }
 
   .density-chart-card {
-    overflow-x: auto;
+    overflow-x: hidden;
   }
 
   .figure-card-shell {
