@@ -9,6 +9,7 @@ import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/type
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { SourceView } from "@/components/source/source-view";
+import { SignalGainControl } from "@/components/signal-gain-control";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
 
@@ -657,7 +658,7 @@ function prepareMapFlagPresentation(flags: MapFlagRenderItem[]) {
       continue;
     }
     const ordered = [...group].sort((a, b) => a.record_id - b.record_id);
-    const radius = group.length === 2 ? 2.8 : group.length === 3 ? 3.6 : 4.4;
+    const radius = group.length === 2 ? 2.6 : group.length === 3 ? 3.25 : 4;
     const rotation = ((ordered[0]?.record_id ?? 0) % 11) * 0.09;
     ordered.forEach((flag, index) => {
       const angle = rotation + (index / ordered.length) * Math.PI * 2;
@@ -981,6 +982,7 @@ function ArchiveTerminalShell({
         <section className={`view-area view-area-${view}`} aria-label={`${view} data view`}>
           {children}
         </section>
+        <SignalGainControl />
 
         <div className="external-control-dock" aria-label="Fixed external controls">
           <Link className="dock-button about-button" href="/about">
@@ -1034,7 +1036,7 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
     if (!layer) {
       return;
     }
-    const glyphs = Array.from(layer.querySelectorAll<SVGGElement>(".record-flag-glyph"));
+    const glyphs = Array.from(layer.querySelectorAll<SVGCircleElement>(".record-flag-dot"));
     timelineRef.current?.cancel();
     timelineRef.current = null;
 
@@ -1336,8 +1338,7 @@ const MapFlagMarker = memo(function MapFlagMarker({
     .filter(Boolean)
     .join(" ");
   const label = flag.title || flag.canonical_figure || `Record ${flag.record_id}`;
-  const ringRadius = active ? 8.2 : stateLinked ? 5.2 : 4.3;
-  const coreRadius = active ? 5.1 : stateLinked ? 2.9 : 2.35;
+  const dotRadius = active ? 5.2 : stateLinked ? 3.7 : 2.8;
 
   return (
     <g
@@ -1351,13 +1352,8 @@ const MapFlagMarker = memo(function MapFlagMarker({
         <line className="record-flag-connector" x1={flag.x} y1={flag.y} x2={flag.displayX} y2={flag.displayY} />
       ) : null}
       <circle className="record-flag-hit" cx={flag.displayX} cy={flag.displayY} r="10" />
-      <g className="record-flag-glyph" data-growth-bucket={flag.growthBucket}>
-        <g className="record-flag-symbol">
-          <circle className="record-flag-under-ring" cx={flag.displayX} cy={flag.displayY} r={ringRadius + 1.1} />
-          <circle className="record-flag-ring" cx={flag.displayX} cy={flag.displayY} r={ringRadius} />
-          <circle className="record-flag-core" cx={flag.displayX} cy={flag.displayY} r={coreRadius} />
-        </g>
-      </g>
+      <circle className="record-flag-dot" cx={flag.displayX} cy={flag.displayY} r={dotRadius} data-growth-bucket={flag.growthBucket} />
+      {active ? <circle className="record-flag-active-ring" cx={flag.displayX} cy={flag.displayY} r="8.1" /> : null}
       {active ? (
         <text className="record-flag-label" x={Math.min(flag.displayX + 12, MAP_VIEWBOX.width - 150)} y={Math.max(flag.displayY - 10, 26)}>
           {flag.year ?? "--"} / {truncate(flag.canonical_figure ?? label, 24)}
@@ -1378,9 +1374,7 @@ function MapSourceLegend({ items }: { items: MapSourceLegendItem[] }) {
       {items.map((item) => (
         <div className={`map-source-legend-row record-flag ${item.className}`} key={item.id}>
           <svg viewBox="0 0 18 18" aria-hidden="true">
-            <circle className="record-flag-under-ring" cx="9" cy="9" r="5.4" />
-            <circle className="record-flag-ring" cx="9" cy="9" r="4.4" />
-            <circle className="record-flag-core" cx="9" cy="9" r="2.5" />
+            <circle className="record-flag-dot legend-dot" cx="9" cy="9" r="3.3" />
           </svg>
           <b>{item.label}</b>
           <small>{mapCount(item.count)}</small>
