@@ -563,7 +563,7 @@ a {
 }
 
 .record-flag-layer.flags-growing .record-flag-dot {
-  will-change: opacity, transform;
+  will-change: transform;
 }
 
 .record-flag-layer.flags-grown .record-flag-dot {

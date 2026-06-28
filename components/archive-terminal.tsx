@@ -1087,8 +1087,8 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
 
     layer.classList.remove("flags-grown");
     glyphs.forEach((glyph) => {
-      glyph.style.opacity = "0";
-      glyph.style.transform = "scale(0.12)";
+      glyph.style.opacity = "1";
+      glyph.style.transform = "scale(0.01)";
     });
 
     const bucketGroups = new Map<string, SVGCircleElement[]>();
@@ -1111,7 +1111,7 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
     layer.classList.add("flags-growing");
     const timeline = createTimeline({
       defaults: {
-        ease: "outQuad",
+        ease: "linear",
         composition: "replace",
       },
       onComplete: finishGrowth,
@@ -1123,14 +1123,12 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
         continue;
       }
       timeline.add(bucketGlyphs, {
-        opacity: [0, 1],
-        scale: [0.12, 1],
-        duration: 560,
-        delay: (_element: unknown, index: number) => (index % 10) * 4,
-      }, 180 + bucket * 220);
+        scale: [0.01, 1],
+        duration: 960,
+      }, 220 + bucket * 380);
     }
 
-    timeline.add(glyphs, { opacity: 1, scale: 1, duration: 1 }, 2350);
+    timeline.add(glyphs, { opacity: 1, scale: 1, duration: 1 }, 3920);
     timelineRef.current = timeline;
 
     return () => {
