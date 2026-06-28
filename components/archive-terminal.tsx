@@ -11,7 +11,7 @@ import { figureProfileFor } from "@/lib/figure-profiles";
 import type { FigureProfile } from "@/lib/figure-profiles";
 import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { SourceView } from "@/components/source/source-view";
-import { DisplayControls } from "@/components/signal-gain-control";
+import { DisplayControls } from "@/components/display-controls";
 import { SOURCE_FAMILY_STYLES, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
@@ -181,6 +181,9 @@ type SourceFamilyChartItem = {
   id: SourceFamilyId;
   label: string;
   color: string;
+  strokeColor: string;
+  fillColor: string;
+  softColor: string;
   className: string;
 };
 
@@ -188,6 +191,9 @@ const SOURCE_FAMILIES: SourceFamilyChartItem[] = (Object.keys(SOURCE_FAMILY_STYL
   id,
   label: SOURCE_FAMILY_STYLES[id].label,
   color: SOURCE_FAMILY_STYLES[id].color,
+  strokeColor: SOURCE_FAMILY_STYLES[id].stroke,
+  fillColor: SOURCE_FAMILY_STYLES[id].fill,
+  softColor: SOURCE_FAMILY_STYLES[id].soft,
   className: SOURCE_CLASS_BY_FAMILY[id],
 }));
 
@@ -231,7 +237,7 @@ type DensityCrossRow = {
   values: MatrixCell[];
   total: number;
 };
-type FigureSignalItem = {
+type FigureDensityItem = {
   slug: string;
   label: string;
   profile: FigureProfile;
@@ -262,7 +268,20 @@ type SourceFamilyAggregate = {
   id: SourceFamilyId;
   label: string;
   color: string;
+  strokeColor: string;
+  fillColor: string;
+  softColor: string;
   count: number;
+  mappedCount: number;
+  sourceOrgCount: number;
+  periodCoverage: number;
+  dominantBandId: string | null;
+  dominantBandLabel: string;
+  dominantBandShare: number;
+  narrativeSpread: number;
+  jurisdictionSpread: number;
+  yearStart: number | null;
+  yearEnd: number | null;
   byBand: Record<string, number>;
 };
 type DashboardFieldAggregate = {
@@ -519,24 +538,24 @@ function sourceGraphClass(label: string) {
 function sourceGraphColor(label: string) {
   const sourceClass = sourceGraphClass(label);
   if (sourceClass === "source-repository") {
-    return SOURCE_FAMILY_STYLES.repository.color;
+    return SOURCE_FAMILY_STYLES.repository.stroke;
   }
   if (sourceClass === "source-public-domain") {
-    return SOURCE_FAMILY_STYLES.public_domain.color;
+    return SOURCE_FAMILY_STYLES.public_domain.stroke;
   }
   if (sourceClass === "source-modern-web") {
-    return SOURCE_FAMILY_STYLES.modern_web.color;
+    return SOURCE_FAMILY_STYLES.modern_web.stroke;
   }
   if (sourceClass === "source-institution") {
-    return SOURCE_FAMILY_STYLES.institutions.color;
+    return SOURCE_FAMILY_STYLES.institutions.stroke;
   }
   if (sourceClass === "source-academic") {
-    return SOURCE_FAMILY_STYLES.academic.color;
+    return SOURCE_FAMILY_STYLES.academic.stroke;
   }
   if (sourceClass === "source-community") {
-    return SOURCE_FAMILY_STYLES.community.color;
+    return SOURCE_FAMILY_STYLES.community.stroke;
   }
-  return SOURCE_FAMILY_STYLES.other.color;
+  return SOURCE_FAMILY_STYLES.other.stroke;
 }
 
 function relationPath(from: RelationNode | undefined, to: RelationNode | undefined) {
@@ -1608,23 +1627,23 @@ function DensityView({
   const mappedByBand = useMemo(() => buildMappedCountByDateBand(derived.mapFlags), [derived.mapFlags]);
   const annualSeries = useMemo(() => buildAnnualDensitySeries(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
   const boxStats = useMemo(() => buildPeriodBoxPlotStats(periodBands, data.records, derived.mapFlags), [periodBands, data.records, derived.mapFlags]);
-  const figureSignals = useMemo(() => buildFigureSignalItems(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
-  const figureFrequency = useMemo(() => figureSignals.slice(0, 8).map((figure) => ({
+  const figureDensityItems = useMemo(() => buildFigureDensityItems(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const figureFrequency = useMemo(() => figureDensityItems.slice(0, 8).map((figure) => ({
     key: figure.slug,
     label: figure.label,
     value: figure.records.length,
     secondary: figure.mappedCount,
-  })), [figureSignals]);
+  })), [figureDensityItems]);
   const sourceComposition = useMemo(() => buildSourceComposition(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
   const regionConcentration = useMemo(() => buildRegionConcentration(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
-  const figurePeriodMatrix = useMemo(() => buildFigurePeriodMatrix(figureSignals, periodBands), [figureSignals, periodBands]);
+  const figurePeriodMatrix = useMemo(() => buildFigurePeriodMatrix(figureDensityItems, periodBands), [figureDensityItems, periodBands]);
   const locationHealth = {
     map_flags: derived.mapFlags.length,
     broad_or_review: Math.max(0, data.summary.record_count - derived.mapFlags.length),
     undated_records: derived.undatedRecordCount,
     locations_total: data.summary.location_count,
   };
-  const selectedFigure = selectedFigureIndex === null ? null : figureSignals[selectedFigureIndex] ?? null;
+  const selectedFigure = selectedFigureIndex === null ? null : figureDensityItems[selectedFigureIndex] ?? null;
 
   useDensityMotion(densityViewRef);
 
@@ -1670,19 +1689,19 @@ function DensityView({
         periodBands={periodBands}
       />
       <div className="density-aux-grid">
-        <DensitySignal title="LOCATION HEALTH" values={locationHealth} />
-        <DensityFigureRail figures={figureSignals} onSelectFigure={setSelectedFigureIndex} />
+        <DensityMetricPanel title="LOCATION HEALTH" values={locationHealth} />
+        <DensityFigureRail figures={figureDensityItems} onSelectFigure={setSelectedFigureIndex} />
       </div>
       {selectedFigure ? (
         <FigureCardOverlay
-          figures={figureSignals}
+          figures={figureDensityItems}
           figure={selectedFigure}
           figureIndex={selectedFigureIndex ?? 0}
           onClose={() => setSelectedFigureIndex(null)}
           onNavigate={(direction) => {
             setSelectedFigureIndex((current) => {
               const index = current ?? 0;
-              return (index + direction + figureSignals.length) % figureSignals.length;
+              return (index + direction + figureDensityItems.length) % figureDensityItems.length;
             });
           }}
         />
@@ -1733,8 +1752,8 @@ function DensityBand({
         <small>{numberFormat(mappedCount)} mapped / {mappedShare}</small>
       </div>
       <div className="density-band-bars" aria-hidden="true">
-        <i className="density-bar-fill" style={{ "--bar-width": `${recordWidth}%` } as CSSProperties} />
-        <em className="density-bar-fill" style={{ "--bar-width": `${queryWidth}%` } as CSSProperties} />
+        <i className="density-bar-fill" style={{ "--bar-width": `${recordWidth}%` } as CSSProperties} title={`${band.label}: ${numberFormat(band.record_count)} public records`} />
+        <em className="density-bar-fill" style={{ "--bar-width": `${queryWidth}%` } as CSSProperties} title={`${band.label}: ${numberFormat(band.planned_query_count)} planned queries`} />
       </div>
       <dl className="density-band-stats">
         <div>
@@ -1952,8 +1971,14 @@ function DensityRankedBarChart({
               <text className="density-box-label" x={margin.left - 20} y={y + 25} textAnchor="end">
                 {truncate(row.label, 22)}
               </text>
-              {row.secondary ? <rect className="density-bar-secondary density-bar-fill" x={margin.left} y={y + 18} width={Math.max(1, secondaryWidth)} height="8" /> : null}
-              <rect className="density-bar-primary density-bar-fill" x={margin.left} y={y + 5} width={Math.max(1, primaryWidth)} height="13" />
+              {row.secondary ? (
+                <rect className="density-bar-secondary density-bar-fill" x={margin.left} y={y + 18} width={Math.max(1, secondaryWidth)} height="8">
+                  <title>{`${row.label}: ${numberFormat(row.secondary)} ${secondaryLabel ?? "secondary records"}`}</title>
+                </rect>
+              ) : null}
+              <rect className="density-bar-primary density-bar-fill" x={margin.left} y={y + 5} width={Math.max(1, primaryWidth)} height="13">
+                <title>{`${row.label}: ${numberFormat(row.value)} public records`}</title>
+              </rect>
               <text className="density-box-count" x={valueLabelX} y={y + 22} textAnchor="end">
                 {numberFormat(row.value)}
                 {typeof row.secondary === "number" ? ` / ${numberFormat(row.secondary)} ${secondaryLabel ?? ""}` : ""}
@@ -2005,7 +2030,9 @@ function DensityFigurePeriodHeatmap({ rows, periods }: { rows: DensityCrossRow[]
                       width={cellWidth - 10}
                       height="18"
                       style={{ "--cell-opacity": String(0.14 + intensity * 0.78) } as CSSProperties}
-                    />
+                    >
+                      <title>{`${row.figure}, ${period.label}: ${numberFormat(value)} records`}</title>
+                    </rect>
                     {value > 0 ? (
                       <text className="density-heatmap-value" x={margin.left + columnIndex * cellWidth + cellWidth / 2} y={y + 17} textAnchor="middle">
                         {numberFormat(value)}
@@ -2025,18 +2052,18 @@ function DensityFigurePeriodHeatmap({ rows, periods }: { rows: DensityCrossRow[]
   );
 }
 
-function DensitySignal({ title, values }: { title: string; values: Record<string, number> }) {
+function DensityMetricPanel({ title, values }: { title: string; values: Record<string, number> }) {
   const entries = entriesDescending(values, 5);
   const max = Math.max(...entries.map(([, value]) => value), 1);
 
   return (
-    <section className="density-signal">
+    <section className="density-metric">
       <span className="tiny-label">{title}</span>
-      <div className="density-signal-bars">
+      <div className="density-metric-bars">
         {entries.map(([label, value]) => (
-          <div key={label} className="density-signal-row">
+          <div key={label} className="density-metric-row">
             <span>{truncate(label, 18)}</span>
-            <i style={{ "--signal-width": `${Math.max(8, (value / max) * 100)}%` } as CSSProperties} />
+            <i style={{ "--metric-width": `${Math.max(8, (value / max) * 100)}%` } as CSSProperties} />
             <b>{value}</b>
           </div>
         ))}
@@ -2049,7 +2076,7 @@ function DensityFigureRail({
   figures,
   onSelectFigure,
 }: {
-  figures: FigureSignalItem[];
+  figures: FigureDensityItem[];
   onSelectFigure: (index: number) => void;
 }) {
   return (
@@ -2079,8 +2106,8 @@ function FigureCardOverlay({
   onClose,
   onNavigate,
 }: {
-  figures: FigureSignalItem[];
-  figure: FigureSignalItem;
+  figures: FigureDensityItem[];
+  figure: FigureDensityItem;
   figureIndex: number;
   onClose: () => void;
   onNavigate: (direction: -1 | 1) => void;
@@ -2228,7 +2255,7 @@ function buildPeriodBoxPlotStats(
   });
 }
 
-function buildFigureSignalItems(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): FigureSignalItem[] {
+function buildFigureDensityItems(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): FigureDensityItem[] {
   const mappedIds = new Set(mapFlags.map((flag) => flag.record_id));
   const grouped = new Map<string, { profile: FigureProfile; records: RecordItem[] }>();
   for (const record of records) {
@@ -2327,7 +2354,7 @@ function buildRegionConcentration(records: readonly RecordItem[], mapFlags: read
     .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label));
 }
 
-function buildFigurePeriodMatrix(figures: readonly FigureSignalItem[], periods: readonly DateBand[]): DensityCrossRow[] {
+function buildFigurePeriodMatrix(figures: readonly FigureDensityItem[], periods: readonly DateBand[]): DensityCrossRow[] {
   return figures.slice(0, 7).map((figure) => {
     const periodCounts = figure.records.reduce<Record<string, number>>((acc, record) => {
       acc[record.date_band] = (acc[record.date_band] ?? 0) + 1;
@@ -2441,7 +2468,7 @@ function DashboardExpandButton({
   expanded: boolean;
   onToggle: () => void;
 }) {
-  const title = side === "left" ? "record network" : "corpus console";
+  const title = side === "left" ? "relation network" : "source field";
   const glyph = expanded ? "×" : side === "left" ? ">" : "<";
 
   return (
@@ -2502,24 +2529,55 @@ function useDashboardLayoutMotion(rootRef: RefObject<HTMLDivElement | null>, lay
     });
 
     timeline
-      .add(leftPanel, { flexBasis: target.left, duration: layout === "balanced" ? 380 : 520 }, 0)
-      .add(rightPanel, { flexBasis: target.right, duration: layout === "balanced" ? 380 : 520 }, 0);
-    addIfTargets(timeline, root.querySelectorAll(".dashboard-draw-path, .console-polyline polyline"), { strokeDashoffset: 0, duration: 860, delay: stagger(22) }, 120);
-    addIfTargets(timeline, root.querySelectorAll(".network-slot-label, .track-row small, .console-effect-grid span, .source-wheel-list span"), {
+      .add(leftPanel, { flexBasis: target.left, duration: layout === "balanced" ? 680 : 840 }, 0)
+      .add(rightPanel, { flexBasis: target.right, duration: layout === "balanced" ? 680 : 840 }, 0);
+    addIfTargets(timeline, root.querySelectorAll(".dashboard-panel, .dashboard-track-network, .dashboard-console"), {
+      opacity: [0.72, 1],
+      translateY: [10, 0],
+      duration: 760,
+    }, 0);
+    addIfTargets(timeline, root.querySelectorAll(".dashboard-draw-path, .console-polyline polyline"), { strokeDashoffset: 0, duration: 1180, ease: "linear", delay: stagger(28) }, 180);
+    addIfTargets(timeline, root.querySelectorAll(".relation-network-node, .relation-node-count, .dashboard-axis-label, .network-slot-label, .track-row small, .console-effect-grid span, .source-wheel-list span"), {
       opacity: [0, 1],
       translateY: [4, 0],
-      duration: 420,
-      delay: stagger(22),
-    }, 180);
+      duration: 620,
+      delay: stagger(28),
+    }, 260);
+    addIfTargets(timeline, root.querySelectorAll(".dashboard-track-row, .track-row"), {
+      opacity: [0, 1],
+      translateY: [12, 0],
+      duration: 720,
+      delay: stagger(34),
+    }, layout === "left-expanded" ? 420 : 360);
+    addIfTargets(timeline, root.querySelectorAll(".source-period-segment, .source-ribbon-segment"), {
+      opacity: [0, 1],
+      scaleY: [0.08, 1],
+      duration: 1040,
+      ease: "linear",
+      delay: stagger(18),
+    }, 360);
+    addIfTargets(timeline, root.querySelectorAll(".source-donut, .source-donut-legend span, .source-donut-mapped-bars span, .source-insight-card"), {
+      opacity: [0, 1],
+      translateY: [10, 0],
+      scale: [0.96, 1],
+      duration: 920,
+      delay: stagger(42),
+    }, 520);
+    addIfTargets(timeline, root.querySelectorAll(".source-family-row, .source-rank-row, .source-profile-cell"), {
+      opacity: [0, 1],
+      translateX: [14, 0],
+      duration: 840,
+      delay: stagger(28),
+    }, 620);
     addIfTargets(timeline, root.querySelectorAll(".dashboard-highlight-point"), {
       filter: [
         "drop-shadow(0 0 0 rgba(159, 227, 107, 0))",
         "drop-shadow(0 0 10px rgba(159, 227, 107, .58))",
         "drop-shadow(0 0 2px rgba(159, 227, 107, .2))",
       ],
-      duration: 420,
+      duration: 700,
       delay: stagger(90),
-    }, 620);
+    }, 880);
 
     timelineRef.current = timeline;
 
@@ -2581,7 +2639,7 @@ function useDensityMotion(rootRef: RefObject<HTMLDivElement | null>) {
       duration: 360,
       delay: stagger(42),
     }, 0);
-    addIfTargets(timeline, root.querySelectorAll(".density-signal, .density-figure-rail"), {
+    addIfTargets(timeline, root.querySelectorAll(".density-metric, .density-figure-rail"), {
       opacity: [0, 1],
       translateY: [10, 0],
       duration: 320,
@@ -2677,7 +2735,7 @@ function prepareDensityDrawPaths(root: HTMLElement) {
 }
 
 function resetDensityMotion(root: HTMLElement) {
-  root.querySelectorAll<HTMLElement | SVGElement>(".density-band, .density-signal, .density-figure-rail, .density-chart-card, .density-bar-fill, .density-box").forEach((element) => {
+  root.querySelectorAll<HTMLElement | SVGElement>(".density-band, .density-metric, .density-figure-rail, .density-chart-card, .density-bar-fill, .density-box").forEach((element) => {
     element.style.opacity = "";
     element.style.transform = "";
     element.style.transformOrigin = "";
@@ -2778,14 +2836,14 @@ function DashboardTrackNetwork({
 
     const strongestRelationFor = (predicate: (relation: RelationGroup) => boolean) => relations.find(predicate)?.key ?? relations[0]?.key ?? "";
     const laneX: Record<RelationLane, number> = {
-      source: expanded ? 104 : 92,
-      period: expanded ? 282 : 266,
-      narrative: expanded ? 464 : 454,
-      place: expanded ? 642 : 628,
+      source: expanded ? 108 : 92,
+      period: expanded ? 274 : 258,
+      narrative: expanded ? 486 : 466,
+      place: expanded ? 684 : 650,
     };
     const laneY = (index: number, total: number) => {
-      const min = expanded ? 76 : 84;
-      const max = expanded ? 396 : 382;
+      const min = expanded ? 96 : 84;
+      const max = expanded ? 482 : 386;
       return total <= 1 ? (min + max) / 2 : min + (index / (total - 1)) * (max - min);
     };
     const sourceEntries = entriesDescending(sourceCounts, expanded ? 7 : 5);
@@ -2883,6 +2941,13 @@ function DashboardTrackNetwork({
   const relationTitle = activeRelation
     ? `${activeRelation.source} / ${activeRelation.periodLabel} / ${activeRelation.narrative}`
     : "Representative public relations";
+  const graphViewBox = expanded ? "0 0 760 560" : "0 0 760 520";
+  const graphField = expanded
+    ? { x: 26, y: 64, width: 708, height: 456, y2: 520, legendY: 540 }
+    : { x: 42, y: 58, width: 676, height: 396, y2: 444, legendY: 474 };
+  const nodeWidth = expanded ? 164 : 146;
+  const nodeHeight = expanded ? 38 : 32;
+  const nodeLabelLimit = expanded ? 28 : 19;
   const setHoverRelation = (key: string | null) => {
     if (!lockedRelationKey) {
       setHoverRelationKey(key);
@@ -2891,7 +2956,7 @@ function DashboardTrackNetwork({
 
   return (
     <section
-      className={`dashboard-track-network dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
+      className={`dashboard-track-network dashboard-panel dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
       data-dashboard-panel="left"
       aria-label="Record network and track list"
     >
@@ -2900,14 +2965,14 @@ function DashboardTrackNetwork({
         <span>RELATION NETWORK</span>
         <p>Source family to period to narrative type to place. Links show corpus routing, not causal relation.</p>
       </header>
-      <svg className="network-svg" viewBox={expanded ? "18 28 724 466" : "0 0 760 520"} role="img" aria-label="Archive record relation network">
-        <rect className="network-wave-box network-field-box" x="42" y="58" width="676" height="396" />
+      <svg className="network-svg" viewBox={graphViewBox} role="img" aria-label="Archive record relation network">
+        <rect className="network-wave-box network-field-box" x={graphField.x} y={graphField.y} width={graphField.width} height={graphField.height} />
         {(["source", "period", "narrative", "place"] as RelationLane[]).map((lane) => {
           const node = graph.nodes.find((item) => item.lane === lane);
           return (
             <g className={`relation-lane relation-lane-${lane}`} key={lane}>
-              <line x1={node?.x ?? 0} x2={node?.x ?? 0} y1="62" y2="444" />
-              <text x={(node?.x ?? 0) - 52} y="48">{lane.toUpperCase()}</text>
+              <line x1={node?.x ?? 0} x2={node?.x ?? 0} y1={graphField.y + 4} y2={graphField.y2} />
+              <text x={(node?.x ?? 0) - (expanded ? 64 : 52)} y={graphField.y - 12}>{lane.toUpperCase()}</text>
             </g>
           );
         })}
@@ -2923,7 +2988,7 @@ function DashboardTrackNetwork({
           const isRelated = activeNodeIds.has(edge.from) || activeNodeIds.has(edge.to);
           return (
             <path
-              className={`relation-edge relation-edge-${edge.kind} ${sourceGraphClass(edge.sourceLabel ?? "")}${isActive ? " is-active" : isRelated ? " is-related" : ""} dashboard-draw-path`}
+              className={`relation-edge relation-network-edge relation-edge-${edge.kind} ${sourceGraphClass(edge.sourceLabel ?? "")}${isActive ? " is-active" : isRelated ? " is-related" : ""} dashboard-draw-path`}
               d={path}
               key={edge.key}
               style={{ "--edge-weight": String(Math.min(2.4, 0.7 + Math.sqrt(edge.count) / 18)) } as CSSProperties}
@@ -2961,27 +3026,28 @@ function DashboardTrackNetwork({
             tabIndex={0}
             aria-label={`${node.lane} node ${node.label}, ${node.count} records`}
           >
-            <rect className="relation-node-hitbox" x={node.x - 78} y={node.y - 18} width="156" height="36" />
-            <circle className="relation-node-anchor" cx={node.x - 72} cy={node.y} r="3.5" />
-            <rect className="relation-node-box" x={node.x - 66} y={node.y - 15} width="132" height="30" />
-            <text className="relation-node-label" x={node.x - 58} y={node.y - 2}>
-              {truncate(node.label, expanded ? 22 : 18)}
+            <title>{`${node.label}: ${numberFormat(node.count)} records`}</title>
+            <rect className="relation-node-hitbox" x={node.x - nodeWidth / 2 - 10} y={node.y - nodeHeight / 2 - 6} width={nodeWidth + 20} height={nodeHeight + 12} />
+            <circle className="relation-node-anchor" cx={node.x - nodeWidth / 2 - 7} cy={node.y} r={expanded ? 4.6 : 3.8} />
+            <rect className="relation-node-box" x={node.x - nodeWidth / 2} y={node.y - nodeHeight / 2} width={nodeWidth} height={nodeHeight} />
+            <text className="relation-node-label relation-network-node" x={node.x - nodeWidth / 2 + 10} y={node.y - 3}>
+              {truncate(node.label, nodeLabelLimit)}
             </text>
-            <text className="relation-node-count" x={node.x - 58} y={node.y + 10}>
+            <text className="relation-node-count" x={node.x - nodeWidth / 2 + 10} y={node.y + 12}>
               {numberFormat(node.count)}
             </text>
           </g>
         ))}
         <g className="relation-style-legend">
-          <text x="54" y="474">SOURCE STYLE</text>
-          <line className="source-repository" x1="154" y1="471" x2="190" y2="471" />
-          <text x="196" y="474">repository</text>
-          <line className="source-public-domain" x1="294" y1="471" x2="330" y2="471" />
-          <text x="336" y="474">public-domain</text>
-          <line className="source-modern-web" x1="468" y1="471" x2="504" y2="471" />
-          <text x="510" y="474">modern web</text>
-          <line className="source-academic" x1="616" y1="471" x2="652" y2="471" />
-          <text x="658" y="474">academic</text>
+          <text x="54" y={graphField.legendY}>SOURCE STYLE</text>
+          <line className="source-repository" x1="154" y1={graphField.legendY - 3} x2="190" y2={graphField.legendY - 3} />
+          <text x="196" y={graphField.legendY}>repository</text>
+          <line className="source-public-domain" x1="294" y1={graphField.legendY - 3} x2="330" y2={graphField.legendY - 3} />
+          <text x="336" y={graphField.legendY}>public-domain</text>
+          <line className="source-modern-web" x1="468" y1={graphField.legendY - 3} x2="504" y2={graphField.legendY - 3} />
+          <text x="510" y={graphField.legendY}>modern web</text>
+          <line className="source-academic" x1="616" y1={graphField.legendY - 3} x2="652" y2={graphField.legendY - 3} />
+          <text x="658" y={graphField.legendY}>academic</text>
         </g>
       </svg>
       <div className="mobile-track-snapshot" aria-label="Compact track relation preview">
@@ -3058,7 +3124,7 @@ function DashboardTrackNetwork({
             const relation = graph.recordRelationKeys.get(record.record_id) ?? parts.key;
             return (
               <button
-                className={`track-row${activeTrackIndex === index ? " is-active" : ""}`}
+                className={`track-row dashboard-track-row${activeTrackIndex === index ? " is-active" : ""}`}
                 key={record.record_id}
                 type="button"
                 style={{ "--track-source-color": sourceGraphColor(parts.source) } as CSSProperties}
@@ -3153,7 +3219,7 @@ function DashboardControlConsole({
 
   return (
     <section
-      className={`dashboard-console dashboard-right-scroll dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
+      className={`dashboard-console dashboard-panel dashboard-right-scroll dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
       data-dashboard-panel="right"
       aria-label="Public corpus control console"
     >
@@ -3262,7 +3328,7 @@ function RecordsFieldView({
     const mappedShare = aggregate.totalRecords ? Math.round((aggregate.totalMapped / aggregate.totalRecords) * 100) : 0;
     return (
       <div className="dashboard-field-view records-field-view records-field-preview">
-        <RecordSignalChart points={aggregate.timeline} compact />
+        <RecordTimelineChart points={aggregate.timeline} compact />
         <div className="field-preview-metrics">
           <MiniControl label="RECORDS" value={aggregate.totalRecords} />
           <MiniControl label="MAPPED SHARE" value={mappedShare} />
@@ -3274,7 +3340,7 @@ function RecordsFieldView({
   return (
     <div className="dashboard-field-view records-field-view">
       <div className="dashboard-field-row records-top-row">
-        <RecordSignalChart points={aggregate.timeline} scopeLabel={scopeLabel} />
+        <RecordTimelineChart points={aggregate.timeline} scopeLabel={scopeLabel} />
         <NarrativePeriodMatrix rows={aggregate.narrativePeriodRows} bands={bands} />
       </div>
       <SelectedPeriodDetail aggregate={aggregate} scopeLabel={scopeLabel} />
@@ -3331,23 +3397,77 @@ function SourceFieldView({
     return (
       <div className="dashboard-field-view source-field-view source-field-preview">
         <SourcePeriodRibbon families={aggregate.sourceFamilies} bands={bands} compact />
-        <SourceDonut families={aggregate.sourceFamilies} compact />
+        <div className="source-preview-stack">
+          <SourceDonut families={aggregate.sourceFamilies} compact />
+          <SourceInsightCards families={aggregate.sourceFamilies} totalRecords={aggregate.totalRecords} compact />
+        </div>
       </div>
     );
   }
 
   return (
     <div className="dashboard-field-view source-field-view">
+      <SourceInsightCards families={aggregate.sourceFamilies} totalRecords={aggregate.totalRecords} />
       <SourcePeriodRibbon families={aggregate.sourceFamilies} bands={bands} scopeLabel={scopeLabel} />
       <div className="dashboard-field-row source-bottom-row">
         <SourceDonut families={aggregate.sourceFamilies} />
-        <RankedSourceBars families={aggregate.sourceFamilies} bands={bands} />
       </div>
+      <RankedSourceBars families={aggregate.sourceFamilies} bands={bands} />
     </div>
   );
 }
 
-function RecordSignalChart({
+function SourceInsightCards({
+  families,
+  totalRecords,
+  compact = false,
+}: {
+  families: SourceFamilyAggregate[];
+  totalRecords: number;
+  compact?: boolean;
+}) {
+  const activeFamilies = families.filter((family) => family.count > 0);
+  const dominant = activeFamilies[0];
+  const bestMapped = [...activeFamilies].sort((a, b) => mappedShare(b) - mappedShare(a))[0];
+  const widestCoverage = [...activeFamilies].sort((a, b) => b.periodCoverage - a.periodCoverage || b.narrativeSpread - a.narrativeSpread)[0];
+  const cards = [
+    dominant
+      ? {
+          label: "DOMINANT FAMILY",
+          value: dominant.label,
+          note: `${numberFormat(dominant.count)} records / ${formatPercent(dominant.count, totalRecords)}`,
+        }
+      : null,
+    bestMapped
+      ? {
+          label: "MAPPED SUBSET",
+          value: `${mappedShare(bestMapped)}% mapped`,
+          note: `${bestMapped.label}; ${numberFormat(bestMapped.mappedCount)} of ${numberFormat(bestMapped.count)} records`,
+        }
+      : null,
+    widestCoverage
+      ? {
+          label: "PERIOD COVERAGE",
+          value: `${widestCoverage.periodCoverage}/6 periods`,
+          note: `${widestCoverage.label}; ${widestCoverage.narrativeSpread} narrative groups`,
+        }
+      : null,
+  ].filter((card): card is { label: string; value: string; note: string } => Boolean(card));
+
+  return (
+    <div className={`source-insight-cards${compact ? " compact" : ""}`}>
+      {cards.slice(0, compact ? 2 : 3).map((card) => (
+        <span className="source-insight-card" data-animate="source-insight" key={card.label}>
+          <b>{card.label}</b>
+          <strong>{card.value}</strong>
+          <small>{card.note}</small>
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function RecordTimelineChart({
   points,
   scopeLabel = "complete archive",
   compact = false,
@@ -3376,14 +3496,14 @@ function RecordSignalChart({
   const labelStep = Math.max(1, Math.ceil(points.length / (compact ? 3 : 5)));
 
   return (
-    <section className="dashboard-chart-module record-signal-module">
+    <section className="dashboard-chart-module record-timeline-module">
       {!compact ? (
         <header className="module-heading">
           <span>RECORD TIMELINE</span>
           <small>Archive records by period, not the real-world frequency of a phenomenon.</small>
         </header>
       ) : null}
-      <svg className="record-signal-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`Record timeline for ${scopeLabel}`}>
+      <svg className="record-timeline-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`Record timeline for ${scopeLabel}`}>
         {[0, 0.5, 1].map((tick) => (
           <g key={tick}>
             <line className="timeline-grid-line" x1={left} x2={width - right} y1={yFor(max * tick)} y2={yFor(max * tick)} />
@@ -3395,7 +3515,7 @@ function RecordSignalChart({
         {points.map((point, index) => (
           <rect
             key={`bar-${point.key}`}
-            className="record-signal-bar"
+            className="record-timeline-bar"
             data-animate="record-bar"
             x={xFor(index) - barWidth / 2}
             y={yFor(point.value)}
@@ -3428,7 +3548,7 @@ function RecordSignalChart({
         )}
         {!compact ? (
           <g className="timeline-legend">
-            <rect className="record-signal-bar" x={width - 184} y="14" width="16" height="7" />
+            <rect className="record-timeline-bar" x={width - 184} y="14" width="16" height="7" />
             <text x={width - 164} y="20">all records</text>
             <line className="timeline-mapped-line" x1={width - 102} y1="17" x2={width - 82} y2="17" />
             <text x={width - 76} y="20">mapped</text>
@@ -3633,9 +3753,10 @@ function SourcePeriodRibbon({
   const bottom = compact ? 24 : 34;
   const plotHeight = height - top - bottom;
   const colWidth = (width - left - right) / Math.max(1, bands.length);
+  const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
 
   return (
-    <section className="dashboard-chart-module source-ribbon-module">
+    <section className="dashboard-chart-module source-ribbon-module" onPointerLeave={() => setTooltip(null)}>
       {!compact ? (
         <header className="module-heading">
           <span>SOURCE COMPOSITION THROUGH TIME</span>
@@ -3651,31 +3772,42 @@ function SourcePeriodRibbon({
               {families.map((family) => {
                 const value = family.byBand[band.id] ?? 0;
                 const segmentHeight = (value / total) * plotHeight;
+                const tooltipText = sourcePeriodTooltip(family, band, value, total);
                 yCursor -= segmentHeight;
                 return (
                   <rect
                     key={`${family.id}-${band.id}`}
-                    className="source-ribbon-segment"
+                    className="source-ribbon-segment source-period-segment"
                     data-animate="source-ribbon"
+                    tabIndex={0}
+                    role="img"
+                    aria-label={tooltipText}
                     x={left + bandIndex * colWidth + 4}
                     y={yCursor}
                     width={Math.max(4, colWidth - 8)}
                     height={Math.max(value > 0 ? 1.5 : 0, segmentHeight)}
-                    style={{ "--source-color": family.color } as CSSProperties}
-                  />
+                    style={{ "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
+                    onPointerEnter={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onPointerMove={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onFocus={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onBlur={() => setTooltip(null)}
+                  >
+                    <title>{tooltipText}</title>
+                  </rect>
                 );
               })}
-              <text className="console-axis-label" x={left + bandIndex * colWidth + colWidth / 2} y={height - 8}>{bandIndex + 1}</text>
+              <text className="console-axis-label dashboard-axis-label" x={left + bandIndex * colWidth + colWidth / 2} y={height - 8}>{bandIndex + 1}</text>
             </g>
           );
         })}
         {!compact ? (
           <>
-            <text className="dashboard-svg-micro" x="8" y={top + 4}>100%</text>
-            <text className="dashboard-svg-micro" x="12" y={top + plotHeight}>0</text>
+            <text className="dashboard-svg-micro dashboard-axis-label" x="8" y={top + 4}>100%</text>
+            <text className="dashboard-svg-micro dashboard-axis-label" x="12" y={top + plotHeight}>0</text>
           </>
         ) : null}
       </svg>
+      <DashboardTooltip tooltip={tooltip} />
     </section>
   );
 }
@@ -3684,13 +3816,14 @@ function SourceDonut({ families, compact = false }: { families: SourceFamilyAggr
   const total = families.reduce((sum, family) => sum + family.count, 0) || 1;
   const visibleFamilies = families.filter((family) => family.count > 0);
   const gradient = sourceFamilyConicGradient(visibleFamilies);
+  const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
 
   return (
-    <section className={`dashboard-chart-module source-donut-module${compact ? " compact" : ""}`} data-animate="source-donut">
+    <section className={`dashboard-chart-module source-donut-module${compact ? " compact" : ""}`} data-animate="source-donut" onPointerLeave={() => setTooltip(null)}>
       {!compact ? (
         <header className="module-heading">
           <span>LARGE SOURCE DONUT</span>
-          <small>Public source-family composition.</small>
+          <small>Composition plus mapped coverage; counts remain raw public records.</small>
         </header>
       ) : null}
       <div className="source-donut-layout">
@@ -3698,18 +3831,50 @@ function SourceDonut({ families, compact = false }: { families: SourceFamilyAggr
           <i />
         </div>
         {!compact ? (
-          <div className="source-donut-legend">
-            {visibleFamilies.map((family) => (
-              <span key={family.id} data-source-family={family.id}>
-                <b style={{ "--source-color": family.color } as CSSProperties} />
-                <i>{family.label}</i>
-                <em>{numberFormat(family.count)} · {formatPercent(family.count, total)}</em>
-              </span>
-            ))}
+          <div className="source-donut-companion">
+            <div className="source-donut-legend">
+              {visibleFamilies.map((family) => {
+                const tooltipText = sourceFamilyTooltip(family, total);
+                return (
+                  <span
+                    key={family.id}
+                    data-source-family={family.id}
+                    tabIndex={0}
+                    title={tooltipText}
+                    onPointerEnter={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onPointerMove={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onFocus={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onBlur={() => setTooltip(null)}
+                  >
+                    <b className="source-donut-slice" style={{ "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties} />
+                    <i>{family.label}</i>
+                    <em>{numberFormat(family.count)} · {formatPercent(family.count, total)}</em>
+                  </span>
+                );
+              })}
+            </div>
+            <SourceMappedShareBars families={visibleFamilies} />
           </div>
         ) : null}
       </div>
+      <DashboardTooltip tooltip={tooltip} />
     </section>
+  );
+}
+
+function SourceMappedShareBars({ families }: { families: SourceFamilyAggregate[] }) {
+  return (
+    <div className="source-donut-mapped-bars" data-animate="source-companion">
+      <b>Mapped-share companion</b>
+      <small>Bars show mapped records inside each source family, not total family size.</small>
+      {families.map((family) => (
+        <span key={family.id}>
+          <i>{family.label}</i>
+          <em style={{ "--source-meter": `${Math.max(3, mappedShare(family))}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties} />
+          <strong>{mappedShare(family)}% mapped · {family.periodCoverage}/6 periods</strong>
+        </span>
+      ))}
+    </div>
   );
 }
 
@@ -3717,36 +3882,116 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
   const rows = families.filter((family) => family.count > 0);
   const total = rows.reduce((sum, family) => sum + family.count, 0) || 1;
   const max = Math.max(...rows.map((family) => family.count), 1);
+  const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
 
   return (
-    <section className="dashboard-chart-module source-ranked-module">
+    <section className="dashboard-chart-module source-ranked-module" onPointerLeave={() => setTooltip(null)}>
       <header className="module-heading">
         <span>RANKED SOURCE FAMILIES</span>
-        <small>Count, share, and six-period mini-profile.</small>
+        <small>Six-period profile: darker/longer cells indicate where this source family contributes records.</small>
       </header>
       <div className="ranked-source-bars">
+        <div className="source-rank-header" aria-hidden="true">
+          <span>FAMILY</span>
+          <span>RECORDS / SHARE</span>
+          <span>TOTAL</span>
+          <span>SIX-PERIOD PROFILE</span>
+          <span>INSIGHT</span>
+        </div>
         {rows.map((family) => {
           const profileMax = Math.max(...bands.map((band) => family.byBand[band.id] ?? 0), 1);
           return (
-            <div className="source-rank-row" data-animate="source-bar" data-source-family={family.id} key={family.id}>
+            <div className="source-rank-row source-family-row" data-animate="source-bar" data-source-family={family.id} key={family.id}>
               <span>{family.label}</span>
               <b>{numberFormat(family.count)} · {formatPercent(family.count, total)}</b>
-              <i style={{ "--source-meter": `${Math.max(4, (family.count / max) * 100)}%`, "--source-color": family.color } as CSSProperties} />
+              <i style={{ "--source-meter": `${Math.max(4, (family.count / max) * 100)}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties} />
               <em>
-                {bands.map((band) => (
-                  <small
-                    key={`${family.id}-${band.id}`}
-                    style={{ "--spark-height": `${Math.max(12, ((family.byBand[band.id] ?? 0) / profileMax) * 100)}%`, "--source-color": family.color } as CSSProperties}
-                    title={`${band.label}: ${numberFormat(family.byBand[band.id] ?? 0)}`}
-                  />
-                ))}
+                {bands.map((band) => {
+                  const value = family.byBand[band.id] ?? 0;
+                  const tooltipText = sourcePeriodTooltip(family, band, value, family.count || 1, "family");
+                  return (
+                    <small
+                      key={`${family.id}-${band.id}`}
+                      className="source-profile-cell"
+                      tabIndex={0}
+                      style={{ "--spark-height": `${value > 0 ? Math.max(12, (value / profileMax) * 100) : 0}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
+                      title={tooltipText}
+                      aria-label={tooltipText}
+                      onPointerEnter={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                      onPointerMove={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                      onFocus={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                      onBlur={() => setTooltip(null)}
+                    />
+                  );
+                })}
               </em>
+              <small className="source-rank-insight">{sourceFamilyInsight(family)}</small>
             </div>
           );
         })}
       </div>
+      <DashboardTooltip tooltip={tooltip} />
     </section>
   );
+}
+
+type DashboardTooltipState = {
+  text: string;
+  x: number;
+  y: number;
+} | null;
+
+function showDashboardTooltip(
+  event: { currentTarget: Element; clientX?: number; clientY?: number },
+  text: string,
+  setTooltip: (tooltip: DashboardTooltipState) => void,
+) {
+  const rect = event.currentTarget.getBoundingClientRect();
+  const x = typeof event.clientX === "number" ? event.clientX : rect.left + rect.width / 2;
+  const y = typeof event.clientY === "number" ? event.clientY : rect.top;
+  setTooltip({ text, x, y });
+}
+
+function DashboardTooltip({ tooltip }: { tooltip: DashboardTooltipState }) {
+  if (!tooltip) {
+    return null;
+  }
+  return (
+    <span className="dashboard-tooltip" style={{ "--tooltip-x": `${tooltip.x}px`, "--tooltip-y": `${tooltip.y}px` } as CSSProperties}>
+      {tooltip.text}
+    </span>
+  );
+}
+
+function sourcePeriodTooltip(
+  family: SourceFamilyAggregate,
+  band: DateBand,
+  value: number,
+  total: number,
+  scope: "period" | "family" = "period",
+) {
+  const share = formatPercent(value, total);
+  return `${family.label}\n${band.label}: ${numberFormat(value)} records\n${share} of this ${scope}`;
+}
+
+function sourceFamilyTooltip(family: SourceFamilyAggregate, total: number) {
+  const span = family.yearStart && family.yearEnd ? `${family.yearStart}-${family.yearEnd}` : "mixed dates";
+  return `${family.label}\n${numberFormat(family.count)} records / ${formatPercent(family.count, total)}\n${mappedShare(family)}% mapped; ${family.periodCoverage}/6 periods\n${family.narrativeSpread} narrative groups; ${family.jurisdictionSpread} jurisdictions; ${span}`;
+}
+
+function sourceFamilyInsight(family: SourceFamilyAggregate) {
+  const parts = [
+    family.dominantBandId ? `dominant ${family.dominantBandLabel} (${family.dominantBandShare}%)` : null,
+    `${family.periodCoverage}/6 periods`,
+    `${mappedShare(family)}% mapped`,
+    `${family.narrativeSpread} narrative groups`,
+    family.jurisdictionSpread ? `${family.jurisdictionSpread} jurisdictions` : null,
+  ].filter(Boolean);
+  return parts.join(" / ");
+}
+
+function mappedShare(family: SourceFamilyAggregate) {
+  return family.count ? Math.round((family.mappedCount / family.count) * 100) : 0;
 }
 
 function useDashboardFieldMotion(rootRef: RefObject<HTMLDivElement | null>, mode: ConsoleMode) {
@@ -3782,23 +4027,24 @@ function useDashboardFieldMotion(rootRef: RefObject<HTMLDivElement | null>, mode
 
     addIfTargets(timeline, root.querySelectorAll(".dashboard-field-view"), {
       opacity: [0, 1],
-      translateY: [8, 0],
-      clipPath: ["inset(0 0 18% 0)", "inset(0 0 0% 0)"],
-      duration: 220,
+      translateY: [12, 0],
+      duration: 760,
     }, 0);
 
     if (mode === "records") {
-      addIfTargets(timeline, root.querySelectorAll(".record-signal-bar"), { opacity: [0, 1], scaleY: [0.18, 1], duration: 320, delay: stagger(14) }, 120);
-      addIfTargets(timeline, root.querySelectorAll(".record-signal-chart .dashboard-draw-path"), { strokeDashoffset: 0, duration: 480, delay: stagger(34) }, 180);
-      addIfTargets(timeline, root.querySelectorAll(".matrix-bubble"), { opacity: [0, 1], scale: [0.2, 1], duration: 260, delay: stagger(12) }, 280);
+      addIfTargets(timeline, root.querySelectorAll(".record-timeline-bar"), { opacity: [0, 1], scaleY: [0.18, 1], duration: 920, ease: "linear", delay: stagger(22) }, 180);
+      addIfTargets(timeline, root.querySelectorAll(".record-timeline-chart .dashboard-draw-path"), { strokeDashoffset: 0, duration: 1180, ease: "linear", delay: stagger(44) }, 260);
+      addIfTargets(timeline, root.querySelectorAll(".matrix-bubble"), { opacity: [0, 1], scale: [0.2, 1], duration: 820, delay: stagger(20) }, 380);
     } else if (mode === "locations") {
-      addIfTargets(timeline, root.querySelectorAll(".state-lollipop-row"), { opacity: [0, 1], translateY: [8, 0], duration: 260, delay: stagger(18) }, 120);
-      addIfTargets(timeline, root.querySelectorAll(".precision-dot.lit"), { opacity: [0, 1], scale: [0.25, 1], duration: 220, delay: stagger(12) }, 260);
-      addIfTargets(timeline, root.querySelectorAll(".place-role-row i"), { opacity: [0, 1], scaleX: [0.25, 1], duration: 240, delay: stagger(10) }, 340);
+      addIfTargets(timeline, root.querySelectorAll(".state-lollipop-row"), { opacity: [0, 1], translateY: [10, 0], duration: 760, delay: stagger(26) }, 160);
+      addIfTargets(timeline, root.querySelectorAll(".precision-dot.lit"), { opacity: [0, 1], scale: [0.25, 1], duration: 720, delay: stagger(16) }, 320);
+      addIfTargets(timeline, root.querySelectorAll(".place-role-row i"), { opacity: [0, 1], scaleX: [0.25, 1], duration: 920, ease: "linear", delay: stagger(14) }, 420);
     } else {
-      addIfTargets(timeline, root.querySelectorAll(".source-ribbon-segment"), { opacity: [0, 1], scaleY: [0.15, 1], duration: 360, delay: stagger(12) }, 120);
-      addIfTargets(timeline, root.querySelectorAll(".source-donut-module"), { opacity: [0, 1], scale: [0.94, 1], duration: 280 }, 310);
-      addIfTargets(timeline, root.querySelectorAll(".source-rank-row"), { opacity: [0, 1], translateX: [10, 0], duration: 260, delay: stagger(18) }, 360);
+      addIfTargets(timeline, root.querySelectorAll(".source-insight-card"), { opacity: [0, 1], translateY: [10, 0], duration: 760, delay: stagger(38) }, 120);
+      addIfTargets(timeline, root.querySelectorAll(".source-ribbon-segment, .source-period-segment"), { opacity: [0, 1], scaleY: [0.12, 1], duration: 1080, ease: "linear", delay: stagger(18) }, 220);
+      addIfTargets(timeline, root.querySelectorAll(".source-donut-module, .source-donut, .source-donut-slice, .source-donut-legend span, .source-donut-mapped-bars span"), { opacity: [0, 1], translateY: [12, 0], scale: [0.95, 1], duration: 1040, delay: stagger(36) }, 430);
+      addIfTargets(timeline, root.querySelectorAll(".source-family-row, .source-rank-row"), { opacity: [0, 1], translateX: [14, 0], duration: 900, delay: stagger(30) }, 640);
+      addIfTargets(timeline, root.querySelectorAll(".source-profile-cell"), { opacity: [0, 1], scaleY: [0.22, 1], duration: 860, ease: "linear", delay: stagger(16) }, 760);
     }
 
     timelineRef.current = timeline;
@@ -3838,6 +4084,10 @@ function buildDashboardFieldAggregate({
   const stateTotals: Record<string, number> = {};
   const precisionCounts: Record<string, number> = Object.fromEntries(PRECISION_LABELS.map((label) => [label, 0]));
   const placeRoleCounts = new Map<string, number>();
+  const mappedRecordIds = new Set(mapFlags.map((flag) => flag.record_id));
+  const sourceOrgSets = new Map<SourceFamilyId, Set<string>>();
+  const narrativeSets = new Map<SourceFamilyId, Set<string>>();
+  const jurisdictionSets = new Map<SourceFamilyId, Set<string>>();
   const sourceFamilyMap = new Map<string, SourceFamilyAggregate>(
     SOURCE_FAMILIES.map((family) => [
       family.id,
@@ -3845,11 +4095,29 @@ function buildDashboardFieldAggregate({
         id: family.id,
         label: family.label,
         color: family.color,
+        strokeColor: family.strokeColor,
+        fillColor: family.fillColor,
+        softColor: family.softColor,
         count: 0,
+        mappedCount: 0,
+        sourceOrgCount: 0,
+        periodCoverage: 0,
+        dominantBandId: null,
+        dominantBandLabel: "no dated period",
+        dominantBandShare: 0,
+        narrativeSpread: 0,
+        jurisdictionSpread: 0,
+        yearStart: null,
+        yearEnd: null,
         byBand: Object.fromEntries(dateBands.map((band) => [band.id, 0])),
       },
     ]),
   );
+  for (const family of SOURCE_FAMILIES) {
+    sourceOrgSets.set(family.id, new Set());
+    narrativeSets.set(family.id, new Set());
+    jurisdictionSets.set(family.id, new Set());
+  }
 
   for (const record of records) {
     const narrative = displayNarrativeGroupLabel(record);
@@ -3875,10 +4143,34 @@ function buildDashboardFieldAggregate({
     const sourceAggregate = sourceFamilyMap.get(family.id);
     if (sourceAggregate) {
       sourceAggregate.count += 1;
+      if (mappedRecordIds.has(record.record_id)) {
+        sourceAggregate.mappedCount += 1;
+      }
       if (record.date_band in sourceAggregate.byBand) {
         sourceAggregate.byBand[record.date_band] += 1;
       }
+      sourceOrgSets.get(family.id)?.add(String(record.source_id || record.source_name || "unknown source"));
+      narrativeSets.get(family.id)?.add(narrative);
+      if (record.state_territory) {
+        jurisdictionSets.get(family.id)?.add(record.state_territory);
+      }
+      if (typeof record.year === "number" && Number.isFinite(record.year)) {
+        sourceAggregate.yearStart = sourceAggregate.yearStart === null ? record.year : Math.min(sourceAggregate.yearStart, record.year);
+        sourceAggregate.yearEnd = sourceAggregate.yearEnd === null ? record.year : Math.max(sourceAggregate.yearEnd, record.year);
+      }
     }
+  }
+
+  for (const family of sourceFamilyMap.values()) {
+    const bandEntries = dateBands.map((band) => ({ band, value: family.byBand[band.id] ?? 0 }));
+    const dominant = [...bandEntries].sort((a, b) => b.value - a.value)[0];
+    family.sourceOrgCount = sourceOrgSets.get(family.id)?.size ?? 0;
+    family.narrativeSpread = narrativeSets.get(family.id)?.size ?? 0;
+    family.jurisdictionSpread = jurisdictionSets.get(family.id)?.size ?? 0;
+    family.periodCoverage = bandEntries.filter((entry) => entry.value > 0).length;
+    family.dominantBandId = dominant && dominant.value > 0 ? dominant.band.id : null;
+    family.dominantBandLabel = dominant && dominant.value > 0 ? dominant.band.label : "no dated period";
+    family.dominantBandShare = dominant && family.count ? Math.round((dominant.value / family.count) * 100) : 0;
   }
 
   const mappedCounts = mapFlags.reduce<Record<string, number>>((acc, flag) => {
@@ -4002,7 +4294,7 @@ function sourceFamilyConicGradient(families: SourceFamilyAggregate[]) {
     .map((family) => {
       const start = cursor;
       cursor += (family.count / total) * 100;
-      return `${family.color} ${start}% ${cursor}%`;
+      return `${family.fillColor} ${start}% ${cursor}%`;
     })
     .join(", ");
 }
@@ -4256,12 +4548,12 @@ function ConsolePolyline({
 
 function consoleModeLabel(mode: ConsoleMode) {
   if (mode === "records") {
-    return "Record time signal";
+    return "Record timeline";
   }
   if (mode === "locations") {
-    return "Mapped place signal";
+    return "Mapped place coverage";
   }
-  return "Source family signal";
+  return "Source family coverage";
 }
 
 function countRecordValues(records: readonly RecordItem[], getKey: (record: RecordItem) => string | null | undefined) {
@@ -4372,7 +4664,7 @@ function dashboardTrackLabel(record: RecordItem) {
 
 function dashboardTrackTitle(record: RecordItem, limit: number) {
   const figure = record.canonical_figure_guess || record.canonical_figure || "";
-  const rawTitle = record.title || figure || `Record ${record.record_id}`;
+  const rawTitle = displayRecordTitle(record);
   const title = rawTitle
     .replace(/^\s*(?:ca\.?\s*)?\d{4}\s*[-–:]\s*/i, "")
     .replace(/\s*\/\s*\d{4}\s*$/i, "")
@@ -4515,53 +4807,6 @@ function aggregateYearValues(entries: readonly (readonly [number, number])[], ta
   return bins.map((bin) => [`${bin.start}-${bin.end}`, bin.value] as const);
 }
 
-function SignalSquare({ records }: { records: RecordItem[] }) {
-  const nodes = records.slice(0, 14).map((record, index) => {
-    const leftColumn = index % 2 === 0;
-    return {
-      record,
-      x: leftColumn ? 12 + (index % 3) * 7 : 57 + (index % 3) * 9,
-      y: 12 + index * 5.7,
-      anchorX: 50,
-      anchorY: 50 + ((index % 5) - 2) * 7,
-    };
-  });
-
-  return (
-    <section className="signal-square">
-      <svg viewBox="0 0 100 100" className="signal-svg" role="img" aria-label="Record signal network">
-        <rect x="36" y="42" width="28" height="16" className="signal-core" />
-        <text x="39" y="51" className="signal-core-text">
-          ARCH
-        </text>
-        {nodes.map((node) => (
-          <line
-            key={`line-${node.record.record_id}`}
-            className="signal-line"
-            x1={node.x + 8}
-            y1={node.y + 2}
-            x2={node.anchorX}
-            y2={node.anchorY}
-          />
-        ))}
-        {nodes.map((node) => (
-          <g key={node.record.record_id}>
-            <rect x={node.x} y={node.y} width="15" height="4.3" className="slot-box" />
-            <rect x={node.x + 2} y={node.y + 0.9} width="10" height="2.5" className="slot-fill" />
-            <text x={node.x + 16.5} y={node.y + 3.6} className="slot-label">
-              SLOT_{String(node.record.record_id).padStart(2, "0")}
-            </text>
-          </g>
-        ))}
-      </svg>
-      <div className="square-caption">
-        <span>RECORD FIELD</span>
-        <b>{records.length}</b>
-      </div>
-    </section>
-  );
-}
-
 function MetricTile({ label, value, detail }: { label: string; value: number; detail: string }) {
   return (
     <div className="metric-tile">
@@ -4642,13 +4887,14 @@ function mapSourceTone(record: RecordItem) {
   };
 }
 
-function recordDisplayTitle(record: RecordItem) {
+function displayRecordTitle(record: RecordItem) {
   const title = normalizeDisplayText(record.title)
     .replace(/^[\s\p{P}\p{S}]+/u, "")
     .trim();
   const fallback = normalizeDisplayText(
     record.canonical_figure_guess
       || record.canonical_figure
+      || record.source_name
       || record.publication
       || "Public record",
   );
@@ -4669,7 +4915,7 @@ function recordBody(record: RecordItem) {
   if (record.snippet) {
     return displayRecordExcerpt(record.snippet);
   }
-  const figure = recordDisplayTitle(record);
+  const figure = displayRecordTitle(record);
   const source = record.publication || record.source_name || "a public source";
   const date = record.date_published || (record.year ? String(record.year) : "an undated record");
   return `Public record note for ${figure}, recorded in ${source} (${date}). This card is a review surface: source voice, relevance, location, and publicness still require human checking before interpretation.`;
@@ -4805,7 +5051,7 @@ function RecordCardOverlay({
 
         <section className="record-card-title-block">
           <div className="record-card-year">{year}</div>
-          <h2 id={titleId}>{recordDisplayTitle(record)}</h2>
+          <h2 id={titleId}>{displayRecordTitle(record)}</h2>
         </section>
 
         <section className="record-card-body">

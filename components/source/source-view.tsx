@@ -144,7 +144,7 @@ function SourceRollupPane({ rows, typeRows, totalRecords }: { rows: SourceRollup
       </header>
       <div className="source-pane-scroll source-rollup-scroll">
         {rows.map((row) => (
-          <div className="source-rollup-row" key={row.id} style={{ "--source-color": row.color, "--source-signal": `${Math.max(6, (row.records / maxRecords) * 100)}%` } as CSSProperties}>
+          <div className="source-rollup-row" key={row.id} style={{ "--source-color": row.color, "--source-meter": `${Math.max(6, (row.records / maxRecords) * 100)}%` } as CSSProperties}>
             <span className={`source-family-marker source-family-marker-${row.marker}${row.records === maxRecords ? " is-active" : ""}`} aria-hidden="true" />
             <div className="source-rollup-name">
               <b title={row.label}>{row.label}</b>
@@ -163,7 +163,7 @@ function SourceRollupPane({ rows, typeRows, totalRecords }: { rows: SourceRollup
               <small>TOP PUBLIC DISPLAY TYPES</small>
             </div>
             {typeRows.map((row) => (
-              <div className="source-type-rollup-row" key={row.id} style={{ "--source-color": row.color, "--source-signal": `${Math.max(5, (row.records / maxRecords) * 100)}%` } as CSSProperties}>
+              <div className="source-type-rollup-row" key={row.id} style={{ "--source-color": row.color, "--source-meter": `${Math.max(5, (row.records / maxRecords) * 100)}%` } as CSSProperties}>
                 <span className="source-family-marker source-family-marker-hollow" aria-hidden="true" />
                 <div className="source-rollup-name">
                   <b title={`${row.label} / ${row.familyLabel}`}>{row.label}</b>
