@@ -8,8 +8,6 @@ import type { Timeline } from "animejs";
 import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
-import { buildDensityPeriodSchemes, periodContainsYear } from "@/lib/density-periods";
-import type { DensityPeriod, DensityPeriodScheme, DensityPeriodSchemeId } from "@/lib/density-periods";
 import { SourceView } from "@/components/source/source-view";
 import { DisplayControls } from "@/components/signal-gain-control";
 
@@ -119,7 +117,6 @@ const NARRATIVE_TYPE_LABELS: Record<string, string> = {
   retelling_or_adaptation: "Retellings",
 };
 
-const DENSITY_CHARS = [" ", ".", ":", "+", "#"];
 const TERRAIN_SYMBOLS = {
   range: "+",
   plateau: "@",
@@ -220,24 +217,29 @@ type NarrativePeriodRow = {
   label: string;
   values: MatrixCell[];
 };
-type DensityAnalysisTab = "temporal_narrative" | "source_bias" | "map_coverage" | "regional_profile";
-type DensityPeriodSummary = {
-  period: DensityPeriod;
-  records: RecordItem[];
-  mappedCount: number;
-  topNarrative: string;
-  topSourceFamily: string;
-  firstRecord: RecordItem | null;
+type AnnualDensityPoint = {
+  year: number;
+  total: number;
+  mapped: number;
 };
-type DensityNarrativeCard = {
+type PeriodBoxPlotStat = {
+  band: DateBand;
+  min: number;
+  q1: number;
+  median: number;
+  q3: number;
+  max: number;
+  total: number;
+  mapped: number;
+};
+type FigureSignalItem = {
   label: string;
   records: RecordItem[];
   mappedCount: number;
-  topSourceFamily: string;
   dateSpan: string;
-  description: string;
-  glyph: string;
-  sensitivityNote: string;
+  topSourceFamily: string;
+  topRegion: string;
+  note: string;
 };
 type StateCoverageRow = {
   state: string;
@@ -1588,569 +1590,492 @@ function DensityView({
   derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const [analysisSchemeId, setAnalysisSchemeId] = useState<DensityPeriodSchemeId>("historical_context");
-  const [analysisTab, setAnalysisTab] = useState<DensityAnalysisTab>("temporal_narrative");
-  const [selectedPeriodId, setSelectedPeriodId] = useState<string | null>(null);
-  const periodSchemes = useMemo(() => buildDensityPeriodSchemes(data.records), [data.records]);
-  const overviewScheme = periodSchemes.find((scheme) => scheme.id === "historical_context") ?? periodSchemes[0];
-  const analysisScheme = periodSchemes.find((scheme) => scheme.id === analysisSchemeId) ?? overviewScheme;
-  const overviewSummaries = useMemo(
-    () => buildDensityPeriodSummaries(overviewScheme, data.records, derived.mapFlags),
-    [data.records, derived.mapFlags, overviewScheme],
-  );
-  const analysisSummaries = useMemo(
-    () => buildDensityPeriodSummaries(analysisScheme, data.records, derived.mapFlags),
-    [analysisScheme, data.records, derived.mapFlags],
-  );
-  const selectedPeriod =
-    overviewSummaries.find((summary) => summary.period.id === selectedPeriodId) ??
-    [...overviewSummaries].sort((a, b) => b.records.length - a.records.length)[0] ??
-    null;
-  const narrativeCards = useMemo(() => buildDensityNarrativeCards(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const [selectedFigure, setSelectedFigure] = useState<FigureSignalItem | null>(null);
+  const periodBands = useMemo(() => data.date_bands.filter((band) => band.id !== "undated"), [data.date_bands]);
+  const maxRecords = Math.max(...periodBands.map((band) => band.record_count), 1);
+  const maxQueries = Math.max(...periodBands.map((band) => band.planned_query_count), 1);
+  const mappedByBand = useMemo(() => buildMappedCountByDateBand(derived.mapFlags), [derived.mapFlags]);
+  const annualSeries = useMemo(() => buildAnnualDensitySeries(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const boxStats = useMemo(() => buildPeriodBoxPlotStats(periodBands, data.records, derived.mapFlags), [periodBands, data.records, derived.mapFlags]);
+  const figureSignals = useMemo(() => buildFigureSignalItems(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const locationHealth = {
+    map_flags: derived.mapFlags.length,
+    broad_or_review: Math.max(0, data.summary.record_count - derived.mapFlags.length),
+    undated_records: derived.undatedRecordCount,
+    locations_total: data.summary.location_count,
+  };
 
   return (
     <div className="density-view">
       <header className="density-header">
-        <span>DENSITY FIELD / PUBLIC-TEXT PERIOD LENSES</span>
+        <div>
+          <span>TIME DENSITY</span>
+          <p>Density shows public-text record distribution and source coverage. It is not a claim about real-world frequency.</p>
+        </div>
         <b>
-          {data.summary.earliest_year}-{data.summary.latest_year} / {data.summary.record_count} PUBLIC / {data.summary.mapped_record_count} MAPPED
+          {data.summary.earliest_year}-{data.summary.latest_year} / {numberFormat(data.summary.record_count)} PUBLIC RECORDS / {numberFormat(data.summary.mapped_record_count)} MAPPED
         </b>
       </header>
-      <div className="density-field-stack">
-        <section className="density-field density-field-overview" id="density-field-overview" aria-label="Density overview">
-          <div className="density-field-heading">
-            <span>FIELD 01</span>
-            <b>DENSITY OVERVIEW</b>
-            <p>Default periods are historical/public-text context bands. They help interpret source and publication environments; they do not imply causation.</p>
-          </div>
-          <div className="density-period-row">
-            {overviewSummaries.map((summary, index) => (
-              <DensityPeriodCard
-                key={summary.period.id}
-                summary={summary}
-                index={index}
-                maxRecords={Math.max(...overviewSummaries.map((item) => item.records.length), 1)}
-                selected={selectedPeriod?.period.id === summary.period.id}
-                onSelect={() => setSelectedPeriodId(summary.period.id)}
-                onSelectRecord={onSelectRecord}
-              />
-            ))}
-          </div>
-          <div className="density-overview-grid">
-            <DensityNarrativeCards cards={narrativeCards} onSelectRecord={onSelectRecord} />
-            <DensitySelectedPeriodSummary summary={selectedPeriod} undatedCount={derived.undatedRecordCount} />
-          </div>
-        </section>
-
-        <section className="density-field density-field-method" id="density-field-method" aria-label="Period method comparator">
-          <div className="density-field-heading">
-            <span>FIELD 02</span>
-            <b>PERIOD METHOD COMPARATOR</b>
-            <p>The archive can be sliced in several defensible ways. Historical context bands preserve publication and public-text context. Equal-duration bands test uneven period widths. Equal-record bands test composition without letting one dense period dominate the display.</p>
-          </div>
-          <DensityMethodComparator schemes={periodSchemes} records={data.records} mapFlags={derived.mapFlags} />
-          <p className="density-method-note">
-            Period lenses are interpretive display tools. They organise public records for reading; they do not establish real-world frequency or causation. Equal-record bins are a comparison tool and can hide real temporal concentration.
-          </p>
-        </section>
-
-        <section className="density-field density-field-analysis" id="density-field-analysis" aria-label="Analytical field">
-          <div className="density-field-heading density-analysis-heading">
-            <span>FIELD 03</span>
-            <b>ANALYTICAL FIELD</b>
-            <p>Charts use the selected period lens and show archive record density, source coverage, and map eligibility patterns.</p>
-          </div>
-          <DensityAnalysisControls selectedSchemeId={analysisScheme.id} selectedTab={analysisTab} onSchemeChange={setAnalysisSchemeId} onTabChange={setAnalysisTab} />
-          <DensityAnalysisField tab={analysisTab} scheme={analysisScheme} summaries={analysisSummaries} records={data.records} mapFlags={derived.mapFlags} />
-        </section>
+      <div className="density-bands">
+        {periodBands.map((band) => (
+          <DensityBand
+            key={band.id}
+            band={band}
+            maxRecords={maxRecords}
+            maxQueries={maxQueries}
+            mappedCount={mappedByBand[band.id] ?? 0}
+            firstRecord={derived.firstRecordByDateBand.get(band.id) ?? null}
+            onSelectRecord={onSelectRecord}
+          />
+        ))}
       </div>
+      <DensityChartPanel annualSeries={annualSeries} boxStats={boxStats} />
+      <div className="density-aux-grid">
+        <DensitySignal title="SOURCE FIELD" values={data.summary.source_type_counts} />
+        <DensitySignal title="LOCATION HEALTH" values={locationHealth} />
+        <DensityFigureRail figures={figureSignals} onSelectFigure={setSelectedFigure} />
+      </div>
+      {selectedFigure ? (
+        <FigureCardOverlay
+          figure={selectedFigure}
+          onClose={() => setSelectedFigure(null)}
+          onOpenRecord={(record) => {
+            setSelectedFigure(null);
+            onSelectRecord(record);
+          }}
+        />
+      ) : null}
     </div>
   );
 }
 
-function DensityPeriodCard({
-  summary,
-  index,
+function DensityBand({
+  band,
   maxRecords,
-  selected,
-  onSelect,
+  maxQueries,
+  mappedCount,
+  firstRecord,
   onSelectRecord,
 }: {
-  summary: DensityPeriodSummary;
-  index: number;
+  band: DateBand;
   maxRecords: number;
-  selected: boolean;
-  onSelect: () => void;
+  maxQueries: number;
+  mappedCount: number;
+  firstRecord: RecordItem | null;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const recordLevel = Math.ceil((summary.records.length / maxRecords) * 28);
-  const char = DENSITY_CHARS[Math.min(DENSITY_CHARS.length - 1, index)];
-  const mappedShare = formatPercent(summary.mappedCount, summary.records.length);
+  const recordWidth = Math.max(3, (band.record_count / maxRecords) * 100);
+  const queryWidth = Math.max(3, (band.planned_query_count / maxQueries) * 100);
+  const mappedShare = formatPercent(mappedCount, band.record_count);
   return (
-    <section className={`density-band density-period-card${selected ? " selected" : ""}`}>
-      <div className="density-matrix" aria-hidden="true">
-        {Array.from({ length: 28 }).map((_, cellIndex) => (
-          <span key={cellIndex} className={cellIndex < recordLevel ? "matrix-cell lit" : "matrix-cell"}>
-            {cellIndex < recordLevel ? char : "."}
-          </span>
-        ))}
-      </div>
+    <section
+      className={firstRecord ? "density-band clickable-record" : "density-band"}
+      onClick={() => {
+        if (firstRecord) {
+          onSelectRecord(firstRecord);
+        }
+      }}
+      onKeyDown={(event) => {
+        if (firstRecord && (event.key === "Enter" || event.key === " ")) {
+          event.preventDefault();
+          onSelectRecord(firstRecord);
+        }
+      }}
+      role={firstRecord ? "button" : undefined}
+      tabIndex={firstRecord ? 0 : undefined}
+      aria-label={firstRecord ? `Open sample record for ${band.label}` : undefined}
+    >
       <div className="band-meta">
-        <span>{summary.period.shortLabel}</span>
-        <strong>{summary.period.label}</strong>
-        <b>{numberFormat(summary.records.length)}</b>
-        <small style={{ "--query-level": `${Math.max(5, Math.round((summary.mappedCount / Math.max(1, summary.records.length)) * 100))}%` } as CSSProperties}>
-          mapped {summary.mappedCount} / {mappedShare}
-        </small>
+        <span>{band.label}</span>
+        <b>{numberFormat(band.record_count)}</b>
+        <small>{numberFormat(mappedCount)} mapped / {mappedShare}</small>
       </div>
-      <dl className="density-period-metrics">
+      <div className="density-band-bars" aria-hidden="true">
+        <i style={{ "--bar-width": `${recordWidth}%` } as CSSProperties} />
+        <em style={{ "--bar-width": `${queryWidth}%` } as CSSProperties} />
+      </div>
+      <dl className="density-band-stats">
         <div>
-          <dt>Narrative</dt>
-          <dd>{summary.topNarrative}</dd>
+          <dt>Public records</dt>
+          <dd>{numberFormat(band.record_count)}</dd>
         </div>
         <div>
-          <dt>Source</dt>
-          <dd>{summary.topSourceFamily}</dd>
+          <dt>Planned queries</dt>
+          <dd>{numberFormat(band.planned_query_count)}</dd>
         </div>
       </dl>
-      <div className="density-card-actions">
-        <button type="button" onClick={onSelect} aria-pressed={selected}>
-          inspect
-        </button>
-        <button
-          type="button"
-          disabled={!summary.firstRecord}
-          onClick={() => {
-            if (summary.firstRecord) {
-              onSelectRecord(summary.firstRecord);
-            }
-          }}
-        >
-          sample
-        </button>
-      </div>
+      {firstRecord ? <span className="density-band-action">OPEN SAMPLE</span> : null}
     </section>
   );
 }
 
-function DensityNarrativeCards({ cards, onSelectRecord }: { cards: DensityNarrativeCard[]; onSelectRecord: (record: RecordItem) => void }) {
-  const [selectedLabel, setSelectedLabel] = useState<string | null>(cards[0]?.label ?? null);
-  const selectedCard = cards.find((card) => card.label === selectedLabel) ?? cards[0] ?? null;
-
+function DensityChartPanel({ annualSeries, boxStats }: { annualSeries: AnnualDensityPoint[]; boxStats: PeriodBoxPlotStat[] }) {
   return (
-    <section className="density-narrative-panel">
-      <div className="density-panel-heading">
-        <span>FIGURE / NARRATIVE SIGNAL</span>
-        <b>PUBLIC-TEXT FAMILIES</b>
-      </div>
-      <div className="density-narrative-grid">
-        {cards.slice(0, 6).map((card) => (
-          <article className="density-narrative-card" key={card.label}>
-            <i aria-hidden="true">{card.glyph}</i>
-            <div>
-              <span>{card.label}</span>
-              <b>{numberFormat(card.records.length)} records / {numberFormat(card.mappedCount)} mapped</b>
-              <small>{card.dateSpan} / {card.topSourceFamily}</small>
-            </div>
-            <p>{card.description}</p>
-            <em>{card.sensitivityNote}</em>
-            <button
-              type="button"
-              aria-pressed={selectedCard?.label === card.label}
-              onClick={() => setSelectedLabel(card.label)}
-            >
-              inspect
-            </button>
-          </article>
-        ))}
-      </div>
-      {selectedCard ? (
-        <aside className="density-figure-inspector">
-          <div>
-            <span>FIGURE-CARD INSPECTOR</span>
-            <b>{selectedCard.label}</b>
-          </div>
-          <p>{selectedCard.description}</p>
-          <dl>
-            <div>
-              <dt>Records</dt>
-              <dd>{numberFormat(selectedCard.records.length)}</dd>
-            </div>
-            <div>
-              <dt>Mapped</dt>
-              <dd>{numberFormat(selectedCard.mappedCount)}</dd>
-            </div>
-            <div>
-              <dt>Date span</dt>
-              <dd>{selectedCard.dateSpan}</dd>
-            </div>
-            <div>
-              <dt>Top source</dt>
-              <dd>{selectedCard.topSourceFamily}</dd>
-            </div>
-          </dl>
-          <em>{selectedCard.sensitivityNote}</em>
-          <button
-            type="button"
-            disabled={!selectedCard.records[0]}
-            onClick={() => {
-              if (selectedCard.records[0]) {
-                onSelectRecord(selectedCard.records[0]);
-              }
-            }}
-          >
-            sample record
-          </button>
-        </aside>
-      ) : null}
+    <section className="density-chart-panel" aria-label="Density charts">
+      <DensityAnnualLineChart series={annualSeries} />
+      <DensityPeriodBoxPlot stats={boxStats} />
     </section>
   );
 }
 
-function DensitySelectedPeriodSummary({ summary, undatedCount }: { summary: DensityPeriodSummary | null; undatedCount: number }) {
-  return (
-    <section className="density-selected-panel">
-      <div className="density-panel-heading">
-        <span>SELECTED PERIOD SUMMARY</span>
-        <b>{summary ? summary.period.shortLabel : "No period selected"}</b>
-      </div>
-      {summary ? (
-        <div className="density-selected-grid">
-          <div>
-            <span>YEARS</span>
-            <b>{summary.period.label}</b>
-          </div>
-          <div>
-            <span>PUBLIC RECORDS</span>
-            <b>{numberFormat(summary.records.length)}</b>
-          </div>
-          <div>
-            <span>MAPPED</span>
-            <b>{numberFormat(summary.mappedCount)} / {formatPercent(summary.mappedCount, summary.records.length)}</b>
-          </div>
-          <div>
-            <span>TOP NARRATIVE</span>
-            <b>{summary.topNarrative}</b>
-          </div>
-          <div>
-            <span>TOP SOURCE</span>
-            <b>{summary.topSourceFamily}</b>
-          </div>
-        </div>
-      ) : null}
-      <p>{summary?.period.anchorNote ?? "Select a period card to inspect the contextual band."}</p>
-      <small>UNDATED: {numberFormat(undatedCount)} public records. Undated records are not forced into a false period.</small>
-    </section>
-  );
-}
-
-function DensityMethodComparator({
-  schemes,
-  records,
-  mapFlags,
-}: {
-  schemes: DensityPeriodScheme[];
-  records: readonly RecordItem[];
-  mapFlags: readonly MapFlagRenderItem[];
-}) {
-  const rows = schemes.map((scheme) => ({
-    scheme,
-    summaries: buildDensityPeriodSummaries(scheme, records, mapFlags),
-  }));
-  const max = Math.max(...rows.flatMap((row) => row.summaries.map((summary) => summary.records.length)), 1);
+function DensityAnnualLineChart({ series }: { series: AnnualDensityPoint[] }) {
+  const width = 760;
+  const height = 210;
+  const margin = { top: 18, right: 30, bottom: 36, left: 56 };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+  const minYear = series[0]?.year ?? 0;
+  const maxYear = series[series.length - 1]?.year ?? minYear + 1;
+  const maxValue = Math.max(...series.map((point) => Math.max(point.total, point.mapped)), 1);
+  const xFor = (year: number) => margin.left + ((year - minYear) / Math.max(1, maxYear - minYear)) * innerWidth;
+  const yFor = (value: number) => margin.top + innerHeight - (value / maxValue) * innerHeight;
+  const publicPath = series.map((point) => `${xFor(point.year)},${yFor(point.total)}`).join(" ");
+  const mappedPath = series.map((point) => `${xFor(point.year)},${yFor(point.mapped)}`).join(" ");
+  const yearTicks = buildLinearTicks(minYear, maxYear, 5).map((tick) => Math.round(tick));
+  const valueTicks = buildLinearTicks(0, maxValue, 5).map((tick) => Math.round(tick));
 
   return (
-    <div className="density-method-comparator">
-      {rows.map(({ scheme, summaries }) => (
-        <section className="density-method-row" key={scheme.id}>
-          <header>
-            <span>{scheme.label.toUpperCase()}</span>
-            <small>{scheme.description}</small>
-          </header>
-          <div className="density-method-blocks">
-            {summaries.map((summary) => {
-              const intensity = summary.records.length / max;
-              return (
-                <div className="density-method-block" key={summary.period.id} style={{ "--period-intensity": String(0.12 + intensity * 0.78) } as CSSProperties}>
-                  <b>{summary.period.shortLabel}</b>
-                  <span>{summary.period.label}</span>
-                  <i style={{ "--mapped-share": `${Math.max(3, (summary.mappedCount / Math.max(1, summary.records.length)) * 100)}%` } as CSSProperties} />
-                  <em>{numberFormat(summary.records.length)}</em>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      ))}
-    </div>
-  );
-}
-
-function DensityAnalysisControls({
-  selectedSchemeId,
-  selectedTab,
-  onSchemeChange,
-  onTabChange,
-}: {
-  selectedSchemeId: DensityPeriodSchemeId;
-  selectedTab: DensityAnalysisTab;
-  onSchemeChange: (id: DensityPeriodSchemeId) => void;
-  onTabChange: (id: DensityAnalysisTab) => void;
-}) {
-  const schemes: Array<{ id: DensityPeriodSchemeId; label: string }> = [
-    { id: "historical_context", label: "Historical Context" },
-    { id: "equal_duration", label: "Equal Duration" },
-    { id: "equal_record_count", label: "Equal Record Count" },
-  ];
-  const tabs: Array<{ id: DensityAnalysisTab; label: string }> = [
-    { id: "temporal_narrative", label: "TEMPORAL × NARRATIVE" },
-    { id: "source_bias", label: "SOURCE BIAS" },
-    { id: "map_coverage", label: "MAP COVERAGE" },
-    { id: "regional_profile", label: "REGIONAL PROFILE" },
-  ];
-
-  return (
-    <div className="density-analysis-controls">
-      <div>
-        <span>PERIOD LENS</span>
-        {schemes.map((scheme) => (
-          <button key={scheme.id} type="button" className={selectedSchemeId === scheme.id ? "active" : ""} onClick={() => onSchemeChange(scheme.id)}>
-            {scheme.label}
-          </button>
+    <article className="density-chart-card">
+      <header>
+        <span>ANNUAL TREND</span>
+        <b>Dated public records by year</b>
+      </header>
+      <svg className="density-line-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Annual public record trend line chart">
+        {valueTicks.map((tick) => (
+          <g key={`y-${tick}`}>
+            <line className="density-chart-grid" x1={margin.left} x2={width - margin.right} y1={yFor(tick)} y2={yFor(tick)} />
+            <text className="density-chart-axis" x={margin.left - 10} y={yFor(tick) + 4} textAnchor="end">
+              {tick}
+            </text>
+          </g>
         ))}
-      </div>
-      <div>
-        <span>ANALYSIS</span>
-        {tabs.map((tab) => (
-          <button key={tab.id} type="button" className={selectedTab === tab.id ? "active" : ""} onClick={() => onTabChange(tab.id)}>
-            {tab.label}
-          </button>
+        {yearTicks.map((tick) => (
+          <g key={`x-${tick}`}>
+            <line className="density-chart-tick" x1={xFor(tick)} x2={xFor(tick)} y1={height - margin.bottom} y2={height - margin.bottom + 6} />
+            <text className="density-chart-axis" x={xFor(tick)} y={height - 16} textAnchor="middle">
+              {tick}
+            </text>
+          </g>
         ))}
+        <line className="density-chart-axis-line" x1={margin.left} x2={width - margin.right} y1={height - margin.bottom} y2={height - margin.bottom} />
+        <line className="density-chart-axis-line" x1={margin.left} x2={margin.left} y1={margin.top} y2={height - margin.bottom} />
+        <polyline className="density-line-public" points={publicPath} fill="none" />
+        <polyline className="density-line-mapped" points={mappedPath} fill="none" />
+      </svg>
+      <div className="density-chart-legend">
+        <span><i className="legend-public" /> public records</span>
+        <span><i className="legend-mapped" /> mapped records</span>
       </div>
-    </div>
+    </article>
   );
 }
 
-function DensityAnalysisField({
-  tab,
-  scheme,
-  summaries,
-  records,
-  mapFlags,
-}: {
-  tab: DensityAnalysisTab;
-  scheme: DensityPeriodScheme;
-  summaries: DensityPeriodSummary[];
-  records: readonly RecordItem[];
-  mapFlags: readonly MapFlagRenderItem[];
-}) {
-  if (tab === "source_bias") {
-    return (
-      <DensityAnalysisMatrix
-        title="SOURCE FAMILY x PERIOD"
-        note="Dense periods may reflect source availability or collection history rather than more narratives in the world."
-        rows={SOURCE_FAMILIES.map((family) => ({
-          label: family.label,
-          values: summaries.map((summary) => summary.records.filter((record) => sourceFamilyFor(record.source_type).id === family.id).length),
-        }))}
-        periods={scheme.periods}
-      />
-    );
-  }
-  if (tab === "map_coverage") {
-    return <DensityMapCoverageChart summaries={summaries} />;
-  }
-  if (tab === "regional_profile") {
-    return <DensityRegionalProfile records={records} mapFlags={mapFlags} periods={scheme.periods} />;
-  }
-  return (
-    <DensityAnalysisMatrix
-      title="NARRATIVE FAMILY x PERIOD"
-      note="This view shows which narrative families are represented in each period. It shows archive record density, not real-world frequency."
-      rows={NARRATIVE_MATRIX_LABELS.map((label) => ({
-        label,
-        values: summaries.map((summary) => summary.records.filter((record) => displayNarrativeGroupLabel(record) === label).length),
-      }))}
-      periods={scheme.periods}
-    />
-  );
-}
-
-function DensityAnalysisMatrix({
-  title,
-  note,
-  rows,
-  periods,
-}: {
-  title: string;
-  note: string;
-  rows: Array<{ label: string; values: number[] }>;
-  periods: readonly DensityPeriod[];
-}) {
-  const max = Math.max(...rows.flatMap((row) => row.values), 1);
+function DensityPeriodBoxPlot({ stats }: { stats: PeriodBoxPlotStat[] }) {
+  const width = 760;
+  const rowHeight = 27;
+  const margin = { top: 20, right: 36, bottom: 30, left: 138 };
+  const height = margin.top + margin.bottom + stats.length * rowHeight;
+  const innerWidth = width - margin.left - margin.right;
+  const maxValue = Math.max(...stats.map((stat) => stat.max), 1);
+  const xFor = (value: number) => margin.left + (value / maxValue) * innerWidth;
+  const ticks = buildLinearTicks(0, maxValue, 5).map((tick) => Math.round(tick));
 
   return (
-    <section className="density-analysis-panel">
-      <div className="density-panel-heading">
-        <span>{title}</span>
-        <b>{periods.map((period) => period.shortLabel).join(" / ")}</b>
-      </div>
-      <div className="density-analysis-matrix" style={{ "--matrix-cols": periods.length } as CSSProperties}>
-        <span />
-        {periods.map((period) => <b key={period.id}>{period.shortLabel}</b>)}
-        {rows.map((row) => (
-          <div className="density-analysis-row" key={row.label}>
-            <span>{row.label}</span>
-            {row.values.map((value, index) => (
-              <i key={`${row.label}-${periods[index]?.id}`} style={{ "--heat": String(value / max) } as CSSProperties} title={`${row.label}, ${periods[index]?.label}: ${numberFormat(value)}`}>
-                {value > 0 ? numberFormat(value) : ""}
-              </i>
-            ))}
-          </div>
+    <article className="density-chart-card">
+      <header>
+        <span>PERIOD DISTRIBUTION</span>
+        <b>Per-year record counts inside each band</b>
+      </header>
+      <svg className="density-box-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Period distribution box plot">
+        {ticks.map((tick) => (
+          <g key={tick}>
+            <line className="density-chart-grid" x1={xFor(tick)} x2={xFor(tick)} y1={margin.top - 8} y2={height - margin.bottom} />
+            <text className="density-chart-axis" x={xFor(tick)} y={height - 12} textAnchor="middle">
+              {tick}
+            </text>
+          </g>
         ))}
-      </div>
-      <p>{note}</p>
-    </section>
-  );
-}
-
-function DensityMapCoverageChart({ summaries }: { summaries: DensityPeriodSummary[] }) {
-  const max = Math.max(...summaries.map((summary) => summary.records.length), 1);
-  return (
-    <section className="density-analysis-panel density-map-coverage">
-      <div className="density-panel-heading">
-        <span>MAPPED / UNMAPPED BY PERIOD</span>
-        <b>MAP ELIGIBILITY RATIO</b>
-      </div>
-      <div className="density-coverage-bars">
-        {summaries.map((summary) => {
-          const unmapped = Math.max(0, summary.records.length - summary.mappedCount);
+        {stats.map((stat, index) => {
+          const y = margin.top + index * rowHeight + rowHeight / 2;
           return (
-            <div key={summary.period.id} className="density-coverage-row">
-              <span>{summary.period.shortLabel}</span>
-              <i>
-                <b style={{ "--bar-width": `${Math.max(2, (summary.mappedCount / max) * 100)}%` } as CSSProperties} />
-                <em style={{ "--bar-width": `${Math.max(2, (unmapped / max) * 100)}%` } as CSSProperties} />
-              </i>
-              <strong>{numberFormat(summary.mappedCount)} / {formatPercent(summary.mappedCount, summary.records.length)}</strong>
-            </div>
+            <g key={stat.band.id}>
+              <text className="density-box-label" x={margin.left - 14} y={y + 5} textAnchor="end">
+                {stat.band.label}
+              </text>
+              <line className="density-box-whisker" x1={xFor(stat.min)} x2={xFor(stat.max)} y1={y} y2={y} />
+              <line className="density-box-cap" x1={xFor(stat.min)} x2={xFor(stat.min)} y1={y - 8} y2={y + 8} />
+              <line className="density-box-cap" x1={xFor(stat.max)} x2={xFor(stat.max)} y1={y - 8} y2={y + 8} />
+              <rect className="density-box-rect" x={xFor(stat.q1)} y={y - 10} width={Math.max(2, xFor(stat.q3) - xFor(stat.q1))} height="20" />
+              <line className="density-box-median" x1={xFor(stat.median)} x2={xFor(stat.median)} y1={y - 12} y2={y + 12} />
+              <text className="density-box-count" x={width - margin.right} y={y + 5} textAnchor="end">
+                {numberFormat(stat.total)}
+              </text>
+            </g>
           );
         })}
-      </div>
-      <p>A record can be source-grounded but remain unmapped if it lacks a verified display location or should remain broad, sensitive, or summary-only.</p>
-    </section>
+      </svg>
+    </article>
   );
 }
 
-function DensityRegionalProfile({
-  records,
-  mapFlags,
-  periods,
-}: {
-  records: readonly RecordItem[];
-  mapFlags: readonly MapFlagRenderItem[];
-  periods: readonly DensityPeriod[];
-}) {
-  const rows = DASHBOARD_STATE_ORDER.map((state) => ({
-    label: state,
-    values: periods.map((period) => records.filter((record) => record.state_territory === state && periodContainsYear(period, record.year)).length),
-    mapped: periods.map((period) => mapFlags.filter((flag) => flag.state_territory === state && periodContainsYear(period, flag.record.year)).length),
-  }));
-  const max = Math.max(...rows.flatMap((row) => row.values), 1);
+function DensitySignal({ title, values }: { title: string; values: Record<string, number> }) {
+  const entries = entriesDescending(values, 5);
+  const max = Math.max(...entries.map(([, value]) => value), 1);
+
   return (
-    <section className="density-analysis-panel">
-      <div className="density-panel-heading">
-        <span>JURISDICTION x PERIOD</span>
-        <b>PUBLIC RECORDS / MAPPED SIGNAL</b>
-      </div>
-      <div className="density-regional-grid" style={{ "--matrix-cols": periods.length } as CSSProperties}>
-        <span />
-        {periods.map((period) => <b key={period.id}>{period.shortLabel}</b>)}
-        {rows.map((row) => (
-          <div className="density-regional-row" key={row.label}>
-            <span>{row.label}</span>
-            {row.values.map((value, index) => (
-              <i key={`${row.label}-${periods[index]?.id}`} style={{ "--heat": String(value / max), "--mapped-share": `${Math.max(3, (row.mapped[index] / Math.max(1, value)) * 100)}%` } as CSSProperties}>
-                {value ? numberFormat(value) : ""}
-              </i>
-            ))}
+    <section className="density-signal">
+      <span className="tiny-label">{title}</span>
+      <div className="density-signal-bars">
+        {entries.map(([label, value]) => (
+          <div key={label} className="density-signal-row">
+            <span>{truncate(label, 18)}</span>
+            <i style={{ "--signal-width": `${Math.max(8, (value / max) * 100)}%` } as CSSProperties} />
+            <b>{value}</b>
           </div>
         ))}
       </div>
-      <p>Regional density reflects source coverage and map eligibility. It is not a verified distribution of supernatural beings or events.</p>
     </section>
   );
 }
 
-function buildDensityPeriodSummaries(
-  scheme: DensityPeriodScheme,
+function DensityFigureRail({
+  figures,
+  onSelectFigure,
+}: {
+  figures: FigureSignalItem[];
+  onSelectFigure: (figure: FigureSignalItem) => void;
+}) {
+  return (
+    <section className="density-figure-rail">
+      <span className="tiny-label">CHARACTER / FIGURE SIGNAL</span>
+      <div>
+        {figures.slice(0, 8).map((figure, index) => (
+          <button
+            key={figure.label}
+            type="button"
+            className={index % 3 === 0 ? "rail-mark strong" : "rail-mark"}
+            onClick={() => onSelectFigure(figure)}
+          >
+            <b>{truncate(figure.label, 18)}</b>
+            <span>{numberFormat(figure.records.length)}</span>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FigureCardOverlay({
+  figure,
+  onClose,
+  onOpenRecord,
+}: {
+  figure: FigureSignalItem;
+  onClose: () => void;
+  onOpenRecord: (record: RecordItem) => void;
+}) {
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const titleId = `figure-card-title-${slugForId(figure.label)}`;
+  const samples = figure.records.slice(0, 5);
+
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [onClose]);
+
+  return (
+    <div className="record-overlay figure-overlay" role="presentation" onClick={onClose}>
+      <div className="record-card-shell figure-card-shell" onClick={(event) => event.stopPropagation()}>
+        <article className="record-card figure-card" role="dialog" aria-modal="true" aria-labelledby={titleId}>
+          <section className="record-card-table" aria-label="Figure metadata">
+            <div className="record-card-table-top">
+              <span>character / figure signal</span>
+              <span>{numberFormat(figure.records.length)} public records</span>
+              <button ref={closeButtonRef} type="button" onClick={onClose} aria-label="Close figure card">
+                CLOSE
+              </button>
+            </div>
+            <div className="record-card-grid figure-card-grid">
+              <div>
+                <span>TOTAL</span>
+                <b>{numberFormat(figure.records.length)}</b>
+              </div>
+              <div>
+                <span>MAPPED</span>
+                <b>{numberFormat(figure.mappedCount)}</b>
+              </div>
+              <div>
+                <span>DATE SPAN</span>
+                <b>{figure.dateSpan}</b>
+              </div>
+              <div>
+                <span>TOP SOURCE</span>
+                <b>{truncate(figure.topSourceFamily, 34)}</b>
+              </div>
+              <div>
+                <span>TOP REGION</span>
+                <b>{figure.topRegion}</b>
+              </div>
+            </div>
+          </section>
+
+          <section className="record-card-title-block figure-title-block">
+            <div className="record-card-year">{numberFormat(figure.records.length)}</div>
+            <h2 id={titleId}>{figure.label}</h2>
+          </section>
+
+          <section className="figure-card-body">
+            <p>{figure.note}</p>
+            <div className="figure-sample-list">
+              {samples.map((record) => (
+                <button key={record.record_id} type="button" onClick={() => onOpenRecord(record)}>
+                  <span>{record.year ?? "----"}</span>
+                  <b>{truncate(recordDisplayTitle(record), 54)}</b>
+                </button>
+              ))}
+            </div>
+            {samples[0] ? (
+              <button className="figure-open-sample" type="button" onClick={() => onOpenRecord(samples[0])}>
+                OPEN SAMPLE RECORD
+              </button>
+            ) : null}
+          </section>
+        </article>
+      </div>
+    </div>
+  );
+}
+
+function buildMappedCountByDateBand(mapFlags: readonly MapFlagRenderItem[]) {
+  return mapFlags.reduce<Record<string, number>>((acc, flag) => {
+    const band = flag.record.date_band;
+    acc[band] = (acc[band] ?? 0) + 1;
+    return acc;
+  }, {});
+}
+
+function buildAnnualDensitySeries(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): AnnualDensityPoint[] {
+  const totals = new Map<number, { total: number; mapped: number }>();
+  for (const record of records) {
+    if (typeof record.year !== "number" || !Number.isFinite(record.year)) {
+      continue;
+    }
+    const row = totals.get(record.year) ?? { total: 0, mapped: 0 };
+    row.total += 1;
+    totals.set(record.year, row);
+  }
+  for (const flag of mapFlags) {
+    const year = flag.record.year;
+    if (typeof year !== "number" || !Number.isFinite(year)) {
+      continue;
+    }
+    const row = totals.get(year) ?? { total: 0, mapped: 0 };
+    row.mapped += 1;
+    totals.set(year, row);
+  }
+  return [...totals.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([year, value]) => ({ year, total: value.total, mapped: value.mapped }));
+}
+
+function buildPeriodBoxPlotStats(
+  dateBands: readonly DateBand[],
   records: readonly RecordItem[],
   mapFlags: readonly MapFlagRenderItem[],
-): DensityPeriodSummary[] {
-  return scheme.periods.map((period) => {
-    const periodRecords = records.filter((record) => periodContainsYear(period, record.year));
-    const mappedCount = mapFlags.filter((flag) => periodContainsYear(period, flag.record.year)).length;
+): PeriodBoxPlotStat[] {
+  const mappedByBand = buildMappedCountByDateBand(mapFlags);
+  return dateBands.map((band) => {
+    const byYear = new Map<number, number>();
+    for (const record of records) {
+      if (record.date_band !== band.id || typeof record.year !== "number" || !Number.isFinite(record.year)) {
+        continue;
+      }
+      byYear.set(record.year, (byYear.get(record.year) ?? 0) + 1);
+    }
+    const values = [...byYear.values()].sort((a, b) => a - b);
     return {
-      period,
-      records: periodRecords,
-      mappedCount,
-      topNarrative: topLabel(periodRecords, (record) => displayNarrativeGroupLabel(record)),
-      topSourceFamily: topLabel(periodRecords, (record) => sourceFamilyFor(record.source_type).label),
-      firstRecord: [...periodRecords].sort(compareRecordsByDate)[0] ?? null,
+      band,
+      min: values[0] ?? 0,
+      q1: quantile(values, 0.25),
+      median: quantile(values, 0.5),
+      q3: quantile(values, 0.75),
+      max: values[values.length - 1] ?? 0,
+      total: band.record_count,
+      mapped: mappedByBand[band.id] ?? 0,
     };
   });
 }
 
-function buildDensityNarrativeCards(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): DensityNarrativeCard[] {
+function buildFigureSignalItems(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): FigureSignalItem[] {
   const mappedIds = new Set(mapFlags.map((flag) => flag.record_id));
-  const descriptions: Record<string, string> = {
-    "Hairy humanoid reports": "Reports and retellings using hairy-human or wild-person language in public sources.",
-    "Spirit-person narratives": "Public records involving spirit-person or culturally specific narrative language, handled as source-context records.",
-    "Ghost / apparition records": "Apparition and ghost records where the public text presents a humanoid or person-like figure.",
-    "Traditional narratives": "Public-source traditional narrative records requiring careful terminology and contextual reading.",
-    "Retellings and adaptations": "Later adaptations, summaries, or retellings that show circulation rather than primary evidence.",
-    "Giant / ogre narratives": "Giant, ogre, or large humanoid narrative records in public textual circulation.",
-    "Local legends": "Place-attached legend records and local public-history narratives.",
-    "Encounter accounts": "Reported encounter-style public records, not verification of an event.",
-    "Other typed context": "Typed contextual records that support source history or classification.",
-  };
-  const glyphs = ["++", "::", "[]", "//", "<>", "##", "..", "||", "--"];
-
-  return NARRATIVE_MATRIX_LABELS.map((label, index) => {
-    const familyRecords = records.filter((record) => displayNarrativeGroupLabel(record) === label);
-    const years = familyRecords
-      .map((record) => record.year)
-      .filter((year): year is number => typeof year === "number" && Number.isFinite(year))
-      .sort((a, b) => a - b);
-    const mappedCount = familyRecords.filter((record) => mappedIds.has(record.record_id)).length;
-    const involvesCulturalContext = familyRecords.some((record) => Boolean(record.involves_indigenous_knowledge));
-    return {
-      label,
-      records: familyRecords.sort(compareRecordsByDate),
-      mappedCount,
-      topSourceFamily: topLabel(familyRecords, (record) => sourceFamilyFor(record.source_type).label),
-      dateSpan: years.length ? `${years[0]}-${years[years.length - 1]}` : "undated only",
-      description: descriptions[label] ?? descriptions["Other typed context"],
-      glyph: glyphs[index % glyphs.length],
-      sensitivityNote: involvesCulturalContext
-        ? "Culturally specific public records need source context; publicness is not permission."
-        : "Public-text grouping only; not a claim about real-world frequency.",
-    };
-  }).sort((a, b) => b.records.length - a.records.length || a.label.localeCompare(b.label));
+  const grouped = new Map<string, RecordItem[]>();
+  for (const record of records) {
+    const label = record.canonical_figure_guess || record.canonical_figure || "uncoded";
+    const rows = grouped.get(label) ?? [];
+    rows.push(record);
+    grouped.set(label, rows);
+  }
+  return [...grouped.entries()]
+    .map(([label, figureRecords]) => {
+      const sortedRecords = [...figureRecords].sort(compareRecordsByDate);
+      const years = sortedRecords
+        .map((record) => record.year)
+        .filter((year): year is number => typeof year === "number" && Number.isFinite(year));
+      const topRegion = entriesDescending(
+        sortedRecords.reduce<Record<string, number>>((acc, record) => {
+          const region = record.state_territory ? STATE_NAMES[record.state_territory] ?? record.state_territory : "Unspecified";
+          acc[region] = (acc[region] ?? 0) + 1;
+          return acc;
+        }, {}),
+        1,
+      )[0]?.[0] ?? "Unspecified";
+      const topSourceFamily = entriesDescending(
+        sortedRecords.reduce<Record<string, number>>((acc, record) => {
+          const family = sourceFamilyFor(record.source_type).label;
+          acc[family] = (acc[family] ?? 0) + 1;
+          return acc;
+        }, {}),
+        1,
+      )[0]?.[0] ?? "Public sources";
+      return {
+        label,
+        records: sortedRecords,
+        mappedCount: sortedRecords.filter((record) => mappedIds.has(record.record_id)).length,
+        dateSpan: years.length ? `${Math.min(...years)}-${Math.max(...years)}` : "undated only",
+        topSourceFamily,
+        topRegion,
+        note: "This figure card summarises public source records in the archive. It is a source-context view, not a claim about real-world frequency.",
+      };
+    })
+    .sort((a, b) => b.records.length - a.records.length || a.label.localeCompare(b.label));
 }
 
-function topLabel(records: readonly RecordItem[], labelFor: (record: RecordItem) => string) {
-  if (!records.length) {
-    return "No dated records";
+function quantile(values: readonly number[], q: number) {
+  if (!values.length) {
+    return 0;
   }
-  return entriesDescending(
-    records.reduce<Record<string, number>>((acc, record) => {
-      const label = labelFor(record);
-      acc[label] = (acc[label] ?? 0) + 1;
-      return acc;
-    }, {}),
-    1,
-  )[0]?.[0] ?? "No dated records";
+  const pos = (values.length - 1) * q;
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  const next = values[base + 1] ?? values[base];
+  return values[base] + rest * (next - values[base]);
+}
+
+function buildLinearTicks(min: number, max: number, count: number) {
+  if (count <= 1 || min === max) {
+    return [min, max];
+  }
+  return Array.from({ length: count }, (_, index) => min + ((max - min) / (count - 1)) * index);
+}
+
+function slugForId(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "figure";
 }
 
 function DashboardView({
