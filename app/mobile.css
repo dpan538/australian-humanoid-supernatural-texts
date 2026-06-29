@@ -52,10 +52,33 @@
     display: none;
   }
 
+  .mobile-archive-shell {
+    min-height: 100svh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .mobile-archive-page {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 430px);
+    min-height: 100svh;
+    margin: 0 auto;
+    padding: calc(env(safe-area-inset-top) + 14px) 12px calc(env(safe-area-inset-bottom) + 78px);
+  }
+
+  .mobile-archive-shell .map-view,
+  .mobile-archive-shell .density-view,
+  .mobile-archive-shell .source-view,
+  .mobile-archive-shell .about-view {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .mobile-archive-controls {
     position: fixed;
     left: 50%;
-    bottom: calc(env(safe-area-inset-bottom) + 54px);
+    bottom: calc(env(safe-area-inset-bottom) + 38px);
     z-index: 80;
     display: flex;
     align-items: center;
@@ -136,15 +159,21 @@
   }
 
   .mobile-nav-icon {
-    width: 23px;
-    height: 23px;
+    width: 28px;
+    height: 28px;
     display: block;
     fill: none;
     stroke: currentColor;
-    stroke-width: 1.8;
+    stroke-width: 1.85;
     stroke-linecap: round;
     stroke-linejoin: round;
     overflow: visible;
+  }
+
+  .mobile-nav-icon path,
+  .mobile-nav-icon circle,
+  .mobile-nav-icon line {
+    vector-effect: non-scaling-stroke;
   }
 
   .mobile-nav-pill-label {
@@ -233,11 +262,27 @@
     font-weight: 400;
   }
 
+  .mobile-archive-shell .mobile-map-heading b {
+    font-size: 1.06rem;
+  }
+
   .map-canvas {
     min-height: 0;
     height: clamp(236px, 30svh, 274px);
     margin-top: -2px;
     overflow: hidden;
+  }
+
+  .mobile-archive-shell .map-view {
+    min-height: auto;
+    padding: 0;
+    gap: 7px;
+  }
+
+  .mobile-archive-shell .mobile-map-canvas {
+    height: clamp(318px, 44svh, 388px);
+    margin: -6px 0 -8px;
+    overflow: visible;
   }
 
   .mobile-map-note {
@@ -246,6 +291,12 @@
     color: var(--muted);
     font-size: 0.88rem;
     line-height: 1.32;
+  }
+
+  .mobile-archive-shell .mobile-map-note {
+    margin: 0 2px 4px;
+    font-size: 0.92rem;
+    font-weight: 500;
   }
 
   .australia-map {
@@ -261,13 +312,27 @@
     stroke-width: 3.6px;
   }
 
+  .mobile-archive-shell .state-label {
+    font-size: 2.72rem;
+    stroke-width: 3.8px;
+  }
+
   .state-label-act {
     font-size: 1.55rem;
+  }
+
+  .mobile-archive-shell .state-label-act {
+    font-size: 1.8rem;
   }
 
   .state-label-vic,
   .state-label-tas {
     font-size: 1.86rem;
+  }
+
+  .mobile-archive-shell .state-label-vic,
+  .mobile-archive-shell .state-label-tas {
+    font-size: 2.05rem;
   }
 
   .map-readout {
@@ -322,6 +387,13 @@
     padding: calc(env(safe-area-inset-top) + 16px) 14px calc(env(safe-area-inset-bottom) + 66px);
     gap: 12px;
     overflow: visible;
+  }
+
+  .mobile-archive-shell .density-view,
+  .mobile-archive-shell .source-view,
+  .mobile-archive-shell .about-view {
+    min-height: auto;
+    padding: 0;
   }
 
   .density-header {
@@ -621,6 +693,13 @@
       rgba(5, 6, 6, 0.42);
   }
 
+  .mobile-archive-shell .source-mobile-accordion > summary {
+    color: var(--ink);
+    background:
+      repeating-linear-gradient(0deg, rgba(242, 242, 237, 0.018), rgba(242, 242, 237, 0.018) 1px, transparent 1px, transparent 8px),
+      rgba(5, 6, 6, 0.36);
+  }
+
   .source-mobile-accordion > summary::-webkit-details-marker {
     display: none;
   }
@@ -641,6 +720,11 @@
     font-size: var(--type-micro-size);
     line-height: 1.16;
     font-weight: 450;
+  }
+
+  .mobile-archive-shell .source-mobile-accordion > summary small {
+    color: var(--muted);
+    font-weight: 500;
   }
 
   .source-mobile-accordion .source-pane {
@@ -721,9 +805,7 @@
   :root[data-theme="light"] .source-mobile-accordion > summary {
     color: rgba(5, 6, 6, 0.9);
     border-bottom: 1px solid rgba(5, 6, 6, 0.18);
-    background:
-      repeating-linear-gradient(0deg, rgba(5, 6, 6, 0.018), rgba(5, 6, 6, 0.018) 1px, transparent 1px, transparent 8px),
-      #f4f2ea;
+    background: #fbfaf6;
   }
 
   :root[data-theme="light"] .source-mobile-accordion > summary span,
@@ -732,7 +814,7 @@
   }
 
   :root[data-theme="light"] .source-mobile-accordion > summary small {
-    color: rgba(5, 6, 6, 0.68);
+    color: rgba(5, 6, 6, 0.72);
   }
 
   :root[data-theme="light"] .source-mobile-intro {

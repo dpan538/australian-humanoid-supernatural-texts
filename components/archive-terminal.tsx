@@ -12,7 +12,13 @@ import type { FigureProfile } from "@/lib/figure-profiles";
 import { FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { SourceView } from "@/components/source/source-view";
 import { DisplayControls } from "@/components/display-controls";
-import { MobileArchiveControls, MobileArchiveView, useMobileArchiveRouteGuard } from "@/components/mobile-archive";
+import {
+  MobileArchiveControls,
+  MobileArchiveRoute,
+  MobileArchiveView,
+  useMobileArchiveMode,
+  useMobileArchiveRouteGuard,
+} from "@/components/mobile-archive";
 import { SOURCE_FAMILY_STYLES, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
@@ -1022,6 +1028,7 @@ function projectLambertConformalConic(latitude: number, longitude: number) {
 }
 
 export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
+  const mobileMode = useMobileArchiveMode();
   const mobileRoute = useMobileArchiveRouteGuard(view);
   const [data, setData] = useState<FrontendData | null>(frontendDataCache);
   const [showArchive, setShowArchive] = useState(Boolean(frontendDataCache));
@@ -1029,6 +1036,10 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
   const loadingRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (!mobileMode.ready || mobileMode.isMobile) {
+      return;
+    }
+
     let cancelled = false;
     loadFrontendData()
       .then((payload) => {
@@ -1046,7 +1057,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [mobileMode.ready, mobileMode.isMobile]);
 
   useEffect(() => {
     if (!data || showArchive) {
@@ -1103,6 +1114,10 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
       timeline.cancel();
     };
   }, [data, showArchive]);
+
+  if (mobileMode.ready && mobileMode.isMobile) {
+    return <MobileArchiveRoute view={view} />;
+  }
 
   if (mobileRoute.blockedDashboard) {
     return (
