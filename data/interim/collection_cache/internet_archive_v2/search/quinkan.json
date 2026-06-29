@@ -1,0 +1,94 @@
+{
+  "response": {
+    "docs": [
+      {
+        "creator": "Percy Trezise & Dick Roughsey",
+        "date": "1982-01-01T00:00:00Z",
+        "identifier": "isbn_9780006619420",
+        "publicdate": "2023-03-11T08:14:50Z",
+        "title": "Turramulli the Giant Quinkin"
+      },
+      {
+        "creator": "Trezise, P. J. (Percy J.)",
+        "date": "1983-01-01T00:00:00Z",
+        "description": [
+          "1 volume (unpaged) : 26 cm",
+          "Originally published : Sydney : Collins, 1982",
+          "For children"
+        ],
+        "identifier": "turramulligiantq0000trez",
+        "publicdate": "2022-02-02T13:58:10Z",
+        "title": "Turramulli the giant Quinkin"
+      },
+      {
+        "creator": "Erbacher, John, 1941-",
+        "date": "1991-01-01T00:00:00Z",
+        "description": [
+          "62 pages : 22 x 24 cm",
+          "Text and photographs describe the customs, legends, activities, and changing lifestyles of the Kuku-Yalanji Aborigines of the Australian rainforest"
+        ],
+        "identifier": "aboriginesofrain0000erba",
+        "publicdate": "2019-02-09T13:24:08Z",
+        "title": "Aborigines of the rainforest"
+      },
+      {
+        "creator": "ERIC",
+        "date": "2003-01-01T00:00:00Z",
+        "description": "A day in Cape York, in the far north east of Australia, can change the life of a modern Australian. In that time, one can see hundreds of examples of rock art that are up to 36,000 years old, sharply contrasting the history of Indigenous people and the immigration of Europeans.One such visit led to a proposed collaboration between the Quinkan Culture Elders and a team of metadata researchers. The researchers proposed a Qualified Dublin Core style catalog to be used to identify and record examples of Quinkan Culture so Elders could at last gain access to information needed to manage the proliferation of unauthorized publications about Quinkan culture, and to \"bring back home\" cultural representations. In addition, the catalog would allow the Elders to make decisions about publishing their own representations. This paper describes the journey of members of the team developing \"Matchbox,\" a cataloging system, as they have sought a way of using Qualified DC metadata (QDC) to describe, collect, and represent Quinkan Culture. One focus in this paper is how developing a QDC representation has led to questions of cultural definition and, simultaneously, of the use of technologies such as HTML, XML and RDF. (Author)",
+        "identifier": "ERIC_ED482118",
+        "publicdate": "2016-01-22T22:41:11Z",
+        "title": "ERIC ED482118: Dublin Core: The Base for an Indigenous Culture Environment?"
+      },
+      {
+        "creator": "Trezise, P. J. (Percy J.)",
+        "date": "1995-01-01T00:00:00Z",
+        "description": "1 v. (unpaged) : 29 cm",
+        "identifier": "quinkinmountain0000trez",
+        "publicdate": "2024-01-12T20:52:47Z",
+        "title": "Quinkin Mountain"
+      },
+      {
+        "description": "Ty the Tasmanian Tiger 3 Night of the Quinkan (USA)",
+        "identifier": "ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA",
+        "publicdate": "2022-10-26T16:55:25Z",
+        "title": "Ty the Tasmanian Tiger 3 Night of the Quinkan (USA)"
+      },
+      {
+        "creator": "Roth, Walter E. (Walter Edmund), 1861-1933",
+        "date": "1897-01-01T00:00:00Z",
+        "description": [
+          "xvi, 199, [1] pages, XXIV leaves of plates (some color) : illustrations, map ; 26 cm",
+          "xvi, 199, [1] pages, XXIV leaves of plates (some color) : 26 cm",
+          "P.1-40; Pitta - Pitta grammar & vocabulary (approximately 650 words); p.41-55; List of tribes indigenous to Boulia, Marion Downs, Bedouri, Cooraboolka, Mooraboola, Burke River, Warenda, Breadalbane, Carlo, Upper Mulligan River, Middle Diamantina River, Glenormiston, Leichhardt-Selwyn district, Cloncurry, Upper Flinders, Upper Georgina; tabular comparison between various words used in different districts - parts of body, flora & fauna, other objects of nature, weapons & utensils, numerals, abstract ideas (Walookera, Yaroinga, Undekerebina, Ulaolinya, Wonkajera, Karanya, Pitta Pitta; Miorli, Goa, Woonamurra, Mitakoodi, Kalkadoon); family relationships (Pitta - Pitta, Kalkadoon, Mitakoodi, Miubbi, Woonamurra, Goa, Wommin); p.56- 70; Social & individual nomenclature; class systems; patronym, or tribal name (Pitta Pitta, Yunda); gamo-matro-nym (Pitta - Pitta, Mitakoodi, Miubbi, Woonamurra, Goa, Kalkadoon); paedo - matro - nym (Kalkadoon, Miubbi, Workoboongo & Boulia district tribes); hetero - nym tables with details of groups; genea - nym (Pitta - Pitta, Kalkadoon, Mitakoodi, Miubbi, Woonamurra); genealogical tree of Pitta - Pitta native; auto nym (Boulia district); clima - nym (Pitta - Pitta, Kalkadoon, Yaroinga, Mitakoodi, Woonamurra); notes on similar systems of nomenclature - Palm Island, Cooktown, Laura, Croydon (Wollangama); probable interpretations of class system; p.71-90; Sign language, 213 signs illustrated & described, Boulia (Pitta - Pitta, Boinji, Ulaolinya, Wonkajera), Upper Georgina (Walookera, Undekerebina), Leichhardt Selwyn (Kalkadoon), Cloncurry (Mitakoodi), Flinders (Woonamurra), Upper Diamantina (Goa); p.91-100; Search for food, covers plants, gives scientific & Aboriginal name, animals, birds, fish (with note on nets & dams in Boulia district), insects; trading of pituri, route of trade, method of preparing; this section covers foregoing areas; p.101-107; Domestic implements & utensils, details of manufacture - koolamons, native chisels (throughout N.W. Central areas), cementing substance, artificial bending & straightening of timber, water bags of skin, human & animal hair dilly bags, ; grindstones, nardoo stone (Boulia & Upper Georgina), baking ovens, fire sticks, yam sticks (Cloncurry), huts & shelters (Boulia, Cloncurry, Leichhardt - Selwyn area); p.108-116; Ornamentation & decoration method of hair dressing, head ornaments, tooth decorations (Boulia, Georgina, Leichhardt - Selwyn, Cloncurry), nets, fillets, circlets, spiral bands, nose piercing (Boulia), ear piercing (Cloncurry), tooth avulsion; (Boulia, Upper Georgina, Diamantina areas), beards (Boulia), necklaces, chest ornaments, waist-belts & aprons, phallocrypts, painting & feathering of body, mutilation, scarification; rock painting - Oorindimindi Station & on old Normanton road approximately 6 miles from Cloncurry; engraving in Glenormiston area; p.117- 131; Recreations - corroborees, details of performances, authorship, the Molonglo travelling corroboree, decorations, gives few lines of Pitta - Pitta song with translation, instruments; details of the Molonglo dances, songs & actions; tales from Boulia district; toy boomerang, throwing stick, whirler, ball games, skipping rope, hide & seek, mimicry, pit throwing; p.132-138; Travel, trade & barter, signs & signals on the road, names of waterholes, camping grounds, rivers, mountains; arrangement of camping ground when visiting (Pitta-Pitta, Miorli, Yunda, Yellunga); details of trade routes; message sticks illustrated & described (Boulia - Pitta- Pitta, Boinji, Karanya, Springvale - Miorli, Selwyn Kalkadoon, Flinders Woonamurra, Cloncurry Mitakoodi); p.139-151; Law & order, fighting methods, interand intratribal disputes (Boulia, Glenormiston - Undekeribina tribe), classification of fighting boomerangs (Pitta - Pitta, Mitakoodi, Kalkadoon, Walookera, Yaroinga, Wonkajera); material, manufacture & flight, notes on the ornate boomerang, fluted type (all areas), plain, hooked types; two handed sword",
+          "Includes errata (p. vi)",
+          "Includes bibliographical references (pages vii-x) and index"
+        ],
+        "identifier": "McGillLibrary-rbsc_ethnological-studies-queensland-aborigines_GN667Q8R8-30670",
+        "publicdate": "2026-02-27T21:06:08Z",
+        "title": "Ethnological studies among the north-west-central Queensland aborigines"
+      },
+      {
+        "creator": "ERIC",
+        "date": "2002-04-01T00:00:00Z",
+        "description": "This paper argues that a range of forms and modalities of resources should be provided to ensure accessibility and richness on the World Wide Web for all users. Based on experiences in developing virtual exhibitions of Quinkan Aboriginal Rock Art, the authors present a brief overview of the technology available for accessibility. Then they explore some different approaches to providing access through the perspective of the IMS Global Learning Consortium. They further develop these ideas with particular reference to their similarity with current museum practice and consider the implications for accessibility. Finally they recommend that museum exhibitors and authors, developing interactive or electronic resources, include planning for accessibility as part of their initial design process. (MES)",
+        "identifier": "ERIC_ED482098",
+        "publicdate": "2016-01-22T22:37:22Z",
+        "title": "ERIC ED482098: The Virtual Ramp to the Equivalent Experience in the Virtual Museum: Accessibility to Museums on the Web."
+      }
+    ],
+    "numFound": 8,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 30,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Quinkan&quot; OR &quot;Quinkin&quot;) AND mediatype:texts",
+      "query": "((text:Quinkan OR text:Quinkan OR text__reviews:Quinkan) OR (text:Quinkin OR text:Quinkin OR text__reviews:Quinkin)) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

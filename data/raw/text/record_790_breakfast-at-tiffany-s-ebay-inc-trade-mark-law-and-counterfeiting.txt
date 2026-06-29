@@ -1,0 +1,14 @@
+{
+  "title": "'Breakfast at tiffany's': eBay Inc, Trade Mark Law and counterfeiting",
+  "source": "OpenAlex",
+  "url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=1974274",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2011-01-01",
+  "publication": "SSRN Electronic Journal",
+  "author": "Matthew Rimmer",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "In an exploration of intellectual property and fashion, this article examines the question of the intermediary liability of online auction-houses for counterfeiting. In the United States, the illustrious jewellery store, Tiffany &amp;amp; Co, brought a legal action against eBay Inc, alleging direct trademark infringement, contributory trademark infringement, false advertising, unfair competition and trademark dilution. The luxury store depicted the online auction-house as a pirate bazaar, a flea-market and a haven for counterfeiting. During epic litigation, eBay Inc successfully defended itself against these allegations in a United States District Court and the United States Court of Appeals for the Second Circuit. Tiffany &amp;amp; Co made a desperate, unsuccessful effort to appeal the matter to the Supreme Court of the United States. The matter featured a number of interventions from amicus curiae — Tiffany was supported by Coty, the Fashion Designer's Guild, and the International Anticounterfeiting Coalition, while eBay was defended by publicly-spirited civil society groups such as Electronic Frontier Foundation, Public Citizen, and Public Knowledge as well as Yahoo!, Google Inc, Amazon.com, and associations representing telecommunications carriers and internet service providers. The litigation in the United States can be counterpointed with the fusillade of legal action against eBay in the European Union. In contrast to Tiffany &amp;amp; Co, Louis Vuitton triumphed over eBay in the French courts — claiming its victory as vindication of the need to protect the commercial interests and cultural heritage of France. However, eBay has fared somewhat better in a dispute with L’Oréal in Great Britain and the European Court of Justice. It is argued that, in a time of flux and uncertainty, Australia should follow the position of the United States courts in Tiffany &amp;amp; Co v eBay Inc. The final part examines the ramifications of this litigation over online auction-houses for trade mark law reform and consumer rights; parallel disputes over intermediary liability and safe harbours in the field of copyright law and the Anti-Counterfeiting Trade Agreement 2010. The conclusion calls for a revision of trade mark law, animated by a respect for consumers’ rights and interests in the electronic marketplace.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

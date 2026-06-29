@@ -1,0 +1,14 @@
+{
+  "title": "What Can You Find about Polycystic Ovary Syndrome (PCOS) Online? Assessing Online Information on PCOS: Quality, Content, and User-Friendliness",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1055/s-0038-1667186",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2018-01-01",
+  "publication": "Seminars in Reproductive Medicine",
+  "author": "Wei-Ling Chiu, Millicent Kuczynska-Burggraf, Melanie Gibson‐Helm, Helena Teede et al.",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "BACKGROUND: Polycystic ovary syndrome (PCOS) is a common yet complex condition, where education is vital. It predominantly affects reproductive-aged women, the age group with peak use of the Internet, now a major source of health information. Women with PCOS are dissatisfied with care, and the lack of useful online information is a key concern. METHODS: Using a rigorous and systematic methodology, we examined the quality, information content, and user-friendliness of online information about PCOS. Internet searches were conducted in Australia and the United Kingdom in December 2015 using Google, Bing, and Yahoo with different browsers, operating systems, and domain names. A total of 75 Web sites were evaluated and categorized. RESULTS: The majority of Web sites were commercial (41%) and not-for-profit (76%) and were aimed at women only. Less than a third of the Web sites were externally accredited. Commercial Web sites and Web sites targeting only women had the lowest quality scores, while professional-society Web sites and Web sites targeting only HPs scored the highest in quality. Accredited Web sites had higher quality and user-friendliness scores than nonaccredited Web sites. CONCLUSION: The majority of PCOS Web sites were commercially derived, targeted women, and were not accredited. There is a significant lack of quality, easy-to-read, evidence-based information online for women with PCOS.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

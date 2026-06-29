@@ -1,0 +1,251 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/australia-post-alphabet-stamp-series-a-z",
+        "server": "dn710207.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/australia-post-alphabet-stamp-series-a-z",
+        "server": "dn710207.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1781957343,
+  "d1": "ia600601.us.archive.org",
+  "d2": "ia800601.us.archive.org",
+  "dir": "/32/items/australia-post-alphabet-stamp-series-a-z",
+  "files": [
+    {
+      "crc32": "6da0b599",
+      "format": "Text PDF",
+      "md5": "50398a936f059436a3416cea42ca1a71",
+      "mtime": "1722212001",
+      "name": "Australia Post Alphabet Stamp Series A-Z.pdf",
+      "sha1": "ef635f6dccb57ff2d5da75bb1734821685e12bc0",
+      "size": "5232625",
+      "source": "original",
+      "viruscheck": "1722212347"
+    },
+    {
+      "crc32": "9200602a",
+      "format": "chOCR",
+      "md5": "cf10c9f26fc9ececcecc2aa695a1c28f",
+      "mtime": "1722212927",
+      "name": "Australia Post Alphabet Stamp Series A-Z_chocr.html.gz",
+      "ocr": "tesseract 5.3.0-6-g76ae",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-swa;lang-ita;lang-nld;lang-afr;lang-lat;lang-mlt;lang-eng;lang-Latin;two-pass-disabled;pass-dpi-disabled;autonomous-mode-enabled;binarisation-method-otsu",
+      "original": "Australia Post Alphabet Stamp Series A-Z_jp2.zip",
+      "sha1": "62727eb586a4fcbf7ee8fcc9f91ebd331b1c8a3b",
+      "size": "45806",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f2e3ea68",
+      "format": "DjVuTXT",
+      "md5": "880f460e5046f0243502f08be0683e29",
+      "mtime": "1722213711",
+      "name": "Australia Post Alphabet Stamp Series A-Z_djvu.txt",
+      "original": "Australia Post Alphabet Stamp Series A-Z_djvu.xml",
+      "sha1": "c911bd479f1771f1b69299e812ffb43501885c4a",
+      "size": "2816",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1f5b27a0",
+      "format": "Djvu XML",
+      "md5": "47e2e4f1ce91bb63a902041afba314f1",
+      "mtime": "1722213282",
+      "name": "Australia Post Alphabet Stamp Series A-Z_djvu.xml",
+      "original": "Australia Post Alphabet Stamp Series A-Z_hocr.html",
+      "sha1": "e39eb6e5757a8ea114cffb018ac5d8cbe0351ea5",
+      "size": "68033",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b42eb829",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.56",
+      "hocr_char_to_word_module_version": "1.3.0",
+      "md5": "034966a255e50eedae3cf82ade4ecd3a",
+      "mtime": "1722213197",
+      "name": "Australia Post Alphabet Stamp Series A-Z_hocr.html",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-swa;lang-ita;lang-nld;lang-afr;lang-lat;lang-mlt;lang-eng;lang-Latin;two-pass-disabled;pass-dpi-disabled;autonomous-mode-enabled;binarisation-method-otsu",
+      "original": "Australia Post Alphabet Stamp Series A-Z_chocr.html.gz",
+      "sha1": "be6e86cf1343cfe297afe483cf9c4cedc66ed127",
+      "size": "140503",
+      "source": "derivative"
+    },
+    {
+      "crc32": "dd92da3c",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.56",
+      "hocr_pageindex_module_version": "1.1.0",
+      "md5": "61589befb08e18147cabe0dbdb4e9620",
+      "mtime": "1722213329",
+      "name": "Australia Post Alphabet Stamp Series A-Z_hocr_pageindex.json.gz",
+      "original": "Australia Post Alphabet Stamp Series A-Z_hocr.html",
+      "sha1": "8b07b868d645492c57873c41016f28f7d28d4c48",
+      "size": "290",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ccfbd5a3",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.56",
+      "hocr_fts_text_module_version": "1.2.0",
+      "md5": "93d766d047ebdd8b089b3bbab4d364b3",
+      "mtime": "1722213424",
+      "name": "Australia Post Alphabet Stamp Series A-Z_hocr_searchtext.txt.gz",
+      "original": "Australia Post Alphabet Stamp Series A-Z_hocr.html",
+      "sha1": "8e160f107e90d05385d729c5b6b0a6cf0cf5fca1",
+      "size": "1331",
+      "source": "derivative",
+      "word_conf_0_10": "9",
+      "word_conf_11_20": "1",
+      "word_conf_21_30": "8",
+      "word_conf_31_40": "20",
+      "word_conf_41_50": "33",
+      "word_conf_51_60": "32",
+      "word_conf_61_70": "29",
+      "word_conf_71_80": "41",
+      "word_conf_81_90": "108",
+      "word_conf_91_100": "221"
+    },
+    {
+      "crc32": "c51565ad",
+      "filecount": "27",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "b5ea85dae172800444323883d259bad5",
+      "mtime": "1722212477",
+      "name": "Australia Post Alphabet Stamp Series A-Z_jp2.zip",
+      "original": "Australia Post Alphabet Stamp Series A-Z.pdf",
+      "sha1": "6fdae648be053cf75a365822faadcb5e8addbfed",
+      "size": "10098749",
+      "source": "derivative"
+    },
+    {
+      "crc32": "68d5c31d",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "0",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "85c0e0dd92afb8fc774c1649e7062f90",
+      "mtime": "1722214333",
+      "name": "Australia Post Alphabet Stamp Series A-Z_page_numbers.json",
+      "original": "Australia Post Alphabet Stamp Series A-Z_hocr.html",
+      "sha1": "f8eb782292e3f471ce1716d10d06eca5a34dae60",
+      "size": "4730",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d4b2bfc4",
+      "format": "Scandata",
+      "md5": "cd63b8ce06658e1d6cb18d57b2b809ac",
+      "mtime": "1722214333",
+      "name": "Australia Post Alphabet Stamp Series A-Z_scandata.xml",
+      "original": "Australia Post Alphabet Stamp Series A-Z_djvu.xml",
+      "sha1": "b119de97a4eb4ebc0d49490f61728b7399a1b65c",
+      "size": "8922",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6537d197",
+      "format": "Item Tile",
+      "md5": "bab7a9b3ebf208efcbd370c11c83e824",
+      "mtime": "1778259488",
+      "name": "__ia_thumb.jpg",
+      "sha1": "a9185761b3d0ee68842217e2ec325546dd36ca8a",
+      "size": "23630",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "0e1a1ae6d2934dd7f7ead16edbb1faa8",
+      "name": "australia-post-alphabet-stamp-series-a-z_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "75d1b104",
+      "format": "Metadata",
+      "md5": "cfcb5db15322778b0ae8e52b8956580d",
+      "mtime": "1722212023",
+      "name": "australia-post-alphabet-stamp-series-a-z_meta.sqlite",
+      "sha1": "4de7db538a6f187016f803beb0bdc2a69dea51c2",
+      "size": "53248",
+      "source": "original"
+    },
+    {
+      "crc32": "6e9141b8",
+      "format": "Metadata",
+      "md5": "537f36c79b6f73034b2eb1aa4b02d5bc",
+      "mtime": "1778259468",
+      "name": "australia-post-alphabet-stamp-series-a-z_meta.xml",
+      "sha1": "2eaccbf3c448d384baaf023ccc014ede330265f9",
+      "size": "12177",
+      "source": "original"
+    }
+  ],
+  "files_count": 14,
+  "item_last_updated": 1778259488,
+  "item_size": 15692860,
+  "metadata": {
+    "addeddate": "2024-07-29 00:13:36",
+    "collection": "opensource",
+    "creator": "Gavin Ryan.",
+    "curation": "[curator]kaplan@archive.org[/curator][date]20260508165704[/date][state]un-dark[/state][comment][/comment]",
+    "date": "2018",
+    "description": "<p>Australia\nPost Alphabet Stamp Series A-Z.</p>\n<p>Artist Gavin Ryan.</p>\n<p>Australia Post Group Group Chief Executive Officer &amp; Managing\nDirector : Mr. Paul Graham,  480 Swan St Richmond VIC 3121.</p>\n<table width=\"100%\" cellpadding=\"4\" cellspacing=\"0\">\n\t<colgroup><col width=\"256*\" />\n\t</colgroup><tbody><tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border:1px solid #000000;padding:0.1cm;\"><p>\n\t\t\tA is for  … Aussie rules, Adelaide, ant, Anzac memorial ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tB is for … Budgie-smugglers, blowflies, barramundi, billy and ….</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tC is for… Canberra, cockatoo, crocodile, campfire, couple…</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tD is for… a digger, his dingo ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tE is for … Emo emu, ear-bashing, echidna and ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tF is for … a footy fan, fishing ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tG is for … Galah, sumboots, gecko, gasket and ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tH is for … hanging washing on the Hills hoist ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tI is for … an ironing ironman! ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tJ is for … Jillaroo, Jam, jumbuck and ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tK is for … Koala, kangaroo suit, kelpie and...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tL is for … Lace Monitor, lyrebird, lamington, log, lounge …</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tM is for … mullet, mud crab, macadamia, meat pie ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tN is for… New South Wales, nipper, numbat…</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tO is for … Oilskin, opal, opera house, Oar and ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tP is for … Platypus, possum and paviova ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tQ is for… Queensland, Quokka, queue, quoll…</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tR is for… refrigerator, rugby, reel, rope, Red Centre,\n\t\t\truler…</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tS is for… South Australia, shark, sandcastle, surf, starfish,\n\t\t\tsausage…</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tT is for…Tasmania, tinnie, tradie, Tasmanian Devil, two-up\n\t\t\t…</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tU is for … Ulysses butterfly, uggs, umpire and ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tV is for… Victoria, Victa, vegemite, vegetables, violin…</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tW is for… Western Australia, wombat, wattle, waratah, water\n\t\t\those…</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tX is for … X-ray, Xanthorrhea grass tree, xylophone and ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tY is for … Yowie. Yabbie, Yarra River and ...</p>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td width=\"100%\" valign=\"top\" style=\"border-top:none;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;padding-top:0cm;padding-bottom:0.1cm;padding-left:0.1cm;padding-right:0.1cm;\"><p>\n\t\t\tZ is for … Zebra Finch, zoologist, zebra crossing and ...</p>\n\t\t</td>\n\t</tr>\n</tbody></table>\n<p style=\"border:none;padding:0cm;\"><br />\n<br />\n\n</p>\n<p>“Overview</p>\n<p>On 16 August 2016, part two of the Fair Dinkum Aussie Alphabet\nstamp series will be released. Once again, Artist Gavin Ryan has\ncreated some highly amusing and quintessentially ocker scenes, based\non each letter of the alphabet.</p>\n<p>Within each stamp-sized scene, there are places, products,\nlexicon, cultural icons and native fauna beginning with the featured\nletter.</p>\n<p>Part One, released on 1 March 2016 featured the letters N, Q, S, V\nand W (to represent five of the six Australian states). This time\nit’s A, C, L, R, T. That means it’s Tassie’s turn! As well as\nTarquin the tradie, you’ll cross paths with angry Aaron the Aussie\nRules aficionado, and cautious couple Cheryl and Claude. Plus,\nthere’s a lamington being lobbed, a crazy cockatoo and a chummy\ncrocodile to contend with.”</p>\n<p>Compiled by Graham Millar.</p>\n<p><a href=\"https://australiapostcollectables.com.au/stamp-issues/australian-humour-a-z?\" rel=\"ugc nofollow\">Source</a>.</p>",
+    "identifier": "australia-post-alphabet-stamp-series-a-z",
+    "identifier-access": "http://archive.org/details/australia-post-alphabet-stamp-series-a-z",
+    "identifier-ark": "ark:/13960/s21xw1j0ptr",
+    "mediatype": "texts",
+    "noarchivetorrent": "true",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_autonomous": "true",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_module_version": "0.0.21",
+    "ocr_parameters": "-l swa+ita+nld+afr+lat+mlt+eng+Latin",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.5",
+    "ppi": "300",
+    "publicdate": "2024-07-29 00:13:36",
+    "scanner": "Internet Archive HTML5 Uploader 1.7.0",
+    "subject": [
+      "Alphabet",
+      "Ephemera",
+      "Postage stamps",
+      "Philately",
+      "Culture",
+      "Patois",
+      "Art work",
+      "Australia."
+    ],
+    "title": "Australia Post Alphabet Stamp Series A Z",
+    "uploader": "gmillar@ozemail.com.au"
+  },
+  "server": "ia800601.us.archive.org",
+  "uniq": 1853711188,
+  "workable_servers": [
+    "ia800601.us.archive.org",
+    "ia600601.us.archive.org"
+  ]
+}

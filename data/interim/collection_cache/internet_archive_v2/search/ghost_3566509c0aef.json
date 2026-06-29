@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 73,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "((&quot;Northern Territory ghost&quot; OR &quot;Northern Territory ghost stories&quot; OR &quot;haunted Northern Territory&quot;)) AND mediatype:texts",
+      "query": "((text:&quot;Northern Territory ghost&quot; OR text:&quot;Northern Territory ghost&quot; OR text__reviews:&quot;Northern Territory ghost&quot;) OR (text:&quot;Northern Territory ghost stories&quot; OR text:&quot;Northern Territory ghost stories&quot; OR text__reviews:&quot;Northern Territory ghost stories&quot;) OR (text:&quot;haunted Northern Territory&quot; OR text:&quot;haunted Northern Territory&quot; OR text__reviews:&quot;haunted Northern Territory&quot;)) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

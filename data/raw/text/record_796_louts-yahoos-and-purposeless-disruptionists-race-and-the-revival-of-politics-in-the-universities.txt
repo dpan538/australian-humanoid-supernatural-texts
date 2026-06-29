@@ -1,0 +1,14 @@
+{
+  "title": "'Louts, Yahoos and Purposeless Disruptionists': Race and the 'Revival of Politics' in the Universities",
+  "source": "OpenAlex",
+  "url": "http://search.informit.com.au/documentSummary;dn=522748990262821;res=IELIND",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2008-01-01",
+  "publication": "OpenAlex",
+  "author": "Jennifer Clark",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "Alan Walker, Superintendent of Sydney's Central Methodist Mission, told the Sydney Morning Herald in April 1960 that '[n]othing, for years, has stirred the conscience of Australians more than the massacre of natives in South Africa.' The same could have been said specifically about the conscience of students. With a reputation for apathy students seemed rarely stirred at all; however, in response to events in Sharpeville, Sydney University saw a demonstration so loud that two o'clock classes were cancelled. Such enthusiasm was significant. According to Peter Coleman, writing in The Bulletin, it represented the 'revival of politics' at Sydney University. The Sydney case was not an isolated one. On campuses across the country students protested against racial injustice: apartheid in South Africa, restrictive immigration policy in Australia and, eventually, discrimination against Aborigines.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

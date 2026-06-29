@@ -1,0 +1,14 @@
+{
+  "title": "Implementasi Algoritma Rc4 Dan Kompresi Lzw Untuk Pengamanan Database Pada Pt. Mpp International Development Indonesia",
+  "source": "OpenAlex",
+  "url": "https://jom.fti.budiluhur.ac.id/index.php/SKANIKA/article/download/2524/760",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2018-07-31",
+  "publication": "SKANIKA",
+  "author": "Abdul Wahid, Mohammad Syafrullah",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "PT. MPP International Development Indonesia yang bergerak dibidang jasa spesialis proyek, struktur bangunan, kontraktor, proyek manager dan konsultan proyek. PT. MPP international Development Indonesia salah satu perusahaan yang sudah betaraf internasional dan jam terbang yang sudah cukup banyak. Ada beberapa perusahaan-perusahaan yang cukup terkenal yang mempercayai PT. MPP International Indonesia untuk membangun daripada gedung-gedung perusahaan contohnya yaitu google, Yahoo, Grand Hyaat Bali, Bakrie Tower, Kedutaan Besar Australia dan Bank China yang ada di Indonesia. PT. MPP International Development Indonesia menjaga baik data para kontraktor agar tidak terjadi kesalahan atau kebocoran data maupun kecurangan rancangan anggaran biaya dalam berbagai tender yang diajukan. Tetapi data tidak akan aman apabila disimpan menjadi bentuk file. Maka oleh dari itu dibutuhkan suatu pemecah masalah dalam mengaman data yang nantinya akan dibaca dan bisa dilihat dengan mudah, yang dimana ini akan dibuat untuk perusahaan yang membutuhkan solusi seperti yang diajukan. Kriptografi yang digunakan dalam pembuatan apikasi keamanan ini ialah RC4 (Rivest Code-4) dan kompresi LZW (Lempel-Ziv-Welch). Dimana didalam aplikasi ini terdapat perhitungan yang lumayan rumit dengan menggunakan kunci yang nantinya akan digunakan untuk mengamankan database yang ada disimpan,",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

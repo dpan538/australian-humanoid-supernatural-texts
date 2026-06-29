@@ -2,11 +2,15 @@
 
 A typed, provenance-aware public research archive for tracing how humanoid or humanoid-adjacent supernatural figures appear in Australian public texts.
 
-The project documents source-grounded public records: alleged encounters, apparition accounts, ghost legends, local rumours, traditional and spirit-person narratives, descriptive belief records, and later retellings. It does not verify supernatural claims. Inclusion means that a public source or public metadata record exists and can be cited, reviewed, or linked.
+The project documents source-grounded public records: alleged encounters, apparition accounts, ghost legends, local legends, traditional and spirit-person narratives, descriptive belief records, and later retellings. It does not verify supernatural claims. Inclusion means that a public source or public metadata record exists and can be cited, reviewed, or linked.
 
 The public interface is a research display system, not a proof-of-existence database and not a generic monster catalogue.
 
 Repository: <https://github.com/dpan538/australian-humanoid-supernatural-texts>
+
+Public site: <https://ausfigures.com>
+
+Canonical production origin: <https://ausfigures.com>
 
 ## What this project is
 
@@ -41,11 +45,11 @@ The frontend is a restrained archive-terminal research display. It uses a dark t
 
 Pages:
 
-- `Map`: verified mapped public records only. Each map flag represents one public record with a verified display location.
-- `Dashboard`: broad public-corpus overview across time, narrative, source, and mapped-record aggregates.
-- `Density`: compressed source/query/figure density fields for comparing corpus signals.
-- `Source`: two-pane source register showing source-family rollups and registered public source organisations.
-- `About`: research-positioning page explaining scope, method, source policy, mapping limits, and ethics.
+- `https://ausfigures.com/dashboard`: broad public-corpus overview across time, narrative, source, and mapped-record aggregates.
+- `https://ausfigures.com/map`: verified mapped public records only. Each map flag represents one public record with a verified display location.
+- `https://ausfigures.com/density`: compressed source/query/figure density fields for comparing corpus signals.
+- `https://ausfigures.com/source`: two-pane source register showing source-family rollups and registered public source organisations.
+- `https://ausfigures.com/about`: research-positioning page explaining scope, method, source policy, mapping limits, and ethics.
 
 Dashboard and Density use the broader public corpus. Map uses only records with verified display coordinates.
 
@@ -99,7 +103,7 @@ python3 -m pip install -r requirements.txt
 The visual frontend uses Next.js and reads a static JSON export from the SQLite database:
 
 ```sh
-npm install
+npm ci
 make export-frontend
 npm run dev -- --hostname 127.0.0.1 --port 3000
 ```
@@ -173,6 +177,18 @@ See also:
 - `docs/research/METHODS_V2.md`
 - `docs/research/SCOPE_V2.md`
 - `docs/research/FRONTEND_DATA_CONTRACT_V2.md`
+- `docs/release/VERCEL_DEPLOYMENT.md`
+- `docs/release/LAUNCH_CHECKLIST.md`
+
+## Public web discovery files
+
+The production site publishes restrained public-archive discovery files:
+
+- `https://ausfigures.com/robots.txt`
+- `https://ausfigures.com/sitemap.xml`
+- `https://ausfigures.com/llms.txt`
+
+These files describe only public routes and public launch guidance. They are not security boundaries and should not be used to hide restricted, sensitive, unpublished, or internal material.
 
 ## Repository structure
 

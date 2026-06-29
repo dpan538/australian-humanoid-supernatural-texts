@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 61,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "((&quot;Mimih&quot; OR &quot;Mimi spirits&quot;) AND (&quot;Northern Territory&quot; OR Arnhem OR Australia)) AND mediatype:texts",
+      "query": "(((text:Mimih OR text:Mimih OR text__reviews:Mimih) OR (text:&quot;Mimi spirits&quot; OR text:&quot;Mimi spirits&quot; OR text__reviews:&quot;Mimi spirits&quot;)) AND ((text:&quot;Northern Territory&quot; OR text:&quot;Northern Territory&quot; OR text__reviews:&quot;Northern Territory&quot;) OR (text:Arnhem OR text:Arnhem OR text__reviews:Arnhem) OR (text:Australia OR text:Australia OR text__reviews:Australia))) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "active_database": {
+    "active_database_path": "data/processed/australian_humanoid_figures.sqlite",
+    "active_database_sha256": "2be10510d14b826f7042b15dc0d512f68469b1132f82bac69a4d0823d0b8028b",
+    "active_database_size_bytes": 30851072,
+    "frontend_json_path": "public/data/frontend-data.json",
+    "frontend_json_sha256": "55f8e65ea145438dfaf06bc59ead24f2375ec61c5eb4abbe5e2781355b25c58c",
+    "other_sqlite_files": [
+      {
+        "path": "data/australian_humanoid_public.db",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0,
+        "status": "inactive"
+      },
+      {
+        "path": "data/processed/australian_humanoid_figures.sqlite",
+        "sha256": "2be10510d14b826f7042b15dc0d512f68469b1132f82bac69a4d0823d0b8028b",
+        "size_bytes": 30851072,
+        "status": "active"
+      },
+      {
+        "path": "data/releases/legacy_985/database/australian_humanoid_figures.sqlite",
+        "sha256": "85334d3ed0c5729e35e75a27da835622cb0ff85d1877d6e867daba08602a1eae",
+        "size_bytes": 4046848,
+        "status": "inactive"
+      }
+    ],
+    "sqlite_schema_version": 62,
+    "sqlite_user_version": 0
+  },
+  "baseline": {
+    "coding_ontology_counts": {
+      "ancestral_being": 28,
+      "apparition_account": 305,
+      "cautionary_being": 4,
+      "cryptid_style_apeman": 1028,
+      "descriptive_belief_record": 45,
+      "encounter_account": 1,
+      "ghost_legend": 8,
+      "giant": 4,
+      "giant_or_ogre_narrative": 90,
+      "local_legend": 2,
+      "non_humanoid_control": 1,
+      "retelling_or_adaptation": 225,
+      "satire": 1,
+      "spirit_being": 31,
+      "spirit_person_narrative": 590,
+      "traditional_narrative": 47
+    },
+    "collection_candidates_by_status": {
+      "accepted": 1313,
+      "duplicate": 89,
+      "lead_only": 1179,
+      "rejected": 109
+    },
+    "context_records_estimated": 35,
+    "extra_export_records_not_public_db": [],
+    "first_class_records_estimated": 2362,
+    "invariants": {
+      "every_map_flag_references_public_record": true,
+      "exporter_candidate_append_absent": true,
+      "map_record_ids_unique": true,
+      "mapped_public_records_equals_map_lengths": true,
+      "public_record_ids_unique": true,
+      "suppressed_or_restricted_absent_from_export": true,
+      "suppressed_or_restricted_export_record_ids": []
+    },
+    "map_flags_length": 921,
+    "map_points_length": 921,
+    "mapped_public_records": 921,
+    "missing_public_db_records_from_export": [],
+    "narrative_units": 2229,
+    "promoted_candidates": 1313,
+    "public_db_records": 2397,
+    "public_export_records": 2397,
+    "rejected_or_excluded_rows_estimated": 122,
+    "source_families": 21,
+    "source_items": 2298,
+    "source_organisations": 34,
+    "suppressed_records": 13,
+    "total_canonical_records_sqlite": 2410,
+    "unmapped_public_records": 1476,
+    "unpromoted_accepted_candidates": 0
+  },
+  "snapshot": {
+    "database": "data/releases/pre_frontend_optimization_20260622T073320Z/australian_humanoid_figures.sqlite",
+    "frontend_json": "data/releases/pre_frontend_optimization_20260622T073320Z/frontend-data.json",
+    "manifest": "data/releases/pre_frontend_optimization_20260622T073320Z/MANIFEST.sha256",
+    "snapshot_dir": "data/releases/pre_frontend_optimization_20260622T073320Z",
+    "timestamp": "20260622T073320Z"
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/biostor-259575",
+        "server": "dn720001.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/biostor-259575",
+        "server": "dn760100.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/biostor-259575",
+        "server": "dn720001.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/biostor-259575",
+        "server": "dn760100.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1782061879,
+  "d1": "ia601509.us.archive.org",
+  "d2": "ia801509.us.archive.org",
+  "dir": "/26/items/biostor-259575",
+  "files": [
+    {
+      "crc32": "1d664a91",
+      "format": "Item Tile",
+      "md5": "8079ac2695bae12295848f3543f4d976",
+      "mtime": "1658437372",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "80b7cf6ef95b342be1a17cae32f0449cf879033b",
+      "size": "22200",
+      "source": "original"
+    },
+    {
+      "crc32": "83f2228a",
+      "format": "Text PDF",
+      "md5": "c9407fb760562f7a071df0c76840d731",
+      "mtime": "1658436712",
+      "name": "biostor-259575.pdf",
+      "sha1": "9855615fe0224db583a9c0dd8e623ad68be50bab",
+      "size": "679881",
+      "source": "original"
+    },
+    {
+      "btih": "ba850d601dc0263635d4456d21e5eeb237873a86",
+      "crc32": "0ed6d5df",
+      "format": "Archive BitTorrent",
+      "md5": "6ce1bccda88280bc70e58d3970d18f05",
+      "mtime": "1771466419",
+      "name": "biostor-259575_archive.torrent",
+      "sha1": "6d668d60a1646e28df640eed40169003ae3fa023",
+      "size": "3554",
+      "source": "metadata"
+    },
+    {
+      "crc32": "f8b3c2e9",
+      "format": "chOCR",
+      "md5": "4a5c1ed99525ea84af312e6d5e273c97",
+      "mtime": "1658436910",
+      "name": "biostor-259575_chocr.html.gz",
+      "ocr": "tesseract 5.1.0-1-ge935",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.16",
+      "ocr_parameters": "-l eng+Latin",
+      "original": "biostor-259575_jp2.zip",
+      "sha1": "8ceeb680e4d3a3225cee96ec91206c5e5cf66b6f",
+      "size": "108870",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ec16c71d",
+      "format": "DjVuTXT",
+      "md5": "db5206634c2992f733460398034d0842",
+      "mtime": "1658437321",
+      "name": "biostor-259575_djvu.txt",
+      "original": "biostor-259575_djvu.xml",
+      "sha1": "6a430594db55bca84d93efde5dd27a419cf3566f",
+      "size": "7903",
+      "source": "derivative"
+    },
+    {
+      "crc32": "98ad8a92",
+      "format": "Djvu XML",
+      "md5": "6c0f2d15b67ff4f7224153a0f63dad28",
+      "mtime": "1658437083",
+      "name": "biostor-259575_djvu.xml",
+      "original": "biostor-259575_hocr.html",
+      "sha1": "72b7679384039ba0e68642af10fc7b3e29f22b78",
+      "size": "98634",
+      "source": "derivative"
+    },
+    {
+      "format": "Metadata",
+      "md5": "f8b7d1c197a407082d91af1085a5beeb",
+      "name": "biostor-259575_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "bc662eff",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "182e5f4f360c6edf941950b8530a416d",
+      "mtime": "1658437041",
+      "name": "biostor-259575_hocr.html",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.16",
+      "ocr_parameters": "-l eng+Latin",
+      "original": "biostor-259575_chocr.html.gz",
+      "sha1": "7928f46477c8433ad6c9055e5afce9a0da054d36",
+      "size": "188091",
+      "source": "derivative"
+    },
+    {
+      "crc32": "cd9dce45",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "bd241594cb8ed1620d6e6e754b0efa97",
+      "mtime": "1658437173",
+      "name": "biostor-259575_hocr_pageindex.json.gz",
+      "original": "biostor-259575_hocr.html",
+      "sha1": "25aef24e5bf5b93df3f69fbe1c0ab97855ba6d82",
+      "size": "61",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0dde8dec",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "1da8ecb3f507a606c20459f752650efd",
+      "mtime": "1658437293",
+      "name": "biostor-259575_hocr_searchtext.txt.gz",
+      "original": "biostor-259575_hocr.html",
+      "sha1": "642b5743505ede67c6748cb92001e14da6cdeadf",
+      "size": "3428",
+      "source": "derivative",
+      "word_conf_0_10": "1",
+      "word_conf_11_20": "1",
+      "word_conf_21_30": "1",
+      "word_conf_31_40": "6",
+      "word_conf_41_50": "2",
+      "word_conf_51_60": "3",
+      "word_conf_61_70": "4",
+      "word_conf_71_80": "13",
+      "word_conf_81_90": "55",
+      "word_conf_91_100": "1153"
+    },
+    {
+      "crc32": "174be057",
+      "filecount": "2",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "24fd7299de59fb574cec291ff1d4e08f",
+      "mtime": "1658436776",
+      "name": "biostor-259575_jp2.zip",
+      "original": "biostor-259575.pdf",
+      "sha1": "8dd6d1ee5b7e3aab7c14b833d4d19671ba86067b",
+      "size": "1197501",
+      "source": "derivative"
+    },
+    {
+      "crc32": "eaba10ac",
+      "format": "Metadata",
+      "md5": "66358cb47fd92f18b24fdf6f0139a51f",
+      "mtime": "1658436730",
+      "name": "biostor-259575_meta.sqlite",
+      "sha1": "e6bb2ae184bbf830ab76a558af531fa5891a043b",
+      "size": "20480",
+      "source": "original"
+    },
+    {
+      "crc32": "d3874b79",
+      "format": "Metadata",
+      "md5": "a3798667954ab5a4bc05f170c42f8804",
+      "mtime": "1771466418",
+      "name": "biostor-259575_meta.xml",
+      "sha1": "c065e71d3963545e8ad6ab10cc5d1d58a13db7a1",
+      "size": "1350",
+      "source": "original"
+    },
+    {
+      "crc32": "7dc33e24",
+      "format": "Page Numbers JSON",
+      "md5": "12ca9fbf4f7ca9dd579e96e627b4a83c",
+      "mtime": "1658437331",
+      "name": "biostor-259575_page_numbers.json",
+      "original": "biostor-259575_djvu.xml",
+      "sha1": "dbc49c062fa5e6cf8e0becb645dd6b1ba83e6d8a",
+      "size": "289",
+      "source": "derivative"
+    },
+    {
+      "crc32": "fdafc224",
+      "format": "Scandata",
+      "md5": "78ce1217326414869a84a1f92823ee74",
+      "mtime": "1658437323",
+      "name": "biostor-259575_scandata.xml",
+      "original": "biostor-259575_djvu.xml",
+      "sha1": "3df948e9e7c503e70c460ca50e4d7e233ef9d99b",
+      "size": "864",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 15,
+  "item_last_updated": 1771466419,
+  "item_size": 2333106,
+  "metadata": {
+    "addeddate": "2022-07-21 20:52:02",
+    "collection": [
+      "biostor",
+      "journals"
+    ],
+    "collection_added": "journals",
+    "creator": "A Kemp",
+    "date": "1983",
+    "identifier": "biostor-259575",
+    "identifier-access": "http://archive.org/details/biostor-259575",
+    "identifier-ark": "ark:/13960/s2xm8cpkg0p",
+    "imagecount": "2",
+    "journal": "Proceedings of The Royal Society of Victoria",
+    "licenseurl": "http://creativecommons.org/licenses/by-nc/3.0/",
+    "mediatype": "texts",
+    "ocr": "tesseract 5.1.0-1-ge935",
+    "ocr_autonomous": "true",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_module_version": "0.0.16",
+    "ocr_parameters": "-l eng+Latin",
+    "pages": "23-24",
+    "ppi": "300",
+    "publicdate": "2022-07-21 20:52:02",
+    "sponsor": "BioStor",
+    "title": "Ceratodus nargun, a new Early Cretaceous ceratodont lungfish from Cape Lewis, Victoria",
+    "uploader": "rdmpage@gmail.com",
+    "volume": "95",
+    "year": "1983"
+  },
+  "page_numbers": {
+    "confidence": 0,
+    "identifier": "/var/tmp/autoclean/derive/biostor-259575/biostor-259575",
+    "pages": [
+      {
+        "confidence": 0,
+        "leafNum": 1,
+        "ocr_value": [
+          "24"
+        ],
+        "pageNumber": ""
+      }
+    ]
+  },
+  "server": "ia801509.us.archive.org",
+  "uniq": 1763424641,
+  "workable_servers": [
+    "ia801509.us.archive.org",
+    "ia601509.us.archive.org"
+  ]
+}

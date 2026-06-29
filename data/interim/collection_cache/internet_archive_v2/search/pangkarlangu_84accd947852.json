@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 13,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Pangkarlangu&quot; AND (Warlpiri OR &quot;Northern Territory&quot; OR Australia)) AND mediatype:texts",
+      "query": "((text:Pangkarlangu OR text:Pangkarlangu OR text__reviews:Pangkarlangu) AND ((text:Warlpiri OR text:Warlpiri OR text__reviews:Warlpiri) OR (text:&quot;Northern Territory&quot; OR text:&quot;Northern Territory&quot; OR text__reviews:&quot;Northern Territory&quot;) OR (text:Australia OR text:Australia OR text__reviews:Australia))) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

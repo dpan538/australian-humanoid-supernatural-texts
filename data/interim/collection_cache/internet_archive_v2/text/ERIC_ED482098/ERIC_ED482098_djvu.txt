@@ -1,0 +1,940 @@
+DOCUMENT RESUME 
+
+
+
+ED 482 098 
+
+
+
+IR 058 786 
+
+
+
+AUTHOR 
+
+TITLE 
+
+PUB DATE 
+NOTE 
+
+
+
+AVAILABLE FROM 
+
+PUB TYPE 
+EDRS PRICE 
+DESCRIPTORS 
+
+
+
+IDENTIFIERS 
+
+
+
+Nevile, Liddy; McCathieNevile , Charles 
+
+The Virtual Ramp to the Equivalent Experience in the Virtual Museum: 
+Accessibility to Museums on the Web. 
+
+2002-04-00 
+
+lip.; In: Museums and the Web 2002: Selected Papers from an 
+International Conference (6th, Boston, MA, April 17-20, 2002) ; see 
+IR 058 778. 
+
+For full text: http://www.archimuse.com/mw2002/ 
+papers/nevile/nevile . html/ . 
+
+Reports - Descriptive (141) — Speeches/Meeting Papers (150) 
+
+EDRS Price MF01/PC01 Plus Postage. 
+
+Aboriginal Australians; * Access to Computers; * Access to 
+Information; * Accessibility (for Disabled) ; Disabilities; 
+information Technology; ^Museums; *User Needs (Information); Users 
+(Information) ; World Wide Web 
+^Virtual Museums 
+
+
+
+ABSTRACT 
+
+This paper argues that a range of forms and modalities of resources 
+should be provided to ensure accessibility and richness on the World Wide Web for all 
+users. Based on experiences in developing virtual exhibitions of Quinkan Aboriginal 
+Rock Art, the authors present a brief overview of the technology available for 
+accessibility. Then they explore some different approaches to providing access through 
+the perspective of the IMS Global -Learning Consortium. They further develop these 
+ideas with particular reference to their similarity with current museum practice and 
+consider the implications for accessibility. Finally they recommend that museum 
+exhibitors and authors, developing interactive or electronic resources, include 
+planning for accessibility as part of their initial design process. (MES) 
+
+
+
+
+Reproductions supplied by EDRS are the best that can be made 
+from the original document. 
+
+
+
+« IR058786 ED 482 098 
+
+
+
+
+Register 
+
+Workshops 
+
+Sessions 
+
+Speakers 
+
+Interactions 
+
+Demonstrations 
+
+Exhibits 
+
+Events 
+
+Best of the Web 
+Key Dates 
+Boston 
+Sponsors 
+
+
+
+A&MI 
+
+
+
+Archives & Museum 
+Informatics 
+2008 Murray Ave. 
+Suite D 
+
+Pittsburgh, PA 
+15217 USA 
+i nfo @ arc h i m use.com 
+www . a rc h imuse.com 
+
+
+
+Q. 
+
+
+
+Se arch 
+
+A&M] 
+
+
+
+Join our M ailin g List. 
+Privacy. 
+
+
+
+PAPERS 
+
+Museums and the Web 2002 
+
+
+
+The Virtual Ramp To The Equivalent Experience 
+In The Virtual Museum: Accessibility To 
+Museums On The Web 
+
+
+
+Liddy Nevile, Motile Research, Australia and Charles 
+McCathieNevile, W3C, France 
+
+
+
+U.S. DEPARTMENT OF EDUCATION 
+
+Office of Educational Research and Improvement 
+
+EDUCATIONAL RESOURCES INFORMATION 
+CENTER (ERIC) 
+
+m This document has been reproduced as 
+** received from the person or organization 
+originating it. 
+
+□ Minor changes have been made to 
+
+
+
+Abstract 
+
+
+
+* Points of view or opinions stated in this 
+document do not necessarily represent 
+official OERI position or policy. 
+
+
+
+People with disabilities are slowly finding their way on to the Web, 
+up the virtual ramp, as it were. The ramp that is being built is 
+proving popular among many users beyond the community for 
+whom it was first requested. Good practice has ramps integrated 
+into the design of buildings and Web sites from the start, and 
+everyone can feel equally welcome and share in the experiences 
+provided beyond the ramp. The same practices can be adopted 
+on the Web, but often the question is what the best virtual 
+experience that will provide for all inclusively is. The authors argue 
+a range of forms and modalities of resources should be provided 
+to ensure accessibility and richness for all users. 
+
+
+
+PERMISSION TO REPRODUCE AND 
+DISSEMINATE THIS MATERIAL HAS 
+BEEN GRANTED BY 
+
+
+
+D. Bearman 
+
+
+
+TO THE EDUCATIONAL RESOURCES 
+INFORMATION CENTER (ERIC) 
+
+
+
+Introduction 
+
+After a number of years, the communities of people with disabilities are 
+slowly finding their way on to the Web, up the virtual ramp, as it were. 
+The ramp that is being used is, as in many other contexts, popular 
+among many users beyond the community for whom it was first 
+requested. Good practice has ramps integrated into the design of 
+institutions from the start, and everyone can feel equally welcome and 
+share in the experiences provided beyond the ramp. 
+
+The authors have been working with a community responsible for a 
+'museum' that covers several hundred square miles. It contains a 
+collection of 100,000 Quinkan Aboriginal cave paintings and is located in 
+the far north of Queensland in Australia. In this context, the idea of an 
+equivalent experience for those who visit on the Web is of paramount 
+interest. In fact, almost everyone who visits and experiences Quinkan 
+culture and artifacts will be doing so via the Web. Almost all of the 
+'museum' is inaccessible (the nearest city is 250 miles away) for one 
+reason or another. Currently, work is being undertaken to develop an 
+interpretive centre for this museum and the on-line component of that is 
+of interest here. (See the Queensland Heritage Trails Web site, 
+http://www.heritagetrails.qId.gov.au/fs_quinkan.html) 
+
+Virtual tours of Quinkan country will be designed to attract visitors to the 
+real thing, but only a small proportion of visitors will make the journey. 
+The virtual tour will provide the first level of equivalence; the virtual 
+experience for those who cannot have the real experience. The second 
+level of equivalence comes in when the first experience is transformed 
+for the benefit of those who, for whatever reason, do not get access to 
+the first level. 
+
+
+
+ERIC 
+
+
+
+BEST COPY AVAILABLE 
+
+
+
+file://E :\M W2002\papers\nevi le\nevile .html 
+
+
+
+5/22/2003 
+
+
+
+
+
+
+'Equivalence' in the accessibility context means that a user who avoids 
+one presentation of a resource, for one reason or another, can choose 
+an alternative resource to gain an 'equivalent' experience. It is an open 
+question what is equivalent to the range of resources and activities being 
+developed for what is seen as a museum's target audience. So questions 
+for consideration when developing virtual exhibitions of the Quinkan 
+Rock Art include: 
+
+• What is equivalent to being shown a 36,000 year old cave painting 
+by an elder of a community that has lived in the region for tens of 
+thousands of years?, and 
+
+• What is the equivalent of the experience for those who either 
+cannot see, or cannot hear the primary virtual experience? 
+
+For a starting point, the authors present a brief overview of the 
+technology available for accessibility. Then they explore some different 
+approaches to providing access, through the perspective of IMS 
+(http://www.imsproject.org/). They further develop these ideas with 
+particular reference to their similarity with current museum practice, and 
+consider the implications for accessibility. Finally they recommend that 
+museum exhibitors and authors, developing interactive or electronic 
+resources, include planning for accessibility as part of their initial design 
+process. 
+
+The Technology of Access 
+
+The ramp in the online context is what is defined as universally 
+accessible Web content, according to the W3C Web Content 
+Accessibility Guidelines (http://www.w3.org/WAI/). An effective ramp 
+exists, according to the W3C Web Content Accessibility Initiative working 
+groups' recommendations, when Web content is equally available to all 
+accessibility-standards-compliant devices, whether they are GUI 
+browsers, have mouseless interfaces, or are Braille devices. The 
+guidelines relate to content, authoring tools and access devices and 
+agents. 
+
+In the case of a virtual museum, or the online publication and interactions 
+of a museum, such ramps are now required by law in many countries. 
+Currently there is work going on to implement the accessibility 
+requirements but some of this work is not merely technical, and this is 
+especially of interest in the museum context. Generally, the familiar 
+question that is now well-integrated into thinking in the physical world, 
+"How can experiences be provided by museums in ways that provide 
+equal satisfaction for all" is extended to ask, "How can virtual 
+experiences be provided by museums in ways that cater for all needs, 
+including for those who could never enter a physical museum?" 
+
+W3C's Web Content Accessibility Guidelines, derived from consultation 
+and consensus among the many and varied disabilities communities, and 
+content and technology developers, call for the provision of equivalent 
+alternative resources and activities for those who cannot use the initial 
+presentation, be it an interactive multimedia object, a video, or just a 
+picture. In this paper, we start to formulate ways of thinking about what 
+this may mean for the design of online experiences. 
+
+A video file can have multiple tracks, each catering for modalities that 
+suit different needs. Sometimes such a composite object can be 
+constructed as a unit, with software that handles all the modalities, and 
+
+
+
+0 
+
+ERJC 
+
+
+
+3 
+
+
+
+file://E:\MW2002\papers\nevile\nevile.html 
+
+
+
+5/22/2003 
+
+
+
+on other occasions it needs to be formed by the close association of the 
+sub-objects. It can even be a combination of sub-elements from different 
+sources, as happens when, post-publication of the primary objects, 
+someone else publishes an alternative transformed version, say a 
+caption file that relates to the original resource. Integration of all these 
+files, including the capability to vary the speed with which interactions 
+happen, can be organized by a single integrating language. SMIL 
+(pronounced 'smile' and meaning Synchronised Multimedia Integration 
+Language), (http://www.w3.org/SMIL/) is the recommended XML 
+(http://www.w3.org/XML/) language that can perform this function 
+(http://www.w3.org/AudioVideo/). 
+
+Composite objects can be combined in the usual way as Web pages 
+before being published to the Web . In fact, in new work on theories of 
+how authors can learn to create Web resources, the authors have 
+worked with the metaphor of a newspaper. The Web author, according to 
+this theory, is encouraged to develop atomic Web content, aggregate it 
+as accessible composite objects, and then to lay them out on a Web 
+page, to create the Web resource. 
+
+An important technology that has made this an appropriate practice is the 
+development of Cascading StyleSheets (http://www.w3.org/Style/CSS/). 
+Using these, and separating the content from its layout is the first step. 
+The content, apart from being composed of objects that are themselves 
+accessible (because they consist of a range of sub-objects that 
+themselves cater for a range of needs), needs to be carefully classified 
+or structured. HTML (now deprecated in favor of XHTML) and other XML 
+markup languages can be used to tag objects within the resource so that 
+navigation elements, headings, sub-headings, addresses, etc can be 
+easily picked up by access devices and presented in ways that make 
+them easily identifiable, as they are for those of us who can see them on 
+a web page. CSS is then used to format these objects in ways that make 
+them most useable according to the particular access device being 
+employed. The style sheets 'cascade' in order to allow for a set of them, 
+including a user preferred one, and it is possible for the user to change 
+the layout or presentation by changing the style sheet. In other words, 
+while a GUI device such as a standard browser might use a style sheet 
+that has tags describing how the text, images, links should appear on a 
+screen, a screen-reading device may override the given style sheet and 
+use one that applies different voices as it reads out the differently 
+structured objects. 
+
+With the developments made possible by XML, style sheets can 
+themselves be transformed, not just alternated, and there is considerable 
+scope for good devices to make objects and thus resources much more 
+meaningful and useable according to the needs and devices of the user. 
+
+It is in this context that the authors have been working on their 
+newspaper metaphor for developing accessible resources. 
+
+Like a modern museum, the Web is not a static experience of receiving 
+information, but an interactive dynamic space for exploration. Work on 
+ensuring the accessibility of new Web technologies such as Scalable 
+Vector Graphics (http://www.w3.org/SVG/), a way of presenting dynamic 
+animated graphic material in textual form so it can be rendered as 
+images or text, SMIL (as mentioned above) and new interactive building 
+blocks for the Web, is critical for the provision of accessibility. This work 
+forms the base for the virtual ramps. 
+
+
+
+0 
+
+ERIC 
+
+
+
+4 
+
+
+
+file://E:\MW2002\papers\nevile\nevile.html 
+
+
+
+5/22/2003 
+
+
+
+Where multiple transformations of the same resource are authored by 
+the resource creator, and available to users regardless of their special 
+needs, or access abilities, the creator of the resources is able to 
+communicate directly with the user. Psychologically, as with the ramp 
+into the building, the user has the sense of inclusion and an equal 
+opportunity to participate. The technologies mentioned so far can be 
+used to make available, in appropriate formats and modalities, what has 
+been selected and created by the original resource creator. The point 
+here is that it is not a matter of a creator producing one resource and 
+leaving it to technicians to make alternatives for those with special 
+needs, but rather a situation where the original creator should be 
+encouraged to think ab initio of all the different formats and modalities 
+and consider their design part of the main design process. 
+
+Direct and Compatible Access 
+
+There are two major forms of physical access to online resources 
+(http://www.imsproject.org/accessibility/index.html) 
+
+"A "directly accessible” product is designed so that a 
+person with a disability can operate all on-screen controls 
+and access the content without relying on the aid of an AT 
+[assistive technology]. For example, to be accessible to 
+users with low-vision, directly accessible applications, 
+software, or Web sites offer features to enlarge all controls 
+and on-screen text and are designed with high contrast 
+colors or provide features that allow users to choose 
+appropriate colors. To be accessible to blind users, a 
+directly accessible product should have a keyboard 
+interface with audio output." 
+
+A directly accessible Web resource, with a suitable keyboard interface 
+will provide access for many users who are blind, those with physical 
+disabilities and many others who have a temporary disability. Audio 
+output that announces the presence and status of on-screen controls and 
+conveys the atmosphere of the application, software, or Web site assists 
+those with vision disabilities but also the illiterate and the foreign 
+language speakers. A single key method for scanning through choices in 
+the application or software provides access for users dependent on a 
+single switch for input or who are busy using their hands for some other 
+purpose (e.g. knitting or driving). 
+
+A "compatibly accessible" application, software, or Web site is designed 
+with AT in mind. This level of access assumes the user has a preferred 
+AT package installed and is relatively competent and comfortable with it. 
+A compatibly accessible product is designed with "hooks" to facilitate 
+ease of use with a screen reader, screen magnifier, or alternative input 
+devices such as adapted keyboards or single switches. These hooks can 
+be implemented by developers . “... Exposing the system cursor, using 
+standard controls and fonts, and following the operating system's human 
+interface guidelines can help make a product compatibly accessible." 
+
+Direct and compatible access offers different advantages to different 
+stakeholders in the Web context. 
+
+Directly accessible on-line resources have as advantages: 
+
+
+
+O 
+
+ERIC 
+
+
+
+file ://E :\MW2002\papers\nevile\nev ile.html 
+
+
+
+5 
+
+
+
+5/22/2003 
+
+
+
+• no requirement for expensive assistive technologies, cutting costs 
+
+• reduction of technical complexity 
+
+• the opportunity for users to operate any computers anywhere 
+
+• direct and designed communication between the creative author 
+and the user, not an AT acting as intermediary, and 
+
+• single resources that are suitable for a range of special needs 
+(one size fits all). 
+
+Compatibly accessible on-line resources offer: 
+
+• consistency of operation across different activities for the user 
+
+• lower content development costs 
+
+• system-based functionality e.g. an AT package provides text-to- 
+speech capability 
+
+• possibly the only access means for some users e.g. Braille, anda 
+single set of programming techniques to be used by the developer 
+for all ATs. 
+
+Directly compatible resources allow all users to engage with them 
+‘equally 1 in the same sense as the ramp into the museum building gives 
+access to all. The experience may be different, because the ability to 
+participate may be different, but everyone has the opportunity to 
+participate in the same activity. 
+
+The National Center for Accessible Media (http://ncam.wgbh.org/) has 
+developed a DVD that shows how this can be done with interactive 
+materials that have been made directly accessible for people with a 
+range of disabilities. 
+
+Direct access is available when users are provided with transformations 
+of content that suit their access devices. 
+
+Imagine an interactive multimedia product that offers a virtual tour of a 
+small area containing some significant rock art paintings in northern 
+Australia. Such a multimedia product would probably contain, in various 
+combinations, text, images, animations, video, sound files, and 
+interactive applications. 
+
+Blind persons will not be able to see either the images or the controls to 
+interact with the resources. They will need keyboard replacements for the 
+mouse, for text that describes all images and imagery, and Braille or 
+voice transformations of all text, captions to accompany sound files 
+where these are initially accompanied by images or text, and so on. Deaf 
+persons will be grateful for images and video but possibly not find text 
+easy to read, and may need signing, and this may need to be in their 
+language (e.g. US, or UK standards). A person with cognitive disabilities 
+may need more literal text than others who are not confused by 
+metaphoric representations. Braille readers may need extra time in which 
+to make choices because their transformations are delivered more 
+slowly. And so on. 
+
+All of these requirements can be accommodated simultaneously by the 
+creation of composite objects from which the user can choose those 
+required. 
+
+An example of a situation when direct access might not be preferred over 
+compatible access is when users of a speech interface are required to 
+
+
+
+
+6 
+
+
+
+5/22/2003 
+
+
+
+learn to use the speech interface associated with the resource instead of 
+being able to rely on their own, and operate with familiar, but compatible 
+access. For blind people who are using a computer every day, it is 
+important to have access to a number of different kinds of software: e- 
+mail, word processing, Web browsing, system tasks, and so on. To deal 
+with this, various systems are available to provide something like an 
+"audio desktop", as familiar to its users as other people are with a visual 
+desktop metaphor of windows placed like overlapping pieces of paper on 
+the screen. For such blind users, it is an interference (sometimes quite 
+literally, stopping their everyday software from working) to have to learn a 
+specially designed system for a unique task when they are used to 
+similar tasks using a familiar interface. 
+
+If multiple modalities are available to increase the range of opportunities 
+for direct access, four classes of users may benefit although they would 
+not normally have sought such alternatives. These include users who: 
+
+• do not know of their 'disabilities’ 
+
+• do not consider them worthy of concern 
+
+• do not know what to do about them or 
+
+• do not know how to, or cannot afford to get assistance. 
+
+In addition, as has been noted above, it is not always possible to provide 
+directly accessible transformations of all content so that all users may 
+participate directly. 
+
+If a range of resource sub-elements has been developed, so that the 
+users are free to choose among them, in many cases a user with a 
+compatible device will choose to use that in combination with a directly 
+accessible sub-element. In other words, direct access is compatible with 
+compatible access as well-designed direct access sub-elements can be 
+selected by all users, including those who may need to use ATs. 
+
+Alternative and Equivalent Access 
+
+In practice, however, it may be quite difficult to provide all users with the 
+same resource and achieve the same outcomes. In this sense, it is not 
+the technical difficulties associated with the task but rather the potential 
+to support, or destroy, the original intention of the resource that may be 
+in question. The problem of what to provide for users is not new: in the 
+museum context it has been dealt with extensively as the problem of how 
+to design a good exhibition. An expression often used to describe the 
+quality of good applications that make them useful and learnable to the 
+most users is "low threshold and high ceiling”. This means that for users 
+there is a minimal entry level, in terms of technological expertise and 
+domain understanding, and yet the same application can work well for a 
+highly accomplished and knowledgeable person who has strong 
+technical skills. 
+
+In the virtual museum context, the question is what will provide a virtual 
+visitor with the richest experience, given that some visitors have special 
+needs. The solution may be one that offers all users an equivalent 
+experience, according to the modality in which they participate. In other 
+words, the provision of resources in multiple modalities may not be 
+sufficient to satisfy the original intention of the resource when the full 
+range of users is taken into account. 
+
+
+
+
+7 
+
+
+
+5/22/2003 
+
+
+
+Returning to the IMS definitions, (IMS, 2001) we find: 
+
+
+
+When considering the accessibility of applications and 
+software for learning, education, and training, it is important 
+to understand the differences between two types of access: 
+equivalent and alternative. 
+
+Equivalent Access provides the learner with the same 
+learning activity but it is mediated in a different modality. 
+
+Providing a course textbook in Braille format, on audio 
+tape, or in digital format are examples of equivalent 
+accessibility. Alternative Access provides the learner with a 
+different learning activity but one that is designed to 
+achieve the same learning objectives. An example of 
+alternative accessibility might be having a mobility-impaired 
+student conduct science experiments in a virtual laboratory, 
+where the same levels of dexterity, strength, and physical 
+access are not required as in a physical laboratory. 
+
+What is impressive, and often makes the production of alternative activity 
+worthwhile, is that what was primarily considered as an alternative for 
+people with disabilities, like the ramp, becomes an attraction for an 
+unanticipated community of people. A simple example is provided by the 
+"virtual microscope", developed by the Open University, UK (IMS, 2001) 
+for disabled students but subsequently used by all students because of 
+its ability to achieve key learning objectives more fully than the original 
+exercise involving a real microscope. 
+
+It is the cognitive aspect of accessibility that is under consideration here. 
+If the virtual museum experience is designed to replace or be an 
+alternative to a 'real' experience, it will be designed, presumably, to 
+achieve the same effect in the participant’s mind. What is not clear, and 
+not answerable, is whether the alternative experience is to provide equal 
+access to the real experience or simply to the virtual experience. Either 
+way, and this will depend upon the circumstances, this will not be easily 
+solved. 
+
+Cognitive Equivalence 
+
+Many years ago, the authors both worked with computer controlled robot 
+'turtles' - on screen and off. For a substantial time, teachers saw the 
+Logo 'turtle' as needing to be explained to children in the real world 
+(using a physical object) so they could make sense of the virtual turtle - a 
+triangle of pixels on the screen. In fact, children had no trouble at all 
+identifying with the 'turtle' triangle and also relating to the physical (toy) 
+turtle. There was nothing to suggest that the children did not see these 
+as two separate objects, alternate, and in many ways equivalent, or that 
+they needed to relate to a real turtle in order to be able to relate to a 
+moving image. This thinking led one author through a series of 
+investigations of screen experiences, ultimately concluding that there 
+was nothing ’virtual’ about screen objects. In some cases, the virtual 
+object had characteristics that were not possible for a physical object, 
+and so could be used to discover 'artificially', concepts that could not be 
+accessed as easily in the real world. 
+
+The most effective use of this artificiality seemed to occur when the 
+virtual or simulated object was 'broken' in significant respects. In the case 
+of the turtle, the screen version did not have to contend with gravity, and 
+
+
+
+O 
+
+ERIC 
+
+
+
+file://E:\MW2002\papers\nevile\nevile.html 
+
+
+
+3 
+
+
+
+5/22/2003 
+
+
+
+could assert its position in co-ordinates. These two features alone made 
+it a most suitable object for programming in a gravity investigation 
+exercise. In the process of attributing gravity to the world of the turtle, 
+children were able to discover important facts about gravity such as that 
+it exerted a constant downwards effect on objects, and that this was not 
+altered by the object's horizontal motion although it changed the path of 
+the object traveling horizontally. 
+
+There was 'reality' in the children's minds of equal significance, no matter 
+that it was inspired by a real (physical) or virtual (electronic) object. 
+
+If the aim of a museum exhibition is to provide visitors with opportunities 
+to use the exhibition to learn, become more knowledgeable, or whatever 
+it's called, it seems that there is the potential for alternative activities, 
+particularly when supported by computation, to achieve the same goal as 
+the physical exhibition. When considering what alternatives to make 
+available for users with special needs who are accessing a virtual 
+exhibition, the author has the task of deciding what is appropriate to 
+people who have access to only some modalities in which resources can 
+be provided. The authors consider this similar to the familiar task of 
+designing for work with different materials in the real world, and that 
+including the range of modalities extends, rather than alters, the 
+designer's work. 
+
+Creating Alternative Experiences 
+
+In the end, equivalence is something that is a matter of judgment. The 
+perceptions of authors about what they are trying to convey, and the 
+perceptions of readers (in the broad sense) of what the authors were 
+trying to convey, are not necessarily the same. An equivalent or an 
+alternative can be said to have been a "good" one when readers who 
+used different alternatives come away with the same impressions of what 
+they are being shown. 
+
+This is a difficult but mostly soluble problem in a training context where 
+there are specific desired outcomes and measurable descriptions of what 
+the reader should be able to demonstrate having accomplished. But in 
+the more open-ended context of an educational experience, or a 
+museum experience, providing a resource that can be interpreted in 
+different ways is more complicated. 
+
+A "minimal equivalence" might be achieved if it is possible for some 
+primary message to be received from any of the available alternatives. 
+For example, a short cartoon like the following might be perceived as 
+conveying the information that text without illustrations does not 
+communicate as well as illustrated text. On the other hand, a "more 
+complete equivalence" could convey something more. In fact, any 
+selection of an alternative will convey a style. Consider the difference 
+between: 
+
+"Supplement text with non-text content." 
+
+
+
+and 
+
+
+
+"Some people can't read writing easily, so add images, 
+sounds, movies and so on to help them understand your 
+message." 
+
+
+
+
+9 
+
+
+
+5/22/2003 
+
+
+
+and 
+
+
+
+"This is a cartoon. On the left is a person looking in 
+confusion at a poster of text. On the right the text has had 
+images added to explain it, and "the light has dawned" - the 
+person now understands the poster. The left hand panel 
+has been crossed out indicating it is not the right approach, 
+and the right hand panel has a tick indicating that it is a 
+good approach." 
+
+
+
+and 
+
+
+
+
+Figure 1: a cartoon http://www.w3.org/2001/08/mmcmn/34a.png 
+
+
+
+
+In the work associated with development of artificial environments for 
+learning, the community often refers to such environments as 
+'microworlds'. One quality of good microworlds is that they satisfy the rule 
+above of having a low threshold but nevertheless a high ceiling. As well, 
+they provide rich opportunities for a range of users without necessarily 
+being able to predict what users will bring to their interaction with the 
+microworld or gain from it. Microworlds usually give control to the users, 
+allowing them to choose what to do in the environment with the designer 
+knowing that whatever is done, it is very likely that something of value 
+will be gained. A physical equivalent of such a microworld might be a 
+sandpit with water for a child. 
+
+But one feature of microworlds is outstanding. While they are 
+recognizable for these qualities once developed, it is often not that they 
+have been easy to create, or even that their designers were able to apply 
+a clear set of design practices in order to produce them. Many years of 
+experience with microworlds suggests they are somewhat like other 
+forms of art: not subject to prescription yet enormously rewarding and 
+valuable. The authors believe this to be similar to the work of museum 
+exhibition design, and feel confident that museums will embrace 
+accessibility and demonstrate their expertise in a slightly more complex 
+world with the usual high standards of success. 
+
+Conclusion 
+
+
+
+O 
+
+ERIC 
+
+
+
+BEST COPY AVAILABLE 
+
+
+
+file://E:\MW2002\papers\nevile\nevile.html 
+
+
+
+10 
+
+
+
+5/22/2003 
+
+
+
+Having considered the tools with which museums might work to build the 
+virtual ramp, and the growing demonstration of talent within museums to 
+create on-line resources of all kinds, the authors are optimistic that the 
+museum community will be able to make a substantial contribution to the 
+more general effort to make the Web a rich, exciting and educational 
+environment for all. 
+
+A young Aboriginal man recently spoke of his efforts to make sure the 
+rock path he was building up to a rock painting site was appropriate for 
+the site (Steffensen, 2000). We believe the ramps that give access to 
+virtual visits to the Quinkan Rock Art of far north Australia can be just as 
+inclusive and rewarding. 
+
+References 
+
+Steffensen, V, presentation (without published paper) at International 
+Rock Art Conference, hosted by AURA, Alice Springs, Australia: June 
+2000. 
+
+
+
+
+11 
+
+
+
+5/22/2003 
+
+
+
+
+U.S. Department of Education 
+Office of Educational Research and Improvement (OERI) 
+National Library of Education (NLE) 
+Educational Resources Information Center (ERIC) 
+
+
+
+
+NOTICE 
+
+
+
+Reproduction Basis 
+
+
+
+
+This document is covered by a signed "Reproduction Release (Blanket)" 
+form (on file within the ERIC system), encompassing all or classes of 
+documents from its source organization and, therefore, does not require a 
+"Specific Document" Release form. 
+
+
+
+This document is Federally-funded, or carries its own permission to 
+reproduce, or is otherwise in the public domain and, therefore, may be 
+reproduced by ERIC without a signed Reproduction Release form (either 
+"Specific Document" or "Blanket"). 
+
+
+
+
+EFF-089 (1/2003) 
+
+
+

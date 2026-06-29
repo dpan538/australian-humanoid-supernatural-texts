@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 77,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "((&quot;Western Australian ghost&quot; OR &quot;Western Australia ghost stories&quot; OR &quot;haunted Western Australia&quot;)) AND mediatype:texts",
+      "query": "((text:&quot;Western Australian ghost&quot; OR text:&quot;Western Australian ghost&quot; OR text__reviews:&quot;Western Australian ghost&quot;) OR (text:&quot;Western Australia ghost stories&quot; OR text:&quot;Western Australia ghost stories&quot; OR text__reviews:&quot;Western Australia ghost stories&quot;) OR (text:&quot;haunted Western Australia&quot; OR text:&quot;haunted Western Australia&quot; OR text__reviews:&quot;haunted Western Australia&quot;)) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

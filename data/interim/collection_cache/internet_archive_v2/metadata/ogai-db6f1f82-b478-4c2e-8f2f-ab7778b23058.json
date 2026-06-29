@@ -1,0 +1,372 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058",
+        "server": "dn721905.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058",
+        "server": "dn760008.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058",
+        "server": "dn721905.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058",
+        "server": "dn760008.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1782061960,
+  "d1": "ia601806.us.archive.org",
+  "d2": "ia801806.us.archive.org",
+  "dir": "/9/items/ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058",
+  "files": [
+    {
+      "crc32": "de2fd42d",
+      "format": "Item Tile",
+      "md5": "c90de970f23acce26e21e0c882a1d831",
+      "mtime": "1747021825",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "b9cc53449c6eea2e328491f02e053006503bad82",
+      "size": "8798",
+      "source": "original"
+    },
+    {
+      "crc32": "2e4d1f79",
+      "format": "Text PDF",
+      "md5": "a45e0bdb11efa40f0d873a2774826b0a",
+      "mtime": "1747021716",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058.pdf",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_page_numbers.json",
+      "pdf_degraded": "invalid-jp2-headers",
+      "pdf_module_version": "0.0.25",
+      "sha1": "ad3da3a3d73760086bd19a0cd2af3e9f83f3d69d",
+      "size": "4781670",
+      "source": "derivative"
+    },
+    {
+      "btih": "103ff74a7c2101fc680afe3327337687690a61e8",
+      "crc32": "8c230e57",
+      "format": "Archive BitTorrent",
+      "md5": "200263b81ac066d834fd9a62ff4af978",
+      "mtime": "1747021827",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_archive.torrent",
+      "sha1": "718242a105203be4a8a7167682cf2f2146dd375a",
+      "size": "6383",
+      "source": "metadata"
+    },
+    {
+      "crc32": "8d70391a",
+      "format": "chOCR",
+      "md5": "c8fa77de8dddf16c4b67bb151a068ca3",
+      "mtime": "1747020969",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_chocr.html.gz",
+      "ocr": "tesseract 5.3.0-6-g76ae",
+      "ocr_detected_lang": "de",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Fraktur",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-deu;lang-Fraktur;two-pass-disabled;pass-dpi-disabled;autonomous-mode-disabled;binarisation-method-otsu",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_jp2.zip",
+      "sha1": "5a0f052716f790d0d72c6b397bf7b3eb9c8a892e",
+      "size": "649282",
+      "source": "derivative"
+    },
+    {
+      "crc32": "639cb7b9",
+      "format": "DjVuTXT",
+      "md5": "b1c0d7bf730fd594ddb9bf403ae15a44",
+      "mtime": "1747021225",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_djvu.txt",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_djvu.xml",
+      "sha1": "faea8689b810e97130498e0b8f54817aaed41fd9",
+      "size": "48745",
+      "source": "derivative"
+    },
+    {
+      "crc32": "57fd3727",
+      "format": "Djvu XML",
+      "md5": "c62c08282db4fc003cbd45d717256029",
+      "mtime": "1747021061",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_djvu.xml",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_hocr.html",
+      "sha1": "dedfcfc6db058b653a06cef9ca9325f7e886f95c",
+      "size": "577480",
+      "source": "derivative"
+    },
+    {
+      "format": "Metadata",
+      "md5": "dfd70e788034f394ae5300b81b1a598c",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "6613aee9",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.56",
+      "hocr_char_to_word_module_version": "1.3.0",
+      "md5": "5b85c85d3331fbf48501146b1c57c867",
+      "mtime": "1747021036",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_hocr.html",
+      "ocr_detected_lang": "de",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Fraktur",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-deu;lang-Fraktur;two-pass-disabled;pass-dpi-disabled;autonomous-mode-disabled;binarisation-method-otsu",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_chocr.html.gz",
+      "sha1": "7bf436a95ee21c43620d3dd81c48a4add618fdd5",
+      "size": "1120551",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2f04c91f",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.56",
+      "hocr_pageindex_module_version": "1.1.0",
+      "md5": "8df5fecff45429610eb399a20a331c09",
+      "mtime": "1747021076",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_hocr_pageindex.json.gz",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_hocr.html",
+      "sha1": "145a2087d112669c140a609f4fe02bd53518ec2e",
+      "size": "156",
+      "source": "derivative"
+    },
+    {
+      "crc32": "527805a5",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.56",
+      "hocr_fts_text_module_version": "1.2.0",
+      "md5": "b4ba67de67da33841e123c6e72fa4456",
+      "mtime": "1747021163",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_hocr_searchtext.txt.gz",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_hocr.html",
+      "sha1": "be732e1d7202778ddc61bba5c3fa110abc6735c6",
+      "size": "19054",
+      "source": "derivative",
+      "word_conf_0_10": "94",
+      "word_conf_11_20": "44",
+      "word_conf_21_30": "50",
+      "word_conf_31_40": "69",
+      "word_conf_41_50": "68",
+      "word_conf_51_60": "61",
+      "word_conf_61_70": "73",
+      "word_conf_71_80": "88",
+      "word_conf_81_90": "464",
+      "word_conf_91_100": "5980"
+    },
+    {
+      "crc32": "155e5db9",
+      "filecount": "11",
+      "format": "Generic Raw Book Zip",
+      "md5": "a95977c57487e4e540d21c073de4ea91",
+      "mtime": "1604037731",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_images.zip",
+      "sha1": "9d4c826cd5e8b54d2789012aa8c5163951bf04c4",
+      "size": "36951061",
+      "source": "original"
+    },
+    {
+      "crc32": "69768754",
+      "filecount": "11",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "2f0ff907c0bae3da06921f16ec4a6faf",
+      "mtime": "1604052683",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_jp2.zip",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_images.zip",
+      "sha1": "24e22983ac060dc1f70bd73d29e3c8c29af34025",
+      "size": "13457395",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5e339e56",
+      "format": "Metadata",
+      "md5": "21768c1e6af1268fdd8705e9ba2fd10d",
+      "mtime": "1604038890",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_meta.sqlite",
+      "sha1": "1e6da7cf4549f994641d7be390ac2bdd2221e69d",
+      "size": "24576",
+      "source": "original"
+    },
+    {
+      "crc32": "d47561be",
+      "format": "Metadata",
+      "md5": "c3872e32880b6e9b09ebefb88c69d325",
+      "mtime": "1747021722",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_meta.xml",
+      "sha1": "f5af13dc9eca1c3df2efa1034f712793844e325a",
+      "size": "3858",
+      "source": "original"
+    },
+    {
+      "crc32": "b6792c1b",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "0",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "bc25883eb9f89d32edebf52757b125d1",
+      "mtime": "1747021319",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_page_numbers.json",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_hocr.html",
+      "sha1": "e3d7a07463172abc0c28ad6e0c93b5cce9e9d074",
+      "size": "2027",
+      "source": "derivative"
+    },
+    {
+      "crc32": "112d07a9",
+      "format": "Scandata",
+      "md5": "ebf90b176f77d5196e460f0e52c14deb",
+      "mtime": "1747021319",
+      "name": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_scandata.xml",
+      "original": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058_djvu.xml",
+      "sha1": "4bea078b10fed2e1c5df5d77d2184860ef127371",
+      "size": "3784",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 16,
+  "item_last_updated": 1747021827,
+  "item_size": 57654820,
+  "metadata": {
+    "addeddate": "2020-10-30 06:20:49",
+    "bookreader-defaults": "mode/1up",
+    "call_number": "鴎E200:1308",
+    "collection": [
+      "mori-ogai",
+      "utokyo-general"
+    ],
+    "collection_url": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/s/ogai/",
+    "contributor": "東京大学総合図書館 General Library in the University of Tokyo, JAPAN",
+    "database": "鴎外文庫書入本画像データベース",
+    "description": "ビーシャ・メアリー・クローカー『かわいらしいミス・ネヴィル』のドイツ語訳。 本文最終頁には「明治十九年九月八日於列翁沌読了」の書入れがある。『独逸日記』(全集35巻)によれば、鴎外は明治19年(1886)9月3日から18日の間、シュタルンベルク湖のほとりのレオニ村に滞在し、その間 『Ethnographisch-hygienische Studie über Wohnhäuser in Japan』(日本家屋論、全集29巻)を訂正し、ナウマン(E.Naumann)への反駁文『Die Wahrheit über Japan』(日本の実情、全集未収録)を起稿した。シュタルンベルク湖は、『うたかたの記』(全集2巻)に登場するルートヴィッヒ2世の水死した場所であり、鴎外はミュンヘン時代、頻繁に出かけている。 作者は19世紀末から20世紀初頭の流行作家で、インド滞在経験があり、本作品にもインド在住イギリス人の生活を描いている。幽霊小説(ghost stories)を多く書いた。鴎外は「巫」などの文字を書込んでいる。(山)\n参考文献: 小堀桂一郎『若き日の森鴎外』東京大学出版会，1969年\n参考文献: Michael Cox and R.A. Gilbert selected and introduced “Victorian ghost stories : an Oxford anthology.” Oxford University Press, 1991.",
+    "extent": "Stuttgart : J. Engelhorn, 1886. 2 v. ; 18 cm. -- (Engelhorns Allgemeine Romanbibliothek ; 2. Jahrg., Bd. 17-18) 別書名: Pretty Miss Neville",
+    "foldoutcount": "0",
+    "identifier": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058",
+    "identifier-access": "http://archive.org/details/ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058",
+    "identifier-ark": "ark:/13960/t2w47b56q",
+    "imagecount": "11",
+    "language": "ger",
+    "licenseurl": "https://www.lib.u-tokyo.ac.jp/ja/library/contents/archives-top/reuse",
+    "manifest": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/db6f1f82-b478-4c2e-8f2f-ab7778b23058/manifest",
+    "mediatype": "texts",
+    "notes": "書入頁",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_detected_lang": "de",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Fraktur",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_module_version": "0.0.21",
+    "ocr_parameters": "-l deu+Fraktur",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.5",
+    "pdf_degraded": "invalid-jp2-headers",
+    "pdf_module_version": "0.0.25",
+    "publicdate": "2020-10-30 06:20:49",
+    "rights": "ATTRIBUTION:The Internet Archive",
+    "scanner": "Internet Archive Python library 1.7.7",
+    "source_url": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/s/ogai/document/db6f1f82-b478-4c2e-8f2f-ab7778b23058",
+    "subject": "洋書",
+    "title": "Die hübsche Miss Neville / von B.M. Croker ; autorisierte Uebersetzung aus dem Englischen von Emmy Becher.",
+    "title-alt-script": "Die hübsche Miss Neville / von B.M. Croker ; autorisierte Uebersetzung aus dem Englischen von Emmy Becher.",
+    "uploader": "jake@archive.org"
+  },
+  "page_numbers": {
+    "archive-hocr-tools-version": "1.1.54",
+    "confidence": 0,
+    "format-version": "2",
+    "identifier": "ogai-db6f1f82-b478-4c2e-8f2f-ab7778b23058",
+    "pages": [
+      {
+        "confidence": null,
+        "leafNum": 0,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 1,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 2,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 3,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 4,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 5,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 6,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 7,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 8,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 9,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 10,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      }
+    ]
+  },
+  "server": "ia801806.us.archive.org",
+  "uniq": 1190421253,
+  "workable_servers": [
+    "ia801806.us.archive.org",
+    "ia601806.us.archive.org"
+  ]
+}

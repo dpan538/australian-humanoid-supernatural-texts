@@ -1,0 +1,4286 @@
+{
+  "Adelaide Gaol, Adelaide, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "city": "Adelaide",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "18",
+        "postcode": "5000",
+        "road": "Gaol Road",
+        "state": "South Australia",
+        "suburb": "Adelaide",
+        "tourism": "Adelaide Gaol"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-34.9188203",
+        "-34.9170506",
+        "138.5838787",
+        "138.5856516"
+      ],
+      "category": "tourism",
+      "display_name": "Adelaide Gaol, 18, Gaol Road, Adelaide, South Australia, 5000, Australia",
+      "importance": 0.3298727163953751,
+      "lat": "-34.9179424",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "138.5848489",
+      "name": "Adelaide Gaol",
+      "osm_id": 1257720059,
+      "osm_type": "way",
+      "place_id": 19002428,
+      "place_rank": 30,
+      "type": "attraction"
+    }
+  ],
+  "Adelaide, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "city": "Adelaide",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "South Australia"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-35.3502960",
+        "-34.5722420",
+        "138.4281386",
+        "138.8479091"
+      ],
+      "category": "place",
+      "display_name": "Adelaide, South Australia, Australia",
+      "importance": 0.6908162210460888,
+      "lat": "-34.9281805",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "138.5999312",
+      "name": "Adelaide",
+      "osm_id": 11381689,
+      "osm_type": "relation",
+      "place_id": 19062551,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "5000",
+        "state": "South Australia",
+        "suburb": "Adelaide"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-34.9421608",
+        "-34.9091218",
+        "138.5770603",
+        "138.6244769"
+      ],
+      "category": "boundary",
+      "display_name": "Adelaide, South Australia, 5000, Australia",
+      "importance": 0.46171628964047634,
+      "lat": "-34.9261502",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "138.6006231",
+      "name": "Adelaide",
+      "osm_id": 3114051,
+      "osm_type": "relation",
+      "place_id": 19043956,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "administrative": "Adelaide City Council",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "South Australia"
+      },
+      "addresstype": "administrative",
+      "boundingbox": [
+        "-34.9419790",
+        "-34.8987775",
+        "138.5772193",
+        "138.6242167"
+      ],
+      "category": "boundary",
+      "display_name": "Adelaide City Council, South Australia, Australia",
+      "importance": 0.4134776339011324,
+      "lat": "-34.9211019",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "138.5972625",
+      "name": "Adelaide City Council",
+      "osm_id": 3093825,
+      "osm_type": "relation",
+      "place_id": 19022459,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Albany Post Office, Stirling Terrace, Albany, Western Australia, Australia": [],
+  "Alice Springs Telegraph Station, Northern Territory, Australia": [],
+  "Aradale Asylum, Ararat, Victoria, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "amenity": "Aradale Asylum",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3377",
+        "road": "Grano Street",
+        "state": "Victoria",
+        "town": "Ararat"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-37.2799268",
+        "-37.2757185",
+        "142.9556363",
+        "142.9622704"
+      ],
+      "category": "amenity",
+      "display_name": "Aradale Asylum, Grano Street, Ararat, Victoria, 3377, Australia",
+      "importance": 5.068513008311616e-05,
+      "lat": "-37.2775765",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "142.9581683",
+      "name": "Aradale Asylum",
+      "osm_id": 168850611,
+      "osm_type": "way",
+      "place_id": 19122904,
+      "place_rank": 30,
+      "type": "former_hospital"
+    }
+  ],
+  "Arthur Circus, Battery Point, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "park": "Arthur Circus",
+        "postcode": "7004",
+        "state": "Tasmania",
+        "suburb": "Battery Point"
+      },
+      "addresstype": "park",
+      "boundingbox": [
+        "-42.8891129",
+        "-42.8888884",
+        "147.3348902",
+        "147.3353611"
+      ],
+      "category": "leisure",
+      "display_name": "Arthur Circus, Battery Point, Hobart, Tasmania, 7004, Australia",
+      "importance": 0.08002869993133437,
+      "lat": "-42.8889972",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3351286",
+      "name": "Arthur Circus",
+      "osm_id": 805343906,
+      "osm_type": "way",
+      "place_id": 24321660,
+      "place_rank": 24,
+      "type": "park"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7004",
+        "road": "Arthur Circus",
+        "state": "Tasmania",
+        "suburb": "Battery Point"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-42.8891409",
+        "-42.8888634",
+        "147.3348614",
+        "147.3352092"
+      ],
+      "category": "highway",
+      "display_name": "Arthur Circus, Battery Point, Hobart, Tasmania, 7004, Australia",
+      "importance": 0.0533620332646677,
+      "lat": "-42.8889757",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3348779",
+      "name": "Arthur Circus",
+      "osm_id": 8111268,
+      "osm_type": "way",
+      "place_id": 24495294,
+      "place_rank": 26,
+      "type": "residential"
+    }
+  ],
+  "Babinda Boulders, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "leisure": "Babinda Paintball",
+        "postcode": "4861",
+        "road": "The Boulders Road",
+        "state": "Queensland",
+        "town": "Babinda"
+      },
+      "addresstype": "leisure",
+      "boundingbox": [
+        "-17.3463495",
+        "-17.3462495",
+        "145.9012775",
+        "145.9013775"
+      ],
+      "category": "leisure",
+      "display_name": "Babinda Paintball, The Boulders Road, Babinda, Queensland, 4861, Australia",
+      "importance": 4.785610742346864e-05,
+      "lat": "-17.3462995",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.9013275",
+      "name": "Babinda Paintball",
+      "osm_id": 9516007876,
+      "osm_type": "node",
+      "place_id": 27586154,
+      "place_rank": 30,
+      "type": "pitch"
+    }
+  ],
+  "Ballarat, Victoria, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city": "Ballarat",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3350",
+        "state": "Victoria"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-37.7223013",
+        "-37.4023013",
+        "143.7005645",
+        "144.0205645"
+      ],
+      "category": "place",
+      "display_name": "Ballarat, Victoria, 3350, Australia",
+      "importance": 0.5518346225045071,
+      "lat": "-37.5623013",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "143.8605645",
+      "name": "Ballarat",
+      "osm_id": 189820294,
+      "osm_type": "node",
+      "place_id": 19105185,
+      "place_rank": 16,
+      "type": "city"
+    }
+  ],
+  "Battery Point, Hobart, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "cape": "Battery Point",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7004",
+        "state": "Tasmania",
+        "suburb": "Battery Point"
+      },
+      "addresstype": "cape",
+      "boundingbox": [
+        "-42.8867544",
+        "-42.8866544",
+        "147.3393038",
+        "147.3394038"
+      ],
+      "category": "natural",
+      "display_name": "Battery Point, Hobart, Tasmania, 7004, Australia",
+      "importance": 0.10669536659800104,
+      "lat": "-42.8867044",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3393538",
+      "name": "Battery Point",
+      "osm_id": 8928402326,
+      "osm_type": "node",
+      "place_id": 24188638,
+      "place_rank": 22,
+      "type": "cape"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "highway": "Battery Point",
+        "postcode": "7004",
+        "road": "Hampden Road",
+        "state": "Tasmania",
+        "suburb": "Battery Point"
+      },
+      "addresstype": "highway",
+      "boundingbox": [
+        "-42.8894317",
+        "-42.8893317",
+        "147.3359679",
+        "147.3360679"
+      ],
+      "category": "highway",
+      "display_name": "Battery Point, Hampden Road, Battery Point, Hobart, Tasmania, 7004, Australia",
+      "importance": 2.8699931334355954e-05,
+      "lat": "-42.8893817",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3360179",
+      "name": "Battery Point",
+      "osm_id": 12887889496,
+      "osm_type": "node",
+      "place_id": 24350409,
+      "place_rank": 30,
+      "type": "bus_stop"
+    }
+  ],
+  "Beechworth Asylum, Beechworth, Victoria, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3747",
+        "protected_area": "Mayday Hills Lunatic Asylum (1867-1995)",
+        "state": "Victoria",
+        "town": "Beechworth"
+      },
+      "addresstype": "protected_area",
+      "boundingbox": [
+        "-36.3721780",
+        "-36.3644843",
+        "146.6924666",
+        "146.7002528"
+      ],
+      "category": "boundary",
+      "display_name": "Mayday Hills Lunatic Asylum (1867-1995), Beechworth, Victoria, 3747, Australia",
+      "importance": 0.06671284122987715,
+      "lat": "-36.3689111",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.6956558",
+      "name": "Mayday Hills Lunatic Asylum (1867-1995)",
+      "osm_id": 286009372,
+      "osm_type": "way",
+      "place_id": 20228348,
+      "place_rank": 25,
+      "type": "protected_area"
+    }
+  ],
+  "Bendigo, Victoria, Australia": {
+    "error": "HTTPError: HTTP Error 429: Too many requests",
+    "updated_at": "2026-06-22T10:19:00+00:00"
+  },
+  "Black Mountain, Cooktown, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Rossville",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4895",
+        "road": "Mulligan Highway",
+        "state": "Queensland",
+        "tourism": "Black Mountain"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-15.6494917",
+        "-15.6493917",
+        "145.2214794",
+        "145.2215794"
+      ],
+      "category": "tourism",
+      "display_name": "Black Mountain, Mulligan Highway, Rossville, Queensland, 4895, Australia",
+      "importance": 4.691157396806313e-05,
+      "lat": "-15.6494417",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.2215294",
+      "name": "Black Mountain",
+      "osm_id": 2046991740,
+      "osm_type": "node",
+      "place_id": 28563750,
+      "place_rank": 30,
+      "type": "viewpoint"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Rossville",
+        "country": "Australia",
+        "country_code": "au",
+        "nature_reserve": "Black Mountain National Park",
+        "postcode": "4895",
+        "state": "Queensland"
+      },
+      "addresstype": "nature_reserve",
+      "boundingbox": [
+        "-15.6562759",
+        "-15.6465012",
+        "145.2190591",
+        "145.2219775"
+      ],
+      "category": "leisure",
+      "display_name": "Black Mountain National Park, Rossville, Queensland, 4895, Australia",
+      "importance": 0.08004691157396808,
+      "lat": "-15.6515574",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.2210699",
+      "name": "Black Mountain National Park",
+      "osm_id": 14531862,
+      "osm_type": "relation",
+      "place_id": 28633926,
+      "place_rank": 24,
+      "type": "nature_reserve"
+    }
+  ],
+  "Blundells Cottage, Canberra, Australian Capital Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "building": "Blundells Cottage",
+        "city": "Canberra",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "neighbourhood": "Parliamentary Triangle",
+        "postcode": "2600",
+        "road": "Wendouree Drive",
+        "suburb": "Parkes",
+        "territory": "Australian Capital Territory"
+      },
+      "addresstype": "building",
+      "boundingbox": [
+        "-35.2929076",
+        "-35.2927475",
+        "149.1416996",
+        "149.1418304"
+      ],
+      "category": "building",
+      "display_name": "Blundells Cottage, Wendouree Drive, Parliamentary Triangle, Parkes, Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+      "importance": 0.3172483997907332,
+      "lat": "-35.2927998",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1417718",
+      "name": "Blundells Cottage",
+      "osm_id": 51678578,
+      "osm_type": "way",
+      "place_id": 23754175,
+      "place_rank": 30,
+      "type": "house"
+    }
+  ],
+  "Boggo Road Gaol, Brisbane, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Brisbane",
+        "city_district": "Dutton Park",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4102",
+        "road": "Boggo Road",
+        "state": "Queensland",
+        "suburb": "Dutton Park",
+        "tourism": "Boggo Road Gaol"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-27.4955708",
+        "-27.4947267",
+        "153.0282627",
+        "153.0291302"
+      ],
+      "category": "tourism",
+      "display_name": "Boggo Road Gaol, Boggo Road, Dutton Park, Brisbane, Queensland, 4102, Australia",
+      "importance": 0.2827546027204031,
+      "lat": "-27.4950869",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.0287003",
+      "name": "Boggo Road Gaol",
+      "osm_id": 35841181,
+      "osm_type": "way",
+      "place_id": 27677039,
+      "place_rank": 30,
+      "type": "museum"
+    }
+  ],
+  "Borroloola, Northern Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0854",
+        "territory": "Northern Territory",
+        "village": "Borroloola"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-16.0964613",
+        "-16.0430150",
+        "136.2945912",
+        "136.3226473"
+      ],
+      "category": "boundary",
+      "display_name": "Borroloola, Northern Territory, 0854, Australia",
+      "importance": 0.3799838315762615,
+      "lat": "-16.0594471",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "136.3054069",
+      "name": "Borroloola",
+      "osm_id": 11716392,
+      "osm_type": "relation",
+      "place_id": 28796914,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Braidwood, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Braidwood",
+        "postcode": "2622",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-35.5197292",
+        "-35.3352424",
+        "149.6967454",
+        "149.9145792"
+      ],
+      "category": "boundary",
+      "display_name": "Braidwood, New South Wales, 2622, Australia",
+      "importance": 0.3915604223356184,
+      "lat": "-35.4388907",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.7955552",
+      "name": "Braidwood",
+      "osm_id": 6079482,
+      "osm_type": "relation",
+      "place_id": 23731232,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Brisbane, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Brisbane",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-27.9386050",
+        "-26.7922700",
+        "152.3827210",
+        "153.5465130"
+      ],
+      "category": "place",
+      "display_name": "Brisbane, Queensland, Australia",
+      "importance": 0.7126705606994053,
+      "lat": "-27.4689623",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.0235009",
+      "name": "Brisbane",
+      "osm_id": 14027280,
+      "osm_type": "relation",
+      "place_id": 27675532,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Brisbane",
+        "state": "Queensland"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-27.6602190",
+        "-27.0215438",
+        "152.6796930",
+        "153.4682348"
+      ],
+      "category": "boundary",
+      "display_name": "City of Brisbane, Queensland, Australia",
+      "importance": 0.47789038763300545,
+      "lat": "-27.4693645",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9687926",
+      "name": "City of Brisbane",
+      "osm_id": 11677792,
+      "osm_type": "relation",
+      "place_id": 27656826,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Campbelltown, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Campbelltown City Council",
+        "postcode": "2560",
+        "state": "New South Wales",
+        "town": "Campbelltown"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-34.1896128",
+        "-33.9582068",
+        "150.7370498",
+        "150.9409013"
+      ],
+      "category": "boundary",
+      "display_name": "Campbelltown City Council, Campbelltown, New South Wales, 2560, Australia",
+      "importance": 0.44721600109457404,
+      "lat": "-34.0737892",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8536614",
+      "name": "Campbelltown City Council",
+      "osm_id": 6290704,
+      "osm_type": "relation",
+      "place_id": 24030797,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2560",
+        "state": "New South Wales",
+        "town": "Campbelltown"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-34.0827839",
+        "-34.0461554",
+        "150.7712964",
+        "150.8379777"
+      ],
+      "category": "boundary",
+      "display_name": "Campbelltown, New South Wales, 2560, Australia",
+      "importance": 0.44700302356006166,
+      "lat": "-34.0636914",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8206159",
+      "name": "Campbelltown",
+      "osm_id": 5517465,
+      "osm_type": "relation",
+      "place_id": 24003301,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Canberra, Australian Capital Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "city": "Canberra",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "postcode": "2600",
+        "territory": "Australian Capital Territory"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-35.4575906",
+        "-35.1375906",
+        "148.9412676",
+        "149.2612676"
+      ],
+      "category": "place",
+      "display_name": "Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+      "importance": 0.6754372088484613,
+      "lat": "-35.2975906",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1012676",
+      "name": "Canberra",
+      "osm_id": 21674637,
+      "osm_type": "node",
+      "place_id": 24083087,
+      "place_rank": 15,
+      "type": "city"
+    }
+  ],
+  "Castle Hotel, York, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6302",
+        "road": "South Street",
+        "state": "Western Australia",
+        "tourism": "Castle Hotel",
+        "town": "York"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-31.8898916",
+        "-31.8897916",
+        "116.7681663",
+        "116.7682663"
+      ],
+      "category": "tourism",
+      "display_name": "Castle Hotel, South Street, York, Western Australia, 6302, Australia",
+      "importance": 4.825284199278275e-05,
+      "lat": "-31.8898416",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "116.7682163",
+      "name": "Castle Hotel",
+      "osm_id": 543647726,
+      "osm_type": "node",
+      "place_id": 33869870,
+      "place_rank": 30,
+      "type": "hotel"
+    }
+  ],
+  "Cooktown, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Cooktown",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4895",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-15.6817680",
+        "-15.0619390",
+        "144.6729610",
+        "145.3490210"
+      ],
+      "category": "boundary",
+      "display_name": "Cooktown, Queensland, 4895, Australia",
+      "importance": 0.45940393879340735,
+      "lat": "-15.3718125",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9028573",
+      "name": "Cooktown",
+      "osm_id": 11677363,
+      "osm_type": "relation",
+      "place_id": 28945228,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "town": "Cooktown"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-15.5126622",
+        "-15.4326622",
+        "145.2134218",
+        "145.2934218"
+      ],
+      "category": "place",
+      "display_name": "Cooktown, Queensland, Australia",
+      "importance": 0.16004691157396808,
+      "lat": "-15.4726622",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.2534218",
+      "name": "Cooktown",
+      "osm_id": 248103256,
+      "osm_type": "node",
+      "place_id": 28837226,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Cowandilla House, Cowandilla, South Australia, Australia": [],
+  "Cowandilla, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "5033",
+        "state": "South Australia",
+        "suburb": "Cowandilla"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-34.9357005",
+        "-34.9292257",
+        "138.5523062",
+        "138.5615240"
+      ],
+      "category": "boundary",
+      "display_name": "Cowandilla, South Australia, 5033, Australia",
+      "importance": 0.24782860043147328,
+      "lat": "-34.9324599",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "138.5569406",
+      "name": "Cowandilla",
+      "osm_id": 8355107,
+      "osm_type": "relation",
+      "place_id": 18941090,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Cuballing Tavern, Cuballing, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "amenity": "Cuballing Tavern",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6311",
+        "road": "Alton Street",
+        "state": "Western Australia",
+        "town": "Cuballing"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-32.8200220",
+        "-32.8199220",
+        "117.1788678",
+        "117.1789678"
+      ],
+      "category": "amenity",
+      "display_name": "Cuballing Tavern, Alton Street, Cuballing, Western Australia, 6311, Australia",
+      "importance": 4.641412985423083e-05,
+      "lat": "-32.8199720",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "117.1789178",
+      "name": "Cuballing Tavern",
+      "osm_id": 10553722724,
+      "osm_type": "node",
+      "place_id": 33840033,
+      "place_rank": 30,
+      "type": "pub"
+    }
+  ],
+  "Darwin, Northern Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city": "Darwin",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0800",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-12.6204400",
+        "-12.3004400",
+        "130.6810469",
+        "131.0010469"
+      ],
+      "category": "place",
+      "display_name": "Darwin, Northern Territory, 0800, Australia",
+      "importance": 0.6018469733331366,
+      "lat": "-12.4604400",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "130.8410469",
+      "name": "Darwin",
+      "osm_id": 1639099539,
+      "osm_type": "node",
+      "place_id": 28800571,
+      "place_rank": 16,
+      "type": "city"
+    }
+  ],
+  "Drunken Admiral, Hobart, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "amenity": "Drunken Admiral",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7000",
+        "road": "Hunter Street",
+        "state": "Tasmania",
+        "suburb": "Hobart"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-42.8812091",
+        "-42.8811091",
+        "147.3348813",
+        "147.3349813"
+      ],
+      "category": "amenity",
+      "display_name": "Drunken Admiral, Hunter Street, Hobart, Tasmania, 7000, Australia",
+      "importance": 2.8699931334355954e-05,
+      "lat": "-42.8811591",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3349313",
+      "name": "Drunken Admiral",
+      "osm_id": 2527899709,
+      "osm_type": "node",
+      "place_id": 24082751,
+      "place_rank": 30,
+      "type": "restaurant"
+    }
+  ],
+  "Dumbleyung, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Shire of Dumbleyung",
+        "state": "Western Australia"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-33.4855040",
+        "-32.9502020",
+        "117.6205620",
+        "118.3544730"
+      ],
+      "category": "boundary",
+      "display_name": "Shire of Dumbleyung, Western Australia, Australia",
+      "importance": 0.42771066427573406,
+      "lat": "-33.2180030",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "117.9579719",
+      "name": "Shire of Dumbleyung",
+      "osm_id": 11688916,
+      "osm_type": "relation",
+      "place_id": 33746614,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6350",
+        "state": "Western Australia",
+        "town": "Dumbleyung"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-33.4100710",
+        "-33.1956480",
+        "117.6802740",
+        "117.8499630"
+      ],
+      "category": "boundary",
+      "display_name": "Dumbleyung, Western Australia, 6350, Australia",
+      "importance": 0.3957352519202844,
+      "lat": "-33.3147678",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "117.7393632",
+      "name": "Dumbleyung",
+      "osm_id": 11688913,
+      "osm_type": "relation",
+      "place_id": 33763682,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "East Point Reserve, Darwin, Northern Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city": "Darwin",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "East Point Reserve",
+        "postcode": "0820",
+        "suburb": "East Point",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-12.4077606",
+        "-12.4076606",
+        "130.8253706",
+        "130.8254706"
+      ],
+      "category": "leisure",
+      "display_name": "East Point Reserve, East Point, Darwin, Northern Territory, 0820, Australia",
+      "importance": 0.08006798886091399,
+      "lat": "-12.4077106",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "130.8254206",
+      "name": "East Point Reserve",
+      "osm_id": 13457915588,
+      "osm_type": "node",
+      "place_id": 28919098,
+      "place_rank": 24,
+      "type": "park"
+    }
+  ],
+  "Exmouth, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6707",
+        "state": "Western Australia",
+        "town": "Exmouth"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-22.0014070",
+        "-21.8954910",
+        "114.0821240",
+        "114.1451130"
+      ],
+      "category": "boundary",
+      "display_name": "Exmouth, Western Australia, 6707, Australia",
+      "importance": 0.3826968451717165,
+      "lat": "-21.9324401",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "114.1258094",
+      "name": "Exmouth",
+      "osm_id": 11689998,
+      "osm_type": "relation",
+      "place_id": 33732564,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Shire of Exmouth",
+        "postcode": "6707",
+        "state": "Western Australia"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-23.0114050",
+        "-21.5737127",
+        "113.5645368",
+        "114.7539960"
+      ],
+      "category": "boundary",
+      "display_name": "Shire of Exmouth, Western Australia, 6707, Australia",
+      "importance": 0.3793875555226289,
+      "lat": "-22.2924716",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "114.1469586",
+      "name": "Shire of Exmouth",
+      "osm_id": 11689997,
+      "osm_type": "relation",
+      "place_id": 33742525,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Franklin House, Launceston, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "building": "Franklin House",
+        "city": "Launceston",
+        "country": "Australia",
+        "country_code": "au",
+        "neighbourhood": "Franklin Village",
+        "postcode": "7249",
+        "road": "Hobart Road",
+        "state": "Tasmania",
+        "suburb": "Youngtown"
+      },
+      "addresstype": "building",
+      "boundingbox": [
+        "-41.4901457",
+        "-41.4898623",
+        "147.1682391",
+        "147.1685365"
+      ],
+      "category": "building",
+      "display_name": "Franklin House, Hobart Road, Franklin Village, Youngtown, Launceston, Tasmania, 7249, Australia",
+      "importance": 6.140154116116605e-05,
+      "lat": "-41.4900176",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.1683193",
+      "name": "Franklin House",
+      "osm_id": 909825558,
+      "osm_type": "way",
+      "place_id": 24194531,
+      "place_rank": 30,
+      "type": "yes"
+    }
+  ],
+  "Fremantle Arts Centre, Fremantle, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "building": "Fremantle Arts Centre",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6160",
+        "road": "Ord Street",
+        "state": "Western Australia",
+        "town": "Fremantle"
+      },
+      "addresstype": "building",
+      "boundingbox": [
+        "-32.0480448",
+        "-32.0473487",
+        "115.7536501",
+        "115.7543342"
+      ],
+      "category": "building",
+      "display_name": "Fremantle Arts Centre, Ord Street, Fremantle, Western Australia, 6160, Australia",
+      "importance": 0.2791651820367976,
+      "lat": "-32.0476763",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.7539837",
+      "name": "Fremantle Arts Centre",
+      "osm_id": 721631,
+      "osm_type": "relation",
+      "place_id": 34011040,
+      "place_rank": 30,
+      "type": "yes"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "information": "Fremantle Arts Centre",
+        "postcode": "6160",
+        "road": "Finnerty Street",
+        "state": "Western Australia",
+        "town": "Fremantle"
+      },
+      "addresstype": "information",
+      "boundingbox": [
+        "-32.0473593",
+        "-32.0472593",
+        "115.7539097",
+        "115.7540097"
+      ],
+      "category": "information",
+      "display_name": "Fremantle Arts Centre, Finnerty Street, Fremantle, Western Australia, 6160, Australia",
+      "importance": 7.485389486529362e-05,
+      "lat": "-32.0473093",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.7539597",
+      "name": "Fremantle Arts Centre",
+      "osm_id": 2569153520,
+      "osm_type": "node",
+      "place_id": 33963714,
+      "place_rank": 30,
+      "type": "board"
+    }
+  ],
+  "Fremantle Prison, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "historic": "Fremantle Prison",
+        "house_number": "1",
+        "postcode": "6160",
+        "road": "The Terrace",
+        "state": "Western Australia",
+        "town": "Fremantle"
+      },
+      "addresstype": "historic",
+      "boundingbox": [
+        "-32.0562844",
+        "-32.0537213",
+        "115.7522184",
+        "115.7547268"
+      ],
+      "category": "historic",
+      "display_name": "Fremantle Prison, 1, The Terrace, Fremantle, Western Australia, 6160, Australia",
+      "importance": 0.38936877137464093,
+      "lat": "-32.0553437",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.7534563",
+      "name": "Fremantle Prison",
+      "osm_id": 217613628,
+      "osm_type": "way",
+      "place_id": 33799378,
+      "place_rank": 30,
+      "type": "prison"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "1",
+        "postcode": "6160",
+        "road": "The Terrace",
+        "state": "Western Australia",
+        "tourism": "Fremantle Prison",
+        "town": "Fremantle"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-32.0551294",
+        "-32.0550294",
+        "115.7526566",
+        "115.7527566"
+      ],
+      "category": "tourism",
+      "display_name": "Fremantle Prison, 1, The Terrace, Fremantle, Western Australia, 6160, Australia",
+      "importance": 7.485389486529362e-05,
+      "lat": "-32.0550794",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.7527066",
+      "name": "Fremantle Prison",
+      "osm_id": 2269125755,
+      "osm_type": "node",
+      "place_id": 33860431,
+      "place_rank": 30,
+      "type": "attraction"
+    }
+  ],
+  "Fremantle, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6160",
+        "state": "Western Australia",
+        "town": "Fremantle"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-32.0639420",
+        "-32.0411840",
+        "115.7321950",
+        "115.7797250"
+      ],
+      "category": "boundary",
+      "display_name": "Fremantle, Western Australia, 6160, Australia",
+      "importance": 0.5413386865073574,
+      "lat": "-32.0534086",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.7586172",
+      "name": "Fremantle",
+      "osm_id": 11689400,
+      "osm_type": "relation",
+      "place_id": 33790356,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Fyfe Street, Exmouth, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6707",
+        "road": "Fyfe Street",
+        "state": "Western Australia",
+        "town": "Exmouth"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-21.9310593",
+        "-21.9268347",
+        "114.1205795",
+        "114.1231464"
+      ],
+      "category": "highway",
+      "display_name": "Fyfe Street, Exmouth, Western Australia, 6707, Australia",
+      "importance": 0.05337905622949565,
+      "lat": "-21.9287065",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "114.1214780",
+      "name": "Fyfe Street",
+      "osm_id": 187086372,
+      "osm_type": "way",
+      "place_id": 33667631,
+      "place_rank": 26,
+      "type": "residential"
+    }
+  ],
+  "Gaiety Theatre, Zeehan, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "building": "Gaiety Theatre and Grand Hotel",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7469",
+        "road": "Main Street",
+        "state": "Tasmania",
+        "town": "Zeehan"
+      },
+      "addresstype": "building",
+      "boundingbox": [
+        "-41.8822327",
+        "-41.8817328",
+        "145.3350193",
+        "145.3355711"
+      ],
+      "category": "building",
+      "display_name": "Gaiety Theatre and Grand Hotel, Main Street, Zeehan, Tasmania, 7469, Australia",
+      "importance": 4.632867933160933e-05,
+      "lat": "-41.8819768",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.3353375",
+      "name": "Gaiety Theatre and Grand Hotel",
+      "osm_id": 924018882,
+      "osm_type": "way",
+      "place_id": 24244045,
+      "place_rank": 30,
+      "type": "yes"
+    }
+  ],
+  "Gladstone Gaol, Gladstone, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "commercial": "Gladstone Gaol Tourist Complex",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "5473",
+        "state": "South Australia",
+        "town": "Gladstone"
+      },
+      "addresstype": "commercial",
+      "boundingbox": [
+        "-33.2621528",
+        "-33.2607937",
+        "138.3550420",
+        "138.3566552"
+      ],
+      "category": "landuse",
+      "display_name": "Gladstone Gaol Tourist Complex, Gladstone, South Australia, 5473, Australia",
+      "importance": 0.08004289692530706,
+      "lat": "-33.2617877",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "138.3558523",
+      "name": "Gladstone Gaol Tourist Complex",
+      "osm_id": 303261374,
+      "osm_type": "way",
+      "place_id": 19150307,
+      "place_rank": 24,
+      "type": "commercial"
+    }
+  ],
+  "Grand Hotel, Millicent, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "amenity": "Grand Hotel",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "55",
+        "postcode": "5280",
+        "road": "George Street",
+        "state": "South Australia",
+        "town": "Millicent"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-37.5949739",
+        "-37.5948739",
+        "140.3540071",
+        "140.3541071"
+      ],
+      "category": "amenity",
+      "display_name": "Grand Hotel, 55, George Street, Millicent, South Australia, 5280, Australia",
+      "importance": 4.6015869382727056e-05,
+      "lat": "-37.5949239",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "140.3540571",
+      "name": "Grand Hotel",
+      "osm_id": 1482257459,
+      "osm_type": "node",
+      "place_id": 19399967,
+      "place_rank": 30,
+      "type": "pub"
+    }
+  ],
+  "Grand Olde Dumbleyung Inn, Dumbleyung, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6350",
+        "road": "Bartram Road",
+        "state": "Western Australia",
+        "tourism": "Grand Olde Dumbleyung Inn",
+        "town": "Dumbleyung"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-33.3159271",
+        "-33.3158271",
+        "117.7416532",
+        "117.7417532"
+      ],
+      "category": "tourism",
+      "display_name": "Grand Olde Dumbleyung Inn, Bartram Road, Dumbleyung, Western Australia, 6350, Australia",
+      "importance": 4.639734493014446e-05,
+      "lat": "-33.3158771",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "117.7417032",
+      "name": "Grand Olde Dumbleyung Inn",
+      "osm_id": 10591130229,
+      "osm_type": "node",
+      "place_id": 33928974,
+      "place_rank": 30,
+      "type": "hotel"
+    }
+  ],
+  "Great Dividing Range, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "mountain_pass": "Great Dividing Range",
+        "state": "New South Wales"
+      },
+      "addresstype": "mountain_pass",
+      "boundingbox": [
+        "-34.8348710",
+        "-34.8347710",
+        "149.5855568",
+        "149.5856568"
+      ],
+      "category": "mountain_pass",
+      "display_name": "Great Dividing Range, New South Wales, Australia",
+      "importance": 0.1333814610513466,
+      "lat": "-34.8348210",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.5856068",
+      "name": "Great Dividing Range",
+      "osm_id": 24082848,
+      "osm_type": "node",
+      "place_id": 24131277,
+      "place_rank": 20,
+      "type": "yes"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Koreelah",
+        "postcode": "2476",
+        "ridge": "Great Dividing Range",
+        "state": "New South Wales"
+      },
+      "addresstype": "ridge",
+      "boundingbox": [
+        "-28.2572200",
+        "-28.2539080",
+        "152.4840530",
+        "152.4876180"
+      ],
+      "category": "natural",
+      "display_name": "Great Dividing Range, Koreelah, New South Wales, 2476, Australia",
+      "importance": 0.10671495765621421,
+      "lat": "-28.2556403",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.4859095",
+      "name": "Great Dividing Range",
+      "osm_id": 773912189,
+      "osm_type": "way",
+      "place_id": 28650899,
+      "place_rank": 22,
+      "type": "ridge"
+    }
+  ],
+  "Greenough, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city_district": "Greenough",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6532",
+        "state": "Western Australia"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-28.9781930",
+        "-28.8621710",
+        "114.6638410",
+        "114.7790620"
+      ],
+      "category": "boundary",
+      "display_name": "Greenough, Western Australia, 6532, Australia",
+      "importance": 0.36517188513067234,
+      "lat": "-28.9199695",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "114.7172748",
+      "name": "Greenough",
+      "osm_id": 11689897,
+      "osm_type": "relation",
+      "place_id": 33563054,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Greenough River",
+        "state": "Western Australia"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-28.9703251",
+        "-27.8037661",
+        "114.6353310",
+        "116.5358677"
+      ],
+      "category": "waterway",
+      "display_name": "Greenough River, Western Australia, Australia",
+      "importance": 0.3759021037005979,
+      "lat": "-28.3231732",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.4288491",
+      "name": "Greenough River",
+      "osm_id": 4638504,
+      "osm_type": "relation",
+      "place_id": 33594997,
+      "place_rank": 18,
+      "type": "river"
+    }
+  ],
+  "Gwalia, Western Australia, Australia": {
+    "error": "HTTPError: HTTP Error 429: Too many requests",
+    "updated_at": "2026-06-22T10:23:28+00:00"
+  },
+  "Henry Jones Art Hotel, Hobart, Tasmania, Australia": [],
+  "Hobart Convict Penitentiary, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "highway": "Hobart Convict Penitentiary",
+        "postcode": "7000",
+        "road": "Campbell Street",
+        "state": "Tasmania",
+        "suburb": "Hobart"
+      },
+      "addresstype": "highway",
+      "boundingbox": [
+        "-42.8773697",
+        "-42.8772697",
+        "147.3274798",
+        "147.3275798"
+      ],
+      "category": "highway",
+      "display_name": "Hobart Convict Penitentiary, Campbell Street, Hobart, Tasmania, 7000, Australia",
+      "importance": 2.8699931334355954e-05,
+      "lat": "-42.8773197",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3275298",
+      "name": "Hobart Convict Penitentiary",
+      "osm_id": 12887893307,
+      "osm_type": "node",
+      "place_id": 24357579,
+      "place_rank": 30,
+      "type": "bus_stop"
+    }
+  ],
+  "Hobart Penitentiary, Hobart, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "highway": "Hobart Convict Penitentiary",
+        "postcode": "7000",
+        "road": "Campbell Street",
+        "state": "Tasmania",
+        "suburb": "Hobart"
+      },
+      "addresstype": "highway",
+      "boundingbox": [
+        "-42.8773697",
+        "-42.8772697",
+        "147.3274798",
+        "147.3275798"
+      ],
+      "category": "highway",
+      "display_name": "Hobart Convict Penitentiary, Campbell Street, Hobart, Tasmania, 7000, Australia",
+      "importance": 2.8699931334355954e-05,
+      "lat": "-42.8773197",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3275298",
+      "name": "Hobart Convict Penitentiary",
+      "osm_id": 12887893307,
+      "osm_type": "node",
+      "place_id": 24190090,
+      "place_rank": 30,
+      "type": "bus_stop"
+    }
+  ],
+  "Hobart, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Tasmania"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-43.1036150",
+        "-42.6553760",
+        "147.0916880",
+        "147.6455880"
+      ],
+      "category": "place",
+      "display_name": "Hobart, Tasmania, Australia",
+      "importance": 0.6232599963964325,
+      "lat": "-42.8825088",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3281233",
+      "name": "Hobart",
+      "osm_id": 10632745,
+      "osm_type": "relation",
+      "place_id": 24124672,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Hobart",
+        "state": "Tasmania"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-42.9431440",
+        "-42.8445880",
+        "147.1957490",
+        "147.3621330"
+      ],
+      "category": "boundary",
+      "display_name": "City of Hobart, Tasmania, Australia",
+      "importance": 0.38656660986684044,
+      "lat": "-42.8938510",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.2720858",
+      "name": "City of Hobart",
+      "osm_id": 10625466,
+      "osm_type": "relation",
+      "place_id": 24233513,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Hotel Kurrajong, Canberra, ACT, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "house_number": "8",
+        "postcode": "2600",
+        "road": "National Circuit",
+        "suburb": "Barton",
+        "territory": "Australian Capital Territory",
+        "tourism": "Kurrajong Hotel",
+        "town": "South Canberra"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-35.3081167",
+        "-35.3066134",
+        "149.1338159",
+        "149.1352761"
+      ],
+      "category": "tourism",
+      "display_name": "Kurrajong Hotel, 8, National Circuit, Barton, South Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+      "importance": 0.31673068536229987,
+      "lat": "-35.3075211",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1345390",
+      "name": "Kurrajong Hotel",
+      "osm_id": 236166857,
+      "osm_type": "way",
+      "place_id": 24031771,
+      "place_rank": 30,
+      "type": "hotel"
+    }
+  ],
+  "Hotel Kurrajong, Canberra, Australian Capital Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "house_number": "8",
+        "postcode": "2600",
+        "road": "National Circuit",
+        "suburb": "Barton",
+        "territory": "Australian Capital Territory",
+        "tourism": "Kurrajong Hotel",
+        "town": "South Canberra"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-35.3081167",
+        "-35.3066134",
+        "149.1338159",
+        "149.1352761"
+      ],
+      "category": "tourism",
+      "display_name": "Kurrajong Hotel, 8, National Circuit, Barton, South Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+      "importance": 0.31673068536229987,
+      "lat": "-35.3075211",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1345390",
+      "name": "Kurrajong Hotel",
+      "osm_id": 236166857,
+      "osm_type": "way",
+      "place_id": 23949445,
+      "place_rank": 30,
+      "type": "hotel"
+    }
+  ],
+  "Ipswich, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Ipswich",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4305",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-27.7760323",
+        "-27.4560323",
+        "152.6008348",
+        "152.9208348"
+      ],
+      "category": "place",
+      "display_name": "Ipswich, Queensland, 4305, Australia",
+      "importance": 0.5220080456730997,
+      "lat": "-27.6160323",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7608348",
+      "name": "Ipswich",
+      "osm_id": 21477953,
+      "osm_type": "node",
+      "place_id": 27732865,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Ipswich City",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-27.8654690",
+        "-27.4903270",
+        "152.3827210",
+        "152.9408830"
+      ],
+      "category": "boundary",
+      "display_name": "Ipswich City, Queensland, Australia",
+      "importance": 0.4286584454214316,
+      "lat": "-27.6782200",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.6705348",
+      "name": "Ipswich City",
+      "osm_id": 11675604,
+      "osm_type": "relation",
+      "place_id": 27910767,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "suburb": "Ipswich"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-27.6364776",
+        "-27.6102390",
+        "152.7484080",
+        "152.7715890"
+      ],
+      "category": "boundary",
+      "display_name": "Ipswich, Queensland, Australia",
+      "importance": 0.3054111172263137,
+      "lat": "-27.6234673",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.7594638",
+      "name": "Ipswich",
+      "osm_id": 11675330,
+      "osm_type": "relation",
+      "place_id": 27825950,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Isle of the Dead, Port Arthur, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "amenity": "Isle of the Dead",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7182",
+        "road": "Point Puer Track",
+        "state": "Tasmania",
+        "village": "Port Arthur"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-43.1499475",
+        "-43.1485371",
+        "147.8666182",
+        "147.8682417"
+      ],
+      "category": "amenity",
+      "display_name": "Isle of the Dead, Point Puer Track, Port Arthur, Tasmania, 7182, Australia",
+      "importance": 0.1773516541617975,
+      "lat": "-43.1492718",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.8675721",
+      "name": "Isle of the Dead",
+      "osm_id": 67976983,
+      "osm_type": "way",
+      "place_id": 24348047,
+      "place_rank": 30,
+      "type": "grave_yard"
+    }
+  ],
+  "Jimna, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Jimna",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4515",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.8459620",
+        "-26.5569230",
+        "152.4114710",
+        "152.6684570"
+      ],
+      "category": "boundary",
+      "display_name": "Jimna, Queensland, 4515, Australia",
+      "importance": 0.29892160108322774,
+      "lat": "-26.7014630",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5099119",
+      "name": "Jimna",
+      "osm_id": 11675280,
+      "osm_type": "relation",
+      "place_id": 27378840,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "village": "Jimna"
+      },
+      "addresstype": "village",
+      "boundingbox": [
+        "-26.6797686",
+        "-26.6397686",
+        "152.4450521",
+        "152.4850521"
+      ],
+      "category": "place",
+      "display_name": "Jimna, Queensland, Australia",
+      "importance": 0.14671343785763327,
+      "lat": "-26.6597686",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.4650521",
+      "name": "Jimna",
+      "osm_id": 1884404091,
+      "osm_type": "node",
+      "place_id": 27343389,
+      "place_rank": 19,
+      "type": "village"
+    }
+  ],
+  "Joskeleigh, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Joskeleigh",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4702",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-23.4116860",
+        "-23.3475370",
+        "150.7432650",
+        "150.8569700"
+      ],
+      "category": "boundary",
+      "display_name": "Joskeleigh, Queensland, 4702, Australia",
+      "importance": 0.2853231881743613,
+      "lat": "-23.3787260",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8040757",
+      "name": "Joskeleigh",
+      "osm_id": 11676515,
+      "osm_type": "relation",
+      "place_id": 27664801,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Joskeleigh",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4702",
+        "state": "Queensland",
+        "suburb": "Joskeleigh"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-23.3970762",
+        "-23.3570762",
+        "150.7682138",
+        "150.8082138"
+      ],
+      "category": "place",
+      "display_name": "Joskeleigh, Queensland, 4702, Australia",
+      "importance": 0.14671143892576483,
+      "lat": "-23.3770762",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.7882138",
+      "name": "Joskeleigh",
+      "osm_id": 3320287114,
+      "osm_type": "node",
+      "place_id": 27591322,
+      "place_rank": 19,
+      "type": "suburb"
+    }
+  ],
+  "Junee, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Junee Shire Council",
+        "postcode": "2663",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-35.0969657",
+        "-34.5330538",
+        "147.3109427",
+        "147.9499696"
+      ],
+      "category": "boundary",
+      "display_name": "Junee Shire Council, New South Wales, 2663, Australia",
+      "importance": 0.44813098313920746,
+      "lat": "-34.8150256",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.6726750",
+      "name": "Junee Shire Council",
+      "osm_id": 6252194,
+      "osm_type": "relation",
+      "place_id": 23064698,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2663",
+        "state": "New South Wales",
+        "town": "Junee"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-34.8972076",
+        "-34.8303882",
+        "147.5430766",
+        "147.6161379"
+      ],
+      "category": "boundary",
+      "display_name": "Junee, New South Wales, 2663, Australia",
+      "importance": 0.4101932977803121,
+      "lat": "-34.8689024",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.5833451",
+      "name": "Junee",
+      "osm_id": 5940832,
+      "osm_type": "relation",
+      "place_id": 23080649,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Kapunda, South Australia, Australia": {
+    "error": "HTTPError: HTTP Error 429: Too many requests",
+    "updated_at": "2026-06-22T10:29:54+00:00"
+  },
+  "Katherine, Northern Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0850",
+        "territory": "Northern Territory",
+        "town": "Katherine"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-14.4678890",
+        "-14.4361480",
+        "132.2582490",
+        "132.2818150"
+      ],
+      "category": "boundary",
+      "display_name": "Katherine, Northern Territory, 0850, Australia",
+      "importance": 0.436622561458167,
+      "lat": "-14.4646157",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "132.2635993",
+      "name": "Katherine",
+      "osm_id": 11716419,
+      "osm_type": "relation",
+      "place_id": 28812996,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Kilcoy, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Kilcoy",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4515",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-26.9549960",
+        "-26.9284190",
+        "152.5526380",
+        "152.5723360"
+      ],
+      "category": "boundary",
+      "display_name": "Kilcoy, Queensland, 4515, Australia",
+      "importance": 0.3415289282979405,
+      "lat": "-26.9417175",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5611570",
+      "name": "Kilcoy",
+      "osm_id": 11675277,
+      "osm_type": "relation",
+      "place_id": 27696035,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Queensland",
+        "town": "Kilcoy"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-26.9831268",
+        "-26.9031268",
+        "152.5254162",
+        "152.6054162"
+      ],
+      "category": "place",
+      "display_name": "Kilcoy, Queensland, Australia",
+      "importance": 0.16004677119096664,
+      "lat": "-26.9431268",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.5654162",
+      "name": "Kilcoy",
+      "osm_id": 136980902,
+      "osm_type": "node",
+      "place_id": 27651346,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Labassa Mansion, Caulfield North, Victoria, Australia": [],
+  "Lenna of Hobart, Battery Point, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "20",
+        "postcode": "7004",
+        "road": "Runnymede Street",
+        "state": "Tasmania",
+        "suburb": "Battery Point",
+        "tourism": "Lenna Of Hobart"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-42.8874231",
+        "-42.8872031",
+        "147.3356162",
+        "147.3359084"
+      ],
+      "category": "tourism",
+      "display_name": "Lenna Of Hobart, 20, Runnymede Street, Battery Point, Hobart, Tasmania, 7004, Australia",
+      "importance": 2.8699931334355954e-05,
+      "lat": "-42.8873486",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3357623",
+      "name": "Lenna Of Hobart",
+      "osm_id": 326653795,
+      "osm_type": "way",
+      "place_id": 24218062,
+      "place_rank": 30,
+      "type": "hotel"
+    }
+  ],
+  "Maatsuyker Island, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "island": "Maatsuyker Island",
+        "state": "Tasmania"
+      },
+      "addresstype": "island",
+      "boundingbox": [
+        "-43.6584564",
+        "-43.6361341",
+        "146.2672912",
+        "146.2862874"
+      ],
+      "category": "place",
+      "display_name": "Maatsuyker Island, Tasmania, Australia",
+      "importance": 0.17334333333333332,
+      "lat": "-43.6472572",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.2781867",
+      "name": "Maatsuyker Island",
+      "osm_id": 68023523,
+      "osm_type": "way",
+      "place_id": 23976578,
+      "place_rank": 17,
+      "type": "island"
+    }
+  ],
+  "Maitland Gaol, East Maitland, New South Wales, Australia": {
+    "error": "HTTPError: HTTP Error 429: Too many requests",
+    "updated_at": "2026-06-22T10:19:26+00:00"
+  },
+  "Melbourne, Victoria, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city": "Melbourne",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3000",
+        "state": "Victoria"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-37.9742454",
+        "-37.6542454",
+        "144.8031732",
+        "145.1231732"
+      ],
+      "category": "place",
+      "display_name": "Melbourne, Victoria, 3000, Australia",
+      "importance": 0.763077479403244,
+      "lat": "-37.8142454",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9631732",
+      "name": "Melbourne",
+      "osm_id": 21579127,
+      "osm_type": "node",
+      "place_id": 22460210,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Melbourne",
+        "state": "Victoria"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-37.8506670",
+        "-37.7754510",
+        "144.8969810",
+        "144.9913462"
+      ],
+      "category": "boundary",
+      "display_name": "City of Melbourne, Victoria, Australia",
+      "importance": 0.45998972565190827,
+      "lat": "-37.8123825",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9482613",
+      "name": "City of Melbourne",
+      "osm_id": 2404870,
+      "osm_type": "relation",
+      "place_id": 22509681,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Victoria",
+        "suburb": "Melbourne"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-37.8555270",
+        "-37.7994460",
+        "144.9514311",
+        "144.9890970"
+      ],
+      "category": "boundary",
+      "display_name": "Melbourne, Victoria, Australia",
+      "importance": 0.44854900924452645,
+      "lat": "-37.8141705",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9655616",
+      "name": "Melbourne",
+      "osm_id": 2383266,
+      "osm_type": "relation",
+      "place_id": 22486181,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Mole Creek Hotel, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "90",
+        "postcode": "7304",
+        "road": "Pioneer Drive",
+        "state": "Tasmania",
+        "tourism": "Mole Creek Hotel",
+        "village": "Mole Creek"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-41.5558821",
+        "-41.5556862",
+        "146.4003641",
+        "146.4008391"
+      ],
+      "category": "tourism",
+      "display_name": "Mole Creek Hotel, 90, Pioneer Drive, Mole Creek, Tasmania, 7304, Australia",
+      "importance": 4.5722896162310484e-05,
+      "lat": "-41.5558005",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.4006016",
+      "name": "Mole Creek Hotel",
+      "osm_id": 295975559,
+      "osm_type": "way",
+      "place_id": 381253399,
+      "place_rank": 30,
+      "type": "hotel"
+    }
+  ],
+  "Monte Cristo Homestead, Junee, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "1",
+        "postcode": "2663",
+        "road": "Homestead Lane",
+        "state": "New South Wales",
+        "suburb": "Junee North",
+        "tourism": "Monte Cristo Homestead",
+        "town": "Junee"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-34.8683427",
+        "-34.8682427",
+        "147.5757532",
+        "147.5758532"
+      ],
+      "category": "tourism",
+      "display_name": "Monte Cristo Homestead, 1, Homestead Lane, Junee North, Junee, New South Wales, 2663, Australia",
+      "importance": 4.966887922479618e-05,
+      "lat": "-34.8682927",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.5758032",
+      "name": "Monte Cristo Homestead",
+      "osm_id": 4353240917,
+      "osm_type": "node",
+      "place_id": 23081308,
+      "place_rank": 30,
+      "type": "museum"
+    }
+  ],
+  "Mulgrave Battery, Battery Point, Hobart, Tasmania, Australia": [],
+  "Narryna Heritage Museum, Battery Point, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "103",
+        "postcode": "7004",
+        "road": "Hampden Road",
+        "state": "Tasmania",
+        "suburb": "Battery Point",
+        "tourism": "Narryna Heritage Museum"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-42.8893678",
+        "-42.8891309",
+        "147.3314349",
+        "147.3316758"
+      ],
+      "category": "tourism",
+      "display_name": "Narryna Heritage Museum, 103, Hampden Road, Battery Point, Hobart, Tasmania, 7004, Australia",
+      "importance": 2.8699931334355954e-05,
+      "lat": "-42.8892857",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3315508",
+      "name": "Narryna Heritage Museum",
+      "osm_id": 729906613,
+      "osm_type": "way",
+      "place_id": 23977428,
+      "place_rank": 30,
+      "type": "museum"
+    }
+  ],
+  "National Film and Sound Archive, Canberra, ACT, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "city": "Canberra",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "postcode": "2601",
+        "road": "Liversidge Street",
+        "suburb": "Acton",
+        "territory": "Australian Capital Territory",
+        "tourism": "National Film and Sound Archive of Australia (NFSA)"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-35.2829143",
+        "-35.2828143",
+        "149.1209036",
+        "149.1210036"
+      ],
+      "category": "tourism",
+      "display_name": "National Film and Sound Archive of Australia (NFSA), Liversidge Street, Acton, Canberra, District of Canberra Central, Australian Capital Territory, 2601, Australia",
+      "importance": 7.258182650487553e-05,
+      "lat": "-35.2828643",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1209536",
+      "name": "National Film and Sound Archive of Australia (NFSA)",
+      "osm_id": 11332211175,
+      "osm_type": "node",
+      "place_id": 24107392,
+      "place_rank": 30,
+      "type": "attraction"
+    }
+  ],
+  "National Film and Sound Archive, Canberra, Australian Capital Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "city": "Canberra",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "postcode": "2601",
+        "road": "Liversidge Street",
+        "suburb": "Acton",
+        "territory": "Australian Capital Territory",
+        "tourism": "National Film and Sound Archive of Australia (NFSA)"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-35.2829143",
+        "-35.2828143",
+        "149.1209036",
+        "149.1210036"
+      ],
+      "category": "tourism",
+      "display_name": "National Film and Sound Archive of Australia (NFSA), Liversidge Street, Acton, Canberra, District of Canberra Central, Australian Capital Territory, 2601, Australia",
+      "importance": 7.258182650487553e-05,
+      "lat": "-35.2828643",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1209536",
+      "name": "National Film and Sound Archive of Australia (NFSA)",
+      "osm_id": 11332211175,
+      "osm_type": "node",
+      "place_id": 24197719,
+      "place_rank": 30,
+      "type": "attraction"
+    }
+  ],
+  "National Railway Museum Port Adelaide South Australia Australia": [],
+  "National Railway Museum, Lipson Street, Port Adelaide, South Australia, Australia": [],
+  "National Railway Museum, Port Adelaide, South Australia, Australia": [],
+  "New Norfolk, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7140",
+        "state": "Tasmania",
+        "town": "New Norfolk"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-42.8056160",
+        "-42.7586990",
+        "147.0196950",
+        "147.0920990"
+      ],
+      "category": "boundary",
+      "display_name": "New Norfolk, Tasmania, 7140, Australia",
+      "importance": 0.3629003094109262,
+      "lat": "-42.7801998",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.0615332",
+      "name": "New Norfolk",
+      "osm_id": 10603743,
+      "osm_type": "relation",
+      "place_id": 24001884,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "North Kapunda Hotel, Kapunda, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "amenity": "North Kapunda Hotel",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "50",
+        "postcode": "5373",
+        "road": "Main Street",
+        "state": "South Australia",
+        "town": "Kapunda"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-34.3409760",
+        "-34.3405701",
+        "138.9155636",
+        "138.9160445"
+      ],
+      "category": "amenity",
+      "display_name": "North Kapunda Hotel, 50, Main Street, Kapunda, South Australia, 5373, Australia",
+      "importance": 4.427176317993465e-05,
+      "lat": "-34.3407794",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "138.9157143",
+      "name": "North Kapunda Hotel",
+      "osm_id": 261228073,
+      "osm_type": "way",
+      "place_id": 19060071,
+      "place_rank": 30,
+      "type": "pub"
+    }
+  ],
+  "Oak House, Richmond, Tasmania, Australia": [],
+  "Oak Lodge, Richmond, Tasmania, Australia": [],
+  "Oakabella Homestead, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city_district": "Bowes",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6535",
+        "road": "Oakabella Road",
+        "state": "Western Australia",
+        "tourism": "Oakabella Homestead"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-28.5001794",
+        "-28.5000794",
+        "114.5996239",
+        "114.5997239"
+      ],
+      "category": "tourism",
+      "display_name": "Oakabella Homestead, Oakabella Road, Bowes, Western Australia, 6535, Australia",
+      "importance": 4.654535744254242e-05,
+      "lat": "-28.5001294",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "114.5996739",
+      "name": "Oakabella Homestead",
+      "osm_id": 621867600,
+      "osm_type": "node",
+      "place_id": 33366654,
+      "place_rank": 30,
+      "type": "museum"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "amenity": "Oakabella Homestead",
+        "city_district": "Bowes",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6535",
+        "road": "Oakabella Road",
+        "state": "Western Australia"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-28.5002349",
+        "-28.5001349",
+        "114.5995366",
+        "114.5996366"
+      ],
+      "category": "amenity",
+      "display_name": "Oakabella Homestead, Oakabella Road, Bowes, Western Australia, 6535, Australia",
+      "importance": 4.654535744254242e-05,
+      "lat": "-28.5001849",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "114.5995866",
+      "name": "Oakabella Homestead",
+      "osm_id": 621866221,
+      "osm_type": "node",
+      "place_id": 33397470,
+      "place_rank": 30,
+      "type": "restaurant"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city_district": "Bowes",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6535",
+        "road": "Oakabella Road",
+        "state": "Western Australia",
+        "tourism": "Oakabella Homestead"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-28.5002611",
+        "-28.5001611",
+        "114.6004589",
+        "114.6005589"
+      ],
+      "category": "tourism",
+      "display_name": "Oakabella Homestead, Oakabella Road, Bowes, Western Australia, 6535, Australia",
+      "importance": 4.654535744254242e-05,
+      "lat": "-28.5002111",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "114.6005089",
+      "name": "Oakabella Homestead",
+      "osm_id": 1811190939,
+      "osm_type": "node",
+      "place_id": 33439226,
+      "place_rank": 30,
+      "type": "camp_site"
+    }
+  ],
+  "Old Adelaide Gaol, South Australia, Australia": [],
+  "Old Albany Post Office, Albany, Western Australia, Australia": [],
+  "Old Government House, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "historic": "Old Government House",
+        "postcode": "2150",
+        "road": "Governor Macquarie Carriageway",
+        "state": "New South Wales"
+      },
+      "addresstype": "historic",
+      "boundingbox": [
+        "-33.8122814",
+        "-33.8119776",
+        "150.9972523",
+        "150.9974790"
+      ],
+      "category": "historic",
+      "display_name": "Old Government House, Governor Macquarie Carriageway, Sydney, New South Wales, 2150, Australia",
+      "importance": 0.4025263861160931,
+      "lat": "-33.8121519",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.9973594",
+      "name": "Old Government House",
+      "osm_id": 214519085,
+      "osm_type": "way",
+      "place_id": 23402495,
+      "place_rank": 30,
+      "type": "building"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2150",
+        "road": "Governor Macquarie Carriageway",
+        "state": "New South Wales",
+        "tourism": "Old Government House"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-33.8121598",
+        "-33.8120598",
+        "150.9973105",
+        "150.9974105"
+      ],
+      "category": "tourism",
+      "display_name": "Old Government House, Governor Macquarie Carriageway, Sydney, New South Wales, 2150, Australia",
+      "importance": 8.246051728079679e-05,
+      "lat": "-33.8121098",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.9973605",
+      "name": "Old Government House",
+      "osm_id": 4354728860,
+      "osm_type": "node",
+      "place_id": 23387367,
+      "place_rank": 30,
+      "type": "museum"
+    }
+  ],
+  "Old Melbourne Gaol, Victoria, Australia": {
+    "error": "HTTPError: HTTP Error 429: Too many requests",
+    "updated_at": "2026-06-22T10:19:34+00:00"
+  },
+  "Old Parliament House, Canberra, ACT, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "building": "Old Parliament House",
+        "city": "Canberra",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "house_number": "18",
+        "neighbourhood": "Parliamentary Triangle",
+        "postcode": "2600",
+        "road": "King George Terrace",
+        "suburb": "Parkes",
+        "territory": "Australian Capital Territory"
+      },
+      "addresstype": "building",
+      "boundingbox": [
+        "-35.3031175",
+        "-35.3015902",
+        "149.1286409",
+        "149.1306129"
+      ],
+      "category": "building",
+      "display_name": "Old Parliament House, 18, King George Terrace, Parliamentary Triangle, Parkes, Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+      "importance": 0.4063398020044483,
+      "lat": "-35.3023519",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1300176",
+      "name": "Old Parliament House",
+      "osm_id": 1198,
+      "osm_type": "relation",
+      "place_id": 24091456,
+      "place_rank": 30,
+      "type": "government"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "city": "Canberra",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "neighbourhood": "Parliamentary Triangle",
+        "office": "Old Parliament House",
+        "postcode": "2600",
+        "road": "Centenary of Women\u2019s Suffrage",
+        "suburb": "Parkes",
+        "territory": "Australian Capital Territory"
+      },
+      "addresstype": "office",
+      "boundingbox": [
+        "-35.3031175",
+        "-35.3015902",
+        "149.1286409",
+        "149.1306129"
+      ],
+      "category": "office",
+      "display_name": "Old Parliament House, Centenary of Women\u2019s Suffrage, Parliamentary Triangle, Parkes, Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+      "importance": 7.258182650487553e-05,
+      "lat": "-35.3023527",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1296266",
+      "name": "Old Parliament House",
+      "osm_id": 1090884419,
+      "osm_type": "way",
+      "place_id": 24103120,
+      "place_rank": 30,
+      "type": "government"
+    }
+  ],
+  "Old Parliament House, Canberra, Australian Capital Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "city": "Canberra",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "house_number": "18",
+        "neighbourhood": "Parliamentary Triangle",
+        "postcode": "2600",
+        "road": "King George Terrace",
+        "suburb": "Parkes",
+        "territory": "Australian Capital Territory",
+        "tourism": "Old Parliament House"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-35.3031175",
+        "-35.3015902",
+        "149.1286409",
+        "149.1306129"
+      ],
+      "category": "tourism",
+      "display_name": "Old Parliament House, 18, King George Terrace, Parliamentary Triangle, Parkes, Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+      "importance": 0.4063398020044483,
+      "lat": "-35.3023519",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1300176",
+      "name": "Old Parliament House",
+      "osm_id": 1198,
+      "osm_type": "relation",
+      "place_id": 24136729,
+      "place_rank": 30,
+      "type": "attraction"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-ACT",
+        "city": "Canberra",
+        "country": "Australia",
+        "country_code": "au",
+        "district": "District of Canberra Central",
+        "neighbourhood": "Parliamentary Triangle",
+        "office": "Old Parliament House",
+        "postcode": "2600",
+        "road": "Centenary of Women\u2019s Suffrage",
+        "suburb": "Parkes",
+        "territory": "Australian Capital Territory"
+      },
+      "addresstype": "office",
+      "boundingbox": [
+        "-35.3031175",
+        "-35.3015902",
+        "149.1286409",
+        "149.1306129"
+      ],
+      "category": "office",
+      "display_name": "Old Parliament House, Centenary of Women\u2019s Suffrage, Parliamentary Triangle, Parkes, Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+      "importance": 7.258182650487553e-05,
+      "lat": "-35.3023527",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.1296266",
+      "name": "Old Parliament House",
+      "osm_id": 1090884419,
+      "osm_type": "way",
+      "place_id": 24146813,
+      "place_rank": 30,
+      "type": "government"
+    }
+  ],
+  "Old Post Office, Albany, Western Australia, Australia": [],
+  "Old Tailem Town, Tailem Bend, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "5260",
+        "road": "Princes Highway",
+        "state": "South Australia",
+        "tourism": "Old Tailem Town",
+        "town": "Tailem Bend"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-35.2267958",
+        "-35.2233226",
+        "139.4194982",
+        "139.4231750"
+      ],
+      "category": "tourism",
+      "display_name": "Old Tailem Town, Princes Highway, Tailem Bend, South Australia, 5260, Australia",
+      "importance": 4.131914244292389e-05,
+      "lat": "-35.2249640",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "139.4214197",
+      "name": "Old Tailem Town",
+      "osm_id": 147494581,
+      "osm_type": "way",
+      "place_id": 19494274,
+      "place_rank": 30,
+      "type": "attraction"
+    }
+  ],
+  "Old York Hospital, York, Western Australia, Australia": [],
+  "Parramatta Gaol, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "amenity": "Parramatta Gaol",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2151",
+        "road": "New Street",
+        "state": "New South Wales",
+        "suburb": "North Parramatta"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-33.7999892",
+        "-33.7979179",
+        "150.9996741",
+        "151.0018522"
+      ],
+      "category": "amenity",
+      "display_name": "Parramatta Gaol, New Street, North Parramatta, Sydney, New South Wales, 2151, Australia",
+      "importance": 0.2574973608523206,
+      "lat": "-33.7989451",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.0007621",
+      "name": "Parramatta Gaol",
+      "osm_id": 14458447,
+      "osm_type": "way",
+      "place_id": 23772307,
+      "place_rank": 30,
+      "type": "prison"
+    }
+  ],
+  "Penghana Bed and Breakfast, Queenstown, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "32",
+        "postcode": "7467",
+        "road": "Esplanade",
+        "state": "Tasmania",
+        "tourism": "Penghana Bed and Breakfast",
+        "town": "Queenstown"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-42.0779551",
+        "-42.0776349",
+        "145.5515728",
+        "145.5519119"
+      ],
+      "category": "tourism",
+      "display_name": "Penghana Bed and Breakfast, 32, Esplanade, Queenstown, Tasmania, 7467, Australia",
+      "importance": 4.7213702601617725e-05,
+      "lat": "-42.0777582",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.5517178",
+      "name": "Penghana Bed and Breakfast",
+      "osm_id": 523583462,
+      "osm_type": "way",
+      "place_id": 24256326,
+      "place_rank": 30,
+      "type": "guest_house"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "32",
+        "postcode": "7467",
+        "road": "Esplanade",
+        "state": "Tasmania",
+        "tourism": "Penghana Bed and Breakfast",
+        "town": "Queenstown"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-42.0776179",
+        "-42.0775179",
+        "145.5517562",
+        "145.5518562"
+      ],
+      "category": "tourism",
+      "display_name": "Penghana Bed and Breakfast, 32, Esplanade, Queenstown, Tasmania, 7467, Australia",
+      "importance": 4.7213702601617725e-05,
+      "lat": "-42.0775679",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.5518062",
+      "name": "Penghana Bed and Breakfast",
+      "osm_id": 2286927240,
+      "osm_type": "node",
+      "place_id": 24413741,
+      "place_rank": 30,
+      "type": "guest_house"
+    }
+  ],
+  "Penitentiary Chapel Historic Site, Hobart, Tasmania, Australia": [],
+  "Penitentiary, Port Arthur Historic Site, Tasmania, Australia": [],
+  "Perth, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city": "Perth",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6000",
+        "state": "Western Australia"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-32.1158967",
+        "-31.7958967",
+        "115.7005784",
+        "116.0205784"
+      ],
+      "category": "place",
+      "display_name": "Perth, Western Australia, 6000, Australia",
+      "importance": 0.6910666106978679,
+      "lat": "-31.9558967",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.8605784",
+      "name": "Perth",
+      "osm_id": 29277817,
+      "osm_type": "node",
+      "place_id": 33834793,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city": "Perth",
+        "city_district": "Perth",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6000",
+        "state": "Western Australia"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-31.9730120",
+        "-31.9364940",
+        "115.8271660",
+        "115.8779110"
+      ],
+      "category": "boundary",
+      "display_name": "Perth, Western Australia, 6000, Australia",
+      "importance": 0.3501849283177136,
+      "lat": "-31.9548005",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.8583736",
+      "name": "Perth",
+      "osm_id": 11689210,
+      "osm_type": "relation",
+      "place_id": 33717806,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Picton Tunnel, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2571",
+        "road": "Mushroom Tunnel",
+        "state": "New South Wales",
+        "town": "Picton"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-34.1726448",
+        "-34.1720714",
+        "150.6041516",
+        "150.6059837"
+      ],
+      "category": "highway",
+      "display_name": "Mushroom Tunnel, Picton, New South Wales, 2571, Australia",
+      "importance": 0.04005010681315327,
+      "lat": "-34.1723581",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.6050677",
+      "name": "Mushroom Tunnel",
+      "osm_id": 295453595,
+      "osm_type": "way",
+      "place_id": 23968209,
+      "place_rank": 27,
+      "type": "service"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "man_made": "Picton Tunnel",
+        "postcode": "2571",
+        "road": "Mushroom Tunnel",
+        "state": "New South Wales",
+        "town": "Picton"
+      },
+      "addresstype": "man_made",
+      "boundingbox": [
+        "-34.1726774",
+        "-34.1720381",
+        "150.6041365",
+        "150.6059990"
+      ],
+      "category": "man_made",
+      "display_name": "Picton Tunnel, Mushroom Tunnel, Picton, New South Wales, 2571, Australia",
+      "importance": 5.0106813153231365e-05,
+      "lat": "-34.1723579",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.6050680",
+      "name": "Picton Tunnel",
+      "osm_id": 1496490059,
+      "osm_type": "way",
+      "place_id": 23907149,
+      "place_rank": 30,
+      "type": "tunnel"
+    }
+  ],
+  "Picton, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Picton",
+        "postcode": "2571",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-34.2184493",
+        "-34.1327937",
+        "150.5611721",
+        "150.6400611"
+      ],
+      "category": "boundary",
+      "display_name": "Picton, New South Wales, 2571, Australia",
+      "importance": 0.16005010681315326,
+      "lat": "-34.1693445",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.6114983",
+      "name": "Picton",
+      "osm_id": 6076698,
+      "osm_type": "relation",
+      "place_id": 23996375,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Pinnacles Desert, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city_district": "Nambung",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6521",
+        "road": "Pinnacles Drive",
+        "state": "Western Australia",
+        "tourism": "pinnacles desert"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-30.6020117",
+        "-30.6019117",
+        "115.1573809",
+        "115.1574809"
+      ],
+      "category": "tourism",
+      "display_name": "pinnacles desert, Pinnacles Drive, Nambung, Western Australia, 6521, Australia",
+      "importance": 4.662775616078458e-05,
+      "lat": "-30.6019617",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.1574309",
+      "name": "pinnacles desert",
+      "osm_id": 5492633021,
+      "osm_type": "node",
+      "place_id": 33590894,
+      "place_rank": 30,
+      "type": "attraction"
+    }
+  ],
+  "Port Adelaide, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "5015",
+        "state": "South Australia",
+        "suburb": "Port Adelaide"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-34.8592090",
+        "-34.8079384",
+        "138.4969697",
+        "138.5252573"
+      ],
+      "category": "boundary",
+      "display_name": "Port Adelaide, South Australia, 5015, Australia",
+      "importance": 0.4382681388401734,
+      "lat": "-34.8342755",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "138.5123548",
+      "name": "Port Adelaide",
+      "osm_id": 8355338,
+      "osm_type": "relation",
+      "place_id": 18967979,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Port Arthur Historic Site, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "nature_reserve": "Port Arthur Historic Site",
+        "postcode": "7182",
+        "state": "Tasmania",
+        "village": "Port Arthur"
+      },
+      "addresstype": "nature_reserve",
+      "boundingbox": [
+        "-43.1652209",
+        "-43.1410171",
+        "147.8420509",
+        "147.8714649"
+      ],
+      "category": "leisure",
+      "display_name": "Port Arthur Historic Site, Port Arthur, Tasmania, 7182, Australia",
+      "importance": 0.08003500190737771,
+      "lat": "-43.1531346",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.8694003",
+      "name": "Port Arthur Historic Site",
+      "osm_id": 16405102,
+      "osm_type": "relation",
+      "place_id": 24356772,
+      "place_rank": 24,
+      "type": "nature_reserve"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7182",
+        "road": "Champ Street",
+        "state": "Tasmania",
+        "tourism": "Port Arthur Historic Site",
+        "village": "Port Arthur"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-43.1525270",
+        "-43.1422927",
+        "147.8433124",
+        "147.8577325"
+      ],
+      "category": "tourism",
+      "display_name": "Port Arthur Historic Site, Champ Street, Port Arthur, Tasmania, 7182, Australia",
+      "importance": 5.033264667730247e-05,
+      "lat": "-43.1473120",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.8474032",
+      "name": "Port Arthur Historic Site",
+      "osm_id": 189733698,
+      "osm_type": "way",
+      "place_id": 24378832,
+      "place_rank": 30,
+      "type": "attraction"
+    }
+  ],
+  "Princes Park, Battery Point, Hobart, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "park": "Princes Park",
+        "postcode": "7004",
+        "state": "Tasmania",
+        "suburb": "Battery Point"
+      },
+      "addresstype": "park",
+      "boundingbox": [
+        "-42.8883272",
+        "-42.8868872",
+        "147.3359852",
+        "147.3380825"
+      ],
+      "category": "leisure",
+      "display_name": "Princes Park, Battery Point, Hobart, Tasmania, 7004, Australia",
+      "importance": 0.08002869993133437,
+      "lat": "-42.8876000",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3370428",
+      "name": "Princes Park",
+      "osm_id": 27877074,
+      "osm_type": "way",
+      "place_id": 24074702,
+      "place_rank": 24,
+      "type": "park"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "highway": "Princes Park",
+        "postcode": "7004",
+        "road": "Castray Esplanade",
+        "state": "Tasmania",
+        "suburb": "Battery Point"
+      },
+      "addresstype": "highway",
+      "boundingbox": [
+        "-42.8872046",
+        "-42.8871046",
+        "147.3381322",
+        "147.3382322"
+      ],
+      "category": "highway",
+      "display_name": "Princes Park, Castray Esplanade, Battery Point, Hobart, Tasmania, 7004, Australia",
+      "importance": 2.8699931334355954e-05,
+      "lat": "-42.8871546",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3381822",
+      "name": "Princes Park",
+      "osm_id": 12887889497,
+      "osm_type": "node",
+      "place_id": 23953452,
+      "place_rank": 30,
+      "type": "bus_stop"
+    }
+  ],
+  "Princess Theatre, Launceston, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "amenity": "Princess Theatre",
+        "city": "Launceston",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7250",
+        "road": "Earl Street",
+        "state": "Tasmania",
+        "suburb": "Launceston"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-41.4364910",
+        "-41.4359701",
+        "147.1409875",
+        "147.1418128"
+      ],
+      "category": "amenity",
+      "display_name": "Princess Theatre, Earl Street, Launceston, Tasmania, 7250, Australia",
+      "importance": 0.26001653813030656,
+      "lat": "-41.4362370",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.1413958",
+      "name": "Princess Theatre",
+      "osm_id": 188156504,
+      "osm_type": "way",
+      "place_id": 24114805,
+      "place_rank": 30,
+      "type": "theatre"
+    }
+  ],
+  "Princess Theatre, Melbourne, Victoria, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "amenity": "Princess Theatre",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "163",
+        "neighbourhood": "East End Theatre District",
+        "postcode": "3000",
+        "road": "Spring Street",
+        "state": "Victoria",
+        "suburb": "Melbourne"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-37.8109594",
+        "-37.8104631",
+        "144.9720269",
+        "144.9726337"
+      ],
+      "category": "amenity",
+      "display_name": "Princess Theatre, 163, Spring Street, East End Theatre District, Melbourne, Victoria, 3000, Australia",
+      "importance": 0.354703308323595,
+      "lat": "-37.8106911",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.9723167",
+      "name": "Princess Theatre",
+      "osm_id": 46194494,
+      "osm_type": "way",
+      "place_id": 22238859,
+      "place_rank": 30,
+      "type": "theatre"
+    }
+  ],
+  "Richmond Bridge, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "man_made": "Richmond Bridge",
+        "postcode": "7025",
+        "road": "Wellington Street",
+        "state": "Tasmania"
+      },
+      "addresstype": "man_made",
+      "boundingbox": [
+        "-42.7338972",
+        "-42.7337625",
+        "147.4396463",
+        "147.4403168"
+      ],
+      "category": "man_made",
+      "display_name": "Richmond Bridge, Wellington Street, Hobart, Tasmania, 7025, Australia",
+      "importance": 0.35352855872429106,
+      "lat": "-42.7338298",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.4399809",
+      "name": "Richmond Bridge",
+      "osm_id": 676130629,
+      "osm_type": "way",
+      "place_id": 24402767,
+      "place_rank": 30,
+      "type": "bridge"
+    }
+  ],
+  "Richmond Gaol, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7025",
+        "road": "Bathurst Street",
+        "state": "Tasmania",
+        "tourism": "Richmond Gaol"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-42.7365676",
+        "-42.7360746",
+        "147.4390213",
+        "147.4395219"
+      ],
+      "category": "tourism",
+      "display_name": "Richmond Gaol, Bathurst Street, Hobart, Tasmania, 7025, Australia",
+      "importance": 0.3453315576369598,
+      "lat": "-42.7363111",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.4392723",
+      "name": "Richmond Gaol",
+      "osm_id": 676130633,
+      "osm_type": "way",
+      "place_id": 24496108,
+      "place_rank": 30,
+      "type": "museum"
+    }
+  ],
+  "Roseview House, Port Arthur, Tasmania, Australia": [],
+  "Rottnest Island, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city_district": "Rottnest Island",
+        "country": "Australia",
+        "country_code": "au",
+        "island": "Rottnest Island",
+        "postcode": "6161",
+        "state": "Western Australia",
+        "village": "Geordie Bay"
+      },
+      "addresstype": "island",
+      "boundingbox": [
+        "-32.0268390",
+        "-31.9871201",
+        "115.4490605",
+        "115.5591471"
+      ],
+      "category": "place",
+      "display_name": "Rottnest Island, Geordie Bay, Western Australia, 6161, Australia",
+      "importance": 0.4671110744464873,
+      "lat": "-32.0070095",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.5205271",
+      "name": "Rottnest Island",
+      "osm_id": 8145344,
+      "osm_type": "relation",
+      "place_id": 33908360,
+      "place_rank": 17,
+      "type": "island"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city_district": "Rottnest Island",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6161",
+        "state": "Western Australia",
+        "village": "Geordie Bay"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-32.0268520",
+        "-31.9871460",
+        "115.4491250",
+        "115.5588530"
+      ],
+      "category": "boundary",
+      "display_name": "Rottnest Island, Geordie Bay, Western Australia, 6161, Australia",
+      "importance": 0.16004904478522924,
+      "lat": "-32.0069345",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.5207677",
+      "name": "Rottnest Island",
+      "osm_id": 11690521,
+      "osm_type": "relation",
+      "place_id": 33816797,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Settlers House, York, Western Australia, Australia": [],
+  "Sirius building, The Rocks, Sydney, New South Wales, Australia": [],
+  "Spectrum Theatre, Albany, Western Australia, Australia": [],
+  "Spectrum Theatre, Stirling Terrace, Albany, Western Australia, Australia": [],
+  "St Andrews Inn, Cleveland, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "building": "St. Andrews Inn",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Cleveland",
+        "postcode": "7211",
+        "road": "Midland Highway",
+        "state": "Tasmania"
+      },
+      "addresstype": "building",
+      "boundingbox": [
+        "-41.8049719",
+        "-41.8047979",
+        "147.4038004",
+        "147.4040338"
+      ],
+      "category": "building",
+      "display_name": "St. Andrews Inn, Midland Highway, Cleveland, Tasmania, 7211, Australia",
+      "importance": 4.375295643544697e-05,
+      "lat": "-41.8048849",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.4039171",
+      "name": "St. Andrews Inn",
+      "osm_id": 276888683,
+      "osm_type": "way",
+      "place_id": 24141391,
+      "place_rank": 30,
+      "type": "hotel"
+    }
+  ],
+  "St Helena Island, Moreton Bay, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city": "Brisbane",
+        "city_district": "Moreton Bay",
+        "country": "Australia",
+        "country_code": "au",
+        "island": "Saint Helena Island",
+        "state": "Queensland"
+      },
+      "addresstype": "island",
+      "boundingbox": [
+        "-27.3972985",
+        "-27.3776886",
+        "153.2238212",
+        "153.2415579"
+      ],
+      "category": "place",
+      "display_name": "Saint Helena Island, Moreton Bay, Brisbane, Queensland, Australia",
+      "importance": 0.17337333409628441,
+      "lat": "-27.3874290",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2352829",
+      "name": "Saint Helena Island",
+      "osm_id": 70202690,
+      "osm_type": "way",
+      "place_id": 27709816,
+      "place_rank": 17,
+      "type": "island"
+    }
+  ],
+  "Sulphur Creek, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Sulphur Creek",
+        "postcode": "7316",
+        "state": "Tasmania"
+      },
+      "addresstype": "hamlet",
+      "boundingbox": [
+        "-41.1287640",
+        "-41.0870271",
+        "145.9854470",
+        "146.0403730"
+      ],
+      "category": "boundary",
+      "display_name": "Sulphur Creek, Tasmania, 7316, Australia",
+      "importance": 0.16273786379520622,
+      "lat": "-41.0945112",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.0247310",
+      "name": "Sulphur Creek",
+      "osm_id": 10590145,
+      "osm_type": "relation",
+      "place_id": 24312576,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "West Pine",
+        "postcode": "7316",
+        "state": "Tasmania",
+        "stream": "Sulphur Creek"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-41.1490726",
+        "-41.1289436",
+        "145.9888749",
+        "145.9999349"
+      ],
+      "category": "waterway",
+      "display_name": "Sulphur Creek, West Pine, Tasmania, 7316, Australia",
+      "importance": 0.1067085336079957,
+      "lat": "-41.1378814",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "145.9940252",
+      "name": "Sulphur Creek",
+      "osm_id": 1243118161,
+      "osm_type": "way",
+      "place_id": 24291267,
+      "place_rank": 22,
+      "type": "stream"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7316",
+        "state": "Tasmania",
+        "stream": "Sulphur Creek",
+        "village": "Sulphur Creek"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-41.1272040",
+        "-41.1237728",
+        "146.0019856",
+        "146.0084238"
+      ],
+      "category": "waterway",
+      "display_name": "Sulphur Creek, Tasmania, 7316, Australia",
+      "importance": 0.1067085336079957,
+      "lat": "-41.1253840",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.0051036",
+      "name": "Sulphur Creek",
+      "osm_id": 1243118165,
+      "osm_type": "way",
+      "place_id": 24193416,
+      "place_rank": 22,
+      "type": "stream"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "West Pine",
+        "postcode": "7316",
+        "state": "Tasmania",
+        "stream": "Sulphur Creek",
+        "village": "Sulphur Creek"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-41.1288439",
+        "-41.1270530",
+        "145.9999231",
+        "146.0018358"
+      ],
+      "category": "waterway",
+      "display_name": "Sulphur Creek, West Pine, Sulphur Creek, Tasmania, 7316, Australia",
+      "importance": 0.1067085336079957,
+      "lat": "-41.1275515",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "146.0004700",
+      "name": "Sulphur Creek",
+      "osm_id": 1243118163,
+      "osm_type": "way",
+      "place_id": 24238864,
+      "place_rank": 22,
+      "type": "stream"
+    }
+  ],
+  "Sutton Forest, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Sutton Forest",
+        "postcode": "2577",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-34.6315351",
+        "-34.5085893",
+        "150.1504218",
+        "150.3598457"
+      ],
+      "category": "boundary",
+      "display_name": "Sutton Forest, New South Wales, 2577, Australia",
+      "importance": 0.160049436942092,
+      "lat": "-34.5672546",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.3212358",
+      "name": "Sutton Forest",
+      "osm_id": 6074630,
+      "osm_type": "relation",
+      "place_id": 23854913,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Swan View Tunnel, John Forrest National Park, Western Australia, Australia": [],
+  "Swan View Tunnel, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6071",
+        "road": "Railway Reserves Heritage Trail (North Loop Tunnel Branch)",
+        "state": "Western Australia",
+        "suburb": "Hovea",
+        "tunnel": "Swan View Tunnel"
+      },
+      "addresstype": "tunnel",
+      "boundingbox": [
+        "-31.8840721",
+        "-31.8822251",
+        "116.0681090",
+        "116.0709859"
+      ],
+      "category": "tunnel",
+      "display_name": "Swan View Tunnel, Railway Reserves Heritage Trail (North Loop Tunnel Branch), Hovea, Western Australia, 6071, Australia",
+      "importance": 0.18554865524912875,
+      "lat": "-31.8831486",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "116.0695475",
+      "name": "Swan View Tunnel",
+      "osm_id": 59288196,
+      "osm_type": "way",
+      "place_id": 33790854,
+      "place_rank": 30,
+      "type": "yes"
+    }
+  ],
+  "Swansea, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7190",
+        "state": "Tasmania",
+        "town": "Swansea"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-42.2170634",
+        "-41.9989970",
+        "147.9015165",
+        "148.1354580"
+      ],
+      "category": "boundary",
+      "display_name": "Swansea, Tasmania, 7190, Australia",
+      "importance": 0.3307177672703685,
+      "lat": "-42.1249330",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "148.0757326",
+      "name": "Swansea",
+      "osm_id": 10621845,
+      "osm_type": "relation",
+      "place_id": 23993257,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Sylvania Station, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city_district": "Capricorn",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6642",
+        "road": "Sylvania Station Road",
+        "state": "Western Australia"
+      },
+      "addresstype": "road",
+      "boundingbox": [
+        "-23.5898472",
+        "-23.5823198",
+        "120.0476506",
+        "120.0536449"
+      ],
+      "category": "highway",
+      "display_name": "Sylvania Station Road, Capricorn, Western Australia, 6642, Australia",
+      "importance": 0.05337992904554815,
+      "lat": "-23.5853738",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "120.0521953",
+      "name": "Sylvania Station Road",
+      "osm_id": 137306314,
+      "osm_type": "way",
+      "place_id": 33632569,
+      "place_rank": 26,
+      "type": "unclassified"
+    }
+  ],
+  "The Parsonage, Port Arthur Historic Site, Tasmania, Australia": [],
+  "Theatre Royal, Hobart, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "amenity": "Theatre Royal",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7000",
+        "road": "Sun Street",
+        "state": "Tasmania",
+        "suburb": "Hobart"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-42.8797245",
+        "-42.8792227",
+        "147.3309101",
+        "147.3315335"
+      ],
+      "category": "amenity",
+      "display_name": "Theatre Royal, Sun Street, Hobart, Tasmania, 7000, Australia",
+      "importance": 0.37244305375643855,
+      "lat": "-42.8795092",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3311803",
+      "name": "Theatre Royal",
+      "osm_id": 188586180,
+      "osm_type": "way",
+      "place_id": 24229646,
+      "place_rank": 30,
+      "type": "theatre"
+    }
+  ],
+  "Village Cinemas Launceston, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "amenity": "Village Cinemas Launceston",
+        "city": "Launceston",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "159-163",
+        "postcode": "7250",
+        "road": "Brisbane Street",
+        "state": "Tasmania",
+        "suburb": "Launceston"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-41.4392535",
+        "-41.4387012",
+        "147.1363768",
+        "147.1370234"
+      ],
+      "category": "amenity",
+      "display_name": "Village Cinemas Launceston, 159-163, Brisbane Street, Launceston, Tasmania, 7250, Australia",
+      "importance": 6.140154116116605e-05,
+      "lat": "-41.4390338",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.1367680",
+      "name": "Village Cinemas Launceston",
+      "osm_id": 193604535,
+      "osm_type": "way",
+      "place_id": 23922007,
+      "place_rank": 30,
+      "type": "cinema"
+    }
+  ],
+  "Wanjarrarra Northern Territory Australia": [],
+  "Willow Court, New Norfolk, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "building": "Willow Court Historic Site",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "7140",
+        "road": "The Avenue",
+        "state": "Tasmania",
+        "town": "New Norfolk"
+      },
+      "addresstype": "building",
+      "boundingbox": [
+        "-42.7857610",
+        "-42.7851253",
+        "147.0634675",
+        "147.0641975"
+      ],
+      "category": "building",
+      "display_name": "Willow Court Historic Site, The Avenue, New Norfolk, Tasmania, 7140, Australia",
+      "importance": 4.5133897917098e-05,
+      "lat": "-42.7854275",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.0636218",
+      "name": "Willow Court Historic Site",
+      "osm_id": 247782375,
+      "osm_type": "way",
+      "place_id": 24273740,
+      "place_rank": 30,
+      "type": "yes"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "43",
+        "postcode": "7140",
+        "road": "George Street",
+        "state": "Tasmania",
+        "tourism": "Willow Court Motel",
+        "town": "New Norfolk"
+      },
+      "addresstype": "tourism",
+      "boundingbox": [
+        "-42.7834774",
+        "-42.7831370",
+        "147.0620327",
+        "147.0627893"
+      ],
+      "category": "tourism",
+      "display_name": "Willow Court Motel, 43, George Street, New Norfolk, Tasmania, 7140, Australia",
+      "importance": 4.5133897917098e-05,
+      "lat": "-42.7832929",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.0623859",
+      "name": "Willow Court Motel",
+      "osm_id": 273241308,
+      "osm_type": "way",
+      "place_id": 24296919,
+      "place_rank": 30,
+      "type": "motel"
+    }
+  ],
+  "Woodenbong, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Woodenbong",
+        "postcode": "2476",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-28.4327844",
+        "-28.3147790",
+        "152.5348989",
+        "152.6544293"
+      ],
+      "category": "boundary",
+      "display_name": "Woodenbong, New South Wales, 2476, Australia",
+      "importance": 0.1600483154039826,
+      "lat": "-28.3913455",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.6120214",
+      "name": "Woodenbong",
+      "osm_id": 6070264,
+      "osm_type": "relation",
+      "place_id": 28576650,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Woodford Academy, Woodford, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "building": "Woodford Academy",
+        "city": "Sydney",
+        "country": "Australia",
+        "country_code": "au",
+        "house_number": "90-92",
+        "postcode": "2778",
+        "road": "Great Western Highway",
+        "state": "New South Wales"
+      },
+      "addresstype": "building",
+      "boundingbox": [
+        "-33.7331901",
+        "-33.7330458",
+        "150.4735195",
+        "150.4738511"
+      ],
+      "category": "building",
+      "display_name": "Woodford Academy, 90-92, Great Western Highway, Sydney, New South Wales, 2778, Australia",
+      "importance": 0.14389741120638372,
+      "lat": "-33.7331140",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4736891",
+      "name": "Woodford Academy",
+      "osm_id": 886597610,
+      "osm_type": "way",
+      "place_id": 23395262,
+      "place_rank": 30,
+      "type": "yes"
+    }
+  ],
+  "Woodman Point, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "amenity": "Woodman Point",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6166",
+        "road": "Nyyerbup Circle",
+        "state": "Western Australia",
+        "suburb": "Coogee"
+      },
+      "addresstype": "amenity",
+      "boundingbox": [
+        "-32.1257881",
+        "-32.1254035",
+        "115.7607781",
+        "115.7616191"
+      ],
+      "category": "amenity",
+      "display_name": "Woodman Point, Nyyerbup Circle, Coogee, Western Australia, 6166, Australia",
+      "importance": 4.904478522922129e-05,
+      "lat": "-32.1256010",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.7612273",
+      "name": "Woodman Point",
+      "osm_id": 175514667,
+      "osm_type": "way",
+      "place_id": 33874670,
+      "place_rank": 30,
+      "type": "parking"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "highway": "Woodman Point",
+        "postcode": "6166",
+        "road": "Woodman Point View",
+        "state": "Western Australia",
+        "suburb": "Coogee"
+      },
+      "addresstype": "highway",
+      "boundingbox": [
+        "-32.1367712",
+        "-32.1366712",
+        "115.7448922",
+        "115.7449922"
+      ],
+      "category": "highway",
+      "display_name": "Woodman Point, Woodman Point View, Coogee, Western Australia, 6166, Australia",
+      "importance": 4.904478522922129e-05,
+      "lat": "-32.1367212",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.7449422",
+      "name": "Woodman Point",
+      "osm_id": 9987705705,
+      "osm_type": "node",
+      "place_id": 34050579,
+      "place_rank": 30,
+      "type": "emergency_access_point"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "highway": "Woodman Point",
+        "postcode": "6166",
+        "road": "O'Kane Court",
+        "state": "Western Australia",
+        "suburb": "Coogee"
+      },
+      "addresstype": "highway",
+      "boundingbox": [
+        "-32.1312968",
+        "-32.1311968",
+        "115.7540671",
+        "115.7541671"
+      ],
+      "category": "highway",
+      "display_name": "Woodman Point, O'Kane Court, Coogee, Western Australia, 6166, Australia",
+      "importance": 4.904478522922129e-05,
+      "lat": "-32.1312468",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.7541171",
+      "name": "Woodman Point",
+      "osm_id": 9987691419,
+      "osm_type": "node",
+      "place_id": 34080746,
+      "place_rank": 30,
+      "type": "emergency_access_point"
+    }
+  ],
+  "York, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6302",
+        "state": "Western Australia",
+        "town": "York"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-31.9040400",
+        "-31.8439460",
+        "116.7469420",
+        "116.8058460"
+      ],
+      "category": "boundary",
+      "display_name": "York, Western Australia, 6302, Australia",
+      "importance": 0.43794231461514876,
+      "lat": "-31.8889034",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "116.7691483",
+      "name": "York",
+      "osm_id": 11689692,
+      "osm_type": "relation",
+      "place_id": 33571685,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Shire of York",
+        "postcode": "6302",
+        "state": "Western Australia"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-32.1398370",
+        "-31.6941240",
+        "116.2849850",
+        "117.1582320"
+      ],
+      "category": "boundary",
+      "display_name": "Shire of York, Western Australia, 6302, Australia",
+      "importance": 0.4167181092808382,
+      "lat": "-31.9199121",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "116.7674661",
+      "name": "Shire of York",
+      "osm_id": 11689681,
+      "osm_type": "relation",
+      "place_id": 33556014,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Z Ward, Glenside, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "building": "Z Ward",
+        "city": "Adelaide",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "5065",
+        "road": "Olive Close",
+        "state": "South Australia",
+        "suburb": "Glenside"
+      },
+      "addresstype": "building",
+      "boundingbox": [
+        "-34.9430624",
+        "-34.9426592",
+        "138.6322528",
+        "138.6325142"
+      ],
+      "category": "building",
+      "display_name": "Z Ward, Olive Close, Glenside, Adelaide, South Australia, 5065, Australia",
+      "importance": 7.489051651784569e-05,
+      "lat": "-34.9428535",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "138.6323835",
+      "name": "Z Ward",
+      "osm_id": 240742759,
+      "osm_type": "way",
+      "place_id": 19681989,
+      "place_rank": 30,
+      "type": "hospital"
+    }
+  ]
+}

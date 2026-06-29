@@ -1,43 +1,64 @@
-# Domain Setup For AusFigures
+# AusFigures Domain Setup
 
-Target domain: `ausfigures.com`
+Production canonical domain:
 
-## Vercel Project
+https://ausfigures.com
+
+## Canonical Policy
+
+- Apex domain `ausfigures.com` is canonical.
+- `www.ausfigures.com` should redirect to `ausfigures.com`.
+- Vercel preview URLs are not canonical and must remain preview-only.
+- README, metadata, sitemap, robots, and llms.txt should use the apex canonical domain.
+
+## Vercel Project Settings
 
 1. Import the GitHub repository into Vercel.
 2. Confirm Framework Preset is `Next.js`.
 3. Confirm Production Branch is `main`.
 4. Confirm Root Directory is the repository root.
-5. Confirm Install Command is `npm install`.
+5. Confirm Install Command is `npm ci`.
 6. Confirm Build Command is `npm run build`.
-7. Confirm Output Directory is `.next`.
-8. Deploy the project and open the temporary `*.vercel.app` URL.
+7. Leave Output Directory blank/default for the Next.js framework preset.
+8. Deploy the project and use the temporary `*.vercel.app` URL only as a preview deployment.
 
 ## Domains
 
 1. In Vercel Project Settings, open Domains.
 2. Add `ausfigures.com`.
-3. Add `www.ausfigures.com`.
-4. Use `ausfigures.com` as the canonical domain.
+3. Add `www.ausfigures.com` if using the www redirect.
+4. Use `ausfigures.com` as the canonical production domain.
 5. Redirect `www.ausfigures.com` to `ausfigures.com`.
 
-## Namecheap DNS
+## DNS
 
-Use the DNS records shown in the Vercel UI as the source of truth.
+Configure DNS records exactly as Vercel shows in Project Settings -> Domains or via `vercel domains inspect`.
 
 Typical Vercel patterns are:
 
 - Apex domain such as `ausfigures.com`: A record.
 - Subdomain such as `www.ausfigures.com`: CNAME record.
 
-Do not copy these typical patterns blindly. Add exactly the records Vercel shows
-after the domain is added to the project.
+Do not copy these typical patterns blindly. Add exactly the records Vercel shows after the domain is added to the project.
 
-## Verification
+## Post-Deploy Checks
 
-1. Wait for DNS propagation.
-2. Confirm Vercel domain status is valid.
-3. Confirm HTTPS certificate is active.
-4. Open `https://ausfigures.com/about`.
-5. Open `https://ausfigures.com/map`.
-6. Open `https://www.ausfigures.com` and confirm it redirects to the canonical domain.
+1. `https://ausfigures.com/dashboard` returns 200.
+2. `https://ausfigures.com/robots.txt` returns 200 and references `https://ausfigures.com/sitemap.xml`.
+3. `https://ausfigures.com/sitemap.xml` returns 200 and only lists `ausfigures.com` URLs.
+4. `https://ausfigures.com/llms.txt` returns 200.
+5. `https://www.ausfigures.com/dashboard` redirects to `https://ausfigures.com/dashboard`.
+6. No canonical, Open Graph, sitemap, robots, llms.txt, README deployment badge, or README production URL points to `*.vercel.app`.
+
+## Optional CLI Checks
+
+If Vercel CLI is available and authenticated, these read-only checks can help inspect setup:
+
+```sh
+vercel domains inspect ausfigures.com
+vercel domains inspect www.ausfigures.com
+vercel certs ls
+vercel curl /dashboard
+```
+
+Do not run Vercel CLI commands that modify project settings unless explicitly authorized.

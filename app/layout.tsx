@@ -1,24 +1,52 @@
 import type { Metadata } from "next";
+import { SITE, absoluteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://ausfigures.com"),
-  title: {
-    default: "AusFigures | Public Text Archive",
-    template: "%s | AusFigures",
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.siteName,
+  alternateName: siteConfig.fullTitle,
+  url: siteConfig.siteUrl,
+  description: siteConfig.shortDescription,
+  inLanguage: "en-AU",
+  creator: {
+    "@type": "Person",
+    name: siteConfig.creator,
   },
-  description: "A typed public-text archive and research display for Australian supernatural humanoid narratives, encounters, apparitions, legends, and retellings.",
+  isAccessibleForFree: true,
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.canonicalOrigin),
+  applicationName: SITE.name,
+  authors: [{ name: siteConfig.creator }],
+  creator: siteConfig.creator,
+  publisher: siteConfig.creator,
+  title: {
+    default: `${SITE.name} - ${SITE.fullTitle}`,
+    template: `%s | ${SITE.name}`,
+  },
+  description: siteConfig.shortDescription,
+  alternates: {
+    canonical: absoluteUrl(SITE.primaryRoute),
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "AusFigures | Public Text Archive",
-    description: "A typed public-text archive and research display for Australian supernatural humanoid narratives, encounters, apparitions, legends, and retellings.",
-    url: "https://ausfigures.com",
-    siteName: "AusFigures",
+    title: `${SITE.name} - ${SITE.fullTitle}`,
+    description: siteConfig.shortDescription,
+    url: absoluteUrl(SITE.primaryRoute),
+    siteName: SITE.name,
+    locale: siteConfig.locale,
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "AusFigures | Public Text Archive",
-    description: "A typed public-text archive and research display for Australian supernatural humanoid narratives, encounters, apparitions, legends, and retellings.",
+    title: `${SITE.name} - ${SITE.fullTitle}`,
+    description: siteConfig.shortDescription,
   },
 };
 
@@ -43,6 +71,12 @@ try {
   document.documentElement.dataset.theme = "dark";
 }
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
           }}
         />
       </head>

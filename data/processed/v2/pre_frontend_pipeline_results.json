@@ -1,0 +1,34 @@
+[
+  {
+    "command": "python3 scripts/export_frontend_json.py",
+    "exit_code": 0,
+    "duration_seconds": 0.26,
+    "result": "pass",
+    "stdout_tail": "Wrote frontend data to: /Users/jarlgiovanni/Desktop/bigfoot_research/public/data/frontend-data.json\n",
+    "stderr_tail": ""
+  },
+  {
+    "command": "python3 scripts/validate_v2.py",
+    "exit_code": 0,
+    "duration_seconds": 0.06,
+    "result": "pass",
+    "stdout_tail": "{\n  \"checks\": 13,\n  \"failed\": 0\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "command": "python3 scripts/run_tests.py",
+    "exit_code": 0,
+    "duration_seconds": 0.38,
+    "result": "pass",
+    "stdout_tail": "PASS test_candidate_promotion.py::test_accepted_candidate_promotes_to_canonical_record_idempotently\nPASS test_dedupe.py::test_title_similarity_handles_near_duplicates\nPASS test_dedupe.py::test_title_similarity_returns_zero_for_missing_titles\nPASS test_dedupe.py::test_token_overlap_detects_shared_title_terms\nPASS test_frontend_data_contract.py::test_frontend_record_ids_are_unique\nPASS test_frontend_data_contract.py::test_public_map_has_one_flag_per_eligible_record\nPASS test_normalise.py::test_canonicalise_whitespace_collapses_runs\nPASS test_normalise.py::test_normalise_alias_matches_text_normalisation\nPASS test_normalise.py::test_normalise_text_casefolds_and_replaces_quotes\nPASS test_normalise.py::test_parse_year_from_loose_dates\nPASS test_normalise.py::test_slugify_is_ascii_and_stable\nPASS test_schema.py::test_schema_creates_required_tables\nPASS test_schema.py::test_schema_enables_foreign_keys\nPASS test_schema.py::test_schema_has_expected_indexes\nPASS test_v2_migration.py::test_automation_does_not_assign_analysis_ready_or_rewrite_label\nPASS test_v2_migration.py::test_publication_location_role_not_silently_event_location\nPASS test_v2_migration.py::test_v2_migration_creates_tables_and_mapping\nPASS test_v2_migration.py::test_v2_migration_is_idempotent\n",
+    "stderr_tail": ""
+  },
+  {
+    "command": "npm run build",
+    "exit_code": 0,
+    "duration_seconds": 11.56,
+    "result": "pass",
+    "stdout_tail": "\n> australian-humanoid-supernatural-texts@0.1.0 build\n> next build\n\n▲ Next.js 16.2.9 (Turbopack)\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 2.2s\n  Running TypeScript ...\n  Finished TypeScript in 5.1s ...\n  Collecting page data using 7 workers ...\n  Generating static pages using 7 workers (0/8) ...\n  Generating static pages using 7 workers (2/8) \n  Generating static pages using 7 workers (4/8) \n  Generating static pages using 7 workers (6/8) \n✓ Generating static pages using 7 workers (8/8) in 1863ms\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ○ /about\n├ ○ /dashboard\n├ ○ /density\n├ ○ /map\n└ ○ /source\n\n\n○  (Static)  prerendered as static content\n\n",
+    "stderr_tail": ""
+  }
+]

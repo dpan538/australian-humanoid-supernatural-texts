@@ -1,3 +1,11 @@
+.env*
+.vercel/
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
 data/raw/
 data/interim/
 data/releases/
@@ -10,4 +18,6 @@ data/processed/**/raw/
 *.sqlite
 *.sqlite-*
 *.log
+*.pid
+*.trace.zip
 .DS_Store

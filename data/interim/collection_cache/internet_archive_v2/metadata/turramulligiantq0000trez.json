@@ -1,0 +1,498 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/turramulligiantq0000trez",
+        "server": "dn760002.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/turramulligiantq0000trez",
+        "server": "dn790001.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/turramulligiantq0000trez",
+        "server": "dn790001.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1781957573,
+  "d1": "ia902807.us.archive.org",
+  "d2": "ia802807.us.archive.org",
+  "dir": "/34/items/turramulligiantq0000trez",
+  "files": [
+    {
+      "crc32": "019e567b",
+      "format": "Item Tile",
+      "md5": "bc7090a19b66f61b6e274f6f7bf0b0b7",
+      "mtime": "1661194274",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "a886c506048cc9153173d400a4dbc50136be6bb2",
+      "size": "18198",
+      "source": "original"
+    },
+    {
+      "crc32": "2010dd96",
+      "format": "Log",
+      "md5": "cefcd3f5c133346cb11443bd6c5bbb7a",
+      "mtime": "1643830181",
+      "name": "logs/turramulligiantq0000trez_iabdash_2022-02-0303:29:37.log",
+      "private": "true",
+      "sha1": "a9826b65d599a87d9aeb1ce76546b0945e68b913",
+      "size": "680",
+      "source": "original"
+    },
+    {
+      "crc32": "4da95196",
+      "format": "Log",
+      "md5": "d51d5999502973a640328d554734c06e",
+      "mtime": "1643830190",
+      "name": "logs/turramulligiantq0000trez_scanning_2022-02-0303:29:47.log",
+      "private": "true",
+      "sha1": "ff2d66ad5728bb2f323698e8d7b49561da58d09c",
+      "size": "156686",
+      "source": "original"
+    },
+    {
+      "crc32": "c0d91ff3",
+      "format": "Log",
+      "md5": "ae66a97daa02c54213adb52eafed4659",
+      "mtime": "1643830187",
+      "name": "logs/turramulligiantq0000trez_status_history_2022-02-0303:29:42.log",
+      "private": "true",
+      "sha1": "2dbe082a80fbd2501614e9c69e3a977d33209c1f",
+      "size": "409",
+      "source": "original"
+    },
+    {
+      "crc32": "577f5786",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.66",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "5b388d7b7062c6db75ae8ca1b472b493",
+      "mtime": "1754134298",
+      "name": "turramulligiantq0000trez.epub",
+      "original": "turramulligiantq0000trez_hocr.html",
+      "private": "true",
+      "sha1": "ef03799963f176f3ca655e98ba8bf55a121f8459",
+      "size": "2230177",
+      "source": "derivative"
+    },
+    {
+      "crc32": "06ee1cbf",
+      "format": "LCP Encrypted PDF",
+      "md5": "720029fe367745ea4660aec8cd8e672a",
+      "mtime": "1754134044",
+      "name": "turramulligiantq0000trez.lcpdf",
+      "original": "turramulligiantq0000trez.pdf",
+      "sha1": "49c6b9c19cb177c0000a1b1c8079c5a7235e4378",
+      "size": "12093718",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a632ddd0",
+      "format": "Text PDF",
+      "md5": "638f01f93af93322911699762a8eb7cc",
+      "mtime": "1726027318",
+      "name": "turramulligiantq0000trez.pdf",
+      "original": "turramulligiantq0000trez_page_numbers.json",
+      "private": "true",
+      "sha1": "4f45eb3e3f84cf25263a347aac7575549454287e",
+      "size": "11452584",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a615018c",
+      "format": "chOCR",
+      "md5": "28c7b69071f2daea4410538a3ec0e5b9",
+      "mtime": "1644366783",
+      "name": "turramulligiantq0000trez_chocr.html.gz",
+      "ocr": "tesseract 5.0.0-1-g862e",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "0.6746",
+      "ocr_module_version": "0.0.15",
+      "ocr_parameters": "-l eng",
+      "original": "turramulligiantq0000trez_jp2.zip",
+      "private": "true",
+      "sha1": "414d85dc13b43e759be9d078953f09fc9ee4132e",
+      "size": "111235",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "ca7f9a8b",
+      "format": "Cloth Cover Detection Log",
+      "md5": "e8cb322035a796bd17178f7671ec3b87",
+      "mtime": "1671536024",
+      "name": "turramulligiantq0000trez_cloth_detection.log",
+      "original": "turramulligiantq0000trez_scandata.xml",
+      "private": "true",
+      "sha1": "d04b960a71bbc065a0cc66ae284c8b4ba517304f",
+      "size": "788",
+      "source": "derivative"
+    },
+    {
+      "crc32": "76a08651",
+      "format": "Dublin Core",
+      "md5": "95aebbbb2166c4254a65794a6c4f1005",
+      "mtime": "1644366096",
+      "name": "turramulligiantq0000trez_dc.xml",
+      "sha1": "a3758ce7f0de244137cb0703a70829d230222e43",
+      "size": "1135",
+      "source": "original"
+    },
+    {
+      "crc32": "03db565c",
+      "format": "DjVuTXT",
+      "md5": "052a4479ce9b5ca4728e72c97b9dd9f2",
+      "mtime": "1644366917",
+      "name": "turramulligiantq0000trez_djvu.txt",
+      "original": "turramulligiantq0000trez_djvu.xml",
+      "private": "true",
+      "sha1": "4c16f97bf2f5ee44d69053f4c55722dc732b7e9c",
+      "size": "7999",
+      "source": "derivative"
+    },
+    {
+      "crc32": "38bd675a",
+      "format": "Djvu XML",
+      "md5": "befd03a450c751f7cb8a6357703e8bf1",
+      "mtime": "1644366846",
+      "name": "turramulligiantq0000trez_djvu.xml",
+      "original": "turramulligiantq0000trez_hocr.html",
+      "private": "true",
+      "sha1": "d7ad406bc64a63628fc2f38211a157e71e7a2f8e",
+      "size": "132137",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2d0cbc4f",
+      "format": "ACS Encrypted PDF",
+      "md5": "bce8176bd990debc9f00f44acd5a292a",
+      "mtime": "1726028266",
+      "name": "turramulligiantq0000trez_encrypted.pdf",
+      "original": "turramulligiantq0000trez.pdf",
+      "sha1": "f9717d846fe89d21b4bd344f2713bc95d44b8a51",
+      "size": "11443492",
+      "source": "derivative"
+    },
+    {
+      "crc32": "062ec68e",
+      "format": "JSON",
+      "md5": "8d5c8c83d1dac456081ae5f1fc26738d",
+      "mtime": "1644366057",
+      "name": "turramulligiantq0000trez_events.json",
+      "private": "true",
+      "sha1": "3550929a95a7cbfbb27aecc488d3fdf1afef2a05",
+      "size": "59",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "42752c7c40bb5a8e28a03d04ac336b85",
+      "name": "turramulligiantq0000trez_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "f9f642ce",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.2",
+      "hocr_char_to_word_module_version": "1.0.0",
+      "md5": "c8cd112180d53d6791f75c68eb388100",
+      "mtime": "1644366825",
+      "name": "turramulligiantq0000trez_hocr.html",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "0.6746",
+      "ocr_module_version": "0.0.15",
+      "ocr_parameters": "-l eng",
+      "original": "turramulligiantq0000trez_chocr.html.gz",
+      "private": "true",
+      "sha1": "ec4699ee3f42319cdd8548eecd913d93d7f24895",
+      "size": "239501",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5d415cb0",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "0e7d579cfa29da738ef3003f88fb10f9",
+      "mtime": "1644366865",
+      "name": "turramulligiantq0000trez_hocr_pageindex.json.gz",
+      "original": "turramulligiantq0000trez_hocr.html",
+      "private": "true",
+      "sha1": "ec5c683dc9d934427bc7d5e50ca752c7905991bf",
+      "size": "394",
+      "source": "derivative"
+    },
+    {
+      "crc32": "11175406",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "2f8d764fcba985f398c98f015ba27e8e",
+      "mtime": "1644366902",
+      "name": "turramulligiantq0000trez_hocr_searchtext.txt.gz",
+      "original": "turramulligiantq0000trez_hocr.html",
+      "private": "true",
+      "sha1": "5729bfa45656f1a28d50bf8efd485bfe0e359e8e",
+      "size": "3540",
+      "source": "derivative",
+      "word_conf_0_10": "41",
+      "word_conf_11_20": "16",
+      "word_conf_21_30": "25",
+      "word_conf_31_40": "14",
+      "word_conf_41_50": "11",
+      "word_conf_51_60": "8",
+      "word_conf_61_70": "10",
+      "word_conf_71_80": "14",
+      "word_conf_81_90": "41",
+      "word_conf_91_100": "1192"
+    },
+    {
+      "crc32": "0806f1fc",
+      "filecount": "38",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "69de04bb4b26c65926d76ce1905f0f97",
+      "mtime": "1644366492",
+      "name": "turramulligiantq0000trez_jp2.zip",
+      "original": "turramulligiantq0000trez_orig_jp2.tar",
+      "private": "true",
+      "sha1": "c9e0cded8eb73f04a4f93f7968321d5758438e6e",
+      "size": "64611734",
+      "source": "derivative"
+    },
+    {
+      "crc32": "33dc166c",
+      "format": "LCP Encrypted EPUB",
+      "md5": "6b402ad9113cc36887f309f8c6a7dd10",
+      "mtime": "1754134533",
+      "name": "turramulligiantq0000trez_lcp.epub",
+      "original": "turramulligiantq0000trez.epub",
+      "sha1": "bee451f6ee08b856fe9f18495770cf6d119f04e1",
+      "size": "2233059",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a5996ca4",
+      "format": "MARC",
+      "md5": "d729f5ed003a84ad99d593b68a32aeb9",
+      "mtime": "1643830173",
+      "name": "turramulligiantq0000trez_marc.xml",
+      "sha1": "afd00986ca88e89a7e7da32f080402a24381bf06",
+      "size": "4760",
+      "source": "original"
+    },
+    {
+      "crc32": "0bb48b94",
+      "format": "MARC Binary",
+      "md5": "705fb433191dbe66d7cb63b257711a93",
+      "mtime": "1643830169",
+      "name": "turramulligiantq0000trez_meta.mrc",
+      "sha1": "97a54caee0633ae21689a9897eee5877a15095c4",
+      "size": "1449",
+      "source": "original"
+    },
+    {
+      "crc32": "0b1dd049",
+      "format": "Metadata",
+      "md5": "5a55eb6777b2ad43dc3668b5019c1a6f",
+      "mtime": "1644366081",
+      "name": "turramulligiantq0000trez_meta.sqlite",
+      "sha1": "b3b8527e28be2d2034ac678222691105d8d4687a",
+      "size": "45056",
+      "source": "original"
+    },
+    {
+      "crc32": "282e9c45",
+      "format": "Metadata",
+      "md5": "e803ea1d3ec7d7441abd653e8e6b821f",
+      "mtime": "1754134533",
+      "name": "turramulligiantq0000trez_meta.xml",
+      "sha1": "d6621f03726fa0a549bd377f93f39b9f983dbc46",
+      "size": "3368",
+      "source": "original"
+    },
+    {
+      "crc32": "9f2ab9aa",
+      "filecount": "38",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "f9a587c8febd657568a1ee2f0b0d282a",
+      "mtime": "1644366080",
+      "name": "turramulligiantq0000trez_orig_jp2.tar",
+      "private": "true",
+      "sha1": "b95f402cf07c14938e0e593a8f8688418fd24d81",
+      "size": "137400320",
+      "source": "original"
+    },
+    {
+      "crc32": "d914be6a",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "0",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "0f40960bec5efea9509efb32bb5c44a0",
+      "mtime": "1726027318",
+      "name": "turramulligiantq0000trez_page_numbers.json",
+      "original": "turramulligiantq0000trez_hocr.html",
+      "private": "true",
+      "sha1": "0b767e3c404952b0ce4234d4a126d18c90ec66c5",
+      "size": "6236",
+      "source": "derivative"
+    },
+    {
+      "crc32": "48ebcaef",
+      "format": "Scandata",
+      "md5": "99c7ad0862d9927abdf85b912ae1c57b",
+      "mtime": "1671536024",
+      "name": "turramulligiantq0000trez_scandata.xml",
+      "sha1": "5b6a9c40fc077937b3ed65e2ec2a3478d6ad5d73",
+      "size": "40290",
+      "source": "original"
+    },
+    {
+      "crc32": "89d14fb6",
+      "format": "PNG",
+      "md5": "1cf44f107d08d0decfe04524968cdff0",
+      "mtime": "1643810272",
+      "name": "turramulligiantq0000trez_slip.png",
+      "private": "true",
+      "sha1": "6ad6aab119a4f78916c4eaa9241a797c588d187c",
+      "size": "40943",
+      "source": "original"
+    },
+    {
+      "crc32": "2d4c8082",
+      "format": "JPEG Thumb",
+      "md5": "bc1dd1355cc60a162bab71319bb35970",
+      "mtime": "1644366098",
+      "name": "turramulligiantq0000trez_slip_thumb.jpg",
+      "original": "turramulligiantq0000trez_slip.png",
+      "private": "true",
+      "sha1": "ed54be5593b091dbb95142284fd188688d9bb36c",
+      "size": "8514",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e393d2bd",
+      "format": "Title Page Detection Log",
+      "md5": "48973a4db779bf4f9850647a1e89e7a1",
+      "mtime": "1671535637",
+      "name": "turramulligiantq0000trez_title_detection.log",
+      "original": "turramulligiantq0000trez_djvu.xml",
+      "private": "true",
+      "sha1": "189c0b0759123fda7a64fe49c7c3fc27fd992b80",
+      "size": "669",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 30,
+  "item_last_updated": 1754134533,
+  "item_size": 242289130,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2022-02-09 04:13:06",
+    "associated-names": "Roughsey, Dick",
+    "boxid": "IA40350202",
+    "camera": "USB PTP Class Camera",
+    "collection": [
+      "internetarchivebooks",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "collection_set": "printdisabled",
+    "contributor": "Internet Archive",
+    "creator": "Trezise, P. J. (Percy J.)",
+    "date": "1983",
+    "description": [
+      "1 volume (unpaged) : 26 cm",
+      "Originally published : Sydney : Collins, 1982",
+      "For children"
+    ],
+    "external-identifier": [
+      "urn:acs6:turramulligiantq0000trez:pdf:5504ee78-d2a1-4892-be43-c9c665974ce8",
+      "urn:oclc:record:1302558802",
+      "urn:lcp:turramulligiantq0000trez:lcpdf:fdc2850e-bf66-4c1f-b9aa-e6ad9ea61fca",
+      "urn:lcp:turramulligiantq0000trez:epub:b8275ea2-9c13-4bdb-8e85-3972f8b93c0d"
+    ],
+    "foldoutcount": "0",
+    "identifier": "turramulligiantq0000trez",
+    "identifier-access": "http://archive.org/details/turramulligiantq0000trez",
+    "identifier-ark": "ark:/13960/s2pxjft6gmw",
+    "imagecount": "38",
+    "invoice": "1652",
+    "isbn": [
+      "0732272505",
+      "9780732272500"
+    ],
+    "language": "eng",
+    "mediatype": "texts",
+    "ocr": "tesseract 5.0.0-1-g862e",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "0.6746",
+    "ocr_module_version": "0.0.15",
+    "ocr_parameters": "-l eng",
+    "old_pallet": "IA-NS-1300269",
+    "openlibrary_edition": "OL37046921M",
+    "openlibrary_work": "OL2417822W",
+    "operator": "associate-julieann-cabaltera@archive.org",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.18",
+    "ppi": "360",
+    "publicdate": "2022-02-02 13:58:10",
+    "publisher": "Sydney : Collins",
+    "rcs_key": "24143",
+    "repub_state": "19",
+    "republisher_date": "20220209082052",
+    "republisher_operator": "associate-jullyann-guisadio@archive.org",
+    "republisher_time": "152",
+    "scandate": "20220202200710",
+    "scanfee": "0;1.00;200",
+    "scanner": "station38.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "scribe3_search_catalog": "isbn",
+    "scribe3_search_id": "9780732272500",
+    "sponsordate": "20220228",
+    "subject": [
+      "Mythology, Aboriginal Australian -- Juvenile literature",
+      "Aboriginal Australians -- Folklore -- Juvenile literature",
+      "Aboriginal Australians",
+      "Mythology, Aboriginal Australian"
+    ],
+    "title": "Turramulli the giant Quinkin",
+    "tts_version": "4.5-initial-80-gce32ee1e",
+    "uploader": "station38.cebu@archive.org"
+  },
+  "server": "ia902807.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "bpljordan-ol": {
+        "notes": {
+          "isbn": [
+            "9780732272500"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-11 00:53:42.559038"
+      }
+    }
+  },
+  "uniq": 1337727795,
+  "workable_servers": [
+    "ia902807.us.archive.org",
+    "ia802807.us.archive.org"
+  ]
+}

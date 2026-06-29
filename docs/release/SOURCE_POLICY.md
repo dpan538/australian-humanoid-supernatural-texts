@@ -67,9 +67,12 @@ Collectors and release scripts must not bypass paywalls, login walls, access res
 Before release, run:
 
 ```sh
-python3 scripts/validate_release.py
-python3 scripts/generate_release_reports.py
+python3 scripts/check_vercel_release.py
+make validate-v2
+make audit-v2
 ```
+
+Run V2 make targets with a timeout when the local Python/data environment is ready.
 
 Review:
 
@@ -79,4 +82,3 @@ Review:
 - excessive source concentration;
 - duplicate source organisations under slightly different names;
 - raw enum labels leaking into the public UI.
-

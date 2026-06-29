@@ -1,0 +1,196 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/Project_Red_Book_vol_4_no_4",
+        "server": "dn711203.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/Project_Red_Book_vol_4_no_4",
+        "server": "dn760102.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/Project_Red_Book_vol_4_no_4",
+        "server": "dn711203.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/Project_Red_Book_vol_4_no_4",
+        "server": "dn760102.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1781957395,
+  "d1": "ia903100.us.archive.org",
+  "d2": "ia803100.us.archive.org",
+  "dir": "/33/items/Project_Red_Book_vol_4_no_4",
+  "files": [
+    {
+      "crc32": "2740793c",
+      "format": "Text PDF",
+      "md5": "d7415297bb0852cfa8c9353f90625ecf",
+      "mtime": "1571164618",
+      "name": "Project_Red_Book_vol_4_no_4.pdf",
+      "sha1": "9959fe4e5b2a346c0d52124688494288df5d9338",
+      "size": "3036307",
+      "source": "original"
+    },
+    {
+      "crc32": "6debb26b",
+      "format": "Abbyy GZ",
+      "md5": "04f3735b7010e202d7c479a241cb4e3b",
+      "mtime": "1571165328",
+      "name": "Project_Red_Book_vol_4_no_4_abbyy.gz",
+      "original": "Project_Red_Book_vol_4_no_4_jp2.zip",
+      "sha1": "b3fe73afec34ad1fc3352824fdd5acc3d043aeb1",
+      "size": "1144281",
+      "source": "derivative"
+    },
+    {
+      "btih": "8091980e3a7d105e7677518727f5a8b978003b6e",
+      "crc32": "b3ab1ac9",
+      "format": "Archive BitTorrent",
+      "md5": "191cac297d5e571d010c85e9c25f36da",
+      "mtime": "1602035317",
+      "name": "Project_Red_Book_vol_4_no_4_archive.torrent",
+      "sha1": "d058253c07095ea36536379f5154b953122366fd",
+      "size": "4098",
+      "source": "metadata"
+    },
+    {
+      "crc32": "fdc3b0aa",
+      "format": "DjVuTXT",
+      "md5": "7f67f0e40077bc46460ee27eb4e0c643",
+      "mtime": "1571165375",
+      "name": "Project_Red_Book_vol_4_no_4_djvu.txt",
+      "original": "Project_Red_Book_vol_4_no_4_djvu.xml",
+      "sha1": "4e6fe931cc83e29ce71e7d441c77552784bc9b21",
+      "size": "77521",
+      "source": "derivative"
+    },
+    {
+      "crc32": "15e8630e",
+      "format": "Djvu XML",
+      "md5": "ce52458fac5aad53f94367c028307d51",
+      "mtime": "1571165371",
+      "name": "Project_Red_Book_vol_4_no_4_djvu.xml",
+      "original": "Project_Red_Book_vol_4_no_4_abbyy.gz",
+      "sha1": "b540f4db69cea5917ebb35283353d58b17aeeb31",
+      "size": "811738",
+      "source": "derivative"
+    },
+    {
+      "format": "Metadata",
+      "md5": "f67a0f78ea592b39e39be53280f92003",
+      "name": "Project_Red_Book_vol_4_no_4_files.xml",
+      "source": "original"
+    },
+    {
+      "crc32": "0074722f",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "6e7b00cbd42ff8d7e4997315364dcddf",
+      "mtime": "1571164862",
+      "name": "Project_Red_Book_vol_4_no_4_jp2.zip",
+      "original": "Project_Red_Book_vol_4_no_4.pdf",
+      "sha1": "cb1ff70d6a2f40d865d38adc9c67f016ed0be8a2",
+      "size": "26717990",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2f9522bb",
+      "format": "Metadata",
+      "md5": "6d5f6534e69b8c34f893753f8f22e4ee",
+      "mtime": "1571164638",
+      "name": "Project_Red_Book_vol_4_no_4_meta.sqlite",
+      "sha1": "7040778023eb564339fdc7e17cdaf1d9af8648d3",
+      "size": "9216",
+      "source": "original"
+    },
+    {
+      "crc32": "f466e9db",
+      "format": "Metadata",
+      "md5": "1ed7ebaef3ed75d28083719d5f5cd063",
+      "mtime": "1602035312",
+      "name": "Project_Red_Book_vol_4_no_4_meta.xml",
+      "sha1": "d5b2076a6ea042afab6d209d9286a2a91fae6590",
+      "size": "1737",
+      "source": "original"
+    },
+    {
+      "crc32": "1956ee89",
+      "format": "Scandata",
+      "md5": "4ad68abcf2e15989f1e6b720bce87149",
+      "mtime": "1571165378",
+      "name": "Project_Red_Book_vol_4_no_4_scandata.xml",
+      "original": "Project_Red_Book_vol_4_no_4_djvu.xml",
+      "sha1": "317568ebfe2d658edbf4818bfdc2412d233ac067",
+      "size": "6807",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6d48cea3",
+      "format": "Item Tile",
+      "md5": "4dc6e15434d360f7d23cdd9e3d42623e",
+      "mtime": "1602035316",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "913cba59eedcd59fcda53ba36e102eda5461f266",
+      "size": "7354",
+      "source": "original"
+    }
+  ],
+  "files_count": 11,
+  "item_last_updated": 1602035317,
+  "item_size": 31817049,
+  "metadata": {
+    "addeddate": "2019-10-15 18:36:59",
+    "backup_location": "ia907003_28",
+    "collection": [
+      "ufonewsletters",
+      "zines"
+    ],
+    "description": " Project Red Book vol 4 no 4",
+    "identifier": "Project_Red_Book_vol_4_no_4",
+    "identifier-access": "http://archive.org/details/Project_Red_Book_vol_4_no_4",
+    "identifier-ark": "ark:/13960/t2h78cx9f",
+    "imagecount": "22",
+    "language": "eng",
+    "mediatype": "texts",
+    "notes": "This newsletter is from the collection of the Archives for The Unexplained (also known as the Archives for UFO Research), in Sweden. Their website is located at: <a href=\"http://www.afu.se/afu2/\" rel=\"nofollow\">http://www.afu.se/afu2/</a>",
+    "ocr": "ABBYY FineReader 11.0 (Extended OCR)",
+    "ppi": "600",
+    "publicdate": "2019-10-15 18:36:59",
+    "scanner": "Internet Archive Python library 1.8.4",
+    "subject": [
+      "ufo",
+      "prb",
+      "footage",
+      "wandjina",
+      "ufos",
+      "michael",
+      "sightings",
+      "october",
+      "yufos",
+      "sasquatch",
+      "dave baker",
+      "south yorkshire",
+      "sarah crabtree",
+      "yorkshire ufo",
+      "yorkshire times",
+      "red book",
+      "project red",
+      "pest control",
+      "greatest number",
+      "bright lights"
+    ],
+    "title": " Project Red Book vol 4 no 4",
+    "uploader": "sketch@cow.net"
+  },
+  "server": "ia803100.us.archive.org",
+  "uniq": 1893835012,
+  "workable_servers": [
+    "ia803100.us.archive.org",
+    "ia903100.us.archive.org"
+  ]
+}

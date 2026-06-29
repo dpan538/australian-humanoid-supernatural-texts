@@ -1,0 +1,530 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/aboriginesofrain0000erba",
+        "server": "dn721503.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/aboriginesofrain0000erba",
+        "server": "dn760101.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/aboriginesofrain0000erba",
+        "server": "dn721503.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/aboriginesofrain0000erba",
+        "server": "dn760101.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1781957576,
+  "d1": "ia600906.us.archive.org",
+  "d2": "ia800906.us.archive.org",
+  "dir": "/27/items/aboriginesofrain0000erba",
+  "files": [
+    {
+      "crc32": "8742c4eb",
+      "format": "Item Tile",
+      "md5": "75339a5300346ded7ab8ab8aa4cb080d",
+      "mtime": "1658126998",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "6a8e5760a8cd6a6b67daabb3f6804b512f7c06cc",
+      "size": "18489",
+      "source": "original"
+    },
+    {
+      "crc32": "bea4b73b",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.62",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "a372f40909431bf200be7247939495b4",
+      "mtime": "1752994108",
+      "name": "aboriginesofrain0000erba.epub",
+      "original": "aboriginesofrain0000erba_hocr.html",
+      "private": "true",
+      "sha1": "89856398e747e0660ba970856b4f8e7aadf2b1f1",
+      "size": "36213661",
+      "source": "derivative"
+    },
+    {
+      "crc32": "dc989dd9",
+      "format": "LCP Encrypted PDF",
+      "md5": "26dd17ced17d2e45853589b3a9c14f91",
+      "mtime": "1752994030",
+      "name": "aboriginesofrain0000erba.lcpdf",
+      "original": "aboriginesofrain0000erba.pdf",
+      "sha1": "3195400432b2c821bbabfb4896630e051ff1553f",
+      "size": "9698645",
+      "source": "derivative"
+    },
+    {
+      "crc32": "fa7fe9b0",
+      "format": "Text PDF",
+      "md5": "b1499679839b69c37eaf203d02e7bbb4",
+      "mtime": "1714048294",
+      "name": "aboriginesofrain0000erba.pdf",
+      "original": "aboriginesofrain0000erba_page_numbers.json",
+      "private": "true",
+      "sha1": "3f4c3fa85274d9c9a6181a91854539065abd5c97",
+      "size": "9110097",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0a4f0ff3",
+      "format": "Abbyy GZ",
+      "md5": "bcf6765e58180e4145b3a0ecb62bf096",
+      "mtime": "1549873190",
+      "name": "aboriginesofrain0000erba_abbyy.gz",
+      "original": "aboriginesofrain0000erba_jp2.zip",
+      "private": "true",
+      "sha1": "e1609c7b0da7e2c1c91855784b9d039edada56fe",
+      "size": "678942",
+      "source": "derivative"
+    },
+    {
+      "crc32": "80b4efbf",
+      "format": "chOCR",
+      "md5": "5a7cc10218c6fed30f2f3ee027129bc8",
+      "mtime": "1658125738",
+      "name": "aboriginesofrain0000erba_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.16",
+      "original": "aboriginesofrain0000erba_abbyy.gz",
+      "private": "true",
+      "sha1": "ff76d03da34812bbe4862ad8d5ac6f1f860c4a14",
+      "size": "560898",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "37fbdd4b",
+      "format": "Cloth Cover Detection Log",
+      "md5": "cb4aab832234a55b7a32e7e2bc3285db",
+      "mtime": "1658126094",
+      "name": "aboriginesofrain0000erba_cloth_detection.log",
+      "original": "aboriginesofrain0000erba_scandata.xml",
+      "private": "true",
+      "sha1": "dd6daef0ca30c780bee9444abb9ee920397910c1",
+      "size": "788",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e9b83a49",
+      "format": "Dublin Core",
+      "md5": "d22771fce87c58cae6df693def289a16",
+      "mtime": "1549871916",
+      "name": "aboriginesofrain0000erba_dc.xml",
+      "sha1": "d2df01342f430fce4db3c87c3edd461e032635ac",
+      "size": "3657",
+      "source": "original"
+    },
+    {
+      "crc32": "b4bb0414",
+      "format": "DjVuTXT",
+      "md5": "c6437c20f093d94bd77e219c36e93b7a",
+      "mtime": "1658126231",
+      "name": "aboriginesofrain0000erba_djvu.txt",
+      "original": "aboriginesofrain0000erba_djvu.xml",
+      "private": "true",
+      "sha1": "e637805520132a7bbd5f1f8571c0bd3845718473",
+      "size": "47590",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a03d6f68",
+      "format": "Djvu XML",
+      "md5": "e9eba85cc730b6b0ecc2c5fdd6017788",
+      "mtime": "1658126172",
+      "name": "aboriginesofrain0000erba_djvu.xml",
+      "original": "aboriginesofrain0000erba_hocr.html",
+      "private": "true",
+      "sha1": "2994734063679aa963113bc0d7c9f1aee657307f",
+      "size": "578443",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1899803e",
+      "format": "ACS Encrypted EPUB",
+      "md5": "ca5d9ed9f1e71e004b9560294e5de63d",
+      "mtime": "1549873568",
+      "name": "aboriginesofrain0000erba_encrypted.epub",
+      "original": "aboriginesofrain0000erba_abbyy.gz",
+      "sha1": "97647a1dfe5d87ea86ad04a91caf5845764d273a",
+      "size": "1994226",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2b8c6c19",
+      "format": "ACS Encrypted PDF",
+      "md5": "6116f5a8ff9f06f79c80a26078ebf498",
+      "mtime": "1714048446",
+      "name": "aboriginesofrain0000erba_encrypted.pdf",
+      "original": "aboriginesofrain0000erba.pdf",
+      "sha1": "8d5db9365fbcd823ea85cec16559deb8e0158e42",
+      "size": "9093007",
+      "source": "derivative"
+    },
+    {
+      "crc32": "fc9fa4b5",
+      "format": "JSON",
+      "md5": "ddc0f6cc79c83706f160f6ea621a4b4f",
+      "mtime": "1549871864",
+      "name": "aboriginesofrain0000erba_events.json",
+      "private": "true",
+      "sha1": "dbadcc902c5ea9d9a323bd67e13967f7ede44cef",
+      "size": "56",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "e21867ebd808bf23fc73a3ce05af0444",
+      "name": "aboriginesofrain0000erba_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "2aea86a4",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "f4453a248c42aadab524624dae9139aa",
+      "mtime": "1658126146",
+      "name": "aboriginesofrain0000erba_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.16",
+      "original": "aboriginesofrain0000erba_chocr.html.gz",
+      "private": "true",
+      "sha1": "82f0a09f92511195c6aa9103e9f0cc925be828a7",
+      "size": "1153756",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1611cf98",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "6a335f2b22de6bd14ccdb148da6e462b",
+      "mtime": "1658126184",
+      "name": "aboriginesofrain0000erba_hocr_pageindex.json.gz",
+      "original": "aboriginesofrain0000erba_hocr.html",
+      "private": "true",
+      "sha1": "2275648df452b85a5c1b7a78ad149733ec357e25",
+      "size": "722",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7091afdb",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "aa393dc0e8b0e5f3febd921b911d0806",
+      "mtime": "1658126217",
+      "name": "aboriginesofrain0000erba_hocr_searchtext.txt.gz",
+      "original": "aboriginesofrain0000erba_hocr.html",
+      "private": "true",
+      "sha1": "8d9977e269a8dad12608b55d1dd92c846267fe04",
+      "size": "16978",
+      "source": "derivative",
+      "word_conf_0_10": "17",
+      "word_conf_11_20": "13",
+      "word_conf_21_30": "22",
+      "word_conf_31_40": "48",
+      "word_conf_41_50": "95",
+      "word_conf_51_60": "215",
+      "word_conf_61_70": "470",
+      "word_conf_71_80": "1059",
+      "word_conf_81_90": "1969",
+      "word_conf_91_100": "2994"
+    },
+    {
+      "crc32": "a4a1f21a",
+      "filecount": "70",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "12c12a734727980a0e9c9a6167d4a74d",
+      "mtime": "1549872886",
+      "name": "aboriginesofrain0000erba_jp2.zip",
+      "original": "aboriginesofrain0000erba_orig_jp2.tar",
+      "private": "true",
+      "sha1": "c42ae08b97ca669cfdd60e6b516ab69e6b170d5b",
+      "size": "50416964",
+      "source": "derivative"
+    },
+    {
+      "crc32": "23b77e9e",
+      "format": "LCP Encrypted EPUB",
+      "md5": "2ee8dfde753212df71c572ffac9a5f1c",
+      "mtime": "1752994164",
+      "name": "aboriginesofrain0000erba_lcp.epub",
+      "original": "aboriginesofrain0000erba.epub",
+      "sha1": "37684bf48f92515e5b7dd4914e3d201a6a5b8692",
+      "size": "36315315",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1575a943",
+      "format": "JSON",
+      "md5": "2b509f772b9c306a00783f5728cdc565",
+      "mtime": "1599322324",
+      "name": "aboriginesofrain0000erba_loans.json",
+      "private": "true",
+      "sha1": "adb2214367a52ec1e7cfac6d52c8de277d596a04",
+      "size": "1980",
+      "source": "original"
+    },
+    {
+      "crc32": "7d474bf9",
+      "format": "MARC",
+      "md5": "11d1fc29ea13ef0066fafeb97ff76399",
+      "mtime": "1549871916",
+      "name": "aboriginesofrain0000erba_marc.xml",
+      "sha1": "1c50b333c4eb510e3f473bf06dba4379364aa5b9",
+      "size": "13689",
+      "source": "original"
+    },
+    {
+      "crc32": "cec2e1d7",
+      "format": "MARC Binary",
+      "md5": "279f5e6c9376c8d760de11c44379275e",
+      "mtime": "1549718576",
+      "name": "aboriginesofrain0000erba_meta.mrc",
+      "sha1": "a513e572b3318249c7d40c483a8189c23c36342e",
+      "size": "4256",
+      "source": "original"
+    },
+    {
+      "crc32": "b5540f28",
+      "format": "Metadata",
+      "md5": "ea1be5a732786d8f355f6c81b4932769",
+      "mtime": "1549871881",
+      "name": "aboriginesofrain0000erba_meta.sqlite",
+      "sha1": "3ff181dfd07b5e10a0fc653b7045854841de8072",
+      "size": "20480",
+      "source": "original"
+    },
+    {
+      "crc32": "ba9b5256",
+      "format": "Metadata",
+      "md5": "115f46e79ef9b0857f6a73d9fddea98e",
+      "mtime": "1752994164",
+      "name": "aboriginesofrain0000erba_meta.xml",
+      "sha1": "08b4400b70d9e641ea918b57fa646425fef8ddc5",
+      "size": "5635",
+      "source": "original"
+    },
+    {
+      "crc32": "9fb4cc7e",
+      "filecount": "70",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "16fd383993aeb5b2a32d1dcb33aaff1d",
+      "mtime": "1549871880",
+      "name": "aboriginesofrain0000erba_orig_jp2.tar",
+      "private": "true",
+      "sha1": "49101470bf1784da614cb4aa8f851af27cf7b116",
+      "size": "142192640",
+      "source": "original"
+    },
+    {
+      "crc32": "31e5caa9",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "99",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "f3383e9f826c0502bfc495efdfe95969",
+      "mtime": "1714048294",
+      "name": "aboriginesofrain0000erba_page_numbers.json",
+      "original": "aboriginesofrain0000erba_hocr.html",
+      "private": "true",
+      "sha1": "8acf50dc88ff557e304b3589e2b7082a3ef7c9a8",
+      "size": "11502",
+      "source": "derivative"
+    },
+    {
+      "crc32": "4faffa60",
+      "format": "Scandata",
+      "md5": "55aa4a2975cd8e405b05a26706b8f3f6",
+      "mtime": "1658126094",
+      "name": "aboriginesofrain0000erba_scandata.xml",
+      "sha1": "a1bb8e322a289a65dd73857c55505d6de5d8023b",
+      "size": "71594",
+      "source": "original"
+    },
+    {
+      "crc32": "a2a344b2",
+      "format": "Log",
+      "md5": "fc3382707b5196b84849cb426aa0105f",
+      "mtime": "1549718564",
+      "name": "logs/aboriginesofrain0000erba_iabdash_2019-02-0921:22:28.log",
+      "private": "true",
+      "sha1": "353d69f63e136fc065326dd9350c9f329ff0e327",
+      "size": "1348",
+      "source": "original"
+    },
+    {
+      "crc32": "80b72e62",
+      "format": "Log",
+      "md5": "bcfe0aeb90d17ede49f38e5633865161",
+      "mtime": "1549718559",
+      "name": "logs/aboriginesofrain0000erba_scanning_2019-02-0921:22:22.log",
+      "private": "true",
+      "sha1": "3e11d9e8bf4acb63ff999d38cea6858b94f84d84",
+      "size": "235755",
+      "source": "original"
+    }
+  ],
+  "files_count": 29,
+  "item_last_updated": 1752994164,
+  "item_size": 298461113,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2019-02-09 13:22:21",
+    "associated-names": "Erbacher, Sue, 1949-",
+    "backup_location": "ia906807_16",
+    "bookplateleaf": "0004",
+    "boxid": "IA1638706",
+    "camera": "Sony Alpha-A6300 (Control)",
+    "collection": [
+      "internetarchivebooks",
+      "printdisabled",
+      "inlibrary"
+    ],
+    "collection_set": "printdisabled",
+    "contributor": "Internet Archive",
+    "creator": "Erbacher, John, 1941-",
+    "date": "1991",
+    "description": [
+      "62 pages : 22 x 24 cm",
+      "Text and photographs describe the customs, legends, activities, and changing lifestyles of the Kuku-Yalanji Aborigines of the Australian rainforest"
+    ],
+    "external-identifier": [
+      "urn:acs6:aboriginesofrain0000erba:epub:01f20d9c-14ef-477a-b1eb-af0d917df524",
+      "urn:acs6:aboriginesofrain0000erba:pdf:e7e72b43-c256-4c42-8b8d-771b4adc6578",
+      "urn:oclc:record:1086122336",
+      "urn:lcp:aboriginesofrain0000erba:lcpdf:d2fb9539-27a4-4138-a651-7a4c98b63ca4",
+      "urn:lcp:aboriginesofrain0000erba:epub:7855a851-1ab8-4de4-814c-5585917c1c12"
+    ],
+    "foldoutcount": "0",
+    "identifier": "aboriginesofrain0000erba",
+    "identifier-access": "http://archive.org/details/aboriginesofrain0000erba",
+    "identifier-ark": "ark:/13960/t8qc7hr6x",
+    "imagecount": "70",
+    "invoice": "1652",
+    "isbn": [
+      "0521402891",
+      "9780521402897"
+    ],
+    "language": "eng",
+    "lccn": "90048760",
+    "loans__status__last_loan_date": "2020-05-09T11:30:00Z",
+    "loans__status__last_waitlist_date": "2019-06-17T20:11:50Z",
+    "loans__status__num_history": "13",
+    "loans__status__num_loans": "0",
+    "loans__status__num_waitlist": "0",
+    "loans__status__status": "AVAILABLE",
+    "mediatype": "texts",
+    "ocr": "ABBYY FineReader 11.0 (Extended OCR)",
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.16",
+    "old_pallet": "IA11371",
+    "openlibrary_edition": "OL1887503M",
+    "openlibrary_work": "OL4318823W",
+    "operator": "associate-jeneil-colonia@archive.org",
+    "page_number_confidence": "99",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.18",
+    "ppi": "300",
+    "publicdate": "2019-02-09 13:24:08",
+    "publisher": "Cambridge ; New York : Cambridge University Press",
+    "repub_state": "19",
+    "republisher_date": "20190211155740",
+    "republisher_operator": "associate-jeneil-colonia@archive.org",
+    "republisher_time": "621",
+    "scandate": "20190209135743",
+    "scanfee": "0;1.00;200",
+    "scanner": "station03.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "source": "removedNEL",
+    "sponsordate": "ramp_up_20190228",
+    "subject": [
+      "Mining industry - Gold",
+      "Mining industry - Tin",
+      "Death - Mortuary / funeral ceremonies",
+      "Music - Vocal",
+      "Family - Mothers in law",
+      "Health - Education and promotion",
+      "Indigenous knowledge - Health and medicine",
+      "Literature and stories - Juvenile",
+      "Language - Linguistics - Phonology - Pronunciation",
+      "Stories and motifs - Rainbow serpent",
+      "Aborigines, Australian",
+      "Aborigines, Australian - Legends",
+      "Rainforests - Australia",
+      "Aborigines, Australia -- social life and customs",
+      "Kuku-Yalanji (Australian people)",
+      "Kuku-Yalanji (Australian people) -- Juvenile literature",
+      "Aboriginal Australians",
+      "Animals - Reptiles - Crocodiles",
+      "Aborigines",
+      "Australian aborigines Culture",
+      "Art - Rock art - Painting",
+      "Art - Painting - Bark",
+      "Art - Crafts",
+      "Art - Subjects - Contact",
+      "Health - Treatments - Traditional - Clever people",
+      "Religions - Christianity - Missions",
+      "Stories and motifs - Crocodiles",
+      "Communications - Nonverbal - Sign language and gestures",
+      "Stories and motifs - Echidnas",
+      "Dance",
+      "Language - Sociolinguistics",
+      "Recreation - Play - Children",
+      "Tuross / Bodalla / Eurobodalla (NSW Far S Coast SJ55-04)",
+      "Northeast Queensland (NE Qld SE55)",
+      "Laura / Quinkan area (Qld SE Cape York SD55-13)",
+      "Kuku Yalanji / Gugu Yalandji people (Y78) (Qld SD55-13)",
+      "Kuku Yalanji / Gugu Yalandji language (Y78) (Qld SD55-13)",
+      "Stories and motifs - Thunder and lightning"
+    ],
+    "title": "Aborigines of the rainforest",
+    "tts_version": "1.63-final-3-gfb459fd",
+    "uploader": "station03.cebu@archive.org"
+  },
+  "server": "ia800906.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "bpljordan-ol": {
+        "notes": {
+          "isbn": [
+            "9780521402897"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charles.horn@gmail.com"
+        },
+        "sys_last_changed": "2019-06-27 05:49:53.761155"
+      },
+      "johnshopkins-ol": {
+        "notes": {
+          "isbn": [
+            "9780521402897"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-03-31 10:06:26.16605"
+      }
+    }
+  },
+  "uniq": 1137591507,
+  "workable_servers": [
+    "ia800906.us.archive.org",
+    "ia600906.us.archive.org"
+  ]
+}

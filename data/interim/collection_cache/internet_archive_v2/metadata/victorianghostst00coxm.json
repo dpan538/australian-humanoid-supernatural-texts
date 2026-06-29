@@ -1,0 +1,737 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/victorianghostst00coxm",
+        "server": "dn760102.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/victorianghostst00coxm",
+        "server": "dn790002.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/victorianghostst00coxm",
+        "server": "dn760102.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/victorianghostst00coxm",
+        "server": "dn790002.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1782061976,
+  "d1": "ia902901.us.archive.org",
+  "d2": "ia802901.us.archive.org",
+  "dir": "/16/items/victorianghostst00coxm",
+  "files": [
+    {
+      "crc32": "aafeb1d7",
+      "format": "Item Tile",
+      "md5": "a8901d6c62c1f9c958bd1b52bbf25ad9",
+      "mtime": "1661238242",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "5ed89fb02a510b97ba84ad52687ecb405f6a085d",
+      "size": "18930",
+      "source": "original"
+    },
+    {
+      "crc32": "f11df8cc",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.66",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "aedfe3457e328dcfdbe5cc9ab22635ee",
+      "mtime": "1754149219",
+      "name": "victorianghostst00coxm.epub",
+      "original": "victorianghostst00coxm_hocr.html",
+      "private": "true",
+      "sha1": "0df82ba463d267010469cbe679b1224dbc961249",
+      "size": "1644583",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2192301e",
+      "format": "Animated GIF",
+      "md5": "0da4e381391d7d5fbb3656f09736d0ef",
+      "mtime": "1317819304",
+      "name": "victorianghostst00coxm.gif",
+      "original": "victorianghostst00coxm_jp2.zip",
+      "sha1": "c8a3f4256edda50a85773a82267d43b60d32a8b1",
+      "size": "291303",
+      "source": "derivative"
+    },
+    {
+      "crc32": "9f06718e",
+      "format": "LCP Encrypted PDF",
+      "md5": "660866f3054f921b954a48d15e5dbd09",
+      "mtime": "1754148843",
+      "name": "victorianghostst00coxm.lcpdf",
+      "original": "victorianghostst00coxm.pdf",
+      "sha1": "6971b9dd1f1ba562f92e9c2a0056b774fb9d0ea2",
+      "size": "42383831",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a282af0d",
+      "format": "Text PDF",
+      "md5": "b8c8475665c6f50410171e246e1c2c89",
+      "mtime": "1716306654",
+      "name": "victorianghostst00coxm.pdf",
+      "original": "victorianghostst00coxm_page_numbers.json",
+      "pdf_degraded": "invalid-jp2-headers",
+      "pdf_module_version": "0.0.25",
+      "private": "true",
+      "sha1": "f47bb5392da81eec519969bc7d1d645a3bb7a64c",
+      "size": "42115413",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6e1e28c4",
+      "format": "Abbyy GZ",
+      "md5": "013af30b7a5c00ef8398a9041ec8b067",
+      "mtime": "1317834754",
+      "name": "victorianghostst00coxm_abbyy.gz",
+      "original": "victorianghostst00coxm_jp2.zip",
+      "private": "true",
+      "sha1": "d7f99bb3eb71bc57201cc516904036bf42d1f737",
+      "size": "18497091",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ff719f09",
+      "format": "chOCR",
+      "md5": "d0038964774e1a2a61ed1aa243546e3c",
+      "mtime": "1638732483",
+      "name": "victorianghostst00coxm_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.11",
+      "ocr_module_version": "0.0.14",
+      "original": "victorianghostst00coxm_abbyy.gz",
+      "private": "true",
+      "sha1": "5fd9f58b4e27355d0ca4eeefce6e62c05ec8a5dc",
+      "size": "16012332",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "eadf676b",
+      "format": "Cloth Cover Detection Log",
+      "md5": "7db26838aeb3d373e91978ac2943b656",
+      "mtime": "1671638393",
+      "name": "victorianghostst00coxm_cloth_detection.log",
+      "original": "victorianghostst00coxm_scandata.xml",
+      "private": "true",
+      "sha1": "33fbd69f6589f75561074dd68102fb6fbdef14bf",
+      "size": "780",
+      "source": "derivative"
+    },
+    {
+      "crc32": "852be1fd",
+      "format": "Dublin Core",
+      "md5": "480e1f02db6d51de62d898c1564196ea",
+      "mtime": "1305664194",
+      "name": "victorianghostst00coxm_dc.xml",
+      "sha1": "488a79a9450eb178acbe157bef28e698909545f3",
+      "size": "1511",
+      "source": "original"
+    },
+    {
+      "crc32": "6985d635",
+      "format": "DjVuTXT",
+      "md5": "1d3f8b2c015d4e01dccaeb00081814c6",
+      "mtime": "1716306828",
+      "name": "victorianghostst00coxm_djvu.txt",
+      "original": "victorianghostst00coxm_djvu.xml",
+      "private": "true",
+      "sha1": "4eb4adae059a11b3bef96b6108f9fea67548a1cc",
+      "size": "1519559",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0467b58a",
+      "format": "Djvu XML",
+      "md5": "74e54bf9e03ce6b20c8225af81ca580c",
+      "mtime": "1716300147",
+      "name": "victorianghostst00coxm_djvu.xml",
+      "original": "victorianghostst00coxm_hocr.html",
+      "private": "true",
+      "sha1": "f0a96f153308678d9c18ee37d7b0f25fb9f7a172",
+      "size": "18325350",
+      "source": "derivative"
+    },
+    {
+      "crc32": "46bf11ae",
+      "format": "ACS Encrypted PDF",
+      "md5": "1518a6ceed01fecd2550aa2ec934c9ea",
+      "mtime": "1716306833",
+      "name": "victorianghostst00coxm_encrypted.pdf",
+      "original": "victorianghostst00coxm.pdf",
+      "sha1": "6784a78f6974bc6f2f5a6ee639747b38dd995fad",
+      "size": "41978876",
+      "source": "derivative"
+    },
+    {
+      "crc32": "8f3c660e",
+      "format": "Metadata",
+      "md5": "5694de010fcb2cf2c8422875d2e69be3",
+      "mtime": "1419574250",
+      "name": "victorianghostst00coxm_extramarc.xml",
+      "sha1": "3ec02da70f8aa6f08b868c20f7808dd4ae67b381",
+      "size": "4500",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "07d21fb4fd54261023914717be0e7712",
+      "name": "victorianghostst00coxm_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "54e03c06",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.2",
+      "hocr_char_to_word_module_version": "1.0.0",
+      "md5": "2a35438ef78dc71df91488d115a4bd29",
+      "mtime": "1638732669",
+      "name": "victorianghostst00coxm_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.11",
+      "ocr_module_version": "0.0.14",
+      "original": "victorianghostst00coxm_chocr.html.gz",
+      "private": "true",
+      "sha1": "3dd299b1a036c88c6c5be133e602bf6cb9840778",
+      "size": "33716409",
+      "source": "derivative"
+    },
+    {
+      "crc32": "050207b2",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.0",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "f133522d72f44943cd5be900ca33335c",
+      "mtime": "1638732843",
+      "name": "victorianghostst00coxm_hocr_pageindex.json.gz",
+      "original": "victorianghostst00coxm_hocr.html",
+      "private": "true",
+      "sha1": "3525bb8dbebfd188caf6ceed7dc3e91d23792c14",
+      "size": "6464",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d017a47e",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.0",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "e8a8e7299fc814387b9e719865324227",
+      "mtime": "1638732981",
+      "name": "victorianghostst00coxm_hocr_searchtext.txt.gz",
+      "original": "victorianghostst00coxm_hocr.html",
+      "private": "true",
+      "sha1": "ce6f80e65b4aa29e11ebac8bcf4fcf2cd232efd6",
+      "size": "514451",
+      "source": "derivative",
+      "word_conf_0_10": "3606",
+      "word_conf_11_20": "2651",
+      "word_conf_21_30": "14769",
+      "word_conf_31_40": "19581",
+      "word_conf_41_50": "47846",
+      "word_conf_51_60": "55313",
+      "word_conf_61_70": "50320",
+      "word_conf_71_80": "25332",
+      "word_conf_81_90": "7035",
+      "word_conf_91_100": "9147"
+    },
+    {
+      "crc32": "945d35c6",
+      "filecount": "530",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "278252f819f69c4d3fa0727c95c28c91",
+      "mtime": "1317817914",
+      "name": "victorianghostst00coxm_jp2.zip",
+      "original": "victorianghostst00coxm_orig_jp2.tar",
+      "private": "true",
+      "sha1": "0bd9e1ba15bf4ccca4e533fd8cd8131c755fcff1",
+      "size": "278918151",
+      "source": "derivative"
+    },
+    {
+      "crc32": "85d6ef0c",
+      "format": "LCP Encrypted EPUB",
+      "md5": "b4f6f326c36a0151c20b1680b5f9c6f4",
+      "mtime": "1754149523",
+      "name": "victorianghostst00coxm_lcp.epub",
+      "original": "victorianghostst00coxm.epub",
+      "sha1": "558cb65bb0ef393e64f2bab4906edf0ea041364a",
+      "size": "1667918",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a53feecb",
+      "format": "JSON",
+      "md5": "d50661133cb2daa1dfbf330861fab0a7",
+      "mtime": "1598582425",
+      "name": "victorianghostst00coxm_loans.json",
+      "private": "true",
+      "sha1": "defd351a5a78b9bd9efc3ba86f45df41b902e59f",
+      "size": "32391",
+      "source": "original"
+    },
+    {
+      "crc32": "e643c9eb",
+      "format": "MARC",
+      "md5": "09907e4eb739b4f4cc1b129ed6d03df5",
+      "mtime": "1305664194",
+      "name": "victorianghostst00coxm_marc.xml",
+      "sha1": "25cc9023d455fe2c6533b8121e1a9895a7180bab",
+      "size": "22906",
+      "source": "original"
+    },
+    {
+      "crc32": "1d579963",
+      "format": "Metadata Log",
+      "md5": "2c3f48ab1895050baf0109db6cf8aca8",
+      "mtime": "1454805662",
+      "name": "victorianghostst00coxm_meta.log",
+      "original": "victorianghostst00coxm_xisbn.json",
+      "private": "true",
+      "sha1": "7fe6f0519d04b796a9442a534cedc7f4978c450e",
+      "size": "892",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b11fb515",
+      "format": "MARC Binary",
+      "md5": "30d1a6de33877b2ad3c8c70154869e00",
+      "mtime": "1305664194",
+      "name": "victorianghostst00coxm_meta.mrc",
+      "sha1": "61935ae5c2df8a62932c76d4a7f019f2249b4a65",
+      "size": "6622",
+      "source": "original"
+    },
+    {
+      "crc32": "0de69cf4",
+      "format": "Metadata",
+      "md5": "ee59b89b54ec78a382c455dec2daf8c3",
+      "mtime": "1464122954",
+      "name": "victorianghostst00coxm_meta.sqlite",
+      "sha1": "aff63ec4577fcfee07df3d83c50a672a490eef5f",
+      "size": "8192",
+      "source": "original"
+    },
+    {
+      "crc32": "7e7c0824",
+      "format": "Metadata",
+      "md5": "2b1e35e1c9e5c6a89b2d6a264be6e8a2",
+      "mtime": "1754149523",
+      "name": "victorianghostst00coxm_meta.xml",
+      "sha1": "625e6bb58e2fc32d00077abc22103fe2cc52c1c3",
+      "size": "5006",
+      "source": "original"
+    },
+    {
+      "crc32": "cb4e7f7c",
+      "format": "MARC Source",
+      "md5": "0db2d60ff6e5ae4baf690bd50a040e22",
+      "mtime": "1305664194",
+      "name": "victorianghostst00coxm_metasource.xml",
+      "sha1": "33577637f40256b58a85ee3925f54f3e4618c7a7",
+      "size": "410",
+      "source": "original"
+    },
+    {
+      "crc32": "6ea3765c",
+      "format": "METS",
+      "md5": "f1e43738724a2ed67f1caf88274bec7c",
+      "mtime": "1440007665",
+      "name": "victorianghostst00coxm_mets.xml",
+      "private": "true",
+      "sha1": "12a89790cd5c9ad2eab19db8354ed70dc0fee4e2",
+      "size": "6276",
+      "source": "original"
+    },
+    {
+      "crc32": "82cceb23",
+      "filecount": "530",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "b29c382dfee5609ec91d82b66a7f6b00",
+      "mtime": "1317625316",
+      "name": "victorianghostst00coxm_orig_jp2.tar",
+      "private": "true",
+      "sha1": "fc26f766e42a619cf4ee2262db9f58be8f84286d",
+      "size": "361400320",
+      "source": "original"
+    },
+    {
+      "crc32": "49bd6e39",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "98",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "953872c519f17d38c29eb15e8a86aef9",
+      "mtime": "1716300235",
+      "name": "victorianghostst00coxm_page_numbers.json",
+      "original": "victorianghostst00coxm_hocr.html",
+      "private": "true",
+      "sha1": "12d759f9362eef4b0bd9a6e7a25675e2bc10f3c3",
+      "size": "89982",
+      "source": "derivative"
+    },
+    {
+      "crc32": "95ba24f9",
+      "format": "Scandata",
+      "md5": "fbf4032c99af6847581fcb0b02a0e054",
+      "mtime": "1671638392",
+      "name": "victorianghostst00coxm_scandata.xml",
+      "sha1": "d3bdc538d6fb276267d0a569f107e786b0735ed2",
+      "size": "527446",
+      "source": "original"
+    },
+    {
+      "crc32": "1603dd5d",
+      "format": "OCLC xISBN JSON",
+      "md5": "646180ddafc3bfe60f2b94e153e2e736",
+      "mtime": "1454804097",
+      "name": "victorianghostst00coxm_xisbn.json",
+      "sha1": "36c493a15efb9b9aa3169b696b6cd263556c5321",
+      "size": "902",
+      "source": "original"
+    }
+  ],
+  "files_count": 31,
+  "item_last_updated": 1754149523,
+  "item_size": 859718797,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2011-05-17 20:29:56",
+    "backup_location": "ia903700_5",
+    "boxid": "IA138709",
+    "boxid_2": "CH100401",
+    "camera": "Canon EOS 5D Mark II",
+    "city": "Oxford",
+    "collection": [
+      "internetarchivebooks",
+      "delawarecountydistrictlibrary",
+      "americana",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "containerid_2": "X0001",
+    "contributor": "Internet Archive",
+    "creator": [
+      "Cox, Michael, 1948-2009",
+      "Gilbert, R. A"
+    ],
+    "date": "1991",
+    "description": [
+      "Includes bibliographical references (p. [493]-497)",
+      "Collection of thirty-four English ghost stories written during the Victorian Era"
+    ],
+    "donor": "bostonpubliclibrary",
+    "external-identifier": [
+      "urn:acs6:victorianghostst00coxm:pdf:3cbdaf10-e5fb-4ad4-b109-22e48ffe7892",
+      "urn:acs6:victorianghostst00coxm:epub:8f7624bd-6686-490c-bd15-1785db6c7330",
+      "urn:oclc:record:1036909533",
+      "urn:lcp:victorianghostst00coxm:lcpdf:371169c7-f333-4e68-aa8d-884862b0cded",
+      "urn:lcp:victorianghostst00coxm:epub:ea4d1224-3c8c-44f7-b2a7-9ad62c21a092"
+    ],
+    "extramarc": "University of Toronto",
+    "filesxml": [
+      "Sat Dec 26 16:21:03 UTC 2020",
+      "Wed Apr 3 16:12:12 UTC 2024"
+    ],
+    "foldoutcount": "0",
+    "identifier": "victorianghostst00coxm",
+    "identifier-access": "http://www.archive.org/details/victorianghostst00coxm",
+    "identifier-ark": "ark:/13960/t54f2s42x",
+    "imagecount": "530",
+    "isbn": [
+      "019214202X",
+      "9780192142023"
+    ],
+    "language": "eng",
+    "lccn": "91002748",
+    "loans__status__last_loan_date": "2020-08-28T02:40:22Z",
+    "loans__status__last_waitlist_date": "2019-10-22T17:27:20Z",
+    "loans__status__num_history": "83",
+    "loans__status__num_loans": "1",
+    "loans__status__num_waitlist": "0",
+    "loans__status__status": "AVAILABLE",
+    "mediatype": "texts",
+    "oclc-id": [
+      "23286913",
+      "466013810",
+      "611640567",
+      "804486526",
+      "490241312"
+    ],
+    "ocr": "ABBYY FineReader 8.0",
+    "ocr_converted": "abbyy-to-hocr 1.1.11",
+    "ocr_module_version": "0.0.14",
+    "openlibrary_edition": "OL2026783M",
+    "openlibrary_work": "OL16068550W",
+    "operator": "scanner-shenzhen-jep@archive.org",
+    "page-progression": "lr",
+    "page_number_confidence": "98",
+    "page_number_module_version": "1.0.5",
+    "pdf_degraded": "invalid-jp2-headers",
+    "pdf_module_version": "0.0.25",
+    "ppi": "500",
+    "publicdate": "2011-05-17 20:30:01",
+    "publisher": "Oxford ; New York : Oxford University Press",
+    "related-external-id": [
+      "urn:isbn:0192829998",
+      "urn:lccn:91002748",
+      "urn:oclc:473810239",
+      "urn:oclc:490241312",
+      "urn:oclc:59951764",
+      "urn:oclc:644532374",
+      "urn:oclc:797427794",
+      "urn:oclc:828175801",
+      "urn:oclc:831320876",
+      "urn:oclc:860349831",
+      "urn:oclc:23286913"
+    ],
+    "repub_seconds": "641",
+    "repub_state": "4",
+    "scandate": "20111003070138",
+    "scanfee": "100",
+    "scanner": "scribe11.shenzhen.archive.org",
+    "scanningcenter": "shenzhen",
+    "shiptracking": "f0015",
+    "sponsor": "Internet Archive",
+    "sponsordate": "sent20111107",
+    "subject": [
+      "Ghost stories, English",
+      "English fiction",
+      "Hayalet öyküleri, Ingiliz",
+      "Ingiliz roman",
+      "Anthologie",
+      "Gespenstergeschichte",
+      "Littérature fantastique anglaise",
+      "Roman anglais",
+      "English fiction Short stories",
+      "English fiction Short stories"
+    ],
+    "title": "Victorian ghost stories : an Oxford anthology",
+    "updatedate": "2011-05-17 20:29:54",
+    "updater": "sf-loaders@archive.org",
+    "uploader": "sf-loaders@archive.org"
+  },
+  "server": "ia802901.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "barryuniversity-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-05-08 07:40:10.745265"
+      },
+      "dartmouthlibrary-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-04-07 06:44:44.40009"
+      },
+      "delawarecountydistrictlibrary-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charles.horn@gmail.com"
+        },
+        "sys_last_changed": "2019-01-11 02:26:53.940422"
+      },
+      "johnshopkins-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-03-31 08:20:33.157837"
+      },
+      "library_of_atlantis": {
+        "notes": {
+          "isbn": "9780192142023"
+        },
+        "sys_changed_by": {
+          "source": "task",
+          "task_id": "718194457"
+        },
+        "sys_last_changed": "2017-08-09 01:26:42.177956"
+      },
+      "occidentalcollegelibrary-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-03-26 10:27:03.837576"
+      },
+      "phillipsacademy-preview": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2019-02-18 01:16:55.447459"
+      },
+      "rochester-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-01-20 23:13:56.252581"
+      },
+      "the-claremont-colleges-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-03-27 00:06:19.875923"
+      },
+      "universityofarizona-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-04-14 02:10:51.559967"
+      },
+      "universityofcoloradoboulder-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-04-17 01:43:37.43077"
+      },
+      "universityofoklahoma-ol": {
+        "notes": {
+          "isbn": [
+            "9780192142023"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charles.horn@gmail.com"
+        },
+        "sys_last_changed": "2019-12-04 04:18:27.41069"
+      }
+    }
+  },
+  "uniq": 102873910,
+  "workable_servers": [
+    "ia802901.us.archive.org",
+    "ia902901.us.archive.org"
+  ],
+  "xisbn": {
+    "list": [
+      {
+        "author": "selected and introduced by Michael Cox and R.A. Gilbert.",
+        "city": "Oxford",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "019214202X"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "91002748"
+        ],
+        "oclcnum": [
+          "23286913",
+          "466013810",
+          "611640567",
+          "804486526",
+          "490241312"
+        ],
+        "publisher": "Oxford University Press",
+        "title": "Victorian ghost stories : an Oxford anthology",
+        "url": [
+          "http://www.worldcat.org/oclc/23286913?referer=xid"
+        ],
+        "year": "1991"
+      },
+      {
+        "author": "selected and introduced by Michael Cox and R.A. Gilbert.",
+        "city": "Oxford",
+        "ed": "Oxford University Press pbk.",
+        "form": [
+          "BC"
+        ],
+        "isbn": [
+          "0192829998"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "91002748"
+        ],
+        "oclcnum": [
+          "473810239",
+          "490241312",
+          "59951764",
+          "644532374",
+          "797427794",
+          "828175801",
+          "831320876",
+          "860349831",
+          "23286913"
+        ],
+        "publisher": "Oxford University Press",
+        "title": "Victorian ghost stories : an Oxford anthology",
+        "url": [
+          "http://www.worldcat.org/oclc/473810239?referer=xid"
+        ],
+        "year": "1992"
+      }
+    ],
+    "stat": "ok"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Narrative Discourse Analysis of A Foreigner’s Story During His Work in Indonesia",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.21512/lc.v4i1.350",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2010-05-31",
+  "publication": "Lingua Cultura",
+  "author": "Melania Wiannastiti",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "This article is concerned with the study of appraisal of a foreigner who worked in Indonesia. The aim is to find out some personal feeling of working in Indonesia. An Australian who worked in Indonesia during some period of time was the main respondent. There are three episodes of conversation through the internet chat, namely Yahoo Messenger between the writer and the respondent. The conversation transcript was used as the data. Narrative story and discourse analysis were used as a perspective approach to analyze the story. The important themes discussed in the study are affect, appreciation, personal and moral judgment, and social judgment.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

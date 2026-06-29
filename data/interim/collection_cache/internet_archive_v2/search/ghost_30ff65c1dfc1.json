@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 38,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "((&quot;Tasmanian ghost&quot; OR &quot;Tasmania ghost stories&quot; OR &quot;haunted Tasmania&quot;)) AND mediatype:texts",
+      "query": "((text:&quot;Tasmanian ghost&quot; OR text:&quot;Tasmanian ghost&quot; OR text__reviews:&quot;Tasmanian ghost&quot;) OR (text:&quot;Tasmania ghost stories&quot; OR text:&quot;Tasmania ghost stories&quot; OR text__reviews:&quot;Tasmania ghost stories&quot;) OR (text:&quot;haunted Tasmania&quot; OR text:&quot;haunted Tasmania&quot; OR text__reviews:&quot;haunted Tasmania&quot;)) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

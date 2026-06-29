@@ -1,0 +1,1402 @@
+{
+  "Alice Springs, Northern Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city": "Alice Springs",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0870",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-23.7070930",
+        "-23.6916140",
+        "133.8742630",
+        "133.8859970"
+      ],
+      "category": "boundary",
+      "display_name": "Alice Springs, Northern Territory, 0870, Australia",
+      "importance": 0.5378810065780416,
+      "lat": "-23.6983884",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "133.8812885",
+      "name": "Alice Springs",
+      "osm_id": 11716659,
+      "osm_type": "relation",
+      "place_id": 28910179,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Bathurst, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Bathurst",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2795",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-33.5766482",
+        "-33.2566482",
+        "149.4203725",
+        "149.7403725"
+      ],
+      "category": "place",
+      "display_name": "Bathurst, New South Wales, 2795, Australia",
+      "importance": 0.5297443376314536,
+      "lat": "-33.4166482",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.5803725",
+      "name": "Bathurst",
+      "osm_id": 172987017,
+      "osm_type": "node",
+      "place_id": 22923005,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Bathurst Regional Council",
+        "postcode": "2795",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-33.9976261",
+        "-32.9486157",
+        "149.1172255",
+        "149.9221834"
+      ],
+      "category": "boundary",
+      "display_name": "Bathurst Regional Council, New South Wales, 2795, Australia",
+      "importance": 0.43005488498339645,
+      "lat": "-33.4747071",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.6413197",
+      "name": "Bathurst Regional Council",
+      "osm_id": 6330866,
+      "osm_type": "relation",
+      "place_id": 22914836,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Bendigo, Victoria, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city": "Bendigo",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3550",
+        "state": "Victoria"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-36.9190183",
+        "-36.5990183",
+        "144.1226718",
+        "144.4426718"
+      ],
+      "category": "place",
+      "display_name": "Bendigo, Victoria, 3550, Australia",
+      "importance": 0.5445588346649259,
+      "lat": "-36.7590183",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.2826718",
+      "name": "Bendigo",
+      "osm_id": 30917754,
+      "osm_type": "node",
+      "place_id": 22782117,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "city_district": "Bendigo",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3550",
+        "state": "Victoria"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-36.7705760",
+        "-36.7417840",
+        "144.2621360",
+        "144.2981670"
+      ],
+      "category": "boundary",
+      "display_name": "Bendigo, Victoria, 3550, Australia",
+      "importance": 0.28939223170644257,
+      "lat": "-36.7554002",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.2808450",
+      "name": "Bendigo",
+      "osm_id": 3079195,
+      "osm_type": "relation",
+      "place_id": 23002750,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Blue Mountains, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "mountain_range": "Blue Mountains",
+        "state": "New South Wales"
+      },
+      "addresstype": "mountain_range",
+      "boundingbox": [
+        "-33.9553209",
+        "-33.1789387",
+        "150.1281731",
+        "150.6871019"
+      ],
+      "category": "natural",
+      "display_name": "Blue Mountains, New South Wales, Australia",
+      "importance": 0.5027059905512913,
+      "lat": "-33.6097410",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4052237",
+      "name": "Blue Mountains",
+      "osm_id": 889118010,
+      "osm_type": "way",
+      "place_id": 23379781,
+      "place_rank": 18,
+      "type": "mountain_range"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Blue Mountains City Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-33.9002879",
+        "-33.3633831",
+        "150.1660300",
+        "150.6598411"
+      ],
+      "category": "boundary",
+      "display_name": "Blue Mountains City Council, New South Wales, Australia",
+      "importance": 0.4526540225690988,
+      "lat": "-33.6351142",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.4375037",
+      "name": "Blue Mountains City Council",
+      "osm_id": 6299568,
+      "osm_type": "relation",
+      "place_id": 23363013,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Finke River, Northern Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Finke River",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-25.8965228",
+        "-23.6601476",
+        "132.6624692",
+        "135.1029110"
+      ],
+      "category": "waterway",
+      "display_name": "Finke River, Northern Territory, Australia",
+      "importance": 0.3678453393566702,
+      "lat": "-24.9214046",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "133.6838744",
+      "name": "Finke River",
+      "osm_id": 4690307,
+      "osm_type": "relation",
+      "place_id": 28803200,
+      "place_rank": 18,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Finke River",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-26.0862621",
+        "-25.8595856",
+        "135.1467704",
+        "135.4738525"
+      ],
+      "category": "waterway",
+      "display_name": "Finke River, Northern Territory, Australia",
+      "importance": 0.14671521095597767,
+      "lat": "-25.9568272",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "135.3193365",
+      "name": "Finke River",
+      "osm_id": 729006036,
+      "osm_type": "way",
+      "place_id": 28830779,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city_district": "Ghan",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0872",
+        "river": "Finke River",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-25.4904730",
+        "-25.4781400",
+        "134.2421300",
+        "134.2651605"
+      ],
+      "category": "waterway",
+      "display_name": "Finke River, Ghan, Northern Territory, 0872, Australia",
+      "importance": 0.14671521095597767,
+      "lat": "-25.4782645",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "134.2573902",
+      "name": "Finke River",
+      "osm_id": 310605432,
+      "osm_type": "way",
+      "place_id": 418944982,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city_district": "Namatjira",
+        "country": "Australia",
+        "country_code": "au",
+        "hamlet": "Armstrongs",
+        "postcode": "0872",
+        "river": "Finke River",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-23.8891227",
+        "-23.8777717",
+        "132.6808004",
+        "132.6999271"
+      ],
+      "category": "waterway",
+      "display_name": "Finke River, Armstrongs, Namatjira, Northern Territory, 0872, Australia",
+      "importance": 0.14671521095597767,
+      "lat": "-23.8850496",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "132.6895765",
+      "name": "Finke River",
+      "osm_id": 446598359,
+      "osm_type": "way",
+      "place_id": 28954230,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city_district": "Hugh",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0872",
+        "stream": "Finke River",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-25.0223960",
+        "-24.9980539",
+        "133.8267300",
+        "133.8385853"
+      ],
+      "category": "waterway",
+      "display_name": "Finke River, Hugh, Northern Territory, 0872, Australia",
+      "importance": 0.10671521095597769,
+      "lat": "-25.0098315",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "133.8305048",
+      "name": "Finke River",
+      "osm_id": 310599697,
+      "osm_type": "way",
+      "place_id": 28880452,
+      "place_rank": 22,
+      "type": "stream"
+    }
+  ],
+  "Fremantle, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6160",
+        "state": "Western Australia",
+        "town": "Fremantle"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-32.0639420",
+        "-32.0411840",
+        "115.7321950",
+        "115.7797250"
+      ],
+      "category": "boundary",
+      "display_name": "Fremantle, Western Australia, 6160, Australia",
+      "importance": 0.5413386865073574,
+      "lat": "-32.0534086",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.7586172",
+      "name": "Fremantle",
+      "osm_id": 11689400,
+      "osm_type": "relation",
+      "place_id": 33986475,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Goulburn, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2580",
+        "state": "New South Wales",
+        "town": "Goulburn"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-34.7937910",
+        "-34.6956000",
+        "149.6716221",
+        "149.7758447"
+      ],
+      "category": "boundary",
+      "display_name": "Goulburn, New South Wales, 2580, Australia",
+      "importance": 0.4865632884358775,
+      "lat": "-34.7523871",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "149.7198009",
+      "name": "Goulburn",
+      "osm_id": 6074534,
+      "osm_type": "relation",
+      "place_id": 23954320,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Hobart, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Hobart",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Tasmania"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-43.1036150",
+        "-42.6553760",
+        "147.0916880",
+        "147.6455880"
+      ],
+      "category": "place",
+      "display_name": "Hobart, Tasmania, Australia",
+      "importance": 0.6232599963964325,
+      "lat": "-42.8825088",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.3281233",
+      "name": "Hobart",
+      "osm_id": 10632745,
+      "osm_type": "relation",
+      "place_id": 24023066,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Hobart",
+        "state": "Tasmania"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-42.9431440",
+        "-42.8445880",
+        "147.1957490",
+        "147.3621330"
+      ],
+      "category": "boundary",
+      "display_name": "City of Hobart, Tasmania, Australia",
+      "importance": 0.38656660986684044,
+      "lat": "-42.8938510",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.2720858",
+      "name": "City of Hobart",
+      "osm_id": 10625466,
+      "osm_type": "relation",
+      "place_id": 24051801,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Illawarra, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "region": "Illawarra",
+        "state": "New South Wales"
+      },
+      "addresstype": "region",
+      "boundingbox": [
+        "-34.7925927",
+        "-34.1300239",
+        "150.6107498",
+        "151.0665796"
+      ],
+      "category": "place",
+      "display_name": "Illawarra, New South Wales, Australia",
+      "importance": 0.16006058060578315,
+      "lat": "-34.4614504",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.7904090",
+      "name": "Illawarra",
+      "osm_id": 7876497,
+      "osm_type": "relation",
+      "place_id": 24013173,
+      "place_rank": 18,
+      "type": "region"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "lake": "Lake Illawarra",
+        "postcode": "2530",
+        "state": "New South Wales",
+        "village": "Yallah"
+      },
+      "addresstype": "lake",
+      "boundingbox": [
+        "-34.5615506",
+        "-34.4836170",
+        "150.7958242",
+        "150.8877901"
+      ],
+      "category": "water",
+      "display_name": "Lake Illawarra, Yallah, New South Wales, 2530, Australia",
+      "importance": 0.4253784106722686,
+      "lat": "-34.5225021",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8404660",
+      "name": "Lake Illawarra",
+      "osm_id": 1076609,
+      "osm_type": "relation",
+      "place_id": 23955226,
+      "place_rank": 20,
+      "type": "lake"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "mountain_range": "Illawarra Escarpment",
+        "postcode": "2577",
+        "state": "New South Wales",
+        "town": "Robertson"
+      },
+      "addresstype": "mountain_range",
+      "boundingbox": [
+        "-34.8121118",
+        "-34.2192545",
+        "150.5676266",
+        "151.0020160"
+      ],
+      "category": "natural",
+      "display_name": "Illawarra Escarpment, Robertson, New South Wales, 2577, Australia",
+      "importance": 0.38057472762224825,
+      "lat": "-34.5096680",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.7265980",
+      "name": "Illawarra Escarpment",
+      "osm_id": 889117003,
+      "osm_type": "way",
+      "place_id": 23865489,
+      "place_rank": 18,
+      "type": "mountain_range"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "locality": "Lake Illawarra",
+        "postcode": "2528",
+        "state": "New South Wales"
+      },
+      "addresstype": "locality",
+      "boundingbox": [
+        "-34.5499923",
+        "-34.5298497",
+        "150.8482917",
+        "150.8824779"
+      ],
+      "category": "boundary",
+      "display_name": "Lake Illawarra, New South Wales, 2528, Australia",
+      "importance": 0.308429648456196,
+      "lat": "-34.5427778",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8594444",
+      "name": "Lake Illawarra",
+      "osm_id": 6076654,
+      "osm_type": "relation",
+      "place_id": 23971628,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Kati Thanda-Lake Eyre, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "country": "Australia",
+        "country_code": "au",
+        "lake": "Kati Thanda-Lake Eyre (North)",
+        "state": "South Australia"
+      },
+      "addresstype": "lake",
+      "boundingbox": [
+        "-29.1249261",
+        "-27.8403444",
+        "136.7956638",
+        "138.0624389"
+      ],
+      "category": "water",
+      "display_name": "Kati Thanda-Lake Eyre (North), South Australia, Australia",
+      "importance": 0.462786696392632,
+      "lat": "-28.4803638",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "137.2979051",
+      "name": "Kati Thanda-Lake Eyre (North)",
+      "osm_id": 253952,
+      "osm_type": "relation",
+      "place_id": 28513723,
+      "place_rank": 20,
+      "type": "lake"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "country": "Australia",
+        "country_code": "au",
+        "lake": "Kati Thanda-Lake Eyre (South)",
+        "state": "South Australia"
+      },
+      "addresstype": "lake",
+      "boundingbox": [
+        "-29.5056157",
+        "-29.0809055",
+        "137.1055929",
+        "137.7181666"
+      ],
+      "category": "water",
+      "display_name": "Kati Thanda-Lake Eyre (South), South Australia, Australia",
+      "importance": 0.13335752422369723,
+      "lat": "-29.2905703",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "137.4084110",
+      "name": "Kati Thanda-Lake Eyre (South)",
+      "osm_id": 27653773,
+      "osm_type": "way",
+      "place_id": 28540768,
+      "place_rank": 20,
+      "type": "lake"
+    }
+  ],
+  "Launceston, Tasmania, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "city": "Launceston",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "Tasmania"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-41.5268720",
+        "-41.3345650",
+        "146.9721810",
+        "147.3052450"
+      ],
+      "category": "place",
+      "display_name": "Launceston, Tasmania, Australia",
+      "importance": 0.5582913777439519,
+      "lat": "-41.4340813",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.1373496",
+      "name": "Launceston",
+      "osm_id": 10632701,
+      "osm_type": "relation",
+      "place_id": 24192195,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-TAS",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Launceston",
+        "state": "Tasmania"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-41.5561780",
+        "-41.0857340",
+        "146.9766380",
+        "147.6480590"
+      ],
+      "category": "boundary",
+      "display_name": "City of Launceston, Tasmania, Australia",
+      "importance": 0.36001248335965585,
+      "lat": "-41.3209940",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "147.2731288",
+      "name": "City of Launceston",
+      "osm_id": 10581631,
+      "osm_type": "relation",
+      "place_id": 24627071,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Moreton Bay, Queensland, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "bay": "Moreton Bay",
+        "city_district": "Moreton Bay",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4178",
+        "state": "Queensland"
+      },
+      "addresstype": "bay",
+      "boundingbox": [
+        "-27.2398319",
+        "-27.2397319",
+        "153.2539494",
+        "153.2540494"
+      ],
+      "category": "natural",
+      "display_name": "Moreton Bay, Queensland, 4178, Australia",
+      "importance": 0.49292875345192705,
+      "lat": "-27.2397819",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.2539994",
+      "name": "Moreton Bay",
+      "osm_id": 2678277422,
+      "osm_type": "node",
+      "place_id": 27578744,
+      "place_rank": 22,
+      "type": "bay"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Moreton Bay",
+        "state": "Queensland"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-27.4223750",
+        "-26.7922700",
+        "152.6511890",
+        "153.2073850"
+      ],
+      "category": "boundary",
+      "display_name": "City of Moreton Bay, Queensland, Australia",
+      "importance": 0.4246822253175736,
+      "lat": "-27.1073095",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "152.9024718",
+      "name": "City of Moreton Bay",
+      "osm_id": 11677711,
+      "osm_type": "relation",
+      "place_id": 27649680,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-QLD",
+        "city_district": "Moreton Bay",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "4178",
+        "state": "Queensland"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-27.6993170",
+        "-27.0627968",
+        "153.0668030",
+        "153.4504100"
+      ],
+      "category": "boundary",
+      "display_name": "Moreton Bay, Queensland, 4178, Australia",
+      "importance": 0.36081278497828223,
+      "lat": "-27.3810005",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "153.3189411",
+      "name": "Moreton Bay",
+      "osm_id": 11677904,
+      "osm_type": "relation",
+      "place_id": 27387794,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Mount Gambier, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "city": "Mount Gambier",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "5290",
+        "state": "South Australia"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-37.8526165",
+        "-37.8000280",
+        "140.7376121",
+        "140.8236766"
+      ],
+      "category": "boundary",
+      "display_name": "Mount Gambier, South Australia, 5290, Australia",
+      "importance": 0.4741470525797434,
+      "lat": "-37.8301386",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "140.7842627",
+      "name": "Mount Gambier",
+      "osm_id": 3801000,
+      "osm_type": "relation",
+      "place_id": 19129461,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Mount Gambier",
+        "postcode": "5290",
+        "state": "South Australia"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-37.8550797",
+        "-37.7942924",
+        "140.7374821",
+        "140.8261967"
+      ],
+      "category": "boundary",
+      "display_name": "City of Mount Gambier, South Australia, 5290, Australia",
+      "importance": 0.3708703066864196,
+      "lat": "-37.8246698",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "140.7819596",
+      "name": "City of Mount Gambier",
+      "osm_id": 3395909,
+      "osm_type": "relation",
+      "place_id": 19179903,
+      "place_rank": 12,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "city": "Mount Gambier",
+        "country": "Australia",
+        "country_code": "au",
+        "peak": "Mount Gambier",
+        "postcode": "5290",
+        "state": "South Australia"
+      },
+      "addresstype": "peak",
+      "boundingbox": [
+        "-37.8404302",
+        "-37.8403302",
+        "140.7557115",
+        "140.7558115"
+      ],
+      "category": "natural",
+      "display_name": "Mount Gambier, South Australia, 5290, Australia",
+      "importance": 0.3307177672703685,
+      "lat": "-37.8403802",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "140.7557615",
+      "name": "Mount Gambier",
+      "osm_id": 2528849807,
+      "osm_type": "node",
+      "place_id": 19062740,
+      "place_rank": 18,
+      "type": "peak"
+    }
+  ],
+  "Newcastle, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Newcastle-Maitland",
+        "postcode": "2300",
+        "state": "New South Wales",
+        "suburb": "Newcastle"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-32.9378050",
+        "-32.9014820",
+        "151.7596295",
+        "151.8039320"
+      ],
+      "category": "boundary",
+      "display_name": "Newcastle, Newcastle-Maitland, New South Wales, 2300, Australia",
+      "importance": 0.6015185985164261,
+      "lat": "-32.9192953",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.7795348",
+      "name": "Newcastle",
+      "osm_id": 5989933,
+      "osm_type": "relation",
+      "place_id": 23948352,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Newcastle",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Newcastle-Maitland",
+        "postcode": "2300",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-33.0872881",
+        "-32.7672881",
+        "151.6212534",
+        "151.9412534"
+      ],
+      "category": "place",
+      "display_name": "Newcastle, Newcastle-Maitland, New South Wales, 2300, Australia",
+      "importance": 0.6015185985164261,
+      "lat": "-32.9272881",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.7812534",
+      "name": "Newcastle",
+      "osm_id": 25841904,
+      "osm_type": "node",
+      "place_id": 23333416,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Newcastle",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-32.9630394",
+        "-32.7893530",
+        "151.6067490",
+        "151.8179061"
+      ],
+      "category": "boundary",
+      "display_name": "City of Newcastle, New South Wales, Australia",
+      "importance": 0.4438716956635516,
+      "lat": "-32.8762675",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "151.7039180",
+      "name": "City of Newcastle",
+      "osm_id": 6189831,
+      "osm_type": "relation",
+      "place_id": 23092996,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Perth, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city": "Perth",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6000",
+        "state": "Western Australia"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-32.1158967",
+        "-31.7958967",
+        "115.7005784",
+        "116.0205784"
+      ],
+      "category": "place",
+      "display_name": "Perth, Western Australia, 6000, Australia",
+      "importance": 0.6910666106978679,
+      "lat": "-31.9558967",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.8605784",
+      "name": "Perth",
+      "osm_id": 29277817,
+      "osm_type": "node",
+      "place_id": 33834793,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "city": "Perth",
+        "city_district": "Perth",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6000",
+        "state": "Western Australia"
+      },
+      "addresstype": "city_district",
+      "boundingbox": [
+        "-31.9730120",
+        "-31.9364940",
+        "115.8271660",
+        "115.8779110"
+      ],
+      "category": "boundary",
+      "display_name": "Perth, Western Australia, 6000, Australia",
+      "importance": 0.3501849283177136,
+      "lat": "-31.9548005",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.8583736",
+      "name": "Perth",
+      "osm_id": 11689210,
+      "osm_type": "relation",
+      "place_id": 33717806,
+      "place_rank": 18,
+      "type": "administrative"
+    }
+  ],
+  "Port Lincoln, South Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "5606",
+        "state": "South Australia",
+        "town": "Port Lincoln"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-34.7697420",
+        "-34.6874143",
+        "135.8106056",
+        "135.8940370"
+      ],
+      "category": "boundary",
+      "display_name": "Port Lincoln, South Australia, 5606, Australia",
+      "importance": 0.47329590008323624,
+      "lat": "-34.7211905",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "135.8592218",
+      "name": "Port Lincoln",
+      "osm_id": 6334164,
+      "osm_type": "relation",
+      "place_id": 18785881,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-SA",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "City of Port Lincoln",
+        "postcode": "5606",
+        "state": "South Australia"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-34.7697420",
+        "-34.6874143",
+        "135.8213639",
+        "135.8940370"
+      ],
+      "category": "boundary",
+      "display_name": "City of Port Lincoln, South Australia, 5606, Australia",
+      "importance": 0.36081278497828223,
+      "lat": "-34.7284175",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "135.8563199",
+      "name": "City of Port Lincoln",
+      "osm_id": 9110111,
+      "osm_type": "relation",
+      "place_id": 18805347,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ],
+  "Port Phillip, Victoria, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-VIC",
+        "bay": "Port Phillip",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "3225",
+        "state": "Victoria"
+      },
+      "addresstype": "bay",
+      "boundingbox": [
+        "-38.3701398",
+        "-37.8390456",
+        "144.4254353",
+        "145.1245464"
+      ],
+      "category": "natural",
+      "display_name": "Port Phillip, Victoria, 3225, Australia",
+      "importance": 0.4789467094710231,
+      "lat": "-38.1046482",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "144.7798547",
+      "name": "Port Phillip",
+      "osm_id": 1221199,
+      "osm_type": "relation",
+      "place_id": 19686715,
+      "place_rank": 22,
+      "type": "bay"
+    }
+  ],
+  "Roper River, Northern Territory, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Roper River",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-14.9628825",
+        "-14.6142540",
+        "133.1497559",
+        "135.3978793"
+      ],
+      "category": "waterway",
+      "display_name": "Roper River, Northern Territory, Australia",
+      "importance": 0.3697233328141787,
+      "lat": "-14.6873399",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "134.3765274",
+      "name": "Roper River",
+      "osm_id": 4672684,
+      "osm_type": "relation",
+      "place_id": 28790203,
+      "place_rank": 18,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "city_district": "Elsey",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "0852",
+        "river": "Roper River",
+        "territory": "Northern Territory"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-14.9335176",
+        "-14.9305991",
+        "133.1921688",
+        "133.1974668"
+      ],
+      "category": "waterway",
+      "display_name": "Roper River, Elsey, Northern Territory, 0852, Australia",
+      "importance": 0.14671052185854883,
+      "lat": "-14.9312592",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "133.1952885",
+      "name": "Roper River",
+      "osm_id": 370291964,
+      "osm_type": "way",
+      "place_id": 28837956,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NT",
+        "country": "Australia",
+        "country_code": "au",
+        "territory": "Northern Territory",
+        "town": "Ngukurr"
+      },
+      "addresstype": "town",
+      "boundingbox": [
+        "-14.7741439",
+        "-14.6941439",
+        "134.6923402",
+        "134.7723402"
+      ],
+      "category": "place",
+      "display_name": "Ngukurr, Northern Territory, Australia",
+      "importance": 0.1600438551918822,
+      "lat": "-14.7341439",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "134.7323402",
+      "name": "Ngukurr",
+      "osm_id": 4526115161,
+      "osm_type": "node",
+      "place_id": 28829248,
+      "place_rank": 18,
+      "type": "town"
+    }
+  ],
+  "Swan River, Western Australia, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "river": "Swan River",
+        "state": "Western Australia"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-32.0549364",
+        "-31.7357394",
+        "115.7300327",
+        "116.0727693"
+      ],
+      "category": "waterway",
+      "display_name": "Swan River, Western Australia, Australia",
+      "importance": 0.4777126655859621,
+      "lat": "-31.9319845",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "115.9190544",
+      "name": "Swan River",
+      "osm_id": 4638229,
+      "osm_type": "relation",
+      "place_id": 33819908,
+      "place_rank": 18,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6056",
+        "river": "Swan River",
+        "state": "Western Australia",
+        "suburb": "Baskerville"
+      },
+      "addresstype": "river",
+      "boundingbox": [
+        "-31.7927721",
+        "-31.7904830",
+        "116.0123195",
+        "116.0166986"
+      ],
+      "category": "waterway",
+      "display_name": "Swan River, Baskerville, Western Australia, 6056, Australia",
+      "importance": 0.14671437476157773,
+      "lat": "-31.7921818",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "116.0148624",
+      "name": "Swan River",
+      "osm_id": 88982102,
+      "osm_type": "way",
+      "place_id": 33919608,
+      "place_rank": 19,
+      "type": "river"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-WA",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "6069",
+        "state": "Western Australia",
+        "stream": "Swan River",
+        "suburb": "Upper Swan"
+      },
+      "addresstype": "stream",
+      "boundingbox": [
+        "-31.7877532",
+        "-31.7818536",
+        "116.0165068",
+        "116.0204742"
+      ],
+      "category": "waterway",
+      "display_name": "Swan River, Upper Swan, Western Australia, 6069, Australia",
+      "importance": 0.10671437476157776,
+      "lat": "-31.7839988",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "116.0172066",
+      "name": "Swan River",
+      "osm_id": 132640872,
+      "osm_type": "way",
+      "place_id": 33874848,
+      "place_rank": 22,
+      "type": "stream"
+    }
+  ],
+  "Wollongong, New South Wales, Australia": [
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2500",
+        "state": "New South Wales",
+        "suburb": "Wollongong"
+      },
+      "addresstype": "suburb",
+      "boundingbox": [
+        "-34.4429563",
+        "-34.4135598",
+        "150.8750698",
+        "150.9110471"
+      ],
+      "category": "boundary",
+      "display_name": "Wollongong, New South Wales, 2500, Australia",
+      "importance": 0.5609783498592809,
+      "lat": "-34.4278083",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8930540",
+      "name": "Wollongong",
+      "osm_id": 6076763,
+      "osm_type": "relation",
+      "place_id": 23852011,
+      "place_rank": 18,
+      "type": "administrative"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "city": "Wollongong",
+        "country": "Australia",
+        "country_code": "au",
+        "postcode": "2500",
+        "state": "New South Wales"
+      },
+      "addresstype": "city",
+      "boundingbox": [
+        "-34.5843941",
+        "-34.2643941",
+        "150.7338500",
+        "151.0538500"
+      ],
+      "category": "place",
+      "display_name": "Wollongong, New South Wales, 2500, Australia",
+      "importance": 0.5609783498592809,
+      "lat": "-34.4243941",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8938500",
+      "name": "Wollongong",
+      "osm_id": 20920968,
+      "osm_type": "node",
+      "place_id": 24000434,
+      "place_rank": 16,
+      "type": "city"
+    },
+    {
+      "address": {
+        "ISO3166-2-lvl4": "AU-NSW",
+        "country": "Australia",
+        "country_code": "au",
+        "municipality": "Wollongong City Council",
+        "state": "New South Wales"
+      },
+      "addresstype": "municipality",
+      "boundingbox": [
+        "-34.5537423",
+        "-34.1300239",
+        "150.6351001",
+        "151.0665796"
+      ],
+      "category": "boundary",
+      "display_name": "Wollongong City Council, New South Wales, Australia",
+      "importance": 0.44614411899810325,
+      "lat": "-34.3419352",
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "lon": "150.8338851",
+      "name": "Wollongong City Council",
+      "osm_id": 6303077,
+      "osm_type": "relation",
+      "place_id": 24013533,
+      "place_rank": 12,
+      "type": "administrative"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Yahoo! A mobile news service is a bold move",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.64628/aa.xvhjvgdmj",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2013-11-29",
+  "publication": "OpenAlex",
+  "author": "Martin Hirst",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "\\n\\t\\t\\t\\t\\tThe investment in Katie Couric and senior reporters from The New York Times signals that Yahoo wants to move into Web TV and mobile video content in an effort to take on the the giants of American network and cable television, and perhaps even Netflix, which is rumoured to also be looking at an Australian launch next yea\\n\\t\\t\\t\\t",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

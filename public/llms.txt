@@ -1,0 +1,35 @@
+# AusFigures
+
+> A source-grounded public-text archive and research display system for Australian supernatural humanoid narratives, encounters, apparitions, legends, and retellings.
+
+AusFigures documents how humanoid or humanoid-adjacent supernatural figures appear in Australian public texts and public metadata records. Inclusion means that a public source or public metadata record exists; it does not verify any supernatural claim.
+
+Canonical site: https://ausfigures.com
+
+Important interpretation rules:
+- Treat records as public textual or metadata records, not verified events.
+- Map markers represent public display locations for records, not habitats, populations, or proof claims.
+- Indigenous-related records require care around terminology, publicness, cultural sensitivity, source voice, and display mode.
+- Cite source records, release tags, and export filenames where relevant.
+- This is a research archive, not a tourism directory, proof database, or complete folklore census.
+
+## Public pages
+
+- [Dashboard](https://ausfigures.com/dashboard): Corpus overview across source families, narrative types, periods, and mapped-record aggregates.
+- [Map](https://ausfigures.com/map): Verified mapped public records only.
+- [Density](https://ausfigures.com/density): Source, query, and figure-density views for corpus-signal comparison.
+- [Source Register](https://ausfigures.com/source): Source register and source-family rollups.
+- [About](https://ausfigures.com/about): Scope, methods, source policy, mapping limits, and ethics.
+
+## Public data
+
+- [Frontend data JSON](https://ausfigures.com/data/frontend-data.json): Static public frontend data contract used by the interface.
+
+## Repository and citation
+
+- [GitHub repository](https://github.com/dpan538/australian-humanoid-supernatural-texts): Source code, documentation, data workflow, licensing, and citation guidance.
+
+## Optional
+
+- [Sitemap](https://ausfigures.com/sitemap.xml): Indexable public pages.
+- [Robots](https://ausfigures.com/robots.txt): Crawler access guidance.

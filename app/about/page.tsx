@@ -2,9 +2,12 @@ import Link from "next/link";
 import frontendData from "@/public/data/frontend-data.json";
 import { AboutAmbientMotion } from "@/components/about/about-ambient-motion";
 import { DisplayControls } from "@/components/display-controls";
+import { metadataForRoute } from "@/lib/site";
 import type { FrontendData } from "@/lib/types";
 
 const data = frontendData as FrontendData;
+
+export const metadata = metadataForRoute("/about");
 
 export default function AboutPage() {
   const statusCells = buildStatusCells(data);

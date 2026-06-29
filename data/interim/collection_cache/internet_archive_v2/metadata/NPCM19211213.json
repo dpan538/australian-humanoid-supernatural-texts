@@ -1,0 +1,352 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/NPCM19211213",
+        "server": "dn710000.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/NPCM19211213",
+        "server": "dn760003.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/NPCM19211213",
+        "server": "dn710000.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/NPCM19211213",
+        "server": "dn760003.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1781957563,
+  "d1": "ia600503.us.archive.org",
+  "d2": "ia800503.us.archive.org",
+  "dir": "/17/items/NPCM19211213",
+  "files": [
+    {
+      "crc32": "8cdbbea3",
+      "format": "Image Container PDF",
+      "md5": "eccb2822acbe5764ef93a77dec51bc53",
+      "mtime": "1701497341",
+      "name": "NPCM19211213.pdf",
+      "sha1": "9b0125f9f7e1f2d4c8a0ff9202e96232f05ff0c8",
+      "size": "5248081",
+      "source": "original"
+    },
+    {
+      "btih": "6d3d095c0a257437382e87588727992ad9eb951c",
+      "crc32": "f7572d8c",
+      "format": "Archive BitTorrent",
+      "md5": "542b0f855cea75482fb5dedb6ef166cd",
+      "mtime": "1701502562",
+      "name": "NPCM19211213_archive.torrent",
+      "sha1": "74a63798487afbb430372fa5d7d6fa0c73f3a8a8",
+      "size": "6067",
+      "source": "metadata"
+    },
+    {
+      "crc32": "c50e9f72",
+      "format": "chOCR",
+      "md5": "654ccb2c39a3aa35648e7d359e435832",
+      "mtime": "1701499322",
+      "name": "NPCM19211213_chocr.html.gz",
+      "ocr": "tesseract 5.3.0-6-g76ae",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Cyrillic",
+      "ocr_detected_script_conf": "0.8301",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-eng;two-pass-disabled;pass-dpi-disabled;autonomous-mode-disabled;binarisation-method-otsu",
+      "original": "NPCM19211213_jp2.zip",
+      "sha1": "ea9115e0110a75eab5929aac7aa9d07e11439003",
+      "size": "1938807",
+      "source": "derivative"
+    },
+    {
+      "crc32": "94403515",
+      "format": "DjVuTXT",
+      "md5": "e0037cc2256e37f1ea40247c83b4aca2",
+      "mtime": "1701500386",
+      "name": "NPCM19211213_djvu.txt",
+      "original": "NPCM19211213_djvu.xml",
+      "sha1": "0938cbbabb07d206c5fbc83e1fed5215444163eb",
+      "size": "133364",
+      "source": "derivative"
+    },
+    {
+      "crc32": "981d6862",
+      "format": "Djvu XML",
+      "md5": "c4c7d217bacd6ce78ef02da4b082798f",
+      "mtime": "1701499755",
+      "name": "NPCM19211213_djvu.xml",
+      "original": "NPCM19211213_hocr.html",
+      "sha1": "f9133247abd4f775cff410d1bd965735913dc71e",
+      "size": "1876509",
+      "source": "derivative"
+    },
+    {
+      "format": "Metadata",
+      "md5": "d9a4a7266f0def7c24fd1993d2598461",
+      "name": "NPCM19211213_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "c3fe2ca8",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.45",
+      "hocr_char_to_word_module_version": "1.2.0",
+      "md5": "590c4d5e5d0761ad932652c20615a69f",
+      "mtime": "1701499612",
+      "name": "NPCM19211213_hocr.html",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Cyrillic",
+      "ocr_detected_script_conf": "0.8301",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-eng;two-pass-disabled;pass-dpi-disabled;autonomous-mode-disabled;binarisation-method-otsu",
+      "original": "NPCM19211213_chocr.html.gz",
+      "sha1": "dff87d1aff9353a264f27252a2541f5b96786da1",
+      "size": "3660629",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d3cb802c",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "732fbb8f26a5e1cf8d3b237855d73569",
+      "mtime": "1701500030",
+      "name": "NPCM19211213_hocr_pageindex.json.gz",
+      "original": "NPCM19211213_hocr.html",
+      "sha1": "60e1695b6bceb28bcebd7d72e836c8ac775f43a6",
+      "size": "155",
+      "source": "derivative"
+    },
+    {
+      "crc32": "46c6015e",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "d4cbb45cd156fc48a2b5b2cc88c1393a",
+      "mtime": "1701500187",
+      "name": "NPCM19211213_hocr_searchtext.txt.gz",
+      "original": "NPCM19211213_hocr.html",
+      "sha1": "cc1183e44a5addcaf010e06cc0fb57810918405f",
+      "size": "67468",
+      "source": "derivative",
+      "word_conf_0_10": "2643",
+      "word_conf_11_20": "1164",
+      "word_conf_21_30": "1407",
+      "word_conf_31_40": "1471",
+      "word_conf_41_50": "1515",
+      "word_conf_51_60": "1463",
+      "word_conf_61_70": "1648",
+      "word_conf_71_80": "1943",
+      "word_conf_81_90": "2964",
+      "word_conf_91_100": "6710"
+    },
+    {
+      "crc32": "ba382838",
+      "filecount": "10",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "58e3a609535a7996b70bc49d5b03bc2d",
+      "mtime": "1701498739",
+      "name": "NPCM19211213_jp2.zip",
+      "original": "NPCM19211213.pdf",
+      "sha1": "a8d1c505994f533367e1a6f2d1a6bf91a60cf3a1",
+      "size": "38492037",
+      "source": "derivative"
+    },
+    {
+      "crc32": "bb49c975",
+      "format": "Metadata",
+      "md5": "a85f354c8b69b684269fd2f42a4bc30a",
+      "mtime": "1701497748",
+      "name": "NPCM19211213_meta.sqlite",
+      "sha1": "1abdbef42cdbb49461bfcffab18d7b59693afb45",
+      "size": "20480",
+      "source": "original"
+    },
+    {
+      "crc32": "038b5a69",
+      "format": "Metadata",
+      "md5": "747805f31c271c8c323eaeb3fe081e60",
+      "mtime": "1701502548",
+      "name": "NPCM19211213_meta.xml",
+      "sha1": "3262051e7f31147df89e739203ee055522e9d13a",
+      "size": "2396",
+      "source": "original"
+    },
+    {
+      "crc32": "9846861f",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "0",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.3",
+      "md5": "6031d71fee93367ea15a0955a90cdc9d",
+      "mtime": "1701500885",
+      "name": "NPCM19211213_page_numbers.json",
+      "original": "NPCM19211213_hocr.html",
+      "sha1": "7737d462945f637b26cbb81f6f01dae0688a5494",
+      "size": "1829",
+      "source": "derivative"
+    },
+    {
+      "crc32": "59efeab2",
+      "format": "Scandata",
+      "md5": "45df1ad741a0b58d422f957d05b38855",
+      "mtime": "1701500885",
+      "name": "NPCM19211213_scandata.xml",
+      "original": "NPCM19211213_djvu.xml",
+      "sha1": "3219dc98e98568bb8374e79f0dbc3d52d366df75",
+      "size": "3455",
+      "source": "derivative"
+    },
+    {
+      "crc32": "709bc54e",
+      "format": "Additional Text PDF",
+      "md5": "4f6bc3eb28c42fe8bb0001cde548577f",
+      "mtime": "1701501471",
+      "name": "NPCM19211213_text.pdf",
+      "original": "NPCM19211213_page_numbers.json",
+      "pdf_module_version": "0.0.23",
+      "sha1": "e2e79f04018b9dde67ff2ec00849431bccbed1f3",
+      "size": "12791482",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7c31b59a",
+      "format": "Item Tile",
+      "md5": "9e483c96a34c63222f2180a06875497c",
+      "mtime": "1701502556",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "0956e8657aa468432216fe91a626d24d0bd57db2",
+      "size": "25015",
+      "source": "original"
+    }
+  ],
+  "files_count": 16,
+  "item_last_updated": 1701502562,
+  "item_size": 64267774,
+  "metadata": {
+    "addeddate": "2023-12-02 06:14:36",
+    "collection": [
+      "china-mail",
+      "newspapers"
+    ],
+    "date": "19211213",
+    "description": "\"OTHER DAYS\".\nENGLAND AND THE  U.S. 60 YEARS AGO.\nBEST LOVERS.\nADORABLE AMERICAN MEN. \nQUADRUPLE ALLIANCE.\nNON-COOPERATION MOVEMENT.\nHUGE SILVER DEALS.\nALLEGED BREACH OF CONTRACT INVOLVING MILLIONS.\nTHINKS BABY'S OWN TABLETS SAVED HER BABY'S LIFE. \nA WILD HAIRY MAN.\nANTARTIC EPIC. \nSCOTT'S LAST ANTARTIC EXPEDITION.\nCAPTAIN EVANS' LECTURE.\nHONGKONG ART CLUB. \nTO-DAY'S EXHIBITION.\nA FINE SHOW. \nCANADIAN PACIFIC. \nFORMER GERMAN LINER RENAMED. \nTHE \"EMPRESS OF AUSTRALIA\".\nWHAT TO BELIEVE.\nQUEER STORY FROM MOSCOW.\nWISEMANS CAFE.\nTEMPORARY PREMISES SECURED.\nWHOLESALE ROBBERY.\nTEN NIGHT SOIL BOATMEN CHARGED.\nHONGKONG SCHOOL MASTER.\nBRILLIANT SCHOLASTIC CAREER.\nMOTORISTS  FINED. \nFURIOUS DRIVING ON CAINE ROAD. \nDANGEROUS INCLINE.\nADMIRAL LINE. \nLINER SERVICE EVEN FASTER.\nTWENTY-TREE STAB WOUNDS.\nA YAUMATI CRIME.\nRACIAL DISABILITY.\nDOES IT EXIST HERE.\nLIVELY FELLOWSHIP LEAGUE MEETING.\nOFFICIAL PATRONAGE DEPRECATED.\nELECTION OF OFFICERS.\nWHO MADE H.E. A PATRON.\nSMART YOUNG MEN. \nPREVENT ROBBERY AND CATCH CRIMINAL.\nPROCESSIONS AND TRAFFIC. \nWAIT AND SEE.\nPOPULAR CHARLIE.\nFILM'S REMARKABLE DRAW AT TIENTSIN.\nWOMAN HAD SIX BAD COINS. \nGETS FOUR WEEKS HARD.\nA DOUGLAS FAIRBANKS PICTURE. \nSCHOLAR'S AGE FAKED. \nCHIEF JUSTICE'S COMMENT.",
+    "identifier": "NPCM19211213",
+    "language": "English",
+    "mediatype": "texts",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Cyrillic",
+    "ocr_detected_script_conf": "0.8301",
+    "ocr_module_version": "0.0.21",
+    "ocr_parameters": "-l eng",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.3",
+    "pdf_module_version": "0.0.23",
+    "ppi": "100",
+    "publicdate": "2023-12-02 06:14:36",
+    "scanner": "Internet Archive Python library 3.0.2",
+    "subject": [
+      "德臣西報",
+      "德臣西报",
+      "China Mail"
+    ],
+    "title": "China Mail 1921-12-13",
+    "uploader": "zhengszh3@gmail.com"
+  },
+  "page_numbers": {
+    "archive-hocr-tools-version": "1.1.54",
+    "confidence": 0,
+    "format-version": "2",
+    "identifier": "NPCM19211213",
+    "pages": [
+      {
+        "confidence": null,
+        "leafNum": 0,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 1,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 2,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 3,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 4,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 5,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 6,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 7,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 8,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      },
+      {
+        "confidence": null,
+        "leafNum": 9,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      }
+    ]
+  },
+  "server": "ia800503.us.archive.org",
+  "uniq": 533757070,
+  "workable_servers": [
+    "ia800503.us.archive.org",
+    "ia600503.us.archive.org"
+  ]
+}

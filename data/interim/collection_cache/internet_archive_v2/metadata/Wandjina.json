@@ -1,0 +1,280 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/Wandjina",
+        "server": "dn710200.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/Wandjina",
+        "server": "dn710200.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1782009284,
+  "d1": "ia903209.us.archive.org",
+  "d2": "ia803209.us.archive.org",
+  "dir": "/4/items/Wandjina",
+  "files": [
+    {
+      "crc32": "1222d5b6",
+      "format": "Text PDF",
+      "md5": "1965e3a448dffdc4c4d207a30d3db369",
+      "mtime": "1712057615",
+      "name": "Wandjina.pdf",
+      "sha1": "177be301a9ca7217a78cd8e928d6b8a7d0556b2c",
+      "size": "90585",
+      "source": "original",
+      "viruscheck": "1712057945"
+    },
+    {
+      "btih": "d559210fd570358f5f026e5c496c5a01ea1220c8",
+      "crc32": "283067e7",
+      "format": "Archive BitTorrent",
+      "md5": "173c00bb1660b1541a3f81c30ec25f60",
+      "mtime": "1772388699",
+      "name": "Wandjina_archive.torrent",
+      "sha1": "a0a658b8d05346eb11e153b50ce7b4b1a5232466",
+      "size": "3344",
+      "source": "metadata"
+    },
+    {
+      "crc32": "0eb9ff41",
+      "format": "chOCR",
+      "md5": "509879d96b4818e8afc8850c6424d9b1",
+      "mtime": "1712058050",
+      "name": "Wandjina_chocr.html.gz",
+      "ocr": "tesseract 5.3.0-6-g76ae",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "0.7692",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-spa;lang-nor;lang-eng;lang-Latin;two-pass-disabled;pass-dpi-disabled;autonomous-mode-enabled;binarisation-method-otsu",
+      "original": "Wandjina_jp2.zip",
+      "sha1": "479c35e4695a0f4848da1c9b29c03ffa0c34a01a",
+      "size": "1378",
+      "source": "derivative"
+    },
+    {
+      "crc32": "caa1d179",
+      "format": "DjVuTXT",
+      "md5": "c78fb21c10f5be7a3bc542feec212cca",
+      "mtime": "1712058241",
+      "name": "Wandjina_djvu.txt",
+      "original": "Wandjina_djvu.xml",
+      "sha1": "631e1cc8e9e2379d72d49697b592e33dba1578c4",
+      "size": "51",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7a2a2f09",
+      "format": "Djvu XML",
+      "md5": "a6fb2b25713fc7ee420869a1edea7f42",
+      "mtime": "1712058123",
+      "name": "Wandjina_djvu.xml",
+      "original": "Wandjina_hocr.html",
+      "sha1": "e8693744c21728a5a0c52012bac02990fa2ecda4",
+      "size": "1119",
+      "source": "derivative"
+    },
+    {
+      "format": "Metadata",
+      "md5": "3e65cea2ef23adf640c28398e4070816",
+      "name": "Wandjina_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "06d79892",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.56",
+      "hocr_char_to_word_module_version": "1.3.0",
+      "md5": "ebd913769ecef7d4510ed5d6f45d4655",
+      "mtime": "1712058101",
+      "name": "Wandjina_hocr.html",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "0.7692",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-spa;lang-nor;lang-eng;lang-Latin;two-pass-disabled;pass-dpi-disabled;autonomous-mode-enabled;binarisation-method-otsu",
+      "original": "Wandjina_chocr.html.gz",
+      "sha1": "ec2c5f8cf98399ed229f3464b9fa78358fd52b06",
+      "size": "2234",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e3bba72b",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.56",
+      "hocr_pageindex_module_version": "1.1.0",
+      "md5": "6dff1a3da1cc627db5724b80c59db8fd",
+      "mtime": "1712058185",
+      "name": "Wandjina_hocr_pageindex.json.gz",
+      "original": "Wandjina_hocr.html",
+      "sha1": "50187df6c57c62bf72bd2cc881bc95508bbc6d13",
+      "size": "40",
+      "source": "derivative"
+    },
+    {
+      "crc32": "71a0ed31",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.56",
+      "hocr_fts_text_module_version": "1.2.0",
+      "md5": "26d8eb027cbe7ecd85ea152141ad4625",
+      "mtime": "1712058223",
+      "name": "Wandjina_hocr_searchtext.txt.gz",
+      "original": "Wandjina_hocr.html",
+      "sha1": "97e3136a48a84685c55e344d8905635dcf592736",
+      "size": "75",
+      "source": "derivative",
+      "word_conf_0_10": "0",
+      "word_conf_11_20": "0",
+      "word_conf_21_30": "0",
+      "word_conf_31_40": "0",
+      "word_conf_41_50": "0",
+      "word_conf_51_60": "0",
+      "word_conf_61_70": "0",
+      "word_conf_71_80": "0",
+      "word_conf_81_90": "0",
+      "word_conf_91_100": "8"
+    },
+    {
+      "crc32": "668959fb",
+      "filecount": "1",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "dacfccdda693bc215f35c7697d616469",
+      "mtime": "1712057990",
+      "name": "Wandjina_jp2.zip",
+      "original": "Wandjina.pdf",
+      "sha1": "645f6d435530b8b22559405eddddea0c2289d4ea",
+      "size": "54719",
+      "source": "derivative"
+    },
+    {
+      "crc32": "4cb38aeb",
+      "format": "Metadata",
+      "md5": "71ccf3eca902c17a670268cb3decd102",
+      "mtime": "1712057635",
+      "name": "Wandjina_meta.sqlite",
+      "sha1": "89cdf3af1e740ab5a4aa9e55398b4a6d3f68feaf",
+      "size": "20480",
+      "source": "original"
+    },
+    {
+      "crc32": "d2b642b9",
+      "format": "Metadata",
+      "md5": "39cb4889f430b062ce93fbf3fc202d86",
+      "mtime": "1772388698",
+      "name": "Wandjina_meta.xml",
+      "sha1": "94cc5031239036087f568934e32fc457bc514b96",
+      "size": "1617",
+      "source": "original"
+    },
+    {
+      "crc32": "f7582d0b",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "0",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "96ae85ffb94cdbc688bed32de7f6ecf0",
+      "mtime": "1712058263",
+      "name": "Wandjina_page_numbers.json",
+      "original": "Wandjina_hocr.html",
+      "sha1": "ca2ffedc36daaf46c853faf901caa33a38b02b67",
+      "size": "313",
+      "source": "derivative"
+    },
+    {
+      "crc32": "65545caf",
+      "format": "Scandata",
+      "md5": "e3e1cdc6edc809dcf7eb80748ce885fa",
+      "mtime": "1712058263",
+      "name": "Wandjina_scandata.xml",
+      "original": "Wandjina_djvu.xml",
+      "sha1": "203bece9cf1dc8f2c984d3369a262345d999917a",
+      "size": "579",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d0334d75",
+      "format": "Item Tile",
+      "md5": "dc4b03b93e0e70fef28c0d642589c05e",
+      "mtime": "1772388699",
+      "name": "__ia_thumb.jpg",
+      "sha1": "3329af4e79fc7c8913890fbd58fe20e82caebc00",
+      "size": "4714",
+      "source": "original"
+    }
+  ],
+  "files_count": 15,
+  "item_last_updated": 1772388699,
+  "item_size": 181248,
+  "metadata": {
+    "addeddate": "2024-04-02 11:33:49",
+    "collection": [
+      "alfredo_lissoni_ufo",
+      "patron-library-collection"
+    ],
+    "collection_added": [
+      "additional_collections",
+      "patron-library-collection"
+    ],
+    "curation": "[curator]validator@archive.org[/curator][date]20240402113905[/date][comment]checked for malware[/comment]",
+    "description": "I Wandjina",
+    "identifier": "Wandjina",
+    "identifier-access": "http://archive.org/details/Wandjina",
+    "identifier-ark": "ark:/13960/s23z24w7mmc",
+    "imagecount": "1",
+    "mediatype": "texts",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_autonomous": "true",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "0.7692",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_module_version": "0.0.21",
+    "ocr_parameters": "-l spa+nor+eng+Latin",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.5",
+    "ppi": "300",
+    "publicdate": "2024-04-02 11:33:49",
+    "scanner": "Internet Archive HTML5 Uploader 1.7.0",
+    "subject": [
+      "Wandjina",
+      "Australia",
+      "alieni",
+      "UFO",
+      "Grigi",
+      "ancient astronauts"
+    ],
+    "title": "Wandjina",
+    "uploader": "alliss@tin.it"
+  },
+  "page_numbers": {
+    "archive-hocr-tools-version": "1.1.54",
+    "confidence": 0,
+    "format-version": "2",
+    "identifier": "Wandjina",
+    "pages": [
+      {
+        "confidence": null,
+        "leafNum": 0,
+        "pageNumber": "",
+        "pageProb": null,
+        "wordConf": null
+      }
+    ]
+  },
+  "server": "ia803209.us.archive.org",
+  "uniq": 2084744193,
+  "workable_servers": [
+    "ia803209.us.archive.org",
+    "ia903209.us.archive.org"
+  ]
+}

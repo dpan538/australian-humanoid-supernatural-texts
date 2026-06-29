@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 55,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "((&quot;South Australian ghost&quot; OR &quot;South Australia ghost stories&quot; OR &quot;haunted South Australia&quot;)) AND mediatype:texts",
+      "query": "((text:&quot;South Australian ghost&quot; OR text:&quot;South Australian ghost&quot; OR text__reviews:&quot;South Australian ghost&quot;) OR (text:&quot;South Australia ghost stories&quot; OR text:&quot;South Australia ghost stories&quot; OR text__reviews:&quot;South Australia ghost stories&quot;) OR (text:&quot;haunted South Australia&quot; OR text:&quot;haunted South Australia&quot; OR text__reviews:&quot;haunted South Australia&quot;)) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

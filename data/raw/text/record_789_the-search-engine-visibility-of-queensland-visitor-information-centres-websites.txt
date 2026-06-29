@@ -1,0 +1,14 @@
+{
+  "title": "THE SEARCH ENGINE VISIBILITY OF QUEENSLAND VISITOR INFORMATION CENTRES' WEBSITES",
+  "source": "OpenAlex",
+  "url": "http://doi.org/10.48009/2_iis_2006_228-232",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2006-01-01",
+  "publication": "Issues in Information Systems",
+  "author": "Yuquan Shi, J Bar-Ilan, K Chen, H Sockel et al.",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "The search engine visibility of a website is very important in bringing traffic and building brand recognition online. This study examined the search engine visibility of websites from 68 Queensland visitor information centres (VICs) on three of the most popular search engines: Google, Yahoo!, & MSN. The majority of examined VIC websites were found to have low search engine visibility, which meant users may have had difficulty in finding them. It shows that, for Queensland VICs, how to make their websites truly part of their business strategies has not been subject to management analysis and discussion.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

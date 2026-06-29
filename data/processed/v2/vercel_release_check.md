@@ -1,13 +1,13 @@
 # Vercel Release Check
 
-Generated: `2026-06-28T03:53:38.371651+00:00`
+Generated: `2026-06-29T07:39:13.893557+00:00`
 Status: `pass`
 Domain target: `ausfigures.com`
 
 ## Static Data
 
 - Frontend JSON: `public/data/frontend-data.json`
-- Frontend JSON size: `20717839` bytes
+- Frontend JSON size: `20675725` bytes
 - Public records: `3809`
 - Mapped records: `1206`
 - map_flags length: `1206`

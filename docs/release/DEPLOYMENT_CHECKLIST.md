@@ -3,17 +3,20 @@
 ## Pre-Deploy
 
 - `git status --short --branch` is clean except intentional release files.
-- `python3 scripts/export_frontend_json.py` has been run.
-- `python3 scripts/validate_v2.py` has been run.
-- `python3 scripts/validate_release.py` passes.
-- `python3 scripts/run_tests.py` passes.
+- `public/data/frontend-data.json` exists and is intended public data.
+- `npm ci` passes.
+- `npm run typecheck` passes.
 - `npm run build` passes.
+- `python3 scripts/check_vercel_release.py` passes.
+- `robots.txt`, `sitemap.xml`, and `llms.txt` are present and public-safe.
 - README is updated.
 - Release notes are ready.
-- Domain is selected.
+- Canonical production domain is `https://ausfigures.com`.
 - Environment variables are reviewed.
 - No secrets are committed.
 - No raw/interim/crawler noise is staged.
+
+Data pipeline checks such as `make export-frontend`, `make audit-v2`, `make validate-v2`, and `make test` should be run when the local Python/data environment is ready, but they are not hard blockers for deploying the static Vercel frontend if the public data export already exists and the Next.js build passes.
 
 ## GitHub Metadata
 
@@ -43,13 +46,15 @@ gh repo edit dpan538/australian-humanoid-supernatural-texts \
 
 - Push `main`.
 - Deploy on Vercel or the selected target host.
-- Confirm production URL.
+- Confirm production URL is `https://ausfigures.com`.
+- Confirm `/dashboard` is the canonical public entry route.
 - Confirm `/data/frontend-data.json` loads.
 - Confirm `/about`, `/map`, `/dashboard`, `/density`, and `/source`.
+- Confirm `/robots.txt`, `/sitemap.xml`, and `/llms.txt`.
 - Confirm map marker count.
-- Confirm custom domain binding.
+- Confirm `ausfigures.com` custom domain binding.
 - Confirm HTTPS.
-- Confirm redirect from `www` to apex or apex to `www`.
+- Confirm redirect from `www.ausfigures.com` to apex.
 
 ## Post-Deploy
 
@@ -59,4 +64,3 @@ gh repo edit dpan538/australian-humanoid-supernatural-texts \
 - Check GitHub repository description and topics.
 - Create GitHub release tag.
 - Archive the release baseline and readiness report.
-

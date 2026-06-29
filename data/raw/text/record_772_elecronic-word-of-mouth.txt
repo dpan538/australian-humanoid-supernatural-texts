@@ -1,0 +1,14 @@
+{
+  "title": "Elecronic Word-of-Mouth",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1080/15252019.2006.10722119",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2006-03-01",
+  "publication": "Journal of Interactive Advertising",
+  "author": "John Fong, Suzan Burton",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "ABSTRACTThe important influence of peer recommendations on consumer purchases has been strongly established. However, recent growth in electronic discussion boards has increased the potential for electronic word-of-mouth (eWOM) between people who have never met. This study examines and compares the extent of eWOM on electronic discussion boards within U.S. and China based websites. Using online surveys (N = 214) and observation of discussion postings (N = 3029), data was collected from the \"Digital Photography\" discussion boards on eBay, Yahoo, and Google (U.S. based websites) and EachNet, Sina, and Netease (China based websites). The findings indicated both similarities and differences in the information giving and seeking behaviors, with the U.S. participants more likely to provide information than Chinese participants, resulting in the U.S. based discussion boards containing a richer source of information relative to requests. Additional informationABOUT THE AUTHORSJohn Fong is a Ph.D. candidate at the Macquarie Graduate School of Management. He is also an adjunct lecturer at the Graduate Accounting and Commerce Centre in the Division of Economic and Financial Studies at Macquarie University, Sydney, Australia. John.Fong@mgsm.edu.auSuzan Burton is an Associate Professor at the Macquarie Graduate School of Management, Macquarie University, Sydney, Australia.Suzan.Burton@mgsm.edu.au",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

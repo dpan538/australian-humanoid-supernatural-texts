@@ -1,0 +1,184 @@
+{
+  "created": 1781957386,
+  "d1": "ia601907.us.archive.org",
+  "d2": "ia801907.us.archive.org",
+  "dir": "/11/items/ERIC_ED482098",
+  "files": [
+    {
+      "crc32": "27c1a853",
+      "format": "DjVu",
+      "md5": "e85ebdf3f28eca3c0d3b09f476c43a0f",
+      "mtime": "1453509336",
+      "name": "ERIC_ED482098.djvu",
+      "original": "ERIC_ED482098_djvu.xml",
+      "sha1": "2a3b63edb5ff084c2ff7d3a0a21f48774a5180af",
+      "size": "244823",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6595032e",
+      "format": "Animated GIF",
+      "md5": "088de927316c1c43531817199f69878a",
+      "mtime": "1453508902",
+      "name": "ERIC_ED482098.gif",
+      "original": "ERIC_ED482098_jp2.zip",
+      "sha1": "db7d0090bf9ec47d8536221462011dc53ee0102a",
+      "size": "58042",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1b940695",
+      "format": "Text PDF",
+      "md5": "85afc72ce8cbb9633b7a9b10bc1d4bb1",
+      "mtime": "1453502241",
+      "name": "ERIC_ED482098.pdf",
+      "sha1": "b02a53e3c96fd7ff66010bd753c53b65b02263f5",
+      "size": "185770",
+      "source": "original"
+    },
+    {
+      "crc32": "67b5d92b",
+      "format": "Abbyy GZ",
+      "md5": "e30a5e60f3a594592f0aa579a3c40fc4",
+      "mtime": "1453509111",
+      "name": "ERIC_ED482098_abbyy.gz",
+      "original": "ERIC_ED482098_jp2.zip",
+      "sha1": "3472d692c22cbd0c9d4079f5e592391335c8a1fd",
+      "size": "450978",
+      "source": "derivative"
+    },
+    {
+      "btih": "5690fb18f942472565880ed7dbcda93a323b184c",
+      "crc32": "17fef95a",
+      "format": "Archive BitTorrent",
+      "md5": "0251b9d669594e21ef4175611722aff8",
+      "mtime": "1771476811",
+      "name": "ERIC_ED482098_archive.torrent",
+      "sha1": "0af6d4be0dc58167d37838c2f2f6d23ad9fc4796",
+      "size": "3560",
+      "source": "metadata"
+    },
+    {
+      "crc32": "a7ac3dfc",
+      "format": "DjVuTXT",
+      "md5": "abb4d6d85dd590971c23fc197bd9cc52",
+      "mtime": "1453509373",
+      "name": "ERIC_ED482098_djvu.txt",
+      "original": "ERIC_ED482098.djvu",
+      "sha1": "877c21b26dd6a8bc8676214d091752c6c4a8e481",
+      "size": "32191",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7f523445",
+      "format": "Djvu XML",
+      "md5": "f3f47765c62ecb41333e2aa3c469f771",
+      "mtime": "1453509133",
+      "name": "ERIC_ED482098_djvu.xml",
+      "original": "ERIC_ED482098_abbyy.gz",
+      "sha1": "88fe0a1033fed0bf853786247cf87a5ee32d5249",
+      "size": "284780",
+      "source": "derivative"
+    },
+    {
+      "format": "Metadata",
+      "md5": "8968f8bcc9a95626c7e58e491acfe738",
+      "name": "ERIC_ED482098_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "fb62ee8a",
+      "filecount": "12",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "78660f408e655909d519b7854840f2ae",
+      "mtime": "1453508833",
+      "name": "ERIC_ED482098_jp2.zip",
+      "original": "ERIC_ED482098.pdf",
+      "sha1": "beaccd186a1fa94c4dadd3ec62b09a9db09fe82e",
+      "size": "12005079",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2f7b9dfa",
+      "format": "Metadata",
+      "md5": "c793823de2be75505072839bd64ec0ea",
+      "mtime": "1463617706",
+      "name": "ERIC_ED482098_meta.sqlite",
+      "sha1": "286836f4ae26cdc9b064ec89828ea3c25df6e023",
+      "size": "11264",
+      "source": "original"
+    },
+    {
+      "crc32": "13464357",
+      "format": "Metadata",
+      "md5": "e3be8c287a8b40ee67d947cadb70277e",
+      "mtime": "1771476810",
+      "name": "ERIC_ED482098_meta.xml",
+      "sha1": "c6837d3f08bdfd5d977f633f3b98461c607d6dd5",
+      "size": "2179",
+      "source": "original"
+    },
+    {
+      "crc32": "1b88de44",
+      "format": "Scandata",
+      "md5": "9499e2f9d03a9fcca195ad2496405249",
+      "mtime": "1453509338",
+      "name": "ERIC_ED482098_scandata.xml",
+      "original": "ERIC_ED482098_djvu.xml",
+      "sha1": "7067bb0927ec201fba62eba2f77a655f81e30f9d",
+      "size": "3803",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0000d635",
+      "format": "Item Tile",
+      "md5": "60cea0a09def188f54e18791ae2f9eb9",
+      "mtime": "1771476811",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "f7530c0fa85e4624d92ed2f16bef8e36901e2a54",
+      "size": "7975",
+      "source": "original"
+    }
+  ],
+  "files_count": 13,
+  "item_last_updated": 1771476811,
+  "item_size": 13290444,
+  "metadata": {
+    "addeddate": "2016-01-22 22:37:22",
+    "backup_location": "ia905508_27",
+    "collection": [
+      "ericarchive",
+      "usgovernmentmirrors",
+      "government-documents"
+    ],
+    "collection_added": [
+      "usgovernmentmirrors",
+      "government-documents"
+    ],
+    "creator": "ERIC",
+    "date": "2002-04",
+    "description": "This paper argues that a range of forms and modalities of resources should be provided to ensure accessibility and richness on the World Wide Web for all users. Based on experiences in developing virtual exhibitions of Quinkan Aboriginal Rock Art, the authors present a brief overview of the technology available for accessibility. Then they explore some different approaches to providing access through the perspective of the IMS Global Learning Consortium. They further develop these ideas with particular reference to their similarity with current museum practice and consider the implications for accessibility. Finally they recommend that museum exhibitors and authors, developing interactive or electronic resources, include planning for accessibility as part of their initial design  process. (MES)",
+    "identifier": "ERIC_ED482098",
+    "identifier-access": "http://archive.org/details/ERIC_ED482098",
+    "identifier-ark": "ark:/13960/t08w7bq6b",
+    "imagecount": "12",
+    "language": "english",
+    "mediatype": "texts",
+    "ocr": "ABBYY FineReader 11.0",
+    "ppi": "600",
+    "publicdate": "2016-01-22 22:37:22",
+    "repub_state": "4",
+    "subject": "ERIC Archive; Aboriginal Australians; Access to Computers; Access to Information; Accessibility (for Disabled); Disabilities; Information Technology; Museums; User Needs (Information); Users (Information); World Wide Web; Nevile, Liddy;McCathieNevile, Charles",
+    "title": "ERIC ED482098: The Virtual Ramp to the Equivalent Experience in the Virtual Museum: Accessibility to Museums on the Web.",
+    "uploader": "slaxemulator@gmail.com",
+    "year": "2002"
+  },
+  "server": "ia801907.us.archive.org",
+  "uniq": 1685385257,
+  "workable_servers": [
+    "ia801907.us.archive.org",
+    "ia601907.us.archive.org"
+  ]
+}

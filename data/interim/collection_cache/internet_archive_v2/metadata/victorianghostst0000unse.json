@@ -1,0 +1,484 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/victorianghostst0000unse",
+        "server": "dn760001.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/victorianghostst0000unse",
+        "server": "dn790000.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/victorianghostst0000unse",
+        "server": "dn760001.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/victorianghostst0000unse",
+        "server": "dn790000.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1782061922,
+  "d1": "ia903107.us.archive.org",
+  "d2": "ia803107.us.archive.org",
+  "dir": "/11/items/victorianghostst0000unse",
+  "files": [
+    {
+      "crc32": "3bb931ad",
+      "format": "Item Tile",
+      "md5": "547dd8aab2eedd4a44f2cf4343c41f7b",
+      "mtime": "1661238993",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "6bb823e62fb7487cab49dcfada460861e91278cb",
+      "size": "19640",
+      "source": "original"
+    },
+    {
+      "crc32": "31d5787d",
+      "format": "Log",
+      "md5": "2f3963f2da4d0f0fcdfb8f1612764bdb",
+      "mtime": "1533904443",
+      "name": "logs/victorianghostst0000unse_iabdash_2018-08-1020:33:58.log",
+      "private": "true",
+      "sha1": "36a5d2a3ed23739e51ca3612b76e886f25b1f36d",
+      "size": "679",
+      "source": "original"
+    },
+    {
+      "crc32": "a578e80b",
+      "format": "Log",
+      "md5": "1ea3879e962545775b011042bf9b0e58",
+      "mtime": "1533904436",
+      "name": "logs/victorianghostst0000unse_scanning_2018-08-1020:33:52.log",
+      "private": "true",
+      "sha1": "83fd235545530592716d2485771257cd9961ff3f",
+      "size": "668587",
+      "source": "original"
+    },
+    {
+      "crc32": "d26a7ea4",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.66",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "34f426422d5da9ea2ae00b8bc2e2db83",
+      "mtime": "1754148894",
+      "name": "victorianghostst0000unse.epub",
+      "original": "victorianghostst0000unse_hocr.html",
+      "private": "true",
+      "sha1": "f8c1f51f8fd48b094cf45c96c553c656d442fb0a",
+      "size": "4700538",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ed0cdfe8",
+      "format": "LCP Encrypted PDF",
+      "md5": "3a8090aee9a8784f45c96ba491c88bc0",
+      "mtime": "1754148715",
+      "name": "victorianghostst0000unse.lcpdf",
+      "original": "victorianghostst0000unse.pdf",
+      "sha1": "095d8595d9fe8aacc3676471bc8124e06593ceb1",
+      "size": "23396398",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f09321eb",
+      "format": "Text PDF",
+      "md5": "ab867df83546ee4aef7ded40da15b008",
+      "mtime": "1726409951",
+      "name": "victorianghostst0000unse.pdf",
+      "original": "victorianghostst0000unse_page_numbers.json",
+      "private": "true",
+      "sha1": "552213a8e16e6845f8ca419b4e028290f922c8e2",
+      "size": "23046886",
+      "source": "derivative"
+    },
+    {
+      "crc32": "c238fca6",
+      "format": "Abbyy GZ",
+      "md5": "18c55f900ccc3f195535e19993a50bc8",
+      "mtime": "1534056649",
+      "name": "victorianghostst0000unse_abbyy.gz",
+      "original": "victorianghostst0000unse_jp2.zip",
+      "private": "true",
+      "sha1": "8d24575f32b0f6bd669faaeced3b865cf0d0f5fe",
+      "size": "9290008",
+      "source": "derivative"
+    },
+    {
+      "crc32": "06024df5",
+      "format": "chOCR",
+      "md5": "b3b21b2ed7a5e54d55c8846203868a3b",
+      "mtime": "1661238153",
+      "name": "victorianghostst0000unse_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "victorianghostst0000unse_abbyy.gz",
+      "private": "true",
+      "sha1": "0d53b48a2a09b3c610635c095cce4ec99167e78c",
+      "size": "8302934",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "b86c405a",
+      "format": "Cloth Cover Detection Log",
+      "md5": "c6a0b88cc472ebc18a300b2e528fb15a",
+      "mtime": "1671637886",
+      "name": "victorianghostst0000unse_cloth_detection.log",
+      "original": "victorianghostst0000unse_scandata.xml",
+      "private": "true",
+      "sha1": "1a17d738c2c93669ae58097b0c5a5c176a343977",
+      "size": "788",
+      "source": "derivative"
+    },
+    {
+      "crc32": "fe29eeba",
+      "format": "Dublin Core",
+      "md5": "c7ae598ff5f538215d0b4e480baca699",
+      "mtime": "1534049977",
+      "name": "victorianghostst0000unse_dc.xml",
+      "sha1": "9f35a361c3a407350ba6c337c93ddc26e685f46b",
+      "size": "962",
+      "source": "original"
+    },
+    {
+      "crc32": "12e6fee1",
+      "format": "DjVuTXT",
+      "md5": "b5d14900da8f9c3f085944f7f5463496",
+      "mtime": "1661238986",
+      "name": "victorianghostst0000unse_djvu.txt",
+      "original": "victorianghostst0000unse_djvu.xml",
+      "private": "true",
+      "sha1": "a1dfa6d54311065457865a0467e1ea8d9812848c",
+      "size": "734037",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6bd5458f",
+      "format": "Djvu XML",
+      "md5": "c05d7fdc0ff75a27f0565cd0ff408e39",
+      "mtime": "1661238801",
+      "name": "victorianghostst0000unse_djvu.xml",
+      "original": "victorianghostst0000unse_hocr.html",
+      "private": "true",
+      "sha1": "52b6ecff63dd4dc68f37b02f608f9f022ad678a9",
+      "size": "9089439",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d9254034",
+      "format": "ACS Encrypted EPUB",
+      "md5": "837b8f00a77b2554fddc092e8e64eff0",
+      "mtime": "1534059228",
+      "name": "victorianghostst0000unse_encrypted.epub",
+      "original": "victorianghostst0000unse_abbyy.gz",
+      "sha1": "5d698d3b4bf72cf318da71d85a7a65cdd7c34338",
+      "size": "1342396",
+      "source": "derivative"
+    },
+    {
+      "crc32": "9a643f9e",
+      "format": "ACS Encrypted PDF",
+      "md5": "103a231f6d11f23bcb1360bb7e258ea8",
+      "mtime": "1726410181",
+      "name": "victorianghostst0000unse_encrypted.pdf",
+      "original": "victorianghostst0000unse.pdf",
+      "sha1": "854d2abff6cf030b0192e687289321b751c8b1a7",
+      "size": "22912604",
+      "source": "derivative"
+    },
+    {
+      "crc32": "c1f8bae5",
+      "format": "JSON",
+      "md5": "b42ec522cf37fe1396bb4dfeafc9ec11",
+      "mtime": "1534049810",
+      "name": "victorianghostst0000unse_events.json",
+      "private": "true",
+      "sha1": "7dd289156893e0b207dca2dc621dbfd9d93b62e1",
+      "size": "51",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "fb5b58dee7ea75b65dc027ccfa9f76bd",
+      "name": "victorianghostst0000unse_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "43d1c26f",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "ca91def23306cbb61621de6ece35d6bb",
+      "mtime": "1661238733",
+      "name": "victorianghostst0000unse_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "victorianghostst0000unse_chocr.html.gz",
+      "private": "true",
+      "sha1": "4688179641f3584710749396e2ba277756660788",
+      "size": "18126047",
+      "source": "derivative"
+    },
+    {
+      "crc32": "08f309da",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "f4ded48de5e7369aa3a276238d27d766",
+      "mtime": "1661238844",
+      "name": "victorianghostst0000unse_hocr_pageindex.json.gz",
+      "original": "victorianghostst0000unse_hocr.html",
+      "private": "true",
+      "sha1": "96d56ed292aa6ef68799d9cc3c668946f8774afd",
+      "size": "4239",
+      "source": "derivative"
+    },
+    {
+      "crc32": "88c95127",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "a8d6c7e0d33c6e431f50629dbc136ec7",
+      "mtime": "1661238969",
+      "name": "victorianghostst0000unse_hocr_searchtext.txt.gz",
+      "original": "victorianghostst0000unse_hocr.html",
+      "private": "true",
+      "sha1": "fab9b44daff39e7bdb0a2736997a8fa7fb513c9c",
+      "size": "243571",
+      "source": "derivative",
+      "word_conf_0_10": "2530",
+      "word_conf_11_20": "527",
+      "word_conf_21_30": "891",
+      "word_conf_31_40": "1492",
+      "word_conf_41_50": "2861",
+      "word_conf_51_60": "5340",
+      "word_conf_61_70": "11177",
+      "word_conf_71_80": "21469",
+      "word_conf_81_90": "29481",
+      "word_conf_91_100": "39631"
+    },
+    {
+      "crc32": "4c762b44",
+      "filecount": "358",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "7091e353ec6b995ef380c5b073c09452",
+      "mtime": "1534054762",
+      "name": "victorianghostst0000unse_jp2.zip",
+      "original": "victorianghostst0000unse_orig_jp2.tar",
+      "private": "true",
+      "sha1": "cff00f3fcda270dd8761849914a7409e49b967ac",
+      "size": "276891599",
+      "source": "derivative"
+    },
+    {
+      "crc32": "4dbfd3fc",
+      "format": "LCP Encrypted EPUB",
+      "md5": "82b28cad796ebc739323233eed5c1873",
+      "mtime": "1754149153",
+      "name": "victorianghostst0000unse_lcp.epub",
+      "original": "victorianghostst0000unse.epub",
+      "sha1": "89210ff8b328c1aac4bcc7d9bbd8362e53869597",
+      "size": "5113825",
+      "source": "derivative"
+    },
+    {
+      "crc32": "12f8165f",
+      "format": "JSON",
+      "md5": "ef0647922f2f7acd981211a796477d5e",
+      "mtime": "1594021386",
+      "name": "victorianghostst0000unse_loans.json",
+      "private": "true",
+      "sha1": "d52050490e077fe2ac8bfd7236786ffe95ced76f",
+      "size": "9506",
+      "source": "original"
+    },
+    {
+      "crc32": "549666bb",
+      "format": "MARC",
+      "md5": "769f3a33ec7202211f1067ea00def83b",
+      "mtime": "1534049977",
+      "name": "victorianghostst0000unse_marc.xml",
+      "sha1": "3232fd92f5aabe685b909fefdf5a4623a37ebbe5",
+      "size": "3750",
+      "source": "original"
+    },
+    {
+      "crc32": "56f575c5",
+      "format": "MARC Binary",
+      "md5": "90bebcb477a12377debe2c1a1f91d7fb",
+      "mtime": "1533904460",
+      "name": "victorianghostst0000unse_meta.mrc",
+      "sha1": "e8afd9ca0287b9308f7ea7d17129d6308da3b866",
+      "size": "999",
+      "source": "original"
+    },
+    {
+      "crc32": "91916553",
+      "format": "Metadata",
+      "md5": "d5eb0bbf884a7265064a49c7e0172e89",
+      "mtime": "1534049865",
+      "name": "victorianghostst0000unse_meta.sqlite",
+      "sha1": "522c168d74cb53d617f7845d78d63bc576e5a1b5",
+      "size": "16384",
+      "source": "original"
+    },
+    {
+      "crc32": "302ed221",
+      "format": "Metadata",
+      "md5": "085fd7dca6cc0a668d749404c5d79d0c",
+      "mtime": "1754149153",
+      "name": "victorianghostst0000unse_meta.xml",
+      "sha1": "7972b30a1ceee612594dde22171a0bdfc9e3e687",
+      "size": "2860",
+      "source": "original"
+    },
+    {
+      "crc32": "5a0330ce",
+      "filecount": "358",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "a7861da913fb70f04cc1814b24a288c5",
+      "mtime": "1534049865",
+      "name": "victorianghostst0000unse_orig_jp2.tar",
+      "private": "true",
+      "sha1": "0eeb4887b3461b51542667cfcdddc08b88fb0608",
+      "size": "731944960",
+      "source": "original"
+    },
+    {
+      "crc32": "d906b24e",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "100",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "47b032e2efee3afc3322dbd5d1d32c84",
+      "mtime": "1726409950",
+      "name": "victorianghostst0000unse_page_numbers.json",
+      "original": "victorianghostst0000unse_hocr.html",
+      "private": "true",
+      "sha1": "866068b2c2eca9549152e7ff04651b66b0138cae",
+      "size": "60671",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d36fae69",
+      "format": "Scandata",
+      "md5": "6512731bf1ae1652faa658c053328a5f",
+      "mtime": "1671637886",
+      "name": "victorianghostst0000unse_scandata.xml",
+      "sha1": "1b88bf717340b6f25ca1ce4f7efd24906a424403",
+      "size": "366809",
+      "source": "original"
+    },
+    {
+      "crc32": "ad1a8935",
+      "format": "Contents",
+      "md5": "b27aa2eed8a67d1325e1d85013d55bad",
+      "mtime": "1671637778",
+      "name": "victorianghostst0000unse_toc.xml",
+      "original": "victorianghostst0000unse_djvu.xml",
+      "private": "true",
+      "sha1": "c89baf10e0edde3474a9698ed09a48ceaf7cfa7b",
+      "size": "18391",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 30,
+  "item_last_updated": 1754149153,
+  "item_size": 1136309558,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2018-08-10 12:33:35",
+    "backup_location": "ia906800_18",
+    "bookplateleaf": "0002",
+    "boxid": "IA1305615",
+    "camera": "Sony Alpha-A6300 (Control)",
+    "collection": [
+      "internetarchivebooks",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "collection_set": "china",
+    "contributor": "Internet Archive",
+    "creator": "None",
+    "creator-alt-script": "None",
+    "date": "1996",
+    "description": "335 pages ; 22 cm",
+    "external-identifier": [
+      "urn:acs6:victorianghostst0000unse:epub:8394e140-73d5-4701-b182-bc81cc0c4935",
+      "urn:acs6:victorianghostst0000unse:pdf:beecaad7-2693-4668-8855-ecc8a7872dae",
+      "urn:oclc:record:1151676199",
+      "urn:lcp:victorianghostst0000unse:lcpdf:9aa06628-2591-4238-a326-e876ce4a7e6c",
+      "urn:lcp:victorianghostst0000unse:epub:aa4a55ad-499b-4927-89ea-3b04410076c8"
+    ],
+    "foldoutcount": "0",
+    "identifier": "victorianghostst0000unse",
+    "identifier-access": "http://archive.org/details/victorianghostst0000unse",
+    "identifier-ark": "ark:/13960/t9s253r03",
+    "imagecount": "358",
+    "invoice": "1213",
+    "isbn": [
+      "1859581331",
+      "9781859581339"
+    ],
+    "language": "eng",
+    "mediatype": "texts",
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.17",
+    "openlibrary_edition": "OL8622133M",
+    "openlibrary_work": "OL6828770W",
+    "operator": "associate-mana-yu@archive.org",
+    "page_number_confidence": "100",
+    "page_number_module_version": "1.0.5",
+    "ppi": "300",
+    "publicdate": "2018-08-10 12:35:05",
+    "publisher": "London : Senate",
+    "repub_state": "22",
+    "republisher_date": "20180812105633",
+    "republisher_operator": "republisher13.dhaka@archive.org",
+    "republisher_time": "783",
+    "scandate": "20180810152107",
+    "scanfee": "0;1.45;0",
+    "scanner": "ttscribe11.hongkong.archive.org",
+    "scanningcenter": "hongkong",
+    "sponsordate": "20180831",
+    "subject": [
+      "Ghost stories, English",
+      "Ghost stories, English",
+      "English fiction Ghost stories"
+    ],
+    "title": "Victorian ghost stories",
+    "title-alt-script": "None",
+    "tts_version": "v1.60-84-g27f7365",
+    "uploader": "ttscribe11.hongkong@archive.org"
+  },
+  "server": "ia803107.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "openlibrary-d-ol": {
+        "notes": {
+          "num_copies": 2,
+          "pallet": [
+            "IA-MC-2000034",
+            "IA-MC-2000015"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-07-19 01:34:08.262963"
+      }
+    }
+  },
+  "uniq": 1891481823,
+  "workable_servers": [
+    "ia803107.us.archive.org",
+    "ia903107.us.archive.org"
+  ]
+}

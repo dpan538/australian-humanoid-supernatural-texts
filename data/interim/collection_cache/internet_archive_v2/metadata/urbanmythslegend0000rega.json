@@ -1,0 +1,504 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/urbanmythslegend0000rega",
+        "server": "dn760109.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/urbanmythslegend0000rega",
+        "server": "dn790003.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/urbanmythslegend0000rega",
+        "server": "dn760109.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/urbanmythslegend0000rega",
+        "server": "dn790003.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1782009301,
+  "d1": "ia903208.us.archive.org",
+  "d2": "ia803208.us.archive.org",
+  "dir": "/30/items/urbanmythslegend0000rega",
+  "files": [
+    {
+      "crc32": "01e5b9fa",
+      "format": "Item Tile",
+      "md5": "6f0c49c35fe016042d594b231712f200",
+      "mtime": "1661232018",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "bc4c84b257284c42fa6a97e5f5d85229d5a2f0f2",
+      "size": "21005",
+      "source": "original"
+    },
+    {
+      "crc32": "40961def",
+      "format": "Log",
+      "md5": "d1624e75feefb8b7cc6d6bb36c6b992b",
+      "mtime": "1543317445",
+      "name": "logs/urbanmythslegend0000rega_iabdash_2018-11-2719:17:23.log",
+      "private": "true",
+      "sha1": "819b9911bb4ca63c716ba5dcdf170c6d0d3e3171",
+      "size": "672",
+      "source": "original"
+    },
+    {
+      "crc32": "a153f1b2",
+      "format": "Log",
+      "md5": "3830b6a56fba65981442166bba0cfcd3",
+      "mtime": "1543317440",
+      "name": "logs/urbanmythslegend0000rega_scanning_2018-11-2719:17:17.log",
+      "private": "true",
+      "sha1": "6c7909dbd0d9c32218f44aa587f84f88b2ad86b3",
+      "size": "176578",
+      "source": "original"
+    },
+    {
+      "crc32": "8b3b42e0",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.66",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "b3c356cc3d841c4b857bb71df1b9271b",
+      "mtime": "1754143810",
+      "name": "urbanmythslegend0000rega.epub",
+      "original": "urbanmythslegend0000rega_hocr.html",
+      "private": "true",
+      "sha1": "0e447d1706d57b70901becda99e9afa6be83b64c",
+      "size": "51120337",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e6e762ca",
+      "format": "LCP Encrypted PDF",
+      "md5": "088af3bd37175a6d85bb5506c72dc55d",
+      "mtime": "1754143543",
+      "name": "urbanmythslegend0000rega.lcpdf",
+      "original": "urbanmythslegend0000rega.pdf",
+      "sha1": "088d7eceeb3ebff50516a8f9b57322098095ba3b",
+      "size": "16794354",
+      "source": "derivative"
+    },
+    {
+      "crc32": "53a04f6e",
+      "format": "Text PDF",
+      "md5": "5a03f4346639c16d124d182012d229ed",
+      "mtime": "1726312799",
+      "name": "urbanmythslegend0000rega.pdf",
+      "original": "urbanmythslegend0000rega_page_numbers.json",
+      "private": "true",
+      "sha1": "c53086b109ad99bf168f661d239742b7a4a22691",
+      "size": "16265060",
+      "source": "derivative"
+    },
+    {
+      "crc32": "9295fdc2",
+      "format": "Abbyy GZ",
+      "md5": "d7565d549304d1792ccf8fa349ab1f2d",
+      "mtime": "1543649384",
+      "name": "urbanmythslegend0000rega_abbyy.gz",
+      "original": "urbanmythslegend0000rega_jp2.zip",
+      "private": "true",
+      "sha1": "ccf02aec150a06e65a21ba37878a8e348c850f17",
+      "size": "1023172",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d6f7be88",
+      "format": "chOCR",
+      "md5": "68c9646a126e5175cd0dd7033605ba15",
+      "mtime": "1661231515",
+      "name": "urbanmythslegend0000rega_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "urbanmythslegend0000rega_abbyy.gz",
+      "private": "true",
+      "sha1": "7ed760bed85053af65b08248710c61af4921684f",
+      "size": "837238",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "9a575fc3",
+      "format": "Cloth Cover Detection Log",
+      "md5": "83d5c8d302fe6c8204e542c97e86d10f",
+      "mtime": "1671597489",
+      "name": "urbanmythslegend0000rega_cloth_detection.log",
+      "original": "urbanmythslegend0000rega_scandata.xml",
+      "private": "true",
+      "sha1": "5a72fe3a1e10ebdbabc3263278409196214439ad",
+      "size": "787",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a9599062",
+      "format": "Dublin Core",
+      "md5": "b869f6033b266a247641c1f6430ebc3c",
+      "mtime": "1543647476",
+      "name": "urbanmythslegend0000rega_dc.xml",
+      "sha1": "23fd01b5b95bf312a6c4ec36f20ebe9cfa2900fe",
+      "size": "2510",
+      "source": "original"
+    },
+    {
+      "crc32": "99988906",
+      "format": "DjVuTXT",
+      "md5": "bccbfc78602364dae12170d0739d9d9f",
+      "mtime": "1661232010",
+      "name": "urbanmythslegend0000rega_djvu.txt",
+      "original": "urbanmythslegend0000rega_djvu.xml",
+      "private": "true",
+      "sha1": "e898a71c174cf1536655a532cb905d03f9abad97",
+      "size": "71567",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6dc8645f",
+      "format": "Djvu XML",
+      "md5": "1480dd475a37f6260b44540e11a862cf",
+      "mtime": "1661231856",
+      "name": "urbanmythslegend0000rega_djvu.xml",
+      "original": "urbanmythslegend0000rega_hocr.html",
+      "private": "true",
+      "sha1": "b0673937cac079288b3dfcd5ef5d7aed02b5930e",
+      "size": "919545",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1b27b72c",
+      "format": "ACS Encrypted EPUB",
+      "md5": "63d15338bbe0d25b9c539d67ee23ddac",
+      "mtime": "1543650096",
+      "name": "urbanmythslegend0000rega_encrypted.epub",
+      "original": "urbanmythslegend0000rega_abbyy.gz",
+      "sha1": "5eec99c0bc2137d694345712602adade7ac11dd0",
+      "size": "6125943",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a3439ed8",
+      "format": "ACS Encrypted PDF",
+      "md5": "87d3e86f9fc6805c84c8effb72879bcb",
+      "mtime": "1726313454",
+      "name": "urbanmythslegend0000rega_encrypted.pdf",
+      "original": "urbanmythslegend0000rega.pdf",
+      "sha1": "c3c9503656dead25c3457035c5b2aa5413b3c0c3",
+      "size": "16227888",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d4e0b68d",
+      "format": "JSON",
+      "md5": "eeeab5ca6b80da45949ce0ac3ac9c34c",
+      "mtime": "1543647444",
+      "name": "urbanmythslegend0000rega_events.json",
+      "private": "true",
+      "sha1": "bdcbef9b73ca11080940f4e80465ce6124142e42",
+      "size": "51",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "02ace37aa9b465aa7df236eece0468ce",
+      "name": "urbanmythslegend0000rega_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "ae2117bf",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "5ab6ea868d49accf5b4e42653a019e02",
+      "mtime": "1661231811",
+      "name": "urbanmythslegend0000rega_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "urbanmythslegend0000rega_chocr.html.gz",
+      "private": "true",
+      "sha1": "17d86d076626a7728a5c48ba16a0643a76ef2560",
+      "size": "1976683",
+      "source": "derivative"
+    },
+    {
+      "crc32": "83f299bc",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "8e17497159a730280cf134778859190a",
+      "mtime": "1661231879",
+      "name": "urbanmythslegend0000rega_hocr_pageindex.json.gz",
+      "original": "urbanmythslegend0000rega_hocr.html",
+      "private": "true",
+      "sha1": "8b54634696f1fa21236e81f8566a0e2312e3864c",
+      "size": "641",
+      "source": "derivative"
+    },
+    {
+      "crc32": "66e40f4a",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "0acee686704e81d2428e7f1791b9e160",
+      "mtime": "1661231983",
+      "name": "urbanmythslegend0000rega_hocr_searchtext.txt.gz",
+      "original": "urbanmythslegend0000rega_hocr.html",
+      "private": "true",
+      "sha1": "5aae70ea25805446e1cc15a6213a193321b47c5c",
+      "size": "26232",
+      "source": "derivative",
+      "word_conf_0_10": "233",
+      "word_conf_11_20": "45",
+      "word_conf_21_30": "56",
+      "word_conf_31_40": "82",
+      "word_conf_41_50": "126",
+      "word_conf_51_60": "231",
+      "word_conf_61_70": "586",
+      "word_conf_71_80": "1340",
+      "word_conf_81_90": "2766",
+      "word_conf_91_100": "5250"
+    },
+    {
+      "crc32": "a32a74e5",
+      "filecount": "58",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "fbd2f89fb37490499a092584614623cc",
+      "mtime": "1543648610",
+      "name": "urbanmythslegend0000rega_jp2.zip",
+      "original": "urbanmythslegend0000rega_orig_jp2.tar",
+      "private": "true",
+      "sha1": "46b839a0b88af2c7790a9a10799dcdaca5975234",
+      "size": "87465978",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b2b9bd8c",
+      "format": "LCP Encrypted EPUB",
+      "md5": "4c95518806bef886de543a40d276c952",
+      "mtime": "1754144028",
+      "name": "urbanmythslegend0000rega_lcp.epub",
+      "original": "urbanmythslegend0000rega.epub",
+      "sha1": "4f0de92376e123e75a8c7f12cc9226f923271b2c",
+      "size": "51876291",
+      "source": "derivative"
+    },
+    {
+      "crc32": "883faed1",
+      "format": "JSON",
+      "md5": "a2bd674dd66ac1fa04828d2d139b3f3b",
+      "mtime": "1594780917",
+      "name": "urbanmythslegend0000rega_loans.json",
+      "private": "true",
+      "sha1": "46058fe88d5c0f22646d35c76f50e578123800d5",
+      "size": "11105",
+      "source": "original"
+    },
+    {
+      "crc32": "c4e5c259",
+      "format": "MARC",
+      "md5": "29cd35a80a9027119e70c312e44823f1",
+      "mtime": "1543647476",
+      "name": "urbanmythslegend0000rega_marc.xml",
+      "sha1": "b7883c80aedbeea14a5e8d17d89ac21f454bb8aa",
+      "size": "9282",
+      "source": "original"
+    },
+    {
+      "crc32": "a66bab32",
+      "format": "MARC Binary",
+      "md5": "ca415aecd5f5da8511165f3a1122b7f6",
+      "mtime": "1543317456",
+      "name": "urbanmythslegend0000rega_meta.mrc",
+      "sha1": "aaca3dba4576427e8c3ddd2e15eb084e3dad3b39",
+      "size": "2928",
+      "source": "original"
+    },
+    {
+      "crc32": "1d49f94f",
+      "format": "Metadata",
+      "md5": "b545d5c061f70ebb0d025ee532e0e01a",
+      "mtime": "1543647465",
+      "name": "urbanmythslegend0000rega_meta.sqlite",
+      "sha1": "242c5c336c9f6e375da871c6fa034a1b6cfd49b6",
+      "size": "18432",
+      "source": "original"
+    },
+    {
+      "crc32": "6fa48dfa",
+      "format": "Metadata",
+      "md5": "75025489e12344baeb2c8ed277688602",
+      "mtime": "1754144028",
+      "name": "urbanmythslegend0000rega_meta.xml",
+      "sha1": "2b1e539ea811133e684ef1b1ff004ea4cb03dd7b",
+      "size": "4301",
+      "source": "original"
+    },
+    {
+      "crc32": "281aeee8",
+      "filecount": "58",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "e495338194191a867fac98845dfdecb7",
+      "mtime": "1543647464",
+      "name": "urbanmythslegend0000rega_orig_jp2.tar",
+      "private": "true",
+      "sha1": "c5ba915bd39185374e834d7da6c2d30653e0e3e2",
+      "size": "124047360",
+      "source": "original"
+    },
+    {
+      "crc32": "c054d242",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "84",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "2927c9afdc3f6b14a18a70d402e7af90",
+      "mtime": "1726312798",
+      "name": "urbanmythslegend0000rega_page_numbers.json",
+      "original": "urbanmythslegend0000rega_hocr.html",
+      "private": "true",
+      "sha1": "75a403c0a8c212ea7c3be35656de76e9c1d5639e",
+      "size": "9459",
+      "source": "derivative"
+    },
+    {
+      "crc32": "52e4e18a",
+      "format": "Scandata",
+      "md5": "48dfe2877d646eaa43d8c733d12ca850",
+      "mtime": "1671597489",
+      "name": "urbanmythslegend0000rega_scandata.xml",
+      "sha1": "5c3d82e7d6acc92d8c5d653f0bf0dbc305f2c75e",
+      "size": "59116",
+      "source": "original"
+    },
+    {
+      "crc32": "619b8a7f",
+      "format": "Contents",
+      "md5": "526a1464d4df0b9d74efa1ace89f3c82",
+      "mtime": "1671597236",
+      "name": "urbanmythslegend0000rega_toc.xml",
+      "original": "urbanmythslegend0000rega_djvu.xml",
+      "private": "true",
+      "sha1": "fd92c02645aa7a77a24ae04a786219955e33d3f3",
+      "size": "16286",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 30,
+  "item_last_updated": 1754144028,
+  "item_size": 375110801,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2018-11-27 11:17:01",
+    "associated-names": "McNab, Chris, 1970-",
+    "backup_location": "ia906804_24",
+    "bookplateleaf": "0004",
+    "boxid": "IA1432511",
+    "camera": "Sony Alpha-A6300 (Control)",
+    "collection": [
+      "internetarchivebooks",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "collection_set": "china",
+    "contributor": "Internet Archive",
+    "creator": "Regan, Lisa, 1971-",
+    "creator-alt-script": "None",
+    "date": "2011",
+    "description": [
+      "48 pages : 27 cm",
+      "This book is an introduction to legendary creatures, including Bigfoot, Goatman, Jersey Devil, Loch Ness Monster, Ogopogo, Skunk Ape, Mokele-Mbembe, Thetis Lake Monster, and other creatures",
+      "Includes bibliographical references (page 47) and index",
+      "Beast of Bray Road -- Bigfoot -- Bunyip -- Goatman -- Hopkinsville Goblin -- Jersey Devil -- Kongamoto -- Loch Ness Monster -- Mngwa -- Mokele-mbembe -- Morgawr -- Nandi bear -- Ogopogo -- Reptoid alien -- Skunk ape -- Spring Heeled Jack -- Thetis Lake Monster -- Tokoloshe -- Yara-ma-yha-who -- Yeti -- Guide to urban myths and legendary creatures",
+      "Accelerated Reader AR 7.1"
+    ],
+    "external-identifier": [
+      "urn:acs6:urbanmythslegend0000rega:epub:52f47c30-8172-4643-b03b-02c275c8a16b",
+      "urn:acs6:urbanmythslegend0000rega:pdf:53f70a86-33a8-4d4e-acf2-2b1bf35fdcb2",
+      "urn:oclc:record:1151687575",
+      "urn:lcp:urbanmythslegend0000rega:lcpdf:600f829a-8600-4102-b874-d61f016d4bae",
+      "urn:lcp:urbanmythslegend0000rega:epub:0118ad48-6b72-498b-9eb0-638aa5643caa"
+    ],
+    "foldoutcount": "0",
+    "identifier": "urbanmythslegend0000rega",
+    "identifier-access": "http://archive.org/details/urbanmythslegend0000rega",
+    "identifier-ark": "ark:/13960/t53g2553f",
+    "imagecount": "58",
+    "invoice": "1213",
+    "isbn": [
+      "9781433950094",
+      "143395009X",
+      "9781433950100",
+      "1433950103",
+      "9781433950117",
+      "1433950111"
+    ],
+    "language": "eng",
+    "lccn": "2010039134",
+    "loans__status__last_loan_date": "2020-07-14T16:40:57Z",
+    "loans__status__num_history": "43",
+    "loans__status__num_loans": "0",
+    "loans__status__num_waitlist": "0",
+    "loans__status__status": "AVAILABLE",
+    "mediatype": "texts",
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.17",
+    "openlibrary_edition": "OL26596975M",
+    "openlibrary_work": "OL18016069W",
+    "operator": "associate-carol@archive.org",
+    "page_number_confidence": "84",
+    "page_number_module_version": "1.0.5",
+    "ppi": "300",
+    "printer": "DYMO_LabelWriter_450_Turbo",
+    "publicdate": "2018-11-27 11:17:44",
+    "publisher": "New York : Gareth Stevens Pub.",
+    "repub_state": "22",
+    "republisher_date": "20181201125712",
+    "republisher_operator": "republisher24.dhaka@archive.org",
+    "republisher_time": "477",
+    "scandate": "20181127122355",
+    "scanfee": "0;1.45;0",
+    "scanner": "ttscribe7.hongkong.archive.org",
+    "scanningcenter": "hongkong",
+    "sponsordate": "20181130",
+    "subject": [
+      "Animals, Mythical",
+      "Legends",
+      "Animals, Mythical",
+      "Legends",
+      "Animals, Mythical",
+      "Legends",
+      "Mythical animals"
+    ],
+    "title": "Urban myths and legendary creatures ",
+    "title-alt-script": "None",
+    "tts_version": "v1.61-final",
+    "uploader": "ttscribe7.hongkong@archive.org"
+  },
+  "server": "ia803208.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "cnusd-ol": {
+        "notes": {
+          "isbn": [
+            "9781433950100"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-06-25 06:31:52.441733"
+      }
+    }
+  },
+  "uniq": 788774144,
+  "workable_servers": [
+    "ia803208.us.archive.org",
+    "ia903208.us.archive.org"
+  ]
+}

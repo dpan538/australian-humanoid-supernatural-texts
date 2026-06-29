@@ -1,0 +1,657 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/dreamkeepersspir0000arde",
+        "server": "dn760104.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/dreamkeepersspir0000arde",
+        "server": "dn760104.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1781957604,
+  "d1": "ia902808.us.archive.org",
+  "d2": "ia802808.us.archive.org",
+  "dir": "/22/items/dreamkeepersspir0000arde",
+  "files": [
+    {
+      "crc32": "7fa25263",
+      "format": "Item Tile",
+      "md5": "c4ba805b69f5cb1add0179a4d7d94c44",
+      "mtime": "1659901624",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "0a6e4eae688df3b2ebbb8a2bfb2ef05da6e6c8a0",
+      "size": "23778",
+      "source": "original"
+    },
+    {
+      "crc32": "f930d1d0",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.62",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "5d4f075d2d02357db6b60583b6aed187",
+      "mtime": "1753251060",
+      "name": "dreamkeepersspir0000arde.epub",
+      "original": "dreamkeepersspir0000arde_hocr.html",
+      "private": "true",
+      "sha1": "7263450ba210a1ed10c42653b4cd2cb1c8b5d91c",
+      "size": "1124786",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f12a06b9",
+      "format": "LCP Encrypted PDF",
+      "md5": "b2569a014bed24e25af246642bfcea62",
+      "mtime": "1753251040",
+      "name": "dreamkeepersspir0000arde.lcpdf",
+      "original": "dreamkeepersspir0000arde.pdf",
+      "sha1": "45c03bc80396843f6896dd69823e1433dbdf779c",
+      "size": "12118343",
+      "source": "derivative"
+    },
+    {
+      "crc32": "219d2b50",
+      "format": "Text PDF",
+      "md5": "0ceab08d9656f54f5ebf40370c940317",
+      "mtime": "1720180419",
+      "name": "dreamkeepersspir0000arde.pdf",
+      "original": "dreamkeepersspir0000arde_page_numbers.json",
+      "private": "true",
+      "sha1": "e382f6b2367d83b9d36dde0a406be1429254b2cc",
+      "size": "11724421",
+      "source": "derivative"
+    },
+    {
+      "crc32": "882e01df",
+      "format": "chOCR",
+      "md5": "b8c0173769af561be76549b73176848f",
+      "mtime": "1651458170",
+      "name": "dreamkeepersspir0000arde_chocr.html.gz",
+      "ocr": "tesseract 5.0.0-1-g862e",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.15",
+      "ocr_parameters": "-l eng",
+      "original": "dreamkeepersspir0000arde_jp2.zip",
+      "private": "true",
+      "sha1": "3048579ef728bc0cf45716d050f7ef1efbc65917",
+      "size": "4870413",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "d9ef7d64",
+      "format": "Cloth Cover Detection Log",
+      "md5": "8f957417e0d794104c2fa6fc354da622",
+      "mtime": "1669829824",
+      "name": "dreamkeepersspir0000arde_cloth_detection.log",
+      "original": "dreamkeepersspir0000arde_scandata.xml",
+      "private": "true",
+      "sha1": "5673ae3a626df91619d97224822bf4532af87585",
+      "size": "787",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5669ec4a",
+      "format": "Dublin Core",
+      "md5": "6b0689c4e3d6f88ea9b33c353bf60bae",
+      "mtime": "1651273286",
+      "name": "dreamkeepersspir0000arde_dc.xml",
+      "sha1": "725e76c3562505ecb17001f9105b8a6c814d1e10",
+      "size": "5040",
+      "source": "original"
+    },
+    {
+      "crc32": "db4e7ac1",
+      "format": "DjVuTXT",
+      "md5": "ac52ac7a2f4464d480c1ceb585136c2b",
+      "mtime": "1651458236",
+      "name": "dreamkeepersspir0000arde_djvu.txt",
+      "original": "dreamkeepersspir0000arde_djvu.xml",
+      "private": "true",
+      "sha1": "d291b70366046428e71fed40b48d366ef3bbb49a",
+      "size": "360385",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7b7cf68d",
+      "format": "Djvu XML",
+      "md5": "9dd0b47cc1667b8e1b121505c6eb6f79",
+      "mtime": "1651458210",
+      "name": "dreamkeepersspir0000arde_djvu.xml",
+      "original": "dreamkeepersspir0000arde_hocr.html",
+      "private": "true",
+      "sha1": "87171755dc1e5ac0da503193dfad66308a12aaa5",
+      "size": "4879342",
+      "source": "derivative"
+    },
+    {
+      "crc32": "da6ba9e4",
+      "format": "ACS Encrypted PDF",
+      "md5": "dcaaa2b80c4f6dafc265292d8cc2b7e5",
+      "mtime": "1720181577",
+      "name": "dreamkeepersspir0000arde_encrypted.pdf",
+      "original": "dreamkeepersspir0000arde.pdf",
+      "sha1": "78334d0dff53da83f837884c5321f44216222915",
+      "size": "11659126",
+      "source": "derivative"
+    },
+    {
+      "crc32": "77e34673",
+      "format": "JSON",
+      "md5": "902ca0eba90fd439c293a96e925bd708",
+      "mtime": "1651454087",
+      "name": "dreamkeepersspir0000arde_events.json",
+      "private": "true",
+      "sha1": "efb0c8df3321bd0b8de0bfb47fafeb2246009c84",
+      "size": "57",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "5f3cba14af75f0ff3770cdf3ad2311fb",
+      "name": "dreamkeepersspir0000arde_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "fbdf6274",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "654ebe5a825b5e2cd018b05a93d5d8c9",
+      "mtime": "1651458200",
+      "name": "dreamkeepersspir0000arde_hocr.html",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.15",
+      "ocr_parameters": "-l eng",
+      "original": "dreamkeepersspir0000arde_chocr.html.gz",
+      "private": "true",
+      "sha1": "f846bc57a3767b0278f3d07ab518a25ad3564ddb",
+      "size": "9153323",
+      "source": "derivative"
+    },
+    {
+      "crc32": "73bd387f",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "9949b9e2eadfbfd8fb2587c4ca70673e",
+      "mtime": "1651458215",
+      "name": "dreamkeepersspir0000arde_hocr_pageindex.json.gz",
+      "original": "dreamkeepersspir0000arde_hocr.html",
+      "private": "true",
+      "sha1": "575a2e52a99aadfc4ebf9c31c9b7072f6d8c69fb",
+      "size": "3070",
+      "source": "derivative"
+    },
+    {
+      "crc32": "40ff9ee9",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "708dcaef7cfee048b558be5755b9deba",
+      "mtime": "1651458228",
+      "name": "dreamkeepersspir0000arde_hocr_searchtext.txt.gz",
+      "original": "dreamkeepersspir0000arde_hocr.html",
+      "private": "true",
+      "sha1": "44debbaad3e91fb853d7b61bf2dcd73373c719b3",
+      "size": "140711",
+      "source": "derivative",
+      "word_conf_0_10": "1706",
+      "word_conf_11_20": "589",
+      "word_conf_21_30": "605",
+      "word_conf_31_40": "538",
+      "word_conf_41_50": "440",
+      "word_conf_51_60": "442",
+      "word_conf_61_70": "457",
+      "word_conf_71_80": "683",
+      "word_conf_81_90": "1867",
+      "word_conf_91_100": "53505"
+    },
+    {
+      "crc32": "6149cfe0",
+      "filecount": "262",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "b600d87daab73cadce7d4aab366ca35a",
+      "mtime": "1651457112",
+      "name": "dreamkeepersspir0000arde_jp2.zip",
+      "original": "dreamkeepersspir0000arde_orig_jp2.tar",
+      "private": "true",
+      "sha1": "079f1d3fc5bca4abbe96e2314790ed2b3586d21c",
+      "size": "98294197",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5aeacf6a",
+      "format": "LCP Encrypted EPUB",
+      "md5": "7306013fca388c9631946b2c7311b6ff",
+      "mtime": "1753251073",
+      "name": "dreamkeepersspir0000arde_lcp.epub",
+      "original": "dreamkeepersspir0000arde.epub",
+      "sha1": "3e3a49c2de8d028535e0626ca9b05d1ffa381c49",
+      "size": "1139901",
+      "source": "derivative"
+    },
+    {
+      "crc32": "9bba3c2d",
+      "format": "MARC",
+      "md5": "0b2c2ac8f7808e83e69b7acd0503920b",
+      "mtime": "1651272969",
+      "name": "dreamkeepersspir0000arde_marc.xml",
+      "sha1": "859d612e2b78c2ccf51d9f755c2e8604daa19dae",
+      "size": "14336",
+      "source": "original"
+    },
+    {
+      "crc32": "06c8cfc9",
+      "format": "MARC Binary",
+      "md5": "7d4f8fff1958c8c93208927f152ca91a",
+      "mtime": "1651272965",
+      "name": "dreamkeepersspir0000arde_meta.mrc",
+      "sha1": "d25491aca8348d62e2dc475aca1c7f03e9538a4f",
+      "size": "5799",
+      "source": "original"
+    },
+    {
+      "crc32": "9802b4e6",
+      "format": "Metadata",
+      "md5": "2b95f2c42fa00eb49aa104bbbf63cf12",
+      "mtime": "1651454273",
+      "name": "dreamkeepersspir0000arde_meta.sqlite",
+      "sha1": "b94330aae8f57489dad70e792b5da17d10ca2caf",
+      "size": "49152",
+      "source": "original"
+    },
+    {
+      "crc32": "5d721a57",
+      "format": "Metadata",
+      "md5": "e5fbc7ff09694dabcade2d510b2aea9c",
+      "mtime": "1753251073",
+      "name": "dreamkeepersspir0000arde_meta.xml",
+      "sha1": "2c9e8b9d02b98d9ca6f4c0af14499947afe23b9e",
+      "size": "7272",
+      "source": "original"
+    },
+    {
+      "crc32": "d1dc36f1",
+      "filecount": "262",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "a8beb7ecb98c01832485921711eaba75",
+      "mtime": "1651454272",
+      "name": "dreamkeepersspir0000arde_orig_jp2.tar",
+      "original": "dreamkeepersspir0000arde_preimage.zip",
+      "private": "true",
+      "sha1": "fdacdbc64a6e60c3c0b2144790e14bfc46c1b159",
+      "size": "502671360",
+      "source": "original"
+    },
+    {
+      "crc32": "767c3be9",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "96",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "3c63d7da19c39c8dd075bed13b927de6",
+      "mtime": "1720180419",
+      "name": "dreamkeepersspir0000arde_page_numbers.json",
+      "original": "dreamkeepersspir0000arde_hocr.html",
+      "private": "true",
+      "sha1": "1b56b34990192928ca51b41fd324edf886c9cc5e",
+      "size": "44003",
+      "source": "derivative"
+    },
+    {
+      "confidence_accurate": "False",
+      "crc32": "c5969825",
+      "crops_accurate": "False",
+      "format": "RePublisher Final Processing Log",
+      "initial_crop_confidence": "100",
+      "md5": "1b7165be636ab426bb6a2994027560fc",
+      "mtime": "1651458186",
+      "name": "dreamkeepersspir0000arde_repub_final.log",
+      "original": "dreamkeepersspir0000arde_scandata.xml",
+      "private": "true",
+      "republisher_deriver_version": "0.0.12",
+      "sha1": "64b0e7eddff6b6952b11f3991df688dfbf630524",
+      "size": "71140",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2960f426",
+      "format": "RePublisher Initial Processing Log",
+      "md5": "08ec62964ef5fd9ce32e032e552b9d58",
+      "mtime": "1651276054",
+      "name": "dreamkeepersspir0000arde_repub_initial.log",
+      "original": "dreamkeepersspir0000arde_preimage.zip",
+      "private": "true",
+      "republisher_deriver_version": "0.0.12",
+      "sha1": "40d9163175b1d24f4b2d6c4c44067eb0bf6af787",
+      "size": "27",
+      "source": "derivative"
+    },
+    {
+      "crc32": "15b1d7f6",
+      "format": "Scandata",
+      "md5": "055e243adbf321bb5c3de5650a5034ef",
+      "mtime": "1669829824",
+      "name": "dreamkeepersspir0000arde_scandata.xml",
+      "original": "dreamkeepersspir0000arde_preimage.zip",
+      "sha1": "da509c177573480726d24dfad8cbee70f82924d0",
+      "size": "278778",
+      "source": "original"
+    },
+    {
+      "crc32": "c3871824",
+      "format": "PNG",
+      "md5": "295b33df75cc8e3c038bec5f1539dcc8",
+      "mtime": "1651272203",
+      "name": "dreamkeepersspir0000arde_slip.png",
+      "private": "true",
+      "sha1": "bc157301548b0e05ee16ae5925a0b3ee2ca698c8",
+      "size": "40901",
+      "source": "original"
+    },
+    {
+      "crc32": "ad20f7c6",
+      "format": "JPEG Thumb",
+      "md5": "1f10c7e187b1cc9e323810defc53f53e",
+      "mtime": "1651273289",
+      "name": "dreamkeepersspir0000arde_slip_thumb.jpg",
+      "original": "dreamkeepersspir0000arde_slip.png",
+      "private": "true",
+      "sha1": "b6d93310d8549947cb32be0aaea472b3f6b43bf3",
+      "size": "8670",
+      "source": "derivative"
+    },
+    {
+      "crc32": "22516cbc",
+      "filecount": "262",
+      "format": "AVIF Thumbnails ZIP",
+      "md5": "73040e998cff57cd39923e0bffff82fe",
+      "mtime": "1651276053",
+      "name": "dreamkeepersspir0000arde_thumb_avif.zip",
+      "original": "dreamkeepersspir0000arde_preimage.zip",
+      "private": "true",
+      "sha1": "186ab61763b9c851414e3a930b82780d89d08594",
+      "size": "20730562",
+      "source": "original"
+    },
+    {
+      "crc32": "5a50c9a7",
+      "format": "Title Page Detection Log",
+      "md5": "cd92a01210b706548392038b60062257",
+      "mtime": "1669829767",
+      "name": "dreamkeepersspir0000arde_title_detection.log",
+      "original": "dreamkeepersspir0000arde_djvu.xml",
+      "private": "true",
+      "sha1": "cfacfa1c5bda706d1aa5fff0843098ce789b4126",
+      "size": "612",
+      "source": "derivative"
+    },
+    {
+      "crc32": "86fa1815",
+      "format": "Log",
+      "md5": "85e7ba0d7ead7dfbd06e8c2da6ba9979",
+      "mtime": "1651272974",
+      "name": "logs/dreamkeepersspir0000arde_iabdash_2022-04-3006:56:12.log",
+      "private": "true",
+      "sha1": "1fbee2df83b2085b238ccfbd9f6f182619f8e469",
+      "size": "1367",
+      "source": "original"
+    },
+    {
+      "crc32": "69702e34",
+      "format": "Log",
+      "md5": "80be5aea50ecc7bbd4aa17ea07cc42c4",
+      "mtime": "1651272982",
+      "name": "logs/dreamkeepersspir0000arde_scanning_2022-04-3006:56:19.log",
+      "private": "true",
+      "sha1": "f6cd34dabf1590808fe8af92c2f278ae2dd4042e",
+      "size": "941107",
+      "source": "original"
+    },
+    {
+      "crc32": "dc4e7843",
+      "format": "Log",
+      "md5": "16e2644992ea9e3545124e62d440f244",
+      "mtime": "1651272978",
+      "name": "logs/dreamkeepersspir0000arde_status_history_2022-04-3006:56:15.log",
+      "private": "true",
+      "sha1": "ad6bc0ab803c44493662b5c001a20ba3f4c236a9",
+      "size": "409",
+      "source": "original"
+    }
+  ],
+  "files_count": 33,
+  "item_last_updated": 1753251073,
+  "item_size": 680363175,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2022-05-02 03:10:27",
+    "autocrop_version": "0.0.12_books-20220331-0.2",
+    "bookplateleaf": "0010",
+    "boxid": "IA40459008",
+    "camera": "Sony Alpha-A6300 (Control)",
+    "collection": [
+      "internetarchivebooks",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "collection_set": "printdisabled",
+    "contributor": "Internet Archive",
+    "creator": "Arden, Harvey",
+    "date": "1994",
+    "description": [
+      "xii, 219 pages : 24 cm",
+      "A book that touches the soul, Harvey Arden's Dreamkeepers: A Spirit-Journey into Aboriginal Australia transports us through vivid narrative and haunting photographs into the world and minds of the custodians of the oldest culture on the planet. Coauthor of the best-selling Wisdomkeepers: Meetings with Native American Spiritual Elders, Arden journeys in Dreamkeepers to the Aboriginal peoples of Australia's wild and spectacular Kimberly region - the \"Land Beyond Goodbye\"--Intent on his continuing life-quest or spirit-journey for what he calls \"the Aboriginal in each of us.\" Though a series of fascinating meetings, interspersed with hair-raising adventures and misadventures of outback travel, we fall under the spell of a remarkable gallery of Aboriginal men and women both ordinary and extraordinary - rough-edged stockmen and gold hunters, storytellers and healers, poets and artists, political visionaries and mystic philosophers, spiritual elders and traditional Law Men. Arden asks of them only to share with us whatever it is they care to share. And from each we receive the gift of some poignant memory, penetrating insight, or shard of universal wisdom. What emerges is an unparalleled close-up portrait of a proud and courageous people who, against all odds, have clung - if only, at times, by the fingernails - to their ancient metaphysical concept of the Dreamtime, or Dreaming that \"time outside of time, a dimension of Being somehow interpenetrating and concurrent with our own,\" in which the Ancestor Beings continuously \"sing the world into existence.\" For those who enjoyed Bruce Chatwin's The Songlines, this remarkable real-life journey to the \"edges of the dreamtime\"--combining a vivid adventure narrative with a moving personal spiritual odyssey - will provide a rich new trove of unforgettable experience, meaning, and inspiration"
+    ],
+    "external-identifier": [
+      "urn:acs6:dreamkeepersspir0000arde:pdf:bb4986df-1834-4900-a383-d0436e0194a5",
+      "urn:oclc:record:1319329803",
+      "urn:lcp:dreamkeepersspir0000arde:lcpdf:92af148d-0dcf-43d8-9560-ed25b5fc7be8",
+      "urn:lcp:dreamkeepersspir0000arde:epub:93e56348-e6ad-45c8-8a82-de40e37ddc0a"
+    ],
+    "foldoutcount": "0",
+    "identifier": "dreamkeepersspir0000arde",
+    "identifier-access": "http://archive.org/details/dreamkeepersspir0000arde",
+    "identifier-ark": "ark:/13960/s24wjqr5nzm",
+    "imagecount": "262",
+    "invoice": "1652",
+    "isbn": [
+      "0060169168",
+      "9780060169169",
+      "0060925809",
+      "9780060925802"
+    ],
+    "language": "eng",
+    "lccn": "93021284",
+    "mediatype": "texts",
+    "oclc-id": [
+      "28929060",
+      "872071820",
+      "1087249752"
+    ],
+    "ocr": "tesseract 5.0.0-1-g862e",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_module_version": "0.0.15",
+    "ocr_parameters": "-l eng",
+    "old_pallet": "IA-NS-1200402",
+    "openlibrary_edition": "OL20945286M",
+    "openlibrary_work": "OL1880813W",
+    "operator": "associate-wilfredo-saladores@archive.org",
+    "page_number_confidence": "96",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.18",
+    "ppi": "360",
+    "publicdate": "2022-04-29 22:43:33",
+    "publisher": "New York : HarperCollins",
+    "rcs_key": "24143",
+    "repub_state": "19",
+    "republisher_date": "20220502091213",
+    "republisher_operator": "associate-maryrose-estose@archive.org",
+    "republisher_time": "357",
+    "scandate": "20220429234733",
+    "scanfee": "0;1.00;200",
+    "scanner": "station15.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "scribe3_search_catalog": "isbn",
+    "scribe3_search_id": "9780060925802",
+    "sponsordate": "20220430",
+    "subject": [
+      "Aboriginal Australians -- Australia -- Kimberley (W.A.) -- Social life and customs",
+      "Mythology, Aboriginal Australian -- Australia -- Kimberley (W.A.)",
+      "Philosophy, Aboriginal Australian",
+      "Australiens (Aborigènes) -- Australie -- Kimberley (Austr.-Occ.) -- Mœurs et coutumes",
+      "Mythologie australienne (aborigène) -- Australie -- Kimberley (Austr.-Occ.)",
+      "Philosophie australienne (aborigène) -- Australie -- Kimberley (Austr.-Occ.)",
+      "Philosophie australienne (aborigène)",
+      "Art - Sand and ground design",
+      "Art - Subjects - Wandjina",
+      "Art - Crafts - Advertising and marketing",
+      "Ceremonies - Smoking ceremonies",
+      "Religions - Christianity - Missions",
+      "Stories and motifs - Eagles / hawks / crows",
+      "Land rights - Mining industry",
+      "Music",
+      "Race relations - Violent - Massacres, murders, poisonings etc. - To 1900",
+      "Culture - Relationship to land",
+      "Substance use - Alcohol - Availability, dry areas etc",
+      "Aboriginal Australians -- Social life and customs",
+      "Mythology, Aboriginal Australian",
+      "Billiluna (Central WA Tanami Desert SE52-14)",
+      "Kununurra (WA East Kimberley SD52-14)",
+      "Halls Creek (WA East Kimberley SE52-10)",
+      "Mowanjum (WA West Kimberley SE51-07)",
+      "Great Sandy Desert (WA SE51, SF51)",
+      "Balgo / Wirrimanu (Central WA Tanami Desert SF52-02)",
+      "Billiluna / Kururrungku (Central WA Tanami Desert SE52-14)",
+      "Western Australia -- Kimberley",
+      "Aboriginal Australians Social life and customs Australia Kimberley (W.A.)",
+      "Mythology, Aboriginal Australian Australia Kimberley (W.A.)",
+      "Philosophy, Aboriginal Australian Australia Kimberley (W.A.)"
+    ],
+    "title": "Dreamkeepers : a spirit-journey into aboriginal Australia ",
+    "tts_version": "4.7-initial-140-g4027b18b",
+    "uploader": "station15.cebu@archive.org"
+  },
+  "server": "ia802808.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "binghamton-ol": {
+        "notes": {
+          "isbn": [
+            "9780060169169"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-13 22:33:33.22671"
+      },
+      "gwulibraries-ol": {
+        "notes": {
+          "isbn": [
+            "9780060169169"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-14 01:59:45.974655"
+      },
+      "occidentalcollegelibrary-ol": {
+        "notes": {
+          "isbn": [
+            "9780060169169"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-14 02:35:43.539767"
+      },
+      "riceuniversity-ol": {
+        "notes": {
+          "isbn": [
+            "9780060169169"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-14 03:09:46.705915"
+      },
+      "the-claremont-colleges-ol": {
+        "notes": {
+          "isbn": [
+            "9780060169169"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-13 01:23:45.542315"
+      },
+      "universityofarizona-ol": {
+        "notes": {
+          "isbn": [
+            "9780060169169"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-14 04:47:41.131944"
+      },
+      "universityofcoloradoboulder-ol": {
+        "notes": {
+          "isbn": [
+            "9780060169169"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-14 05:45:58.99108"
+      },
+      "universityofoklahoma-ol": {
+        "notes": {
+          "isbn": [
+            "9780060169169"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-14 05:59:24.410232"
+      }
+    }
+  },
+  "uniq": 2058749005,
+  "workable_servers": [
+    "ia802808.us.archive.org",
+    "ia902808.us.archive.org"
+  ]
+}

@@ -1,63 +1,278 @@
 # V2 Source Diversity Audit
 
-- Generated: `2026-06-21T10:37:09+00:00`
+- Generated: `2026-06-29T07:24:05+00:00`
 - Schema version: `2.0.0`
 
 ## Source Organisations
 - Australian Yowie Research: 898
+- The Northern Tribes of Central Australia; Baldwin Spencer and F. J. Gillen: 124
+- Native Tribes of the Northern Territory of Australia; Baldwin Spencer: 120
+- The Aborigines of Victoria, volume 1; R. Brough Smyth: 107
+- The Aborigines of New South Wales; John Fraser: 93
+- Across Australia, volume 2; Baldwin Spencer and F. J. Gillen: 83
+- Australian Legends; C. W. Peck: 77
+- Australian fairy tales; Atha Westbury: 77
+- The Aborigines of Tasmania; H. Ling Roth, Marion E. Butler, James Backhouse Walker, J. G. Garson, E. B. Tylor: 76
+- The Euahlayi Tribe; K. Langloh Parker: 62
+- Kamilaroi and Kurnai; Lorimer Fison and A. W. Howitt: 60
+- Below And On Top and Other Stories; Edward Dyson: 56
+- Australian Aborigines: the languages and customs of several tribes of aborigines in the western district of Victoria, Australia; James Dawson: 55
+- The Native Tribes of South Australia; George Taplin, James Dominick Woods, William Wyatt, H. A. E. Meyer, C. W. Schürmann, Samuel Gason, J. W. O. Bennett: 51
+- Australian Broadcasting Corporation: 50
+- Australian Legendary Tales: folk-lore of the Noongahburrahs as told to the Piccaninnies; K. Langloh Parker: 50
+- Diary of ten years eventful life of an early settler in Western Australia; George Fletcher Moore: 50
+- Native Tribes of South-East Australia; A. W. Howitt: 46
+- The Aborigines of Victoria, volume 2; R. Brough Smyth: 46
+- Native Tribes of Central Australia; Baldwin Spencer and F. J. Gillen: 42
+- Queensland, Australia; John Dunmore Lang: 41
+- Nuggets in the Devil's Punch Bowl, and Other Australian Tales; Andrew Robertson: 40
+- The Booandik Tribe of South Australian Aborigines; Christina Smith: 40
+- Eaglehawk and Crow; John Mathew: 39
+- More Australian Legendary Tales; K. Langloh Parker: 37
+- Australian Fairy Tales and related Australian tale books; Hume Cook / Ethel Buckland: 36
+- Australian Legends / Project Gutenberg Australia: 36
+- Kamilaroi, and other Australian languages; William Ridley: 32
+- Ethnological studies among the north-west-central Queensland aborigines; Walter E. Roth: 30
+- The aborigines of Victoria, volume 2; R. Brough Smyth: 30
+- For the Term of His Natural Life; Marcus Clarke: 29
+- The aborigines of Victoria, volume 1; R. Brough Smyth: 29
+- ABC; ABC: 28
+- Across Australia, volume 1; Baldwin Spencer and F. J. Gillen: 27
+- Australia Felix; Henry Handel Richardson: 27
+- Babes in the Bush; Rolf Boldrewood: 27
+- Joe Wilson and His Mates; Henry Lawson: 27
+- The Australian Race, volume 3; Edward Micklethwaite Curr: 27
+- In Bad Company, and other stories; Rolf Boldrewood: 24
+- Nevermore; Rolf Boldrewood: 24
+- The Aborigines of Tasmania; H. Ling Roth, J. G. Garson, and contributors: 24
+- The Australian Race, volume 2; Edward Micklethwaite Curr: 24
+- The Last Chance: A Tale of the Golden West; Rolf Boldrewood: 24
+- Among cannibals; Carl Lumholtz: 23
+- Kámilarói, and Other Australian Languages; William Ridley: 23
+- Such Is Life; Joseph Furphy: 23
+- The Crime of the Under Seas; Guy Boothby: 22
+- A Descriptive Vocabulary of the Language in Common Use Amongst the Aborigines of Western Australia; George Fletcher Moore: 21
+- At Midnight and Other Stories; Ada Cambridge: 21
+- The Australian Race, volume 1; Edward Micklethwaite Curr: 21
+- Steve Brown's Bunyip, and Other Stories; John Arthur Barry: 20
+- My Brilliant Career; Miles Franklin: 19
+- Steve Brown's Bunyip, and Other Stories; L. C. Barry: 19
+- Australian Legendary Tales / Project Gutenberg Australia: 18
+- Australian Tales; Marcus Clarke: 18
+- How did the Natives of Australia become Acquainted with the Demigods and Daemonia, and with the Superstitions of the Ancient Races?; W. Augustus Miles: 18
+- In the Days When the World Was Wide and Other Verses; Henry Lawson: 18
+- In the Roaring Fifties; Edward Dyson: 18
+- Some Everyday Folk and Dawn; Miles Franklin: 18
+- Tales of the Austral Tropics; Ernest Favenc: 18
+- While the Billy Boils; Henry Lawson: 18
+- Children of the Bush; Henry Lawson: 17
+- The Getting of Wisdom; Henry Handel Richardson: 17
+- The Moving Finger; Mary Gaunt: 17
+- The Mystery of a Hansom Cab; Fergus Hume: 17
+- The Rising of the Court; Henry Lawson: 17
+- The Three Miss Kings: An Australian Story; Ada Cambridge: 17
+- Madame Midas; Fergus Hume: 16
+- Plain Living; Rolf Boldrewood: 16
+- Robbery under Arms: A Story of Life and Adventure in the Bush and in the Australian Goldfields; Rolf Boldrewood: 16
+- The Crooked Stick; Rolf Boldrewood: 16
+- The folklore, manners, customs, and languages of the South Australian aborigines; George Taplin: 16
+- Over the Sliprails; Henry Lawson: 15
+- The Customs and Traditions of the Aboriginal Natives of North Western Australia; John G. Withnell: 15
+- The Gold-Stealers; Edward Dyson: 15
+- A Colonial Reformer, Volume 1; Rolf Boldrewood: 14
+- A Colonial Reformer, Volume 3; Rolf Boldrewood: 14
+- Native Tribes of Central Australia / Internet Sacred Text Archive: 14
+- North Queensland Ethnography. Bulletin No. 9. Burial ceremonies, and disposal of the dead; Walter E. Roth: 14
+- A Colonial Reformer, Volume 2; Rolf Boldrewood: 13
+- Australian Stories Retold and Sketches of Country Life; William Henry Suttor: 13
 - Internet Archive: 13
+- Old Melbourne Memories; Rolf Boldrewood: 13
+- Old Tales of a Young Country; Marcus Clarke: 12
+- Tales of Australian Life; Nathaniel Walter Swan: 12
+- A Colonial Tramp; Hume Nisbet: 11
+- On the Track; Henry Lawson: 11
+- Sisters; Ada Cambridge: 11
+- Tales of the Dandenongs; Hume Cook: 11
+- The Aborigines of Victoria and Riverina; Peter Beveridge: 11
+- Native Tribes of South-East Australia / Wikisource: 10
+- Spooky stories from the Library; Tess McLaughlan: 10
+- The Wonder-Child: An Australian Story; Ethel Turner: 10
+- Thirty Years in Australia; Ada Cambridge: 10
+- Adelaide Gaol Ghostly sightings; Department for Environment and Water, South Australia: 9
+- Federici's ghost; Sarah Matthews: 8
+- Notes on the Aborigines of New South Wales; Richard Hill and George Thornton: 8
+- Notes on the Aborigines of Western Australia; C. G. Nicolay: 8
+- On Our Selection; Steele Rudd: 8
+- Bush Studies; Barbara Baynton: 7
+- Canberra history and legends; John Gale: 7
 - OpenAlex: 7
+- ABC; Background Briefing: 6
+- Among Cannibals; Carl Lumholtz: 6
 - English Wikipedia: 6
+- More Australian Legendary Tales / Project Gutenberg Australia: 6
+- Native Tribes of the Northern Territory of Australia / Internet Sacred Text Archive: 6
+- Spooky stories at the National Trust; National Trust NSW Editor: 6
+- The Dashwoods; Steele Rudd: 6
+- Adelaide Arcade history; Adelaide Arcade: 5
+- National Trust / Australian Broadcasting Corporation: 5
+- The Fifth Continent; C. H. Eden: 5
+- ABC; Mornings: 4
+- ABC; The Ark: 4
+- ABC; The World Today: 4
 - Australian Archaeology: 4
+- Australian Screen / NFSA: 4
+- Shearing in the Riverina, New South Wales; Rolf Boldrewood: 4
+- The Aborigines of Western Australia; Albert Frederick Calvert: 4
+- Wrightson, Patricia: 4
+- ABC; Encounter: 3
+- ABC; Evenings: 3
+- ABC; Nightlife: 3
+- ABC; Science Show: 3
+- ABC; Spirit of Things: 3
 - Australian aboriginal studies/Australian Aboriginal studies: 3
+- Human Repetends; Marcus Clarke: 3
 - ResearchOnline at James Cook University (James Cook University): 3
+- Reviewed exact public place snippets; National Trust / Australian Broadcasting Corporation: 3
+- The Moral Compass Cleverman Special; ABC Religion & Ethics / Geraldine Doogue: 3
+- What are Hobart's most famous ghost stories?; Australian Broadcasting Corporation: 3
+- ABC; Conversations: 2
+- ABC; Drive: 2
+- ABC; Your Afternoon: 2
 - Children's Literature Association quarterly: 2
+- Ghost hunters conduct global seance via Facebook at Australia's oldest mental hospital; ABC News Tasmania: 2
+- Ghosts of Castle, Settlers hotels and Old York Hospital spook and delight tourists in WA town; ABC Midwest & Wheatbelt: 2
 - Medical Entomology and Zoology: 2
+- Meet the woman taking Tasmania's most haunted sites to the social media masses; ABC Northern Tasmania: 2
+- National Trust Tasmania: 2
+- Notes on the Aborigines of New South Wales; R. H. Mathews: 2
 - Oxford English Dictionary: 2
 - Palethnologie: 2
+- Port Arthur Historic Site: 2
 - RUNE (Research UNE): 2
 - Rock Art Research: 2
+- Trezise, P. J. (Percy J.): 2
+- 'Hairy man' encountered by Arthur Marrin 123 years ago still unidentified; ABC News: 1
+- A ghost story for Christmas; State Library Victoria: 1
 - ABC News: 1
+- ABC; ABC HOBART: 1
+- ABC; Afternoons: 1
+- ABC; Awaye!: 1
+- ABC; Hindsight: 1
+- ABC; Into The Music: 1
+- ABC; Late Lunch: 1
+- ABC; Ockham's Razor: 1
+- ABC; Overnights: 1
+- ABC; PM: 1
+- ABC; Radio Eye: 1
+- ABC; Saturday Breakfast: 1
+- ABC; Saturdays: 1
+- ABC; Street Stories: 1
+- ACMI: 1
 - ANU Open Research (Australian National University): 1
+- Adelaide's notorious Z Ward asylum opens for after-dark ghost tours; 891 ABC Adelaide: 1
 - American Anthropologist: 1
+- Ann Ferns: 1
 - Anthropological Forum: 1
 - Antiquity: 1
 - Archaeology in Oceania/Archæology & physical anthropology in Oceania: 1
+- Arden, Harvey: 1
+- Art Gallery of New South Wales: 1
+- Art Gallery of South Australia: 1
 - Arts: 1
 - Austral Entomology: 1
+- Australian Fairy Tales; Atha Westbury: 1
+- Australian Ghost Stories; ABC Overnights / Richard Davis: 1
 - Australian Journal of Psychology: 1
+- Australian National University: 1
 - Australian and New Zealand Journal of Art: 1
+- Burnie's arts centre celebrates 40 years of great shows and ghost stories; ABC Northern Tasmania / Rick Eaves: 1
 - Children's Literature Association Quarterly: 1
+- Cowan, James, 1942-2018: 1
+- Crawford, I. M: 1
+- De'Ath, Otto: 1
+- Department for Environment and Water, Government of South Australia: 1
 - Encyclopedic Dictionary of Archaeology: 1
+- Erbacher, John, 1941-: 1
 - Figshare: 1
+- Finley, Carol: 1
 - Folklore: 1
+- Forest, Heather: 1
+- Fremantle Arts Centre director calls for stories to explore history of former lunatic asylum; ABC Radio Perth: 1
+- Fremantle Prison: 1
+- Friends of J Ward Inc.: 1
+- From yowies to UFOs to panthers, what's the real story behind Australia's urban legends?; ABC Religion & Ethics / God Forbid: 1
 - Geophysical Research Letters: 1
+- Ghost stories from one of Australia's most haunted places; ABC Hobart / Port Arthur Historic Site: 1
+- Grand, P. M. (Paule Marie), 1914-: 1
+- Gunaikurnai Land and Waters Aboriginal Corporation: 1
 - Humanities Research: 1
+- Hungry spirits haunt station store room; ABC Rural: 1
+- Indigenous ghost stories; ABC Books and Arts / Warwick Thornton: 1
+- Is the Yahoo Australia's bigfoot?; ABC Nightlife / Tohby Riddle: 1
+- John Heffernan: 1
 - Journal of Australian indigenous issues: 1
 - Journal of Herpetology: 1
 - Journal of Paleontology: 1
+- Leaf, Rik, author: 1
 - M/C Journal: 1
 - Man: 1
+- Marriner Group: 1
+- Mattingley, Christobel, author: 1
+- McGregor, William: 1
 - Monster Anthropology: 1
 - Monster Anthropology in Australasia and Beyond: 1
+- More Winners - His Master's Ghost; Australian Children's Television Foundation / Australian Screen Online: 1
+- Myra Demetriou's life in Millers Point; ABC Sydney Weekend Mornings: 1
+- National Trust Victoria: 1
+- Ngabaya: Spirit People; ABC Education: 1
+- No Accounting; ABC Four Corners / Matthew Carney: 1
 - ORGANON: 1
 - Oceania: 1
+- Old Melbourne Gaol / National Trust of Australia (Victoria): 1
+- Out, damned spot! Albany's Spectrum Theatre restoration to deal with damp; ABC Great Southern: 1
 - Oxford Art Online: 1
 - Palaeontology: 1
+- Paranormal investigator Alison Oborn has seen and heard very strange things; ABC Conversations: 1
+- Parks Victoria: 1
+- Queensland towns on the Sunshine Coast and in north Queensland get set for ghostbuster tour; 612 ABC Brisbane: 1
+- Reed, A. W. (Alexander Wyclif), 1908-1979: 1
+- Regan, Lisa, 1971-: 1
 - Research Online (University of Wollongong): 1
+- Restricted Rights and Freedoms: Fanny Balbuk Yooreel; ABC Education: 1
 - Samuel Beckett Today / Aujourd’hui: 1
+- San Souci, Robert D: 1
+- San Souci, Robert D, Wooden, Lenny, ill: 1
+- Self-Drive Tour of Gawler; Town of Gawler Council: 1
+- Shadow Trackers: the spooky stories of Aboriginal Australia; ABC Life Matters: 1
+- Sherlock Holmes and spiritualism: Sir Arthur Conan Doyle in Victoria; State Library Victoria: 1
+- Spooky sightings at Sylvania station; ABC Rural: 1
+- Stanley's Bayview Hotel - tales of a ghost, Joe Lyons and the quest for original artefacts; ABC Northern Tasmania: 1
 - Swamphen a Journal of Cultural Ecology (ASLEC-ANZ): 1
+- Tasmanian blog explores quirky history, from ghost stories to pigeons and penguins; ABC Hobart / Jodie Lee: 1
+- The Aborigines of Victoria, volume 1; Robert Brough Smyth: 1
 - The Antiquaries Journal: 1
 - The Australian Journal of Anthropology: 1
 - The Conversation: 1
 - The Holocene: 1
 - The International Journal of Diversity in Organizations, Communities, and Nations: Annual Review: 1
+- The Northern Territory News, 11 January 2025; News Corp Australia / Library & Archives NT: 1
+- The Northern Territory News, 17 October 2014; News Corp Australia / Library & Archives NT: 1
+- The Northern Territory News; News Corp Australia / Library & Archives NT: 1
+- The daredevil of Monte Cristo; ABC Conversations / Lawrence Ryan: 1
+- The haunted historic houses of Tasmania's east coast; ABC Hobart / Glamorgan Spring Bay Historical Society: 1
+- The secrets of Black Rock House; State Library Victoria: 1
+- This Place: Djimubarn, sacred rock art shelter; ABC Education / Merrill Girrabul: 1
 - USC Research Bank (University of the Sunshine Coast): 1
+- Unexplained stories from the Old Adelaide Gaol; 891 ABC Adelaide: 1
+- Vollie News, 26 May 2011; St John Ambulance Australia (NT): 1
+- Vollie News, 8 August 2013; St John Ambulance Australia (NT): 1
+- WA Afternoons; ABC Radio Perth / Graham Seal: 1
 - World Archaeology: 1
 - Yearbook - Association of Pacific Coast Geographers: 1
 - Zootaxa: 1
 
 ## Mediation
+- public_candidate_review: 3085
 - specialist_aggregator_or_witness_publication: 898
 - bibliographic_metadata: 67
 - digitized_public_item_or_metadata: 13

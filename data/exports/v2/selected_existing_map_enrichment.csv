@@ -1,0 +1,42 @@
+record_id,title,source_name,place_name,state_territory,latitude,longitude,geocode_display_name,decision,review_note
+646,1870 - The Naturalist Article,Australian Yowie Research,"Braidwood, NSW",NSW,,,,already_mapped,record already has eligible representative location
+825,"1938 - Nanango, Yowie Report",Australian Yowie Research,"Nanango, QLD",QLD,,,,already_mapped,record already has eligible representative location
+827,"1962 - Macleay Argus, Dungay Creek Yowie Article",Australian Yowie Research,"Dungay Creek, NSW",NSW,,,,already_mapped,record already has eligible representative location
+828,1976 - Macleay Argus Yowie Article,Australian Yowie Research,"Kempsey, NSW",NSW,,,,already_mapped,record already has eligible representative location
+829,1976 - Reward for Yowie Article,Australian Yowie Research,"Queanbeyan, ACT",ACT,,,,geocode_rejected,no state-matched Australian gazetteer result
+233,"Barclay's Island, New South Wales 1978",Australian Yowie Research,"Barclay's Island, NSW",NSW,,,,geocode_rejected,no state-matched Australian gazetteer result
+613,"Wee Jasper, New South Wales 1987",Australian Yowie Research,"Wee Jasper, NSW",NSW,,,,already_mapped,record already has eligible representative location
+301,"Yarambulla, Victoria 1991",Australian Yowie Research,"Mount Buffalo, VIC",VIC,,,,already_mapped,record already has eligible representative location
+836,"1993 - Mt Spurgeon, Yowie Article",Australian Yowie Research,"Mount Spurgeon, QLD",QLD,,,,already_mapped,record already has eligible representative location
+249,"Blackbutt, Queensland 2008",Australian Yowie Research,"Blackbutt Ranges, QLD",QLD,,,,already_mapped,record already has eligible representative location
+615,"Wellingrove - Dundee, New South Wales 2010",Australian Yowie Research,"Wellingrove, NSW",NSW,,,,already_mapped,record already has eligible representative location
+456,"Hornsby Heights, New South Wales 2012",Australian Yowie Research,"Hornsby Heights, NSW",NSW,,,,already_mapped,record already has eligible representative location
+138,"Parkes, New South Wales 2013",Australian Yowie Research,"Parkes, NSW",NSW,,,,already_mapped,record already has eligible representative location
+381,"Miles, Queensland 2016",Australian Yowie Research,"Miles, QLD",QLD,,,,already_mapped,record already has eligible representative location
+429,"Quaids Dam, Queensland 2017",Australian Yowie Research,"Atherton Tableland, QLD",QLD,,,,already_mapped,record already has eligible representative location
+3679,ghost in Canberra history and legends,Internet Archive,"Yarralumla House, ACT",ACT,,,,already_mapped,record already has eligible representative location
+3680,ghosts in Canberra history and legends,Internet Archive,"Washpen Creek, ACT",ACT,,,,already_mapped,record already has eligible representative location
+2850,ghosts in For the Term of His Natural Life,Project Gutenberg,"Port Arthur Historic Site, TAS",TAS,,,,already_mapped,record already has eligible representative location
+647,1871 - Darling Downa Gazette,Australian Yowie Research,"Mount Dryander, QLD",QLD,,,,already_mapped,record already has eligible representative location
+668,1880 - Southland Times (NZ),Australian Yowie Research,"Yorke Peninsula, SA",SA,,,,already_mapped,record already has eligible representative location
+673,1882 - Colac Herald,Australian Yowie Research,"Treachery Headland, NSW",NSW,,,,already_mapped,record already has eligible representative location
+684,1891 - Bathurst Times Article,Australian Yowie Research,"Kanangra Falls, NSW",NSW,,,,already_mapped,record already has eligible representative location
+700,1907 - The Hairyman by Henry Lawson,Australian Yowie Research,"Blue Mountains, NSW",NSW,,,,already_mapped,record already has eligible representative location
+711,"1927 - History of ACT Legends, John Gale",Australian Yowie Research,"Canberra, ACT",ACT,,,,already_mapped,record already has eligible representative location
+841,1998 - NT News Article,Australian Yowie Research,"Adelaide River, NT",NT,,,,already_mapped,record already has eligible representative location
+945,1999 - Thats Life Magazine Yowie Article,Australian Yowie Research,"Gold Coast, QLD",QLD,,,,already_mapped,record already has eligible representative location
+970,2015- Epoch Times Yowie Article,Australian Yowie Research,"Springwood, NSW",NSW,,,,already_mapped,record already has eligible representative location
+982,2018 - South Burnett Times Yowie Article,Australian Yowie Research,"Nanango, QLD",QLD,,,,already_mapped,record already has eligible representative location
+1001,2021 - Coast to Coast Radio Yowie Article 24-05-2021,Australian Yowie Research,"Springbrook, QLD",QLD,,,,already_mapped,record already has eligible representative location
+1005,2021 - Fortean News Yowie Article 26-05-2021,Australian Yowie Research,"Springbrook, QLD",QLD,,,,already_mapped,record already has eligible representative location
+1012,2021 - Paris Match Newspaper Yowie Article - 25-05-2021,Australian Yowie Research,"Springbrook, QLD",QLD,,,,already_mapped,record already has eligible representative location
+1014,2021- Mysterious Universe Yowie Article 25-05-2021,Australian Yowie Research,"Springbrook, QLD",QLD,,,,already_mapped,record already has eligible representative location
+1015,2021- Sydney News Today Yowie Article 23-05-2021,Australian Yowie Research,"Springbrook, QLD",QLD,,,,already_mapped,record already has eligible representative location
+1016,2022 - 7 News Yowie Article 26-02-2022,Australian Yowie Research,"Springbrook, QLD",QLD,,,,already_mapped,record already has eligible representative location
+643,"1866 - Peter Harris Diary, Toowareenah NSW",Australian Yowie Research,"Tooraweenah, NSW",NSW,,,,already_mapped,record already has eligible representative location
+647,1871 - Darling Downa Gazette,Australian Yowie Research,"Dryander National Park, QLD",QLD,,,,already_mapped,record already has eligible representative location
+673,1882 - Colac Herald,Australian Yowie Research,"Seal Rocks, NSW",NSW,,,,already_mapped,record already has eligible representative location
+658,"1876 - Portland Guardian, Victoria",Australian Yowie Research,"Milburn Creek, NSW",NSW,,,,already_mapped,record already has eligible representative location
+649,1871 - Illustrated Australian News,Australian Yowie Research,"Avondale, Illawarra, NSW",NSW,,,,already_mapped,record already has eligible representative location
+1082,1980 - People Magazine Yowie Article,Australian Yowie Research,"Kilcoy, QLD",QLD,,,,already_mapped,record already has eligible representative location
+1082,1980 - People Magazine Yowie Article,Australian Yowie Research,"Sandy Creek, Kilcoy, QLD",QLD,,,,already_mapped,record already has eligible representative location

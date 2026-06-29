@@ -1,0 +1,14 @@
+{
+  "title": "'A battle between enraged bulls' : the 2009 Australian Senate Inquiry into Sports News and Digital Media",
+  "source": "OpenAlex",
+  "url": "https://researchdirect.westernsydney.edu.au/islandora/object/uws:11075",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2009-01-01",
+  "publication": "OpenAlex",
+  "author": "Brett Hutchins, D.J. Rowe",
+  "region_signal": "Australian Capital Territory",
+  "location_confidence": "medium",
+  "abstract": "On 14 May 2009, the Senate Standing Committee on Environment, Communications and the Arts handed down a Report after completing an Inquiry into 'The Reporting of Sports News and the Emergence of Digital Media'. Called by the Federal Minister for Communications, Broadband and the Digital Economy, Stephen Conroy, the Inquiry sought, in the words of one Senator, 'to shine a light on sometimes quite intractable disputes in this area'. The scale and intensity of these disputes, described in one submission as a 'battle between enraged bulls' (Davies, 2009), can be measured by the profile and power of many of the 44 organisations that made submissions and whose representatives appeared over the three-and-a-half days of hearings in Canberra, Sydney and Melbourne. These organisations included the Australian Football League (AFL), National Rugby League (NRL), the International Olympic Committee (IOC), News Limited, Hutchison Telecoms, Yahoo!7 and the World Association of Newspapers (WAN). The Inquiry's hearings and Final Report have been the subject of close attention both in Australia and overseas, representing the first time that a national government has intervened in this area of commercial news and sporting activity.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

@@ -1,0 +1,9 @@
+{
+  "after_map_flags": 921,
+  "after_public_records": 2397,
+  "applied_changes": [],
+  "automatic_changes_applied": 0,
+  "before_map_flags": 921,
+  "before_public_records": 2397,
+  "note": "No deterministic row-level corrections were applied; all non-trivial issues were written to review queues."
+}

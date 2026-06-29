@@ -1,0 +1,27 @@
+{
+  "response": {
+    "docs": [
+      {
+        "creator": "John Heffernan",
+        "date": "2005-01-01T00:00:00Z",
+        "identifier": "hauntedaustralia0000john",
+        "publicdate": "2023-02-14T13:08:34Z",
+        "title": "Haunted Australia"
+      }
+    ],
+    "numFound": 1,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 77,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "((&quot;Australian ghost stories&quot; OR &quot;ghosts of Australia&quot; OR &quot;haunted Australia&quot; OR &quot;Australian ghosts&quot;)) AND mediatype:texts",
+      "query": "((text:&quot;Australian ghost stories&quot; OR text:&quot;Australian ghost stories&quot; OR text__reviews:&quot;Australian ghost stories&quot;) OR (text:&quot;ghosts of Australia&quot; OR text:&quot;ghosts of Australia&quot; OR text__reviews:&quot;ghosts of Australia&quot;) OR (text:&quot;haunted Australia&quot; OR text:&quot;haunted Australia&quot; OR text__reviews:&quot;haunted Australia&quot;) OR (text:&quot;Australian ghosts&quot; OR text:&quot;Australian ghosts&quot; OR text__reviews:&quot;Australian ghosts&quot;)) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

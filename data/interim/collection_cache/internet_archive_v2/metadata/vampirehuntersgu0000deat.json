@@ -1,0 +1,498 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/vampirehuntersgu0000deat",
+        "server": "dn760005.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/vampirehuntersgu0000deat",
+        "server": "dn790006.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/vampirehuntersgu0000deat",
+        "server": "dn760005.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/vampirehuntersgu0000deat",
+        "server": "dn790006.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1782009296,
+  "d1": "ia902805.us.archive.org",
+  "d2": "ia802805.us.archive.org",
+  "dir": "/22/items/vampirehuntersgu0000deat",
+  "files": [
+    {
+      "crc32": "34ea0817",
+      "format": "Item Tile",
+      "md5": "fecb67e584bdadddddb7db44a0c96abd",
+      "mtime": "1661234265",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "66fca5d409d752dd1762a3e322f886bf20be79d9",
+      "size": "15469",
+      "source": "original"
+    },
+    {
+      "crc32": "f4541649",
+      "format": "Log",
+      "md5": "6a3184d99d0ee79aa7dbd7c292db1484",
+      "mtime": "1575565010",
+      "name": "logs/vampirehuntersgu0000deat_iabdash_2019-12-0600:56:47.log",
+      "private": "true",
+      "sha1": "7e34befb33f790dea7b0fb8b5ac66275ee2143f5",
+      "size": "1356",
+      "source": "original"
+    },
+    {
+      "crc32": "ad23faa7",
+      "format": "Log",
+      "md5": "4f83d712f1934eda8de4e924424399a5",
+      "mtime": "1575565015",
+      "name": "logs/vampirehuntersgu0000deat_scanning_2019-12-0600:56:51.log",
+      "private": "true",
+      "sha1": "ca765cf4ab90825b1dd5c744c2525749162f9160",
+      "size": "129418",
+      "source": "original"
+    },
+    {
+      "crc32": "1a61a3b9",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.66",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "867a2852223dfc2a95b761c5c0a206d6",
+      "mtime": "1754145816",
+      "name": "vampirehuntersgu0000deat.epub",
+      "original": "vampirehuntersgu0000deat_hocr.html",
+      "private": "true",
+      "sha1": "1dfe5b95bd7f4e51b8977d55925d0877a13f9475",
+      "size": "20757566",
+      "source": "derivative"
+    },
+    {
+      "crc32": "23a420bc",
+      "format": "LCP Encrypted PDF",
+      "md5": "08a4b9186048429305078d9a50af1db8",
+      "mtime": "1754145663",
+      "name": "vampirehuntersgu0000deat.lcpdf",
+      "original": "vampirehuntersgu0000deat.pdf",
+      "sha1": "0efafd7b0e2af473bdf95673fc42baf77d05a6f6",
+      "size": "4115468",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a2de57b7",
+      "format": "Text PDF",
+      "md5": "a103e806f8dfc151d843323da3eff467",
+      "mtime": "1726385114",
+      "name": "vampirehuntersgu0000deat.pdf",
+      "original": "vampirehuntersgu0000deat_page_numbers.json",
+      "private": "true",
+      "sha1": "22f05a270a9374f4b2086efb810f30e1f7b20ca2",
+      "size": "3762960",
+      "source": "derivative"
+    },
+    {
+      "crc32": "9612f852",
+      "format": "Abbyy GZ",
+      "md5": "7d5a9e7123ea63b99000d39f7cd44c07",
+      "mtime": "1575963075",
+      "name": "vampirehuntersgu0000deat_abbyy.gz",
+      "original": "vampirehuntersgu0000deat_jp2.zip",
+      "private": "true",
+      "sha1": "9ea77425305bc9459e1fb32c01248cec38c99523",
+      "size": "514756",
+      "source": "derivative"
+    },
+    {
+      "crc32": "4b8f9eef",
+      "format": "chOCR",
+      "md5": "303fc657176e981008fac6e2ee6d4cae",
+      "mtime": "1661234065",
+      "name": "vampirehuntersgu0000deat_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "vampirehuntersgu0000deat_abbyy.gz",
+      "private": "true",
+      "sha1": "0fcc5d063d031a54d3547d2339c963b90f48d2e2",
+      "size": "411194",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "73d40223",
+      "format": "Cloth Cover Detection Log",
+      "md5": "bfdf6026b44223fc6d5fed5788adccbd",
+      "mtime": "1671608896",
+      "name": "vampirehuntersgu0000deat_cloth_detection.log",
+      "original": "vampirehuntersgu0000deat_scandata.xml",
+      "private": "true",
+      "sha1": "4240f2b54c6f2894732d970780a6b2c608705657",
+      "size": "786",
+      "source": "derivative"
+    },
+    {
+      "crc32": "35b39142",
+      "format": "Dublin Core",
+      "md5": "281a0611d22b9f739aa4f03a243dc1a6",
+      "mtime": "1575961769",
+      "name": "vampirehuntersgu0000deat_dc.xml",
+      "sha1": "a68d97faaf5a3ed3361e0143972c02ab22eb0b5f",
+      "size": "1390",
+      "source": "original"
+    },
+    {
+      "crc32": "ba0865d3",
+      "format": "DjVuTXT",
+      "md5": "70b514533502817a6db3076ebb3d660b",
+      "mtime": "1661234261",
+      "name": "vampirehuntersgu0000deat_djvu.txt",
+      "original": "vampirehuntersgu0000deat_djvu.xml",
+      "private": "true",
+      "sha1": "3a5a26b11ecc144c86fbe1c005ee299f8d729650",
+      "size": "35141",
+      "source": "derivative"
+    },
+    {
+      "crc32": "13349a31",
+      "format": "Djvu XML",
+      "md5": "0c818812b31d8f63db8dfb9b352c45d2",
+      "mtime": "1661234235",
+      "name": "vampirehuntersgu0000deat_djvu.xml",
+      "original": "vampirehuntersgu0000deat_hocr.html",
+      "private": "true",
+      "sha1": "34e2f9edad544fc947b5372038a7e9460d5892c7",
+      "size": "447485",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2ac01dc1",
+      "format": "ACS Encrypted EPUB",
+      "md5": "4fd93a5cf492aa6c4d3d5e80beeabfb5",
+      "mtime": "1575963497",
+      "name": "vampirehuntersgu0000deat_encrypted.epub",
+      "original": "vampirehuntersgu0000deat_abbyy.gz",
+      "sha1": "2f7bda93e48870c7764c1e9de8687b34f9dc2ae4",
+      "size": "2156956",
+      "source": "derivative"
+    },
+    {
+      "crc32": "4f096671",
+      "format": "ACS Encrypted PDF",
+      "md5": "02c7258b57dd8c3551c6b1983353d1de",
+      "mtime": "1726385284",
+      "name": "vampirehuntersgu0000deat_encrypted.pdf",
+      "original": "vampirehuntersgu0000deat.pdf",
+      "sha1": "f06d360bfe214c7cc06c2be0db847512bc70ca00",
+      "size": "3740736",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f17927c1",
+      "format": "JSON",
+      "md5": "7308faa5eb2a8678e0b5275b2a77436b",
+      "mtime": "1575961342",
+      "name": "vampirehuntersgu0000deat_events.json",
+      "private": "true",
+      "sha1": "10090d1a9e8ac8051255536c8190076e8a757473",
+      "size": "53",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "33ad80f68131009e9565c914bdd4a4cf",
+      "name": "vampirehuntersgu0000deat_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "9e33865f",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "fd28bcc70ff49f702a2321e0f8fd5cc4",
+      "mtime": "1661234208",
+      "name": "vampirehuntersgu0000deat_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "vampirehuntersgu0000deat_chocr.html.gz",
+      "private": "true",
+      "sha1": "c18db5d57554179e8cf582cba254104ac8723dcf",
+      "size": "963195",
+      "source": "derivative"
+    },
+    {
+      "crc32": "84186248",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "7bf17bc7240af51622b7e3317fb2c634",
+      "mtime": "1661234242",
+      "name": "vampirehuntersgu0000deat_hocr_pageindex.json.gz",
+      "original": "vampirehuntersgu0000deat_hocr.html",
+      "private": "true",
+      "sha1": "ff92b144f0e06bb5ea75b8dc13b33aeaa3a182e5",
+      "size": "449",
+      "source": "derivative"
+    },
+    {
+      "crc32": "69550fc2",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "0b82af04fcb68f9755a07cf51e78fcc7",
+      "mtime": "1661234252",
+      "name": "vampirehuntersgu0000deat_hocr_searchtext.txt.gz",
+      "original": "vampirehuntersgu0000deat_hocr.html",
+      "private": "true",
+      "sha1": "9a3db6764abefefce89efc7f0fef388e6ddaf3a9",
+      "size": "13746",
+      "source": "derivative",
+      "word_conf_0_10": "162",
+      "word_conf_11_20": "79",
+      "word_conf_21_30": "97",
+      "word_conf_31_40": "89",
+      "word_conf_41_50": "110",
+      "word_conf_51_60": "143",
+      "word_conf_61_70": "293",
+      "word_conf_71_80": "558",
+      "word_conf_81_90": "1195",
+      "word_conf_91_100": "2347"
+    },
+    {
+      "crc32": "aeec36a5",
+      "filecount": "42",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "7c97f3fa068c6ea46f7dd3d1bcf70242",
+      "mtime": "1575962752",
+      "name": "vampirehuntersgu0000deat_jp2.zip",
+      "original": "vampirehuntersgu0000deat_orig_jp2.tar",
+      "private": "true",
+      "sha1": "4f37dd8b21f32f8300e241de0ca5a38d28cebeb0",
+      "size": "33217501",
+      "source": "derivative"
+    },
+    {
+      "crc32": "c48c73a9",
+      "format": "LCP Encrypted EPUB",
+      "md5": "d37fdfaf6d32b11091f695c119e16f31",
+      "mtime": "1754146141",
+      "name": "vampirehuntersgu0000deat_lcp.epub",
+      "original": "vampirehuntersgu0000deat.epub",
+      "sha1": "9955c805f320d753e012a3c4beb73357cde8f0eb",
+      "size": "21246001",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7035a992",
+      "format": "MARC",
+      "md5": "83b7b371d12dfd7d51510548945efe95",
+      "mtime": "1575961768",
+      "name": "vampirehuntersgu0000deat_marc.xml",
+      "sha1": "e7d9cfcd23a68491fb6fd8b37f5db640a1bd7165",
+      "size": "2721",
+      "source": "original"
+    },
+    {
+      "crc32": "4bebf712",
+      "format": "MARC Binary",
+      "md5": "cf202ae66aed7e9be68515c0d1457cef",
+      "mtime": "1575565006",
+      "name": "vampirehuntersgu0000deat_meta.mrc",
+      "sha1": "f80d98c9b2bad7e0b4e9ccc7e37e79432d103c48",
+      "size": "1097",
+      "source": "original"
+    },
+    {
+      "crc32": "2c7e808e",
+      "format": "Metadata",
+      "md5": "4f55b4457df55b021475591b4f075a9d",
+      "mtime": "1575961682",
+      "name": "vampirehuntersgu0000deat_meta.sqlite",
+      "sha1": "ef61b8d6f2677f9d24704c29dfb5d5d1ea7e0a03",
+      "size": "18432",
+      "source": "original"
+    },
+    {
+      "crc32": "a40141d5",
+      "format": "Metadata",
+      "md5": "75a403341ad7dd4d08a100cf2212d77a",
+      "mtime": "1754146141",
+      "name": "vampirehuntersgu0000deat_meta.xml",
+      "sha1": "5cac3624531cc1c2a496bd032f39a391481b850b",
+      "size": "3373",
+      "source": "original"
+    },
+    {
+      "crc32": "db09f69b",
+      "filecount": "42",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "fdcac12e293fa739c8da8014336e3ebe",
+      "mtime": "1575961682",
+      "name": "vampirehuntersgu0000deat_orig_jp2.tar",
+      "private": "true",
+      "sha1": "95927323b8bf0f7ccf9d7bf6cf36f7f3c116af3e",
+      "size": "78233600",
+      "source": "original"
+    },
+    {
+      "crc32": "b93b6d38",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "62",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "1f3fbf9128bf4d69d6f5a84f4dc117e5",
+      "mtime": "1726385114",
+      "name": "vampirehuntersgu0000deat_page_numbers.json",
+      "original": "vampirehuntersgu0000deat_hocr.html",
+      "private": "true",
+      "sha1": "c056cc700f8d9636e7b9fb7fff79d6763654b8e8",
+      "size": "6882",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d7703d65",
+      "format": "Scandata",
+      "md5": "10d7f11b4772709fb6dca9e39544ed6b",
+      "mtime": "1671608896",
+      "name": "vampirehuntersgu0000deat_scandata.xml",
+      "sha1": "aa930fd089b21e27acab29c708ebd964b98d3078",
+      "size": "43201",
+      "source": "original"
+    },
+    {
+      "crc32": "21c0a4ec",
+      "format": "PNG",
+      "md5": "399e6a85d7d55d96cf6da98c23666019",
+      "mtime": "1575547831",
+      "name": "vampirehuntersgu0000deat_slip.png",
+      "private": "true",
+      "sha1": "5a12ccf794d11104a883dcbbb356f776d2701df7",
+      "size": "40194",
+      "source": "original"
+    },
+    {
+      "crc32": "1ddd5a5d",
+      "format": "JPEG Thumb",
+      "md5": "06de020f715c74cb8bb422b885ac7f38",
+      "mtime": "1575961777",
+      "name": "vampirehuntersgu0000deat_slip_thumb.jpg",
+      "original": "vampirehuntersgu0000deat_slip.png",
+      "private": "true",
+      "sha1": "e7690a436f79bbcda61b739cb8f133548fc8205f",
+      "size": "5637",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a4dc4652",
+      "format": "Title Page Detection Log",
+      "md5": "7495e4ae0107cff88b0862fc8accaac7",
+      "mtime": "1671608838",
+      "name": "vampirehuntersgu0000deat_title_detection.log",
+      "original": "vampirehuntersgu0000deat_djvu.xml",
+      "private": "true",
+      "sha1": "1b5df70ce9d2a4798535890e041898dd7de83935",
+      "size": "617",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 31,
+  "item_last_updated": 1754146141,
+  "item_size": 169887380,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2019-12-05 12:10:32",
+    "backup_location": "ia907008_6",
+    "boxid": "IA1729501",
+    "camera": "USB PTP Class Camera",
+    "collection": [
+      "internetarchivebooks",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "collection_set": "printdisabled",
+    "contributor": "Internet Archive",
+    "creator": "De'Ath, Otto",
+    "date": "2012",
+    "description": [
+      "32 p. 25 cm",
+      "Includes bibliographical references (p. 31) and index",
+      "Vampires everywhere! -- The vampire heartland -- Feature: Dracula! -- The Vrykolakas of Greece -- Feature: the strange case of Peter Plogojowitz -- Penanggalan of Indonesia -- Rokurokubi of Japan -- The Loogaroo of the Caribbean -- The Boo Hag of South Carolina -- Scotland's Baobhan Sith -- Feature: the vampires of Haidamak -- Australia's Yara-Ma-Yha-Who -- Brahmaparusha of India"
+    ],
+    "external-identifier": [
+      "urn:acs6:vampirehuntersgu0000deat:epub:890a6a3c-5121-4890-94e6-e16bc916c6a1",
+      "urn:acs6:vampirehuntersgu0000deat:pdf:80882fd1-e592-48b4-96f4-992abc912b2d",
+      "urn:oclc:record:1151665377",
+      "urn:lcp:vampirehuntersgu0000deat:lcpdf:54e5faba-8bde-4544-8a79-4b97f97c018b",
+      "urn:lcp:vampirehuntersgu0000deat:epub:56a9694c-4675-44f0-8a9f-27c7fc88e37d"
+    ],
+    "foldoutcount": "0",
+    "identifier": "vampirehuntersgu0000deat",
+    "identifier-access": "http://archive.org/details/vampirehuntersgu0000deat",
+    "identifier-ark": "ark:/13960/t6f273528",
+    "imagecount": "42",
+    "invoice": "1652",
+    "isbn": "9781597713177",
+    "language": "eng",
+    "lccn": "2011006582",
+    "mediatype": "texts",
+    "notes": "obscured text on back cover<br />",
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.17",
+    "old_pallet": "IA13312",
+    "openlibrary_edition": "OL24809058M",
+    "openlibrary_work": "OL15901993W",
+    "operator": "associate-kristel-talandron@archive.org",
+    "page_number_confidence": "62",
+    "page_number_module_version": "1.0.5",
+    "ppi": "300",
+    "publicdate": "2019-12-05 12:10:46",
+    "publisher": "Mankato, Minn. : Sea-to-Sea Publications",
+    "repub_state": "19",
+    "republisher_date": "20191210150217",
+    "republisher_operator": "associate-jobert-apor@archive.org",
+    "republisher_time": "307",
+    "scandate": "20191205172237",
+    "scanfee": "0;1.00;200",
+    "scanner": "station38.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "scribe3_search_catalog": "isbn",
+    "scribe3_search_id": "9781597713177",
+    "sponsordate": "20191231",
+    "subject": "Vampires -- Juvenile literature",
+    "title": "The vampire hunter's guide",
+    "tts_version": "3.2-rc-2-g0d7c1ed",
+    "uploader": "station38.cebu@archive.org"
+  },
+  "server": "ia902805.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "openlibrary-d-ol": {
+        "notes": {
+          "num_copies": 5,
+          "pallet": [
+            "IA-MC-0000135",
+            "IA-MC-0000049",
+            "IA-MC-1200015",
+            "IA-MC-1200014",
+            "IA-MC-1200036"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-09-23 05:02:53.282295"
+      }
+    }
+  },
+  "uniq": 2118774430,
+  "workable_servers": [
+    "ia902805.us.archive.org",
+    "ia802805.us.archive.org"
+  ]
+}

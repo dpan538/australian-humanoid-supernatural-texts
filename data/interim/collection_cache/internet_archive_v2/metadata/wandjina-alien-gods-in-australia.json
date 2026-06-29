@@ -1,0 +1,284 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/wandjina-alien-gods-in-australia",
+        "server": "dn710205.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/wandjina-alien-gods-in-australia",
+        "server": "dn760104.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/wandjina-alien-gods-in-australia",
+        "server": "dn710205.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/wandjina-alien-gods-in-australia",
+        "server": "dn760104.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1781957401,
+  "d1": "ia903109.us.archive.org",
+  "d2": "ia803109.us.archive.org",
+  "dir": "/5/items/wandjina-alien-gods-in-australia",
+  "files": [
+    {
+      "crc32": "d4fa22c1",
+      "format": "Image Container PDF",
+      "md5": "75d0e3479dbd5c2a8b75f4eaf19a699c",
+      "mtime": "1710089962",
+      "name": "Wandjina, alien gods in Australia.pdf",
+      "sha1": "1f261e3e20f4405051bbaac54337f5797e60a2e6",
+      "size": "914991",
+      "source": "original",
+      "viruscheck": "1710090384"
+    },
+    {
+      "crc32": "792e827f",
+      "format": "chOCR",
+      "md5": "84af81a3b164cda9e2b1b1b9ff188667",
+      "mtime": "1710090609",
+      "name": "Wandjina, alien gods in Australia_chocr.html.gz",
+      "ocr": "tesseract 5.3.0-6-g76ae",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "it",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-ita;lang-Latin;two-pass-disabled;pass-dpi-disabled;autonomous-mode-enabled;binarisation-method-otsu",
+      "original": "Wandjina, alien gods in Australia_jp2.zip",
+      "sha1": "bdc8f627079e601edb89950ab9d25e401f8dc44a",
+      "size": "6805",
+      "source": "derivative"
+    },
+    {
+      "crc32": "3484aec0",
+      "format": "DjVuTXT",
+      "md5": "b2e5519b4313e9f861bd683f75e9b726",
+      "mtime": "1710091071",
+      "name": "Wandjina, alien gods in Australia_djvu.txt",
+      "original": "Wandjina, alien gods in Australia_djvu.xml",
+      "sha1": "2a91b222138554aa8471dbb2a63b47efa80a906e",
+      "size": "416",
+      "source": "derivative"
+    },
+    {
+      "crc32": "98089788",
+      "format": "Djvu XML",
+      "md5": "ab53e232aa402723afdd4c2c82be8c23",
+      "mtime": "1710090982",
+      "name": "Wandjina, alien gods in Australia_djvu.xml",
+      "original": "Wandjina, alien gods in Australia_hocr.html",
+      "sha1": "cb9bedad839c8d09d70f1a49892a9dd474782b42",
+      "size": "6333",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2cc552a4",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.56",
+      "hocr_char_to_word_module_version": "1.3.0",
+      "md5": "2ca9eb58e2428626ebd880a05d152eb3",
+      "mtime": "1710090961",
+      "name": "Wandjina, alien gods in Australia_hocr.html",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "it",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-ita;lang-Latin;two-pass-disabled;pass-dpi-disabled;autonomous-mode-enabled;binarisation-method-otsu",
+      "original": "Wandjina, alien gods in Australia_chocr.html.gz",
+      "sha1": "0542f5ce61e2e553e9925f6faa96a15778b33648",
+      "size": "13398",
+      "source": "derivative"
+    },
+    {
+      "crc32": "8f06ce1b",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.56",
+      "hocr_pageindex_module_version": "1.1.0",
+      "md5": "f8219dd203afce794fc29a3ac2368c67",
+      "mtime": "1710091008",
+      "name": "Wandjina, alien gods in Australia_hocr_pageindex.json.gz",
+      "original": "Wandjina, alien gods in Australia_hocr.html",
+      "sha1": "f0fbfa38c0ee01a96d87de94b9b3b44a9264e7a3",
+      "size": "42",
+      "source": "derivative"
+    },
+    {
+      "crc32": "3a157822",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.56",
+      "hocr_fts_text_module_version": "1.2.0",
+      "md5": "c3d61996ab4925e0439923bbae9a37f6",
+      "mtime": "1710091048",
+      "name": "Wandjina, alien gods in Australia_hocr_searchtext.txt.gz",
+      "original": "Wandjina, alien gods in Australia_hocr.html",
+      "sha1": "fb4265b9ef9679eb4eb844d989a0b3c2afbac76d",
+      "size": "287",
+      "source": "derivative",
+      "word_conf_0_10": "4",
+      "word_conf_11_20": "3",
+      "word_conf_21_30": "2",
+      "word_conf_31_40": "4",
+      "word_conf_41_50": "6",
+      "word_conf_51_60": "5",
+      "word_conf_61_70": "4",
+      "word_conf_71_80": "5",
+      "word_conf_81_90": "11",
+      "word_conf_91_100": "24"
+    },
+    {
+      "crc32": "c06c99d2",
+      "filecount": "1",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "c2a14d6cbebddf8741aa4e887f324803",
+      "mtime": "1710090492",
+      "name": "Wandjina, alien gods in Australia_jp2.zip",
+      "original": "Wandjina, alien gods in Australia.pdf",
+      "sha1": "4721918a33b93ec126c056226a590d774d250d50",
+      "size": "296624",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0a0f2d32",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "0",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "6d59861737b2a66995c00ccc36f12595",
+      "mtime": "1710091110",
+      "name": "Wandjina, alien gods in Australia_page_numbers.json",
+      "original": "Wandjina, alien gods in Australia_hocr.html",
+      "sha1": "187be3cdd8d07676762abd933aabc3598f18bc92",
+      "size": "337",
+      "source": "derivative"
+    },
+    {
+      "crc32": "27411fe2",
+      "format": "Scandata",
+      "md5": "e2dbcdafd24aba6ad53adffeebdea990",
+      "mtime": "1710091110",
+      "name": "Wandjina, alien gods in Australia_scandata.xml",
+      "original": "Wandjina, alien gods in Australia_djvu.xml",
+      "sha1": "8cdae5b51a7cb0f0b533f8733c3ff60e93eddd27",
+      "size": "603",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ffc9be3d",
+      "format": "Additional Text PDF",
+      "md5": "78da8a1f0808ed100be8f746fd01a4f6",
+      "mtime": "1710091300",
+      "name": "Wandjina, alien gods in Australia_text.pdf",
+      "original": "Wandjina, alien gods in Australia_page_numbers.json",
+      "pdf_module_version": "0.0.23",
+      "sha1": "0124fa73255a34201a3de16671d17f61093348f9",
+      "size": "159040",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6002967d",
+      "format": "Item Tile",
+      "md5": "dbfd094ad8e550e01f595b5593a6faa6",
+      "mtime": "1772388699",
+      "name": "__ia_thumb.jpg",
+      "sha1": "3fa9b5491ba8da3cf5612e34cce91914991692ad",
+      "size": "11461",
+      "source": "original"
+    },
+    {
+      "btih": "cac54c5dcb76a70b86fee8be9aab3394c98caccf",
+      "crc32": "6520edce",
+      "format": "Archive BitTorrent",
+      "md5": "89c09af8ec7f14e0cf1328f155acfbe1",
+      "mtime": "1772388699",
+      "name": "wandjina-alien-gods-in-australia_archive.torrent",
+      "sha1": "0242ad8e4d01450997745d1812633084c51becb0",
+      "size": "4055",
+      "source": "metadata"
+    },
+    {
+      "format": "Metadata",
+      "md5": "009e9ec6c0a71571e1e6d9c1be368e6a",
+      "name": "wandjina-alien-gods-in-australia_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "b7076d39",
+      "format": "Metadata",
+      "md5": "cc87fd9f287c51a43ea310c9647454bc",
+      "mtime": "1710090041",
+      "name": "wandjina-alien-gods-in-australia_meta.sqlite",
+      "sha1": "9e2e5d79d44a741b0ff0ac99609a0fcb9c867bbc",
+      "size": "20480",
+      "source": "original"
+    },
+    {
+      "crc32": "ed4770f2",
+      "format": "Metadata",
+      "md5": "6cfde8562812dc5e34cb5b4de8908505",
+      "mtime": "1772388697",
+      "name": "wandjina-alien-gods-in-australia_meta.xml",
+      "sha1": "9421491e7ce0709627d52f2863ffe38d655b086a",
+      "size": "1660",
+      "source": "original"
+    }
+  ],
+  "files_count": 16,
+  "item_last_updated": 1772388699,
+  "item_size": 1436532,
+  "metadata": {
+    "addeddate": "2024-03-10 16:59:53",
+    "collection": [
+      "alfredo_lissoni_ufo",
+      "patron-library-collection"
+    ],
+    "collection_added": [
+      "additional_collections",
+      "patron-library-collection"
+    ],
+    "curation": "[curator]validator@archive.org[/curator][date]20240310170624[/date][comment]checked for malware[/comment]",
+    "description": "Wandjina",
+    "identifier": "wandjina-alien-gods-in-australia",
+    "identifier-access": "http://archive.org/details/wandjina-alien-gods-in-australia",
+    "identifier-ark": "ark:/13960/s2cwdgsb01h",
+    "mediatype": "texts",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_autonomous": "true",
+    "ocr_detected_lang": "it",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_module_version": "0.0.21",
+    "ocr_parameters": "-l ita+Latin",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.23",
+    "ppi": "300",
+    "publicdate": "2024-03-10 16:59:53",
+    "scanner": "Internet Archive HTML5 Uploader 1.7.0",
+    "subject": [
+      "Wandjina",
+      "Greys",
+      "alien",
+      "UFO",
+      "Australia"
+    ],
+    "title": "Wandjina, Alien Gods In Australia",
+    "uploader": "alliss@tin.it"
+  },
+  "server": "ia903109.us.archive.org",
+  "uniq": 1366663473,
+  "workable_servers": [
+    "ia903109.us.archive.org",
+    "ia803109.us.archive.org"
+  ]
+}

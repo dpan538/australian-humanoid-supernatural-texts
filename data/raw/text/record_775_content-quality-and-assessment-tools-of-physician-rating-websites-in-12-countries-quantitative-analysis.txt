@@ -1,0 +1,14 @@
+{
+  "title": "Content, Quality, and Assessment Tools of Physician-Rating Websites in 12 Countries: Quantitative Analysis",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.2196/jmir.9105",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2018-06-14",
+  "publication": "Journal of Medical Internet Research",
+  "author": "Fabia Rothenfluh, Peter J. Schulz",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "BACKGROUND: Websites on which users can rate their physician are becoming increasingly popular, but little is known about the website quality, the information content, and the tools they offer users to assess physicians. This study assesses these aspects on physician-rating websites in German- and English-speaking countries. OBJECTIVE: The objective of this study was to collect information on websites with a physician rating or review tool in 12 countries in terms of metadata, website quality (transparency, privacy and freedom of speech of physicians and patients, check mechanisms for appropriateness and accuracy of reviews, and ease of page navigation), professional information about the physician, rating scales and tools, as well as traffic rank. METHODS: A systematic Web search based on a set of predefined keywords was conducted on Google, Bing, and Yahoo in August 2016. A final sample of 143 physician-rating websites was analyzed and coded for metadata, quality, information content, and the physician-rating tools. RESULTS: The majority of websites were registered in the United States (40/143) or Germany (25/143). The vast majority were commercially owned (120/143, 83.9%), and 69.9% (100/143) displayed some form of physician advertisement. Overall, information content (mean 9.95/25) as well as quality were low (mean 18.67/47). Websites registered in the United Kingdom obtained the highest quality scores (mean 26.50/47), followed by Australian websites (mean 21.50/47). In terms of rating tools, physician-rating websites were most frequently asking users to score overall performance, punctuality, or wait time in practice. CONCLUSIONS: This study evidences that websites that provide physician rating should improve and communicate their quality standards, especially in terms of physician and user protection, as well as transparency. In addition, given that quality standards on physician-rating websites are low overall, the development of transparent guidelines is required. Furthermore, attention should be paid to the financial goals that the majority of physician-rating websites, especially the ones that are commercially owned, pursue.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

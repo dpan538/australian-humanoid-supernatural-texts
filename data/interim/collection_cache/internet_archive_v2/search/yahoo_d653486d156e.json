@@ -1,0 +1,28 @@
+{
+  "response": {
+    "docs": [
+      {
+        "creator": "United States Senate Select Committee",
+        "date": "1976-04-26T00:00:00Z",
+        "description": "PLEASE READ: The best files are the ones that begin with underscore characters (\"_Book-I_Foreign-and-Military-Intelligence\" for example). These are the full books. The other files are portions of the books. Audio Books of Sections of These Reports are available on YouTube: HERE . Final Report of United States Senate Select Committee to Study Governmental Operations with Respect to Intelligence Activities (Church Committee) Five Books (Foreign Intel, Domestic Intel, Case Studies, the NSA, and the JFK Assassination), the Interim Report (Foreign Assassinations), plus Seven Volumes of Testimony. Also, I found audio of some of the hearings which can be found by clicking this text . People should also be aware that C-SPAN presented several of the hearings, as filmed for television, on their site . People should go check them out. The audio I linked here, though, has Important (the most important IMHO) hearings not presented by C-SPAN. From Wikipedia : The  Church Committee  was the  United States Senate Select Committee to Study Governmental Operations with Respect to Intelligence Activities , a  U.S. Senate  committee chaired by Senator  Frank Church  ( D - ID ) in 1975. A precursor to the  U.S. Senate Select Committee on Intelligence , the committee investigated  intelligence gathering  for illegality by the  Central Intelligence Agency  (CIA), National Security Agency  (NSA) and  Federal Bureau of Investigation  (FBI) after certain activities had been revealed by the  Watergate   affair.",
+        "identifier": "ChurchCommittee_FullReport",
+        "publicdate": "2015-03-26T05:25:18Z",
+        "title": "United States Senate Select Committee to Study Governmental Operations with Respect to Intelligence Activities (Church Committee) - Full Report"
+      }
+    ],
+    "numFound": 1,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 81,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Yahoo&quot; AND Australia AND Aboriginal) AND mediatype:texts",
+      "query": "((text:Yahoo OR text:Yahoo OR text__reviews:Yahoo) AND (text:Australia OR text:Australia OR text__reviews:Australia) AND (text:Aboriginal OR text:Aboriginal OR text__reviews:Aboriginal)) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

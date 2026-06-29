@@ -1,0 +1,284 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/palenque-e-i-wandjina",
+        "server": "dn721608.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/palenque-e-i-wandjina",
+        "server": "dn760002.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/palenque-e-i-wandjina",
+        "server": "dn721608.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/palenque-e-i-wandjina",
+        "server": "dn760002.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1781957409,
+  "d1": "ia601907.us.archive.org",
+  "d2": "ia801907.us.archive.org",
+  "dir": "/7/items/palenque-e-i-wandjina",
+  "files": [
+    {
+      "crc32": "74ad7e90",
+      "format": "Image Container PDF",
+      "md5": "b6871e9c02ba0eb77b3716d40256ae14",
+      "mtime": "1712129401",
+      "name": "Palenque e i wandjina.pdf",
+      "sha1": "a6307704a04d8ef3eaa6d06dc496da640bd40cd0",
+      "size": "511425",
+      "source": "original",
+      "viruscheck": "1712129748"
+    },
+    {
+      "crc32": "e4d2d2dc",
+      "format": "chOCR",
+      "md5": "a3d4f0c48ed2c32a4d21a5d7fc25b46f",
+      "mtime": "1712130032",
+      "name": "Palenque e i wandjina_chocr.html.gz",
+      "ocr": "tesseract 5.3.0-6-g76ae",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "it",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-ita;lang-Latin;two-pass-disabled;pass-dpi-disabled;autonomous-mode-enabled;binarisation-method-otsu",
+      "original": "Palenque e i wandjina_jp2.zip",
+      "sha1": "4d63c3f61f5c303927d000790485e45e08a9fecb",
+      "size": "17862",
+      "source": "derivative"
+    },
+    {
+      "crc32": "568b4942",
+      "format": "DjVuTXT",
+      "md5": "1b18d5326d341d0d3fbc1ba2b0d0e2b7",
+      "mtime": "1712130738",
+      "name": "Palenque e i wandjina_djvu.txt",
+      "original": "Palenque e i wandjina_djvu.xml",
+      "sha1": "241ca4653173bbdd7c55c30bc4978136988c855f",
+      "size": "1371",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b5478a9c",
+      "format": "Djvu XML",
+      "md5": "5d23a5e4e0b5a13913dcb7400a5b5d86",
+      "mtime": "1712130271",
+      "name": "Palenque e i wandjina_djvu.xml",
+      "original": "Palenque e i wandjina_hocr.html",
+      "sha1": "016df88f5aa262c75f84453bf82421c5d3f42b5f",
+      "size": "17237",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0b73eaa0",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.56",
+      "hocr_char_to_word_module_version": "1.3.0",
+      "md5": "fb9f3d28996a4813251af087c8b51ed4",
+      "mtime": "1712130226",
+      "name": "Palenque e i wandjina_hocr.html",
+      "ocr_autonomous": "true",
+      "ocr_detected_lang": "it",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.21",
+      "ocr_parameters": "lang-ita;lang-Latin;two-pass-disabled;pass-dpi-disabled;autonomous-mode-enabled;binarisation-method-otsu",
+      "original": "Palenque e i wandjina_chocr.html.gz",
+      "sha1": "349954a2889cd95465cb5da12b46b31f8ad88184",
+      "size": "36376",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1be7556f",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.56",
+      "hocr_pageindex_module_version": "1.1.0",
+      "md5": "def2c0aae6a581ceef7a47c513814232",
+      "mtime": "1712130446",
+      "name": "Palenque e i wandjina_hocr_pageindex.json.gz",
+      "original": "Palenque e i wandjina_hocr.html",
+      "sha1": "5e671179c3078cd91c41c9e87ee4dd5bb80fdfeb",
+      "size": "43",
+      "source": "derivative"
+    },
+    {
+      "crc32": "90a70f1f",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.56",
+      "hocr_fts_text_module_version": "1.2.0",
+      "md5": "0ff3c38f9e077f082d747e57136e393a",
+      "mtime": "1712130697",
+      "name": "Palenque e i wandjina_hocr_searchtext.txt.gz",
+      "original": "Palenque e i wandjina_hocr.html",
+      "sha1": "40170deff01cc06728c6283616d8b58e26235314",
+      "size": "769",
+      "source": "derivative",
+      "word_conf_0_10": "0",
+      "word_conf_11_20": "0",
+      "word_conf_21_30": "1",
+      "word_conf_31_40": "0",
+      "word_conf_41_50": "0",
+      "word_conf_51_60": "1",
+      "word_conf_61_70": "2",
+      "word_conf_71_80": "6",
+      "word_conf_81_90": "12",
+      "word_conf_91_100": "177"
+    },
+    {
+      "crc32": "bf3f8577",
+      "filecount": "1",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "f0b68295f97fd841692f12989a70d62a",
+      "mtime": "1712129893",
+      "name": "Palenque e i wandjina_jp2.zip",
+      "original": "Palenque e i wandjina.pdf",
+      "sha1": "a539781bb20c603cd9178496b9de7b3abe684a98",
+      "size": "206995",
+      "source": "derivative"
+    },
+    {
+      "crc32": "93ab9ffa",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "0",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "47e96357369e268d25a0d8e4559e1374",
+      "mtime": "1712131321",
+      "name": "Palenque e i wandjina_page_numbers.json",
+      "original": "Palenque e i wandjina_hocr.html",
+      "sha1": "74902f98f9c5a0b58b150cdb67585d1632628066",
+      "size": "326",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ad942583",
+      "format": "Scandata",
+      "md5": "53aed28f44c44df5880330c715dcad64",
+      "mtime": "1712131323",
+      "name": "Palenque e i wandjina_scandata.xml",
+      "original": "Palenque e i wandjina_djvu.xml",
+      "sha1": "2256473c19bfd2db9f1d135be9b8a604b4776e58",
+      "size": "592",
+      "source": "derivative"
+    },
+    {
+      "crc32": "67d5aecf",
+      "format": "Additional Text PDF",
+      "md5": "63434b3d9afb460ff6464fcde9a946b9",
+      "mtime": "1712131729",
+      "name": "Palenque e i wandjina_text.pdf",
+      "original": "Palenque e i wandjina_page_numbers.json",
+      "pdf_module_version": "0.0.23",
+      "sha1": "59655ee7f0031cb505be6ca05099164c67f91f00",
+      "size": "149434",
+      "source": "derivative"
+    },
+    {
+      "crc32": "c660d867",
+      "format": "Item Tile",
+      "md5": "9a62c8fbec3d22871e31ff06c4a6b0a4",
+      "mtime": "1772388401",
+      "name": "__ia_thumb.jpg",
+      "sha1": "0ddafccf49dbed1804129dd86fe0b34b4930a368",
+      "size": "21119",
+      "source": "original"
+    },
+    {
+      "btih": "fd9813ca30c34fab3e1e6663064cb18b73696b52",
+      "crc32": "f3908612",
+      "format": "Archive BitTorrent",
+      "md5": "40b52345cc6297760aa91d4e269d17d8",
+      "mtime": "1772388402",
+      "name": "palenque-e-i-wandjina_archive.torrent",
+      "sha1": "22b3c841496de8fb95f5e069edcd4ab4713d4333",
+      "size": "3807",
+      "source": "metadata"
+    },
+    {
+      "format": "Metadata",
+      "md5": "cb3b1f27762bf71e09250b23b0a98663",
+      "name": "palenque-e-i-wandjina_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "6bd2f811",
+      "format": "Metadata",
+      "md5": "016a823356c1bae863cb0515f22def22",
+      "mtime": "1712129428",
+      "name": "palenque-e-i-wandjina_meta.sqlite",
+      "sha1": "65275c6e755eb999b78ae1bf9de45522f4aaf466",
+      "size": "20480",
+      "source": "original"
+    },
+    {
+      "crc32": "ee1a1067",
+      "format": "Metadata",
+      "md5": "fef54c8097e9963b19679300538deaed",
+      "mtime": "1772388400",
+      "name": "palenque-e-i-wandjina_meta.xml",
+      "sha1": "c402eff065c1663ee763e07fad9f6f8ed9dff753",
+      "size": "1639",
+      "source": "original"
+    }
+  ],
+  "files_count": 16,
+  "item_last_updated": 1772388402,
+  "item_size": 989475,
+  "metadata": {
+    "addeddate": "2024-04-03 07:30:19",
+    "collection": [
+      "alfredo_lissoni_ufo",
+      "patron-library-collection"
+    ],
+    "collection_added": [
+      "additional_collections",
+      "patron-library-collection"
+    ],
+    "curation": "[curator]validator@archive.org[/curator][date]20240403073548[/date][comment]checked for malware[/comment]",
+    "description": "Palenque",
+    "identifier": "palenque-e-i-wandjina",
+    "identifier-access": "http://archive.org/details/palenque-e-i-wandjina",
+    "identifier-ark": "ark:/13960/s28961cb16z",
+    "mediatype": "texts",
+    "ocr": "tesseract 5.3.0-6-g76ae",
+    "ocr_autonomous": "true",
+    "ocr_detected_lang": "it",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_module_version": "0.0.21",
+    "ocr_parameters": "-l ita+Latin",
+    "page_number_confidence": "0",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.23",
+    "ppi": "150",
+    "publicdate": "2024-04-03 07:30:19",
+    "scanner": "Internet Archive HTML5 Uploader 1.7.0",
+    "subject": [
+      "Palenque",
+      "Wandjina",
+      "ancient astronauts",
+      "alieni",
+      "UFO"
+    ],
+    "title": "Palenque E I Wandjina",
+    "uploader": "alliss@tin.it"
+  },
+  "server": "ia601907.us.archive.org",
+  "uniq": 1482391344,
+  "workable_servers": [
+    "ia601907.us.archive.org",
+    "ia801907.us.archive.org"
+  ]
+}

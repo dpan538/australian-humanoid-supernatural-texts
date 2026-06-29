@@ -1,0 +1,777 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/nargunstars00wrig",
+        "server": "dn721704.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/nargunstars00wrig",
+        "server": "dn760105.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/nargunstars00wrig",
+        "server": "dn721704.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/nargunstars00wrig",
+        "server": "dn760105.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1782061865,
+  "d1": "ia600409.us.archive.org",
+  "d2": "ia800409.us.archive.org",
+  "dir": "/32/items/nargunstars00wrig",
+  "files": [
+    {
+      "crc32": "50f81294",
+      "format": "Item Tile",
+      "md5": "4b5ed5c65cd177c6ac2ac8b428fe14ce",
+      "mtime": "1660718187",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "1c44d7e30a8175803ace232e4ee8cd818ae32745",
+      "size": "17913",
+      "source": "original"
+    },
+    {
+      "crc32": "fceb1e3d",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.62",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "812d9270874f8845c491ff21d1f31021",
+      "mtime": "1753666776",
+      "name": "nargunstars00wrig.epub",
+      "original": "nargunstars00wrig_hocr.html",
+      "private": "true",
+      "sha1": "6ce9c0fcbf12fb0255d145d014a68cf0902d5231",
+      "size": "5587131",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d69e100b",
+      "format": "Animated GIF",
+      "md5": "fc68978c16e1a91b8a9f0aa9a306b056",
+      "mtime": "1302950444",
+      "name": "nargunstars00wrig.gif",
+      "original": "nargunstars00wrig_jp2.zip",
+      "sha1": "705fdb87d28c8cd09dcdbdcfb4982ca28214ce52",
+      "size": "292676",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2f5fc9c6",
+      "format": "LCP Encrypted PDF",
+      "md5": "57e9ccaaaf75f721af4192f2e5df79af",
+      "mtime": "1753666695",
+      "name": "nargunstars00wrig.lcpdf",
+      "original": "nargunstars00wrig.pdf",
+      "sha1": "9c9a96ff01f6e5e08a04a084181f0388b6d849ff",
+      "size": "9937990",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6e140cdd",
+      "format": "Text PDF",
+      "md5": "5ed7244f9175368892a72e7aa505c7fc",
+      "mtime": "1716913489",
+      "name": "nargunstars00wrig.pdf",
+      "original": "nargunstars00wrig_page_numbers.json",
+      "private": "true",
+      "sha1": "c4b3affe9b4c6ed8e17fac2dc600cf1dd2b1f0fb",
+      "size": "9666563",
+      "source": "derivative"
+    },
+    {
+      "crc32": "8a91276a",
+      "format": "Abbyy GZ",
+      "md5": "be45478682ea4fed4663f6d02d3cbe96",
+      "mtime": "1302956639",
+      "name": "nargunstars00wrig_abbyy.gz",
+      "original": "nargunstars00wrig_jp2.zip",
+      "private": "true",
+      "sha1": "043842965d33c3278ab894f954148961e0fdc841",
+      "size": "3739505",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6fe056d9",
+      "format": "Grayscale PDF",
+      "md5": "694b6ceae0f1f316184d20bc3bffe7de",
+      "mtime": "1716913489",
+      "name": "nargunstars00wrig_bw.pdf",
+      "original": "nargunstars00wrig_page_numbers.json",
+      "private": "true",
+      "sha1": "727fe2807da851e906d0f81ac613ac5723f182e6",
+      "size": "6273319",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f4fcdfff",
+      "format": "chOCR",
+      "md5": "3fb83734f2ec49ad704ba90a7fd04169",
+      "mtime": "1660717738",
+      "name": "nargunstars00wrig_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "nargunstars00wrig_abbyy.gz",
+      "private": "true",
+      "sha1": "59cffbef13e03a03da7c53723b25f3fc41b40a70",
+      "size": "3248347",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "cd95fb1e",
+      "format": "Cloth Cover Detection Log",
+      "md5": "76b600a5d1391adbbd0026b0fbca5c03",
+      "mtime": "1670728407",
+      "name": "nargunstars00wrig_cloth_detection.log",
+      "original": "nargunstars00wrig_scandata.xml",
+      "private": "true",
+      "sha1": "ac611f558fb80d0be224dcb4bdaacbce7eac67ef",
+      "size": "761",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2a6a7221",
+      "format": "Dublin Core",
+      "md5": "9286856a72ddd9c35eecf66e64426bc3",
+      "mtime": "1301516087",
+      "name": "nargunstars00wrig_dc.xml",
+      "sha1": "521298ab2b07dd778d70c9c42643fa4d83e071f2",
+      "size": "742",
+      "source": "original"
+    },
+    {
+      "crc32": "c784b974",
+      "format": "DjVuTXT",
+      "md5": "5631e7447425ad8a884a6ffd02dce1ed",
+      "mtime": "1720044790",
+      "name": "nargunstars00wrig_djvu.txt",
+      "original": "nargunstars00wrig_djvu.xml",
+      "private": "true",
+      "sha1": "4894b692ee1456a0825cfb9101903257ca9a5484",
+      "size": "295730",
+      "source": "derivative"
+    },
+    {
+      "crc32": "52b150d0",
+      "format": "Djvu XML",
+      "md5": "a9188c3b79c5dd5f9ec227ff418f0259",
+      "mtime": "1720044782",
+      "name": "nargunstars00wrig_djvu.xml",
+      "original": "nargunstars00wrig_hocr.html",
+      "private": "true",
+      "sha1": "7016ec9af491a0e766cec4d97caf108075fb7672",
+      "size": "3675864",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ffc3c8fd",
+      "format": "ACS Encrypted PDF",
+      "md5": "62f05430ca7ff77ecfad5b3610b7b67c",
+      "mtime": "1716914086",
+      "name": "nargunstars00wrig_encrypted.pdf",
+      "original": "nargunstars00wrig.pdf",
+      "sha1": "f14373749e4ef5f3e62ba85fe738c362fb00c6d5",
+      "size": "9632410",
+      "source": "derivative"
+    },
+    {
+      "crc32": "3ff41d91",
+      "format": "Metadata",
+      "md5": "98010427d21de81da3da0d8d03cf3f38",
+      "mtime": "1401898700",
+      "name": "nargunstars00wrig_extramarc.xml",
+      "sha1": "9c10955dff30f6bbbeef5b068205eedd29bb27f4",
+      "size": "2763",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "a91a680b553479db1d04481443f22185",
+      "name": "nargunstars00wrig_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "11932e0a",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "776a8058ebc03dcfbe83502c5132b55c",
+      "mtime": "1660717954",
+      "name": "nargunstars00wrig_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "nargunstars00wrig_chocr.html.gz",
+      "private": "true",
+      "sha1": "56e2472c597c85b7799011402aad0edd46270292",
+      "size": "6837906",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b23b3a3d",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "c516329a283547e8ad0980a724edb26d",
+      "mtime": "1660718043",
+      "name": "nargunstars00wrig_hocr_pageindex.json.gz",
+      "original": "nargunstars00wrig_hocr.html",
+      "private": "true",
+      "sha1": "47274befa9d7eb554912da7f77af6a6bed7f3ee0",
+      "size": "2371",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e37f01ae",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "a6cf11d8599d747b343b0f648def58c6",
+      "mtime": "1660718152",
+      "name": "nargunstars00wrig_hocr_searchtext.txt.gz",
+      "original": "nargunstars00wrig_hocr.html",
+      "private": "true",
+      "sha1": "e1d62d8e71e7cd3e974036e04ea32faf12c8f0bc",
+      "size": "95543",
+      "source": "derivative",
+      "word_conf_0_10": "539",
+      "word_conf_11_20": "439",
+      "word_conf_21_30": "2841",
+      "word_conf_31_40": "3216",
+      "word_conf_41_50": "8661",
+      "word_conf_51_60": "13088",
+      "word_conf_61_70": "10623",
+      "word_conf_71_80": "3645",
+      "word_conf_81_90": "1337",
+      "word_conf_91_100": "1924"
+    },
+    {
+      "crc32": "579d0a01",
+      "filecount": "204",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "6c2a4e54416fde7b8dd02feef816213f",
+      "mtime": "1302950383",
+      "name": "nargunstars00wrig_jp2.zip",
+      "original": "nargunstars00wrig_orig_jp2.tar",
+      "private": "true",
+      "sha1": "b5eb5ddd0bed5df8d3ba54a2a121efc7ffa4f26f",
+      "size": "85891522",
+      "source": "derivative"
+    },
+    {
+      "crc32": "327f5030",
+      "format": "LCP Encrypted EPUB",
+      "md5": "92c78916ea612368402a7a85f8df9627",
+      "mtime": "1753666877",
+      "name": "nargunstars00wrig_lcp.epub",
+      "original": "nargunstars00wrig.epub",
+      "sha1": "debe356def8545b8117e063901d55972314b3307",
+      "size": "5608638",
+      "source": "derivative"
+    },
+    {
+      "crc32": "05df8789",
+      "format": "JSON",
+      "md5": "4ea6910690253c6bb46ed1a34e279a48",
+      "mtime": "1599237581",
+      "name": "nargunstars00wrig_loans.json",
+      "private": "true",
+      "sha1": "070d2243c85f7c2251027084fd66afee38f6b4c8",
+      "size": "18370",
+      "source": "original"
+    },
+    {
+      "crc32": "cea7f4ee",
+      "format": "MARC",
+      "md5": "879081b1cea95c6822965c96b55ab843",
+      "mtime": "1301516087",
+      "name": "nargunstars00wrig_marc.xml",
+      "sha1": "d4044783a7bb11880b096a09dfc59ef2c92120a1",
+      "size": "4374",
+      "source": "original"
+    },
+    {
+      "crc32": "1b9e2470",
+      "format": "Metadata Log",
+      "md5": "f774edb7e9d2b29220029295a4371311",
+      "mtime": "1454712933",
+      "name": "nargunstars00wrig_meta.log",
+      "original": "nargunstars00wrig_xisbn.json",
+      "private": "true",
+      "sha1": "b28d73c9d5d872f53a5621bef433dd2f132d0e39",
+      "size": "1724",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2d67d584",
+      "format": "MARC Binary",
+      "md5": "b2246271e96c07bd4bc386020d9e50a3",
+      "mtime": "1301516087",
+      "name": "nargunstars00wrig_meta.mrc",
+      "sha1": "338dc76081debf9769258d0fc1144fed355cec39",
+      "size": "1232",
+      "source": "original"
+    },
+    {
+      "crc32": "8c2cbc3f",
+      "format": "Metadata",
+      "md5": "39233c26e3afaf7792b18e1ea02186c0",
+      "mtime": "1466329704",
+      "name": "nargunstars00wrig_meta.sqlite",
+      "sha1": "c36a132cf20cfa47c13057d545ca73f795379d72",
+      "size": "6144",
+      "source": "original"
+    },
+    {
+      "crc32": "c874fcf4",
+      "format": "Metadata",
+      "md5": "e6b7f0b1164a2caa50b24dc1694a6a43",
+      "mtime": "1753666877",
+      "name": "nargunstars00wrig_meta.xml",
+      "sha1": "a03e8fa603ee8ed9a27ba2aa0c728b6b7ad6d688",
+      "size": "5938",
+      "source": "original"
+    },
+    {
+      "crc32": "b0a72318",
+      "format": "MARC Source",
+      "md5": "ad61f6c98a4d57303b8211f5db54408c",
+      "mtime": "1301516087",
+      "name": "nargunstars00wrig_metasource.xml",
+      "sha1": "aecf7e1a05086cf4e247c1045b0e69ee23bdf38a",
+      "size": "405",
+      "source": "original"
+    },
+    {
+      "crc32": "5b93abde",
+      "filecount": "204",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "bb5dfcd2e4249dbbfb01dfbe8c5b17f8",
+      "mtime": "1302939012",
+      "name": "nargunstars00wrig_orig_jp2.tar",
+      "private": "true",
+      "sha1": "78e36b5769cdfd0d6f247772a027d8a8e2c65610",
+      "size": "176865280",
+      "source": "original"
+    },
+    {
+      "crc32": "a0bfd82f",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "88",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "87d7907420cad45fa359c0058c030f9e",
+      "mtime": "1716913488",
+      "name": "nargunstars00wrig_page_numbers.json",
+      "original": "nargunstars00wrig_hocr.html",
+      "private": "true",
+      "sha1": "99adf5e4f701e59e27a37badf471824c31b4dd83",
+      "size": "33188",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a3f674db",
+      "format": "Scandata",
+      "md5": "cb1e1a910ddfd70707b00e6b745e534c",
+      "mtime": "1670728407",
+      "name": "nargunstars00wrig_scandata.xml",
+      "sha1": "c72347e1691a42425757be9ce1f235ce5a8e493a",
+      "size": "202929",
+      "source": "original"
+    },
+    {
+      "crc32": "e342f6a4",
+      "format": "OCLC xISBN JSON",
+      "md5": "3dc4fa08163074c7990c3189c5b6fb79",
+      "mtime": "1454648133",
+      "name": "nargunstars00wrig_xisbn.json",
+      "sha1": "5fc7bdfd6d3a1c3c929718e3822382a542dce38b",
+      "size": "2874",
+      "source": "original"
+    }
+  ],
+  "files_count": 31,
+  "item_last_updated": 1753666877,
+  "item_size": 327950152,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2011-03-30 20:14:48",
+    "backup_location": "ia903609_16",
+    "bookplateleaf": "0004",
+    "boxid": "IA138318",
+    "camera": "Canon EOS 5D Mark II",
+    "city": "New York",
+    "collection": [
+      "internetarchivebooks",
+      "americana",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "comment": "Removing Scanfee from Billable Books scanned before June 2011 which appear to have manually set scanfees",
+    "contributor": "Internet Archive",
+    "creator": "Wrightson, Patricia",
+    "curation": "[curator]venus@archive.org[/curator][date]20111004134123[/date][state]approved[/state]",
+    "date": "1986",
+    "description": [
+      "Map on lining paper",
+      "An ancient stone creature threatens the lives of a family on a lonely sheep farm in Australia"
+    ],
+    "donor": "bostonpubliclibrary",
+    "edition": "1st amer. ed.",
+    "external-identifier": [
+      "urn:acs6:nargunstars00wrig:pdf:3ec6febb-c8c7-465e-9081-830fc01803ac",
+      "urn:acs6:nargunstars00wrig:epub:2e12993c-8280-48af-b33a-b2c6f55f5c95",
+      "urn:oclc:record:1036782408",
+      "urn:lcp:nargunstars00wrig:lcpdf:7c2f653d-1c4d-4685-b86a-25628301c79b",
+      "urn:lcp:nargunstars00wrig:epub:9a861fb3-6e78-4038-91b5-110bf4d68e83"
+    ],
+    "extramarc": "University of Alberta Libraries",
+    "filesxml": [
+      "Fri Dec 25 11:07:59 UTC 2020",
+      "Wed Apr 3 9:53:39 UTC 2024"
+    ],
+    "foldoutcount": "0",
+    "identifier": "nargunstars00wrig",
+    "identifier-access": "http://www.archive.org/details/nargunstars00wrig",
+    "identifier-ark": "ark:/13960/t4xh0fz87",
+    "imagecount": "200",
+    "isbn": [
+      "0689504039",
+      "9780689504037"
+    ],
+    "language": "eng",
+    "lccn": "86010600",
+    "loans__status__last_loan_date": "2020-08-21T15:26:52Z",
+    "loans__status__last_waitlist_date": "2020-07-27T07:42:24Z",
+    "loans__status__num_history": "42",
+    "loans__status__num_loans": "0",
+    "loans__status__num_waitlist": "0",
+    "loans__status__status": "AVAILABLE",
+    "mediatype": "texts",
+    "oclc-id": [
+      "13665671",
+      "712744092"
+    ],
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.17",
+    "openlibrary_edition": "OL2717417M",
+    "openlibrary_work": "OL2252134W",
+    "operator": "adriana.g@archive.org",
+    "page-progression": "lr",
+    "page_number_confidence": "88",
+    "page_number_module_version": "1.0.5",
+    "ppi": "500",
+    "publicdate": "2011-03-30 20:14:52",
+    "publisher": "New York : M.K. McElderry Books",
+    "related-external-id": [
+      "urn:isbn:0702236837",
+      "urn:oclc:228408391",
+      "urn:oclc:694257237",
+      "urn:isbn:0141307293",
+      "urn:oclc:226050353",
+      "urn:isbn:0091176905",
+      "urn:lccn:74166411",
+      "urn:oclc:28999642",
+      "urn:oclc:433238077",
+      "urn:oclc:473754007",
+      "urn:oclc:59020665",
+      "urn:oclc:639747209",
+      "urn:oclc:768796425",
+      "urn:oclc:927709",
+      "urn:isbn:014030780X",
+      "urn:lccn:87035817",
+      "urn:oclc:10421181",
+      "urn:oclc:17300708",
+      "urn:oclc:225581484",
+      "urn:oclc:28992569",
+      "urn:oclc:696022185",
+      "urn:oclc:70452584",
+      "urn:oclc:859668090",
+      "urn:oclc:877572331",
+      "urn:isbn:1846470765",
+      "urn:oclc:317931361",
+      "urn:isbn:1862560587",
+      "urn:oclc:857707077",
+      "urn:isbn:0091574404",
+      "urn:oclc:20091950",
+      "urn:oclc:59083585",
+      "urn:isbn:0689304323",
+      "urn:lccn:73085323",
+      "urn:oclc:894136"
+    ],
+    "repub_seconds": "4047",
+    "repub_state": "4",
+    "scandate": "20110416073004",
+    "scanfee": "100",
+    "scanner": "scribe10.sanfrancisco.archive.org",
+    "scanningcenter": "sanfrancisco",
+    "shiptracking": "f0015",
+    "sponsor": "Internet Archive",
+    "sponsordate": "20110930",
+    "subject": [
+      "Fantasy",
+      "Fantasy"
+    ],
+    "title": "The Nargun and the stars",
+    "updatedate": "2011-03-30 20:14:47",
+    "updater": "sf-loaders@archive.org",
+    "uploader": "sf-loaders@archive.org"
+  },
+  "server": "ia800409.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "bpljordan-ol": {
+        "notes": {
+          "isbn": [
+            "9780689504037"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charles.horn@gmail.com"
+        },
+        "sys_last_changed": "2019-06-27 08:22:43.170444"
+      },
+      "universityofcoloradoboulder-ol": {
+        "notes": {
+          "isbn": [
+            "9780689504037"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-04-17 04:46:15.282569"
+      }
+    }
+  },
+  "uniq": 1657792598,
+  "workable_servers": [
+    "ia800409.us.archive.org",
+    "ia600409.us.archive.org"
+  ],
+  "xisbn": {
+    "list": [
+      {
+        "author": "Patricia Wrightson.",
+        "city": "New York",
+        "ed": "1st amer. ed.",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "0689504039"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "86010600"
+        ],
+        "oclcnum": [
+          "13665671",
+          "712744092"
+        ],
+        "publisher": "M.K. McElderry Books",
+        "title": "The Nargun and the stars",
+        "url": [
+          "http://www.worldcat.org/oclc/13665671?referer=xid"
+        ],
+        "year": "1986"
+      },
+      {
+        "author": "Patricia Wrightson.",
+        "city": "St Lucia, Qld.",
+        "form": [
+          "BC"
+        ],
+        "isbn": [
+          "0702236837"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "228408391",
+          "694257237"
+        ],
+        "publisher": "University of Queensland Press",
+        "title": "The Nargun and the stars",
+        "url": [
+          "http://www.worldcat.org/oclc/228408391?referer=xid"
+        ],
+        "year": "2008"
+      },
+      {
+        "author": "Patricia Wrightson.",
+        "city": "Ringwood, Vic.",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "0141307293"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "226050353"
+        ],
+        "publisher": "Penguin",
+        "title": "The Nargun and the stars",
+        "url": [
+          "http://www.worldcat.org/oclc/226050353?referer=xid"
+        ],
+        "year": "2000"
+      },
+      {
+        "author": "[by] Patricia Wrightson.",
+        "city": "Richmond, Vic., London",
+        "ed": "[Reprint.].",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "0091176905"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "74166411"
+        ],
+        "oclcnum": [
+          "28999642",
+          "433238077",
+          "473754007",
+          "59020665",
+          "639747209",
+          "768796425",
+          "927709"
+        ],
+        "publisher": "Hutchinson",
+        "title": "The nargun and the stars",
+        "url": [
+          "http://www.worldcat.org/oclc/28999642?referer=xid"
+        ],
+        "year": "1973"
+      },
+      {
+        "author": "Patricia Wrightson ; cover illustration by Jack Newnham.",
+        "city": "Harmondsworth, Eng.",
+        "form": [
+          "BC"
+        ],
+        "isbn": [
+          "014030780X"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "87035817"
+        ],
+        "oclcnum": [
+          "10421181",
+          "17300708",
+          "225581484",
+          "28992569",
+          "696022185",
+          "70452584",
+          "859668090",
+          "877572331"
+        ],
+        "publisher": "Penguin Books",
+        "title": "The Nargun and the stars",
+        "url": [
+          "http://www.worldcat.org/oclc/10421181?referer=xid"
+        ],
+        "year": "1975"
+      },
+      {
+        "author": "Patricia Wrightson.",
+        "city": "London",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "1846470765"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "317931361"
+        ],
+        "publisher": "Catnip",
+        "title": "The Nargun and the stars",
+        "url": [
+          "http://www.worldcat.org/oclc/317931361?referer=xid"
+        ],
+        "year": "2009"
+      },
+      {
+        "author": "Patricia Wrightson.",
+        "city": "Kensignton, N.S.W.",
+        "ed": "Children's classics edition.",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "1862560587"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "857707077"
+        ],
+        "publisher": "Times House Publishing",
+        "title": "The Nargun and the stars",
+        "url": [
+          "http://www.worldcat.org/oclc/857707077?referer=xid"
+        ],
+        "year": "1987"
+      },
+      {
+        "author": "Patricia Wrightson ; illustrated by Robert Ingpen.",
+        "city": "London",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "0091574404"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "20091950",
+          "59083585"
+        ],
+        "publisher": "Hutchinson Australia",
+        "title": "The nargun and the stars.",
+        "url": [
+          "http://www.worldcat.org/oclc/20091950?referer=xid"
+        ],
+        "year": "1988"
+      },
+      {
+        "city": "New York",
+        "ed": "[1st American ed.]",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "0689304323"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "73085323"
+        ],
+        "oclcnum": [
+          "894136"
+        ],
+        "publisher": "Atheneum",
+        "title": "The Nargun and the stars.",
+        "url": [
+          "http://www.worldcat.org/oclc/894136?referer=xid"
+        ],
+        "year": "1974"
+      }
+    ],
+    "stat": "ok"
+  }
+}

@@ -1,0 +1,665 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/terrifyingtasteo00sans",
+        "server": "dn760107.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/terrifyingtasteo00sans",
+        "server": "dn760107.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1782009293,
+  "d1": "ia601309.us.archive.org",
+  "d2": "ia801309.us.archive.org",
+  "dir": "/15/items/terrifyingtasteo00sans",
+  "files": [
+    {
+      "crc32": "c824c277",
+      "format": "Item Tile",
+      "md5": "8f1bfcbd359164043eaf55ea234c118d",
+      "mtime": "1661151388",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "a24075905ac44d9160ff6ba805d418b8162d034c",
+      "size": "18345",
+      "source": "original"
+    },
+    {
+      "crc32": "d7633223",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.66",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "9eb8f3d989212a01ae96ea552837f5e1",
+      "mtime": "1758432204",
+      "name": "terrifyingtasteo00sans.epub",
+      "original": "terrifyingtasteo00sans_hocr.html",
+      "private": "true",
+      "sha1": "711d8fe5be3fac6073db4b0691c88c5493144cf6",
+      "size": "12263156",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f0cc630a",
+      "format": "Animated GIF",
+      "md5": "1f3a43c63036fb2ae9c75d2457fa275e",
+      "mtime": "1269385754",
+      "name": "terrifyingtasteo00sans.gif",
+      "original": "terrifyingtasteo00sans_jp2.zip",
+      "sha1": "03059c275340dd3454e81a6b4765f697a10ee289",
+      "size": "292767",
+      "source": "derivative"
+    },
+    {
+      "crc32": "8880fbb6",
+      "format": "LCP Encrypted PDF",
+      "md5": "31edff713a203237ba08952e13b04ebb",
+      "mtime": "1758432080",
+      "name": "terrifyingtasteo00sans.lcpdf",
+      "original": "terrifyingtasteo00sans.pdf",
+      "sha1": "d5a412ce0e405c85afffa13a9b4d264395a7bb4a",
+      "size": "8585716",
+      "source": "derivative"
+    },
+    {
+      "crc32": "899d155c",
+      "format": "Text PDF",
+      "md5": "565d1fb3d75dd0068a717d6932f7bc8b",
+      "mtime": "1722784468",
+      "name": "terrifyingtasteo00sans.pdf",
+      "original": "terrifyingtasteo00sans_page_numbers.json",
+      "pdf_degraded": "invalid-jp2-headers",
+      "pdf_module_version": "0.0.25",
+      "private": "true",
+      "sha1": "be1f901bdaf599ce3b38adcd34f83bbb0f7f8e0a",
+      "size": "8393377",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f640be6c",
+      "format": "Abbyy GZ",
+      "md5": "d1e8ddb150addbf4407a465a538042a1",
+      "mtime": "1269389001",
+      "name": "terrifyingtasteo00sans_abbyy.gz",
+      "original": "terrifyingtasteo00sans_jp2.zip",
+      "private": "true",
+      "sha1": "5ee6a5c959363d0b5f4ba7bc4b3c8c0e6d22797f",
+      "size": "2920012",
+      "source": "derivative"
+    },
+    {
+      "crc32": "34f3f37a",
+      "format": "chOCR",
+      "md5": "ef9310bc247f2933f1bde5748f12a5fa",
+      "mtime": "1661150978",
+      "name": "terrifyingtasteo00sans_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "terrifyingtasteo00sans_abbyy.gz",
+      "private": "true",
+      "sha1": "7e6968c89a5986ef5f5aeec71c318f0644b91021",
+      "size": "2461864",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "36ce13fe",
+      "format": "Cloth Cover Detection Log",
+      "md5": "430a81edde526e63cf40a14a9dee403d",
+      "mtime": "1671430297",
+      "name": "terrifyingtasteo00sans_cloth_detection.log",
+      "original": "terrifyingtasteo00sans_scandata.xml",
+      "private": "true",
+      "sha1": "ec278043c2ebd6a429f217004e86ccea8d611df6",
+      "size": "781",
+      "source": "derivative"
+    },
+    {
+      "crc32": "3d50f52e",
+      "format": "Dublin Core",
+      "md5": "c14f602eba37cea96b6f32fecc66b3a1",
+      "mtime": "1267561150",
+      "name": "terrifyingtasteo00sans_dc.xml",
+      "sha1": "828ef889054e10915a7e6db913290c26290f6b8f",
+      "size": "2175",
+      "source": "original"
+    },
+    {
+      "crc32": "8d0ba250",
+      "format": "DjVuTXT",
+      "md5": "c2d3bf6e0ed8c58144d16032bd4f3645",
+      "mtime": "1722784490",
+      "name": "terrifyingtasteo00sans_djvu.txt",
+      "original": "terrifyingtasteo00sans_djvu.xml",
+      "private": "true",
+      "sha1": "3cc97af761c5a6c3afa07c5450327abba718c265",
+      "size": "235939",
+      "source": "derivative"
+    },
+    {
+      "crc32": "068e559e",
+      "format": "Djvu XML",
+      "md5": "24e724f5af8b6a1219c0c774fbd813b4",
+      "mtime": "1722783798",
+      "name": "terrifyingtasteo00sans_djvu.xml",
+      "original": "terrifyingtasteo00sans_hocr.html",
+      "private": "true",
+      "sha1": "b0af3a2c601a8e76fd15315735af52ed57bbd640",
+      "size": "2872459",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0dadc0a7",
+      "format": "ACS Encrypted PDF",
+      "md5": "4ec7abbf77ac0f97384d37b443de8313",
+      "mtime": "1722784493",
+      "name": "terrifyingtasteo00sans_encrypted.pdf",
+      "original": "terrifyingtasteo00sans.pdf",
+      "sha1": "fcce2dd78c36be6b8520804aa4f09560d2834544",
+      "size": "8347681",
+      "source": "derivative"
+    },
+    {
+      "format": "Metadata",
+      "md5": "d38a1fd4fefe41ef4105abb9cbe7a412",
+      "name": "terrifyingtasteo00sans_files.xml",
+      "source": "metadata",
+      "summation": "md5"
+    },
+    {
+      "crc32": "cbd0b419",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "255ec451d61b01dab763596d0184789e",
+      "mtime": "1661151151",
+      "name": "terrifyingtasteo00sans_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "terrifyingtasteo00sans_chocr.html.gz",
+      "private": "true",
+      "sha1": "c3f4fe54afebca420ca72e44925eebe20d3dba7e",
+      "size": "5303028",
+      "source": "derivative"
+    },
+    {
+      "crc32": "52fd03b6",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "9ba549abd6f90fae1d6920245cbb30fa",
+      "mtime": "1661151271",
+      "name": "terrifyingtasteo00sans_hocr_pageindex.json.gz",
+      "original": "terrifyingtasteo00sans_hocr.html",
+      "private": "true",
+      "sha1": "cfe20bdd3a3d7b966a323b996fd9bc0f54a873ae",
+      "size": "2081",
+      "source": "derivative"
+    },
+    {
+      "crc32": "79b68392",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "3a5c7baaa69eac6669e2fcfe97e7f135",
+      "mtime": "1661151363",
+      "name": "terrifyingtasteo00sans_hocr_searchtext.txt.gz",
+      "original": "terrifyingtasteo00sans_hocr.html",
+      "private": "true",
+      "sha1": "2b9d53daef7f8982a1d72c7158bc562aa1c9cf14",
+      "size": "82131",
+      "source": "derivative",
+      "word_conf_0_10": "687",
+      "word_conf_11_20": "607",
+      "word_conf_21_30": "1950",
+      "word_conf_31_40": "1998",
+      "word_conf_41_50": "6071",
+      "word_conf_51_60": "8554",
+      "word_conf_61_70": "8334",
+      "word_conf_71_80": "4458",
+      "word_conf_81_90": "975",
+      "word_conf_91_100": "2366"
+    },
+    {
+      "crc32": "c93d758f",
+      "filecount": "186",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "fbca2e4a7283971ed4fcbde8e6d1c3e3",
+      "mtime": "1269385714",
+      "name": "terrifyingtasteo00sans_jp2.zip",
+      "original": "terrifyingtasteo00sans_orig_jp2.tar",
+      "private": "true",
+      "sha1": "f0e9f6fd66b12d6686aeebc09e3c81e82aa4b232",
+      "size": "56218493",
+      "source": "derivative"
+    },
+    {
+      "crc32": "df970205",
+      "format": "LCP Encrypted EPUB",
+      "md5": "9d26d06ee548ae76696371ead9dcf63f",
+      "mtime": "1758432447",
+      "name": "terrifyingtasteo00sans_lcp.epub",
+      "original": "terrifyingtasteo00sans.epub",
+      "sha1": "60092c8e3bbda89f0b35034d5af7d7b19aea8ebc",
+      "size": "12276827",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a6c7874a",
+      "format": "JSON",
+      "md5": "3b1754755a3e505d88ac1524e28fb0c1",
+      "mtime": "1594536861",
+      "name": "terrifyingtasteo00sans_loans.json",
+      "private": "true",
+      "sha1": "a0f8733b6102a9f27de2a8cc26165a808562ed2b",
+      "size": "15841",
+      "source": "original"
+    },
+    {
+      "crc32": "43aea60a",
+      "format": "MARC",
+      "md5": "12f199de78ca07494293e50c178a1d65",
+      "mtime": "1267561150",
+      "name": "terrifyingtasteo00sans_marc.xml",
+      "sha1": "5817daa2e29272ffbc7553f46e98d5c3f32c1652",
+      "size": "5434",
+      "source": "original"
+    },
+    {
+      "crc32": "58e69469",
+      "format": "Metadata Log",
+      "md5": "13133f09b2365a13881025e9ff229082",
+      "mtime": "1454778671",
+      "name": "terrifyingtasteo00sans_meta.log",
+      "original": "terrifyingtasteo00sans_xisbn.json",
+      "private": "true",
+      "sha1": "96a02e5e23da7d1cefcf9d9261d81ad8e6e5f5b3",
+      "size": "1136",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2a0126bd",
+      "format": "MARC Binary",
+      "md5": "839c388a289c4407cab211e4e97efc34",
+      "mtime": "1267561150",
+      "name": "terrifyingtasteo00sans_meta.mrc",
+      "sha1": "f38ce0be86047600d649c1ccfe2b6927e29ec1af",
+      "size": "2523",
+      "source": "original"
+    },
+    {
+      "crc32": "d858dd3c",
+      "format": "Metadata",
+      "md5": "3fd5c4d90b27add0ac3687d50d0fd637",
+      "mtime": "1462946888",
+      "name": "terrifyingtasteo00sans_meta.sqlite",
+      "sha1": "740b81433df13897b5fda1cdb50c129a6d3b4929",
+      "size": "6144",
+      "source": "original"
+    },
+    {
+      "crc32": "f32b32bd",
+      "format": "Metadata",
+      "md5": "8763dbe6e013318fdc6d2ca02ad62d9d",
+      "mtime": "1758432447",
+      "name": "terrifyingtasteo00sans_meta.xml",
+      "sha1": "b300ab9162565f7da6f6a2e8ef98e155d3bd382b",
+      "size": "5745",
+      "source": "metadata"
+    },
+    {
+      "crc32": "ee7a9794",
+      "format": "MARC Source",
+      "md5": "5c7a2d279bf9fae2e0a09852f3565653",
+      "mtime": "1267561150",
+      "name": "terrifyingtasteo00sans_metasource.xml",
+      "sha1": "9b5bcdc0298e7b1a33db2b3d93c50060c342f5f1",
+      "size": "459",
+      "source": "original"
+    },
+    {
+      "crc32": "f78c7b80",
+      "filecount": "186",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "9e57b032450e9ca2d9d6e05f8ea1b36a",
+      "mtime": "1269382290",
+      "name": "terrifyingtasteo00sans_orig_jp2.tar",
+      "private": "true",
+      "sha1": "f9dd8fa15be916eb856d0b9132f9226345bbd79c",
+      "size": "98078720",
+      "source": "original"
+    },
+    {
+      "crc32": "a87578c0",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "85",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "9f5092d2b0660db1e4624c4887069525",
+      "mtime": "1722783851",
+      "name": "terrifyingtasteo00sans_page_numbers.json",
+      "original": "terrifyingtasteo00sans_hocr.html",
+      "private": "true",
+      "sha1": "e21b11db2496273a40cb4e3776f9e72793c4c7e8",
+      "size": "30785",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e8e5dd60",
+      "format": "Scandata",
+      "md5": "fddf0e389e6fd5c5d42d46188e2a25b4",
+      "mtime": "1671430297",
+      "name": "terrifyingtasteo00sans_scandata.xml",
+      "sha1": "3b8b85ec9c0099dbf519e06f7ab7d6f17ffc48ff",
+      "size": "96346",
+      "source": "original"
+    },
+    {
+      "crc32": "7cbe0b1b",
+      "format": "OCLC xISBN JSON",
+      "md5": "25901ff0af9726675038af2196c38559",
+      "mtime": "1454777082",
+      "name": "terrifyingtasteo00sans_xisbn.json",
+      "sha1": "c999c451c7d01bc78c2ae414bf632384af33daa1",
+      "size": "2512",
+      "source": "original"
+    }
+  ],
+  "files_count": 29,
+  "item_last_updated": 1758432447,
+  "item_size": 218522477,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2010-03-02 20:19:13",
+    "backup_location": "ia903604_34",
+    "boxid": "IA114516",
+    "camera": "Canon 5D",
+    "city": "New York, N.Y.",
+    "collection": [
+      "internetarchivebooks",
+      "delawarecountydistrictlibrary",
+      "americana",
+      "printdisabled"
+    ],
+    "contributor": "Internet Archive",
+    "creator": [
+      "San Souci, Robert D",
+      "Wooden, Lenny, ill"
+    ],
+    "curation": "[curator]paul.n@archive.org[/curator][date]20100405215951[/date][state]approved[/state]",
+    "date": "2004",
+    "description": [
+      "Crooker waits (British Isles--England) -- Yara-ma-yha-who (Australia) -- The fata (Italy) -- The fiddler (British Isles--Wales) -- Land-otter (Native American--Tlingit tribe) -- A fish story (United States--Virginia--African American traditional) -- Apparitions (Germany) -- The bijli (India) -- The lutin (Canada--French Canadian traditional) -- The hundredth skull (United States--Ohio) -- The ogre's arm (Japan) -- The hairy hands (British Isles--England) -- The snow husband (Native American--Algonquin tribe) -- The zimwi (Africa--from the Swahili) -- Witchbirds (France) -- Dangerous Hill (British Isles--England) -- The witch's head (El Salvador) -- Dinkins is dead (United States--South Carolina) -- Old Nan's ghost (British Isles--England) -- The interrupted wedding (Norway) -- The mulombe (Africa--Zimbabwe) -- The haunted grove (Canada) -- The tiger woman (China) -- Peacock's ghost (United States--Louisiana) -- Israel and the werewolf (Poland--Jewish traditional) -- Hoichi the earless (Japan--from Lafcadio Hearn) -- A snap of the fingers (Mexico) -- Narrow escape (United States--California) -- The black fox (United States--Connecticut) -- The mother and death (Denmark--from Hans Christian Andersen)",
+      "\"A Dell Yearling book.\"",
+      "A collection of scary traditional tales from all over the world, including \"Apparitions\" from Germany, \"The Hundredth Skull\" from Ohio, and \"The Ogre's Arm\" from Japan"
+    ],
+    "donor": "friendsofthesanfranciscopubliclibrary",
+    "edition": "Pbk. ed.",
+    "external-identifier": [
+      "urn:acs6:terrifyingtasteo00sans:pdf:b1c66b42-54a9-4937-8327-116474330c90",
+      "urn:acs6:terrifyingtasteo00sans:epub:87a95273-b39e-406c-a415-6c514594f9d9",
+      "urn:oclc:record:1036961302",
+      "urn:lcp:terrifyingtasteo00sans:lcpdf:7889bd23-5eea-4cf2-ab93-1aeebceadc24",
+      "urn:lcp:terrifyingtasteo00sans:epub:fc3fb5a6-b1f1-4e89-9f7d-87568c88ce68"
+    ],
+    "filesxml": [
+      "Sat Dec 26 11:11:48 UTC 2020",
+      "Wed Apr 3 14:57:18 UTC 2024"
+    ],
+    "foldoutcount": "0",
+    "identifier": "terrifyingtasteo00sans",
+    "identifier-access": "http://www.archive.org/details/terrifyingtasteo00sans",
+    "identifier-ark": "ark:/13960/t3pv7518g",
+    "imagecount": "184",
+    "isbn": [
+      "044041878X",
+      "9780440418788"
+    ],
+    "language": "eng",
+    "lccn": "98005551",
+    "mediatype": "texts",
+    "oclc-id": [
+      "56509293",
+      "671825443",
+      "678604713",
+      "864456631"
+    ],
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.17",
+    "openlibrary_edition": "OL7521629M",
+    "openlibrary_work": "OL116630W",
+    "operator": "scanner-kemina-carthen@archive.org",
+    "page-progression": "lr",
+    "page_number_confidence": "85",
+    "page_number_module_version": "1.0.5",
+    "pdf_degraded": "invalid-jp2-headers",
+    "pdf_module_version": "0.0.25",
+    "ppi": "500",
+    "publicdate": "2010-03-02 20:19:16",
+    "publisher": "New York, N.Y. : Dell Yearling",
+    "related-external-id": [
+      "urn:isbn:1415551456",
+      "urn:oclc:704547977",
+      "urn:isbn:1448736250",
+      "urn:oclc:639162214",
+      "urn:isbn:1299118240",
+      "urn:oclc:842872860",
+      "urn:isbn:0307793672",
+      "urn:oclc:772466398",
+      "urn:oclc:854901718",
+      "urn:oclc:869563287",
+      "urn:isbn:0385326351",
+      "urn:lccn:98005551",
+      "urn:oclc:38504292",
+      "urn:oclc:778986572",
+      "urn:isbn:0385322550",
+      "urn:oclc:45392064",
+      "urn:oclc:59539138"
+    ],
+    "repub_state": "4",
+    "scandate": "20100323220412",
+    "scanner": "scribe3.sfdowntown.archive.org",
+    "scanningcenter": "sfdowntown",
+    "source": "removed",
+    "sponsor": "Internet Archive",
+    "subject": [
+      "Ghost stories",
+      "Ghosts"
+    ],
+    "title": "A terrifying taste of short & shivery : thirty creepy tales",
+    "updatedate": "2010-03-02 20:19:11",
+    "updater": "sf-loaders@archive.org",
+    "uploader": "sf-loaders@archive.org"
+  },
+  "server": "ia601309.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "openlibrary-d-ol": {
+        "notes": {
+          "num_copies": 2,
+          "pallet": [
+            "IA-MC-0000018",
+            "IA-MC-1300008"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-01-15 04:14:04.19966"
+      }
+    }
+  },
+  "uniq": 140951369,
+  "workable_servers": [
+    "ia601309.us.archive.org",
+    "ia801309.us.archive.org"
+  ],
+  "xisbn": {
+    "list": [
+      {
+        "author": "retold by Robert D. San Souci ; illustrated by Lenny Wooden.",
+        "city": "New York, N.Y.",
+        "ed": "Pbk. ed.",
+        "form": [
+          "BC"
+        ],
+        "isbn": [
+          "044041878X"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "98005551"
+        ],
+        "oclcnum": [
+          "56509293",
+          "671825443",
+          "678604713",
+          "864456631"
+        ],
+        "publisher": "Dell Yearling",
+        "title": "A terrifying taste of short & shivery : thirty creepy tales",
+        "url": [
+          "http://www.worldcat.org/oclc/56509293?referer=xid"
+        ],
+        "year": "2004"
+      },
+      {
+        "author": "Retold by Robert D. San Souci ; illustrated by Lenny Wooden.",
+        "city": "New York",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "1415551456"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "704547977"
+        ],
+        "publisher": "Random House Children's Books",
+        "title": "A terrifying taste of short and shivery",
+        "url": [
+          "http://www.worldcat.org/oclc/704547977?referer=xid"
+        ],
+        "year": "2004"
+      },
+      {
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "1448736250"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "639162214"
+        ],
+        "publisher": "Paw Prints",
+        "title": "A Terrifying Taste of Short & Shivery Thirty Creepy Tales.",
+        "url": [
+          "http://www.worldcat.org/oclc/639162214?referer=xid"
+        ],
+        "year": "2010"
+      },
+      {
+        "author": "retold by Robert D. San Souci ; illustrated by Lenny Wooden.",
+        "city": "New York",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "1299118240"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "842872860"
+        ],
+        "publisher": "Dell Yearling",
+        "title": "A terrifying taste of short & shivery thirty creepy tales",
+        "url": [
+          "http://www.worldcat.org/oclc/842872860?referer=xid"
+        ],
+        "year": "2004"
+      },
+      {
+        "author": "retold by Robert D. San Souci, illustrated by Lenny Wooden.",
+        "city": "New York",
+        "ed": "Unabridged.",
+        "form": [
+          "BA",
+          "DA"
+        ],
+        "isbn": [
+          "0307793672"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "772466398",
+          "854901718",
+          "869563287"
+        ],
+        "publisher": "Random House",
+        "title": "A terrifying taste of short & shivery thirty creepy tales",
+        "url": [
+          "http://www.worldcat.org/oclc/772466398?referer=xid"
+        ],
+        "year": "2011"
+      },
+      {
+        "author": "retold by Robert D. San Souci, illustrated by Lenny Wooden.",
+        "city": "New York",
+        "ed": "1st ed.",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "0385326351"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "98005551"
+        ],
+        "oclcnum": [
+          "38504292",
+          "778986572"
+        ],
+        "publisher": "Delacorte Press",
+        "title": "A terrifying taste of short & shivery : thirty creepy tales",
+        "url": [
+          "http://www.worldcat.org/oclc/38504292?referer=xid"
+        ],
+        "year": "1998"
+      },
+      {
+        "author": "retold by Robert D. San Souci, illustrated by Lenny Wooden.",
+        "city": "New York",
+        "form": [
+          "BC"
+        ],
+        "isbn": [
+          "0385322550"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "98005551"
+        ],
+        "oclcnum": [
+          "45392064",
+          "59539138"
+        ],
+        "publisher": "Delacorte Press",
+        "title": "A terrifying taste of short & shivery : thirty creepy tales",
+        "url": [
+          "http://www.worldcat.org/oclc/45392064?referer=xid"
+        ],
+        "year": "2000"
+      }
+    ],
+    "stat": "ok"
+  }
+}

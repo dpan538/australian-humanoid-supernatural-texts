@@ -1,0 +1,512 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/oxfordbookofvict0000unse_v4h7",
+        "server": "dn760109.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/oxfordbookofvict0000unse_v4h7",
+        "server": "dn760109.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1782061929,
+  "d1": "ia903202.us.archive.org",
+  "d2": "ia803202.us.archive.org",
+  "dir": "/13/items/oxfordbookofvict0000unse_v4h7",
+  "files": [
+    {
+      "crc32": "17157817",
+      "format": "Item Tile",
+      "md5": "b7d8278f25ca8a4ec7b7460d245b86cd",
+      "mtime": "1660833703",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "e78f8c032d63d0600a54c7afa85f2388382b60b8",
+      "size": "11753",
+      "source": "original"
+    },
+    {
+      "crc32": "fc75379d",
+      "format": "Log",
+      "md5": "3668be4b27e11b1b7a76aae41e8462da",
+      "mtime": "1594772504",
+      "name": "logs/oxfordbookofvict0000unse_v4h7_iabdash_2020-07-1508:21:21.log",
+      "private": "true",
+      "sha1": "d302b6a87dbe3270b22f2c17746e80435aa16ac1",
+      "size": "3493",
+      "source": "original"
+    },
+    {
+      "crc32": "f66a929e",
+      "format": "Log",
+      "md5": "4d5a4511867d895df013ddab0decf938",
+      "mtime": "1594772538",
+      "name": "logs/oxfordbookofvict0000unse_v4h7_scanning_2020-07-1508:22:01.log",
+      "private": "true",
+      "sha1": "ffa861db256be5c497596ef03a8ae1ee771522eb",
+      "size": "1852939",
+      "source": "original"
+    },
+    {
+      "crc32": "aef3b286",
+      "format": "Log",
+      "md5": "b2d9c3c320f2757c5025718e5bbe4e6e",
+      "mtime": "1594772518",
+      "name": "logs/oxfordbookofvict0000unse_v4h7_status_history_2020-07-1508:21:46.log",
+      "private": "true",
+      "sha1": "8c0552bee0a61282e30b2b4c79d2c81ecf78adca",
+      "size": "404",
+      "source": "original"
+    },
+    {
+      "crc32": "9cb98b2c",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.62",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "991ae7711ccab1dbaebe4bde5ced6855",
+      "mtime": "1753723857",
+      "name": "oxfordbookofvict0000unse_v4h7.epub",
+      "original": "oxfordbookofvict0000unse_v4h7_hocr.html",
+      "private": "true",
+      "sha1": "01d20a4a0a345ccf4a2980ffd84a22e4f0a3cc73",
+      "size": "2869435",
+      "source": "derivative"
+    },
+    {
+      "crc32": "64ea00ce",
+      "format": "LCP Encrypted PDF",
+      "md5": "92a047f02e90aa6be2353d1837768cc1",
+      "mtime": "1753723763",
+      "name": "oxfordbookofvict0000unse_v4h7.lcpdf",
+      "original": "oxfordbookofvict0000unse_v4h7.pdf",
+      "sha1": "cc9e9a51dac1f35ae989cd93085228b8749da472",
+      "size": "17431567",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1ee55e2a",
+      "format": "Text PDF",
+      "md5": "00e81d8a5c2df0d34a6e19ab9d0cc236",
+      "mtime": "1718526050",
+      "name": "oxfordbookofvict0000unse_v4h7.pdf",
+      "original": "oxfordbookofvict0000unse_v4h7_page_numbers.json",
+      "private": "true",
+      "sha1": "788bd224626f2f652186988510d4aa3d6dc08d78",
+      "size": "17023190",
+      "source": "derivative"
+    },
+    {
+      "crc32": "95e84e2a",
+      "format": "Abbyy GZ",
+      "md5": "e180cd2cb926e2d97101326f76b81b5f",
+      "mtime": "1596468930",
+      "name": "oxfordbookofvict0000unse_v4h7_abbyy.gz",
+      "original": "oxfordbookofvict0000unse_v4h7_jp2.zip",
+      "private": "true",
+      "sha1": "550917010436705bd3d02873c6225cdd874cf439",
+      "size": "18017297",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1775dc81",
+      "format": "chOCR",
+      "md5": "cc8f98f6d6773af7e28e3cc376ffd44a",
+      "mtime": "1638215413",
+      "name": "oxfordbookofvict0000unse_v4h7_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.11",
+      "ocr_module_version": "0.0.14",
+      "original": "oxfordbookofvict0000unse_v4h7_abbyy.gz",
+      "private": "true",
+      "sha1": "c880bb6c530d35887c0f162a4d220674d3922cb4",
+      "size": "16202685",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "4dd6d139",
+      "format": "Cloth Cover Detection Log",
+      "md5": "5e8932c4bf77aa226c31f00db1d197b5",
+      "mtime": "1670825608",
+      "name": "oxfordbookofvict0000unse_v4h7_cloth_detection.log",
+      "original": "oxfordbookofvict0000unse_v4h7_scandata.xml",
+      "private": "true",
+      "sha1": "59137c6a53fb914f7bddf3231ffd9183429cb175",
+      "size": "807",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0d1dad32",
+      "format": "Dublin Core",
+      "md5": "1fbcf29c1f1cc19132725b85e27ef83c",
+      "mtime": "1596459071",
+      "name": "oxfordbookofvict0000unse_v4h7_dc.xml",
+      "sha1": "6ab0af76b95db2a4dd2124d3cc58d2ea8702e488",
+      "size": "1479",
+      "source": "original"
+    },
+    {
+      "crc32": "6fcfcfe2",
+      "format": "DjVuTXT",
+      "md5": "5ab1160e8066646d0b52dd7951e9878e",
+      "mtime": "1638215883",
+      "name": "oxfordbookofvict0000unse_v4h7_djvu.txt",
+      "original": "oxfordbookofvict0000unse_v4h7_djvu.xml",
+      "private": "true",
+      "sha1": "f1326618fc526257e20ff078d343eccf6d5d4763",
+      "size": "1537196",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7bca4f02",
+      "format": "Djvu XML",
+      "md5": "2adfb9dba323379f6be02768ba6ca543",
+      "mtime": "1638215600",
+      "name": "oxfordbookofvict0000unse_v4h7_djvu.xml",
+      "original": "oxfordbookofvict0000unse_v4h7_hocr.html",
+      "private": "true",
+      "sha1": "347befe251b86026e3c6a58a071c93e304ce82fe",
+      "size": "18230969",
+      "source": "derivative"
+    },
+    {
+      "crc32": "d386f4a2",
+      "format": "ACS Encrypted EPUB",
+      "md5": "b54725c78bf986cfddbd59e1131c7c16",
+      "mtime": "1596469117",
+      "name": "oxfordbookofvict0000unse_v4h7_encrypted.epub",
+      "original": "oxfordbookofvict0000unse_v4h7_abbyy.gz",
+      "sha1": "09d90a5a7c69a0f03b2a9f58ffe1c88db3bb82ef",
+      "size": "1136090",
+      "source": "derivative"
+    },
+    {
+      "crc32": "91121940",
+      "format": "ACS Encrypted PDF",
+      "md5": "65e248e2f0be8a03cd2ffcd202697bca",
+      "mtime": "1718527296",
+      "name": "oxfordbookofvict0000unse_v4h7_encrypted.pdf",
+      "original": "oxfordbookofvict0000unse_v4h7.pdf",
+      "sha1": "1d94da603e5c96861ab580e30d7b704d68fc7ee6",
+      "size": "16784888",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e5c65215",
+      "format": "JSON",
+      "md5": "7931903dd0ed32223cc3fe62968bf953",
+      "mtime": "1596458858",
+      "name": "oxfordbookofvict0000unse_v4h7_events.json",
+      "private": "true",
+      "sha1": "13e126c88041864a268802643d3ab5b05f5880fd",
+      "size": "56",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "289b841df327985517fd3309687aea79",
+      "name": "oxfordbookofvict0000unse_v4h7_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "070a7902",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.2",
+      "hocr_char_to_word_module_version": "1.0.0",
+      "md5": "063aba6a7d5a147e5f3385d5065f5cb3",
+      "mtime": "1638215552",
+      "name": "oxfordbookofvict0000unse_v4h7_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.11",
+      "ocr_module_version": "0.0.14",
+      "original": "oxfordbookofvict0000unse_v4h7_chocr.html.gz",
+      "private": "true",
+      "sha1": "041f006133bd0b2d19e7f414df23761e812b4166",
+      "size": "35783570",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5e89da37",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.0",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "ddd9662667529d4a2b3c3a730bd4120f",
+      "mtime": "1638215729",
+      "name": "oxfordbookofvict0000unse_v4h7_hocr_pageindex.json.gz",
+      "original": "oxfordbookofvict0000unse_v4h7_hocr.html",
+      "private": "true",
+      "sha1": "422f379f9c9c2bc2223ed84129a1294045e8a719",
+      "size": "6573",
+      "source": "derivative"
+    },
+    {
+      "crc32": "03d62224",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.0",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "22f0420f5e0f5c13a731a357e7002905",
+      "mtime": "1638215856",
+      "name": "oxfordbookofvict0000unse_v4h7_hocr_searchtext.txt.gz",
+      "original": "oxfordbookofvict0000unse_v4h7_hocr.html",
+      "private": "true",
+      "sha1": "3767af44ee27d420589ac2301b006151994a3e9a",
+      "size": "515936",
+      "source": "derivative",
+      "word_conf_0_10": "1713",
+      "word_conf_11_20": "125",
+      "word_conf_21_30": "234",
+      "word_conf_31_40": "849",
+      "word_conf_41_50": "1418",
+      "word_conf_51_60": "2119",
+      "word_conf_61_70": "5403",
+      "word_conf_71_80": "15866",
+      "word_conf_81_90": "44493",
+      "word_conf_91_100": "162998"
+    },
+    {
+      "crc32": "f8afb626",
+      "filecount": "534",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "04a6caa8dabdfdf0e2bb31833640ad84",
+      "mtime": "1596467142",
+      "name": "oxfordbookofvict0000unse_v4h7_jp2.zip",
+      "original": "oxfordbookofvict0000unse_v4h7_orig_jp2.tar",
+      "private": "true",
+      "sha1": "b1e70ee9d0891c6e9c021aab65311911a3cd025d",
+      "size": "239928674",
+      "source": "derivative"
+    },
+    {
+      "crc32": "59613161",
+      "format": "LCP Encrypted EPUB",
+      "md5": "a948df3d02f539adabd3e8d0ffc93dcf",
+      "mtime": "1753724425",
+      "name": "oxfordbookofvict0000unse_v4h7_lcp.epub",
+      "original": "oxfordbookofvict0000unse_v4h7.epub",
+      "sha1": "da49e901343d2f596ccf815adc79e04378e4ae36",
+      "size": "3032284",
+      "source": "derivative"
+    },
+    {
+      "crc32": "eea785f8",
+      "format": "MARC",
+      "md5": "654f1f00bb3e0958536c0d5cf72305d3",
+      "mtime": "1594772480",
+      "name": "oxfordbookofvict0000unse_v4h7_marc.xml",
+      "sha1": "94f3ba14fa83a84d871bf17b1969bbc9351604ec",
+      "size": "3226",
+      "source": "original"
+    },
+    {
+      "crc32": "ba3c2cdc",
+      "format": "MARC Binary",
+      "md5": "438ff2cf1a25ba8ede2158ef2779e315",
+      "mtime": "1594772471",
+      "name": "oxfordbookofvict0000unse_v4h7_meta.mrc",
+      "sha1": "cad59a418c1e5c57c25507604bbcc123a993cab0",
+      "size": "1195",
+      "source": "original"
+    },
+    {
+      "crc32": "0cbe6858",
+      "format": "Metadata",
+      "md5": "a2ef7599d239cb673cee5feb939b0101",
+      "mtime": "1596458996",
+      "name": "oxfordbookofvict0000unse_v4h7_meta.sqlite",
+      "sha1": "3c0970c70ddc4e649723395c08c7cfef9a62b83d",
+      "size": "19456",
+      "source": "original"
+    },
+    {
+      "crc32": "38d45ca6",
+      "format": "Metadata",
+      "md5": "08d86a363e2ba2c24f969b432ec3ad18",
+      "mtime": "1753724425",
+      "name": "oxfordbookofvict0000unse_v4h7_meta.xml",
+      "sha1": "805f51299cae5705ac1beaa4de76c6751090b213",
+      "size": "3239",
+      "source": "original"
+    },
+    {
+      "crc32": "105bc811",
+      "filecount": "534",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "559fb61779cb13587cb574fd60cdae03",
+      "mtime": "1596458995",
+      "name": "oxfordbookofvict0000unse_v4h7_orig_jp2.tar",
+      "private": "true",
+      "sha1": "f71bd221e3c65c7bc3be0eb4a7055ef5a5e86200",
+      "size": "973516800",
+      "source": "original"
+    },
+    {
+      "crc32": "9f720da0",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "98",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "16b165ac5afd24a52f99474679df7b19",
+      "mtime": "1718526050",
+      "name": "oxfordbookofvict0000unse_v4h7_page_numbers.json",
+      "original": "oxfordbookofvict0000unse_v4h7_hocr.html",
+      "private": "true",
+      "sha1": "f8b9058a74cfcc58998aecaa0019a1b8dc5b8bae",
+      "size": "90240",
+      "source": "derivative"
+    },
+    {
+      "crc32": "c230a1fb",
+      "format": "Scandata",
+      "md5": "8e60d6a22c5cd67569060f3753c8c388",
+      "mtime": "1670825607",
+      "name": "oxfordbookofvict0000unse_v4h7_scandata.xml",
+      "sha1": "de95d477a094d6ef72a57ec65725df003a80345c",
+      "size": "547568",
+      "source": "original"
+    },
+    {
+      "crc32": "b21df3f9",
+      "format": "PNG",
+      "md5": "b5b7e6cd244431ac95e782eb4c5b709d",
+      "mtime": "1594767079",
+      "name": "oxfordbookofvict0000unse_v4h7_slip.png",
+      "private": "true",
+      "sha1": "3d12d8bb682d6304018ed5afbb25918cdef75d6c",
+      "size": "42952",
+      "source": "original"
+    },
+    {
+      "crc32": "de74a011",
+      "format": "JPEG Thumb",
+      "md5": "2dfb45cad42df716ae4047991a58ee06",
+      "mtime": "1596459077",
+      "name": "oxfordbookofvict0000unse_v4h7_slip_thumb.jpg",
+      "original": "oxfordbookofvict0000unse_v4h7_slip.png",
+      "private": "true",
+      "sha1": "025d1a45eedfe9dcd3ff04061285bf4a96103384",
+      "size": "5855",
+      "source": "derivative"
+    },
+    {
+      "crc32": "665ea054",
+      "format": "Title Page Detection Log",
+      "md5": "8c03ed06ba6171142e43fb34db504506",
+      "mtime": "1670824919",
+      "name": "oxfordbookofvict0000unse_v4h7_title_detection.log",
+      "original": "oxfordbookofvict0000unse_v4h7_djvu.xml",
+      "private": "true",
+      "sha1": "097f90a91c7791252b1e33d8c8289df74681b29f",
+      "size": "691",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 32,
+  "item_last_updated": 1753724425,
+  "item_size": 1364602507,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2020-08-11 13:51:01",
+    "associated-names": "Cox, Michael, 1948-2009; Gilbert, R. A",
+    "boxid": "IA1887723",
+    "camera": "USB PTP Class Camera",
+    "collection": [
+      "internetarchivebooks",
+      "printdisabled"
+    ],
+    "collection_set": "printdisabled",
+    "contributor": "Internet Archive",
+    "curation": "[date]20250212013710[/date][comment]inlibrary removal 3[/comment]",
+    "date": "2003",
+    "description": [
+      "xx, 497 p. ; 20 cm",
+      "Previously published as: Victorian ghost stories",
+      "Includes bibliographical references (p. [493]-497)"
+    ],
+    "external-identifier": [
+      "urn:acs6:oxfordbookofvict0000unse_v4h7:epub:7d64db21-490d-436b-bc9b-ad6f27ce45c7",
+      "urn:acs6:oxfordbookofvict0000unse_v4h7:pdf:efdc1fc0-a326-46ae-9c03-3aa848609ca7",
+      "urn:oclc:record:1194922526",
+      "urn:lcp:oxfordbookofvict0000unse_v4h7:lcpdf:6213ee3f-9b93-4f67-a99a-4ad70b03a1ce",
+      "urn:lcp:oxfordbookofvict0000unse_v4h7:epub:d0996d62-a190-45f7-932b-29089c7b79cc"
+    ],
+    "foldoutcount": "0",
+    "identifier": "oxfordbookofvict0000unse_v4h7",
+    "identifier-access": "http://archive.org/details/oxfordbookofvict0000unse_v4h7",
+    "identifier-ark": "ark:/13960/t0wq90h64",
+    "imagecount": "534",
+    "invoice": "1652",
+    "isbn": "0192804472",
+    "language": "eng",
+    "lccn": "2003267692",
+    "mediatype": "texts",
+    "ocr": "ABBYY FineReader 11.0 (Extended OCR)",
+    "ocr_converted": "abbyy-to-hocr 1.1.11",
+    "ocr_module_version": "0.0.14",
+    "old_pallet": "IA18203",
+    "openlibrary_edition": "OL3701419M",
+    "openlibrary_work": "OL18268498W",
+    "operator": "associate-johnlyndon-echica@archive.org",
+    "page_number_confidence": "98",
+    "page_number_module_version": "1.0.5",
+    "ppi": "300",
+    "publicdate": "2020-07-14 22:52:47",
+    "publisher": "Oxford ; New York : Oxford University Press",
+    "rcs_key": "24143",
+    "repub_state": "19",
+    "republisher_date": "20200803204711",
+    "republisher_operator": "associate-ronamye-cabale@archive.org",
+    "republisher_time": "797",
+    "scandate": "20200715015441",
+    "scanfee": "0;1.00;200",
+    "scanner": "station61.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "scribe3_search_catalog": "isbn",
+    "scribe3_search_id": "9780192804471",
+    "source": "removed",
+    "sponsordate": "20200731",
+    "subject": [
+      "Ghost stories, English",
+      "English fiction -- 19th century"
+    ],
+    "title": "The Oxford book of Victorian ghost stories",
+    "tts_version": "4.0-initial-155-gbba175a5",
+    "uploader": "station61.cebu@archive.org"
+  },
+  "server": "ia803202.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "cnusd-ol": {
+        "notes": {
+          "isbn": [
+            "9780192804471"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-05-25 05:54:30.349746"
+      },
+      "dartmouthlibrary-ol": {
+        "notes": {
+          "isbn": [
+            "9780192804471"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-10-30 03:12:06.443997"
+      }
+    }
+  },
+  "uniq": 1607956028,
+  "workable_servers": [
+    "ia803202.us.archive.org",
+    "ia903202.us.archive.org"
+  ]
+}

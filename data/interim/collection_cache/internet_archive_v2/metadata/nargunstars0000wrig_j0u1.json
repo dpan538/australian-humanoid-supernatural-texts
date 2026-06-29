@@ -1,0 +1,555 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/nargunstars0000wrig_j0u1",
+        "server": "dn720004.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/nargunstars0000wrig_j0u1",
+        "server": "dn760105.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/nargunstars0000wrig_j0u1",
+        "server": "dn720004.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/nargunstars0000wrig_j0u1",
+        "server": "dn760105.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1782061869,
+  "d1": "ia600600.us.archive.org",
+  "d2": "ia800600.us.archive.org",
+  "dir": "/26/items/nargunstars0000wrig_j0u1",
+  "files": [
+    {
+      "crc32": "74128ee5",
+      "format": "Item Tile",
+      "md5": "02baf7411f8896a1245df4ec8f441683",
+      "mtime": "1653353759",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "7c5a5bf5047c0930a576455d4a04831aa9274642",
+      "size": "26693",
+      "source": "original"
+    },
+    {
+      "crc32": "f08ba590",
+      "format": "Log",
+      "md5": "45fe53433414a6192f569e5b455b586c",
+      "mtime": "1650983005",
+      "name": "logs/nargunstars0000wrig_j0u1_iabdash_2022-04-2622:23:21.log",
+      "private": "true",
+      "sha1": "c6f82f8ab1afd2336e2962873689ff8cf7594efc",
+      "size": "677",
+      "source": "original"
+    },
+    {
+      "crc32": "baae6c7b",
+      "format": "Log",
+      "md5": "e01748c7ab73b80100b4f1ac7a796e4c",
+      "mtime": "1650983013",
+      "name": "logs/nargunstars0000wrig_j0u1_scanning_2022-04-2622:23:29.log",
+      "private": "true",
+      "sha1": "b44cd9bfe70876ef3ef255bdd25e7df9517d50d9",
+      "size": "932044",
+      "source": "original"
+    },
+    {
+      "crc32": "94cfd787",
+      "format": "Log",
+      "md5": "ab297658e6b9ea156775e2c14063813e",
+      "mtime": "1650983009",
+      "name": "logs/nargunstars0000wrig_j0u1_status_history_2022-04-2622:23:26.log",
+      "private": "true",
+      "sha1": "b2eeb218084e50e226de696b6804d0114f7ed39e",
+      "size": "404",
+      "source": "original"
+    },
+    {
+      "crc32": "560de796",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.62",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "e0360dd8d2233611ec75287f7bbb1fa3",
+      "mtime": "1753666786",
+      "name": "nargunstars0000wrig_j0u1.epub",
+      "original": "nargunstars0000wrig_j0u1_hocr.html",
+      "private": "true",
+      "sha1": "7f8f5200033a26d227a3a6d3888f9e5f66428dcd",
+      "size": "880805",
+      "source": "derivative"
+    },
+    {
+      "crc32": "9e8b6eca",
+      "format": "LCP Encrypted PDF",
+      "md5": "973a0a3ba530b2848772c84ebbff619a",
+      "mtime": "1753666708",
+      "name": "nargunstars0000wrig_j0u1.lcpdf",
+      "original": "nargunstars0000wrig_j0u1.pdf",
+      "sha1": "aef566ed7091597dd0089e653841ccc5897c5e0c",
+      "size": "8294874",
+      "source": "derivative"
+    },
+    {
+      "crc32": "50cf0692",
+      "format": "Text PDF",
+      "md5": "d69366226ba2a38a0d5a272d548c693b",
+      "mtime": "1716913656",
+      "name": "nargunstars0000wrig_j0u1.pdf",
+      "original": "nargunstars0000wrig_j0u1_page_numbers.json",
+      "private": "true",
+      "sha1": "f75935e2936b4e587cb542aba71293ba0731db2c",
+      "size": "7920509",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7dfebb4d",
+      "format": "chOCR",
+      "md5": "139a166fad393262da4e4650b17b80ee",
+      "mtime": "1651070928",
+      "name": "nargunstars0000wrig_j0u1_chocr.html.gz",
+      "ocr": "tesseract 5.0.0-1-g862e",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "0.9945",
+      "ocr_module_version": "0.0.15",
+      "ocr_parameters": "-l eng",
+      "original": "nargunstars0000wrig_j0u1_jp2.zip",
+      "private": "true",
+      "sha1": "b73907c015f96a26643447e95e85d437f532163d",
+      "size": "3499416",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.1",
+      "crc32": "329b34f0",
+      "format": "Cloth Cover Detection Log",
+      "md5": "d30b04f57bb9b060e5fa2ae265ca4f4b",
+      "mtime": "1651070250",
+      "name": "nargunstars0000wrig_j0u1_cloth_detection.log",
+      "original": "nargunstars0000wrig_j0u1_scandata.xml",
+      "private": "true",
+      "sha1": "3ecc66856ecd83c15d12216a2acc88e6d9099264",
+      "size": "788",
+      "source": "derivative"
+    },
+    {
+      "crc32": "63aa39a1",
+      "format": "Dublin Core",
+      "md5": "a13174a6501bf50be65c9b7350367b51",
+      "mtime": "1650983251",
+      "name": "nargunstars0000wrig_j0u1_dc.xml",
+      "sha1": "d24e6126a3454c6e7ca1938c086c1773a83cf0a7",
+      "size": "1067",
+      "source": "original"
+    },
+    {
+      "crc32": "3c5c8433",
+      "format": "DjVuTXT",
+      "md5": "1ede4165627461db938cf430ec40955c",
+      "mtime": "1651071070",
+      "name": "nargunstars0000wrig_j0u1_djvu.txt",
+      "original": "nargunstars0000wrig_j0u1_djvu.xml",
+      "private": "true",
+      "sha1": "cf63bf40d8c4696c37135cc8886b39368ff37555",
+      "size": "260884",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ed5448ca",
+      "format": "Djvu XML",
+      "md5": "f32b0a0f6d6c82ce9de02b99957629d7",
+      "mtime": "1651071021",
+      "name": "nargunstars0000wrig_j0u1_djvu.xml",
+      "original": "nargunstars0000wrig_j0u1_hocr.html",
+      "private": "true",
+      "sha1": "115b1c78ecc5f74cc72c5b933bc400277f6b4be7",
+      "size": "3625672",
+      "source": "derivative"
+    },
+    {
+      "crc32": "28fecc2f",
+      "format": "ACS Encrypted PDF",
+      "md5": "4ed873a89ba041bab8afff92cb072e85",
+      "mtime": "1716914425",
+      "name": "nargunstars0000wrig_j0u1_encrypted.pdf",
+      "original": "nargunstars0000wrig_j0u1.pdf",
+      "sha1": "b8008156a1a59af5849e0323498280dec2c7d8d1",
+      "size": "7870234",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6afc0a17",
+      "format": "JSON",
+      "md5": "921f6111369690fa5321453d103e33f0",
+      "mtime": "1651067975",
+      "name": "nargunstars0000wrig_j0u1_events.json",
+      "private": "true",
+      "sha1": "c5c026959e164bec3302544af696f1b37c0cfeac",
+      "size": "55",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "e33eb81bef3c8285289ee3ea61a4b91b",
+      "name": "nargunstars0000wrig_j0u1_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "c73a488d",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "6ad4d4ca82845e6d6eef2cdccf026a25",
+      "mtime": "1651071001",
+      "name": "nargunstars0000wrig_j0u1_hocr.html",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "0.9945",
+      "ocr_module_version": "0.0.15",
+      "ocr_parameters": "-l eng",
+      "original": "nargunstars0000wrig_j0u1_chocr.html.gz",
+      "private": "true",
+      "sha1": "1e10bb70866d74ad3cd98ad5c973ffd336bf3512",
+      "size": "6724946",
+      "source": "derivative"
+    },
+    {
+      "crc32": "851d7a3b",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "0a5809aa5bf2020a10092687c3fdfd27",
+      "mtime": "1651071032",
+      "name": "nargunstars0000wrig_j0u1_hocr_pageindex.json.gz",
+      "original": "nargunstars0000wrig_j0u1_hocr.html",
+      "private": "true",
+      "sha1": "fa2c0f28c5e815e3ce9293373167ba71d3249019",
+      "size": "2371",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2d3abbf0",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "e2cc070b0eea575280ae4dbf8582a23a",
+      "mtime": "1651071054",
+      "name": "nargunstars0000wrig_j0u1_hocr_searchtext.txt.gz",
+      "original": "nargunstars0000wrig_j0u1_hocr.html",
+      "private": "true",
+      "sha1": "76d0ca4fc44cdc897816619b8c5cf6f43f787e57",
+      "size": "91240",
+      "source": "derivative",
+      "word_conf_0_10": "65",
+      "word_conf_11_20": "56",
+      "word_conf_21_30": "69",
+      "word_conf_31_40": "92",
+      "word_conf_41_50": "82",
+      "word_conf_51_60": "90",
+      "word_conf_61_70": "105",
+      "word_conf_71_80": "213",
+      "word_conf_81_90": "788",
+      "word_conf_91_100": "44760"
+    },
+    {
+      "crc32": "c8a8aa3c",
+      "filecount": "202",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "bb9beb8c25beaae69468578b498aacf4",
+      "mtime": "1651070216",
+      "name": "nargunstars0000wrig_j0u1_jp2.zip",
+      "original": "nargunstars0000wrig_j0u1_orig_jp2.tar",
+      "private": "true",
+      "sha1": "a486b48a34c691a054c4f92e877245d9f007495e",
+      "size": "61528212",
+      "source": "derivative"
+    },
+    {
+      "crc32": "3270de4d",
+      "format": "LCP Encrypted EPUB",
+      "md5": "b508db8c89b29da72d77997ccf453557",
+      "mtime": "1753666926",
+      "name": "nargunstars0000wrig_j0u1_lcp.epub",
+      "original": "nargunstars0000wrig_j0u1.epub",
+      "sha1": "7e5e962c775f1058a28a2d8bb09bc14d4fbecb21",
+      "size": "893079",
+      "source": "derivative"
+    },
+    {
+      "crc32": "cc772528",
+      "format": "MARC",
+      "md5": "9bb77e673ae60acfc4bd1b0b4fd46ad8",
+      "mtime": "1650982996",
+      "name": "nargunstars0000wrig_j0u1_marc.xml",
+      "sha1": "d53e52dd585a73f5d8fc6a3223b1440c7833a821",
+      "size": "2541",
+      "source": "original"
+    },
+    {
+      "crc32": "c6caae11",
+      "format": "MARC Binary",
+      "md5": "e660e9346703f34d02e85f4ad3a2f06c",
+      "mtime": "1650982992",
+      "name": "nargunstars0000wrig_j0u1_meta.mrc",
+      "sha1": "b068f340991670188570eff488adbfc2285111e3",
+      "size": "773",
+      "source": "original"
+    },
+    {
+      "crc32": "f897ab61",
+      "format": "Metadata",
+      "md5": "a4f2169e3e1e5a457416d98b07086114",
+      "mtime": "1651068006",
+      "name": "nargunstars0000wrig_j0u1_meta.sqlite",
+      "sha1": "ff5597eceb8b52143b875f94fa21e99c5ffde152",
+      "size": "45056",
+      "source": "original"
+    },
+    {
+      "crc32": "7e2b2c79",
+      "format": "Metadata",
+      "md5": "17636f9a7f265e9773e4896093d4222a",
+      "mtime": "1753666926",
+      "name": "nargunstars0000wrig_j0u1_meta.xml",
+      "sha1": "5355b80e75d7adf0842b4f6218eb8b55d8cf8125",
+      "size": "3272",
+      "source": "original"
+    },
+    {
+      "crc32": "7bd7bfc5",
+      "filecount": "202",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "885076ecf6c918937851726efd3323ee",
+      "mtime": "1651068005",
+      "name": "nargunstars0000wrig_j0u1_orig_jp2.tar",
+      "original": "nargunstars0000wrig_j0u1_preimage.zip",
+      "private": "true",
+      "sha1": "75e24c34bb411272a448e42072835e58c4ba98d5",
+      "size": "377108480",
+      "source": "original"
+    },
+    {
+      "crc32": "e84e0957",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "84",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "47b5d2ab452b2c9e28f6a5a540ccc130",
+      "mtime": "1716913656",
+      "name": "nargunstars0000wrig_j0u1_page_numbers.json",
+      "original": "nargunstars0000wrig_j0u1_hocr.html",
+      "private": "true",
+      "sha1": "cfa0b175a3cba40d3a8f93fd19c2dd763ce03fe3",
+      "size": "33767",
+      "source": "derivative"
+    },
+    {
+      "confidence_accurate": "True",
+      "crc32": "79885cec",
+      "crops_accurate": "False",
+      "format": "RePublisher Final Processing Log",
+      "initial_crop_confidence": "78",
+      "md5": "9db131acb9a60807a48773a0d9402bef",
+      "mtime": "1651070965",
+      "name": "nargunstars0000wrig_j0u1_repub_final.log",
+      "original": "nargunstars0000wrig_j0u1_scandata.xml",
+      "private": "true",
+      "republisher_deriver_version": "0.0.12",
+      "sha1": "3047ce59b67a38e4bcae96db19c14e47bcde2d0f",
+      "size": "54992",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2960f426",
+      "format": "RePublisher Initial Processing Log",
+      "md5": "08ec62964ef5fd9ce32e032e552b9d58",
+      "mtime": "1650985287",
+      "name": "nargunstars0000wrig_j0u1_repub_initial.log",
+      "original": "nargunstars0000wrig_j0u1_preimage.zip",
+      "private": "true",
+      "republisher_deriver_version": "0.0.12",
+      "sha1": "40d9163175b1d24f4b2d6c4c44067eb0bf6af787",
+      "size": "27",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f29d0001",
+      "format": "Scandata",
+      "md5": "b778633595b0feca849957602aaeede6",
+      "mtime": "1651070250",
+      "name": "nargunstars0000wrig_j0u1_scandata.xml",
+      "original": "nargunstars0000wrig_j0u1_preimage.zip",
+      "sha1": "a41fdaa6aa8e6b8011aae4fc0b909bedcb2af2c4",
+      "size": "214704",
+      "source": "original"
+    },
+    {
+      "crc32": "878948e2",
+      "format": "PNG",
+      "md5": "e7673b3eaccaa239a13fe12d8c750bf3",
+      "mtime": "1650981767",
+      "name": "nargunstars0000wrig_j0u1_slip.png",
+      "private": "true",
+      "sha1": "bf9a3db5f393ad47618c3d9ecd9471793a0cdfe1",
+      "size": "41986",
+      "source": "original"
+    },
+    {
+      "crc32": "e02b2793",
+      "format": "JPEG Thumb",
+      "md5": "6b888f14105a233ca7f1c8a8d3300da3",
+      "mtime": "1650983253",
+      "name": "nargunstars0000wrig_j0u1_slip_thumb.jpg",
+      "original": "nargunstars0000wrig_j0u1_slip.png",
+      "private": "true",
+      "sha1": "044e40c5c8fc35de9e358259f2acf54b53d7afb3",
+      "size": "8577",
+      "source": "derivative"
+    },
+    {
+      "crc32": "00bc54b7",
+      "filecount": "202",
+      "format": "AVIF Thumbnails ZIP",
+      "md5": "826979ab332a0316793c5714a5bba465",
+      "mtime": "1650985285",
+      "name": "nargunstars0000wrig_j0u1_thumb_avif.zip",
+      "original": "nargunstars0000wrig_j0u1_preimage.zip",
+      "private": "true",
+      "sha1": "272915b3263a3f2d4f09a0dbb7a5ea151283660b",
+      "size": "19715744",
+      "source": "original"
+    }
+  ],
+  "files_count": 32,
+  "item_last_updated": 1753666926,
+  "item_size": 499783889,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2022-04-27 16:08:35",
+    "autocrop_version": "0.0.12_books-20220331-0.2",
+    "bookplateleaf": "0006",
+    "boxid": "IA40454011",
+    "camera": "Sony Alpha-A6300 (Control)",
+    "collection": [
+      "internetarchivebooks",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "collection_set": "printdisabled",
+    "contributor": "Internet Archive",
+    "creator": "Wrightson, Patricia",
+    "date": "1974",
+    "description": [
+      "184 p. 22 cm",
+      "An ancient stone creature threatens the lives of a family on a lonely sheep farm in Australia",
+      "\"A Margaret K. McElderry book.\""
+    ],
+    "external-identifier": [
+      "urn:acs6:nargunstars0000wrig_j0u1:pdf:237ca83f-0cb0-4d40-86ad-e852a6c4e896",
+      "urn:oclc:record:1319419539",
+      "urn:lcp:nargunstars0000wrig_j0u1:lcpdf:92405c08-2169-4b8c-9cb1-5775257ba2e0",
+      "urn:lcp:nargunstars0000wrig_j0u1:epub:b8604ff5-0d36-42d2-8c7a-1b3c31671483"
+    ],
+    "foldoutcount": "0",
+    "identifier": "nargunstars0000wrig_j0u1",
+    "identifier-access": "http://archive.org/details/nargunstars0000wrig_j0u1",
+    "identifier-ark": "ark:/13960/s2cz74gdm42",
+    "imagecount": "202",
+    "invoice": "1652",
+    "isbn": "0689304323",
+    "language": "eng",
+    "lccn": "73085323",
+    "mediatype": "texts",
+    "ocr": "tesseract 5.0.0-1-g862e",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "0.9945",
+    "ocr_module_version": "0.0.15",
+    "ocr_parameters": "-l eng",
+    "old_pallet": "IA-NS-1200379",
+    "openlibrary_edition": "OL5436819M",
+    "openlibrary_work": "OL2252134W",
+    "operator": "associate-johnmark-dajoya@archive.org",
+    "page_number_confidence": "84",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.18",
+    "ppi": "360",
+    "publicdate": "2022-04-26 14:03:23",
+    "publisher": "New York, Atheneum",
+    "rcs_key": "24143",
+    "repub_state": "19",
+    "republisher_date": "20220427215932",
+    "republisher_operator": "associate-rosie-allanic@archive.org",
+    "republisher_time": "204",
+    "scandate": "20220426150125",
+    "scanfee": "0;1.00;200",
+    "scanner": "station05.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "scribe3_search_catalog": "isbn",
+    "scribe3_search_id": "0689304323",
+    "sponsordate": "20220430",
+    "subject": [
+      "Fantasy",
+      "Australia -- Fiction"
+    ],
+    "title": "The Nargun and the stars",
+    "tts_version": "4.7-initial-140-g4027b18b",
+    "uploader": "station05.cebu@archive.org"
+  },
+  "server": "ia800600.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "bpljordan-ol": {
+        "notes": {
+          "isbn": [
+            "9780689304323"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-11 00:49:26.671434"
+      },
+      "universityofarizona-ol": {
+        "notes": {
+          "isbn": [
+            "9780689304323"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-14 06:51:34.452926"
+      },
+      "universityofoklahoma-ol": {
+        "notes": {
+          "isbn": [
+            "9780689304323"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-07-14 07:25:34.737779"
+      }
+    }
+  },
+  "uniq": 1954147603,
+  "workable_servers": [
+    "ia800600.us.archive.org",
+    "ia600600.us.archive.org"
+  ]
+}

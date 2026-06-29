@@ -1,0 +1,14 @@
+{
+  "title": "Yahoo Serious",
+  "source": "OpenAlex",
+  "url": "http://dx.doi.org/10.5040/9781350923966",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "1989-01-01",
+  "publication": "OpenAlex",
+  "author": "",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "Director, producer and star of Young Einstein speaks about the highly successful production and the development of his on-screen character. Yahoo Serious is an Australian film actor, director, and score composer. His films include the 1988 comedy Young Einstein, Reckless Kelly, and Mr. Accident. Ser",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

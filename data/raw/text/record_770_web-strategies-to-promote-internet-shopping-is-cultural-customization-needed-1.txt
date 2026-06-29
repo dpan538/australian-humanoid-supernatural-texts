@@ -1,0 +1,14 @@
+{
+  "title": "Web Strategies to Promote Internet Shopping: Is Cultural-Customization NeedeD?1",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.2307/20650306",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2009-09-01",
+  "publication": "MIS Quarterly",
+  "author": "Choon Ling Sia, Kai H. Lim, Leung, Matthew Lee et al.",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "Building consumer trust is important for new or unknown Internet businesses seeking to extend their customer reach globally. This study explores the question: Should website designers take into account the cultural characteristics of prospective customers to increase trust, given that different trust-building web strategies have different cost implications? In this study, we focused on two theoretically grounded practical web strategies of customer endorsement, which evokes unit grouping, and portal affiliation, which evokes reputation categorization, and compared them across two research sites: Australia (individualistic culture) and Hong Kong (collectivistic culture). The results of the laboratory experiment we conducted, on the website of an online bookstore, revealed that the impact of peer customer endorsements on trust perceptions was stronger for subjects in Hong Kong than Australia and that portal (Yahoo) affiliation was effective only in the Australian site. A follow-up study was conducted as a conceptual replication, and provided additional insights on the effects of customer endorsement versus firm affiliation on trust-building. Together, these findings highlight the need to consider cultural differences when identifying the mix of web strategies to employ in Internet store websites.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

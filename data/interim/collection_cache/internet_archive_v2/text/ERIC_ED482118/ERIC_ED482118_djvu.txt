@@ -1,0 +1,843 @@
+DOCUMENT RESUME 
+
+
+
+ED 482 118 
+
+
+
+IR 058 804 
+
+
+
+AUTHOR 
+TITLE 
+PUB DATE 
+NOTE 
+
+
+
+AVAILABLE FROM 
+
+PUB TYPE 
+EDRS PRICE 
+DESCRIPTORS 
+
+
+
+IDENTIFIERS 
+
+
+
+Nevile, Liddy; Lissonnet, Sophie 
+
+Dublin Core: The Base for an Indigenous Culture Environment? 
+2003-00-00 
+
+9p.; In: Museums and the Web 2003: Selected Papers from an 
+International Conference (7th, Charlotte, NC, March 19-22, 2003) ; 
+see IR 058 801. 
+
+For full text: http://www.archimuse.com/mw2003/ 
+papers/nevile/nevile . html/ . 
+
+Reports - Evaluative (142) — Speeches/Meeting Papers (150) 
+
+EDRS Price MF01/PC01 Plus Postage. 
+
+Access to Information; ^Cataloging; Catalogs; Cooperative Programs; 
+Culture; Foreign Countries; ^Indigenous Populations; Information 
+Technology; Metadata; Preservation; Programming; Programming 
+Languages 
+
+Australia; Digital Collections; Digital Preservation; Digitizing; 
+
+* Dublin Core; HTML; *Rock Art; XML 
+
+
+
+ABSTRACT 
+
+A day in Cape York, in the far north east of Australia, can change the 
+life of a modern Australian. In that time, one can see hundreds of examples of rock 
+art that are up to 36,000 years old, sharply contrasting the history of Indigenous 
+people and the immigration of Europeans . One such visit led to a proposed collaboration 
+between the Quinkan Culture Elders and a team of metadata researchers. The researchers 
+proposed a Qualified Dublin Core style catalog to be used to identify and record 
+examples of Quinkan Culture so Elders could at last gain access to information needed 
+to manage the proliferation of unauthorized publications about Quinkan culture, and to 
+"bring back home" cultural representations. In addition, the catalog would allow the 
+Elders to make decisions about publishing their own representations. This paper 
+describes the journey of members of the team developing "Matchbox, " a cataloging 
+system, as they have sought a way of using Qualified DC metadata (QDC) to describe, 
+collect, and represent Quinkan Culture. One focus in this paper is how developing a 
+QDC representation has led to questions of cultural definition and, simultaneously, of 
+the use of technologies such as HTML, XML and RDF. (Author) 
+
+
+
+0 
+
+ERIC 
+
+
+
+Reproductions supplied by EDRS are the best that can be made 
+from the original document. 
+
+
+
+IR058804 ED 482 118 
+
+
+
+
+1 Register 
+! Workshops 
+I Sessions 
+Speakers 
+1 Interactions 
+I Demonstrations 
+| Exhibits 
+! Events 
+
+■ J Best of the Web 
+Key Dates 
+Charlotte 
+
+
+
+A&MI 
+
+
+
+Archives & Museum 
+Informatics 
+158 Lee Avenue 
+Toronto Ontario 
+M4E 2P3 Canada 
+
+
+
+ph: +1 416-691-2516 
+fx: +1 416-352-6025 
+
+
+
+info@arc himu se.com 
+
+www.archimuse.com 
+
+
+
+Q. 
+
+
+
+Search 
+
+A&MI 
+
+
+
+PAPERS 
+
+Museums and the Web 2003 
+
+Dublin Core: The Base For An Indigenous 
+Culture Environment? 
+
+
+
+Liddy Nevile, La Trobe University, Australia, and 
+Sophie Lissonnet, James Cook University, Australia 
+
+Abstract 
+
+A day in Cape York, in the far north east of Australia, can change the life 
+of a modern Australian. In that time, one can see hundreds of examples of 
+rock art that are up to 36,000 years old, sharply contrasting the history of | 
+Indigenous people and the immigration of Europeans. . 
+
+j 
+
+One such visit led to a proposed collaboration between the Quinkan 
+Culture Elders and a team of metadata researchers. The researchers 
+proposed a Qualified Dublin Core style catalogue to be used to identify 
+and record examples of Quinkan Culture so Elders could at last gain 
+access to information needed to manage the proliferation of unauthorised 
+publications about Quinkan culture, and to 'bring back home’ cultural 
+representations. In addition, the catalogue would allow the Elders to make 
+decisions about publishing their own representations. 
+
+
+
+U.S. DEPARTMENT OF EDUCATION 
+Office of Educational Research and Improvement 
+
+EDUCATIONAL RESOURCES INFORMATION 
+CENTER (ERIC) 
+
+□ This document has been reproduced as 
+received from the person or organization 
+originating it. 
+
+□ Minor changes have been made to 
+improve reproduction quality. 
+
+
+
+Points of view or opinions stated in this 
+document do not necessarily represent 
+official OERI position or policy. 
+
+
+
+J 
+
+
+
+PERMISSION TO REPRODUCE AND 
+DISSEMINATE THIS MATERIAL HAS 
+BEEN GRANTED BY 
+
+
+
+This paper describes the journey of members of the team developing 
+'Matchbox’, a cataloguing system, as they have sought a way of using 
+Qualified DC metadata (QDC) to describe, collect, and represent Quinkan 
+Culture. Of interest in this paper is how developing a QDC representation 
+has led to questions of cultural definition and, simultaneously, of the use of -j 
+technologies such as HTML, XML and RDF. y 
+
+
+
+_Bearmar 
+
+
+
+TO THE EDUCATIONAL RESOURCES 
+INFORMATION CENTER (ERIC) 
+
+
+
+Keywords: Qualified Dublin Core, HTML, XML, RDF, Quinkan Rock Art, culture 
+
+
+
+Introduction 
+
+A day in Cape York, in the far north east of Australia, can change the life of a 
+modern Australian. In that time, one can see hundreds of examples of rock art 
+that are up to 36,000 years old, sharply contrasting the history of Indigenous 
+people and the immigration of Europeans. 
+
+
+
+Join our Mailing List . 
+Priva cy. 
+
+
+
+Updated: March 13, 2003 
+
+
+
+One such visit led to a proposal for collaboration between the Quinkan Culture 
+Elders and a team of metadata researchers_[i]_. The researchers proposed a 
+Qualified Dublin Core style_[ij]_catalogue to be used to identify and record 
+examples of Quinkan Culture so Elders could at last gain access to information 
+needed to manage the proliferation of unauthorised publications about Quinkan 
+culture, and to ’bring back home’ cultural representations. In addition, the 
+catalogue would allow the Elders to make decisions about publishing their own 
+representations. 
+
+
+
+In the nearest city (200 miles away), Elders attended a computer workshop and 
+accessed the Web. Most exciting was the viewing of a recent video of some 
+Elders talking about a honey tree. They enjoyed sharing their stories of collecting 
+honey. They decided a multimedia catalogue would make it easy to prompt new 
+stories and explanations without the need to travel far out into the country. 
+
+
+
+Meanwhile, working with the Dublin Core Metadata Element Set (DC) has been 
+found by the authoritative museum community to lack much of the richness that 
+is valued by curators. CIMI [iii] several years ago energetically investigated the 
+
+
+
+O 
+
+ERJC 
+
+flle://E:\mw2003\papers\nevile\nevile.html 
+
+
+
+
+
+2 
+
+
+
+5/27/2003 
+
+
+
+
+
+
+possibilities and found it necessary to modify and extend DC. This work was 
+done with early versions of DC, however. Recently, DC has gained from 
+experience and changed so that it may, indeed, now perform more usefully in this 
+role. The Quinkan researchers are investigating this. 
+
+
+
+This paper describes a journey undertaken in a university office by some 
+researchers through a myriad of disciplines as they have sought, through 
+literature and so far a very few interactions with Indigenous Elders, a way of 
+using Qualified DC metadata (QDC) to describe, collect, and represent Quinkan 
+Culture. 
+
+Of interest in this paper is how developing a QDC representation has led to 
+questions of cultural definition. This is not a paper about how Indigenous people 
+have worked on their cultural interests. It is about how the questions being asked 
+by the researchers have changed. In fact, these questions appear as indicators 
+of the change in their understanding. Why such changes are reported here is 
+because they seem to offer a way of thinking about the use of metadata-based 
+technologies to explore the nature of tools that may be useful to those working in 
+cultural contexts. 
+
+Context 
+
+We held a series of meetings and exploratory visits to the far north east of 
+Australia, where the communities are small and Indigenous people have been 
+involuntarily scattered. We, a small group of European Australians, proposed a 
+project that we hoped would serve as a useful resource for our Indigenous 
+colleagues and help them repatriate their heritage. We are not experts in such 
+matters, with the exception of one of us who is a specialist in the archaeology of 
+the region. 
+
+To us novices, it seemed that a catalogue of cultural heritage would make it 
+easier for the Indigenous people to control their heritage. There was a rewarding 
+workshop in which Indigenous Elders showed their pleasure in sharing 
+interpretations of events and objects, and we assumed from this that a catalogue 
+might be a good organising tool and stimulus for gathering such stories. 
+
+Naively, perhaps, we thought Quinkan culture would somehow be amenable to 
+being catalogued. It seemed that all that would be required was something like 
+an extension of an archaeological catalogue. 
+
+Sadly, there no longer are rock artists, and relevant cultural practices are scarce. 
+Today, Elders tell stories of hunting, of gathering bush tucker, of lives in which 
+they have unfortunately been victims of the invasion of their country. They gather 
+to celebrate their dance culture. They take people to see some of the many Rock 
+Art paintings. There has been carbon dating of some paintings, scores of 
+anthropological, geological, and many other forms of study of the region, and 
+there are data in many forms and locations world-wide. 
+
+The government is building an ‘interpretive centre’ in the region, but what is to 
+happen there is unclear. This ’open’ museum may be a collection of tangible and 
+intangible assets, a presentation site, a meeting place. Whatever, it is in its 
+infancy as a cultural institution. One idea is that the Quinkan catalogue will be a 
+living exhibit, an environment, in this small space, and possibly a cultural heritage 
+management tool. 
+
+The First Question 
+
+Given that the most obvious ’cultural assets’ in the region are Rock Art paintings 
+and petroglyphs, our focus naturally gravitated towards these. This is not all there 
+is in the region, of course, but such a vast number in apparently original condition 
+is attractive as a ’collection’, a set of objects that can be identified, described, 
+possibly even quantified. It is also interesting to note that these paintings are 
+
+
+
+O 
+
+ERJC 
+
+file://E:\mw2003\papers\nevile\nevile.html 
+
+
+
+3 
+
+
+
+5/27/2003 
+
+
+
+fixed; their location is stable and discernible in great detail using modern geo- 
+spatial tools and techniques. At first glance, it might seem that the first question 
+would be how to describe the location of the paintings, and then everything would 
+follow. 
+
+Quinkan Rock Art occurs in what have been called galleries, usually open 
+shelters high up on steep overhanging rock outcrops. The areas are appealing 
+because of their aspect, catching the breezes and providing shelter, and 
+frequently also having good views of the surrounding country. Galleries contain 
+as many as hundreds of paintings, often superimposed on one another, with 
+remarkably fresh-looking paintings in abundance. Fortunately, although there are 
+almost no resources available to protect this heritage, it is isolated and has not 
+suffered, as it might, from extensive tourism. Like the flora and fauna of Australia, 
+the Rock Art sites are geologically frail, and human visitations cause significant 
+damage to the sites themselves, as well as to the paintings. 
+
+Not all paintings or galleries have been identified and had their location recorded. 
+Some have had minute details recorded about them, while others are known to 
+be sort of ’over there’. But the idea of a stable identification system with 
+descriptions of material culture is attractive, and modern technology offers great 
+precision to the task of recording relevant locations. 
+
+So using location with sufficient detail to develop a geo-spatial topology could 
+solve our problems. This is, after all, a typical approach: every resource in our 
+collection could have the location of its content so well specified that it would only 
+need to be differentiated from others that are related to exactly the same location. 
+Trouble is, Elders do not want their paintings, or presumably their culture in 
+general, identified in this way. The way we want to describe locations is, a matter 
+of cultural preference, and geo-spatial science is not a traditional way. In 
+Australian Indigenous cultures, land is not just a commodity, and location is not 
+just a number. The sites where paintings are located are the same places where 
+sacred objects and spirits are likely to be found. People and their country, 
+locations as others think of them, are inextricable intertwined. Access is often 
+limited to a few people, and the rules for access are not published. 
+
+For non-lndigenous researchers who work on Indigenous cultural heritage in the 
+area, recording and revealing locations has no more interest than for their 
+Indigenous colleagues. The paintings are in remote country, perhaps several 
+days' walking time from the nearest accessible track, and that might be several 
+days' driving from the nearest town. Small helicopters can sometimes land 
+directly near sites. But site visitation is always at a cost, and sadly, it is the 
+condition of the paintings that suffers most when dust is disturbed by visitors and 
+abrasion wears out yet more of the precious images, or when ancient meeting 
+places are disturbed. 
+
+What if we were dealing with a Rock Art painting, a chart, a photograph, a 
+scanned image, etc and all were at exactly the same place? The geo-spatial 
+information would not be sufficient to distinguish among the objects just listed. 
+The differences among the objects would be of form, perhaps ownership, 
+possibly content as viewed by different people, and more. Recording these 
+differences, or identifiers, is the primary work of the Dublin Core Metadata 
+Element Set (DCMES). Every object described by DCMES has a unique 
+resource identifier (a URI) and a range of other identifiers. 
+
+Seeking Answers to the First Question 
+
+So the first question was: how should the objects to be catalogued be described 
+using a DC-based system? 
+
+Starting in what seemed the obvious place, the team consulted the resident 
+archaeologist who, as an archaeologist, has focused on particular examples of 
+material culture, paintings. 
+
+
+
+
+4 
+
+
+
+5/27/2003 
+
+
+
+Typical archaeological work describes in detail some aspects of the paintings and 
+has at times depended upon descriptive vocabularies that allow for classification 
+of aspects of paintings. A good example is the use of colour classifications that 
+allow archaeologists to make comparisons of the colouring of paintings. Given 
+that all the paintings are in the open air, the time of day makes a significant 
+difference to their appearance. Observations of colour need to be time-stamped 
+and seasonally-marked as part of their codification if they are to be useful. The 
+development of useful colour classifications has therefore been of interest to 
+archaeologists, and there are specialised and idiosyncratic classification 
+schemata. 
+
+So to classify all the Rock Art paintings by colour should be a relatively objective 
+activity, and there are established criteria. The same is true of other aspects of 
+the paintings: the date, the location, the shapes of the objects within the 
+paintings, even photographs of the paintings, drawings of them, stories about 
+them, everything could be described. Not all the items would be paintings, of 
+course. In fact, we anticipate stories about paintings and stories about those 
+stories, something like annotations of interpretations or descriptions. But still 
+these objects can be described. Each one is a unique object and with a good 
+description, can be identified. 
+
+The information scientist in the team is versed in metadata and had no trouble 
+building a metadata profile that provided for elements and sub-elements, with 
+controlled vocabularies, specialised formats, etc. This work made good sense 
+and could be neatly represented in a hypertext Web page with pull-down menus 
+and active buttons. 
+
+The ’describing process’ was reduced to the filling in of a form. The description 
+would be more or less useful depending upon how well the elements and 
+qualifications of them were chosen. The metadata application profile (MAP) for 
+each item in the catalogue had be developed in the light of experience over many 
+years, even centuries, on the part of museums, libraries, scholars and others. 
+
+Describing objects in this way has been, for a long ’Web' time, the primary use of 
+metadata, particularly of Dublin Core (DC) metadata. Finding the criteria that 
+make it possible to distinguish an object from all other objects with which it might 
+be confused is a primary role for a metadata profile. If a system can use the 
+description of each item in an appropriate way, it will have a handle by which it 
+can perform functions and provide services, such as discovery. 
+
+A good example is provided by a resource that is a photograph. If the description 
+is complete, it will be clear not only who and what are in the photograph, the 
+’aboutness' of the photograph. It will also be discernible which version of the 
+photograph it is, where it is, and so on, and the photograph will be distinguishable 
+from another that looks similar but is, in fact, a second print from the same 
+negative. 
+
+We have come to think of this as a first dimensional activity. Unless an item can 
+be uniquely identified, nothing more is possible, so its description is the crucial 
+first requirement, its DNA. The description that we produce for items in Matchbox 
+can be represented completely in Hypertext Markup Language (HTMLJiyJJ. It is 
+capable of being written in plain text with tags to show what each bit means, and 
+it can easily be read and understood by humans. Significantly, the tags can be 
+read by machines so they too can tell what bit goes where. The meaning of what 
+is between the tags, the content that is added to the MAP, is, of course, opaque 
+to the machines. 
+
+The First Question Leads to the First Dimension 
+
+So working on the first question leads to a set of textual statements that are 
+meaningful to humans and computers and can isolate a chosen object from 
+others. 
+
+
+
+
+5 
+
+
+
+5/27/2003 
+
+
+
+First dimension mapping (filling in of a MAP) is primarily for discovery. It can also 
+be used to do simple things like pointing to links between objects. In other words, 
+first dimension maps can be used in a first dimension way, for discovery, 
+because they can be used for matching and thus for filtering, and so they can 
+support discovery. 
+
+An object might have the special DC tag that contains information about how one 
+object relates to another. Suppose this digitised photograph is of a painting that 
+records a visitor in a gallery that contains a Rock Art painting. The digitised 
+photograph can be linked syntactically (by a machine) to the photograph of the 
+painting if both objects are registered in the same catalogue: the digitised 
+photograph will have the relationship 'is format of to the photograph. 
+
+Significantly, the relationship is between one object and another; for instance, a 
+digital file and the photograph that was scanned. There is no machine-readable 
+mechanism for recording the semantic link between the photographs. That is, 
+that the two photographs and the chart are all of the same Rock Art painting is 
+not machine accessible information. The relationship of the semantics, or 
+content, is not expressed in HTML although by filtering the HTML an application 
+could get access to information to make this link. (The important thing to note is 
+that HTML does not convey the link. It is not a part of the description of the 
+photograph, but rather a connection that has to be made somehow.) 
+
+It is critical that the object’s description contain the necessary information and 
+that the information be in good form and understandable, with ways of 
+deciphering it where necessary, such as dependence on a documented 
+controlled vocabulary. It is not critical, however, that the information be in a 
+simple form such as the proposed HTML version (referred to above). It may be in 
+a more complex form, expressed in extensible Markup Language (XML [ v] ) or 
+even using the Resource Description Framework (RDF [vi] ). Where this is the 
+case, there is generally also a human-readable version made available by the 
+system responsible for the representation because, although the text content is 
+within the XML or RDF, it is surrounded by a lot of other syntactical clutter that 
+may make reading it difficult. The form of expression is not important for its first 
+dimensional use, for discovery that is based on unique identification, for example. 
+Whether the additional information contained in the XML or RDF format is a 
+problem or not depends upon the system using it. 
+
+The Second Question 
+
+The second question relates to how the semantics of the descriptions can be 
+made to carry information about the structure of the descriptions. How can it be 
+made known to a machine that this object is a scanned version of that object? It 
+turns out that finding a way to represent structure is the next problem. 
+
+If I am looking for something and do not know its DNA, or MAP values, I may 
+want to 'browse' through what is available until I find something that will do for 
+me. This is the typical position of many users of Web navigation; they know they 
+want something but either have not spent the time or do not know how to frame a 
+discovery question that will guide them to a satisfactory object (containing the 
+required information). This user is doing something quite different from those who 
+know exactly what objects they are looking for - the user in this case is usually 
+looking for information about something but not sure what form that information 
+will take (and maybe does not care anyway). The mapping that will provide this 
+user with what is wanted will have to be used somehow to link objects in some 
+hierarchy that will lead the user towards material satisfactory for the purpose. In 
+fact, often the user likes to vary the discovery process and tries at times to 
+narrow the field with a search during the browse, but inasmuch as he or she is 
+using a browse navigation system, the object's description MAP will be essential. 
+It will be used to show that this is a scanned version of that, for instance, 
+because the two objects will be identified as having a relationship to different 
+parts of a single hierarchy of production of digitised images. 
+
+Question Two Works to the Second Dimension 
+
+
+
+
+6 
+
+
+
+5/27/2003 
+
+
+
+In the Matchbox case, it is not clear how users will want to browse, or, more 
+correctly perhaps, what they will expect to find as the underlying structure of a 
+browsing activity. Users do not always see the structure, but it is important that 
+they learn to 'drive' it, and this usually comes from the effective development of a 
+structural representation in the users’ minds. Users do not like suddenly being 
+jumped to a resource or set of resources that do not have what appears to them 
+as a logical connection with what they thought they were asking for, or the 
+resources they thought they were already viewing. 
+
+Some Matchbox users do act in predictable ways: those who work within 
+established disciplines usually have learned to respond to the disciplinary 
+taxonomies and terminology and can make fairly accurate guesses about what 
+will happen if they are browsing up or down a hierarchy of criteria. It is also fairly 
+predictable what type of criteria they will use: title, format, aboutness, authorship, 
+etc., in many cases. 
+
+The Dublin Core Metadata Application Profile captures this information well. 
+
+Once there is more specificity, qualifications to the DCMES can focus the mind 
+appropriately, especially if there are additional elements that are useful in the 
+context (for instance, the CIMI profile for museums). But in order to be machine 
+readable, this structure must be declared in syntax that makes it accessible to 
+machines. So the team has to express its qualified, extended Dublin Core-based 
+metadata application profile for Matchbox in a way that will convey the 
+relationships. XML, as recommended for the DCMES, makes it possible to 
+declare both the relationships and the data. 
+
+The photograph of the person referred to above might contain information such 
+as that the person 'is the child of xx’ and 'is the parent of yy'. This is interesting 
+but not readable information if it is expressed in HTML: the semantics are 
+opaque. But if the semantics are expressed in a machine-readable way, the 
+photograph, upon inclusion in the collection, can be linked by a set structure such 
+as a family tree to pictures of the parent and child if they are in the collection. 
+
+Ideally, where elements are found useful and derived from established metadata 
+application profiles, it should be easy and most accurate to simply import them 
+into a new, combined, in this case Quinkan, profile, extensible Markup Language 
+(XML) makes this possible, so instead of recording the maps of resources in 
+HTML, it becomes necessary to record them in XML so their structures will also 
+be recorded and thus decipherable. 
+
+XML is such a versatile language that many people can be using compliant, valid 
+XML, and recording the structure of their information about their resources, and 
+not be constrained by having to use the same way of representing their 
+information. If MAPs from different sources are to be combined, however, there 
+will be a problem with also conveying the structure that is associated with those 
+MAPs. XML does not provide an easy way to solve this as the structure needs to 
+be declared in advance, and it may be broken by the process of combining bits 
+and pieces. In other words, the structure and the information are so closely 
+coupled in XML that there is a risk the coupling will be broken when the XML is 
+fragmented. 
+
+In the Matchbox case, this means recombining the pieces of others' MAPs with 
+the new, special Quinkan pieces, to work in an integrated structure to be 
+provided by the team. This structure, or taxonomy as we refer to it, will determine 
+the browse structure. In fact, we may provide more than one to suit more than 
+one group of predictable users. Some taxonomies, particularly those that are 
+established elsewhere as useful to disciplined users (archaeologists, 
+anthropologists, etc.), have already been identified and will be used to organise 
+the semantic content of the resource maps, but they will need to be augmented 
+by more general user-oriented taxonomies. 
+
+Just as HTML was closely related to the opening up of the first dimension of 
+discovery, extensible Markup language that provides structure has made 
+possible the second level. Without a structured description, there is not the 
+
+
+
+
+7 
+
+
+
+5/27/2003 
+
+
+
+control required. But once in XML, it does not matter if there is more structure 
+than is necessary. For instance, if the mark-up complies with the Resource 
+Description Framework (RDF), it is XML and useful at both the first and second 
+level but may have added advantages. 
+
+Pre-determining the structure of the resources unfortunately does not work well in 
+the Matchbox context. Our major challenge is not to find how to catalogue 
+resources so that those who work within well-defined disciplines can find them, 
+but to extend the opportunities for use of the resources and particularly to find 
+ways of making them useful to the Traditional Owners of the Rock Art. We had 
+no idea how such people would want to classify information about their heritage. 
+
+So we moved to question three. 
+
+Question Three 
+
+As soon as we asked how the resources should be organized, we found 
+ourselves asking what they would be used for. If Matchbox is a cultural heritage 
+tool, it should do things for its users. The problem is, we don't know what they will 
+want to do. 
+
+Perhaps users will just want to find a resource or find if a resource exists. 
+
+Perhaps they will want to know how it came to be in the form it is in. But what if 
+they want to do with resources something like they do everyday: i.e., use 
+resources in a cultural practice? 
+
+It is a well-known activity to try to find a link through friends of friends from one 
+person to another: 'I know Mary and she knows Tom'. 'I am the daughter of Fred 
+and he is the son of Mabel, so Mabel is my grandmother.' These are examples of 
+the sort of relationships that people make between information, of cultural 
+practices. 
+
+Australian Indigenous people often have long histories of their family in their 
+memory, and they can relate these to people with whom they are interacting. 
+They also have kinship structures that are different from the standard atomic 
+family groupings that characterise modern western society. Linking people in 
+photographs in some ways associated with indigenous kinship structures might 
+prove to be of interest to Matchbox users in the future. So far, such structures are 
+not defined for use in Matchbox, but they may be in the near future. 
+
+The Third Dimension 
+
+A simple example follows. It is not something that the Indigenous people have 
+said they want to d,o but it is proposed as typical of something that might be of 
+interest, so it can be presented to them. 
+
+Libby Miller and colleagues have developed Co-Depiction_[vii]_, an RDF system 
+that takes a photograph, with the e-mail addresses of those in the picture, and 
+uses this information to map from one person in that picture to a person in 
+another picture by working on the friends-of-a-friend principle. If I am in a photo 
+with Mary and Mary is in a photo with Jack, then two photos can be used to 
+automatically link me to Jack. 
+
+In the Matchbox example, the idea is that as Indigenous people often use their 
+genealogy to identify themselves, it might be interesting to use a yet further 
+constrained friend of a friend principle to link photographs as they are placed in a 
+collection. This could be achieved by having a structure, as described before, 
+and having the new photograph deliberately located in relationship to that 
+structure, each photo being described as containing an image of a person in a 
+particular position in a family tree. But suppose we don't know the structure or 
+family-tree equivalent when we start collecting the photographs? Suppose that 
+the families are intermingled in ways that are not usually documented in western 
+
+
+
+
+8 
+
+
+
+5/27/2003 
+
+
+
+family trees? Suppose the kinship structure requires quite different sorts of 
+connections to be made? All of these suppositions are probably not far from the 
+truth. So we need a way of dynamically associating people and letting the 
+structure emerge. We cannot be tied to a pre-determined structure. 
+
+Describing resources in the way prescribed by RDF leaves open the 
+opportunities we need. If we say of any resource, only something that can be 
+said in the ' triple ' format of this resource (x) has this property (y) with this value 
+(z), then we can make associations as the photos are added to the collection. 
+Instead of prescribing the associations, we are choosing to leave them open but 
+at the same time provide enough structure for them to have the potential to be 
+used. We provide the simple triple structure in the place of a predetermined more 
+complex structure, and let that be defined later on. 
+
+Conclusion 
+
+At last we feel we are beginning to address the requirements at the level at which 
+they make some sense in our context. Matchbox needs to use RDF because it is 
+a requirement for the sort of ’doing’ that a cultural heritage tool can offer its users. 
+We cannot predict what our users will want to do, and we certainly realise now 
+that we will not be satisfied if all we offer them is a catalogue for discovery by 
+search, or even by browsing. We want to offer a cultural heritage tool, something 
+that does things for them, or with which they can do things. We are aware that we 
+will have to provide some means of accessing the power we provide, but the 
+interface issue is not of concern here. 
+
+This paper has worked through three levels of questions that have emerged for 
+the research team associated with the Quinkan Matchbox project. The questions 
+parallel the freedoms offered by the advances in the relevant technologies. 
+
+Endnotes and References 
+
+
+
+[i] http://www.jcu.edu.au/rockart/Matchbox 
+
+[ii] http://dublincore.or g/ 
+
+[iii] http://www.cimi.or g/ 
+
+[iv] http://w w w.w3 .org/M arkU p/ 
+
+[v] htt p://www.w3.or q /XML/ 
+
+[vi] htt p://www.w3.or g /RDF/ 
+
+[vii] http://swordfish.rdfweb.or g/ discovery/2001/08/ codepict/ 
+
+
+
+
+9 
+
+
+
+5/27/2003 
+
+
+
+
+U.S. Department of Education 
+Office of Educational Research and Improvement (OERI) 
+National Library of Education (NLE) 
+Educational Resources Information Center (ERIC) 
+
+
+
+
+NOTICE 
+
+Reproduction Basis 
+
+
+
+
+This document is covered by a signed "Reproduction Release (Blanket)" 
+form (on file within the ERIC system), encompassing all or classes of 
+documents from its source organization and, therefore, does not require a 
+"Specific Document" Release form. 
+
+
+
+This document is Federally-funded, or carries its own permission to 
+reproduce, or is otherwise in the public domain and, therefore, may be 
+reproduced by ERIC without a signed Reproduction Release form (either 
+"Specific Document" or "Blanket"). 
+
+
+
+EFF-089 (1/2003) 
+
+
+

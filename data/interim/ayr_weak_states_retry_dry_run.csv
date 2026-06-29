@@ -1,0 +1,101 @@
+status,record_id,skip_reason,state_code,year,title,url,place_name,date_band
+skipped,14,duplicate_existing_record,WA,1983,"Kalamundra, Western Australia 1983",https://www.yowiehunters.com.au/western-australia/1135-kalamundra-1983,,modern_1970_present
+skipped,15,duplicate_existing_record,WA,1991,"Australind, Western Australia 1991",https://www.yowiehunters.com.au/western-australia/1812-australind-western-australia-1991,,modern_1970_present
+skipped,16,duplicate_existing_record,WA,1993,"Exmouth, Western Australia 1993",https://www.yowiehunters.com.au/western-australia/2016-exmouth-western-australia-1993,,modern_1970_present
+skipped,17,duplicate_existing_record,WA,2000,"Coral Bay, Western Australia 2000",https://www.yowiehunters.com.au/western-australia/1146-coral-bay-2000,,modern_1970_present
+skipped,18,duplicate_existing_record,WA,2000,"Lancedin, Western Australia 2000",https://www.yowiehunters.com.au/western-australia/2297-lancedin-western-australia-2000,,modern_1970_present
+skipped,19,duplicate_existing_record,WA,2008,"Greenbushes, Western Australia 2008",https://www.yowiehunters.com.au/western-australia/2030-greenbushes-western-australia-2008,,modern_1970_present
+skipped,20,duplicate_existing_record,WA,2011,"Donnybrook, Western Australia 2011",https://www.yowiehunters.com.au/western-australia/1676-donnybrook-western-australia-2011,,modern_1970_present
+skipped,21,duplicate_existing_record,WA,2011,"Mandurah, Western Australia 2011",https://www.yowiehunters.com.au/western-australia/1831-mandurah-western-australia-2011,,modern_1970_present
+skipped,22,duplicate_existing_record,WA,2020,"Jarrahdale, Western Australia 2020",https://www.yowiehunters.com.au/western-australia/2250-jarrahdale-western-australia-2020,,modern_1970_present
+skipped,23,duplicate_existing_record,WA,2022,"Alcoa Wetlands, Western Australia 2022",https://www.yowiehunters.com.au/western-australia/2292-alcoa-wetlands-western-australia-2022,,modern_1970_present
+skipped,24,duplicate_existing_record,SA,1992,"Willunga, South Australia 1992",https://www.yowiehunters.com.au/south-australia/241-willungra-1992,,modern_1970_present
+skipped,25,duplicate_existing_record,SA,1993,"Yalata, South Australia 1993",https://www.yowiehunters.com.au/south-australia/1849-yalata-south-australia-1993,,modern_1970_present
+skipped,26,duplicate_existing_record,SA,1995,"Roxby Downs, South Australia 1995",https://www.yowiehunters.com.au/south-australia/1144-roxby-downs-1995,,modern_1970_present
+skipped,27,duplicate_existing_record,SA,2014,"Wilpena Pound, South Australia 2014",https://www.yowiehunters.com.au/south-australia/1805-wilpena-pound-south-australia-2014,,modern_1970_present
+skipped,28,duplicate_existing_record,SA,2015,"Sixth Creek - Adelaide Hills, South Australia 2015",https://www.yowiehunters.com.au/south-australia/1882-sixth-creek-adelaide-hills-south-australia-2015,,modern_1970_present
+skipped,29,duplicate_existing_record,SA,2016,"Loxton, South Australia 2016",https://www.yowiehunters.com.au/south-australia/1856-loxton-south-australia-2016,,modern_1970_present
+skipped,30,duplicate_existing_record,SA,2016,"Poochera, South Australia 2016",https://www.yowiehunters.com.au/south-australia/1969-poochera-south-australia-2016,,modern_1970_present
+skipped,31,duplicate_existing_record,NT,1979,"Darwin (Fannie Bay), Northern Territory 1979",https://www.yowiehunters.com.au/northern-territory/2138-darwin-fannie-bay-northern-territory-1979,,modern_1970_present
+skipped,32,duplicate_existing_record,NT,1987,"Yambah Station, Northern Territory 1987",https://www.yowiehunters.com.au/northern-territory/271-yambah-station-1987,,modern_1970_present
+skipped,33,duplicate_existing_record,NT,1995,"Berry Springs, Northern Territory 1995",https://www.yowiehunters.com.au/northern-territory/1912-berry-springs-northern-territory-1995,,modern_1970_present
+skipped,34,duplicate_existing_record,NT,1997,"Acacia Hills, Northern Territory 1997 (1)",https://www.yowiehunters.com.au/northern-territory/270-acacia-hills-1997-sp-8502,,modern_1970_present
+skipped,35,duplicate_existing_record,NT,1997,"Acacia Hills, Northern Territory 1997 (2)",https://www.yowiehunters.com.au/northern-territory/268-acacia-hills-1998,,modern_1970_present
+skipped,36,duplicate_existing_record,NT,1998,"Acacia Hills & Humpty Doo, Northern Territory 1998",https://www.yowiehunters.com.au/northern-territory/2291-acacia-ridge-humpty-doo-northern-territory-1998,,modern_1970_present
+skipped,37,duplicate_existing_record,NT,1998,"Adelaide River, Northern Territory 1998",https://www.yowiehunters.com.au/northern-territory/267-adelaide-river-1998,,modern_1970_present
+skipped,38,duplicate_existing_record,NT,1998,"Tanima Desert, Northern Territory 1998",https://www.yowiehunters.com.au/northern-territory/1242-tanima-desert-nt-1998,,modern_1970_present
+skipped,39,duplicate_existing_record,NT,2001,"Kings Canyon, Northern Territory 2001",https://www.yowiehunters.com.au/northern-territory/1552-kings-canyon-northern-territory-2001,,modern_1970_present
+skipped,40,duplicate_existing_record,TAS,1987,"Lake Dulverton, Tasmania 1987 (1)",https://www.yowiehunters.com.au/tasmania/273-lake-dulverton-jan-1987,,modern_1970_present
+skipped,41,duplicate_existing_record,TAS,1987,"Lake Dulverton, Tasmania 1987 (2)",https://www.yowiehunters.com.au/tasmania/1240-lake-dulverton-tas-1987-2,,modern_1970_present
+skipped,42,duplicate_existing_record,TAS,1992,"Smithton, Tasmania 1992",https://www.yowiehunters.com.au/tasmania/2028-smithton-tasmania-1992,,modern_1970_present
+skipped,43,duplicate_existing_record,TAS,2024,"Christmas Hills Reserve, Tasmania 2024",https://www.yowiehunters.com.au/tasmania/2274-christmas-hills-reserve-tasmania-2024,,modern_1970_present
+skipped,44,duplicate_existing_record,VIC,1849,"Phillip Island, Victoria 1849",https://www.yowiehunters.com.au/victoria/1259-phillip-island-vic-1849,,anchor_1842_1875
+skipped,45,duplicate_existing_record,VIC,1970,"Sherbrooke Forest, Victoria 1970",https://www.yowiehunters.com.au/victoria/2174-sherbrooke-forest-victoria-1970,,modern_1970_present
+skipped,46,duplicate_existing_record,VIC,1980,"Colac, Victoria 1980",https://www.yowiehunters.com.au/victoria/1593-colac-victoria-1980,,modern_1970_present
+skipped,47,duplicate_existing_record,VIC,1980,"Kinglake West & Eden Park, Victoria late 1980's",https://www.yowiehunters.com.au/victoria/2284-kinglake-west-eden-park-victoria-late-1980s,,modern_1970_present
+skipped,48,duplicate_existing_record,VIC,1982,"Cranbourne, Victoria 1982",https://www.yowiehunters.com.au/victoria/1244-cranbourne-vic-1982,,modern_1970_present
+skipped,49,duplicate_existing_record,VIC,1984,"Noojee, Victoria 1984",https://www.yowiehunters.com.au/victoria/1257-noojee-vic-1984,,modern_1970_present
+skipped,50,duplicate_existing_record,VIC,1984,"Toolangi, Victoria 1984",https://www.yowiehunters.com.au/victoria/1680-toolangi-victoria-1984,,modern_1970_present
+skipped,51,duplicate_existing_record,VIC,1985,"Avonsleigh, Victoria 1985",https://www.yowiehunters.com.au/victoria/1954-avonsleigh-victoria-1985,,modern_1970_present
+skipped,52,duplicate_existing_record,VIC,1985,"Darriman, Victoria 1985",https://www.yowiehunters.com.au/victoria/1246-darriman-vic-1985,,modern_1970_present
+skipped,53,duplicate_existing_record,VIC,1987,"Cranbourne, Victoria 1987",https://www.yowiehunters.com.au/victoria/1245-cranbourne-vic-1987,,modern_1970_present
+skipped,54,duplicate_existing_record,VIC,1987,"Lyndhurst, Victoria 1987",https://www.yowiehunters.com.au/victoria/1251-lyndhurst-vic-1987,,modern_1970_present
+skipped,55,duplicate_existing_record,VIC,1988,"Emerald, Victoria 1988",https://www.yowiehunters.com.au/victoria/1248-emerald-vic-1988,,modern_1970_present
+skipped,56,duplicate_existing_record,VIC,1990,"Dellicknora, Victoria 1990",https://www.yowiehunters.com.au/victoria/1247-dellicknora-vic-1990,,modern_1970_present
+skipped,57,duplicate_existing_record,VIC,1991,"Lake Buffalo, Victoria 1991",https://www.yowiehunters.com.au/victoria/1920-lake-buffalo-victoria-1991,,modern_1970_present
+skipped,58,duplicate_existing_record,VIC,1993,"Hepburn Springs, Victoria 1993",https://www.yowiehunters.com.au/victoria/2171-hepburn-springs-victoria-1993,,modern_1970_present
+skipped,59,duplicate_existing_record,VIC,1996,"Aberfeldy, Victoria 1996",https://www.yowiehunters.com.au/victoria/1243-aberfeldie-vic-1996,,modern_1970_present
+skipped,60,duplicate_existing_record,VIC,1997,"Warnambool, Victoria 1997",https://www.yowiehunters.com.au/victoria/1264-warnambool-vic-1997,,modern_1970_present
+skipped,61,duplicate_existing_record,VIC,1999,"Wilsons Promontory, Victoria 1999",https://www.yowiehunters.com.au/victoria/1265-wilsons-promontory-vic-1999,,modern_1970_present
+skipped,62,duplicate_existing_record,VIC,2002,"Licola, Victoria 2002",https://www.yowiehunters.com.au/victoria/1592-licola-victoria-2002,,modern_1970_present
+skipped,63,duplicate_existing_record,VIC,2004,"Robinvale, Victoria 2004",https://www.yowiehunters.com.au/victoria/1261-robinvale-vic-2004,,modern_1970_present
+skipped,64,duplicate_existing_record,VIC,2006,"Mansfield, Victoria 2006",https://www.yowiehunters.com.au/victoria/1835-mansfield-victoria-2006,,modern_1970_present
+skipped,65,duplicate_existing_record,VIC,2007,"Barmah Forest (Murray River), Victoria 2007",https://www.yowiehunters.com.au/victoria/2188-barmah-forest-murray-river-victoria-2007,,modern_1970_present
+skipped,66,duplicate_existing_record,VIC,2007,"Nowa Nowa, Victoria 2007",https://www.yowiehunters.com.au/victoria/1258-nowa-nowa-vic-2007,,modern_1970_present
+skipped,67,duplicate_existing_record,VIC,2008,"Redbank, Victoria 2008 (2)",https://www.yowiehunters.com.au/victoria/1971-redbank-victoria-2008-2,,modern_1970_present
+skipped,68,duplicate_existing_record,VIC,2008,"Robinvale, Victoria 2008",https://www.yowiehunters.com.au/victoria/1666-robinvale-victoria-2008,,modern_1970_present
+skipped,69,duplicate_existing_record,VIC,2010,"Aberfeldy, Victoria 2010",https://www.yowiehunters.com.au/victoria/1571-aberfeldie-victoria-2010,,modern_1970_present
+skipped,70,duplicate_existing_record,VIC,2010,"Briagolong, Victoria 2010",https://www.yowiehunters.com.au/victoria/1619-briagolong-victoria-2010-2,,modern_1970_present
+skipped,71,duplicate_existing_record,VIC,2011,"Bendigo (area), Victoria 2011",https://www.yowiehunters.com.au/victoria/1548-bendigo-area-victoria-2011,,modern_1970_present
+skipped,72,duplicate_existing_record,VIC,2011,"Falls Creek, Victoria 2011",https://www.yowiehunters.com.au/victoria/1585-falls-creek-victoria-2011,,modern_1970_present
+skipped,73,duplicate_existing_record,VIC,2011,"Yarra Valley, Victoria 2011",https://www.yowiehunters.com.au/victoria/1570-yarra-valley-victoria-2011,,modern_1970_present
+skipped,74,duplicate_existing_record,VIC,2013,"Bemm River, Victoria 2013",https://www.yowiehunters.com.au/victoria/2095-bemm-river-victoria-2013,,modern_1970_present
+skipped,75,duplicate_existing_record,VIC,2013,"Healesville, Victoria 2013",https://www.yowiehunters.com.au/victoria/1677-healesville-victoria-2013,,modern_1970_present
+skipped,76,duplicate_existing_record,VIC,2015,"Harrietville, Victoria 2015",https://www.yowiehunters.com.au/victoria/1889-harrietville-victoria-2015,,modern_1970_present
+skipped,77,duplicate_existing_record,VIC,2015,"Mount Hotham, Victoria 2015",https://www.yowiehunters.com.au/victoria/2219-mount-hotham-victoria-2015,,modern_1970_present
+skipped,78,duplicate_existing_record,VIC,2016,"Goongerah, Victoria 2016",https://www.yowiehunters.com.au/victoria/1890-goonerah-victoria-2016,,modern_1970_present
+skipped,79,duplicate_existing_record,VIC,2016,"Noojee, Victoria 2016",https://www.yowiehunters.com.au/victoria/1854-noojee-victoria-2016,,modern_1970_present
+skipped,80,duplicate_existing_record,VIC,2018,"Bunyip, Victoria 2018",https://www.yowiehunters.com.au/victoria/2004-bunyip-victoria-2018,,modern_1970_present
+skipped,81,duplicate_existing_record,VIC,2019,"Blackwood, Victoria 2019",https://www.yowiehunters.com.au/victoria/2142-blackwood-victoria-2019,,modern_1970_present
+skipped,82,duplicate_existing_record,VIC,2020,"Creswick, Victoria 2020",https://www.yowiehunters.com.au/victoria/2193-creswick-victoria-2020,,modern_1970_present
+skipped,83,duplicate_existing_record,VIC,2023,"Mitta Mitta, Victoria 2023",https://www.yowiehunters.com.au/victoria/2271-mitta-mitta-victoria-2023,,modern_1970_present
+skipped,214,duplicate_existing_record,VIC,2007,"Bemm River, Victoria 2007",https://www.yowiehunters.com.au/victoria/2085-bemm-river-victoria-2007,,modern_1970_present
+skipped,217,duplicate_existing_record,VIC,1985,"Benambra, Victoria 1985",https://www.yowiehunters.com.au/victoria/1974-benambra-victoria-1985,,modern_1970_present
+skipped,220,duplicate_existing_record,VIC,2010,"Bendigo (area), Victoria 2010",https://www.yowiehunters.com.au/victoria/1547-bendigo-area-victoria-2010,,modern_1970_present
+skipped,223,duplicate_existing_record,VIC,2000,"Billabong, Victoria 2000",https://www.yowiehunters.com.au/victoria/1263-victorian-billabong-vic-2000,,modern_1970_present
+skipped,226,duplicate_existing_record,VIC,2013,"Colac, Victoria 2013",https://www.yowiehunters.com.au/victoria/1658-colac-victoria-2013,,modern_1970_present
+skipped,229,duplicate_existing_record,VIC,1987,"Dufty's Beach - Murray River, Victoria 1987",https://www.yowiehunters.com.au/victoria/2184-dufty-s-beach-murray-river-victoria-1987,,modern_1970_present
+skipped,232,duplicate_existing_record,VIC,2011,"Emerald, Victoria 2011",https://www.yowiehunters.com.au/victoria/1569-emerald-victoria-2011,,modern_1970_present
+skipped,235,duplicate_existing_record,VIC,1999,"Falls Creek, Victoria 1999",https://www.yowiehunters.com.au/victoria/1249-falls-creek-vic-1999,,modern_1970_present
+skipped,238,duplicate_existing_record,VIC,2016,"Grampians, Victoria 2016",https://www.yowiehunters.com.au/victoria/2186-grampians-victoria-2016,,modern_1970_present
+skipped,241,duplicate_existing_record,VIC,1986,"Harrietville, Victoria 1986",https://www.yowiehunters.com.au/victoria/1250-harietville-vic-1986,,modern_1970_present
+skipped,244,duplicate_existing_record,VIC,2019,"Hepburn Springs, Victoria 2019",https://www.yowiehunters.com.au/victoria/2094-hepburn-springs-victoria-2019,,modern_1970_present
+skipped,247,duplicate_existing_record,VIC,2020,"Hepburn Springs, Victoria 2020",https://www.yowiehunters.com.au/victoria/2140-hepburn-springs-victoria-2020,,modern_1970_present
+skipped,250,duplicate_existing_record,VIC,1982,"Macclesfield, Victoria 1982",https://www.yowiehunters.com.au/victoria/1252-macclesfield-vic-1982,,modern_1970_present
+skipped,253,duplicate_existing_record,VIC,1988,"Mansfield, Victoria 1988",https://www.yowiehunters.com.au/victoria/1253-mansfield-vic-1988,,modern_1970_present
+skipped,256,duplicate_existing_record,VIC,1950,"Moe, Victoria 1950",https://www.yowiehunters.com.au/victoria/1254-moe-vic-1950,,expansion_1876_1969
+skipped,259,duplicate_existing_record,VIC,1995,"Moe, Victoria 1995",https://www.yowiehunters.com.au/victoria/1255-moe-vic-1995,,modern_1970_present
+skipped,262,duplicate_existing_record,VIC,1980,"Mount Buller, Victoria 1980's",https://www.yowiehunters.com.au/victoria/2275-mount-buller-victoria-1980s,,modern_1970_present
+skipped,265,duplicate_existing_record,VIC,1978,"Mount Warrenheip, Victoria 1978",https://www.yowiehunters.com.au/victoria/2180-mount-warrenheip-victoria-1978,,modern_1970_present
+skipped,268,duplicate_existing_record,VIC,1990,"Myrrhee, Victoria 1990",https://www.yowiehunters.com.au/victoria/1256-myhree-vic-1990,,modern_1970_present
+skipped,271,duplicate_existing_record,VIC,1984,"Noojee, Victoria 1984",https://www.yowiehunters.com.au/victoria/1621-noojee-victoria-1984,,modern_1970_present
+skipped,274,duplicate_existing_record,VIC,2012,"Noojee, Victoria 2012",https://www.yowiehunters.com.au/victoria/1583-noojee-victoria-2012,,modern_1970_present
+skipped,277,duplicate_existing_record,VIC,2010,"Otways, Victoria 2010",https://www.yowiehunters.com.au/victoria/1678-otways-victoria-2010,,modern_1970_present
+skipped,280,duplicate_existing_record,VIC,2008,"Redbank, Victoria 2008",https://www.yowiehunters.com.au/victoria/1679-redbank-victoria-2008,,modern_1970_present
+skipped,283,duplicate_existing_record,VIC,2003,"Riddells Creek, Victoria 2003",https://www.yowiehunters.com.au/victoria/1260-riddles-creek-vic-2003,,modern_1970_present
+skipped,286,duplicate_existing_record,VIC,2009,"Robinvale, Victoria 2009",https://www.yowiehunters.com.au/victoria/1262-robinvale-vic-2009,,modern_1970_present
+skipped,289,duplicate_existing_record,VIC,2014,"Rokewood, Victoria 2014",https://www.yowiehunters.com.au/victoria/2008-rokewood-victoria-2014,,modern_1970_present
+skipped,292,duplicate_existing_record,VIC,2006,"Thomson Dam, Victoria 2006",https://www.yowiehunters.com.au/victoria/2040-thomson-dam-victoria-2006,,modern_1970_present
+skipped,295,duplicate_existing_record,VIC,2015,"Trentham, Victoria 2015",https://www.yowiehunters.com.au/victoria/1811-trentham-victoria-2015,,modern_1970_present
+skipped,298,duplicate_existing_record,VIC,2016,"Werribee, Victoria 2016",https://www.yowiehunters.com.au/victoria/1958-werribee-victoria-2016,,modern_1970_present
+skipped,301,duplicate_existing_record,VIC,1991,"Yarambulla, Victoria 1991",https://www.yowiehunters.com.au/victoria/1266-yarambulla-vic-1991,,modern_1970_present

@@ -1,0 +1,115 @@
+# Local/Remote State Reconciliation
+
+- Local HEAD: `45a8a6ea82115857f6253a3fa31bbc4ac5cf1023`
+- origin/main HEAD: `45a8a6ea82115857f6253a3fa31bbc4ac5cf1023`
+- Ahead/behind: `0` ahead, `0` behind
+- Public export records: `2397`
+- Public map flags: `921`
+- Public map points: `921`
+- 2397/921 state: `uncommitted_worktree_export`
+
+## Modified Collection-Owned Files
+- ` M config/collection_routes.yml`
+- ` M config/collection_sprint.yml`
+- ` M data/processed/australian_humanoid_figures.sqlite`
+- ` M data/processed/v2/collection_route_registry.csv`
+- ` M data/processed/v2/collection_route_registry.md`
+- ` M data/processed/v2/collection_sprint_state.json`
+- ` M data/processed/v2/collection_sprint_status.json`
+- ` M data/processed/v2/collection_sprint_status.md`
+- ` M data/processed/v2/validation_v2_report.md`
+- ` M public/data/frontend-data.json`
+- ` M scripts/run_collection_sprint.py`
+
+## Untracked Collection Artifacts
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_061222_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062018_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062456_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062603_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062644_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062645_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062646_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062647_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062648_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062649_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062650_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062651_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062652_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062653_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062654_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062655_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062656_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062657_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062658_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062659_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062700_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062701_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062702_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062703_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062704_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062705_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062706_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062707_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062708_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062709_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062710_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062711_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062712_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062713_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062714_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062715_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062716_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062717_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062718_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062719_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062720_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062721_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_062722_004/`
+- `data/interim/collection_sprint/collection_sprint_launch_20260622_070246_004/`
+- `data/processed/crossref_dryrun_fast_20260622.md`
+- `data/processed/openalex_dryrun_fast_20260622.md`
+- `data/processed/v2/ayr_fast_expansion_20260621.md`
+- `data/processed/v2/ayr_weak_states_retry_dry_run.md`
+
+## Unrelated Pre-Existing Dirty Files
+- ` D "Australian Anomalous Humanoid Encounter Archive Audit.docx"`
+- ` M "Australian Public Text Archive of Supernatural Humanoid Narratives and Encounters.docx"`
+- ` M scripts/collect_v2_batch.py`
+- `?? data/australian_humanoid_public.db`
+- `?? data/interim/ayr_fast_expansion_20260621.csv`
+- `?? data/interim/ayr_weak_states_retry_dry_run.csv`
+- `?? data/interim/collection_cache/`
+- `?? data/interim/crossref_dryrun_fast_20260622.csv`
+- `?? data/interim/openalex_dryrun_fast_20260622.csv`
+- `?? data/interim/public_web_archive_first_leads_20260621.csv`
+- `?? data/interim/public_web_institutional_media_aiatsis_20260621.csv`
+- `?? data/raw/text/record_770_web-strategies-to-promote-internet-shopping-is-cultural-customization-needed-1.txt`
+- `?? data/raw/text/record_771_who-controls-the-internet-illusions-of-a-borderless-world.txt`
+- `?? data/raw/text/record_772_elecronic-word-of-mouth.txt`
+- `?? data/raw/text/record_773_the-world-trade-law-of-censorship-and-internet-filtering.txt`
+- `?? data/raw/text/record_774_what-can-you-find-about-polycystic-ovary-syndrome-pcos-online-assessing-online-information-on-pcos-quality-content-and-user-friendliness.txt`
+- `?? data/raw/text/record_775_content-quality-and-assessment-tools-of-physician-rating-websites-in-12-countries-quantitative-analysis.txt`
+- `?? data/raw/text/record_776_advice-in-discourse.txt`
+- `?? data/raw/text/record_777_it-s-in-the-pipes-using-mash-up-technology-in-the-parliament-of-australia-library.txt`
+- `?? data/raw/text/record_778_beyond-racism-some-opinions-about-racialism-and-american-archaeology.txt`
+- `?? data/raw/text/record_779_on-the-occurrence-of-mesozoic-and-permian-faun-in-eastern-australia.txt`
+- `?? data/raw/text/record_780_search-engine-retrieval-of-changing-information.txt`
+- `?? data/raw/text/record_781_narrative-discourse-analysis-of-a-foreigner-s-story-during-his-work-in-indonesia.txt`
+- `?? data/raw/text/record_782_rethinking-public-library-websites.txt`
+- `?? data/raw/text/record_783_narrative-discourse-analysis-of-a-foreigner-s-story-during-his-work-in-indonesia.txt`
+- `?? data/raw/text/record_784_a-battle-between-enraged-bulls-the-2009-australian-senate-inquiry-into-sports-news-and-digital-media.txt`
+- `?? data/raw/text/record_785_proceedings-of-the-3rd-workshop-on-information-credibility-on-the-web.txt`
+- `?? data/raw/text/record_786_shakespeare-on-the-melbourne-stage-1843-61.txt`
+- `?? data/raw/text/record_787_keyword-advertising-and-other-invisible-uses-of-third-party-trade-marks-in-online-advertising-a-new-zealand-australasian-perspective.txt`
+- `?? data/raw/text/record_788_japan-s-new-security-agenda.txt`
+- `?? data/raw/text/record_789_the-search-engine-visibility-of-queensland-visitor-information-centres-websites.txt`
+- `?? data/raw/text/record_790_breakfast-at-tiffany-s-ebay-inc-trade-mark-law-and-counterfeiting.txt`
+- `?? data/raw/text/record_791_proceedings-of-the-3rd-workshop-on-information-credibility-on-the-web.txt`
+- `?? data/raw/text/record_792_implementasi-algoritma-rc4-dan-kompresi-lzw-untuk-pengamanan-database-pada-pt-mpp-international-development-indonesia.txt`
+- `?? data/raw/text/record_793_yahoo-serious.txt`
+- `?? data/raw/text/record_794_the-internet-as-an-investment-tool.txt`
+- `?? data/raw/text/record_795_yahoo-a-mobile-news-service-is-a-bold-move.txt`
+- `?? data/raw/text/record_796_louts-yahoos-and-purposeless-disruptionists-race-and-the-revival-of-politics-in-the-universities.txt`
+- `?? data/raw/text/record_797_eharmony-more-than-traditional-internet-dating.txt`
+- `?? data/raw/text/record_798_blues-a-regional-experience-by-bob-eagle-and-eric-s-leblanc-and-the-great-jazz-guitarists-the-ultimate-guide-by-scott-yanow-review.txt`
+- `?? scripts/pre_frontend_freeze_audit.py`

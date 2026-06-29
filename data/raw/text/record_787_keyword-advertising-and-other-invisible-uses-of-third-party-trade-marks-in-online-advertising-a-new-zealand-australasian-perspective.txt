@@ -1,0 +1,14 @@
+{
+  "title": "Keyword Advertising, and Other Invisible Uses of Third-Party Trade Marks in Online Advertising - A New Zealand/Australasian Perspective",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.26686/vuwlr.v39i4.6297",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2009-11-05",
+  "publication": "Victoria University of Wellington Law Review",
+  "author": "Philip J Greene",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "From the early days of the Internet, the use of trade marks have been the subject of intense debate and often litigation. Indeed, much of what constituted \"Internet Law\" in the late 1990s was driven by controversies over the use of trademarks, in domain names, on Web sites (both visibly and invisibly), and other forms. As we entered the 21st century, the discussion shifted to the advertising arena, as search engine companies saw ways to profit by selling advertising, using methods tied to the trade marks of third-parties. For example, search engines such as Google, Yahoo, Microsoft, Ask.com, and others, have sold Internet \"key words,\" words that when searched for using their search engine, might produce a desired search result, or \"hit.\" When such key word search terms happen to be trade marks, the owners of such marks have reacted by filing litigation, in some jurisdictions, or government action has been brought, in others. This paper discusses those practices, and how third-party use of trade marks in Internet advertising is conducted in New Zealand and Australia, and how courts and government agencies in Australasia and elsewhere have dealt with such practices, or how existing jurisprudence might be applied. The papers begins with an examination of the trade mark, its origins in English common law and how it has evolved, and how owners can prevent third-party unauthorised use. The paper discusses what constitutes \"trade mark use,\" in various jurisdictions (including the US, the UK, Australia and New Zealand). Included is discussion of New Zealand and Australia’s trade mark law, the law of passing off, and other consumer protection laws. The paper reviews relevant jurisprudence from the US and UK and discusses how such disputes might be resolved in New Zealand.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

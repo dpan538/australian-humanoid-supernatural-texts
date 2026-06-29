@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 28,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Tjangara&quot; AND (giant OR spirit OR Australia)) AND mediatype:texts",
+      "query": "((text:Tjangara OR text:Tjangara OR text__reviews:Tjangara) AND ((text:giant OR text:giant OR text__reviews:giant) OR (text:spirit OR text:spirit OR text__reviews:spirit) OR (text:Australia OR text:Australia OR text__reviews:Australia))) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

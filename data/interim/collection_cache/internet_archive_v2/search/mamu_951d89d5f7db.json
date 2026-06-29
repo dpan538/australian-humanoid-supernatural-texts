@@ -1,0 +1,34 @@
+{
+  "response": {
+    "docs": [
+      {
+        "creator": "Mattingley, Christobel, author",
+        "date": "2016-01-01T00:00:00Z",
+        "description": [
+          "197 pages : 21 cm",
+          "Grandfather and Grandmother telling lots of stories. They had to live at Yalata. Their home was bombed. That was their home where the bomb went off. They thought it was mamu tjuta, evil spirits, coming. Everyone was frightened, thinking about people back in the bush. Didn't know what bomb was. Later told it was poison. Parents and grandparents really wanted to go home, used to talk all the time to get their land back.'..Yvonne Edwards was just six years old when the first bombs of the nuclear tests at Maralinga were detonated in 1956. The tests continued until 1963 and their consequences profoundly affected her family and community...This powerful book, by award-winning author Christobel Mattingley, honours Yvonne Edwards' legacy as a highly respected artist and community elder",
+          "\"The devastating and lasting costs to an Aboriginal community of the nuclear tests at Maralinga\"--Cover",
+          "Includes index",
+          "Includes bibliographical references and index"
+        ],
+        "identifier": "maralingaslongsh0000matt",
+        "publicdate": "2020-10-28T08:51:54Z",
+        "title": "Maralinga's long shadow : Yvonne's story"
+      }
+    ],
+    "numFound": 1,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 178,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Mamu&quot; AND (Anangu OR Pitjantjatjara OR spirit OR Australia)) AND mediatype:texts",
+      "query": "((text:Mamu OR text:Mamu OR text__reviews:Mamu) AND ((text:Anangu OR text:Anangu OR text__reviews:Anangu) OR (text:Pitjantjatjara OR text:Pitjantjatjara OR text__reviews:Pitjantjatjara) OR (text:spirit OR text:spirit OR text__reviews:spirit) OR (text:Australia OR text:Australia OR text__reviews:Australia))) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

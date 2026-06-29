@@ -1,0 +1,609 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/isbn_9781414438542",
+        "server": "dn760006.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/isbn_9781414438542",
+        "server": "dn790009.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/isbn_9781414438542",
+        "server": "dn760006.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/isbn_9781414438542",
+        "server": "dn790009.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1782061956,
+  "d1": "ia601606.us.archive.org",
+  "d2": "ia801606.us.archive.org",
+  "dir": "/12/items/isbn_9781414438542",
+  "files": [
+    {
+      "crc32": "7fd4c645",
+      "format": "Item Tile",
+      "md5": "3951e8459fca2944088ef4774fd9a50f",
+      "mtime": "1660372359",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "4331e8384ab619ed35aa3ba24c267f9c6ac181bf",
+      "size": "13439",
+      "source": "original"
+    },
+    {
+      "crc32": "4607d52b",
+      "format": "Backup",
+      "md5": "4659332ef9c29a964b3a4ec3e9aa1ec6",
+      "mtime": "1483783322",
+      "name": "bak/2017/isbn_9781414438542_meta.sqlite.bak",
+      "private": "true",
+      "sha1": "563e40684ead5821855778f1ba86284e54136e10",
+      "size": "9216",
+      "source": "original"
+    },
+    {
+      "crc32": "5a16e5b0",
+      "format": "Item CDX Index",
+      "md5": "654cda4a3ab03348f76b7a3822e55531",
+      "mtime": "1483957864",
+      "name": "isbn_9781414438542.cdx.gz",
+      "private": "true",
+      "sha1": "17e007ddd7b4152f54efeddf02824ceedf5c1685",
+      "size": "6039",
+      "source": "original"
+    },
+    {
+      "crc32": "4381c773",
+      "format": "Item CDX Meta-Index",
+      "md5": "62ea9806f8fdc15ec8eb07c24e2a60c9",
+      "mtime": "1483957864",
+      "name": "isbn_9781414438542.cdx.idx",
+      "private": "true",
+      "sha1": "ed0580ff9e34bbb2098e0e4fa49753693cb9d49b",
+      "size": "34",
+      "source": "original"
+    },
+    {
+      "crc32": "6f41a5be",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.62",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "0b0ebf2211c15b3289b50763d6bed863",
+      "mtime": "1753548578",
+      "name": "isbn_9781414438542.epub",
+      "original": "isbn_9781414438542_hocr.html",
+      "private": "true",
+      "sha1": "84e229e8c159cf64b165d1b6375b934205e501be",
+      "size": "6710277",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6b6b812b",
+      "format": "Animated GIF",
+      "md5": "aa74d669a02020044e3f4e2b7cefe1f2",
+      "mtime": "1483940005",
+      "name": "isbn_9781414438542.gif",
+      "original": "isbn_9781414438542_jp2.zip",
+      "sha1": "99f75396b609ac272d57ed377fc8d7f969081972",
+      "size": "212355",
+      "source": "derivative"
+    },
+    {
+      "crc32": "966299da",
+      "format": "LCP Encrypted PDF",
+      "md5": "3920151eb64700171b32600386d347ee",
+      "mtime": "1753548524",
+      "name": "isbn_9781414438542.lcpdf",
+      "original": "isbn_9781414438542.pdf",
+      "sha1": "1e86827ef9ce068e361f5e66905c3fb768d5ff37",
+      "size": "62421607",
+      "source": "derivative"
+    },
+    {
+      "crc32": "97fece42",
+      "format": "Text PDF",
+      "md5": "5fb3694f36771aa6d1cba339753a8444",
+      "mtime": "1726612318",
+      "name": "isbn_9781414438542.pdf",
+      "original": "isbn_9781414438542_page_numbers.json",
+      "private": "true",
+      "sha1": "d640f3ef2710a5e239c40b8ddfbcfbfa735a8d7c",
+      "size": "61912923",
+      "source": "derivative"
+    },
+    {
+      "crc32": "bfcdb0a5",
+      "format": "Web ARChive GZ",
+      "md5": "174eeff237d37adedebfee8bd0ca63b3",
+      "mtime": "1407859530",
+      "name": "isbn_9781414438542.warc.gz",
+      "sha1": "d07beb0c2c08f2cd488f263bf1df7c54170bd683",
+      "size": "533607",
+      "source": "original"
+    },
+    {
+      "crc32": "a0e45da5",
+      "format": "WARC CDX Index",
+      "md5": "c96d2c2fbe8cc28c3a699676a04e0561",
+      "mtime": "1483932055",
+      "name": "isbn_9781414438542.warc.os.cdx.gz",
+      "original": "isbn_9781414438542.warc.gz",
+      "private": "true",
+      "sha1": "54245108be9ee44d475fcd9fb4c2ffce844a5747",
+      "size": "6190",
+      "source": "derivative"
+    },
+    {
+      "crc32": "911150c7",
+      "format": "Abbyy GZ",
+      "md5": "b7841b8661cf01b7cbb95de19ffa171d",
+      "mtime": "1483951055",
+      "name": "isbn_9781414438542_abbyy.gz",
+      "original": "isbn_9781414438542_jp2.zip",
+      "private": "true",
+      "sha1": "b66a751c1e57afe713b01c91fe3974511eb043e4",
+      "size": "40803671",
+      "source": "derivative"
+    },
+    {
+      "crc32": "47670fe8",
+      "format": "chOCR",
+      "md5": "88fa408517ef69e12d5965fa59f22251",
+      "mtime": "1660371940",
+      "name": "isbn_9781414438542_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "isbn_9781414438542_abbyy.gz",
+      "private": "true",
+      "sha1": "b4c7e57bead2c6f9dbb4c733bc60a6f0fb0798b6",
+      "size": "35174916",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "5a57222b",
+      "format": "Cloth Cover Detection Log",
+      "md5": "24c10496c26fe0b772086049e1cad29e",
+      "mtime": "1670384342",
+      "name": "isbn_9781414438542_cloth_detection.log",
+      "original": "isbn_9781414438542_scandata.xml",
+      "private": "true",
+      "sha1": "7aa4c5fffff13e9f288bce28c89e6233e7b7e535",
+      "size": "764",
+      "source": "derivative"
+    },
+    {
+      "crc32": "c88a19ba",
+      "format": "Dublin Core",
+      "md5": "1e92356d0639521b32a75a7a9c327035",
+      "mtime": "1455023138",
+      "name": "isbn_9781414438542_dc.xml",
+      "sha1": "4aabb032f4439383ff1b121ecbd054851549288e",
+      "size": "2086",
+      "source": "original"
+    },
+    {
+      "crc32": "cdb3e66e",
+      "format": "DjVuTXT",
+      "md5": "734553a8a5eeafb5be09667e7da56234",
+      "mtime": "1660372332",
+      "name": "isbn_9781414438542_djvu.txt",
+      "original": "isbn_9781414438542_djvu.xml",
+      "private": "true",
+      "sha1": "a2e13aafab613a4c6b13605ec889df9eab2f84f0",
+      "size": "3192287",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2109093c",
+      "format": "Djvu XML",
+      "md5": "69fb86cf91a86c52d6f3f5427b4b4003",
+      "mtime": "1660372223",
+      "name": "isbn_9781414438542_djvu.xml",
+      "original": "isbn_9781414438542_hocr.html",
+      "private": "true",
+      "sha1": "9570d0654502ee72f8c4f3d7d9ad8823ae639cce",
+      "size": "37093815",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e508592f",
+      "format": "ACS Encrypted EPUB",
+      "md5": "4e79e004559768cd316814f4b6f475a6",
+      "mtime": "1509127007",
+      "name": "isbn_9781414438542_encrypted.epub",
+      "original": "isbn_9781414438542_jpg.pdf",
+      "sha1": "ddc2c98a174ac816773b9590e63710ee726ebc92",
+      "size": "1323604",
+      "source": "derivative"
+    },
+    {
+      "crc32": "fe3189dc",
+      "format": "ACS Encrypted PDF",
+      "md5": "e5211be4f360af71e239436f212d1ab9",
+      "mtime": "1726612784",
+      "name": "isbn_9781414438542_encrypted.pdf",
+      "original": "isbn_9781414438542.pdf",
+      "sha1": "4fdbb75da98f58fd0291fbb0a00b774aa4220d83",
+      "size": "61835431",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5cd72bff",
+      "format": "JSON",
+      "md5": "efe1121be082bc6055b66084e7e9b5e7",
+      "mtime": "1483931944",
+      "name": "isbn_9781414438542_events.json",
+      "private": "true",
+      "sha1": "fe22240a73ce89cf0b5aeac27d69d087c4fed033",
+      "size": "54",
+      "source": "original"
+    },
+    {
+      "crc32": "56d6b05a",
+      "format": "Metadata",
+      "md5": "2c0d014344905e1613303174f183c0c2",
+      "mtime": "1407903443",
+      "name": "isbn_9781414438542_extramarc.xml",
+      "sha1": "fd9cbdc44041def07bc2dfddc5eb906f2f2595eb",
+      "size": "7592",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "1d921a6237be45967ea4110002f22814",
+      "name": "isbn_9781414438542_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "686da86e",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "8371cda709629dc951427a7b7d9ce155",
+      "mtime": "1660372117",
+      "name": "isbn_9781414438542_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "isbn_9781414438542_chocr.html.gz",
+      "private": "true",
+      "sha1": "7310745353805912c965a2bed83292cf25e01b51",
+      "size": "72914728",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a866d8f1",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "ffce1b003baac91d91b4bdabed8cfe28",
+      "mtime": "1660372270",
+      "name": "isbn_9781414438542_hocr_pageindex.json.gz",
+      "original": "isbn_9781414438542_hocr.html",
+      "private": "true",
+      "sha1": "b131ccc92a3e9830539b6ea5ac1ca7d246d8d91c",
+      "size": "6211",
+      "source": "derivative"
+    },
+    {
+      "crc32": "aaf7316b",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "3ec5710c5baabcac397f5263245128c3",
+      "mtime": "1660372316",
+      "name": "isbn_9781414438542_hocr_searchtext.txt.gz",
+      "original": "isbn_9781414438542_hocr.html",
+      "private": "true",
+      "sha1": "32bd065068dad0e4b92c9b854ebf05b0e566cee0",
+      "size": "1080874",
+      "source": "derivative",
+      "word_conf_0_10": "14125",
+      "word_conf_11_20": "7881",
+      "word_conf_21_30": "11109",
+      "word_conf_31_40": "17183",
+      "word_conf_41_50": "19786",
+      "word_conf_51_60": "27690",
+      "word_conf_61_70": "38361",
+      "word_conf_71_80": "47510",
+      "word_conf_81_90": "48994",
+      "word_conf_91_100": "236394"
+    },
+    {
+      "crc32": "8f81b1fe",
+      "filecount": "490",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "b9a481746b16c9d8aaf529a00e1e2845",
+      "mtime": "1483939949",
+      "name": "isbn_9781414438542_jp2.zip",
+      "original": "isbn_9781414438542_orig_jp2.tar",
+      "private": "true",
+      "sha1": "a33d957b871576430edafadc5fbf01f741a3ca4b",
+      "size": "406457637",
+      "source": "derivative"
+    },
+    {
+      "crc32": "64244fb4",
+      "format": "JPEG-Compressed PDF",
+      "md5": "12840589dbcb36b781da691851b17afc",
+      "mtime": "1509126856",
+      "name": "isbn_9781414438542_jpg.pdf",
+      "original": "isbn_9781414438542_abbyy.gz",
+      "private": "true",
+      "sha1": "e0f3ccd5aaaad0fa1f2c81ad5213583581b40dfc",
+      "size": "159209340",
+      "source": "derivative"
+    },
+    {
+      "crc32": "16eec076",
+      "format": "LCP Encrypted EPUB",
+      "md5": "93697fde59d95012e99e2566b6dabd3e",
+      "mtime": "1753548602",
+      "name": "isbn_9781414438542_lcp.epub",
+      "original": "isbn_9781414438542.epub",
+      "sha1": "45814ed10ec53221940b66af06a0ca222170f107",
+      "size": "7269445",
+      "source": "derivative"
+    },
+    {
+      "crc32": "34bec830",
+      "format": "JSON",
+      "md5": "6b39cd9a88cdf8232d4ef1d1a948e412",
+      "mtime": "1593037737",
+      "name": "isbn_9781414438542_loans.json",
+      "private": "true",
+      "sha1": "a11f4ddcb9feca958019a687eb7a51c9d0c2660c",
+      "size": "2533",
+      "source": "original"
+    },
+    {
+      "crc32": "5eb26536",
+      "format": "MARC",
+      "md5": "3c43814757ba15f5f3a737bfa378d5a6",
+      "mtime": "1455023138",
+      "name": "isbn_9781414438542_marc.xml",
+      "sha1": "020afc508e012faf0bc9f1de70f795377d9526ac",
+      "size": "8798",
+      "source": "original"
+    },
+    {
+      "crc32": "cff2636e",
+      "format": "Metadata Log",
+      "md5": "6c545bc0fc1e1b6aaf93595df5794fc6",
+      "mtime": "1483932057",
+      "name": "isbn_9781414438542_meta.log",
+      "original": "isbn_9781414438542_xisbn.json",
+      "private": "true",
+      "sha1": "ac4eaca3bb11d274c0195bdc2935c399c08daf55",
+      "size": "137",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f8d45e11",
+      "format": "MARC Binary",
+      "md5": "b0cbfb34eade642db73093b846cee67e",
+      "mtime": "1455023138",
+      "name": "isbn_9781414438542_meta.mrc",
+      "sha1": "550291b20e5f41b175291987efb441582772948b",
+      "size": "3139",
+      "source": "original"
+    },
+    {
+      "crc32": "c1305f26",
+      "format": "Metadata",
+      "md5": "5ec5a9996e7f9267da211351928def8e",
+      "mtime": "1483931992",
+      "name": "isbn_9781414438542_meta.sqlite",
+      "sha1": "61f6e9e13b68fae828bf1837e2d31603c9936711",
+      "size": "13312",
+      "source": "original"
+    },
+    {
+      "crc32": "984ef69b",
+      "format": "Metadata",
+      "md5": "876482178aa0e72945aab895c383a31f",
+      "mtime": "1772120951",
+      "name": "isbn_9781414438542_meta.xml",
+      "sha1": "11b52c066997ac02b44b9d1f969490e7ad2e3951",
+      "size": "4068",
+      "source": "original"
+    },
+    {
+      "crc32": "80f22930",
+      "format": "MARC Source",
+      "md5": "017a1e5f5baa1732da01c8a9fafb391d",
+      "mtime": "1407859530",
+      "name": "isbn_9781414438542_metasource.xml",
+      "sha1": "7b7e1145cb3e5b7f573384e6081412bc8f990b5a",
+      "size": "295",
+      "source": "original"
+    },
+    {
+      "crc32": "be164eec",
+      "filecount": "490",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "b251e5f81040511d8ea5f1431b7a6aef",
+      "mtime": "1483931992",
+      "name": "isbn_9781414438542_orig_jp2.tar",
+      "private": "true",
+      "sha1": "95b3e6ad8a1b907860347ddb6e52c5e45cd3acc6",
+      "size": "483860480",
+      "source": "original"
+    },
+    {
+      "crc32": "06c30efd",
+      "format": "Text",
+      "md5": "e202274cbd6c09943f67ec0ec7cca254",
+      "mtime": "1483783193",
+      "name": "isbn_9781414438542_origin.txt",
+      "private": "true",
+      "sha1": "68dac6fbabd35cc9e6e2d57cb36638927c082b24",
+      "size": "43",
+      "source": "original"
+    },
+    {
+      "crc32": "82cd0601",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "97",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "d4dafe15f8b576e49953f408ce47b50c",
+      "mtime": "1726612317",
+      "name": "isbn_9781414438542_page_numbers.json",
+      "original": "isbn_9781414438542_hocr.html",
+      "private": "true",
+      "sha1": "2fa0b932d40b0c0823c6552e10b8f26592d79a89",
+      "size": "81796",
+      "source": "derivative"
+    },
+    {
+      "crc32": "62991839",
+      "format": "Scandata",
+      "md5": "bb52b39032bbcda84d63316aefa5fadc",
+      "mtime": "1670384342",
+      "name": "isbn_9781414438542_scandata.xml",
+      "sha1": "98fa4a586c625bdf68b6296dab1f36d98abea33b",
+      "size": "497223",
+      "source": "original"
+    },
+    {
+      "crc32": "c994c7aa",
+      "format": "OCLC xISBN JSON",
+      "md5": "26975b803f7761c5af3f208179cf8f91",
+      "mtime": "1454989628",
+      "name": "isbn_9781414438542_xisbn.json",
+      "sha1": "f9b17c1ba643499f0870fa5fc0a49d2f3884bab2",
+      "size": "315",
+      "source": "original"
+    }
+  ],
+  "files_count": 39,
+  "item_last_updated": 1772120951,
+  "item_size": 1442670281,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2014-08-12 16:05:33.081209",
+    "backup_location": "ia905902_4",
+    "bookplateleaf": "0003",
+    "boxid": "IA1147406",
+    "city": "Detroit, Mich.",
+    "collection": [
+      "inlibrary",
+      "printdisabled",
+      "pub_nineteenth-century-literature-criticism",
+      "internetarchivebooks",
+      "periodicals"
+    ],
+    "contributor": "Internet Archive",
+    "creator": "Darrow, Kathy D",
+    "date": "2010",
+    "description": [
+      "Description based on print version record",
+      "Adultery in 19th-Century literature -- Victorian ghost stories -- Women and medicine",
+      "Presents literary criticism on the works of nineteenth-century writers of all genres, nations, and cultures. Critical essays are selected from leading sources, including published journals, magazines, books, reviews, diaries, broadsheets, pamphlets, and scholarly papers. Criticism includes early views from the author's lifetime as well as later views, including extensive collections of contemporary analysis"
+    ],
+    "donor": "bostonpubliclibrary",
+    "external-identifier": [
+      "urn:acs6:isbn_9781414438542:pdf:758f224a-5f0e-40f4-b0e9-dabcd44c99a5",
+      "urn:acs6:isbn_9781414438542:epub:48b23b43-6926-40ad-b8c1-237fd7a157f3",
+      "urn:oclc:record:644729299",
+      "urn:lcp:isbn_9781414438542:lcpdf:3ed87246-ffec-44e7-8958-3a5160906206",
+      "urn:lcp:isbn_9781414438542:epub:910d0078-dbf5-48f4-82d9-e832549a552e"
+    ],
+    "extramarc": "The Indiana University Catalog",
+    "filesxml": "Wed Apr 3 6:21:06 UTC 2024",
+    "foldoutcount": "0",
+    "identifier": "isbn_9781414438542",
+    "identifier-access": "http://archive.org/details/isbn_9781414438542",
+    "identifier-ark": "ark:/13960/t55f2wb44",
+    "imagecount": "490",
+    "invoice": "1213",
+    "isbn": [
+      "9781414438542",
+      "1414438540"
+    ],
+    "issn": "0732-1864",
+    "language": "eng",
+    "mediatype": "texts",
+    "oclc-id": "785707973",
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.17",
+    "openlibrary_edition": "OL26284352M",
+    "openlibrary_work": "OL17681071W",
+    "operator": "associate-yanting-liang@archive.org",
+    "page-progression": "lr",
+    "page_number_confidence": "97",
+    "page_number_module_version": "1.0.5",
+    "ppi": "300",
+    "publicdate": "2014-08-12 16:05:37",
+    "publisher": "Detroit, Mich. : Gale",
+    "repub_state": "22",
+    "republisher_date": "20170109111850",
+    "republisher_operator": "republisher13.shenzhen@archive.org",
+    "republisher_time": "940",
+    "scandate": "20170107110303",
+    "scanfee": "11",
+    "scanner": "ttscribe1.hongkong.archive.org",
+    "scanningcenter": "hongkong",
+    "shipping_container": "SZ0023",
+    "source": "removedNEL",
+    "sponsordate": "20170131",
+    "subject": [
+      "American fiction",
+      "European literature",
+      "American literature",
+      "English literature",
+      "Literature",
+      "Literature",
+      "Literature",
+      "Literature",
+      "Literature, Modern",
+      "Literature, Modern",
+      "Literature, Modern"
+    ],
+    "title": "Nineteenth-century literature criticism. [electronic resource]",
+    "updatedate": "2014-08-12 16:05:28",
+    "updater": "associate-lotu-tii@archive.org",
+    "uploader": "associate-lotu-tii@archive.org"
+  },
+  "server": "ia801606.us.archive.org",
+  "uniq": 980618832,
+  "workable_servers": [
+    "ia801606.us.archive.org",
+    "ia601606.us.archive.org"
+  ],
+  "xisbn": {
+    "list": [
+      {
+        "author": "Kathy Darrow, editor.",
+        "city": "Detroit, Mich.",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "1414438540"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "644729299",
+          "785707973"
+        ],
+        "publisher": "Gale",
+        "title": "Nineteenth-century literature criticism.",
+        "url": [
+          "http://www.worldcat.org/oclc/644729299?referer=xid"
+        ],
+        "year": "2010"
+      }
+    ],
+    "stat": "ok"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "On the Occurrence of Mesozoic and Permian Faunæ in Eastern Australia",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1144/gsl.jgs.1862.018.01-02.36",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "1862-02-01",
+  "publication": "Quarterly Journal of the Geological Society",
+  "author": "William Branwhite Clarke",
+  "region_signal": "Queensland",
+  "location_confidence": "medium",
+  "abstract": "Since I forwarded my remarks on the “Relative Positions of certain Plants in the Coal-hearing Beds of Australia,” which were published in the Quarterly Journal, vol.xvii. pp. 354–362, I have received, from a friend who is engaged, under my direction, in exploring the country between the Balonne and Maranoa Rivers (now a portion of the new colony of Queensland), a collection of fossils which will serve, to a certain degree, to meet the remark I made at p, 361, respecting “the want of good unmistakeable deposits in which the animal remains will leave no further room for doubt.” Mr. W. P. Gordon, a young squatter on Wollumbilla Creek, one of the branches of the “Yahoo River” of Leichhardt, was requested by me to search his neighbourhood and the Fitzroy Downs for fossils; and he has been enabled to send me a very goodly collection. The specimens are accompanied by the pale sandstones of the Creek, and hard red conglomerates and quartzites from between Wollumbilla and the River Amby of Mitchell, including a tract on Fitzroy Downs nearly halfway to Mount Abundance. On receiving them, I reported at once to Sir Henry Barkly, the Governor of Victoria, who has taken a deep interest in the little matters of difference in opinion between Prof. M'Coy and myself respecting the Coal-epochs, that I had obtained Mesozoic evidence (enumerating many of the genera), and that I should be obliged if he would submit them to Prof. M'Coy, to whom I wished them referred, because",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

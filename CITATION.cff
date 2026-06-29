@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this repository, public archive interface, database structure, or exported review tables, please cite the project and include export filenames where relevant."
+title: "Australian Public Text Archive of Supernatural Humanoid Narratives and Encounters"
+authors:
+  - family-names: "Pan"
+    given-names: "Dai"
+year: 2026
+date-released: "2026-06-29"
+version: "0.1.0"
+repository-code: "https://github.com/dpan538/australian-humanoid-supernatural-texts"
+url: "https://ausfigures.com"
+abstract: "A source-grounded public-text archive and research display for Australian supernatural humanoid narratives, encounters, apparitions, legends, and retellings. Inclusion means a public source or public metadata record exists; it does not verify any supernatural claim."
+keywords:
+  - "digital humanities"
+  - "public archive"
+  - "Australian history"
+  - "source-grounded research"
+  - "research interface"

@@ -1,0 +1,576 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/aboriginalartofa00finl",
+        "server": "dn760107.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/aboriginalartofa00finl",
+        "server": "dn790000.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/aboriginalartofa00finl",
+        "server": "dn760107.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/aboriginalartofa00finl",
+        "server": "dn790000.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1781957407,
+  "d1": "ia600408.us.archive.org",
+  "d2": "ia800408.us.archive.org",
+  "dir": "/34/items/aboriginalartofa00finl",
+  "files": [
+    {
+      "crc32": "a229e3c6",
+      "format": "Item Tile",
+      "md5": "9f80161bb3a140836e0d291207d8f89e",
+      "mtime": "1658128277",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "ce8a0d50dc04b5d6d516eab5d321378cdf301564",
+      "size": "11061",
+      "source": "original"
+    },
+    {
+      "crc32": "ef0760cb",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.62",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "e24f990e72e92041dadedc795715f120",
+      "mtime": "1752994116",
+      "name": "aboriginalartofa00finl.epub",
+      "original": "aboriginalartofa00finl_hocr.html",
+      "private": "true",
+      "sha1": "9b136c090805a7b557290819ecb76c0cdea28fe6",
+      "size": "14910630",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1dc11bd0",
+      "format": "Animated GIF",
+      "md5": "def830f9051fa4a052a2d577872b9c07",
+      "mtime": "1286585441",
+      "name": "aboriginalartofa00finl.gif",
+      "original": "aboriginalartofa00finl_jp2.zip",
+      "sha1": "a6dd5e907ff1d5088d5340fad3b9d8d40ee6c191",
+      "size": "215931",
+      "source": "derivative"
+    },
+    {
+      "crc32": "03a1e6b3",
+      "format": "LCP Encrypted PDF",
+      "md5": "6574c7e3c908a0e56bd09c639ac31f17",
+      "mtime": "1752994042",
+      "name": "aboriginalartofa00finl.lcpdf",
+      "original": "aboriginalartofa00finl.pdf",
+      "sha1": "2feef4ebb6e41864fbe153a65141e33ba8503ca7",
+      "size": "5026148",
+      "source": "derivative"
+    },
+    {
+      "crc32": "40a3657e",
+      "format": "Text PDF",
+      "md5": "ecb9761946dfd8f0bf8d7e81ef3d17c6",
+      "mtime": "1714047624",
+      "name": "aboriginalartofa00finl.pdf",
+      "original": "aboriginalartofa00finl_page_numbers.json",
+      "private": "true",
+      "sha1": "c906957ad6a47a9f7e8e8f63dbc0974b8d4c0648",
+      "size": "4640278",
+      "source": "derivative"
+    },
+    {
+      "crc32": "53362ed1",
+      "format": "Abbyy GZ",
+      "md5": "c02df5e0b597d1b5507fde18633f5de2",
+      "mtime": "1286615777",
+      "name": "aboriginalartofa00finl_abbyy.gz",
+      "original": "aboriginalartofa00finl_jp2.zip",
+      "private": "true",
+      "sha1": "d6c4c49154be3cb12d34a42724b1b30c77d01b49",
+      "size": "637104",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5aa55c26",
+      "format": "chOCR",
+      "md5": "1ba9c8cb1ca1d367448fc5c08e406997",
+      "mtime": "1658124930",
+      "name": "aboriginalartofa00finl_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.16",
+      "original": "aboriginalartofa00finl_abbyy.gz",
+      "private": "true",
+      "sha1": "0e907c2cda36101d5b351f47e769708e81628433",
+      "size": "520239",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "e1dd12e0",
+      "format": "Cloth Cover Detection Log",
+      "md5": "817bc7d85fd830f56129c509929fe2ae",
+      "mtime": "1658125131",
+      "name": "aboriginalartofa00finl_cloth_detection.log",
+      "original": "aboriginalartofa00finl_scandata.xml",
+      "private": "true",
+      "sha1": "3c2f18ebda24b6ccf97d5d9c77e54e089f60d001",
+      "size": "778",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ab5b307d",
+      "format": "Dublin Core",
+      "md5": "6de0116e691fe89860486c2aaf5f5daa",
+      "mtime": "1285695833",
+      "name": "aboriginalartofa00finl_dc.xml",
+      "sha1": "9269bff08be4f9042023222fd71b81049b0cbc45",
+      "size": "1383",
+      "source": "original"
+    },
+    {
+      "crc32": "7396d7ef",
+      "format": "DjVuTXT",
+      "md5": "e59ee06c40de50ef697293563a2a93ab",
+      "mtime": "1721842769",
+      "name": "aboriginalartofa00finl_djvu.txt",
+      "original": "aboriginalartofa00finl_djvu.xml",
+      "private": "true",
+      "sha1": "3d36d7a14e2aa04797205706976dfa23b775c837",
+      "size": "46895",
+      "source": "derivative"
+    },
+    {
+      "crc32": "21cca396",
+      "format": "Djvu XML",
+      "md5": "65b74acc2c06bb5531d2f050176c5654",
+      "mtime": "1721842767",
+      "name": "aboriginalartofa00finl_djvu.xml",
+      "original": "aboriginalartofa00finl_hocr.html",
+      "private": "true",
+      "sha1": "4e3002eb5471081c73ae76de8624fd4f644d047f",
+      "size": "550417",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0964b648",
+      "format": "ACS Encrypted PDF",
+      "md5": "a3fbe5d7b5b309981c0803c9b3b65ad5",
+      "mtime": "1714047656",
+      "name": "aboriginalartofa00finl_encrypted.pdf",
+      "original": "aboriginalartofa00finl.pdf",
+      "sha1": "c27ffcc87d541b8bc901882ac9eabaae43bcb738",
+      "size": "4624176",
+      "source": "derivative"
+    },
+    {
+      "format": "Metadata",
+      "md5": "0c3a6dd00e92499b9655f0fc8f7740c1",
+      "name": "aboriginalartofa00finl_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "7a812d08",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "d2b65e56ac4ef404db806a9a00e75b46",
+      "mtime": "1658125244",
+      "name": "aboriginalartofa00finl_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.16",
+      "original": "aboriginalartofa00finl_chocr.html.gz",
+      "private": "true",
+      "sha1": "ab6c4ab0af0be567da4e2969ca58f720078edf51",
+      "size": "1059849",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e67cd1f6",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "8ff2671575316d5a26e579fa8e24b6cc",
+      "mtime": "1658125332",
+      "name": "aboriginalartofa00finl_hocr_pageindex.json.gz",
+      "original": "aboriginalartofa00finl_hocr.html",
+      "private": "true",
+      "sha1": "511dffd8f68bce5b6290a322d362711cd81a74f2",
+      "size": "714",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7428428a",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "70cfbd912c1081195e3aa22be09c2f03",
+      "mtime": "1658125373",
+      "name": "aboriginalartofa00finl_hocr_searchtext.txt.gz",
+      "original": "aboriginalartofa00finl_hocr.html",
+      "private": "true",
+      "sha1": "8d6d795715c94a69f1372c0e67a280da30cae636",
+      "size": "17166",
+      "source": "derivative",
+      "word_conf_0_10": "464",
+      "word_conf_11_20": "440",
+      "word_conf_21_30": "612",
+      "word_conf_31_40": "717",
+      "word_conf_41_50": "1093",
+      "word_conf_51_60": "1103",
+      "word_conf_61_70": "952",
+      "word_conf_71_80": "515",
+      "word_conf_81_90": "176",
+      "word_conf_91_100": "346"
+    },
+    {
+      "crc32": "b538ed9e",
+      "filecount": "70",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "2b9e725e047960dedd7c98d9b243f62e",
+      "mtime": "1286585414",
+      "name": "aboriginalartofa00finl_jp2.zip",
+      "original": "aboriginalartofa00finl_orig_jp2.tar",
+      "private": "true",
+      "sha1": "8ccfd201b45ca85f7990221ef2ceff90ed87f4b3",
+      "size": "21974870",
+      "source": "derivative"
+    },
+    {
+      "crc32": "414261ef",
+      "format": "LCP Encrypted EPUB",
+      "md5": "e6b3f6c1b809c8b7cd6cb717875f1b0d",
+      "mtime": "1752994155",
+      "name": "aboriginalartofa00finl_lcp.epub",
+      "original": "aboriginalartofa00finl.epub",
+      "sha1": "fb157449d0282665eb3a3e8acf8e880a1db4ff68",
+      "size": "14979378",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ef069683",
+      "format": "JSON",
+      "md5": "950bdf45a1d00cc1715ee65d887572d1",
+      "mtime": "1588471250",
+      "name": "aboriginalartofa00finl_loans.json",
+      "private": "true",
+      "sha1": "f21abeabcc018a77b4da6d5a6265cab67e4d7ab5",
+      "size": "11692",
+      "source": "original"
+    },
+    {
+      "crc32": "ab2a4a81",
+      "format": "MARC",
+      "md5": "d3455207b4298a37d5541d35fcf02c75",
+      "mtime": "1285695833",
+      "name": "aboriginalartofa00finl_marc.xml",
+      "sha1": "404f002da22b6a98141dfef9b36fe08eddd7c484",
+      "size": "6302",
+      "source": "original"
+    },
+    {
+      "crc32": "57226bb4",
+      "format": "Metadata Log",
+      "md5": "eac643bb282405cfe69caf60f5671299",
+      "mtime": "1454314488",
+      "name": "aboriginalartofa00finl_meta.log",
+      "original": "aboriginalartofa00finl_xisbn.json",
+      "private": "true",
+      "sha1": "63e9afe3211e8d0e22cadfea9a676394bd3fe52b",
+      "size": "598",
+      "source": "derivative"
+    },
+    {
+      "crc32": "c490a6c5",
+      "format": "MARC Binary",
+      "md5": "fae15773f3a07d2a2ad39a986ebfc26f",
+      "mtime": "1285695833",
+      "name": "aboriginalartofa00finl_meta.mrc",
+      "sha1": "a668f75215308e9875ef746c7e1873aae396e3f1",
+      "size": "2083",
+      "source": "original"
+    },
+    {
+      "crc32": "f76edeb4",
+      "format": "Metadata",
+      "md5": "3aa2756abae4adb6332a370c7c39add2",
+      "mtime": "1464311029",
+      "name": "aboriginalartofa00finl_meta.sqlite",
+      "sha1": "3720adf5409d84991896800e2367a469392f7637",
+      "size": "6144",
+      "source": "original"
+    },
+    {
+      "crc32": "5e4dfef4",
+      "format": "Metadata",
+      "md5": "0c1bad26b08ad4d4b2a2379269a914a3",
+      "mtime": "1752994156",
+      "name": "aboriginalartofa00finl_meta.xml",
+      "sha1": "9f53ac8c4100792a6c0cfd4c324a9ad433f58a0f",
+      "size": "4422",
+      "source": "original"
+    },
+    {
+      "crc32": "d41a8ba2",
+      "format": "MARC Source",
+      "md5": "f39ff9cd6ec61ad74de865575f34e9ae",
+      "mtime": "1285695833",
+      "name": "aboriginalartofa00finl_metasource.xml",
+      "sha1": "966cde21834b963d5f985e946ca94196648402de",
+      "size": "400",
+      "source": "original"
+    },
+    {
+      "crc32": "50e2cb42",
+      "filecount": "70",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "14b9d74abecb57488381575d65767368",
+      "mtime": "1286583258",
+      "name": "aboriginalartofa00finl_orig_jp2.tar",
+      "private": "true",
+      "sha1": "375b2687915ad43ea6411198d940b45bd1631a43",
+      "size": "36720640",
+      "source": "original"
+    },
+    {
+      "crc32": "77bebfbe",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "85",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "5cc861bc55c460e3203935811a47f459",
+      "mtime": "1714047624",
+      "name": "aboriginalartofa00finl_page_numbers.json",
+      "original": "aboriginalartofa00finl_hocr.html",
+      "private": "true",
+      "sha1": "2478ba05da41704eb978c170f2af45f0978e42cc",
+      "size": "10903",
+      "source": "derivative"
+    },
+    {
+      "crc32": "81d64c07",
+      "format": "Scandata",
+      "md5": "0886c40396e8585bc255abd9cb8cdee4",
+      "mtime": "1658125130",
+      "name": "aboriginalartofa00finl_scandata.xml",
+      "sha1": "31364128bac001c51098833e7aed2d057555a088",
+      "size": "36555",
+      "source": "original"
+    },
+    {
+      "crc32": "7164a4f5",
+      "format": "OCLC xISBN JSON",
+      "md5": "409f35cc386992410a404dd41f34a553",
+      "mtime": "1454009452",
+      "name": "aboriginalartofa00finl_xisbn.json",
+      "sha1": "ac156d0decd78a5af73499314212e87eb51d1130",
+      "size": "696",
+      "source": "original"
+    }
+  ],
+  "files_count": 29,
+  "item_last_updated": 1752994156,
+  "item_size": 106017452,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2010-09-28 17:43:55",
+    "backup_location": "ia903606_20",
+    "bookplateleaf": "0003",
+    "boxid": "IA128205",
+    "camera": "Canon 5D",
+    "city": "Minneapolis, MN",
+    "collection": [
+      "internetarchivebooks",
+      "americana",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "contributor": "Internet Archive",
+    "creator": "Finley, Carol",
+    "curation": "[curator]paul.n@archive.org[/curator][date]20101104075339[/date][state]approved[/state]",
+    "date": "1999",
+    "description": [
+      "Includes bibliographical references (p. 54) and index",
+      "Introduction to Aboriginal art: Dreaming -- Bark paintings of Arnhem Land: Mimi myth -- Stars -- Animals in painting -- Tracks and footprints -- Kimberley region: Wandjina -- Weather -- Christianity -- Desert paintings: Animal tracks -- Dreamtime -- Conclusion",
+      "Describes the art of the Australian Aborigines including rock painting and engraving as well as sand and bark painting; also discusses the symbolism found in these works"
+    ],
+    "donor": "bostonpubliclibrary",
+    "external-identifier": [
+      "urn:acs6:aboriginalartofa00finl:pdf:a21ebdd9-7a38-483e-b124-f0cbe023ad05",
+      "urn:acs6:aboriginalartofa00finl:epub:1fe67179-bf33-4e16-a3f9-ef145bc92054",
+      "urn:oclc:record:1023755643",
+      "urn:lcp:aboriginalartofa00finl:lcpdf:5b2a7e8d-c155-4edd-9538-d4dd630f88b6",
+      "urn:lcp:aboriginalartofa00finl:epub:d7f7e0a2-7f0f-4dae-a191-a3fed5dc5573"
+    ],
+    "filesxml": [
+      "Wed Dec 23 1:44:35 UTC 2020",
+      "Tue Apr 2 20:37:46 UTC 2024"
+    ],
+    "foldoutcount": "0",
+    "identifier": "aboriginalartofa00finl",
+    "identifier-access": "http://www.archive.org/details/aboriginalartofa00finl",
+    "identifier-ark": "ark:/13960/t3708v14j",
+    "imagecount": "68",
+    "isbn": [
+      "0822520761",
+      "9780822520764"
+    ],
+    "language": "eng",
+    "lccn": "97028467",
+    "loans__status__last_loan_date": "2020-04-14T00:23:57Z",
+    "loans__status__last_waitlist_date": "2019-01-18T04:02:16Z",
+    "loans__status__num_history": "30",
+    "loans__status__num_loans": "0",
+    "loans__status__num_waitlist": "0",
+    "loans__status__status": "AVAILABLE",
+    "mediatype": "texts",
+    "oclc-id": [
+      "37315360",
+      "42660133",
+      "490721578",
+      "670106722",
+      "689919059"
+    ],
+    "ocr": "ABBYY FineReader 8.0",
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.16",
+    "openlibrary_edition": "OL681831M",
+    "openlibrary_work": "OL1841576W",
+    "operator": "scanner-romeo-baful@archive.org",
+    "page-progression": "lr",
+    "page_number_confidence": "85",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.18",
+    "ppi": "400",
+    "publicdate": "2010-09-28 17:44:02",
+    "publisher": "Minneapolis, MN : Lerner Publications",
+    "related-external-id": [
+      "urn:isbn:158013372X",
+      "urn:oclc:180475888",
+      "urn:oclc:780939500"
+    ],
+    "repub_state": "4",
+    "scandate": "20101009000711",
+    "scanner": "scribe6.sfdowntown.archive.org",
+    "scanningcenter": "sfdowntown",
+    "source": "removedNEL",
+    "sponsor": "Internet Archive",
+    "subject": [
+      "Painting, Aboriginal Australian",
+      "Aboriginal Australians",
+      "Painting, Australian",
+      "Aboriginal Australians",
+      "Art appreciation"
+    ],
+    "title": "Aboriginal art of Australia : exploring cultural traditions",
+    "updatedate": "2010-09-28 17:43:53",
+    "updater": "AltheaB",
+    "uploader": "althea@archive.org"
+  },
+  "server": "ia800408.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "bpljordan-ol": {
+        "notes": {
+          "isbn": [
+            "9780822520764"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charles.horn@gmail.com"
+        },
+        "sys_last_changed": "2019-06-27 10:22:23.111758"
+      },
+      "cnusd-ol": {
+        "notes": {
+          "isbn": [
+            "9780822520764"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-05-25 07:18:33.344585"
+      },
+      "marymount-ol": {
+        "notes": {
+          "isbn": [
+            "9780822520764"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-06-04 05:13:06.089686"
+      }
+    }
+  },
+  "uniq": 776345579,
+  "workable_servers": [
+    "ia800408.us.archive.org",
+    "ia600408.us.archive.org"
+  ],
+  "xisbn": {
+    "list": [
+      {
+        "author": "by Carol Finley.",
+        "city": "Minneapolis, MN",
+        "form": [
+          "BA"
+        ],
+        "isbn": [
+          "0822520761"
+        ],
+        "lang": "eng",
+        "lccn": [
+          "97028467"
+        ],
+        "oclcnum": [
+          "37315360",
+          "42660133",
+          "490721578",
+          "670106722",
+          "689919059"
+        ],
+        "publisher": "Lerner Publications",
+        "title": "Aboriginal art of Australia : exploring cultural traditions",
+        "url": [
+          "http://www.worldcat.org/oclc/37315360?referer=xid"
+        ],
+        "year": "1999"
+      },
+      {
+        "author": "Carol Finley.",
+        "city": "London",
+        "form": [
+          "BC"
+        ],
+        "isbn": [
+          "158013372X"
+        ],
+        "lang": "eng",
+        "oclcnum": [
+          "180475888",
+          "780939500"
+        ],
+        "publisher": "Lerner",
+        "title": "Aboriginal art of Australia : exploring cultural traditions",
+        "url": [
+          "http://www.worldcat.org/oclc/180475888?referer=xid"
+        ],
+        "year": "2008"
+      }
+    ],
+    "stat": "ok"
+  }
+}

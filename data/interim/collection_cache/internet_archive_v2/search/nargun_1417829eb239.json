@@ -1,0 +1,72 @@
+{
+  "response": {
+    "docs": [
+      {
+        "creator": "Wrightson, Patricia",
+        "date": "1986-01-01T00:00:00Z",
+        "description": [
+          "Map on lining paper",
+          "An ancient stone creature threatens the lives of a family on a lonely sheep farm in Australia"
+        ],
+        "identifier": "nargunstars00wrig",
+        "publicdate": "2011-03-30T20:14:52Z",
+        "title": "The Nargun and the stars"
+      },
+      {
+        "creator": "Wrightson, Patricia",
+        "date": "1974-01-01T00:00:00Z",
+        "description": [
+          "184 p. 22 cm",
+          "An ancient stone creature threatens the lives of a family on a lonely sheep farm in Australia",
+          "\"A Margaret K. McElderry book.\""
+        ],
+        "identifier": "nargunstars0000wrig_j0u1",
+        "publicdate": "2022-04-26T14:03:23Z",
+        "title": "The Nargun and the stars"
+      },
+      {
+        "creator": "Wrightson, Patricia",
+        "date": "1988-01-01T00:00:00Z",
+        "description": [
+          "184 pages, 2 unnumbered pages of plates : 20 cm",
+          "An ancient stone creature threatens the lives of a family on a lonely sheep farm in Australia"
+        ],
+        "identifier": "isbn_9780833518576",
+        "publicdate": "2020-08-26T04:36:35Z",
+        "title": "The Nargun and the stars"
+      },
+      {
+        "creator": "A Kemp",
+        "date": "1983-01-01T00:00:00Z",
+        "identifier": "biostor-259575",
+        "publicdate": "2022-07-21T20:52:02Z",
+        "title": "Ceratodus nargun, a new Early Cretaceous ceratodont lungfish from Cape Lewis, Victoria"
+      },
+      {
+        "creator": "Wrightson, Patricia",
+        "date": "1988-01-01T00:00:00Z",
+        "description": [
+          "142 pages",
+          "An ancient stone creature threatens the lives of a family on a lonely sheep farm in Australia"
+        ],
+        "identifier": "nargunstars0000wrig",
+        "publicdate": "2021-05-06T08:23:39Z",
+        "title": "The nargun and the stars"
+      }
+    ],
+    "numFound": 5,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 20,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Nargun&quot; AND (Gippsland OR Victoria OR Australia)) AND mediatype:texts",
+      "query": "((text:Nargun OR text:Nargun OR text__reviews:Nargun) AND ((text:Gippsland OR text:Gippsland OR text__reviews:Gippsland) OR (text:Victoria OR text:Victoria OR text__reviews:Victoria) OR (text:Australia OR text:Australia OR text__reviews:Australia))) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

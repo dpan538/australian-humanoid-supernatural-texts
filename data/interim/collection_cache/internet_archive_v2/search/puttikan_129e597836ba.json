@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 195,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Puttikan&quot; AND (Victoria OR Australia)) AND mediatype:texts",
+      "query": "((text:Puttikan OR text:Puttikan OR text__reviews:Puttikan) AND ((text:Victoria OR text:Victoria OR text__reviews:Victoria) OR (text:Australia OR text:Australia OR text__reviews:Australia))) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

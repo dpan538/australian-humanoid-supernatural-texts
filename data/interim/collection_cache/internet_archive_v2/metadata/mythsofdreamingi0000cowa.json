@@ -1,0 +1,561 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/mythsofdreamingi0000cowa",
+        "server": "dn720701.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/mythsofdreamingi0000cowa",
+        "server": "dn760108.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/mythsofdreamingi0000cowa",
+        "server": "dn720701.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/mythsofdreamingi0000cowa",
+        "server": "dn760108.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1781957608,
+  "d1": "ia902808.us.archive.org",
+  "d2": "ia802808.us.archive.org",
+  "dir": "/25/items/mythsofdreamingi0000cowa",
+  "files": [
+    {
+      "crc32": "d07665d5",
+      "format": "Item Tile",
+      "md5": "14270d45170832a8c5fed33d4666dd95",
+      "mtime": "1660714985",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "39bb7b447dec5877bbc22a583e42584964945f28",
+      "size": "15881",
+      "source": "original"
+    },
+    {
+      "crc32": "8538e57c",
+      "format": "Log",
+      "md5": "a03017dc2e619ac39826b07e40d868c6",
+      "mtime": "1623765373",
+      "name": "logs/mythsofdreamingi0000cowa_iabdash_2021-06-1521:56:09.log",
+      "private": "true",
+      "sha1": "1c0f9920d560d609a8e1b52cc31b52f143d61ce5",
+      "size": "679",
+      "source": "original"
+    },
+    {
+      "crc32": "bd8e76ec",
+      "format": "Log",
+      "md5": "434c2ecae74f11838da23db20d13312d",
+      "mtime": "1623765383",
+      "name": "logs/mythsofdreamingi0000cowa_scanning_2021-06-1521:56:18.log",
+      "private": "true",
+      "sha1": "888d55e7e235e0246d539e0443ce3e91647c3047",
+      "size": "799474",
+      "source": "original"
+    },
+    {
+      "crc32": "3e6f5b9b",
+      "format": "Log",
+      "md5": "6770a6ba9315002ac6b1cbf0e25575d5",
+      "mtime": "1623765377",
+      "name": "logs/mythsofdreamingi0000cowa_status_history_2021-06-1521:56:14.log",
+      "private": "true",
+      "sha1": "e7347ff58d36fc39e218a87f0aca491bd6ce71eb",
+      "size": "408",
+      "source": "original"
+    },
+    {
+      "crc32": "b652c597",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.62",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "9a3f10a45570859370ca1b1ed263b702",
+      "mtime": "1753665101",
+      "name": "mythsofdreamingi0000cowa.epub",
+      "original": "mythsofdreamingi0000cowa_hocr.html",
+      "private": "true",
+      "sha1": "01e458a5f1eb170da97b8433ce6d6f15f611a7e2",
+      "size": "745619",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e0f7e99c",
+      "format": "LCP Encrypted PDF",
+      "md5": "da9d45dd8d372f564a8e2c5bb2d8d5fd",
+      "mtime": "1753665045",
+      "name": "mythsofdreamingi0000cowa.lcpdf",
+      "original": "mythsofdreamingi0000cowa.pdf",
+      "sha1": "1cdd3cae3fe4456ac084898dddb94fb0c85535cc",
+      "size": "10135981",
+      "source": "derivative"
+    },
+    {
+      "crc32": "cf8c3d5c",
+      "format": "Text PDF",
+      "md5": "f8807995a250d837095312b5d3ee3216",
+      "mtime": "1716731764",
+      "name": "mythsofdreamingi0000cowa.pdf",
+      "original": "mythsofdreamingi0000cowa_page_numbers.json",
+      "private": "true",
+      "sha1": "3e21a469fdb739b0588fa5bd87707a557583071d",
+      "size": "9897868",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f19b95fd",
+      "format": "chOCR",
+      "md5": "71e72e3e611f7e6b20c79f378ded75ad",
+      "mtime": "1623919764",
+      "name": "mythsofdreamingi0000cowa_chocr.html.gz",
+      "ocr": "tesseract 5.0.0-alpha-20201231-10-g1236",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.13",
+      "ocr_parameters": "-l eng",
+      "original": "mythsofdreamingi0000cowa_jp2.zip",
+      "private": "true",
+      "sha1": "434b611041fdbb223e724ee82a72e3d32bfa2b53",
+      "size": "4917619",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "0d8b6d25",
+      "format": "Cloth Cover Detection Log",
+      "md5": "e4247c87ca34d95489c23094555a84f3",
+      "mtime": "1670723927",
+      "name": "mythsofdreamingi0000cowa_cloth_detection.log",
+      "original": "mythsofdreamingi0000cowa_scandata.xml",
+      "private": "true",
+      "sha1": "07ccb051a29c7e989f18801ec2ae29e8f5883277",
+      "size": "788",
+      "source": "derivative"
+    },
+    {
+      "crc32": "8f61e4bb",
+      "format": "Dublin Core",
+      "md5": "e988c3374bbadb06cf8cdf95f10cd131",
+      "mtime": "1623913255",
+      "name": "mythsofdreamingi0000cowa_dc.xml",
+      "sha1": "7e71aa0f219abc158145f308361febfd5d11997d",
+      "size": "2067",
+      "source": "original"
+    },
+    {
+      "crc32": "30860675",
+      "format": "DjVuTXT",
+      "md5": "d6edf714827d4c45eab140841bf45bae",
+      "mtime": "1623920235",
+      "name": "mythsofdreamingi0000cowa_djvu.txt",
+      "original": "mythsofdreamingi0000cowa_djvu.xml",
+      "private": "true",
+      "sha1": "6e07b41e43d7fa613146ea6988134e6a03cd2b30",
+      "size": "367254",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5ac55880",
+      "format": "Djvu XML",
+      "md5": "0e4fad20408b0c1103f362bdfdb467ac",
+      "mtime": "1623919978",
+      "name": "mythsofdreamingi0000cowa_djvu.xml",
+      "original": "mythsofdreamingi0000cowa_hocr.html",
+      "private": "true",
+      "sha1": "959381e96ec270aa446e3f20065a019bbd2cee51",
+      "size": "4794183",
+      "source": "derivative"
+    },
+    {
+      "crc32": "4cab1886",
+      "format": "ACS Encrypted PDF",
+      "md5": "a9149beed629c13d6c3f99cbb0c17aaa",
+      "mtime": "1716733217",
+      "name": "mythsofdreamingi0000cowa_encrypted.pdf",
+      "original": "mythsofdreamingi0000cowa.pdf",
+      "sha1": "29874ee16b55b54d9237ec8e550c9e65967a3f07",
+      "size": "9846581",
+      "source": "derivative"
+    },
+    {
+      "crc32": "85000f8d",
+      "format": "JSON",
+      "md5": "17973c45ca7aa28cbd030ef26a56285f",
+      "mtime": "1623913008",
+      "name": "mythsofdreamingi0000cowa_events.json",
+      "private": "true",
+      "sha1": "5d303085d30d22d09829d0dd2f0d43017598973e",
+      "size": "54",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "47db787480ee9ec007d19a596c557c1f",
+      "name": "mythsofdreamingi0000cowa_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "2b5c27ce",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.2",
+      "hocr_char_to_word_module_version": "1.0.0",
+      "md5": "98766c73547d27353bfdedaa211978b9",
+      "mtime": "1623919935",
+      "name": "mythsofdreamingi0000cowa_hocr.html",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.13",
+      "ocr_parameters": "-l eng",
+      "original": "mythsofdreamingi0000cowa_chocr.html.gz",
+      "private": "true",
+      "sha1": "ec889e6b05bfd320aca121ae147836ffed2ebd43",
+      "size": "8844169",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5b1c26cb",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.0",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "2698cb26428afb0d6867b7b16636b44f",
+      "mtime": "1623920084",
+      "name": "mythsofdreamingi0000cowa_hocr_pageindex.json.gz",
+      "original": "mythsofdreamingi0000cowa_hocr.html",
+      "private": "true",
+      "sha1": "d26dc8cd4e24f5f5e3c24842a6f8eaf7f1cdfbe3",
+      "size": "2455",
+      "source": "derivative"
+    },
+    {
+      "crc32": "31013338",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.0",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "c74f3c635ded6305055e4c5885142a7d",
+      "mtime": "1623920214",
+      "name": "mythsofdreamingi0000cowa_hocr_searchtext.txt.gz",
+      "original": "mythsofdreamingi0000cowa_hocr.html",
+      "private": "true",
+      "sha1": "3ebc583e6d28afdd59eb4e366a66cde2ad6ba4ab",
+      "size": "130119",
+      "source": "derivative",
+      "word_conf_0_10": "149",
+      "word_conf_11_20": "80",
+      "word_conf_21_30": "92",
+      "word_conf_31_40": "118",
+      "word_conf_41_50": "122",
+      "word_conf_51_60": "121",
+      "word_conf_61_70": "148",
+      "word_conf_71_80": "243",
+      "word_conf_81_90": "1086",
+      "word_conf_91_100": "58932"
+    },
+    {
+      "crc32": "703689e8",
+      "filecount": "206",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "083f468a0775f2199eb485f349099c10",
+      "mtime": "1623917905",
+      "name": "mythsofdreamingi0000cowa_jp2.zip",
+      "original": "mythsofdreamingi0000cowa_orig_jp2.tar",
+      "private": "true",
+      "sha1": "2895be3e97e923dd9d2baecf31a432be004bf306",
+      "size": "82390800",
+      "source": "derivative"
+    },
+    {
+      "crc32": "579c560b",
+      "format": "LCP Encrypted EPUB",
+      "md5": "6a1a6196bee28a7e2875be4419564730",
+      "mtime": "1753665300",
+      "name": "mythsofdreamingi0000cowa_lcp.epub",
+      "original": "mythsofdreamingi0000cowa.epub",
+      "sha1": "1fa9e96aad031a5efdd00cbca6b94efb8084a8fa",
+      "size": "757539",
+      "source": "derivative"
+    },
+    {
+      "crc32": "dc899b69",
+      "format": "MARC",
+      "md5": "9c136df492927b2bad2e4f3e86a4b20c",
+      "mtime": "1623765367",
+      "name": "mythsofdreamingi0000cowa_marc.xml",
+      "sha1": "cd2f4cf9a1e8d86a547381f7b11f63debb8485cc",
+      "size": "9590",
+      "source": "original"
+    },
+    {
+      "crc32": "db36ee00",
+      "format": "MARC Binary",
+      "md5": "fa93b52d2eac91f3d02399b6f7b2bc50",
+      "mtime": "1623765361",
+      "name": "mythsofdreamingi0000cowa_meta.mrc",
+      "sha1": "8705ccdb831e77059e5dc154524a26989d7f253e",
+      "size": "2894",
+      "source": "original"
+    },
+    {
+      "crc32": "ec901cdb",
+      "format": "Metadata",
+      "md5": "fd84dbe94db07f45ca851b8af636a362",
+      "mtime": "1623913153",
+      "name": "mythsofdreamingi0000cowa_meta.sqlite",
+      "sha1": "fcf19d50b54be7fe27c0591e1045cd1cceedbdf8",
+      "size": "45056",
+      "source": "original"
+    },
+    {
+      "crc32": "635ff10e",
+      "format": "Metadata",
+      "md5": "d3fa738804a971fb4dafe005cfa4d4fe",
+      "mtime": "1753665300",
+      "name": "mythsofdreamingi0000cowa_meta.xml",
+      "sha1": "e20e5b367b5b58974ac5cdfcefb49249355a2e2e",
+      "size": "4211",
+      "source": "original"
+    },
+    {
+      "crc32": "10384793",
+      "filecount": "206",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "e417b3a35e0c861e02f00454ab0662dd",
+      "mtime": "1623913150",
+      "name": "mythsofdreamingi0000cowa_orig_jp2.tar",
+      "private": "true",
+      "sha1": "dbe4c59a21226943d8864712a4bfe72df333a71f",
+      "size": "244070400",
+      "source": "original"
+    },
+    {
+      "crc32": "aba7320c",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "87",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "f7d96edd1490c162925b689ab8603795",
+      "mtime": "1716731764",
+      "name": "mythsofdreamingi0000cowa_page_numbers.json",
+      "original": "mythsofdreamingi0000cowa_hocr.html",
+      "private": "true",
+      "sha1": "a733b406641e04769cc731d9d2192cbefe658dda",
+      "size": "34219",
+      "source": "derivative"
+    },
+    {
+      "crc32": "43a1dfb6",
+      "format": "Scandata",
+      "md5": "768115a242918b32a8ccbafb7a22be2c",
+      "mtime": "1670723926",
+      "name": "mythsofdreamingi0000cowa_scandata.xml",
+      "sha1": "3ac60b7cbaa7788371ce4492eff660ef0da8c65f",
+      "size": "223412",
+      "source": "original"
+    },
+    {
+      "crc32": "f7e3cf35",
+      "format": "PNG",
+      "md5": "71de7b3bef9f9f4b4ae9f1d80e69ffb0",
+      "mtime": "1623757607",
+      "name": "mythsofdreamingi0000cowa_slip.png",
+      "private": "true",
+      "sha1": "410ddaf89c6d8738ddbf81e5bd38474c5abec419",
+      "size": "45469",
+      "source": "original"
+    },
+    {
+      "crc32": "03d0c0d3",
+      "format": "JPEG Thumb",
+      "md5": "97d6d886cdda5cef9e53657c7f5200d3",
+      "mtime": "1623913261",
+      "name": "mythsofdreamingi0000cowa_slip_thumb.jpg",
+      "original": "mythsofdreamingi0000cowa_slip.png",
+      "private": "true",
+      "sha1": "d07d749fa9f93a7ac9fb0790da19086b438a5dd6",
+      "size": "8795",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b8ff7126",
+      "format": "Title Page Detection Log",
+      "md5": "85e7e7aa8982a1a31d01bb7378c3137c",
+      "mtime": "1670723826",
+      "name": "mythsofdreamingi0000cowa_title_detection.log",
+      "original": "mythsofdreamingi0000cowa_djvu.xml",
+      "private": "true",
+      "sha1": "ff190e88f88a5fd24f2045315e0e9419e171303d",
+      "size": "599",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 30,
+  "item_last_updated": 1753665300,
+  "item_size": 378094183,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2021-06-17 10:01:27",
+    "boxid": "IA40137619",
+    "camera": "Sony Alpha-A6300 (Control)",
+    "collection": [
+      "internetarchivebooks",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "collection_set": "printdisabled",
+    "contributor": "Internet Archive",
+    "creator": "Cowan, James, 1942-2018",
+    "date": "1994",
+    "description": [
+      "187 pages, 8 unnumbered pages of plates : 23 cm",
+      "For centuries, the spiritual life of the Australian Aborigines was concealed behind a veil of misunderstanding and prejudice. In this work, Cowan recounts some of the major myths and analyzes them in detail. The myth material stands alone, independent of Aboriginal culture, and through it we are offered an insight into the Paleolithic tradition",
+      "Includes bibliographical references (pages 181-182) and index"
+    ],
+    "external-identifier": [
+      "urn:acs6:mythsofdreamingi0000cowa:pdf:5a5557c2-ca1a-447d-a83f-85d3ef825234",
+      "urn:oclc:record:1280708963",
+      "urn:lcp:mythsofdreamingi0000cowa:lcpdf:d3ffbbf1-9c3d-4159-8ff9-fb06fd618ad8",
+      "urn:lcp:mythsofdreamingi0000cowa:epub:4fc9d40b-5bfe-4d7c-b4c9-3edc9ac2593e"
+    ],
+    "foldoutcount": "0",
+    "grant_report": "Arcadia #4281",
+    "identifier": "mythsofdreamingi0000cowa",
+    "identifier-access": "http://archive.org/details/mythsofdreamingi0000cowa",
+    "identifier-ark": "ark:/13960/t62637v68",
+    "imagecount": "206",
+    "invoice": "2089",
+    "isbn": [
+      "1853270857",
+      "9781853270857"
+    ],
+    "language": "eng",
+    "mediatype": "texts",
+    "ocr": "tesseract 5.0.0-alpha-20201231-10-g1236",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_module_version": "0.0.13",
+    "ocr_parameters": "-l eng",
+    "old_pallet": "IA-WL-1200048",
+    "openlibrary_edition": "OL22115508M",
+    "openlibrary_work": "OL13535047W",
+    "operator": "associate-gillian-tapdasan@archive.org",
+    "page_number_confidence": "87",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.14",
+    "ppi": "360",
+    "publicdate": "2021-06-15 11:51:37",
+    "publisher": "Bridport : Prism",
+    "rcs_key": "24143",
+    "repub_state": "19",
+    "republisher_date": "20210617145638",
+    "republisher_operator": "associate-jesa-monares@archive.org",
+    "republisher_time": "275",
+    "scandate": "20210615144552",
+    "scanfee": "2000;0;0",
+    "scanner": "station22.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "scribe3_search_catalog": "isbn",
+    "scribe3_search_id": "9781853270857",
+    "sponsor": "The Arcadia Fund",
+    "sponsordate": "20210930",
+    "subject": [
+      "Aboriginal Australians -- Folklore",
+      "Mythology, Aboriginal Australian",
+      "Stories and motifs -- Ancestor spirits",
+      "Stories and motifs -- Wawalag Sisters",
+      "Stories and motifs -- Wandjina",
+      "Religion",
+      "Stories and motifs -- Mythological beings",
+      "Stories and motifs -- Dingoes -- dogs",
+      "Stories and motifs",
+      "Aboriginal Australians",
+      "Legende",
+      "mythos",
+      "Aborigines",
+      "Myths By Australian aborigines"
+    ],
+    "title": "Myths of the dreaming : interpreting Aboriginal legends",
+    "tts_version": "4.4-initial-98-g6696694c",
+    "uploader": "station22.cebu@archive.org"
+  },
+  "server": "ia902808.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "binghamton-ol": {
+        "notes": {
+          "isbn": [
+            "9781853270857"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-11-25 00:27:38.598056"
+      },
+      "dartmouthlibrary-ol": {
+        "notes": {
+          "isbn": [
+            "9781853270857"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-12-02 01:07:11.570919"
+      },
+      "rochester-ol": {
+        "notes": {
+          "isbn": [
+            "9781853270857"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-12-02 10:39:04.22923"
+      },
+      "universityofarizona-ol": {
+        "notes": {
+          "isbn": [
+            "9781853270857"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-12-02 21:04:10.660057"
+      },
+      "universityofcoloradoboulder-ol": {
+        "notes": {
+          "isbn": [
+            "9781853270857"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-12-02 21:16:38.189047"
+      }
+    }
+  },
+  "uniq": 2101886909,
+  "workable_servers": [
+    "ia902808.us.archive.org",
+    "ia802808.us.archive.org"
+  ]
+}

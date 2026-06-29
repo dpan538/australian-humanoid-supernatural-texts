@@ -1,0 +1,14 @@
+{
+  "title": "Advice in Discourse",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1075/pbns.221",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2012-05-04",
+  "publication": "Pragmatics & beyond. New series",
+  "author": "",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "This peer-reviewed series offers a selection of high quality work covering the full richness of Pragmatics as an interdisciplinary field within language sciences. It is committed to innovative research and includes monographs and thematic collections of articles. We welcome submissions with a focus on language use without predefined boundaries for the field and with an explicit interest in work that interacts with other fields such as sociology, anthropology, semantics, historical linguistics, and so on. Table of Contents Acknowledgments 1. Introduction: Advice in discourse Miriam A. Locher and Holger Limberg Part I: Advice in academic, educational and training settings 2. Question-prefaced advice in feedback sequences of Finnish academic supervisions Sanna Vehvilainen 3. ‘You could make this clearer’: Teachers’ advice on ESL academic writing Ken Hyland and Fiona Hyland 4. ‘It wouldn’t hurt if you had your child evaluated’: Advice to mothers in responses to vignettes from a US teaching context Andrea DeCapua and Joan Findlay Dunham 5. The advising sequence and its preference structures in graduate peer tutoring at an American university Hansun Zhang Waring 6. ‘Yes that’s a good idea’: Peer-advice in academic discourse at a UK university Jo Angouri 7. Mentoring migrants: Facilitating the transition to the New Zealand workplace Bernadette Vine, Janet Holmes and Meredith Marra Part II: Advice in medical and health-related settings 8. Advice giving - terminable and interminable: The case of British health visitors John Heritage and Anna Lindstrom 9. ‘You may know better than I do’: Negotiating advice-giving in Down Syndrome screening in a Hong Kong prenatal hospital Olga Zayts and Stephanie Schnurr 10. Requesting and receiving advice on the telephone: A comparative analysis of some Australian-based helplines Michael Emmison and Alan Firth 11. The pursuit of advice on US peer telephone helplines: Sequential and functional aspects Christopher Pudlinski Part III: Advice in computer-mediated settings 12. Online advice in Japanese: Giving advice in an Internet discussion forum Phillip R. Morrow 13. Online peer-to-peer advice in Spanish Yahoo!Respuestas Maria Elena Placencia Part IV: Cross-cultural and corpus linguistic perspectives on advice 14. ‘Advice’ in English and in Russian: A contrastive and cross-cultural perspective Anna Wierzbicka 15. ‘Well it’s not for me to advise you, of course…’: Advice and advise in the British National Corpus of English Catherine Diederich and Nicole Hohn",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

@@ -1,0 +1,524 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/terrifyingtasteo0000sans",
+        "server": "dn721901.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/terrifyingtasteo0000sans",
+        "server": "dn760106.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/terrifyingtasteo0000sans",
+        "server": "dn721901.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/terrifyingtasteo0000sans",
+        "server": "dn760106.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1782009298,
+  "d1": "ia601801.us.archive.org",
+  "d2": "ia801801.us.archive.org",
+  "dir": "/14/items/terrifyingtasteo0000sans",
+  "files": [
+    {
+      "crc32": "35bc96c9",
+      "format": "Item Tile",
+      "md5": "d0470510e01e1c77f623a80b18f97649",
+      "mtime": "1661150912",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "7f01ad418d16c0606729011d265d590860b674ee",
+      "size": "18651",
+      "source": "original"
+    },
+    {
+      "crc32": "b18a9a8d",
+      "format": "Log",
+      "md5": "7afb55f6c1e9c34fa2c4c5f0e73cb613",
+      "mtime": "1613674898",
+      "name": "logs/terrifyingtasteo0000sans_iabdash_2021-02-1903:01:35.log",
+      "private": "true",
+      "sha1": "84808fd91702a30042161af94f11ab3070a07c53",
+      "size": "668",
+      "source": "original"
+    },
+    {
+      "crc32": "641de431",
+      "format": "Log",
+      "md5": "c7e4c41b84ffd7e37960cd8e9f3093db",
+      "mtime": "1613674908",
+      "name": "logs/terrifyingtasteo0000sans_scanning_2021-02-1903:01:45.log",
+      "private": "true",
+      "sha1": "35fd0fd299112decc67094c22f9387e458608c29",
+      "size": "599519",
+      "source": "original"
+    },
+    {
+      "crc32": "cf79e3f0",
+      "format": "Log",
+      "md5": "2218a0d30f362da7dfb8e4e521fd9a79",
+      "mtime": "1613992119",
+      "name": "logs/terrifyingtasteo0000sans_scanning_2021-02-2219:08:37.log",
+      "private": "true",
+      "sha1": "7c61365d0143518985e5898ea103b8ec1ba49ebf",
+      "size": "331712",
+      "source": "original"
+    },
+    {
+      "crc32": "13fb40e3",
+      "format": "Log",
+      "md5": "5c7e50d61149056198afedb22aee5cbd",
+      "mtime": "1613674902",
+      "name": "logs/terrifyingtasteo0000sans_status_history_2021-02-1903:01:39.log",
+      "private": "true",
+      "sha1": "52bc353d07b0d6efe84bec9887f63836fe19311f",
+      "size": "406",
+      "source": "original"
+    },
+    {
+      "crc32": "fd7baf76",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.66",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "868153780cc65a4acd588941651809cb",
+      "mtime": "1758432437",
+      "name": "terrifyingtasteo0000sans.epub",
+      "original": "terrifyingtasteo0000sans_hocr.html",
+      "private": "true",
+      "sha1": "289e21c9ecf24ad5b1e6a4a64c11b2b64ce792eb",
+      "size": "565195",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ef6b7e56",
+      "format": "LCP Encrypted PDF",
+      "md5": "43e7f4e3e2a593706396e91ce57eb89d",
+      "mtime": "1758432288",
+      "name": "terrifyingtasteo0000sans.lcpdf",
+      "original": "terrifyingtasteo0000sans.pdf",
+      "sha1": "7e60d12321dfd0f48dd6a30ee7152b0ce57c305a",
+      "size": "9726394",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7f2287f5",
+      "format": "Text PDF",
+      "md5": "69cefe7bf4c341392e576b4936839f27",
+      "mtime": "1725470585",
+      "name": "terrifyingtasteo0000sans.pdf",
+      "original": "terrifyingtasteo0000sans_page_numbers.json",
+      "private": "true",
+      "sha1": "ee3ac17e58b6238f89bba4b23f835976f85d9114",
+      "size": "9473394",
+      "source": "derivative"
+    },
+    {
+      "crc32": "754ead5e",
+      "format": "chOCR",
+      "md5": "b1dd7a68a42a5451d42f3bf3c28d5575",
+      "mtime": "1614064657",
+      "name": "terrifyingtasteo0000sans_chocr.html.gz",
+      "ocr": "tesseract 5.0.0-alpha-20201231-7-gc75f",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "0.9746",
+      "ocr_module_version": "0.0.11",
+      "ocr_parameters": "-l eng",
+      "original": "terrifyingtasteo0000sans_jp2.zip",
+      "private": "true",
+      "sha1": "6373ea0eadc8774d01e6bc401c9dbac030ad3f14",
+      "size": "2811060",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "bdbefe4c",
+      "format": "Cloth Cover Detection Log",
+      "md5": "2933d2b063b5d165b5e9aa251d28673b",
+      "mtime": "1671429799",
+      "name": "terrifyingtasteo0000sans_cloth_detection.log",
+      "original": "terrifyingtasteo0000sans_scandata.xml",
+      "private": "true",
+      "sha1": "31b13a052d0bec641b00eaffecec5e42aa7bcfb5",
+      "size": "787",
+      "source": "derivative"
+    },
+    {
+      "crc32": "276474fa",
+      "format": "Dublin Core",
+      "md5": "8f6c90283b4ea6420f124ba6a5b9a626",
+      "mtime": "1614058476",
+      "name": "terrifyingtasteo0000sans_dc.xml",
+      "sha1": "2cf4c991937369b5b2c6611d7312787dff7880b7",
+      "size": "2433",
+      "source": "original"
+    },
+    {
+      "crc32": "29391f90",
+      "format": "DjVuTXT",
+      "md5": "e9b2296d799a34857288c7be3b452d11",
+      "mtime": "1614064755",
+      "name": "terrifyingtasteo0000sans_djvu.txt",
+      "original": "terrifyingtasteo0000sans_djvu.xml",
+      "private": "true",
+      "sha1": "9b37581ee880a655fde2a862a9e74fb8d5217575",
+      "size": "209835",
+      "source": "derivative"
+    },
+    {
+      "crc32": "77dc3e9e",
+      "format": "Djvu XML",
+      "md5": "65a8fdd187145b1b0bb1928850a73ef6",
+      "mtime": "1614064715",
+      "name": "terrifyingtasteo0000sans_djvu.xml",
+      "original": "terrifyingtasteo0000sans_hocr.html",
+      "private": "true",
+      "sha1": "8a49f175977e45265b98cdd77abd6ae422027c2c",
+      "size": "2882376",
+      "source": "derivative"
+    },
+    {
+      "crc32": "da9523c7",
+      "format": "ACS Encrypted PDF",
+      "md5": "35c8e706428112e15c3be9dfc880dac8",
+      "mtime": "1725471564",
+      "name": "terrifyingtasteo0000sans_encrypted.pdf",
+      "original": "terrifyingtasteo0000sans.pdf",
+      "sha1": "15991f29d27e93db869d9443d57cc30578975fb6",
+      "size": "9428192",
+      "source": "derivative"
+    },
+    {
+      "crc32": "dc545264",
+      "format": "JSON",
+      "md5": "955dd5827e2c4a7ecdc52e5b11cb6e74",
+      "mtime": "1614058383",
+      "name": "terrifyingtasteo0000sans_events.json",
+      "private": "true",
+      "sha1": "1d33a1f25842bd873a093b1dbc30ed00eb59b09b",
+      "size": "116",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "aff37e605709053ff4b3320cbea3abbb",
+      "name": "terrifyingtasteo0000sans_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "3be7c0e5",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.1",
+      "hocr_char_to_word_module_version": "1.0.0",
+      "md5": "5f61df25c393e75fca75d37b7ac95db6",
+      "mtime": "1614064698",
+      "name": "terrifyingtasteo0000sans_hocr.html",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "0.9746",
+      "ocr_module_version": "0.0.11",
+      "ocr_parameters": "-l eng",
+      "original": "terrifyingtasteo0000sans_chocr.html.gz",
+      "private": "true",
+      "sha1": "e04290d610c2b202df26b5b187bbf98a1840c7e4",
+      "size": "5346518",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2b600c90",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.0",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "58093b85d4137b8e7e7b5106cdba1218",
+      "mtime": "1614064730",
+      "name": "terrifyingtasteo0000sans_hocr_pageindex.json.gz",
+      "original": "terrifyingtasteo0000sans_hocr.html",
+      "private": "true",
+      "sha1": "8411cdcbb11dc932188836b21d574137a5cb626c",
+      "size": "2049",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b58a31be",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.0",
+      "hocr_fts_text_module_version": "1.0.0",
+      "md5": "6eb4879dc22c37b6ab5170620bdc33f8",
+      "mtime": "1614064745",
+      "name": "terrifyingtasteo0000sans_hocr_searchtext.txt.gz",
+      "original": "terrifyingtasteo0000sans_hocr.html",
+      "private": "true",
+      "sha1": "ec550f08ecb59f64047d3f219f0add5c273836e2",
+      "size": "79915",
+      "source": "derivative",
+      "word_conf_0_10": "310",
+      "word_conf_11_20": "126",
+      "word_conf_21_30": "171",
+      "word_conf_31_40": "195",
+      "word_conf_41_50": "258",
+      "word_conf_51_60": "238",
+      "word_conf_61_70": "253",
+      "word_conf_71_80": "307",
+      "word_conf_81_90": "631",
+      "word_conf_91_100": "33882"
+    },
+    {
+      "crc32": "ed651f10",
+      "filecount": "182",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "e85c90a17d7a346dae685e218d6c00a9",
+      "mtime": "1614063392",
+      "name": "terrifyingtasteo0000sans_jp2.zip",
+      "original": "terrifyingtasteo0000sans_orig_jp2.tar",
+      "private": "true",
+      "sha1": "328319978ea0602f420861f83483ad8d0e89b0a9",
+      "size": "73097345",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e78099a4",
+      "format": "LCP Encrypted EPUB",
+      "md5": "1d9f913591d3bdd55db341792040353f",
+      "mtime": "1758432861",
+      "name": "terrifyingtasteo0000sans_lcp.epub",
+      "original": "terrifyingtasteo0000sans.epub",
+      "sha1": "f078e7369fc1debe90e9f82135843a4159343ffb",
+      "size": "576714",
+      "source": "derivative"
+    },
+    {
+      "crc32": "743edc4d",
+      "format": "MARC",
+      "md5": "2fd2c3d33b24f35795911114e26baa68",
+      "mtime": "1613674893",
+      "name": "terrifyingtasteo0000sans_marc.xml",
+      "sha1": "f32c29d950177546fd9bce31a321aac19a5cf974",
+      "size": "11706",
+      "source": "original"
+    },
+    {
+      "crc32": "31c77fd4",
+      "format": "MARC Binary",
+      "md5": "4d963ed23c73a0c1d36e5d337fc578fb",
+      "mtime": "1613674887",
+      "name": "terrifyingtasteo0000sans_meta.mrc",
+      "sha1": "c26043695a3e1651cfc2a2d56b46aa3f1ce093df",
+      "size": "3476",
+      "source": "original"
+    },
+    {
+      "crc32": "9ee03401",
+      "format": "Metadata",
+      "md5": "5380f4a6e972fe3ac2b22f61787ee211",
+      "mtime": "1614058443",
+      "name": "terrifyingtasteo0000sans_meta.sqlite",
+      "sha1": "5489aa4609bfc6ec589f373751d88d3485a767f3",
+      "size": "29696",
+      "source": "original"
+    },
+    {
+      "crc32": "84303a73",
+      "format": "Metadata",
+      "md5": "c509ad5716842a09bd96f76cb890399d",
+      "mtime": "1758432861",
+      "name": "terrifyingtasteo0000sans_meta.xml",
+      "sha1": "ad7a88b9062c76e72beb9ef9dd10e16d4e881727",
+      "size": "4584",
+      "source": "original"
+    },
+    {
+      "crc32": "24cc77a3",
+      "filecount": "182",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "c0473aa45f098613db676f47dedae6e6",
+      "mtime": "1614058442",
+      "name": "terrifyingtasteo0000sans_orig_jp2.tar",
+      "private": "true",
+      "sha1": "07c8b28f3965695ddb19e1f5db47d7fc07e86b44",
+      "size": "321392640",
+      "source": "original"
+    },
+    {
+      "crc32": "f46aca57",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "88",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "a7ed6bd4aac64aa7a47300db3fee4b88",
+      "mtime": "1725470579",
+      "name": "terrifyingtasteo0000sans_page_numbers.json",
+      "original": "terrifyingtasteo0000sans_hocr.html",
+      "private": "true",
+      "sha1": "8207a58a9bd4c2a942756b167d10e8f8f1ddfb41",
+      "size": "30444",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7688a3cb",
+      "format": "Scandata",
+      "md5": "b469a628994460b6e086e2586ddbfd88",
+      "mtime": "1671429799",
+      "name": "terrifyingtasteo0000sans_scandata.xml",
+      "sha1": "759318de4974a75bf867549ba86e516eca160498",
+      "size": "197489",
+      "source": "original"
+    },
+    {
+      "crc32": "495b151b",
+      "format": "PNG",
+      "md5": "82b850900c2018b6fc73955c5883ff75",
+      "mtime": "1613646698",
+      "name": "terrifyingtasteo0000sans_slip.png",
+      "private": "true",
+      "sha1": "55a282ff24dddff7830912edcff3f70453b4aa2f",
+      "size": "40574",
+      "source": "original"
+    },
+    {
+      "crc32": "c7272fae",
+      "format": "JPEG Thumb",
+      "md5": "bafc3f13232078bfcb4dcd0130a7a8bb",
+      "mtime": "1614058482",
+      "name": "terrifyingtasteo0000sans_slip_thumb.jpg",
+      "original": "terrifyingtasteo0000sans_slip.png",
+      "private": "true",
+      "sha1": "7cbeb39048fd4b24991091a0232ff726c3ca28dc",
+      "size": "5767",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7ec9d55f",
+      "format": "Title Page Detection Log",
+      "md5": "13a4f9dbc34350be14854749b3ad13f4",
+      "mtime": "1671429707",
+      "name": "terrifyingtasteo0000sans_title_detection.log",
+      "original": "terrifyingtasteo0000sans_djvu.xml",
+      "private": "true",
+      "sha1": "47b7ef6f93102b06efa5083b48960c83b0621a9a",
+      "size": "702",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 31,
+  "item_last_updated": 1758432861,
+  "item_size": 436870357,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2021-02-23 09:01:11",
+    "associated-names": "Wooden, Lenny, ill",
+    "boxid": "IA40064014",
+    "camera": "USB PTP Class Camera",
+    "collection": [
+      "internetarchivebooks",
+      "printdisabled"
+    ],
+    "collection_set": "printdisabled",
+    "contributor": "Internet Archive",
+    "creator": "San Souci, Robert D",
+    "date": "2004",
+    "description": [
+      "xii, 159 p. : 20 cm",
+      "\"A Dell Yearling book.\"",
+      "Crooker waits (British Isles--England) -- Yara-ma-yha-who (Australia) -- The fata (Italy) -- The fiddler (British Isles--Wales) -- Land-otter (Native American--Tlingit tribe) -- A fish story (United States--Virginia--African American traditional) -- Apparitions (Germany) -- The bijli (India) -- The lutin (Canada--French Canadian traditional) -- The hundredth skull (United States--Ohio) -- The ogre's arm (Japan) -- The hairy hands (British Isles--England) -- The snow husband (Native American--Algonquin tribe) -- The zimwi (Africa--from the Swahili) -- Witchbirds (France) -- Dangerous Hill (British Isles--England) -- The witch's head (El Salvador) -- Dinkins is dead (United States--South Carolina) -- Old Nan's ghost (British Isles--England) -- The interrupted wedding (Norway) -- The mulombe (Africa--Zimbabwe) -- The haunted grove (Canada) -- The tiger woman (China) -- Peacock's ghost (United States--Louisiana) -- Israel and the werewolf (Poland--Jewish traditional) -- Hoichi the earless (Japan--from Lafcadio Hearn) -- A snap of the fingers (Mexico) -- Narrow escape (United States--California) -- The black fox (United States--Connecticut) -- The mother and death (Denmark--from Hans Christian Andersen)"
+    ],
+    "external-identifier": [
+      "urn:acs6:terrifyingtasteo0000sans:pdf:c8745749-5ede-485f-be92-f8f71e64db80",
+      "urn:oclc:record:1245807837",
+      "urn:lcp:terrifyingtasteo0000sans:lcpdf:46729922-29ca-4963-a127-ba6fdfd4058f",
+      "urn:lcp:terrifyingtasteo0000sans:epub:9aaa10fe-8330-4046-a17b-aad397c0beb5"
+    ],
+    "foldoutcount": "0",
+    "identifier": "terrifyingtasteo0000sans",
+    "identifier-access": "http://archive.org/details/terrifyingtasteo0000sans",
+    "identifier-ark": "ark:/13960/t8z99fp7x",
+    "imagecount": "182",
+    "invoice": "1652",
+    "isbn": [
+      "044041878X",
+      "9780440418788"
+    ],
+    "language": "eng",
+    "mediatype": "texts",
+    "notes": "Obscured  text on front cover\nSome text/cut off due too close to the gutter tight binding inherent.",
+    "ocr": "tesseract 5.0.0-alpha-20201231-7-gc75f",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "0.9746",
+    "ocr_module_version": "0.0.11",
+    "ocr_parameters": "-l eng",
+    "old_pallet": "IA19119",
+    "openlibrary_edition": "OL7521629M",
+    "openlibrary_work": "OL116630W",
+    "operator": "associate-girly-perez@archive.org",
+    "page_number_confidence": "88",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.7",
+    "ppi": "360",
+    "publicdate": "2021-02-18 11:12:12",
+    "publisher": "New York, N.Y. : Dell Yearling",
+    "rcs_key": "24143",
+    "repub_state": "19",
+    "republisher_date": "20210223133229",
+    "republisher_operator": "associate-roche-borja@archive.org;associate-noreenangelika-saberon@archive.org",
+    "republisher_time": "819",
+    "scandate": "20210218195232",
+    "scanfee": "0;1.00;200",
+    "scanner": "station60.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "scribe3_search_catalog": "isbn",
+    "scribe3_search_id": "9780440418788",
+    "sent_to_scribe": "station60.cebu.archive.org",
+    "source": "removed",
+    "sponsordate": "20210228",
+    "subject": "Ghosts -- Fiction",
+    "title": "A terrifying taste of short & shivery : thirty creepy tales",
+    "tts_version": "4.3-initial-120-g7e2701ee",
+    "uploader": "station60.cebu@archive.org"
+  },
+  "server": "ia801801.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "delawarecountydistrictlibrary-ol": {
+        "notes": {
+          "isbn": [
+            "9780440418788"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-03-11 07:43:50.574131"
+      },
+      "openlibrary-d-ol": {
+        "notes": {
+          "num_copies": 2,
+          "pallet": [
+            "IA-MC-0000018",
+            "IA-MC-1300008"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-02-24 06:03:25.008699"
+      }
+    }
+  },
+  "uniq": 1091376996,
+  "workable_servers": [
+    "ia801801.us.archive.org",
+    "ia601801.us.archive.org"
+  ]
+}

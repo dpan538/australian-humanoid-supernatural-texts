@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 12,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Yaroma&quot; AND (Queensland OR Australia)) AND mediatype:texts",
+      "query": "((text:Yaroma OR text:Yaroma OR text__reviews:Yaroma) AND ((text:Queensland OR text:Queensland OR text__reviews:Queensland) OR (text:Australia OR text:Australia OR text__reviews:Australia))) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

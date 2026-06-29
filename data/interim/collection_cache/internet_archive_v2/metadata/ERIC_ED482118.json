@@ -1,0 +1,198 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/ERIC_ED482118",
+        "server": "dn790000.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/ERIC_ED482118",
+        "server": "dn790000.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1781957582,
+  "d1": "ia902806.us.archive.org",
+  "d2": "ia802806.us.archive.org",
+  "dir": "/33/items/ERIC_ED482118",
+  "files": [
+    {
+      "crc32": "b6f4b5dc",
+      "format": "DjVu",
+      "md5": "fe010a3498b944e3ce8b3caecaad9287",
+      "mtime": "1453509425",
+      "name": "ERIC_ED482118.djvu",
+      "original": "ERIC_ED482118_djvu.xml",
+      "sha1": "3a011c58824e953039cdb95cf6d10ee271a059e0",
+      "size": "233666",
+      "source": "derivative"
+    },
+    {
+      "crc32": "22a32b7d",
+      "format": "Animated GIF",
+      "md5": "2cf0667a471366642e9aeed40439c080",
+      "mtime": "1453509173",
+      "name": "ERIC_ED482118.gif",
+      "original": "ERIC_ED482118_jp2.zip",
+      "sha1": "5f64ae7d33c7db0f63990f3f585ce200913ba0d8",
+      "size": "50128",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b622ad1c",
+      "format": "Text PDF",
+      "md5": "5bd10f39a3c6269257bbae596bdfe970",
+      "mtime": "1453502470",
+      "name": "ERIC_ED482118.pdf",
+      "sha1": "2229a20664f20cf698e5283c46db5c3340d4b6a2",
+      "size": "177424",
+      "source": "original"
+    },
+    {
+      "crc32": "4bffd9ff",
+      "format": "Abbyy GZ",
+      "md5": "ad042bca216a6fd35aa033e97f6c6017",
+      "mtime": "1453509260",
+      "name": "ERIC_ED482118_abbyy.gz",
+      "original": "ERIC_ED482118_jp2.zip",
+      "sha1": "0199b6314282a628f3eaf84263f00634da844a09",
+      "size": "475996",
+      "source": "derivative"
+    },
+    {
+      "btih": "6492f160d967870afb33b97dbc6d0b1b39674476",
+      "crc32": "453139c8",
+      "format": "Archive BitTorrent",
+      "md5": "98da4f640973dc91580622c88e7444fb",
+      "mtime": "1771476811",
+      "name": "ERIC_ED482118_archive.torrent",
+      "sha1": "ca0b62460db3b481b78ea62c2b09d5b416401132",
+      "size": "3520",
+      "source": "metadata"
+    },
+    {
+      "crc32": "5de4f8d0",
+      "format": "DjVuTXT",
+      "md5": "55cca18c29c3f79bb8eb0b7dd2af6174",
+      "mtime": "1453509447",
+      "name": "ERIC_ED482118_djvu.txt",
+      "original": "ERIC_ED482118.djvu",
+      "sha1": "fd7728eb510a74709bf056ef09704f52a3e343e3",
+      "size": "33518",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a7892c7e",
+      "format": "Djvu XML",
+      "md5": "4509a89b1cf3747d73ec50257a80a067",
+      "mtime": "1453509278",
+      "name": "ERIC_ED482118_djvu.xml",
+      "original": "ERIC_ED482118_abbyy.gz",
+      "sha1": "2b83ea8d9a25dbe00f8f3b0ecbc8d06e8a877adb",
+      "size": "302636",
+      "source": "derivative"
+    },
+    {
+      "format": "Metadata",
+      "md5": "1532de3459cde0337bdb2052b042e1fb",
+      "name": "ERIC_ED482118_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "1876c000",
+      "filecount": "10",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "81cfaa3210dfcdc31a1c56bd48248ef8",
+      "mtime": "1453509123",
+      "name": "ERIC_ED482118_jp2.zip",
+      "original": "ERIC_ED482118.pdf",
+      "sha1": "57f6a54bd901e65cd4a397f201e430002e8d024f",
+      "size": "10974847",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0e102f10",
+      "format": "Metadata",
+      "md5": "0063f5791c7837d469d88c9bb3058d7f",
+      "mtime": "1466413349",
+      "name": "ERIC_ED482118_meta.sqlite",
+      "sha1": "23b0f3ea23f7d2bda696eead39f8307207061ad7",
+      "size": "12288",
+      "source": "original"
+    },
+    {
+      "crc32": "a97cfd09",
+      "format": "Metadata",
+      "md5": "5992a8fb99b15b60117e7efe859460c8",
+      "mtime": "1771476810",
+      "name": "ERIC_ED482118_meta.xml",
+      "sha1": "14dd82af6a489b169f5a6e6944cc2ec44ace0038",
+      "size": "2542",
+      "source": "original"
+    },
+    {
+      "crc32": "a3ac7ca8",
+      "format": "Scandata",
+      "md5": "e642f552bc989372cbd1e38dd84fb025",
+      "mtime": "1453509427",
+      "name": "ERIC_ED482118_scandata.xml",
+      "original": "ERIC_ED482118_djvu.xml",
+      "sha1": "0acd09c1487a9704cc34b35a25d06d279f54e339",
+      "size": "3205",
+      "source": "derivative"
+    },
+    {
+      "crc32": "09234389",
+      "format": "Item Tile",
+      "md5": "da42a9a8507ee32ea97e8763a0ea820d",
+      "mtime": "1771476811",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "bb432d2c02771faf3e0784003290c2a9620cd769",
+      "size": "9690",
+      "source": "original"
+    }
+  ],
+  "files_count": 13,
+  "item_last_updated": 1771476811,
+  "item_size": 12279460,
+  "metadata": {
+    "addeddate": "2016-01-22 22:41:11",
+    "backup_location": "ia905508_27",
+    "collection": [
+      "ericarchive",
+      "usgovernmentmirrors",
+      "government-documents"
+    ],
+    "collection_added": [
+      "usgovernmentmirrors",
+      "government-documents"
+    ],
+    "creator": "ERIC",
+    "date": "2003",
+    "description": "A day in Cape York, in the far north east of Australia, can change the life of a modern Australian. In that time, one can see hundreds of examples of rock art that are up to 36,000 years old, sharply contrasting the history of Indigenous people and the immigration of Europeans.One such visit led to a proposed collaboration between the Quinkan Culture Elders and a team of metadata researchers. The researchers proposed a Qualified Dublin Core style catalog to be used to identify and record examples of Quinkan Culture so Elders could at last gain access to information needed to manage the proliferation of unauthorized publications about Quinkan culture, and to \"bring back home\" cultural representations. In addition, the catalog would allow the Elders to make decisions about  publishing their own representations. This paper describes the journey of members of the team developing \"Matchbox,\" a cataloging system, as they have sought a way of using Qualified DC metadata (QDC) to describe, collect, and represent Quinkan Culture. One focus in this paper is how developing a QDC representation has led to questions of cultural definition and, simultaneously, of the use of technologies such as HTML, XML and RDF. (Author)",
+    "identifier": "ERIC_ED482118",
+    "identifier-access": "http://archive.org/details/ERIC_ED482118",
+    "identifier-ark": "ark:/13960/t9866fm30",
+    "imagecount": "10",
+    "language": "english",
+    "mediatype": "texts",
+    "ocr": "ABBYY FineReader 11.0",
+    "ppi": "600",
+    "publicdate": "2016-01-22 22:41:11",
+    "repub_state": "4",
+    "subject": "ERIC Archive; Access to Information; Cataloging; Catalogs; Cooperative Programs; Culture; Foreign Countries; Indigenous Populations; Information Technology; Metadata; Preservation; Programming; Programming Languages; Nevile, Liddy;Lissonnet, Sophie",
+    "title": "ERIC ED482118: Dublin Core: The Base for an Indigenous Culture Environment?",
+    "uploader": "slaxemulator@gmail.com",
+    "year": "2003"
+  },
+  "server": "ia802806.us.archive.org",
+  "uniq": 546418642,
+  "workable_servers": [
+    "ia802806.us.archive.org",
+    "ia902806.us.archive.org"
+  ]
+}

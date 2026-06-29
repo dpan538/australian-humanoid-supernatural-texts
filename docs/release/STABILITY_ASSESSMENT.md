@@ -24,16 +24,18 @@ Classification: `stable`
 
 Classification: `stable`
 
-Required sequence:
+Data pipeline sequence when the local Python/data environment is ready:
 
 ```sh
-python3 scripts/export_frontend_json.py
-python3 scripts/validate_v2.py
-python3 scripts/validate_release.py
+make export-frontend
+make validate-v2
+make audit-v2
 npm run build
 ```
 
 The frontend JSON is generated from SQLite. It should not be manually edited. The map invariant must be confirmed after every export.
+
+For static Vercel frontend deployment, `public/data/frontend-data.json` may be treated as the prebuilt public data contract when it already exists and `npm run build` plus `python3 scripts/check_vercel_release.py` pass.
 
 ## Interaction Load
 
@@ -61,4 +63,3 @@ Manual checks should cover:
 - high contrast or signal-gain mode.
 
 The release validator checks missing title/source and invalid JSON. Runtime error-state presentation remains a manual QA item.
-

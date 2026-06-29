@@ -1,0 +1,523 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/aboriginalfables0000reed",
+        "server": "dn760006.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/aboriginalfables0000reed",
+        "server": "dn790003.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/aboriginalfables0000reed",
+        "server": "dn760006.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/aboriginalfables0000reed",
+        "server": "dn790003.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1782009306,
+  "d1": "ia600902.us.archive.org",
+  "d2": "ia800902.us.archive.org",
+  "dir": "/35/items/aboriginalfables0000reed",
+  "files": [
+    {
+      "crc32": "e47ad279",
+      "format": "Item Tile",
+      "md5": "d476f314b38faa98461f3a4cd304632e",
+      "mtime": "1658128644",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "8a51926efea292e5c2a02475a6a7728216fd5809",
+      "size": "14637",
+      "source": "original"
+    },
+    {
+      "crc32": "e5b47861",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.62",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "df023d4dcd0412b3546344d21e6e6c4f",
+      "mtime": "1752994039",
+      "name": "aboriginalfables0000reed.epub",
+      "original": "aboriginalfables0000reed_hocr.html",
+      "private": "true",
+      "sha1": "0287f6373948a7f0c84768607bcc8147a956dced",
+      "size": "5977750",
+      "source": "derivative"
+    },
+    {
+      "crc32": "01bbed85",
+      "format": "LCP Encrypted PDF",
+      "md5": "2f9f2811d9fcdf64cdcea72d7a282e41",
+      "mtime": "1752994011",
+      "name": "aboriginalfables0000reed.lcpdf",
+      "original": "aboriginalfables0000reed.pdf",
+      "sha1": "8a59ecec5948926d40346c9cdbf825333354dec4",
+      "size": "8198451",
+      "source": "derivative"
+    },
+    {
+      "crc32": "183cd98d",
+      "format": "Text PDF",
+      "md5": "9387f92ec61437cccc3d4657fa6812e6",
+      "mtime": "1714048125",
+      "name": "aboriginalfables0000reed.pdf",
+      "original": "aboriginalfables0000reed_page_numbers.json",
+      "private": "true",
+      "sha1": "d34e22bbeea7b687dfb86eb8d8521959068cb4c9",
+      "size": "7968671",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f6a9ee66",
+      "format": "Abbyy GZ",
+      "md5": "477b42b7dfe850233ada09154f18a7d3",
+      "mtime": "1597624885",
+      "name": "aboriginalfables0000reed_abbyy.gz",
+      "original": "aboriginalfables0000reed_jp2.zip",
+      "private": "true",
+      "sha1": "99d43a4a79f3ed46f710506c60b3e35d0c83f549",
+      "size": "3943558",
+      "source": "derivative"
+    },
+    {
+      "crc32": "9f0000d9",
+      "format": "chOCR",
+      "md5": "63d61a7b2a99b8ca39fd19e1aa9ddc68",
+      "mtime": "1658125222",
+      "name": "aboriginalfables0000reed_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.16",
+      "original": "aboriginalfables0000reed_abbyy.gz",
+      "private": "true",
+      "sha1": "caab780631323ec4e1eef3b38b9bc0efae1404f7",
+      "size": "3524430",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "97ccd18a",
+      "format": "Cloth Cover Detection Log",
+      "md5": "efa37ab7ea63bc99b3aeb5f5acd05a8e",
+      "mtime": "1658125325",
+      "name": "aboriginalfables0000reed_cloth_detection.log",
+      "original": "aboriginalfables0000reed_scandata.xml",
+      "private": "true",
+      "sha1": "96c0e71d4e459118117d8ccecb84e8f8d313176b",
+      "size": "786",
+      "source": "derivative"
+    },
+    {
+      "crc32": "6252a08e",
+      "format": "Dublin Core",
+      "md5": "5b058338aab9053f80da7462a44d922b",
+      "mtime": "1597621511",
+      "name": "aboriginalfables0000reed_dc.xml",
+      "sha1": "c441fb840d29ec500cd68ef8fc4d207018733313",
+      "size": "4691",
+      "source": "original"
+    },
+    {
+      "crc32": "869ff886",
+      "format": "DjVuTXT",
+      "md5": "504c6178c2a44a44b4f7dd77819951c1",
+      "mtime": "1658125681",
+      "name": "aboriginalfables0000reed_djvu.txt",
+      "original": "aboriginalfables0000reed_djvu.xml",
+      "private": "true",
+      "sha1": "61076abf7d50092d854a5781c16af119d12b5260",
+      "size": "325371",
+      "source": "derivative"
+    },
+    {
+      "crc32": "31ab5d92",
+      "format": "Djvu XML",
+      "md5": "1887064be4f5f845e5f98887099a602c",
+      "mtime": "1658125497",
+      "name": "aboriginalfables0000reed_djvu.xml",
+      "original": "aboriginalfables0000reed_hocr.html",
+      "private": "true",
+      "sha1": "85a3db5390749f893b4c53e56c14c1729faf8416",
+      "size": "4108565",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b1ab39ac",
+      "format": "ACS Encrypted EPUB",
+      "md5": "06a11eeaf00f7f5f1d34755f3085d924",
+      "mtime": "1597624961",
+      "name": "aboriginalfables0000reed_encrypted.epub",
+      "original": "aboriginalfables0000reed_abbyy.gz",
+      "sha1": "da9c14202f0b8923dbfac37c6aa348dc35ae5bba",
+      "size": "2769541",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a2f2ff92",
+      "format": "ACS Encrypted PDF",
+      "md5": "44906bd0585e63c567af1f9a71faa034",
+      "mtime": "1714048292",
+      "name": "aboriginalfables0000reed_encrypted.pdf",
+      "original": "aboriginalfables0000reed.pdf",
+      "sha1": "6866522151e6a8171af3b0f7cf9bb7f0c698ccb2",
+      "size": "7931473",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e01614e9",
+      "format": "JSON",
+      "md5": "c4925b8a5bde7f1c966aeb168090526e",
+      "mtime": "1597621426",
+      "name": "aboriginalfables0000reed_events.json",
+      "private": "true",
+      "sha1": "7035852773182d00cabc40f6048fab273acde4ab",
+      "size": "59",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "863aaffb36d91627ff064e3b77976b7e",
+      "name": "aboriginalfables0000reed_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "5ea82f6b",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "076a684099ce5106e6bc34542ad8f79f",
+      "mtime": "1658125447",
+      "name": "aboriginalfables0000reed_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.16",
+      "original": "aboriginalfables0000reed_chocr.html.gz",
+      "private": "true",
+      "sha1": "2c32b6fb34f9dc21a564c0611390044c66ded3a9",
+      "size": "8642075",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e2f58bdd",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "2ffdcdab38cb0b99f32915b3cfff0479",
+      "mtime": "1658125558",
+      "name": "aboriginalfables0000reed_hocr_pageindex.json.gz",
+      "original": "aboriginalfables0000reed_hocr.html",
+      "private": "true",
+      "sha1": "afe098dbc4e67d8ff45f8667cde611dbba11ed4e",
+      "size": "1791",
+      "source": "derivative"
+    },
+    {
+      "crc32": "88a20517",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "df7ed27f8108f14989e70efca59fe78b",
+      "mtime": "1658125651",
+      "name": "aboriginalfables0000reed_hocr_searchtext.txt.gz",
+      "original": "aboriginalfables0000reed_hocr.html",
+      "private": "true",
+      "sha1": "7bfca1d8bd1faf779354ff2a9de4367b25cf963f",
+      "size": "109135",
+      "source": "derivative",
+      "word_conf_0_10": "47",
+      "word_conf_11_20": "19",
+      "word_conf_21_30": "47",
+      "word_conf_31_40": "72",
+      "word_conf_41_50": "159",
+      "word_conf_51_60": "362",
+      "word_conf_61_70": "1186",
+      "word_conf_71_80": "4200",
+      "word_conf_81_90": "11534",
+      "word_conf_91_100": "33000"
+    },
+    {
+      "crc32": "74f894d6",
+      "filecount": "150",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "38bded7589a96f32aeba3420b6bba0fb",
+      "mtime": "1597624309",
+      "name": "aboriginalfables0000reed_jp2.zip",
+      "original": "aboriginalfables0000reed_orig_jp2.tar",
+      "private": "true",
+      "sha1": "010a8dfe3ef0fc36a414a69e7008112daee5607c",
+      "size": "57654244",
+      "source": "derivative"
+    },
+    {
+      "crc32": "23325952",
+      "format": "LCP Encrypted EPUB",
+      "md5": "dc4d49d705c95504d56d5d963f812b64",
+      "mtime": "1752994062",
+      "name": "aboriginalfables0000reed_lcp.epub",
+      "original": "aboriginalfables0000reed.epub",
+      "sha1": "1088721b73e1591374a19865b884abdd958aa521",
+      "size": "6028364",
+      "source": "derivative"
+    },
+    {
+      "crc32": "cec7662f",
+      "format": "MARC",
+      "md5": "4c9ed9bfb2bcc4875ca47e542e8d5caa",
+      "mtime": "1597152902",
+      "name": "aboriginalfables0000reed_marc.xml",
+      "sha1": "22319966c4906624f898980eb8e9f2d7012d5750",
+      "size": "13964",
+      "source": "original"
+    },
+    {
+      "crc32": "256ffb79",
+      "format": "MARC Binary",
+      "md5": "20f907b0ebf4b200e344aa13f8533676",
+      "mtime": "1597152895",
+      "name": "aboriginalfables0000reed_meta.mrc",
+      "sha1": "c5fdaff6bb9a6dfe67e81320f508ed70fea82183",
+      "size": "5712",
+      "source": "original"
+    },
+    {
+      "crc32": "24705851",
+      "format": "Metadata",
+      "md5": "dcaf0c7b469230714e562315c0f76973",
+      "mtime": "1597621476",
+      "name": "aboriginalfables0000reed_meta.sqlite",
+      "sha1": "6d5e8eca45fb6c3ea8a3690949a67f23636f14ad",
+      "size": "27648",
+      "source": "original"
+    },
+    {
+      "crc32": "255fe13b",
+      "format": "Metadata",
+      "md5": "208a0a1805b30b48a50543f2baa4d273",
+      "mtime": "1770070381",
+      "name": "aboriginalfables0000reed_meta.xml",
+      "sha1": "bb7af9e28341438ce2652b0aa0bdc75f2cb7be51",
+      "size": "6664",
+      "source": "original"
+    },
+    {
+      "crc32": "8b72714b",
+      "filecount": "150",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "8e8ee8ac5a15b895f2c58f5e3212051b",
+      "mtime": "1597621475",
+      "name": "aboriginalfables0000reed_orig_jp2.tar",
+      "private": "true",
+      "sha1": "d88be743b82d2529bd605bdbaef552d6cacb8f34",
+      "size": "218808320",
+      "source": "original"
+    },
+    {
+      "crc32": "9413bc3f",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "88",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "caa0721b7be55e0469c7b77ba5264fea",
+      "mtime": "1714048125",
+      "name": "aboriginalfables0000reed_page_numbers.json",
+      "original": "aboriginalfables0000reed_hocr.html",
+      "private": "true",
+      "sha1": "d28c9dd22d966f7b91763ebf8205ca9347870284",
+      "size": "24878",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f5e4b056",
+      "format": "Scandata",
+      "md5": "58c455e5db389e58f60de12fd8d23d64",
+      "mtime": "1658125324",
+      "name": "aboriginalfables0000reed_scandata.xml",
+      "sha1": "eb35180149366e360d91d972a90e428f88b513fa",
+      "size": "81348",
+      "source": "original"
+    },
+    {
+      "crc32": "112892bf",
+      "format": "PNG",
+      "md5": "ab30e21946111b1f0958a158f8bc31c1",
+      "mtime": "1597128847",
+      "name": "aboriginalfables0000reed_slip.png",
+      "private": "true",
+      "sha1": "c85af2d5ffb46f2eb51a89e035c9fab073cd8bde",
+      "size": "44075",
+      "source": "original"
+    },
+    {
+      "crc32": "7990482d",
+      "format": "JPEG Thumb",
+      "md5": "fb9b9a4ad156e42a6f1efc9fcce13d38",
+      "mtime": "1597621517",
+      "name": "aboriginalfables0000reed_slip_thumb.jpg",
+      "original": "aboriginalfables0000reed_slip.png",
+      "private": "true",
+      "sha1": "47f51ce122cfd051b901a4e996b830612d5b584a",
+      "size": "6056",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e56d340f",
+      "format": "Log",
+      "md5": "56f032d2d757b88fbb97378fac1fbaec",
+      "mtime": "1597152908",
+      "name": "logs/aboriginalfables0000reed_iabdash_2020-08-1121:35:04.log",
+      "private": "true",
+      "sha1": "033fb7396d6a7f195a467b8811953c8137629ff0",
+      "size": "1357",
+      "source": "original"
+    },
+    {
+      "crc32": "9d9b15ca",
+      "format": "Log",
+      "md5": "82a6a5b18d4ad647470c3a3181eca36a",
+      "mtime": "1597152920",
+      "name": "logs/aboriginalfables0000reed_scanning_2020-08-1121:35:15.log",
+      "private": "true",
+      "sha1": "d819a190b8a86d9526a1b094cd076634f0ee2c72",
+      "size": "521890",
+      "source": "original"
+    },
+    {
+      "crc32": "f09d651c",
+      "format": "Log",
+      "md5": "8ce21ba386bef55a58ea6af06489cec7",
+      "mtime": "1597152914",
+      "name": "logs/aboriginalfables0000reed_status_history_2020-08-1121:35:09.log",
+      "private": "true",
+      "sha1": "9e32a7678cdd48b82453eaff4753c18b3dd0c5f5",
+      "size": "410",
+      "source": "original"
+    }
+  ],
+  "files_count": 31,
+  "item_last_updated": 1770070381,
+  "item_size": 336745914,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2020-08-17 01:05:03",
+    "boxid": "IA1909311",
+    "camera": "Sony Alpha-A6300 (Control)",
+    "collection": [
+      "internetarchivebooks",
+      "printdisabled",
+      "inlibrary"
+    ],
+    "contributor": "Internet Archive",
+    "creator": "Reed, A. W. (Alexander Wyclif), 1908-1979",
+    "date": "1965",
+    "description": [
+      "144 pages : 20 cm",
+      "Stories written in popular form; including myths from Kamilaroi and Ngadjuri tribes",
+      "Includes bibliographical references (page 6)",
+      "The adventures of Yooneeara -- The anger of Pund-jil -- Baiame's gift of manna -- Bees and honey -- Black paint and red ochre -- The cannibal woman -- The case of the moth -- The coming of death -- The coming of spring -- Dingo and native cat -- The dogs that were really snakes -- The dugong, the cockatoos, and the chicken hawk -- The fate of the mocking bird -- A fight with a kurrea -- The first bullroarer -- The first man in the Southern Cross -- Fish hawk and lyrebird -- Fish moon -- The flies and the bees -- The flight of the bandicoot -- The frog and the flies -- The frog food of the bunyip -- The frogs at flood time -- The frog, the wallaby, and the dugong -- The gifts of the sun goddess -- Goanna and his stripes -- The great flood -- The hero who was changed into a mountain -- How animals came to Australia -- How bats and shags were made -- How black snake became poisonous -- How blue heron brings in the tide -- How koala lost his tail -- How platypus was born -- How the Murray River was made -- How the porcupine got his spines -- How possum and cat killed kangaroo -- How tortoise got a swollen back -- How tortoise lost his tail -- How tortoise got his shell -- How the waratah was made -- How the waratah became sweet -- How tree-runner made a rainbow for his wife -- Kangaroo and emu -- The kangaroo dance -- Koala and bunyip -- Kulai and Culma -- The last song of Priepriggie -- Laughing jackass and sun fire -- The miserable mopoke -- The moon's reward -- The oyster brothers and the shark -- Rainbow into fish into mountain -- The rainbow snake -- The rainbow snakes -- The rebellious son of Baiame -- The red cloud -- Rolla-Mano and the stars -- The sandpiper's misfortune -- The sculptor -- The shaming of rainbow snake -- The son of Mount Gambier -- The song of the tree frogs -- The spear with the stingray spines -- Spiny lizard and galah bird -- Sun, moon, and the spirit of birth -- Suns, moons, and stars -- Turtle, oyster, and whale -- Why curlew cries plaintively at night -- The winds -- The woman who changed into a kangaroo -- The wooden devil-devil -- Yara-ma-yha-who"
+    ],
+    "external-identifier": [
+      "urn:acs6:aboriginalfables0000reed:epub:2c8edd49-e620-4d56-bc7e-e6a3f90e1830",
+      "urn:acs6:aboriginalfables0000reed:pdf:5c976852-f166-41c0-aa92-9b5e8ccecd13",
+      "urn:oclc:record:1193359589",
+      "urn:lcp:aboriginalfables0000reed:lcpdf:d47888e5-fe40-4ebb-8de5-434c2cf3e9f5",
+      "urn:lcp:aboriginalfables0000reed:epub:7fc889c0-d019-4eb2-9802-7282715c820a"
+    ],
+    "foldoutcount": "0",
+    "identifier": "aboriginalfables0000reed",
+    "identifier-access": "http://archive.org/details/aboriginalfables0000reed",
+    "identifier-ark": "ark:/13960/t1bm0g01n",
+    "imagecount": "150",
+    "invoice": "1652",
+    "isbn": [
+      "0589070002",
+      "9780589070007",
+      "0730101991",
+      "9780730101994"
+    ],
+    "language": "eng",
+    "lccn": "65027883",
+    "mediatype": "texts",
+    "notes": "some text are tight binding.<br />obscured text on back cover.<br />",
+    "ocr": "ABBYY FineReader 11.0 (Extended OCR)",
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.16",
+    "old_pallet": "IA18452",
+    "openlibrary_edition": "OL7868854M",
+    "openlibrary_work": "OL15532417W",
+    "operator": "associate-madorothy-guaves@archive.org",
+    "page_number_confidence": "88",
+    "page_number_module_version": "1.0.5",
+    "pdf_module_version": "0.0.18",
+    "ppi": "300",
+    "publicdate": "2020-08-11 06:54:55",
+    "publisher": "Sydney : A.H. & A.W. Reed",
+    "rcs_key": "24143",
+    "repub_state": "19",
+    "republisher_date": "20200817074336",
+    "republisher_operator": "associate-glennblair-beduya@archive.org",
+    "republisher_time": "251",
+    "scandate": "20200814072145",
+    "scanfee": "0;1.00;200",
+    "scanner": "station26.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "scribe3_search_catalog": "isbn",
+    "scribe3_search_id": "0730101991",
+    "sponsordate": "20200831",
+    "subject": [
+      "Fables, Australian",
+      "Stories and motifs",
+      "Ngadjuri / Ngadyuri people (L5) (SA SI54-05)",
+      "Gamilaraay / Gamilaroi / Kamilaroi people (D23) (NSW SH55-12)",
+      "Stories and motifs - Dingoes / dogs",
+      "Stories and motifs - Dugongs",
+      "Stories and motifs - Echidnas",
+      "Stories and motifs - Insects",
+      "Stories and motifs - Kangaroos / Wallabies",
+      "Stories and motifs - Koalas",
+      "Stories and motifs - Lizards / goannas",
+      "Stories and motifs - Snakes",
+      "Stories and motifs - Rainbow serpent",
+      "Stories and motifs - Celestial phenomena",
+      "Stories and motifs - Baiame",
+      "Stories and motifs - Devils, monsters, evil spirits, hairy men, bunyips",
+      "Stories and motifs - Plants",
+      "Stories and motifs - Animals",
+      "Stories and motifs - Birds",
+      "Australia -- Folklore",
+      "South East South Australia (SE SA SI54, SJ54)",
+      "Northern New South Wales (N NSW SH55, SH56)",
+      "Southwest New South Wales (SW NSW SI54, SI55)"
+    ],
+    "title": "Aboriginal fables and legendary tales",
+    "tts_version": "4.0-initial-155-gbba175a5",
+    "uploader": "station26.cebu@archive.org"
+  },
+  "server": "ia600902.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "openlibrary-d-ol": {
+        "notes": {
+          "pallet": [
+            "IA-MC-2000041"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2022-09-27 02:49:58.753015"
+      }
+    }
+  },
+  "uniq": 2078891794,
+  "workable_servers": [
+    "ia600902.us.archive.org",
+    "ia800902.us.archive.org"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 14,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Nargun&quot; AND Gippsland) AND mediatype:texts",
+      "query": "((text:Nargun OR text:Nargun OR text__reviews:Nargun) AND (text:Gippsland OR text:Gippsland OR text__reviews:Gippsland)) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

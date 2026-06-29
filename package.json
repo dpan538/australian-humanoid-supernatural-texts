@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "license": "SEE LICENSE.md",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "qa:density-ui": "playwright test --config=playwright.density.config.ts"
+    "qa:density-ui": "playwright test --config=playwright.density.config.ts",
+    "check": "npm run typecheck && npm run build",
+    "qa:release": "npm run typecheck && npm run build"
   },
   "dependencies": {
     "animejs": "^4.4.1",

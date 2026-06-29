@@ -1,0 +1,14 @@
+{
+  "title": "It’s in the Pipes: Using Mash-Up Technology in the Parliament of Australia Library",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1080/00048623.2011.10722234",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "2011-09-01",
+  "publication": "Australian Academic & Research Libraries",
+  "author": "Roxanne Missingham, Kathryn York",
+  "region_signal": "Australia",
+  "location_confidence": "low",
+  "abstract": "Mash-ups, applications that use data from two or more different online services to create new services, are a slowly growing and relatively new technology being adopted by libraries. The Australian Parliamentary Library has used a mash-up technology, Yahoo Pipes, to innovatively solve the problem of how to collect press releases from Senators and Members for a national repository. Yahoo Pipes is an application that lets any user aggregate, manipulate, and mash up content from around the web. This paper describes how mash-ups are used in libraries generally and the implementation of Yahoo Pipes in the Parliamentary Library to collect press releases of Senators and Members, and describes issues identified through undertaking the project and considers areas for future development.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

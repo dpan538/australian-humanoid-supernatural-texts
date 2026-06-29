@@ -1,0 +1,522 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/wondertalesfroma0000fore",
+        "server": "dn760004.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/wondertalesfroma0000fore",
+        "server": "dn790003.ca.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/wondertalesfroma0000fore",
+        "server": "dn760004.eu.archive.org"
+      },
+      {
+        "dir": "/0/items/wondertalesfroma0000fore",
+        "server": "dn790003.ca.archive.org"
+      }
+    ]
+  },
+  "created": 1781944442,
+  "d1": "ia601004.us.archive.org",
+  "d2": "ia801004.us.archive.org",
+  "dir": "/23/items/wondertalesfroma0000fore",
+  "files": [
+    {
+      "crc32": "82e7b2af",
+      "format": "Item Tile",
+      "md5": "5e2396c5f47e74db374bf959bfaeac12",
+      "mtime": "1661321682",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "aee03f809fa67aac60a2373512647e249be4b85e",
+      "size": "19856",
+      "source": "original"
+    },
+    {
+      "crc32": "3fbfe42e",
+      "format": "Log",
+      "md5": "20e06ecbac7ac8e55c2f11d1a2e54568",
+      "mtime": "1578959923",
+      "name": "logs/wondertalesfroma0000fore_iabdash_2020-01-1407:58:37.log",
+      "private": "true",
+      "sha1": "98e3302d6429e00b88b462936806c73d287aa933",
+      "size": "1347",
+      "source": "original"
+    },
+    {
+      "crc32": "240adde6",
+      "format": "Log",
+      "md5": "ba8b83d134a5fb53a1c73726a9794de0",
+      "mtime": "1578959929",
+      "name": "logs/wondertalesfroma0000fore_scanning_2020-01-1407:58:43.log",
+      "private": "true",
+      "sha1": "51c6b8e9c56c2207604d4f7545bdf86af0f36c13",
+      "size": "437346",
+      "source": "original"
+    },
+    {
+      "crc32": "396e0b10",
+      "format": "EPUB",
+      "hocr_epub_hocr_version": "1.1.66",
+      "hocr_epub_module_version": "0.0.1",
+      "md5": "4f01031dfa182d05b883eb1bb2da6c05",
+      "mtime": "1754172936",
+      "name": "wondertalesfroma0000fore.epub",
+      "original": "wondertalesfroma0000fore_hocr.html",
+      "private": "true",
+      "sha1": "11ceceb4d923d2d6bf57e1a1f3b66f212a17ea38",
+      "size": "41250770",
+      "source": "derivative"
+    },
+    {
+      "crc32": "29b37411",
+      "format": "LCP Encrypted PDF",
+      "md5": "0643fe966147c3a2cd40e049949a2e99",
+      "mtime": "1754172643",
+      "name": "wondertalesfroma0000fore.lcpdf",
+      "original": "wondertalesfroma0000fore.pdf",
+      "sha1": "b7a19e474e8c2308cc385caaa1a312064eb2e149",
+      "size": "14840894",
+      "source": "derivative"
+    },
+    {
+      "crc32": "68f777ef",
+      "format": "Text PDF",
+      "md5": "c6e2c991104bad89fda05107b83aa4d6",
+      "mtime": "1720684151",
+      "name": "wondertalesfroma0000fore.pdf",
+      "original": "wondertalesfroma0000fore_page_numbers.json",
+      "pdf_degraded": "invalid-jp2-headers",
+      "pdf_module_version": "0.0.25",
+      "private": "true",
+      "sha1": "d0d484ee72f7e843821f6194e10d56dc2107067d",
+      "size": "14430679",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a9264e4a",
+      "format": "Abbyy GZ",
+      "md5": "6f374afa4df5af3853e85cb7bd1ec0a7",
+      "mtime": "1579266814",
+      "name": "wondertalesfroma0000fore_abbyy.gz",
+      "original": "wondertalesfroma0000fore_jp2.zip",
+      "private": "true",
+      "sha1": "5062b34ef7c274f39f1246f7ce4b4b06951069eb",
+      "size": "3274910",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2452b86a",
+      "format": "chOCR",
+      "md5": "c75229049e177a542ed5dc53ba1c47f6",
+      "mtime": "1661321159",
+      "name": "wondertalesfroma0000fore_chocr.html.gz",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "wondertalesfroma0000fore_abbyy.gz",
+      "private": "true",
+      "sha1": "194459b1b50610b47f3b270a8f766f7d9098cc7c",
+      "size": "2774869",
+      "source": "derivative"
+    },
+    {
+      "cloth_cover_detection_module_version": "1.2",
+      "crc32": "a7877e54",
+      "format": "Cloth Cover Detection Log",
+      "md5": "e5d0c4e410b63e70f5054a7eaf6e885f",
+      "mtime": "1671870772",
+      "name": "wondertalesfroma0000fore_cloth_detection.log",
+      "original": "wondertalesfroma0000fore_scandata.xml",
+      "private": "true",
+      "sha1": "939d30aa62893f3c315bf4ccabfcd762df6253f5",
+      "size": "789",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5483b188",
+      "format": "Dublin Core",
+      "md5": "e1c89e1f99223a26feef60656c917b43",
+      "mtime": "1661321080",
+      "name": "wondertalesfroma0000fore_dc.xml",
+      "sha1": "017e9182010550e5efc2282291a86df504510448",
+      "size": "3043",
+      "source": "original"
+    },
+    {
+      "crc32": "d6e256eb",
+      "format": "DjVuTXT",
+      "md5": "766ee9941456ead7c3e2b35ef233e48c",
+      "mtime": "1720684315",
+      "name": "wondertalesfroma0000fore_djvu.txt",
+      "original": "wondertalesfroma0000fore_djvu.xml",
+      "private": "true",
+      "sha1": "b8c9d5e0f5621f55de4d4714c9b1acdae6c12b29",
+      "size": "253171",
+      "source": "derivative"
+    },
+    {
+      "crc32": "937af53c",
+      "format": "Djvu XML",
+      "md5": "80e763e0cf206fbf233b7d5403849983",
+      "mtime": "1720677458",
+      "name": "wondertalesfroma0000fore_djvu.xml",
+      "original": "wondertalesfroma0000fore_hocr.html",
+      "private": "true",
+      "sha1": "f583f2ad39c3587818fce5332f856aa1a6da2c5a",
+      "size": "3078665",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b51138d7",
+      "format": "ACS Encrypted EPUB",
+      "md5": "d78b83babd866749d10153f8f7f9d4dc",
+      "mtime": "1579266895",
+      "name": "wondertalesfroma0000fore_encrypted.epub",
+      "original": "wondertalesfroma0000fore_abbyy.gz",
+      "sha1": "f407ed12e2b467502da5b4d329155d43092d391a",
+      "size": "2265351",
+      "source": "derivative"
+    },
+    {
+      "crc32": "ddb077df",
+      "format": "ACS Encrypted PDF",
+      "md5": "16439a67c7bd60d3202b181d32882003",
+      "mtime": "1720684319",
+      "name": "wondertalesfroma0000fore_encrypted.pdf",
+      "original": "wondertalesfroma0000fore.pdf",
+      "sha1": "7d5591fcd981d68d0e83eeacf284771bddeeef7b",
+      "size": "14388955",
+      "source": "derivative"
+    },
+    {
+      "crc32": "a7c8f303",
+      "format": "JSON",
+      "md5": "8c0d707bae6143ca6d2ef8e7b3ae64e3",
+      "mtime": "1579262207",
+      "name": "wondertalesfroma0000fore_events.json",
+      "private": "true",
+      "sha1": "56a15191a46f55475c97c9f6be7495f78ab37fad",
+      "size": "53",
+      "source": "original"
+    },
+    {
+      "format": "Metadata",
+      "md5": "970668370a681fae32d5748ed13d1e77",
+      "name": "wondertalesfroma0000fore_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "ce1f2bc5",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "f422463028773138acc15f0a7aa259fc",
+      "mtime": "1661321477",
+      "name": "wondertalesfroma0000fore_hocr.html",
+      "ocr_converted": "abbyy-to-hocr 1.1.20",
+      "ocr_module_version": "0.0.17",
+      "original": "wondertalesfroma0000fore_chocr.html.gz",
+      "private": "true",
+      "sha1": "cbbab0df22b8106b3460becbb15d6a249e8f80ec",
+      "size": "6250844",
+      "source": "derivative"
+    },
+    {
+      "crc32": "20dbaaa2",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "0eada723df63c6ad3fd76afe4105f336",
+      "mtime": "1661321549",
+      "name": "wondertalesfroma0000fore_hocr_pageindex.json.gz",
+      "original": "wondertalesfroma0000fore_hocr.html",
+      "private": "true",
+      "sha1": "af85f98868b01fd9d09c7c4ca99215e4908339eb",
+      "size": "1873",
+      "source": "derivative"
+    },
+    {
+      "crc32": "9f988e59",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "47cc28497bf2d14ac9c33ee6c6cf1a1b",
+      "mtime": "1661321618",
+      "name": "wondertalesfroma0000fore_hocr_searchtext.txt.gz",
+      "original": "wondertalesfroma0000fore_hocr.html",
+      "private": "true",
+      "sha1": "cce58d2a83d740e8049bc70956ac9fdbdc30e778",
+      "size": "81387",
+      "source": "derivative",
+      "word_conf_0_10": "191",
+      "word_conf_11_20": "60",
+      "word_conf_21_30": "91",
+      "word_conf_31_40": "113",
+      "word_conf_41_50": "206",
+      "word_conf_51_60": "393",
+      "word_conf_61_70": "1221",
+      "word_conf_71_80": "3132",
+      "word_conf_81_90": "7400",
+      "word_conf_91_100": "25451"
+    },
+    {
+      "crc32": "855e9315",
+      "filecount": "166",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "eae8c782ae68ee5ec93cdb7f9321d9a2",
+      "mtime": "1579265858",
+      "name": "wondertalesfroma0000fore_jp2.zip",
+      "original": "wondertalesfroma0000fore_orig_jp2.tar",
+      "private": "true",
+      "sha1": "cf38dce6da617e6c55f71f2e52ccc9835580aba0",
+      "size": "101528065",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e4390a8f",
+      "format": "LCP Encrypted EPUB",
+      "md5": "d619b5ba7f177b65c732170f59df9529",
+      "mtime": "1754173231",
+      "name": "wondertalesfroma0000fore_lcp.epub",
+      "original": "wondertalesfroma0000fore.epub",
+      "sha1": "fbf4b4fe682d51c48ef176b9bb0f851c33f8a871",
+      "size": "41606399",
+      "source": "derivative"
+    },
+    {
+      "crc32": "2ff43515",
+      "format": "JSON",
+      "md5": "b7e8618bc8d7911499983944d44f060d",
+      "mtime": "1599449411",
+      "name": "wondertalesfroma0000fore_loans.json",
+      "private": "true",
+      "sha1": "5bf47094f3709fd1759d0b1edc6a88bc30f3e711",
+      "size": "2378",
+      "source": "original"
+    },
+    {
+      "crc32": "97ddadd2",
+      "format": "MARC",
+      "md5": "6ea1f51e1128d870fcb8320a9325278a",
+      "mtime": "1661321080",
+      "name": "wondertalesfroma0000fore_marc.xml",
+      "sha1": "cdd77556193dc5b4e2f76097a07e0088c2d49322",
+      "size": "8297",
+      "source": "original"
+    },
+    {
+      "crc32": "4759c347",
+      "format": "MARC Binary",
+      "md5": "987546411cb82d02bd99c8de0210ec52",
+      "mtime": "1578959911",
+      "name": "wondertalesfroma0000fore_meta.mrc",
+      "sha1": "a8720fa49bb5f639a4e33d40569e94242889d83c",
+      "size": "3328",
+      "source": "original"
+    },
+    {
+      "crc32": "b65a0e9d",
+      "format": "Metadata",
+      "md5": "5a4a3cc779db810521e6b4890a278bbc",
+      "mtime": "1579262240",
+      "name": "wondertalesfroma0000fore_meta.sqlite",
+      "sha1": "a8b06066cfa7c4cd9d541eb73d8cdb42cbca3c0a",
+      "size": "20480",
+      "source": "original"
+    },
+    {
+      "crc32": "bb74a794",
+      "format": "Metadata",
+      "md5": "5baaf75501926307c1b6edcc24e0e83d",
+      "mtime": "1754173231",
+      "name": "wondertalesfroma0000fore_meta.xml",
+      "sha1": "2a952ef388a3be53c7eb3fd144714a28bb170a00",
+      "size": "5102",
+      "source": "original"
+    },
+    {
+      "crc32": "efa2ad70",
+      "filecount": "166",
+      "format": "Single Page Original JP2 Tar",
+      "md5": "9b8435754c73588463331d3fe05d3136",
+      "mtime": "1579262239",
+      "name": "wondertalesfroma0000fore_orig_jp2.tar",
+      "private": "true",
+      "sha1": "2820455ecdb4dedd76b6f3bcb2bc44416a2fe1c4",
+      "size": "219033600",
+      "source": "original"
+    },
+    {
+      "crc32": "9af53516",
+      "format": "Page Numbers JSON",
+      "hocr_pagenumber_confidence": "88",
+      "hocr_pagenumber_hocr_version": "1.1.54",
+      "hocr_pagenumber_module_version": "1.0.5",
+      "md5": "afaabc2e305a8a301cdd47fe25fd29a3",
+      "mtime": "1720678605",
+      "name": "wondertalesfroma0000fore_page_numbers.json",
+      "original": "wondertalesfroma0000fore_hocr.html",
+      "private": "true",
+      "sha1": "0e8235251485c231e76920c908464e40cedf91bd",
+      "size": "27911",
+      "source": "derivative"
+    },
+    {
+      "crc32": "85c6dd1e",
+      "format": "Scandata",
+      "md5": "891c8fb84da94418049a86440f289fa3",
+      "mtime": "1671870772",
+      "name": "wondertalesfroma0000fore_scandata.xml",
+      "sha1": "bde63c2eef774549bf3aabbb8fd1e0f2110cd908",
+      "size": "169927",
+      "source": "original"
+    },
+    {
+      "crc32": "f0a33c31",
+      "format": "PNG",
+      "md5": "3d54f7786832bb2fcacc005dcc98545c",
+      "mtime": "1578958467",
+      "name": "wondertalesfroma0000fore_slip.png",
+      "private": "true",
+      "sha1": "686a3afa4116a6670333a24b93cb2fda190f6d05",
+      "size": "40822",
+      "source": "original"
+    },
+    {
+      "crc32": "57401a82",
+      "format": "JPEG Thumb",
+      "md5": "c732f68705f006dd18c96fc29db306d1",
+      "mtime": "1579262266",
+      "name": "wondertalesfroma0000fore_slip_thumb.jpg",
+      "original": "wondertalesfroma0000fore_slip.png",
+      "private": "true",
+      "sha1": "3d8bdd465ddc52f5de0c0042e3955e6b5c0631fa",
+      "size": "5775",
+      "source": "derivative"
+    }
+  ],
+  "files_count": 31,
+  "item_last_updated": 1754173231,
+  "item_size": 465806886,
+  "metadata": {
+    "access-restricted-item": "true",
+    "addeddate": "2020-01-17 14:03:35",
+    "associated-names": "Boston, David, illustrator",
+    "backup_location": "ia907101_25",
+    "boxid": "IA1761704",
+    "camera": "USB PTP Class Camera",
+    "collection": [
+      "internetarchivebooks",
+      "inlibrary",
+      "printdisabled"
+    ],
+    "collection_set": "printdisabled",
+    "contributor": "Internet Archive",
+    "creator": "Forest, Heather",
+    "date": "1995",
+    "description": [
+      "155 pages : 29 cm",
+      "This volume contains a collection of twenty-seven multicultural folktales which stretch imaginations and offer insights into diverse cultures (from Europe, Asia, Africa, India, the Arctic, and the Americas). The stories are retold with a touch of poetry. Each story is complemented by an ornate, full-page line drawing. Comprised of ancient plots both poignant and comical, this anthology contains simple truths, common sense, and the promise that we can benefit from past generations' experiences",
+      "Introduction -- The magic brocade (China) -- The talking skull (West Africa) -- The magic mill (Norway) -- The blizzard witch of the North (Siberian Arctic) -- Urashima the fisherman (Japan) -- Mother Holle (Germany) -- The sealskin (Iceland) -- The tiger, the Brahman, and the jackal (India) -- Wiley and the hairy man (United States) -- The golden goose (Germany) -- The magic oysters of the queen of the South Sea (Indonesia) -- The sad story of stone frogs (Australia) -- Talk! talk! (West Africa) -- The man who could transform himself (Kenya) -- Duffy and the devil (England) -- The golden touch (Ancient Greece) -- The contrary fairy (French Canada) -- Drakestail (France) -- The mouse bride (Finland) -- The Pedlar Of Swaffham (England) -- The boy who drew cats (Japan) -- The search for the magic lake (Ecuador) -- The olden golden goose (India) -- The firebird, the horse of power, and Princess Vasilissa (Russia) -- The beggar king, a King Solomon tale (Babylonia) -- The carpet, the mirror, and the magic fruit (Middle East) -- The contest between wisdom and luck (Eastern Europe)"
+    ],
+    "external-identifier": [
+      "urn:acs6:wondertalesfroma0000fore:epub:7d7f70c4-fbdd-49b5-8fb5-4e6963c3a21e",
+      "urn:acs6:wondertalesfroma0000fore:pdf:41824cdb-0198-4bfa-bab8-3e7cbab2cbb1",
+      "urn:lcp:wondertalesfroma0000fore:lcpdf:7cbd7beb-ac33-4610-a56c-b05f3bdb2a03",
+      "urn:lcp:wondertalesfroma0000fore:epub:304326e5-e051-4ee2-a25b-3722a2c506f4"
+    ],
+    "foldoutcount": "0",
+    "identifier": "wondertalesfroma0000fore",
+    "identifier-access": "http://archive.org/details/wondertalesfroma0000fore",
+    "identifier-ark": "ark:/13960/t3qw1xs0z",
+    "imagecount": "166",
+    "invoice": "1652",
+    "isbn": [
+      "087483421X",
+      "9780874834215",
+      "0874834228",
+      "9780874834222"
+    ],
+    "language": "eng",
+    "lccn": "95020459",
+    "loans__status__last_loan_date": "2020-09-07T03:29:11Z",
+    "loans__status__last_waitlist_date": "2020-02-11T07:44:07Z",
+    "loans__status__num_history": "23",
+    "loans__status__num_loans": "1",
+    "loans__status__num_waitlist": "0",
+    "loans__status__status": "AVAILABLE",
+    "mediatype": "texts",
+    "oclc-id": "32704870",
+    "ocr_converted": "abbyy-to-hocr 1.1.20",
+    "ocr_module_version": "0.0.17",
+    "old_pallet": "IA17482",
+    "openlibrary_edition": "OL788116M",
+    "openlibrary_work": "OL2648042W",
+    "operator": "associate-joyme-dalagan@archive.org",
+    "page_number_confidence": "88",
+    "page_number_module_version": "1.0.5",
+    "pdf_degraded": "invalid-jp2-headers",
+    "pdf_module_version": "0.0.25",
+    "ppi": "300",
+    "publicdate": "2020-01-13 23:34:48",
+    "publisher": "Little Rock : August Publishers",
+    "repub_state": "19",
+    "republisher_date": "20200117195642",
+    "republisher_operator": "associate-roche-borja@archive.org",
+    "republisher_time": "241",
+    "scandate": "20200114002115",
+    "scanfee": "0;1.00;200",
+    "scanner": "station36.cebu.archive.org",
+    "scanningcenter": "cebu",
+    "scribe3_search_catalog": "isbn",
+    "scribe3_search_id": "9780874834222",
+    "sponsordate": "20200131",
+    "subject": [
+      "Tales",
+      "Folklore"
+    ],
+    "title": "Wonder tales from around the world",
+    "tts_version": "3.2-rc-2-g0d7c1ed",
+    "uploader": "station36.cebu@archive.org"
+  },
+  "server": "ia601004.us.archive.org",
+  "simplelists": {
+    "holdings": {
+      "bpljordan-ol": {
+        "notes": {
+          "isbn": [
+            "9780874834222"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2020-04-14 08:19:17.768376"
+      },
+      "openlibrary-d-ol": {
+        "notes": {
+          "pallet": [
+            "IA40069211"
+          ]
+        },
+        "sys_changed_by": {
+          "source": "mdapi",
+          "username": "charleshorn@archive.org"
+        },
+        "sys_last_changed": "2021-08-01 22:58:41.147151"
+      }
+    }
+  },
+  "uniq": 795035248,
+  "workable_servers": [
+    "ia601004.us.archive.org",
+    "ia801004.us.archive.org"
+  ]
+}

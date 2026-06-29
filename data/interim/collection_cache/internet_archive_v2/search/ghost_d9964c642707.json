@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 60,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "((&quot;Victoria Australia ghost&quot; OR &quot;Victoria, Australia ghost&quot; OR &quot;haunted Victoria Australia&quot; OR &quot;Melbourne ghost stories&quot; OR &quot;Gippsland ghost stories&quot;)) AND mediatype:texts",
+      "query": "((text:&quot;Victoria Australia ghost&quot; OR text:&quot;Victoria Australia ghost&quot; OR text__reviews:&quot;Victoria Australia ghost&quot;) OR (text:&quot;Victoria, Australia ghost&quot; OR text:&quot;Victoria, Australia ghost&quot; OR text__reviews:&quot;Victoria, Australia ghost&quot;) OR (text:&quot;haunted Victoria Australia&quot; OR text:&quot;haunted Victoria Australia&quot; OR text__reviews:&quot;haunted Victoria Australia&quot;) OR (text:&quot;Melbourne ghost stories&quot; OR text:&quot;Melbourne ghost stories&quot; OR text__reviews:&quot;Melbourne ghost stories&quot;) OR (text:&quot;Gippsland ghost stories&quot; OR text:&quot;Gippsland ghost stories&quot; OR text__reviews:&quot;Gippsland ghost stories&quot;)) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

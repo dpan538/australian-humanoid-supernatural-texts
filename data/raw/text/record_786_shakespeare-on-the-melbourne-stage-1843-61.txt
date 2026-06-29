@@ -1,0 +1,14 @@
+{
+  "title": "Shakespeare on the Melbourne Stage, 1843-61",
+  "source": "OpenAlex",
+  "url": "https://doi.org/10.1017/ccol0521247527.004",
+  "matched_term": "Yahoo",
+  "figure": "Yahoo",
+  "date_published": "1982-11-25",
+  "publication": "Cambridge University Press eBooks",
+  "author": "Dennis Bartholomeusz",
+  "region_signal": "Victoria",
+  "location_confidence": "medium",
+  "abstract": "Barely ten years after John Batman, one of the first settlers in Victoria, had made a treaty with the aborigines which the central government a few years later decided to ignore, Othello was played in Melbourne. It was the first Shakespeare play to be staged in the colony, on 4 September 1843, under the management of Conrad Knowles, in a wooden shed in Bourke Street which seated 500 and was called the Pavilion. It was astonishing that Shakespeare was produced at all, for instead of the ‘fashionable’ house that The Port Phillip Gazette anticipated, Knowles had to contend with wild, unruly audiences. When he played Shylock in September ‘certain parties were refused admission to the dress circle’. This was the Yahoo period of Australian stage history when barbarism reigned triumphant.",
+  "note": "OpenAlex public metadata only; full text was not collected."
+}

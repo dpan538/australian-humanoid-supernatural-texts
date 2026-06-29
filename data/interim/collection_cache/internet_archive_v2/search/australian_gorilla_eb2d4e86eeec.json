@@ -1,0 +1,19 @@
+{
+  "response": {
+    "docs": [],
+    "numFound": 0,
+    "start": 0
+  },
+  "responseHeader": {
+    "QTime": 106,
+    "params": {
+      "fields": "identifier,title,date,creator,description,publicdate",
+      "qin": "(&quot;Australian gorilla&quot;) AND mediatype:texts",
+      "query": "(text:&quot;Australian gorilla&quot; OR text:&quot;Australian gorilla&quot; OR text__reviews:&quot;Australian gorilla&quot;) AND mediatype:texts",
+      "rows": 25,
+      "start": 0,
+      "wt": "json"
+    },
+    "status": 0
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "alternate_locations": {
+    "servers": [
+      {
+        "dir": "/0/items/ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA",
+        "server": "dn720002.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA",
+        "server": "dn760108.eu.archive.org"
+      }
+    ],
+    "workable": [
+      {
+        "dir": "/0/items/ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA",
+        "server": "dn720002.ca.archive.org"
+      },
+      {
+        "dir": "/0/items/ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA",
+        "server": "dn760108.eu.archive.org"
+      }
+    ]
+  },
+  "created": 1781957377,
+  "d1": "ia601402.us.archive.org",
+  "d2": "ia801402.us.archive.org",
+  "dir": "/21/items/ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA",
+  "files": [
+    {
+      "crc32": "419f3beb",
+      "format": "Image Container PDF",
+      "md5": "3b7076c8ceb2e7b973aa776cff44cd12",
+      "mtime": "1666804748",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA.pdf",
+      "sha1": "c594c30f4fa0bab9e45e56d5da79f8a057c4599a",
+      "size": "5255336",
+      "source": "original"
+    },
+    {
+      "crc32": "307f461f",
+      "format": "chOCR",
+      "md5": "1f2d874fb2864f35606043c32f3691f8",
+      "mtime": "1666805215",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_chocr.html.gz",
+      "ocr": "tesseract 5.2.0-1-gc42a",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.18",
+      "ocr_parameters": "-l eng",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_jp2.zip",
+      "sha1": "cbeec544523c888c34f4a412d81eb7ef187718b2",
+      "size": "538615",
+      "source": "derivative"
+    },
+    {
+      "crc32": "8382086c",
+      "format": "DjVuTXT",
+      "md5": "40d67f1a42de38f78ddae7c72445ca70",
+      "mtime": "1666807400",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_djvu.txt",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_djvu.xml",
+      "sha1": "8ae398af2c373b00466641bb2104feb5ae53ea1c",
+      "size": "41287",
+      "source": "derivative"
+    },
+    {
+      "crc32": "077a01c3",
+      "format": "Djvu XML",
+      "md5": "786e88c3d3650c0e2f1a90b32f918bea",
+      "mtime": "1666807214",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_djvu.xml",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_hocr.html",
+      "sha1": "73cba53df582d66784a455c21efdabbbc309f206",
+      "size": "542507",
+      "source": "derivative"
+    },
+    {
+      "crc32": "0a81e9d7",
+      "format": "hOCR",
+      "hocr_char_to_word_hocr_version": "1.1.15",
+      "hocr_char_to_word_module_version": "1.1.0",
+      "md5": "b19fa5efa05b7d8d9fd37a7ebf042e26",
+      "mtime": "1666807195",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_hocr.html",
+      "ocr_detected_lang": "en",
+      "ocr_detected_lang_conf": "1.0000",
+      "ocr_detected_script": "Latin",
+      "ocr_detected_script_conf": "1.0000",
+      "ocr_module_version": "0.0.18",
+      "ocr_parameters": "-l eng",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_chocr.html.gz",
+      "sha1": "4b0774ba659b9fd8b4ceb92ad8af394498f2acb1",
+      "size": "1042118",
+      "source": "derivative"
+    },
+    {
+      "crc32": "1e448d24",
+      "format": "OCR Page Index",
+      "hocr_pageindex_hocr_version": "1.1.15",
+      "hocr_pageindex_module_version": "1.0.0",
+      "md5": "6b8e02c814d71607acb17542af890712",
+      "mtime": "1666807312",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_hocr_pageindex.json.gz",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_hocr.html",
+      "sha1": "385765695905552a434ea762628442340d517046",
+      "size": "328",
+      "source": "derivative"
+    },
+    {
+      "crc32": "e9950051",
+      "format": "OCR Search Text",
+      "hocr_fts_text_hocr_version": "1.1.15",
+      "hocr_fts_text_module_version": "1.1.0",
+      "md5": "e1d6f8f465f5b4b9ffe1a7cfb2672fa1",
+      "mtime": "1666807381",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_hocr_searchtext.txt.gz",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_hocr.html",
+      "sha1": "fabce05863395d9b0224e40b85ebe33588e12748",
+      "size": "17685",
+      "source": "derivative",
+      "word_conf_0_10": "459",
+      "word_conf_11_20": "89",
+      "word_conf_21_30": "95",
+      "word_conf_31_40": "69",
+      "word_conf_41_50": "51",
+      "word_conf_51_60": "39",
+      "word_conf_61_70": "39",
+      "word_conf_71_80": "48",
+      "word_conf_81_90": "106",
+      "word_conf_91_100": "5482"
+    },
+    {
+      "crc32": "ecd5f3e0",
+      "format": "Image-Only PDF Metadata JSON",
+      "md5": "fa4cf31a5221e644126490845c571b31",
+      "mtime": "1666804930",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_imgonly_pdfmeta.json",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA.pdf",
+      "pdf_metadata_json_module_version": "1.0.0",
+      "sha1": "60ee0f928ff7008ac6609911fc1894a242fa41bd",
+      "size": "36271",
+      "source": "derivative"
+    },
+    {
+      "crc32": "7b534cdf",
+      "filecount": "28",
+      "format": "Single Page Processed JP2 ZIP",
+      "md5": "4780ef87594bee48c9f3c7662614dc0f",
+      "mtime": "1666805061",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_jp2.zip",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_imgonly_pdfmeta.json",
+      "sha1": "22f900824a480b11cb3cc137fa1b80b100fee28b",
+      "size": "4980564",
+      "source": "derivative"
+    },
+    {
+      "crc32": "5d401404",
+      "format": "Page Numbers JSON",
+      "md5": "e8447332954aa2850238056a2a5de259",
+      "mtime": "1666807412",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_page_numbers.json",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_djvu.xml",
+      "sha1": "6bf26e5f6a1c9c9af32515a0477e504e1b70d4ca",
+      "size": "4926",
+      "source": "derivative"
+    },
+    {
+      "crc32": "82931bab",
+      "format": "Scandata",
+      "md5": "b9e1bd5b3318df97457e0c96dde1b678",
+      "mtime": "1666807412",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_scandata.xml",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_djvu.xml",
+      "sha1": "2bf9bae568faf493dc63f46fc91476265d35150a",
+      "size": "9909",
+      "source": "derivative"
+    },
+    {
+      "crc32": "b9869e5c",
+      "format": "Additional Text PDF",
+      "md5": "1b562456b65432aed1e5a1df107f761e",
+      "mtime": "1666807578",
+      "name": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_text.pdf",
+      "original": "Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_page_numbers.json",
+      "pdf_module_version": "0.0.20",
+      "sha1": "bb30330fdd5b4744237936ce660bc35af72f66ae",
+      "size": "2023994",
+      "source": "derivative"
+    },
+    {
+      "crc32": "f9ae07c7",
+      "format": "Item Tile",
+      "md5": "9d473cfa56ac64537ef8c3bf1959f839",
+      "mtime": "1767846046",
+      "name": "__ia_thumb.jpg",
+      "rotation": "0",
+      "sha1": "7cb448400636eb4e76589759d18625c080d6d8ac",
+      "size": "30304",
+      "source": "original"
+    },
+    {
+      "btih": "c8cf10b9f80200f219c0f5cab5ae24166e8be9b3",
+      "crc32": "f5d33ade",
+      "format": "Archive BitTorrent",
+      "md5": "a23cff888dc4b92a6651a391bb0e2419",
+      "mtime": "1767846047",
+      "name": "ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_archive.torrent",
+      "sha1": "9fb5eaf698e2635961b98548f62f047995ec304f",
+      "size": "5182",
+      "source": "metadata"
+    },
+    {
+      "format": "Metadata",
+      "md5": "e2f2d99b0c45df642ad34a46ac9540ae",
+      "name": "ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_files.xml",
+      "source": "original",
+      "summation": "md5"
+    },
+    {
+      "crc32": "22cbf965",
+      "format": "Metadata",
+      "md5": "2076a8242b5540992b5110b35c78850e",
+      "mtime": "1666805348",
+      "name": "ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_meta.sqlite",
+      "sha1": "8596c7dae9ed4fb3eede822d8fac626c6f3d5127",
+      "size": "20480",
+      "source": "original"
+    },
+    {
+      "crc32": "791d96ae",
+      "format": "Metadata",
+      "md5": "178e64ce475f15a9ef74e440150086dc",
+      "mtime": "1767846041",
+      "name": "ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA_meta.xml",
+      "sha1": "0f54bc0121b1897cf38b8a9adedeed17ba0931b2",
+      "size": "1362",
+      "source": "original"
+    }
+  ],
+  "files_count": 17,
+  "item_last_updated": 1767846047,
+  "item_size": 14550868,
+  "metadata": {
+    "addeddate": "2022-10-26 16:55:25",
+    "collection": [
+      "ps2-kirklands-manual-labor",
+      "manuals",
+      "consolemanuals"
+    ],
+    "collection_added": "consolemanuals",
+    "description": " Ty the Tasmanian Tiger 3  Night of the Quinkan (USA)",
+    "identifier": "ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA",
+    "identifier-access": "http://archive.org/details/ps2_Ty_the_Tasmanian_Tiger_3-_Night_of_the_Quinkan_USA",
+    "identifier-ark": "ark:/13960/s28fqmm00xf",
+    "language": "eng",
+    "mediatype": "texts",
+    "ocr": "tesseract 5.2.0-1-gc42a",
+    "ocr_detected_lang": "en",
+    "ocr_detected_lang_conf": "1.0000",
+    "ocr_detected_script": "Latin",
+    "ocr_detected_script_conf": "1.0000",
+    "ocr_module_version": "0.0.18",
+    "ocr_parameters": "-l eng",
+    "page_number_confidence": "81.48",
+    "pdf_module_version": "0.0.20",
+    "publicdate": "2022-10-26 16:55:25",
+    "scanner": "Internet Archive Python library 2.3.0",
+    "title": " Ty the Tasmanian Tiger 3  Night of the Quinkan (USA)",
+    "uploader": "sketch@cow.net"
+  },
+  "server": "ia801402.us.archive.org",
+  "uniq": 242614749,
+  "workable_servers": [
+    "ia801402.us.archive.org",
+    "ia601402.us.archive.org"
+  ]
+}
