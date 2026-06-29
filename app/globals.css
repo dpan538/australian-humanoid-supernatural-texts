@@ -10170,19 +10170,27 @@ body {
 .record-timeline-chart .dashboard-svg-micro,
 .record-timeline-chart .console-axis-label,
 .record-timeline-chart .timeline-peak-label {
-  font-size: 15px !important;
+  font-size: 13.5px !important;
   font-weight: var(--weight-regular) !important;
   paint-order: normal !important;
   stroke: none !important;
 }
 
 .record-timeline-chart .timeline-peak-label {
-  font-size: 13.8px !important;
+  font-size: 12.4px !important;
   font-weight: var(--weight-medium) !important;
 }
 
 .record-timeline-chart .timeline-mapped-line {
-  stroke-width: 1.4;
+  stroke-width: 1.25;
+}
+
+.record-timeline-chart .timeline-axis-start {
+  text-anchor: start !important;
+}
+
+.record-timeline-chart .timeline-axis-end {
+  text-anchor: end !important;
 }
 
 .source-donut-module:not(.compact),
@@ -10391,6 +10399,158 @@ body {
   border-color: var(--terminal-line);
   background: #ffffff;
   color: var(--ink);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .density-chart-switcher button:hover,
+:root:not([data-theme="light"]) .dashboard-view .density-chart-switcher button:focus-visible,
+:root:not([data-theme="light"]) .dashboard-view .density-chart-switcher button.is-active,
+:root:not([data-theme="light"]) .dashboard-view .console-tabs button:hover,
+:root:not([data-theme="light"]) .dashboard-view .console-tabs button:focus-visible,
+:root:not([data-theme="light"]) .dashboard-view .console-tabs button.active,
+:root:not([data-theme="light"]) .dashboard-view .output-switch button:hover,
+:root:not([data-theme="light"]) .dashboard-view .output-switch button:focus-visible,
+:root:not([data-theme="light"]) .dashboard-view .output-switch button.active {
+  border-color: var(--accent-blue);
+  background: color-mix(in srgb, var(--accent-blue) 22%, var(--panel-bg));
+  color: var(--text-primary);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .console-tabs button,
+:root:not([data-theme="light"]) .dashboard-view .output-switch,
+:root:not([data-theme="light"]) .dashboard-view .output-switch button,
+:root:not([data-theme="light"]) .dashboard-view .mini-control,
+:root:not([data-theme="light"]) .dashboard-view .time-cutter-grid,
+:root:not([data-theme="light"]) .dashboard-view .time-cutter-grid button {
+  border-color: color-mix(in srgb, var(--text-secondary) 54%, transparent);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .output-switch button,
+:root:not([data-theme="light"]) .dashboard-view .time-cutter-grid button,
+:root:not([data-theme="light"]) .dashboard-view .mini-control b {
+  color: var(--text-primary);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .mini-control span,
+:root:not([data-theme="light"]) .dashboard-view .time-cutter-period {
+  color: var(--text-secondary);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .time-cutter-count,
+:root:not([data-theme="light"]) .dashboard-view .tiny-label {
+  color: var(--accent-blue);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .console-sequencer .time-cutter-grid button.active,
+:root:not([data-theme="light"]) .dashboard-view .console-sequencer .time-cutter-grid button:hover,
+:root:not([data-theme="light"]) .dashboard-view .console-sequencer .time-cutter-grid button:focus-visible {
+  border-color: var(--dashboard-amber);
+  background: color-mix(in srgb, var(--dashboard-amber) 20%, var(--panel-bg));
+  color: var(--text-primary);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .state-coverage-grid-line {
+  stroke: color-mix(in srgb, var(--text-secondary) 22%, transparent);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .state-total-rail {
+  stroke: color-mix(in srgb, var(--text-secondary) 32%, transparent);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .state-mapped-rail,
+:root:not([data-theme="light"]) .dashboard-view .state-mapped-profile {
+  stroke: #4f8dff;
+}
+
+:root:not([data-theme="light"]) .dashboard-view .state-total-point {
+  fill: var(--panel-bg);
+  stroke: color-mix(in srgb, var(--text-secondary) 58%, transparent);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .state-mapped-point {
+  fill: #6fa3ff;
+  stroke: var(--panel-bg);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .state-coverage-label {
+  fill: var(--text-primary);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .state-coverage-count,
+:root:not([data-theme="light"]) .dashboard-view .state-coverage-share {
+  fill: #7fb0ff;
+}
+
+:root:not([data-theme="light"]) .dashboard-view .precision-dot {
+  border-color: color-mix(in srgb, var(--text-secondary) 50%, transparent);
+  background: color-mix(in srgb, var(--text-secondary) 18%, transparent);
+}
+
+:root:not([data-theme="light"]) .dashboard-view .precision-dot.lit {
+  border-color: #7fa7ff;
+  background: #6388ec;
+}
+
+:root:not([data-theme="light"]) .source-registry-row:hover,
+:root:not([data-theme="light"]) .source-registry-row:focus-visible,
+:root:not([data-theme="light"]) .source-registry-row.is-selected {
+  background: color-mix(in srgb, var(--source-color) 24%, var(--panel-bg));
+  color: var(--text-primary);
+}
+
+:root:not([data-theme="light"]) .source-registry-row.is-selected .source-org-name b,
+:root:not([data-theme="light"]) .source-registry-row.is-selected .source-type-cell b,
+:root:not([data-theme="light"]) .source-registry-row.is-selected > strong,
+:root:not([data-theme="light"]) .source-registry-row:hover .source-org-name b,
+:root:not([data-theme="light"]) .source-registry-row:hover .source-type-cell b,
+:root:not([data-theme="light"]) .source-registry-row:hover > strong,
+:root:not([data-theme="light"]) .source-registry-row:focus-visible .source-org-name b,
+:root:not([data-theme="light"]) .source-registry-row:focus-visible .source-type-cell b,
+:root:not([data-theme="light"]) .source-registry-row:focus-visible > strong {
+  color: var(--text-primary);
+}
+
+:root:not([data-theme="light"]) .source-registry-row.is-selected .source-org-name small,
+:root:not([data-theme="light"]) .source-registry-row.is-selected .source-type-cell small,
+:root:not([data-theme="light"]) .source-registry-row:hover .source-org-name small,
+:root:not([data-theme="light"]) .source-registry-row:hover .source-type-cell small,
+:root:not([data-theme="light"]) .source-registry-row:focus-visible .source-org-name small,
+:root:not([data-theme="light"]) .source-registry-row:focus-visible .source-type-cell small {
+  color: var(--text-secondary);
+}
+
+:root:not([data-theme="light"]) .source-registry-row.is-selected .source-role-cell,
+:root:not([data-theme="light"]) .source-registry-row:hover .source-role-cell,
+:root:not([data-theme="light"]) .source-registry-row:focus-visible .source-role-cell {
+  color: var(--accent-blue);
+}
+
+.density-header b {
+  font-size: clamp(0.99rem, 1.305vw, 1.395rem);
+  font-weight: var(--weight-medium);
+}
+
+:root:not([data-theme="light"]) .density-line-public {
+  stroke: #d9993a;
+}
+
+:root:not([data-theme="light"]) .density-line-mapped {
+  stroke: #7dd3c7;
+  opacity: 0.95;
+}
+
+:root:not([data-theme="light"]) .legend-public {
+  background: #d9993a;
+}
+
+:root:not([data-theme="light"]) .legend-mapped {
+  background: #7dd3c7;
+}
+
+:root:not([data-theme="light"]) .density-chart-axis,
+:root:not([data-theme="light"]) .density-box-label,
+:root:not([data-theme="light"]) .density-box-count,
+:root:not([data-theme="light"]) .density-heatmap-value {
+  fill: rgba(255, 250, 240, 0.78);
 }
 
 @media (max-width: 920px) {

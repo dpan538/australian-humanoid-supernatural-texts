@@ -3471,7 +3471,7 @@ function RecordTimelineChart({
   const width = 640;
   const height = compact ? 132 : 246;
   const left = 44;
-  const right = 18;
+  const right = compact ? 18 : 44;
   const top = compact ? 24 : 34;
   const bottom = compact ? 28 : 42;
   const plotWidth = width - left - right;
@@ -3521,15 +3521,15 @@ function RecordTimelineChart({
             className="timeline-diversity-dot"
             cx={xFor(index)}
             cy={height - bottom + 8 - (point.diversity / maxDiversity) * 12}
-            r={compact ? 1.8 : 2.5}
+            r={compact ? 1.62 : 2.25}
           />
         ))}
         {points.map((point, index) =>
           peakIndexes.has(index) ? (
             <g key={`peak-${point.key}`}>
-              <circle className="dashboard-highlight-point" cx={xFor(index)} cy={yFor(point.value)} r={compact ? 4 : 5} />
+              <circle className="dashboard-highlight-point" cx={xFor(index)} cy={yFor(point.value)} r={compact ? 3.6 : 4.5} />
               {!compact ? (
-                <text className="timeline-peak-label" x={Math.min(width - 56, xFor(index) + 8)} y={Math.max(18, yFor(point.value) - 6)}>
+                <text className="timeline-peak-label" x={Math.min(width - 70, xFor(index) + 7)} y={Math.max(18, yFor(point.value) - 6)}>
                   {numberFormat(point.value)}
                 </text>
               ) : null}
@@ -3538,16 +3538,22 @@ function RecordTimelineChart({
         )}
         {!compact ? (
           <g className="timeline-legend">
-            <rect className="record-timeline-bar" x={width - 210} y="13" width="16" height="7" />
-            <text x={width - 188} y="20">all records</text>
-            <line className="timeline-mapped-line" x1={width - 95} y1="17" x2={width - 70} y2="17" />
-            <text x={width - 62} y="20">mapped</text>
-            <circle className="timeline-diversity-dot" cx={width - 210} cy="34" r="2.5" />
-            <text x={width - 198} y="38">narrative families</text>
+            <rect className="record-timeline-bar" x={width - 212} y="13" width="14.4" height="6.3" />
+            <text x={width - 192} y="20">all records</text>
+            <line className="timeline-mapped-line" x1={width - 103} y1="17" x2={width - 80.5} y2="17" />
+            <text x={width - 73} y="20">mapped</text>
+            <circle className="timeline-diversity-dot" cx={width - 212} cy="34" r="2.25" />
+            <text x={width - 201} y="38">narrative families</text>
           </g>
         ) : null}
         {points.map((point, index) => index % labelStep === 0 || index === points.length - 1 ? (
-          <text key={`label-${point.key}`} className="console-axis-label" x={xFor(index)} y={height - 8}>
+          <text
+            key={`label-${point.key}`}
+            className={`console-axis-label${index === points.length - 1 ? " timeline-axis-end" : index === 0 ? " timeline-axis-start" : ""}`}
+            x={xFor(index)}
+            y={height - 8}
+            textAnchor={index === points.length - 1 ? "end" : index === 0 ? "start" : "middle"}
+          >
             {compactChartLabel(point.label, "records")}
           </text>
         ) : null)}
