@@ -99,6 +99,57 @@ const TERRAIN_SYMBOLS = {
 type TerrainKind = keyof typeof TERRAIN_SYMBOLS;
 type DashboardLayout = "balanced" | "left-expanded" | "right-expanded";
 type ConsoleMode = "records" | "locations" | "sources";
+
+const DASHBOARD_LAYOUT_STORAGE_KEY = "aus-archive-dashboard-layout";
+const DASHBOARD_MODE_STORAGE_KEY = "aus-archive-dashboard-mode";
+const DASHBOARD_BAND_STORAGE_KEY = "aus-archive-dashboard-band";
+
+function readDashboardLayoutPreference(): DashboardLayout {
+  if (typeof window === "undefined") {
+    return "balanced";
+  }
+  try {
+    const stored = window.localStorage.getItem(DASHBOARD_LAYOUT_STORAGE_KEY);
+    return stored === "left-expanded" || stored === "right-expanded" || stored === "balanced" ? stored : "balanced";
+  } catch {
+    return "balanced";
+  }
+}
+
+function readDashboardModePreference(): ConsoleMode {
+  if (typeof window === "undefined") {
+    return "sources";
+  }
+  try {
+    const stored = window.localStorage.getItem(DASHBOARD_MODE_STORAGE_KEY);
+    return stored === "records" || stored === "locations" || stored === "sources" ? stored : "sources";
+  } catch {
+    return "sources";
+  }
+}
+
+function readDashboardBandPreference() {
+  if (typeof window === "undefined") {
+    return "all";
+  }
+  try {
+    return window.localStorage.getItem(DASHBOARD_BAND_STORAGE_KEY) || "all";
+  } catch {
+    return "all";
+  }
+}
+
+function writeDashboardPreference(key: string, value: string) {
+  if (typeof window === "undefined") {
+    return;
+  }
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // Dashboard view state is a convenience only; ignore storage failures.
+  }
+}
+
 type ConsoleChartPoint = {
   key: string;
   label: string;
@@ -483,6 +534,17 @@ function compactChartLabel(value: string, mode: ConsoleMode) {
     return truncate(value, 8);
   }
   return words.slice(0, 2).map((word) => word.slice(0, 4)).join(" ");
+}
+
+function fullDateRangeLabel(value: string) {
+  const years = value.match(/\d{4}/g);
+  if (!years?.length) {
+    return value;
+  }
+  if (years.length === 1) {
+    return years[0];
+  }
+  return `${years[0]}-${years[years.length - 1]}`;
 }
 
 function relationKey(source: string, periodId: string, narrative: string) {
@@ -1622,8 +1684,8 @@ function DensityView({
   const densityViewRef = useRef<HTMLDivElement | null>(null);
   const [selectedFigureIndex, setSelectedFigureIndex] = useState<number | null>(null);
   const periodBands = useMemo(() => data.date_bands.filter((band) => band.id !== "undated"), [data.date_bands]);
-  const maxRecords = Math.max(...periodBands.map((band) => band.record_count), 1);
-  const maxQueries = Math.max(...periodBands.map((band) => band.planned_query_count), 1);
+  const totalBandRecords = Math.max(periodBands.reduce((sum, band) => sum + band.record_count, 0), 1);
+  const totalBandQueries = Math.max(periodBands.reduce((sum, band) => sum + band.planned_query_count, 0), 1);
   const mappedByBand = useMemo(() => buildMappedCountByDateBand(derived.mapFlags), [derived.mapFlags]);
   const annualSeries = useMemo(() => buildAnnualDensitySeries(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
   const boxStats = useMemo(() => buildPeriodBoxPlotStats(periodBands, data.records, derived.mapFlags), [periodBands, data.records, derived.mapFlags]);
@@ -1671,8 +1733,8 @@ function DensityView({
           <DensityBand
             key={band.id}
             band={band}
-            maxRecords={maxRecords}
-            maxQueries={maxQueries}
+            totalRecords={totalBandRecords}
+            totalQueries={totalBandQueries}
             mappedCount={mappedByBand[band.id] ?? 0}
             firstRecord={derived.firstRecordByDateBand.get(band.id) ?? null}
             onSelectRecord={onSelectRecord}
@@ -1712,21 +1774,23 @@ function DensityView({
 
 function DensityBand({
   band,
-  maxRecords,
-  maxQueries,
+  totalRecords,
+  totalQueries,
   mappedCount,
   firstRecord,
   onSelectRecord,
 }: {
   band: DateBand;
-  maxRecords: number;
-  maxQueries: number;
+  totalRecords: number;
+  totalQueries: number;
   mappedCount: number;
   firstRecord: RecordItem | null;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const recordWidth = Math.max(3, (band.record_count / maxRecords) * 100);
-  const queryWidth = Math.max(3, (band.planned_query_count / maxQueries) * 100);
+  const recordShare = (band.record_count / totalRecords) * 100;
+  const queryShare = (band.planned_query_count / totalQueries) * 100;
+  const recordWidth = Math.max(2, recordShare);
+  const queryWidth = Math.max(2, queryShare);
   const mappedShare = formatPercent(mappedCount, band.record_count);
   return (
     <section
@@ -1752,8 +1816,8 @@ function DensityBand({
         <small>{numberFormat(mappedCount)} mapped / {mappedShare}</small>
       </div>
       <div className="density-band-bars" aria-hidden="true">
-        <i className="density-bar-fill" style={{ "--bar-width": `${recordWidth}%` } as CSSProperties} title={`${band.label}: ${numberFormat(band.record_count)} public records`} />
-        <em className="density-bar-fill" style={{ "--bar-width": `${queryWidth}%` } as CSSProperties} title={`${band.label}: ${numberFormat(band.planned_query_count)} planned queries`} />
+        <i className="density-bar-fill" style={{ "--bar-width": `${recordWidth}%` } as CSSProperties} title={`${band.label}: ${numberFormat(band.record_count)} public records · ${Math.round(recordShare)}% of dated records`} />
+        <em className="density-bar-fill" style={{ "--bar-width": `${queryWidth}%` } as CSSProperties} title={`${band.label}: ${numberFormat(band.planned_query_count)} planned queries · ${Math.round(queryShare)}% of planned queries`} />
       </div>
       <dl className="density-band-stats">
         <div>
@@ -2432,9 +2496,13 @@ function DashboardView({
   onSelectRecord: (record: RecordItem) => void;
 }) {
   const rootRef = useRef<HTMLDivElement | null>(null);
-  const [layout, setLayout] = useState<DashboardLayout>("balanced");
+  const [layout, setLayout] = useState<DashboardLayout>(() => readDashboardLayoutPreference());
 
   useDashboardLayoutMotion(rootRef, layout);
+
+  useEffect(() => {
+    writeDashboardPreference(DASHBOARD_LAYOUT_STORAGE_KEY, layout);
+  }, [layout]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -3208,10 +3276,10 @@ function DashboardControlConsole({
   layout: DashboardLayout;
   onToggle: () => void;
 }) {
-  const [mode, setMode] = useState<ConsoleMode>("sources");
+  const [mode, setMode] = useState<ConsoleMode>(() => readDashboardModePreference());
   const expanded = layout === "right-expanded";
   const contracted = layout === "left-expanded";
-  const [selectedBandId, setSelectedBandId] = useState<string>("all");
+  const [selectedBandId, setSelectedBandId] = useState<string>(() => readDashboardBandPreference());
   const datedBands = useMemo(() => data.date_bands.filter((band) => band.id !== "undated"), [data.date_bands]);
   const selectedBand = datedBands.find((band) => band.id === selectedBandId) ?? null;
   const scopedRecords = useMemo(
@@ -3233,6 +3301,21 @@ function DashboardControlConsole({
     [datedBands, expanded, scopedMapFlags, scopedRecords],
   );
   useDashboardFieldMotion(contentRef, mode);
+
+  useEffect(() => {
+    writeDashboardPreference(DASHBOARD_MODE_STORAGE_KEY, mode);
+  }, [mode]);
+
+  useEffect(() => {
+    writeDashboardPreference(DASHBOARD_BAND_STORAGE_KEY, selectedBandId);
+  }, [selectedBandId]);
+
+  useEffect(() => {
+    if (selectedBandId !== "all" && !datedBands.some((band) => band.id === selectedBandId)) {
+      setSelectedBandId("all");
+    }
+  }, [datedBands, selectedBandId]);
+
   const activeTabs = [
     { id: "records" as const, label: "RECORDS" },
     { id: "locations" as const, label: "GEO FIELD" },
@@ -3496,12 +3579,12 @@ function RecordTimelineChart({
 }) {
   const max = Math.max(...points.map((point) => point.value), 1);
   const maxDiversity = Math.max(...points.map((point) => point.diversity), 1);
-  const width = 640;
-  const height = compact ? 132 : 246;
-  const left = 44;
-  const right = compact ? 18 : 44;
-  const top = compact ? 24 : 34;
-  const bottom = compact ? 28 : 42;
+  const width = compact ? 640 : 1040;
+  const height = compact ? 132 : 430;
+  const left = compact ? 44 : 76;
+  const right = compact ? 18 : 30;
+  const top = compact ? 24 : 58;
+  const bottom = compact ? 28 : 64;
   const plotWidth = width - left - right;
   const plotHeight = height - top - bottom;
   const xFor = (index: number) => left + (index / Math.max(1, points.length - 1)) * plotWidth;
@@ -3525,7 +3608,7 @@ function RecordTimelineChart({
         {[0, 0.5, 1].map((tick) => (
           <g key={tick}>
             <line className="timeline-grid-line" x1={left} x2={width - right} y1={yFor(max * tick)} y2={yFor(max * tick)} />
-            <text className="dashboard-svg-micro" x="8" y={yFor(max * tick) + 4}>
+            <text className="dashboard-svg-micro timeline-y-label" x={compact ? 8 : 16} y={yFor(max * tick) + 4}>
               {tick === 0 ? "0" : tick === 1 ? numberFormat(max) : numberFormat(Math.round(max / 2))}
             </text>
           </g>
@@ -3566,23 +3649,23 @@ function RecordTimelineChart({
         )}
         {!compact ? (
           <g className="timeline-legend">
-            <rect className="record-timeline-bar" x={width - 212} y="13" width="14.4" height="6.3" />
-            <text x={width - 192} y="20">all records</text>
-            <line className="timeline-mapped-line" x1={width - 103} y1="17" x2={width - 80.5} y2="17" />
-            <text x={width - 73} y="20">mapped</text>
-            <circle className="timeline-diversity-dot" cx={width - 212} cy="34" r="2.25" />
-            <text x={width - 201} y="38">narrative families</text>
+            <rect className="record-timeline-bar" x={width - 250} y="12.5" width="16.6" height="7.2" />
+            <text x={width - 228} y="21">all records</text>
+            <line className="timeline-mapped-line" x1={width - 110} y1="17.4" x2={width - 80} y2="17.4" />
+            <text x={width - 72} y="21">mapped</text>
+            <circle className="timeline-diversity-dot" cx={width - 250} cy="36" r="2.6" />
+            <text x={width - 238} y="41">narrative families</text>
           </g>
         ) : null}
         {points.map((point, index) => index % labelStep === 0 || index === points.length - 1 ? (
           <text
             key={`label-${point.key}`}
-            className={`console-axis-label${index === points.length - 1 ? " timeline-axis-end" : index === 0 ? " timeline-axis-start" : ""}`}
+            className={`console-axis-label timeline-axis-label${index === points.length - 1 ? " timeline-axis-end" : index === 0 ? " timeline-axis-start" : ""}`}
             x={xFor(index)}
-            y={height - 8}
+            y={compact ? height - 8 : height - 20}
             textAnchor={index === points.length - 1 ? "end" : index === 0 ? "start" : "middle"}
           >
-            {compactChartLabel(point.label, "records")}
+            {compact ? compactChartLabel(point.label, "records") : fullDateRangeLabel(point.label)}
           </text>
         ) : null)}
       </svg>
@@ -4146,7 +4229,6 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
                       data-period={index + 1}
                       data-value={value}
                       style={{ "--period-top": `${periodTop.toFixed(1)}px`, "--period-active": value > 0 ? 1 : 0.22, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
-                      title={tooltipText}
                       aria-label={tooltipText}
                       onPointerEnter={(event) => {
                         event.stopPropagation();

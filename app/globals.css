@@ -1463,9 +1463,10 @@ a {
 .density-band-bars i,
 .density-band-bars em {
   position: relative;
-  height: 11px;
-  background: rgba(242, 242, 237, 0.08);
-  overflow: hidden;
+  height: 8px;
+  border: 1px solid rgba(242, 242, 237, 0.18);
+  background: rgba(242, 242, 237, 0.06);
+  overflow: visible;
 }
 
 .density-band-bars i::before,
@@ -1476,11 +1477,29 @@ a {
   width: var(--bar-width);
 }
 
+.density-band-bars i::after,
+.density-band-bars em::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: calc(var(--bar-width) - 1px);
+  width: 2px;
+  height: 12px;
+}
+
 .density-band-bars i::before {
   background: var(--green);
 }
 
+.density-band-bars i::after {
+  background: var(--green);
+}
+
 .density-band-bars em::before {
+  background: var(--blue);
+}
+
+.density-band-bars em::after {
   background: var(--blue);
 }
 
@@ -4943,6 +4962,12 @@ a {
   background: #e7e7e7;
 }
 
+:root[data-theme="light"] .density-band-bars i,
+:root[data-theme="light"] .density-band-bars em {
+  border-color: rgba(0, 0, 0, 0.16);
+  background: #eeeeee;
+}
+
 :root[data-theme="light"] .density-chart-switcher button {
   color: var(--ink);
   border-color: rgba(0, 0, 0, 0.28);
@@ -6959,6 +6984,15 @@ a {
 .source-field-preview .source-ribbon-module,
 .source-donut-module.compact {
   min-height: 144px;
+}
+
+.records-field-view:not(.records-field-preview) .record-timeline-module {
+  min-height: clamp(320px, 40vh, 420px);
+}
+
+.records-field-view:not(.records-field-preview) .record-timeline-chart {
+  width: 100%;
+  height: auto;
 }
 
 .field-preview-metrics {
@@ -10781,4 +10815,107 @@ body {
   .source-rank-row em {
     grid-template-columns: repeat(6, minmax(28px, 1fr));
   }
+}
+
+.dashboard-page .record-timeline-chart .timeline-axis-label,
+.dashboard-view .record-timeline-chart .timeline-axis-label,
+.density-view .record-timeline-chart .timeline-axis-label {
+  font-size: 14.2px !important;
+  font-weight: 560 !important;
+  letter-spacing: 0 !important;
+  paint-order: normal !important;
+  stroke: none !important;
+}
+
+.dashboard-page .record-timeline-chart .timeline-legend text,
+.dashboard-view .record-timeline-chart .timeline-legend text {
+  font-size: 16.6px !important;
+  font-weight: 620 !important;
+}
+
+.dashboard-page .record-timeline-chart .timeline-y-label,
+.dashboard-view .record-timeline-chart .timeline-y-label,
+.dashboard-page .record-timeline-chart .timeline-peak-label,
+.dashboard-view .record-timeline-chart .timeline-peak-label {
+  font-size: 14.2px !important;
+  font-weight: 560 !important;
+}
+
+.dashboard-page .record-timeline-chart .timeline-axis-start,
+.dashboard-view .record-timeline-chart .timeline-axis-start,
+.density-view .record-timeline-chart .timeline-axis-start {
+  text-anchor: start !important;
+}
+
+.dashboard-page .record-timeline-chart .timeline-axis-end,
+.dashboard-view .record-timeline-chart .timeline-axis-end,
+.density-view .record-timeline-chart .timeline-axis-end {
+  text-anchor: end !important;
+}
+
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-module,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-module {
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 250, 240, 0.018), rgba(255, 250, 240, 0.018) 1px, transparent 1px, transparent 7px),
+    rgba(3, 5, 5, 0.72);
+}
+
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .record-timeline-bar,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .record-timeline-bar {
+  fill: rgba(217, 168, 84, 0.44);
+}
+
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .timeline-total-line,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .timeline-total-line {
+  stroke: #d99a28;
+  stroke-width: 2.05;
+}
+
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .timeline-mapped-line,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .timeline-mapped-line {
+  stroke: #7fbfe1;
+  stroke-width: 1.75;
+}
+
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .timeline-diversity-dot,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .timeline-diversity-dot {
+  fill: #b7a6ec;
+  opacity: 0.95;
+}
+
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .dashboard-highlight-point,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .dashboard-highlight-point {
+  fill: #fff8e8;
+  stroke: #050606;
+  stroke-width: 1.2;
+}
+
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .timeline-grid-line,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .timeline-grid-line {
+  stroke: rgba(255, 250, 240, 0.16);
+}
+
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .timeline-legend text,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .timeline-legend text,
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .dashboard-svg-micro,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .dashboard-svg-micro,
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .console-axis-label,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .console-axis-label,
+:root:not([data-theme="light"]) .dashboard-page .record-timeline-chart .timeline-peak-label,
+:root:not([data-theme="light"]) .dashboard-view .record-timeline-chart .timeline-peak-label {
+  fill: rgba(255, 250, 240, 0.86);
+}
+
+:root[data-theme="light"] .dashboard-page .record-timeline-chart .timeline-y-label,
+:root[data-theme="light"] .dashboard-view .record-timeline-chart .timeline-y-label,
+:root[data-theme="light"] .dashboard-page .record-timeline-chart .timeline-peak-label,
+:root[data-theme="light"] .dashboard-view .record-timeline-chart .timeline-peak-label {
+  fill: rgba(44, 36, 25, 0.68) !important;
+}
+
+:root[data-theme="light"] .dashboard-page .record-timeline-chart .timeline-axis-label,
+:root[data-theme="light"] .dashboard-view .record-timeline-chart .timeline-axis-label,
+:root[data-theme="light"] .dashboard-page .record-timeline-chart .timeline-legend text,
+:root[data-theme="light"] .dashboard-view .record-timeline-chart .timeline-legend text {
+  fill: rgba(6, 7, 7, 0.78) !important;
 }
