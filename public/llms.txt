@@ -15,8 +15,8 @@ Important interpretation rules:
 
 ## Public pages
 
+- [Index](https://ausfigures.com/): Homepage map for verified mapped public records only.
 - [Dashboard](https://ausfigures.com/dashboard): Corpus overview across source families, narrative types, periods, and mapped-record aggregates.
-- [Map](https://ausfigures.com/map): Verified mapped public records only.
 - [Density](https://ausfigures.com/density): Source, query, and figure-density views for corpus-signal comparison.
 - [Source Register](https://ausfigures.com/source): Source register and source-family rollups.
 - [About](https://ausfigures.com/about): Scope, methods, source policy, mapping limits, and ethics.

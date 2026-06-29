@@ -12,6 +12,8 @@ Public site: <https://ausfigures.com>
 
 Canonical production origin: <https://ausfigures.com>
 
+Homepage route: <https://ausfigures.com/>
+
 ## What this project is
 
 This archive studies public textual representation, not biological or supernatural truth. The top-level object is a narrative or source-grounded public record. Bounded encounter events are one subtype, not the whole archive.
@@ -45,8 +47,9 @@ The frontend is a restrained archive-terminal research display. It uses a dark t
 
 Pages:
 
+- `https://ausfigures.com/`: homepage index map for verified mapped public records only. Each map flag represents one public record with a verified display location.
 - `https://ausfigures.com/dashboard`: broad public-corpus overview across time, narrative, source, and mapped-record aggregates.
-- `https://ausfigures.com/map`: verified mapped public records only. Each map flag represents one public record with a verified display location.
+- `https://ausfigures.com/map`: map route alias for the same verified mapped public records view.
 - `https://ausfigures.com/density`: compressed source/query/figure density fields for comparing corpus signals.
 - `https://ausfigures.com/source`: two-pane source register showing source-family rollups and registered public source organisations.
 - `https://ausfigures.com/about`: research-positioning page explaining scope, method, source policy, mapping limits, and ethics.

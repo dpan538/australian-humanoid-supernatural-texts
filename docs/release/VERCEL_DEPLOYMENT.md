@@ -5,14 +5,14 @@ This note records the production settings for the AusFigures public interface.
 ## Production Target
 
 - Production domain: `https://ausfigures.com`
-- Canonical route: `/dashboard`
+- Canonical route: `/`
 - Apex domain policy: `https://ausfigures.com` is canonical.
 - Preview policy: `*.vercel.app` URLs are preview deployments only and must not be used in production metadata, sitemap, robots, llms.txt, or README deployment badges.
 
 ## Runtime
 
 - Framework: Next.js
-- Node.js: `>=20.9.0` as declared in `package.json`.
+- Node.js: `22.x` as declared in `package.json`.
 - Package manager: npm with committed `package-lock.json`.
 - Install command: `npm ci`.
 - Build command: `npm run build`.
@@ -65,9 +65,9 @@ python3 scripts/check_vercel_release.py
 
 Check these paths on the production deployment:
 
-- `/` redirects to `/dashboard`.
+- `/` returns 200 and renders the index map.
+- `/map` returns 200 as a map route alias.
 - `/dashboard` returns 200.
-- `/map` returns 200.
 - `/density` returns 200.
 - `/source` returns 200.
 - `/about` returns 200.

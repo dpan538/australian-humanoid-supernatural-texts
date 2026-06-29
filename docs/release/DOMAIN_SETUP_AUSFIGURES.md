@@ -43,11 +43,11 @@ Do not copy these typical patterns blindly. Add exactly the records Vercel shows
 
 ## Post-Deploy Checks
 
-1. `https://ausfigures.com/dashboard` returns 200.
+1. `https://ausfigures.com/` returns 200 and renders the index map.
 2. `https://ausfigures.com/robots.txt` returns 200 and references `https://ausfigures.com/sitemap.xml`.
 3. `https://ausfigures.com/sitemap.xml` returns 200 and only lists `ausfigures.com` URLs.
 4. `https://ausfigures.com/llms.txt` returns 200.
-5. `https://www.ausfigures.com/dashboard` redirects to `https://ausfigures.com/dashboard`.
+5. `https://www.ausfigures.com/` redirects to `https://ausfigures.com/`.
 6. No canonical, Open Graph, sitemap, robots, llms.txt, README deployment badge, or README production URL points to `*.vercel.app`.
 
 ## Optional CLI Checks
@@ -58,7 +58,7 @@ If Vercel CLI is available and authenticated, these read-only checks can help in
 vercel domains inspect ausfigures.com
 vercel domains inspect www.ausfigures.com
 vercel certs ls
-vercel curl /dashboard
+vercel curl /
 ```
 
 Do not run Vercel CLI commands that modify project settings unless explicitly authorized.

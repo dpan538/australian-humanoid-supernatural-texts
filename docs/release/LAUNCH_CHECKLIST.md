@@ -20,7 +20,7 @@ Use this checklist immediately before a production release.
 - [ ] Wait for Vercel domain verification.
 - [ ] Confirm SSL certificate provisioning.
 - [ ] Confirm `www.ausfigures.com` redirects to `ausfigures.com`.
-- [ ] Confirm `https://ausfigures.com/dashboard` loads.
+- [ ] Confirm `https://ausfigures.com/` loads the index map.
 - [ ] Confirm Vercel preview URLs are not used as production canonical URLs.
 
 ## Internet Discovery Gate
@@ -29,7 +29,7 @@ Use this checklist immediately before a production release.
 - [ ] `/sitemap.xml` lists only public HTML routes on `https://ausfigures.com`.
 - [ ] `/llms.txt` contains only public, non-sensitive launch guidance.
 - [ ] Route metadata uses restrained public-text archive framing.
-- [ ] Root redirect does not appear as the main sitemap entry.
+- [ ] Root index appears as the main sitemap entry.
 - [ ] README has the production link and canonical-domain note.
 
 ## Research Release Gate
@@ -55,9 +55,9 @@ Use this checklist immediately before a production release.
 
 ## Public Routes
 
-- [ ] `/` redirects to `/dashboard`.
+- [ ] `/` renders the index map for verified mapped public records only.
+- [ ] `/map` renders the same map view as a route alias.
 - [ ] `/dashboard` renders.
-- [ ] `/map` renders verified mapped public records only.
 - [ ] `/density` renders density views.
 - [ ] `/source` renders the source register.
 - [ ] `/about` renders scope, methods, source policy, mapping limits, and ethics.

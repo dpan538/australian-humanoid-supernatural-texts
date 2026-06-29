@@ -47,7 +47,7 @@ gh repo edit dpan538/australian-humanoid-supernatural-texts \
 - Push `main`.
 - Deploy on Vercel or the selected target host.
 - Confirm production URL is `https://ausfigures.com`.
-- Confirm `/dashboard` is the canonical public entry route.
+- Confirm `/` is the canonical public entry route and renders the map view.
 - Confirm `/data/frontend-data.json` loads.
 - Confirm `/about`, `/map`, `/dashboard`, `/density`, and `/source`.
 - Confirm `/robots.txt`, `/sitemap.xml`, and `/llms.txt`.

@@ -1,8 +1,8 @@
-import { redirect } from "next/navigation";
+import { ArchiveTerminalRoute } from "@/components/archive-terminal";
 import { metadataForRoute } from "@/lib/site";
 
-export const metadata = metadataForRoute("/dashboard");
+export const metadata = metadataForRoute("/");
 
 export default function Home() {
-  redirect("/dashboard");
+  return <ArchiveTerminalRoute view="map" />;
 }

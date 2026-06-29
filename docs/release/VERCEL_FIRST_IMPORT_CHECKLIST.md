@@ -29,6 +29,7 @@
 ## After Import
 
 - Open the temporary `*.vercel.app` URL as a preview deployment only.
+- Test `/` renders the index map.
 - Test `/about`.
 - Test `/map`.
 - Test `/dashboard`.

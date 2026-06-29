@@ -532,31 +532,175 @@ a {
   height: 100%;
   min-height: 320px;
   display: grid;
-  place-content: center;
-  gap: 10px;
-  padding: 28px;
-  text-align: center;
+  place-items: center;
+  padding: clamp(22px, 5vw, 64px);
+  overflow: hidden;
+  text-align: left;
 }
 
-.terminal-loading-state span {
+.terminal-loading-state::before {
+  content: none;
+}
+
+.terminal-loading-state::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 31%, var(--terminal-grid-line) 31% 31.2%, transparent 31.2% 67%, var(--terminal-grid-line) 67% 67.2%, transparent 67.2%),
+    linear-gradient(0deg, transparent 0 28%, var(--terminal-grid-line) 28% 28.2%, transparent 28.2% 72%, var(--terminal-grid-line) 72% 72.2%, transparent 72.2%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.loading-boot-panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 760px);
+  display: grid;
+  gap: clamp(24px, 4vw, 42px);
+}
+
+.loading-copy {
+  display: grid;
+  gap: 14px;
+  max-width: 720px;
+}
+
+.loading-typewriter-line {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.loading-typewriter-line > span {
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  animation: loading-typewriter-reveal 780ms steps(10, end) forwards;
+}
+
+.loading-title-line {
+  width: fit-content;
+  color: var(--terminal-ink-strong);
+  font-size: clamp(2.35rem, 6vw, 5.25rem);
+  line-height: 0.95;
+  white-space: nowrap;
+}
+
+.loading-intro-line {
+  width: min(100%, 68ch);
+  color: var(--terminal-muted);
+  font-size: clamp(0.9rem, 1.55vw, 1.2rem);
+  line-height: var(--line-normal);
+}
+
+.loading-intro-line > span {
+  display: block;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.loading-intro-line > span {
+  animation-duration: 1600ms;
+  animation-delay: 520ms;
+  animation-timing-function: steps(68, end);
+}
+
+.loading-runner {
+  position: relative;
+  height: 42px;
+  margin-top: 2px;
+}
+
+.loading-track,
+.loading-complete-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25px;
+  height: 1px;
+}
+
+.loading-track {
+  background: linear-gradient(90deg, transparent, var(--terminal-line), transparent);
+}
+
+.loading-complete-line {
+  background: var(--terminal-cyan);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  box-shadow: 0 0 16px rgba(120, 228, 220, 0.26);
+}
+
+.loading-pixel-figure {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 24px;
+  height: 24px;
+  color: var(--terminal-cyan);
+  filter: drop-shadow(0 0 8px rgba(120, 228, 220, 0.32));
+  animation: loading-pixel-walk 1800ms steps(18, end) infinite alternate;
+}
+
+.loading-pixel-figure rect {
+  fill: currentColor;
+  shape-rendering: crispEdges;
+}
+
+.loading-runner-label {
+  display: inline-block;
   color: var(--blue);
   font-size: var(--type-micro-size);
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-.terminal-loading-state b {
-  color: var(--ink);
-  font-size: clamp(1.4rem, 3vw, 2.5rem);
-  font-weight: 400;
+.loading-error-state .loading-typewriter-line > span {
+  animation-duration: 360ms;
+  animation-delay: 0ms;
 }
 
-.terminal-loading-state small {
-  color: var(--muted);
-  font-size: var(--type-meta-size);
+.loading-error-state .loading-runner {
+  opacity: 0.45;
 }
 
 .view-area-map .map-loading-state {
   min-height: 100%;
   background: transparent;
+}
+
+@keyframes loading-typewriter-reveal {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes loading-pixel-walk {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: calc(100% - 24px);
+  }
+}
+
+@media (max-width: 760px) {
+  .terminal-loading-state {
+    padding: 22px;
+  }
+
+  .loading-title-line {
+    font-size: clamp(2.4rem, 16vw, 4rem);
+  }
+
+  .loading-intro-line {
+    max-width: 300px;
+  }
 }
 
 .map-view,
@@ -1848,7 +1992,7 @@ a {
   border: 1px solid rgba(242, 242, 237, 0.64);
   background: #101312;
   box-shadow: none;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .figure-profile-left,
@@ -1949,10 +2093,11 @@ a {
 .figure-profile-right h2 {
   margin: 0;
   color: #050606;
-  font-size: clamp(3.2rem, 7vw, 7rem);
+  max-width: 100%;
+  font-size: clamp(2.75rem, 4.8vw, 5.4rem);
   font-weight: 700;
-  line-height: 0.9;
-  overflow-wrap: anywhere;
+  line-height: 0.94;
+  overflow-wrap: break-word;
 }
 
 .figure-profile-alias {

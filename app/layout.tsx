@@ -62,9 +62,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
 try {
-  var theme = localStorage.getItem("aus-archive-theme");
+  var theme = sessionStorage.getItem("aus-archive-theme");
   if (theme !== "dark" && theme !== "light") {
-    theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    theme = "dark";
   }
   document.documentElement.dataset.theme = theme;
 } catch (error) {

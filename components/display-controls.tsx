@@ -10,11 +10,15 @@ function readStoredTheme(): DisplayTheme {
   if (typeof window === "undefined") {
     return "dark";
   }
-  const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
-  if (stored === "dark" || stored === "light") {
-    return stored;
+  try {
+    const stored = window.sessionStorage.getItem(THEME_STORAGE_KEY);
+    if (stored === "dark" || stored === "light") {
+      return stored;
+    }
+  } catch {
+    return "dark";
   }
-  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  return "dark";
 }
 
 export function DisplayControls() {
@@ -31,7 +35,7 @@ export function DisplayControls() {
       return;
     }
     document.documentElement.dataset.theme = theme;
-    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    window.sessionStorage.setItem(THEME_STORAGE_KEY, theme);
     window.dispatchEvent(new CustomEvent("archive-display-change", { detail: { theme } }));
   }, [theme, hydrated]);
 

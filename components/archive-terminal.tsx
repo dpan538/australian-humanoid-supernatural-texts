@@ -9,7 +9,7 @@ import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/type
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { figureProfileFor } from "@/lib/figure-profiles";
 import type { FigureProfile } from "@/lib/figure-profiles";
-import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
+import { FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { SourceView } from "@/components/source/source-view";
 import { DisplayControls } from "@/components/display-controls";
 import { SOURCE_FAMILY_STYLES, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
@@ -31,6 +31,8 @@ const VIEW_PATHS: Record<ViewMode, string> = {
   density: "/density",
   source: "/source",
 };
+const LOADING_TITLE = "AusFigures";
+const LOADING_INTRO = "A source-grounded archive of Australian supernatural humanoid narratives.";
 
 const STATE_NAMES: Record<string, string> = {
   WA: "Western Australia",
@@ -474,7 +476,7 @@ function loadFrontendData() {
     return Promise.resolve(frontendDataCache);
   }
   if (!frontendDataPromise) {
-    frontendDataPromise = fetch(FRONTEND_DATA_URL, { cache: "no-store" })
+    frontendDataPromise = fetch(FRONTEND_DATA_URL)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Frontend data request failed: ${response.status}`);
@@ -1015,7 +1017,9 @@ function projectLambertConformalConic(latitude: number, longitude: number) {
 
 export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
   const [data, setData] = useState<FrontendData | null>(frontendDataCache);
+  const [showArchive, setShowArchive] = useState(Boolean(frontendDataCache));
   const [error, setError] = useState<string | null>(null);
+  const loadingRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -1036,18 +1040,135 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
     };
   }, []);
 
-  if (data) {
+  useEffect(() => {
+    if (!data || showArchive) {
+      return;
+    }
+
+    let cancelled = false;
+    const loadingRoot = loadingRef.current;
+    const finishLoading = () => {
+      if (!cancelled) {
+        setShowArchive(true);
+      }
+    };
+
+    if (!loadingRoot || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      finishLoading();
+      return () => {
+        cancelled = true;
+      };
+    }
+
+    loadingRoot.classList.add("loading-is-complete");
+    const timeline = createTimeline({
+      defaults: {
+        ease: "linear",
+        composition: "replace",
+      },
+      onComplete: finishLoading,
+    });
+
+    addIfTargets(timeline, loadingRoot.querySelectorAll(".loading-complete-line"), {
+      opacity: [0.35, 1],
+      scaleX: [0, 1],
+      duration: 320,
+    }, 0);
+    addIfTargets(timeline, loadingRoot.querySelectorAll(".loading-pixel-figure"), {
+      opacity: [1, 0],
+      translateY: [0, -3],
+      duration: 220,
+    }, 220);
+    addIfTargets(timeline, loadingRoot.querySelectorAll(".loading-typewriter-line, .loading-runner-label"), {
+      opacity: [1, 0],
+      translateY: [0, -6],
+      duration: 220,
+      delay: stagger(24),
+    }, 260);
+    timeline.add(loadingRoot, {
+      opacity: [1, 0],
+      duration: 180,
+    }, 460);
+
+    return () => {
+      cancelled = true;
+      timeline.cancel();
+    };
+  }, [data, showArchive]);
+
+  if (data && showArchive) {
     return <ArchiveTerminal data={data} view={view} />;
   }
 
   return (
     <ArchiveTerminalShell view={view}>
-      <div className={`terminal-loading-state ${view === "map" ? "map-loading-state" : ""}`} role={error ? "alert" : "status"} aria-live="polite">
-        <span>{error ? "DATA LOAD ERROR" : "LOADING PUBLIC ARCHIVE DATA"}</span>
-        <b>{error ? error : FRONTEND_DATA_SCHEMA}</b>
-        <small>{FRONTEND_DATA_URL}</small>
-      </div>
+      <ArchiveLoadingState view={view} error={error} loadingRef={loadingRef} />
     </ArchiveTerminalShell>
+  );
+}
+
+function ArchiveLoadingState({
+  view,
+  error,
+  loadingRef,
+}: {
+  view: ViewMode;
+  error: string | null;
+  loadingRef: RefObject<HTMLDivElement | null>;
+}) {
+  const isMap = view === "map";
+  const runnerLabel = error
+    ? `${VIEW_LABELS[view]} view paused`
+    : isMap
+      ? "Map index initializing"
+      : `${VIEW_LABELS[view]} view initializing`;
+
+  return (
+    <div
+      ref={loadingRef}
+      className={error ? "terminal-loading-state map-loading-state loading-error-state" : "terminal-loading-state map-loading-state"}
+      role={error ? "alert" : "status"}
+      aria-live="polite"
+    >
+      <div className="loading-boot-panel">
+        <div className="loading-copy">
+          {error ? (
+            <>
+              <span className="loading-typewriter-line loading-title-line">
+                <span>Archive data unavailable</span>
+              </span>
+              <span className="loading-typewriter-line loading-intro-line">
+                <span>Refresh the page or try again shortly.</span>
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="loading-typewriter-line loading-title-line">
+                <span>{LOADING_TITLE}</span>
+              </span>
+              <span className="loading-typewriter-line loading-intro-line">
+                <span>{LOADING_INTRO}</span>
+              </span>
+            </>
+          )}
+        </div>
+        <div className="loading-runner" aria-hidden="true">
+          <span className="loading-track" />
+          <span className="loading-complete-line" />
+          <svg className="loading-pixel-figure" viewBox="0 0 16 16" focusable="false">
+            <rect x="6" y="1" width="4" height="4" />
+            <rect x="5" y="5" width="6" height="5" />
+            <rect x="3" y="6" width="2" height="4" />
+            <rect x="11" y="6" width="2" height="4" />
+            <rect x="5" y="10" width="2" height="5" />
+            <rect x="9" y="10" width="2" height="5" />
+            <rect x="4" y="14" width="3" height="1" />
+            <rect x="9" y="14" width="3" height="1" />
+          </svg>
+        </div>
+        <span className="loading-runner-label">{runnerLabel}</span>
+      </div>
+    </div>
   );
 }
 

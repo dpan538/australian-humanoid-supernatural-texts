@@ -7,8 +7,8 @@ export const SITE = {
   url: "https://ausfigures.com",
   canonicalOrigin: "https://ausfigures.com",
   repositoryUrl: "https://github.com/dpan538/australian-humanoid-supernatural-texts",
-  primaryRoute: "/dashboard",
-  routes: ["/dashboard", "/map", "/density", "/source", "/about"],
+  primaryRoute: "/",
+  routes: ["/", "/dashboard", "/density", "/source", "/about"],
   description:
     "A source-grounded public-text archive and research display system for Australian supernatural humanoid narratives, encounters, apparitions, legends, and retellings.",
 } as const;
@@ -23,19 +23,19 @@ export const siteConfig = {
   releaseDate: "2026-06-29",
   routeMetadata: [
     {
-      path: "/dashboard",
-      title: "Dashboard",
+      path: "/",
+      title: "Index",
       description:
-        "Corpus overview for AusFigures, a source-grounded public-text archive of Australian supernatural humanoid narratives, source families, narrative types, periods, and mapped-record aggregates.",
+        "Homepage map for verified mapped public records in AusFigures. Map markers represent public display locations for records, not proof, habitats, or populations.",
       priority: 1.0,
       changeFrequency: "monthly",
     },
     {
-      path: "/map",
-      title: "Map",
+      path: "/dashboard",
+      title: "Dashboard",
       description:
-        "Verified mapped public records in AusFigures. Map markers represent public display locations for records, not proof, habitats, or populations.",
-      priority: 0.7,
+        "Corpus overview for AusFigures, a source-grounded public-text archive of Australian supernatural humanoid narratives, source families, narrative types, periods, and mapped-record aggregates.",
+      priority: 0.8,
       changeFrequency: "monthly",
     },
     {
