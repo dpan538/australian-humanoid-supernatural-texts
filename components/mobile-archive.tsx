@@ -357,7 +357,7 @@ function MobileSourceView() {
         <header className="source-terminal-header">
           <div className="source-header-title">
             <span>SOURCE REGISTER</span>
-            <h2>PUBLIC SOURCE FIELD</h2>
+            <h2>Public Source Field</h2>
             <p className="source-mobile-intro">
               AusFigures organises public source organisations and public metadata signals used by the archive. These rows describe source context, not permission to extract restricted cultural knowledge.
             </p>
