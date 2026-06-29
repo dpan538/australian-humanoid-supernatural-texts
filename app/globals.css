@@ -1842,6 +1842,7 @@ a {
   align-content: space-between;
   gap: 18px;
   padding: 28px;
+  --figure-card-accent: #80c9bd;
   background: #101312;
   color: #f2efe6;
 }
@@ -1864,7 +1865,7 @@ a {
 .figure-profile-kicker span,
 .figure-profile-topline span,
 .figure-profile-reference span {
-  color: var(--blue);
+  color: var(--figure-card-accent, var(--blue));
   font-size: 0.88rem;
   line-height: 1;
 }
@@ -1877,6 +1878,9 @@ a {
 
 .figure-profile-note {
   color: rgba(242, 239, 230, 0.62) !important;
+  max-width: 34em;
+  font-size: 0.82rem !important;
+  line-height: 1.46 !important;
 }
 
 .figure-reference-link {
@@ -1903,6 +1907,7 @@ a {
   align-content: start;
   gap: 18px;
   padding: 28px 30px 30px;
+  --figure-card-accent: #0b6f66;
   background: #f5f2e8;
   color: #050606;
 }
@@ -1910,7 +1915,7 @@ a {
 .figure-profile-topline button {
   border: 0;
   background: transparent;
-  color: var(--blue);
+  color: var(--figure-card-accent);
   font: inherit;
   font-size: var(--type-meta-size);
   cursor: pointer;
@@ -1953,8 +1958,9 @@ a {
 }
 
 .figure-profile-stats dt {
-  color: var(--blue);
+  color: var(--figure-card-accent);
   font-size: var(--type-control-size);
+  font-weight: var(--weight-semibold);
   line-height: 1;
 }
 

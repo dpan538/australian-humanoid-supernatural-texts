@@ -2114,6 +2114,7 @@ function FigureCardOverlay({
 }) {
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const titleId = `figure-card-title-${slugForId(figure.label)}`;
+  const contextNote = figureContextNote(figure);
   const statRows = [
     ["Total records", numberFormat(figure.records.length)],
     ["Mapped records", numberFormat(figure.mappedCount)],
@@ -2159,7 +2160,7 @@ function FigureCardOverlay({
             <p>{figure.profile.shortDescription || figure.note}</p>
             {figure.profile.notes ? <p>{figure.profile.notes}</p> : null}
             <p className="figure-profile-note">
-              Archive context: this card combines a static public-reference profile with computed corpus statistics. Counts describe public source records, not real-world frequency.
+              {contextNote}
             </p>
             <a className="figure-reference-link" href={figure.profile.externalUrl} target="_blank" rel="noreferrer">
               {figure.profile.referenceLabel?.toUpperCase().includes("WIKIPEDIA") ? "OPEN ENCYCLOPAEDIA" : "OPEN REFERENCE"}
@@ -2193,6 +2194,33 @@ function FigureCardOverlay({
       </div>
     </div>
   );
+}
+
+function figureContextNote(figure: FigureDensityItem) {
+  const total = figure.records.length;
+  const mappedShare = total ? figure.mappedCount / total : 0;
+  const source = figure.topSourceFamily.toLowerCase();
+  const narrative = figure.topNarrativeFamily.toLowerCase();
+
+  if (mappedShare >= 0.75) {
+    return "Reading note: most records include usable place data, so regional patterns are meaningful within this archive.";
+  }
+  if (mappedShare > 0 && mappedShare < 0.35) {
+    return "Mapping note: place coverage is partial here; compare mapped regions with caution.";
+  }
+  if (source.includes("modern public web")) {
+    return "Source note: this figure is web-heavy in the corpus, so counts mainly reflect public-source visibility.";
+  }
+  if (source.includes("repository") || source.includes("archive")) {
+    return "Archive note: repository records dominate this profile; counts describe collection coverage, not sightings.";
+  }
+  if (source.includes("public-domain")) {
+    return "Text note: public-domain sources shape this profile, with older publication cycles influencing the record count.";
+  }
+  if (narrative.includes("hairy") || narrative.includes("spirit") || narrative.includes("ghost")) {
+    return "Narrative note: the figure is grouped by recurring public-text context rather than a single fixed taxonomy.";
+  }
+  return "Corpus note: public reference text and archive counts are shown together; totals describe records in this collection.";
 }
 
 function buildMappedCountByDateBand(mapFlags: readonly MapFlagRenderItem[]) {
