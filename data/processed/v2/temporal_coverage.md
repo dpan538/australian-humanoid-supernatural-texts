@@ -1,14 +1,13 @@
 # V2 Temporal Coverage
 
-- Generated: `2026-06-21T10:37:09+00:00`
+- Generated: `2026-06-28T11:51:44+00:00`
 - Schema version: `2.0.0`
 
 ## Date Bands
-- before 1842: 3
-- 1842-1875: 27
-- 1876-1918: 82
-- 1919-1945: 16
-- 1946-1969: 17
-- 1970-1999: 345
-- 2000-present: 426
-- undated / circulation period only: 0
+- 1825-1850: 30
+- 1851-1889: 887
+- 1890-1929: 1817
+- 1930-1969: 33
+- 1970-1999: 361
+- 2000-2026: 728
+- undated / circulation period only: 145

@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aus_humanoid.db import DEFAULT_DB_PATH, connect
+from aus_humanoid.time_periods import build_public_date_bands, year_to_public_period_id
 from aus_humanoid.utils import PROJECT_ROOT, utc_now_iso
 from aus_humanoid.v2_schema import SCHEMA_VERSION
 
@@ -29,26 +30,18 @@ def scalar(conn: sqlite3.Connection, sql: str) -> int:
     return int(conn.execute(sql).fetchone()[0])
 
 
-def date_band(value: str | None) -> str:
+def safe_year(value: str | None) -> int | None:
     if not value:
-        return "undated / circulation period only"
+        return None
     try:
-        year = int(str(value)[:4])
+        return int(str(value)[:4])
     except ValueError:
-        return "undated / circulation period only"
-    if year < 1842:
-        return "before 1842"
-    if year <= 1875:
-        return "1842-1875"
-    if year <= 1918:
-        return "1876-1918"
-    if year <= 1945:
-        return "1919-1945"
-    if year <= 1969:
-        return "1946-1969"
-    if year <= 1999:
-        return "1970-1999"
-    return "2000-present"
+        return None
+
+
+def date_band(value: str | None, date_bands: list[dict]) -> str:
+    year = safe_year(value)
+    return year_to_public_period_id(year, date_bands) if year is not None else "undated / circulation period only"
 
 
 def write_report(path: Path, title: str, sections: Iterable[tuple[str, list[str]]]) -> None:
@@ -205,19 +198,21 @@ def audit(db_path: str | Path, report_dir: Path) -> None:
         )
         write_report(report_dir / "geographic_coverage.md", "V2 Geographic Coverage", [("States And Territories", state_lines), ("Location Roles", role_lines)])
 
+        temporal_rows = rows(conn, "SELECT earliest_attestation_start FROM narrative_units")
+        temporal_years = [safe_year(row["earliest_attestation_start"]) for row in temporal_rows]
+        dated_temporal_years = [year for year in temporal_years if year is not None]
+        date_bands = build_public_date_bands(
+            min(dated_temporal_years) if dated_temporal_years else None,
+            max(dated_temporal_years) if dated_temporal_years else None,
+        )
         band_counter: Counter[str] = Counter()
-        for row in rows(conn, "SELECT earliest_attestation_start FROM narrative_units"):
-            band_counter[date_band(row["earliest_attestation_start"])] += 1
-        temporal_lines = [f"- {key}: {band_counter[key]}" for key in [
-            "before 1842",
-            "1842-1875",
-            "1876-1918",
-            "1919-1945",
-            "1946-1969",
-            "1970-1999",
-            "2000-present",
-            "undated / circulation period only",
-        ]]
+        for row in temporal_rows:
+            band_counter[date_band(row["earliest_attestation_start"], date_bands)] += 1
+        temporal_order = [str(band["id"]) for band in date_bands] + ["undated / circulation period only"]
+        temporal_lines = [
+            f"- {next((band['label'] for band in date_bands if band['id'] == key), key)}: {band_counter[key]}"
+            for key in temporal_order
+        ]
         write_report(report_dir / "temporal_coverage.md", "V2 Temporal Coverage", [("Date Bands", temporal_lines)])
 
         ethics_sections = [

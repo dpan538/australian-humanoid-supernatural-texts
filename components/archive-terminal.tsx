@@ -7,11 +7,12 @@ import { createTimeline, stagger } from "animejs";
 import type { Timeline } from "animejs";
 import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
+import { figureProfileFor } from "@/lib/figure-profiles";
+import type { FigureProfile } from "@/lib/figure-profiles";
 import { FRONTEND_DATA_SCHEMA, FRONTEND_DATA_URL } from "@/lib/frontend-data";
-import { buildDensityPeriodSchemes, periodContainsYear } from "@/lib/density-periods";
-import type { DensityPeriod, DensityPeriodScheme, DensityPeriodSchemeId } from "@/lib/density-periods";
 import { SourceView } from "@/components/source/source-view";
-import { DisplayControls } from "@/components/signal-gain-control";
+import { DisplayControls } from "@/components/display-controls";
+import { SOURCE_FAMILY_STYLES, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
 
@@ -42,22 +43,6 @@ const STATE_NAMES: Record<string, string> = {
   ACT: "Australian Capital Territory",
 };
 
-const SOURCE_TONE: Record<string, { label: string; className: string }> = {
-  trove_newspaper: { label: "NEWSPAPER", className: "source-tone-newspaper" },
-  trove_magazine: { label: "MAGAZINE", className: "source-tone-magazine" },
-  nla_catalogue: { label: "CATALOGUE", className: "source-tone-catalogue" },
-  aiatsis_public_catalogue: { label: "CATALOGUE", className: "source-tone-catalogue" },
-  andc: { label: "METADATA", className: "source-tone-metadata" },
-  academic_metadata: { label: "ACADEMIC", className: "source-tone-academic" },
-  internet_archive_metadata: { label: "ARCHIVE", className: "source-tone-archive" },
-  institutional_web: { label: "INSTITUTIONAL", className: "source-tone-institutional" },
-  seeded_public_web: { label: "PUBLIC WEB", className: "source-tone-seeded-web" },
-  google_trends: { label: "ATTENTION", className: "source-tone-attention" },
-  wikimedia_pageviews: { label: "PAGEVIEWS", className: "source-tone-attention" },
-  modern_web: { label: "WEB", className: "source-tone-web" },
-  manual: { label: "MANUAL", className: "source-tone-manual" },
-};
-
 const SOURCE_PUBLIC_LABELS: Record<string, string> = {
   trove_newspaper: "Historic newspapers",
   trove_magazine: "Historic magazines",
@@ -85,25 +70,6 @@ const SOURCE_PUBLIC_LABELS: Record<string, string> = {
   wikimedia_pageviews: "Pageviews",
   manual: "Manual review",
 };
-
-const MAP_SOURCE_LEGEND_GROUPS = [
-  { id: "repository", label: "Repository / archive", className: "source-tone-archive" },
-  { id: "public-domain", label: "Public-domain text", className: "source-tone-candidate" },
-  { id: "modern-web", label: "Modern public web", className: "source-tone-web" },
-  { id: "institution", label: "Public institution", className: "source-tone-institutional" },
-  { id: "other", label: "Other public source", className: "source-tone-default" },
-] as const;
-
-const MAP_FLAG_GROWTH_BUCKETS = [
-  { start: -Infinity, end: 1841 },
-  { start: 1842, end: 1875 },
-  { start: 1876, end: 1900 },
-  { start: 1901, end: 1950 },
-  { start: 1951, end: 1969 },
-  { start: 1970, end: 1990 },
-  { start: 1991, end: 2010 },
-  { start: 2011, end: Infinity },
-] as const;
 
 const NARRATIVE_TYPE_LABELS: Record<string, string> = {
   cryptid_style_apeman: "Hairy humanoid reports",
@@ -201,15 +167,39 @@ const PLACE_ROLE_LABELS = [
   "Narrative setting",
   "Rumour circulation place",
 ] as const;
-const SOURCE_FAMILIES = [
-  { id: "repository", label: "Repository texts", color: "#69d7d0" },
-  { id: "modern_web", label: "Modern public web", color: "#eceae2" },
-  { id: "public_domain", label: "Public-domain books", color: "#d9a854" },
-  { id: "institutions", label: "Public institutions", color: "#98df63" },
-  { id: "academic", label: "Academic / catalogue sources", color: "#9580cf" },
-  { id: "community", label: "Community-controlled public sources", color: "#7fb8ff" },
-  { id: "other", label: "Other", color: "#7f858a" },
-] as const;
+const SOURCE_CLASS_BY_FAMILY: Record<SourceFamilyId, string> = {
+  repository: "source-tone-archive",
+  modern_web: "source-tone-web",
+  public_domain: "source-tone-candidate",
+  institutions: "source-tone-institutional",
+  academic: "source-tone-academic",
+  community: "source-tone-community",
+  other: "source-tone-default",
+};
+
+type SourceFamilyChartItem = {
+  id: SourceFamilyId;
+  label: string;
+  color: string;
+  strokeColor: string;
+  fillColor: string;
+  softColor: string;
+  className: string;
+};
+
+const SOURCE_FAMILIES: SourceFamilyChartItem[] = (Object.keys(SOURCE_FAMILY_STYLES) as SourceFamilyId[]).map((id) => ({
+  id,
+  label: SOURCE_FAMILY_STYLES[id].label,
+  color: SOURCE_FAMILY_STYLES[id].color,
+  strokeColor: SOURCE_FAMILY_STYLES[id].stroke,
+  fillColor: SOURCE_FAMILY_STYLES[id].fill,
+  softColor: SOURCE_FAMILY_STYLES[id].soft,
+  className: SOURCE_CLASS_BY_FAMILY[id],
+}));
+
+const SOURCE_FAMILY_BY_ID = new Map<SourceFamilyId, SourceFamilyChartItem>(
+  SOURCE_FAMILIES.map((family) => [family.id, family] as const),
+);
 
 type MatrixCell = {
   bandId: string;
@@ -220,24 +210,46 @@ type NarrativePeriodRow = {
   label: string;
   values: MatrixCell[];
 };
-type DensityAnalysisTab = "temporal_narrative" | "source_bias" | "map_coverage" | "regional_profile";
-type DensityPeriodSummary = {
-  period: DensityPeriod;
-  records: RecordItem[];
-  mappedCount: number;
-  topNarrative: string;
-  topSourceFamily: string;
-  firstRecord: RecordItem | null;
+type AnnualDensityPoint = {
+  year: number;
+  total: number;
+  mapped: number;
 };
-type DensityNarrativeCard = {
+type PeriodBoxPlotStat = {
+  band: DateBand;
+  min: number;
+  q1: number;
+  median: number;
+  q3: number;
+  max: number;
+  total: number;
+  mapped: number;
+};
+type DensityChartMode = "temporal" | "distribution" | "figures" | "sources" | "regions" | "cross";
+type DensityChartDatum = {
+  key: string;
   label: string;
+  value: number;
+  secondary?: number;
+};
+type DensityCrossRow = {
+  figure: string;
+  values: MatrixCell[];
+  total: number;
+};
+type FigureDensityItem = {
+  slug: string;
+  label: string;
+  profile: FigureProfile;
   records: RecordItem[];
   mappedCount: number;
-  topSourceFamily: string;
   dateSpan: string;
-  description: string;
-  glyph: string;
-  sensitivityNote: string;
+  earliestYear: number | null;
+  latestYear: number | null;
+  topSourceFamily: string;
+  topRegion: string;
+  topNarrativeFamily: string;
+  note: string;
 };
 type StateCoverageRow = {
   state: string;
@@ -253,10 +265,23 @@ type PlaceRoleRow = {
   values: MatrixCell[];
 };
 type SourceFamilyAggregate = {
-  id: string;
+  id: SourceFamilyId;
   label: string;
   color: string;
+  strokeColor: string;
+  fillColor: string;
+  softColor: string;
   count: number;
+  mappedCount: number;
+  sourceOrgCount: number;
+  periodCoverage: number;
+  dominantBandId: string | null;
+  dominantBandLabel: string;
+  dominantBandShare: number;
+  narrativeSpread: number;
+  jurisdictionSpread: number;
+  yearStart: number | null;
+  yearEnd: number | null;
   byBand: Record<string, number>;
 };
 type DashboardFieldAggregate = {
@@ -369,7 +394,7 @@ type MapFlagRenderItem = {
 };
 
 type MapSourceLegendItem = {
-  id: string;
+  id: SourceFamilyId;
   label: string;
   className: string;
   count: number;
@@ -474,7 +499,7 @@ function recordPeriod(data: FrontendData, record: RecordItem) {
 
 function recordRelationParts(data: FrontendData, record: RecordItem) {
   const period = recordPeriod(data, record);
-  const source = publicSourceLabel(record.source_type);
+  const source = sourceFamilyFor(record.source_type).label;
   const narrative = narrativeGroupLabel(record);
   const place = record.state_territory || "Broad / unmapped";
   return {
@@ -489,7 +514,7 @@ function recordRelationParts(data: FrontendData, record: RecordItem) {
 
 function sourceGraphClass(label: string) {
   const normalized = label.toLowerCase();
-  if (/repository|institutional/.test(normalized)) {
+  if (/repository|archive/.test(normalized)) {
     return "source-repository";
   }
   if (/public-domain|book|gutenberg/.test(normalized)) {
@@ -497,6 +522,9 @@ function sourceGraphClass(label: string) {
   }
   if (/modern|web/.test(normalized)) {
     return "source-modern-web";
+  }
+  if (/institution/.test(normalized)) {
+    return "source-institution";
   }
   if (/academic|scholarly|metadata|catalogue/.test(normalized)) {
     return "source-academic";
@@ -509,19 +537,25 @@ function sourceGraphClass(label: string) {
 
 function sourceGraphColor(label: string) {
   const sourceClass = sourceGraphClass(label);
-  if (sourceClass === "source-repository" || sourceClass === "source-public-domain") {
-    return "#69d7d0";
+  if (sourceClass === "source-repository") {
+    return SOURCE_FAMILY_STYLES.repository.stroke;
   }
-  if (sourceClass === "source-academic") {
-    return "#9580cf";
-  }
-  if (sourceClass === "source-community") {
-    return "#d6a650";
+  if (sourceClass === "source-public-domain") {
+    return SOURCE_FAMILY_STYLES.public_domain.stroke;
   }
   if (sourceClass === "source-modern-web") {
-    return "#eceae2";
+    return SOURCE_FAMILY_STYLES.modern_web.stroke;
   }
-  return "rgba(236, 234, 226, 0.72)";
+  if (sourceClass === "source-institution") {
+    return SOURCE_FAMILY_STYLES.institutions.stroke;
+  }
+  if (sourceClass === "source-academic") {
+    return SOURCE_FAMILY_STYLES.academic.stroke;
+  }
+  if (sourceClass === "source-community") {
+    return SOURCE_FAMILY_STYLES.community.stroke;
+  }
+  return SOURCE_FAMILY_STYLES.other.stroke;
 }
 
 function relationPath(from: RelationNode | undefined, to: RelationNode | undefined) {
@@ -668,14 +702,14 @@ function buildMapFlags(data: FrontendData, recordsById: Map<number, RecordItem>)
     });
   }
 
-  return prepareMapFlagPresentation(flags);
+  return prepareMapFlagPresentation(flags, data.date_bands);
 }
 
-function prepareMapFlagPresentation(flags: MapFlagRenderItem[]) {
+function prepareMapFlagPresentation(flags: MapFlagRenderItem[], dateBands: readonly DateBand[]) {
   const collisionGroups = new Map<string, MapFlagRenderItem[]>();
 
   for (const flag of flags) {
-    flag.growthBucket = chronologicalGrowthBucket(flag);
+    flag.growthBucket = chronologicalGrowthBucket(flag, dateBands);
     const collisionKey = `${flag.x.toFixed(3)}:${flag.y.toFixed(3)}`;
     const group = collisionGroups.get(collisionKey) ?? [];
     group.push(flag);
@@ -707,17 +741,23 @@ function prepareMapFlagPresentation(flags: MapFlagRenderItem[]) {
   return flags;
 }
 
-function chronologicalGrowthBucket(flag: MapFlagRenderItem) {
-  if (typeof flag.year === "number" && Number.isFinite(flag.year)) {
-    const bucketIndex = MAP_FLAG_GROWTH_BUCKETS.findIndex((bucket) => flag.year !== null && flag.year >= bucket.start && flag.year <= bucket.end);
-    return bucketIndex >= 0 ? bucketIndex : MAP_FLAG_GROWTH_BUCKETS.length - 1;
+function chronologicalGrowthBucket(flag: MapFlagRenderItem, dateBands: readonly DateBand[]) {
+  const bandIndex = dateBands.findIndex((band) => {
+    if (flag.record.date_band === band.id) {
+      return true;
+    }
+    return (
+      typeof flag.year === "number" &&
+      typeof band.start === "number" &&
+      typeof band.end === "number" &&
+      flag.year >= band.start &&
+      flag.year <= band.end
+    );
+  });
+  if (bandIndex >= 0) {
+    return bandIndex;
   }
-  const bandOrder = ["backsearch_1803_1841", "anchor_1842_1875", "expansion_1876_1969", "modern_1970_1990", "modern_1991_2010", "contemporary_2011_present"];
-  const bandIndex = bandOrder.indexOf(flag.record.date_band);
-  if (bandIndex < 0) {
-    return MAP_FLAG_GROWTH_BUCKETS.length - 1;
-  }
-  return Math.round((bandIndex / Math.max(1, bandOrder.length - 1)) * (MAP_FLAG_GROWTH_BUCKETS.length - 1));
+  return Math.max(0, dateBands.length - 1);
 }
 
 function stableUnit(seed: number) {
@@ -740,33 +780,18 @@ function collisionMicroJitter(recordId: number, collisionIndex: number) {
 }
 
 function buildMapSourceLegend(mapFlags: readonly MapFlagRenderItem[]): MapSourceLegendItem[] {
-  const counts = new Map<string, number>();
+  const counts = new Map<SourceFamilyId, number>();
   for (const flag of mapFlags) {
-    const group = mapSourceLegendGroup(flag.record);
-    counts.set(group.id, (counts.get(group.id) ?? 0) + 1);
+    const family = sourceFamilyFor(flag.record.source_type);
+    counts.set(family.id, (counts.get(family.id) ?? 0) + 1);
   }
 
-  return MAP_SOURCE_LEGEND_GROUPS.map((group) => ({
-    ...group,
-    count: counts.get(group.id) ?? 0,
+  return SOURCE_FAMILIES.map((family) => ({
+    id: family.id,
+    label: family.label,
+    className: family.className,
+    count: counts.get(family.id) ?? 0,
   })).filter((group) => group.count > 0);
-}
-
-function mapSourceLegendGroup(record: RecordItem) {
-  const text = [record.source_type, record.source_name, record.publication, record.url].filter(Boolean).join(" ").toLowerCase();
-  if (/public_domain|gutenberg|wikisource|sacred_texts/.test(text)) {
-    return MAP_SOURCE_LEGEND_GROUPS[1];
-  }
-  if (/institutional|municipal|museum|library|catalogue|aiatsis|abc|parks victoria/.test(text)) {
-    return MAP_SOURCE_LEGEND_GROUPS[3];
-  }
-  if (/repository|archive|trove|newspaper|magazine/.test(text)) {
-    return MAP_SOURCE_LEGEND_GROUPS[0];
-  }
-  if (/modern_web|seeded_public_web|yowie research|public_web|web/.test(text)) {
-    return MAP_SOURCE_LEGEND_GROUPS[2];
-  }
-  return MAP_SOURCE_LEGEND_GROUPS[4];
 }
 
 function createRecordFromMapFlag(flag: MapFlagItem, dateBands: DateBand[]): RecordItem {
@@ -826,7 +851,12 @@ function dateBandForYear(year: number | null, dateBands: DateBand[]) {
   if (year === null) {
     return "undated";
   }
-  return dateBands.find((band) => year >= band.start && (band.end === null || year <= band.end))?.id ?? "undated";
+  return dateBands.find((band) => (
+    typeof band.start === "number" &&
+    typeof band.end === "number" &&
+    year >= band.start &&
+    year <= band.end
+  ))?.id ?? "undated";
 }
 
 function mapFlagCoordinates(flag: MapFlagItem, record: RecordItem) {
@@ -1156,7 +1186,8 @@ function useMapFlagGrowth(layerRef: RefObject<SVGGElement | null>, flagSignature
     const chunkInterval = 42;
     const bucketGap = 120;
 
-    for (let bucket = 0; bucket < MAP_FLAG_GROWTH_BUCKETS.length; bucket += 1) {
+    const orderedBuckets = [...bucketGroups.keys()].map((bucket) => Number(bucket)).sort((a, b) => a - b);
+    for (const bucket of orderedBuckets) {
       const bucketGlyphs = [...(bucketGroups.get(String(bucket)) ?? [])].sort((a, b) => (
         Number(a.dataset.growthOrder ?? 0) - Number(b.dataset.growthOrder ?? 0)
       ));
@@ -1326,7 +1357,7 @@ function MapView({
           viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
           preserveAspectRatio="xMidYMid meet"
           role="img"
-          aria-label="Public signal map of Australia by state and territory"
+          aria-label="Public record map of Australia by state and territory"
         >
           <MapPatternDefs />
           <TerrainSurfaceLayer hoverState={hoverState} />
@@ -1588,569 +1619,779 @@ function DensityView({
   derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const [analysisSchemeId, setAnalysisSchemeId] = useState<DensityPeriodSchemeId>("historical_context");
-  const [analysisTab, setAnalysisTab] = useState<DensityAnalysisTab>("temporal_narrative");
-  const [selectedPeriodId, setSelectedPeriodId] = useState<string | null>(null);
-  const periodSchemes = useMemo(() => buildDensityPeriodSchemes(data.records), [data.records]);
-  const overviewScheme = periodSchemes.find((scheme) => scheme.id === "historical_context") ?? periodSchemes[0];
-  const analysisScheme = periodSchemes.find((scheme) => scheme.id === analysisSchemeId) ?? overviewScheme;
-  const overviewSummaries = useMemo(
-    () => buildDensityPeriodSummaries(overviewScheme, data.records, derived.mapFlags),
-    [data.records, derived.mapFlags, overviewScheme],
-  );
-  const analysisSummaries = useMemo(
-    () => buildDensityPeriodSummaries(analysisScheme, data.records, derived.mapFlags),
-    [analysisScheme, data.records, derived.mapFlags],
-  );
-  const selectedPeriod =
-    overviewSummaries.find((summary) => summary.period.id === selectedPeriodId) ??
-    [...overviewSummaries].sort((a, b) => b.records.length - a.records.length)[0] ??
-    null;
-  const narrativeCards = useMemo(() => buildDensityNarrativeCards(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const densityViewRef = useRef<HTMLDivElement | null>(null);
+  const [selectedFigureIndex, setSelectedFigureIndex] = useState<number | null>(null);
+  const periodBands = useMemo(() => data.date_bands.filter((band) => band.id !== "undated"), [data.date_bands]);
+  const maxRecords = Math.max(...periodBands.map((band) => band.record_count), 1);
+  const maxQueries = Math.max(...periodBands.map((band) => band.planned_query_count), 1);
+  const mappedByBand = useMemo(() => buildMappedCountByDateBand(derived.mapFlags), [derived.mapFlags]);
+  const annualSeries = useMemo(() => buildAnnualDensitySeries(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const boxStats = useMemo(() => buildPeriodBoxPlotStats(periodBands, data.records, derived.mapFlags), [periodBands, data.records, derived.mapFlags]);
+  const figureDensityItems = useMemo(() => buildFigureDensityItems(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const figureFrequency = useMemo(() => figureDensityItems.slice(0, 8).map((figure) => ({
+    key: figure.slug,
+    label: figure.label,
+    value: figure.records.length,
+    secondary: figure.mappedCount,
+  })), [figureDensityItems]);
+  const sourceComposition = useMemo(() => buildSourceComposition(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const regionConcentration = useMemo(() => buildRegionConcentration(data.records, derived.mapFlags), [data.records, derived.mapFlags]);
+  const figurePeriodMatrix = useMemo(() => buildFigurePeriodMatrix(figureDensityItems, periodBands), [figureDensityItems, periodBands]);
+  const locationHealth = {
+    map_flags: derived.mapFlags.length,
+    broad_or_review: Math.max(0, data.summary.record_count - derived.mapFlags.length),
+    undated_records: derived.undatedRecordCount,
+    locations_total: data.summary.location_count,
+  };
+  const selectedFigure = selectedFigureIndex === null ? null : figureDensityItems[selectedFigureIndex] ?? null;
+
+  useDensityMotion(densityViewRef);
+
+  useEffect(() => {
+    function resetDensityScroll() {
+      densityViewRef.current?.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+    window.addEventListener("archive-display-change", resetDensityScroll);
+    return () => window.removeEventListener("archive-display-change", resetDensityScroll);
+  }, []);
 
   return (
-    <div className="density-view">
+    <div className="density-view" ref={densityViewRef}>
       <header className="density-header">
-        <span>DENSITY FIELD / PUBLIC-TEXT PERIOD LENSES</span>
+        <div>
+          <span>TIME DENSITY</span>
+          <p>Density shows public-text record distribution and source coverage. It is not a claim about real-world frequency.</p>
+        </div>
         <b>
-          {data.summary.earliest_year}-{data.summary.latest_year} / {data.summary.record_count} PUBLIC / {data.summary.mapped_record_count} MAPPED
+          {data.summary.earliest_year}-{data.summary.latest_year} / {numberFormat(data.summary.record_count)} PUBLIC RECORDS / {numberFormat(data.summary.mapped_record_count)} MAPPED
         </b>
       </header>
-      <div className="density-field-stack">
-        <section className="density-field density-field-overview" id="density-field-overview" aria-label="Density overview">
-          <div className="density-field-heading">
-            <span>FIELD 01</span>
-            <b>DENSITY OVERVIEW</b>
-            <p>Default periods are historical/public-text context bands. They help interpret source and publication environments; they do not imply causation.</p>
-          </div>
-          <div className="density-period-row">
-            {overviewSummaries.map((summary, index) => (
-              <DensityPeriodCard
-                key={summary.period.id}
-                summary={summary}
-                index={index}
-                maxRecords={Math.max(...overviewSummaries.map((item) => item.records.length), 1)}
-                selected={selectedPeriod?.period.id === summary.period.id}
-                onSelect={() => setSelectedPeriodId(summary.period.id)}
-                onSelectRecord={onSelectRecord}
-              />
-            ))}
-          </div>
-          <div className="density-overview-grid">
-            <DensityNarrativeCards cards={narrativeCards} onSelectRecord={onSelectRecord} />
-            <DensitySelectedPeriodSummary summary={selectedPeriod} undatedCount={derived.undatedRecordCount} />
-          </div>
-        </section>
-
-        <section className="density-field density-field-method" id="density-field-method" aria-label="Period method comparator">
-          <div className="density-field-heading">
-            <span>FIELD 02</span>
-            <b>PERIOD METHOD COMPARATOR</b>
-            <p>The archive can be sliced in several defensible ways. Historical context bands preserve publication and public-text context. Equal-duration bands test uneven period widths. Equal-record bands test composition without letting one dense period dominate the display.</p>
-          </div>
-          <DensityMethodComparator schemes={periodSchemes} records={data.records} mapFlags={derived.mapFlags} />
-          <p className="density-method-note">
-            Period lenses are interpretive display tools. They organise public records for reading; they do not establish real-world frequency or causation. Equal-record bins are a comparison tool and can hide real temporal concentration.
-          </p>
-        </section>
-
-        <section className="density-field density-field-analysis" id="density-field-analysis" aria-label="Analytical field">
-          <div className="density-field-heading density-analysis-heading">
-            <span>FIELD 03</span>
-            <b>ANALYTICAL FIELD</b>
-            <p>Charts use the selected period lens and show archive record density, source coverage, and map eligibility patterns.</p>
-          </div>
-          <DensityAnalysisControls selectedSchemeId={analysisScheme.id} selectedTab={analysisTab} onSchemeChange={setAnalysisSchemeId} onTabChange={setAnalysisTab} />
-          <DensityAnalysisField tab={analysisTab} scheme={analysisScheme} summaries={analysisSummaries} records={data.records} mapFlags={derived.mapFlags} />
-        </section>
+      <div className="density-bands">
+        {periodBands.map((band) => (
+          <DensityBand
+            key={band.id}
+            band={band}
+            maxRecords={maxRecords}
+            maxQueries={maxQueries}
+            mappedCount={mappedByBand[band.id] ?? 0}
+            firstRecord={derived.firstRecordByDateBand.get(band.id) ?? null}
+            onSelectRecord={onSelectRecord}
+          />
+        ))}
       </div>
+      <DensityChartPanel
+        annualSeries={annualSeries}
+        boxStats={boxStats}
+        figureFrequency={figureFrequency}
+        sourceComposition={sourceComposition}
+        regionConcentration={regionConcentration}
+        figurePeriodMatrix={figurePeriodMatrix}
+        periodBands={periodBands}
+      />
+      <div className="density-aux-grid">
+        <DensityMetricPanel title="LOCATION HEALTH" values={locationHealth} />
+        <DensityFigureRail figures={figureDensityItems} onSelectFigure={setSelectedFigureIndex} />
+      </div>
+      {selectedFigure ? (
+        <FigureCardOverlay
+          figures={figureDensityItems}
+          figure={selectedFigure}
+          figureIndex={selectedFigureIndex ?? 0}
+          onClose={() => setSelectedFigureIndex(null)}
+          onNavigate={(direction) => {
+            setSelectedFigureIndex((current) => {
+              const index = current ?? 0;
+              return (index + direction + figureDensityItems.length) % figureDensityItems.length;
+            });
+          }}
+        />
+      ) : null}
     </div>
   );
 }
 
-function DensityPeriodCard({
-  summary,
-  index,
+function DensityBand({
+  band,
   maxRecords,
-  selected,
-  onSelect,
+  maxQueries,
+  mappedCount,
+  firstRecord,
   onSelectRecord,
 }: {
-  summary: DensityPeriodSummary;
-  index: number;
+  band: DateBand;
   maxRecords: number;
-  selected: boolean;
-  onSelect: () => void;
+  maxQueries: number;
+  mappedCount: number;
+  firstRecord: RecordItem | null;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const recordLevel = Math.ceil((summary.records.length / maxRecords) * 28);
-  const char = DENSITY_CHARS[Math.min(DENSITY_CHARS.length - 1, index)];
-  const mappedShare = formatPercent(summary.mappedCount, summary.records.length);
+  const recordWidth = Math.max(3, (band.record_count / maxRecords) * 100);
+  const queryWidth = Math.max(3, (band.planned_query_count / maxQueries) * 100);
+  const mappedShare = formatPercent(mappedCount, band.record_count);
   return (
-    <section className={`density-band density-period-card${selected ? " selected" : ""}`}>
-      <div className="density-matrix" aria-hidden="true">
-        {Array.from({ length: 28 }).map((_, cellIndex) => (
-          <span key={cellIndex} className={cellIndex < recordLevel ? "matrix-cell lit" : "matrix-cell"}>
-            {cellIndex < recordLevel ? char : "."}
-          </span>
-        ))}
-      </div>
+    <section
+      className={firstRecord ? "density-band clickable-record" : "density-band"}
+      onClick={() => {
+        if (firstRecord) {
+          onSelectRecord(firstRecord);
+        }
+      }}
+      onKeyDown={(event) => {
+        if (firstRecord && (event.key === "Enter" || event.key === " ")) {
+          event.preventDefault();
+          onSelectRecord(firstRecord);
+        }
+      }}
+      role={firstRecord ? "button" : undefined}
+      tabIndex={firstRecord ? 0 : undefined}
+      aria-label={firstRecord ? `Open sample record for ${band.label}` : undefined}
+    >
       <div className="band-meta">
-        <span>{summary.period.shortLabel}</span>
-        <strong>{summary.period.label}</strong>
-        <b>{numberFormat(summary.records.length)}</b>
-        <small style={{ "--query-level": `${Math.max(5, Math.round((summary.mappedCount / Math.max(1, summary.records.length)) * 100))}%` } as CSSProperties}>
-          mapped {summary.mappedCount} / {mappedShare}
-        </small>
+        <span>{band.label}</span>
+        <b>{numberFormat(band.record_count)}</b>
+        <small>{numberFormat(mappedCount)} mapped / {mappedShare}</small>
       </div>
-      <dl className="density-period-metrics">
+      <div className="density-band-bars" aria-hidden="true">
+        <i className="density-bar-fill" style={{ "--bar-width": `${recordWidth}%` } as CSSProperties} title={`${band.label}: ${numberFormat(band.record_count)} public records`} />
+        <em className="density-bar-fill" style={{ "--bar-width": `${queryWidth}%` } as CSSProperties} title={`${band.label}: ${numberFormat(band.planned_query_count)} planned queries`} />
+      </div>
+      <dl className="density-band-stats">
         <div>
-          <dt>Narrative</dt>
-          <dd>{summary.topNarrative}</dd>
+          <dt>Public records</dt>
+          <dd>{numberFormat(band.record_count)}</dd>
         </div>
         <div>
-          <dt>Source</dt>
-          <dd>{summary.topSourceFamily}</dd>
+          <dt>Planned queries</dt>
+          <dd>{numberFormat(band.planned_query_count)}</dd>
         </div>
       </dl>
-      <div className="density-card-actions">
-        <button type="button" onClick={onSelect} aria-pressed={selected}>
-          inspect
-        </button>
-        <button
-          type="button"
-          disabled={!summary.firstRecord}
-          onClick={() => {
-            if (summary.firstRecord) {
-              onSelectRecord(summary.firstRecord);
-            }
-          }}
-        >
-          sample
-        </button>
-      </div>
+      {firstRecord ? <span className="density-band-action">OPEN SAMPLE</span> : null}
     </section>
   );
 }
 
-function DensityNarrativeCards({ cards, onSelectRecord }: { cards: DensityNarrativeCard[]; onSelectRecord: (record: RecordItem) => void }) {
-  const [selectedLabel, setSelectedLabel] = useState<string | null>(cards[0]?.label ?? null);
-  const selectedCard = cards.find((card) => card.label === selectedLabel) ?? cards[0] ?? null;
+const DENSITY_CHART_MODES: Array<{ id: DensityChartMode; label: string }> = [
+  { id: "temporal", label: "Temporal" },
+  { id: "distribution", label: "Distribution" },
+  { id: "figures", label: "Figures" },
+  { id: "sources", label: "Sources" },
+  { id: "regions", label: "Regions" },
+  { id: "cross", label: "Cross-analysis" },
+];
+
+function DensityChartPanel({
+  annualSeries,
+  boxStats,
+  figureFrequency,
+  sourceComposition,
+  regionConcentration,
+  figurePeriodMatrix,
+  periodBands,
+}: {
+  annualSeries: AnnualDensityPoint[];
+  boxStats: PeriodBoxPlotStat[];
+  figureFrequency: DensityChartDatum[];
+  sourceComposition: DensityChartDatum[];
+  regionConcentration: DensityChartDatum[];
+  figurePeriodMatrix: DensityCrossRow[];
+  periodBands: DateBand[];
+}) {
+  const [mode, setMode] = useState<DensityChartMode>("temporal");
+  const panelRef = useRef<HTMLElement | null>(null);
+
+  useDensityPanelMotion(panelRef, mode);
 
   return (
-    <section className="density-narrative-panel">
-      <div className="density-panel-heading">
-        <span>FIGURE / NARRATIVE SIGNAL</span>
-        <b>PUBLIC-TEXT FAMILIES</b>
-      </div>
-      <div className="density-narrative-grid">
-        {cards.slice(0, 6).map((card) => (
-          <article className="density-narrative-card" key={card.label}>
-            <i aria-hidden="true">{card.glyph}</i>
-            <div>
-              <span>{card.label}</span>
-              <b>{numberFormat(card.records.length)} records / {numberFormat(card.mappedCount)} mapped</b>
-              <small>{card.dateSpan} / {card.topSourceFamily}</small>
-            </div>
-            <p>{card.description}</p>
-            <em>{card.sensitivityNote}</em>
-            <button
-              type="button"
-              aria-pressed={selectedCard?.label === card.label}
-              onClick={() => setSelectedLabel(card.label)}
-            >
-              inspect
-            </button>
-          </article>
-        ))}
-      </div>
-      {selectedCard ? (
-        <aside className="density-figure-inspector">
-          <div>
-            <span>FIGURE-CARD INSPECTOR</span>
-            <b>{selectedCard.label}</b>
-          </div>
-          <p>{selectedCard.description}</p>
-          <dl>
-            <div>
-              <dt>Records</dt>
-              <dd>{numberFormat(selectedCard.records.length)}</dd>
-            </div>
-            <div>
-              <dt>Mapped</dt>
-              <dd>{numberFormat(selectedCard.mappedCount)}</dd>
-            </div>
-            <div>
-              <dt>Date span</dt>
-              <dd>{selectedCard.dateSpan}</dd>
-            </div>
-            <div>
-              <dt>Top source</dt>
-              <dd>{selectedCard.topSourceFamily}</dd>
-            </div>
-          </dl>
-          <em>{selectedCard.sensitivityNote}</em>
+    <section className="density-chart-panel" ref={panelRef} aria-label="Density charts">
+      <div className="density-chart-switcher" role="tablist" aria-label="Density chart mode">
+        {DENSITY_CHART_MODES.map((item) => (
           <button
+            key={item.id}
             type="button"
-            disabled={!selectedCard.records[0]}
-            onClick={() => {
-              if (selectedCard.records[0]) {
-                onSelectRecord(selectedCard.records[0]);
-              }
-            }}
+            role="tab"
+            aria-selected={mode === item.id}
+            className={mode === item.id ? "is-active" : undefined}
+            onClick={() => setMode(item.id)}
           >
-            sample record
+            {item.label}
           </button>
-        </aside>
-      ) : null}
+        ))}
+      </div>
+      {mode === "temporal" ? <DensityAnnualLineChart series={annualSeries} /> : null}
+      {mode === "distribution" ? <DensityPeriodBoxPlot stats={boxStats} /> : null}
+      {mode === "figures" ? <DensityRankedBarChart title="FIGURE FREQUENCY" subtitle="Top public-text figure labels" data={figureFrequency} secondaryLabel="mapped" /> : null}
+      {mode === "sources" ? <DensityRankedBarChart title="SOURCE COMPOSITION" subtitle="Source families shaping the archive" data={sourceComposition} secondaryLabel="mapped" /> : null}
+      {mode === "regions" ? <DensityRankedBarChart title="REGIONAL CONCENTRATION" subtitle="Public and mapped records by state or territory" data={regionConcentration} secondaryLabel="mapped" /> : null}
+      {mode === "cross" ? <DensityFigurePeriodHeatmap rows={figurePeriodMatrix} periods={periodBands} /> : null}
     </section>
   );
 }
 
-function DensitySelectedPeriodSummary({ summary, undatedCount }: { summary: DensityPeriodSummary | null; undatedCount: number }) {
-  return (
-    <section className="density-selected-panel">
-      <div className="density-panel-heading">
-        <span>SELECTED PERIOD SUMMARY</span>
-        <b>{summary ? summary.period.shortLabel : "No period selected"}</b>
-      </div>
-      {summary ? (
-        <div className="density-selected-grid">
-          <div>
-            <span>YEARS</span>
-            <b>{summary.period.label}</b>
-          </div>
-          <div>
-            <span>PUBLIC RECORDS</span>
-            <b>{numberFormat(summary.records.length)}</b>
-          </div>
-          <div>
-            <span>MAPPED</span>
-            <b>{numberFormat(summary.mappedCount)} / {formatPercent(summary.mappedCount, summary.records.length)}</b>
-          </div>
-          <div>
-            <span>TOP NARRATIVE</span>
-            <b>{summary.topNarrative}</b>
-          </div>
-          <div>
-            <span>TOP SOURCE</span>
-            <b>{summary.topSourceFamily}</b>
-          </div>
-        </div>
-      ) : null}
-      <p>{summary?.period.anchorNote ?? "Select a period card to inspect the contextual band."}</p>
-      <small>UNDATED: {numberFormat(undatedCount)} public records. Undated records are not forced into a false period.</small>
-    </section>
-  );
-}
-
-function DensityMethodComparator({
-  schemes,
-  records,
-  mapFlags,
-}: {
-  schemes: DensityPeriodScheme[];
-  records: readonly RecordItem[];
-  mapFlags: readonly MapFlagRenderItem[];
-}) {
-  const rows = schemes.map((scheme) => ({
-    scheme,
-    summaries: buildDensityPeriodSummaries(scheme, records, mapFlags),
-  }));
-  const max = Math.max(...rows.flatMap((row) => row.summaries.map((summary) => summary.records.length)), 1);
+function DensityAnnualLineChart({ series }: { series: AnnualDensityPoint[] }) {
+  const width = 1500;
+  const height = 240;
+  const margin = { top: 18, right: 36, bottom: 38, left: 60 };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+  const minYear = series[0]?.year ?? 0;
+  const maxYear = series[series.length - 1]?.year ?? minYear + 1;
+  const maxValue = Math.max(...series.map((point) => Math.max(point.total, point.mapped)), 1);
+  const xFor = (year: number) => margin.left + ((year - minYear) / Math.max(1, maxYear - minYear)) * innerWidth;
+  const yFor = (value: number) => margin.top + innerHeight - (value / maxValue) * innerHeight;
+  const publicPath = series.map((point) => `${xFor(point.year)},${yFor(point.total)}`).join(" ");
+  const mappedPath = series.map((point) => `${xFor(point.year)},${yFor(point.mapped)}`).join(" ");
+  const yearTicks = buildLinearTicks(minYear, maxYear, 5).map((tick) => Math.round(tick));
+  const valueTicks = buildLinearTicks(0, maxValue, 5).map((tick) => Math.round(tick));
 
   return (
-    <div className="density-method-comparator">
-      {rows.map(({ scheme, summaries }) => (
-        <section className="density-method-row" key={scheme.id}>
-          <header>
-            <span>{scheme.label.toUpperCase()}</span>
-            <small>{scheme.description}</small>
-          </header>
-          <div className="density-method-blocks">
-            {summaries.map((summary) => {
-              const intensity = summary.records.length / max;
-              return (
-                <div className="density-method-block" key={summary.period.id} style={{ "--period-intensity": String(0.12 + intensity * 0.78) } as CSSProperties}>
-                  <b>{summary.period.shortLabel}</b>
-                  <span>{summary.period.label}</span>
-                  <i style={{ "--mapped-share": `${Math.max(3, (summary.mappedCount / Math.max(1, summary.records.length)) * 100)}%` } as CSSProperties} />
-                  <em>{numberFormat(summary.records.length)}</em>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      ))}
-    </div>
-  );
-}
-
-function DensityAnalysisControls({
-  selectedSchemeId,
-  selectedTab,
-  onSchemeChange,
-  onTabChange,
-}: {
-  selectedSchemeId: DensityPeriodSchemeId;
-  selectedTab: DensityAnalysisTab;
-  onSchemeChange: (id: DensityPeriodSchemeId) => void;
-  onTabChange: (id: DensityAnalysisTab) => void;
-}) {
-  const schemes: Array<{ id: DensityPeriodSchemeId; label: string }> = [
-    { id: "historical_context", label: "Historical Context" },
-    { id: "equal_duration", label: "Equal Duration" },
-    { id: "equal_record_count", label: "Equal Record Count" },
-  ];
-  const tabs: Array<{ id: DensityAnalysisTab; label: string }> = [
-    { id: "temporal_narrative", label: "TEMPORAL × NARRATIVE" },
-    { id: "source_bias", label: "SOURCE BIAS" },
-    { id: "map_coverage", label: "MAP COVERAGE" },
-    { id: "regional_profile", label: "REGIONAL PROFILE" },
-  ];
-
-  return (
-    <div className="density-analysis-controls">
-      <div>
-        <span>PERIOD LENS</span>
-        {schemes.map((scheme) => (
-          <button key={scheme.id} type="button" className={selectedSchemeId === scheme.id ? "active" : ""} onClick={() => onSchemeChange(scheme.id)}>
-            {scheme.label}
-          </button>
+    <article className="density-chart-card">
+      <header>
+        <span>ANNUAL TREND</span>
+        <b>Dated public records by year</b>
+      </header>
+      <svg className="density-line-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Annual public record trend line chart">
+        {valueTicks.map((tick) => (
+          <g key={`y-${tick}`}>
+            <line className="density-chart-grid" x1={margin.left} x2={width - margin.right} y1={yFor(tick)} y2={yFor(tick)} />
+            <text className="density-chart-axis" x={margin.left - 10} y={yFor(tick) + 4} textAnchor="end">
+              {tick}
+            </text>
+          </g>
         ))}
-      </div>
-      <div>
-        <span>ANALYSIS</span>
-        {tabs.map((tab) => (
-          <button key={tab.id} type="button" className={selectedTab === tab.id ? "active" : ""} onClick={() => onTabChange(tab.id)}>
-            {tab.label}
-          </button>
+        {yearTicks.map((tick) => (
+          <g key={`x-${tick}`}>
+            <line className="density-chart-tick" x1={xFor(tick)} x2={xFor(tick)} y1={height - margin.bottom} y2={height - margin.bottom + 6} />
+            <text className="density-chart-axis" x={xFor(tick)} y={height - 16} textAnchor="middle">
+              {tick}
+            </text>
+          </g>
         ))}
+        <line className="density-chart-axis-line" x1={margin.left} x2={width - margin.right} y1={height - margin.bottom} y2={height - margin.bottom} />
+        <line className="density-chart-axis-line" x1={margin.left} x2={margin.left} y1={margin.top} y2={height - margin.bottom} />
+        <polyline className="density-line-public density-chart-path" points={publicPath} fill="none" />
+        <polyline className="density-line-mapped density-chart-path" points={mappedPath} fill="none" />
+      </svg>
+      <div className="density-chart-legend">
+        <span><i className="legend-public" /> public records</span>
+        <span><i className="legend-mapped" /> mapped records</span>
       </div>
-    </div>
+    </article>
   );
 }
 
-function DensityAnalysisField({
-  tab,
-  scheme,
-  summaries,
-  records,
-  mapFlags,
-}: {
-  tab: DensityAnalysisTab;
-  scheme: DensityPeriodScheme;
-  summaries: DensityPeriodSummary[];
-  records: readonly RecordItem[];
-  mapFlags: readonly MapFlagRenderItem[];
-}) {
-  if (tab === "source_bias") {
-    return (
-      <DensityAnalysisMatrix
-        title="SOURCE FAMILY x PERIOD"
-        note="Dense periods may reflect source availability or collection history rather than more narratives in the world."
-        rows={SOURCE_FAMILIES.map((family) => ({
-          label: family.label,
-          values: summaries.map((summary) => summary.records.filter((record) => sourceFamilyFor(record.source_type).id === family.id).length),
-        }))}
-        periods={scheme.periods}
-      />
-    );
-  }
-  if (tab === "map_coverage") {
-    return <DensityMapCoverageChart summaries={summaries} />;
-  }
-  if (tab === "regional_profile") {
-    return <DensityRegionalProfile records={records} mapFlags={mapFlags} periods={scheme.periods} />;
-  }
-  return (
-    <DensityAnalysisMatrix
-      title="NARRATIVE FAMILY x PERIOD"
-      note="This view shows which narrative families are represented in each period. It shows archive record density, not real-world frequency."
-      rows={NARRATIVE_MATRIX_LABELS.map((label) => ({
-        label,
-        values: summaries.map((summary) => summary.records.filter((record) => displayNarrativeGroupLabel(record) === label).length),
-      }))}
-      periods={scheme.periods}
-    />
-  );
-}
-
-function DensityAnalysisMatrix({
-  title,
-  note,
-  rows,
-  periods,
-}: {
-  title: string;
-  note: string;
-  rows: Array<{ label: string; values: number[] }>;
-  periods: readonly DensityPeriod[];
-}) {
-  const max = Math.max(...rows.flatMap((row) => row.values), 1);
+function DensityPeriodBoxPlot({ stats }: { stats: PeriodBoxPlotStat[] }) {
+  const width = 1500;
+  const rowHeight = 30;
+  const margin = { top: 22, right: 60, bottom: 34, left: 156 };
+  const height = margin.top + margin.bottom + stats.length * rowHeight;
+  const innerWidth = width - margin.left - margin.right;
+  const maxValue = Math.max(...stats.map((stat) => stat.max), 1);
+  const xFor = (value: number) => margin.left + (value / maxValue) * innerWidth;
+  const ticks = buildLinearTicks(0, maxValue, 5).map((tick) => Math.round(tick));
 
   return (
-    <section className="density-analysis-panel">
-      <div className="density-panel-heading">
-        <span>{title}</span>
-        <b>{periods.map((period) => period.shortLabel).join(" / ")}</b>
-      </div>
-      <div className="density-analysis-matrix" style={{ "--matrix-cols": periods.length } as CSSProperties}>
-        <span />
-        {periods.map((period) => <b key={period.id}>{period.shortLabel}</b>)}
-        {rows.map((row) => (
-          <div className="density-analysis-row" key={row.label}>
-            <span>{row.label}</span>
-            {row.values.map((value, index) => (
-              <i key={`${row.label}-${periods[index]?.id}`} style={{ "--heat": String(value / max) } as CSSProperties} title={`${row.label}, ${periods[index]?.label}: ${numberFormat(value)}`}>
-                {value > 0 ? numberFormat(value) : ""}
-              </i>
-            ))}
-          </div>
+    <article className="density-chart-card">
+      <header>
+        <span>PERIOD DISTRIBUTION</span>
+        <b>Per-year record counts inside each band</b>
+      </header>
+      <svg className="density-box-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Period distribution box plot">
+        {ticks.map((tick) => (
+          <g key={tick}>
+            <line className="density-chart-grid" x1={xFor(tick)} x2={xFor(tick)} y1={margin.top - 8} y2={height - margin.bottom} />
+            <text className="density-chart-axis" x={xFor(tick)} y={height - 12} textAnchor="middle">
+              {tick}
+            </text>
+          </g>
         ))}
-      </div>
-      <p>{note}</p>
-    </section>
-  );
-}
-
-function DensityMapCoverageChart({ summaries }: { summaries: DensityPeriodSummary[] }) {
-  const max = Math.max(...summaries.map((summary) => summary.records.length), 1);
-  return (
-    <section className="density-analysis-panel density-map-coverage">
-      <div className="density-panel-heading">
-        <span>MAPPED / UNMAPPED BY PERIOD</span>
-        <b>MAP ELIGIBILITY RATIO</b>
-      </div>
-      <div className="density-coverage-bars">
-        {summaries.map((summary) => {
-          const unmapped = Math.max(0, summary.records.length - summary.mappedCount);
+        {stats.map((stat, index) => {
+          const y = margin.top + index * rowHeight + rowHeight / 2;
           return (
-            <div key={summary.period.id} className="density-coverage-row">
-              <span>{summary.period.shortLabel}</span>
-              <i>
-                <b style={{ "--bar-width": `${Math.max(2, (summary.mappedCount / max) * 100)}%` } as CSSProperties} />
-                <em style={{ "--bar-width": `${Math.max(2, (unmapped / max) * 100)}%` } as CSSProperties} />
-              </i>
-              <strong>{numberFormat(summary.mappedCount)} / {formatPercent(summary.mappedCount, summary.records.length)}</strong>
-            </div>
+            <g key={stat.band.id}>
+              <text className="density-box-label" x={margin.left - 14} y={y + 5} textAnchor="end">
+                {stat.band.label}
+              </text>
+              <line className="density-box-whisker" x1={xFor(stat.min)} x2={xFor(stat.max)} y1={y} y2={y} />
+              <line className="density-box-cap" x1={xFor(stat.min)} x2={xFor(stat.min)} y1={y - 8} y2={y + 8} />
+              <line className="density-box-cap" x1={xFor(stat.max)} x2={xFor(stat.max)} y1={y - 8} y2={y + 8} />
+              <rect className="density-box-rect density-box" x={xFor(stat.q1)} y={y - 10} width={Math.max(2, xFor(stat.q3) - xFor(stat.q1))} height="20" />
+              <line className="density-box-median" x1={xFor(stat.median)} x2={xFor(stat.median)} y1={y - 12} y2={y + 12} />
+              <text className="density-box-count" x={width - margin.right} y={y + 5} textAnchor="end">
+                {numberFormat(stat.total)}
+              </text>
+            </g>
           );
         })}
-      </div>
-      <p>A record can be source-grounded but remain unmapped if it lacks a verified display location or should remain broad, sensitive, or summary-only.</p>
-    </section>
+      </svg>
+    </article>
   );
 }
 
-function DensityRegionalProfile({
-  records,
-  mapFlags,
-  periods,
+function DensityRankedBarChart({
+  title,
+  subtitle,
+  data,
+  secondaryLabel,
 }: {
-  records: readonly RecordItem[];
-  mapFlags: readonly MapFlagRenderItem[];
-  periods: readonly DensityPeriod[];
+  title: string;
+  subtitle: string;
+  data: DensityChartDatum[];
+  secondaryLabel?: string;
 }) {
-  const rows = DASHBOARD_STATE_ORDER.map((state) => ({
-    label: state,
-    values: periods.map((period) => records.filter((record) => record.state_territory === state && periodContainsYear(period, record.year)).length),
-    mapped: periods.map((period) => mapFlags.filter((flag) => flag.state_territory === state && periodContainsYear(period, flag.record.year)).length),
-  }));
-  const max = Math.max(...rows.flatMap((row) => row.values), 1);
+  const width = 1500;
+  const rowHeight = 38;
+  const margin = { top: 26, right: 360, bottom: 42, left: 330 };
+  const height = margin.top + margin.bottom + Math.max(1, data.length) * rowHeight;
+  const maxValue = Math.max(...data.map((row) => Math.max(row.value, row.secondary ?? 0)), 1);
+  const xFor = (value: number) => margin.left + (value / maxValue) * (width - margin.left - margin.right);
+  const valueLabelX = width - 32;
+  const ticks = buildLinearTicks(0, maxValue, 5).map((tick) => Math.round(tick));
+
   return (
-    <section className="density-analysis-panel">
-      <div className="density-panel-heading">
-        <span>JURISDICTION x PERIOD</span>
-        <b>PUBLIC RECORDS / MAPPED SIGNAL</b>
-      </div>
-      <div className="density-regional-grid" style={{ "--matrix-cols": periods.length } as CSSProperties}>
-        <span />
-        {periods.map((period) => <b key={period.id}>{period.shortLabel}</b>)}
-        {rows.map((row) => (
-          <div className="density-regional-row" key={row.label}>
-            <span>{row.label}</span>
-            {row.values.map((value, index) => (
-              <i key={`${row.label}-${periods[index]?.id}`} style={{ "--heat": String(value / max), "--mapped-share": `${Math.max(3, (row.mapped[index] / Math.max(1, value)) * 100)}%` } as CSSProperties}>
-                {value ? numberFormat(value) : ""}
-              </i>
-            ))}
+    <article className="density-chart-card density-chart-card-main">
+      <header>
+        <span>{title}</span>
+        <b>{subtitle}</b>
+      </header>
+      <svg className="density-bar-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${title} ranked bar chart`}>
+        {ticks.map((tick) => (
+          <g key={tick}>
+            <line className="density-chart-grid" x1={xFor(tick)} x2={xFor(tick)} y1={margin.top - 8} y2={height - margin.bottom} />
+            <text className="density-chart-axis" x={xFor(tick)} y={height - 12} textAnchor="middle">
+              {tick}
+            </text>
+          </g>
+        ))}
+        {data.map((row, index) => {
+          const y = margin.top + index * rowHeight;
+          const secondaryWidth = xFor(row.secondary ?? 0) - margin.left;
+          const primaryWidth = xFor(row.value) - margin.left;
+          return (
+            <g key={row.key}>
+              <text className="density-box-label" x={margin.left - 20} y={y + 25} textAnchor="end">
+                {truncate(row.label, 22)}
+              </text>
+              {row.secondary ? (
+                <rect className="density-bar-secondary density-bar-fill" x={margin.left} y={y + 18} width={Math.max(1, secondaryWidth)} height="8">
+                  <title>{`${row.label}: ${numberFormat(row.secondary)} ${secondaryLabel ?? "secondary records"}`}</title>
+                </rect>
+              ) : null}
+              <rect className="density-bar-primary density-bar-fill" x={margin.left} y={y + 5} width={Math.max(1, primaryWidth)} height="13">
+                <title>{`${row.label}: ${numberFormat(row.value)} public records`}</title>
+              </rect>
+              <text className="density-box-count" x={valueLabelX} y={y + 22} textAnchor="end">
+                {numberFormat(row.value)}
+                {typeof row.secondary === "number" ? ` / ${numberFormat(row.secondary)} ${secondaryLabel ?? ""}` : ""}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </article>
+  );
+}
+
+function DensityFigurePeriodHeatmap({ rows, periods }: { rows: DensityCrossRow[]; periods: DateBand[] }) {
+  const width = 1500;
+  const cellWidth = 190;
+  const rowHeight = 26;
+  const margin = { top: 42, right: 62, bottom: 22, left: 220 };
+  const height = margin.top + margin.bottom + Math.max(1, rows.length) * rowHeight;
+  const maxValue = Math.max(...rows.flatMap((row) => row.values.map((cell) => cell.value)), 1);
+
+  return (
+    <article className="density-chart-card density-chart-card-main">
+      <header>
+        <span>CROSS-ANALYSIS</span>
+        <b>Top figures across archive periods</b>
+      </header>
+      <svg className="density-heatmap-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Figure by period heatmap">
+        {periods.map((period, index) => (
+          <text key={period.id} className="density-chart-axis" x={margin.left + index * cellWidth + cellWidth / 2} y="24" textAnchor="middle">
+            {period.label.replace("present", "now")}
+          </text>
+        ))}
+        {rows.map((row, rowIndex) => {
+          const y = margin.top + rowIndex * rowHeight;
+          return (
+            <g key={row.figure}>
+              <text className="density-box-label" x={margin.left - 14} y={y + 19} textAnchor="end">
+                {truncate(row.figure, 20)}
+              </text>
+              {periods.map((period, columnIndex) => {
+                const value = row.values.find((cell) => cell.bandId === period.id)?.value ?? 0;
+                const intensity = value / maxValue;
+                return (
+                  <g key={`${row.figure}-${period.id}`}>
+                    <rect
+                      className="density-heatmap-cell density-box"
+                      x={margin.left + columnIndex * cellWidth + 5}
+                      y={y + 3}
+                      width={cellWidth - 10}
+                      height="18"
+                      style={{ "--cell-opacity": String(0.14 + intensity * 0.78) } as CSSProperties}
+                    >
+                      <title>{`${row.figure}, ${period.label}: ${numberFormat(value)} records`}</title>
+                    </rect>
+                    {value > 0 ? (
+                      <text className="density-heatmap-value" x={margin.left + columnIndex * cellWidth + cellWidth / 2} y={y + 17} textAnchor="middle">
+                        {numberFormat(value)}
+                      </text>
+                    ) : null}
+                  </g>
+                );
+              })}
+              <text className="density-box-count" x={width - margin.right} y={y + 19} textAnchor="end">
+                {numberFormat(row.total)}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </article>
+  );
+}
+
+function DensityMetricPanel({ title, values }: { title: string; values: Record<string, number> }) {
+  const entries = entriesDescending(values, 5);
+  const max = Math.max(...entries.map(([, value]) => value), 1);
+
+  return (
+    <section className="density-metric">
+      <span className="tiny-label">{title}</span>
+      <div className="density-metric-bars">
+        {entries.map(([label, value]) => (
+          <div key={label} className="density-metric-row">
+            <span>{truncate(label, 18)}</span>
+            <i style={{ "--metric-width": `${Math.max(8, (value / max) * 100)}%` } as CSSProperties} />
+            <b>{value}</b>
           </div>
         ))}
       </div>
-      <p>Regional density reflects source coverage and map eligibility. It is not a verified distribution of supernatural beings or events.</p>
     </section>
   );
 }
 
-function buildDensityPeriodSummaries(
-  scheme: DensityPeriodScheme,
+function DensityFigureRail({
+  figures,
+  onSelectFigure,
+}: {
+  figures: FigureDensityItem[];
+  onSelectFigure: (index: number) => void;
+}) {
+  return (
+    <section className="density-figure-rail">
+      <span className="tiny-label">FIGURE MIX</span>
+      <div>
+        {figures.slice(0, 8).map((figure, index) => (
+          <button
+            key={figure.slug}
+            type="button"
+            className={index % 3 === 0 ? "rail-mark strong" : "rail-mark"}
+            onClick={() => onSelectFigure(index)}
+          >
+            <b>{truncate(figure.label, 18)}</b>
+            <span>{numberFormat(figure.records.length)}</span>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FigureCardOverlay({
+  figures,
+  figure,
+  figureIndex,
+  onClose,
+  onNavigate,
+}: {
+  figures: FigureDensityItem[];
+  figure: FigureDensityItem;
+  figureIndex: number;
+  onClose: () => void;
+  onNavigate: (direction: -1 | 1) => void;
+}) {
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const titleId = `figure-card-title-${slugForId(figure.label)}`;
+  const statRows = [
+    ["Total records", numberFormat(figure.records.length)],
+    ["Mapped records", numberFormat(figure.mappedCount)],
+    ["First seen", figure.earliestYear ? String(figure.earliestYear) : "undated"],
+    ["Date span", figure.dateSpan],
+    ["Common region", figure.topRegion],
+    ["Top source", figure.topSourceFamily],
+    ["Narrative family", figure.topNarrativeFamily],
+  ];
+
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        onClose();
+      } else if (event.key === "ArrowLeft") {
+        onNavigate(-1);
+      } else if (event.key === "ArrowRight") {
+        onNavigate(1);
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [onClose, onNavigate]);
+
+  return (
+    <div className="record-overlay figure-overlay" role="presentation" onClick={onClose}>
+      <div className="figure-card-shell" onClick={(event) => event.stopPropagation()}>
+        <button className="record-card-nav record-card-nav-prev figure-card-nav" type="button" onClick={(event) => { event.stopPropagation(); onNavigate(-1); }} aria-label="Previous figure">
+          ‹
+        </button>
+        <button className="record-card-nav record-card-nav-next figure-card-nav" type="button" onClick={(event) => { event.stopPropagation(); onNavigate(1); }} aria-label="Next figure">
+          ›
+        </button>
+        <article className="figure-profile-card" role="dialog" aria-modal="true" aria-labelledby={titleId}>
+          <section className="figure-profile-left">
+            <div className="figure-profile-kicker">
+              <span>FIGURE PROFILE</span>
+              <b>
+                {numberFormat(figureIndex + 1)} / {numberFormat(figures.length)}
+              </b>
+            </div>
+            <p>{figure.profile.shortDescription || figure.note}</p>
+            {figure.profile.notes ? <p>{figure.profile.notes}</p> : null}
+            <p className="figure-profile-note">
+              Archive context: this card combines a static public-reference profile with computed corpus statistics. Counts describe public source records, not real-world frequency.
+            </p>
+            <a className="figure-reference-link" href={figure.profile.externalUrl} target="_blank" rel="noreferrer">
+              {figure.profile.referenceLabel?.toUpperCase().includes("WIKIPEDIA") ? "OPEN ENCYCLOPAEDIA" : "OPEN REFERENCE"}
+            </a>
+          </section>
+          <section className="figure-profile-right">
+            <div className="figure-profile-topline">
+              <span>ARCHIVE FIGURE</span>
+              <button ref={closeButtonRef} type="button" onClick={onClose} aria-label="Close figure card">
+                CLOSE
+              </button>
+            </div>
+            <h2 id={titleId}>{figure.profile.label || figure.label}</h2>
+            <div className="figure-profile-alias">
+              {figure.profile.aliases?.length ? `aliases: ${figure.profile.aliases.slice(0, 5).join(", ")}` : "public-text category"}
+            </div>
+            <dl className="figure-profile-stats">
+              {statRows.map(([label, value]) => (
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className="figure-profile-reference">
+              <span>REFERENCE</span>
+              <b>{figure.profile.referenceLabel}</b>
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+  );
+}
+
+function buildMappedCountByDateBand(mapFlags: readonly MapFlagRenderItem[]) {
+  return mapFlags.reduce<Record<string, number>>((acc, flag) => {
+    const band = flag.record.date_band;
+    acc[band] = (acc[band] ?? 0) + 1;
+    return acc;
+  }, {});
+}
+
+function buildAnnualDensitySeries(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): AnnualDensityPoint[] {
+  const totals = new Map<number, { total: number; mapped: number }>();
+  for (const record of records) {
+    if (typeof record.year !== "number" || !Number.isFinite(record.year)) {
+      continue;
+    }
+    const row = totals.get(record.year) ?? { total: 0, mapped: 0 };
+    row.total += 1;
+    totals.set(record.year, row);
+  }
+  for (const flag of mapFlags) {
+    const year = flag.record.year;
+    if (typeof year !== "number" || !Number.isFinite(year)) {
+      continue;
+    }
+    const row = totals.get(year) ?? { total: 0, mapped: 0 };
+    row.mapped += 1;
+    totals.set(year, row);
+  }
+  return [...totals.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([year, value]) => ({ year, total: value.total, mapped: value.mapped }));
+}
+
+function buildPeriodBoxPlotStats(
+  dateBands: readonly DateBand[],
   records: readonly RecordItem[],
   mapFlags: readonly MapFlagRenderItem[],
-): DensityPeriodSummary[] {
-  return scheme.periods.map((period) => {
-    const periodRecords = records.filter((record) => periodContainsYear(period, record.year));
-    const mappedCount = mapFlags.filter((flag) => periodContainsYear(period, flag.record.year)).length;
+): PeriodBoxPlotStat[] {
+  const mappedByBand = buildMappedCountByDateBand(mapFlags);
+  return dateBands.map((band) => {
+    const byYear = new Map<number, number>();
+    for (const record of records) {
+      if (record.date_band !== band.id || typeof record.year !== "number" || !Number.isFinite(record.year)) {
+        continue;
+      }
+      byYear.set(record.year, (byYear.get(record.year) ?? 0) + 1);
+    }
+    const values = [...byYear.values()].sort((a, b) => a - b);
     return {
-      period,
-      records: periodRecords,
-      mappedCount,
-      topNarrative: topLabel(periodRecords, (record) => displayNarrativeGroupLabel(record)),
-      topSourceFamily: topLabel(periodRecords, (record) => sourceFamilyFor(record.source_type).label),
-      firstRecord: [...periodRecords].sort(compareRecordsByDate)[0] ?? null,
+      band,
+      min: values[0] ?? 0,
+      q1: quantile(values, 0.25),
+      median: quantile(values, 0.5),
+      q3: quantile(values, 0.75),
+      max: values[values.length - 1] ?? 0,
+      total: band.record_count,
+      mapped: mappedByBand[band.id] ?? 0,
     };
   });
 }
 
-function buildDensityNarrativeCards(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): DensityNarrativeCard[] {
+function buildFigureDensityItems(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): FigureDensityItem[] {
   const mappedIds = new Set(mapFlags.map((flag) => flag.record_id));
-  const descriptions: Record<string, string> = {
-    "Hairy humanoid reports": "Reports and retellings using hairy-human or wild-person language in public sources.",
-    "Spirit-person narratives": "Public records involving spirit-person or culturally specific narrative language, handled as source-context records.",
-    "Ghost / apparition records": "Apparition and ghost records where the public text presents a humanoid or person-like figure.",
-    "Traditional narratives": "Public-source traditional narrative records requiring careful terminology and contextual reading.",
-    "Retellings and adaptations": "Later adaptations, summaries, or retellings that show circulation rather than primary evidence.",
-    "Giant / ogre narratives": "Giant, ogre, or large humanoid narrative records in public textual circulation.",
-    "Local legends": "Place-attached legend records and local public-history narratives.",
-    "Encounter accounts": "Reported encounter-style public records, not verification of an event.",
-    "Other typed context": "Typed contextual records that support source history or classification.",
-  };
-  const glyphs = ["++", "::", "[]", "//", "<>", "##", "..", "||", "--"];
-
-  return NARRATIVE_MATRIX_LABELS.map((label, index) => {
-    const familyRecords = records.filter((record) => displayNarrativeGroupLabel(record) === label);
-    const years = familyRecords
-      .map((record) => record.year)
-      .filter((year): year is number => typeof year === "number" && Number.isFinite(year))
-      .sort((a, b) => a - b);
-    const mappedCount = familyRecords.filter((record) => mappedIds.has(record.record_id)).length;
-    const involvesCulturalContext = familyRecords.some((record) => Boolean(record.involves_indigenous_knowledge));
-    return {
-      label,
-      records: familyRecords.sort(compareRecordsByDate),
-      mappedCount,
-      topSourceFamily: topLabel(familyRecords, (record) => sourceFamilyFor(record.source_type).label),
-      dateSpan: years.length ? `${years[0]}-${years[years.length - 1]}` : "undated only",
-      description: descriptions[label] ?? descriptions["Other typed context"],
-      glyph: glyphs[index % glyphs.length],
-      sensitivityNote: involvesCulturalContext
-        ? "Culturally specific public records need source context; publicness is not permission."
-        : "Public-text grouping only; not a claim about real-world frequency.",
-    };
-  }).sort((a, b) => b.records.length - a.records.length || a.label.localeCompare(b.label));
+  const grouped = new Map<string, { profile: FigureProfile; records: RecordItem[] }>();
+  for (const record of records) {
+    const rawLabel = record.canonical_figure_guess || record.canonical_figure || "uncoded";
+    const profile = figureProfileFor(rawLabel);
+    const row = grouped.get(profile.slug) ?? { profile, records: [] };
+    row.records.push(record);
+    grouped.set(profile.slug, row);
+  }
+  return [...grouped.entries()]
+    .map(([slug, group]) => {
+      const { profile } = group;
+      const figureRecords = group.records;
+      const sortedRecords = [...figureRecords].sort(compareRecordsByDate);
+      const years = sortedRecords
+        .map((record) => record.year)
+        .filter((year): year is number => typeof year === "number" && Number.isFinite(year));
+      const topRegion = entriesDescending(
+        sortedRecords.reduce<Record<string, number>>((acc, record) => {
+          const region = record.state_territory ? STATE_NAMES[record.state_territory] ?? record.state_territory : "Unspecified";
+          acc[region] = (acc[region] ?? 0) + 1;
+          return acc;
+        }, {}),
+        1,
+      )[0]?.[0] ?? "Unspecified";
+      const topSourceFamily = entriesDescending(
+        sortedRecords.reduce<Record<string, number>>((acc, record) => {
+          const family = sourceFamilyFor(record.source_type).label;
+          acc[family] = (acc[family] ?? 0) + 1;
+          return acc;
+        }, {}),
+        1,
+      )[0]?.[0] ?? "Public sources";
+      const topNarrativeFamily = entriesDescending(
+        sortedRecords.reduce<Record<string, number>>((acc, record) => {
+          const narrative = narrativeGroupLabel(record);
+          acc[narrative] = (acc[narrative] ?? 0) + 1;
+          return acc;
+        }, {}),
+        1,
+      )[0]?.[0] ?? "Other typed context";
+      const earliestYear = years.length ? Math.min(...years) : null;
+      const latestYear = years.length ? Math.max(...years) : null;
+      return {
+        slug,
+        label: profile.label,
+        profile,
+        records: sortedRecords,
+        mappedCount: sortedRecords.filter((record) => mappedIds.has(record.record_id)).length,
+        dateSpan: earliestYear && latestYear ? `${earliestYear}-${latestYear}` : "undated only",
+        earliestYear,
+        latestYear,
+        topSourceFamily,
+        topRegion,
+        topNarrativeFamily,
+        note: profile.shortDescription,
+      };
+    })
+    .sort((a, b) => b.records.length - a.records.length || a.label.localeCompare(b.label));
 }
 
-function topLabel(records: readonly RecordItem[], labelFor: (record: RecordItem) => string) {
-  if (!records.length) {
-    return "No dated records";
+function buildSourceComposition(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): DensityChartDatum[] {
+  const mappedIds = new Set(mapFlags.map((flag) => flag.record_id));
+  const groups = new Map<string, { label: string; total: number; mapped: number }>();
+  for (const record of records) {
+    const family = sourceFamilyFor(record.source_type);
+    const row = groups.get(family.id) ?? { label: family.label, total: 0, mapped: 0 };
+    row.total += 1;
+    if (mappedIds.has(record.record_id)) {
+      row.mapped += 1;
+    }
+    groups.set(family.id, row);
   }
-  return entriesDescending(
-    records.reduce<Record<string, number>>((acc, record) => {
-      const label = labelFor(record);
-      acc[label] = (acc[label] ?? 0) + 1;
+  return [...groups.entries()]
+    .map(([key, row]) => ({ key, label: row.label, value: row.total, secondary: row.mapped }))
+    .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
+    .slice(0, 8);
+}
+
+function buildRegionConcentration(records: readonly RecordItem[], mapFlags: readonly MapFlagRenderItem[]): DensityChartDatum[] {
+  const totals = new Map<string, { total: number; mapped: number }>();
+  for (const record of records) {
+    const code = record.state_territory || "Unspecified";
+    const row = totals.get(code) ?? { total: 0, mapped: 0 };
+    row.total += 1;
+    totals.set(code, row);
+  }
+  for (const flag of mapFlags) {
+    const code = flag.state_territory || flag.record.state_territory || "Unspecified";
+    const row = totals.get(code) ?? { total: 0, mapped: 0 };
+    row.mapped += 1;
+    totals.set(code, row);
+  }
+  return [...totals.entries()]
+    .map(([key, row]) => ({ key, label: STATE_NAMES[key] ?? key, value: row.total, secondary: row.mapped }))
+    .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label));
+}
+
+function buildFigurePeriodMatrix(figures: readonly FigureDensityItem[], periods: readonly DateBand[]): DensityCrossRow[] {
+  return figures.slice(0, 7).map((figure) => {
+    const periodCounts = figure.records.reduce<Record<string, number>>((acc, record) => {
+      acc[record.date_band] = (acc[record.date_band] ?? 0) + 1;
       return acc;
-    }, {}),
-    1,
-  )[0]?.[0] ?? "No dated records";
+    }, {});
+    return {
+      figure: figure.label,
+      total: figure.records.length,
+      values: periods.map((period) => ({
+        bandId: period.id,
+        bandLabel: period.label,
+        value: periodCounts[period.id] ?? 0,
+      })),
+    };
+  });
+}
+
+function quantile(values: readonly number[], q: number) {
+  if (!values.length) {
+    return 0;
+  }
+  const pos = (values.length - 1) * q;
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  const next = values[base + 1] ?? values[base];
+  return values[base] + rest * (next - values[base]);
+}
+
+function buildLinearTicks(min: number, max: number, count: number) {
+  if (count <= 1 || min === max) {
+    return [min, max];
+  }
+  return Array.from({ length: count }, (_, index) => min + ((max - min) / (count - 1)) * index);
+}
+
+function slugForId(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "figure";
 }
 
 function DashboardView({
@@ -2227,7 +2468,7 @@ function DashboardExpandButton({
   expanded: boolean;
   onToggle: () => void;
 }) {
-  const title = side === "left" ? "record network" : "corpus console";
+  const title = side === "left" ? "relation network" : "source field";
   const glyph = expanded ? "×" : side === "left" ? ">" : "<";
 
   return (
@@ -2248,8 +2489,8 @@ function DashboardExpandButton({
 
 const DASHBOARD_LAYOUT_TARGETS: Record<DashboardLayout, { left: string; right: string }> = {
   balanced: { left: "54%", right: "46%" },
-  "left-expanded": { left: "74%", right: "26%" },
-  "right-expanded": { left: "26%", right: "74%" },
+  "left-expanded": { left: "100%", right: "0%" },
+  "right-expanded": { left: "0%", right: "100%" },
 };
 
 function useDashboardLayoutMotion(rootRef: RefObject<HTMLDivElement | null>, layout: DashboardLayout) {
@@ -2288,24 +2529,55 @@ function useDashboardLayoutMotion(rootRef: RefObject<HTMLDivElement | null>, lay
     });
 
     timeline
-      .add(leftPanel, { flexBasis: target.left, duration: layout === "balanced" ? 380 : 520 }, 0)
-      .add(rightPanel, { flexBasis: target.right, duration: layout === "balanced" ? 380 : 520 }, 0);
-    addIfTargets(timeline, root.querySelectorAll(".dashboard-draw-path, .console-polyline polyline"), { strokeDashoffset: 0, duration: 860, delay: stagger(22) }, 120);
-    addIfTargets(timeline, root.querySelectorAll(".network-slot-label, .track-row small, .console-effect-grid span, .source-wheel-list span"), {
+      .add(leftPanel, { flexBasis: target.left, duration: layout === "balanced" ? 680 : 840 }, 0)
+      .add(rightPanel, { flexBasis: target.right, duration: layout === "balanced" ? 680 : 840 }, 0);
+    addIfTargets(timeline, root.querySelectorAll(".dashboard-panel, .dashboard-track-network, .dashboard-console"), {
+      opacity: [0.72, 1],
+      translateY: [10, 0],
+      duration: 760,
+    }, 0);
+    addIfTargets(timeline, root.querySelectorAll(".dashboard-draw-path, .console-polyline polyline"), { strokeDashoffset: 0, duration: 1180, ease: "linear", delay: stagger(28) }, 180);
+    addIfTargets(timeline, root.querySelectorAll(".relation-network-node, .relation-node-count, .dashboard-axis-label, .network-slot-label, .track-row small, .console-effect-grid span, .source-wheel-list span"), {
       opacity: [0, 1],
       translateY: [4, 0],
-      duration: 420,
-      delay: stagger(22),
-    }, 180);
+      duration: 620,
+      delay: stagger(28),
+    }, 260);
+    addIfTargets(timeline, root.querySelectorAll(".dashboard-track-row, .track-row"), {
+      opacity: [0, 1],
+      translateY: [12, 0],
+      duration: 720,
+      delay: stagger(34),
+    }, layout === "left-expanded" ? 420 : 360);
+    addIfTargets(timeline, root.querySelectorAll(".source-period-segment, .source-ribbon-segment"), {
+      opacity: [0, 1],
+      scaleY: [0.08, 1],
+      duration: 1040,
+      ease: "linear",
+      delay: stagger(18),
+    }, 360);
+    addIfTargets(timeline, root.querySelectorAll(".source-donut, .source-donut-legend span, .source-donut-mapped-bars span, .source-insight-card"), {
+      opacity: [0, 1],
+      translateY: [10, 0],
+      scale: [0.96, 1],
+      duration: 920,
+      delay: stagger(42),
+    }, 520);
+    addIfTargets(timeline, root.querySelectorAll(".source-family-row, .source-rank-row, .source-profile-cell"), {
+      opacity: [0, 1],
+      translateX: [14, 0],
+      duration: 840,
+      delay: stagger(28),
+    }, 620);
     addIfTargets(timeline, root.querySelectorAll(".dashboard-highlight-point"), {
       filter: [
         "drop-shadow(0 0 0 rgba(159, 227, 107, 0))",
         "drop-shadow(0 0 10px rgba(159, 227, 107, .58))",
         "drop-shadow(0 0 2px rgba(159, 227, 107, .2))",
       ],
-      duration: 420,
+      duration: 700,
       delay: stagger(90),
-    }, 620);
+    }, 880);
 
     timelineRef.current = timeline;
 
@@ -2334,6 +2606,145 @@ function usePrefersReducedMotion() {
   }, []);
 
   return reduced;
+}
+
+function useDensityMotion(rootRef: RefObject<HTMLDivElement | null>) {
+  const reducedMotion = usePrefersReducedMotion();
+  const timelineRef = useRef<Timeline | null>(null);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) {
+      return;
+    }
+
+    timelineRef.current?.cancel();
+    timelineRef.current = null;
+
+    if (reducedMotion) {
+      resetDensityMotion(root);
+      return;
+    }
+
+    const timeline = createTimeline({
+      defaults: {
+        ease: "outCubic",
+        composition: "replace",
+      },
+    });
+
+    addIfTargets(timeline, root.querySelectorAll(".density-band"), {
+      opacity: [0, 1],
+      translateY: [12, 0],
+      duration: 360,
+      delay: stagger(42),
+    }, 0);
+    addIfTargets(timeline, root.querySelectorAll(".density-metric, .density-figure-rail"), {
+      opacity: [0, 1],
+      translateY: [10, 0],
+      duration: 320,
+      delay: stagger(70),
+    }, 220);
+
+    timelineRef.current = timeline;
+
+    return () => {
+      timeline.cancel();
+    };
+  }, [reducedMotion, rootRef]);
+
+  useEffect(() => {
+    return () => {
+      timelineRef.current?.cancel();
+      timelineRef.current = null;
+    };
+  }, []);
+}
+
+function useDensityPanelMotion(rootRef: RefObject<HTMLElement | null>, mode: DensityChartMode) {
+  const reducedMotion = usePrefersReducedMotion();
+  const timelineRef = useRef<Timeline | null>(null);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) {
+      return;
+    }
+
+    timelineRef.current?.cancel();
+    timelineRef.current = null;
+
+    if (reducedMotion) {
+      resetDensityMotion(root);
+      return;
+    }
+
+    prepareDensityDrawPaths(root);
+    root.querySelectorAll<HTMLElement | SVGElement>(".density-bar-fill, .density-box").forEach((element) => {
+      element.style.transformOrigin = "left center";
+      element.style.setProperty("transform-box", "fill-box");
+    });
+
+    const timeline = createTimeline({
+      defaults: {
+        ease: "outCubic",
+        composition: "replace",
+      },
+    });
+
+    addIfTargets(timeline, root.querySelectorAll(".density-chart-card"), {
+      opacity: [0, 1],
+      translateY: [8, 0],
+      duration: 240,
+    }, 0);
+    addIfTargets(timeline, root.querySelectorAll(".density-chart-path"), {
+      strokeDashoffset: 0,
+      duration: 720,
+      ease: "linear",
+      delay: stagger(90),
+    }, 80);
+    addIfTargets(timeline, root.querySelectorAll(".density-bar-fill, .density-box"), {
+      opacity: [0.72, 1],
+      scaleX: [0, 1],
+      duration: 360,
+      ease: "linear",
+      delay: stagger(16),
+    }, 120);
+
+    timelineRef.current = timeline;
+
+    return () => {
+      timeline.cancel();
+    };
+  }, [mode, reducedMotion, rootRef]);
+
+  useEffect(() => {
+    return () => {
+      timelineRef.current?.cancel();
+      timelineRef.current = null;
+    };
+  }, []);
+}
+
+function prepareDensityDrawPaths(root: HTMLElement) {
+  root.querySelectorAll<SVGGeometryElement>(".density-chart-path").forEach((path) => {
+    const length = Math.max(1, path.getTotalLength());
+    path.style.strokeDasharray = String(length);
+    path.style.strokeDashoffset = String(length);
+  });
+}
+
+function resetDensityMotion(root: HTMLElement) {
+  root.querySelectorAll<HTMLElement | SVGElement>(".density-band, .density-metric, .density-figure-rail, .density-chart-card, .density-bar-fill, .density-box").forEach((element) => {
+    element.style.opacity = "";
+    element.style.transform = "";
+    element.style.transformOrigin = "";
+    element.style.removeProperty("transform-box");
+  });
+  root.querySelectorAll<SVGGeometryElement>(".density-chart-path").forEach((path) => {
+    path.style.strokeDasharray = "";
+    path.style.strokeDashoffset = "";
+  });
 }
 
 function prepareDashboardDrawPaths(root: HTMLElement) {
@@ -2425,14 +2836,14 @@ function DashboardTrackNetwork({
 
     const strongestRelationFor = (predicate: (relation: RelationGroup) => boolean) => relations.find(predicate)?.key ?? relations[0]?.key ?? "";
     const laneX: Record<RelationLane, number> = {
-      source: expanded ? 104 : 92,
-      period: expanded ? 282 : 266,
-      narrative: expanded ? 464 : 454,
-      place: expanded ? 642 : 628,
+      source: expanded ? 108 : 92,
+      period: expanded ? 274 : 258,
+      narrative: expanded ? 486 : 466,
+      place: expanded ? 684 : 650,
     };
     const laneY = (index: number, total: number) => {
-      const min = expanded ? 76 : 84;
-      const max = expanded ? 396 : 382;
+      const min = expanded ? 96 : 84;
+      const max = expanded ? 482 : 386;
       return total <= 1 ? (min + max) / 2 : min + (index / (total - 1)) * (max - min);
     };
     const sourceEntries = entriesDescending(sourceCounts, expanded ? 7 : 5);
@@ -2530,6 +2941,13 @@ function DashboardTrackNetwork({
   const relationTitle = activeRelation
     ? `${activeRelation.source} / ${activeRelation.periodLabel} / ${activeRelation.narrative}`
     : "Representative public relations";
+  const graphViewBox = expanded ? "0 0 760 560" : "0 0 760 520";
+  const graphField = expanded
+    ? { x: 26, y: 64, width: 708, height: 456, y2: 520, legendY: 540 }
+    : { x: 42, y: 58, width: 676, height: 396, y2: 444, legendY: 474 };
+  const nodeWidth = expanded ? 164 : 146;
+  const nodeHeight = expanded ? 38 : 32;
+  const nodeLabelLimit = expanded ? 28 : 19;
   const setHoverRelation = (key: string | null) => {
     if (!lockedRelationKey) {
       setHoverRelationKey(key);
@@ -2538,23 +2956,23 @@ function DashboardTrackNetwork({
 
   return (
     <section
-      className={`dashboard-track-network dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
+      className={`dashboard-track-network dashboard-panel dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
       data-dashboard-panel="left"
       aria-label="Record network and track list"
     >
       <DashboardExpandButton side="left" expanded={expanded} onToggle={onToggle} />
-      <svg className="network-svg" viewBox="0 0 760 520" role="img" aria-label="Archive record signal network">
-        <path className="corner-mark top-left" d="M72 34 h-20 v20 M72 34 v-22" />
-        <path className="corner-mark top-right" d="M690 34 h20 v20 M690 34 v-22" />
-        <path className="corner-mark bottom-left" d="M72 486 h-20 v-20 M72 486 v22" />
-        <path className="corner-mark bottom-right" d="M690 486 h20 v-20 M690 486 v22" />
-        <rect className="network-wave-box network-field-box" x="42" y="58" width="676" height="396" />
+      <header className="dashboard-panel-title dashboard-panel-title-left">
+        <span>RELATION NETWORK</span>
+        <p>Source family to period to narrative type to place. Links show corpus routing, not causal relation.</p>
+      </header>
+      <svg className="network-svg" viewBox={graphViewBox} role="img" aria-label="Archive record relation network">
+        <rect className="network-wave-box network-field-box" x={graphField.x} y={graphField.y} width={graphField.width} height={graphField.height} />
         {(["source", "period", "narrative", "place"] as RelationLane[]).map((lane) => {
           const node = graph.nodes.find((item) => item.lane === lane);
           return (
             <g className={`relation-lane relation-lane-${lane}`} key={lane}>
-              <line x1={node?.x ?? 0} x2={node?.x ?? 0} y1="62" y2="444" />
-              <text x={(node?.x ?? 0) - 52} y="48">{lane.toUpperCase()}</text>
+              <line x1={node?.x ?? 0} x2={node?.x ?? 0} y1={graphField.y + 4} y2={graphField.y2} />
+              <text x={(node?.x ?? 0) - (expanded ? 64 : 52)} y={graphField.y - 12}>{lane.toUpperCase()}</text>
             </g>
           );
         })}
@@ -2570,7 +2988,7 @@ function DashboardTrackNetwork({
           const isRelated = activeNodeIds.has(edge.from) || activeNodeIds.has(edge.to);
           return (
             <path
-              className={`relation-edge relation-edge-${edge.kind} ${sourceGraphClass(edge.sourceLabel ?? "")}${isActive ? " is-active" : isRelated ? " is-related" : ""} dashboard-draw-path`}
+              className={`relation-edge relation-network-edge relation-edge-${edge.kind} ${sourceGraphClass(edge.sourceLabel ?? "")}${isActive ? " is-active" : isRelated ? " is-related" : ""} dashboard-draw-path`}
               d={path}
               key={edge.key}
               style={{ "--edge-weight": String(Math.min(2.4, 0.7 + Math.sqrt(edge.count) / 18)) } as CSSProperties}
@@ -2608,27 +3026,28 @@ function DashboardTrackNetwork({
             tabIndex={0}
             aria-label={`${node.lane} node ${node.label}, ${node.count} records`}
           >
-            <rect className="relation-node-hitbox" x={node.x - 68} y={node.y - 18} width="136" height="36" />
-            <circle className="relation-node-anchor" cx={node.x - 62} cy={node.y} r="3.5" />
-            <rect className="relation-node-box" x={node.x - 54} y={node.y - 15} width="108" height="30" />
-            <text className="relation-node-label" x={node.x - 48} y={node.y - 2}>
-              {truncate(node.label, expanded ? 19 : 13)}
+            <title>{`${node.label}: ${numberFormat(node.count)} records`}</title>
+            <rect className="relation-node-hitbox" x={node.x - nodeWidth / 2 - 10} y={node.y - nodeHeight / 2 - 6} width={nodeWidth + 20} height={nodeHeight + 12} />
+            <circle className="relation-node-anchor" cx={node.x - nodeWidth / 2 - 7} cy={node.y} r={expanded ? 4.6 : 3.8} />
+            <rect className="relation-node-box" x={node.x - nodeWidth / 2} y={node.y - nodeHeight / 2} width={nodeWidth} height={nodeHeight} />
+            <text className="relation-node-label relation-network-node" x={node.x - nodeWidth / 2 + 10} y={node.y - 3}>
+              {truncate(node.label, nodeLabelLimit)}
             </text>
-            <text className="relation-node-count" x={node.x - 48} y={node.y + 10}>
+            <text className="relation-node-count" x={node.x - nodeWidth / 2 + 10} y={node.y + 12}>
               {numberFormat(node.count)}
             </text>
           </g>
         ))}
         <g className="relation-style-legend">
-          <text x="54" y="474">SOURCE STYLE</text>
-          <line className="source-repository" x1="154" y1="471" x2="190" y2="471" />
-          <text x="196" y="474">repository</text>
-          <line className="source-public-domain" x1="294" y1="471" x2="330" y2="471" />
-          <text x="336" y="474">public-domain</text>
-          <line className="source-modern-web" x1="468" y1="471" x2="504" y2="471" />
-          <text x="510" y="474">modern web</text>
-          <line className="source-academic" x1="616" y1="471" x2="652" y2="471" />
-          <text x="658" y="474">academic</text>
+          <text x="54" y={graphField.legendY}>SOURCE STYLE</text>
+          <line className="source-repository" x1="154" y1={graphField.legendY - 3} x2="190" y2={graphField.legendY - 3} />
+          <text x="196" y={graphField.legendY}>repository</text>
+          <line className="source-public-domain" x1="294" y1={graphField.legendY - 3} x2="330" y2={graphField.legendY - 3} />
+          <text x="336" y={graphField.legendY}>public-domain</text>
+          <line className="source-modern-web" x1="468" y1={graphField.legendY - 3} x2="504" y2={graphField.legendY - 3} />
+          <text x="510" y={graphField.legendY}>modern web</text>
+          <line className="source-academic" x1="616" y1={graphField.legendY - 3} x2="652" y2={graphField.legendY - 3} />
+          <text x="658" y={graphField.legendY}>academic</text>
         </g>
       </svg>
       <div className="mobile-track-snapshot" aria-label="Compact track relation preview">
@@ -2705,7 +3124,7 @@ function DashboardTrackNetwork({
             const relation = graph.recordRelationKeys.get(record.record_id) ?? parts.key;
             return (
               <button
-                className={`track-row${activeTrackIndex === index ? " is-active" : ""}`}
+                className={`track-row dashboard-track-row${activeTrackIndex === index ? " is-active" : ""}`}
                 key={record.record_id}
                 type="button"
                 style={{ "--track-source-color": sourceGraphColor(parts.source) } as CSSProperties}
@@ -2800,7 +3219,7 @@ function DashboardControlConsole({
 
   return (
     <section
-      className={`dashboard-console dashboard-right-scroll dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
+      className={`dashboard-console dashboard-panel dashboard-right-scroll dash-hover-zone${expanded ? " is-expanded" : ""}${contracted ? " is-contracted" : ""}`}
       data-dashboard-panel="right"
       aria-label="Public corpus control console"
     >
@@ -2808,7 +3227,7 @@ function DashboardControlConsole({
       <header className="console-header">
         <div>
           <span>PUBLIC FIELD:</span>
-          <b>AU HUMANOID SIGNAL</b>
+          <b>{mode === "records" ? "PUBLIC RECORD ROUTES" : mode === "locations" ? "MAPPED COVERAGE" : "SOURCE FIELD"}</b>
         </div>
         <div className="output-switch" aria-label="Output density">
           {outputValues.map((item) => (
@@ -2909,7 +3328,7 @@ function RecordsFieldView({
     const mappedShare = aggregate.totalRecords ? Math.round((aggregate.totalMapped / aggregate.totalRecords) * 100) : 0;
     return (
       <div className="dashboard-field-view records-field-view records-field-preview">
-        <RecordSignalChart points={aggregate.timeline} compact />
+        <RecordTimelineChart points={aggregate.timeline} compact />
         <div className="field-preview-metrics">
           <MiniControl label="RECORDS" value={aggregate.totalRecords} />
           <MiniControl label="MAPPED SHARE" value={mappedShare} />
@@ -2921,7 +3340,7 @@ function RecordsFieldView({
   return (
     <div className="dashboard-field-view records-field-view">
       <div className="dashboard-field-row records-top-row">
-        <RecordSignalChart points={aggregate.timeline} scopeLabel={scopeLabel} />
+        <RecordTimelineChart points={aggregate.timeline} scopeLabel={scopeLabel} />
         <NarrativePeriodMatrix rows={aggregate.narrativePeriodRows} bands={bands} />
       </div>
       <SelectedPeriodDetail aggregate={aggregate} scopeLabel={scopeLabel} />
@@ -2978,23 +3397,77 @@ function SourceFieldView({
     return (
       <div className="dashboard-field-view source-field-view source-field-preview">
         <SourcePeriodRibbon families={aggregate.sourceFamilies} bands={bands} compact />
-        <SourceDonut families={aggregate.sourceFamilies} compact />
+        <div className="source-preview-stack">
+          <SourceDonut families={aggregate.sourceFamilies} compact />
+          <SourceInsightCards families={aggregate.sourceFamilies} totalRecords={aggregate.totalRecords} compact />
+        </div>
       </div>
     );
   }
 
   return (
     <div className="dashboard-field-view source-field-view">
+      <SourceInsightCards families={aggregate.sourceFamilies} totalRecords={aggregate.totalRecords} />
       <SourcePeriodRibbon families={aggregate.sourceFamilies} bands={bands} scopeLabel={scopeLabel} />
       <div className="dashboard-field-row source-bottom-row">
         <SourceDonut families={aggregate.sourceFamilies} />
-        <RankedSourceBars families={aggregate.sourceFamilies} bands={bands} />
       </div>
+      <RankedSourceBars families={aggregate.sourceFamilies} bands={bands} />
     </div>
   );
 }
 
-function RecordSignalChart({
+function SourceInsightCards({
+  families,
+  totalRecords,
+  compact = false,
+}: {
+  families: SourceFamilyAggregate[];
+  totalRecords: number;
+  compact?: boolean;
+}) {
+  const activeFamilies = families.filter((family) => family.count > 0);
+  const dominant = activeFamilies[0];
+  const bestMapped = [...activeFamilies].sort((a, b) => mappedShare(b) - mappedShare(a))[0];
+  const widestCoverage = [...activeFamilies].sort((a, b) => b.periodCoverage - a.periodCoverage || b.narrativeSpread - a.narrativeSpread)[0];
+  const cards = [
+    dominant
+      ? {
+          label: "DOMINANT FAMILY",
+          value: dominant.label,
+          note: `${numberFormat(dominant.count)} records / ${formatPercent(dominant.count, totalRecords)}`,
+        }
+      : null,
+    bestMapped
+      ? {
+          label: "MAPPED SUBSET",
+          value: `${mappedShare(bestMapped)}% mapped`,
+          note: `${bestMapped.label}; ${numberFormat(bestMapped.mappedCount)} of ${numberFormat(bestMapped.count)} records`,
+        }
+      : null,
+    widestCoverage
+      ? {
+          label: "PERIOD COVERAGE",
+          value: `${widestCoverage.periodCoverage}/6 periods`,
+          note: `${widestCoverage.label}; ${widestCoverage.narrativeSpread} narrative groups`,
+        }
+      : null,
+  ].filter((card): card is { label: string; value: string; note: string } => Boolean(card));
+
+  return (
+    <div className={`source-insight-cards${compact ? " compact" : ""}`}>
+      {cards.slice(0, compact ? 2 : 3).map((card) => (
+        <span className="source-insight-card" data-animate="source-insight" key={card.label}>
+          <b>{card.label}</b>
+          <strong>{card.value}</strong>
+          <small>{card.note}</small>
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function RecordTimelineChart({
   points,
   scopeLabel = "complete archive",
   compact = false,
@@ -3023,14 +3496,14 @@ function RecordSignalChart({
   const labelStep = Math.max(1, Math.ceil(points.length / (compact ? 3 : 5)));
 
   return (
-    <section className="dashboard-chart-module record-signal-module">
+    <section className="dashboard-chart-module record-timeline-module">
       {!compact ? (
         <header className="module-heading">
-          <span>RECORD TIME SIGNAL</span>
+          <span>RECORD TIMELINE</span>
           <small>Archive records by period, not the real-world frequency of a phenomenon.</small>
         </header>
       ) : null}
-      <svg className="record-signal-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`Record time signal for ${scopeLabel}`}>
+      <svg className="record-timeline-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`Record timeline for ${scopeLabel}`}>
         {[0, 0.5, 1].map((tick) => (
           <g key={tick}>
             <line className="timeline-grid-line" x1={left} x2={width - right} y1={yFor(max * tick)} y2={yFor(max * tick)} />
@@ -3042,7 +3515,7 @@ function RecordSignalChart({
         {points.map((point, index) => (
           <rect
             key={`bar-${point.key}`}
-            className="record-signal-bar"
+            className="record-timeline-bar"
             data-animate="record-bar"
             x={xFor(index) - barWidth / 2}
             y={yFor(point.value)}
@@ -3075,7 +3548,7 @@ function RecordSignalChart({
         )}
         {!compact ? (
           <g className="timeline-legend">
-            <rect className="record-signal-bar" x={width - 184} y="14" width="16" height="7" />
+            <rect className="record-timeline-bar" x={width - 184} y="14" width="16" height="7" />
             <text x={width - 164} y="20">all records</text>
             <line className="timeline-mapped-line" x1={width - 102} y1="17" x2={width - 82} y2="17" />
             <text x={width - 76} y="20">mapped</text>
@@ -3280,9 +3753,10 @@ function SourcePeriodRibbon({
   const bottom = compact ? 24 : 34;
   const plotHeight = height - top - bottom;
   const colWidth = (width - left - right) / Math.max(1, bands.length);
+  const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
 
   return (
-    <section className="dashboard-chart-module source-ribbon-module">
+    <section className="dashboard-chart-module source-ribbon-module" onPointerLeave={() => setTooltip(null)}>
       {!compact ? (
         <header className="module-heading">
           <span>SOURCE COMPOSITION THROUGH TIME</span>
@@ -3298,31 +3772,42 @@ function SourcePeriodRibbon({
               {families.map((family) => {
                 const value = family.byBand[band.id] ?? 0;
                 const segmentHeight = (value / total) * plotHeight;
+                const tooltipText = sourcePeriodTooltip(family, band, value, total);
                 yCursor -= segmentHeight;
                 return (
                   <rect
                     key={`${family.id}-${band.id}`}
-                    className="source-ribbon-segment"
+                    className="source-ribbon-segment source-period-segment"
                     data-animate="source-ribbon"
+                    tabIndex={0}
+                    role="img"
+                    aria-label={tooltipText}
                     x={left + bandIndex * colWidth + 4}
                     y={yCursor}
                     width={Math.max(4, colWidth - 8)}
                     height={Math.max(value > 0 ? 1.5 : 0, segmentHeight)}
-                    style={{ "--source-color": family.color } as CSSProperties}
-                  />
+                    style={{ "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
+                    onPointerEnter={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onPointerMove={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onFocus={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onBlur={() => setTooltip(null)}
+                  >
+                    <title>{tooltipText}</title>
+                  </rect>
                 );
               })}
-              <text className="console-axis-label" x={left + bandIndex * colWidth + colWidth / 2} y={height - 8}>{bandIndex + 1}</text>
+              <text className="console-axis-label dashboard-axis-label" x={left + bandIndex * colWidth + colWidth / 2} y={height - 8}>{bandIndex + 1}</text>
             </g>
           );
         })}
         {!compact ? (
           <>
-            <text className="dashboard-svg-micro" x="8" y={top + 4}>100%</text>
-            <text className="dashboard-svg-micro" x="12" y={top + plotHeight}>0</text>
+            <text className="dashboard-svg-micro dashboard-axis-label" x="8" y={top + 4}>100%</text>
+            <text className="dashboard-svg-micro dashboard-axis-label" x="12" y={top + plotHeight}>0</text>
           </>
         ) : null}
       </svg>
+      <DashboardTooltip tooltip={tooltip} />
     </section>
   );
 }
@@ -3331,13 +3816,14 @@ function SourceDonut({ families, compact = false }: { families: SourceFamilyAggr
   const total = families.reduce((sum, family) => sum + family.count, 0) || 1;
   const visibleFamilies = families.filter((family) => family.count > 0);
   const gradient = sourceFamilyConicGradient(visibleFamilies);
+  const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
 
   return (
-    <section className={`dashboard-chart-module source-donut-module${compact ? " compact" : ""}`} data-animate="source-donut">
+    <section className={`dashboard-chart-module source-donut-module${compact ? " compact" : ""}`} data-animate="source-donut" onPointerLeave={() => setTooltip(null)}>
       {!compact ? (
         <header className="module-heading">
           <span>LARGE SOURCE DONUT</span>
-          <small>Public source-family composition.</small>
+          <small>Composition plus mapped coverage; counts remain raw public records.</small>
         </header>
       ) : null}
       <div className="source-donut-layout">
@@ -3345,18 +3831,50 @@ function SourceDonut({ families, compact = false }: { families: SourceFamilyAggr
           <i />
         </div>
         {!compact ? (
-          <div className="source-donut-legend">
-            {visibleFamilies.map((family) => (
-              <span key={family.id}>
-                <b style={{ "--source-color": family.color } as CSSProperties} />
-                <i>{family.label}</i>
-                <em>{numberFormat(family.count)} · {formatPercent(family.count, total)}</em>
-              </span>
-            ))}
+          <div className="source-donut-companion">
+            <div className="source-donut-legend">
+              {visibleFamilies.map((family) => {
+                const tooltipText = sourceFamilyTooltip(family, total);
+                return (
+                  <span
+                    key={family.id}
+                    data-source-family={family.id}
+                    tabIndex={0}
+                    title={tooltipText}
+                    onPointerEnter={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onPointerMove={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onFocus={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                    onBlur={() => setTooltip(null)}
+                  >
+                    <b className="source-donut-slice" style={{ "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties} />
+                    <i>{family.label}</i>
+                    <em>{numberFormat(family.count)} · {formatPercent(family.count, total)}</em>
+                  </span>
+                );
+              })}
+            </div>
+            <SourceMappedShareBars families={visibleFamilies} />
           </div>
         ) : null}
       </div>
+      <DashboardTooltip tooltip={tooltip} />
     </section>
+  );
+}
+
+function SourceMappedShareBars({ families }: { families: SourceFamilyAggregate[] }) {
+  return (
+    <div className="source-donut-mapped-bars" data-animate="source-companion">
+      <b>Mapped-share companion</b>
+      <small>Bars show mapped records inside each source family, not total family size.</small>
+      {families.map((family) => (
+        <span key={family.id}>
+          <i>{family.label}</i>
+          <em style={{ "--source-meter": `${Math.max(3, mappedShare(family))}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties} />
+          <strong>{mappedShare(family)}% mapped · {family.periodCoverage}/6 periods</strong>
+        </span>
+      ))}
+    </div>
   );
 }
 
@@ -3364,36 +3882,116 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
   const rows = families.filter((family) => family.count > 0);
   const total = rows.reduce((sum, family) => sum + family.count, 0) || 1;
   const max = Math.max(...rows.map((family) => family.count), 1);
+  const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
 
   return (
-    <section className="dashboard-chart-module source-ranked-module">
+    <section className="dashboard-chart-module source-ranked-module" onPointerLeave={() => setTooltip(null)}>
       <header className="module-heading">
         <span>RANKED SOURCE FAMILIES</span>
-        <small>Count, share, and six-period mini-profile.</small>
+        <small>Six-period profile: darker/longer cells indicate where this source family contributes records.</small>
       </header>
       <div className="ranked-source-bars">
+        <div className="source-rank-header" aria-hidden="true">
+          <span>FAMILY</span>
+          <span>RECORDS / SHARE</span>
+          <span>TOTAL</span>
+          <span>SIX-PERIOD PROFILE</span>
+          <span>INSIGHT</span>
+        </div>
         {rows.map((family) => {
           const profileMax = Math.max(...bands.map((band) => family.byBand[band.id] ?? 0), 1);
           return (
-            <div className="source-rank-row" data-animate="source-bar" key={family.id}>
+            <div className="source-rank-row source-family-row" data-animate="source-bar" data-source-family={family.id} key={family.id}>
               <span>{family.label}</span>
               <b>{numberFormat(family.count)} · {formatPercent(family.count, total)}</b>
-              <i style={{ "--source-meter": `${Math.max(4, (family.count / max) * 100)}%`, "--source-color": family.color } as CSSProperties} />
+              <i style={{ "--source-meter": `${Math.max(4, (family.count / max) * 100)}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties} />
               <em>
-                {bands.map((band) => (
-                  <small
-                    key={`${family.id}-${band.id}`}
-                    style={{ "--spark-height": `${Math.max(12, ((family.byBand[band.id] ?? 0) / profileMax) * 100)}%`, "--source-color": family.color } as CSSProperties}
-                    title={`${band.label}: ${numberFormat(family.byBand[band.id] ?? 0)}`}
-                  />
-                ))}
+                {bands.map((band) => {
+                  const value = family.byBand[band.id] ?? 0;
+                  const tooltipText = sourcePeriodTooltip(family, band, value, family.count || 1, "family");
+                  return (
+                    <small
+                      key={`${family.id}-${band.id}`}
+                      className="source-profile-cell"
+                      tabIndex={0}
+                      style={{ "--spark-height": `${value > 0 ? Math.max(12, (value / profileMax) * 100) : 0}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
+                      title={tooltipText}
+                      aria-label={tooltipText}
+                      onPointerEnter={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                      onPointerMove={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                      onFocus={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                      onBlur={() => setTooltip(null)}
+                    />
+                  );
+                })}
               </em>
+              <small className="source-rank-insight">{sourceFamilyInsight(family)}</small>
             </div>
           );
         })}
       </div>
+      <DashboardTooltip tooltip={tooltip} />
     </section>
   );
+}
+
+type DashboardTooltipState = {
+  text: string;
+  x: number;
+  y: number;
+} | null;
+
+function showDashboardTooltip(
+  event: { currentTarget: Element; clientX?: number; clientY?: number },
+  text: string,
+  setTooltip: (tooltip: DashboardTooltipState) => void,
+) {
+  const rect = event.currentTarget.getBoundingClientRect();
+  const x = typeof event.clientX === "number" ? event.clientX : rect.left + rect.width / 2;
+  const y = typeof event.clientY === "number" ? event.clientY : rect.top;
+  setTooltip({ text, x, y });
+}
+
+function DashboardTooltip({ tooltip }: { tooltip: DashboardTooltipState }) {
+  if (!tooltip) {
+    return null;
+  }
+  return (
+    <span className="dashboard-tooltip" style={{ "--tooltip-x": `${tooltip.x}px`, "--tooltip-y": `${tooltip.y}px` } as CSSProperties}>
+      {tooltip.text}
+    </span>
+  );
+}
+
+function sourcePeriodTooltip(
+  family: SourceFamilyAggregate,
+  band: DateBand,
+  value: number,
+  total: number,
+  scope: "period" | "family" = "period",
+) {
+  const share = formatPercent(value, total);
+  return `${family.label}\n${band.label}: ${numberFormat(value)} records\n${share} of this ${scope}`;
+}
+
+function sourceFamilyTooltip(family: SourceFamilyAggregate, total: number) {
+  const span = family.yearStart && family.yearEnd ? `${family.yearStart}-${family.yearEnd}` : "mixed dates";
+  return `${family.label}\n${numberFormat(family.count)} records / ${formatPercent(family.count, total)}\n${mappedShare(family)}% mapped; ${family.periodCoverage}/6 periods\n${family.narrativeSpread} narrative groups; ${family.jurisdictionSpread} jurisdictions; ${span}`;
+}
+
+function sourceFamilyInsight(family: SourceFamilyAggregate) {
+  const parts = [
+    family.dominantBandId ? `dominant ${family.dominantBandLabel} (${family.dominantBandShare}%)` : null,
+    `${family.periodCoverage}/6 periods`,
+    `${mappedShare(family)}% mapped`,
+    `${family.narrativeSpread} narrative groups`,
+    family.jurisdictionSpread ? `${family.jurisdictionSpread} jurisdictions` : null,
+  ].filter(Boolean);
+  return parts.join(" / ");
+}
+
+function mappedShare(family: SourceFamilyAggregate) {
+  return family.count ? Math.round((family.mappedCount / family.count) * 100) : 0;
 }
 
 function useDashboardFieldMotion(rootRef: RefObject<HTMLDivElement | null>, mode: ConsoleMode) {
@@ -3429,23 +4027,24 @@ function useDashboardFieldMotion(rootRef: RefObject<HTMLDivElement | null>, mode
 
     addIfTargets(timeline, root.querySelectorAll(".dashboard-field-view"), {
       opacity: [0, 1],
-      translateY: [8, 0],
-      clipPath: ["inset(0 0 18% 0)", "inset(0 0 0% 0)"],
-      duration: 220,
+      translateY: [12, 0],
+      duration: 760,
     }, 0);
 
     if (mode === "records") {
-      addIfTargets(timeline, root.querySelectorAll(".record-signal-bar"), { opacity: [0, 1], scaleY: [0.18, 1], duration: 320, delay: stagger(14) }, 120);
-      addIfTargets(timeline, root.querySelectorAll(".record-signal-chart .dashboard-draw-path"), { strokeDashoffset: 0, duration: 480, delay: stagger(34) }, 180);
-      addIfTargets(timeline, root.querySelectorAll(".matrix-bubble"), { opacity: [0, 1], scale: [0.2, 1], duration: 260, delay: stagger(12) }, 280);
+      addIfTargets(timeline, root.querySelectorAll(".record-timeline-bar"), { opacity: [0, 1], scaleY: [0.18, 1], duration: 920, ease: "linear", delay: stagger(22) }, 180);
+      addIfTargets(timeline, root.querySelectorAll(".record-timeline-chart .dashboard-draw-path"), { strokeDashoffset: 0, duration: 1180, ease: "linear", delay: stagger(44) }, 260);
+      addIfTargets(timeline, root.querySelectorAll(".matrix-bubble"), { opacity: [0, 1], scale: [0.2, 1], duration: 820, delay: stagger(20) }, 380);
     } else if (mode === "locations") {
-      addIfTargets(timeline, root.querySelectorAll(".state-lollipop-row"), { opacity: [0, 1], translateY: [8, 0], duration: 260, delay: stagger(18) }, 120);
-      addIfTargets(timeline, root.querySelectorAll(".precision-dot.lit"), { opacity: [0, 1], scale: [0.25, 1], duration: 220, delay: stagger(12) }, 260);
-      addIfTargets(timeline, root.querySelectorAll(".place-role-row i"), { opacity: [0, 1], scaleX: [0.25, 1], duration: 240, delay: stagger(10) }, 340);
+      addIfTargets(timeline, root.querySelectorAll(".state-lollipop-row"), { opacity: [0, 1], translateY: [10, 0], duration: 760, delay: stagger(26) }, 160);
+      addIfTargets(timeline, root.querySelectorAll(".precision-dot.lit"), { opacity: [0, 1], scale: [0.25, 1], duration: 720, delay: stagger(16) }, 320);
+      addIfTargets(timeline, root.querySelectorAll(".place-role-row i"), { opacity: [0, 1], scaleX: [0.25, 1], duration: 920, ease: "linear", delay: stagger(14) }, 420);
     } else {
-      addIfTargets(timeline, root.querySelectorAll(".source-ribbon-segment"), { opacity: [0, 1], scaleY: [0.15, 1], duration: 360, delay: stagger(12) }, 120);
-      addIfTargets(timeline, root.querySelectorAll(".source-donut-module"), { opacity: [0, 1], scale: [0.94, 1], duration: 280 }, 310);
-      addIfTargets(timeline, root.querySelectorAll(".source-rank-row"), { opacity: [0, 1], translateX: [10, 0], duration: 260, delay: stagger(18) }, 360);
+      addIfTargets(timeline, root.querySelectorAll(".source-insight-card"), { opacity: [0, 1], translateY: [10, 0], duration: 760, delay: stagger(38) }, 120);
+      addIfTargets(timeline, root.querySelectorAll(".source-ribbon-segment, .source-period-segment"), { opacity: [0, 1], scaleY: [0.12, 1], duration: 1080, ease: "linear", delay: stagger(18) }, 220);
+      addIfTargets(timeline, root.querySelectorAll(".source-donut-module, .source-donut, .source-donut-slice, .source-donut-legend span, .source-donut-mapped-bars span"), { opacity: [0, 1], translateY: [12, 0], scale: [0.95, 1], duration: 1040, delay: stagger(36) }, 430);
+      addIfTargets(timeline, root.querySelectorAll(".source-family-row, .source-rank-row"), { opacity: [0, 1], translateX: [14, 0], duration: 900, delay: stagger(30) }, 640);
+      addIfTargets(timeline, root.querySelectorAll(".source-profile-cell"), { opacity: [0, 1], scaleY: [0.22, 1], duration: 860, ease: "linear", delay: stagger(16) }, 760);
     }
 
     timelineRef.current = timeline;
@@ -3485,6 +4084,10 @@ function buildDashboardFieldAggregate({
   const stateTotals: Record<string, number> = {};
   const precisionCounts: Record<string, number> = Object.fromEntries(PRECISION_LABELS.map((label) => [label, 0]));
   const placeRoleCounts = new Map<string, number>();
+  const mappedRecordIds = new Set(mapFlags.map((flag) => flag.record_id));
+  const sourceOrgSets = new Map<SourceFamilyId, Set<string>>();
+  const narrativeSets = new Map<SourceFamilyId, Set<string>>();
+  const jurisdictionSets = new Map<SourceFamilyId, Set<string>>();
   const sourceFamilyMap = new Map<string, SourceFamilyAggregate>(
     SOURCE_FAMILIES.map((family) => [
       family.id,
@@ -3492,11 +4095,29 @@ function buildDashboardFieldAggregate({
         id: family.id,
         label: family.label,
         color: family.color,
+        strokeColor: family.strokeColor,
+        fillColor: family.fillColor,
+        softColor: family.softColor,
         count: 0,
+        mappedCount: 0,
+        sourceOrgCount: 0,
+        periodCoverage: 0,
+        dominantBandId: null,
+        dominantBandLabel: "no dated period",
+        dominantBandShare: 0,
+        narrativeSpread: 0,
+        jurisdictionSpread: 0,
+        yearStart: null,
+        yearEnd: null,
         byBand: Object.fromEntries(dateBands.map((band) => [band.id, 0])),
       },
     ]),
   );
+  for (const family of SOURCE_FAMILIES) {
+    sourceOrgSets.set(family.id, new Set());
+    narrativeSets.set(family.id, new Set());
+    jurisdictionSets.set(family.id, new Set());
+  }
 
   for (const record of records) {
     const narrative = displayNarrativeGroupLabel(record);
@@ -3522,10 +4143,34 @@ function buildDashboardFieldAggregate({
     const sourceAggregate = sourceFamilyMap.get(family.id);
     if (sourceAggregate) {
       sourceAggregate.count += 1;
+      if (mappedRecordIds.has(record.record_id)) {
+        sourceAggregate.mappedCount += 1;
+      }
       if (record.date_band in sourceAggregate.byBand) {
         sourceAggregate.byBand[record.date_band] += 1;
       }
+      sourceOrgSets.get(family.id)?.add(String(record.source_id || record.source_name || "unknown source"));
+      narrativeSets.get(family.id)?.add(narrative);
+      if (record.state_territory) {
+        jurisdictionSets.get(family.id)?.add(record.state_territory);
+      }
+      if (typeof record.year === "number" && Number.isFinite(record.year)) {
+        sourceAggregate.yearStart = sourceAggregate.yearStart === null ? record.year : Math.min(sourceAggregate.yearStart, record.year);
+        sourceAggregate.yearEnd = sourceAggregate.yearEnd === null ? record.year : Math.max(sourceAggregate.yearEnd, record.year);
+      }
     }
+  }
+
+  for (const family of sourceFamilyMap.values()) {
+    const bandEntries = dateBands.map((band) => ({ band, value: family.byBand[band.id] ?? 0 }));
+    const dominant = [...bandEntries].sort((a, b) => b.value - a.value)[0];
+    family.sourceOrgCount = sourceOrgSets.get(family.id)?.size ?? 0;
+    family.narrativeSpread = narrativeSets.get(family.id)?.size ?? 0;
+    family.jurisdictionSpread = jurisdictionSets.get(family.id)?.size ?? 0;
+    family.periodCoverage = bandEntries.filter((entry) => entry.value > 0).length;
+    family.dominantBandId = dominant && dominant.value > 0 ? dominant.band.id : null;
+    family.dominantBandLabel = dominant && dominant.value > 0 ? dominant.band.label : "no dated period";
+    family.dominantBandShare = dominant && family.count ? Math.round((dominant.value / family.count) * 100) : 0;
   }
 
   const mappedCounts = mapFlags.reduce<Record<string, number>>((acc, flag) => {
@@ -3638,26 +4283,8 @@ function placeRoleLabel(role: string | null | undefined) {
 }
 
 function sourceFamilyFor(sourceType: string | null | undefined) {
-  const source = (sourceType ?? "").toLowerCase();
-  if (/community/.test(source)) {
-    return SOURCE_FAMILIES[5];
-  }
-  if (/repository/.test(source)) {
-    return SOURCE_FAMILIES[0];
-  }
-  if (/modern_web|seeded_public_web/.test(source)) {
-    return SOURCE_FAMILIES[1];
-  }
-  if (/public_domain|gutenberg|wikisource|sacred_texts/.test(source)) {
-    return SOURCE_FAMILIES[2];
-  }
-  if (/institutional|municipal/.test(source)) {
-    return SOURCE_FAMILIES[3];
-  }
-  if (/academic|catalogue|metadata|andc|archive/.test(source)) {
-    return SOURCE_FAMILIES[4];
-  }
-  return SOURCE_FAMILIES[6];
+  const id = sourceFamilyId(sourceType);
+  return SOURCE_FAMILY_BY_ID.get(id) ?? SOURCE_FAMILY_BY_ID.get("other") ?? SOURCE_FAMILIES[SOURCE_FAMILIES.length - 1];
 }
 
 function sourceFamilyConicGradient(families: SourceFamilyAggregate[]) {
@@ -3667,7 +4294,7 @@ function sourceFamilyConicGradient(families: SourceFamilyAggregate[]) {
     .map((family) => {
       const start = cursor;
       cursor += (family.count / total) * 100;
-      return `${family.color} ${start}% ${cursor}%`;
+      return `${family.fillColor} ${start}% ${cursor}%`;
     })
     .join(", ");
 }
@@ -3921,12 +4548,12 @@ function ConsolePolyline({
 
 function consoleModeLabel(mode: ConsoleMode) {
   if (mode === "records") {
-    return "Record time signal";
+    return "Record timeline";
   }
   if (mode === "locations") {
-    return "Mapped place signal";
+    return "Mapped place coverage";
   }
-  return "Source family signal";
+  return "Source family coverage";
 }
 
 function countRecordValues(records: readonly RecordItem[], getKey: (record: RecordItem) => string | null | undefined) {
@@ -4037,7 +4664,7 @@ function dashboardTrackLabel(record: RecordItem) {
 
 function dashboardTrackTitle(record: RecordItem, limit: number) {
   const figure = record.canonical_figure_guess || record.canonical_figure || "";
-  const rawTitle = record.title || figure || `Record ${record.record_id}`;
+  const rawTitle = displayRecordTitle(record);
   const title = rawTitle
     .replace(/^\s*(?:ca\.?\s*)?\d{4}\s*[-–:]\s*/i, "")
     .replace(/\s*\/\s*\d{4}\s*$/i, "")
@@ -4103,7 +4730,7 @@ function publicSourceLabel(sourceType: string | null | undefined) {
   if (!sourceType) {
     return "Public source";
   }
-  return SOURCE_PUBLIC_LABELS[sourceType] ?? SOURCE_TONE[sourceType]?.label ?? sourceType.replace(/[_-]+/g, " ");
+  return SOURCE_PUBLIC_LABELS[sourceType] ?? displaySourceType(sourceType);
 }
 
 function dashboardTrackSample(data: FrontendData, limit = 14) {
@@ -4180,53 +4807,6 @@ function aggregateYearValues(entries: readonly (readonly [number, number])[], ta
   return bins.map((bin) => [`${bin.start}-${bin.end}`, bin.value] as const);
 }
 
-function SignalSquare({ records }: { records: RecordItem[] }) {
-  const nodes = records.slice(0, 14).map((record, index) => {
-    const leftColumn = index % 2 === 0;
-    return {
-      record,
-      x: leftColumn ? 12 + (index % 3) * 7 : 57 + (index % 3) * 9,
-      y: 12 + index * 5.7,
-      anchorX: 50,
-      anchorY: 50 + ((index % 5) - 2) * 7,
-    };
-  });
-
-  return (
-    <section className="signal-square">
-      <svg viewBox="0 0 100 100" className="signal-svg" role="img" aria-label="Record signal network">
-        <rect x="36" y="42" width="28" height="16" className="signal-core" />
-        <text x="39" y="51" className="signal-core-text">
-          ARCH
-        </text>
-        {nodes.map((node) => (
-          <line
-            key={`line-${node.record.record_id}`}
-            className="signal-line"
-            x1={node.x + 8}
-            y1={node.y + 2}
-            x2={node.anchorX}
-            y2={node.anchorY}
-          />
-        ))}
-        {nodes.map((node) => (
-          <g key={node.record.record_id}>
-            <rect x={node.x} y={node.y} width="15" height="4.3" className="slot-box" />
-            <rect x={node.x + 2} y={node.y + 0.9} width="10" height="2.5" className="slot-fill" />
-            <text x={node.x + 16.5} y={node.y + 3.6} className="slot-label">
-              SLOT_{String(node.record.record_id).padStart(2, "0")}
-            </text>
-          </g>
-        ))}
-      </svg>
-      <div className="square-caption">
-        <span>RECORD SIGNAL</span>
-        <b>{records.length}</b>
-      </div>
-    </section>
-  );
-}
-
 function MetricTile({ label, value, detail }: { label: string; value: number; detail: string }) {
   return (
     <div className="metric-tile">
@@ -4260,7 +4840,7 @@ function MiniSpark({ values }: { values: Record<string, number> }) {
   const entries = Object.entries(values).sort(([a], [b]) => Number(a) - Number(b));
   const max = Math.max(...entries.map(([, value]) => value), 1);
   return (
-    <div className="mini-spark" aria-label="Year signal">
+    <div className="mini-spark" aria-label="Year pattern">
       {entries.map(([year, value]) => (
         <span key={year} style={{ "--bar": `${Math.max(10, (value / max) * 100)}%` } as CSSProperties} title={`${year}: ${value}`} />
       ))}
@@ -4279,7 +4859,7 @@ function Waveform({ records }: { records: RecordItem[] }) {
 
   return (
     <div className="wave-module">
-      <span className="tiny-label">SIGNAL</span>
+      <span className="tiny-label">FIELD</span>
       <svg viewBox="0 0 200 58" role="img" aria-label="Record waveform">
         <polyline className="wave-shadow" points={points.join(" ")} />
         <polyline className="wave-line" points={points.join(" ")} />
@@ -4299,48 +4879,26 @@ function RecordLine({ record }: { record: RecordItem }) {
   );
 }
 
-function sourceTone(record: RecordItem) {
-  return SOURCE_TONE[record.source_type ?? ""] ?? { label: "SOURCE", className: "source-tone-default" };
-}
-
-const HISTORICAL_PUBLICATION_PATTERN =
-  /\b(article|courier|post|herald|argus|bulletin|times|mercury|gazette|advertiser|chronicle|examiner|star|mail|mirror|telegraph|age|leader|news|budget|advocate|journal|guardian|free press|penny post|press)\b/i;
-
 function mapSourceTone(record: RecordItem) {
-  const text = [record.source_name, record.source_type, record.publication, record.title, record.url].filter(Boolean).join(" ");
-  const lower = text.toLowerCase();
-  if (/public_domain|gutenberg|wikisource|sacred_texts/.test(lower)) {
-    return { label: "PUBLIC DOMAIN", className: "source-tone-candidate" };
-  }
-  if (/repository|trove|newspaper|magazine/.test(lower)) {
-    return { label: "REPOSITORY", className: "source-tone-archive" };
-  }
-  if (lower.includes("abc")) {
-    return { label: "MEDIA", className: "source-tone-media" };
-  }
-  if (lower.includes("parks victoria") || lower.includes("museum") || lower.includes("library") || lower.includes("catalogue")) {
-    return { label: "INSTITUTIONAL", className: "source-tone-institutional" };
-  }
-  if (lower.includes("australian yowie research")) {
-    if ((record.year && record.year < 1970) || HISTORICAL_PUBLICATION_PATTERN.test(text)) {
-      return { label: "AYR HISTORICAL", className: "source-tone-ayr-historical" };
-    }
-    return { label: "AYR WITNESS", className: "source-tone-ayr-witness" };
-  }
-  if (record.source_type === "academic_metadata") {
-    return { label: "ACADEMIC", className: "source-tone-academic" };
-  }
-  if (record.source_type === "internet_archive_metadata") {
-    return { label: "ARCHIVE", className: "source-tone-archive" };
-  }
-  if (record.source_type === "seeded_public_web") {
-    return { label: "PUBLIC WEB", className: "source-tone-seeded-web" };
-  }
-  return sourceTone(record);
+  const family = sourceFamilyFor(record.source_type);
+  return {
+    label: family.label.toUpperCase(),
+    className: family.className,
+  };
 }
 
-function recordDisplayTitle(record: RecordItem) {
-  return record.canonical_figure_guess || record.canonical_figure || record.title || "Uncoded public record";
+function displayRecordTitle(record: RecordItem) {
+  const title = normalizeDisplayText(record.title)
+    .replace(/^[\s\p{P}\p{S}]+/u, "")
+    .trim();
+  const fallback = normalizeDisplayText(
+    record.canonical_figure_guess
+      || record.canonical_figure
+      || record.source_name
+      || record.publication
+      || "Public record",
+  );
+  return title && /[\p{L}\p{N}]/u.test(title) ? title : fallback;
 }
 
 function isSummaryOnlyRecord(record: RecordItem) {
@@ -4355,12 +4913,26 @@ function recordBody(record: RecordItem) {
     return `Summary-only public record from ${source} (${date}). This card keeps the display at metadata level because the item carries publicness or sensitivity restrictions.`;
   }
   if (record.snippet) {
-    return record.snippet;
+    return displayRecordExcerpt(record.snippet);
   }
-  const figure = recordDisplayTitle(record);
+  const figure = displayRecordTitle(record);
   const source = record.publication || record.source_name || "a public source";
   const date = record.date_published || (record.year ? String(record.year) : "an undated record");
   return `Public record note for ${figure}, recorded in ${source} (${date}). This card is a review surface: source voice, relevance, location, and publicness still require human checking before interpretation.`;
+}
+
+function normalizeDisplayText(value: string | null | undefined) {
+  return (value ?? "").replace(/\s+/g, " ").trim();
+}
+
+function displayRecordExcerpt(value: string) {
+  const text = normalizeDisplayText(value);
+  if (!text) {
+    return "";
+  }
+  const startsAbruptly = /^[a-z,;:)]/.test(text) || /^\S{2,}[-–]\S/.test(text);
+  const endsAbruptly = !/[.!?]"?$/.test(text) && text.length > 120;
+  return `${startsAbruptly ? "…" : ""}${text}${endsAbruptly ? "…" : ""}`;
 }
 
 type RecordNavigationContext = {
@@ -4479,7 +5051,7 @@ function RecordCardOverlay({
 
         <section className="record-card-title-block">
           <div className="record-card-year">{year}</div>
-          <h2 id={titleId}>{recordDisplayTitle(record)}</h2>
+          <h2 id={titleId}>{displayRecordTitle(record)}</h2>
         </section>
 
         <section className="record-card-body">

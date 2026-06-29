@@ -16,72 +16,11 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from aus_humanoid.db import DEFAULT_DB_PATH, connect, table_names
 from aus_humanoid.geo import location_summary
+from aus_humanoid.time_periods import attention_windows, build_public_date_bands, year_to_public_period_id
 from aus_humanoid.utils import PROJECT_ROOT
 
 
 FRONTEND_DATA_PATH = PROJECT_ROOT / "public" / "data" / "frontend-data.json"
-
-DATE_BANDS = [
-    {
-        "id": "backsearch_1803_1841",
-        "label": "1803-1841",
-        "start": 1803,
-        "end": 1841,
-        "role": "retrospective Trove backsearch / negative-control field",
-    },
-    {
-        "id": "anchor_1842_1875",
-        "label": "1842-1875",
-        "start": 1842,
-        "end": 1875,
-        "role": "early semantic anchor period",
-    },
-    {
-        "id": "expansion_1876_1969",
-        "label": "1876-1969",
-        "start": 1876,
-        "end": 1969,
-        "role": "pre-modern newspaper and publication expansion",
-    },
-    {
-        "id": "modern_1970_1990",
-        "label": "1970-1990",
-        "start": 1970,
-        "end": 1990,
-        "role": "early modern witness, heritage, tourism, and media period",
-    },
-    {
-        "id": "modern_1991_2010",
-        "label": "1991-2010",
-        "start": 1991,
-        "end": 2010,
-        "role": "late modern web, media, and public retelling period",
-    },
-    {
-        "id": "contemporary_2011_present",
-        "label": "2011-present",
-        "start": 2011,
-        "end": None,
-        "role": "contemporary public web and platform circulation period",
-    },
-]
-
-ATTENTION_DATE_WINDOWS = [
-    {
-        "id": "google_trends_2004_present",
-        "label": "2004-present",
-        "start": 2004,
-        "end": None,
-        "role": "Google Trends relative interest window",
-    },
-    {
-        "id": "wikimedia_2015_present",
-        "label": "2015-present",
-        "start": 2015,
-        "end": None,
-        "role": "Wikimedia pageviews attention window",
-    },
-]
 
 STATE_CODES = ["WA", "NT", "SA", "QLD", "NSW", "VIC", "TAS", "ACT"]
 STATE_NAME_TO_CODE = {
@@ -140,20 +79,10 @@ def row_dict(row: Any) -> dict[str, Any]:
     return {key: row[key] for key in row.keys()}
 
 
-def year_to_band(year: int | None) -> str:
-    if year is None:
-        return "undated"
-    for band in DATE_BANDS:
-        end = band["end"] if band["end"] is not None else 9999
-        if int(band["start"]) <= year <= int(end):
-            return str(band["id"])
-    return "outside_scope"
-
-
-def query_band(date_start: str | None, date_end: str | None) -> str:
+def query_band(date_start: str | None, date_end: str | None, date_bands: list[dict[str, Any]]) -> str:
     start = str(date_start or "")
     end = str(date_end or "")
-    for band in [*DATE_BANDS, *ATTENTION_DATE_WINDOWS]:
+    for band in [*date_bands, *attention_windows()]:
         if start == str(band["start"]) and (end == str(band["end"]) or (band["end"] is None and end == "present")):
             return str(band["id"])
     return f"{start}-{end}".strip("-") or "unspecified"
@@ -267,7 +196,6 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         for row in records_rows:
             item = row_dict(row)
             item["year"] = safe_int(item.get("year"))
-            item["date_band"] = year_to_band(item["year"])
             item["location_summary"] = location_summary(conn, int(item["record_id"])) if "record_locations" in tables else ""
             item["state_territory"] = None
             item["location_precision_status"] = "unmapped"
@@ -282,6 +210,13 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             item["map_confidence"] = None
             item["map_evidence_text"] = None
             records.append(item)
+
+        dated_years = [record["year"] for record in records if record.get("year") is not None]
+        earliest_year = min(dated_years) if dated_years else None
+        latest_year = max(dated_years) if dated_years else None
+        date_bands = build_public_date_bands(earliest_year, latest_year)
+        for record in records:
+            record["date_band"] = year_to_public_period_id(record["year"], date_bands)
 
         locations: list[dict[str, Any]] = []
         if {"record_locations", "locations"}.issubset(tables):
@@ -310,7 +245,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                 item["year"] = safe_int(item.get("year"))
                 item["latitude"] = float(item["latitude"]) if item.get("latitude") not in (None, "") else None
                 item["longitude"] = float(item["longitude"]) if item.get("longitude") not in (None, "") else None
-                item["date_band"] = year_to_band(item["year"])
+                item["date_band"] = year_to_public_period_id(item["year"], date_bands)
                 locations.append(item)
 
         figure_rows = conn.execute(
@@ -385,7 +320,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
         queries = []
         for row in query_rows:
             item = row_dict(row)
-            item["date_band"] = query_band(item.get("date_start"), item.get("date_end"))
+            item["date_band"] = query_band(item.get("date_start"), item.get("date_end"), date_bands)
             queries.append(item)
 
         source_rows = conn.execute(
@@ -526,13 +461,21 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
     records_by_figure = Counter((record.get("canonical_figure_guess") or record.get("canonical_figure") or "uncoded") for record in records)
     records_by_year = Counter(str(record["year"]) for record in records if record.get("year") is not None)
 
+    mapped_band_counts = Counter(point.get("date_band") for point in map_points)
     date_band_summaries = []
-    for band in DATE_BANDS:
+    for band in date_bands:
         planned_query_count = sum(1 for query in queries if query_overlaps_band(query, band))
+        record_count = int(record_band_counts.get(str(band["id"]), 0))
+        mapped_count = int(mapped_band_counts.get(str(band["id"]), 0))
+        span_years = int(band["end"]) - int(band["start"]) + 1 if isinstance(band.get("start"), int) and isinstance(band.get("end"), int) else 0
         date_band_summaries.append(
             {
                 **band,
-                "record_count": int(record_band_counts.get(str(band["id"]), 0)),
+                "record_count": record_count,
+                "mapped_count": mapped_count,
+                "mapped_share": mapped_count / record_count if record_count else 0,
+                "span_years": span_years,
+                "records_per_year": record_count / span_years if span_years else 0,
                 "planned_query_count": int(planned_query_count),
             }
         )
@@ -545,11 +488,14 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
                 "end": None,
                 "role": "public records with no defensible publication or event year in the source metadata",
                 "record_count": int(record_band_counts.get("undated", 0)),
+                "mapped_count": int(mapped_band_counts.get("undated", 0)),
+                "mapped_share": 0,
+                "span_years": None,
+                "records_per_year": None,
                 "planned_query_count": 0,
             }
         )
 
-    years = [record["year"] for record in records if record.get("year") is not None]
     source_rollup: dict[str, dict[str, Any]] = defaultdict(lambda: {"record_count": 0, "query_count": 0})
     for record in records:
         source_rollup[record.get("source_type") or "unknown"]["record_count"] += 1
@@ -572,11 +518,13 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             "source_count": len(sources),
             "location_count": len(locations),
             "mapped_record_count": len(mapped_record_ids),
+            "dated_record_count": len(dated_years),
+            "undated_record_count": int(record_band_counts.get("undated", 0)),
             "broad_location_count": len(broad_locations),
             "map_cluster_count": len(map_clusters),
             "map_flag_count": len(map_flags),
-            "earliest_year": min(years) if years else None,
-            "latest_year": max(years) if years else None,
+            "earliest_year": earliest_year,
+            "latest_year": latest_year,
             "state_record_counts": {code: len(ids) for code, ids in state_record_ids.items()},
             "corpus_state_counts": {code: len(ids) for code, ids in corpus_state_record_ids.items()},
             "mapped_state_counts": {code: sum(1 for point in map_points if point.get("state_territory") == code) for code in STATE_CODES},
@@ -589,6 +537,7 @@ def export_frontend_data(db_path: str | Path = DEFAULT_DB_PATH, output_path: Pat
             "source_rollup": dict(source_rollup),
         },
         "date_bands": date_band_summaries,
+        "attention_windows": attention_windows(),
         "records": records,
         "locations": locations,
         "map_points": map_points,

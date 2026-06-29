@@ -1,0 +1,64 @@
+{
+  "schema_version": "time-periods/v1",
+  "public_record_periods": [
+    {
+      "id": "early_colonial",
+      "dynamic_start": "actual_earliest_year",
+      "end": 1850,
+      "short_label": "Early colonial",
+      "context": "Early colonial / pre-gold-rush public texts"
+    },
+    {
+      "id": "gold_rush_colonial",
+      "start": 1851,
+      "end": 1889,
+      "short_label": "Gold-rush colonial",
+      "context": "Gold-rush era and colonial press expansion"
+    },
+    {
+      "id": "federation_era",
+      "start": 1890,
+      "end": 1929,
+      "short_label": "Federation era",
+      "context": "Federation lead-up, early Commonwealth, and early mass press"
+    },
+    {
+      "id": "depression_postwar",
+      "start": 1930,
+      "end": 1969,
+      "short_label": "Depression-postwar",
+      "context": "Depression, wartime, postwar, broadcast, and local-history public texts"
+    },
+    {
+      "id": "late_twentieth_century",
+      "start": 1970,
+      "end": 1999,
+      "short_label": "Late twentieth century",
+      "context": "Late twentieth-century media, local public discourse, and revived public interest"
+    },
+    {
+      "id": "digital_era",
+      "start": 2000,
+      "dynamic_end": "actual_latest_year",
+      "short_label": "Digital era",
+      "context": "Web, digitisation, repository, and contemporary public archive era",
+      "open_display_label": "2000-present"
+    }
+  ],
+  "attention_windows": [
+    {
+      "id": "google_trends_2004_present",
+      "label": "2004-present",
+      "start": 2004,
+      "end": null,
+      "role": "Google Trends relative interest window"
+    },
+    {
+      "id": "wikimedia_2015_present",
+      "label": "2015-present",
+      "start": 2015,
+      "end": null,
+      "role": "Wikimedia pageviews attention window"
+    }
+  ]
+}
