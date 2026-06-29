@@ -56,6 +56,10 @@ python3 scripts/check_vercel_release.py
 
 - `metadataBase` uses `https://ausfigures.com`.
 - Canonical route metadata uses `https://ausfigures.com`.
+- Root route metadata titles the homepage as the AusFigures map index.
+- Open Graph and Twitter metadata use `summary_large_image` framing and canonical `ausfigures.com` image URLs.
+- Browser identity metadata includes `/manifest.webmanifest`, `/apple-icon`, theme colors, and Safari/Chrome app titles.
+- `www.ausfigures.com/*` redirects permanently to `https://ausfigures.com/*`.
 - Sitemap only lists `https://ausfigures.com` URLs.
 - Robots references `https://ausfigures.com/sitemap.xml`.
 - `llms.txt` uses canonical apex URLs.
@@ -74,6 +78,10 @@ Check these paths on the production deployment:
 - `/robots.txt` returns 200 and references `https://ausfigures.com/sitemap.xml`.
 - `/sitemap.xml` returns 200 and only lists canonical public routes.
 - `/llms.txt` returns 200 and contains only public launch guidance.
+- `/opengraph-image` returns 200 image/png and uses research-safe framing.
+- `/twitter-image` returns 200 image/png and uses research-safe framing.
+- `/manifest.webmanifest` returns 200 application/manifest+json or compatible JSON.
+- `/apple-icon` returns 200 image/png.
 - `/data/frontend-data.json` returns 200.
 
 ## Security Headers

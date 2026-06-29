@@ -9,8 +9,11 @@ export const SITE = {
   repositoryUrl: "https://github.com/dpan538/australian-humanoid-supernatural-texts",
   primaryRoute: "/",
   routes: ["/", "/dashboard", "/density", "/source", "/about"],
+  socialImagePath: "/opengraph-image",
+  twitterImagePath: "/twitter-image",
+  socialImageAlt: "AusFigures map social preview",
   description:
-    "A source-grounded public-text archive and research display system for Australian supernatural humanoid narratives, encounters, apparitions, legends, and retellings.",
+    "A source-grounded public-text research archive for Australian supernatural humanoid narratives, encounters, apparitions, legends, and retellings.",
 } as const;
 
 export const siteConfig = {
@@ -21,28 +24,48 @@ export const siteConfig = {
   creator: "Dai Pan",
   locale: "en_AU",
   releaseDate: "2026-06-29",
+  keywords: [
+    "AusFigures",
+    "Australian public text archive",
+    "supernatural humanoid narratives",
+    "source-grounded archive",
+    "digital humanities",
+    "Australian folklore research",
+    "public record map",
+    "mapped public records",
+    "public source register",
+  ],
   routeMetadata: [
     {
       path: "/",
-      title: "Index",
+      title: "AusFigures Map",
       description:
-        "Homepage map for verified mapped public records in AusFigures. Map markers represent public display locations for records, not proof, habitats, or populations.",
+        "Source-grounded map view for Australian supernatural humanoid narratives in public texts. Map markers are display locations for records, not proof, habitats, or populations.",
       priority: 1.0,
       changeFrequency: "monthly",
     },
     {
-      path: "/dashboard",
-      title: "Dashboard",
+      path: "/map",
+      canonicalPath: "/",
+      title: "Map",
       description:
-        "Corpus overview for AusFigures, a source-grounded public-text archive of Australian supernatural humanoid narratives, source families, narrative types, periods, and mapped-record aggregates.",
+        "Map view for verified display locations in the AusFigures public-text archive. Markers identify records, not supernatural proof or habitats.",
+      priority: 0.0,
+      changeFrequency: "monthly",
+    },
+    {
+      path: "/dashboard",
+      title: "Research Dashboard",
+      description:
+        "Overview of the AusFigures public-text corpus by period, source family, narrative type, figure label, and mapped-record coverage.",
       priority: 0.8,
       changeFrequency: "monthly",
     },
     {
       path: "/density",
-      title: "Density",
+      title: "Density Explorer",
       description:
-        "Source, query, and figure-density views for comparing corpus signals in the AusFigures public-text archive.",
+        "Source, query, and figure-density views for comparing public-text signals across the AusFigures research archive.",
       priority: 0.7,
       changeFrequency: "monthly",
     },
@@ -56,7 +79,7 @@ export const siteConfig = {
     },
     {
       path: "/about",
-      title: "About",
+      title: "About AusFigures",
       description:
         "Scope, methods, source policy, mapping limits, and ethical interpretation rules for AusFigures.",
       priority: 0.8,
@@ -65,10 +88,23 @@ export const siteConfig = {
   ],
 } as const;
 
-export type SiteRoutePath = (typeof SITE.routes)[number];
+export type SiteRoutePath = (typeof siteConfig.routeMetadata)[number]["path"];
 
 export function absoluteUrl(path = "/") {
   return new URL(path, SITE.canonicalOrigin).toString();
+}
+
+export function socialImageMetadata(path: string = SITE.socialImagePath) {
+  return {
+    url: absoluteUrl(path),
+    width: 1200,
+    height: 630,
+    alt: SITE.socialImageAlt,
+  };
+}
+
+function brandedTitle(title: string) {
+  return title.includes(siteConfig.siteName) ? title : `${title} | ${siteConfig.siteName}`;
 }
 
 export function routeConfig(path: SiteRoutePath) {
@@ -79,29 +115,35 @@ export function metadataForRoute(path: SiteRoutePath): Metadata {
   const route = routeConfig(path);
   const title = route.title;
   const description = route.description;
+  const metaTitle = brandedTitle(title);
+  const canonicalPath = "canonicalPath" in route ? route.canonicalPath : route.path;
 
   return {
     title,
     description,
+    keywords: [...siteConfig.keywords],
+    category: "research",
     alternates: {
-      canonical: absoluteUrl(route.path),
+      canonical: absoluteUrl(canonicalPath),
     },
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
-      title: `${title} | ${siteConfig.siteName}`,
+      title: metaTitle,
       description,
-      url: absoluteUrl(route.path),
+      url: absoluteUrl(canonicalPath),
       siteName: siteConfig.siteName,
       locale: siteConfig.locale,
       type: "website",
+      images: [socialImageMetadata()],
     },
     twitter: {
-      card: "summary",
-      title: `${title} | ${siteConfig.siteName}`,
+      card: "summary_large_image",
+      title: metaTitle,
       description,
+      images: [socialImageMetadata(SITE.twitterImagePath).url],
     },
   };
 }

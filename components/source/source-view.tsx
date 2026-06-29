@@ -86,6 +86,32 @@ export function SourceView({ data }: { data: FrontendData }) {
           </button>
         </div>
 
+        <div className="source-mobile-accordions" aria-label="Mobile source sections">
+          <details className="source-mobile-accordion" open>
+            <summary>
+              <span>ROLLUP</span>
+              <small>SOURCE FAMILY / RECORDS / SHARE / ORGS</small>
+            </summary>
+            <SourceRollupPane rows={registryData.rollupRows} typeRows={registryData.typeRows} totalRecords={registryData.metrics.publicRecords} />
+          </details>
+          <details className="source-mobile-accordion" open>
+            <summary>
+              <span>REGISTERED SOURCES</span>
+              <small>SOURCE ORGANISATION / PUBLIC ROLE / RECORDS / TYPE</small>
+            </summary>
+            <SourceRegistryPane
+              filter={filter}
+              filterRef={filterRef}
+              resultCount={resultCount}
+              rows={filteredRows}
+              selectedSource={selectedSource}
+              onClearFilter={clearFilter}
+              onFilterChange={setFilter}
+              onSelect={setSelectedSourceId}
+            />
+          </details>
+        </div>
+
         <div className="source-split-layout" data-mobile-pane={mobilePane}>
           <SourceRollupPane rows={registryData.rollupRows} typeRows={registryData.typeRows} totalRecords={registryData.metrics.publicRecords} />
           <SourceTerminalDivider dragging={dragging} separatorProps={separatorProps} />
@@ -113,6 +139,9 @@ function SourceTerminalHeader({ data }: { data: ReturnType<typeof buildSourceReg
       <div className="source-header-title">
         <span>SOURCE REGISTER</span>
         <h2>PUBLIC SOURCE FIELD</h2>
+        <p className="source-mobile-intro">
+          Public sources are grouped by organisation and source family. Counts describe public-record coverage; they do not verify any underlying claim.
+        </p>
       </div>
       <div className="source-header-status" aria-label="Source page status metrics">
         <span className="source-terminal-led is-live" aria-hidden="true" />

@@ -12,6 +12,7 @@ import type { FigureProfile } from "@/lib/figure-profiles";
 import { FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { SourceView } from "@/components/source/source-view";
 import { DisplayControls } from "@/components/display-controls";
+import { MobileArchiveControls, MobileArchiveView, useMobileArchiveRouteGuard } from "@/components/mobile-archive";
 import { SOURCE_FAMILY_STYLES, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
@@ -33,6 +34,11 @@ const VIEW_PATHS: Record<ViewMode, string> = {
 };
 const LOADING_TITLE = "AusFigures";
 const LOADING_INTRO = "A source-grounded archive of Australian supernatural humanoid narratives.";
+const LOADING_BOOT_LINES = [
+  "Reading static public archive export",
+  "Indexing mapped display records",
+  "Separating source text from claim",
+] as const;
 
 const STATE_NAMES: Record<string, string> = {
   WA: "Western Australia",
@@ -1016,6 +1022,7 @@ function projectLambertConformalConic(latitude: number, longitude: number) {
 }
 
 export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
+  const mobileRoute = useMobileArchiveRouteGuard(view);
   const [data, setData] = useState<FrontendData | null>(frontendDataCache);
   const [showArchive, setShowArchive] = useState(Boolean(frontendDataCache));
   const [error, setError] = useState<string | null>(null);
@@ -1035,6 +1042,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
           setError(loadError.message);
         }
       });
+
     return () => {
       cancelled = true;
     };
@@ -1079,7 +1087,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
       translateY: [0, -3],
       duration: 220,
     }, 220);
-    addIfTargets(timeline, loadingRoot.querySelectorAll(".loading-typewriter-line, .loading-runner-label"), {
+    addIfTargets(timeline, loadingRoot.querySelectorAll(".loading-typewriter-line, .loading-runner-label, .loading-mobile-detail"), {
       opacity: [1, 0],
       translateY: [0, -6],
       duration: 220,
@@ -1096,8 +1104,20 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
     };
   }, [data, showArchive]);
 
+  if (mobileRoute.blockedDashboard) {
+    return (
+      <ArchiveTerminalShell view="map">
+        <ArchiveLoadingState view="map" error={null} loadingRef={loadingRef} />
+      </ArchiveTerminalShell>
+    );
+  }
+
   if (data && showArchive) {
-    return <ArchiveTerminal data={data} view={view} />;
+    return (
+      <MobileArchiveView>
+        <ArchiveTerminal data={data} view={view} />
+      </MobileArchiveView>
+    );
   }
 
   return (
@@ -1120,8 +1140,19 @@ function ArchiveLoadingState({
   const runnerLabel = error
     ? `${VIEW_LABELS[view]} view paused`
     : isMap
-      ? "Map index initializing"
+      ? "Map view initializing"
       : `${VIEW_LABELS[view]} view initializing`;
+  const loadingStatusItems = error
+    ? [
+        ["Archive state", "Data unavailable"],
+        ["Next step", "Refresh or retry shortly"],
+        ["Display mode", "Public interface paused"],
+      ]
+    : [
+        ["Entry view", isMap ? "Map" : `${VIEW_LABELS[view]} field`],
+        ["Source plane", "Public texts and metadata"],
+        ["Map rule", "Markers identify records, not proof"],
+      ];
 
   return (
     <div
@@ -1167,6 +1198,26 @@ function ArchiveLoadingState({
           </svg>
         </div>
         <span className="loading-runner-label">{runnerLabel}</span>
+        <div className="loading-mobile-detail" aria-hidden={error ? undefined : "true"}>
+          <div className="loading-status-grid">
+            {loadingStatusItems.map(([label, value]) => (
+              <span className="loading-status-cell" key={label}>
+                <span>{label}</span>
+                <b>{value}</b>
+              </span>
+            ))}
+          </div>
+          <div className="loading-boot-log">
+            {LOADING_BOOT_LINES.map((line, index) => (
+              <span className="loading-boot-line" key={line} style={{ "--boot-line-index": index } as CSSProperties}>
+                {line}
+              </span>
+            ))}
+          </div>
+          <p className="loading-interpretation-note">
+            Public source exists does not mean a supernatural claim is verified.
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -1288,6 +1339,7 @@ function ArchiveTerminalShell({
             </Link>
           </div>
         </div>
+        <MobileArchiveControls view={view} />
       </div>
       {overlay}
     </main>
@@ -1534,6 +1586,10 @@ function MapView({
         <span>BOUNDARY: {MAP_BOUNDARY_SOURCE.name}</span>
         <span>TERRAIN: {TERRAIN_TILES.length} LANDFORM CUES / STATE-CLIPPED</span>
       </div>
+      <header className="mobile-map-heading">
+        <span>MAP</span>
+        <b>Public records by display location</b>
+      </header>
       <div className="map-canvas">
         <svg
           className="australia-map"
@@ -1599,6 +1655,9 @@ function MapView({
           <TerrainLegend />
         </svg>
       </div>
+      <p className="mobile-map-note">
+        Markers are public display locations for records, not proof, habitats, or populations.
+      </p>
 
       <aside className="map-readout">
         <div className="readout-block">

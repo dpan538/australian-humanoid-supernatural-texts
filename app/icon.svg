@@ -1,7 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="0" ry="0" fill="#F7F4EC"/>
-  <path d="M12 44h40" stroke="#0B7F6C" stroke-width="5" stroke-linecap="round"/>
-  <path d="M18 36c5-15 23-15 28 0" fill="none" stroke="#2F5FB8" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="32" cy="25" r="7" fill="#D99A3B"/>
-  <path d="M23 50h18" stroke="#7357B8" stroke-width="5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="crispEdges">
+  <rect width="64" height="64" fill="#030504"/>
+  <rect x="3" y="3" width="58" height="58" fill="none" stroke="#31413F" stroke-width="2"/>
+  <path d="M10 49h44" stroke="#163A38" stroke-width="2"/>
+  <path d="M14 49h19" stroke="#78E4DC" stroke-width="2"/>
+  <path d="M38 49h12" stroke="#2F6BFF" stroke-width="2"/>
+  <rect x="11" y="47" width="4" height="4" fill="#78E4DC"/>
+  <rect x="49" y="47" width="4" height="4" fill="#2F6BFF"/>
+  <g transform="translate(8 2) scale(3)" fill="#2F6BFF">
+    <rect x="6" y="1" width="4" height="4"/>
+    <rect x="5" y="5" width="6" height="5"/>
+    <rect x="3" y="6" width="2" height="4"/>
+    <rect x="11" y="6" width="2" height="4"/>
+    <rect x="5" y="10" width="2" height="5"/>
+    <rect x="9" y="10" width="2" height="5"/>
+    <rect x="4" y="14" width="3" height="1"/>
+    <rect x="9" y="14" width="3" height="1"/>
+  </g>
+  <g transform="translate(8 2) scale(3)" fill="#78E4DC" opacity="0.8">
+    <rect x="6" y="1" width="1" height="1"/>
+    <rect x="5" y="5" width="1" height="1"/>
+    <rect x="3" y="6" width="1" height="1"/>
+  </g>
 </svg>

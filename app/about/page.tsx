@@ -2,6 +2,7 @@ import Link from "next/link";
 import frontendData from "@/public/data/frontend-data.json";
 import { AboutAmbientMotion } from "@/components/about/about-ambient-motion";
 import { DisplayControls } from "@/components/display-controls";
+import { MobileArchiveControls } from "@/components/mobile-archive";
 import { metadataForRoute } from "@/lib/site";
 import type { FrontendData } from "@/lib/types";
 
@@ -24,7 +25,12 @@ export default function AboutPage() {
             <header className="about-hero">
               <div className="about-hero-copy">
                 <span className="tiny-label">ABOUT / PUBLIC DATA TERMINAL</span>
-                <h1>AUSTRALIAN HUMANOID SUPERNATURAL TEXTS</h1>
+                <div className="mobile-about-heading">
+                  <span>ABOUT</span>
+                  <h1>AusFigures</h1>
+                  <p>Source-grounded public records of Australian supernatural humanoid narratives.</p>
+                </div>
+                <h1 className="about-desktop-title">AUSTRALIAN HUMANOID SUPERNATURAL TEXTS</h1>
                 <p className="about-subtitle">Public-text archive and research display system</p>
                 <p>
                   This project is a public-text archive for tracing how humanoid or humanoid-adjacent supernatural figures appear in Australian public sources.
@@ -63,11 +69,11 @@ export default function AboutPage() {
                 body="The archive treats each entry as a documented public text or source-grounded narrative unit. Records are organised by source family, narrative type, period, publicness, and available location evidence so later research can separate reported encounters, retellings, heritage discourse, catalogue metadata, and contextual material."
               />
 
-              <section className="about-module about-model-module" aria-label="Archive model">
-                <div className="about-module-head">
+              <details className="about-module about-model-module about-accordion-module" aria-label="Archive model" open>
+                <summary className="about-module-head">
                   <span>ARCHIVE MODEL</span>
                   <i aria-hidden="true" />
-                </div>
+                </summary>
                 <h2>Source item to research record</h2>
                 <div className="about-flow" aria-label="Archive model flow">
                   <svg viewBox="0 0 520 128" role="img" aria-label="Source item to public record to narrative type to location role">
@@ -86,13 +92,13 @@ export default function AboutPage() {
                     <span>location role</span>
                   </div>
                 </div>
-              </section>
+              </details>
 
-              <section className="about-module about-record-types" aria-label="Record types">
-                <div className="about-module-head">
+              <details className="about-module about-record-types about-accordion-module" aria-label="Record types" open>
+                <summary className="about-module-head">
                   <span>RECORD TYPES</span>
                   <i aria-hidden="true" />
-                </div>
+                </summary>
                 <h2>Typed narrative surface</h2>
                 <div className="about-type-list">
                   {recordTypeRows.map((row) => (
@@ -103,7 +109,7 @@ export default function AboutPage() {
                     </span>
                   ))}
                 </div>
-              </section>
+              </details>
 
               <AboutModule
                 kicker="MAP RULE"
@@ -153,6 +159,7 @@ export default function AboutPage() {
         <div className="terminal-footer-controls">
           <DisplayControls />
         </div>
+        <MobileArchiveControls view="about" />
       </div>
     </main>
   );
@@ -160,14 +167,14 @@ export default function AboutPage() {
 
 function AboutModule({ kicker, title, body }: { kicker: string; title: string; body: string }) {
   return (
-    <section className="about-module">
-      <div className="about-module-head">
+    <details className="about-module about-accordion-module" open>
+      <summary className="about-module-head">
         <span>{kicker}</span>
         <i aria-hidden="true" />
-      </div>
+      </summary>
       <h2>{title}</h2>
       <p>{body}</p>
-    </section>
+    </details>
   );
 }
 

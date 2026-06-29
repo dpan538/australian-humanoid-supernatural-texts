@@ -30,6 +30,9 @@ Use this checklist immediately before a production release.
 - [ ] `/llms.txt` contains only public, non-sensitive launch guidance.
 - [ ] Route metadata uses restrained public-text archive framing.
 - [ ] Root index appears as the main sitemap entry.
+- [ ] `/opengraph-image` and `/twitter-image` return image/png social cards with research-safe framing.
+- [ ] `/manifest.webmanifest` and `/apple-icon` return browser identity metadata for Chrome/Safari.
+- [ ] `www.ausfigures.com` permanently redirects to `https://ausfigures.com`.
 - [ ] README has the production link and canonical-domain note.
 
 ## Research Release Gate

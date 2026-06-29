@@ -47,8 +47,12 @@ Do not copy these typical patterns blindly. Add exactly the records Vercel shows
 2. `https://ausfigures.com/robots.txt` returns 200 and references `https://ausfigures.com/sitemap.xml`.
 3. `https://ausfigures.com/sitemap.xml` returns 200 and only lists `ausfigures.com` URLs.
 4. `https://ausfigures.com/llms.txt` returns 200.
-5. `https://www.ausfigures.com/` redirects to `https://ausfigures.com/`.
-6. No canonical, Open Graph, sitemap, robots, llms.txt, README deployment badge, or README production URL points to `*.vercel.app`.
+5. `https://ausfigures.com/opengraph-image` returns 200 image/png.
+6. `https://ausfigures.com/twitter-image` returns 200 image/png.
+7. `https://ausfigures.com/manifest.webmanifest` returns browser identity metadata for Chrome.
+8. `https://ausfigures.com/apple-icon` returns 200 image/png for Safari and Apple surfaces.
+9. `https://www.ausfigures.com/` redirects to `https://ausfigures.com/`.
+10. No canonical, Open Graph, sitemap, robots, llms.txt, README deployment badge, or README production URL points to `*.vercel.app`.
 
 ## Optional CLI Checks
 

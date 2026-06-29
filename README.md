@@ -47,10 +47,10 @@ The frontend is a restrained archive-terminal research display. It uses a dark t
 
 Pages:
 
-- `https://ausfigures.com/`: homepage index map for verified mapped public records only. Each map flag represents one public record with a verified display location.
-- `https://ausfigures.com/dashboard`: broad public-corpus overview across time, narrative, source, and mapped-record aggregates.
+- `https://ausfigures.com/`: map index for verified mapped public records only. Each map flag represents one public record with a verified display location.
+- `https://ausfigures.com/dashboard`: research dashboard for broad public-corpus overview across time, narrative, source, figure label, and mapped-record aggregates.
 - `https://ausfigures.com/map`: map route alias for the same verified mapped public records view.
-- `https://ausfigures.com/density`: compressed source/query/figure density fields for comparing corpus signals.
+- `https://ausfigures.com/density`: density explorer for compressed source/query/figure fields and corpus-signal comparison.
 - `https://ausfigures.com/source`: two-pane source register showing source-family rollups and registered public source organisations.
 - `https://ausfigures.com/about`: research-positioning page explaining scope, method, source policy, mapping limits, and ethics.
 
