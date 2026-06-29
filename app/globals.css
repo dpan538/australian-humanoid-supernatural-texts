@@ -10362,6 +10362,13 @@ body {
 .source-rank-row > i {
   height: 14px;
   min-width: 0;
+  border: 1px solid var(--source-stroke);
+  background: color-mix(in srgb, var(--source-color) 10%, transparent);
+}
+
+.source-rank-row > i::before {
+  width: var(--source-meter);
+  background: var(--source-color);
 }
 
 .source-rank-row > i:hover,
@@ -10374,17 +10381,70 @@ body {
 
 .source-rank-row em {
   min-width: 0;
-  height: 34px;
-  grid-template-columns: repeat(6, minmax(38px, 1fr));
-  gap: 7px;
+  height: 44px;
+  grid-template-columns: repeat(6, minmax(34px, 1fr));
+  gap: 5px;
+  align-items: stretch;
 }
 
 .source-rank-row .source-profile-cell {
-  display: block;
+  position: relative;
+  display: grid;
+  align-items: end;
+  justify-items: center;
   width: auto;
-  height: 34px;
-  min-height: 34px;
-  opacity: 0.9;
+  height: 44px;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  opacity: 1;
+  overflow: visible;
+}
+
+.source-rank-row .source-profile-cell::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  bottom: 12px;
+  width: 1px;
+  min-height: 0;
+  background: color-mix(in srgb, var(--source-stroke) 44%, transparent);
+}
+
+.source-rank-row .source-profile-cell::after {
+  content: "";
+  position: absolute;
+  left: 13%;
+  right: 13%;
+  top: var(--period-top);
+  height: 3px;
+  min-height: 0;
+  background: var(--source-color);
+  border-top: 1px solid var(--source-stroke);
+  opacity: var(--period-active);
+}
+
+.source-rank-row .source-profile-cell:hover::before,
+.source-rank-row .source-profile-cell:focus-visible::before {
+  background: color-mix(in srgb, var(--source-stroke) 78%, transparent);
+}
+
+.source-rank-row .source-profile-cell:hover::after,
+.source-rank-row .source-profile-cell:focus-visible::after {
+  left: 6%;
+  right: 6%;
+  height: 5px;
+  background: color-mix(in srgb, var(--source-color) 84%, var(--text-primary));
+}
+
+.source-rank-row .source-profile-cell span {
+  position: relative;
+  z-index: 1;
+  color: color-mix(in srgb, var(--text-secondary) 74%, transparent);
+  font-size: 10px;
+  font-weight: var(--weight-medium);
+  line-height: 1;
 }
 
 .dashboard-tooltip {
@@ -10398,7 +10458,7 @@ body {
   font-size: var(--dash-font-label);
   font-weight: var(--weight-semibold);
   line-height: 1.22;
-  white-space: normal;
+  white-space: pre-line;
 }
 
 :root[data-theme="light"] .dashboard-tooltip {
@@ -10557,6 +10617,129 @@ body {
 :root:not([data-theme="light"]) .density-box-count,
 :root:not([data-theme="light"]) .density-heatmap-value {
   fill: rgba(255, 250, 240, 0.78);
+}
+
+:root:not([data-theme="light"]) .map-view {
+  --map-dot-green: #23a092;
+  --map-dot-cyan: #5d93e6;
+  --map-dot-amber: #d28a25;
+  --map-dot-violet: #9d7be0;
+}
+
+:root:not([data-theme="light"]) .map-view .map-source-block {
+  color: rgba(127, 199, 225, 0.84);
+}
+
+:root:not([data-theme="light"]) .map-view .readout-block,
+:root:not([data-theme="light"]) .map-view .state-mini,
+:root:not([data-theme="light"]) .map-view .map-health-note,
+:root:not([data-theme="light"]) .map-view .map-source-legend {
+  border-color: rgba(255, 250, 240, 0.28);
+  background: rgba(2, 4, 4, 0.72);
+}
+
+:root:not([data-theme="light"]) .map-view .readout-block {
+  border-color: rgba(255, 250, 240, 0.34);
+  color: rgba(255, 250, 240, 0.88);
+}
+
+:root:not([data-theme="light"]) .map-view .readout-block strong,
+:root:not([data-theme="light"]) .map-view .readout-number,
+:root:not([data-theme="light"]) .map-view .state-mini b,
+:root:not([data-theme="light"]) .map-view .map-health-note b,
+:root:not([data-theme="light"]) .map-view .map-source-legend-row small {
+  color: #fffaf0;
+}
+
+:root:not([data-theme="light"]) .map-view .readout-number {
+  font-weight: var(--weight-semibold);
+}
+
+:root:not([data-theme="light"]) .map-view .readout-tail,
+:root:not([data-theme="light"]) .map-view .map-health-note,
+:root:not([data-theme="light"]) .map-view .map-health-note em,
+:root:not([data-theme="light"]) .map-view .map-source-legend-row b {
+  color: rgba(255, 250, 240, 0.86);
+}
+
+:root:not([data-theme="light"]) .map-view .map-health-note small,
+:root:not([data-theme="light"]) .map-view .map-source-legend-row small {
+  color: rgba(255, 250, 240, 0.78);
+}
+
+:root:not([data-theme="light"]) .map-view .map-source-legend-row small {
+  color: #fffaf0;
+  font-weight: var(--weight-semibold);
+}
+
+:root:not([data-theme="light"]) .map-view .tiny-label,
+:root:not([data-theme="light"]) .map-view .map-health-note span,
+:root:not([data-theme="light"]) .map-view .map-source-legend > span {
+  color: #7fc7e1;
+}
+
+:root:not([data-theme="light"]) .map-view .state-mini span {
+  color: rgba(255, 250, 240, 0.94);
+}
+
+:root:not([data-theme="light"]) .map-view .state-mini:hover,
+:root:not([data-theme="light"]) .map-view .state-mini:focus-visible,
+:root:not([data-theme="light"]) .map-view .state-mini.active {
+  border-color: rgba(255, 250, 240, 0.64);
+  background: rgba(255, 250, 240, 0.14);
+  color: #fffaf0;
+}
+
+:root:not([data-theme="light"]) .map-view .coast-outline {
+  stroke: rgba(255, 250, 240, 0.88);
+}
+
+:root:not([data-theme="light"]) .map-view .tas-outline {
+  stroke: rgba(255, 250, 240, 0.68);
+}
+
+:root:not([data-theme="light"]) .map-view .state-shape {
+  fill: rgba(35, 160, 146, 0.035);
+  stroke: rgba(255, 250, 240, 0.34);
+}
+
+:root:not([data-theme="light"]) .map-view .state-shape.warm {
+  fill: rgba(127, 199, 225, 0.045);
+}
+
+:root:not([data-theme="light"]) .map-view .state-shape.hot {
+  fill: rgba(35, 160, 146, 0.075);
+}
+
+:root:not([data-theme="light"]) .map-view .state-shape.hovered {
+  fill: rgba(255, 250, 240, 0.14);
+  stroke: rgba(255, 250, 240, 0.98);
+}
+
+:root:not([data-theme="light"]) .map-view .terrain-surface {
+  opacity: calc(var(--terrain-idle) + 0.035);
+}
+
+:root:not([data-theme="light"]) .map-view .terrain-surface.emphasized {
+  opacity: 0.085;
+}
+
+:root:not([data-theme="light"]) .map-view .terrain-surface.dimmed {
+  opacity: 0.012;
+}
+
+:root:not([data-theme="light"]) .map-view .terrain-legend-back {
+  fill: rgba(2, 4, 4, 0.82);
+  stroke: rgba(255, 250, 240, 0.24);
+}
+
+:root:not([data-theme="light"]) .map-view .terrain-legend-label {
+  fill: rgba(255, 250, 240, 0.84);
+}
+
+:root:not([data-theme="light"]) .map-view .state-label {
+  fill: rgba(255, 250, 240, 0.92);
+  stroke: rgba(0, 0, 0, 0.88);
 }
 
 @media (max-width: 920px) {

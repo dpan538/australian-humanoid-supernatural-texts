@@ -4079,14 +4079,13 @@ function SourceDonut({ families, bands = [], compact = false }: { families: Sour
 function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate[]; bands: readonly DateBand[] }) {
   const rows = families.filter((family) => family.count > 0);
   const total = rows.reduce((sum, family) => sum + family.count, 0) || 1;
-  const max = Math.max(...rows.map((family) => family.count), 1);
   const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
 
   return (
     <section className="dashboard-chart-module source-ranked-module" onPointerLeave={() => setTooltip(null)}>
       <header className="module-heading">
         <span>RANKED SOURCE FAMILIES</span>
-        <small>Six-period profile: darker/longer cells indicate where this source family contributes records.</small>
+        <small>Six-period profile: each needle marks that period's share within the source family.</small>
       </header>
       <div className="ranked-source-bars">
         <div className="source-rank-header" aria-hidden="true">
@@ -4096,7 +4095,6 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
           <span>SIX-PERIOD PROFILE</span>
         </div>
         {rows.map((family) => {
-          const profileMax = Math.max(...bands.map((band) => family.byBand[band.id] ?? 0), 1);
           const familyTooltip = sourceFamilyRankTooltip(family, total);
           return (
             <div
@@ -4118,7 +4116,7 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
                 tabIndex={0}
                 title={familyTooltip}
                 aria-label={familyTooltip}
-                style={{ "--source-meter": `${Math.max(4, (family.count / max) * 100)}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
+                style={{ "--source-meter": `${Math.max(2, (family.count / total) * 100)}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
                 onPointerEnter={(event) => {
                   event.stopPropagation();
                   showDashboardTooltip(event, familyTooltip, setTooltip);
@@ -4134,15 +4132,20 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
                 onBlur={() => setTooltip(null)}
               />
               <em>
-                {bands.map((band) => {
+                {bands.map((band, index) => {
                   const value = family.byBand[band.id] ?? 0;
                   const tooltipText = sourcePeriodTooltip(family, band, value, family.count || 1, "family");
+                  const periodShare = family.count ? (value / family.count) * 100 : 0;
+                  const boundedShare = Math.min(100, Math.max(0, periodShare));
+                  const periodTop = value > 0 ? 4 + (1 - boundedShare / 100) * 30 : 36;
                   return (
                     <small
                       key={`${family.id}-${band.id}`}
                       className="source-profile-cell"
                       tabIndex={0}
-                      style={{ "--spark-height": `${value > 0 ? Math.max(12, (value / profileMax) * 100) : 0}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
+                      data-period={index + 1}
+                      data-value={value}
+                      style={{ "--period-top": `${periodTop.toFixed(1)}px`, "--period-active": value > 0 ? 1 : 0.22, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
                       title={tooltipText}
                       aria-label={tooltipText}
                       onPointerEnter={(event) => {
@@ -4158,7 +4161,9 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
                         showDashboardTooltip(event, tooltipText, setTooltip);
                       }}
                       onBlur={() => setTooltip(null)}
-                    />
+                    >
+                      <span aria-hidden="true">{index + 1}</span>
+                    </small>
                   );
                 })}
               </em>
