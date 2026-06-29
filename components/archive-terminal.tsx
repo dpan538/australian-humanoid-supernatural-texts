@@ -2463,17 +2463,19 @@ function DashboardExpandButton({
   side,
   expanded,
   onToggle,
+  inline = false,
 }: {
   side: "left" | "right";
   expanded: boolean;
   onToggle: () => void;
+  inline?: boolean;
 }) {
   const title = side === "left" ? "relation network" : "source field";
   const glyph = expanded ? "×" : side === "left" ? ">" : "<";
 
   return (
     <button
-      className={`dashboard-expand-control dashboard-expand-${side}`}
+      className={`dashboard-expand-control dashboard-expand-${side}${inline ? " dashboard-expand-inline" : ""}`}
       type="button"
       aria-expanded={expanded}
       aria-label={expanded ? `Collapse ${title}` : `Expand ${title}`}
@@ -3109,7 +3111,7 @@ function DashboardTrackNetwork({
           </div>
         </div>
       </div>
-      <div className="track-list">
+      <div className="track-list" tabIndex={0} aria-label="Scrollable relation tracks">
         <div className="track-list-header">
           <span>TRACKS · {truncate(relationTitle, expanded ? 82 : 30)}</span>
           {lockedRelationKey ? <button type="button" onClick={() => setLockedRelationKey(null)}>CLEAR</button> : null}
@@ -3213,6 +3215,7 @@ function DashboardControlConsole({
     { id: "locations" as const, value: scopedMapFlags.length, label: "Mapped records" },
     { id: "sources" as const, value: aggregate.sourceFamilies.filter((family) => family.count > 0).length, label: "Source families" },
   ];
+  const fieldTitle = mode === "records" ? "RECORDS" : mode === "locations" ? "GEO FIELD" : "SOURCE FIELD";
 
   return (
     <section
@@ -3220,27 +3223,28 @@ function DashboardControlConsole({
       data-dashboard-panel="right"
       aria-label="Public corpus control console"
     >
-      <DashboardExpandButton side="right" expanded={expanded} onToggle={onToggle} />
       <header className="console-header">
-        <div>
-          <span>PUBLIC FIELD:</span>
-          <b>{mode === "records" ? "PUBLIC RECORD ROUTES" : mode === "locations" ? "MAPPED COVERAGE" : "SOURCE FIELD"}</b>
+        <div className="console-title-cell">
+          <b>{fieldTitle}</b>
         </div>
-        <div className="output-switch" aria-label="Output density">
-          {outputValues.map((item) => (
-            <button
-              className={mode === item.id ? "active" : ""}
-              key={item.id}
-              type="button"
-              onClick={() => setMode(item.id)}
-              aria-pressed={mode === item.id}
-              aria-label={item.label}
-              title={item.label}
-            >
-              {item.value}
-          </button>
-        ))}
-      </div>
+        <div className="console-header-controls">
+          <div className="output-switch" aria-label="Output density">
+            {outputValues.map((item) => (
+              <button
+                className={mode === item.id ? "active" : ""}
+                key={item.id}
+                type="button"
+                onClick={() => setMode(item.id)}
+                aria-pressed={mode === item.id}
+                aria-label={item.label}
+                title={item.label}
+              >
+                {item.value}
+              </button>
+            ))}
+          </div>
+          <DashboardExpandButton side="right" expanded={expanded} onToggle={onToggle} inline />
+        </div>
       </header>
 
       <div className="dashboard-right-sticky">
@@ -3731,12 +3735,12 @@ function SourcePeriodRibbon({
   scopeLabel?: string;
   compact?: boolean;
 }) {
-  const width = 720;
-  const height = compact ? 132 : 220;
-  const left = compact ? 22 : 38;
-  const right = compact ? 16 : 22;
+  const width = compact ? 540 : 720;
+  const height = compact ? 190 : 220;
+  const left = compact ? 24 : 38;
+  const right = compact ? 18 : 22;
   const top = compact ? 20 : 40;
-  const bottom = compact ? 24 : 34;
+  const bottom = compact ? 32 : 34;
   const plotHeight = height - top - bottom;
   const colWidth = (width - left - right) / Math.max(1, bands.length);
   const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
@@ -4073,7 +4077,7 @@ function sourcePeriodTooltip(
 }
 
 function sourceFamilyTooltip(family: SourceFamilyAggregate, total: number) {
-  return `${family.label}\n${numberFormat(family.count)} records\n${formatPercent(family.count, total)}`;
+  return `${family.label} · ${numberFormat(family.count)} records · ${formatPercent(family.count, total)}`;
 }
 
 function useDashboardFieldMotion(rootRef: RefObject<HTMLDivElement | null>, mode: ConsoleMode) {
