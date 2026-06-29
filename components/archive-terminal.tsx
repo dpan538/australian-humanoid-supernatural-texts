@@ -3399,7 +3399,7 @@ function SourceFieldView({
       <div className="dashboard-field-view source-field-view source-field-preview">
         <SourcePeriodRibbon families={aggregate.sourceFamilies} bands={bands} compact />
         <div className="source-preview-stack">
-          <SourceDonut families={aggregate.sourceFamilies} compact />
+          <SourceDonut families={aggregate.sourceFamilies} bands={bands} compact />
           <SourceInsightCards families={aggregate.sourceFamilies} totalRecords={aggregate.totalRecords} compact />
         </div>
       </div>
@@ -3411,7 +3411,7 @@ function SourceFieldView({
       <SourceInsightCards families={aggregate.sourceFamilies} totalRecords={aggregate.totalRecords} />
       <SourcePeriodRibbon families={aggregate.sourceFamilies} bands={bands} scopeLabel={scopeLabel} />
       <div className="dashboard-field-row source-bottom-row">
-        <SourceDonut families={aggregate.sourceFamilies} />
+        <SourceDonut families={aggregate.sourceFamilies} bands={bands} />
       </div>
       <RankedSourceBars families={aggregate.sourceFamilies} bands={bands} />
     </div>
@@ -3538,12 +3538,12 @@ function RecordTimelineChart({
         )}
         {!compact ? (
           <g className="timeline-legend">
-            <rect className="record-timeline-bar" x={width - 184} y="14" width="16" height="7" />
-            <text x={width - 164} y="20">all records</text>
-            <line className="timeline-mapped-line" x1={width - 102} y1="17" x2={width - 82} y2="17" />
-            <text x={width - 76} y="20">mapped</text>
-            <circle className="timeline-diversity-dot" cx={width - 184} cy="32" r="2.5" />
-            <text x={width - 176} y="35">narrative families</text>
+            <rect className="record-timeline-bar" x={width - 210} y="13" width="16" height="7" />
+            <text x={width - 188} y="20">all records</text>
+            <line className="timeline-mapped-line" x1={width - 95} y1="17" x2={width - 70} y2="17" />
+            <text x={width - 62} y="20">mapped</text>
+            <circle className="timeline-diversity-dot" cx={width - 210} cy="34" r="2.5" />
+            <text x={width - 198} y="38">narrative families</text>
           </g>
         ) : null}
         {points.map((point, index) => index % labelStep === 0 || index === points.length - 1 ? (
@@ -3643,25 +3643,71 @@ function StateCoverageChart({
   compact?: boolean;
 }) {
   const max = Math.max(...rows.map((row) => Math.max(row.total, row.mapped)), 1);
+  const chartRows = compact ? rows.slice(0, 6) : [...rows].sort((a, b) => b.mapped - a.mapped || b.total - a.total || a.state.localeCompare(b.state));
+  const width = compact ? 520 : 760;
+  const height = compact ? 184 : 296;
+  const left = compact ? 58 : 66;
+  const right = compact ? 48 : 58;
+  const top = compact ? 18 : 24;
+  const bottom = compact ? 20 : 28;
+  const plotWidth = width - left - right;
+  const yStep = (height - top - bottom) / Math.max(1, chartRows.length - 1);
+  const yFor = (index: number) => top + index * yStep;
+  const xFor = (value: number) => left + (value / max) * plotWidth;
+  const profilePoints = chartRows.map((row, index) => `${xFor(row.mapped).toFixed(1)},${yFor(index).toFixed(1)}`).join(" ");
+  const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
 
   return (
-    <section className="dashboard-chart-module state-coverage-module">
+    <section className="dashboard-chart-module state-coverage-module" onPointerLeave={() => setTooltip(null)}>
       {!compact ? (
         <header className="module-heading">
           <span>STATE / TERRITORY COVERAGE</span>
           <small>{scopeLabel}</small>
         </header>
       ) : null}
-      <div className="state-lollipop-chart">
-        {rows.map((row) => (
-          <div className="state-lollipop-row" data-animate="geo-lollipop" key={row.state} style={{ "--total": `${Math.max(3, (row.total / max) * 100)}%`, "--mapped": `${Math.max(3, (row.mapped / max) * 100)}%` } as CSSProperties}>
-            <b>{row.state}</b>
-            <i className="state-total-bar" />
-            <i className="state-mapped-bar" />
-            <em>{numberFormat(row.mapped)}</em>
-          </div>
+      <svg className={`state-coverage-chart${compact ? " compact" : ""}`} viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`State and territory mapped coverage for ${scopeLabel}`}>
+        {[0.25, 0.5, 0.75, 1].map((tick) => (
+          <line
+            className="state-coverage-grid-line"
+            key={tick}
+            x1={xFor(max * tick)}
+            x2={xFor(max * tick)}
+            y1={top - 8}
+            y2={height - bottom + 8}
+          />
         ))}
-      </div>
+        {!compact ? <polyline className="state-mapped-profile dashboard-draw-path" points={profilePoints} /> : null}
+        {chartRows.map((row, index) => {
+          const y = yFor(index);
+          const totalX = xFor(row.total);
+          const mappedX = xFor(row.mapped);
+          const tooltipText = stateCoverageTooltip(row);
+          return (
+            <g
+              className="state-coverage-mark"
+              data-animate="geo-lollipop"
+              key={row.state}
+              role="img"
+              tabIndex={0}
+              aria-label={tooltipText}
+              onPointerEnter={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+              onPointerMove={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+              onFocus={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+              onBlur={() => setTooltip(null)}
+            >
+              <title>{tooltipText}</title>
+              <text className="state-coverage-label" x="8" y={y + 4}>{row.state}</text>
+              <text className="state-coverage-count" x={left - 10} y={y + 4} textAnchor="end">{numberFormat(row.mapped)}</text>
+              <line className="state-total-rail" x1={left} x2={totalX} y1={y} y2={y} />
+              <line className="state-mapped-rail" x1={left} x2={mappedX} y1={y} y2={y} />
+              <circle className="state-total-point" cx={totalX} cy={y} r={compact ? 2 : 2.7} />
+              <circle className="state-mapped-point" cx={mappedX} cy={y} r={compact ? 3.2 : 4.2} />
+              <text className="state-coverage-share" x={width - 8} y={y + 4} textAnchor="end">{formatPercent(row.mapped, row.total || max)}</text>
+            </g>
+          );
+        })}
+      </svg>
+      <DashboardTooltip tooltip={tooltip} />
     </section>
   );
 }
@@ -3809,13 +3855,21 @@ function SourcePeriodRibbon({
   );
 }
 
-function SourceDonut({ families, compact = false }: { families: SourceFamilyAggregate[]; compact?: boolean }) {
+function SourceDonut({ families, bands = [], compact = false }: { families: SourceFamilyAggregate[]; bands?: readonly DateBand[]; compact?: boolean }) {
   const total = families.reduce((sum, family) => sum + family.count, 0) || 1;
   const visibleFamilies = families.filter((family) => family.count > 0);
   const [tooltip, setTooltip] = useState<DashboardTooltipState>(null);
   const [activeFamilyId, setActiveFamilyId] = useState<string | null>(null);
   const activeFamily = activeFamilyId ? visibleFamilies.find((family) => family.id === activeFamilyId) ?? null : null;
   const donutSegments = sourceDonutSegments(visibleFamilies, total);
+  const latestBand = bands[bands.length - 1] ?? null;
+  const latestFamilies = latestBand
+    ? visibleFamilies
+        .map((family) => ({ ...family, count: family.byBand[latestBand.id] ?? 0 }))
+        .filter((family) => family.count > 0)
+    : [];
+  const latestTotal = latestFamilies.reduce((sum, family) => sum + family.count, 0) || 1;
+  const latestSegments = sourceDonutSegments(latestFamilies, latestTotal);
 
   return (
     <section
@@ -3833,59 +3887,106 @@ function SourceDonut({ families, compact = false }: { families: SourceFamilyAggr
         </header>
       ) : null}
       <div className="source-donut-layout">
-        <svg className="source-donut" viewBox="0 0 240 240" role="img" aria-label="Source family composition donut">
-          <circle className="source-donut-hole" cx="120" cy="120" r="54" />
-          {donutSegments.map((segment) => {
-            const tooltipText = sourceFamilyTooltip(segment.family, total);
-            return (
-              <path
-                key={segment.family.id}
-                className={`source-donut-segment${activeFamilyId === segment.family.id ? " is-active" : ""}`}
-                d={segment.path}
-                tabIndex={0}
-                role="img"
-                aria-label={tooltipText}
-                style={{ "--source-color": segment.family.fillColor, "--source-stroke": segment.family.strokeColor } as CSSProperties}
-                onPointerEnter={(event) => {
-                  setActiveFamilyId(segment.family.id);
-                  showDashboardTooltip(event, tooltipText, setTooltip);
-                }}
-                onPointerMove={(event) => {
-                  setActiveFamilyId(segment.family.id);
-                  showDashboardTooltip(event, tooltipText, setTooltip);
-                }}
-                onMouseEnter={(event) => {
-                  setActiveFamilyId(segment.family.id);
-                  showDashboardTooltip(event, tooltipText, setTooltip);
-                }}
-                onMouseMove={(event) => {
-                  setActiveFamilyId(segment.family.id);
-                  showDashboardTooltip(event, tooltipText, setTooltip);
-                }}
-                onFocus={(event) => {
-                  setActiveFamilyId(segment.family.id);
-                  showDashboardTooltip(event, tooltipText, setTooltip);
-                }}
-                onClick={(event) => {
-                  setActiveFamilyId(segment.family.id);
-                  showDashboardTooltip(event, tooltipText, setTooltip);
-                }}
-                onBlur={() => {
-                  setActiveFamilyId(null);
-                  setTooltip(null);
-                }}
-              >
-                <title>{tooltipText}</title>
-              </path>
-            );
-          })}
-          <text className="source-donut-center-label" x="120" y="114" textAnchor="middle">
-            {activeFamily ? truncate(activeFamily.label, compact ? 14 : 18) : "Sources"}
-          </text>
-          <text className="source-donut-center-value" x="120" y="134" textAnchor="middle">
-            {activeFamily ? `${numberFormat(activeFamily.count)} / ${formatPercent(activeFamily.count, total)}` : numberFormat(total)}
-          </text>
-        </svg>
+        <div className="source-donut-visuals">
+          <svg className="source-donut source-donut-primary" viewBox="0 0 240 240" role="img" aria-label="Source family composition donut">
+            <circle className="source-donut-hole" cx="120" cy="120" r="54" />
+            {donutSegments.map((segment) => {
+              const tooltipText = sourceFamilyTooltip(segment.family, total);
+              return (
+                <path
+                  key={segment.family.id}
+                  className={`source-donut-segment${activeFamilyId === segment.family.id ? " is-active" : ""}`}
+                  d={segment.path}
+                  tabIndex={0}
+                  role="img"
+                  aria-label={tooltipText}
+                  style={{ "--source-color": segment.family.fillColor, "--source-stroke": segment.family.strokeColor } as CSSProperties}
+                  onPointerEnter={(event) => {
+                    setActiveFamilyId(segment.family.id);
+                    showDashboardTooltip(event, tooltipText, setTooltip);
+                  }}
+                  onPointerMove={(event) => {
+                    setActiveFamilyId(segment.family.id);
+                    showDashboardTooltip(event, tooltipText, setTooltip);
+                  }}
+                  onMouseEnter={(event) => {
+                    setActiveFamilyId(segment.family.id);
+                    showDashboardTooltip(event, tooltipText, setTooltip);
+                  }}
+                  onMouseMove={(event) => {
+                    setActiveFamilyId(segment.family.id);
+                    showDashboardTooltip(event, tooltipText, setTooltip);
+                  }}
+                  onFocus={(event) => {
+                    setActiveFamilyId(segment.family.id);
+                    showDashboardTooltip(event, tooltipText, setTooltip);
+                  }}
+                  onClick={(event) => {
+                    setActiveFamilyId(segment.family.id);
+                    showDashboardTooltip(event, tooltipText, setTooltip);
+                  }}
+                  onBlur={() => {
+                    setActiveFamilyId(null);
+                    setTooltip(null);
+                  }}
+                >
+                  <title>{tooltipText}</title>
+                </path>
+              );
+            })}
+            <text className="source-donut-center-label" x="120" y="114" textAnchor="middle">
+              {activeFamily ? truncate(activeFamily.label, compact ? 14 : 18) : "Sources"}
+            </text>
+            <text className="source-donut-center-value" x="120" y="134" textAnchor="middle">
+              {activeFamily ? `${numberFormat(activeFamily.count)} / ${formatPercent(activeFamily.count, total)}` : numberFormat(total)}
+            </text>
+          </svg>
+          {!compact && latestBand && latestSegments.length ? (
+            <div className="source-donut-secondary-panel">
+              <span>RECENT PERIOD MIX</span>
+              <small>{latestBand.label}</small>
+              <svg className="source-donut source-donut-secondary" viewBox="0 0 240 240" role="img" aria-label={`Source family composition for ${latestBand.label}`}>
+                <circle className="source-donut-hole" cx="120" cy="120" r="54" />
+                {latestSegments.map((segment) => {
+                  const sourceValue = segment.family.byBand[latestBand.id] ?? 0;
+                  const tooltipText = sourcePeriodTooltip(segment.family, latestBand, sourceValue, latestTotal);
+                  return (
+                    <path
+                      key={`${segment.family.id}-${latestBand.id}`}
+                      className={`source-donut-segment${activeFamilyId === segment.family.id ? " is-active" : ""}`}
+                      d={segment.path}
+                      tabIndex={0}
+                      role="img"
+                      aria-label={tooltipText}
+                      style={{ "--source-color": segment.family.fillColor, "--source-stroke": segment.family.strokeColor } as CSSProperties}
+                      onPointerEnter={(event) => {
+                        setActiveFamilyId(segment.family.id);
+                        showDashboardTooltip(event, tooltipText, setTooltip);
+                      }}
+                      onPointerMove={(event) => {
+                        setActiveFamilyId(segment.family.id);
+                        showDashboardTooltip(event, tooltipText, setTooltip);
+                      }}
+                      onFocus={(event) => {
+                        setActiveFamilyId(segment.family.id);
+                        showDashboardTooltip(event, tooltipText, setTooltip);
+                      }}
+                      onBlur={() => {
+                        setActiveFamilyId(null);
+                        setTooltip(null);
+                      }}
+                    >
+                      <title>{tooltipText}</title>
+                    </path>
+                  );
+                })}
+                <text className="source-donut-center-label" x="120" y="114" textAnchor="middle">Period 6</text>
+                <text className="source-donut-center-value" x="120" y="134" textAnchor="middle">{numberFormat(latestTotal)}</text>
+              </svg>
+              <p>Later records make modern public web sources visible while repository records remain present.</p>
+            </div>
+          ) : null}
+        </div>
         {!compact ? (
           <div className="source-donut-companion">
             <div className="source-donut-legend">
@@ -3962,11 +4063,42 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
         </div>
         {rows.map((family) => {
           const profileMax = Math.max(...bands.map((band) => family.byBand[band.id] ?? 0), 1);
+          const familyTooltip = sourceFamilyRankTooltip(family, total);
           return (
-            <div className="source-rank-row source-family-row" data-animate="source-bar" data-source-family={family.id} key={family.id}>
+            <div
+              className="source-rank-row source-family-row"
+              data-animate="source-bar"
+              data-source-family={family.id}
+              key={family.id}
+              tabIndex={0}
+              title={familyTooltip}
+              aria-label={familyTooltip}
+              onPointerEnter={(event) => showDashboardTooltip(event, familyTooltip, setTooltip)}
+              onPointerMove={(event) => showDashboardTooltip(event, familyTooltip, setTooltip)}
+              onFocus={(event) => showDashboardTooltip(event, familyTooltip, setTooltip)}
+              onBlur={() => setTooltip(null)}
+            >
               <span>{family.label}</span>
               <b>{numberFormat(family.count)} · {formatPercent(family.count, total)}</b>
-              <i style={{ "--source-meter": `${Math.max(4, (family.count / max) * 100)}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties} />
+              <i
+                tabIndex={0}
+                title={familyTooltip}
+                aria-label={familyTooltip}
+                style={{ "--source-meter": `${Math.max(4, (family.count / max) * 100)}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
+                onPointerEnter={(event) => {
+                  event.stopPropagation();
+                  showDashboardTooltip(event, familyTooltip, setTooltip);
+                }}
+                onPointerMove={(event) => {
+                  event.stopPropagation();
+                  showDashboardTooltip(event, familyTooltip, setTooltip);
+                }}
+                onFocus={(event) => {
+                  event.stopPropagation();
+                  showDashboardTooltip(event, familyTooltip, setTooltip);
+                }}
+                onBlur={() => setTooltip(null)}
+              />
               <em>
                 {bands.map((band) => {
                   const value = family.byBand[band.id] ?? 0;
@@ -3979,9 +4111,18 @@ function RankedSourceBars({ families, bands }: { families: SourceFamilyAggregate
                       style={{ "--spark-height": `${value > 0 ? Math.max(12, (value / profileMax) * 100) : 0}%`, "--source-color": family.fillColor, "--source-stroke": family.strokeColor } as CSSProperties}
                       title={tooltipText}
                       aria-label={tooltipText}
-                      onPointerEnter={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
-                      onPointerMove={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
-                      onFocus={(event) => showDashboardTooltip(event, tooltipText, setTooltip)}
+                      onPointerEnter={(event) => {
+                        event.stopPropagation();
+                        showDashboardTooltip(event, tooltipText, setTooltip);
+                      }}
+                      onPointerMove={(event) => {
+                        event.stopPropagation();
+                        showDashboardTooltip(event, tooltipText, setTooltip);
+                      }}
+                      onFocus={(event) => {
+                        event.stopPropagation();
+                        showDashboardTooltip(event, tooltipText, setTooltip);
+                      }}
                       onBlur={() => setTooltip(null)}
                     />
                   );
@@ -4080,6 +4221,17 @@ function sourceFamilyTooltip(family: SourceFamilyAggregate, total: number) {
   return `${family.label} · ${numberFormat(family.count)} records · ${formatPercent(family.count, total)}`;
 }
 
+function sourceFamilyRankTooltip(family: SourceFamilyAggregate, total: number) {
+  const years = family.yearStart && family.yearEnd ? ` · ${family.yearStart}-${family.yearEnd}` : "";
+  const peak = family.dominantBandLabel ? ` · peak ${family.dominantBandLabel}` : "";
+  return `${sourceFamilyTooltip(family, total)}${peak}${years}`;
+}
+
+function stateCoverageTooltip(row: StateCoverageRow) {
+  const share = formatPercent(row.mapped, row.total || 1);
+  return `${row.state} · ${numberFormat(row.mapped)} mapped records · ${numberFormat(row.total)} public records · ${share}`;
+}
+
 function useDashboardFieldMotion(rootRef: RefObject<HTMLDivElement | null>, mode: ConsoleMode) {
   const reducedMotion = usePrefersReducedMotion();
   const timelineRef = useRef<Timeline | null>(null);
@@ -4122,7 +4274,7 @@ function useDashboardFieldMotion(rootRef: RefObject<HTMLDivElement | null>, mode
       addIfTargets(timeline, root.querySelectorAll(".record-timeline-chart .dashboard-draw-path"), { strokeDashoffset: 0, duration: 1180, ease: "linear", delay: stagger(44) }, 260);
       addIfTargets(timeline, root.querySelectorAll(".matrix-bubble"), { opacity: [0, 1], scale: [0.2, 1], duration: 820, delay: stagger(20) }, 380);
     } else if (mode === "locations") {
-      addIfTargets(timeline, root.querySelectorAll(".state-lollipop-row"), { opacity: [0, 1], translateY: [10, 0], duration: 760, delay: stagger(26) }, 160);
+      addIfTargets(timeline, root.querySelectorAll(".state-coverage-mark"), { opacity: [0, 1], translateY: [10, 0], duration: 760, delay: stagger(26) }, 160);
       addIfTargets(timeline, root.querySelectorAll(".precision-dot.lit"), { opacity: [0, 1], scale: [0.25, 1], duration: 720, delay: stagger(16) }, 320);
       addIfTargets(timeline, root.querySelectorAll(".place-role-row i"), { opacity: [0, 1], scaleX: [0.25, 1], duration: 920, ease: "linear", delay: stagger(14) }, 420);
     } else {
