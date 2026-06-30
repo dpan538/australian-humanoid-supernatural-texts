@@ -1,7 +1,7 @@
 "use client";
 
-import { CSSProperties, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { RefObject } from "react";
+import { CSSProperties, memo, useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import type { KeyboardEvent as ReactKeyboardEvent, RefObject } from "react";
 import Link from "next/link";
 import { createTimeline, stagger } from "animejs";
 import type { Timeline } from "animejs";
@@ -1324,6 +1324,7 @@ function ArchiveTerminalShell({
 
   return (
     <main className="terminal-shell">
+      <h1 className="visually-hidden">{archiveRouteHeading(view)}</h1>
       <div className="noise-layer" aria-hidden="true" />
       <div className="terminal-stage">
         <section className={`view-area view-area-${view}`} aria-label={`${view} data view`}>
@@ -1359,6 +1360,19 @@ function ArchiveTerminalShell({
       {overlay}
     </main>
   );
+}
+
+function archiveRouteHeading(view: ViewMode) {
+  if (view === "density") {
+    return "AusFigures density explorer";
+  }
+  if (view === "source") {
+    return "AusFigures source register";
+  }
+  if (view === "dashboard") {
+    return "AusFigures research dashboard";
+  }
+  return "AusFigures public map";
 }
 
 function getNextView(view: ViewMode) {
@@ -1694,6 +1708,7 @@ function MapView({
               onPointerLeave={() => setHoverState(null)}
               onFocus={() => setHoverState(code)}
               onBlur={() => setHoverState(null)}
+              aria-label={`${STATE_NAMES[code as keyof typeof STATE_NAMES] ?? code}, ${mapCount(preciseStateCounts[code] ?? 0)} mapped records`}
             >
               <span>{code}</span>
               <b>{mapCount(preciseStateCounts[code] ?? 0)}</b>
@@ -2087,6 +2102,8 @@ function DensityChartPanel({
 }
 
 function DensityAnnualLineChart({ series }: { series: AnnualDensityPoint[] }) {
+  const titleId = useId();
+  const descId = useId();
   const width = 1500;
   const height = 240;
   const margin = { top: 18, right: 36, bottom: 38, left: 60 };
@@ -2101,6 +2118,8 @@ function DensityAnnualLineChart({ series }: { series: AnnualDensityPoint[] }) {
   const mappedPath = series.map((point) => `${xFor(point.year)},${yFor(point.mapped)}`).join(" ");
   const yearTicks = buildLinearTicks(minYear, maxYear, 5).map((tick) => Math.round(tick));
   const valueTicks = buildLinearTicks(0, maxValue, 5).map((tick) => Math.round(tick));
+  const publicPeak = series.reduce((best, point) => (point.total > best.total ? point : best), { year: minYear, total: 0, mapped: 0 });
+  const mappedPeak = series.reduce((best, point) => (point.mapped > best.mapped ? point : best), { year: minYear, total: 0, mapped: 0 });
 
   return (
     <article className="density-chart-card">
@@ -2108,7 +2127,11 @@ function DensityAnnualLineChart({ series }: { series: AnnualDensityPoint[] }) {
         <span>ANNUAL TREND</span>
         <b>Dated public records by year</b>
       </header>
-      <svg className="density-line-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Annual public record trend line chart">
+      <svg className="density-line-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby={titleId} aria-describedby={descId}>
+        <title id={titleId}>Annual public and mapped record trend line chart</title>
+        <desc id={descId}>
+          Dated public records from {minYear} to {maxYear}. Public records peak at {numberFormat(publicPeak.total)} in {publicPeak.year}; mapped records peak at {numberFormat(mappedPeak.mapped)} in {mappedPeak.year}.
+        </desc>
         {valueTicks.map((tick) => (
           <g key={`y-${tick}`}>
             <line className="density-chart-grid" x1={margin.left} x2={width - margin.right} y1={yFor(tick)} y2={yFor(tick)} />
@@ -2139,6 +2162,8 @@ function DensityAnnualLineChart({ series }: { series: AnnualDensityPoint[] }) {
 }
 
 function DensityPeriodBoxPlot({ stats }: { stats: PeriodBoxPlotStat[] }) {
+  const titleId = useId();
+  const descId = useId();
   const width = 1500;
   const rowHeight = 30;
   const margin = { top: 22, right: 60, bottom: 34, left: 156 };
@@ -2147,6 +2172,7 @@ function DensityPeriodBoxPlot({ stats }: { stats: PeriodBoxPlotStat[] }) {
   const maxValue = Math.max(...stats.map((stat) => stat.max), 1);
   const xFor = (value: number) => margin.left + (value / maxValue) * innerWidth;
   const ticks = buildLinearTicks(0, maxValue, 5).map((tick) => Math.round(tick));
+  const highestBand = stats.length > 0 ? stats.reduce((best, stat) => (stat.total > best.total ? stat : best)) : null;
 
   return (
     <article className="density-chart-card">
@@ -2154,7 +2180,11 @@ function DensityPeriodBoxPlot({ stats }: { stats: PeriodBoxPlotStat[] }) {
         <span>PERIOD DISTRIBUTION</span>
         <b>Per-year record counts inside each band</b>
       </header>
-      <svg className="density-box-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Period distribution box plot">
+      <svg className="density-box-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby={titleId} aria-describedby={descId}>
+        <title id={titleId}>Period distribution box plot</title>
+        <desc id={descId}>
+          Per-year public record counts grouped by archive period{highestBand ? `; highest total band is ${highestBand.band.label} with ${numberFormat(highestBand.total)} records` : ""}.
+        </desc>
         {ticks.map((tick) => (
           <g key={tick}>
             <line className="density-chart-grid" x1={xFor(tick)} x2={xFor(tick)} y1={margin.top - 8} y2={height - margin.bottom} />
@@ -2197,6 +2227,8 @@ function DensityRankedBarChart({
   data: DensityChartDatum[];
   secondaryLabel?: string;
 }) {
+  const titleId = useId();
+  const descId = useId();
   const width = 1500;
   const rowHeight = 38;
   const margin = { top: 26, right: 360, bottom: 42, left: 330 };
@@ -2205,6 +2237,7 @@ function DensityRankedBarChart({
   const xFor = (value: number) => margin.left + (value / maxValue) * (width - margin.left - margin.right);
   const valueLabelX = width - 32;
   const ticks = buildLinearTicks(0, maxValue, 5).map((tick) => Math.round(tick));
+  const topRow = data[0] ?? null;
 
   return (
     <article className="density-chart-card density-chart-card-main">
@@ -2212,7 +2245,11 @@ function DensityRankedBarChart({
         <span>{title}</span>
         <b>{subtitle}</b>
       </header>
-      <svg className="density-bar-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${title} ranked bar chart`}>
+      <svg className="density-bar-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby={titleId} aria-describedby={descId}>
+        <title id={titleId}>{title} ranked bar chart</title>
+        <desc id={descId}>
+          {subtitle}{topRow ? `; highest row is ${topRow.label} with ${numberFormat(topRow.value)} public records` : ""}.
+        </desc>
         {ticks.map((tick) => (
           <g key={tick}>
             <line className="density-chart-grid" x1={xFor(tick)} x2={xFor(tick)} y1={margin.top - 8} y2={height - margin.bottom} />
@@ -2251,12 +2288,26 @@ function DensityRankedBarChart({
 }
 
 function DensityFigurePeriodHeatmap({ rows, periods }: { rows: DensityCrossRow[]; periods: DateBand[] }) {
+  const titleId = useId();
+  const descId = useId();
   const width = 1500;
   const cellWidth = 190;
   const rowHeight = 26;
   const margin = { top: 42, right: 62, bottom: 22, left: 220 };
   const height = margin.top + margin.bottom + Math.max(1, rows.length) * rowHeight;
   const maxValue = Math.max(...rows.flatMap((row) => row.values.map((cell) => cell.value)), 1);
+  let topCell: { figure: string; periodLabel: string; value: number } | null = null;
+  for (const row of rows) {
+    for (const cell of row.values) {
+      if (!topCell || cell.value > topCell.value) {
+        topCell = {
+          figure: row.figure,
+          periodLabel: periods.find((period) => period.id === cell.bandId)?.label ?? cell.bandId,
+          value: cell.value,
+        };
+      }
+    }
+  }
 
   return (
     <article className="density-chart-card density-chart-card-main">
@@ -2264,7 +2315,11 @@ function DensityFigurePeriodHeatmap({ rows, periods }: { rows: DensityCrossRow[]
         <span>CROSS-ANALYSIS</span>
         <b>Top figures across archive periods</b>
       </header>
-      <svg className="density-heatmap-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Figure by period heatmap">
+      <svg className="density-heatmap-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby={titleId} aria-describedby={descId}>
+        <title id={titleId}>Figure by period heatmap</title>
+        <desc id={descId}>
+          Top figures across archive periods{topCell ? `; strongest cell is ${topCell.figure} in ${topCell.periodLabel} with ${numberFormat(topCell.value)} records` : ""}.
+        </desc>
         {periods.map((period, index) => (
           <text key={period.id} className="density-chart-axis" x={margin.left + index * cellWidth + cellWidth / 2} y="24" textAnchor="middle">
             {period.label.replace("present", "now")}
@@ -2372,6 +2427,7 @@ function FigureCardOverlay({
   onNavigate: (direction: -1 | 1) => void;
 }) {
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const dialogScopeRef = useRef<HTMLDivElement | null>(null);
   const titleId = `figure-card-title-${slugForId(figure.label)}`;
   const contextNote = figureContextNote(figure);
   const statRows = [
@@ -2399,9 +2455,13 @@ function FigureCardOverlay({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [onClose, onNavigate]);
 
+  const trapFigureFocus = useCallback((event: ReactKeyboardEvent<HTMLDivElement>) => {
+    trapFocusWithin(event, dialogScopeRef.current);
+  }, []);
+
   return (
     <div className="record-overlay figure-overlay" role="presentation" onClick={onClose}>
-      <div className="figure-card-shell" onClick={(event) => event.stopPropagation()}>
+      <div ref={dialogScopeRef} className="figure-card-shell" onClick={(event) => event.stopPropagation()} onKeyDown={trapFigureFocus}>
         <button className="record-card-nav record-card-nav-prev figure-card-nav" type="button" onClick={(event) => { event.stopPropagation(); onNavigate(-1); }} aria-label="Previous figure">
           ‹
         </button>
@@ -5498,6 +5558,31 @@ function recordNavigationContext(derived: FrontendDerivedData, record: RecordIte
   };
 }
 
+function focusableElementsWithin(root: HTMLElement) {
+  return Array.from(root.querySelectorAll<HTMLElement>(
+    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+  )).filter((element) => element.getClientRects().length > 0);
+}
+
+function trapFocusWithin(event: ReactKeyboardEvent, root: HTMLElement | null) {
+  if (event.key !== "Tab" || !root) {
+    return;
+  }
+  const focusable = focusableElementsWithin(root);
+  if (focusable.length === 0) {
+    return;
+  }
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
 function RecordCardOverlay({
   record,
   navigation,
@@ -5511,6 +5596,7 @@ function RecordCardOverlay({
 }) {
   const tone = mapSourceTone(record);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const dialogScopeRef = useRef<HTMLDivElement | null>(null);
   const location = record.location_summary || "location unverified";
   const sourceName = record.source_name || record.publication || "public source";
   const sourceClass = tone.className;
@@ -5524,9 +5610,13 @@ function RecordCardOverlay({
     closeButtonRef.current?.focus();
   }, [record.record_id]);
 
+  const trapDialogFocus = useCallback((event: ReactKeyboardEvent<HTMLDivElement>) => {
+    trapFocusWithin(event, dialogScopeRef.current);
+  }, []);
+
   return (
     <div className="record-overlay" role="presentation" onClick={onClose}>
-      <div className="record-card-shell" onClick={(event) => event.stopPropagation()}>
+      <div ref={dialogScopeRef} className="record-card-shell" onClick={(event) => event.stopPropagation()} onKeyDown={trapDialogFocus}>
         {canNavigate ? (
           <>
             <button

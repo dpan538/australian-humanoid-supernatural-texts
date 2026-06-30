@@ -45,7 +45,8 @@ export function DisplayControls() {
         type="button"
         className="display-control-button theme-mode-control"
         data-mode={theme}
-        aria-label={`Theme ${theme}; toggle dark and light mode`}
+        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        aria-pressed={theme === "light"}
         onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
       >
         <span>MODE</span>

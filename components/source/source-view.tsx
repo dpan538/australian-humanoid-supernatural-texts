@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { CSSProperties, RefObject } from "react";
 import type { FrontendData } from "@/lib/types";
 import {
@@ -22,6 +22,8 @@ export function SourceView({ data }: { data: FrontendData }) {
   const [filter, setFilter] = useState("");
   const [selectedSourceId, setSelectedSourceId] = useState<number | null>(() => registryData.registryRows[0]?.source.source_id ?? null);
   const [mobilePane, setMobilePane] = useState<"rollup" | "registry">("registry");
+  const rollupTabId = useId();
+  const registryTabId = useId();
   const { ratio, dragging, separatorProps } = useSourcePaneResize(rootRef);
 
   const filteredRows = useMemo(() => {
@@ -77,11 +79,25 @@ export function SourceView({ data }: { data: FrontendData }) {
       >
         <SourceTerminalHeader data={registryData} />
 
-        <div className="source-mobile-tabs" aria-label="Source panes">
-          <button type="button" className={mobilePane === "rollup" ? "active" : ""} onClick={() => setMobilePane("rollup")}>
+        <div className="source-mobile-tabs" role="tablist" aria-label="Source panes">
+          <button
+            id={rollupTabId}
+            type="button"
+            role="tab"
+            aria-selected={mobilePane === "rollup"}
+            className={mobilePane === "rollup" ? "active" : ""}
+            onClick={() => setMobilePane("rollup")}
+          >
             ROLLUP
           </button>
-          <button type="button" className={mobilePane === "registry" ? "active" : ""} onClick={() => setMobilePane("registry")}>
+          <button
+            id={registryTabId}
+            type="button"
+            role="tab"
+            aria-selected={mobilePane === "registry"}
+            className={mobilePane === "registry" ? "active" : ""}
+            onClick={() => setMobilePane("registry")}
+          >
             REGISTER
           </button>
         </div>
@@ -295,7 +311,7 @@ function SourceFilter({
           }
         }}
       />
-      <em>{numberFormat(resultCount)} shown</em>
+      <em role="status" aria-live="polite" aria-atomic="true">{numberFormat(resultCount)} shown</em>
     </label>
   );
 }
@@ -315,7 +331,8 @@ function SourceRegistryRowView({
       className={`source-registry-row${selected ? " is-selected" : ""}`}
       data-source-id={row.source.source_id}
       onClick={() => onSelect(row.source.source_id)}
-      onFocus={() => onSelect(row.source.source_id)}
+      aria-pressed={selected}
+      aria-label={`${row.source.source_name}, ${row.publicRole}, ${numberFormat(row.recordCount)} records`}
       style={{ "--source-color": row.color } as CSSProperties}
       title={`${row.source.source_name} / ${row.source.source_type}`}
     >

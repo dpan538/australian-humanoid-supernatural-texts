@@ -1,9 +1,10 @@
 "use client";
 
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, FocusEvent, ReactNode, SyntheticEvent } from "react";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { createTimeline, stagger } from "animejs";
 import mobileArchiveData from "@/public/data/mobile-archive.json";
 import { MAP_VIEWBOX, STATE_SHAPES } from "@/lib/au-map-data";
 
@@ -166,6 +167,7 @@ export function MobileArchiveRoute({ view }: { view: MobileControlView }) {
 
   return (
     <main className={`terminal-shell mobile-archive-shell mobile-view-${routeView}`}>
+      <h1 className="visually-hidden">{mobileRouteHeading(routeView)}</h1>
       <div className="noise-layer" aria-hidden="true" />
       <section className="mobile-archive-page" aria-label={`AusFigures ${routeView} mobile view`}>
         {routeView === "map" ? <MobileMapView /> : null}
@@ -178,8 +180,23 @@ export function MobileArchiveRoute({ view }: { view: MobileControlView }) {
   );
 }
 
+function mobileRouteHeading(view: MobileRouteView) {
+  if (view === "density") {
+    return "AusFigures density explorer";
+  }
+  if (view === "source") {
+    return "AusFigures source register";
+  }
+  if (view === "about") {
+    return "About AusFigures";
+  }
+  return "AusFigures public map";
+}
+
 function MobileMapView() {
   const [hoverState, setHoverState] = useState<string | null>(null);
+  const titleId = useId();
+  const descId = useId();
   const stateCounts = MOBILE_DATA.map.stateCounts;
   const stateCountMap = new Map(stateCounts.map((row) => [row.code, row.count]));
   const activeState = hoverState ? STATE_NAMES[hoverState] ?? hoverState : "Australia";
@@ -197,8 +214,13 @@ function MobileMapView() {
           viewBox={`${MOBILE_MAP_VIEWBOX.x} ${MOBILE_MAP_VIEWBOX.y} ${MOBILE_MAP_VIEWBOX.width} ${MOBILE_MAP_VIEWBOX.height}`}
           preserveAspectRatio="xMidYMid meet"
           role="img"
-          aria-label="Public record display locations across Australia"
+          aria-labelledby={titleId}
+          aria-describedby={descId}
         >
+          <title id={titleId}>Public record display locations across Australia</title>
+          <desc id={descId}>
+            Australia map with state and territory outlines, summarising {formatNumber(MOBILE_DATA.summary.mappedRecordCount)} mapped public records.
+          </desc>
           {STATE_SHAPES.map((state) => {
             const count = stateCountMap.get(state.code) ?? 0;
             const intensity = count > 100 ? "hot" : count > 0 ? "warm" : "cold";
@@ -213,7 +235,7 @@ function MobileMapView() {
             );
           })}
           <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
-          <g className={`record-flag-layer ${hoverState ? "has-state-hover" : ""}`} aria-label="Mapped public record locations">
+          <g className={`record-flag-layer ${hoverState ? "has-state-hover" : ""}`} aria-hidden="true">
             {MOBILE_DATA.map.flags.map((flag) => (
               <MobileMapFlagMarker key={flag.id} flag={flag} stateLinked={hoverState === flag.state} />
             ))}
@@ -254,6 +276,7 @@ function MobileMapView() {
               onPointerLeave={() => setHoverState(null)}
               onFocus={() => setHoverState(row.code)}
               onBlur={() => setHoverState(null)}
+              aria-label={`${STATE_NAMES[row.code] ?? row.code}, ${formatNumber(row.count)} mapped records`}
             >
               <span>{row.code}</span>
               <b>{formatNumber(row.count)}</b>
@@ -275,7 +298,7 @@ function MobileMapFlagMarker({ flag, stateLinked }: { flag: MobileMapFlag; state
   const className = ["record-flag", "precise", flag.toneClass, stateLinked ? "state-linked" : ""].filter(Boolean).join(" ");
 
   return (
-    <g className={className} aria-label={`${flag.title ?? "Public record"} ${flag.state}`}>
+    <g className={className} aria-hidden="true">
       <circle className="record-flag-dot" cx={flag.displayX} cy={flag.displayY} r={stateLinked ? 4.1 : 3.25} />
     </g>
   );
@@ -329,21 +352,56 @@ function MobileDensityBand({ period }: { period: MobilePeriod }) {
 
 function MobileAnnualSparkline() {
   const series = MOBILE_DATA.density.annualSeries;
+  const titleId = useId();
+  const descId = useId();
+  const lineRef = useRef<SVGPolylineElement | null>(null);
+  const reducedMotion = useMobilePrefersReducedMotion();
   const width = 340;
   const height = 112;
   const max = Math.max(1, ...series.map((row) => row.count));
   const minYear = Math.min(...series.map((row) => row.year));
   const maxYear = Math.max(...series.map((row) => row.year));
+  const peak = series.reduce((best, row) => (row.count > best.count ? row : best), { year: minYear, count: 0 });
   const points = series.map((row) => {
     const x = ((row.year - minYear) / Math.max(1, maxYear - minYear)) * (width - 24) + 12;
     const y = height - 14 - (row.count / max) * (height - 28);
     return `${x.toFixed(1)},${y.toFixed(1)}`;
   }).join(" ");
 
+  useEffect(() => {
+    const line = lineRef.current;
+    if (!line || reducedMotion) {
+      return;
+    }
+
+    const length = line.getTotalLength();
+    line.style.strokeDasharray = `${length}`;
+    line.style.strokeDashoffset = `${length}`;
+
+    const timeline = createTimeline({
+      defaults: {
+        ease: "outCubic",
+        duration: 560,
+        composition: "replace",
+      },
+    });
+    timeline.add(line, { strokeDashoffset: [length, 0] }, 0);
+
+    return () => {
+      timeline.cancel();
+      line.style.strokeDasharray = "";
+      line.style.strokeDashoffset = "";
+    };
+  }, [points, reducedMotion]);
+
   return (
-    <svg className="density-line-chart mobile-sparkline" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Annual public record trend">
+    <svg className="density-line-chart mobile-sparkline" viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby={titleId} aria-describedby={descId}>
+      <title id={titleId}>Annual public record trend</title>
+      <desc id={descId}>
+        Dated public records from {minYear} to {maxYear}; highest annual count is {formatNumber(peak.count)} in {peak.year}.
+      </desc>
       <line className="density-chart-grid" x1="12" x2={width - 12} y1={height - 14} y2={height - 14} />
-      <polyline className="density-line-public density-chart-path" points={points} fill="none" />
+      <polyline ref={lineRef} className="density-line-public density-chart-path" points={points} fill="none" />
       <text className="density-chart-axis" x="12" y={height - 2}>{minYear}</text>
       <text className="density-chart-axis" x={width - 12} y={height - 2} textAnchor="end">{maxYear}</text>
     </svg>
@@ -351,6 +409,11 @@ function MobileAnnualSparkline() {
 }
 
 function MobileSourceView() {
+  const reducedMotion = useMobilePrefersReducedMotion();
+  const handleDetailsToggle = useCallback((event: SyntheticEvent<HTMLDetailsElement>) => {
+    animateMobileDetails(event.currentTarget, reducedMotion);
+  }, [reducedMotion]);
+
   return (
     <div className="source-view mobile-source-view">
       <section className="source-terminal">
@@ -370,7 +433,7 @@ function MobileSourceView() {
           </div>
         </header>
         <div className="source-mobile-accordions">
-          <details className="source-mobile-accordion" open>
+          <details className="source-mobile-accordion" open onToggle={handleDetailsToggle}>
             <summary>
               <span>ROLLUP</span>
               <small>SOURCE FAMILY / RECORDS / ORGS</small>
@@ -385,7 +448,7 @@ function MobileSourceView() {
               ))}
             </div>
           </details>
-          <details className="source-mobile-accordion">
+          <details className="source-mobile-accordion" onToggle={handleDetailsToggle}>
             <summary>
               <span>REGISTERED SOURCES</span>
               <small>SOURCE ORGANISATION / PUBLIC ROLE / RECORDS</small>
@@ -443,8 +506,13 @@ function MobileAboutView() {
 }
 
 function MobileAboutModule({ title, children }: { title: string; children: ReactNode }) {
+  const reducedMotion = useMobilePrefersReducedMotion();
+  const handleDetailsToggle = useCallback((event: SyntheticEvent<HTMLDetailsElement>) => {
+    animateMobileDetails(event.currentTarget, reducedMotion);
+  }, [reducedMotion]);
+
   return (
-    <details className="about-module about-accordion-module" open>
+    <details className="about-module about-accordion-module" open onToggle={handleDetailsToggle}>
       <summary className="about-module-head">
         <i aria-hidden="true" />
         <span>{title}</span>
@@ -454,9 +522,31 @@ function MobileAboutModule({ title, children }: { title: string; children: React
   );
 }
 
+function animateMobileDetails(details: HTMLDetailsElement, reducedMotion: boolean) {
+  if (!details.open || reducedMotion) {
+    return;
+  }
+
+  const content = Array.from(details.children).filter((child) => child.tagName !== "SUMMARY");
+  if (content.length === 0) {
+    return;
+  }
+
+  const timeline = createTimeline({
+    defaults: {
+      ease: "outCubic",
+      duration: 180,
+      composition: "replace",
+    },
+  });
+  timeline.add(content, { opacity: [0.78, 1], translateY: [4, 0], delay: stagger(18) }, 0);
+}
+
 export function MobileArchiveControls({ view }: { view: MobileControlView }) {
   const [collapsed, setCollapsed] = useState(false);
+  const controlsRef = useRef<HTMLDivElement | null>(null);
   const idleTimer = useRef<number | null>(null);
+  useMobileControlsMotion(controlsRef, collapsed);
 
   const clearIdleTimer = useCallback(() => {
     if (idleTimer.current) {
@@ -467,7 +557,14 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
 
   const scheduleCollapse = useCallback(() => {
     clearIdleTimer();
-    idleTimer.current = window.setTimeout(() => setCollapsed(true), MOBILE_NAV_IDLE_MS);
+    idleTimer.current = window.setTimeout(() => {
+      const activeElement = document.activeElement;
+      if (activeElement && controlsRef.current?.contains(activeElement)) {
+        idleTimer.current = null;
+        return;
+      }
+      setCollapsed(true);
+    }, MOBILE_NAV_IDLE_MS);
   }, [clearIdleTimer]);
 
   const expandAndSchedule = useCallback(() => {
@@ -480,10 +577,28 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
     return clearIdleTimer;
   }, [clearIdleTimer, expandAndSchedule, view]);
 
+  const handleFocusCapture = useCallback(() => {
+    clearIdleTimer();
+    setCollapsed(false);
+  }, [clearIdleTimer]);
+
+  const handleBlurCapture = useCallback((event: FocusEvent<HTMLDivElement>) => {
+    const nextTarget = event.relatedTarget;
+    if (nextTarget instanceof Node && event.currentTarget.contains(nextTarget)) {
+      return;
+    }
+    scheduleCollapse();
+  }, [scheduleCollapse]);
+
   return (
     <div
+      ref={controlsRef}
       className={collapsed ? "mobile-archive-controls is-collapsed" : "mobile-archive-controls"}
       aria-label="Mobile archive controls"
+      onFocusCapture={handleFocusCapture}
+      onBlurCapture={handleBlurCapture}
+      onPointerEnter={clearIdleTimer}
+      onPointerLeave={scheduleCollapse}
     >
       <button
         type="button"
@@ -544,6 +659,58 @@ function formatNumber(value: number) {
   return new Intl.NumberFormat("en-AU").format(value);
 }
 
+function useMobilePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  return reduced;
+}
+
+function useMobileControlsMotion(rootRef: React.RefObject<HTMLDivElement | null>, collapsed: boolean) {
+  const reducedMotion = useMobilePrefersReducedMotion();
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root || reducedMotion) {
+      return;
+    }
+
+    const timeline = createTimeline({
+      defaults: {
+        ease: "outCubic",
+        duration: 160,
+        composition: "replace",
+      },
+    });
+
+    if (collapsed) {
+      const collapsedButton = root.querySelector<HTMLElement>(".mobile-nav-collapse-toggle");
+      if (collapsedButton) {
+        timeline.add(collapsedButton, { opacity: [0.72, 1], scale: [0.96, 1] }, 0);
+      }
+      return () => {
+        timeline.cancel();
+      };
+    }
+
+    const links = root.querySelectorAll<HTMLElement>(".mobile-archive-link");
+    if (links.length > 0) {
+      timeline.add(links, { opacity: [0.76, 1], translateY: [3, 0], delay: stagger(14) }, 0);
+    }
+
+    return () => {
+      timeline.cancel();
+    };
+  }, [collapsed, reducedMotion, rootRef]);
+}
+
 function readStoredTheme(): DisplayTheme {
   if (typeof window === "undefined") {
     return "dark";
@@ -581,7 +748,8 @@ function MobileThemeControl() {
     <button
       type="button"
       className="mobile-archive-link mobile-theme-button"
-      aria-label={`Theme ${theme}; toggle dark and light mode`}
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      aria-pressed={theme === "light"}
       onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
     >
       <MobileNavIcon name="theme" theme={theme} />
