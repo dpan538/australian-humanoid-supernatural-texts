@@ -1,6 +1,6 @@
 "use client";
 
-import type { CSSProperties, FocusEvent, ReactNode, SyntheticEvent } from "react";
+import type { CSSProperties, FocusEvent, KeyboardEvent, ReactNode, SyntheticEvent } from "react";
 import Link from "next/link";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -116,6 +116,10 @@ function isMobileArchiveViewport() {
   return typeof window !== "undefined" && window.matchMedia(MOBILE_ARCHIVE_QUERY).matches;
 }
 
+function isFineHoverPointer() {
+  return typeof window !== "undefined" && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+}
+
 export function MobileArchiveView({ children }: { children: ReactNode }) {
   return <>{children}</>;
 }
@@ -194,13 +198,23 @@ function mobileRouteHeading(view: MobileRouteView) {
 }
 
 function MobileMapView() {
-  const [hoverState, setHoverState] = useState<string | null>(null);
+  const [selectedState, setSelectedState] = useState<string | null>(null);
   const titleId = useId();
   const descId = useId();
   const stateCounts = MOBILE_DATA.map.stateCounts;
   const stateCountMap = new Map(stateCounts.map((row) => [row.code, row.count]));
-  const activeState = hoverState ? STATE_NAMES[hoverState] ?? hoverState : "Australia";
-  const activeCount = hoverState ? stateCountMap.get(hoverState) ?? 0 : MOBILE_DATA.summary.mappedRecordCount;
+  const activeState = selectedState ? STATE_NAMES[selectedState] ?? selectedState : "Australia";
+  const activeCount = selectedState ? stateCountMap.get(selectedState) ?? 0 : MOBILE_DATA.summary.mappedRecordCount;
+  const toggleSelectedState = useCallback((stateCode: string) => {
+    setSelectedState((current) => (current === stateCode ? null : stateCode));
+  }, []);
+  const handleStateKeyDown = useCallback((event: KeyboardEvent<SVGPathElement>, stateCode: string) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+    event.preventDefault();
+    toggleSelectedState(stateCode);
+  }, [toggleSelectedState]);
 
   return (
     <div className="map-view mobile-map-view">
@@ -223,21 +237,24 @@ function MobileMapView() {
           </desc>
           {STATE_SHAPES.map((state) => {
             const count = stateCountMap.get(state.code) ?? 0;
-            const intensity = count > 100 ? "hot" : count > 0 ? "warm" : "cold";
             return (
               <path
                 key={state.code}
-                className={`state-shape ${hoverState === state.code ? "hovered" : ""} ${intensity}`}
+                className={selectedState === state.code ? "state-shape selected" : "state-shape"}
                 d={state.d}
-                onPointerEnter={() => setHoverState(state.code)}
-                onPointerLeave={() => setHoverState(null)}
+                role="button"
+                tabIndex={0}
+                aria-label={`${STATE_NAMES[state.code] ?? state.code}, ${formatNumber(count)} mapped records`}
+                aria-pressed={selectedState === state.code}
+                onClick={() => toggleSelectedState(state.code)}
+                onKeyDown={(event) => handleStateKeyDown(event, state.code)}
               />
             );
           })}
           <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
-          <g className={`record-flag-layer ${hoverState ? "has-state-hover" : ""}`} aria-hidden="true">
+          <g className={`record-flag-layer ${selectedState ? "has-state-selected" : ""}`} aria-hidden="true">
             {MOBILE_DATA.map.flags.map((flag) => (
-              <MobileMapFlagMarker key={flag.id} flag={flag} stateLinked={hoverState === flag.state} />
+              <MobileMapFlagMarker key={flag.id} flag={flag} stateLinked={selectedState === flag.state} />
             ))}
           </g>
           <g className="state-label-layer" aria-hidden="true">
@@ -270,12 +287,10 @@ function MobileMapView() {
           {stateCounts.map((row) => (
             <button
               type="button"
-              className={hoverState === row.code ? "state-mini active" : "state-mini"}
+              className={selectedState === row.code ? "state-mini active" : "state-mini"}
               key={row.code}
-              onPointerEnter={() => setHoverState(row.code)}
-              onPointerLeave={() => setHoverState(null)}
-              onFocus={() => setHoverState(row.code)}
-              onBlur={() => setHoverState(null)}
+              onClick={() => toggleSelectedState(row.code)}
+              aria-pressed={selectedState === row.code}
               aria-label={`${STATE_NAMES[row.code] ?? row.code}, ${formatNumber(row.count)} mapped records`}
             >
               <span>{row.code}</span>
@@ -546,7 +561,7 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
   const [collapsed, setCollapsed] = useState(false);
   const controlsRef = useRef<HTMLDivElement | null>(null);
   const idleTimer = useRef<number | null>(null);
-  useMobileControlsMotion(controlsRef, collapsed);
+  const keyboardInteraction = useRef(false);
 
   const clearIdleTimer = useCallback(() => {
     if (idleTimer.current) {
@@ -559,7 +574,8 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
     clearIdleTimer();
     idleTimer.current = window.setTimeout(() => {
       const activeElement = document.activeElement;
-      if (activeElement && controlsRef.current?.contains(activeElement)) {
+      const keyboardFocus = keyboardInteraction.current && activeElement && controlsRef.current?.contains(activeElement);
+      if (keyboardFocus) {
         idleTimer.current = null;
         return;
       }
@@ -597,8 +613,22 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
       aria-label="Mobile archive controls"
       onFocusCapture={handleFocusCapture}
       onBlurCapture={handleBlurCapture}
-      onPointerEnter={clearIdleTimer}
-      onPointerLeave={scheduleCollapse}
+      onPointerDownCapture={() => {
+        keyboardInteraction.current = false;
+      }}
+      onKeyDownCapture={() => {
+        keyboardInteraction.current = true;
+      }}
+      onPointerEnter={() => {
+        if (isFineHoverPointer()) {
+          clearIdleTimer();
+        }
+      }}
+      onPointerLeave={() => {
+        if (isFineHoverPointer()) {
+          scheduleCollapse();
+        }
+      }}
     >
       <button
         type="button"
@@ -673,44 +703,6 @@ function useMobilePrefersReducedMotion() {
   return reduced;
 }
 
-function useMobileControlsMotion(rootRef: React.RefObject<HTMLDivElement | null>, collapsed: boolean) {
-  const reducedMotion = useMobilePrefersReducedMotion();
-
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root || reducedMotion) {
-      return;
-    }
-
-    const timeline = createTimeline({
-      defaults: {
-        ease: "outCubic",
-        duration: 160,
-        composition: "replace",
-      },
-    });
-
-    if (collapsed) {
-      const collapsedButton = root.querySelector<HTMLElement>(".mobile-nav-collapse-toggle");
-      if (collapsedButton) {
-        timeline.add(collapsedButton, { opacity: [0.72, 1], scale: [0.96, 1] }, 0);
-      }
-      return () => {
-        timeline.cancel();
-      };
-    }
-
-    const links = root.querySelectorAll<HTMLElement>(".mobile-archive-link");
-    if (links.length > 0) {
-      timeline.add(links, { opacity: [0.76, 1], translateY: [3, 0], delay: stagger(14) }, 0);
-    }
-
-    return () => {
-      timeline.cancel();
-    };
-  }, [collapsed, reducedMotion, rootRef]);
-}
-
 function readStoredTheme(): DisplayTheme {
   if (typeof window === "undefined") {
     return "dark";
@@ -727,11 +719,13 @@ function readStoredTheme(): DisplayTheme {
 }
 
 function MobileThemeControl() {
-  const [theme, setTheme] = useState<DisplayTheme>("dark");
+  const [theme, setTheme] = useState<DisplayTheme>(() => readStoredTheme());
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    setTheme(readStoredTheme());
+    const storedTheme = readStoredTheme();
+    setTheme(storedTheme);
+    document.documentElement.dataset.theme = storedTheme;
     setHydrated(true);
   }, []);
 
