@@ -219,27 +219,27 @@ function useMobilePageAmbientMotion(
     const redrawTimeline = createTimeline({
       defaults: {
         ease: "outCubic",
-        duration: 620,
+        duration: 820,
         composition: "replace",
       },
     });
     addMobileTimelineTargets(
       redrawTimeline,
       root.querySelectorAll(".mobile-map-heading, .density-header, .source-terminal-header, .mobile-about-heading"),
-      { opacity: [0.86, 1], translateY: [3, 0] },
+      { opacity: [0.76, 1], translateY: [5, 0] },
       0,
     );
     addMobileTimelineTargets(
       redrawTimeline,
       root.querySelectorAll(".readout-block, .state-mini, .density-band, .density-chart-card, .source-mobile-accordion, .about-status-panel, .about-module"),
-      { opacity: [0.84, 1], delay: stagger(24) },
-      90,
+      { opacity: [0.78, 1], translateY: [4, 0], delay: stagger(34) },
+      120,
     );
     addMobileTimelineTargets(
       redrawTimeline,
       redrawTargets,
-      { strokeDashoffset: 0, duration: 980, ease: "linear", delay: stagger(18) },
-      120,
+      { strokeDashoffset: 0, duration: 1280, ease: "linear", delay: stagger(22) },
+      160,
     );
 
     let ambientTimeline: Timeline | null = null;
@@ -250,22 +250,22 @@ function useMobilePageAmbientMotion(
         alternate: true,
         defaults: {
           ease: "inOutSine",
-          duration: 5200,
+          duration: 6800,
           composition: "replace",
         },
       });
 
       if (view === "map") {
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".coast-outline"), { opacity: [0.72, 0.98] }, 0);
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".coast-outline"), { opacity: [0.62, 1] }, 0);
         addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".record-flag-dot"), {
-          opacity: [0.58, 1],
-          scale: [0.92, 1.08],
-          delay: stagger(7),
+          opacity: [0.48, 1],
+          scale: [0.9, 1.12],
+          delay: stagger(9),
         }, 0);
         addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".map-readout-led"), {
-          opacity: [0.34, 0.9],
-          scale: [0.9, 1.12],
-        }, 120);
+          opacity: [0.28, 0.96],
+          scale: [0.86, 1.14],
+        }, 180);
       }
 
       if (view === "density") {
@@ -273,29 +273,29 @@ function useMobilePageAmbientMotion(
           target.style.transformOrigin = "left center";
         });
         addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".density-bar-fill"), {
-          opacity: [0.66, 1],
-          scaleX: [0.965, 1.025],
-          delay: stagger(28),
+          opacity: [0.56, 1],
+          scaleX: [0.955, 1.035],
+          delay: stagger(34),
         }, 0);
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".density-chart-path"), { opacity: [0.62, 1] }, 120);
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".density-chart-path"), { opacity: [0.5, 1] }, 180);
       }
 
       if (view === "source") {
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".source-mobile-accordion"), { opacity: [0.9, 1] }, 0);
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".source-mobile-accordion"), { opacity: [0.82, 1] }, 0);
         addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".source-rollup-row i"), {
-          opacity: [0.42, 1],
-          scale: [0.9, 1.08],
-          delay: stagger(54),
-        }, 120);
+          opacity: [0.32, 1],
+          scale: [0.86, 1.12],
+          delay: stagger(64),
+        }, 180);
       }
 
       if (view === "about") {
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".about-status-panel, .about-module"), { opacity: [0.9, 1] }, 0);
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".about-status-panel, .about-module"), { opacity: [0.82, 1] }, 0);
         addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".about-status-head i, .about-module-head i"), {
-          opacity: [0.42, 1],
-          scale: [0.9, 1.1],
-          delay: stagger(120),
-        }, 120);
+          opacity: [0.32, 1],
+          scale: [0.86, 1.14],
+          delay: stagger(140),
+        }, 180);
       }
     };
     const stopAmbient = () => {
@@ -687,11 +687,11 @@ function animateMobileDetails(details: HTMLDetailsElement, reducedMotion: boolea
   const timeline = createTimeline({
     defaults: {
       ease: "outCubic",
-      duration: 180,
+      duration: 280,
       composition: "replace",
     },
   });
-  timeline.add(content, { opacity: [0.78, 1], translateY: [4, 0], delay: stagger(18) }, 0);
+  timeline.add(content, { opacity: [0.7, 1], translateY: [6, 0], delay: stagger(24) }, 0);
 }
 
 function addMobileTimelineTargets(

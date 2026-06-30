@@ -69,15 +69,17 @@ export default function AboutPage() {
                 kicker="WHAT THIS ARCHIVE IS"
                 title="Documented public texts, not proof claims"
                 body="The archive treats each entry as a documented public text or source-grounded narrative unit. Records are organised by source family, narrative type, period, publicness, and available location evidence so later research can separate reported encounters, retellings, heritage discourse, catalogue metadata, and contextual material."
+                mobileBody="A public-text archive of source-grounded supernatural humanoid records. Inclusion means a public source exists; it does not verify the claim."
               />
 
-              <details className="about-module about-model-module about-accordion-module" aria-label="Archive model" open>
+              <details className="about-module about-model-module about-accordion-module" aria-label="Archive model">
                 <summary className="about-module-head">
                   <span>ARCHIVE MODEL</span>
                   <i aria-hidden="true" />
                 </summary>
-                <h2>Source item to research record</h2>
-                <div className="about-flow" aria-label="Archive model flow">
+                <h2 className="about-desktop-detail">Source item to research record</h2>
+                <p className="about-mobile-detail">Source item to public record to narrative type to location role. Each step stays auditable.</p>
+                <div className="about-flow about-desktop-detail" aria-label="Archive model flow">
                   <svg viewBox="0 0 520 128" role="img" aria-label="Source item to public record to narrative type to location role">
                     <line className="about-flow-line" x1="68" y1="64" x2="182" y2="64" pathLength="1" />
                     <line className="about-flow-line" x1="250" y1="64" x2="364" y2="64" pathLength="1" />
@@ -96,13 +98,14 @@ export default function AboutPage() {
                 </div>
               </details>
 
-              <details className="about-module about-record-types about-accordion-module" aria-label="Record types" open>
+              <details className="about-module about-record-types about-accordion-module" aria-label="Record types">
                 <summary className="about-module-head">
                   <span>RECORD TYPES</span>
                   <i aria-hidden="true" />
                 </summary>
-                <h2>Typed narrative surface</h2>
-                <div className="about-type-list">
+                <h2 className="about-desktop-detail">Typed narrative surface</h2>
+                <p className="about-mobile-detail">Record types separate encounters, apparitions, legends, traditional or spirit-person narratives, and retellings.</p>
+                <div className="about-type-list about-desktop-detail">
                   {recordTypeRows.map((row) => (
                     <span key={row.label}>
                       <b>{row.label}</b>
@@ -117,18 +120,21 @@ export default function AboutPage() {
                 kicker="MAP RULE"
                 title="One verified location flag per mapped public record"
                 body="Map points represent records with a verified display location. They indicate narrative geography, alleged event geography, or place association depending on the record type. They are not habitat maps, population maps, or proof of an underlying phenomenon."
+                mobileBody="Map points are public display locations for records. They are not proof, habitats, or populations."
               />
 
               <AboutModule
                 kicker="SOURCE POLICY"
                 title="Public sources first"
                 body="The project prioritises public archives, libraries, newspapers, digitised books, institutional pages, public repositories, and community-controlled public sources. Tourism pages and unsourced paranormal aggregators may be useful as discovery leads, but they are not treated as primary evidence without stronger source support."
+                mobileBody="The archive prioritises public archives, libraries, newspapers, books, repositories, and institutional or community-controlled public sources."
               />
 
               <AboutModule
                 kicker="ETHICS / SENSITIVITY"
                 title="Public discoverability is not unrestricted permission"
                 body="Records involving Aboriginal and Torres Strait Islander peoples, communities, or culturally specific figures require additional care around terminology, publicness, display mode, and source context. Sensitive public material may be summary-only or suppressed."
+                mobileBody="Indigenous-related records require careful terminology, source voice, publicness, cultural sensitivity, and display mode."
               />
             </section>
 
@@ -168,15 +174,16 @@ export default function AboutPage() {
   );
 }
 
-function AboutModule({ kicker, title, body }: { kicker: string; title: string; body: string }) {
+function AboutModule({ kicker, title, body, mobileBody }: { kicker: string; title: string; body: string; mobileBody?: string }) {
   return (
-    <details className="about-module about-accordion-module" open>
+    <details className="about-module about-accordion-module">
       <summary className="about-module-head">
         <span>{kicker}</span>
         <i aria-hidden="true" />
       </summary>
-      <h2>{title}</h2>
-      <p>{body}</p>
+      <h2 className="about-desktop-detail">{title}</h2>
+      <p className="about-desktop-detail">{body}</p>
+      <p className="about-mobile-detail">{mobileBody ?? body}</p>
     </details>
   );
 }

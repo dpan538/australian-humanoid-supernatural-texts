@@ -16,6 +16,10 @@
   display: none;
 }
 
+.about-mobile-detail {
+  display: none;
+}
+
 @media (max-width: 980px), (pointer: coarse) {
   :root {
     --mobile-safe-top: env(safe-area-inset-top, 0px);
@@ -26,7 +30,7 @@
     --mobile-page-bottom: calc(var(--mobile-safe-bottom) + 98px);
     --mobile-nav-bottom: calc(var(--mobile-safe-bottom) + 34px);
     --mobile-nav-button: 52px;
-    --mobile-nav-icon-size: 30px;
+    --mobile-nav-icon-size: 31px;
   }
 
   html {
@@ -65,7 +69,7 @@
   .about-view {
     font-size: 1.02rem;
     line-height: 1.38;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .terminal-footer-controls {
@@ -108,16 +112,20 @@
     gap: 6px;
     max-width: calc(100vw - 28px);
     padding: 7px;
-    border: 1px solid rgba(242, 242, 237, 0.2);
+    border: 1px solid rgba(242, 242, 237, 0.28);
     border-radius: 999px;
-    background: rgba(5, 6, 6, 0.82);
-    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.42);
-    backdrop-filter: blur(12px);
+    background: rgba(5, 6, 6, 0.74);
+    box-shadow:
+      0 18px 48px rgba(0, 0, 0, 0.48),
+      0 0 0 1px rgba(255, 250, 240, 0.05);
+    -webkit-backdrop-filter: blur(16px) saturate(145%);
+    backdrop-filter: blur(16px) saturate(145%);
     transform: translate3d(-50%, 0, 0);
     backface-visibility: hidden;
-    transition: border-color 140ms ease, background 140ms ease;
+    transition: border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
     -webkit-tap-highlight-color: transparent;
     contain: layout paint;
+    isolation: isolate;
   }
 
   .mobile-archive-expanded,
@@ -132,8 +140,13 @@
   }
 
   .mobile-archive-controls.is-collapsed {
-    padding: 7px;
-    animation: mobile-nav-shell-breathe 5200ms ease-in-out infinite;
+    width: calc(var(--mobile-nav-button) + 16px);
+    min-width: calc(var(--mobile-nav-button) + 16px);
+    height: calc(var(--mobile-nav-button) + 16px);
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    animation: mobile-nav-shell-breathe 6400ms ease-in-out infinite;
   }
 
   .mobile-archive-controls.is-collapsed .mobile-archive-expanded {
@@ -142,6 +155,12 @@
 
   .mobile-archive-controls.is-collapsed .mobile-nav-collapse-toggle {
     display: grid;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    border: 0;
     border-color: transparent;
     background: transparent;
   }
@@ -154,15 +173,15 @@
     display: grid;
     place-items: center;
     padding: 0;
-    border: 1px solid rgba(242, 242, 237, 0.22);
+    border: 1px solid rgba(242, 242, 237, 0.26);
     border-radius: 999px;
     color: var(--ink);
-    background: rgba(5, 6, 6, 0.62);
+    background: rgba(5, 6, 6, 0.5);
     font: inherit;
     text-decoration: none;
     box-shadow: none;
     touch-action: manipulation;
-    transition: color 120ms ease, background 120ms ease, border-color 120ms ease;
+    transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
   }
 
   .mobile-archive-controls:not(.is-collapsed) .mobile-nav-collapse-toggle {
@@ -193,9 +212,10 @@
     width: var(--mobile-nav-icon-size);
     height: var(--mobile-nav-icon-size);
     display: block;
+    margin: auto;
     fill: none;
     stroke: currentColor;
-    stroke-width: 1.85;
+    stroke-width: 1.95;
     stroke-linecap: round;
     stroke-linejoin: round;
     overflow: visible;
@@ -210,11 +230,16 @@
   .mobile-nav-pill-label {
     position: relative;
     z-index: 1;
-    display: block;
+    display: grid;
+    place-items: center;
+    min-width: 3ch;
+    height: 1em;
     color: currentColor;
-    font-size: 0.9rem;
+    font-size: 0.94rem;
     font-weight: 700;
     letter-spacing: 0;
+    text-align: center;
+    transform: translateY(-0.01em);
   }
 
   .mobile-archive-link:focus-visible,
@@ -236,9 +261,11 @@
   }
 
   :root[data-theme="light"] .mobile-archive-controls {
-    border-color: rgba(5, 6, 6, 0.18);
-    background: rgba(255, 255, 255, 0.82);
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
+    border-color: rgba(5, 6, 6, 0.22);
+    background: rgba(255, 255, 255, 0.76);
+    box-shadow:
+      0 16px 38px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.44);
   }
 
   :root[data-theme="light"] .mobile-archive-controls.is-collapsed {
@@ -257,6 +284,32 @@
   :root[data-theme="light"] .mobile-nav-collapse-toggle:focus-visible {
     color: #ffffff;
     background: var(--blue);
+  }
+
+  @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .mobile-archive-controls {
+      background:
+        linear-gradient(135deg, rgba(255, 250, 240, 0.2), rgba(255, 250, 240, 0.055) 42%, rgba(159, 224, 255, 0.13)),
+        rgba(5, 6, 6, 0.5);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 250, 240, 0.22),
+        0 18px 48px rgba(0, 0, 0, 0.48),
+        0 0 22px rgba(159, 224, 255, 0.08);
+      -webkit-backdrop-filter: blur(22px) saturate(175%);
+      backdrop-filter: blur(22px) saturate(175%);
+    }
+
+    :root[data-theme="light"] .mobile-archive-controls {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.54) 46%, rgba(0, 75, 255, 0.12)),
+        rgba(255, 255, 255, 0.68);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.92),
+        0 16px 38px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(0, 75, 255, 0.06);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+      backdrop-filter: blur(22px) saturate(160%);
+    }
   }
 
   .view-area-map {
@@ -294,7 +347,7 @@
     color: var(--blue);
     font-size: 0.78rem;
     line-height: 1;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
   }
 
@@ -302,7 +355,7 @@
     color: var(--ink);
     font-size: 1.04rem;
     line-height: 1.15;
-    font-weight: 540;
+    font-weight: 580;
   }
 
   .mobile-archive-shell .mobile-map-heading b {
@@ -371,13 +424,13 @@
     color: var(--muted);
     font-size: 1rem;
     line-height: 1.42;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .mobile-archive-shell .mobile-map-note {
     margin: 0 2px 4px;
     font-size: 1rem;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .australia-map {
@@ -497,13 +550,13 @@
   .density-header p {
     font-size: 1.02rem;
     line-height: 1.42;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .density-header b {
     font-size: 1rem;
     line-height: 1.26;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .density-bands {
@@ -536,7 +589,7 @@
 
   .band-meta small {
     font-size: 0.82rem;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .density-band-bars {
@@ -611,7 +664,7 @@
     margin: 0;
     color: var(--ink);
     font-size: 2.05rem;
-    font-weight: 400;
+    font-weight: 450;
     line-height: 1;
   }
 
@@ -619,7 +672,7 @@
     color: var(--muted);
     font-size: 1.02rem;
     line-height: 1.42;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .about-hero-copy > .tiny-label,
@@ -637,7 +690,7 @@
   .about-hero-copy p {
     font-size: 1.02rem;
     line-height: 1.42;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .about-grid {
@@ -684,11 +737,23 @@
     padding-bottom: 14px;
   }
 
+  .about-accordion-module > .about-desktop-detail {
+    display: none;
+  }
+
+  .about-accordion-module > .about-mobile-detail {
+    display: block;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.42;
+    font-weight: 570;
+  }
+
   .about-accordion-module[open] > h2,
   .about-accordion-module[open] > p,
   .about-accordion-module[open] > .about-flow,
   .about-accordion-module[open] > .about-type-list {
-    animation: mobile-details-enter 180ms ease-out both;
+    animation: mobile-details-enter 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   .about-model-module {
@@ -732,7 +797,7 @@
 
   .source-terminal-header .source-header-title h2 {
     font-size: 2.05rem;
-    font-weight: 400;
+    font-weight: 450;
     line-height: 1;
   }
 
@@ -742,7 +807,7 @@
     color: var(--muted);
     font-size: 1.02rem;
     line-height: 1.42;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .source-header-status,
@@ -831,12 +896,12 @@
     color: rgba(242, 242, 237, 0.86);
     font-size: 0.8rem;
     line-height: 1.2;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   .mobile-archive-shell .source-mobile-accordion > summary small {
-    color: rgba(244, 241, 232, 0.78);
-    font-weight: 500;
+    color: rgba(244, 241, 232, 0.88);
+    font-weight: 570;
   }
 
   .source-mobile-accordion .source-pane {
@@ -907,7 +972,7 @@
   .source-display-note {
     font-size: 0.9rem;
     line-height: 1.42;
-    font-weight: 540;
+    font-weight: 570;
   }
 
   :root[data-theme="light"] .source-mobile-accordion {
@@ -1101,8 +1166,8 @@
 
 @keyframes mobile-details-enter {
   from {
-    opacity: 0.78;
-    transform: translateY(4px);
+    opacity: 0.68;
+    transform: translateY(6px);
   }
 
   to {
@@ -1114,26 +1179,40 @@
 @keyframes mobile-nav-shell-breathe {
   0%,
   100% {
-    border-color: rgba(242, 242, 237, 0.2);
-    background: rgba(5, 6, 6, 0.82);
+    border-color: rgba(242, 242, 237, 0.28);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 250, 240, 0.18),
+      0 18px 48px rgba(0, 0, 0, 0.48),
+      0 0 0 1px rgba(255, 250, 240, 0.04);
   }
 
   50% {
-    border-color: rgba(159, 224, 255, 0.48);
-    background: rgba(5, 6, 6, 0.9);
+    border-color: rgba(159, 224, 255, 0.72);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 250, 240, 0.24),
+      0 18px 48px rgba(0, 0, 0, 0.48),
+      0 0 0 1px rgba(159, 224, 255, 0.12),
+      0 0 26px rgba(159, 224, 255, 0.18);
   }
 }
 
 @keyframes mobile-nav-shell-breathe-light {
   0%,
   100% {
-    border-color: rgba(5, 6, 6, 0.18);
-    background: rgba(255, 255, 255, 0.82);
+    border-color: rgba(5, 6, 6, 0.22);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.88),
+      0 16px 38px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.44);
   }
 
   50% {
-    border-color: rgba(0, 75, 255, 0.46);
-    background: rgba(255, 255, 255, 0.94);
+    border-color: rgba(0, 75, 255, 0.58);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.94),
+      0 16px 38px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(0, 75, 255, 0.12),
+      0 0 24px rgba(0, 75, 255, 0.14);
   }
 }
 
