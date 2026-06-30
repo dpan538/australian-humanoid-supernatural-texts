@@ -1,10 +1,11 @@
 "use client";
 
-import type { CSSProperties, FocusEvent, KeyboardEvent, ReactNode, SyntheticEvent } from "react";
+import type { CSSProperties, FocusEvent, KeyboardEvent, ReactNode, RefObject, SyntheticEvent } from "react";
 import Link from "next/link";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createTimeline, stagger } from "animejs";
+import type { Timeline } from "animejs";
 import mobileArchiveData from "@/public/data/mobile-archive.json";
 import { MAP_VIEWBOX, STATE_SHAPES } from "@/lib/au-map-data";
 
@@ -168,12 +169,16 @@ export function useMobileArchiveRouteGuard(view: MobileControlView) {
 
 export function MobileArchiveRoute({ view }: { view: MobileControlView }) {
   const routeView: MobileRouteView = view === "dashboard" ? "map" : view;
+  const pageRef = useRef<HTMLElement | null>(null);
+  const reducedMotion = useMobilePrefersReducedMotion();
+
+  useMobilePageAmbientMotion(pageRef, routeView, reducedMotion);
 
   return (
     <main className={`terminal-shell mobile-archive-shell mobile-view-${routeView}`}>
       <h1 className="visually-hidden">{mobileRouteHeading(routeView)}</h1>
       <div className="noise-layer" aria-hidden="true" />
-      <section className="mobile-archive-page" aria-label={`AusFigures ${routeView} mobile view`}>
+      <section ref={pageRef} className="mobile-archive-page" aria-label={`AusFigures ${routeView} mobile view`}>
         {routeView === "map" ? <MobileMapView /> : null}
         {routeView === "density" ? <MobileDensityView /> : null}
         {routeView === "source" ? <MobileSourceView /> : null}
@@ -182,6 +187,138 @@ export function MobileArchiveRoute({ view }: { view: MobileControlView }) {
       <MobileArchiveControls view={routeView} />
     </main>
   );
+}
+
+function useMobilePageAmbientMotion(
+  rootRef: RefObject<HTMLElement | null>,
+  view: MobileRouteView,
+  reducedMotion: boolean,
+) {
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root || reducedMotion) {
+      return;
+    }
+
+    const redrawTargets = Array.from(
+      root.querySelectorAll<SVGGeometryElement>(".mobile-map-canvas .state-shape, .mobile-map-canvas .coast-outline"),
+    );
+    const resetRedrawTargets = () => {
+      redrawTargets.forEach((target) => {
+        target.style.strokeDasharray = "";
+        target.style.strokeDashoffset = "";
+      });
+    };
+
+    redrawTargets.forEach((target) => {
+      const length = target.getTotalLength();
+      target.style.strokeDasharray = `${length}`;
+      target.style.strokeDashoffset = `${length}`;
+    });
+
+    const redrawTimeline = createTimeline({
+      defaults: {
+        ease: "outCubic",
+        duration: 620,
+        composition: "replace",
+      },
+    });
+    addMobileTimelineTargets(
+      redrawTimeline,
+      root.querySelectorAll(".mobile-map-heading, .density-header, .source-terminal-header, .mobile-about-heading"),
+      { opacity: [0.86, 1], translateY: [3, 0] },
+      0,
+    );
+    addMobileTimelineTargets(
+      redrawTimeline,
+      root.querySelectorAll(".readout-block, .state-mini, .density-band, .density-chart-card, .source-mobile-accordion, .about-status-panel, .about-module"),
+      { opacity: [0.84, 1], delay: stagger(24) },
+      90,
+    );
+    addMobileTimelineTargets(
+      redrawTimeline,
+      redrawTargets,
+      { strokeDashoffset: 0, duration: 980, ease: "linear", delay: stagger(18) },
+      120,
+    );
+
+    let ambientTimeline: Timeline | null = null;
+    const startAmbient = () => {
+      ambientTimeline?.cancel();
+      ambientTimeline = createTimeline({
+        loop: true,
+        alternate: true,
+        defaults: {
+          ease: "inOutSine",
+          duration: 5200,
+          composition: "replace",
+        },
+      });
+
+      if (view === "map") {
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".coast-outline"), { opacity: [0.72, 0.98] }, 0);
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".record-flag-dot"), {
+          opacity: [0.58, 1],
+          scale: [0.92, 1.08],
+          delay: stagger(7),
+        }, 0);
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".map-readout-led"), {
+          opacity: [0.34, 0.9],
+          scale: [0.9, 1.12],
+        }, 120);
+      }
+
+      if (view === "density") {
+        root.querySelectorAll<HTMLElement>(".density-bar-fill").forEach((target) => {
+          target.style.transformOrigin = "left center";
+        });
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".density-bar-fill"), {
+          opacity: [0.66, 1],
+          scaleX: [0.965, 1.025],
+          delay: stagger(28),
+        }, 0);
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".density-chart-path"), { opacity: [0.62, 1] }, 120);
+      }
+
+      if (view === "source") {
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".source-mobile-accordion"), { opacity: [0.9, 1] }, 0);
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".source-rollup-row i"), {
+          opacity: [0.42, 1],
+          scale: [0.9, 1.08],
+          delay: stagger(54),
+        }, 120);
+      }
+
+      if (view === "about") {
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".about-status-panel, .about-module"), { opacity: [0.9, 1] }, 0);
+        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".about-status-head i, .about-module-head i"), {
+          opacity: [0.42, 1],
+          scale: [0.9, 1.1],
+          delay: stagger(120),
+        }, 120);
+      }
+    };
+    const stopAmbient = () => {
+      ambientTimeline?.cancel();
+      ambientTimeline = null;
+    };
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        startAmbient();
+      } else {
+        stopAmbient();
+      }
+    };
+
+    startAmbient();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      redrawTimeline.cancel();
+      stopAmbient();
+      resetRedrawTargets();
+    };
+  }, [reducedMotion, rootRef, view]);
 }
 
 function mobileRouteHeading(view: MobileRouteView) {
@@ -555,6 +692,17 @@ function animateMobileDetails(details: HTMLDetailsElement, reducedMotion: boolea
     },
   });
   timeline.add(content, { opacity: [0.78, 1], translateY: [4, 0], delay: stagger(18) }, 0);
+}
+
+function addMobileTimelineTargets(
+  timeline: Timeline,
+  targets: NodeListOf<Element> | Element[],
+  params: Record<string, unknown>,
+  position: number,
+) {
+  if (targets.length > 0) {
+    timeline.add(targets, params, position);
+  }
 }
 
 export function MobileArchiveControls({ view }: { view: MobileControlView }) {

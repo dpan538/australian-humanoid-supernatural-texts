@@ -133,6 +133,7 @@
 
   .mobile-archive-controls.is-collapsed {
     padding: 7px;
+    animation: mobile-nav-shell-breathe 5200ms ease-in-out infinite;
   }
 
   .mobile-archive-controls.is-collapsed .mobile-archive-expanded {
@@ -141,6 +142,8 @@
 
   .mobile-archive-controls.is-collapsed .mobile-nav-collapse-toggle {
     display: grid;
+    border-color: transparent;
+    background: transparent;
   }
 
   .mobile-archive-link,
@@ -214,23 +217,6 @@
     letter-spacing: 0;
   }
 
-  .mobile-nav-collapse-toggle {
-    position: relative;
-    isolation: isolate;
-  }
-
-  .mobile-nav-collapse-toggle::after {
-    content: "";
-    position: absolute;
-    inset: 7px;
-    z-index: 0;
-    border: 1px solid currentColor;
-    border-radius: 999px;
-    opacity: 0.38;
-    pointer-events: none;
-    animation: mobile-nav-inner-breathe 5200ms ease-in-out infinite;
-  }
-
   .mobile-archive-link:focus-visible,
   .mobile-archive-link.is-active,
   .mobile-nav-collapse-toggle:focus-visible {
@@ -253,6 +239,10 @@
     border-color: rgba(5, 6, 6, 0.18);
     background: rgba(255, 255, 255, 0.82);
     box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
+  }
+
+  :root[data-theme="light"] .mobile-archive-controls.is-collapsed {
+    animation-name: mobile-nav-shell-breathe-light;
   }
 
   :root[data-theme="light"] .mobile-archive-link,
@@ -341,14 +331,6 @@
     position: relative;
   }
 
-  .mobile-view-map .coast-outline {
-    animation: mobile-map-coast-breathe 7800ms ease-in-out infinite;
-  }
-
-  .mobile-view-map .state-shape {
-    animation: mobile-map-field-breathe 9200ms ease-in-out infinite;
-  }
-
   .mobile-archive-shell .mobile-map-view .state-shape {
     cursor: pointer;
     pointer-events: auto;
@@ -373,10 +355,6 @@
   :root[data-theme="light"] .mobile-archive-shell .mobile-map-view .state-shape:focus-visible {
     fill: #dcdcdc;
     stroke: rgba(5, 6, 6, 0.86);
-  }
-
-  .mobile-view-map .record-flag-layer {
-    animation: mobile-map-flags-breathe 6400ms ease-in-out infinite;
   }
 
   .mobile-archive-shell .record-flag-layer.has-state-selected .record-flag {
@@ -1133,66 +1111,38 @@
   }
 }
 
-@keyframes mobile-nav-inner-breathe {
+@keyframes mobile-nav-shell-breathe {
   0%,
   100% {
-    opacity: 0.28;
-    transform: scale(0.96);
+    border-color: rgba(242, 242, 237, 0.2);
+    background: rgba(5, 6, 6, 0.82);
   }
 
   50% {
-    opacity: 0.5;
-    transform: scale(1.03);
+    border-color: rgba(159, 224, 255, 0.48);
+    background: rgba(5, 6, 6, 0.9);
   }
 }
 
-@keyframes mobile-map-coast-breathe {
+@keyframes mobile-nav-shell-breathe-light {
   0%,
   100% {
-    opacity: 0.78;
+    border-color: rgba(5, 6, 6, 0.18);
+    background: rgba(255, 255, 255, 0.82);
   }
 
   50% {
-    opacity: 0.94;
-  }
-}
-
-@keyframes mobile-map-field-breathe {
-  0%,
-  100% {
-    opacity: 0.92;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes mobile-map-flags-breathe {
-  0%,
-  100% {
-    opacity: 0.9;
-  }
-
-  50% {
-    opacity: 1;
+    border-color: rgba(0, 75, 255, 0.46);
+    background: rgba(255, 255, 255, 0.94);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mobile-nav-collapse-toggle::after,
-  .mobile-view-map .coast-outline,
-  .mobile-view-map .state-shape,
-  .mobile-view-map .record-flag-layer,
+  .mobile-archive-controls.is-collapsed,
   .about-accordion-module[open] > h2,
   .about-accordion-module[open] > p,
   .about-accordion-module[open] > .about-flow,
   .about-accordion-module[open] > .about-type-list {
     animation: none !important;
-  }
-
-  .mobile-nav-collapse-toggle::after {
-    opacity: 0.42;
-    transform: none;
   }
 }
