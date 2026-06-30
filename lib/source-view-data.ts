@@ -125,13 +125,20 @@ const SOURCE_TYPE_LABELS: Record<string, string> = {
   institutional_web: "Institutional web",
   internet_archive_metadata: "Archive metadata",
   internet_sacred_texts_public_domain_book: "Public-domain text",
+  live_crawl_crossref: "Crossref metadata",
+  live_crawl_openalex: "OpenAlex metadata",
   modern_web: "Modern public web",
   municipal_local_history_pdf: "Local history PDF",
   project_gutenberg_australia_book: "Public-domain book",
+  public_books_metadata_openlibrary: "Open Library metadata",
   public_domain_ebook: "Public-domain book",
   public_domain_transcribed_book: "Public-domain text",
   public_repository_newsletter_ocr_text: "Repository OCR text",
   public_repository_ocr_text: "Repository OCR text",
+  public_web_haunted_places_directory: "Haunted places directory",
+  public_web_yowie_report_map: "Yowie report map",
+  public_web_yowie_state_report_index: "Yowie state report index",
+  public_wikidata_entity_metadata: "Wikidata metadata",
   repository_full_text: "Full text",
   repository_full_text_article: "Repository article",
   repository_institutional_full_text: "Institutional full text",
@@ -211,7 +218,7 @@ export function buildSourceRegistryData(data: FrontendData): SourceRegistryData 
       ...row,
       share: publicRecords ? Math.round((row.records / publicRecords) * 100) : 0,
     }))
-    .filter((row) => row.records > 0 || row.orgs > 0)
+    .filter((row) => row.records > 0)
     .sort((a, b) => b.records - a.records || a.label.localeCompare(b.label));
 
   const typeRows = buildTypeRows(registryRows).slice(0, 18);
@@ -305,7 +312,7 @@ export function sourceFamilyId(sourceType: string | null | undefined): SourceFam
   if (/repository|archive|trove|newspaper|magazine/.test(source)) {
     return "repository";
   }
-  if (/modern_web|seeded_public_web/.test(source)) {
+  if (/modern_web|seeded_public_web|public_web|haunted_places|yowie_report|yowie_state/.test(source)) {
     return "modern_web";
   }
   if (/public_domain|gutenberg|wikisource|sacred_texts/.test(source)) {
@@ -314,7 +321,7 @@ export function sourceFamilyId(sourceType: string | null | undefined): SourceFam
   if (/institutional|municipal/.test(source)) {
     return "institutions";
   }
-  if (/academic|catalogue|metadata|andc|archive/.test(source)) {
+  if (/academic|catalogue|metadata|andc|openalex|crossref|wikidata|openlibrary/.test(source)) {
     return "academic";
   }
   return "other";

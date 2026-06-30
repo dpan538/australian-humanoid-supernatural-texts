@@ -1036,7 +1036,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
   const loadingRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!mobileMode.ready || mobileMode.isMobile) {
+    if (!mobileMode.ready) {
       return;
     }
 
@@ -1057,7 +1057,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
     return () => {
       cancelled = true;
     };
-  }, [mobileMode.ready, mobileMode.isMobile]);
+  }, [mobileMode.ready]);
 
   useEffect(() => {
     if (!data || showArchive) {
@@ -1116,7 +1116,14 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
   }, [data, showArchive]);
 
   if (mobileMode.ready && mobileMode.isMobile) {
-    return <MobileArchiveRoute view={view} />;
+    if (data) {
+      return <MobileArchiveRoute view={view} data={data} />;
+    }
+    return (
+      <ArchiveTerminalShell view={view === "dashboard" ? "map" : view}>
+        <ArchiveLoadingState view={view === "dashboard" ? "map" : view} error={error} loadingRef={loadingRef} />
+      </ArchiveTerminalShell>
+    );
   }
 
   if (mobileRoute.blockedDashboard) {

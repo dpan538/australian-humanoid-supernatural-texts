@@ -1,13 +1,14 @@
 "use client";
 
-import type { CSSProperties, FocusEvent, KeyboardEvent, ReactNode, RefObject, SyntheticEvent } from "react";
+import type { CSSProperties, FocusEvent, KeyboardEvent, PointerEvent, ReactNode, RefObject, SyntheticEvent } from "react";
 import Link from "next/link";
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createTimeline, stagger } from "animejs";
 import type { Timeline } from "animejs";
-import mobileArchiveData from "@/public/data/mobile-archive.json";
-import { MAP_VIEWBOX, STATE_SHAPES } from "@/lib/au-map-data";
+import { STATE_SHAPES } from "@/lib/au-map-data";
+import type { FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
+import { SOURCE_FAMILY_STYLES, buildSourceRegistryData, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
 
 type MobileControlView = "about" | "map" | "density" | "dashboard" | "source";
 type DisplayTheme = "dark" | "light";
@@ -15,8 +16,43 @@ type MobileNavName = "theme" | "about" | "source" | "density" | "map";
 const MOBILE_ARCHIVE_QUERY = "(max-width: 980px), (pointer: coarse)";
 const MOBILE_NAV_IDLE_MS = 4600;
 const THEME_STORAGE_KEY = "aus-archive-theme";
-const MOBILE_DATA = mobileArchiveData as MobileArchiveData;
 const MOBILE_MAP_VIEWBOX = { x: 24, y: 18, width: 930, height: 682 } as const;
+const MOBILE_SOURCE_CLASS_BY_FAMILY: Record<SourceFamilyId, string> = {
+  repository: "source-tone-archive",
+  modern_web: "source-tone-web",
+  public_domain: "source-tone-candidate",
+  institutions: "source-tone-institutional",
+  academic: "source-tone-academic",
+  community: "source-tone-community",
+  other: "source-tone-default",
+};
+const JSON_BOUNDS = {
+  minX: -999,
+  maxX: 8821,
+  minY: 649,
+  maxY: 9851,
+} as const;
+const SVG_BOUNDS = {
+  minX: 54,
+  maxX: 914,
+  minY: 36,
+  maxY: 676,
+} as const;
+const HICHARTS_AU_TRANSFORM = {
+  scale: 0.000158093982027,
+  jsonres: 15.5,
+  jsonmarginX: -999,
+  jsonmarginY: 9851,
+  xoffset: -2082021.85219,
+  yoffset: -1210304.51735,
+} as const;
+const LAMBERT_AU = {
+  radius: 6378137,
+  lat1: -18,
+  lat2: -36,
+  lat0: 0,
+  lon0: 134,
+} as const;
 
 type MobileRouteView = "about" | "map" | "density" | "source";
 
@@ -113,6 +149,312 @@ const STATE_NAMES: Record<string, string> = {
   ACT: "Australian Capital Territory",
 };
 
+const MOBILE_NARRATIVE_LABELS: Record<string, string> = {
+  apparition_account: "Apparition Account",
+  cryptid_style_apeman: "Cryptid Style Apeman",
+  ghost_legend: "Ghost Legend",
+  local_legend: "Local Legend",
+  retelling_or_adaptation: "Retelling / Adaptation",
+  spirit_person_narrative: "Spirit Person Narrative",
+  traditional_narrative: "Traditional Narrative",
+  giant_or_ogre_narrative: "Giant Or Ogre Narrative",
+};
+
+function buildMobileArchiveData(data: FrontendData): MobileArchiveData {
+  const sourceData = buildSourceRegistryData(data);
+  const mapFlags = buildMobileMapFlags(data);
+  const mappedStateCounts = mapFlags.reduce<Record<string, number>>((acc, flag) => {
+    acc[flag.state] = (acc[flag.state] ?? 0) + 1;
+    return acc;
+  }, {});
+  const datedYears = data.records
+    .map((record) => record.year)
+    .filter((year): year is number => typeof year === "number" && Number.isFinite(year));
+  const recordCount = data.summary.record_count || data.records.length;
+  const mappedRecordCount = data.summary.mapped_record_count || mapFlags.length;
+  const maxPeriodRecords = Math.max(1, ...data.date_bands.map((period) => period.record_count || 0));
+
+  return {
+    schema_version: "mobile-archive/v1",
+    generated_from: data.schema_version,
+    generated_at: data.generated_at,
+    summary: {
+      recordCount,
+      mappedRecordCount,
+      sourceCount: data.summary.source_count || data.sources.length,
+      sourceTypeCount: sourceData.metrics.sourceTypes,
+      earliestYear: data.summary.earliest_year ?? (datedYears.length ? Math.min(...datedYears) : 0),
+      latestYear: data.summary.latest_year ?? (datedYears.length ? Math.max(...datedYears) : 0),
+      ethicalNote: data.scope.ethical_note,
+    },
+    map: {
+      stateCounts: Object.keys(STATE_NAMES).map((code) => ({
+        code,
+        count: mappedStateCounts[code] ?? data.summary.mapped_state_counts?.[code] ?? 0,
+      })),
+      flags: mapFlags,
+      interpretation: "Markers are public display locations for records, not proof, habitats, or populations.",
+    },
+    density: {
+      periods: data.date_bands.map((period) => {
+        const records = period.record_count || 0;
+        const mapped = period.mapped_count || 0;
+        return {
+          id: period.id,
+          label: period.short_label || period.label,
+          records,
+          mapped,
+          mappedShare: records ? mapped / records : 0,
+          plannedQueries: period.planned_query_count || 0,
+          recordShare: recordCount ? records / recordCount : 0,
+          maxShare: records / maxPeriodRecords,
+        };
+      }),
+      annualSeries: buildMobileAnnualSeries(data),
+    },
+    sources: {
+      metrics: sourceData.metrics,
+      rollup: sourceData.rollupRows.map((row) => ({
+        id: row.id,
+        label: row.label,
+        color: row.color,
+        records: row.records,
+        orgs: row.orgs,
+      })),
+      typeRows: sourceData.typeRows.map((row) => ({
+        id: row.id,
+        label: row.label,
+        familyLabel: row.familyLabel,
+        color: row.color,
+        records: row.records,
+        orgs: row.orgs,
+      })),
+      registry: sourceData.registryRows.map((row) => ({
+        id: row.source.source_id,
+        name: row.source.source_name,
+        sourceType: row.source.source_type,
+        displayType: row.displayType,
+        familyId: row.familyId,
+        familyLabel: row.familyLabel,
+        color: row.color,
+        publicRole: row.publicRole,
+        recordCount: row.recordCount,
+        publicness: row.source.publicness_level,
+        baseUrl: row.source.base_url,
+        ethicsNotes: row.source.ethics_notes,
+      })),
+    },
+  };
+}
+
+function buildMobileAnnualSeries(data: FrontendData) {
+  const fromSummary = Object.entries(data.summary.records_by_year || {})
+    .map(([year, count]) => ({ year: Number(year), count: Number(count) }))
+    .filter((row) => Number.isFinite(row.year) && Number.isFinite(row.count))
+    .sort((a, b) => a.year - b.year);
+
+  if (fromSummary.length) {
+    return fromSummary;
+  }
+
+  const counts = new Map<number, number>();
+  for (const record of data.records) {
+    if (typeof record.year !== "number" || !Number.isFinite(record.year)) {
+      continue;
+    }
+    counts.set(record.year, (counts.get(record.year) ?? 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => a[0] - b[0]).map(([year, count]) => ({ year, count }));
+}
+
+function buildMobileMapFlags(data: FrontendData): MobileMapFlag[] {
+  const recordsById = new Map(data.records.map((record) => [record.record_id, record]));
+  const sourceFlags = data.map_flags?.length ? data.map_flags : createMobileFallbackMapFlags(data.records);
+  const seenRecordIds = new Set<number>();
+  const flags: MobileMapFlag[] = [];
+
+  for (const flag of sourceFlags) {
+    const record = recordsById.get(flag.record_id);
+    if (!record || seenRecordIds.has(flag.record_id)) {
+      continue;
+    }
+    const coordinates = mobileFlagCoordinates(flag, record);
+    if (!coordinates) {
+      continue;
+    }
+    const familyId = sourceFamilyId(record.source_type);
+    const family = SOURCE_FAMILY_STYLES[familyId];
+    seenRecordIds.add(flag.record_id);
+    flags.push({
+      id: String(flag.flag_id || `mapped:${flag.record_id}`),
+      recordId: flag.record_id,
+      state: flag.state_territory || record.state_territory || "AU",
+      x: coordinates.x,
+      y: coordinates.y,
+      displayX: coordinates.x,
+      displayY: coordinates.y,
+      toneClass: MOBILE_SOURCE_CLASS_BY_FAMILY[familyId],
+      title: flag.title ?? record.title,
+      year: flag.year ?? record.year,
+      figure: flag.canonical_figure ?? record.canonical_figure_guess ?? record.canonical_figure,
+      sourceFamily: family.label,
+      sourceType: displaySourceType(record.source_type),
+      narrativeType: mobileNarrativeType(record),
+    });
+  }
+
+  return prepareMobileMapFlagPresentation(flags);
+}
+
+function createMobileFallbackMapFlags(records: RecordItem[]): MapFlagItem[] {
+  return records.flatMap((record, index) => {
+    if (!record.has_strict_map_point || record.map_latitude == null || record.map_longitude == null) {
+      return [];
+    }
+    const projected = projectPoint(record.map_latitude, record.map_longitude);
+    return [{
+      flag_id: `record-${record.record_id}-${index}`,
+      record_id: record.record_id,
+      state_territory: record.state_territory ?? "AU",
+      x: projected.x,
+      y: projected.y,
+      stem_dx: 0,
+      stem_dy: 0,
+      display_precision: record.location_precision_status ?? "strict",
+      source_location_type: record.map_location_type ?? null,
+      confidence: record.map_confidence ?? null,
+      title: record.title,
+      year: record.year,
+      canonical_figure: record.canonical_figure_guess ?? record.canonical_figure,
+    }];
+  });
+}
+
+function mobileFlagCoordinates(flag: MapFlagItem, record: RecordItem) {
+  if (Number.isFinite(flag.x) && Number.isFinite(flag.y)) {
+    if (flag.x >= 110 && flag.x <= 160 && flag.y >= -45 && flag.y <= -8) {
+      const projected = projectPoint(flag.y, flag.x);
+      return { x: svgCoord(projected.x), y: svgCoord(projected.y) };
+    }
+    if (flag.x >= 0 && flag.x <= MOBILE_MAP_VIEWBOX.width && flag.y >= 0 && flag.y <= MOBILE_MAP_VIEWBOX.height) {
+      return { x: svgCoord(flag.x), y: svgCoord(flag.y) };
+    }
+  }
+  if (record.map_latitude != null && record.map_longitude != null) {
+    const projected = projectPoint(record.map_latitude, record.map_longitude);
+    return { x: svgCoord(projected.x), y: svgCoord(projected.y) };
+  }
+  return null;
+}
+
+function prepareMobileMapFlagPresentation(flags: MobileMapFlag[]) {
+  const groups = new Map<string, MobileMapFlag[]>();
+  for (const flag of flags) {
+    const key = `${flag.x.toFixed(3)}:${flag.y.toFixed(3)}`;
+    const group = groups.get(key) ?? [];
+    group.push(flag);
+    groups.set(key, group);
+  }
+  for (const group of groups.values()) {
+    if (group.length < 2) {
+      continue;
+    }
+    [...group].sort((a, b) => a.recordId - b.recordId).forEach((flag, index) => {
+      const offset = mobileCollisionMicroJitter(flag.recordId, index);
+      flag.displayX = svgCoord(flag.x + offset.x);
+      flag.displayY = svgCoord(flag.y + offset.y);
+    });
+  }
+  return flags.sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.recordId - b.recordId);
+}
+
+function mobileNarrativeType(record: RecordItem) {
+  const key = record.ontology_code || record.genre || record.canonical_figure_guess || record.canonical_figure || "other";
+  return MOBILE_NARRATIVE_LABELS[key] ?? titleize(key);
+}
+
+function mobileCollisionMicroJitter(recordId: number, collisionIndex: number) {
+  if (collisionIndex === 0) {
+    return { x: 0, y: 0 };
+  }
+  const xUnit = stableUnit(recordId + collisionIndex * 97);
+  const yUnit = stableUnit(recordId * 3 + collisionIndex * 193);
+  return {
+    x: clamp((xUnit - 0.5) * 4.2, -2.1, 2.1),
+    y: clamp((yUnit - 0.5) * 3.8, -1.9, 1.9),
+  };
+}
+
+function projectPoint(latitude: number, longitude: number) {
+  const projected = projectLambertConformalConic(latitude, longitude);
+  const jsonX =
+    (projected.x - HICHARTS_AU_TRANSFORM.xoffset) *
+      HICHARTS_AU_TRANSFORM.scale *
+      HICHARTS_AU_TRANSFORM.jsonres +
+    HICHARTS_AU_TRANSFORM.jsonmarginX;
+  const jsonY =
+    (projected.y - HICHARTS_AU_TRANSFORM.yoffset) *
+      HICHARTS_AU_TRANSFORM.scale *
+      HICHARTS_AU_TRANSFORM.jsonres +
+    HICHARTS_AU_TRANSFORM.jsonmarginY;
+  const x =
+    SVG_BOUNDS.minX +
+    ((jsonX - JSON_BOUNDS.minX) / (JSON_BOUNDS.maxX - JSON_BOUNDS.minX)) *
+      (SVG_BOUNDS.maxX - SVG_BOUNDS.minX);
+  const y =
+    SVG_BOUNDS.minY +
+    ((JSON_BOUNDS.maxY - jsonY) / (JSON_BOUNDS.maxY - JSON_BOUNDS.minY)) *
+      (SVG_BOUNDS.maxY - SVG_BOUNDS.minY);
+
+  return {
+    x: clamp(x, SVG_BOUNDS.minX + 4, SVG_BOUNDS.maxX - 4),
+    y: clamp(y, SVG_BOUNDS.minY + 4, SVG_BOUNDS.maxY - 4),
+  };
+}
+
+function projectLambertConformalConic(latitude: number, longitude: number) {
+  const deg = Math.PI / 180;
+  const lat = latitude * deg;
+  const lon = longitude * deg;
+  const lat1 = LAMBERT_AU.lat1 * deg;
+  const lat2 = LAMBERT_AU.lat2 * deg;
+  const lat0 = LAMBERT_AU.lat0 * deg;
+  const lon0 = LAMBERT_AU.lon0 * deg;
+  const n =
+    Math.log(Math.cos(lat1) / Math.cos(lat2)) /
+    Math.log(Math.tan(Math.PI / 4 + lat2 / 2) / Math.tan(Math.PI / 4 + lat1 / 2));
+  const f = (Math.cos(lat1) * Math.pow(Math.tan(Math.PI / 4 + lat1 / 2), n)) / n;
+  const rho = (LAMBERT_AU.radius * f) / Math.pow(Math.tan(Math.PI / 4 + lat / 2), n);
+  const rho0 = (LAMBERT_AU.radius * f) / Math.pow(Math.tan(Math.PI / 4 + lat0 / 2), n);
+  const theta = n * (lon - lon0);
+
+  return {
+    x: rho * Math.sin(theta),
+    y: rho0 - rho * Math.cos(theta),
+  };
+}
+
+function stableUnit(seed: number) {
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
+}
+
+function clamp(value: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function svgCoord(value: number) {
+  return Number(value.toFixed(3));
+}
+
+function titleize(value: string) {
+  return value
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
 function isMobileArchiveViewport() {
   return typeof window !== "undefined" && window.matchMedia(MOBILE_ARCHIVE_QUERY).matches;
 }
@@ -167,8 +509,9 @@ export function useMobileArchiveRouteGuard(view: MobileControlView) {
   return { blockedDashboard };
 }
 
-export function MobileArchiveRoute({ view }: { view: MobileControlView }) {
+export function MobileArchiveRoute({ view, data }: { view: MobileControlView; data: FrontendData }) {
   const routeView: MobileRouteView = view === "dashboard" ? "map" : view;
+  const mobileData = useMemo(() => buildMobileArchiveData(data), [data]);
   const pageRef = useRef<HTMLElement | null>(null);
   const reducedMotion = useMobilePrefersReducedMotion();
 
@@ -179,10 +522,10 @@ export function MobileArchiveRoute({ view }: { view: MobileControlView }) {
       <h1 className="visually-hidden">{mobileRouteHeading(routeView)}</h1>
       <div className="noise-layer" aria-hidden="true" />
       <section ref={pageRef} className="mobile-archive-page" aria-label={`AusFigures ${routeView} mobile view`}>
-        {routeView === "map" ? <MobileMapView /> : null}
-        {routeView === "density" ? <MobileDensityView /> : null}
-        {routeView === "source" ? <MobileSourceView /> : null}
-        {routeView === "about" ? <MobileAboutView /> : null}
+        {routeView === "map" ? <MobileMapView data={mobileData} /> : null}
+        {routeView === "density" ? <MobileDensityView data={mobileData} /> : null}
+        {routeView === "source" ? <MobileSourceView data={mobileData} /> : null}
+        {routeView === "about" ? <MobileAboutView data={mobileData} /> : null}
       </section>
       <MobileArchiveControls view={routeView} />
     </main>
@@ -203,10 +546,18 @@ function useMobilePageAmbientMotion(
     const redrawTargets = Array.from(
       root.querySelectorAll<SVGGeometryElement>(".mobile-map-canvas .state-shape, .mobile-map-canvas .coast-outline"),
     );
+    const mapDots = Array.from(root.querySelectorAll<SVGCircleElement>(".mobile-map-canvas .record-flag-dot"));
+    const ambientMapDots = mapDots.filter((_, index) => index % 29 === 0);
     const resetRedrawTargets = () => {
       redrawTargets.forEach((target) => {
         target.style.strokeDasharray = "";
         target.style.strokeDashoffset = "";
+      });
+    };
+    const resetMapDots = () => {
+      mapDots.forEach((target) => {
+        target.style.opacity = "";
+        target.style.transform = "";
       });
     };
 
@@ -215,34 +566,48 @@ function useMobilePageAmbientMotion(
       target.style.strokeDasharray = `${length}`;
       target.style.strokeDashoffset = `${length}`;
     });
-
-    const redrawTimeline = createTimeline({
-      defaults: {
-        ease: "outCubic",
-        duration: 820,
-        composition: "replace",
-      },
+    mapDots.forEach((target) => {
+      target.style.opacity = "0";
+      target.style.transform = "scale(0.22)";
     });
-    addMobileTimelineTargets(
-      redrawTimeline,
-      root.querySelectorAll(".mobile-map-heading, .density-header, .source-terminal-header, .mobile-about-heading"),
-      { opacity: [0.76, 1], translateY: [5, 0] },
-      0,
-    );
-    addMobileTimelineTargets(
-      redrawTimeline,
-      root.querySelectorAll(".readout-block, .state-mini, .density-band, .density-chart-card, .source-mobile-accordion, .about-status-panel, .about-module"),
-      { opacity: [0.78, 1], translateY: [4, 0], delay: stagger(34) },
-      120,
-    );
-    addMobileTimelineTargets(
-      redrawTimeline,
-      redrawTargets,
-      { strokeDashoffset: 0, duration: 1280, ease: "linear", delay: stagger(22) },
-      160,
-    );
+
+    let redrawTimeline: Timeline | null = null;
+    const redrawFrame = window.requestAnimationFrame(() => {
+      redrawTimeline = createTimeline({
+        defaults: {
+          ease: "outCubic",
+          duration: 780,
+          composition: "replace",
+        },
+      });
+      addMobileTimelineTargets(
+        redrawTimeline,
+        root.querySelectorAll(".mobile-map-heading, .density-header, .source-terminal-header, .mobile-about-heading"),
+        { opacity: [0.74, 1] },
+        0,
+      );
+      addMobileTimelineTargets(
+        redrawTimeline,
+        root.querySelectorAll(".readout-block, .state-mini, .density-band, .density-chart-card, .source-mobile-accordion, .about-status-panel, .about-module"),
+        { opacity: [0.76, 1], delay: stagger(28) },
+        80,
+      );
+      addMobileTimelineTargets(
+        redrawTimeline,
+        redrawTargets,
+        { strokeDashoffset: 0, duration: 1420, ease: "linear", delay: stagger(18) },
+        110,
+      );
+      addMobileTimelineTargets(
+        redrawTimeline,
+        mapDots,
+        { opacity: [0, 1], scale: [0.22, 1], duration: 880, ease: "outCubic", delay: stagger(1.4) },
+        280,
+      );
+    });
 
     let ambientTimeline: Timeline | null = null;
+    let ambientTimer: number | null = null;
     const startAmbient = () => {
       ambientTimeline?.cancel();
       ambientTimeline = createTimeline({
@@ -257,10 +622,10 @@ function useMobilePageAmbientMotion(
 
       if (view === "map") {
         addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".coast-outline"), { opacity: [0.62, 1] }, 0);
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".record-flag-dot"), {
-          opacity: [0.48, 1],
-          scale: [0.9, 1.12],
-          delay: stagger(9),
+        addMobileTimelineTargets(ambientTimeline, ambientMapDots, {
+          opacity: [0.62, 1],
+          scale: [0.92, 1.14],
+          delay: stagger(38),
         }, 0);
         addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".map-readout-led"), {
           opacity: [0.28, 0.96],
@@ -299,6 +664,10 @@ function useMobilePageAmbientMotion(
       }
     };
     const stopAmbient = () => {
+      if (ambientTimer) {
+        window.clearTimeout(ambientTimer);
+        ambientTimer = null;
+      }
       ambientTimeline?.cancel();
       ambientTimeline = null;
     };
@@ -310,13 +679,15 @@ function useMobilePageAmbientMotion(
       }
     };
 
-    startAmbient();
+    ambientTimer = window.setTimeout(startAmbient, view === "map" ? 1700 : 520);
     document.addEventListener("visibilitychange", handleVisibilityChange);
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
-      redrawTimeline.cancel();
+      window.cancelAnimationFrame(redrawFrame);
+      redrawTimeline?.cancel();
       stopAmbient();
       resetRedrawTargets();
+      resetMapDots();
     };
   }, [reducedMotion, rootRef, view]);
 }
@@ -334,17 +705,33 @@ function mobileRouteHeading(view: MobileRouteView) {
   return "AusFigures public map";
 }
 
-function MobileMapView() {
+function MobileMapView({ data }: { data: MobileArchiveData }) {
   const [selectedState, setSelectedState] = useState<string | null>(null);
   const titleId = useId();
   const descId = useId();
-  const stateCounts = MOBILE_DATA.map.stateCounts;
+  const touchStateHandled = useRef(false);
+  const stateCounts = data.map.stateCounts;
   const stateCountMap = new Map(stateCounts.map((row) => [row.code, row.count]));
   const activeState = selectedState ? STATE_NAMES[selectedState] ?? selectedState : "Australia";
-  const activeCount = selectedState ? stateCountMap.get(selectedState) ?? 0 : MOBILE_DATA.summary.mappedRecordCount;
+  const activeCount = selectedState ? stateCountMap.get(selectedState) ?? 0 : data.summary.mappedRecordCount;
   const toggleSelectedState = useCallback((stateCode: string) => {
     setSelectedState((current) => (current === stateCode ? null : stateCode));
   }, []);
+  const handleStateClick = useCallback((stateCode: string) => {
+    if (touchStateHandled.current) {
+      touchStateHandled.current = false;
+      return;
+    }
+    toggleSelectedState(stateCode);
+  }, [toggleSelectedState]);
+  const handleStatePointerUp = useCallback((event: PointerEvent<SVGPathElement>, stateCode: string) => {
+    if (event.pointerType === "mouse") {
+      return;
+    }
+    event.preventDefault();
+    touchStateHandled.current = true;
+    toggleSelectedState(stateCode);
+  }, [toggleSelectedState]);
   const handleStateKeyDown = useCallback((event: KeyboardEvent<SVGPathElement>, stateCode: string) => {
     if (event.key !== "Enter" && event.key !== " ") {
       return;
@@ -370,7 +757,7 @@ function MobileMapView() {
         >
           <title id={titleId}>Public record display locations across Australia</title>
           <desc id={descId}>
-            Australia map with state and territory outlines, summarising {formatNumber(MOBILE_DATA.summary.mappedRecordCount)} mapped public records.
+            Australia map with state and territory outlines, summarising {formatNumber(data.summary.mappedRecordCount)} mapped public records.
           </desc>
           {STATE_SHAPES.map((state) => {
             const count = stateCountMap.get(state.code) ?? 0;
@@ -383,14 +770,15 @@ function MobileMapView() {
                 tabIndex={0}
                 aria-label={`${STATE_NAMES[state.code] ?? state.code}, ${formatNumber(count)} mapped records`}
                 aria-pressed={selectedState === state.code}
-                onClick={() => toggleSelectedState(state.code)}
+                onClick={() => handleStateClick(state.code)}
+                onPointerUp={(event) => handleStatePointerUp(event, state.code)}
                 onKeyDown={(event) => handleStateKeyDown(event, state.code)}
               />
             );
           })}
           <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
           <g className={`record-flag-layer ${selectedState ? "has-state-selected" : ""}`} aria-hidden="true">
-            {MOBILE_DATA.map.flags.map((flag) => (
+            {data.map.flags.map((flag) => (
               <MobileMapFlagMarker key={flag.id} flag={flag} stateLinked={selectedState === flag.state} />
             ))}
           </g>
@@ -411,7 +799,7 @@ function MobileMapView() {
           </g>
         </svg>
       </div>
-      <p className="mobile-map-note">{MOBILE_DATA.map.interpretation}</p>
+      <p className="mobile-map-note">{data.map.interpretation}</p>
       <aside className="map-readout">
         <div className="readout-block">
           <i className="map-readout-led" aria-hidden="true" />
@@ -437,8 +825,8 @@ function MobileMapView() {
         </div>
         <div className="map-health-note">
           <span>MAPPED RECORDS</span>
-          <b>{formatNumber(MOBILE_DATA.summary.mappedRecordCount)}</b>
-          <small>{formatNumber(MOBILE_DATA.summary.mappedRecordCount)} mapped / {formatNumber(MOBILE_DATA.summary.recordCount)} public records</small>
+          <b>{formatNumber(data.summary.mappedRecordCount)}</b>
+          <small>{formatNumber(data.summary.mappedRecordCount)} mapped / {formatNumber(data.summary.recordCount)} public records</small>
           <em>one display marker per mapped public record</em>
         </div>
       </aside>
@@ -456,7 +844,7 @@ function MobileMapFlagMarker({ flag, stateLinked }: { flag: MobileMapFlag; state
   );
 }
 
-function MobileDensityView() {
+function MobileDensityView({ data }: { data: MobileArchiveData }) {
   return (
     <div className="density-view mobile-density-view">
       <header className="density-header">
@@ -465,11 +853,11 @@ function MobileDensityView() {
           <p>Density shows public-text record distribution and source coverage. It is not a claim about real-world frequency.</p>
         </div>
         <b>
-          {MOBILE_DATA.summary.earliestYear}-{MOBILE_DATA.summary.latestYear} / {formatNumber(MOBILE_DATA.summary.recordCount)} PUBLIC RECORDS / {formatNumber(MOBILE_DATA.summary.mappedRecordCount)} MAPPED
+          {data.summary.earliestYear}-{data.summary.latestYear} / {formatNumber(data.summary.recordCount)} PUBLIC RECORDS / {formatNumber(data.summary.mappedRecordCount)} MAPPED
         </b>
       </header>
       <div className="density-bands">
-        {MOBILE_DATA.density.periods.map((period) => (
+        {data.density.periods.map((period) => (
           <MobileDensityBand key={period.id} period={period} />
         ))}
       </div>
@@ -478,7 +866,7 @@ function MobileDensityView() {
           <span>ANNUAL TREND</span>
           <b>Dated public records by year</b>
         </header>
-        <MobileAnnualSparkline />
+        <MobileAnnualSparkline series={data.density.annualSeries} />
         <p>Use the desktop view for the full analytical density console.</p>
       </article>
     </div>
@@ -502,8 +890,7 @@ function MobileDensityBand({ period }: { period: MobilePeriod }) {
   );
 }
 
-function MobileAnnualSparkline() {
-  const series = MOBILE_DATA.density.annualSeries;
+function MobileAnnualSparkline({ series }: { series: Array<{ year: number; count: number }> }) {
   const titleId = useId();
   const descId = useId();
   const lineRef = useRef<SVGPolylineElement | null>(null);
@@ -560,7 +947,7 @@ function MobileAnnualSparkline() {
   );
 }
 
-function MobileSourceView() {
+function MobileSourceView({ data }: { data: MobileArchiveData }) {
   const reducedMotion = useMobilePrefersReducedMotion();
   const handleDetailsToggle = useCallback((event: SyntheticEvent<HTMLDetailsElement>) => {
     animateMobileDetails(event.currentTarget, reducedMotion);
@@ -579,9 +966,9 @@ function MobileSourceView() {
           </div>
           <div className="source-header-status" aria-label="Source metrics">
             <i aria-hidden="true" />
-            <div className="source-metric-cell"><span>SOURCE ORGS</span><b>{formatNumber(MOBILE_DATA.sources.metrics.sourceOrgs)}</b></div>
-            <div className="source-metric-cell"><span>PUBLIC RECORDS</span><b>{formatNumber(MOBILE_DATA.sources.metrics.publicRecords)}</b></div>
-            <div className="source-metric-cell"><span>SOURCE TYPES</span><b>{formatNumber(MOBILE_DATA.sources.metrics.sourceTypes)}</b></div>
+            <div className="source-metric-cell"><span>SOURCE ORGS</span><b>{formatNumber(data.sources.metrics.sourceOrgs)}</b></div>
+            <div className="source-metric-cell"><span>PUBLIC RECORDS</span><b>{formatNumber(data.sources.metrics.publicRecords)}</b></div>
+            <div className="source-metric-cell"><span>SOURCE TYPES</span><b>{formatNumber(data.sources.metrics.sourceTypes)}</b></div>
           </div>
         </header>
         <div className="source-mobile-accordions">
@@ -591,7 +978,7 @@ function MobileSourceView() {
               <small>SOURCE FAMILY / RECORDS / ORGS</small>
             </summary>
             <div className="source-pane-scroll">
-              {MOBILE_DATA.sources.rollup.map((row) => (
+              {data.sources.rollup.map((row) => (
                 <div className="source-rollup-row" key={row.id}>
                   <i style={{ "--source-color": row.color } as CSSProperties} />
                   <span>{row.label}</span>
@@ -606,7 +993,7 @@ function MobileSourceView() {
               <small>SOURCE ORGANISATION / PUBLIC ROLE / RECORDS</small>
             </summary>
             <div className="source-registry-scroll">
-              {MOBILE_DATA.sources.registry.map((row) => (
+              {data.sources.registry.map((row) => (
                 <div className="source-registry-row" key={row.id}>
                   <span>
                     <b>{row.name}</b>
@@ -623,7 +1010,7 @@ function MobileSourceView() {
   );
 }
 
-function MobileAboutView() {
+function MobileAboutView({ data }: { data: MobileArchiveData }) {
   return (
     <div className="about-view mobile-about-view">
       <header className="mobile-about-heading">
@@ -637,9 +1024,9 @@ function MobileAboutView() {
           <span>DATA STATUS / PUBLIC CORPUS</span>
         </header>
         <div className="about-status-grid">
-          <div><span>PUBLIC RECORDS</span><b>{formatNumber(MOBILE_DATA.summary.recordCount)}</b></div>
-          <div><span>MAPPED RECORDS</span><b>{formatNumber(MOBILE_DATA.summary.mappedRecordCount)}</b></div>
-          <div><span>SOURCE ORGS</span><b>{formatNumber(MOBILE_DATA.summary.sourceCount)}</b></div>
+          <div><span>PUBLIC RECORDS</span><b>{formatNumber(data.summary.recordCount)}</b></div>
+          <div><span>MAPPED RECORDS</span><b>{formatNumber(data.summary.mappedRecordCount)}</b></div>
+          <div><span>SOURCE ORGS</span><b>{formatNumber(data.summary.sourceCount)}</b></div>
         </div>
       </section>
       <section className="about-grid">
@@ -706,7 +1093,7 @@ function addMobileTimelineTargets(
 }
 
 export function MobileArchiveControls({ view }: { view: MobileControlView }) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const controlsRef = useRef<HTMLDivElement | null>(null);
   const idleTimer = useRef<number | null>(null);
   const keyboardInteraction = useRef(false);
@@ -737,9 +1124,13 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
   }, [scheduleCollapse]);
 
   useEffect(() => {
-    expandAndSchedule();
     return clearIdleTimer;
-  }, [clearIdleTimer, expandAndSchedule, view]);
+  }, [clearIdleTimer, view]);
+
+  const handleNavigate = useCallback(() => {
+    clearIdleTimer();
+    setCollapsed(true);
+  }, [clearIdleTimer]);
 
   const handleFocusCapture = useCallback(() => {
     clearIdleTimer();
@@ -796,6 +1187,7 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
             href="/about"
             aria-label="Open about"
             aria-current={view === "about" ? "page" : undefined}
+            onClick={handleNavigate}
           >
             <MobileNavIcon name="about" />
             <span>About</span>
@@ -805,6 +1197,7 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
             href="/source"
             aria-label="Open source"
             aria-current={view === "source" ? "page" : undefined}
+            onClick={handleNavigate}
           >
             <MobileNavIcon name="source" />
             <span>Source</span>
@@ -814,6 +1207,7 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
             href="/density"
             aria-label="Open density"
             aria-current={view === "density" ? "page" : undefined}
+            onClick={handleNavigate}
           >
             <MobileNavIcon name="density" />
             <span>Density</span>
@@ -823,6 +1217,7 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
             href="/map"
             aria-label="Open map"
             aria-current={view === "map" ? "page" : undefined}
+            onClick={handleNavigate}
           >
             <MobileNavIcon name="map" />
             <span>Map</span>

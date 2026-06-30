@@ -1,17 +1,18 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import Link from "next/link";
-import frontendData from "@/public/data/frontend-data.json";
 import { AboutAmbientMotion } from "@/components/about/about-ambient-motion";
 import { DisplayControls } from "@/components/display-controls";
 import { MobileArchiveControls } from "@/components/mobile-archive";
 import { RouteStructuredData } from "@/components/route-structured-data";
+import { FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { metadataForRoute } from "@/lib/site";
 import type { FrontendData } from "@/lib/types";
 
-const data = frontendData as FrontendData;
-
 export const metadata = metadataForRoute("/about");
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const data = await loadAboutData();
   const statusCells = buildStatusCells(data);
   const recordTypeRows = buildRecordTypeRows(data);
 
@@ -172,6 +173,19 @@ export default function AboutPage() {
       </div>
     </main>
   );
+}
+
+async function loadAboutData(): Promise<FrontendData> {
+  if (FRONTEND_DATA_URL.startsWith("/")) {
+    const dataPath = path.join(process.cwd(), "public", FRONTEND_DATA_URL.replace(/^\/+/, ""));
+    return JSON.parse(await readFile(dataPath, "utf8")) as FrontendData;
+  }
+
+  const response = await fetch(FRONTEND_DATA_URL, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error(`About data request failed: ${response.status}`);
+  }
+  return response.json() as Promise<FrontendData>;
 }
 
 function AboutModule({ kicker, title, body, mobileBody }: { kicker: string; title: string; body: string; mobileBody?: string }) {
