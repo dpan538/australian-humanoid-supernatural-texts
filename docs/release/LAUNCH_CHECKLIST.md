@@ -26,9 +26,11 @@ Use this checklist immediately before a production release.
 ## Internet Discovery Gate
 
 - [ ] `/robots.txt` allows public crawling and references `https://ausfigures.com/sitemap.xml`.
-- [ ] `/sitemap.xml` lists only public HTML routes on `https://ausfigures.com`.
+- [ ] `/sitemap.xml` lists only public HTML routes on `https://ausfigures.com`, including the research topic entry points.
 - [ ] `/llms.txt` contains only public, non-sensitive launch guidance.
+- [ ] `/llms-full.txt` contains expanded public-safe AI/search context.
 - [ ] Route metadata uses restrained public-text archive framing.
+- [ ] Dataset JSON-LD includes `license`, valid `spatialCoverage`, and public data distribution metadata.
 - [ ] Root index appears as the main sitemap entry.
 - [ ] `/opengraph-image` and `/twitter-image` return image/png social cards with research-safe framing.
 - [ ] `/manifest.webmanifest` and `/apple-icon` return browser identity metadata for Chrome/Safari.
@@ -58,9 +60,10 @@ Use this checklist immediately before a production release.
 
 ## Public Routes
 
-- [ ] `/` renders the index map for verified mapped public records only.
+- [ ] `/` renders the source-grounded map index for records with public display locations.
 - [ ] `/map` renders the same map view as a route alias.
 - [ ] `/dashboard` renders.
 - [ ] `/density` renders density views.
 - [ ] `/source` renders the source register.
 - [ ] `/about` renders scope, methods, source policy, mapping limits, and ethics.
+- [ ] `/topics` and `/topics/*` render research-safe search topic entry points.

@@ -57,12 +57,15 @@ python3 scripts/check_vercel_release.py
 - `metadataBase` uses `https://ausfigures.com`.
 - Canonical route metadata uses `https://ausfigures.com`.
 - Root route metadata titles the homepage as the AusFigures map index.
+- Research topic entry points use source-grounded discovery language for Australian supernatural, Yowie, bunyip, ghost, apparition, and spirit-person searches.
 - Open Graph and Twitter metadata use `summary_large_image` framing and canonical `ausfigures.com` image URLs.
 - Browser identity metadata includes `/manifest.webmanifest`, `/apple-icon`, theme colors, and Safari/Chrome app titles.
 - `www.ausfigures.com/*` redirects permanently to `https://ausfigures.com/*`.
 - Sitemap only lists `https://ausfigures.com` URLs.
 - Robots references `https://ausfigures.com/sitemap.xml`.
 - `llms.txt` uses canonical apex URLs.
+- `llms-full.txt` provides expanded public-safe AI/search context.
+- Dataset JSON-LD uses a license URL, `Place` spatial coverage, and the public frontend data distribution URL.
 - No production metadata or public discovery file points to a `*.vercel.app` URL.
 
 ## Post-Deploy Smoke Checks
@@ -75,9 +78,12 @@ Check these paths on the production deployment:
 - `/density` returns 200.
 - `/source` returns 200.
 - `/about` returns 200.
+- `/topics` returns 200.
+- `/topics/australian-supernatural` returns 200.
 - `/robots.txt` returns 200 and references `https://ausfigures.com/sitemap.xml`.
 - `/sitemap.xml` returns 200 and only lists canonical public routes.
 - `/llms.txt` returns 200 and contains only public launch guidance.
+- `/llms-full.txt` returns 200 and contains only public AI/search guidance.
 - `/opengraph-image` returns 200 image/png and uses research-safe framing.
 - `/twitter-image` returns 200 image/png and uses research-safe framing.
 - `/manifest.webmanifest` returns 200 application/manifest+json or compatible JSON.

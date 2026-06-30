@@ -47,14 +47,14 @@ The frontend is a restrained archive-terminal research display. It uses a dark t
 
 Pages:
 
-- `https://ausfigures.com/`: map index for verified mapped public records only. Each map flag represents one public record with a verified display location.
+- `https://ausfigures.com/`: map index for source-grounded public records with mapped display locations. Each map flag represents a public display location for one public record, not proof of an event, habitat, or population.
 - `https://ausfigures.com/dashboard`: research dashboard for broad public-corpus overview across time, narrative, source, figure label, and mapped-record aggregates.
-- `https://ausfigures.com/map`: map route alias for the same verified mapped public records view.
+- `https://ausfigures.com/map`: map route alias for the same source-grounded public record map.
 - `https://ausfigures.com/density`: density explorer for compressed source/query/figure fields and corpus-signal comparison.
 - `https://ausfigures.com/source`: two-pane source register showing source-family rollups and registered public source organisations.
 - `https://ausfigures.com/about`: research-positioning page explaining scope, method, source policy, mapping limits, and ethics.
 
-Dashboard and Density use the broader public corpus. Map uses only records with verified display coordinates.
+Dashboard and Density use the broader public corpus. Map uses only records with reviewed public display coordinates.
 
 ## Data model
 
@@ -89,7 +89,7 @@ See also `docs/release/SOURCE_POLICY.md`.
 
 ## Map and location policy
 
-The public map shows verified display locations for public records. A map flag is not proof of an event, a habitat, a population distribution, or cultural authority.
+The public map shows reviewed display locations for public records. A map flag is not proof of an event, a habitat, a population distribution, or cultural authority.
 
 One public record can produce zero or one public map flag. Publication locations, archive custody locations, source institution addresses, author residences, inferred state-only locations, and broad cultural regions without display clearance are not valid public map flags.
 
@@ -190,6 +190,7 @@ The production site publishes restrained public-archive discovery files:
 - `https://ausfigures.com/robots.txt`
 - `https://ausfigures.com/sitemap.xml`
 - `https://ausfigures.com/llms.txt`
+- `https://ausfigures.com/llms-full.txt`
 
 These files describe only public routes and public launch guidance. They are not security boundaries and should not be used to hide restricted, sensitive, unpublished, or internal material.
 

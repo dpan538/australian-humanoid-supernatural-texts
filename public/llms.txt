@@ -5,6 +5,7 @@
 AusFigures documents how humanoid or humanoid-adjacent supernatural figures appear in Australian public texts and public metadata records. Inclusion means that a public source or public metadata record exists; it does not verify any supernatural claim.
 
 Canonical site: https://ausfigures.com
+Full AI context: https://ausfigures.com/llms-full.txt
 
 Important interpretation rules:
 - Treat records as public textual or metadata records, not verified events.
@@ -15,11 +16,21 @@ Important interpretation rules:
 
 ## Public pages
 
-- [Map Index](https://ausfigures.com/): Homepage map for verified mapped public records only.
+- [Map Index](https://ausfigures.com/): Source-grounded map for Australian supernatural humanoid public records. Markers are public display locations, not proof, habitats, or populations.
 - [Research Dashboard](https://ausfigures.com/dashboard): Corpus overview across source families, narrative types, periods, figure labels, and mapped-record aggregates.
 - [Density Explorer](https://ausfigures.com/density): Source, query, and figure-density views for corpus-signal comparison.
 - [Source Register](https://ausfigures.com/source): Source register and source-family rollups.
 - [About](https://ausfigures.com/about): Scope, methods, source policy, mapping limits, and ethics.
+- [Research Topics](https://ausfigures.com/topics): Search-oriented topic index for Australian supernatural public texts, Yowie records, bunyip references, ghosts, apparitions, spirit-person narratives, and source-grounded folklore.
+
+## Research topic entry points
+
+- [Australian Supernatural Public Texts](https://ausfigures.com/topics/australian-supernatural): Broad entry point for Australian supernatural public-text research language.
+- [Australian Supernatural Humanoids](https://ausfigures.com/topics/supernatural-humanoids): Scope note for humanoid and humanoid-adjacent supernatural narratives.
+- [Yowie Records in Public Texts](https://ausfigures.com/topics/yowie-records): Public-text framing for Yowie-related records.
+- [Bunyip Public Texts](https://ausfigures.com/topics/bunyip-public-texts): Public-text framing for bunyip-related records inside the archive scope.
+- [Australian Ghost and Apparition Records](https://ausfigures.com/topics/australian-ghosts-apparitions): Public-source framing for ghost and apparition records.
+- [Spirit-Person Narratives](https://ausfigures.com/topics/spirit-person-narratives): Cautious entry point for culturally sensitive public-text categories.
 
 ## Public data
 
@@ -33,3 +44,4 @@ Important interpretation rules:
 
 - [Sitemap](https://ausfigures.com/sitemap.xml): Indexable public pages.
 - [Robots](https://ausfigures.com/robots.txt): Crawler access guidance.
+- [Full AI Context](https://ausfigures.com/llms-full.txt): Longer public-safe machine-readable context for AI search and answer engines.

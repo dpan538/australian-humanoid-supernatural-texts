@@ -3,6 +3,7 @@ import frontendData from "@/public/data/frontend-data.json";
 import { AboutAmbientMotion } from "@/components/about/about-ambient-motion";
 import { DisplayControls } from "@/components/display-controls";
 import { MobileArchiveControls } from "@/components/mobile-archive";
+import { RouteStructuredData } from "@/components/route-structured-data";
 import { metadataForRoute } from "@/lib/site";
 import type { FrontendData } from "@/lib/types";
 
@@ -17,6 +18,7 @@ export default function AboutPage() {
   return (
     <main className="terminal-shell">
       <div className="noise-layer" aria-hidden="true" />
+      <RouteStructuredData path="/about" />
       <div className="terminal-stage">
         <section className="view-area view-area-about" aria-label="About this archive terminal">
           <div className="about-view">
@@ -153,6 +155,7 @@ export default function AboutPage() {
               <Link href="/dashboard">DASHBOARD</Link>
               <Link href="/density">DENSITY</Link>
               <Link href="/source">SOURCE</Link>
+              <Link href="/topics">TOPICS</Link>
             </nav>
           </div>
         </section>
