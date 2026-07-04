@@ -7,6 +7,7 @@ import { MobileArchiveControls } from "@/components/mobile-archive";
 import { RouteStructuredData } from "@/components/route-structured-data";
 import { FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { metadataForRoute } from "@/lib/site";
+import { buildSourceRegistryData } from "@/lib/source-view-data";
 import type { FrontendData } from "@/lib/types";
 
 export const metadata = metadataForRoute("/about");
@@ -204,13 +205,13 @@ function AboutModule({ kicker, title, body, mobileBody }: { kicker: string; titl
 
 function buildStatusCells(sourceData: FrontendData) {
   const summary = sourceData.summary;
-  const sourceTypes = new Set(sourceData.sources.map((source) => source.source_type).filter(Boolean));
+  const sourceMetrics = buildSourceRegistryData(sourceData).metrics;
   const dateSpan = summary.earliest_year && summary.latest_year ? `${summary.earliest_year}-${summary.latest_year}` : null;
   return [
     { label: "PUBLIC RECORDS", value: numberFormat(summary.record_count || sourceData.records.length) },
     { label: "MAPPED RECORDS", value: numberFormat(summary.mapped_record_count || sourceData.map_flags?.length || sourceData.map_points.length) },
-    { label: "SOURCE ORGS", value: numberFormat(summary.source_count || sourceData.sources.length) },
-    { label: "SOURCE TYPES", value: numberFormat(sourceTypes.size) },
+    { label: "SOURCE ORGS", value: numberFormat(sourceMetrics.sourceOrgs) },
+    { label: "SOURCE TYPES", value: numberFormat(sourceMetrics.sourceTypes) },
     dateSpan ? { label: "DATE SPAN", value: dateSpan } : null,
   ].filter((cell): cell is { label: string; value: string } => Boolean(cell));
 }

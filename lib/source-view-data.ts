@@ -172,7 +172,6 @@ export function buildSourceRegistryData(data: FrontendData): SourceRegistryData 
 
   for (const source of data.sources) {
     sourceRecords.set(source.source_id, []);
-    sourceTypeSet.add(source.source_type);
   }
 
   for (const record of data.records) {
@@ -187,6 +186,7 @@ export function buildSourceRegistryData(data: FrontendData): SourceRegistryData 
 
   const registryRows = data.sources
     .map((source) => buildRegistryRow(source, sourceRecords.get(source.source_id) ?? []))
+    .filter((row) => row.recordCount > 0)
     .sort((a, b) => b.recordCount - a.recordCount || a.source.source_name.localeCompare(b.source.source_name));
 
   const rollupMap = new Map<SourceFamilyId, SourceRollupRow>();
@@ -225,7 +225,7 @@ export function buildSourceRegistryData(data: FrontendData): SourceRegistryData 
 
   return {
     metrics: {
-      sourceOrgs: data.summary.source_count || data.sources.length,
+      sourceOrgs: registryRows.length,
       publicRecords,
       sourceTypes: sourceTypeSet.size,
     },

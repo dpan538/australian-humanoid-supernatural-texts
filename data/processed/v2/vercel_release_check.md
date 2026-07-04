@@ -1,19 +1,19 @@
 # Vercel Release Check
 
-Generated: `2026-06-30T01:11:44.395981+00:00`
+Generated: `2026-07-04T14:07:44.542283+00:00`
 Status: `pass`
 Domain target: `ausfigures.com`
 
 ## Static Data
 
 - Frontend JSON: `public/data/frontend-data.json`
-- Frontend JSON size: `20675725` bytes
-- Public records: `3809`
-- Mapped records: `1206`
-- map_flags length: `1206`
-- map_points length: `1206`
-- Source organizations: `42`
-- Source rows: `49`
+- Frontend JSON size: `23062512` bytes
+- Public records: `4265`
+- Mapped records: `1593`
+- map_flags length: `1593`
+- map_points length: `1593`
+- Source organizations: `47`
+- Source rows: `54`
 - Date span: `1825`-`2026`
 
 ## Build Model
@@ -43,10 +43,15 @@ Domain target: `ausfigures.com`
 - `municipal_local_history_pdf`: `1`
 - `nla_catalogue`: `1`
 - `project_gutenberg_australia_book`: `1`
+- `public_books_metadata_internet_archive`: `1`
+- `public_books_metadata_openlibrary`: `1`
 - `public_domain_ebook`: `2`
 - `public_domain_transcribed_book`: `2`
 - `public_repository_newsletter_ocr_text`: `1`
 - `public_repository_ocr_text`: `1`
+- `public_web_yowie_report_map`: `1`
+- `public_web_yowie_state_report_index`: `1`
+- `public_wikidata_entity_metadata`: `1`
 - `repository_full_text`: `1`
 - `repository_full_text_article`: `1`
 - `seeded_public_web`: `1`
