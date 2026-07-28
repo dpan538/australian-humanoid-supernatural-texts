@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { createTimeline, stagger } from "animejs";
-import type { Timeline } from "animejs";
 
 export function AboutAmbientMotion() {
   const reducedMotion = usePrefersReducedMotion();
@@ -26,41 +25,8 @@ export function AboutAmbientMotion() {
       delay: stagger(80),
     }, 80);
 
-    let ambientTimeline: Timeline | null = null;
-    const startAmbient = () => {
-      ambientTimeline?.cancel();
-      ambientTimeline = createTimeline({
-        loop: true,
-        alternate: true,
-        defaults: {
-          ease: "inOutSine",
-          duration: 4600,
-          composition: "replace",
-        },
-      });
-      addIfTargets(ambientTimeline, root.querySelectorAll(".about-status-led, .about-raster-cell.is-live"), {
-        opacity: [0.36, 0.68],
-        scale: [1, 1.018],
-      }, 0);
-    };
-    const stopAmbient = () => {
-      ambientTimeline?.cancel();
-      ambientTimeline = null;
-    };
-    const onVisibility = () => {
-      if (document.visibilityState === "visible") {
-        startAmbient();
-      } else {
-        stopAmbient();
-      }
-    };
-
-    startAmbient();
-    document.addEventListener("visibilitychange", onVisibility);
     return () => {
-      document.removeEventListener("visibilitychange", onVisibility);
       drawTimeline.cancel();
-      stopAmbient();
     };
   }, [reducedMotion]);
 
@@ -81,7 +47,12 @@ function usePrefersReducedMotion() {
   return reduced;
 }
 
-function addIfTargets(timeline: Timeline, targets: NodeListOf<Element>, params: Record<string, unknown>, position: number) {
+function addIfTargets(
+  timeline: ReturnType<typeof createTimeline>,
+  targets: NodeListOf<Element>,
+  params: Record<string, unknown>,
+  position: number,
+) {
   if (targets.length > 0) {
     timeline.add(targets, params, position);
   }

@@ -21,3 +21,4 @@ tsconfig.tsbuildinfo
 *.tsbuildinfo
 *.db
 *.sqlite-*
+public/data/frontend-interactive.json

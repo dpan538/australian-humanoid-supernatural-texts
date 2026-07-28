@@ -133,7 +133,7 @@
     isolation: isolate;
     overflow: hidden;
     pointer-events: auto;
-    animation: mobile-nav-shell-breathe 7200ms ease-in-out infinite;
+    animation: mobile-nav-shell-breathe 6400ms ease-in-out infinite;
   }
 
   .mobile-archive-controls::before {
@@ -486,11 +486,6 @@
     transform-origin: center;
   }
 
-  .mobile-archive-shell .mobile-map-canvas .australia-map {
-    transform-origin: center;
-    animation: mobile-map-breathe 8200ms ease-in-out infinite;
-  }
-
   .mobile-archive-shell .mobile-map-view .state-shape.selected,
   .mobile-archive-shell .mobile-map-view .state-shape:focus-visible {
     fill: rgba(255, 250, 240, 0.12);
@@ -642,17 +637,6 @@
     background:
       repeating-linear-gradient(0deg, rgba(242, 242, 237, 0.014), rgba(242, 242, 237, 0.014) 1px, transparent 1px, transparent 8px),
       rgba(5, 6, 6, 0.28);
-  }
-
-  .mobile-archive-shell .readout-block,
-  .mobile-archive-shell .map-health-note,
-  .mobile-archive-shell .density-band,
-  .mobile-archive-shell .density-chart-card,
-  .mobile-archive-shell .mobile-map-canvas .australia-map,
-  .mobile-archive-shell .source-mobile-accordion,
-  .mobile-archive-shell .about-status-panel,
-  .mobile-archive-shell .about-module {
-    animation: mobile-panel-breathe 7800ms ease-in-out infinite;
   }
 
   .density-view {
@@ -953,8 +937,9 @@
   }
 
   .source-terminal-header .source-metric-cell span {
-    font-size: 0.66rem;
+    font-size: 0.75rem;
     line-height: 1.05;
+    font-weight: 600;
   }
 
   .source-mobile-tabs,
@@ -1304,71 +1289,45 @@
   }
 }
 
-@keyframes mobile-panel-breathe {
-  0%,
-  100% {
-    border-color: rgba(159, 224, 255, 0.28);
-    box-shadow: 0 0 0 rgba(159, 224, 255, 0);
-  }
-
-  50% {
-    border-color: rgba(159, 224, 255, 0.62);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 250, 240, 0.075),
-      0 0 24px rgba(159, 224, 255, 0.14);
-  }
-}
-
-@keyframes mobile-map-breathe {
-  0%,
-  100% {
-    opacity: 0.94;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
 @keyframes mobile-nav-shell-breathe {
   0%,
   100% {
-    border-color: rgba(242, 242, 237, 0.32);
+    border-color: rgba(242, 242, 237, 0.28);
     box-shadow:
       inset 0 1px 0 rgba(255, 250, 240, 0.34),
       inset 0 -1px 0 rgba(5, 6, 6, 0.18),
       0 15px 34px rgba(0, 0, 0, 0.4),
-      0 0 14px rgba(159, 224, 255, 0.05);
+      0 0 12px rgba(159, 224, 255, 0.04);
   }
 
   50% {
-    border-color: rgba(242, 242, 237, 0.48);
+    border-color: rgba(159, 224, 255, 0.72);
     box-shadow:
       inset 0 1px 0 rgba(255, 250, 240, 0.42),
       inset 0 -1px 0 rgba(5, 6, 6, 0.16),
       0 15px 34px rgba(0, 0, 0, 0.4),
-      0 0 20px rgba(159, 224, 255, 0.075);
+      0 0 24px rgba(159, 224, 255, 0.16);
   }
 }
 
 @keyframes mobile-nav-shell-breathe-light {
   0%,
   100% {
-    border-color: rgba(5, 6, 6, 0.16);
+    border-color: rgba(5, 6, 6, 0.2);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.72),
       inset 0 -1px 0 rgba(5, 6, 6, 0.08),
       0 15px 32px rgba(0, 0, 0, 0.16),
-      0 0 13px rgba(0, 75, 255, 0.035);
+      0 0 12px rgba(0, 71, 255, 0.035);
   }
 
   50% {
-    border-color: rgba(5, 6, 6, 0.24);
+    border-color: rgba(0, 71, 255, 0.58);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.82),
       inset 0 -1px 0 rgba(5, 6, 6, 0.08),
       0 15px 32px rgba(0, 0, 0, 0.16),
-      0 0 18px rgba(0, 75, 255, 0.05);
+      0 0 22px rgba(0, 71, 255, 0.12);
   }
 }
 
@@ -1387,5 +1346,19 @@
   .about-accordion-module[open] > .about-flow,
   .about-accordion-module[open] > .about-type-list {
     animation: none !important;
+  }
+}
+
+@media (max-width: 980px), (pointer: coarse) {
+  .publication-frame.terminal-stage {
+    width: calc(100vw - 20px);
+    min-height: 100svh;
+    padding: 10px 0 calc(var(--mobile-safe-bottom) + 28px);
+  }
+
+  .publication-display-controls.terminal-footer-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
   }
 }

@@ -515,7 +515,7 @@ export function MobileArchiveRoute({ view, data }: { view: MobileControlView; da
   const pageRef = useRef<HTMLElement | null>(null);
   const reducedMotion = useMobilePrefersReducedMotion();
 
-  useMobilePageAmbientMotion(pageRef, routeView, reducedMotion);
+  useMobilePageAmbientMotion(pageRef, reducedMotion);
 
   return (
     <main className={`terminal-shell mobile-archive-shell mobile-view-${routeView}`}>
@@ -534,7 +534,6 @@ export function MobileArchiveRoute({ view, data }: { view: MobileControlView; da
 
 function useMobilePageAmbientMotion(
   rootRef: RefObject<HTMLElement | null>,
-  view: MobileRouteView,
   reducedMotion: boolean,
 ) {
   useEffect(() => {
@@ -547,7 +546,6 @@ function useMobilePageAmbientMotion(
       root.querySelectorAll<SVGGeometryElement>(".mobile-map-canvas .state-shape, .mobile-map-canvas .coast-outline"),
     );
     const mapDots = Array.from(root.querySelectorAll<SVGCircleElement>(".mobile-map-canvas .record-flag-dot"));
-    const ambientMapDots = mapDots.filter((_, index) => index % 29 === 0);
     const resetRedrawTargets = () => {
       redrawTargets.forEach((target) => {
         target.style.strokeDasharray = "";
@@ -606,90 +604,13 @@ function useMobilePageAmbientMotion(
       );
     });
 
-    let ambientTimeline: Timeline | null = null;
-    let ambientTimer: number | null = null;
-    const startAmbient = () => {
-      ambientTimeline?.cancel();
-      ambientTimeline = createTimeline({
-        loop: true,
-        alternate: true,
-        defaults: {
-          ease: "inOutSine",
-          duration: 6800,
-          composition: "replace",
-        },
-      });
-
-      if (view === "map") {
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".coast-outline"), { opacity: [0.62, 1] }, 0);
-        addMobileTimelineTargets(ambientTimeline, ambientMapDots, {
-          opacity: [0.62, 1],
-          scale: [0.92, 1.14],
-          delay: stagger(38),
-        }, 0);
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".map-readout-led"), {
-          opacity: [0.28, 0.96],
-          scale: [0.86, 1.14],
-        }, 180);
-      }
-
-      if (view === "density") {
-        root.querySelectorAll<HTMLElement>(".density-bar-fill").forEach((target) => {
-          target.style.transformOrigin = "left center";
-        });
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".density-bar-fill"), {
-          opacity: [0.56, 1],
-          scaleX: [0.955, 1.035],
-          delay: stagger(34),
-        }, 0);
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".density-chart-path"), { opacity: [0.5, 1] }, 180);
-      }
-
-      if (view === "source") {
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".source-mobile-accordion"), { opacity: [0.82, 1] }, 0);
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".source-rollup-row i"), {
-          opacity: [0.32, 1],
-          scale: [0.86, 1.12],
-          delay: stagger(64),
-        }, 180);
-      }
-
-      if (view === "about") {
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".about-status-panel, .about-module"), { opacity: [0.82, 1] }, 0);
-        addMobileTimelineTargets(ambientTimeline, root.querySelectorAll(".about-status-head i, .about-module-head i"), {
-          opacity: [0.32, 1],
-          scale: [0.86, 1.14],
-          delay: stagger(140),
-        }, 180);
-      }
-    };
-    const stopAmbient = () => {
-      if (ambientTimer) {
-        window.clearTimeout(ambientTimer);
-        ambientTimer = null;
-      }
-      ambientTimeline?.cancel();
-      ambientTimeline = null;
-    };
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "visible") {
-        startAmbient();
-      } else {
-        stopAmbient();
-      }
-    };
-
-    ambientTimer = window.setTimeout(startAmbient, view === "map" ? 1700 : 520);
-    document.addEventListener("visibilitychange", handleVisibilityChange);
     return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.cancelAnimationFrame(redrawFrame);
       redrawTimeline?.cancel();
-      stopAmbient();
       resetRedrawTargets();
       resetMapDots();
     };
-  }, [reducedMotion, rootRef, view]);
+  }, [reducedMotion, rootRef]);
 }
 
 function mobileRouteHeading(view: MobileRouteView) {
@@ -965,7 +886,7 @@ function MobileSourceView({ data }: { data: MobileArchiveData }) {
             </p>
           </div>
           <div className="source-header-status" aria-label="Source metrics">
-            <i aria-hidden="true" />
+            <i className="source-terminal-led is-live" aria-hidden="true" />
             <div className="source-metric-cell"><span>SOURCE ORGS</span><b>{formatNumber(data.sources.metrics.sourceOrgs)}</b></div>
             <div className="source-metric-cell"><span>PUBLIC RECORDS</span><b>{formatNumber(data.sources.metrics.publicRecords)}</b></div>
             <div className="source-metric-cell"><span>SOURCE TYPES</span><b>{formatNumber(data.sources.metrics.sourceTypes)}</b></div>

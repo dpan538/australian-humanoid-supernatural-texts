@@ -39,6 +39,8 @@ const structuredData = {
       url: siteConfig.siteUrl,
       description: siteConfig.shortDescription,
       inLanguage: "en-AU",
+      datePublished: siteConfig.releaseDate,
+      dateModified: siteConfig.contentUpdatedDate,
       publisher: {
         "@id": `${siteConfig.siteUrl}/#organization`,
       },
@@ -64,6 +66,8 @@ const structuredData = {
       sameAs: siteConfig.repositoryUrl,
       description: siteConfig.shortDescription,
       inLanguage: "en-AU",
+      datePublished: siteConfig.releaseDate,
+      dateModified: siteConfig.contentUpdatedDate,
       publisher: {
         "@id": `${siteConfig.siteUrl}/#organization`,
       },
@@ -118,6 +122,11 @@ export const metadata: Metadata = {
   description: siteConfig.shortDescription,
   keywords: [...siteConfig.keywords],
   category: "research",
+  alternates: {
+    types: {
+      "application/rss+xml": absoluteUrl("/feed.xml"),
+    },
+  },
   openGraph: {
     title: `${SITE.name} - ${SITE.fullTitle}`,
     description: siteConfig.shortDescription,
@@ -171,9 +180,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-AU" suppressHydrationWarning>
       <head>
         <script
+          id="ausfigures-theme-bootstrap"
           dangerouslySetInnerHTML={{
             __html: `
 try {
@@ -189,6 +199,7 @@ try {
           }}
         />
         <script
+          id="ausfigures-global-structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),

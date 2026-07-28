@@ -16,51 +16,6 @@ export function useSourceTerminalMotion({
   const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (!root || reducedMotion) {
-      return;
-    }
-
-    let timeline: Timeline | null = null;
-    const start = () => {
-      timeline?.cancel();
-      timeline = createTimeline({
-        loop: true,
-        alternate: true,
-        defaults: {
-          ease: "inOutSine",
-          duration: 4200,
-          composition: "replace",
-        },
-      });
-      addIfTargets(timeline, root.querySelectorAll(".source-terminal-led.is-live, .source-divider-led.is-live, .source-family-marker.is-active"), {
-        opacity: [0.38, 0.62],
-        scale: [1, 1.025],
-      }, 0);
-      addIfTargets(timeline, root.querySelectorAll(".source-terminal-divider > span"), {
-        opacity: [0.3, 0.5],
-      }, 420);
-    };
-    const stop = () => {
-      timeline?.cancel();
-      timeline = null;
-    };
-    const onVisibility = () => {
-      if (document.visibilityState === "visible") {
-        start();
-      } else {
-        stop();
-      }
-    };
-
-    start();
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => {
-      document.removeEventListener("visibilitychange", onVisibility);
-      stop();
-    };
-  }, [reducedMotion, root]);
-
-  useEffect(() => {
     if (!root || reducedMotion || selectedId === null) {
       return;
     }

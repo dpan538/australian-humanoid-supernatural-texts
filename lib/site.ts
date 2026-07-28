@@ -29,6 +29,7 @@ export const siteConfig = {
   creator: "Dai Pan",
   locale: "en_AU",
   releaseDate: "2026-06-30",
+  contentUpdatedDate: "2026-07-28",
   searchTopics: [
     "Australian supernatural",
     "Australian supernatural folklore",
@@ -70,9 +71,9 @@ export const siteConfig = {
   routeMetadata: [
     {
       path: "/",
-      title: "AusFigures",
+      title: "Australian Supernatural Humanoid Public-Text Archive",
       description:
-        "Explore a source-grounded map of Australian supernatural humanoid public records, including Yowie, bunyip, apparition, ghost, spirit-person, and giant narratives. Public sources are not proof.",
+        "Explore AusFigures, a source-grounded Australian archive of supernatural humanoid public texts, including wild-person, apparition, ghost, spirit-person, giant, ogre, witch, devil, retelling, and related narratives.",
       priority: 1.0,
       changeFrequency: "monthly",
     },
@@ -153,7 +154,12 @@ export function metadataForRoute(path: SiteRoutePath): Metadata {
   const description = route.description;
   const metaTitle = brandedTitle(title);
   const canonicalPath = canonicalPathForRoute(route);
-  const metadataTitle: Metadata["title"] = title.includes(SITE.name) ? { absolute: title } : title;
+  const metadataTitle: Metadata["title"] =
+    path === "/"
+      ? { absolute: metaTitle }
+      : title.includes(SITE.name)
+        ? { absolute: title }
+        : title;
 
   return {
     title: metadataTitle,

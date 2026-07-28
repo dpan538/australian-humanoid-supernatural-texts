@@ -113,8 +113,9 @@ export default async function TopicPage({ params }: TopicPageProps) {
     <main className="terminal-shell topic-shell">
       <div className="noise-layer" aria-hidden="true" />
       <script
+        id={`topic-${topic.slug}-structured-data`}
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
       <div className="terminal-stage">
         <section className="view-area view-area-about topic-view" aria-label={`${topic.title} research topic`}>

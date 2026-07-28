@@ -16,7 +16,7 @@ export function RouteStructuredData({ path }: RouteStructuredDataProps) {
   const route = routeConfig(path);
   const canonicalPath = canonicalPathForRoute(route);
   const pageUrl = absoluteUrl(canonicalPath);
-  const pageName = route.title === SITE.name ? SITE.name : `${route.title} | ${SITE.name}`;
+  const pageName = route.title.includes(SITE.name) ? route.title : `${route.title} | ${SITE.name}`;
   const socialImage = socialImageMetadata();
 
   const structuredData = {
@@ -29,7 +29,7 @@ export function RouteStructuredData({ path }: RouteStructuredDataProps) {
         name: pageName,
         description: route.description,
         inLanguage: "en-AU",
-        dateModified: siteConfig.releaseDate,
+        dateModified: siteConfig.contentUpdatedDate,
         isPartOf: {
           "@id": `${siteConfig.siteUrl}/#website`,
         },
