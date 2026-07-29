@@ -33,10 +33,40 @@ const labelKey = (record) =>
     .replace(/[_-]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+const normalizeFigureLabel = (value) =>
+  String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[_\s]+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+const figureAliases = new Map([
+  ["yahoo", "yowie"],
+  ["ghosts", "ghost"],
+  ["apparition", "ghost"],
+  ["apparitions", "ghost"],
+  ["spirits", "spirit"],
+  ["spirit-person", "spirit"],
+  ["devils", "devil"],
+  ["giants", "giant"],
+  ["ogre", "giant"],
+  ["ogres", "giant"],
+  ["bunyips", "bunyip"],
+  ["medicine-men", "medicine-man"],
+]);
+const figureSlug = (value) => {
+  const normalized = normalizeFigureLabel(value) || "uncoded-figure";
+  return figureAliases.get(normalized) || normalized;
+};
+const taxonomyFigurePageEligible = (figure) =>
+  figure.include_status !== "control_only" &&
+  figure.include_status !== "exclude_core" &&
+  figure.humanoid_degree !== "non_humanoid";
 
 const recordIndexPages = Math.max(1, Math.ceil(indexRecords.length / 100));
 const narrativeTypePages = groupCount(indexRecords, (record) => record.ontology_code);
-const labelPages = [...groupedCounts(indexRecords, labelKey).values()].filter((count) => count >= 4).length;
+const labelVocabularyGroups = [...groupedCounts(indexRecords, labelKey).values()].filter((count) => count >= 4).length;
 const sourceCounts = groupedCounts(indexRecords, (record) => record.source_id);
 const sourcePages = sourceCounts.size;
 const indexedSourcePages = [...sourceCounts.values()].filter((count) => count >= 2).length;
@@ -44,8 +74,20 @@ const placePages = groupCount(indexRecords, (record) => record.state_territory);
 const periodPages = data.date_bands.filter((period) =>
   indexRecords.some((record) => record.date_band === period.id),
 ).length;
-const staticIndexPaths = 14;
-const topicDetailPages = 6;
+const indexedFigureSlugs = new Set(
+  indexRecords
+    .map((record) => figureSlug(record.canonical_figure_guess || record.canonical_figure))
+    .filter(Boolean),
+);
+const figurePageSlugs = new Set([
+  ...indexedFigureSlugs,
+  ...data.figures
+    .filter(taxonomyFigurePageEligible)
+    .map((figure) => figureSlug(figure.canonical_name))
+    .filter(Boolean),
+]);
+const staticContentPaths = 14;
+const staticIndexPaths = 13;
 
 const inventory = {
   data_generated_at: data.generated_at,
@@ -55,27 +97,28 @@ const inventory = {
   review_only_record_pages: pageRecords.length - indexRecords.length,
   record_index_pages: recordIndexPages,
   narrative_type_pages: narrativeTypePages,
-  label_pages: labelPages,
+  label_vocabulary_groups: labelVocabularyGroups,
+  figure_encyclopedia_pages: figurePageSlugs.size,
+  indexed_figure_encyclopedia_pages: indexedFigureSlugs.size,
+  taxonomy_only_figure_pages: figurePageSlugs.size - indexedFigureSlugs.size,
   source_pages: sourcePages,
   indexed_source_pages: indexedSourcePages,
   place_pages: placePages,
   period_pages: periodPages,
   intended_content_pages:
-    staticIndexPaths +
-    topicDetailPages +
+    staticContentPaths +
     pageRecords.length +
     Math.max(0, recordIndexPages - 1) +
     narrativeTypePages +
-    labelPages +
+    figurePageSlugs.size +
     sourcePages +
     placePages +
     periodPages,
   intended_sitemap_urls:
     staticIndexPaths +
-    topicDetailPages +
     Math.max(0, recordIndexPages - 1) +
     narrativeTypePages +
-    labelPages +
+    indexedFigureSlugs.size +
     indexedSourcePages +
     placePages +
     periodPages +
@@ -92,6 +135,27 @@ const decodeText = (value) =>
     .replace(/&quot;/g, "\"")
     .replace(/&#x27;|&#39;/g, "'")
     .replace(/&#x2F;/g, "/");
+
+function metaContent(html, attribute, value) {
+  const tags = html.match(/<meta\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    const attributeValue = textMatch(
+      tag,
+      new RegExp(`${attribute}=["']([^"']+)["']`, "i"),
+    );
+    if (attributeValue.toLowerCase() !== value.toLowerCase()) {
+      continue;
+    }
+    return decodeText(textMatch(tag, /content=["']([^"']*)["']/i));
+  }
+  return "";
+}
+
+function structuredDataScripts(html) {
+  return [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
+    .filter((match) => /type=["']application\/ld\+json["']/i.test(match[1]))
+    .map((match) => match[2].trim());
+}
 
 async function listFiles(directory, suffix) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -115,11 +179,34 @@ function routeForHtml(buildRoot, filePath) {
 
 function inspectHtml(route, html) {
   const title = decodeText(textMatch(html, /<title[^>]*>([\s\S]*?)<\/title>/i));
-  const description = decodeText(
-    textMatch(html, /<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["'][^>]*>/i),
-  );
+  const description = metaContent(html, "name", "description");
   const canonical = textMatch(html, /<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["'][^>]*>/i);
-  const robots = textMatch(html, /<meta[^>]+name=["']robots["'][^>]+content=["']([^"']+)["'][^>]*>/i);
+  const robots = metaContent(html, "name", "robots");
+  const openGraph = {
+    title: metaContent(html, "property", "og:title"),
+    description: metaContent(html, "property", "og:description"),
+    type: metaContent(html, "property", "og:type"),
+    url: metaContent(html, "property", "og:url"),
+    image: metaContent(html, "property", "og:image"),
+    imageAlt: metaContent(html, "property", "og:image:alt"),
+    siteName: metaContent(html, "property", "og:site_name"),
+  };
+  const twitter = {
+    card: metaContent(html, "name", "twitter:card"),
+    title: metaContent(html, "name", "twitter:title"),
+    description: metaContent(html, "name", "twitter:description"),
+    image: metaContent(html, "name", "twitter:image"),
+    imageAlt: metaContent(html, "name", "twitter:image:alt"),
+  };
+  const jsonLdScripts = structuredDataScripts(html);
+  const structuredDataValid = jsonLdScripts.length > 0 && jsonLdScripts.every((value) => {
+    try {
+      JSON.parse(value);
+      return true;
+    } catch {
+      return false;
+    }
+  });
   const visibleText = decodeText(
     html
       .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
@@ -137,7 +224,26 @@ function inspectHtml(route, html) {
     robots,
     noindex: /\bnoindex\b/i.test(robots),
     hasH1: /<h1\b[^>]*>[\s\S]*?<\/h1>/i.test(html),
-    hasStructuredData: /type=["']application\/ld\+json["']/i.test(html),
+    hasStructuredData: jsonLdScripts.length > 0,
+    structuredDataValid,
+    openGraph,
+    twitter,
+    completeOpenGraph: Boolean(
+      openGraph.title &&
+      openGraph.description &&
+      openGraph.type &&
+      openGraph.url &&
+      openGraph.image &&
+      openGraph.imageAlt &&
+      openGraph.siteName
+    ),
+    completeTwitterCard: Boolean(
+      twitter.card &&
+      twitter.title &&
+      twitter.description &&
+      twitter.image &&
+      twitter.imageAlt
+    ),
     visibleTextLength: visibleText.length,
   };
 }
@@ -162,6 +268,8 @@ async function auditBuildOutput() {
     .map((page) => page.route);
   const sitemapNoindexPages = [...sitemapPaths]
     .filter((route) => pageByRoute.get(route)?.noindex);
+  const legacySitemapPaths = [...sitemapPaths]
+    .filter((route) => route === "/labels" || route.startsWith("/labels/") || route === "/topics" || route.startsWith("/topics/"));
   const canonicalTargets = contentPages
     .map((page) => page.canonical)
     .filter(Boolean)
@@ -173,10 +281,25 @@ async function auditBuildOutput() {
     missing_canonical: contentPages.filter((page) => !page.canonical).map((page) => page.route),
     missing_robots_meta: contentPages.filter((page) => !page.robots).map((page) => page.route),
     missing_h1: contentPages.filter((page) => !page.hasH1).map((page) => page.route),
+    invalid_structured_data: contentPages.filter((page) => !page.structuredDataValid).map((page) => page.route),
+    incomplete_open_graph: contentPages.filter((page) => !page.completeOpenGraph).map((page) => page.route),
+    incomplete_twitter_card: contentPages.filter((page) => !page.completeTwitterCard).map((page) => page.route),
+    open_graph_canonical_mismatch: contentPages
+      .filter((page) => page.canonical && page.openGraph.url !== page.canonical)
+      .map((page) => page.route),
+    invalid_canonical_origin: contentPages
+      .filter(
+        (page) =>
+          page.canonical &&
+          page.canonical !== "https://ausfigures.com" &&
+          !page.canonical.startsWith("https://ausfigures.com/"),
+      )
+      .map((page) => page.route),
     thin_server_html: contentPages.filter((page) => page.visibleTextLength < 120).map((page) => page.route),
     sitemap_missing_html: sitemapMissingHtml,
     indexable_missing_sitemap: indexableMissingSitemap,
     sitemap_contains_noindex: sitemapNoindexPages,
+    sitemap_contains_legacy_taxonomy: legacySitemapPaths,
     missing_canonical_targets: [...new Set(missingCanonicalTargets)],
   };
   const failureCount = Object.values(failures).reduce((total, routes) => total + routes.length, 0);
@@ -186,6 +309,9 @@ async function auditBuildOutput() {
     indexable_html_pages: indexablePages.length,
     crawlable_noindex_pages: contentPages.filter((page) => page.noindex).length,
     pages_with_structured_data: contentPages.filter((page) => page.hasStructuredData).length,
+    pages_with_valid_structured_data: contentPages.filter((page) => page.structuredDataValid).length,
+    pages_with_complete_open_graph: contentPages.filter((page) => page.completeOpenGraph).length,
+    pages_with_complete_twitter_cards: contentPages.filter((page) => page.completeTwitterCard).length,
     sitemap_urls: sitemapUrls.length,
     sitemap_unique_urls: new Set(sitemapUrls).size,
     robots_allows_root: /User-agent:\s*\*[\s\S]*?Allow:\s*\/(?:\s|$)/i.test(robotsText),
@@ -201,22 +327,34 @@ if (process.argv.includes("--build")) {
 }
 
 if (process.argv.includes("--live")) {
-  const [sitemapResponse, robotsResponse, sourceResponse, dashboardResponse] = await Promise.all([
+  const [sitemapResponse, robotsResponse, sourceResponse, dashboardResponse, figuresResponse] = await Promise.all([
     fetch("https://ausfigures.com/sitemap.xml"),
     fetch("https://ausfigures.com/robots.txt"),
     fetch("https://ausfigures.com/source"),
     fetch("https://ausfigures.com/dashboard"),
+    fetch("https://ausfigures.com/figures"),
   ]);
-  const [xml, liveRobots, liveSource, liveDashboard] = await Promise.all([
+  const [xml, liveRobots, liveSource, liveDashboard, liveFigures] = await Promise.all([
     sitemapResponse.text(),
     robotsResponse.text(),
     sourceResponse.text(),
     dashboardResponse.text(),
+    figuresResponse.text(),
   ]);
   const liveSitemapUrls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => decodeText(match[1]));
+  const liveSitemapPaths = liveSitemapUrls.map((url) => new URL(url).pathname);
   inventory.live_sitemap_http = sitemapResponse.status;
   inventory.live_sitemap_urls = liveSitemapUrls.length;
-  inventory.live_sitemap_paths = liveSitemapUrls.map((url) => new URL(url).pathname);
+  inventory.live_sitemap_paths = liveSitemapPaths;
+  inventory.live_legacy_topic_urls = liveSitemapPaths.filter(
+    (route) => route === "/topics" || route.startsWith("/topics/"),
+  ).length;
+  inventory.live_legacy_label_urls = liveSitemapPaths.filter(
+    (route) => route === "/labels" || route.startsWith("/labels/"),
+  ).length;
+  inventory.live_figure_urls = liveSitemapPaths.filter(
+    (route) => route === "/figures" || route.startsWith("/figures/"),
+  ).length;
   inventory.live_to_intended_sitemap_gap = inventory.intended_sitemap_urls - inventory.live_sitemap_urls;
   inventory.live_robots_http = robotsResponse.status;
   inventory.live_robots_allows_root = /User-agent:\s*\*[\s\S]*?Allow:\s*\/(?:\s|$)/i.test(liveRobots);
@@ -224,18 +362,17 @@ if (process.argv.includes("--live")) {
   inventory.live_source = {
     http: sourceResponse.status,
     html_bytes: liveSource.length,
-    has_title: /<title[^>]*>[\s\S]*?<\/title>/i.test(liveSource),
-    has_description: /<meta[^>]+name=["']description["']/i.test(liveSource),
-    has_canonical: /<link[^>]+rel=["']canonical["']/i.test(liveSource),
-    has_structured_data: /type=["']application\/ld\+json["']/i.test(liveSource),
+    ...inspectHtml("/source", liveSource),
   };
   inventory.live_dashboard = {
     http: dashboardResponse.status,
     html_bytes: liveDashboard.length,
-    has_title: /<title[^>]*>[\s\S]*?<\/title>/i.test(liveDashboard),
-    has_description: /<meta[^>]+name=["']description["']/i.test(liveDashboard),
-    has_canonical: /<link[^>]+rel=["']canonical["']/i.test(liveDashboard),
-    has_structured_data: /type=["']application\/ld\+json["']/i.test(liveDashboard),
+    ...inspectHtml("/dashboard", liveDashboard),
+  };
+  inventory.live_figures = {
+    http: figuresResponse.status,
+    html_bytes: liveFigures.length,
+    ...inspectHtml("/figures", liveFigures),
   };
 }
 

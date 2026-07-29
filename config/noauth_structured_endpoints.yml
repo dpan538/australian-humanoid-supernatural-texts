@@ -1,0 +1,117 @@
+run_name: "noauth_structured_gap_marathon"
+parent_runs:
+  - "noauth_marathon_001"
+  - "noauth_gap_marathon_001"
+  - "noauth_gap_recovery_001"
+
+target:
+  target_gap_effective_records: 2000
+  min_source_tier_abc_share: 0.90
+  max_discovery_only_effective_share: 0.0
+  max_sensitive_share: 0.0
+  count_auxiliary_as_effective: false
+
+policy:
+  no_api_keys: true
+  no_trove_api: true
+  no_google_bing_api: true
+  no_paid_api: true
+  no_login: true
+  no_paywall: true
+  respect_robots: true
+  fail_closed_on_uncertain_terms: true
+  metadata_first: true
+  no_public_record_mutation: true
+  no_frontend_mutation: true
+  no_map_mutation: true
+
+allowed_endpoint_types:
+  - OAI_PMH
+  - OMEKA_API
+  - ATOM_AtoM
+  - WORDPRESS_REST
+  - DRUPAL_JSON
+  - RSS_ATOM
+  - IIIF
+  - JSON_LD
+  - CKAN_PUBLIC
+  - PUBLIC_CATALOGUE_JSON
+  - PUBLIC_REPOSITORY_METADATA
+  - INTERNET_ARCHIVE_METADATA
+  - WIKISOURCE_ACCESS
+  - GUTENBERG_ACCESS
+  - OPEN_LIBRARY_DISCOVERY
+
+disallowed_endpoint_types:
+  - TROVE_API
+  - GOOGLE_API
+  - BING_API
+  - PAID_API
+  - LOGIN_REQUIRED
+  - PAYWALL_REQUIRED
+  - CAPTCHA_REQUIRED
+  - TOKEN_REQUIRED
+  - MANUAL_SENSITIVE
+
+endpoint_probe_limits:
+  max_domains_per_run: 500
+  max_endpoint_tests_per_domain: 20
+  max_queries_per_endpoint: 50
+  max_records_per_endpoint: 500
+  max_pages_per_endpoint: 25
+  rate_limit_seconds: 2.5
+  timeout_seconds: 25
+  backoff_403_seconds: 86400
+  backoff_429_seconds: 900
+
+target_queries:
+  controlled_terms:
+    - ghost
+    - apparition
+    - haunted
+    - phantom
+    - yowie
+    - yahoo
+    - "hairy man"
+    - "wild man"
+    - "ape man"
+    - "giant man"
+    - bunyip
+    - "Min Min"
+    - "Fisher's Ghost"
+    - "white lady"
+    - "haunted gaol"
+    - "haunted jail"
+    - "haunted hotel"
+    - "haunted station"
+    - "local legend"
+  date_terms:
+    - "1930"
+    - "1930s"
+    - "1940"
+    - "1940s"
+    - "1950"
+    - "1950s"
+    - "1960"
+    - "1960s"
+    - "1970"
+    - "1970s"
+    - "1926"
+    - "1976"
+  priority_states:
+    - WA
+    - SA
+    - NT
+    - TAS
+    - ACT
+  priority_localities:
+    WA: [Fremantle, Kalgoorlie, Albany, Perth, Broome, Carnamah, Geraldton, Bunbury, York, Toodyay]
+    SA: [Adelaide, Port Adelaide, Kapunda, Burra, Gawler, Moonta, Mount Gambier, Port Pirie, Clare, Quorn]
+    NT: [Darwin, Katherine, Alice Springs, Tennant Creek, Pine Creek, Daly Waters, Barkly, Mataranka]
+    TAS: [Hobart, Launceston, Port Arthur, Queenstown, Zeehan, Devonport, Burnie, Richmond, Ross]
+    ACT: [Canberra, Acton, Kingston, Yarralumla, Hall, Tuggeranong, Namadgi, Queanbeyan]
+
+outputs:
+  out_dir: "data/processed/v2/autoharvest/structured_endpoints"
+  discovery_dir: "data/interim/source_discovery/structured_endpoints"
+  review_dir: "data/review/v2/autoharvest/structured_endpoints"

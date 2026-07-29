@@ -1,0 +1,8 @@
+artifact,exists,size
+frontend-data.json,yes,23062512
+release-count-contract.json,yes,2374
+release-cards.json,yes,13954496
+release-charts.json,yes,15989
+frontend-map-overlays.release-candidate.json,yes,1378111
+frontend-redirects.release-candidate.json,yes,5800693
+release-coverage.release-candidate.json,yes,2350

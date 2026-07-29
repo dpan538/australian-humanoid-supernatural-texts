@@ -1,0 +1,256 @@
+{
+  "generated_at": "2026-07-06T15:34:31+00:00",
+  "git_commit": "b1f339d0672295aaa89ce678fe624510fea4b4dd",
+  "git_dirty_summary": {
+    "dirty_file_count": 422,
+    "is_dirty": true,
+    "status_available": true
+  },
+  "inputs": [
+    {
+      "bytes": 173666304,
+      "exists": true,
+      "mtime_utc": "2026-07-06T14:56:22+00:00",
+      "path": "data/processed/australian_humanoid_figures.sqlite",
+      "role": "input",
+      "sha256": "4648e5091e521e6f177c16a918507c342dc2d80851579facfb416b602de02d83"
+    },
+    {
+      "bytes": 23062512,
+      "exists": true,
+      "mtime_utc": "2026-07-06T12:19:52+00:00",
+      "path": "public/data/frontend-data.json",
+      "role": "input",
+      "sha256": "bd2a0f0c9d838e8df5950884333d8d0853cf80c69c34b42f1b7bb32e323c374d"
+    },
+    {
+      "bytes": 29575288,
+      "exists": true,
+      "mtime_utc": "2026-07-06T12:19:53+00:00",
+      "path": "public/data/frontend-data/v2.json",
+      "role": "input",
+      "sha256": "c6fdafb22b1d2513943081aa447eb7c2c34cb0de2f14e8530671d48dff8600c6"
+    },
+    {
+      "bytes": 877,
+      "exists": true,
+      "mtime_utc": "2026-07-05T07:40:49+00:00",
+      "path": "data/processed/v2/canonical_count_reconciliation.csv",
+      "role": "input",
+      "sha256": "bc58bbcb97c5e84afaf6d9ca7ca90435799de74d2cfa7c8a6cb7d761557b67aa"
+    },
+    {
+      "bytes": 2501,
+      "exists": true,
+      "mtime_utc": "2026-07-05T07:41:53+00:00",
+      "path": "data/processed/v2/frontend_source_concentration_audit.csv",
+      "role": "input",
+      "sha256": "5c4713d8a8ee4301258280b1f5cae6d5d9dac32ee44313e1c27651a36ca72480"
+    },
+    {
+      "bytes": 47475,
+      "exists": true,
+      "mtime_utc": "2026-07-04T15:44:29+00:00",
+      "path": "data/processed/v2/source_concentration_audit.csv",
+      "role": "input",
+      "sha256": "0c6a0cd234f2d768ee2b1c7e4ffbaa28a617fbf0a9dcbb21461624bbf4bac3e9"
+    },
+    {
+      "bytes": 149,
+      "exists": true,
+      "mtime_utc": "2026-07-04T15:44:29+00:00",
+      "path": "data/processed/v2/source_chain_audit.csv",
+      "role": "input",
+      "sha256": "bfe45ed26f12f6145e7d81d3510c680284f498b7825a7a7ccdba5e56a887bb58"
+    },
+    {
+      "bytes": 1585,
+      "exists": true,
+      "mtime_utc": "2026-07-06T14:00:34+00:00",
+      "path": "config/constraint_decision.yml",
+      "role": "input",
+      "sha256": "c7b32a40ef08735892d25bcf2755bd518919e1908e69563fbbaac79394c83209"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 15849,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_stats.json",
+      "role": "output",
+      "sha256": "25875ece425e013d51332353f5f18db711e7b23ed8d351ce8b1a83062c5f0af3"
+    },
+    {
+      "bytes": 6159,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_counts.csv",
+      "role": "output",
+      "sha256": "9966a3a73c9007eabedbdc5bfa02fc43c788ce7940970848737ab379f6c674a2"
+    },
+    {
+      "bytes": 9070,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_stats.md",
+      "role": "output",
+      "sha256": "7d91d0ec0e082f11289560c9bd22ef4f2f54131942a981ef9e8629acfa11592b"
+    },
+    {
+      "bytes": 9070,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "docs/paper/hss_discovery_not_evidence/COUNT_RECONCILIATION.md",
+      "role": "output",
+      "sha256": "7d91d0ec0e082f11289560c9bd22ef4f2f54131942a981ef9e8629acfa11592b"
+    },
+    {
+      "bytes": 763,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/legacy_record_publicness_counts.csv",
+      "role": "output",
+      "sha256": "977e2deda33a1a27c609ecbee61679708dc814113f8fded7f7df228e64971618"
+    },
+    {
+      "bytes": 244,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/v2_display_mode_counts.csv",
+      "role": "output",
+      "sha256": "12da152b49fc01c772119fcec342ccb7f6aa5ae2c5f46f957219a0918ced3ed4"
+    },
+    {
+      "bytes": 282,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/v2_analysis_status_counts.csv",
+      "role": "output",
+      "sha256": "c28d097ee35b8d54f1099125298b2a84e11056706c628c44ba7d6e4e99ac1829"
+    },
+    {
+      "bytes": 2732,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/v2_ethics_counts.csv",
+      "role": "output",
+      "sha256": "8530208d545a790aa07af4d80dd5d9b67438cc966f2c977b9b31e2e44d13d4bd"
+    },
+    {
+      "bytes": 400,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/collection_candidate_status_counts.csv",
+      "role": "output",
+      "sha256": "22f80f44cce45bd6d7c0368d7dfd14831c46eb4d9de6426a6e903de29168a86e"
+    },
+    {
+      "bytes": 772,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_type_counts.csv",
+      "role": "output",
+      "sha256": "a560576921eb7a9ae19a5df484d863e31d412355f4426a0136e1acdad2312d41"
+    },
+    {
+      "bytes": 548,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_source_table_counts.csv",
+      "role": "output",
+      "sha256": "a807485d38e66f6bb7c632acd935335d54a28012d3cf571b98fe15076aef4ff7"
+    },
+    {
+      "bytes": 488,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/priority_lead_bucket_counts.csv",
+      "role": "output",
+      "sha256": "d58151e65408f933ab29801770781f126d21376452c7b294166899d2cca9567d"
+    },
+    {
+      "bytes": 538,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_blocker_counts.csv",
+      "role": "output",
+      "sha256": "22f9926fca28c590afc63c17f50ca80f12e335d9f8349c63836d2675c5f713e8"
+    },
+    {
+      "bytes": 1966,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_evidence_gap_counts.csv",
+      "role": "output",
+      "sha256": "a9c0c05aadbe3cd7942fb590198dd76afafb50b3f88303405344e1f37f6b0a5d"
+    },
+    {
+      "bytes": 1354,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_source_family_counts.csv",
+      "role": "output",
+      "sha256": "cd30abc0e6f301cd4c6665955f8c0d98cd0565e64d31e0040d4e8a9324c9993d"
+    },
+    {
+      "bytes": 940,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_route_family_counts.csv",
+      "role": "output",
+      "sha256": "f9c923cf66525a2468db6b5146b6a9008d7d755c971479f597b55698eecf7560"
+    },
+    {
+      "bytes": 33547,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/source_organisation_counts.csv",
+      "role": "output",
+      "sha256": "fd910c94d45b7abf778dffffec76fb026f346bc8a702459344d3670817b64dfa"
+    },
+    {
+      "bytes": 2029,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/source_type_counts.csv",
+      "role": "output",
+      "sha256": "285a62c04e883272772d70854282c62d4f1f7a9776e444a7e6ba4d298c9ef9cc"
+    },
+    {
+      "bytes": 809,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/source_publicness_counts.csv",
+      "role": "output",
+      "sha256": "86b62e757bf1ae68ac6651c3dc3cca64e9f0fd89285fb5d362f7cacb5bd71fd4"
+    },
+    {
+      "bytes": 1189,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/missingness_counts.csv",
+      "role": "output",
+      "sha256": "2f8b143d645de52c8c0b9f1ae0b9c00d6b1b65b9b23226662c89e802c49981f6"
+    },
+    {
+      "bytes": 3317,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/frontend_map_source_family_counts.csv",
+      "role": "output",
+      "sha256": "f86a2afd7d8860a1ade36a7e38ab9b609388720c2724ffd52576103ed9c98272"
+    },
+    {
+      "bytes": 50327,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/source_chain_original_source_counts.csv",
+      "role": "output",
+      "sha256": "cfa9f415f9bc7c8ae27efa712790051dcfc3c2a913eaba00d9d9bd7ce799f9b9"
+    }
+  ],
+  "script": "generate_paper_stats.py",
+  "script_version": "2026-07-06.1",
+  "warnings": []
+}

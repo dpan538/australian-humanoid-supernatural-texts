@@ -1,0 +1,137 @@
+run_name: "noauth_gap_marathon"
+parent_run_id: "noauth_marathon_001"
+new_run_id: "noauth_gap_marathon_001"
+
+target:
+  target_gap_effective_records: 2000
+  min_1926_1976_share: 1.0
+  min_1955_1976_share: 0.35
+  min_priority_state_share: 0.45
+  min_source_tier_abc_share: 0.90
+  max_discovery_only_share: 0.0
+  max_sensitive_share: 0.0
+  max_tourism_share: 0.0
+  count_auxiliary_records_as_effective: false
+
+temporal_gate:
+  require_explicit_temporal_evidence: true
+  target_start_year: 1926
+  target_end_year: 1976
+  accept_decades:
+    - "1930s"
+    - "1940s"
+    - "1950s"
+    - "1960s"
+    - "1970s"
+  min_date_confidence: 0.70
+  require_temporal_near_term_or_item_metadata: true
+  max_distance_chars_between_year_and_term: 350
+  allow_query_year_only: false
+
+term_gate:
+  require_controlled_term_hit: true
+  allow_general_local_history_only: false
+  controlled_terms:
+    - ghost
+    - apparition
+    - haunted
+    - phantom
+    - yowie
+    - yahoo
+    - "hairy man"
+    - "wild man"
+    - "ape man"
+    - "giant man"
+    - bunyip
+    - "Min Min"
+    - "Fisher's Ghost"
+    - "white lady"
+    - "haunted gaol"
+    - "haunted jail"
+    - "haunted hotel"
+    - "haunted station"
+    - "local legend"
+
+item_level_gate:
+  require_item_level_page: true
+  directory_pages_do_not_count: true
+  search_result_pages_do_not_count: true
+  affiliate_lists_do_not_count: true
+  collection_landing_pages_do_not_count: true
+  allow_index_entry_if_has_title_date_url: true
+
+runtime:
+  default_loop_sleep_seconds: 30
+  checkpoint_every_target_records: 50
+  checkpoint_every_minutes: 30
+  route_yield_recompute_every_target_records: 100
+  max_runtime_hours: 168
+  resume: true
+  dry_run_default: true
+
+safety:
+  no_api_keys: true
+  no_trove_api: true
+  no_google_bing_api: true
+  respect_robots: true
+  fail_closed_on_robots_uncertainty: true
+  no_login: true
+  no_paywall: true
+  no_headless_browser_by_default: true
+  no_bulk_pdf_download: true
+  no_pdf_text_extraction_by_default: true
+  allow_targeted_public_pdf_snippets: true
+  max_pdf_bytes_for_snippet_mode: 15000000
+  max_pdf_pages_for_snippet_mode: 80
+  store_pdf_body: false
+  store_relevant_snippets_only: true
+  rate_limit_seconds_default: 3.0
+  backoff_on_429_seconds: 900
+  backoff_on_403_seconds: 86400
+  user_agent: "AusFiguresNoAuthGapHarvester/0.1 metadata-snippet no-login no-api"
+
+priority:
+  states:
+    WA: 70
+    SA: 70
+    NT: 70
+    TAS: 70
+    ACT: 70
+    NSW: 10
+    QLD: 10
+    VIC: 10
+  time_bands:
+    "1926_1939": 60
+    "1940_1954": 60
+    "1955_1964": 80
+    "1965_1976": 80
+  route_families:
+    state_library_catalogue: 70
+    state_archive_catalogue: 70
+    local_history_serial: 80
+    council_local_studies: 75
+    museum_heritage_page: 60
+    heritage_register: 45
+    public_history_site: 60
+    broadcast_catalogue: 65
+    historical_society: 80
+    public_collection: 55
+
+quality_brakes:
+  early_audit_target_records: 250
+  do_not_stop_for_low_temporal_share_in_gap_mode: true
+  stop_if_target_gap_records_below_after_pages:
+    pages: 500
+    min_target_records: 10
+  stop_if_quality_poor_for_consecutive_gap_audits: 3
+  duplicate_rate_stop_threshold: 0.85
+  noise_rate_stop_threshold: 0.80
+  sensitive_leakage_stop_threshold: 1
+  discovery_leakage_stop_threshold: 1
+
+outputs:
+  checkpoint_dir: "data/autoharvest/checkpoints"
+  logs_dir: "data/autoharvest/logs"
+  reports_dir: "data/processed/v2/autoharvest"
+  review_dir: "data/review/v2/autoharvest"
+  discovery_dir: "data/interim/source_discovery/autoharvest"

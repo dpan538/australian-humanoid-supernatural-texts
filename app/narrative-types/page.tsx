@@ -1,5 +1,6 @@
 import {
   ArchiveCollectionGrid,
+  ArchiveIndexStructuredData,
   ArchivePublicationPage,
   PublicationSection,
 } from "@/components/archive-publication";
@@ -35,6 +36,12 @@ export default async function NarrativeTypesPage() {
       ]}
       notice="Narrative type describes how a public source frames material. It does not verify the event, being, belief, or interpretation described."
     >
+      <ArchiveIndexStructuredData
+        path="/narrative-types"
+        title="Supernatural Humanoid Narrative Types"
+        description="Browse the AusFigures public-text archive by narrative type, including hairy humanoid accounts, apparitions, spirit-person narratives, giants, legends, encounters, belief records, and retellings."
+        items={groups.map((group) => ({ href: narrativeTypePath(group.key), title: group.label }))}
+      />
       <PublicationSection title="Browse by narrative form">
         <ArchiveCollectionGrid
           items={groups.map((group) => ({

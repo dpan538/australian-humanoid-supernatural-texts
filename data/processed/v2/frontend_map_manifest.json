@@ -1,0 +1,50 @@
+{
+  "canonical_join_key_strategy": "record_id+coordinate_pair",
+  "confidence": "high",
+  "db_table_candidates": [
+    "records",
+    "record_locations",
+    "locations",
+    "narrative_locations",
+    "geocode_review_queue",
+    "collection_candidates"
+  ],
+  "distinct_coordinate_pairs": 871,
+  "distinct_narrative_unit_ids": 0,
+  "distinct_record_ids": 1593,
+  "duplicate_coordinate_rows": 722,
+  "export_script_candidates": [
+    "scripts/audit_1926_2011_gap.py",
+    "scripts/audit_frontend_records.py",
+    "scripts/audit_population_coverage.py",
+    "scripts/build_experimental_gap_overlay.py",
+    "scripts/build_gap_public_web_overlay.py",
+    "scripts/build_live_gap_candidate_overlay.py",
+    "scripts/check_vercel_release.py",
+    "scripts/crawl_gap_abc_public_search.py",
+    "scripts/crawl_gap_public_metadata.py",
+    "scripts/export_frontend_json.py",
+    "scripts/generate_release_reports.py",
+    "scripts/import_gap_reviewed_candidates.py",
+    "scripts/pre_frontend_freeze_audit.py",
+    "scripts/reconcile_canonical_counts.py",
+    "scripts/run_collection_sprint.py",
+    "scripts/trace_frontend_map_pipeline.py",
+    "scripts/update_current_collection_baseline.py",
+    "scripts/validate_release.py"
+  ],
+  "frontend_map_count": 1593,
+  "frontend_map_file": "public/data/frontend-data.json",
+  "generated_at": "2026-07-05T07:40:48+00:00",
+  "id_fields_present": [
+    "record_id"
+  ],
+  "rows_with_suppression_or_display_fields": 0,
+  "source_evidence": {
+    "derived_from": "record_locations JOIN locations JOIN records",
+    "frontend_flag_array": "map_flags",
+    "frontend_map_array": "map_points",
+    "public_map_policy_function": "scripts/export_frontend_json.py:is_public_map_location"
+  },
+  "unresolved_questions": []
+}

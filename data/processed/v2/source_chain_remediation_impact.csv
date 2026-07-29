@@ -1,0 +1,4 @@
+scenario,current_ayr_frontend_share,current_ayr_1926_1976_share,tasks_assumed_successful,estimated_ayr_rows_after_replacement,estimated_ayr_share_after_replacement,new_non_ayr_records_needed_for_5pt_drop,new_non_ayr_records_needed_for_10pt_drop,new_non_ayr_records_needed_for_20pt_drop,note
+top_50_replacement_tasks_succeed,79.85,93.02,50,1222,76.71,107,229,533,source-chain replacement improves evidence quality; frontend source display must be updated to change displayed source share
+top_100_replacement_tasks_succeed,79.85,93.02,100,1172,73.57,107,229,533,source-chain replacement improves evidence quality; frontend source display must be updated to change displayed source share
+top_250_replacement_tasks_succeed,79.85,93.02,250,1022,64.16,107,229,533,source-chain replacement improves evidence quality; frontend source display must be updated to change displayed source share

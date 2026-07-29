@@ -1,0 +1,27 @@
+source_family,source_name,row_count,share_percent,rows_1926_1976,rows_1930_1969,rows_1955_1976,recommended_action
+AYR_FAMILY,Australian Yowie Research,914,57.38,55,25,39,keep_map_row_but_prioritize_stronger_evidence_source_chain
+AYR_FAMILY,Australian Yowie Research / AYR Yowie Reports Map,350,21.97,25,12,14,keep_map_row_but_prioritize_stronger_evidence_source_chain
+Australian Broadcasting Corporation,Australian Broadcasting Corporation,116,7.28,0,0,0,monitor_source_balance
+INTERNET_ARCHIVE_FAMILY,Internet Archive,68,4.27,0,0,0,decompose_access_platform_to_original_source
+GUTENBERG_FAMILY,Project Gutenberg,41,2.57,0,0,0,decompose_access_platform_to_original_source
+GUTENBERG_FAMILY,Project Gutenberg Australia,27,1.69,0,0,0,decompose_access_platform_to_original_source
+State Library Victoria,State Library Victoria,21,1.32,0,0,0,monitor_source_balance
+AYR_FAMILY,Australian Yowie Research state report indexes,8,0.5,0,0,0,keep_map_row_but_prioritize_stronger_evidence_source_chain
+National Trust and ABC public pages,National Trust and ABC public pages,8,0.5,0,0,0,monitor_source_balance
+INTERNET_ARCHIVE_FAMILY,Internet Archive Advanced Search,6,0.38,6,6,6,decompose_access_platform_to_original_source
+National Trust of Australia (NSW),National Trust of Australia (NSW),6,0.38,0,0,0,monitor_source_balance
+Adelaide Arcade,Adelaide Arcade,5,0.31,0,0,0,monitor_source_balance
+Territory Stories,Territory Stories,5,0.31,0,0,0,monitor_source_balance
+Adelaide Gaol,Adelaide Gaol,4,0.25,0,0,0,monitor_source_balance
+National Trust Tasmania,National Trust Tasmania,2,0.13,0,0,0,monitor_source_balance
+Port Arthur Historic Site,Port Arthur Historic Site,2,0.13,0,0,0,monitor_source_balance
+ABC News,ABC News,1,0.06,0,0,0,monitor_source_balance
+Australian Screen Online,Australian Screen Online,1,0.06,0,0,0,monitor_source_balance
+Fremantle Prison,Fremantle Prison,1,0.06,0,0,0,monitor_source_balance
+Gunaikurnai Land and Waters Aboriginal Corporation,Gunaikurnai Land and Waters Aboriginal Corporation,1,0.06,0,0,0,monitor_source_balance
+J Ward Ararat,J Ward Ararat,1,0.06,0,0,0,monitor_source_balance
+Marriner Group,Marriner Group,1,0.06,0,0,0,monitor_source_balance
+National Trust Victoria,National Trust Victoria,1,0.06,0,0,0,monitor_source_balance
+Old Melbourne Gaol,Old Melbourne Gaol,1,0.06,0,0,0,monitor_source_balance
+Parks Victoria,Parks Victoria,1,0.06,0,0,0,monitor_source_balance
+Town of Gawler Council,Town of Gawler Council,1,0.06,0,0,0,monitor_source_balance

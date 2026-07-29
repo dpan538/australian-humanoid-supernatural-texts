@@ -10,7 +10,9 @@ import {
   sourceIdFromRouteSlug,
   STATE_NAMES,
 } from "@/lib/archive-routing";
-import type { DateBand, FrontendData, RecordItem, SourceItem } from "@/lib/types";
+import { figureProfileFor, normalizeFigureLabel } from "@/lib/figure-profiles";
+import type { FigureProfile } from "@/lib/figure-profiles";
+import type { DateBand, FigureItem, FrontendData, RecordItem, SourceItem } from "@/lib/types";
 
 export const RECORDS_PER_INDEX_PAGE = 100;
 export const COLLECTION_RECORD_PREVIEW_LIMIT = 60;
@@ -37,6 +39,15 @@ export type ArchivePeriodGroup = ArchiveRecordGroup & {
   period: DateBand;
 };
 
+export type ArchiveFigureGroup = ArchiveRecordGroup & {
+  slug: string;
+  profile: FigureProfile;
+  aliases: string[];
+  printedLabels: string[];
+  taxonomyFigures: FigureItem[];
+  indexEligible: boolean;
+};
+
 type ArchiveCatalogCache = {
   recordsById: Map<number, RecordItem>;
   pageRecords: RecordItem[];
@@ -47,6 +58,7 @@ type ArchiveCatalogCache = {
   sourceGroups: ArchiveSourceGroup[];
   placeGroups: ArchiveRecordGroup[];
   periodGroups: ArchivePeriodGroup[];
+  figureGroups: ArchiveFigureGroup[];
   recordsByNarrative: Map<string, RecordItem[]>;
   recordsByLabel: Map<string, RecordItem[]>;
   recordsByState: Map<string, RecordItem[]>;
@@ -146,6 +158,74 @@ export function periodGroups(data: FrontendData): ArchivePeriodGroup[] {
   return catalogFor(data).periodGroups;
 }
 
+export function encyclopediaFigureGroups(data: FrontendData): ArchiveFigureGroup[] {
+  return catalogFor(data).figureGroups;
+}
+
+export function encyclopediaFigureBySlug(data: FrontendData, slug: string) {
+  return encyclopediaFigureGroups(data).find((group) => group.slug === slug) ?? null;
+}
+
+export function relatedEncyclopediaFigures(
+  data: FrontendData,
+  selected: ArchiveFigureGroup,
+  limit = 6,
+) {
+  const selectedNarratives = new Set(selected.records.map((record) => record.ontology_code).filter(Boolean));
+  const selectedSources = new Set(selected.records.map((record) => record.source_id));
+  const selectedStates = new Set(selected.records.map((record) => record.state_territory).filter(Boolean));
+  const selectedTaxonomy = selected.taxonomyFigures[0];
+
+  return encyclopediaFigureGroups(data)
+    .filter((candidate) => candidate.slug !== selected.slug)
+    .map((candidate) => {
+      const candidateTaxonomy = candidate.taxonomyFigures[0];
+      const sharedNarratives = new Set(
+        candidate.records
+          .map((record) => record.ontology_code)
+          .filter((value) => value && selectedNarratives.has(value)),
+      ).size;
+      const sharedSources = new Set(
+        candidate.records
+          .map((record) => record.source_id)
+          .filter((sourceId) => selectedSources.has(sourceId)),
+      ).size;
+      const sharedStates = new Set(
+        candidate.records
+          .map((record) => record.state_territory)
+          .filter((value) => value && selectedStates.has(value)),
+      ).size;
+      const sharedCluster =
+        selectedTaxonomy?.cluster &&
+        candidateTaxonomy?.cluster === selectedTaxonomy.cluster
+          ? 1
+          : 0;
+      const sharedHumanoidDegree =
+        selectedTaxonomy?.humanoid_degree &&
+        candidateTaxonomy?.humanoid_degree === selectedTaxonomy.humanoid_degree
+          ? 1
+          : 0;
+      return {
+        candidate,
+        score:
+          sharedNarratives * 6 +
+          Math.min(sharedSources, 4) * 2 +
+          sharedStates +
+          sharedCluster * 5 +
+          sharedHumanoidDegree * 2,
+      };
+    })
+    .filter((entry) => entry.score > 0 || selected.records.length === 0)
+    .sort(
+      (a, b) =>
+        b.score - a.score ||
+        b.candidate.records.length - a.candidate.records.length ||
+        a.candidate.label.localeCompare(b.candidate.label),
+    )
+    .slice(0, limit)
+    .map((entry) => entry.candidate);
+}
+
 export function relatedRecords(data: FrontendData, record: RecordItem, limit = 6) {
   const catalog = catalogFor(data);
   const figure = labelKey(record.canonical_figure_guess || record.canonical_figure);
@@ -163,6 +243,7 @@ export function archiveInventory(data: FrontendData) {
   const searchableRecords = indexableRecords(data);
   const narrativeTypes = narrativeTypeGroups(data);
   const labels = labelGroups(data);
+  const figures = encyclopediaFigureGroups(data);
   const sources = sourceGroups(data);
   const places = placeGroups(data);
   const periods = periodGroups(data);
@@ -176,6 +257,9 @@ export function archiveInventory(data: FrontendData) {
     recordIndexPages,
     narrativeTypePages: narrativeTypes.length,
     labelPages: labels.length,
+    figurePages: figures.length,
+    indexableFigurePages: figures.filter((figure) => figure.indexEligible).length,
+    reviewOnlyFigurePages: figures.filter((figure) => !figure.indexEligible).length,
     sourcePages: sources.length,
     placePages: places.length,
     periodPages: periods.length,
@@ -274,6 +358,7 @@ function catalogFor(data: FrontendData): ArchiveCatalogCache {
       period,
     }))
     .filter((group) => group.records.length > 0);
+  const figures = buildEncyclopediaFigureGroups(searchable, data.figures);
   const recordsByNarrative = groupMap(searchable, (record) => record.ontology_code);
   const recordsByLabel = groupMap(searchable, (record) => {
     const key = labelKey(record.canonical_figure_guess || record.canonical_figure);
@@ -292,6 +377,7 @@ function catalogFor(data: FrontendData): ArchiveCatalogCache {
     sourceGroups: sources,
     placeGroups: places,
     periodGroups: periods,
+    figureGroups: figures,
     recordsByNarrative,
     recordsByLabel,
     recordsByState,
@@ -299,6 +385,89 @@ function catalogFor(data: FrontendData): ArchiveCatalogCache {
   };
   archiveCatalogCaches.set(data, catalog);
   return catalog;
+}
+
+function buildEncyclopediaFigureGroups(
+  records: RecordItem[],
+  taxonomyFigures: FigureItem[],
+): ArchiveFigureGroup[] {
+  const groups = new Map<
+    string,
+    {
+      profile: FigureProfile;
+      records: RecordItem[];
+      printedLabels: Set<string>;
+      taxonomyFigures: FigureItem[];
+    }
+  >();
+
+  for (const record of records) {
+    const printedLabel = (record.canonical_figure_guess || record.canonical_figure || "").trim();
+    if (!printedLabel) {
+      continue;
+    }
+    const profile = figureProfileFor(printedLabel);
+    const current = groups.get(profile.slug) ?? {
+      profile,
+      records: [],
+      printedLabels: new Set<string>(),
+      taxonomyFigures: [],
+    };
+    current.records.push(record);
+    current.printedLabels.add(printedLabel);
+    groups.set(profile.slug, current);
+  }
+
+  for (const figure of taxonomyFigures.filter(taxonomyFigurePageEligible)) {
+    const profile = figureProfileFor(figure.canonical_name);
+    const current = groups.get(profile.slug) ?? {
+      profile,
+      records: [],
+      printedLabels: new Set<string>(),
+      taxonomyFigures: [],
+    };
+    current.taxonomyFigures.push(figure);
+    current.printedLabels.add(figure.canonical_name);
+    groups.set(profile.slug, current);
+  }
+
+  return [...groups.entries()]
+    .map(([slug, group]) => {
+      const aliases = new Set<string>(group.profile.aliases ?? []);
+      for (const label of group.printedLabels) {
+        aliases.add(label);
+      }
+      for (const figure of group.taxonomyFigures) {
+        for (const alias of figure.aliases ?? []) {
+          aliases.add(alias.alias);
+        }
+      }
+      aliases.delete(group.profile.label);
+      aliases.delete(group.profile.label.toLowerCase());
+
+      return {
+        key: slug,
+        slug,
+        label: group.profile.label,
+        profile: group.profile,
+        records: group.records.sort(compareRecordsNewestFirst),
+        aliases: [...aliases]
+          .filter((alias) => normalizeFigureLabel(alias) !== normalizeFigureLabel(group.profile.label))
+          .sort((a, b) => a.localeCompare(b)),
+        printedLabels: [...group.printedLabels].sort((a, b) => a.localeCompare(b)),
+        taxonomyFigures: group.taxonomyFigures,
+        indexEligible: group.records.length > 0,
+      };
+    })
+    .sort((a, b) => b.records.length - a.records.length || a.label.localeCompare(b.label));
+}
+
+function taxonomyFigurePageEligible(figure: FigureItem) {
+  return (
+    figure.include_status !== "control_only" &&
+    figure.include_status !== "exclude_core" &&
+    figure.humanoid_degree !== "non_humanoid"
+  );
 }
 
 function groupMap<Key extends string | number>(

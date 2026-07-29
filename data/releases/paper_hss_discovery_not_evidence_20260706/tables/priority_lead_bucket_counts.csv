@@ -1,0 +1,7 @@
+dimension,value,count,share_pct,source,notes
+target_gap_leads.priority_bucket,PRIORITY_LEAD,10528,49.33,target_gap_leads,
+target_gap_leads.priority_bucket,GOOD_LEAD,5336,25.0,target_gap_leads,
+target_gap_leads.priority_bucket,WEAK_LEAD,3759,17.61,target_gap_leads,
+target_gap_leads.priority_bucket,HOLD,1189,5.57,target_gap_leads,
+target_gap_leads.priority_bucket,SENSITIVE_HOLD,431,2.02,target_gap_leads,
+target_gap_leads.priority_bucket,BLOCKED_ROBOTS,100,0.47,target_gap_leads,

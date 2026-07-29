@@ -1,0 +1,4 @@
+dimension,value,count,share_pct,source,notes
+narrative_units.display_mode,full,4317,96.86,narrative_units,
+narrative_units.display_mode,summary_only,127,2.85,narrative_units,
+narrative_units.display_mode,suppressed,13,0.29,narrative_units,

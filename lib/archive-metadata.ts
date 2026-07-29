@@ -42,7 +42,7 @@ export function archivePageMetadata({
       card: "summary_large_image",
       title: brandedTitle,
       description,
-      images: [socialImageMetadata(SITE.twitterImagePath).url],
+      images: [socialImageMetadata(SITE.twitterImagePath)],
     },
   };
 }

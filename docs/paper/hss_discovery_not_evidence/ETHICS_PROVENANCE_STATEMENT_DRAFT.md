@@ -1,0 +1,13 @@
+# Ethics And Provenance Statement Draft
+
+This article reports on a public-text archive and does not verify supernatural claims, cultural authority, or real-world occurrence. The archive records public textual representation, source mediation, archival visibility, and provenance status. A source-grounded narrative unit is therefore an object of public-text analysis, not an assertion that a narrated event occurred.
+
+Discovery-only sources are not treated as evidence. Search results, route inventories, public indexes, tourism pages, aggregators, access-platform records, and metadata-only pointers may identify candidate leads, but they do not by themselves satisfy the archive's evidence-source criteria. Candidate leads are retained as reviewable public-text traces when source-chain, date, term, place, publicness, rights, ethics, or item-level evidence requirements are incomplete.
+
+Public catalogue metadata is not treated as unrestricted permission. A public catalogue entry can support discovery, attribution, or metadata review, but it does not authorize reproduction of restricted cultural knowledge, copyrighted full text, private notes, secret or sacred material, or non-public community-controlled material. The paper release contains aggregate statistics and redacted sample metadata only.
+
+Indigenous, Aboriginal, and Torres Strait Islander-related material requires cultural sensitivity review. The repository ethics policy requires attention to source/community terminology, source voice, cultural sensitivity, ethics review status, display mode, publicness, reuse assessment, and correction or takedown pathways. Sensitive public material may be withheld, represented only in summary or metadata form, or excluded from public display. Restricted, secret or sacred, unpublished, private, or community-controlled non-public material is outside the paper release.
+
+Public map flags are display controls, not proof. A map flag represents a source-stated display location for a public record that satisfies the archive's map policy. It is not truth verification, a habitat claim, population mapping, cultural authority, or event verification. Publication locations, archive custody locations, source institution addresses, author residences, inferred state-only locations, and broad cultural regions without display clearance are not valid public map flags.
+
+The methodological claim of the article follows from these constraints: discovery is not evidence. A responsible public-text archive must keep discovery, access, origin, evidence, lead status, record status, and display status analytically separate.

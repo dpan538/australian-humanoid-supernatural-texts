@@ -20,25 +20,33 @@ Important interpretation rules:
 - [Research Dashboard](https://ausfigures.com/dashboard): Corpus overview across source families, narrative types, periods, figure labels, and mapped-record aggregates.
 - [Density Explorer](https://ausfigures.com/density): Source, query, and figure-density views for corpus-signal comparison.
 - [Source Register](https://ausfigures.com/source): Source register and source-family rollups.
+- [Supernatural Humanoid Dictionary](https://ausfigures.com/figures): Searchable and fuzzy-matched encyclopedia of all public-text figure categories in the archive.
+- [Public Records](https://ausfigures.com/records): Paginated, source-grounded archive records with stable detail URLs.
+- [Narrative Types](https://ausfigures.com/narrative-types): Research classification index for encounter, apparition, spirit-person, retelling, and related public-text forms.
+- [Source Collections](https://ausfigures.com/sources): Crawlable source-organisation collections.
+- [Places](https://ausfigures.com/places): State, territory, and public-place record groupings.
+- [Periods](https://ausfigures.com/periods): Archive period collections from early colonial material to contemporary public sources.
 - [About](https://ausfigures.com/about): Scope, methods, source policy, mapping limits, and ethics.
-- [Research Topics](https://ausfigures.com/topics): Search-oriented topic index for Australian supernatural public texts, Yowie records, bunyip references, ghosts, apparitions, spirit-person narratives, and source-grounded folklore.
 
-## Research topic entry points
+## Figure dictionary entry points
 
-- [Australian Supernatural Public Texts](https://ausfigures.com/topics/australian-supernatural): Broad entry point for Australian supernatural public-text research language.
-- [Australian Supernatural Humanoids](https://ausfigures.com/topics/supernatural-humanoids): Scope note for humanoid and humanoid-adjacent supernatural narratives.
-- [Yowie Records in Public Texts](https://ausfigures.com/topics/yowie-records): Public-text framing for Yowie-related records.
-- [Bunyip Public Texts](https://ausfigures.com/topics/bunyip-public-texts): Public-text framing for bunyip-related records inside the archive scope.
-- [Australian Ghost and Apparition Records](https://ausfigures.com/topics/australian-ghosts-apparitions): Public-source framing for ghost and apparition records.
-- [Spirit-Person Narratives](https://ausfigures.com/topics/spirit-person-narratives): Cautious entry point for culturally sensitive public-text categories.
+- [Yowie](https://ausfigures.com/figures/yowie): Archive summary, aliases, temporal distribution, regions, sources, and selected public records.
+- [Bunyip](https://ausfigures.com/figures/bunyip): Public-text category and related archive records.
+- [Ghost](https://ausfigures.com/figures/ghost): Ghost and apparition discovery entry point.
+- [Spirit](https://ausfigures.com/figures/spirit): Public-text spirit-person discovery entry point; culturally sensitive source contexts still require care.
+- [Hairy Man](https://ausfigures.com/figures/hairy-man): Hairy humanoid public-text category and sparse-record visualisation.
+
+The sitemap is the canonical inventory for every indexable dictionary entry. Older `/topics` and `/labels` URLs are legacy paths and redirect to the corresponding `/figures` page.
 
 ## Public data
 
+- [Public Data Index](https://ausfigures.com/data): Human-readable data access and interpretation guide.
 - [Frontend data JSON](https://ausfigures.com/data/frontend-data.json): Static public frontend data contract used by the interface.
 
 ## Repository and citation
 
 - [GitHub repository](https://github.com/dpan538/australian-humanoid-supernatural-texts): Source code, documentation, data workflow, licensing, and citation guidance.
+- [Citation Guide](https://ausfigures.com/cite): Project and record citation guidance.
 
 ## Optional
 

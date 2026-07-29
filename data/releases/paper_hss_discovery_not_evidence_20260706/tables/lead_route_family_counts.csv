@@ -1,0 +1,12 @@
+dimension,value,count,share_pct,source,notes
+target_gap_leads.route_family,museum_heritage_page,6722,31.5,target_gap_leads,
+target_gap_leads.route_family,council_local_studies,4278,20.04,target_gap_leads,
+target_gap_leads.route_family,state_library_catalogue,3381,15.84,target_gap_leads,
+target_gap_leads.route_family,local_history_serial,2148,10.06,target_gap_leads,
+target_gap_leads.route_family,heritage_register,1934,9.06,target_gap_leads,
+target_gap_leads.route_family,state_archive_catalogue,1597,7.48,target_gap_leads,
+target_gap_leads.route_family,broadcast_catalogue,717,3.36,target_gap_leads,
+target_gap_leads.route_family,public_history_site,265,1.24,target_gap_leads,
+target_gap_leads.route_family,national_archive_catalogue,136,0.64,target_gap_leads,
+target_gap_leads.route_family,national_library_catalogue,124,0.58,target_gap_leads,
+target_gap_leads.route_family,bibliographic_discovery,41,0.19,target_gap_leads,

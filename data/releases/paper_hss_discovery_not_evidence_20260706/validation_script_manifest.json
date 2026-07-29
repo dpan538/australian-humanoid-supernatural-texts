@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-07-06T15:34:32+00:00",
+  "git_commit": "b1f339d0672295aaa89ce678fe624510fea4b4dd",
+  "git_dirty_summary": {
+    "dirty_file_count": 422,
+    "is_dirty": true,
+    "status_available": true
+  },
+  "inputs": [
+    {
+      "bytes": 15849,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_stats.json",
+      "role": "input",
+      "sha256": "25875ece425e013d51332353f5f18db711e7b23ed8d351ce8b1a83062c5f0af3"
+    },
+    {
+      "bytes": 36529,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:32+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_manual_audit_sample.csv",
+      "role": "input",
+      "sha256": "4f9859232faab9fe9a5c4e16c319418e18488de06f6e746841464406ffce6eba"
+    },
+    {
+      "bytes": 9070,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_stats.md",
+      "role": "input",
+      "sha256": "7d91d0ec0e082f11289560c9bd22ef4f2f54131942a981ef9e8629acfa11592b"
+    },
+    {
+      "bytes": 9070,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:31+00:00",
+      "path": "docs/paper/hss_discovery_not_evidence/COUNT_RECONCILIATION.md",
+      "role": "input",
+      "sha256": "7d91d0ec0e082f11289560c9bd22ef4f2f54131942a981ef9e8629acfa11592b"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 171,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:32+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_validation.json",
+      "role": "output",
+      "sha256": "26937017947c8da78e231a477fd017c6c110499ead86a4d699eec046c15f7187"
+    },
+    {
+      "bytes": 82,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:32+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_validation.csv",
+      "role": "output",
+      "sha256": "492da7fddc75fadf756c767272bc9e4a3b447f7f238eeaa17ce2bb8648eed647"
+    },
+    {
+      "bytes": 124,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:32+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_validation.md",
+      "role": "output",
+      "sha256": "06536f80e4f1328245b7c6eec1cb3605b14145e21cf814539213420619953126"
+    }
+  ],
+  "script": "validate_paper_release.py",
+  "script_version": "2026-07-06.1",
+  "warnings": []
+}

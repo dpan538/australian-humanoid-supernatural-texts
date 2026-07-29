@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { runThemeTransition } from "@/lib/theme-transition";
 
 type DisplayTheme = "dark" | "light";
 
@@ -47,9 +48,14 @@ export function DisplayControls() {
         data-mode={theme}
         aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         aria-pressed={theme === "light"}
-        onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
+        onClick={(event) => {
+          const nextTheme = theme === "dark" ? "light" : "dark";
+          runThemeTransition(event.currentTarget, nextTheme, () => {
+            document.documentElement.dataset.theme = nextTheme;
+            setTheme(nextTheme);
+          });
+        }}
       >
-        <span>MODE</span>
         <b>{theme === "dark" ? "DARK" : "LIGHT"}</b>
       </button>
     </div>

@@ -1,0 +1,4 @@
+dimension,value,count,share_pct,source,notes
+narrative_units.analysis_status,display_ready_reviewed,3528,79.16,narrative_units,
+narrative_units.analysis_status,display_ready_unreviewed,916,20.55,narrative_units,
+narrative_units.analysis_status,excluded,13,0.29,narrative_units,

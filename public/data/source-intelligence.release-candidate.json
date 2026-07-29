@@ -1,0 +1,28 @@
+{
+  "source_layer_counts": [
+    {
+      "count": "15000",
+      "layer": "auxiliary_source_intelligence"
+    },
+    {
+      "count": "12454",
+      "layer": "target_gap_leads"
+    },
+    {
+      "count": "8120",
+      "layer": "metadata_only_gap_layer"
+    },
+    {
+      "count": "1090",
+      "layer": "public_map_records"
+    },
+    {
+      "count": "1071",
+      "layer": "accepted_public_records"
+    },
+    {
+      "count": "229",
+      "layer": "provisional_records"
+    }
+  ]
+}

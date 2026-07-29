@@ -1,0 +1,8 @@
+file,dependencies
+app/about/page.tsx,release-count-contract
+app/globals.css,release-coverage
+app/layout.tsx,frontend-data.json
+components/archive-terminal.tsx,release-coverage
+lib/release-data.ts,frontend-data.json;frontend-map-overlays;frontend-redirects;loadMapOverlays;loadRedirects;loadReleaseCountContract;loadReleaseCoverage;release-cards;release-charts;release-count-contract;release-coverage;source-intelligence
+public/data/release-cards.json,release-cards
+public/data/release-charts.json,release-charts;release-count-contract

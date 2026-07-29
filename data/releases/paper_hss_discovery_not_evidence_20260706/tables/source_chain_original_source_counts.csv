@@ -1,0 +1,321 @@
+dimension,value,count,share_pct,source,notes
+access_source_name,public_candidate_review,3541,78.24,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+access_source_name,specialist_aggregator_or_witness_publication,898,19.84,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+access_source_name,bibliographic_metadata,67,1.48,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+access_source_name,digitized_public_item_or_metadata,13,0.29,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+access_source_name,public_web_or_media,7,0.15,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Yowie Research,898,19.84,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Yowie Research / AYR Yowie Reports Map,350,7.73,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Northern Tribes of Central Australia; Baldwin Spencer and F. J. Gillen,124,2.74,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Native Tribes of the Northern Territory of Australia; Baldwin Spencer,120,2.65,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Aborigines of Victoria, volume 1; R. Brough Smyth",107,2.36,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Aborigines of New South Wales; John Fraser,93,2.05,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Across Australia, volume 2; Baldwin Spencer and F. J. Gillen",83,1.83,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Legends; C. W. Peck,77,1.7,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian fairy tales; Atha Westbury,77,1.7,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Aborigines of Tasmania; H. Ling Roth, Marion E. Butler, James Backhouse Walker, J. G. Garson, E. B. Tylor",76,1.68,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Euahlayi Tribe; K. Langloh Parker,62,1.37,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Kamilaroi and Kurnai; Lorimer Fison and A. W. Howitt,60,1.33,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Below And On Top and Other Stories; Edward Dyson,56,1.24,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Australian Aborigines: the languages and customs of several tribes of aborigines in the western district of Victoria, Australia; James Dawson",55,1.22,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Native Tribes of South Australia; George Taplin, James Dominick Woods, William Wyatt, H. A. E. Meyer, C. W. Schürmann, Samuel Gason, J. W. O. Bennett",51,1.13,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Broadcasting Corporation,50,1.1,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Legendary Tales: folk-lore of the Noongahburrahs as told to the Piccaninnies; K. Langloh Parker,50,1.1,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Diary of ten years eventful life of an early settler in Western Australia; George Fletcher Moore,50,1.1,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Native Tribes of South-East Australia; A. W. Howitt,46,1.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Aborigines of Victoria, volume 2; R. Brough Smyth",46,1.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Native Tribes of Central Australia; Baldwin Spencer and F. J. Gillen,42,0.93,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Queensland, Australia; John Dunmore Lang",41,0.91,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Nuggets in the Devil's Punch Bowl, and Other Australian Tales; Andrew Robertson",40,0.88,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Booandik Tribe of South Australian Aborigines; Christina Smith,40,0.88,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Eaglehawk and Crow; John Mathew,39,0.86,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,More Australian Legendary Tales; K. Langloh Parker,37,0.82,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Fairy Tales and related Australian tale books; Hume Cook / Ethel Buckland,36,0.8,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Legends / Project Gutenberg Australia,36,0.8,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Kamilaroi, and other Australian languages; William Ridley",32,0.71,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Ethnological studies among the north-west-central Queensland aborigines; Walter E. Roth,30,0.66,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The aborigines of Victoria, volume 2; R. Brough Smyth",30,0.66,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,For the Term of His Natural Life; Marcus Clarke,29,0.64,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The aborigines of Victoria, volume 1; R. Brough Smyth",29,0.64,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; ABC,28,0.62,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Across Australia, volume 1; Baldwin Spencer and F. J. Gillen",27,0.6,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australia Felix; Henry Handel Richardson,27,0.6,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Babes in the Bush; Rolf Boldrewood,27,0.6,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Joe Wilson and His Mates; Henry Lawson,27,0.6,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Australian Race, volume 3; Edward Micklethwaite Curr",27,0.6,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"In Bad Company, and other stories; Rolf Boldrewood",24,0.53,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Nevermore; Rolf Boldrewood,24,0.53,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Aborigines of Tasmania; H. Ling Roth, J. G. Garson, and contributors",24,0.53,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Australian Race, volume 2; Edward Micklethwaite Curr",24,0.53,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Last Chance: A Tale of the Golden West; Rolf Boldrewood,24,0.53,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Among cannibals; Carl Lumholtz,23,0.51,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Kámilarói, and Other Australian Languages; William Ridley",23,0.51,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Such Is Life; Joseph Furphy,23,0.51,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Crime of the Under Seas; Guy Boothby,22,0.49,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,A Descriptive Vocabulary of the Language in Common Use Amongst the Aborigines of Western Australia; George Fletcher Moore,21,0.46,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC,21,0.46,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,At Midnight and Other Stories; Ada Cambridge,21,0.46,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Yowie Research state report indexes,21,0.46,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Australian Race, volume 1; Edward Micklethwaite Curr",21,0.46,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Steve Brown's Bunyip, and Other Stories; John Arthur Barry",20,0.44,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Internet Archive,19,0.42,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,My Brilliant Career; Miles Franklin,19,0.42,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Steve Brown's Bunyip, and Other Stories; L. C. Barry",19,0.42,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Legendary Tales / Project Gutenberg Australia,18,0.4,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Tales; Marcus Clarke,18,0.4,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"How did the Natives of Australia become Acquainted with the Demigods and Daemonia, and with the Superstitions of the Ancient Races?; W. Augustus Miles",18,0.4,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,In the Days When the World Was Wide and Other Verses; Henry Lawson,18,0.4,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,In the Roaring Fifties; Edward Dyson,18,0.4,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Some Everyday Folk and Dawn; Miles Franklin,18,0.4,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Tales of the Austral Tropics; Ernest Favenc,18,0.4,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,While the Billy Boils; Henry Lawson,18,0.4,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Children of the Bush; Henry Lawson,17,0.38,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Getting of Wisdom; Henry Handel Richardson,17,0.38,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Moving Finger; Mary Gaunt,17,0.38,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Mystery of a Hansom Cab; Fergus Hume,17,0.38,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Rising of the Court; Henry Lawson,17,0.38,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Three Miss Kings: An Australian Story; Ada Cambridge,17,0.38,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Madame Midas; Fergus Hume,16,0.35,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Plain Living; Rolf Boldrewood,16,0.35,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Robbery under Arms: A Story of Life and Adventure in the Bush and in the Australian Goldfields; Rolf Boldrewood,16,0.35,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Crooked Stick; Rolf Boldrewood,16,0.35,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The folklore, manners, customs, and languages of the South Australian aborigines; George Taplin",16,0.35,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Over the Sliprails; Henry Lawson,15,0.33,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Customs and Traditions of the Aboriginal Natives of North Western Australia; John G. Withnell,15,0.33,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Gold-Stealers; Edward Dyson,15,0.33,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"A Colonial Reformer, Volume 1; Rolf Boldrewood",14,0.31,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"A Colonial Reformer, Volume 3; Rolf Boldrewood",14,0.31,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Native Tribes of Central Australia / Internet Sacred Text Archive,14,0.31,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"North Queensland Ethnography. Bulletin No. 9. Burial ceremonies, and disposal of the dead; Walter E. Roth",14,0.31,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"A Colonial Reformer, Volume 2; Rolf Boldrewood",13,0.29,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Stories Retold and Sketches of Country Life; William Henry Suttor,13,0.29,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Old Melbourne Memories; Rolf Boldrewood,13,0.29,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Old Tales of a Young Country; Marcus Clarke,12,0.27,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Tales of Australian Life; Nathaniel Walter Swan,12,0.27,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,A Colonial Tramp; Hume Nisbet,11,0.24,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,On the Track; Henry Lawson,11,0.24,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Sisters; Ada Cambridge,11,0.24,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Tales of the Dandenongs; Hume Cook,11,0.24,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Aborigines of Victoria and Riverina; Peter Beveridge,11,0.24,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Native Tribes of South-East Australia / Wikisource,10,0.22,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Spooky stories from the Library; Tess McLaughlan,10,0.22,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Wonder-Child: An Australian Story; Ethel Turner,10,0.22,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Thirty Years in Australia; Ada Cambridge,10,0.22,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Adelaide Gaol Ghostly sightings; Department for Environment and Water, South Australia",9,0.2,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Federici's ghost; Sarah Matthews,8,0.18,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Notes on the Aborigines of New South Wales; Richard Hill and George Thornton,8,0.18,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Notes on the Aborigines of Western Australia; C. G. Nicolay,8,0.18,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,On Our Selection; Steele Rudd,8,0.18,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Bush Studies; Barbara Baynton,7,0.15,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Canberra history and legends; John Gale,7,0.15,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,OpenAlex,7,0.15,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Background Briefing,6,0.13,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Among Cannibals; Carl Lumholtz,6,0.13,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,English Wikipedia,6,0.13,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,More Australian Legendary Tales / Project Gutenberg Australia,6,0.13,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Native Tribes of the Northern Territory of Australia / Internet Sacred Text Archive,6,0.13,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Spooky stories at the National Trust; National Trust NSW Editor,6,0.13,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Dashwoods; Steele Rudd,6,0.13,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Adelaide Arcade history; Adelaide Arcade,5,0.11,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,National Trust / Australian Broadcasting Corporation,5,0.11,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Fifth Continent; C. H. Eden,5,0.11,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Wikidata,5,0.11,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Mornings,4,0.09,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; The Ark,4,0.09,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; The World Today,4,0.09,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Archaeology,4,0.09,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Screen / NFSA,4,0.09,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Nightlife,4,0.09,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Shearing in the Riverina, New South Wales; Rolf Boldrewood",4,0.09,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Aborigines of Western Australia; Albert Frederick Calvert,4,0.09,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Wrightson, Patricia",4,0.09,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Encounter,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Evenings,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Nightlife,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Science Show,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Spirit of Things,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australia Wide,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian aboriginal studies/Australian Aboriginal studies,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Human Repetends; Marcus Clarke,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ResearchOnline at James Cook University (James Cook University),3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Reviewed exact public place snippets; National Trust / Australian Broadcasting Corporation,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Moral Compass Cleverman Special; ABC Religion & Ethics / Geraldine Doogue,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,What are Hobart's most famous ghost stories?; Australian Broadcasting Corporation,3,0.07,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Conversations,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Drive,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Your Afternoon,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Allen & Unwin,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Breakfast,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Children's Literature Association quarterly,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Ghost hunters conduct global seance via Facebook at Australia's oldest mental hospital; ABC News Tasmania,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Ghosts of Castle, Settlers hotels and Old York Hospital spook and delight tourists in WA town; ABC Midwest & Wheatbelt",2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Medical Entomology and Zoology,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Meet the woman taking Tasmania's most haunted sites to the social media masses; ABC Northern Tasmania,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,National Trust Tasmania,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Notes on the Aborigines of New South Wales; R. H. Mathews,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Oxford English Dictionary,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Palethnologie,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Port Arthur Historic Site,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,RUNE (Research UNE),2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Rock Art Research,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Spirit of Things,2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Trezise, P. J. (Percy J.)",2,0.04,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,'Hairy man' encountered by Arthur Marrin 123 years ago still unidentified; ABC News,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,A ghost story for Christmas; State Library Victoria,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC News,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; ABC HOBART,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Afternoons,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Awaye!,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Hindsight,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Into The Music,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Late Lunch,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Ockham's Razor,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Overnights,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; PM,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Radio Eye,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Saturday Breakfast,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Saturdays,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ABC; Street Stories,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ACMI,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ANU Open Research (Australian National University),1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Adelaide's notorious Z Ward asylum opens for after-dark ghost tours; 891 ABC Adelaide,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Allen & Unwin Pty., Limited (Australia); Allen & Unwin",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,America Star Books,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,American Anthropologist,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Angus & Robertson,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Angus & Robertson; Angus & Robertson Childrens,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Ann Ferns,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Anthropological Forum,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Antiquity,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Archaeology in Oceania/Archæology & physical anthropology in Oceania,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Arden, Harvey",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Art Gallery of New South Wales,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Art Gallery of South Australia,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Arthur A. Levine Books,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Arts,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Austral Entomology,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Fairy Tales; Atha Westbury,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Ghost Stories; ABC Overnights / Richard Davis,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian Journal of Psychology,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian National University,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Australian and New Zealand Journal of Art,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Awaye!,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Burnie's arts centre celebrates 40 years of great shows and ghost stories; ABC Northern Tasmania / Rick Eaves,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Cambridge University Press,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Cemetery Dance Pubns,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Children's Literature Association Quarterly,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Collins,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Conversations,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Counterpoint,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Cowan, James, 1942-2018",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Crawford, I. M",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"De'Ath, Otto",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Department for Environment and Water, Government of South Australia",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Drive,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Encyclopedic Dictionary of Archaeology,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Erbacher, John, 1941-",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Figshare,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Finley, Carol",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Folklore,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Forest, Heather",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Fremantle Arts Centre director calls for stories to explore history of former lunatic asylum; ABC Radio Perth,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Fremantle Prison,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Friends of J Ward Inc.,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"From yowies to UFOs to panthers, what's the real story behind Australia's urban legends?; ABC Religion & Ethics / God Forbid",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,G. C. Joyner,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Geophysical Research Letters,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Ghost stories from one of Australia's most haunted places; ABC Hobart / Port Arthur Historic Site,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Grand, P. M. (Paule Marie), 1914-",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Gunaikurnai Land and Waters Aboriginal Corporation,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Hancock House Publishers; Anomalist Books,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,HarperCollins Publishers Australia,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,HarperCollins Publishers Limited; Harper Voyager,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Heinemann,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,High Country Pub.,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,History Council of New South Wales,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Hodder & Stoughton; Hodder and Stoughton,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Humanities Research,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Hungry spirits haunt station store room; ABC Rural,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Indigenous ghost stories; ABC Books and Arts / Warwick Thornton,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Is the Yahoo Australia's bigfoot?; ABC Nightlife / Tohby Riddle,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,John Heffernan,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Journal of Australian indigenous issues,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Journal of Herpetology,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Journal of Paleontology,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Lansdowne Press,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Leaf, Rik, author",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,M/C Journal,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Man,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Marriner Group,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Mattingley, Christobel, author",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"McGregor, William",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Monster Anthropology,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Monster Anthropology in Australasia and Beyond,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,More Winners - His Master's Ghost; Australian Children's Television Foundation / Australian Screen Online,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Mornings,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Mulini Press,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Myra Demetriou's life in Millers Point; ABC Sydney Weekend Mornings,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,National Library of Australia,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,National Trust Victoria,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Ngabaya: Spirit People; ABC Education,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,No Accounting; ABC Four Corners / Matthew Carney,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,ORGANON,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,OUP Australia and New Zealand,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Oceania,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Ockham's Razor,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Old Melbourne Gaol / National Trust of Australia (Victoria),1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Out, damned spot! Albany's Spectrum Theatre restoration to deal with damp; ABC Great Southern",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Overnights,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Oxford Art Online,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Oxford University Press,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Palaeontology,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Paranormal investigator Alison Oborn has seen and heard very strange things; ABC Conversations,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Parks Victoria,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Penguin Books; Viking; Walker,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Queensland towns on the Sunshine Coast and in north Queensland get set for ghostbuster tour; 612 ABC Brisbane,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Random House Australia,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Reed, A. W. (Alexander Wyclif), 1908-1979",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Regan, Lisa, 1971-",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Research Online (University of Wollongong),1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Restricted Rights and Freedoms: Fanny Balbuk Yooreel; ABC Education,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Samuel Beckett Today / Aujourd’hui,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"San Souci, Robert D",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"San Souci, Robert D, Wooden, Lenny, ill",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Self-Drive Tour of Gawler; Town of Gawler Council,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Shadow Trackers: the spooky stories of Aboriginal Australia; ABC Life Matters,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Sherlock Holmes and spiritualism: Sir Arthur Conan Doyle in Victoria; State Library Victoria,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Spooky sightings at Sylvania station; ABC Rural,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Stanley's Bayview Hotel - tales of a ghost, Joe Lyons and the quest for original artefacts; ABC Northern Tasmania",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Swamphen a Journal of Cultural Ecology (ASLEC-ANZ),1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Tasmanian blog explores quirky history, from ghost stories to pigeons and penguins; ABC Hobart / Jodie Lee",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Tempus Publishing, Limited",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Aborigines of Victoria, volume 1; Robert Brough Smyth",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Antiquaries Journal,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Australian Journal of Anthropology,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Conversation,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Crowood Press; Robert Hale; Magna,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Holocene,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The International Journal of Diversity in Organizations, Communities, and Nations: Annual Review",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Northern Territory News, 11 January 2025; News Corp Australia / Library & Archives NT",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"The Northern Territory News, 17 October 2014; News Corp Australia / Library & Archives NT",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Northern Territory News; News Corp Australia / Library & Archives NT,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The Stage Show,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The World Today,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The daredevil of Monte Cristo; ABC Conversations / Lawrence Ryan,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The haunted historic houses of Tasmania's east coast; ABC Hobart / Glamorgan Spring Bay Historical Society,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,The secrets of Black Rock House; State Library Victoria,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"This Place: Djimubarn, sacred rock art shelter; ABC Education / Merrill Girrabul",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Trafford Publishing,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,USC Research Bank (University of the Sunshine Coast),1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Unexplained stories from the Old Adelaide Gaol; 891 ABC Adelaide,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,University of New South Wales Press,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Viking Books; Viking,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Vollie News, 26 May 2011; St John Ambulance Australia (NT)",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,"Vollie News, 8 August 2013; St John Ambulance Australia (NT)",1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,WA Afternoons; ABC Radio Perth / Graham Seal,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Wednesday Press,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Wordsworth Editions Ltd,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,World Archaeology,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Yearbook - Association of Pacific Coast Geographers,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,Zootaxa,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit
+original_source_name,the authors,1,0.02,data/processed/v2/source_concentration_audit.csv,existing source concentration audit

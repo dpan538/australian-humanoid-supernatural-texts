@@ -1,0 +1,7 @@
+dimension,value,count,share_pct,source,notes
+target_gap_leads.source_table,research_volume_schedule,10000,46.85,target_gap_leads,
+target_gap_leads.source_table,harvest_candidates,7200,33.73,target_gap_leads,
+target_gap_leads.source_table,provisional_records,2762,12.94,target_gap_leads,
+target_gap_leads.source_table,harvest_discovered_routes,1239,5.81,target_gap_leads,
+target_gap_leads.source_table,structured_endpoint_near_misses,120,0.56,target_gap_leads,
+target_gap_leads.source_table,noauth_endpoint_inventory,22,0.1,target_gap_leads,

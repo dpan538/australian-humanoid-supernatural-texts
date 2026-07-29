@@ -1,0 +1,5 @@
+dimension,value,count,share_pct,source,notes
+collection_candidates_v2.candidate_status,accepted,3539,60.48,collection_candidates_v2,
+collection_candidates_v2.candidate_status,lead_only,1229,21.0,collection_candidates_v2,
+collection_candidates_v2.candidate_status,duplicate,816,13.94,collection_candidates_v2,
+collection_candidates_v2.candidate_status,rejected,268,4.58,collection_candidates_v2,

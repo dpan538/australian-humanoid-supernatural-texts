@@ -16,22 +16,27 @@
     "qa:density-ui": "playwright test --config=playwright.density.config.ts",
     "build:interactive-data": "node scripts/build_interactive_data.mjs",
     "audit:pages": "node scripts/audit_site_pages.mjs",
+    "audit:academic": "node scripts/audit_academic_rigour.mjs --build --strict",
     "audit:crawl": "node scripts/audit_site_pages.mjs --build --strict",
     "check": "npm run typecheck && npm run build",
     "qa:release": "npm run typecheck && npm run build"
   },
   "dependencies": {
-    "animejs": "^4.4.1",
-    "next": "^16.0.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "animejs": "^4.5.0",
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
-    "@playwright/test": "^1.61.1",
-    "@types/node": "^24.0.0",
+    "@playwright/test": "^1.62.0",
+    "@types/node": "^24.13.3",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "typescript": "^5.9.0"
+  },
+  "overrides": {
+    "postcss": "^8.5.18",
+    "sharp": "^0.35.0"
   }
 }

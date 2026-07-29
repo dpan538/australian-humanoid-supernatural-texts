@@ -1,0 +1,78 @@
+{
+  "comparisons": {
+    "canonical": {
+      "accepted_public_map_points": 1593,
+      "accepted_public_records": 4265,
+      "coverage_items_1926_2011": 37964,
+      "critical_hard_gaps_1926_2011": 0,
+      "display_hard_gaps_1926_2011": 0,
+      "id_redirects": 8697,
+      "lead_overlay_items": 1448,
+      "metadata_gap_items": 1552,
+      "url_redirects": 9876
+    },
+    "coverage": {
+      "coverage_items_1926_2011": 37964,
+      "critical_hard_gaps_1926_2011": 0,
+      "display_hard_gaps_1926_2011": 0
+    },
+    "db": {
+      "records_table": 4638,
+      "release_lead_overlay_items": 1448,
+      "release_metadata_gap_items": 1552,
+      "release_source_intelligence_items": 0
+    },
+    "frontend": {
+      "accepted_public_map_points": 1593,
+      "accepted_public_records": 4265
+    },
+    "map": {
+      "accepted_public_map": 1593,
+      "lead_place_overlay": 1448,
+      "metadata_place_overlay": 1552,
+      "unmapped_gap_items": 0
+    },
+    "redirects": {
+      "id_redirects": 8697,
+      "url_redirects": 9876
+    },
+    "release_package": {
+      "accepted_public_map": 1593,
+      "accepted_public_records": 4265,
+      "coverage_bands": 6,
+      "generated_at": "2026-07-06T14:56:23+00:00",
+      "lead_overlay": 1448,
+      "metadata_overlay": 1552
+    }
+  },
+  "counts": {
+    "accepted_public_map_points": 1593,
+    "accepted_public_records": 4265,
+    "coverage_items_1926_2011": 37964,
+    "critical_hard_gaps_1926_2011": 0,
+    "display_hard_gaps_1926_2011": 0,
+    "id_redirects": 8697,
+    "lead_overlay_items": 1448,
+    "metadata_gap_items": 1552,
+    "url_redirects": 9876
+  },
+  "failures": [],
+  "generated_at": "2026-07-06T15:45:33+00:00",
+  "labels": {
+    "accepted_public_map_points": "Accepted public map points",
+    "accepted_public_records": "Accepted public records",
+    "coverage_items_1926_2011": "Multi-layer coverage items",
+    "lead_overlay_items": "Research leads",
+    "metadata_gap_items": "Metadata-only gap items"
+  },
+  "release_id": "post_release_site_integration_001",
+  "rules": {
+    "lead_items_are_public_records": false,
+    "map_overlays_are_accepted_map_points": false,
+    "metadata_items_are_public_records": false
+  },
+  "status": "PASS",
+  "warnings": [
+    "DB records table inventory 4638 differs from frontend accepted display count 4265; frontend contract uses displayed accepted records"
+  ]
+}

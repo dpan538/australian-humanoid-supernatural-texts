@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="230" viewBox="0 0 960 230">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="34" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#111111">Map/display eligibility separation</text>
+<text x="24" y="78" font-family="Arial, sans-serif" font-size="14" fill="#222222">local_rule_map_eligible_narrative_location</text>
+<rect x="260" y="58" width="159" height="22" fill="#2f6f73"/>
+<text x="427" y="75" font-family="Arial, sans-serif" font-size="13" fill="#222222">1098</text>
+<text x="24" y="112" font-family="Arial, sans-serif" font-size="14" fill="#222222">local_rule_map_eligibility_share_pct</text>
+<rect x="260" y="92" width="3" height="22" fill="#2f6f73"/>
+<text x="271" y="109" font-family="Arial, sans-serif" font-size="13" fill="#222222">24.99</text>
+<text x="24" y="146" font-family="Arial, sans-serif" font-size="14" fill="#222222">canonical_frontend_public_records</text>
+<rect x="260" y="126" width="620" height="22" fill="#2f6f73"/>
+<text x="888" y="143" font-family="Arial, sans-serif" font-size="13" fill="#222222">4265</text>
+<text x="24" y="180" font-family="Arial, sans-serif" font-size="14" fill="#222222">canonical_frontend_public_map_rows</text>
+<rect x="260" y="160" width="231" height="22" fill="#2f6f73"/>
+<text x="499" y="177" font-family="Arial, sans-serif" font-size="13" fill="#222222">1593</text>
+</svg>

@@ -1,5 +1,6 @@
 import {
   ArchiveCollectionGrid,
+  ArchiveIndexStructuredData,
   ArchivePublicationPage,
   PublicationSection,
 } from "@/components/archive-publication";
@@ -34,6 +35,12 @@ export default async function PlacesPage() {
         { label: "Geographic scope", value: "Australia" },
       ]}
     >
+      <ArchiveIndexStructuredData
+        path="/places"
+        title="Australian Places in Supernatural Humanoid Public Texts"
+        description="Browse source-grounded supernatural humanoid public-text records by Australian state and territory."
+        items={groups.map((group) => ({ href: placePath(group.key), title: group.label }))}
+      />
       <PublicationSection title="Browse narrative geography">
         <ArchiveCollectionGrid
           items={groups.map((group) => ({

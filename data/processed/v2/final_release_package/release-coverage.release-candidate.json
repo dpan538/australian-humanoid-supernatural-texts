@@ -1,0 +1,82 @@
+{
+  "coverage": [
+    {
+      "accepted_public_records": "32",
+      "auxiliary_source_intelligence": "5763",
+      "band": "1926-1939",
+      "end_year": "1939",
+      "metadata_only_gap_layer": "22",
+      "provisional_records": "45",
+      "public_map_records": "35",
+      "start_year": "1926",
+      "target_gap_leads": "6302",
+      "total_items": "12199",
+      "visible_coverage_items": "6356"
+    },
+    {
+      "accepted_public_records": "6",
+      "auxiliary_source_intelligence": "4485",
+      "band": "1940-1954",
+      "end_year": "1954",
+      "metadata_only_gap_layer": "25",
+      "provisional_records": "99",
+      "public_map_records": "6",
+      "start_year": "1940",
+      "target_gap_leads": "3467",
+      "total_items": "8088",
+      "visible_coverage_items": "3498"
+    },
+    {
+      "accepted_public_records": "34",
+      "auxiliary_source_intelligence": "3240",
+      "band": "1955-1969",
+      "end_year": "1969",
+      "metadata_only_gap_layer": "6560",
+      "provisional_records": "70",
+      "public_map_records": "33",
+      "start_year": "1955",
+      "target_gap_leads": "2682",
+      "total_items": "12619",
+      "visible_coverage_items": "9276"
+    },
+    {
+      "accepted_public_records": "237",
+      "auxiliary_source_intelligence": "1512",
+      "band": "1970-1984",
+      "end_year": "1984",
+      "metadata_only_gap_layer": "1513",
+      "provisional_records": "15",
+      "public_map_records": "251",
+      "start_year": "1970",
+      "target_gap_leads": "3",
+      "total_items": "3531",
+      "visible_coverage_items": "1753"
+    },
+    {
+      "accepted_public_records": "334",
+      "auxiliary_source_intelligence": "0",
+      "band": "1985-1999",
+      "end_year": "1999",
+      "metadata_only_gap_layer": "0",
+      "provisional_records": "0",
+      "public_map_records": "341",
+      "start_year": "1985",
+      "target_gap_leads": "0",
+      "total_items": "675",
+      "visible_coverage_items": "334"
+    },
+    {
+      "accepted_public_records": "428",
+      "auxiliary_source_intelligence": "0",
+      "band": "2000-2011",
+      "end_year": "2011",
+      "metadata_only_gap_layer": "0",
+      "provisional_records": "0",
+      "public_map_records": "424",
+      "start_year": "2000",
+      "target_gap_leads": "0",
+      "total_items": "852",
+      "visible_coverage_items": "428"
+    }
+  ]
+}

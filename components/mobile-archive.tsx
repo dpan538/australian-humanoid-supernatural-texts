@@ -5,10 +5,11 @@ import Link from "next/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createTimeline, stagger } from "animejs";
-import type { Timeline } from "animejs";
+import type { AnimationParams, Timeline } from "animejs";
 import { STATE_SHAPES } from "@/lib/au-map-data";
 import type { FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { SOURCE_FAMILY_STYLES, buildSourceRegistryData, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
+import { runThemeTransition } from "@/lib/theme-transition";
 
 type MobileControlView = "about" | "map" | "density" | "dashboard" | "source";
 type DisplayTheme = "dark" | "light";
@@ -1005,7 +1006,7 @@ function animateMobileDetails(details: HTMLDetailsElement, reducedMotion: boolea
 function addMobileTimelineTargets(
   timeline: Timeline,
   targets: NodeListOf<Element> | Element[],
-  params: Record<string, unknown>,
+  params: AnimationParams,
   position: number,
 ) {
   if (targets.length > 0) {
@@ -1183,7 +1184,7 @@ function readStoredTheme(): DisplayTheme {
 }
 
 function MobileThemeControl() {
-  const [theme, setTheme] = useState<DisplayTheme>(() => readStoredTheme());
+  const [theme, setTheme] = useState<DisplayTheme>("dark");
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -1208,10 +1209,16 @@ function MobileThemeControl() {
       className="mobile-archive-link mobile-theme-button"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       aria-pressed={theme === "light"}
-      onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
+      onClick={(event) => {
+        const nextTheme = theme === "dark" ? "light" : "dark";
+        runThemeTransition(event.currentTarget, nextTheme, () => {
+          document.documentElement.dataset.theme = nextTheme;
+          setTheme(nextTheme);
+        });
+      }}
     >
       <MobileNavIcon name="theme" theme={theme} />
-      <span>{theme === "dark" ? "Dark mode" : "Light mode"}</span>
+      <span>{theme === "dark" ? "Dark" : "Light"}</span>
     </button>
   );
 }

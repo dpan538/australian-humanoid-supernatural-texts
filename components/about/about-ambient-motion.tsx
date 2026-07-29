@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createTimeline, stagger } from "animejs";
+import type { AnimationParams } from "animejs";
 
 export function AboutAmbientMotion() {
   const reducedMotion = usePrefersReducedMotion();
@@ -50,7 +51,7 @@ function usePrefersReducedMotion() {
 function addIfTargets(
   timeline: ReturnType<typeof createTimeline>,
   targets: NodeListOf<Element>,
-  params: Record<string, unknown>,
+  params: AnimationParams,
   position: number,
 ) {
   if (targets.length > 0) {

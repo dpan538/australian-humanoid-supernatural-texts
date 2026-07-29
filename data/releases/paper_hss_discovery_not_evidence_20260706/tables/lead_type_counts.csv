@@ -1,0 +1,10 @@
+dimension,value,count,share_pct,source,notes
+target_gap_leads.lead_type,METADATA_ONLY_1955_1976_LEAD,8045,37.69,target_gap_leads,
+target_gap_leads.lead_type,SOURCE_ATLAS_ROUTE_LEAD,7239,33.92,target_gap_leads,
+target_gap_leads.lead_type,DISCOVERY_ONLY_REPLACEMENT_LEAD,2545,11.92,target_gap_leads,
+target_gap_leads.lead_type,PDF_NEWSLETTER_ROUTE_LEAD,2297,10.76,target_gap_leads,
+target_gap_leads.lead_type,MANUAL_SENSITIVE_HOLD,431,2.02,target_gap_leads,
+target_gap_leads.lead_type,DATE_NO_TERM_LEAD,332,1.56,target_gap_leads,
+target_gap_leads.lead_type,TERM_NO_DATE_LEAD,312,1.46,target_gap_leads,
+target_gap_leads.lead_type,ROBOTS_BLOCKED_NEAR_MISS,120,0.56,target_gap_leads,
+target_gap_leads.lead_type,STRUCTURED_ENDPOINT_ROUTE_LEAD,22,0.1,target_gap_leads,

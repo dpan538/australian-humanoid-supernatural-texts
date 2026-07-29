@@ -1362,3 +1362,77 @@
     margin-top: 8px;
   }
 }
+
+/* Mobile completion for the independent light editorial skin. The desktop
+   stylesheet owns the palette; this file only resolves mobile navigation
+   surfaces that intentionally used a pill/glass treatment before the split. */
+@media (max-width: 980px), (pointer: coarse) {
+  :root[data-theme="light"] .mobile-archive-controls,
+  :root[data-theme="light"] .mobile-archive-controls.is-collapsed {
+    border-color: var(--light-line-strong);
+    border-radius: var(--archive-ui-radius-lg);
+    background: var(--light-paper);
+    box-shadow: 0 10px 24px rgba(45, 53, 43, 0.16);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    animation: none;
+  }
+
+  :root[data-theme="light"] .mobile-archive-controls::before,
+  :root[data-theme="light"] .mobile-archive-controls::after {
+    display: none;
+    background: none;
+  }
+
+  :root[data-theme="light"] .mobile-archive-link,
+  :root[data-theme="light"] .mobile-nav-collapse-toggle {
+    color: var(--light-midnight);
+    border-color: var(--light-line);
+    border-radius: var(--archive-ui-radius-md);
+    background: var(--light-paper-strong);
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  :root[data-theme="light"] .mobile-archive-link.active,
+  :root[data-theme="light"] .mobile-archive-link:focus-visible,
+  :root[data-theme="light"] .mobile-nav-collapse-toggle:focus-visible {
+    color: var(--light-paper-strong);
+    border-color: var(--light-midnight);
+    background: var(--light-midnight);
+  }
+
+  :root[data-theme="light"] .mobile-archive-shell .map-view .state-mini:hover:not(.active):not(:focus-visible) {
+    color: var(--light-midnight);
+    border-color: var(--light-line);
+    background: var(--light-paper-strong);
+  }
+
+  :root:not([data-theme="light"]) .mobile-archive-controls,
+  :root:not([data-theme="light"]) .mobile-archive-controls::before,
+  :root:not([data-theme="light"]) .mobile-archive-controls::after,
+  :root:not([data-theme="light"]) .mobile-archive-link,
+  :root:not([data-theme="light"]) .mobile-nav-collapse-toggle,
+  :root:not([data-theme="light"]) .mobile-archive-shell :where(
+    .readout-block,
+    .state-mini,
+    .map-health-note,
+    .density-band,
+    .density-chart-card,
+    .source-mobile-accordion,
+    .about-status-panel,
+    .about-module
+  ) {
+    border-radius: 0 !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :root[data-theme="light"] .mobile-archive-link:hover,
+  :root[data-theme="light"] .mobile-nav-collapse-toggle:hover {
+    color: var(--light-paper-strong);
+    border-color: var(--light-midnight);
+    background: var(--light-midnight);
+  }
+}

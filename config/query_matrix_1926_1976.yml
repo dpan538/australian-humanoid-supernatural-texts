@@ -1,0 +1,180 @@
+time_bands:
+  - id: "1926_1939"
+    start_year: 1926
+    end_year: 1939
+    trove_preferred: true
+  - id: "1940_1954"
+    start_year: 1940
+    end_year: 1954
+    trove_preferred: true
+  - id: "1955_1964"
+    start_year: 1955
+    end_year: 1964
+    trove_preferred: false
+  - id: "1965_1976"
+    start_year: 1965
+    end_year: 1976
+    trove_preferred: false
+
+states:
+  WA:
+    priority: 1
+    locality_terms:
+      - Perth
+      - Fremantle
+      - Albany
+      - Bunbury
+      - Geraldton
+      - Kalgoorlie
+      - Coolgardie
+      - Broome
+      - Derby
+      - Wyndham
+      - York
+      - Toodyay
+      - Carnamah
+      - Kimberley
+      - Pilbara
+      - Goldfields
+  SA:
+    priority: 1
+    locality_terms:
+      - Adelaide
+      - Port Adelaide
+      - Gawler
+      - Kapunda
+      - Burra
+      - Moonta
+      - Mount Gambier
+      - Port Augusta
+      - Port Pirie
+      - Whyalla
+      - Barossa
+      - Flinders Ranges
+      - Yorke Peninsula
+      - Eyre Peninsula
+  NT:
+    priority: 1
+    locality_terms:
+      - Darwin
+      - Palmerston
+      - Katherine
+      - Tennant Creek
+      - Alice Springs
+      - Pine Creek
+      - Mataranka
+      - Borroloola
+      - Arnhem Land
+      - Barkly
+      - Central Australia
+      - Stuart Highway
+  TAS:
+    priority: 1
+    locality_terms:
+      - Hobart
+      - Launceston
+      - Devonport
+      - Burnie
+      - Queenstown
+      - Zeehan
+      - Strahan
+      - Port Arthur
+      - Richmond
+      - Huon
+      - Midlands
+      - Tasman Peninsula
+  ACT:
+    priority: 1
+    locality_terms:
+      - Canberra
+      - Queanbeyan
+      - Lake George
+      - Cotter
+      - Namadgi
+      - Tuggeranong
+      - Gungahlin
+      - Molonglo
+      - Ginninderra
+  NSW:
+    priority: 3
+    locality_terms:
+      - Blue Mountains
+      - Bathurst
+      - Goulburn
+      - Braidwood
+      - Wagga Wagga
+      - Broken Hill
+      - Northern Rivers
+      - New England
+  QLD:
+    priority: 3
+    locality_terms:
+      - Brisbane
+      - Gympie
+      - Toowoomba
+      - Rockhampton
+      - Townsville
+      - Cairns
+      - Mackay
+      - Ipswich
+      - Maryborough
+      - Charters Towers
+  VIC:
+    priority: 3
+    locality_terms:
+      - Melbourne
+      - Ballarat
+      - Bendigo
+      - Geelong
+      - Gippsland
+      - Warrnambool
+      - Ararat
+      - Beechworth
+
+term_families:
+  humanoid_hairy:
+    ethics_risk: "medium"
+    terms:
+      - yowie
+      - yahoo
+      - "hairy man"
+      - "wild man"
+      - "ape man"
+      - "giant man"
+      - "gorilla man"
+      - "monster man"
+  apparition_ghost:
+    ethics_risk: "low_medium"
+    terms:
+      - ghost
+      - apparition
+      - haunted
+      - "white lady"
+      - "haunted house"
+      - "haunted hotel"
+      - "haunted gaol"
+      - "haunted jail"
+      - "haunted station"
+      - phantom
+  named_local_legend:
+    ethics_risk: "medium_high"
+    terms:
+      - bunyip
+      - "Min Min"
+      - "Fisher's Ghost"
+      - Nargun
+      - Quinkan
+      - "little people"
+      - "spirit people"
+  context_filter_exclusions:
+    terms:
+      - fiction
+      - poem
+      - poetry
+      - theatre
+      - advertisement
+      - "radio programme"
+      - "book review"
+      - "short story"
+      - "serial story"
+      - "children's story"

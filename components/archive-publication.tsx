@@ -20,6 +20,68 @@ export type ArchiveCollectionCard = {
   description?: string;
 };
 
+export function ArchiveIndexStructuredData({
+  path,
+  title,
+  description,
+  schemaType = "CollectionPage",
+  items = [],
+}: {
+  path: string;
+  title: string;
+  description: string;
+  schemaType?: "CollectionPage" | "DataCatalog" | "WebPage" | "TechArticle";
+  items?: Array<{ href: string; title: string }>;
+}) {
+  const pageUrl = absoluteUrl(path);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": schemaType,
+        "@id": `${pageUrl}#webpage`,
+        name: `${title} | ${SITE.name}`,
+        url: pageUrl,
+        description,
+        inLanguage: "en-AU",
+        dateModified: siteConfig.contentUpdatedDate,
+        isPartOf: { "@id": `${siteConfig.siteUrl}/#website` },
+        publisher: { "@id": `${siteConfig.siteUrl}/#organization` },
+        ...(items.length
+          ? {
+              mainEntity: {
+                "@type": "ItemList",
+                numberOfItems: items.length,
+                itemListElement: items.map((item, index) => ({
+                  "@type": "ListItem",
+                  position: index + 1,
+                  name: item.title,
+                  url: absoluteUrl(item.href),
+                })),
+              },
+            }
+          : {}),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: SITE.name, item: siteConfig.siteUrl },
+          { "@type": "ListItem", position: 2, name: title, item: pageUrl },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <script
+      id={`${path.replace(/[^a-z0-9]+/gi, "-") || "home"}-structured-data`}
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+    />
+  );
+}
+
 export function ArchivePublicationPage({
   eyebrow,
   title,
@@ -27,6 +89,7 @@ export function ArchivePublicationPage({
   breadcrumbs,
   stats = [],
   notice,
+  className,
   children,
 }: {
   eyebrow: string;
@@ -35,10 +98,11 @@ export function ArchivePublicationPage({
   breadcrumbs: ArchiveBreadcrumb[];
   stats?: Array<{ label: string; value: string | number }>;
   notice?: string;
+  className?: string;
   children: React.ReactNode;
 }) {
   return (
-    <main className="terminal-shell publication-shell">
+    <main className={`terminal-shell publication-shell${className ? ` ${className}` : ""}`}>
       <div className="noise-layer" aria-hidden="true" />
       <div className="terminal-stage publication-frame">
         <header className="publication-console-bar">
@@ -92,7 +156,6 @@ export function ArchivePublicationPage({
           <p>Public source exists does not mean a supernatural claim is verified.</p>
           <nav aria-label="Archive footer navigation">
             <Link href="/records">Records</Link>
-            <Link href="/topics">Topics</Link>
             <Link href="/data">Data</Link>
             <Link href="/cite">Cite</Link>
           </nav>
@@ -143,7 +206,11 @@ export function ArchiveRecordList({
   );
 }
 
-export function ArchiveCollectionGrid({ items }: { items: ArchiveCollectionCard[] }) {
+export function ArchiveCollectionGrid({
+  items,
+}: {
+  items: ArchiveCollectionCard[];
+}) {
   return (
     <div className="publication-collection-grid">
       {items.map((item) => (
@@ -195,8 +262,13 @@ export function ArchiveRecordCollectionPage({
         name: `${title} | ${SITE.name}`,
         url: absoluteUrl(path),
         description: intro,
+        inLanguage: "en-AU",
+        dateModified: siteConfig.contentUpdatedDate,
         isPartOf: {
           "@id": `${siteConfig.siteUrl}/#website`,
+        },
+        publisher: {
+          "@id": `${siteConfig.siteUrl}/#organization`,
         },
         mainEntity: {
           "@type": "ItemList",

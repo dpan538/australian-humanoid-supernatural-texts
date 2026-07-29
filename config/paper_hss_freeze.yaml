@@ -1,0 +1,68 @@
+paper:
+  working_title: "Discovery is not evidence: a source-chain model for unstable public-text archives"
+  journal: "Humanities and Social Sciences Communications"
+  article_type: "Article"
+  main_text_target_words: 8000
+  abstract_max_words: 300
+  double_anonymous_mode: true
+
+freeze:
+  freeze_id: "paper_hss_discovery_not_evidence_20260706"
+  release_dir: "data/releases/paper_hss_discovery_not_evidence_20260706"
+  docs_dir: "docs/paper/hss_discovery_not_evidence"
+  generated_at_policy: "script_runtime_utc"
+
+inputs:
+  sqlite_db: "data/processed/australian_humanoid_figures.sqlite"
+  frontend_public_json: "public/data/frontend-data.json"
+  frontend_v2_json: "public/data/frontend-data/v2.json"
+  frontend_release_counts_json: "public/data/release-counts.json"
+  v2_exports_dir: "data/exports/v2"
+  canonical_count_reconciliation_csv: "data/processed/v2/canonical_count_reconciliation.csv"
+  canonical_count_reconciliation_md: "data/processed/v2/canonical_count_reconciliation.md"
+  frontend_source_concentration_audit_csv: "data/processed/v2/frontend_source_concentration_audit.csv"
+  source_concentration_audit_csv: "data/processed/v2/source_concentration_audit.csv"
+  source_chain_audit_csv: "data/processed/v2/source_chain_audit.csv"
+  strict_closeout_dir: "data/processed/v2/autoharvest/strict_closeout"
+  lead_outputs_dir: "data/processed/v2/autoharvest/target_gap_leads"
+  constraint_decision_yaml: "config/constraint_decision.yml"
+
+manual_audit:
+  sample_size: 100
+  random_seed: 538
+  exclude_sensitive_rows: true
+  stratify_by:
+    - "constraint_blocker"
+    - "source_family"
+  coding_columns:
+    - "source_chain_complete"
+    - "original_source_identifiable"
+    - "evidence_source_adequate"
+    - "date_available"
+    - "term_available"
+    - "source_stated_place_available"
+    - "ethics_sensitive"
+    - "record_eligible"
+    - "map_eligible"
+    - "reason_not_eligible"
+    - "reviewer_notes"
+
+validation:
+  secret_scan_extensions:
+    - ".csv"
+    - ".json"
+    - ".md"
+    - ".svg"
+  forbidden_release_extensions:
+    - ".txt"
+    - ".html"
+    - ".htm"
+    - ".xml"
+    - ".pdf"
+    - ".doc"
+    - ".docx"
+    - ".sqlite"
+    - ".db"
+  generated_markdown_with_counts:
+    - "data/releases/paper_hss_discovery_not_evidence_20260706/paper_stats.md"
+    - "docs/paper/hss_discovery_not_evidence/COUNT_RECONCILIATION.md"

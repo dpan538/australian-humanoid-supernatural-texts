@@ -91,8 +91,8 @@ export function labelKey(value: string | null | undefined) {
     .trim();
 }
 
-export function labelPath(label: string) {
-  return `/labels/${archiveSlug(label, "unspecified")}`;
+export function figurePath(slug: string) {
+  return `/figures/${archiveSlug(slug, "uncoded-figure")}`;
 }
 
 export function sourcePath(sourceId: number, sourceName: string) {

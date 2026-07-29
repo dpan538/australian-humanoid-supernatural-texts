@@ -1,0 +1,14 @@
+gate,status,details
+count_contract_present,PASS,public/data/release-count-contract.json
+accepted_public_map_count,PASS,1593
+metadata_not_public,PASS,metadata rule false
+leads_not_public,PASS,lead rule false
+cards_have_caveats,PASS,15962 cards
+charts_have_provenance,PASS,10 charts
+contract_validation,PASS,PASS
+frontend_smoke,PASS,PASS
+final_release_audit,PASS,READY
+public_db_mutation,PASS,DB mutation report
+accepted_record_tables_unchanged,PASS,accepted records report
+map_flags_unchanged,PASS,map flags report
+display_audit,PASS,PASS

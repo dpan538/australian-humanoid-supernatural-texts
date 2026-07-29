@@ -1,0 +1,471 @@
+{
+  "charts": [
+    {
+      "caveat": "Coverage items are not accepted-public-record totals.",
+      "data": [
+        {
+          "accepted_public_records": "32",
+          "auxiliary_source_intelligence": "5763",
+          "band": "1926-1939",
+          "end_year": "1939",
+          "metadata_only_gap_layer": "22",
+          "provisional_records": "45",
+          "public_map_records": "35",
+          "start_year": "1926",
+          "target_gap_leads": "6302",
+          "total_items": "12199",
+          "visible_coverage_items": "6356"
+        },
+        {
+          "accepted_public_records": "6",
+          "auxiliary_source_intelligence": "4485",
+          "band": "1940-1954",
+          "end_year": "1954",
+          "metadata_only_gap_layer": "25",
+          "provisional_records": "99",
+          "public_map_records": "6",
+          "start_year": "1940",
+          "target_gap_leads": "3467",
+          "total_items": "8088",
+          "visible_coverage_items": "3498"
+        },
+        {
+          "accepted_public_records": "34",
+          "auxiliary_source_intelligence": "3240",
+          "band": "1955-1969",
+          "end_year": "1969",
+          "metadata_only_gap_layer": "6560",
+          "provisional_records": "70",
+          "public_map_records": "33",
+          "start_year": "1955",
+          "target_gap_leads": "2682",
+          "total_items": "12619",
+          "visible_coverage_items": "9276"
+        },
+        {
+          "accepted_public_records": "237",
+          "auxiliary_source_intelligence": "1512",
+          "band": "1970-1984",
+          "end_year": "1984",
+          "metadata_only_gap_layer": "1513",
+          "provisional_records": "15",
+          "public_map_records": "251",
+          "start_year": "1970",
+          "target_gap_leads": "3",
+          "total_items": "3531",
+          "visible_coverage_items": "1753"
+        },
+        {
+          "accepted_public_records": "334",
+          "auxiliary_source_intelligence": "0",
+          "band": "1985-1999",
+          "end_year": "1999",
+          "metadata_only_gap_layer": "0",
+          "provisional_records": "0",
+          "public_map_records": "341",
+          "start_year": "1985",
+          "target_gap_leads": "0",
+          "total_items": "675",
+          "visible_coverage_items": "334"
+        },
+        {
+          "accepted_public_records": "428",
+          "auxiliary_source_intelligence": "0",
+          "band": "2000-2011",
+          "end_year": "2011",
+          "metadata_only_gap_layer": "0",
+          "provisional_records": "0",
+          "public_map_records": "424",
+          "start_year": "2000",
+          "target_gap_leads": "0",
+          "total_items": "852",
+          "visible_coverage_items": "428"
+        }
+      ],
+      "description": "Multi-layer coverage split into accepted records, metadata-only items, leads, and auxiliary intelligence.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "data/processed/v2/release_coverage_1926_2011/release_coverage_1926_2011.csv"
+      ],
+      "title": "1926-2011 coverage by time band and layer"
+    },
+    {
+      "caveat": "Decade rows are coverage counts.",
+      "data": [
+        {
+          "count": "8486",
+          "decade": "1950s"
+        },
+        {
+          "count": "8071",
+          "decade": "1930s"
+        },
+        {
+          "count": "6393",
+          "decade": "1960s"
+        },
+        {
+          "count": "5828",
+          "decade": "1940s"
+        },
+        {
+          "count": "3324",
+          "decade": "1970s"
+        },
+        {
+          "count": "697",
+          "decade": "2000s"
+        },
+        {
+          "count": "497",
+          "decade": "1990s"
+        },
+        {
+          "count": "385",
+          "decade": "1980s"
+        }
+      ],
+      "description": "Decade coverage rows for release display.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "data/processed/v2/release_coverage_1926_2011/release_coverage_by_decade.csv"
+      ],
+      "title": "Decade coverage by layer"
+    },
+    {
+      "caveat": "State coverage may include research-layer rows.",
+      "data": [
+        {
+          "count": "8360",
+          "state": "WA"
+        },
+        {
+          "count": "7626",
+          "state": "SA"
+        },
+        {
+          "count": "7045",
+          "state": "TAS"
+        },
+        {
+          "count": "6944",
+          "state": "NT"
+        },
+        {
+          "count": "5762",
+          "state": "ACT"
+        },
+        {
+          "count": "1370",
+          "state": "unknown"
+        },
+        {
+          "count": "444",
+          "state": "NSW"
+        },
+        {
+          "count": "317",
+          "state": "QLD"
+        },
+        {
+          "count": "84",
+          "state": "VIC"
+        },
+        {
+          "count": "12",
+          "state": "NATIONAL"
+        }
+      ],
+      "description": "State and territory coverage, including release layers.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "data/processed/v2/release_coverage_1926_2011/release_coverage_by_state.csv"
+      ],
+      "title": "Coverage by state and layer"
+    },
+    {
+      "caveat": "Overlay rows are not accepted public map points.",
+      "data": [
+        {
+          "count": 1593,
+          "layer": "accepted_public_map"
+        },
+        {
+          "count": 1552,
+          "layer": "metadata_place_overlay"
+        },
+        {
+          "count": 1448,
+          "layer": "lead_place_overlay"
+        }
+      ],
+      "description": "Accepted map points are separate from metadata and lead overlays.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "data/processed/v2/final_map_layers/map_layer_counts.json"
+      ],
+      "title": "Accepted map vs overlay map layers"
+    },
+    {
+      "caveat": "Research-layer source families remain labelled.",
+      "data": [
+        {
+          "count": 679,
+          "source_family": "heritage_register"
+        },
+        {
+          "count": 491,
+          "source_family": "council_local_studies"
+        },
+        {
+          "count": 488,
+          "source_family": "state_library_catalogue"
+        },
+        {
+          "count": 485,
+          "source_family": "museum_heritage_page"
+        },
+        {
+          "count": 443,
+          "source_family": "local_history_serial"
+        },
+        {
+          "count": 342,
+          "source_family": "state_archive_catalogue"
+        },
+        {
+          "count": 72,
+          "source_family": "broadcast_catalogue"
+        }
+      ],
+      "description": "Release-layer source family distribution.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "release layer DB tables"
+      ],
+      "title": "Source family distribution by layer"
+    },
+    {
+      "caveat": "Tiers do not promote leads into accepted records.",
+      "data": [
+        {
+          "count": 1448,
+          "source_tier": "unknown"
+        },
+        {
+          "count": 802,
+          "source_tier": "B"
+        },
+        {
+          "count": 691,
+          "source_tier": "A"
+        },
+        {
+          "count": 59,
+          "source_tier": "C"
+        }
+      ],
+      "description": "Release-layer source tier distribution.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "release layer DB tables"
+      ],
+      "title": "Source tier distribution by layer"
+    },
+    {
+      "caveat": "Blockers remain visible instead of being hidden.",
+      "data": [
+        {
+          "blocker": "missing_item_url",
+          "count": 1448
+        },
+        {
+          "blocker": "metadata_only_layer;missing_term",
+          "count": 1028
+        },
+        {
+          "blocker": "metadata_only_layer;strict_record_gate_not_met",
+          "count": 524
+        }
+      ],
+      "description": "Evidence gaps and blockers on release-layer rows.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "release layer DB tables"
+      ],
+      "title": "Blocker distribution for leads"
+    },
+    {
+      "caveat": "Redirects are route resolution data, not evidence replacement.",
+      "data": [
+        {
+          "count": 8697,
+          "type": "id_redirects"
+        },
+        {
+          "count": 9876,
+          "type": "url_redirects"
+        }
+      ],
+      "description": "ID and URL redirect counts used by the frontend.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "public/data/release-count-contract.json"
+      ],
+      "title": "Redirect counts"
+    },
+    {
+      "caveat": "Metadata-only rows are not accepted records.",
+      "data": [
+        {
+          "count": 704,
+          "state": "NT"
+        },
+        {
+          "count": 597,
+          "state": "ACT"
+        },
+        {
+          "count": 251,
+          "state": "SA"
+        }
+      ],
+      "description": "Metadata-only release rows overlapping the target gap by state.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "release_metadata_gap_items"
+      ],
+      "title": "Metadata-only 1955-1976 distribution"
+    },
+    {
+      "caveat": "Limitations are part of the release interpretation.",
+      "data": [
+        {
+          "count": 1,
+          "limitation": "accepted_record_gaps_documented"
+        },
+        {
+          "count": 1,
+          "limitation": "metadata_only_not_proof"
+        },
+        {
+          "count": 1,
+          "limitation": "research_leads_require_review"
+        },
+        {
+          "count": 1,
+          "limitation": "map_overlay_not_habitat"
+        }
+      ],
+      "description": "Documented limitations retained in the release.",
+      "generated_at": "2026-07-06T15:45:45+00:00",
+      "layer_definitions": {
+        "accepted_public_map": "Accepted public map points",
+        "accepted_public_records": "Accepted public records",
+        "auxiliary_source_intelligence": "Source intelligence; not public records",
+        "lead_place_overlay": "Lead map overlays; not accepted map points",
+        "metadata_only_gap_layer": "Metadata-only gap items; not public records",
+        "metadata_place_overlay": "Map overlay items; not accepted map points",
+        "target_gap_leads": "Research leads; not public records"
+      },
+      "source_file_provenance": [
+        "final release audit"
+      ],
+      "title": "Known limitations"
+    }
+  ],
+  "contract_counts": {
+    "accepted_public_map_points": 1593,
+    "accepted_public_records": 4265,
+    "coverage_items_1926_2011": 37964,
+    "critical_hard_gaps_1926_2011": 0,
+    "display_hard_gaps_1926_2011": 0,
+    "id_redirects": 8697,
+    "lead_overlay_items": 1448,
+    "metadata_gap_items": 1552,
+    "url_redirects": 9876
+  },
+  "generated_at": "2026-07-06T15:45:45+00:00",
+  "schema": "release-charts/v1"
+}

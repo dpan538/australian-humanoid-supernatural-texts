@@ -1,0 +1,65 @@
+{
+  "generated": [
+    {
+      "id": "figure_1_data",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/figures/figure_1_count_family_reconciliation.csv",
+      "role": "csv",
+      "use": "Count-family separation data."
+    },
+    {
+      "id": "figure_1_svg",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/figures/figure_1_count_family_reconciliation.svg",
+      "role": "svg",
+      "use": "Convenience rendering of count-family separation."
+    },
+    {
+      "id": "figure_2_data",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/figures/figure_2_lead_blockers_top10.csv",
+      "role": "csv",
+      "use": "Top lead blocker counts."
+    },
+    {
+      "id": "figure_2_svg",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/figures/figure_2_lead_blockers_top10.svg",
+      "role": "svg",
+      "use": "Convenience rendering of blocker distribution."
+    },
+    {
+      "id": "figure_3_data",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/figures/figure_3_source_family_top10.csv",
+      "role": "csv",
+      "use": "Top source-family concentration rows."
+    },
+    {
+      "id": "figure_3_svg",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/figures/figure_3_source_family_top10.svg",
+      "role": "svg",
+      "use": "Convenience rendering of source-family concentration."
+    },
+    {
+      "id": "figure_4_data",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/figures/figure_4_map_display_separation.csv",
+      "role": "csv",
+      "use": "Map and eligibility count separation."
+    },
+    {
+      "id": "figure_4_svg",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/figures/figure_4_map_display_separation.svg",
+      "role": "svg",
+      "use": "Convenience rendering of map/display separation."
+    },
+    {
+      "id": "inventory_release",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/FIGURE_TABLE_INVENTORY.md",
+      "role": "markdown",
+      "use": "Release inventory."
+    },
+    {
+      "id": "inventory_docs",
+      "path": "docs/paper/hss_discovery_not_evidence/FIGURE_TABLE_INVENTORY.md",
+      "role": "markdown",
+      "use": "Documentation inventory."
+    }
+  ],
+  "warnings": []
+}

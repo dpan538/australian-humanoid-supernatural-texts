@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  ArchiveIndexStructuredData,
   ArchivePublicationPage,
   PublicationSection,
 } from "@/components/archive-publication";
@@ -35,11 +36,28 @@ export default async function DataPage() {
       ]}
       notice="Search indexing is intentionally narrower than public-data availability. Control records and records awaiting search or sensitivity review do not enter the sitemap."
     >
+      <ArchiveIndexStructuredData
+        path="/data"
+        title="AusFigures Data, Coverage, and Index Policy"
+        description="Public data scope, page inventory, search-index eligibility, provenance boundaries, and machine-readable access for AusFigures."
+        schemaType="DataCatalog"
+        items={[
+          { href: "/records", title: "Public records" },
+          { href: "/figures", title: "Supernatural humanoid dictionary" },
+          { href: "/narrative-types", title: "Narrative types" },
+          { href: "/sources", title: "Source collections" },
+          { href: "/places", title: "Place collections" },
+          { href: "/periods", title: "Period collections" },
+        ]}
+      />
       <PublicationSection title="Generated page inventory">
         <dl className="publication-definition-list">
           <div><dt>Paginated record indexes</dt><dd>{inventory.recordIndexPages}</dd></div>
           <div><dt>Narrative-type pages</dt><dd>{inventory.narrativeTypePages}</dd></div>
           <div><dt>Recurring label pages</dt><dd>{inventory.labelPages}</dd></div>
+          <div><dt>Encyclopedia figure pages</dt><dd>{inventory.figurePages}</dd></div>
+          <div><dt>Search-ready figure pages</dt><dd>{inventory.indexableFigurePages}</dd></div>
+          <div><dt>Review-only figure pages</dt><dd>{inventory.reviewOnlyFigurePages}</dd></div>
           <div><dt>Source pages</dt><dd>{inventory.sourcePages}</dd></div>
           <div><dt>State and territory pages</dt><dd>{inventory.placePages}</dd></div>
           <div><dt>Period pages</dt><dd>{inventory.periodPages}</dd></div>
@@ -53,6 +71,7 @@ export default async function DataPage() {
         <div className="publication-link-row">
           <a href="/data/frontend-data.json">Public frontend JSON</a>
           <Link href="/records">Human-readable record index</Link>
+          <Link href="/figures">Supernatural humanoid encyclopedia</Link>
           <Link href="/cite">Citation guidance</Link>
           <a href="/feed.xml">Recent-record RSS feed</a>
         </div>

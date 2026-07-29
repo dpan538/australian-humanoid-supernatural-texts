@@ -1,0 +1,14 @@
+dimension,value,count,share_pct,source,notes
+target_gap_leads_missingness,temporal_signal,10769,50.46,target_gap_leads,denominator=21343
+target_gap_leads_missingness,term_signal,14361,67.29,target_gap_leads,denominator=21343
+target_gap_leads_missingness,place_signal,11092,51.97,target_gap_leads,denominator=21343
+target_gap_leads_missingness,source_family,10950,51.3,target_gap_leads,denominator=21343
+target_gap_leads_missingness,source_chain_json,0,0.0,target_gap_leads,denominator=21343
+narrative_units_missingness,earliest_attestation_start,150,3.37,narrative_units,denominator=4457
+narrative_units_missingness,public_summary,0,0.0,narrative_units,denominator=4457
+narrative_units_missingness,cultural_sensitivity,0,0.0,narrative_units,denominator=4457
+narrative_units_missingness,ethics_review_status,0,0.0,narrative_units,denominator=4457
+source_items_missingness,publication_or_organisation,0,0.0,source_items,denominator=4526
+source_items_missingness,source_type,0,0.0,source_items,denominator=4526
+source_items_missingness,source_traceability_status,0,0.0,source_items,denominator=4526
+source_items_missingness,publicness_status,0,0.0,source_items,denominator=4526

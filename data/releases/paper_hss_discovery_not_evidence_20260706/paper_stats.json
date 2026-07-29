@@ -1,0 +1,478 @@
+{
+  "counts": [
+    {
+      "count_family": "live_public_website_display_counts",
+      "metric": "live_public_records",
+      "notes": "Requires explicit capture from deployed website/runtime; local frontend exports are reported separately.",
+      "source": "not available in current local data",
+      "status": "not_available",
+      "unit": "records",
+      "value": ""
+    },
+    {
+      "count_family": "live_public_website_display_counts",
+      "metric": "live_public_mapped_records",
+      "notes": "Requires explicit capture from deployed website/runtime; local frontend exports are reported separately.",
+      "source": "not available in current local data",
+      "status": "not_available",
+      "unit": "records",
+      "value": ""
+    },
+    {
+      "count_family": "local_frontend_export_display_counts",
+      "metric": "frontend_records",
+      "notes": "",
+      "source": "public/data/frontend-data.json",
+      "status": "ok",
+      "unit": "records",
+      "value": 4265
+    },
+    {
+      "count_family": "local_frontend_export_display_counts",
+      "metric": "frontend_map_points",
+      "notes": "",
+      "source": "public/data/frontend-data.json",
+      "status": "ok",
+      "unit": "rows",
+      "value": 1593
+    },
+    {
+      "count_family": "local_frontend_export_display_counts",
+      "metric": "frontend_map_flags",
+      "notes": "",
+      "source": "public/data/frontend-data.json",
+      "status": "ok",
+      "unit": "rows",
+      "value": 1593
+    },
+    {
+      "count_family": "local_frontend_export_display_counts",
+      "metric": "map_points_equal_map_flags",
+      "notes": "1 means local export satisfies map_points.length == map_flags.length.",
+      "source": "public/data/frontend-data.json",
+      "status": "ok",
+      "unit": "boolean_as_int",
+      "value": 1
+    },
+    {
+      "count_family": "frontend_release_package_counts",
+      "metric": "accepted_public_records",
+      "notes": "",
+      "source": "public/data/release-counts.json",
+      "status": "ok",
+      "unit": "rows",
+      "value": 4265
+    },
+    {
+      "count_family": "frontend_release_package_counts",
+      "metric": "accepted_public_map",
+      "notes": "",
+      "source": "public/data/release-counts.json",
+      "status": "ok",
+      "unit": "rows",
+      "value": 1593
+    },
+    {
+      "count_family": "frontend_release_package_counts",
+      "metric": "metadata_overlay",
+      "notes": "",
+      "source": "public/data/release-counts.json",
+      "status": "ok",
+      "unit": "rows",
+      "value": 1552
+    },
+    {
+      "count_family": "frontend_release_package_counts",
+      "metric": "lead_overlay",
+      "notes": "",
+      "source": "public/data/release-counts.json",
+      "status": "ok",
+      "unit": "rows",
+      "value": 1448
+    },
+    {
+      "count_family": "legacy_flat_record_corpus_counts",
+      "metric": "records_total",
+      "notes": "",
+      "source": "records",
+      "status": "ok",
+      "unit": "records",
+      "value": 4638
+    },
+    {
+      "count_family": "legacy_flat_record_corpus_counts",
+      "metric": "records_with_full_text_path",
+      "notes": "",
+      "source": "records",
+      "status": "ok",
+      "unit": "records",
+      "value": 1097
+    },
+    {
+      "count_family": "v2_normalized_public_corpus_counts",
+      "metric": "source_items_total",
+      "notes": "",
+      "source": "source_items",
+      "status": "ok",
+      "unit": "source_items",
+      "value": 4526
+    },
+    {
+      "count_family": "v2_normalized_public_corpus_counts",
+      "metric": "narrative_units_total",
+      "notes": "",
+      "source": "narrative_units",
+      "status": "ok",
+      "unit": "narrative_units",
+      "value": 4457
+    },
+    {
+      "count_family": "v2_normalized_public_corpus_counts",
+      "metric": "public_display_eligible_narrative_units",
+      "notes": "display_mode in full/summary_only/metadata_only and analysis_status not excluded.",
+      "source": "narrative_units",
+      "status": "ok",
+      "unit": "narrative_units",
+      "value": 4444
+    },
+    {
+      "count_family": "source_chain_model_counts",
+      "metric": "narrative_source_links_total",
+      "notes": "Normalized link table count; not a proof-strength count.",
+      "source": "narrative_source_links",
+      "status": "ok",
+      "unit": "links",
+      "value": 4457
+    },
+    {
+      "count_family": "source_chain_model_counts",
+      "metric": "source_chains_table_rows",
+      "notes": "The local source_chains table may be empty even when source-chain audit files exist.",
+      "source": "source_chains",
+      "status": "ok",
+      "unit": "rows",
+      "value": 0
+    },
+    {
+      "count_family": "source_chain_model_counts",
+      "metric": "audit_source_chain_rows",
+      "notes": "",
+      "source": "data/processed/v2/source_chain_audit.csv",
+      "status": "ok",
+      "unit": "rows",
+      "value": "4526"
+    },
+    {
+      "count_family": "source_chain_model_counts",
+      "metric": "audit_missing_original_source_name",
+      "notes": "",
+      "source": "data/processed/v2/source_chain_audit.csv",
+      "status": "ok",
+      "unit": "rows",
+      "value": "0"
+    },
+    {
+      "count_family": "source_chain_model_counts",
+      "metric": "audit_tier_e_or_discovery_like_rows",
+      "notes": "",
+      "source": "data/processed/v2/source_chain_audit.csv",
+      "status": "ok",
+      "unit": "rows",
+      "value": "898"
+    },
+    {
+      "count_family": "v2_normalized_public_corpus_counts",
+      "metric": "collection_candidates_v2_total",
+      "notes": "",
+      "source": "collection_candidates_v2",
+      "status": "ok",
+      "unit": "candidates",
+      "value": 5852
+    },
+    {
+      "count_family": "strict_no_credential_record_gate_experiment_counts",
+      "metric": "provisional_records_total",
+      "notes": "",
+      "source": "provisional_records",
+      "status": "ok",
+      "unit": "rows",
+      "value": 2762
+    },
+    {
+      "count_family": "strict_no_credential_record_gate_experiment_counts",
+      "metric": "strict_target_gap_records",
+      "notes": "Strict no-credential structured target-gap gate.",
+      "source": "provisional_records",
+      "status": "ok",
+      "unit": "records",
+      "value": 0
+    },
+    {
+      "count_family": "strict_no_credential_record_gate_experiment_counts",
+      "metric": "harvest_pages_seen",
+      "notes": "",
+      "source": "harvest_pages",
+      "status": "ok",
+      "unit": "rows",
+      "value": 94
+    },
+    {
+      "count_family": "strict_no_credential_record_gate_experiment_counts",
+      "metric": "harvest_candidates_seen",
+      "notes": "",
+      "source": "harvest_candidates",
+      "status": "ok",
+      "unit": "rows",
+      "value": 7200
+    },
+    {
+      "count_family": "strict_no_credential_record_gate_experiment_counts",
+      "metric": "structured_endpoints_seen",
+      "notes": "",
+      "source": "noauth_endpoint_inventory",
+      "status": "ok",
+      "unit": "rows",
+      "value": 22
+    },
+    {
+      "count_family": "strict_no_credential_record_gate_experiment_counts",
+      "metric": "structured_endpoint_records_seen",
+      "notes": "",
+      "source": "noauth_endpoint_records",
+      "status": "ok",
+      "unit": "rows",
+      "value": 120
+    },
+    {
+      "count_family": "strict_no_credential_record_gate_experiment_counts",
+      "metric": "structured_near_misses_materialized",
+      "notes": "",
+      "source": "structured_endpoint_near_misses",
+      "status": "ok",
+      "unit": "rows",
+      "value": 120
+    },
+    {
+      "count_family": "strict_no_credential_record_gate_experiment_counts",
+      "metric": "structured_enriched_records",
+      "notes": "",
+      "source": "structured_endpoint_enriched_records",
+      "status": "ok",
+      "unit": "rows",
+      "value": 240
+    },
+    {
+      "count_family": "strict_no_credential_record_gate_experiment_counts",
+      "metric": "strict_target_goal",
+      "notes": "Configuration target, not achieved count.",
+      "source": "config/constraint_decision.yml",
+      "status": "ok",
+      "unit": "records",
+      "value": 2000
+    },
+    {
+      "count_family": "lead_mode_conversion_counts",
+      "metric": "target_gap_leads_total",
+      "notes": "",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "leads",
+      "value": 21343
+    },
+    {
+      "count_family": "lead_mode_conversion_counts",
+      "metric": "lead_mode_enabled_config",
+      "notes": "",
+      "source": "config/constraint_decision.yml",
+      "status": "ok",
+      "unit": "boolean_as_int",
+      "value": 1
+    },
+    {
+      "count_family": "blocker_counts",
+      "metric": "top_constraint_blocker",
+      "notes": "missing_date (48.35%).",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "leads",
+      "value": 10320
+    },
+    {
+      "count_family": "blocker_counts",
+      "metric": "distinct_constraint_blockers",
+      "notes": "",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "blockers",
+      "value": 6
+    },
+    {
+      "count_family": "source_family_concentration_counts",
+      "metric": "top_lead_source_family_count",
+      "notes": "(missing) (51.3%).",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "leads",
+      "value": 10950
+    },
+    {
+      "count_family": "source_family_concentration_counts",
+      "metric": "distinct_lead_source_families",
+      "notes": "",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "families",
+      "value": 17
+    },
+    {
+      "count_family": "priority_lead_counts",
+      "metric": "lead_score_gte_80",
+      "notes": "",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "leads",
+      "value": 10581
+    },
+    {
+      "count_family": "mapped_public_record_counts",
+      "metric": "local_rule_map_eligible_narrative_locations",
+      "notes": "Local rule denominator=4393; do not substitute for frontend map count.",
+      "source": "narrative_locations JOIN locations JOIN narrative_units",
+      "status": "ok",
+      "unit": "rows",
+      "value": 1098
+    },
+    {
+      "count_family": "mapped_public_record_counts",
+      "metric": "local_rule_map_eligibility_share_pct",
+      "notes": "",
+      "source": "narrative_locations JOIN locations JOIN narrative_units",
+      "status": "ok",
+      "unit": "percent",
+      "value": 24.99
+    },
+    {
+      "count_family": "source_organisation_source_type_counts",
+      "metric": "distinct_source_organisations",
+      "notes": "",
+      "source": "source_items",
+      "status": "ok",
+      "unit": "organisations",
+      "value": 315
+    },
+    {
+      "count_family": "source_organisation_source_type_counts",
+      "metric": "top_source_organisation_count",
+      "notes": "Australian Yowie Research (19.84%).",
+      "source": "source_items",
+      "status": "ok",
+      "unit": "source_items",
+      "value": 898
+    },
+    {
+      "count_family": "source_organisation_source_type_counts",
+      "metric": "distinct_source_types",
+      "notes": "",
+      "source": "source_items",
+      "status": "ok",
+      "unit": "source_types",
+      "value": 26
+    },
+    {
+      "count_family": "source_organisation_source_type_counts",
+      "metric": "top_source_type_count",
+      "notes": "repository_full_text (34.29%).",
+      "source": "source_items",
+      "status": "ok",
+      "unit": "source_items",
+      "value": 1552
+    },
+    {
+      "count_family": "missingness_counts",
+      "metric": "target_gap_leads_missing_temporal_signal",
+      "notes": "50.46% missing.",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "leads",
+      "value": 10769
+    },
+    {
+      "count_family": "missingness_counts",
+      "metric": "target_gap_leads_missing_term_signal",
+      "notes": "67.29% missing.",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "leads",
+      "value": 14361
+    },
+    {
+      "count_family": "missingness_counts",
+      "metric": "target_gap_leads_missing_place_signal",
+      "notes": "51.97% missing.",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "leads",
+      "value": 11092
+    },
+    {
+      "count_family": "missingness_counts",
+      "metric": "target_gap_leads_missing_source_family",
+      "notes": "51.3% missing.",
+      "source": "target_gap_leads",
+      "status": "ok",
+      "unit": "leads",
+      "value": 10950
+    },
+    {
+      "count_family": "mapped_public_record_counts",
+      "metric": "canonical_frontend_public_records",
+      "notes": "",
+      "source": "data/processed/v2/canonical_count_reconciliation.csv",
+      "status": "ok",
+      "unit": "records",
+      "value": "4265"
+    },
+    {
+      "count_family": "mapped_public_record_counts",
+      "metric": "canonical_frontend_public_map_rows",
+      "notes": "",
+      "source": "data/processed/v2/canonical_count_reconciliation.csv",
+      "status": "ok",
+      "unit": "rows",
+      "value": "1593"
+    },
+    {
+      "count_family": "source_family_concentration_counts",
+      "metric": "top_frontend_map_source_family_count",
+      "notes": "AYR_FAMILY (79.85%).",
+      "source": "data/processed/v2/frontend_source_concentration_audit.csv",
+      "status": "ok",
+      "unit": "map_rows",
+      "value": 1272
+    }
+  ],
+  "detail_tables": {
+    "collection_candidate_status_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/collection_candidate_status_counts.csv",
+    "frontend_map_source_family_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/frontend_map_source_family_counts.csv",
+    "lead_blocker_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_blocker_counts.csv",
+    "lead_evidence_gap_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_evidence_gap_counts.csv",
+    "lead_route_family_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_route_family_counts.csv",
+    "lead_source_family_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_source_family_counts.csv",
+    "lead_source_table_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_source_table_counts.csv",
+    "lead_type_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/lead_type_counts.csv",
+    "legacy_record_publicness_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/legacy_record_publicness_counts.csv",
+    "missingness_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/missingness_counts.csv",
+    "priority_lead_bucket_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/priority_lead_bucket_counts.csv",
+    "source_chain_original_source_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/source_chain_original_source_counts.csv",
+    "source_organisation_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/source_organisation_counts.csv",
+    "source_publicness_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/source_publicness_counts.csv",
+    "source_type_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/source_type_counts.csv",
+    "v2_analysis_status_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/v2_analysis_status_counts.csv",
+    "v2_display_mode_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/v2_display_mode_counts.csv",
+    "v2_ethics_counts": "data/releases/paper_hss_discovery_not_evidence_20260706/tables/v2_ethics_counts.csv"
+  },
+  "generated_at": "2026-07-06T15:34:31+00:00",
+  "release_dir": "data/releases/paper_hss_discovery_not_evidence_20260706",
+  "script": "generate_paper_stats.py",
+  "warnings": []
+}

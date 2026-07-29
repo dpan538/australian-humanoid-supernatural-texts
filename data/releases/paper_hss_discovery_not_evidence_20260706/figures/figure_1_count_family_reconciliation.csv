@@ -1,0 +1,8 @@
+label,count_family,metric,count,source,notes
+Local frontend records,local_frontend_export_display_counts,frontend_records,4265,public/data/frontend-data.json,
+Local frontend map rows,local_frontend_export_display_counts,frontend_map_points,1593,public/data/frontend-data.json,
+Legacy records table,legacy_flat_record_corpus_counts,records_total,4638,records,
+V2 source items,v2_normalized_public_corpus_counts,source_items_total,4526,source_items,
+V2 narrative units,v2_normalized_public_corpus_counts,narrative_units_total,4457,narrative_units,
+Strict-gate records,strict_no_credential_record_gate_experiment_counts,strict_target_gap_records,0,provisional_records,Strict no-credential structured target-gap gate.
+Lead-mode rows,lead_mode_conversion_counts,target_gap_leads_total,21343,target_gap_leads,

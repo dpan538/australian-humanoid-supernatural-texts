@@ -1,0 +1,7 @@
+dimension,value,count,share_pct,source,notes
+target_gap_leads.constraint_blocker,missing_date,10320,48.35,target_gap_leads,
+target_gap_leads.constraint_blocker,missing_item_url,6000,28.11,target_gap_leads,
+target_gap_leads.constraint_blocker,missing_term,3863,18.1,target_gap_leads,
+target_gap_leads.constraint_blocker,strict_record_gate_not_met,629,2.95,target_gap_leads,
+target_gap_leads.constraint_blocker,ethics_sensitive,431,2.02,target_gap_leads,
+target_gap_leads.constraint_blocker,robots_unknown,100,0.47,target_gap_leads,

@@ -1,20 +1,20 @@
 {
   "exports": {
-    "collection_500_accepted": 1,
-    "collection_500_rejected": 18,
+    "collection_500_accepted": 3539,
+    "collection_500_rejected": 2313,
     "encounter_events_review.csv": 909,
     "entity_concepts.csv": 4,
-    "entity_labels_review.csv": 985,
+    "entity_labels_review.csv": 4517,
     "exclusions.csv": 2,
     "leads.csv": 0,
-    "narrative_locations_review.csv": 920,
+    "narrative_locations_review.csv": 4393,
     "narrative_relations.csv": 0,
-    "narrative_source_links.csv": 916,
-    "narrative_units": 916,
+    "narrative_source_links.csv": 4457,
+    "narrative_units": 4457,
     "review_queue": 985,
-    "source_items": 985
+    "source_items": 4526
   },
   "frontend_data_v2": "public/data/frontend-data/v2.json",
-  "generated_at": "2026-06-20T11:03:20+00:00",
+  "generated_at": "2026-07-06T12:19:53+00:00",
   "schema_version": "2.0.0"
 }

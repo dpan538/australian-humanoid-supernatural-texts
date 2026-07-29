@@ -1,0 +1,11 @@
+dimension,value,count,share_pct,source,notes
+frontend_map.source_family,AYR_FAMILY,1272,79.85,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit
+frontend_map.source_family,Australian Broadcasting Corporation,116,7.28,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit
+frontend_map.source_family,INTERNET_ARCHIVE_FAMILY,74,4.65,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit
+frontend_map.source_family,GUTENBERG_FAMILY,68,4.27,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit
+frontend_map.source_family,State Library Victoria,21,1.32,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit
+frontend_map.source_family,National Trust and ABC public pages,8,0.5,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit
+frontend_map.source_family,National Trust of Australia (NSW),6,0.38,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit
+frontend_map.source_family,Adelaide Arcade,5,0.31,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit
+frontend_map.source_family,Territory Stories,5,0.31,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit
+frontend_map.source_family,Adelaide Gaol,4,0.25,data/processed/v2/frontend_source_concentration_audit.csv,frontend map source-family audit

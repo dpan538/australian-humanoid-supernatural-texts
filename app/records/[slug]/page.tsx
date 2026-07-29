@@ -17,14 +17,15 @@ import {
 } from "@/lib/archive-catalog";
 import { archiveBreadcrumbJsonLd, archivePageMetadata } from "@/lib/archive-metadata";
 import {
-  labelPath,
+  figurePath,
   narrativeTypeName,
   narrativeTypePath,
   recordPath,
   recordRouteSlug,
   sourcePath,
 } from "@/lib/archive-routing";
-import { SITE, absoluteUrl, siteConfig } from "@/lib/site";
+import { figureProfileFor } from "@/lib/figure-profiles";
+import { SITE, absoluteUrl, siteConfig, socialImageMetadata } from "@/lib/site";
 
 type RecordPageProps = {
   params: Promise<{ slug: string }>;
@@ -53,18 +54,36 @@ export async function generateMetadata({ params }: RecordPageProps): Promise<Met
       `${record.title} is a source-grounded public-text record in the AusFigures Australian supernatural humanoid archive.`,
     158,
   );
-  return archivePageMetadata({
+  const keywords = [
+    record.canonical_figure_guess || record.canonical_figure || "",
+    narrativeTypeName(record.ontology_code || record.genre || "unspecified"),
+    record.state_territory || "",
+    record.source_name || "",
+  ].filter(Boolean);
+  const metadata = archivePageMetadata({
     title,
     description,
     path: recordPath(record),
     index: policy.indexEligible,
-    keywords: [
-      record.canonical_figure_guess || record.canonical_figure || "",
-      narrativeTypeName(record.ontology_code || record.genre || "unspecified"),
-      record.state_territory || "",
-      record.source_name || "",
-    ].filter(Boolean),
+    keywords,
   });
+  return {
+    ...metadata,
+    openGraph: {
+      title: `${title} | ${SITE.name}`,
+      description,
+      url: absoluteUrl(recordPath(record)),
+      siteName: SITE.name,
+      locale: siteConfig.locale,
+      type: "article",
+      publishedTime: record.date_published || (record.year ? `${record.year}-01-01` : undefined),
+      modifiedTime: data.generated_at,
+      authors: record.author ? [record.author] : undefined,
+      section: narrativeTypeName(record.ontology_code || record.genre || "unspecified"),
+      tags: keywords,
+      images: [socialImageMetadata()],
+    },
+  };
 }
 
 export default async function RecordPage({ params }: RecordPageProps) {
@@ -81,6 +100,7 @@ export default async function RecordPage({ params }: RecordPageProps) {
   const policy = archiveRecordPolicy(record);
   const related = relatedRecords(data, record);
   const label = record.canonical_figure_guess || record.canonical_figure;
+  const figure = label ? figureProfileFor(label) : null;
   const narrativeCode = record.ontology_code || record.genre;
   const pageUrl = absoluteUrl(recordPath(record));
   const description = compactText(
@@ -88,9 +108,30 @@ export default async function RecordPage({ params }: RecordPageProps) {
       `${record.title} is a source-grounded public-text record in the AusFigures archive.`,
     300,
   );
+  const recordKeywords = [
+    label,
+    narrativeCode ? narrativeTypeName(narrativeCode) : null,
+    record.state_territory,
+    record.source_name,
+  ].filter(Boolean);
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: `${record.title} | ${SITE.name}`,
+        description,
+        inLanguage: "en-AU",
+        dateModified: data.generated_at,
+        isPartOf: {
+          "@id": `${siteConfig.siteUrl}/#website`,
+        },
+        mainEntity: {
+          "@id": `${pageUrl}#record`,
+        },
+      },
       {
         "@type": "ArchiveComponent",
         "@id": `${pageUrl}#record`,
@@ -104,11 +145,24 @@ export default async function RecordPage({ params }: RecordPageProps) {
         isPartOf: {
           "@id": `${siteConfig.siteUrl}/#dataset`,
         },
+        mainEntityOfPage: {
+          "@id": `${pageUrl}#webpage`,
+        },
         archivedAt: {
           "@type": "WebPage",
           url: record.url,
           name: record.source_name || undefined,
         },
+        isBasedOn: record.url || undefined,
+        citation: record.url || undefined,
+        keywords: recordKeywords.join(", "),
+        temporalCoverage: record.year ? String(record.year) : record.date_band,
+        spatialCoverage: record.state_territory
+          ? {
+              "@type": "Place",
+              name: record.state_territory,
+            }
+          : undefined,
         about: [label, narrativeCode, record.state_territory].filter(Boolean),
       },
       archiveBreadcrumbJsonLd([
@@ -168,7 +222,7 @@ export default async function RecordPage({ params }: RecordPageProps) {
               Narrative type: {narrativeTypeName(narrativeCode)}
             </Link>
           ) : null}
-          {label ? <Link href={labelPath(label)}>Public-text label: {label}</Link> : null}
+          {figure ? <Link href={figurePath(figure.slug)}>Encyclopedia profile: {figure.label}</Link> : null}
           {record.source_name ? (
             <Link href={sourcePath(record.source_id, record.source_name)}>Source: {record.source_name}</Link>
           ) : null}

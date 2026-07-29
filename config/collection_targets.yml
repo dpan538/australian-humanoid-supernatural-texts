@@ -1,0 +1,131 @@
+release: "v_next_gap_balance"
+db_path: "data/processed/australian_humanoid_figures.sqlite"
+
+period_targets:
+  "1926-1939":
+    min_new_candidates: 150
+    min_reviewed_accepts: 60
+    preferred_route_families:
+      - trove_newspaper_metadata
+      - trove_gazette_metadata
+      - state_library_catalogue
+      - local_history_serial
+    max_discovery_only_share: 0.20
+    max_ayr_share: 0.10
+
+  "1940-1954":
+    min_new_candidates: 180
+    min_reviewed_accepts: 75
+    preferred_route_families:
+      - trove_newspaper_metadata
+      - trove_gazette_metadata
+      - state_library_catalogue
+      - local_history_serial
+    max_discovery_only_share: 0.20
+    max_ayr_share: 0.10
+
+  "1955-1964":
+    min_new_candidates: 120
+    min_reviewed_accepts: 40
+    preferred_route_families:
+      - state_library_catalogue
+      - state_archive_catalogue
+      - local_history_serial
+      - council_local_studies
+      - broadcast_catalogue
+      - museum_heritage_page
+    max_discovery_only_share: 0.25
+    max_ayr_share: 0.05
+
+  "1965-1976":
+    min_new_candidates: 120
+    min_reviewed_accepts: 40
+    preferred_route_families:
+      - state_library_catalogue
+      - state_archive_catalogue
+      - local_history_serial
+      - council_local_studies
+      - broadcast_catalogue
+      - museum_heritage_page
+    max_discovery_only_share: 0.25
+    max_ayr_share: 0.05
+
+state_targets:
+  WA:
+    min_new_mapped_candidates: 80
+    priority_regions:
+      - Kimberley
+      - Pilbara
+      - Goldfields
+      - Wheatbelt
+      - South West
+      - Great Southern
+      - Perth and Fremantle
+  SA:
+    min_new_mapped_candidates: 70
+    priority_regions:
+      - Adelaide
+      - Adelaide Hills
+      - Barossa
+      - Mid North
+      - Flinders Ranges
+      - Riverland
+      - Limestone Coast
+      - Yorke Peninsula
+      - Eyre Peninsula
+  NT:
+    min_new_mapped_candidates: 50
+    priority_regions:
+      - Darwin
+      - Palmerston
+      - Katherine
+      - Arnhem Land public institutional records only
+      - Alice Springs
+      - Tennant Creek
+      - Barkly
+      - mining and railway settlements
+  TAS:
+    min_new_mapped_candidates: 40
+    priority_regions:
+      - Hobart
+      - Launceston
+      - West Coast
+      - North West
+      - Midlands
+      - Huon
+      - Port Arthur / Tasman Peninsula
+  ACT:
+    min_new_mapped_candidates: 20
+    priority_regions:
+      - Canberra
+      - Queanbeyan cross-border leads
+      - Lake George
+      - Namadgi public institutional records only
+      - heritage precincts
+
+source_caps:
+  max_single_evidence_source_org_share: 0.20
+  max_single_access_platform_share: 0.35
+  max_top_5_evidence_source_org_share: 0.60
+  max_ayr_share_new_gap_records: 0.05
+  max_discovery_only_accepted_records: 0
+
+map_gates:
+  require_source_stated_place_text: true
+  require_location_role: true
+  require_geocode_confidence_for_public_flag: true
+  disallow_publication_location_as_flag: true
+  disallow_archive_custody_as_flag: true
+  disallow_state_only_as_flag: true
+  require_sensitive_display_decision: true
+
+ethics_gates:
+  indigenous_related_requires_ethics_review: true
+  culturally_sensitive_default_public_display: false
+  culturally_sensitive_default_map_display: false
+
+outputs:
+  audit_dir: "data/processed/v2"
+  plan_dir: "data/interim/collection_plans"
+  discovery_dir: "data/interim/source_discovery"
+  review_dir: "data/review/v2"

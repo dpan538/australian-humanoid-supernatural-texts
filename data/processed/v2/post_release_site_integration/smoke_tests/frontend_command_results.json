@@ -1,0 +1,16 @@
+[
+  {
+    "command": "npm run typecheck",
+    "returncode": 0,
+    "status": "PASS",
+    "stderr_tail": "",
+    "stdout_tail": "\n> australian-humanoid-supernatural-texts@0.1.0 typecheck\n> tsc --noEmit\n\n"
+  },
+  {
+    "command": "npm run build",
+    "returncode": 0,
+    "status": "PASS",
+    "stderr_tail": "",
+    "stdout_tail": "\n> australian-humanoid-supernatural-texts@0.1.0 build\n> next build\n\n\u25b2 Next.js 16.2.9 (Turbopack)\n\n  Creating an optimized production build ...\n\u2713 Compiled successfully in 3.4s\n  Running TypeScript ...\n  Finished TypeScript in 4.6s ...\n  Collecting page data using 7 workers ...\n  Generating static pages using 7 workers (0/22) ...\n  Generating static pages using 7 workers (5/22) \n  Generating static pages using 7 workers (10/22) \n  Generating static pages using 7 workers (16/22) \n\u2713 Generating static pages using 7 workers (22/22) in 1372ms\n  Finalizing page optimization ...\n\nRoute (app)\n\u250c \u25cb /\n\u251c \u25cb /_not-found\n\u251c \u25cb /about\n\u251c \u25cb /apple-icon\n\u251c \u25cb /dashboard\n\u251c \u25cb /density\n\u251c \u25cb /icon.svg\n\u251c \u25cb /manifest.webmanifest\n\u251c \u25cb /map\n\u251c \u25cb /opengraph-image\n\u251c \u25cb /robots.txt\n\u251c \u25cb /sitemap.xml\n\u251c \u25cb /source\n\u251c \u25cb /topics\n\u251c \u25cf /topics/[slug]\n\u2502 \u251c /topics/australian-supernatural\n\u2502 \u251c /topics/supernatural-humanoids\n\u2502 \u251c /topics/yowie-records\n\u2502 \u2514 [+3 more paths]\n\u2514 \u25cb /twitter-image\n\n\n\u25cb  (Static)  prerendered as static content\n\u25cf  (SSG)     prerendered as static HTML (uses generateStaticParams)\n\n"
+  }
+]

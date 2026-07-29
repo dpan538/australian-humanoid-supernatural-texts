@@ -1,0 +1,123 @@
+run_name: "noauth_autoharvest_marathon"
+db_path: "data/processed/australian_humanoid_figures.sqlite"
+
+target:
+  effective_new_records: 2000
+  target_mode: "weighted_effective_growth"
+  min_priority_state_share: 0.45
+  min_1926_1976_share: 0.35
+  min_tier_abc_share: 0.85
+  max_discovery_only_share: 0.00
+  max_tourism_or_marketing_share: 0.00
+
+runtime:
+  default_loop_sleep_seconds: 30
+  checkpoint_every_records: 100
+  checkpoint_every_minutes: 30
+  route_yield_recompute_every_records: 250
+  full_audit_after_effective_records: 2000
+  max_runtime_hours: 168
+  resume: true
+  dry_run_default: true
+
+safety:
+  no_api_keys: true
+  no_trove_api: true
+  no_google_bing_api: true
+  respect_robots: true
+  fail_closed_on_robots_uncertainty: true
+  no_login: true
+  no_paywall: true
+  no_headless_browser_by_default: true
+  no_pdf_text_extraction_by_default: true
+  max_html_bytes: 2000000
+  max_pages_per_domain_per_hour: 120
+  max_pages_per_route_per_loop: 50
+  rate_limit_seconds_default: 3.0
+  backoff_on_429_seconds: 900
+  backoff_on_403_seconds: 86400
+  user_agent: "AusFiguresNoAuthAutoharvestBot/0.1 metadata-first no-login no-api"
+
+candidate_gates:
+  require_url: true
+  require_title_or_link_text: true
+  require_source_tier_in: ["A", "B", "C"]
+  disallow_evidence_or_discovery: ["discovery_only", "manual_only_sensitive"]
+  require_relevance_signal: true
+  require_not_context_noise: true
+  require_not_tourism_marketing: true
+  require_not_sensitive: true
+  require_duplicate_status: "unique_or_probably_unique"
+  min_candidate_score_for_provisional: 80
+
+provisional_record_gates:
+  require_evidence_source_name: true
+  require_evidence_source_url: true
+  require_access_source_url: true
+  require_public_access_verified: true
+  require_metadata_only_or_public_domain: true
+  require_source_chain_complete_enough: true
+  require_rights_status_not_restricted: true
+  require_ethics_status_not_sensitive: true
+  disallow_publication_location_as_map_evidence: true
+  disallow_heritage_address_as_event_location: true
+
+priority:
+  states:
+    WA: 60
+    SA: 60
+    NT: 60
+    TAS: 60
+    ACT: 60
+    NSW: 15
+    QLD: 15
+    VIC: 15
+  time_bands:
+    "1926_1939": 40
+    "1940_1954": 40
+    "1955_1964": 60
+    "1965_1976": 60
+  route_families:
+    state_library_catalogue: 50
+    state_archive_catalogue: 50
+    local_history_serial: 55
+    council_local_studies: 55
+    museum_heritage_page: 45
+    heritage_register: 40
+    public_history_site: 45
+    broadcast_catalogue: 45
+    historical_society: 55
+    public_collection: 40
+
+noise_terms:
+  tourism:
+    - ghost tour
+    - haunted tour
+    - tickets
+    - event
+    - halloween
+    - booking
+    - attraction
+    - top 10
+    - things to do
+  context_noise:
+    - fiction
+    - poem
+    - poetry
+    - theatre
+    - advertisement
+    - book review
+    - movie review
+    - halloween event
+    - costume
+    - game
+    - festival
+    - band
+    - real estate listing
+
+outputs:
+  checkpoint_dir: "data/autoharvest/checkpoints"
+  logs_dir: "data/autoharvest/logs"
+  reports_dir: "data/processed/v2/autoharvest"
+  review_dir: "data/review/v2/autoharvest"
+  discovery_dir: "data/interim/source_discovery/autoharvest"

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createTimeline } from "animejs";
-import type { Timeline } from "animejs";
+import type { AnimationParams, Timeline } from "animejs";
 
 export function useSourceTerminalMotion({
   root,
@@ -74,7 +74,7 @@ function usePrefersReducedMotion() {
   return reduced;
 }
 
-function addIfTargets(timeline: Timeline, targets: NodeListOf<Element>, params: Record<string, unknown>, position: number) {
+function addIfTargets(timeline: Timeline, targets: NodeListOf<Element>, params: AnimationParams, position: number) {
   if (targets.length > 0) {
     timeline.add(targets, params, position);
   }

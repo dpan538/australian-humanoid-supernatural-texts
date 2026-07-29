@@ -1,0 +1,52 @@
+decision_mode: "strict_no_credential_closeout"
+
+strict_mode_status:
+  status: "robots_uncertainty_blocked_current_surface_exhausted"
+  strict_target_gap_records: 0
+  target: 2000
+  watchdog_hard_violations: 0
+  public_records_mutated: false
+  map_flags_mutated: false
+  frontend_artifacts_mutated: false
+
+constraints_active:
+  no_api_keys: true
+  no_trove_api: true
+  no_google_bing_api: true
+  no_paid_api: true
+  no_login: true
+  no_paywall: true
+  respect_robots: true
+  no_human_row_review: true
+  strict_item_date_term_gate: true
+
+lead_mode:
+  enabled: true
+  target_leads: 2000
+  do_not_count_as_public_records: true
+  do_not_publish_map_flags: true
+  lead_score_threshold: 60
+  priority_lead_score_threshold: 80
+
+decision_options:
+  allow_trove_api_key:
+    enabled: false
+    expected_effect: "highest for 1926-1954"
+  allow_tiny_human_review_top_n:
+    enabled: false
+    n: 50
+    expected_effect: "resolves near misses without reviewing thousands"
+  allow_d_class_access_provisional:
+    enabled: false
+    expected_effect: "increases weak provisional coverage via access platforms"
+  allow_target_leads_instead_of_records:
+    enabled: true
+    expected_effect: "supports observational analysis without claiming evidence strength"
+  allow_metadata_only_1955_1976_layer:
+    enabled: true
+    expected_effect: "captures catalogue/broadcast/serial leads without full record gate"
+
+outputs:
+  closeout_dir: "data/processed/v2/autoharvest/strict_closeout"
+  lead_dir: "data/processed/v2/autoharvest/target_gap_leads"
+  review_dir: "data/review/v2/autoharvest/target_gap_leads"

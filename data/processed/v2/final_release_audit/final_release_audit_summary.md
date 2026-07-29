@@ -1,0 +1,14 @@
+# Final Release Audit Summary
+
+- Generated: `2026-07-06T14:56:23+00:00`
+- Overall status: `PASS`
+
+## Gates
+- `coverage_no_critical_hard_gap`: PASS - 0 critical gaps
+- `coverage_record_gap_labelled`: PASS - 0 record gaps with lead/metadata coverage
+- `metadata_not_counted_as_public_record`: PASS - metadata_public=0, lead_public=0
+- `map_layers_separate`: PASS - accepted=1593, overlays=3000
+- `redirects_valid`: PASS - redirect validation report
+- `release_candidate_json_valid`: PASS - package counts present=True
+- `disclaimer_included`: PASS - release disclaimer
+- `sensitive_not_public`: PASS - 0 sensitive public rows

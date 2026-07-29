@@ -26,17 +26,27 @@ The archive should not be summarized as proof of supernatural events. Inclusion 
 - https://ausfigures.com/dashboard - Research dashboard for corpus overview.
 - https://ausfigures.com/density - Density explorer for period, source, and figure signals.
 - https://ausfigures.com/source - Source register for public source organisations and source families.
+- https://ausfigures.com/figures - Searchable supernatural humanoid dictionary with fuzzy matching and stable figure-detail URLs.
+- https://ausfigures.com/records - Paginated public-record index.
+- https://ausfigures.com/narrative-types - Narrative classification index.
+- https://ausfigures.com/sources - Source-organisation collections.
+- https://ausfigures.com/places - Place collections.
+- https://ausfigures.com/periods - Archive-period collections.
+- https://ausfigures.com/data - Public data access and interpretation guide.
+- https://ausfigures.com/cite - Citation guidance.
 - https://ausfigures.com/about - Scope, method, source policy, map limits, and ethics.
-- https://ausfigures.com/topics - Search-oriented topic index.
 
-## Search Topic Entry Points
+## Figure Dictionary Entry Points
 
-- https://ausfigures.com/topics/australian-supernatural
-- https://ausfigures.com/topics/supernatural-humanoids
-- https://ausfigures.com/topics/yowie-records
-- https://ausfigures.com/topics/bunyip-public-texts
-- https://ausfigures.com/topics/australian-ghosts-apparitions
-- https://ausfigures.com/topics/spirit-person-narratives
+- https://ausfigures.com/figures/yowie
+- https://ausfigures.com/figures/bunyip
+- https://ausfigures.com/figures/ghost
+- https://ausfigures.com/figures/spirit
+- https://ausfigures.com/figures/hairy-man
+
+Each figure page combines a plain-language archive summary with public-text occurrence counts, aliases, documented period, mapped coverage, source concentration, related figures, and selected source records. Small-sample figures use visualisations that preserve exact sparse counts rather than implying continuous trends.
+
+Use https://ausfigures.com/sitemap.xml as the canonical machine-readable inventory for all indexable figure pages. Older `/topics` and `/labels` URLs are legacy discovery paths and permanently redirect into the `/figures` dictionary.
 
 ## Interpretation Policy
 
@@ -80,6 +90,9 @@ Do not describe AusFigures as:
 - a database of verified sightings
 
 ## Public Data
+
+Public data index:
+https://ausfigures.com/data
 
 Public frontend data:
 https://ausfigures.com/data/frontend-data.json

@@ -1,0 +1,280 @@
+schema_version: gap-probe-1926-2011/v1
+policy_note: >
+  Exploratory probe plan for post-1926 public-source coverage. Outputs from this
+  plan are leads, hit counts, or simulated aggregates only. They are not verified
+  records and must not be promoted into production frontend data without
+  source-item review, publicness checks, rights checks, duplicate review,
+  narrative classification, and ethics review.
+
+scope:
+  project_identity: AusFigures
+  gap_window_start: 1926
+  gap_window_end: 2011
+  primary_gap_focus:
+    - 1926-1929 transition after current early spike
+    - 1930-1969 mid-century public-record trough
+    - 1970-2011 source-diversity audit beyond AYR-dominant records
+  not_in_scope:
+    - production import
+    - map eligibility changes
+    - ontology changes
+    - restricted or private cultural material
+    - paywall bypass
+
+audit_buckets:
+  - id: early_spike_reference
+    label: 1875-1926 reference spike
+    start_year: 1875
+    end_year: 1926
+  - id: full_gap_window
+    label: 1926-2011 audit window
+    start_year: 1926
+    end_year: 2011
+  - id: transition_gap
+    label: 1926-1929 transition
+    start_year: 1926
+    end_year: 1929
+  - id: mid_century_gap
+    label: 1930-1969 mid-century trough
+    start_year: 1930
+    end_year: 1969
+  - id: pre_ayr_rise
+    label: 1970-1975 pre-rise
+    start_year: 1970
+    end_year: 1975
+  - id: modern_rise_reference
+    label: 1976-2026 modern reference
+    start_year: 1976
+    end_year: 2026
+
+date_windows:
+  - id: transition_1926_1929
+    start_year: 1926
+    end_year: 1929
+    purpose: Check whether the 1890-1929 spike drops because exact-text routes end around 1927.
+  - id: depression_1930_1939
+    start_year: 1930
+    end_year: 1939
+    purpose: Probe newspaper phrasing around Depression-era local reports and historical articles.
+  - id: wartime_1940_1949
+    start_year: 1940
+    end_year: 1949
+    purpose: Test whether wartime digitization/copyright/source-coverage effects suppress records.
+  - id: postwar_1950_1969
+    start_year: 1950
+    end_year: 1969
+    purpose: Probe pre-1970 print, magazine, local-history, and broadcast-source traces.
+  - id: modern_diversity_1970_2011
+    start_year: 1970
+    end_year: 2011
+    purpose: Improve source diversity where AYR dominates current coverage.
+
+query_families:
+  - id: yowie_yahoo_named
+    label: Yowie and Yahoo named forms
+    priority: 1
+    cultural_sensitivity_default: medium
+    templates:
+      - '"Yowie"'
+      - '"Yahoo-devil"'
+      - '"Yahoo devil devil"'
+      - '"Yahoo-devil-devil"'
+      - '"devil-devil" AND (hairy OR man OR bush OR Aboriginal OR Australia)'
+      - '"debil-debil" AND (hairy OR man OR bush OR Aboriginal OR Australia)'
+    expected_noise: medium
+    review_note: Yahoo variants require strict filtering from later internet-company noise.
+
+  - id: hairy_humanoid_descriptors
+    label: Hairy humanoid descriptor forms
+    priority: 1
+    cultural_sensitivity_default: medium
+    templates:
+      - '"hairy man" AND (Australia OR Australian OR bush OR Aboriginal OR Yowie OR Yahoo)'
+      - '"hairyman" AND (Australia OR Australian OR bush)'
+      - '"wild man" AND (Australia OR Australian OR bush OR ranges OR scrub)'
+      - '"wildman" AND (Australia OR Australian OR bush OR ranges OR scrub)'
+      - '"ape man" AND (Australia OR Australian)'
+      - '"ape-man" AND (Australia OR Australian)'
+      - '"Australian ape"'
+      - '"Australian gorilla"'
+      - '"bush ape" AND Australia'
+    expected_noise: high
+    review_note: Descriptor searches are discovery routes; accepted rows need article-level source evidence.
+
+  - id: tracks_sightings_and_headlines
+    label: Report and headline language around sightings
+    priority: 2
+    cultural_sensitivity_default: low
+    templates:
+      - '(Yowie OR "hairy man" OR "wild man") AND (tracks OR footprints OR "strange footprints")'
+      - '(Yowie OR "hairy man" OR "wild man") AND (sighting OR encounter OR "seen near")'
+      - '(Yowie OR "hairy man" OR "wild man") AND (monster OR creature OR scare)'
+      - '("mystery man" OR "mystery creature") AND (bush OR scrub OR ranges) AND Australia'
+    expected_noise: high
+    review_note: Use as hit-count probes first; avoid treating sensational headlines as verified claims.
+
+  - id: apparition_ghost_public_places
+    label: Ghost and apparition public-place records
+    priority: 2
+    cultural_sensitivity_default: low
+    templates:
+      - '(ghost OR ghosts OR apparition OR phantom OR spectre OR spook OR haunted) AND (gaol OR jail OR prison OR theatre OR mine OR hotel OR cemetery OR bridge OR station)'
+      - '"white lady" AND (ghost OR apparition) AND Australia'
+      - '"resident ghost" AND Australia'
+      - '"ghost story" AND ("local history" OR historical OR heritage) AND Australia'
+    expected_noise: high
+    review_note: Prefer institutional, library, archive, or local-history pages over tourism-only pages.
+
+  - id: local_legend_source_voice
+    label: Local legend and source-voice forms
+    priority: 3
+    cultural_sensitivity_default: medium
+    templates:
+      - '"local legend" AND (ghost OR spirit OR giant OR "wild man" OR Yowie) AND Australia'
+      - '"bush legend" AND (ghost OR spirit OR "wild man" OR Yowie) AND Australia'
+      - '"old residents" AND (ghost OR apparition OR "wild man" OR Yowie) AND Australia'
+      - '"district story" AND (ghost OR apparition OR "wild man" OR Yowie) AND Australia'
+    expected_noise: medium
+    review_note: Preserve source voice; do not normalize local phrases into claims.
+
+  - id: public_indigenous_named_figures
+    label: Public named figure records requiring sensitivity review
+    priority: 3
+    cultural_sensitivity_default: high
+    templates:
+      - '(Wandjina OR Wanjina OR Quinkan OR Quinkin OR Nargun OR Mimih OR Mokoi OR Pangkarlangu OR Mamu OR Yaroma OR "Yara-ma-yha-who") AND (catalogue OR library OR archive OR museum OR article OR newspaper)'
+      - '(Wandjina OR Wanjina OR Quinkan OR Quinkin OR Nargun OR Mimih OR Mokoi OR Pangkarlangu OR Mamu OR Yaroma OR "Yara-ma-yha-who") AND (Australia OR Australian)'
+    expected_noise: medium
+    review_note: Public metadata does not imply permission to extract restricted knowledge; catalogue-only hits remain leads.
+
+source_targets:
+  - id: trove_newspapers_metadata
+    label: Trove newspapers and gazettes metadata
+    source_family: trove_newspaper
+    source_tier: A
+    access_method: official_api_or_manual_export
+    requires_network: true
+    requires_api_key: true
+    rate_limit_seconds: 1.0
+    max_queries_first_probe: 80
+    max_samples_per_query: 3
+    publicness_check: official public metadata or researcher-supplied manual export only
+    risk_flags:
+      - requires TROVE_API_KEY for automated metadata counts
+      - no unauthenticated article-text endpoint probing
+
+  - id: trove_magazines_metadata
+    label: Trove magazines and newsletters metadata
+    source_family: trove_magazine
+    source_tier: A
+    access_method: official_api_or_manual_export
+    requires_network: true
+    requires_api_key: true
+    rate_limit_seconds: 1.0
+    max_queries_first_probe: 40
+    max_samples_per_query: 3
+    publicness_check: official public metadata or researcher-supplied manual export only
+    risk_flags:
+      - requires TROVE_API_KEY for automated metadata counts
+      - magazine rights and availability vary by title
+
+  - id: nla_catalogue_metadata
+    label: National Library of Australia catalogue metadata
+    source_family: nla_catalogue
+    source_tier: A
+    access_method: public catalogue metadata
+    requires_network: true
+    requires_api_key: false
+    rate_limit_seconds: 1.0
+    max_queries_first_probe: 25
+    max_samples_per_query: 5
+    publicness_check: metadata only; item content requires separate rights/access review
+    risk_flags:
+      - metadata-only leads are not records
+
+  - id: state_library_and_archive_pages
+    label: State library/archive public pages
+    source_family: institutional_web
+    source_tier: B
+    access_method: seeded public pages and public search results
+    requires_network: true
+    requires_api_key: false
+    rate_limit_seconds: 1.0
+    max_queries_first_probe: 40
+    max_samples_per_query: 5
+    publicness_check: public web page, public catalogue, or public finding aid only
+    risk_flags:
+      - no whole-site crawl
+      - respect robots and page terms
+
+  - id: local_history_public_pages
+    label: Local history public pages with source citations
+    source_family: institutional_or_community_public_web
+    source_tier: C
+    access_method: curated seed list
+    requires_network: true
+    requires_api_key: false
+    rate_limit_seconds: 2.0
+    max_queries_first_probe: 25
+    max_samples_per_query: 5
+    publicness_check: public pages only; tourism pages discovery-only unless source-cited
+    risk_flags:
+      - variable reliability
+      - no private forums or member-only pages
+
+  - id: public_indexed_books
+    label: Public-domain or publicly indexed Australian books
+    source_family: repository_or_public_domain_text
+    source_tier: A
+    access_method: exact known title or public metadata
+    requires_network: true
+    requires_api_key: false
+    rate_limit_seconds: 1.0
+    max_queries_first_probe: 30
+    max_samples_per_query: 3
+    publicness_check: public-domain text or public metadata only
+    risk_flags:
+      - avoid broad global ghost searches
+      - exact Australian title relationship required
+
+simulation:
+  status_label: simulated_not_ingested
+  target_windows:
+    - id: transition_1926_1929
+      start_year: 1926
+      end_year: 1929
+      target_public_records_per_year: 6
+    - id: depression_1930_1939
+      start_year: 1930
+      end_year: 1939
+      target_public_records_per_year: 8
+    - id: wartime_1940_1949
+      start_year: 1940
+      end_year: 1949
+      target_public_records_per_year: 6
+    - id: postwar_1950_1969
+      start_year: 1950
+      end_year: 1969
+      target_public_records_per_year: 8
+    - id: modern_diversity_1970_2011
+      start_year: 1970
+      end_year: 2011
+      target_public_records_per_year: 12
+  source_mix:
+    - source_family: trove_newspaper_metadata
+      share: 0.45
+    - source_family: trove_magazine_metadata
+      share: 0.15
+    - source_family: state_library_or_archive_page
+      share: 0.15
+    - source_family: local_history_public_page
+      share: 0.10
+    - source_family: public_indexed_book_or_catalogue
+      share: 0.10
+    - source_family: institutional_media_or_broadcast_archive
+      share: 0.05
+  mapping_assumption:
+    mapped_share_for_simulation: 0.35
+    note: >
+      Simulated mapped share is intentionally conservative because many public
+      metadata leads will lack article-level place evidence.

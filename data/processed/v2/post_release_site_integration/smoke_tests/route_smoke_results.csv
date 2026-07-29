@@ -1,0 +1,7 @@
+route,status,check
+/,PASS,source_route_exists
+/map,PASS,source_route_exists
+/density,PASS,source_route_exists
+/source,PASS,source_route_exists
+/about,PASS,source_route_exists
+/dashboard,PASS,source_route_exists

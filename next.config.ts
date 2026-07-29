@@ -15,6 +15,71 @@ const nextConfig: NextConfig = {
         destination: "https://ausfigures.com/:path*",
         permanent: true,
       },
+      {
+        source: "/topics",
+        destination: "/figures",
+        permanent: true,
+      },
+      {
+        source: "/topics/australian-supernatural",
+        destination: "/figures",
+        permanent: true,
+      },
+      {
+        source: "/topics/supernatural-humanoids",
+        destination: "/figures",
+        permanent: true,
+      },
+      {
+        source: "/topics/yowie-records",
+        destination: "/figures/yowie",
+        permanent: true,
+      },
+      {
+        source: "/topics/bunyip-public-texts",
+        destination: "/figures/bunyip",
+        permanent: true,
+      },
+      {
+        source: "/topics/australian-ghosts-apparitions",
+        destination: "/figures/ghost",
+        permanent: true,
+      },
+      {
+        source: "/topics/spirit-person-narratives",
+        destination: "/figures/spirit",
+        permanent: true,
+      },
+      {
+        source: "/topics/:path*",
+        destination: "/figures",
+        permanent: true,
+      },
+      {
+        source: "/labels",
+        destination: "/figures",
+        permanent: true,
+      },
+      {
+        source: "/labels/spirits",
+        destination: "/figures/spirit",
+        permanent: true,
+      },
+      {
+        source: "/labels/ghosts",
+        destination: "/figures/ghost",
+        permanent: true,
+      },
+      {
+        source: "/labels/apparition",
+        destination: "/figures/ghost",
+        permanent: true,
+      },
+      {
+        source: "/labels/:slug",
+        destination: "/figures/:slug",
+        permanent: true,
+      },
     ];
   },
   async headers() {

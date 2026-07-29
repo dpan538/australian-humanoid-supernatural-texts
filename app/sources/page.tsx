@@ -1,5 +1,6 @@
 import {
   ArchiveCollectionGrid,
+  ArchiveIndexStructuredData,
   ArchivePublicationPage,
   PublicationSection,
 } from "@/components/archive-publication";
@@ -35,6 +36,15 @@ export default async function SourcesPage() {
       ]}
       notice="Source pages describe provenance and public access. They do not imply endorsement by the source organisation."
     >
+      <ArchiveIndexStructuredData
+        path="/sources"
+        title="Public Source Organisations and Collections"
+        description="Browse public source organisations, repositories, institutional pages, books, archives, and metadata collections represented in the AusFigures public-text archive."
+        items={groups.map((group) => ({
+          href: sourcePath(group.sourceId, group.label),
+          title: group.label,
+        }))}
+      />
       <PublicationSection title="Browse source collections">
         <ArchiveCollectionGrid
           items={groups.map((group) => ({

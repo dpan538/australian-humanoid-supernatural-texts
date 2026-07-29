@@ -1,5 +1,6 @@
 import {
   ArchiveCollectionGrid,
+  ArchiveIndexStructuredData,
   ArchivePublicationPage,
   PublicationSection,
 } from "@/components/archive-publication";
@@ -34,6 +35,12 @@ export default async function PeriodsPage() {
         { label: "Archive span", value: "1825–2026" },
       ]}
     >
+      <ArchiveIndexStructuredData
+        path="/periods"
+        title="Periods in Australian Supernatural Humanoid Public Texts"
+        description="Browse the AusFigures source-grounded public-text archive by historical period from 1825 to the present, including undated public records."
+        items={groups.map((group) => ({ href: periodPath(group.key), title: group.label }))}
+      />
       <PublicationSection title="Browse by source period">
         <ArchiveCollectionGrid
           items={groups.map((group) => ({

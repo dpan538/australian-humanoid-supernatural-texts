@@ -1,0 +1,2258 @@
+- source_id: "trove_newspapers_gazettes"
+  source_name: "Trove Newspapers & Gazettes"
+  institution: "National Library of Australia"
+  route_family: "trove_newspaper_metadata"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "national"
+  states: ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT", "ACT"]
+  years_likely: "1803-1955 mostly; selected later titles by permission"
+  access_method: "api"
+  api_key_env: "TROVE_API_KEY"
+  base_url: "https://api.trove.nla.gov.au/v3/result"
+  search_url_template: "https://trove.nla.gov.au/search/category/newspapers?keyword={query}"
+  allowed_content_mode: "metadata_first"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 2.0
+  temporal_gap_value: "high_1926_1954"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use category=newspaper. Do not mass-harvest full text. Prefer metadata, citation, stable article URL, heading, date, title, place/state facets."
+
+- source_id: "trove_magazines_newsletters"
+  source_name: "Trove Magazines & Newsletters"
+  institution: "National Library of Australia"
+  route_family: "trove_magazines_newsletters"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "national"
+  states: ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT", "ACT"]
+  years_likely: "1900-present depending title and rights"
+  access_method: "api"
+  api_key_env: "TROVE_API_KEY"
+  base_url: "https://api.trove.nla.gov.au/v3/result"
+  search_url_template: "https://trove.nla.gov.au/search/category/magazines?keyword={query}"
+  allowed_content_mode: "metadata_first"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 2.0
+  temporal_gap_value: "medium_1955_1976"
+  regional_balance_value: "medium"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use metadata and rights-visible snippets only unless an official export path is confirmed."
+
+- source_id: "nla_catalogue"
+  source_name: "NLA Catalogue"
+  institution: "National Library of Australia"
+  route_family: "national_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "national"
+  states: ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT", "ACT"]
+  years_likely: "All periods"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://catalogue.nla.gov.au/"
+  search_url_template: "https://catalogue.nla.gov.au/catalog?search_field=all_fields&q={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "medium"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Catalogue metadata can support source-chain tracing; review original source before accepting evidence."
+
+- source_id: "naa_recordsearch"
+  source_name: "National Archives of Australia RecordSearch"
+  institution: "National Archives of Australia"
+  route_family: "national_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "1901-present depending open access"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://recordsearch.naa.gov.au/"
+  search_url_template: "https://recordsearch.naa.gov.au/SearchNRetrieve/Interface/SearchScreens/BasicSearch.aspx"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium_1955_1976"
+  regional_balance_value: "medium"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium_high"
+  notes: "Use as catalogue evidence only when public metadata has substantive description. No restricted or sensitive content extraction."
+
+- source_id: "nfsa_collection"
+  source_name: "NFSA Collection"
+  institution: "National Film and Sound Archive of Australia"
+  route_family: "broadcast_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "1930-present"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.nfsa.gov.au/collection"
+  search_url_template: "https://www.nfsa.gov.au/collection/curated/search?search={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "medium"
+  mappability_likelihood: "low"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Use collection metadata and public descriptive records; do not extract audiovisual content."
+
+- source_id: "australian_screen_online"
+  source_name: "Australian Screen Online"
+  institution: "National Film and Sound Archive of Australia"
+  route_family: "broadcast_catalogue"
+  source_tier: "C"
+  evidence_or_discovery: "evidence_possible"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "1900-present"
+  access_method: "public_html"
+  base_url: "https://aso.gov.au/"
+  search_url_template: "https://aso.gov.au/search/?q={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium_1955_1976"
+  regional_balance_value: "low_medium"
+  mappability_likelihood: "low"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Public summaries can be leads or context; verify original broadcast/source chain before acceptance."
+
+- source_id: "abc_archives_public_pages"
+  source_name: "ABC Archives Public Pages"
+  institution: "Australian Broadcasting Corporation"
+  route_family: "broadcast_catalogue"
+  source_tier: "C"
+  evidence_or_discovery: "evidence_possible"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "1932-present; public web mostly later"
+  access_method: "public_html"
+  base_url: "https://www.abc.net.au/archives"
+  search_url_template: "https://www.abc.net.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "medium"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use public pages and metadata only; avoid full media extraction."
+
+- source_id: "aiatsis_collection_search"
+  source_name: "AIATSIS Collection Search"
+  institution: "AIATSIS"
+  route_family: "indigenous_collection_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "manual_only_sensitive"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "All periods"
+  access_method: "manual_catalogue_review"
+  base_url: "https://aiatsis.gov.au/collection"
+  search_url_template: "https://aiatsis.gov.au/collection/search?search={query}"
+  allowed_content_mode: "manual_review_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 5.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "medium"
+  mappability_likelihood: "low"
+  duplicate_risk: "low"
+  ethics_risk: "high"
+  notes: "Public catalogue metadata is not permission to reproduce, map, or summarize culturally sensitive material."
+
+- source_id: "austlang"
+  source_name: "AUSTLANG"
+  institution: "AIATSIS"
+  route_family: "indigenous_collection_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "manual_only_sensitive"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Reference authority, not narrative source"
+  access_method: "manual_catalogue_review"
+  base_url: "https://collection.aiatsis.gov.au/austlang"
+  search_url_template: "https://collection.aiatsis.gov.au/austlang/search?query={query}"
+  allowed_content_mode: "manual_review_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 5.0
+  temporal_gap_value: "low"
+  regional_balance_value: "medium"
+  mappability_likelihood: "authority_only"
+  duplicate_risk: "low"
+  ethics_risk: "high"
+  notes: "Use only as cautious authority context after ethics review; not as automated narrative evidence."
+
+- source_id: "australian_heritage_database"
+  source_name: "Australian Heritage Database"
+  institution: "Department of Climate Change, Energy, the Environment and Water"
+  route_family: "heritage_register"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Heritage records, mostly retrospective"
+  access_method: "public_html"
+  base_url: "https://www.dcceew.gov.au/parks-heritage/heritage/places"
+  search_url_template: "https://www.dcceew.gov.au/parks-heritage/heritage/places?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "medium"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Use public heritage descriptions and coordinates only where the place relation is explicit."
+
+- source_id: "pandora_web_archive"
+  source_name: "PANDORA Web Archive"
+  institution: "National Library of Australia"
+  route_family: "access_platform"
+  source_tier: "D"
+  evidence_or_discovery: "evidence_only_if_original_source_identified"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "1996-present"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://webarchive.nla.gov.au/"
+  search_url_template: "https://webarchive.nla.gov.au/awa/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low"
+  regional_balance_value: "medium"
+  mappability_likelihood: "medium"
+  duplicate_risk: "high"
+  ethics_risk: "medium"
+  notes: "Access platform only; decompose original source before evidence acceptance."
+
+- source_id: "composite_gazetteer_australia"
+  source_name: "Composite Gazetteer of Australia"
+  institution: "Geoscience Australia"
+  route_family: "gazetteer_authority"
+  source_tier: "A"
+  evidence_or_discovery: "discovery_only"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Place authority only"
+  access_method: "manual_authority_lookup"
+  base_url: "https://www.ga.gov.au/scientific-topics/national-location-information/dimensions/geographic-names"
+  allowed_content_mode: "authority_metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 2.0
+  temporal_gap_value: "none"
+  regional_balance_value: "high"
+  mappability_likelihood: "authority_only"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Authority lookup only; not narrative evidence."
+
+- source_id: "gnaf_address_file"
+  source_name: "Geocoded National Address File"
+  institution: "Geoscape Australia"
+  route_family: "gazetteer_authority"
+  source_tier: "A"
+  evidence_or_discovery: "discovery_only"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Address authority only"
+  access_method: "manual_authority_lookup"
+  base_url: "https://geoscape.com.au/data/g-naf/"
+  allowed_content_mode: "authority_metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 2.0
+  temporal_gap_value: "none"
+  regional_balance_value: "medium"
+  mappability_likelihood: "authority_only"
+  duplicate_risk: "low"
+  ethics_risk: "low"
+  notes: "Authority lookup only; not narrative evidence."
+
+- source_id: "research_data_australia"
+  source_name: "Research Data Australia"
+  institution: "Australian Research Data Commons"
+  route_family: "repository_metadata"
+  source_tier: "E"
+  evidence_or_discovery: "discovery_only"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Dataset metadata"
+  access_method: "public_html"
+  base_url: "https://researchdata.edu.au/"
+  search_url_template: "https://researchdata.edu.au/search?q={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low"
+  regional_balance_value: "low_medium"
+  mappability_likelihood: "low"
+  duplicate_risk: "medium"
+  ethics_risk: "medium_high"
+  notes: "Discovery-only metadata; follow original source and access conditions."
+
+- source_id: "informit_metadata_only"
+  source_name: "Informit Metadata Only"
+  institution: "Informit"
+  route_family: "repository_metadata"
+  source_tier: "E"
+  evidence_or_discovery: "discovery_only"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Journal and magazine metadata"
+  access_method: "manual_metadata_review"
+  base_url: "https://search.informit.org/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium_1955_1976"
+  regional_balance_value: "low"
+  mappability_likelihood: "low"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Do not bypass subscription access. Use only as lead metadata unless a public original is identified."
+
+- source_id: "worldcat_metadata_only"
+  source_name: "WorldCat Metadata Only"
+  institution: "OCLC"
+  route_family: "repository_metadata"
+  source_tier: "E"
+  evidence_or_discovery: "discovery_only"
+  scope: "global"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Catalogue metadata"
+  access_method: "manual_metadata_review"
+  base_url: "https://search.worldcat.org/"
+  search_url_template: "https://search.worldcat.org/search?q={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "low"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Discovery-only catalogue pointer; identify public original before acceptance."
+
+- source_id: "openlibrary_metadata_only"
+  source_name: "Open Library Metadata Only"
+  institution: "Internet Archive"
+  route_family: "repository_metadata"
+  source_tier: "E"
+  evidence_or_discovery: "discovery_only"
+  scope: "global"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Book metadata"
+  access_method: "api_or_public_html"
+  base_url: "https://openlibrary.org/"
+  search_url_template: "https://openlibrary.org/search?q={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 2.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "low"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Discovery-only catalogue pointer."
+
+- source_id: "internet_archive_access_platform"
+  source_name: "Internet Archive Access Platform"
+  institution: "Internet Archive"
+  route_family: "access_platform"
+  source_tier: "D"
+  evidence_or_discovery: "evidence_only_if_original_source_identified"
+  scope: "global"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Digitised public-domain and rights-varied works"
+  access_method: "metadata_api"
+  base_url: "https://archive.org/advancedsearch.php"
+  search_url_template: "https://archive.org/search?query={query}"
+  allowed_content_mode: "metadata_first"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "medium"
+  mappability_likelihood: "medium"
+  duplicate_risk: "high"
+  ethics_risk: "medium"
+  notes: "Access platform; original publication and rights status must be decomposed."
+
+- source_id: "project_gutenberg_australia_access_platform"
+  source_name: "Project Gutenberg Australia Access Platform"
+  institution: "Project Gutenberg Australia"
+  route_family: "access_platform"
+  source_tier: "D"
+  evidence_or_discovery: "evidence_only_if_original_source_identified"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Public-domain texts"
+  access_method: "public_html"
+  base_url: "https://gutenberg.net.au/"
+  search_url_template: "https://gutenberg.net.au/search.html"
+  allowed_content_mode: "metadata_first"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_1926_1976"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "high"
+  ethics_risk: "medium"
+  notes: "Access platform; accepted records require original-source dates and public-domain status."
+
+- source_id: "wikisource_access_platform"
+  source_name: "Wikisource Access Platform"
+  institution: "Wikimedia Foundation"
+  route_family: "access_platform"
+  source_tier: "D"
+  evidence_or_discovery: "evidence_only_if_original_source_identified"
+  scope: "global"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Public-domain texts"
+  access_method: "public_html"
+  base_url: "https://en.wikisource.org/"
+  search_url_template: "https://en.wikisource.org/w/index.php?search={query}"
+  allowed_content_mode: "metadata_first"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 2.0
+  temporal_gap_value: "low_1926_1976"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "high"
+  ethics_risk: "medium"
+  notes: "Access/transcription platform only; preserve original source chain."
+
+- source_id: "openalex_crossref_discovery_only"
+  source_name: "OpenAlex and Crossref Discovery Only"
+  institution: "OpenAlex / Crossref"
+  route_family: "scholarly_metadata"
+  source_tier: "E"
+  evidence_or_discovery: "discovery_only"
+  scope: "global"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Scholarly metadata"
+  access_method: "api"
+  base_url: "https://api.openalex.org/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 1.0
+  temporal_gap_value: "low"
+  regional_balance_value: "low"
+  mappability_likelihood: "low"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Discovery-only scholarly metadata; never accepted as evidence without a public source."
+
+- source_id: "slnsw_catalogue"
+  source_name: "State Library of NSW Catalogue"
+  institution: "State Library of NSW"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["NSW"]
+  years_likely: "All periods"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://collection.sl.nsw.gov.au/"
+  search_url_template: "https://collection.sl.nsw.gov.au/search?search={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Catalogue metadata route; review original item before acceptance."
+
+- source_id: "slnsw_digital_collections"
+  source_name: "State Library of NSW Digital Collections"
+  institution: "State Library of NSW"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["NSW"]
+  years_likely: "All periods"
+  access_method: "public_html"
+  base_url: "https://collection.sl.nsw.gov.au/"
+  search_url_template: "https://collection.sl.nsw.gov.au/search?search={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use item metadata and rights-visible public descriptions."
+
+- source_id: "mhnsw_state_archives_collection"
+  source_name: "Museums of History NSW State Archives Collection"
+  institution: "Museums of History NSW"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["NSW"]
+  years_likely: "1788-present"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://mhnsw.au/collections/state-archives-collection/"
+  search_url_template: "https://mhnsw.au/?s={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Catalogue metadata; do not extract restricted files."
+
+- source_id: "rahs"
+  source_name: "Royal Australian Historical Society"
+  institution: "Royal Australian Historical Society"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["NSW"]
+  years_likely: "1901-present"
+  access_method: "manual_metadata_review"
+  base_url: "https://www.rahs.org.au/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use journal and local-history pointers; verify accessible public text before evidence acceptance."
+
+- source_id: "nsw_state_heritage_inventory"
+  source_name: "NSW State Heritage Inventory"
+  institution: "Heritage NSW"
+  route_family: "heritage_register"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["NSW"]
+  years_likely: "Heritage records, mostly retrospective"
+  access_method: "public_html"
+  base_url: "https://www.hms.heritage.nsw.gov.au/"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low"
+  regional_balance_value: "low"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Accept only explicit narrative/place evidence, not heritage address alone."
+
+- source_id: "national_trust_nsw_register"
+  source_name: "National Trust NSW Register"
+  institution: "National Trust of Australia NSW"
+  route_family: "heritage_register"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["NSW"]
+  years_likely: "Heritage records, retrospective"
+  access_method: "public_html"
+  base_url: "https://www.nationaltrust.org.au/"
+  search_url_template: "https://www.nationaltrust.org.au/?s={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low"
+  regional_balance_value: "low"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use only public register/source statements."
+
+- source_id: "city_of_sydney_archives"
+  source_name: "City of Sydney Archives"
+  institution: "City of Sydney"
+  route_family: "council_local_studies"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["NSW"]
+  years_likely: "1842-present"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://archives.cityofsydney.nsw.gov.au/"
+  search_url_template: "https://archives.cityofsydney.nsw.gov.au/nodes/search?keywords={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Council archive metadata only unless public item text is clearly licensed."
+
+- source_id: "dictionary_of_sydney"
+  source_name: "Dictionary of Sydney"
+  institution: "Dictionary of Sydney"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["NSW"]
+  years_likely: "Retrospective local history"
+  access_method: "public_html"
+  base_url: "https://dictionaryofsydney.org/"
+  search_url_template: "https://dictionaryofsydney.org/search?search={query}"
+  allowed_content_mode: "public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use cited public historical entries; preserve citations."
+
+- source_id: "slq_one_search"
+  source_name: "State Library of Queensland One Search"
+  institution: "State Library of Queensland"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["QLD"]
+  years_likely: "All periods"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://onesearch.slq.qld.gov.au/"
+  search_url_template: "https://onesearch.slq.qld.gov.au/discovery/search?query=any,contains,{query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Catalogue metadata; verify source chain."
+
+- source_id: "qsa_archivessearch"
+  source_name: "Queensland State Archives ArchivesSearch"
+  institution: "Queensland State Archives"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["QLD"]
+  years_likely: "1859-present"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.archivessearch.qld.gov.au/"
+  search_url_template: "https://www.archivessearch.qld.gov.au/search?Search={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Public catalogue metadata only."
+
+- source_id: "john_oxley_library"
+  source_name: "John Oxley Library"
+  institution: "State Library of Queensland"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["QLD"]
+  years_likely: "Queensland local history"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.slq.qld.gov.au/collections/john-oxley-library"
+  search_url_template: "https://onesearch.slq.qld.gov.au/discovery/search?query=any,contains,{query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Prefer item metadata and explicit source descriptions."
+
+- source_id: "queensland_heritage_register"
+  source_name: "Queensland Heritage Register"
+  institution: "Queensland Government"
+  route_family: "heritage_register"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["QLD"]
+  years_likely: "Heritage records, retrospective"
+  access_method: "public_html"
+  base_url: "https://apps.des.qld.gov.au/heritage-register/"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low"
+  regional_balance_value: "low"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Heritage place is not an event place unless source text states it."
+
+- source_id: "rhsq"
+  source_name: "Royal Historical Society of Queensland"
+  institution: "Royal Historical Society of Queensland"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["QLD"]
+  years_likely: "1913-present"
+  access_method: "manual_metadata_review"
+  base_url: "https://www.queenslandhistory.org/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use serial index leads with review."
+
+- source_id: "queensland_museum_network"
+  source_name: "Queensland Museum Network"
+  institution: "Queensland Museum"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["QLD"]
+  years_likely: "Public museum records and articles"
+  access_method: "public_html"
+  base_url: "https://www.museum.qld.gov.au/"
+  search_url_template: "https://www.museum.qld.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium_high"
+  notes: "Museum public pages only; sensitive cultural collection material requires manual ethics review."
+
+- source_id: "brisbane_heritage_register"
+  source_name: "Brisbane Heritage Register"
+  institution: "Brisbane City Council"
+  route_family: "council_local_studies"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["QLD"]
+  years_likely: "Retrospective local heritage"
+  access_method: "public_html"
+  base_url: "https://heritage.brisbane.qld.gov.au/"
+  search_url_template: "https://heritage.brisbane.qld.gov.au/search?search={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low"
+  regional_balance_value: "low"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Heritage address is not event evidence without explicit narrative text."
+
+- source_id: "slv_catalogue"
+  source_name: "State Library Victoria Catalogue"
+  institution: "State Library Victoria"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["VIC"]
+  years_likely: "All periods"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.slv.vic.gov.au/search-discover"
+  search_url_template: "https://find.slv.vic.gov.au/discovery/search?query=any,contains,{query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Catalogue route; review source chain before accepting evidence."
+
+- source_id: "slv_digitised_collections"
+  source_name: "State Library Victoria Digitised Collections"
+  institution: "State Library Victoria"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["VIC"]
+  years_likely: "All periods"
+  access_method: "public_html"
+  base_url: "https://find.slv.vic.gov.au/"
+  search_url_template: "https://find.slv.vic.gov.au/discovery/search?query=any,contains,{query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use rights-visible public metadata and descriptions only."
+
+- source_id: "prov_catalogue"
+  source_name: "Public Record Office Victoria Catalogue"
+  institution: "Public Record Office Victoria"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["VIC"]
+  years_likely: "1836-present"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://prov.vic.gov.au/"
+  search_url_template: "https://prov.vic.gov.au/search?keywords={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Public archive metadata only; no restricted file extraction."
+
+- source_id: "rhsv"
+  source_name: "Royal Historical Society of Victoria"
+  institution: "Royal Historical Society of Victoria"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["VIC"]
+  years_likely: "1909-present"
+  access_method: "manual_metadata_review"
+  base_url: "https://www.historyvictoria.org.au/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Serial and local-history leads require public evidence review."
+
+- source_id: "victorian_collections"
+  source_name: "Victorian Collections"
+  institution: "Museums Victoria / AMaGA Victoria"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["VIC"]
+  years_likely: "Community collection records"
+  access_method: "public_html"
+  base_url: "https://victoriancollections.net.au/"
+  search_url_template: "https://victoriancollections.net.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Community collection metadata; original item/source chain needs review."
+
+- source_id: "victorian_heritage_database"
+  source_name: "Victorian Heritage Database"
+  institution: "Heritage Council Victoria"
+  route_family: "heritage_register"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["VIC"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://vhd.heritagecouncil.vic.gov.au/"
+  search_url_template: "https://vhd.heritagecouncil.vic.gov.au/search?kw={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low"
+  regional_balance_value: "low"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Use only source-stated legend/place text, not heritage address alone."
+
+- source_id: "national_trust_victoria_register"
+  source_name: "National Trust Victoria Register"
+  institution: "National Trust of Australia Victoria"
+  route_family: "heritage_register"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["VIC"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://www.nationaltrust.org.au/vic/"
+  search_url_template: "https://www.nationaltrust.org.au/search/?q={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low"
+  regional_balance_value: "low"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Review citations and source-stated place evidence."
+
+- source_id: "acmi_collections"
+  source_name: "ACMI Collections"
+  institution: "ACMI"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["VIC"]
+  years_likely: "Screen culture records"
+  access_method: "public_html"
+  base_url: "https://www.acmi.net.au/works/"
+  search_url_template: "https://www.acmi.net.au/search/?q={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "low"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use metadata and public summaries; no media extraction."
+
+- source_id: "museums_victoria_collections"
+  source_name: "Museums Victoria Collections"
+  institution: "Museums Victoria"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["VIC"]
+  years_likely: "Collection records"
+  access_method: "public_html"
+  base_url: "https://collections.museumsvictoria.com.au/"
+  search_url_template: "https://collections.museumsvictoria.com.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "low"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium_high"
+  notes: "Public object metadata only; sensitive collection material requires manual review."
+
+- source_id: "slwa_catalogue"
+  source_name: "State Library of Western Australia Catalogue"
+  institution: "State Library of Western Australia"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["WA"]
+  years_likely: "All periods"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://slwa.wa.gov.au/"
+  search_url_template: "https://catalogue.slwa.wa.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Priority route for WA gap balancing; catalogue metadata requires review."
+
+- source_id: "battye_library"
+  source_name: "J.S. Battye Library of West Australian History"
+  institution: "State Library of Western Australia"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["WA"]
+  years_likely: "WA local history"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://slwa.wa.gov.au/explore-discover/western-australian-collections"
+  search_url_template: "https://catalogue.slwa.wa.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium_high"
+  notes: "WA local-history priority; treat culturally sensitive material as manual review only."
+
+- source_id: "sro_wa_catalogue"
+  source_name: "State Records Office of WA Catalogue"
+  institution: "State Records Office of Western Australia"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["WA"]
+  years_likely: "1829-present"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://archive.sro.wa.gov.au/"
+  search_url_template: "https://archive.sro.wa.gov.au/index.php/search?keywords={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium_high"
+  notes: "Archive catalogue metadata only; no restricted file extraction."
+
+- source_id: "history_west_rwahs"
+  source_name: "History West / RWAHS"
+  institution: "Royal Western Australian Historical Society"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["WA"]
+  years_likely: "1927-present"
+  access_method: "manual_metadata_review"
+  base_url: "https://www.histwest.org.au/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1926_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Manual review route for WA local-history serials."
+
+- source_id: "rwahs_affiliates"
+  source_name: "RWAHS Affiliate Societies"
+  institution: "Royal Western Australian Historical Society affiliates"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["WA"]
+  years_likely: "Local histories"
+  access_method: "manual_metadata_review"
+  base_url: "https://www.histwest.org.au/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use as local-history lead network; require public source evidence."
+
+- source_id: "wa_museum_collections"
+  source_name: "Western Australian Museum Collections"
+  institution: "Western Australian Museum"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["WA"]
+  years_likely: "Collection records and public articles"
+  access_method: "public_html"
+  base_url: "https://museum.wa.gov.au/"
+  search_url_template: "https://museum.wa.gov.au/search?search={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium_high"
+  notes: "Public pages only; sensitive collection material requires manual ethics review."
+
+- source_id: "national_trust_wa_classified_places"
+  source_name: "National Trust WA Classified Places"
+  institution: "National Trust of Western Australia"
+  route_family: "heritage_register"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["WA"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://www.nationaltrust.org.au/wa/"
+  search_url_template: "https://www.nationaltrust.org.au/search/?q={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Do not treat place listing as event evidence without source text."
+
+- source_id: "wa_heritage_inherit"
+  source_name: "WA Heritage InHerit"
+  institution: "Heritage Council of Western Australia"
+  route_family: "heritage_register"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["WA"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://inherit.dplh.wa.gov.au/"
+  search_url_template: "https://inherit.dplh.wa.gov.au/Public/Search?searchTerm={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Use explicit narrative statements only; coordinates need review."
+
+- source_id: "fremantle_prison"
+  source_name: "Fremantle Prison"
+  institution: "Fremantle Prison"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["WA"]
+  years_likely: "Retrospective public history"
+  access_method: "public_html"
+  base_url: "https://fremantleprison.com.au/"
+  search_url_template: "https://fremantleprison.com.au/?s={query}"
+  allowed_content_mode: "public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Public interpretive pages can be leads; review original citations."
+
+- source_id: "fremantle_history_centre"
+  source_name: "Fremantle History Centre"
+  institution: "City of Fremantle"
+  route_family: "council_local_studies"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["WA"]
+  years_likely: "Local history"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.fremantle.wa.gov.au/"
+  search_url_template: "https://www.fremantle.wa.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Council local-studies metadata; require public source details."
+
+- source_id: "carnamah_historical_society"
+  source_name: "Carnamah Historical Society"
+  institution: "Carnamah Historical Society"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["WA"]
+  years_likely: "Local history"
+  access_method: "public_html"
+  base_url: "https://www.carnamah.com.au/"
+  search_url_template: "https://www.carnamah.com.au/search?query={query}"
+  allowed_content_mode: "public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1926_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Useful WA Wheatbelt local-history route; review citations and rights."
+
+- source_id: "slsa_catalogue"
+  source_name: "State Library of South Australia Catalogue"
+  institution: "State Library of South Australia"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["SA"]
+  years_likely: "All periods"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.catalog.slsa.sa.gov.au/"
+  search_url_template: "https://www.catalog.slsa.sa.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Priority SA catalogue route; review source chain."
+
+- source_id: "slsa_digital_collections"
+  source_name: "State Library of South Australia Digital Collections"
+  institution: "State Library of South Australia"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["SA"]
+  years_likely: "All periods"
+  access_method: "public_html"
+  base_url: "https://collections.slsa.sa.gov.au/"
+  search_url_template: "https://collections.slsa.sa.gov.au/find/{query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use public metadata and rights-visible descriptions only."
+
+- source_id: "state_records_sa_archivessearch"
+  source_name: "State Records of South Australia ArchivesSearch"
+  institution: "State Records of South Australia"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["SA"]
+  years_likely: "1836-present"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://archives.sa.gov.au/"
+  search_url_template: "https://archives.sa.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Archive catalogue metadata only."
+
+- source_id: "history_trust_sa"
+  source_name: "History Trust of South Australia"
+  institution: "History Trust of South Australia"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["SA"]
+  years_likely: "Public history"
+  access_method: "public_html"
+  base_url: "https://history.sa.gov.au/"
+  search_url_template: "https://history.sa.gov.au/?s={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Public history route; check citations before evidence acceptance."
+
+- source_id: "south_australian_history_network"
+  source_name: "South Australian History Network"
+  institution: "History Trust of South Australia"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["SA"]
+  years_likely: "Local history network"
+  access_method: "manual_metadata_review"
+  base_url: "https://explore.history.sa.gov.au/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Use as lead network; require original public evidence."
+
+- source_id: "sa_heritage_places_database"
+  source_name: "South Australian Heritage Places Database"
+  institution: "South Australian Heritage Council"
+  route_family: "heritage_register"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["SA"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://maps.sa.gov.au/heritagesearch/"
+  search_url_template: "https://maps.sa.gov.au/heritagesearch/HeritageSearchLocation.aspx"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Heritage place alone is not an event point; require narrative text."
+
+- source_id: "national_trust_sa"
+  source_name: "National Trust South Australia"
+  institution: "National Trust of South Australia"
+  route_family: "heritage_register"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["SA"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://www.nationaltrust.org.au/sa/"
+  search_url_template: "https://www.nationaltrust.org.au/search/?q={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Review source-stated place evidence and citations."
+
+- source_id: "south_australian_museum_archives"
+  source_name: "South Australian Museum Archives"
+  institution: "South Australian Museum"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "manual_only_sensitive"
+  scope: "state"
+  states: ["SA"]
+  years_likely: "Collection and archive records"
+  access_method: "manual_catalogue_review"
+  base_url: "https://www.samuseum.sa.gov.au/"
+  allowed_content_mode: "manual_review_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 5.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "low"
+  ethics_risk: "high"
+  notes: "Manual-only due cultural sensitivity and archival access conditions."
+
+- source_id: "adelaide_gaol"
+  source_name: "Adelaide Gaol"
+  institution: "National Trust of South Australia"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["SA"]
+  years_likely: "Public history"
+  access_method: "public_html"
+  base_url: "https://adelaidegaol.org.au/"
+  search_url_template: "https://adelaidegaol.org.au/?s={query}"
+  allowed_content_mode: "public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Public interpretive pages; review original evidence."
+
+- source_id: "adelaide_arcade"
+  source_name: "Adelaide Arcade"
+  institution: "Adelaide Arcade"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["SA"]
+  years_likely: "Public history"
+  access_method: "public_html"
+  base_url: "https://www.adelaidearcade.com.au/"
+  search_url_template: "https://www.adelaidearcade.com.au/?s={query}"
+  allowed_content_mode: "public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Treat commercial/tourism framing as lead unless source citations are clear."
+
+- source_id: "city_of_adelaide_archives"
+  source_name: "City of Adelaide Archives"
+  institution: "City of Adelaide"
+  route_family: "council_local_studies"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["SA"]
+  years_likely: "Local history"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.cityofadelaide.com.au/"
+  search_url_template: "https://www.cityofadelaide.com.au/search/?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Council archive metadata; require public source statements."
+
+- source_id: "port_adelaide_local_history"
+  source_name: "Port Adelaide Local History"
+  institution: "City of Port Adelaide Enfield"
+  route_family: "council_local_studies"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["SA"]
+  years_likely: "Local history"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.cityofpae.sa.gov.au/"
+  search_url_template: "https://www.cityofpae.sa.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Local-studies route for Port Adelaide evidence."
+
+- source_id: "town_of_gawler_council_history"
+  source_name: "Town of Gawler Council History"
+  institution: "Town of Gawler"
+  route_family: "council_local_studies"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["SA"]
+  years_likely: "Local history"
+  access_method: "public_html"
+  base_url: "https://www.gawler.sa.gov.au/"
+  search_url_template: "https://www.gawler.sa.gov.au/search?query={query}"
+  allowed_content_mode: "public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Local history route; review citations."
+
+- source_id: "library_archives_nt_catalogue"
+  source_name: "Library & Archives NT Catalogue"
+  institution: "Library & Archives NT"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["NT"]
+  years_likely: "Northern Territory history"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://lant.nt.gov.au/"
+  search_url_template: "https://lant.nt.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium_high"
+  notes: "Priority NT catalogue route; sensitive material remains manual review."
+
+- source_id: "territory_stories"
+  source_name: "Territory Stories"
+  institution: "Library & Archives NT"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["NT"]
+  years_likely: "Public digitised NT material"
+  access_method: "public_html"
+  base_url: "https://territorystories.nt.gov.au/"
+  search_url_template: "https://territorystories.nt.gov.au/jspui/simple-search?query={query}"
+  allowed_content_mode: "metadata_first"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1926_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium_high"
+  notes: "Use metadata first; no automated sensitive full-text extraction."
+
+- source_id: "lant_archives_navigator"
+  source_name: "LANT Archives Navigator"
+  institution: "Library & Archives NT"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["NT"]
+  years_likely: "NT archives"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://navigator.nt.gov.au/"
+  search_url_template: "https://navigator.nt.gov.au/page/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium_high"
+  notes: "Archive metadata only."
+
+- source_id: "lant_oral_history_search"
+  source_name: "LANT Oral History Search"
+  institution: "Library & Archives NT"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "manual_only_sensitive"
+  scope: "territory"
+  states: ["NT"]
+  years_likely: "Oral history"
+  access_method: "manual_catalogue_review"
+  base_url: "https://lant.nt.gov.au/"
+  allowed_content_mode: "manual_review_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 5.0
+  temporal_gap_value: "medium_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "low"
+  ethics_risk: "high"
+  notes: "Manual-only; oral histories may contain cultural restrictions or consent limits."
+
+- source_id: "historical_society_nt"
+  source_name: "Historical Society of the Northern Territory"
+  institution: "Historical Society of the Northern Territory"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["NT"]
+  years_likely: "Local history"
+  access_method: "manual_metadata_review"
+  base_url: "https://historicalsocietynt.com.au/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Manual local-history lead route."
+
+- source_id: "national_trust_nt"
+  source_name: "National Trust NT"
+  institution: "National Trust of Australia NT"
+  route_family: "heritage_register"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["NT"]
+  years_likely: "Retrospective heritage"
+  access_method: "public_html"
+  base_url: "https://www.nationaltrust.org.au/nt/"
+  search_url_template: "https://www.nationaltrust.org.au/search/?q={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Heritage lead route; require explicit narrative statements."
+
+- source_id: "nt_heritage_register"
+  source_name: "NT Heritage Register"
+  institution: "Northern Territory Government"
+  route_family: "heritage_register"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["NT"]
+  years_likely: "Retrospective heritage"
+  access_method: "public_html"
+  base_url: "https://nt.gov.au/property/land/heritage-register"
+  search_url_template: "https://nt.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium_high"
+  notes: "Public register route; do not map broad cultural regions."
+
+- source_id: "nt_place_names_register"
+  source_name: "NT Place Names Register"
+  institution: "Northern Territory Government"
+  route_family: "gazetteer_authority"
+  source_tier: "A"
+  evidence_or_discovery: "discovery_only"
+  scope: "territory"
+  states: ["NT"]
+  years_likely: "Authority records"
+  access_method: "manual_authority_lookup"
+  base_url: "https://placenames.nt.gov.au/"
+  allowed_content_mode: "authority_metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 2.0
+  temporal_gap_value: "none"
+  regional_balance_value: "high"
+  mappability_likelihood: "authority_only"
+  duplicate_risk: "low"
+  ethics_risk: "medium_high"
+  notes: "Place authority only; not narrative evidence."
+
+- source_id: "magnt_collections"
+  source_name: "MAGNT Collections"
+  institution: "Museum and Art Gallery of the Northern Territory"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "manual_only_sensitive"
+  scope: "territory"
+  states: ["NT"]
+  years_likely: "Collection records"
+  access_method: "manual_catalogue_review"
+  base_url: "https://www.magnt.net.au/"
+  allowed_content_mode: "manual_review_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 5.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "low"
+  ethics_risk: "high"
+  notes: "Manual-only because cultural collection records can be sensitive."
+
+- source_id: "darwin_city_libraries_local_history"
+  source_name: "Darwin City Libraries Local History"
+  institution: "City of Darwin"
+  route_family: "council_local_studies"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["NT"]
+  years_likely: "Local history"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.darwin.nt.gov.au/"
+  search_url_template: "https://www.darwin.nt.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Council local-history metadata; review source details."
+
+- source_id: "alice_springs_public_library_local_history"
+  source_name: "Alice Springs Public Library Local History"
+  institution: "Alice Springs Town Council"
+  route_family: "council_local_studies"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["NT"]
+  years_likely: "Local history"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://alicesprings.nt.gov.au/"
+  search_url_template: "https://alicesprings.nt.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium_high"
+  notes: "Manual review if any culturally sensitive context appears."
+
+- source_id: "libraries_tasmania_catalogue"
+  source_name: "Libraries Tasmania Catalogue"
+  institution: "Libraries Tasmania"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["TAS"]
+  years_likely: "All periods"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://libraries.tas.gov.au/"
+  search_url_template: "https://libraries.tas.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Priority Tasmania catalogue route."
+
+- source_id: "tasmanian_archives"
+  source_name: "Tasmanian Archives"
+  institution: "Libraries Tasmania"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["TAS"]
+  years_likely: "1803-present"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://libraries.tas.gov.au/archive-heritage/"
+  search_url_template: "https://libraries.tas.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Archive metadata only."
+
+- source_id: "tasmanian_names_index"
+  source_name: "Tasmanian Names Index"
+  institution: "Libraries Tasmania"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "discovery_only"
+  scope: "state"
+  states: ["TAS"]
+  years_likely: "Biographical authority records"
+  access_method: "manual_metadata_review"
+  base_url: "https://libraries.tas.gov.au/family-history/Pages/Names-Index.aspx"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low"
+  regional_balance_value: "medium"
+  mappability_likelihood: "low"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Authority/discovery route only; not narrative evidence."
+
+- source_id: "tasmanian_historical_research_association"
+  source_name: "Tasmanian Historical Research Association"
+  institution: "Tasmanian Historical Research Association"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["TAS"]
+  years_likely: "1951-present"
+  access_method: "manual_metadata_review"
+  base_url: "https://thra.org.au/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Manual serial index route; verify public source."
+
+- source_id: "heritage_tasmania_register"
+  source_name: "Heritage Tasmania Register"
+  institution: "Tasmanian Heritage Council"
+  route_family: "heritage_register"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["TAS"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://heritage.tas.gov.au/"
+  search_url_template: "https://heritage.tas.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Heritage listing is not event evidence unless narrative text is explicit."
+
+- source_id: "national_trust_tasmania"
+  source_name: "National Trust Tasmania"
+  institution: "National Trust of Australia Tasmania"
+  route_family: "heritage_register"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["TAS"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://www.nationaltrust.org.au/tas/"
+  search_url_template: "https://www.nationaltrust.org.au/search/?q={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Review citations and source-stated place evidence."
+
+- source_id: "port_arthur_historic_site"
+  source_name: "Port Arthur Historic Site"
+  institution: "Port Arthur Historic Site Management Authority"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["TAS"]
+  years_likely: "Public history"
+  access_method: "public_html"
+  base_url: "https://portarthur.org.au/"
+  search_url_template: "https://portarthur.org.au/?s={query}"
+  allowed_content_mode: "public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Public interpretive route; review original evidence and avoid tourism-only reliance."
+
+- source_id: "qvmag_collections"
+  source_name: "QVMAG Collections"
+  institution: "Queen Victoria Museum and Art Gallery"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["TAS"]
+  years_likely: "Collection records"
+  access_method: "public_html"
+  base_url: "https://www.qvmag.tas.gov.au/"
+  search_url_template: "https://www.qvmag.tas.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Public collection metadata; review source chain."
+
+- source_id: "tmag_collections"
+  source_name: "TMAG Collections"
+  institution: "Tasmanian Museum and Art Gallery"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "state"
+  states: ["TAS"]
+  years_likely: "Collection records"
+  access_method: "public_html"
+  base_url: "https://www.tmag.tas.gov.au/"
+  search_url_template: "https://www.tmag.tas.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium_high"
+  notes: "Sensitive collection records require manual ethics review."
+
+- source_id: "west_coast_heritage_centre"
+  source_name: "West Coast Heritage Centre"
+  institution: "West Coast Heritage Centre"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "local"
+  states: ["TAS"]
+  years_likely: "Local history"
+  access_method: "public_html"
+  base_url: "https://www.westcoastheritagecentre.com.au/"
+  search_url_template: "https://www.westcoastheritagecentre.com.au/search?query={query}"
+  allowed_content_mode: "public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "West Coast local-history priority; review citations."
+
+- source_id: "act_heritage_library"
+  source_name: "ACT Heritage Library"
+  institution: "Libraries ACT"
+  route_family: "state_library_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["ACT"]
+  years_likely: "ACT and Canberra local history"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.library.act.gov.au/find/history"
+  search_url_template: "https://www.library.act.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Priority ACT local-history route."
+
+- source_id: "archivesact_act_memory"
+  source_name: "ArchivesACT / ACT Memory"
+  institution: "ACT Government"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["ACT"]
+  years_likely: "ACT records"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.archives.act.gov.au/"
+  search_url_template: "https://www.archives.act.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Archive metadata only."
+
+- source_id: "canberra_district_historical_society"
+  source_name: "Canberra & District Historical Society"
+  institution: "Canberra & District Historical Society"
+  route_family: "local_history_serial"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["ACT", "NSW"]
+  years_likely: "Local history"
+  access_method: "manual_metadata_review"
+  base_url: "https://www.canberrahistory.org.au/"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "high_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "ACT and Queanbeyan cross-border local-history route."
+
+- source_id: "act_heritage_register"
+  source_name: "ACT Heritage Register"
+  institution: "ACT Heritage Council"
+  route_family: "heritage_register"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["ACT"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://www.environment.act.gov.au/heritage"
+  search_url_template: "https://www.environment.act.gov.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Heritage place records need source-stated narrative/place evidence."
+
+- source_id: "national_trust_act"
+  source_name: "National Trust ACT"
+  institution: "National Trust of Australia ACT"
+  route_family: "heritage_register"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["ACT"]
+  years_likely: "Retrospective heritage records"
+  access_method: "public_html"
+  base_url: "https://www.nationaltrust.org.au/act/"
+  search_url_template: "https://www.nationaltrust.org.au/search/?q={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium"
+  regional_balance_value: "high"
+  mappability_likelihood: "high"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Review public statements and source citations."
+
+- source_id: "canberra_museum_gallery"
+  source_name: "Canberra Museum and Gallery"
+  institution: "Canberra Museum and Gallery"
+  route_family: "museum_heritage_page"
+  source_tier: "B"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["ACT"]
+  years_likely: "Public museum records"
+  access_method: "public_html"
+  base_url: "https://www.cmag.com.au/"
+  search_url_template: "https://www.cmag.com.au/search?query={query}"
+  allowed_content_mode: "metadata_and_public_summary"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "medium"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Public museum metadata and articles; review source chain."
+
+- source_id: "anu_archives"
+  source_name: "ANU Archives"
+  institution: "Australian National University"
+  route_family: "state_archive_catalogue"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "territory"
+  states: ["ACT"]
+  years_likely: "Institutional and regional records"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://archivescollection.anu.edu.au/"
+  search_url_template: "https://archivescollection.anu.edu.au/index.php/informationobject/browse?topLod=0&query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "medium_1955_1976"
+  regional_balance_value: "high"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium"
+  notes: "Archive metadata only."
+
+- source_id: "anu_open_research"
+  source_name: "ANU Open Research"
+  institution: "Australian National University"
+  route_family: "repository_metadata"
+  source_tier: "E"
+  evidence_or_discovery: "discovery_only"
+  scope: "territory"
+  states: ["ACT"]
+  years_likely: "Repository metadata"
+  access_method: "public_html"
+  base_url: "https://openresearch-repository.anu.edu.au/"
+  search_url_template: "https://openresearch-repository.anu.edu.au/simple-search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "medium"
+  mappability_likelihood: "low"
+  duplicate_risk: "medium"
+  ethics_risk: "medium"
+  notes: "Discovery-only repository route; identify public original before acceptance."
+
+- source_id: "australian_war_memorial_collection"
+  source_name: "Australian War Memorial Collection"
+  institution: "Australian War Memorial"
+  route_family: "museum_heritage_page"
+  source_tier: "A"
+  evidence_or_discovery: "evidence_possible"
+  scope: "national"
+  states: ["ACT", "NSW", "VIC", "QLD", "WA", "SA", "TAS", "NT"]
+  years_likely: "Military and public memory records"
+  access_method: "catalogue_manual_or_html"
+  base_url: "https://www.awm.gov.au/collection"
+  search_url_template: "https://www.awm.gov.au/advanced-search?query={query}"
+  allowed_content_mode: "metadata_only"
+  full_text_allowed: false
+  robots_check_required: true
+  rate_limit_seconds: 3.0
+  temporal_gap_value: "low_medium"
+  regional_balance_value: "medium"
+  mappability_likelihood: "low_medium"
+  duplicate_risk: "low"
+  ethics_risk: "medium_high"
+  notes: "Use public catalogue metadata; war records can include sensitive personal material."

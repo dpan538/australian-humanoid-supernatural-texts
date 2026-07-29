@@ -4,7 +4,7 @@ import { CSSProperties, memo, useCallback, useEffect, useId, useMemo, useRef, us
 import type { KeyboardEvent as ReactKeyboardEvent, RefObject } from "react";
 import Link from "next/link";
 import { createTimeline, stagger } from "animejs";
-import type { Timeline } from "animejs";
+import type { AnimationParams, Timeline } from "animejs";
 import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { figureProfileFor } from "@/lib/figure-profiles";
@@ -22,21 +22,24 @@ import {
 import { SOURCE_FAMILY_STYLES, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
 
 export type ViewMode = "map" | "density" | "dashboard" | "source";
+type CycleView = "map" | "density" | "dashboard" | "figures";
 
-const VIEW_SEQUENCE: ViewMode[] = ["dashboard", "map", "density"];
+const VIEW_SEQUENCE: CycleView[] = ["map", "density", "dashboard", "figures"];
 
-const VIEW_LABELS: Record<ViewMode, string> = {
+const VIEW_LABELS: Record<ViewMode | CycleView, string> = {
   dashboard: "Dashboard",
   map: "Map",
   density: "Density",
   source: "Source",
+  figures: "Figures",
 };
 
-const VIEW_PATHS: Record<ViewMode, string> = {
+const VIEW_PATHS: Record<ViewMode | CycleView, string> = {
   dashboard: "/dashboard",
   map: "/map",
   density: "/density",
   source: "/source",
+  figures: "/figures",
 };
 const LOADING_TITLE = "AusFigures";
 const LOADING_INTRO = "A source-grounded archive of Australian supernatural humanoid narratives.";
@@ -1382,7 +1385,10 @@ function archiveRouteHeading(view: ViewMode) {
   return "AusFigures public map";
 }
 
-function getNextView(view: ViewMode) {
+function getNextView(view: ViewMode): CycleView {
+  if (view === "source") {
+    return "dashboard";
+  }
   const index = VIEW_SEQUENCE.indexOf(view);
   if (index === -1) {
     return "dashboard";
@@ -3970,7 +3976,7 @@ function StateCoverageChart({
   const chartRows = compact ? rows.slice(0, 6) : [...rows].sort((a, b) => b.mapped - a.mapped || b.total - a.total || a.state.localeCompare(b.state));
   const width = compact ? 520 : 760;
   const height = compact ? 184 : 296;
-  const left = compact ? 58 : 66;
+  const left = compact ? 84 : 108;
   const right = compact ? 48 : 58;
   const top = compact ? 18 : 24;
   const bottom = compact ? 20 : 28;
@@ -4021,7 +4027,7 @@ function StateCoverageChart({
             >
               <title>{tooltipText}</title>
               <text className="state-coverage-label" x="8" y={y + 4}>{row.state}</text>
-              <text className="state-coverage-count" x={left - 10} y={y + 4} textAnchor="end">{numberFormat(row.mapped)}</text>
+              <text className="state-coverage-count" x={compact ? 44 : 60} y={y + 4}>{numberFormat(row.mapped)}</text>
               <line className="state-total-rail" x1={left} x2={totalX} y1={y} y2={y} />
               <line className="state-mapped-rail" x1={left} x2={mappedX} y1={y} y2={y} />
               <circle className="state-total-point" cx={totalX} cy={y} r={compact ? 2 : 2.7} />
@@ -4628,7 +4634,7 @@ function useDashboardFieldMotion(rootRef: RefObject<HTMLDivElement | null>, mode
   }, []);
 }
 
-function addIfTargets(timeline: Timeline, targets: NodeListOf<Element>, params: Record<string, unknown>, position: number) {
+function addIfTargets(timeline: Timeline, targets: NodeListOf<Element>, params: AnimationParams, position: number) {
   if (targets.length > 0) {
     timeline.add(targets, params, position);
   }

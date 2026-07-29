@@ -2,20 +2,73 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import Link from "next/link";
 import { AboutAmbientMotion } from "@/components/about/about-ambient-motion";
+import { CitationSamples } from "@/components/citation-samples";
 import { DisplayControls } from "@/components/display-controls";
 import { MobileArchiveControls } from "@/components/mobile-archive";
 import { RouteStructuredData } from "@/components/route-structured-data";
 import { FRONTEND_DATA_URL } from "@/lib/frontend-data";
-import { metadataForRoute } from "@/lib/site";
+import { metadataForRoute, siteConfig } from "@/lib/site";
+import { buildProjectCitations } from "@/lib/citations";
 import { buildSourceRegistryData } from "@/lib/source-view-data";
 import type { FrontendData } from "@/lib/types";
 
 export const metadata = metadataForRoute("/about");
 
+const METHOD_STEPS = [
+  {
+    index: "01",
+    label: "SOURCE DISCOVERY",
+    title: "Find a public trace",
+    body:
+      "Search public archives, libraries, newspapers, digitised books, repositories, institutional pages, and community-controlled public sources. Aggregators and tourism pages can lead to a source, but are not admitted as primary support on their own.",
+  },
+  {
+    index: "02",
+    label: "RECORD ADMISSION",
+    title: "Preserve provenance",
+    body:
+      "Admit a record only when a public source or public metadata item can be cited. Keep source organisation, publication role, date, record type, and publicness visible so the record can be checked or revised later.",
+  },
+  {
+    index: "03",
+    label: "CLASSIFICATION",
+    title: "Keep research layers separate",
+    body:
+      "Code the printed figure or descriptive label, narrative type, source family, period, and place role separately. A shared archive category does not make culturally distinct beings, traditions, or claims equivalent.",
+  },
+  {
+    index: "04",
+    label: "LOCATION REVIEW",
+    title: "Map only reviewed evidence",
+    body:
+      "Publish one display flag only when a record has usable location evidence. Narrative geography, alleged event geography, source location, and broad regional association remain distinct and are never presented as habitat or proof.",
+  },
+] as const;
+
+const RIGOUR_CHECKS = [
+  {
+    label: "PROVENANCE",
+    value: "Source, public role, record type, and citation path stay inspectable.",
+  },
+  {
+    label: "LAYER SEPARATION",
+    value: "Public records, mapped records, metadata-only items, and research leads are not interchangeable counts.",
+  },
+  {
+    label: "ETHICS",
+    value: "Culturally specific and sensitive material can be contextualised, summarised, or suppressed.",
+  },
+  {
+    label: "REVISION",
+    value: "The corpus is an auditable research display, not a complete or peer-reviewed authority.",
+  },
+] as const;
+
 export default async function AboutPage() {
   const data = await loadAboutData();
   const statusCells = buildStatusCells(data);
   const recordTypeRows = buildRecordTypeRows(data);
+  const citationSamples = buildProjectCitations(data.generated_at.slice(0, 10));
 
   return (
     <main className="terminal-shell">
@@ -66,109 +119,131 @@ export default async function AboutPage() {
               <b>PUBLIC SOURCE EXISTS != SUPERNATURAL CLAIM VERIFIED</b>
             </section>
 
-            <section className="about-grid" aria-label="Research display modules">
-              <AboutModule
-                kicker="WHAT THIS ARCHIVE IS"
-                title="Documented public texts, not proof claims"
-                body="The archive treats each entry as a documented public text or source-grounded narrative unit. Records are organised by source family, narrative type, period, publicness, and available location evidence so later research can separate reported encounters, retellings, heritage discourse, catalogue metadata, and contextual material."
-                mobileBody="A public-text archive of source-grounded supernatural humanoid records. Inclusion means a public source exists; it does not verify the claim."
-              />
-
-              <details className="about-module about-model-module about-accordion-module" aria-label="Archive model">
-                <summary className="about-module-head">
-                  <span>ARCHIVE MODEL</span>
-                  <i aria-hidden="true" />
-                </summary>
-                <h2 className="about-desktop-detail">Source item to research record</h2>
-                <p className="about-mobile-detail">Source item to public record to narrative type to location role. Each step stays auditable.</p>
-                <div className="about-flow about-desktop-detail" aria-label="Archive model flow">
-                  <svg viewBox="0 0 520 128" role="img" aria-label="Source item to public record to narrative type to location role">
-                    <line className="about-flow-line" x1="68" y1="64" x2="182" y2="64" pathLength="1" />
-                    <line className="about-flow-line" x1="250" y1="64" x2="364" y2="64" pathLength="1" />
-                    <line className="about-flow-line" x1="432" y1="64" x2="492" y2="64" pathLength="1" />
-                    <circle cx="44" cy="64" r="16" />
-                    <circle cx="216" cy="64" r="16" />
-                    <circle cx="398" cy="64" r="16" />
-                    <circle cx="492" cy="64" r="10" />
-                  </svg>
-                  <div className="about-flow-labels">
-                    <span>source item</span>
-                    <span>public record</span>
-                    <span>narrative type</span>
-                    <span>location role</span>
-                  </div>
+            <section className="about-research-board" aria-labelledby="about-method-title">
+              <header className="about-research-head">
+                <div>
+                  <span className="tiny-label">RESEARCH METHOD / AUDIT PROTOCOL</span>
+                  <h2 id="about-method-title">From public source to inspectable record</h2>
                 </div>
-              </details>
+                <p>
+                  The archive documents how supernatural humanoid figures appear in public texts. It evaluates provenance and metadata quality; it does not test whether the reported phenomenon is real.
+                </p>
+              </header>
 
-              <details className="about-module about-record-types about-accordion-module" aria-label="Record types">
-                <summary className="about-module-head">
-                  <span>RECORD TYPES</span>
-                  <i aria-hidden="true" />
-                </summary>
-                <h2 className="about-desktop-detail">Typed narrative surface</h2>
-                <p className="about-mobile-detail">Record types separate encounters, apparitions, legends, traditional or spirit-person narratives, and retellings.</p>
-                <div className="about-type-list about-desktop-detail">
-                  {recordTypeRows.map((row) => (
-                    <span key={row.label}>
+              <div className="about-method-layout">
+                <ol className="about-method-sequence">
+                  {METHOD_STEPS.map((step) => (
+                    <li className="about-method-card" key={step.index}>
+                      <span className="about-method-index">{step.index}</span>
+                      <div>
+                        <b>{step.label}</b>
+                        <h3>{step.title}</h3>
+                        <p>{step.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+
+                <aside className="about-rigour-panel" aria-label="Academic rigour checks">
+                  <header>
+                    <span>ACADEMIC RIGOUR</span>
+                    <strong>04 CHECKS</strong>
+                  </header>
+                  <div className="about-rigour-list">
+                    {RIGOUR_CHECKS.map((check, index) => (
+                      <article key={check.label}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <div>
+                          <b>{check.label}</b>
+                          <p>{check.value}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                  <p className="about-rigour-note">
+                    PUBLIC SOURCE EXISTS <strong>!=</strong> SUPERNATURAL CLAIM VERIFIED
+                  </p>
+                </aside>
+              </div>
+
+              <div className="about-typology" aria-label="Record type distribution">
+                <header>
+                  <span>RECORD TYPOLOGY</span>
+                  <small>accepted public records by research classification</small>
+                </header>
+                <div className="about-typology-grid">
+                  {recordTypeRows.map((row, index) => (
+                    <article key={row.label}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
                       <b>{row.label}</b>
-                      <i aria-hidden="true" />
                       <strong>{row.value}</strong>
-                    </span>
+                    </article>
                   ))}
                 </div>
-              </details>
-
-              <AboutModule
-                kicker="MAP RULE"
-                title="One verified location flag per mapped public record"
-                body="Map points represent records with a verified display location. They indicate narrative geography, alleged event geography, or place association depending on the record type. They are not habitat maps, population maps, or proof of an underlying phenomenon."
-                mobileBody="Map points are public display locations for records. They are not proof, habitats, or populations."
-              />
-
-              <AboutModule
-                kicker="SOURCE POLICY"
-                title="Public sources first"
-                body="The project prioritises public archives, libraries, newspapers, digitised books, institutional pages, public repositories, and community-controlled public sources. Tourism pages and unsourced paranormal aggregators may be useful as discovery leads, but they are not treated as primary evidence without stronger source support."
-                mobileBody="The archive prioritises public archives, libraries, newspapers, books, repositories, and institutional or community-controlled public sources."
-              />
-
-              <AboutModule
-                kicker="ETHICS / SENSITIVITY"
-                title="Public discoverability is not unrestricted permission"
-                body="Records involving Aboriginal and Torres Strait Islander peoples, communities, or culturally specific figures require additional care around terminology, publicness, display mode, and source context. Sensitive public material may be summary-only or suppressed."
-                mobileBody="Indigenous-related records require careful terminology, source voice, publicness, cultural sensitivity, and display mode."
-              />
+              </div>
             </section>
 
-            <section className="about-extension-panel" aria-label="Research extension">
-              <div className="about-module-head">
-                <span>RESEARCH EXTENSION</span>
-                <i aria-hidden="true" />
-              </div>
-              <div>
-                <h2>Designed for audit, revision, and extension</h2>
+            <section className="about-citation-panel" aria-labelledby="about-citation-title">
+              <header className="about-citation-head">
+                <div>
+                  <span className="tiny-label">CITATION / REPRODUCIBLE ATTRIBUTION</span>
+                  <h2 id="about-citation-title">Cite the archive, then cite the source.</h2>
+                </div>
                 <p>
-                  The interface is designed as a research display rather than a final authority. Future work can add sources, revise classifications, improve location evidence, separate source items from narrative units, and audit sensitive records without treating the current corpus as complete or peer reviewed.
+                  Use one project citation for the aggregation and coding layer. When discussing an individual record,
+                  also cite its permanent AusFigures URL and the original public source shown on that record page.
+                </p>
+              </header>
+              <CitationSamples samples={citationSamples} />
+              <p className="about-citation-note">
+                No DOI is asserted for this live export. Original-source rights, access conditions, and culturally
+                specific context continue to apply.
+              </p>
+            </section>
+
+            <section className="about-repository-panel" aria-labelledby="about-repository-title">
+              <span className="about-repository-index" aria-hidden="true">GIT / 01</span>
+              <div className="about-repository-copy">
+                <span>GITHUB / PUBLIC PROJECT REPOSITORY</span>
+                <h2 id="about-repository-title">Inspect the project behind the interface.</h2>
+                <p>
+                  The repository is the technical companion to this public display: source code, data policies, audit scripts, citation guidance, and revision history remain available for inspection and reuse.
                 </p>
               </div>
-              <div className="about-raster" aria-hidden="true">
-                {Array.from({ length: 15 }, (_, index) => (
-                  <i className={index === 2 || index === 8 || index === 13 ? "about-raster-cell is-live" : "about-raster-cell"} key={index} />
-                ))}
-              </div>
+              <dl className="about-repository-meta">
+                <div>
+                  <dt>HOST</dt>
+                  <dd>github.com</dd>
+                </div>
+                <div>
+                  <dt>PROJECT</dt>
+                  <dd>australian-humanoid-supernatural-texts</dd>
+                </div>
+                <div>
+                  <dt>ACCESS</dt>
+                  <dd>public research repository</dd>
+                </div>
+              </dl>
+              <a href={siteConfig.repositoryUrl} target="_blank" rel="noreferrer">
+                <span>VIEW GITHUB REPOSITORY</span>
+                <b aria-hidden="true">↗</b>
+              </a>
             </section>
-
-            <nav className="about-actions" aria-label="Archive views">
-              <Link href="/map">MAP</Link>
-              <Link href="/dashboard">DASHBOARD</Link>
-              <Link href="/density">DENSITY</Link>
-              <Link href="/source">SOURCE</Link>
-              <Link href="/topics">TOPICS</Link>
-            </nav>
           </div>
         </section>
         <div className="terminal-footer-controls">
           <DisplayControls />
+          <div className="external-control-dock" aria-label="Fixed external controls">
+            <Link className="dock-button about-button active" href="/about" aria-current="page">
+              About
+            </Link>
+            <Link className="dock-button source-button" href="/source">
+              Source
+            </Link>
+            <Link className="dock-button view-cycle-button" href="/dashboard">
+              Dashboard
+            </Link>
+          </div>
         </div>
         <MobileArchiveControls view="about" />
       </div>
@@ -187,20 +262,6 @@ async function loadAboutData(): Promise<FrontendData> {
     throw new Error(`About data request failed: ${response.status}`);
   }
   return response.json() as Promise<FrontendData>;
-}
-
-function AboutModule({ kicker, title, body, mobileBody }: { kicker: string; title: string; body: string; mobileBody?: string }) {
-  return (
-    <details className="about-module about-accordion-module">
-      <summary className="about-module-head">
-        <span>{kicker}</span>
-        <i aria-hidden="true" />
-      </summary>
-      <h2 className="about-desktop-detail">{title}</h2>
-      <p className="about-desktop-detail">{body}</p>
-      <p className="about-mobile-detail">{mobileBody ?? body}</p>
-    </details>
-  );
 }
 
 function buildStatusCells(sourceData: FrontendData) {

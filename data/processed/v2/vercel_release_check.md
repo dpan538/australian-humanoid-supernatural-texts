@@ -1,6 +1,6 @@
 # Vercel Release Check
 
-Generated: `2026-07-04T14:07:44.542283+00:00`
+Generated: `2026-07-29T11:46:57.703790+00:00`
 Status: `pass`
 Domain target: `ausfigures.com`
 
@@ -19,7 +19,7 @@ Domain target: `ausfigures.com`
 ## Build Model
 
 - Package manager: `npm`
-- Next.js dependency: `^16.0.0`
+- Next.js dependency: `^16.2.12`
 - Production build command: `npm run build`
 - Runtime SQLite dependency: none detected by this static export check
 

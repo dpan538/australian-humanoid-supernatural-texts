@@ -1,0 +1,12 @@
+dimension,value,count,share_pct,source,notes
+records.publicness_level,public_text_item,1657,35.73,records,
+records.publicness_level,public_domain_public_web,1231,26.54,records,
+records.publicness_level,public_page,1037,22.36,records,
+records.publicness_level,public_web_map_marker_metadata,350,7.55,records,
+records.publicness_level,public_media_page,152,3.28,records,
+records.publicness_level,public_metadata,103,2.22,records,
+records.publicness_level,public_books_metadata,39,0.84,records,
+records.publicness_level,public_web_page,24,0.52,records,
+records.publicness_level,public_web_index_link_metadata,21,0.45,records,
+records.publicness_level,restricted_excluded,19,0.41,records,
+records.publicness_level,public_wikidata_metadata,5,0.11,records,

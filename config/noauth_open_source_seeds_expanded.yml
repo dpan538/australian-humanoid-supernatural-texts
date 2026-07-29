@@ -1,0 +1,2788 @@
+- route_id: nla_catalogue_noauth
+  source_id: nla_catalogue
+  source_name: NLA Catalogue
+  institution: National Library of Australia
+  official_url: https://catalogue.nla.gov.au/
+  search_url_template: https://catalogue.nla.gov.au/catalog?search_field=all_fields&q={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: A
+  route_family: national_library_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium
+  regional_value: medium
+  mappability_likelihood: low_medium
+  notes: Catalogue metadata only; no Trove API.
+- route_id: naa_recordsearch_noauth
+  source_id: naa_recordsearch
+  source_name: National Archives of Australia RecordSearch
+  institution: National Archives of Australia
+  official_url: https://recordsearch.naa.gov.au/
+  search_url_template: https://recordsearch.naa.gov.au/SearchNRetrieve/Interface/SearchScreens/BasicSearch.aspx
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: A
+  route_family: national_archive_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 10
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: medium
+  mappability_likelihood: low_medium
+  notes: Manual because public search behavior is not a simple metadata GET route.
+- route_id: nfsa_collection_noauth
+  source_id: nfsa_collection
+  source_name: NFSA Collection
+  institution: National Film and Sound Archive of Australia
+  official_url: https://www.nfsa.gov.au/collection
+  search_url_template: https://www.nfsa.gov.au/collection/curated/search?search={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: A
+  route_family: broadcast_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: medium
+  mappability_likelihood: low
+  notes: Public metadata only; no media extraction.
+- route_id: australian_screen_online_noauth
+  source_id: australian_screen_online
+  source_name: Australian Screen Online
+  institution: National Film and Sound Archive of Australia
+  official_url: https://aso.gov.au/
+  search_url_template: https://aso.gov.au/search/?q={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: C
+  route_family: broadcast_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - official_search_page
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: low_medium
+  mappability_likelihood: low
+  notes: Public summaries only; verify original source chain.
+- route_id: abc_public_pages_noauth
+  source_id: abc_archives_public_pages
+  source_name: ABC Public Pages
+  institution: Australian Broadcasting Corporation
+  official_url: https://www.abc.net.au/archives
+  search_url_template: https://www.abc.net.au/search?query={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: C
+  route_family: broadcast_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - official_search_page
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: medium
+  mappability_likelihood: medium
+  notes: Public pages and metadata only.
+- route_id: australian_heritage_database_noauth
+  source_id: australian_heritage_database
+  source_name: Australian Heritage Database
+  institution: Department of Climate Change, Energy, the Environment and Water
+  official_url: https://www.dcceew.gov.au/parks-heritage/heritage/places
+  search_url_template: https://www.dcceew.gov.au/search?query={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: A
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - sitemap
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: medium
+  mappability_likelihood: medium
+  notes: Heritage address alone is not an event map point.
+- route_id: pandora_web_archive_noauth_manual_or_semi
+  source_id: pandora_web_archive
+  source_name: PANDORA Web Archive
+  institution: National Library of Australia
+  official_url: https://pandora.nla.gov.au/
+  search_url_template: https://pandora.nla.gov.au/search?query={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: D
+  route_family: web_archive
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 10
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_only_if_original_source_identified
+  temporal_value: medium
+  regional_value: medium
+  mappability_likelihood: low
+  notes: Access platform; manual source-chain review required.
+- route_id: research_data_australia_noauth_discovery
+  source_id: research_data_australia
+  source_name: Research Data Australia
+  institution: Australian Research Data Commons
+  official_url: https://researchdata.edu.au/
+  search_url_template: https://researchdata.edu.au/search#!/q={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: E
+  route_family: research_data_discovery
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: discovery_only
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 10
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: discovery_only
+  temporal_value: low
+  regional_value: medium
+  mappability_likelihood: low
+  notes: Discovery only; never evidence without stronger source.
+- route_id: ehive_noauth
+  source_id: ehive
+  source_name: eHive Museum Collections
+  institution: eHive
+  official_url: https://ehive.com/
+  search_url_template: https://ehive.com/search?query={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: C
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: medium
+  mappability_likelihood: medium
+  notes: Museum object/page metadata only.
+- route_id: worldcat_noauth_discovery
+  source_id: worldcat
+  source_name: WorldCat
+  institution: OCLC
+  official_url: https://search.worldcat.org/
+  search_url_template: https://search.worldcat.org/search?q={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: E
+  route_family: bibliographic_discovery
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: discovery_only
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 5
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: discovery_only
+  temporal_value: medium
+  regional_value: low
+  mappability_likelihood: low
+  notes: Discovery only; do not treat as evidence.
+- route_id: openlibrary_noauth_discovery
+  source_id: openlibrary
+  source_name: Open Library
+  institution: Internet Archive
+  official_url: https://openlibrary.org/
+  search_url_template: https://openlibrary.org/search?q={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: E
+  route_family: bibliographic_discovery
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: discovery_only
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 5
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: discovery_only
+  temporal_value: medium
+  regional_value: low
+  mappability_likelihood: low
+  notes: Discovery only; no full-text harvesting.
+- route_id: trove_public_search_manual_only
+  source_id: trove_public_search
+  source_name: Trove Public Search
+  institution: National Library of Australia
+  official_url: https://trove.nla.gov.au/
+  search_url_template: https://trove.nla.gov.au/search?keyword={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: A
+  route_family: trove_public_search
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 0
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1926_1954
+  regional_value: high
+  mappability_likelihood: medium
+  notes: Manual task only. Do not call Trove API in no-auth sprint.
+- route_id: aiatsis_collection_manual_sensitive
+  source_id: aiatsis_collection_search
+  source_name: AIATSIS Collection Search
+  institution: AIATSIS
+  official_url: https://aiatsis.gov.au/collection
+  search_url_template: https://aiatsis.gov.au/collection/search?search={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: A
+  route_family: indigenous_collection_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_sensitive_review
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 0
+  rate_limit_seconds: 5.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: manual_only_sensitive
+  temporal_value: medium
+  regional_value: medium
+  mappability_likelihood: low
+  notes: Manual-only cultural sensitivity route.
+- route_id: austlang_manual_sensitive
+  source_id: austlang
+  source_name: AUSTLANG
+  institution: AIATSIS
+  official_url: https://collection.aiatsis.gov.au/austlang
+  search_url_template: https://collection.aiatsis.gov.au/austlang/search?query={query}
+  state: NATIONAL
+  states:
+  - WA
+  - SA
+  - NT
+  - TAS
+  - ACT
+  - NSW
+  - QLD
+  - VIC
+  source_tier: A
+  route_family: indigenous_collection_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_sensitive_review
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 0
+  rate_limit_seconds: 5.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: manual_only_sensitive
+  temporal_value: low
+  regional_value: medium
+  mappability_likelihood: authority_only
+  notes: Authority context only after ethics review.
+- route_id: slwa_catalogue_noauth
+  source_id: slwa_catalogue
+  source_name: State Library of Western Australia
+  institution: State Library of Western Australia
+  official_url: https://slwa.wa.gov.au/
+  search_url_template: https://slwa.wa.gov.au/search?keys={query}
+  state: WA
+  states:
+  - WA
+  source_tier: A
+  route_family: state_library_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - sitemap
+  - official_search_page
+  - static_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium_high
+  notes: Metadata/page-title/snippet only unless explicit public reuse terms are found.
+- route_id: battye_library_noauth
+  source_id: battye_library
+  source_name: Battye Library
+  institution: State Library of Western Australia
+  official_url: https://slwa.wa.gov.au/explore-discover/wa-heritage
+  search_url_template: https://slwa.wa.gov.au/search?keys={query}
+  state: WA
+  states:
+  - WA
+  source_tier: A
+  route_family: state_library_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - static_html
+  - official_search_page
+  max_pages_per_run: 25
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium_high
+  notes: WA heritage metadata only.
+- route_id: sro_wa_catalogue_noauth
+  source_id: sro_wa_catalogue
+  source_name: State Records Office of Western Australia
+  institution: State Records Office of Western Australia
+  official_url: https://www.wa.gov.au/organisation/state-records-office-of-western-australia
+  search_url_template: https://archive.sro.wa.gov.au/index.php/informationobject/browse?topLod=0&query={query}
+  state: WA
+  states:
+  - WA
+  source_tier: A
+  route_family: state_archive_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium
+  notes: Public archival metadata only.
+- route_id: history_west_rwahs_noauth
+  source_id: history_west_rwahs
+  source_name: Royal Western Australian Historical Society
+  institution: Royal Western Australian Historical Society
+  official_url: https://histwest.org.au/
+  search_url_template: https://histwest.org.au/?s={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - sitemap
+  - static_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium_high
+  notes: Public page metadata only.
+- route_id: rwahs_affiliates_noauth
+  source_id: rwahs_affiliates
+  source_name: RWAHS Affiliates
+  institution: Royal Western Australian Historical Society
+  official_url: https://histwest.org.au/affiliates/
+  search_url_template: https://histwest.org.au/affiliates/
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: local_history_directory
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - static_html
+  max_pages_per_run: 10
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: discovery_only
+  temporal_value: medium
+  regional_value: high_WA
+  mappability_likelihood: medium
+  notes: Directory route discovery only.
+- route_id: wa_museum_noauth
+  source_id: wa_museum
+  source_name: Western Australian Museum
+  institution: Western Australian Museum
+  official_url: https://museum.wa.gov.au/
+  search_url_template: https://museum.wa.gov.au/search?search={query}
+  state: WA
+  states:
+  - WA
+  source_tier: A
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - sitemap
+  - static_html
+  max_pages_per_run: 25
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium
+  notes: Museum page metadata only.
+- route_id: national_trust_wa_noauth
+  source_id: national_trust_wa
+  source_name: National Trust of Western Australia
+  institution: National Trust of Western Australia
+  official_url: https://www.nationaltrust.org.au/wa/
+  search_url_template: https://www.nationaltrust.org.au/?s={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium
+  notes: Heritage place metadata only.
+- route_id: wa_inherit_noauth
+  source_id: wa_inherit
+  source_name: inHerit WA
+  institution: Heritage Council of Western Australia
+  official_url: https://inherit.dplh.wa.gov.au/
+  search_url_template: https://inherit.dplh.wa.gov.au/Public/Search/PlaceNumber?placeName={query}
+  state: WA
+  states:
+  - WA
+  source_tier: A
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium
+  notes: Do not treat heritage address alone as event map point.
+- route_id: fremantle_prison_noauth
+  source_id: fremantle_prison
+  source_name: Fremantle Prison
+  institution: Fremantle Prison
+  official_url: https://fremantleprison.com.au/
+  search_url_template: https://fremantleprison.com.au/?s={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 15
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium
+  regional_value: high_WA
+  mappability_likelihood: medium
+  notes: Public heritage metadata only.
+- route_id: fremantle_history_centre_noauth
+  source_id: fremantle_history_centre
+  source_name: Fremantle History Centre
+  institution: City of Fremantle
+  official_url: https://www.fremantle.wa.gov.au/fremantle-history-centre
+  search_url_template: https://www.fremantle.wa.gov.au/search?query={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium_high
+  notes: Council local studies metadata only.
+- route_id: carnamah_historical_society_noauth
+  source_id: carnamah_historical_society
+  source_name: Carnamah Historical Society
+  institution: Carnamah Historical Society
+  official_url: https://www.carnamah.com.au/
+  search_url_template: https://www.carnamah.com.au/search?query={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - sitemap
+  - static_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium_high
+  notes: Local history metadata only.
+- route_id: city_of_perth_history_centre_noauth
+  source_id: city_of_perth_history_centre
+  source_name: City of Perth History Centre
+  institution: City of Perth
+  official_url: https://perth.wa.gov.au/
+  search_url_template: https://perth.wa.gov.au/search?query={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium_high
+  notes: Council local studies metadata only.
+- route_id: albany_history_collection_noauth
+  source_id: albany_history_collection
+  source_name: Albany History Collection
+  institution: City of Albany
+  official_url: https://library.albany.wa.gov.au/
+  search_url_template: https://library.albany.wa.gov.au/search?query={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium_high
+  notes: Local studies metadata only.
+- route_id: bunbury_museum_noauth
+  source_id: bunbury_museum
+  source_name: Bunbury Museum and Heritage Centre
+  institution: City of Bunbury
+  official_url: https://www.bunbury.wa.gov.au/museum
+  search_url_template: https://www.bunbury.wa.gov.au/search?query={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium
+  notes: Museum metadata only.
+- route_id: kalgoorlie_boulder_local_history_noauth
+  source_id: kalgoorlie_boulder_local_history
+  source_name: Kalgoorlie-Boulder Local History
+  institution: City of Kalgoorlie-Boulder
+  official_url: https://www.ckb.wa.gov.au/
+  search_url_template: https://www.ckb.wa.gov.au/search?query={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium_high
+  notes: Council local studies metadata only.
+- route_id: broome_kimberley_history_noauth
+  source_id: broome_kimberley_history
+  source_name: Broome and Kimberley History
+  institution: Local history public pages
+  official_url: https://www.broome.wa.gov.au/
+  search_url_template: https://www.broome.wa.gov.au/search?query={query}
+  state: WA
+  states:
+  - WA
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_WA
+  mappability_likelihood: medium_high
+  notes: Council/local history metadata only.
+- route_id: slsa_catalogue_noauth
+  source_id: slsa_catalogue
+  source_name: State Library of South Australia Catalogue
+  institution: State Library of South Australia
+  official_url: https://www.slsa.sa.gov.au/
+  search_url_template: https://www.slsa.sa.gov.au/search?keys={query}
+  state: SA
+  states:
+  - SA
+  source_tier: A
+  route_family: state_library_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - static_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium_high
+  notes: Catalogue metadata only.
+- route_id: slsa_digital_collections_noauth
+  source_id: slsa_digital_collections
+  source_name: State Library of South Australia Digital Collections
+  institution: State Library of South Australia
+  official_url: https://collections.slsa.sa.gov.au/
+  search_url_template: https://collections.slsa.sa.gov.au/find/{query}
+  state: SA
+  states:
+  - SA
+  source_tier: A
+  route_family: state_library_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium_high
+  notes: Digital collection metadata only.
+- route_id: state_records_sa_noauth
+  source_id: state_records_sa
+  source_name: State Records of South Australia
+  institution: State Records of South Australia
+  official_url: https://www.archives.sa.gov.au/
+  search_url_template: https://www.archives.sa.gov.au/search?search={query}
+  state: SA
+  states:
+  - SA
+  source_tier: A
+  route_family: state_archive_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium
+  notes: Archival metadata only.
+- route_id: history_trust_sa_noauth
+  source_id: history_trust_sa
+  source_name: History Trust of South Australia
+  institution: History Trust of South Australia
+  official_url: https://history.sa.gov.au/
+  search_url_template: https://history.sa.gov.au/?s={query}
+  state: SA
+  states:
+  - SA
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - sitemap
+  - static_html
+  max_pages_per_run: 25
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium
+  notes: Public museum/history metadata only.
+- route_id: south_australian_history_network_noauth
+  source_id: south_australian_history_network
+  source_name: South Australian History Network
+  institution: History Trust of South Australia
+  official_url: https://explore.history.sa.gov.au/
+  search_url_template: https://explore.history.sa.gov.au/?s={query}
+  state: SA
+  states:
+  - SA
+  source_tier: B
+  route_family: local_history_directory
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - static_html
+  max_pages_per_run: 10
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: discovery_only
+  temporal_value: medium
+  regional_value: high_SA
+  mappability_likelihood: medium
+  notes: Directory/source discovery only.
+- route_id: sa_heritage_places_database_noauth
+  source_id: sa_heritage_places_database
+  source_name: South Australian Heritage Places Database
+  institution: Government of South Australia
+  official_url: https://maps.sa.gov.au/heritagesearch/
+  search_url_template: https://maps.sa.gov.au/heritagesearch/
+  state: SA
+  states:
+  - SA
+  source_tier: A
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 0
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium
+  notes: Manual search task; do not infer event map points from heritage address alone.
+- route_id: national_trust_sa_noauth
+  source_id: national_trust_sa
+  source_name: National Trust of South Australia
+  institution: National Trust of South Australia
+  official_url: https://www.nationaltrust.org.au/sa/
+  search_url_template: https://www.nationaltrust.org.au/?s={query}
+  state: SA
+  states:
+  - SA
+  source_tier: B
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium
+  notes: Public heritage metadata only.
+- route_id: south_australian_museum_noauth
+  source_id: south_australian_museum
+  source_name: South Australian Museum
+  institution: South Australian Museum
+  official_url: https://www.samuseum.sa.gov.au/
+  search_url_template: https://www.samuseum.sa.gov.au/search?query={query}
+  state: SA
+  states:
+  - SA
+  source_tier: A
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium
+  notes: Museum metadata only.
+- route_id: adelaide_gaol_noauth
+  source_id: adelaide_gaol
+  source_name: Adelaide Gaol
+  institution: Government of South Australia
+  official_url: https://www.adelaidegaol.sa.gov.au/
+  search_url_template: https://www.adelaidegaol.sa.gov.au/search?query={query}
+  state: SA
+  states:
+  - SA
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 15
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium
+  regional_value: high_SA
+  mappability_likelihood: medium
+  notes: Public heritage metadata only.
+- route_id: adelaide_arcade_noauth
+  source_id: adelaide_arcade
+  source_name: Adelaide Arcade
+  institution: Adelaide Arcade
+  official_url: https://adelaidearcade.com.au/
+  search_url_template: https://adelaidearcade.com.au/?s={query}
+  state: SA
+  states:
+  - SA
+  source_tier: C
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - static_html
+  max_pages_per_run: 0
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium
+  regional_value: high_SA
+  mappability_likelihood: medium
+  notes: Manual review; avoid tourism/marketing pages.
+- route_id: city_of_adelaide_archives_noauth
+  source_id: city_of_adelaide_archives
+  source_name: City of Adelaide Archives
+  institution: City of Adelaide
+  official_url: https://www.cityofadelaide.com.au/
+  search_url_template: https://www.cityofadelaide.com.au/search/?query={query}
+  state: SA
+  states:
+  - SA
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium_high
+  notes: Council archive metadata only.
+- route_id: port_adelaide_local_history_noauth
+  source_id: port_adelaide_local_history
+  source_name: Port Adelaide Local History
+  institution: Port Adelaide Enfield Libraries
+  official_url: https://www.cityofpae.sa.gov.au/
+  search_url_template: https://www.cityofpae.sa.gov.au/search?query={query}
+  state: SA
+  states:
+  - SA
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium_high
+  notes: Council local history metadata only.
+- route_id: gawler_history_noauth
+  source_id: gawler_history
+  source_name: Gawler History
+  institution: Gawler local history
+  official_url: https://www.gawler.sa.gov.au/
+  search_url_template: https://www.gawler.sa.gov.au/search?query={query}
+  state: SA
+  states:
+  - SA
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium_high
+  notes: Local history metadata only.
+- route_id: burra_history_noauth
+  source_id: burra_history
+  source_name: Burra History
+  institution: Burra local history
+  official_url: https://www.visitburra.com/
+  search_url_template: https://www.visitburra.com/?s={query}
+  state: SA
+  states:
+  - SA
+  source_tier: C
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - static_html
+  max_pages_per_run: 0
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium
+  regional_value: high_SA
+  mappability_likelihood: medium
+  notes: Manual review to avoid tourism pages.
+- route_id: kapunda_history_noauth
+  source_id: kapunda_history
+  source_name: Kapunda History
+  institution: Kapunda local history
+  official_url: https://www.light.sa.gov.au/
+  search_url_template: https://www.light.sa.gov.au/search?query={query}
+  state: SA
+  states:
+  - SA
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium_high
+  notes: Local history metadata only.
+- route_id: mount_gambier_local_history_noauth
+  source_id: mount_gambier_local_history
+  source_name: Mount Gambier Local History
+  institution: City of Mount Gambier
+  official_url: https://www.mountgambier.sa.gov.au/
+  search_url_template: https://www.mountgambier.sa.gov.au/search?query={query}
+  state: SA
+  states:
+  - SA
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_SA
+  mappability_likelihood: medium_high
+  notes: Council local history metadata only.
+- route_id: library_archives_nt_noauth
+  source_id: library_archives_nt
+  source_name: Library & Archives NT
+  institution: Library & Archives NT
+  official_url: https://lant.nt.gov.au/
+  search_url_template: https://lant.nt.gov.au/search?query={query}
+  state: NT
+  states:
+  - NT
+  source_tier: A
+  route_family: state_library_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - static_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium_high
+  notes: Catalogue/page metadata only.
+- route_id: territory_stories_noauth
+  source_id: territory_stories
+  source_name: Territory Stories
+  institution: Library & Archives NT
+  official_url: https://territorystories.nt.gov.au/
+  search_url_template: https://territorystories.nt.gov.au/discover?query={query}
+  state: NT
+  states:
+  - NT
+  source_tier: A
+  route_family: state_library_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium_high
+  notes: Public metadata only; no PDF text extraction by default.
+- route_id: historical_society_nt_noauth
+  source_id: historical_society_nt
+  source_name: Historical Society of the Northern Territory
+  institution: Historical Society of the Northern Territory
+  official_url: https://www.historicalsocietynt.org.au/
+  search_url_template: https://www.historicalsocietynt.org.au/?s={query}
+  state: NT
+  states:
+  - NT
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - sitemap
+  - static_html
+  max_pages_per_run: 25
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium_high
+  notes: Historical society metadata only.
+- route_id: national_trust_nt_noauth
+  source_id: national_trust_nt
+  source_name: National Trust Northern Territory
+  institution: National Trust Northern Territory
+  official_url: https://www.nationaltrust.org.au/nt/
+  search_url_template: https://www.nationaltrust.org.au/?s={query}
+  state: NT
+  states:
+  - NT
+  source_tier: B
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium
+  notes: Heritage metadata only.
+- route_id: nt_heritage_register_noauth
+  source_id: nt_heritage_register
+  source_name: Northern Territory Heritage Register
+  institution: Northern Territory Government
+  official_url: https://nt.gov.au/property/land/heritage-register
+  search_url_template: https://nt.gov.au/search?query={query}
+  state: NT
+  states:
+  - NT
+  source_tier: A
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium
+  notes: Do not treat heritage address alone as event map point.
+- route_id: nt_place_names_register_noauth_authority_only
+  source_id: nt_place_names_register
+  source_name: Northern Territory Place Names Register
+  institution: Northern Territory Government
+  official_url: https://placenames.nt.gov.au/
+  search_url_template: https://placenames.nt.gov.au/
+  state: NT
+  states:
+  - NT
+  source_tier: A
+  route_family: place_authority
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 0
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: discovery_only
+  temporal_value: low
+  regional_value: high_NT
+  mappability_likelihood: authority_only
+  notes: Authority context only; not narrative evidence.
+- route_id: magnt_noauth
+  source_id: magnt
+  source_name: Museum and Art Gallery of the Northern Territory
+  institution: Museum and Art Gallery of the Northern Territory
+  official_url: https://www.magnt.net.au/
+  search_url_template: https://www.magnt.net.au/search?query={query}
+  state: NT
+  states:
+  - NT
+  source_tier: A
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium
+  notes: Museum metadata only.
+- route_id: darwin_city_libraries_local_history_noauth
+  source_id: darwin_city_libraries_local_history
+  source_name: Darwin City Libraries Local History
+  institution: City of Darwin
+  official_url: https://www.darwin.nt.gov.au/libraries
+  search_url_template: https://www.darwin.nt.gov.au/search?query={query}
+  state: NT
+  states:
+  - NT
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium_high
+  notes: Council local history metadata only.
+- route_id: alice_springs_public_library_local_history_noauth
+  source_id: alice_springs_public_library_local_history
+  source_name: Alice Springs Public Library Local History
+  institution: Alice Springs Town Council
+  official_url: https://alicesprings.nt.gov.au/living/libraries
+  search_url_template: https://alicesprings.nt.gov.au/search?query={query}
+  state: NT
+  states:
+  - NT
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium_high
+  notes: Council local history metadata only.
+- route_id: central_australian_historical_society_noauth
+  source_id: central_australian_historical_society
+  source_name: Central Australian Historical Society
+  institution: Central Australian Historical Society
+  official_url: https://www.cahs.com.au/
+  search_url_template: https://www.cahs.com.au/?s={query}
+  state: NT
+  states:
+  - NT
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 25
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium_high
+  notes: Historical society metadata only.
+- route_id: katherine_museum_noauth
+  source_id: katherine_museum
+  source_name: Katherine Museum
+  institution: Katherine Museum
+  official_url: https://www.katherinemuseum.com/
+  search_url_template: https://www.katherinemuseum.com/?s={query}
+  state: NT
+  states:
+  - NT
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium
+  notes: Museum metadata only.
+- route_id: pine_creek_museum_noauth
+  source_id: pine_creek_museum
+  source_name: Pine Creek Museum
+  institution: Pine Creek local museum
+  official_url: https://pinecreek.nt.gov.au/
+  search_url_template: https://pinecreek.nt.gov.au/search?query={query}
+  state: NT
+  states:
+  - NT
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium
+  notes: Museum/local history metadata only.
+- route_id: tennant_creek_barkly_history_noauth
+  source_id: tennant_creek_barkly_history
+  source_name: Tennant Creek and Barkly History
+  institution: Barkly Regional Council
+  official_url: https://www.barkly.nt.gov.au/
+  search_url_template: https://www.barkly.nt.gov.au/search?query={query}
+  state: NT
+  states:
+  - NT
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_NT
+  mappability_likelihood: medium_high
+  notes: Council/local history metadata only.
+- route_id: libraries_tasmania_noauth
+  source_id: libraries_tasmania
+  source_name: Libraries Tasmania
+  institution: Libraries Tasmania
+  official_url: https://libraries.tas.gov.au/
+  search_url_template: https://libraries.tas.gov.au/search/?query={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: A
+  route_family: state_library_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - static_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium_high
+  notes: Catalogue/page metadata only.
+- route_id: tasmanian_archives_noauth
+  source_id: tasmanian_archives
+  source_name: Tasmanian Archives
+  institution: Libraries Tasmania
+  official_url: https://libraries.tas.gov.au/archive-heritage/
+  search_url_template: https://libraries.tas.gov.au/archive-heritage/search/?query={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: A
+  route_family: state_archive_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium
+  notes: Archival metadata only.
+- route_id: tasmanian_names_index_noauth
+  source_id: tasmanian_names_index
+  source_name: Tasmanian Names Index
+  institution: Libraries Tasmania
+  official_url: https://libraries.tas.gov.au/family-history/Pages/Names-Index.aspx
+  search_url_template: https://libraries.tas.gov.au/family-history/Pages/Names-Index.aspx
+  state: TAS
+  states:
+  - TAS
+  source_tier: A
+  route_family: state_archive_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: manual_search_task
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 0
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: discovery_only
+  temporal_value: low
+  regional_value: high_TAS
+  mappability_likelihood: low
+  notes: Authority/discovery task only.
+- route_id: tasmanian_historical_research_association_noauth
+  source_id: tasmanian_historical_research_association
+  source_name: Tasmanian Historical Research Association
+  institution: Tasmanian Historical Research Association
+  official_url: https://thra.org.au/
+  search_url_template: https://thra.org.au/?s={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - sitemap
+  - static_html
+  max_pages_per_run: 25
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium_high
+  notes: Historical society metadata only.
+- route_id: heritage_tasmania_noauth
+  source_id: heritage_tasmania
+  source_name: Heritage Tasmania
+  institution: Tasmanian Government
+  official_url: https://heritage.tas.gov.au/
+  search_url_template: https://heritage.tas.gov.au/search?query={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: A
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium
+  notes: Do not treat heritage address alone as event map point.
+- route_id: national_trust_tasmania_noauth
+  source_id: national_trust_tasmania
+  source_name: National Trust Tasmania
+  institution: National Trust Tasmania
+  official_url: https://www.nationaltrust.org.au/tas/
+  search_url_template: https://www.nationaltrust.org.au/?s={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: B
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium
+  notes: Heritage metadata only.
+- route_id: port_arthur_historic_site_noauth
+  source_id: port_arthur_historic_site
+  source_name: Port Arthur Historic Site
+  institution: Port Arthur Historic Site Management Authority
+  official_url: https://portarthur.org.au/
+  search_url_template: https://portarthur.org.au/?s={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium
+  regional_value: high_TAS
+  mappability_likelihood: medium
+  notes: Public heritage metadata only; avoid tourism/event marketing.
+- route_id: qvmag_noauth
+  source_id: qvmag
+  source_name: Queen Victoria Museum and Art Gallery
+  institution: QVMAG
+  official_url: https://www.qvmag.tas.gov.au/
+  search_url_template: https://www.qvmag.tas.gov.au/search?query={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium
+  notes: Museum metadata only.
+- route_id: tmag_noauth
+  source_id: tmag
+  source_name: Tasmanian Museum and Art Gallery
+  institution: TMAG
+  official_url: https://www.tmag.tas.gov.au/
+  search_url_template: https://www.tmag.tas.gov.au/search?query={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: A
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium
+  notes: Museum metadata only.
+- route_id: west_coast_heritage_centre_noauth
+  source_id: west_coast_heritage_centre
+  source_name: West Coast Heritage Centre
+  institution: West Coast Heritage Centre
+  official_url: https://www.westcoastheritagecentre.com.au/
+  search_url_template: https://www.westcoastheritagecentre.com.au/?s={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium
+  notes: Museum metadata only.
+- route_id: launceston_historical_society_noauth
+  source_id: launceston_historical_society
+  source_name: Launceston Historical Society
+  institution: Launceston Historical Society
+  official_url: https://launcestonhistory.org.au/
+  search_url_template: https://launcestonhistory.org.au/?s={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 25
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium_high
+  notes: Historical society metadata only.
+- route_id: hobart_local_history_noauth
+  source_id: hobart_local_history
+  source_name: Hobart Local History
+  institution: City of Hobart
+  official_url: https://www.hobartcity.com.au/
+  search_url_template: https://www.hobartcity.com.au/Search?query={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium_high
+  notes: Council local history metadata only.
+- route_id: burnie_devonport_local_history_noauth
+  source_id: burnie_devonport_local_history
+  source_name: Burnie and Devonport Local History
+  institution: North-west Tasmania local history
+  official_url: https://www.devonport.tas.gov.au/
+  search_url_template: https://www.devonport.tas.gov.au/search?query={query}
+  state: TAS
+  states:
+  - TAS
+  source_tier: B
+  route_family: council_local_studies
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_TAS
+  mappability_likelihood: medium_high
+  notes: Council local history metadata only.
+- route_id: act_heritage_library_noauth
+  source_id: act_heritage_library
+  source_name: ACT Heritage Library
+  institution: ACT Libraries
+  official_url: https://www.library.act.gov.au/find/history
+  search_url_template: https://www.library.act.gov.au/search?query={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: A
+  route_family: state_library_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - static_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_ACT
+  mappability_likelihood: medium_high
+  notes: Catalogue/page metadata only.
+- route_id: archivesact_noauth
+  source_id: archivesact
+  source_name: ArchivesACT
+  institution: ACT Government
+  official_url: https://www.archives.act.gov.au/
+  search_url_template: https://www.archives.act.gov.au/search?query={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: A
+  route_family: state_archive_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 30
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_ACT
+  mappability_likelihood: medium
+  notes: Archival metadata only.
+- route_id: act_memory_noauth
+  source_id: act_memory
+  source_name: ACT Memory
+  institution: ACT Government
+  official_url: https://www.act.gov.au/
+  search_url_template: https://www.act.gov.au/search?query={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_ACT
+  mappability_likelihood: medium_high
+  notes: Public history metadata only.
+- route_id: canberra_district_historical_society_noauth
+  source_id: canberra_district_historical_society
+  source_name: Canberra & District Historical Society
+  institution: Canberra & District Historical Society
+  official_url: https://www.canberrahistory.org.au/
+  search_url_template: https://www.canberrahistory.org.au/?s={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: B
+  route_family: local_history_serial
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - sitemap
+  - static_html
+  max_pages_per_run: 25
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_ACT
+  mappability_likelihood: medium_high
+  notes: Historical society metadata only.
+- route_id: act_heritage_register_noauth
+  source_id: act_heritage_register
+  source_name: ACT Heritage Register
+  institution: ACT Government
+  official_url: https://www.environment.act.gov.au/heritage/heritage-register
+  search_url_template: https://www.environment.act.gov.au/search?query={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: A
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_ACT
+  mappability_likelihood: medium
+  notes: Do not treat heritage address alone as event map point.
+- route_id: national_trust_act_noauth
+  source_id: national_trust_act
+  source_name: National Trust ACT
+  institution: National Trust ACT
+  official_url: https://www.nationaltrust.org.au/act/
+  search_url_template: https://www.nationaltrust.org.au/?s={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: B
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_ACT
+  mappability_likelihood: medium
+  notes: Heritage metadata only.
+- route_id: canberra_museum_gallery_noauth
+  source_id: canberra_museum_gallery
+  source_name: Canberra Museum and Gallery
+  institution: Canberra Museum and Gallery
+  official_url: https://www.cmag.com.au/
+  search_url_template: https://www.cmag.com.au/search?query={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: B
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_ACT
+  mappability_likelihood: medium
+  notes: Museum metadata only.
+- route_id: anu_archives_noauth
+  source_id: anu_archives
+  source_name: ANU Archives
+  institution: Australian National University
+  official_url: https://archivescollection.anu.edu.au/
+  search_url_template: https://archivescollection.anu.edu.au/index.php/informationobject/browse?query={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: A
+  route_family: state_archive_catalogue
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 25
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: high_1955_1976
+  regional_value: high_ACT
+  mappability_likelihood: medium
+  notes: Archival metadata only.
+- route_id: anu_open_research_noauth_discovery
+  source_id: anu_open_research
+  source_name: ANU Open Research
+  institution: Australian National University
+  official_url: https://openresearch-repository.anu.edu.au/
+  search_url_template: https://openresearch-repository.anu.edu.au/simple-search?query={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: E
+  route_family: repository_discovery
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: discovery_only
+  probe_modes:
+  - official_search_page
+  max_pages_per_run: 5
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: discovery_only
+  temporal_value: medium
+  regional_value: medium_ACT
+  mappability_likelihood: low
+  notes: Discovery only unless stronger source is identified.
+- route_id: australian_war_memorial_noauth
+  source_id: australian_war_memorial
+  source_name: Australian War Memorial
+  institution: Australian War Memorial
+  official_url: https://www.awm.gov.au/
+  search_url_template: https://www.awm.gov.au/advanced-search?query={query}
+  state: ACT
+  states:
+  - ACT
+  - WA
+  - SA
+  - NT
+  - TAS
+  - NSW
+  - QLD
+  - VIC
+  source_tier: A
+  route_family: museum_heritage_page
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: semi_automated_metadata
+  probe_modes:
+  - official_search_page
+  - catalogue_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: medium
+  mappability_likelihood: low_medium
+  notes: Public collection metadata only; do not extract restricted material.
+- route_id: national_capital_authority_heritage_noauth
+  source_id: national_capital_authority_heritage
+  source_name: National Capital Authority Heritage
+  institution: National Capital Authority
+  official_url: https://www.nca.gov.au/
+  search_url_template: https://www.nca.gov.au/search?query={query}
+  state: ACT
+  states:
+  - ACT
+  source_tier: B
+  route_family: heritage_register
+  noauth_allowed: true
+  api_key_required: false
+  login_required: false
+  paywall_required: false
+  collection_mode: static_html_metadata
+  probe_modes:
+  - static_html
+  max_pages_per_run: 20
+  rate_limit_seconds: 3.0
+  respect_robots: true
+  full_text_allowed: false
+  pdf_text_allowed: false
+  evidence_or_discovery: evidence_possible
+  temporal_value: medium_1955_1976
+  regional_value: high_ACT
+  mappability_likelihood: medium
+  notes: Heritage metadata only.
+- route_id: nfsa_collection
+  source_id: nfsa_collection
+  source_name: NFSA Collection
+  source_tier: A
+  route_family: broadcast_catalogue
+  state: ACT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: australian_screen_online
+  source_id: australian_screen_online
+  source_name: Australian Screen Online
+  source_tier: C
+  route_family: broadcast_catalogue
+  state: ACT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: metadata_and_public_summary
+  collection_mode: metadata_first
+- route_id: abc_archives_public_pages
+  source_id: abc_archives_public_pages
+  source_name: ABC Archives Public Pages
+  source_tier: C
+  route_family: broadcast_catalogue
+  state: ACT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: metadata_and_public_summary
+  collection_mode: metadata_first
+- route_id: slnsw_catalogue
+  source_id: slnsw_catalogue
+  source_name: State Library of NSW Catalogue
+  source_tier: A
+  route_family: state_library_catalogue
+  state: NSW
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: city_of_sydney_archives
+  source_id: city_of_sydney_archives
+  source_name: City of Sydney Archives
+  source_tier: B
+  route_family: council_local_studies
+  state: NSW
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: slq_one_search
+  source_id: slq_one_search
+  source_name: State Library of Queensland One Search
+  source_tier: A
+  route_family: state_library_catalogue
+  state: QLD
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: slv_catalogue
+  source_id: slv_catalogue
+  source_name: State Library Victoria Catalogue
+  source_tier: A
+  route_family: state_library_catalogue
+  state: VIC
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: slwa_catalogue
+  source_id: slwa_catalogue
+  source_name: State Library of Western Australia Catalogue
+  source_tier: A
+  route_family: state_library_catalogue
+  state: WA
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: history_west_rwahs
+  source_id: history_west_rwahs
+  source_name: History West / RWAHS
+  source_tier: B
+  route_family: local_history_serial
+  state: WA
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: manual_metadata_review
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: wa_museum_collections
+  source_id: wa_museum_collections
+  source_name: Western Australian Museum Collections
+  source_tier: B
+  route_family: museum_heritage_page
+  state: WA
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: metadata_and_public_summary
+  collection_mode: metadata_first
+- route_id: wa_heritage_inherit
+  source_id: wa_heritage_inherit
+  source_name: WA Heritage InHerit
+  source_tier: A
+  route_family: heritage_register
+  state: WA
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: metadata_and_public_summary
+  collection_mode: metadata_first
+- route_id: fremantle_history_centre
+  source_id: fremantle_history_centre
+  source_name: Fremantle History Centre
+  source_tier: B
+  route_family: council_local_studies
+  state: WA
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: slsa_catalogue
+  source_id: slsa_catalogue
+  source_name: State Library of South Australia Catalogue
+  source_tier: A
+  route_family: state_library_catalogue
+  state: SA
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: south_australian_history_network
+  source_id: south_australian_history_network
+  source_name: South Australian History Network
+  source_tier: B
+  route_family: local_history_serial
+  state: SA
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: manual_metadata_review
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: sa_heritage_places_database
+  source_id: sa_heritage_places_database
+  source_name: South Australian Heritage Places Database
+  source_tier: A
+  route_family: heritage_register
+  state: SA
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: metadata_and_public_summary
+  collection_mode: metadata_first
+- route_id: city_of_adelaide_archives
+  source_id: city_of_adelaide_archives
+  source_name: City of Adelaide Archives
+  source_tier: B
+  route_family: council_local_studies
+  state: SA
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: library_archives_nt_catalogue
+  source_id: library_archives_nt_catalogue
+  source_name: Library & Archives NT Catalogue
+  source_tier: A
+  route_family: state_library_catalogue
+  state: NT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: historical_society_nt
+  source_id: historical_society_nt
+  source_name: Historical Society of the Northern Territory
+  source_tier: B
+  route_family: local_history_serial
+  state: NT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: manual_metadata_review
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: nt_heritage_register
+  source_id: nt_heritage_register
+  source_name: NT Heritage Register
+  source_tier: A
+  route_family: heritage_register
+  state: NT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: metadata_and_public_summary
+  collection_mode: metadata_first
+- route_id: darwin_city_libraries_local_history
+  source_id: darwin_city_libraries_local_history
+  source_name: Darwin City Libraries Local History
+  source_tier: B
+  route_family: council_local_studies
+  state: NT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: alice_springs_public_library_local_history
+  source_id: alice_springs_public_library_local_history
+  source_name: Alice Springs Public Library Local History
+  source_tier: B
+  route_family: council_local_studies
+  state: NT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: libraries_tasmania_catalogue
+  source_id: libraries_tasmania_catalogue
+  source_name: Libraries Tasmania Catalogue
+  source_tier: A
+  route_family: state_library_catalogue
+  state: TAS
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: tasmanian_historical_research_association
+  source_id: tasmanian_historical_research_association
+  source_name: Tasmanian Historical Research Association
+  source_tier: B
+  route_family: local_history_serial
+  state: TAS
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: manual_metadata_review
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: heritage_tasmania_register
+  source_id: heritage_tasmania_register
+  source_name: Heritage Tasmania Register
+  source_tier: A
+  route_family: heritage_register
+  state: TAS
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: metadata_and_public_summary
+  collection_mode: metadata_first
+- route_id: port_arthur_historic_site
+  source_id: port_arthur_historic_site
+  source_name: Port Arthur Historic Site
+  source_tier: B
+  route_family: museum_heritage_page
+  state: TAS
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: public_summary
+  collection_mode: metadata_first
+- route_id: act_heritage_library
+  source_id: act_heritage_library
+  source_name: ACT Heritage Library
+  source_tier: A
+  route_family: state_library_catalogue
+  state: ACT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: canberra_district_historical_society
+  source_id: canberra_district_historical_society
+  source_name: Canberra & District Historical Society
+  source_tier: B
+  route_family: local_history_serial
+  state: ACT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: manual_metadata_review
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first
+- route_id: act_heritage_register
+  source_id: act_heritage_register
+  source_name: ACT Heritage Register
+  source_tier: A
+  route_family: heritage_register
+  state: ACT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: metadata_and_public_summary
+  collection_mode: metadata_first
+- route_id: canberra_museum_gallery
+  source_id: canberra_museum_gallery
+  source_name: Canberra Museum and Gallery
+  source_tier: B
+  route_family: museum_heritage_page
+  state: ACT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: public_html
+  allowed_content_mode: metadata_and_public_summary
+  collection_mode: metadata_first
+- route_id: australian_war_memorial_collection
+  source_id: australian_war_memorial_collection
+  source_name: Australian War Memorial Collection
+  source_tier: A
+  route_family: museum_heritage_page
+  state: ACT
+  official_url: ''
+  evidence_or_discovery: evidence_possible
+  access_method: catalogue_manual_or_html
+  allowed_content_mode: metadata_only
+  collection_mode: metadata_first

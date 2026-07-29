@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-07-06T15:34:32+00:00",
+  "git_commit": "b1f339d0672295aaa89ce678fe624510fea4b4dd",
+  "git_dirty_summary": {
+    "dirty_file_count": 422,
+    "is_dirty": true,
+    "status_available": true
+  },
+  "inputs": [
+    {
+      "bytes": 173666304,
+      "exists": true,
+      "mtime_utc": "2026-07-06T14:56:22+00:00",
+      "path": "data/processed/australian_humanoid_figures.sqlite",
+      "role": "input",
+      "sha256": "4648e5091e521e6f177c16a918507c342dc2d80851579facfb416b602de02d83"
+    },
+    {
+      "bytes": 1585,
+      "exists": true,
+      "mtime_utc": "2026-07-06T14:00:34+00:00",
+      "path": "config/constraint_decision.yml",
+      "role": "input",
+      "sha256": "c7b32a40ef08735892d25bcf2755bd518919e1908e69563fbbaac79394c83209"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 36529,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:32+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_manual_audit_sample.csv",
+      "role": "output",
+      "sha256": "4f9859232faab9fe9a5c4e16c319418e18488de06f6e746841464406ffce6eba"
+    },
+    {
+      "bytes": 711,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:32+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_manual_audit_sample_manifest.json",
+      "role": "output",
+      "sha256": "d678d0edd7667f31094063d9f5021fff918abbcedd92776c7a0fe321e94570d6"
+    },
+    {
+      "bytes": 824,
+      "exists": true,
+      "mtime_utc": "2026-07-06T15:34:32+00:00",
+      "path": "data/releases/paper_hss_discovery_not_evidence_20260706/paper_manual_audit_sample.md",
+      "role": "output",
+      "sha256": "8fb8c46335f8032548ee687a3f1a5d282a13775165d377e7c31d436f4c942d3e"
+    }
+  ],
+  "script": "generate_audit_sample.py",
+  "script_version": "2026-07-06.1",
+  "warnings": []
+}

@@ -1,10 +1,13 @@
 import Link from "next/link";
 import {
+  ArchiveIndexStructuredData,
   ArchivePublicationPage,
   PublicationSection,
 } from "@/components/archive-publication";
+import { CitationSamples } from "@/components/citation-samples";
 import { archiveInventory, loadArchiveData } from "@/lib/archive-catalog";
 import { archivePageMetadata } from "@/lib/archive-metadata";
+import { buildProjectCitations } from "@/lib/citations";
 import { SITE, siteConfig } from "@/lib/site";
 
 export const metadata = archivePageMetadata({
@@ -19,7 +22,7 @@ export default async function CitePage() {
   const data = await loadArchiveData();
   const inventory = archiveInventory(data);
   const generatedDate = data.generated_at.slice(0, 10);
-  const citation = `Pan, Dai. “AusFigures: Australian Public Text Archive of Supernatural Humanoid Narratives and Encounters.” Public archive export generated ${generatedDate}. https://ausfigures.com/`;
+  const citationSamples = buildProjectCitations(generatedDate);
 
   return (
     <ArchivePublicationPage
@@ -38,8 +41,18 @@ export default async function CitePage() {
       ]}
       notice="AusFigures records the existence and context of public texts. It does not verify supernatural claims and is not an official repository of restricted cultural knowledge."
     >
-      <PublicationSection title="Suggested project citation">
-        <blockquote className="publication-excerpt">{citation}</blockquote>
+      <ArchiveIndexStructuredData
+        path="/cite"
+        title="Cite AusFigures"
+        description="Citation, attribution, version, scope, and reuse guidance for the AusFigures Australian supernatural humanoid public-text archive."
+        schemaType="TechArticle"
+      />
+      <PublicationSection title="Copy a project citation">
+        <p>
+          Choose the format required by your institution. These samples identify the live public export date without
+          claiming a DOI or peer-reviewed edition.
+        </p>
+        <CitationSamples samples={citationSamples} compact />
       </PublicationSection>
       <PublicationSection title="Record-level citation">
         <p>

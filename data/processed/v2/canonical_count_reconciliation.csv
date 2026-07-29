@@ -1,0 +1,8 @@
+population_name,source_kind,table_or_file,total_rows,distinct_record_ids,distinct_narrative_unit_ids,rows_with_lat_lng,notes
+canonical_frontend_public_records,frontend_json,public/data/frontend-data.json.records,4265,4265,0,1593,public frontend records
+canonical_frontend_public_map_rows,frontend_json,public/data/frontend-data.json.map_points,1593,1593,0,1593,public frontend map points
+db_legacy_mapped_like_rows,export_csv,data/exports/v2/narrative_locations_review.csv,4393,916,4389,1482,partitioned internal mapped-like rows
+db_public_records,sqlite,records,4638,,,,schema-level population count
+db_internal_location_rows,sqlite,narrative_locations,4393,,,,schema-level population count
+db_candidate_location_rows,sqlite,collection_candidates,0,,,,schema-level population count
+db_geocode_review_rows,sqlite,geocode_review_queue,6,,,,schema-level population count

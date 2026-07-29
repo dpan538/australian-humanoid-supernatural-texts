@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { SITE, absoluteUrl, siteConfig, socialImageMetadata } from "@/lib/site";
-import { seoTopics, topicUrl } from "@/lib/seo-topics";
 import "./globals.css";
 import "./mobile.css";
 
@@ -49,12 +49,54 @@ const structuredData = {
         name: siteConfig.creator,
       },
       isAccessibleForFree: true,
-      hasPart: seoTopics.map((topic) => ({
-        "@type": "CollectionPage",
-        name: topic.title,
-        url: topicUrl(topic.slug),
-        about: topic.queryTerms,
-      })),
+      hasPart: [
+        {
+          "@type": "CollectionPage",
+          name: "Australian Supernatural Humanoid Encyclopedia",
+          url: absoluteUrl("/figures"),
+          about: [
+            "Australian supernatural humanoid figures",
+            "rare Australian folklore figures",
+            "public-text figure categories",
+          ],
+        },
+        {
+          "@type": "CollectionPage",
+          name: "AusFigures Public Records",
+          url: absoluteUrl("/records"),
+          about: "Source-grounded Australian supernatural humanoid public records",
+        },
+        {
+          "@type": "DefinedTermSet",
+          name: "AusFigures Narrative Types",
+          url: absoluteUrl("/narrative-types"),
+          about: "Research classifications for public-text narrative forms",
+        },
+        {
+          "@type": "CollectionPage",
+          name: "AusFigures Source Collections",
+          url: absoluteUrl("/sources"),
+          about: "Public source organisations and archive source collections",
+        },
+        {
+          "@type": "CollectionPage",
+          name: "AusFigures Place Collections",
+          url: absoluteUrl("/places"),
+          about: "Australian state, territory, and public-place archive groupings",
+        },
+        {
+          "@type": "CollectionPage",
+          name: "AusFigures Period Collections",
+          url: absoluteUrl("/periods"),
+          about: "Historical and contemporary archive period groupings",
+        },
+        {
+          "@type": "AboutPage",
+          name: "AusFigures Research Method",
+          url: absoluteUrl("/about"),
+          about: "Source policy, research method, audit protocol, mapping limits, and ethics",
+        },
+      ],
     },
     {
       "@type": "Dataset",
@@ -90,6 +132,33 @@ const structuredData = {
       license: licenseUrl,
       measurementTechnique:
         "Source register review, public metadata review, mapped display-location eligibility, and static frontend export.",
+      variableMeasured: [
+        {
+          "@type": "PropertyValue",
+          name: "Public source and provenance",
+          description: "Source organisation, source family, source type, URL, publication, and authorship context.",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Narrative classification",
+          description: "Archive coding for supernatural humanoid narrative type and source framing.",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Public-text figure label",
+          description: "Printed and normalised discovery labels retained with source context.",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Temporal and geographic context",
+          description: "Publication date, archive period, state or territory, and reviewed display-location context.",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Publicness and indexing status",
+          description: "Public-source eligibility, ethics review, and search-index readiness.",
+        },
+      ],
       includedInDataCatalog: {
         "@type": "DataCatalog",
         name: siteConfig.siteName,
@@ -140,7 +209,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE.name} - ${SITE.fullTitle}`,
     description: siteConfig.shortDescription,
-    images: [twitterImage.url],
+    images: [twitterImage],
   },
   appleWebApp: {
     capable: true,
@@ -170,7 +239,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#030504" },
-    { media: "(prefers-color-scheme: light)", color: "#f7f4ec" },
+    { media: "(prefers-color-scheme: light)", color: "#d8ccb2" },
   ],
 };
 
@@ -182,8 +251,9 @@ export default function RootLayout({
   return (
     <html lang="en-AU" suppressHydrationWarning>
       <head>
-        <script
+        <Script
           id="ausfigures-theme-bootstrap"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
 try {
@@ -198,8 +268,9 @@ try {
             `,
           }}
         />
-        <script
+        <Script
           id="ausfigures-global-structured-data"
+          strategy="beforeInteractive"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),

@@ -1,0 +1,10 @@
+{
+  "findings": [
+    {
+      "check": "paper_release_validation",
+      "details": "all validation checks passed",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}
