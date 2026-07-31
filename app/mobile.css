@@ -3802,7 +3802,7 @@
     margin: 0;
     font-size: clamp(2rem, 9vw, 2.85rem);
     font-weight: 540;
-    letter-spacing: -0.045em;
+    letter-spacing: -0.075em;
     line-height: 0.92;
   }
 
