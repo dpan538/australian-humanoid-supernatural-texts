@@ -48,6 +48,27 @@
     --m-nav-line: rgba(247, 242, 232, 0.16);
     --m-nav-light: rgba(247, 242, 232, 0.12);
     --m-font: Inter, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    /* Mobile type contract: each semantic role has one responsive scale. */
+    --m-type-label-size: 0.875rem;
+    --m-type-label-weight: 720;
+    --m-type-label-tracking: 0.045em;
+    --m-type-label-leading: 1.2;
+    --m-type-page-title-size: clamp(2rem, 8.8vw, 2.7rem);
+    --m-type-page-title-weight: 540;
+    --m-type-page-title-tracking: -0.025em;
+    --m-type-page-title-leading: 1;
+    --m-type-body-size: 1rem;
+    --m-type-body-weight: 450;
+    --m-type-body-tracking: 0;
+    --m-type-body-leading: 1.45;
+    --m-type-card-title-size: clamp(1.28rem, 5.5vw, 1.68rem);
+    --m-type-card-title-weight: 570;
+    --m-type-card-title-tracking: -0.02em;
+    --m-type-card-title-leading: 1.08;
+    --m-type-card-metric-size: clamp(1rem, 4.8vw, 1.3rem);
+    --m-type-card-metric-weight: 570;
+    --m-type-number-tracking: -0.045em;
+    --m-type-number-leading: 0.9;
     --m-ease: cubic-bezier(0.22, 1, 0.36, 1);
     --m-fast: 240ms;
     --m-normal: 520ms;
@@ -989,20 +1010,20 @@
 
   .mobile-expand-title small {
     color: inherit;
-    font-size: 0.75rem;
-    font-weight: 680;
-    letter-spacing: 0.05em;
-    line-height: 1.2;
+    font-size: var(--m-type-label-size);
+    font-weight: var(--m-type-label-weight);
+    letter-spacing: var(--m-type-label-tracking);
+    line-height: var(--m-type-label-leading);
     opacity: 0.7;
     text-transform: uppercase;
   }
 
   .mobile-expand-title b {
     color: inherit;
-    font-size: clamp(1.28rem, 5.5vw, 1.68rem);
-    font-weight: 570;
-    letter-spacing: -0.01em;
-    line-height: 1.08;
+    font-size: var(--m-type-card-title-size);
+    font-weight: var(--m-type-card-title-weight);
+    letter-spacing: var(--m-type-card-title-tracking);
+    line-height: var(--m-type-card-title-leading);
     overflow-wrap: normal;
     word-break: normal;
   }
@@ -1012,10 +1033,10 @@
     align-self: start;
     max-width: 100%;
     color: inherit;
-    font-size: clamp(1rem, 4.8vw, 1.3rem);
-    font-weight: 570;
-    letter-spacing: -0.01em;
-    line-height: 1.08;
+    font-size: var(--m-type-card-metric-size);
+    font-weight: var(--m-type-card-metric-weight);
+    letter-spacing: var(--m-type-card-title-tracking);
+    line-height: var(--m-type-card-title-leading);
     overflow-wrap: anywhere;
   }
 
@@ -1281,25 +1302,27 @@
     background: var(--m-blue);
   }
 
-  .mobile-map-heading span,
-  .density-header span,
-  .mobile-dashboard-hero > span,
-  .source-header-title > span,
-  .mobile-about-heading > span,
-  .mobile-figures-intro > span {
+  .mobile-archive-shell .mobile-map-heading span,
+  .mobile-archive-shell .density-header span,
+  .mobile-archive-shell .mobile-dashboard-hero > span,
+  .mobile-archive-shell .source-header-title > span,
+  .mobile-archive-shell .mobile-about-heading > span,
+  .mobile-archive-shell .mobile-figure-directory-intro > span,
+  .mobile-archive-shell .mobile-figures-intro > span {
     color: inherit;
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.07em;
+    font-size: var(--m-type-label-size);
+    font-weight: var(--m-type-label-weight);
+    letter-spacing: var(--m-type-label-tracking);
+    line-height: var(--m-type-label-leading);
     text-transform: uppercase;
   }
 
-  .mobile-map-heading b {
+  .mobile-archive-shell .mobile-map-heading b {
     max-width: 300px;
-    font-size: clamp(1.9rem, 8.4vw, 2.55rem);
-    font-weight: 560;
-    letter-spacing: -0.015em;
-    line-height: 1;
+    font-size: var(--m-type-page-title-size);
+    font-weight: var(--m-type-page-title-weight);
+    letter-spacing: var(--m-type-page-title-tracking);
+    line-height: var(--m-type-page-title-leading);
   }
 
   .mobile-hero-badges {
@@ -1985,9 +2008,10 @@
 
   .density-header-title > span {
     align-self: start;
-    font-size: 0.76rem;
-    font-weight: 760;
-    letter-spacing: 0.045em;
+    font-size: var(--m-type-label-size);
+    font-weight: var(--m-type-label-weight);
+    letter-spacing: var(--m-type-label-tracking);
+    line-height: var(--m-type-label-leading);
   }
 
   .density-header-title > strong {
@@ -1996,16 +2020,17 @@
     font-size: clamp(2.65rem, 13vw, 3.8rem);
     font-weight: 500;
     font-variant-numeric: tabular-nums;
-    letter-spacing: -0.055em;
-    line-height: 0.84;
+    letter-spacing: var(--m-type-number-tracking);
+    line-height: var(--m-type-number-leading);
   }
 
   .density-header-title p {
     margin: 0;
     color: inherit;
-    font-size: 0.9rem;
-    font-weight: 520;
-    line-height: 1.2;
+    font-size: var(--m-type-body-size);
+    font-weight: var(--m-type-body-weight);
+    letter-spacing: var(--m-type-body-tracking);
+    line-height: 1.25;
   }
 
   .density-header-stats {
@@ -2121,7 +2146,7 @@
 
   .mobile-density-overview-card {
     margin-top: var(--m-gap-3);
-    min-height: 254px;
+    min-height: 292px;
     padding: 0;
     display: block;
     overflow: clip;
@@ -2133,7 +2158,7 @@
 
   .mobile-annual-flip {
     width: 100%;
-    min-height: 254px;
+    min-height: 292px;
     padding: 0;
     display: block;
     color: inherit;
@@ -2156,7 +2181,7 @@
 
   .mobile-annual-flip-inner {
     position: relative;
-    min-height: 254px;
+    min-height: 292px;
     display: block;
     transform-style: preserve-3d;
     transition: transform var(--m-slow) var(--m-ease);
@@ -2179,7 +2204,7 @@
   }
 
   .mobile-annual-face-front {
-    grid-template-rows: auto minmax(0, 1fr) 38px auto;
+    grid-template-rows: auto minmax(132px, 1fr) 42px auto;
     gap: 8px;
   }
 
@@ -2229,6 +2254,7 @@
     width: 100%;
     height: 132px;
     align-self: end;
+    overflow: hidden;
   }
 
   .density-area-public {
@@ -2250,7 +2276,7 @@
   .mobile-annual-axis {
     position: relative;
     display: block;
-    min-height: 38px;
+    min-height: 42px;
     border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent);
   }
 
@@ -2381,139 +2407,23 @@
     min-height: 146px;
   }
 
-  .density-bands > .mobile-expand-card,
+  :root .mobile-archive-shell .density-bands > .mobile-expand-card,
   .density-band .mobile-expand-trigger {
-    min-height: 170px;
+    min-height: 112px;
+  }
+
+  .density-band .mobile-expand-trigger {
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "title icon"
+      "metric metric";
+    gap: 8px 12px;
   }
 
   .density-band .mobile-expand-title b {
-    font-size: clamp(1.22rem, 5.2vw, 1.5rem);
+    font-size: var(--m-type-card-title-size);
     overflow-wrap: normal;
     word-break: normal;
-  }
-
-  .mobile-density-period-viz {
-    width: 100%;
-    height: 58px;
-    display: block;
-    overflow: hidden;
-    color: currentColor;
-  }
-
-  .mobile-density-period-viz svg {
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .density-viz-base {
-    opacity: 0.16;
-    stroke-width: 8;
-  }
-
-  .density-viz-volume {
-    transform-origin: center;
-    transform: rotate(-90deg);
-    opacity: 0.92;
-    stroke-width: 8;
-  }
-
-  .density-viz-rule {
-    opacity: 0.25;
-    stroke-width: 2;
-  }
-
-  .mobile-density-period-viz text {
-    fill: currentColor;
-    stroke: none;
-    font-family: var(--m-font);
-    font-size: 0.68rem;
-    font-weight: 760;
-  }
-
-  .mobile-density-period-viz.is-composition {
-    display: grid;
-    grid-template-rows: 28px auto;
-    align-content: center;
-    gap: 8px;
-  }
-
-  .mobile-density-period-viz.is-composition > span {
-    width: 100%;
-    height: 28px;
-    display: block;
-    overflow: hidden;
-    border-radius: 999px;
-    background: color-mix(in srgb, currentColor 20%, transparent);
-  }
-
-  .mobile-density-period-viz.is-composition > span i {
-    width: calc(var(--density-mapped) * 100%);
-    min-width: 8px;
-    height: 100%;
-    display: block;
-    border-radius: 999px;
-    background: currentColor;
-  }
-
-  .mobile-density-period-viz.is-composition small {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 6px;
-    font-size: 0.64rem;
-    font-weight: 650;
-  }
-
-  .mobile-density-period-viz.is-composition small b {
-    font-size: 0.84rem;
-  }
-
-  .mobile-density-period-viz.is-rank {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 2px 12px;
-  }
-
-  .mobile-density-period-viz.is-rank > strong {
-    grid-row: 1 / 3;
-    font-size: 2.7rem;
-    font-weight: 520;
-    letter-spacing: -0.06em;
-    line-height: 0.8;
-  }
-
-  .mobile-density-period-viz.is-rank > span {
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 4px;
-  }
-
-  .mobile-density-period-viz.is-rank i {
-    height: 26px;
-    display: block;
-    border-radius: 999px;
-    background: color-mix(in srgb, currentColor 18%, transparent);
-  }
-
-  .mobile-density-period-viz.is-rank i.is-active {
-    background: currentColor;
-  }
-
-  .mobile-density-period-viz.is-rank small {
-    font-size: 0.62rem;
-    font-weight: 720;
-    letter-spacing: 0.04em;
-  }
-
-  .mobile-density-period-viz.is-mapped-arc .density-viz-volume {
-    transform: none;
   }
 
   .density-band .mobile-card-stats > div:nth-child(3) {
@@ -2562,16 +2472,16 @@
   }
 
   .mobile-dashboard-hero > span {
-    letter-spacing: 0.035em;
+    letter-spacing: var(--m-type-label-tracking);
   }
 
-  .mobile-dashboard-hero h2 {
+  .mobile-archive-shell .mobile-dashboard-hero h2 {
     margin: 0;
     color: inherit;
-    font-size: clamp(1.9rem, 8.8vw, 2.7rem);
-    font-weight: 560;
-    letter-spacing: -0.005em;
-    line-height: 1;
+    font-size: var(--m-type-page-title-size);
+    font-weight: var(--m-type-page-title-weight);
+    letter-spacing: var(--m-type-page-title-tracking);
+    line-height: var(--m-type-page-title-leading);
   }
 
   .mobile-dashboard-hero > div > strong {
@@ -2579,16 +2489,18 @@
     font-size: clamp(2.9rem, 15vw, 4.5rem);
     font-weight: 560;
     font-variant-numeric: tabular-nums;
-    letter-spacing: 0.005em;
-    line-height: 0.9;
+    letter-spacing: var(--m-type-number-tracking);
+    line-height: var(--m-type-number-leading);
   }
 
   .mobile-dashboard-hero > p {
     max-width: 360px;
     margin: 0;
     color: color-mix(in srgb, currentColor 72%, transparent);
-    font-size: 1rem;
-    line-height: 1.46;
+    font-size: var(--m-type-body-size);
+    font-weight: var(--m-type-body-weight);
+    letter-spacing: var(--m-type-body-tracking);
+    line-height: var(--m-type-body-leading);
   }
 
   .mobile-dashboard-analysis-grid {
@@ -2832,14 +2744,14 @@
     gap: 10px;
   }
 
-  .source-header-title h2 {
+  :root .mobile-archive-shell .source-terminal-header .source-header-title h2 {
     max-width: 280px;
     margin: 0;
     color: inherit;
-    font-size: clamp(2rem, 9.6vw, 3rem);
-    font-weight: 560;
-    letter-spacing: -0.015em;
-    line-height: 1;
+    font-size: var(--m-type-page-title-size);
+    font-weight: var(--m-type-page-title-weight);
+    letter-spacing: var(--m-type-page-title-tracking);
+    line-height: var(--m-type-page-title-leading);
   }
 
   .source-mobile-intro {
@@ -2847,9 +2759,10 @@
     max-width: 360px;
     margin: 0;
     color: color-mix(in srgb, currentColor 76%, transparent);
-    font-size: 0.94rem;
-    font-weight: 460;
-    line-height: 1.5;
+    font-size: var(--m-type-body-size);
+    font-weight: var(--m-type-body-weight);
+    letter-spacing: var(--m-type-body-tracking);
+    line-height: var(--m-type-body-leading);
   }
 
   .mobile-source-visual-grid {
@@ -3091,22 +3004,23 @@
     background: var(--m-pink);
   }
 
-  .mobile-about-heading h1 {
+  .mobile-archive-shell .mobile-about-heading h1 {
     margin: 0;
     color: inherit;
-    font-size: clamp(2.1rem, 9.4vw, 3.1rem);
-    font-weight: 540;
-    letter-spacing: -0.035em;
-    line-height: 1;
+    font-size: var(--m-type-page-title-size);
+    font-weight: var(--m-type-page-title-weight);
+    letter-spacing: var(--m-type-page-title-tracking);
+    line-height: var(--m-type-page-title-leading);
   }
 
   .mobile-about-heading p {
     max-width: 360px;
     margin: 0;
     color: inherit;
-    font-size: 0.94rem;
-    font-weight: 460;
-    line-height: 1.38;
+    font-size: var(--m-type-body-size);
+    font-weight: var(--m-type-body-weight);
+    letter-spacing: var(--m-type-body-tracking);
+    line-height: var(--m-type-body-leading);
   }
 
   .about-status-panel {
@@ -3793,25 +3707,28 @@
   }
 
   .mobile-figure-directory-intro > span {
-    font-size: 0.72rem;
-    font-weight: 780;
-    letter-spacing: 0.045em;
+    font-size: var(--m-type-label-size);
+    font-weight: var(--m-type-label-weight);
+    letter-spacing: var(--m-type-label-tracking);
+    line-height: var(--m-type-label-leading);
   }
 
-  .mobile-figure-directory-intro h2 {
+  .mobile-archive-shell .mobile-figure-directory-intro h2 {
     margin: 0;
-    font-size: clamp(2rem, 9vw, 2.85rem);
-    font-weight: 540;
-    letter-spacing: -0.075em;
-    line-height: 0.92;
+    font-size: var(--m-type-page-title-size);
+    font-weight: var(--m-type-page-title-weight);
+    letter-spacing: var(--m-type-page-title-tracking);
+    line-height: var(--m-type-page-title-leading);
   }
 
   .mobile-figure-directory-intro p {
     max-width: 34ch;
     margin: 0;
     color: color-mix(in srgb, currentColor 70%, transparent);
-    font-size: 0.96rem;
-    line-height: 1.42;
+    font-size: var(--m-type-body-size);
+    font-weight: var(--m-type-body-weight);
+    letter-spacing: var(--m-type-body-tracking);
+    line-height: var(--m-type-body-leading);
   }
 
   .mobile-figure-directory-intro > div {
@@ -3826,8 +3743,8 @@
   .mobile-figure-directory-intro > div strong {
     font-size: 2.35rem;
     font-weight: 540;
-    letter-spacing: -0.055em;
-    line-height: 0.84;
+    letter-spacing: var(--m-type-number-tracking);
+    line-height: var(--m-type-number-leading);
   }
 
   .mobile-figure-directory-intro > div small,
@@ -3981,14 +3898,14 @@
     gap: 12px;
   }
 
-  .mobile-figures-intro-heading h2 {
+  .mobile-archive-shell .mobile-figures-intro-heading h2 {
     min-width: 0;
     margin: 0;
     color: inherit;
-    font-size: clamp(1.9rem, 8.8vw, 2.65rem);
-    font-weight: 540;
-    letter-spacing: -0.01em;
-    line-height: 1;
+    font-size: var(--m-type-page-title-size);
+    font-weight: var(--m-type-page-title-weight);
+    letter-spacing: var(--m-type-page-title-tracking);
+    line-height: var(--m-type-page-title-leading);
     overflow-wrap: normal;
     text-wrap: balance;
     word-break: normal;
@@ -4000,8 +3917,8 @@
     color: var(--m-black);
     font-size: clamp(2.25rem, 11vw, 3.25rem);
     font-weight: 520;
-    letter-spacing: -0.02em;
-    line-height: 0.95;
+    letter-spacing: var(--m-type-number-tracking);
+    line-height: var(--m-type-number-leading);
   }
 
   .mobile-figures-summary-toggle {
@@ -4022,7 +3939,10 @@
     display: block;
     max-height: calc(6 * 1.52em);
     overflow: hidden;
-    font-size: 1rem;
+    font-size: var(--m-type-body-size);
+    font-weight: var(--m-type-body-weight);
+    letter-spacing: var(--m-type-body-tracking);
+    line-height: var(--m-type-body-leading);
     font-weight: 450;
     line-height: 1.52;
     transition: max-height var(--m-normal) var(--m-ease);
@@ -4581,15 +4501,63 @@
     background: transparent !important;
     text-decoration: none;
     transform-origin: center;
+    isolation: isolate;
     transition:
       color var(--m-normal) var(--m-ease),
       transform var(--m-fast) var(--m-ease);
+  }
+
+  .mobile-archive-link::before,
+  .mobile-archive-link::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition:
+      opacity var(--m-normal) var(--m-ease),
+      transform var(--m-normal) var(--m-ease);
+  }
+
+  .mobile-archive-link::before {
+    inset: 0;
+    border: 1px solid rgba(247, 242, 232, 0.08);
+    border-radius: inherit;
+    background: var(--m-nav-light);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 8px 20px rgba(0, 0, 0, 0.16);
+    transform: scale(0.72);
+  }
+
+  .mobile-archive-link::after {
+    top: 3px;
+    left: 50%;
+    width: 20px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--m-paper);
+    box-shadow: 0 5px 15px rgba(247, 242, 232, 0.28);
+    transform: translateX(-50%) scaleX(0.55);
   }
 
   .mobile-archive-link.is-active {
     color: var(--m-paper) !important;
     background: transparent !important;
     box-shadow: none;
+  }
+
+  .mobile-archive-link.is-active::before,
+  .mobile-archive-link.is-active::after {
+    opacity: 1;
+  }
+
+  .mobile-archive-link.is-active::before {
+    transform: scale(1);
+  }
+
+  .mobile-archive-link.is-active::after {
+    transform: translateX(-50%) scaleX(1);
   }
 
   :root[data-theme="light"] .mobile-archive-link.is-active {
@@ -4625,7 +4593,7 @@
   }
 
   .mobile-archive-link.is-active .mobile-nav-icon {
-    transform: translateY(-2px) scale(1.12);
+    transform: scale(1.12);
   }
 
   .mobile-archive-link.is-pressing {
@@ -4660,38 +4628,8 @@
     }
 
     100% {
-      transform: translateY(-2px) scale(1.12) rotate(0);
+      transform: translateY(0) scale(1.12) rotate(0);
     }
-  }
-
-  .mobile-nav-spotlight {
-    position: absolute;
-    z-index: 1;
-    top: 4px;
-    bottom: auto;
-    left: 0;
-    width: clamp(62px, 18vw, 76px);
-    height: calc(100% - 8px);
-    border: 1px solid rgba(247, 242, 232, 0.08);
-    border-radius: 999px;
-    background: var(--m-nav-light);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      0 8px 20px rgba(0, 0, 0, 0.16);
-    pointer-events: none;
-  }
-
-  .mobile-nav-spotlight::before {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 50%;
-    width: 26px;
-    height: 4px;
-    border-radius: 999px;
-    background: var(--m-paper);
-    box-shadow: 0 5px 15px rgba(247, 242, 232, 0.28);
-    transform: translateX(-50%);
   }
 
   @supports (-webkit-touch-callout: none) {
@@ -4737,7 +4675,7 @@
     }
 
     .mobile-map-heading b {
-      font-size: clamp(1.65rem, 7.4vw, 2.1rem);
+      font-size: var(--m-type-page-title-size);
     }
 
     .mobile-map-canvas {
@@ -4751,6 +4689,10 @@
   }
 
   @media (max-width: 340px) and (max-height: 740px) {
+    :root {
+      --m-type-page-title-size: 1.9rem;
+    }
+
     .mobile-map-heading {
       min-height: 82px;
       padding: 9px 14px;
@@ -4758,7 +4700,7 @@
     }
 
     .mobile-map-heading b {
-      font-size: 1.55rem;
+      font-size: var(--m-type-page-title-size);
     }
 
     .mobile-map-dashboard-card {
@@ -4800,11 +4742,11 @@
     }
 
     .mobile-expand-title b {
-      font-size: clamp(1.26rem, 6vw, 1.62rem);
+      font-size: var(--m-type-card-title-size);
     }
 
     .source-header-title h2 {
-      font-size: clamp(2.1rem, 10.5vw, 3.1rem);
+      font-size: var(--m-type-page-title-size);
     }
 
     .readout-grid {
@@ -4840,6 +4782,7 @@
       --m-gutter: 12px;
       --m-gap-2: 14px;
       --m-gap-3: 14px;
+      --m-type-card-title-size: 1.24rem;
     }
 
     .mobile-top-action svg {
@@ -4873,7 +4816,7 @@
     }
 
     .mobile-expand-title b {
-      font-size: 1.24rem;
+      font-size: var(--m-type-card-title-size);
     }
 
     .mobile-expand-trigger > strong {
@@ -4915,7 +4858,6 @@
     transition-duration: 0.01ms !important;
   }
 
-  .mobile-nav-spotlight,
   .mobile-theme-icon {
     transition: none !important;
   }

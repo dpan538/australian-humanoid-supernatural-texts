@@ -41,7 +41,6 @@ type DisplayTheme = "dark" | "light";
 type MobileNavName = "theme" | "about" | "source" | "density" | "map" | "figures";
 const MOBILE_ARCHIVE_QUERY = "(max-width: 720px)";
 const THEME_STORAGE_KEY = "aus-archive-theme";
-const MOBILE_NAV_STORAGE_KEY = "aus-mobile-nav-view";
 const MOBILE_MOTION_STORAGE_KEY = "aus-mobile-motion-seen";
 const MOBILE_NAV_ITEMS: Array<{
   view: Exclude<MobileControlView, "dashboard">;
@@ -1706,14 +1705,13 @@ function MobileDensityView({ data }: { data: MobileArchiveData }) {
         })}
       </section>
       <MobileCardDeck className="density-bands">
-        {chartPeriods.map((period, visualIndex) => {
+        {chartPeriods.map((period) => {
           const archiveIndex = data.density.periods.findIndex((candidate) => candidate.id === period.id);
           return (
           <MobileDensityBand
             key={period.id}
             period={period}
             index={archiveIndex}
-            visualIndex={visualIndex}
             rank={periodRanks.get(period.id) ?? data.density.periods.length}
             totalPeriods={data.density.periods.length}
           />
@@ -1727,13 +1725,11 @@ function MobileDensityView({ data }: { data: MobileArchiveData }) {
 function MobileDensityBand({
   period,
   index,
-  visualIndex,
   rank,
   totalPeriods,
 }: {
   period: MobilePeriod;
   index: number;
-  visualIndex: number;
   rank: number;
   totalPeriods: number;
 }) {
@@ -1745,14 +1741,6 @@ function MobileDensityBand({
       eyebrow={`ARCHIVE PERIOD ${String(index + 1).padStart(2, "0")}`}
       title={period.label}
       metric={`${formatNumber(period.records)} records`}
-      preview={(
-        <MobileDensityPeriodPreview
-          period={period}
-          index={visualIndex}
-          rank={rank}
-          totalPeriods={totalPeriods}
-        />
-      )}
     >
       <dl className="mobile-card-stats">
         <div><dt>MAPPED</dt><dd>{formatNumber(period.mapped)} / {Math.round(period.mappedShare * 100)}%</dd></div>
@@ -1761,107 +1749,6 @@ function MobileDensityBand({
         <div><dt>SEARCH LEADS</dt><dd>{formatNumber(period.plannedQueries)}</dd></div>
       </dl>
     </MobileExpandableCard>
-  );
-}
-
-function MobileDensityPeriodPreview({
-  period,
-  index,
-  rank,
-  totalPeriods,
-}: {
-  period: MobilePeriod;
-  index: number;
-  rank: number;
-  totalPeriods: number;
-}) {
-  const mapped = Math.min(1, Math.max(0, period.mappedShare));
-  const corpusShare = Math.min(1, Math.max(0, period.recordShare));
-  const mappedPercent = Math.round(mapped * 100);
-  const corpusPercent = Number((corpusShare * 100).toFixed(1));
-  const textOnly = Math.max(0, period.records - period.mapped);
-  const variant = index % 4;
-
-  if (variant === 0) {
-    return (
-      <span
-        className="mobile-density-period-viz is-composition"
-        role="img"
-        aria-label={`${formatNumber(period.mapped)} mapped and ${formatNumber(textOnly)} text-only records`}
-      >
-        <span>
-          <i style={{ "--density-mapped": mapped } as CSSProperties} />
-        </span>
-        <small>
-          <b>{formatNumber(period.mapped)}</b> mapped
-          <b>{formatNumber(textOnly)}</b> text only
-        </small>
-      </span>
-    );
-  }
-
-  if (variant === 1) {
-    return (
-      <span
-        className="mobile-density-period-viz is-corpus-ring"
-        role="img"
-        aria-label={`${corpusPercent} percent of the public corpus`}
-      >
-        <svg viewBox="0 0 150 62">
-          <circle className="density-viz-base" cx="116" cy="31" r="24" pathLength="100" />
-          <circle
-            className="density-viz-volume"
-            cx="116"
-            cy="31"
-            r="24"
-            pathLength="100"
-            strokeDasharray={`${corpusPercent} 100`}
-          />
-          <text x="116" y="35" textAnchor="middle">{corpusPercent}%</text>
-          <path className="density-viz-rule" d="M4 40h58M4 27h42" />
-        </svg>
-      </span>
-    );
-  }
-
-  if (variant === 2) {
-    return (
-      <span
-        className="mobile-density-period-viz is-rank"
-        role="img"
-        aria-label={`Volume rank ${rank} of ${totalPeriods}`}
-      >
-        <strong>#{rank}</strong>
-        <span>
-          {Array.from({ length: totalPeriods }, (_, rankIndex) => (
-            <i
-              className={rankIndex === rank - 1 ? "is-active" : ""}
-              key={`${period.id}-rank-${rankIndex}`}
-            />
-          ))}
-        </span>
-        <small>VOLUME RANK / {totalPeriods}</small>
-      </span>
-    );
-  }
-
-  return (
-    <span
-      className="mobile-density-period-viz is-mapped-arc"
-      role="img"
-      aria-label={`${mappedPercent} percent of records in this period are mapped`}
-    >
-      <svg viewBox="0 0 150 62">
-        <path className="density-viz-base" pathLength="100" d="M12 53A63 63 0 0 1 138 53" />
-        <path
-          className="density-viz-volume"
-          pathLength="100"
-          strokeDasharray={`${mappedPercent} 100`}
-          d="M12 53A63 63 0 0 1 138 53"
-        />
-        <text x="75" y="51" textAnchor="middle">{mappedPercent}% mapped</text>
-      </svg>
-    </span>
   );
 }
 
@@ -2503,9 +2390,6 @@ function addMobileTimelineTargets(
 }
 
 export function MobileArchiveControls({ view }: { view: MobileControlView }) {
-  const controlsRef = useRef<HTMLDivElement | null>(null);
-  const spotlightRef = useRef<HTMLSpanElement | null>(null);
-  const previousSpotlightX = useRef<number | null>(null);
   const reducedMotion = useMobilePrefersReducedMotion();
   const handleNavPress = useCallback((event: PointerEvent<HTMLAnchorElement>) => {
     if (reducedMotion) {
@@ -2518,99 +2402,11 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
     window.setTimeout(() => target.classList.remove("is-pressing"), 420);
   }, [reducedMotion]);
 
-  useEffect(() => {
-    const controls = controlsRef.current;
-    const spotlight = spotlightRef.current;
-    if (!controls || !spotlight) {
-      return;
-    }
-
-    let timeline: Timeline | null = null;
-    const positionSpotlight = () => {
-      const active = controls.querySelector<HTMLElement>(".mobile-archive-link.is-active");
-      if (!active) {
-        spotlight.style.opacity = "0";
-        previousSpotlightX.current = null;
-        return;
-      }
-      spotlight.style.opacity = "1";
-      const controlsBox = controls.getBoundingClientRect();
-      const activeBox = active.getBoundingClientRect();
-      const controlsInnerOffset = controls.clientLeft;
-      const nextX = activeBox.left
-        - controlsBox.left
-        - controlsInnerOffset
-        + activeBox.width / 2
-        - spotlight.offsetWidth / 2;
-      let storedView: string | null = null;
-      try {
-        storedView = window.sessionStorage.getItem(MOBILE_NAV_STORAGE_KEY);
-      } catch {
-        storedView = null;
-      }
-      const previousLink = storedView
-        ? Array.from(controls.querySelectorAll<HTMLElement>(".mobile-archive-link"))
-          .find((link) => link.dataset.navView === storedView)
-        : null;
-      const previousBox = previousLink?.getBoundingClientRect();
-      const storedX = previousBox
-        ? previousBox.left
-          - controlsBox.left
-          - controlsInnerOffset
-          + previousBox.width / 2
-          - spotlight.offsetWidth / 2
-        : nextX;
-      const fromX = previousSpotlightX.current ?? storedX;
-      previousSpotlightX.current = nextX;
-      try {
-        window.sessionStorage.setItem(MOBILE_NAV_STORAGE_KEY, view);
-      } catch {
-        // Session storage is optional; visual navigation remains functional without it.
-      }
-      if (reducedMotion) {
-        spotlight.style.transform = `translate3d(${nextX}px, 0, 0)`;
-        return;
-      }
-      timeline?.cancel();
-      timeline = createTimeline({
-        defaults: {
-          ease: "outQuint",
-          duration: 720,
-          composition: "replace",
-        },
-      });
-      timeline.add(spotlight, {
-        translateX: [fromX, nextX],
-        scaleX: [0.62, 1],
-        opacity: [0.42, 1],
-      }, 0);
-      const activeIcon = active.querySelector(".mobile-nav-icon");
-      if (activeIcon) {
-        timeline.add(activeIcon, {
-          opacity: [0.46, 1],
-          translateY: [5, -2],
-          scale: [0.76, 1.12],
-          rotate: [-5, 0],
-          duration: 620,
-        }, 60);
-      }
-    };
-
-    positionSpotlight();
-    window.addEventListener("resize", positionSpotlight);
-    return () => {
-      window.removeEventListener("resize", positionSpotlight);
-      timeline?.cancel();
-    };
-  }, [reducedMotion, view]);
-
   return (
     <div
-      ref={controlsRef}
       className="mobile-archive-controls"
       aria-label="Mobile archive controls"
     >
-      <span ref={spotlightRef} className="mobile-nav-spotlight" aria-hidden="true" />
       <div className="mobile-archive-expanded">
         <nav className="mobile-archive-nav" aria-label="Mobile archive navigation">
           {MOBILE_NAV_ITEMS.map((item) => (
