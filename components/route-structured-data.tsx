@@ -4,7 +4,7 @@ import {
   canonicalPathForRoute,
   routeConfig,
   siteConfig,
-  socialImageMetadata,
+  socialCardImageMetadata,
   type SiteRoutePath,
 } from "@/lib/site";
 
@@ -17,7 +17,12 @@ export function RouteStructuredData({ path }: RouteStructuredDataProps) {
   const canonicalPath = canonicalPathForRoute(route);
   const pageUrl = absoluteUrl(canonicalPath);
   const pageName = route.title.includes(SITE.name) ? route.title : `${route.title} | ${SITE.name}`;
-  const socialImage = socialImageMetadata();
+  const socialImage = socialCardImageMetadata({
+    title: route.title,
+    description: route.description,
+    eyebrow: route.path === "/" ? "AUSTRALIAN PUBLIC ARCHIVE" : route.title,
+    tone: path === "/dashboard" ? "blue" : path === "/density" ? "ochre" : path === "/source" ? "sage" : "paper",
+  });
 
   const structuredData = {
     "@context": "https://schema.org",

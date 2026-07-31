@@ -25,12 +25,18 @@ export async function generateMetadata({ params }: SourcePageProps): Promise<Met
   if (!group) {
     return {};
   }
+  const sourceType = humanizeArchiveCode(group.source?.source_type || group.records[0]?.source_type);
   return archivePageMetadata({
-    title: `${group.label} — Public Source Records`,
+    title: `${group.label} — ${sourceType} Records`,
     description: `Browse ${group.records.length} search-ready AusFigures public-text records connected to ${group.label}.`,
     path: sourcePath(group.sourceId, group.label),
     index: group.records.length >= 2,
-    keywords: [group.label, humanizeArchiveCode(group.source?.source_type || group.records[0]?.source_type)],
+    keywords: [group.label, sourceType],
+    social: {
+      eyebrow: "PUBLIC SOURCE COLLECTION",
+      metric: `${group.records.length.toLocaleString("en-AU")} records`,
+      tone: "sage",
+    },
   });
 }
 

@@ -28,6 +28,11 @@ export async function generateMetadata({ params }: NarrativeTypePageProps): Prom
     description: `Browse ${group.records.length} source-grounded ${group.label.toLowerCase()} in the AusFigures Australian supernatural humanoid public-text archive.`,
     path: narrativeTypePath(group.key),
     keywords: [group.label, `${group.label} Australia`, "Australian public-text archive"],
+    social: {
+      eyebrow: "NARRATIVE TYPE",
+      metric: `${group.records.length.toLocaleString("en-AU")} records`,
+      tone: "ink",
+    },
   });
 }
 

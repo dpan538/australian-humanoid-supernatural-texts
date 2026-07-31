@@ -28,6 +28,11 @@ export async function generateMetadata({ params }: PeriodPageProps): Promise<Met
     description: `Browse ${group.records.length} search-ready AusFigures supernatural humanoid public-text records from ${group.label}.`,
     path: periodPath(group.key),
     keywords: [`Australian supernatural records ${group.label}`, `${group.label} folklore public texts`],
+    social: {
+      eyebrow: "SOURCE PERIOD",
+      metric: `${group.records.length.toLocaleString("en-AU")} records`,
+      tone: "ochre",
+    },
   });
 }
 

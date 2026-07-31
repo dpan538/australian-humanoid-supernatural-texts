@@ -77,8 +77,7 @@ export default function Image() {
             flexDirection: "column",
             justifyContent: "space-between",
             border: "1px solid rgba(239, 235, 220, 0.34)",
-            background:
-              "linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012))",
+            background: "#101411",
             padding: 44,
           }}
         >

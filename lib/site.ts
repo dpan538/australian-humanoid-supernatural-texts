@@ -25,6 +25,9 @@ export const SITE = {
   ],
   socialImagePath: "/opengraph-image",
   twitterImagePath: "/twitter-image",
+  socialCardPath: "/social-card",
+  openSearchPath: "/opensearch.xml",
+  searchSuggestionsPath: "/search-suggestions",
   iconPath: "/icon.svg",
   faviconPath: "/favicon.ico",
   pngIconPath: "/icon-192.png",
@@ -43,7 +46,7 @@ export const siteConfig = {
   creator: "Dai Pan",
   locale: "en_AU",
   releaseDate: "2026-06-30",
-  contentUpdatedDate: "2026-07-29",
+  contentUpdatedDate: "2026-07-31",
   searchTopics: [
     "Australian supernatural",
     "Australian supernatural folklore",
@@ -69,36 +72,15 @@ export const siteConfig = {
   keywords: [
     "AusFigures",
     "Australian public text archive",
-    "Australian supernatural",
     "Australian supernatural folklore",
     "supernatural humanoid narratives",
-    "Australian supernatural humanoids",
     "source-grounded archive",
     "digital humanities",
     "Australian folklore research",
-    "Australian hairy humanoid records",
-    "Australian wild person narratives",
-    "Australian wild man reports",
-    "Australian yahoo folklore",
-    "Australian giant and ogre narratives",
-    "Australian witches and wizards public texts",
-    "Australian fairies and little people",
-    "Australian supernatural newspaper archive",
-    "Australian supernatural public domain books",
-    "Australian folklore primary sources",
-    "supernatural retellings and adaptations",
     "Yowie records",
-    "bunyip public texts",
-    "Australian apparition records",
     "Australian ghost records",
-    "Australian ghosts",
-    "Australian apparitions",
     "spirit-person narratives",
-    "public record map",
     "mapped public records",
-    "Yowie public records",
-    "bunyip folklore records",
-    "Australian public text research",
     "public source register",
   ],
   routeMetadata: [
@@ -169,6 +151,45 @@ export function socialImageMetadata(path: string = SITE.socialImagePath) {
   };
 }
 
+export type SocialCardTone = "ink" | "sage" | "ochre" | "blue" | "clay" | "paper";
+
+export type SocialCardOptions = {
+  title: string;
+  description: string;
+  eyebrow?: string;
+  metric?: string | number;
+  tone?: SocialCardTone;
+};
+
+export function socialCardImageMetadata({
+  title,
+  description,
+  eyebrow = "PUBLIC-TEXT ARCHIVE",
+  metric,
+  tone = "paper",
+}: SocialCardOptions) {
+  const parameters = new URLSearchParams({
+    title: compactMetadataText(title, 96),
+    description: compactMetadataText(description, 176),
+    eyebrow: compactMetadataText(eyebrow, 38).toUpperCase(),
+    tone,
+  });
+  if (metric !== undefined) {
+    parameters.set("metric", compactMetadataText(String(metric), 22));
+  }
+  return {
+    url: absoluteUrl(`${SITE.socialCardPath}?${parameters.toString()}`),
+    width: 1200,
+    height: 630,
+    alt: `${compactMetadataText(title, 110)} — ${SITE.name} public-text archive`,
+  };
+}
+
+function compactMetadataText(value: string, limit: number) {
+  const text = value.replace(/\s+/g, " ").trim();
+  return text.length > limit ? `${text.slice(0, limit - 1).trimEnd()}…` : text;
+}
+
 function brandedTitle(title: string) {
   return title.includes(siteConfig.siteName) ? title : `${title} | ${siteConfig.siteName}`;
 }
@@ -187,6 +208,22 @@ export function metadataForRoute(path: SiteRoutePath): Metadata {
   const description = route.description;
   const metaTitle = brandedTitle(title);
   const canonicalPath = canonicalPathForRoute(route);
+  const index = canonicalPath === route.path;
+  const routeSocialImage = socialCardImageMetadata({
+    title: route.title,
+    description,
+    eyebrow: route.path === "/" ? "AUSTRALIAN PUBLIC ARCHIVE" : route.title,
+    tone:
+      route.path === "/dashboard"
+        ? "blue"
+        : route.path === "/density"
+          ? "ochre"
+          : route.path === "/source"
+            ? "sage"
+            : route.path === "/about"
+              ? "clay"
+              : "paper",
+  });
   const metadataTitle: Metadata["title"] =
     path === "/"
       ? { absolute: metaTitle }
@@ -201,11 +238,15 @@ export function metadataForRoute(path: SiteRoutePath): Metadata {
     category: "research",
     alternates: {
       canonical: absoluteUrl(canonicalPath),
+      types: {
+        "application/rss+xml": absoluteUrl("/feed.xml"),
+      },
     },
     robots: {
-      index: true,
+      index,
       follow: true,
     },
+    referrer: "origin-when-cross-origin",
     openGraph: {
       title: metaTitle,
       description,
@@ -213,13 +254,13 @@ export function metadataForRoute(path: SiteRoutePath): Metadata {
       siteName: siteConfig.siteName,
       locale: siteConfig.locale,
       type: "website",
-      images: [socialImageMetadata()],
+      images: [routeSocialImage],
     },
     twitter: {
       card: "summary_large_image",
       title: metaTitle,
       description,
-      images: [socialImageMetadata(SITE.twitterImagePath)],
+      images: [routeSocialImage],
     },
   };
 }

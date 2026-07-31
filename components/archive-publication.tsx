@@ -5,7 +5,7 @@ import {
   narrativeTypeName,
   recordPath,
 } from "@/lib/archive-routing";
-import { SITE, absoluteUrl, siteConfig } from "@/lib/site";
+import { SITE, absoluteUrl, siteConfig, socialCardImageMetadata } from "@/lib/site";
 import type { RecordItem } from "@/lib/types";
 
 export type ArchiveBreadcrumb = {
@@ -34,6 +34,7 @@ export function ArchiveIndexStructuredData({
   items?: Array<{ href: string; title: string }>;
 }) {
   const pageUrl = absoluteUrl(path);
+  const socialImage = socialCardImageMetadata({ title, description, eyebrow: "AUSFIGURES RESEARCH INDEX" });
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -47,6 +48,13 @@ export function ArchiveIndexStructuredData({
         dateModified: siteConfig.contentUpdatedDate,
         isPartOf: { "@id": `${siteConfig.siteUrl}/#website` },
         publisher: { "@id": `${siteConfig.siteUrl}/#organization` },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: socialImage.url,
+          width: socialImage.width,
+          height: socialImage.height,
+          caption: socialImage.alt,
+        },
         ...(items.length
           ? {
               mainEntity: {
@@ -253,6 +261,12 @@ export function ArchiveRecordCollectionPage({
   const earliest = datedYears.length ? Math.min(...datedYears) : null;
   const latest = datedYears.length ? Math.max(...datedYears) : null;
   const preview = records.slice(0, 60);
+  const socialImage = socialCardImageMetadata({
+    title,
+    description: intro,
+    eyebrow,
+    metric: `${records.length.toLocaleString("en-AU")} records`,
+  });
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -269,6 +283,13 @@ export function ArchiveRecordCollectionPage({
         },
         publisher: {
           "@id": `${siteConfig.siteUrl}/#organization`,
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: socialImage.url,
+          width: socialImage.width,
+          height: socialImage.height,
+          caption: socialImage.alt,
         },
         mainEntity: {
           "@type": "ItemList",

@@ -3,12 +3,14 @@
 import Link from "next/link";
 import { useDeferredValue, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { CSSProperties, FocusEvent } from "react";
+import { createTimeline, stagger } from "animejs";
 import { DisplayControls } from "@/components/display-controls";
 import { useFigureDictionaryMotion } from "@/components/figures/use-figure-dictionary-motion";
 import {
   MobileArchiveControls,
   MobileCardDeck,
   MobileExpandableCard,
+  MobileLinkArrowIcon,
   MobileTopBar,
   type MobileFigureSearchEntry,
 } from "@/components/mobile-archive";
@@ -17,17 +19,21 @@ import type {
   FigureDictionaryFrequency,
 } from "@/lib/figure-dictionary-types";
 
+const MOBILE_DIRECTORY_TONES = ["mint", "coral", "yellow", "blue", "lavender"] as const;
+
 export function FigureEncyclopedia({
   entries,
   initialSlug = null,
+  initialQuery = "",
 }: {
   entries: FigureDictionaryEntry[];
   initialSlug?: string | null;
+  initialQuery?: string;
 }) {
   const inputId = useId();
   const inputRef = useRef<HTMLInputElement | null>(null);
   const rootRef = useRef<HTMLElement | null>(null);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
   const [searchFocused, setSearchFocused] = useState(false);
   const deferredQuery = useDeferredValue(query);
   const availableEntries = useMemo(
@@ -54,14 +60,27 @@ export function FigureEncyclopedia({
   );
   useFigureDictionaryMotion(rootRef, activeEntry?.slug ?? null);
 
+  useEffect(() => {
+    const browserQuery = new URL(window.location.href).searchParams.get("q") ?? "";
+    setQuery(initialQuery || browserQuery);
+  }, [initialQuery]);
+
   return (
     <>
-      {activeEntry ? (
+      {initialSlug ? (
+        activeEntry ? (
         <MobileFigureEncyclopedia
           entry={activeEntry}
           figures={mobileSearchEntries}
         />
-      ) : null}
+        ) : null
+      ) : (
+        <MobileFigureDirectory
+          entries={isSearching ? results : availableEntries}
+          figures={mobileSearchEntries}
+          query={deferredQuery}
+        />
+      )}
       <main
         ref={rootRef}
         className="terminal-shell figure-dictionary-shell desktop-figure-dictionary-shell"
@@ -225,6 +244,150 @@ export function FigureEncyclopedia({
   );
 }
 
+function MobileFigureDirectory({
+  entries,
+  figures,
+  query,
+}: {
+  entries: FigureDictionaryEntry[];
+  figures: MobileFigureSearchEntry[];
+  query: string;
+}) {
+  const pageSize = 10;
+  const [page, setPage] = useState(0);
+  const listRef = useRef<HTMLDivElement | null>(null);
+  const mounted = useRef(false);
+  const pageCount = Math.max(1, Math.ceil(entries.length / pageSize));
+  const visibleEntries = entries.slice(page * pageSize, (page + 1) * pageSize);
+
+  useEffect(() => {
+    setPage(0);
+  }, [query]);
+
+  useEffect(() => {
+    const list = listRef.current;
+    if (!list) {
+      return;
+    }
+    const cards = list.querySelectorAll(".mobile-expand-card");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const timeline = reducedMotion
+      ? null
+      : createTimeline({
+          defaults: {
+            ease: "outQuint",
+            composition: "replace",
+          },
+        });
+    if (timeline && cards.length) {
+      timeline.add(cards, {
+        opacity: [0.86, 1],
+        translateY: [14, 0],
+        delay: stagger(68),
+        duration: 840,
+      }, 0);
+    }
+    if (mounted.current) {
+      window.scrollTo({
+        top: 0,
+        behavior: reducedMotion ? "auto" : "smooth",
+      });
+    }
+    mounted.current = true;
+    return () => {
+      timeline?.cancel();
+    };
+  }, [page]);
+
+  return (
+    <main className="terminal-shell mobile-archive-shell mobile-view-figures mobile-figure-directory-shell">
+      <h1 className="visually-hidden">AusFigures supernatural humanoid dictionary</h1>
+      <MobileTopBar view="figures" figures={figures} routeLabel={`FIGURES · ${entries.length}`} />
+      <section className="mobile-figures-page mobile-figure-directory">
+        <header className="mobile-figure-directory-intro">
+          <span>SUPERNATURAL HUMANOID DICTIONARY</span>
+          <h2>Figure index</h2>
+          <p>
+            {query.trim()
+              ? `${entries.length} figure matches for “${query.trim()}”. Open a result or refine the archive search.`
+              : "Search the archive or open one of the ten entries on this page. Each entry separates public-text frequency from real-world claims."}
+          </p>
+          <div>
+            <strong>{entries.length}</strong>
+            <small>SEARCH-READY FIGURES</small>
+            <b>{String(page + 1).padStart(2, "0")} / {String(pageCount).padStart(2, "0")}</b>
+          </div>
+        </header>
+        <div ref={listRef}>
+          <MobileCardDeck className="mobile-figure-directory-list">
+            {visibleEntries.map((entry, index) => (
+              <MobileExpandableCard
+                key={entry.slug}
+                cardId={`directory-${entry.slug}`}
+                className="mobile-figure-directory-card"
+                tone={MOBILE_DIRECTORY_TONES[index % MOBILE_DIRECTORY_TONES.length]}
+                eyebrow={`ENTRY ${String(page * pageSize + index + 1).padStart(3, "0")}`}
+                title={entry.label}
+                metric={`${formatNumber(entry.recordCount)} records`}
+              >
+                <p className="mobile-figure-directory-summary">{entry.description}</p>
+                <dl className="mobile-figure-directory-stats">
+                  <div><dt>SPAN</dt><dd>{entry.dateSpan}</dd></div>
+                  <div><dt>MAPPED</dt><dd>{formatNumber(entry.mappedCount)}</dd></div>
+                  <div><dt>SOURCES</dt><dd>{formatNumber(entry.sourceCount)}</dd></div>
+                </dl>
+                <Link className="mobile-figure-directory-open" href={`/figures/${entry.slug}`}>
+                  <span>Open {entry.label}</span>
+                  <MobileLinkArrowIcon />
+                </Link>
+              </MobileExpandableCard>
+            ))}
+            {!visibleEntries.length ? (
+              <p className="mobile-figure-empty-state">No search-ready figure matches this term.</p>
+            ) : null}
+          </MobileCardDeck>
+        </div>
+        <nav className="mobile-figure-pagination" aria-label="Figure dictionary pages">
+          <button
+            type="button"
+            disabled={page === 0}
+            onClick={() => setPage((current) => Math.max(0, current - 1))}
+          >
+            <MobilePageArrowIcon direction="previous" />
+            <span>Previous 10</span>
+          </button>
+          <span>
+            PAGE <b>{page + 1}</b> OF {pageCount}
+          </span>
+          <button
+            type="button"
+            disabled={page >= pageCount - 1}
+            onClick={() => setPage((current) => Math.min(pageCount - 1, current + 1))}
+          >
+            <span>Next 10</span>
+            <MobilePageArrowIcon direction="next" />
+          </button>
+        </nav>
+      </section>
+      <MobileArchiveControls view="figures" />
+    </main>
+  );
+}
+
+function MobilePageArrowIcon({ direction }: { direction: "previous" | "next" }) {
+  return (
+    <svg
+      className={`mobile-page-arrow is-${direction}`}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M5 12h14" />
+      <path d={direction === "previous" ? "m10 7-5 5 5 5" : "m14 7 5 5-5 5"} />
+    </svg>
+  );
+}
+
 function MobileFigureEncyclopedia({
   entry,
   figures,
@@ -258,16 +421,26 @@ function MobileFigureEncyclopedia({
     (peak, item) => (item.count > peak.count ? item : peak),
     entry.timeline[0] ?? { label: "—", count: 0 },
   );
-  const codedRegionTotal = entry.regionFrequency.reduce(
-    (total, item) => total + item.count,
-    0,
-  );
+  const firstPeriod = entry.timeline[0] ?? null;
+  const lastPeriod = entry.timeline.at(-1) ?? null;
+  const peakPeriodPosition = entry.timeline.length > 1
+    ? entry.timeline.findIndex((item) => item.label === peakPeriod.label) /
+      (entry.timeline.length - 1)
+    : 0.5;
+  const strongestTimelinePeriods = [...entry.timeline]
+    .sort((left, right) => right.count - left.count)
+    .slice(0, 5);
   const leadingRegion = entry.regionFrequency[0];
-  const sourceFrequencyTotal = entry.sourceFrequency.reduce(
-    (total, item) => total + item.count,
-    0,
-  );
   const leadingSource = entry.sourceFrequency[0];
+  const coverageRows = Array.from({
+    length: Math.max(
+      Math.min(5, entry.regionFrequency.length),
+      Math.min(5, entry.sourceFrequency.length),
+    ),
+  }, (_, index) => ({
+    region: entry.regionFrequency[index] ?? null,
+    source: entry.sourceFrequency[index] ?? null,
+  }));
 
   useEffect(() => {
     setSummaryExpanded(false);
@@ -395,13 +568,18 @@ function MobileFigureEncyclopedia({
             title="Timeline"
             metric={`${formatNumber(timelineTotal)} dated records`}
             preview={(
-              <span className="mobile-preview-bars" aria-hidden="true">
-                {entry.timeline.slice(-8).map((item) => (
-                  <i
-                    key={item.label}
-                    style={{ "--preview-progress": item.count / timelineMax } as CSSProperties}
+              <span
+                className="mobile-figure-timeline-preview"
+                aria-label={`${firstPeriod?.label ?? "No date"} to ${lastPeriod?.label ?? "No date"}, peaking in ${peakPeriod.label}`}
+              >
+                <small>{firstPeriod?.label ?? "—"}</small>
+                <i>
+                  <em
+                    style={{ "--timeline-peak": peakPeriodPosition } as CSSProperties}
                   />
-                ))}
+                </i>
+                <small>{lastPeriod?.label ?? "—"}</small>
+                <b>{peakPeriod.label} peak</b>
               </span>
             )}
           >
@@ -409,48 +587,51 @@ function MobileFigureEncyclopedia({
               <>
                 <dl className="mobile-analysis-strip">
                   <div>
-                    <dt>DATED TOTAL</dt>
-                    <dd>{formatNumber(timelineTotal)}</dd>
+                    <dt>FIRST DATED</dt>
+                    <dd>{firstPeriod?.label ?? "—"}</dd>
                   </div>
                   <div>
                     <dt>PEAK PERIOD</dt>
                     <dd>{peakPeriod.label}</dd>
                   </div>
                   <div>
-                    <dt>PEAK SHARE</dt>
-                    <dd>
-                      {timelineTotal
-                        ? `${((peakPeriod.count / timelineTotal) * 100).toFixed(1)}%`
-                        : "—"}
-                    </dd>
+                    <dt>LATEST DATED</dt>
+                    <dd>{lastPeriod?.label ?? "—"}</dd>
                   </div>
                 </dl>
                 <div
-                  className="mobile-figure-timeline"
+                  className="mobile-figure-timeline-path"
                   role="img"
-                  aria-label={`${entry.label} accepted records by decade`}
+                  aria-label={`${entry.label} chronology from ${firstPeriod?.label ?? "undated"} to ${lastPeriod?.label ?? "undated"}, peaking in ${peakPeriod.label} with ${formatNumber(peakPeriod.count)} records`}
                 >
-                  {entry.timeline.map((item) => (
-                    <div key={item.label}>
-                      <span>{formatNumber(item.count)}</span>
-                      <i
-                        style={{
-                          "--timeline-ratio": Math.max(0.08, item.count / timelineMax),
-                        } as CSSProperties}
-                      />
-                      <small>{item.label}</small>
-                    </div>
-                  ))}
+                  <span><small>FIRST</small><b>{firstPeriod?.label ?? "—"}</b></span>
+                  <i>
+                    <em
+                      style={{ "--timeline-peak": peakPeriodPosition } as CSSProperties}
+                    />
+                  </i>
+                  <span><small>LATEST</small><b>{lastPeriod?.label ?? "—"}</b></span>
                 </div>
+                <ol className="mobile-figure-timeline-ranked" aria-label="Five largest dated periods">
+                  {strongestTimelinePeriods.map((item) => (
+                    <li key={item.label}>
+                      <span>{item.label}</span>
+                      <i>
+                        <em
+                          style={{ "--timeline-ratio": item.count / timelineMax } as CSSProperties}
+                        />
+                      </i>
+                      <b>{formatNumber(item.count)}</b>
+                    </li>
+                  ))}
+                </ol>
               </>
             ) : (
               <p className="mobile-figure-empty-state">
                 No dated distribution is available for this entry.
               </p>
             )}
-            <p className="mobile-figure-chart-note">
-              Bar height shows accepted records in each coded period; it does not infer an uninterrupted historical trend.
-            </p>
+            <p className="mobile-figure-chart-note">Dated public texts are grouped by decade; gaps remain visible rather than being inferred.</p>
           </MobileExpandableCard>
 
           <MobileExpandableCard
@@ -458,59 +639,50 @@ function MobileFigureEncyclopedia({
             className="mobile-figure-card"
             tone="blue"
             eyebrow="ARCHIVE DISTRIBUTION"
-            title="Regions And Sources"
+            title="Archive Coverage"
             metric={hasPublicRecords
-              ? `${leadingRegion?.label ?? "Regional field"} · ${formatNumber(leadingRegion?.count ?? 0)}`
+              ? `${entry.regionFrequency.length} regions · ${entry.sourceFrequency.length} sources`
               : "No coded field"}
             preview={(
-              <span className="mobile-preview-bars" aria-hidden="true">
-                {entry.regionFrequency.slice(0, 6).map((item) => (
-                  <i
-                    key={item.label}
-                    style={{ "--preview-progress": item.count / regionMax } as CSSProperties}
-                  />
-                ))}
+              <span className="mobile-figure-coverage-preview" aria-hidden="true">
+                <i style={{ "--coverage-share": (leadingRegion?.count ?? 0) / regionMax } as CSSProperties} />
+                <i style={{ "--coverage-share": (leadingSource?.count ?? 0) / Math.max(1, leadingSource?.count ?? 0) } as CSSProperties} />
+                <small>REGION / SOURCE</small>
               </span>
             )}
           >
-            {entry.regionFrequency.length ? (
+            {coverageRows.length ? (
               <>
                 <dl className="mobile-analysis-strip">
                   <div>
-                    <dt>LEADING REGION</dt>
-                    <dd>{leadingRegion?.label ?? "—"}</dd>
+                    <dt>REGIONS SHOWN</dt>
+                    <dd>{Math.min(5, entry.regionFrequency.length)}</dd>
                   </div>
                   <div>
-                    <dt>REGION SHARE</dt>
-                    <dd>
-                      {leadingRegion && codedRegionTotal
-                        ? `${((leadingRegion.count / codedRegionTotal) * 100).toFixed(1)}%`
-                        : "—"}
-                    </dd>
+                    <dt>SOURCES SHOWN</dt>
+                    <dd>{Math.min(5, entry.sourceFrequency.length)}</dd>
                   </div>
                   <div>
-                    <dt>TOP SOURCE SHARE</dt>
-                    <dd>
-                      {leadingSource && sourceFrequencyTotal
-                        ? `${((leadingSource.count / sourceFrequencyTotal) * 100).toFixed(1)}%`
-                        : "—"}
-                    </dd>
+                    <dt>MAPPED</dt>
+                    <dd>{formatNumber(entry.mappedCount)}</dd>
                   </div>
                 </dl>
-                <div className="mobile-figure-region-field">
-                  {entry.regionFrequency.slice(0, 6).map((item, index) => (
-                    <div
-                      key={item.label}
-                      style={{
-                        "--bubble-size": `${Math.round(
-                          34 + Math.max(0.34, Math.sqrt(item.count / regionMax)) * 30,
-                        )}px`,
-                      } as CSSProperties}
-                    >
-                      <i>{String(index + 1).padStart(2, "0")}</i>
+                <div className="mobile-figure-coverage-matrix">
+                  <header>
+                    <span>REGIONAL FIELD</span>
+                    <span>SOURCE REGISTER</span>
+                  </header>
+                  {coverageRows.map((row, index) => (
+                    <div key={`${row.region?.label ?? "region"}-${row.source?.label ?? "source"}-${index}`}>
                       <span>
-                        <b>{item.label}</b>
-                        <small>{formatNumber(item.count)} coded</small>
+                        <small>{String(index + 1).padStart(2, "0")}</small>
+                        <b>{row.region?.label ?? "—"}</b>
+                        <strong>{row.region ? formatNumber(row.region.count) : "—"}</strong>
+                      </span>
+                      <span>
+                        <small>{String(index + 1).padStart(2, "0")}</small>
+                        <b>{row.source?.label ?? "—"}</b>
+                        <strong>{row.source ? formatNumber(row.source.count) : "—"}</strong>
                       </span>
                     </div>
                   ))}
@@ -521,17 +693,8 @@ function MobileFigureEncyclopedia({
                 No coded regional concentration is available.
               </p>
             )}
-            <ol className="mobile-figure-source-list">
-              {entry.sourceFrequency.slice(0, 5).map((item, index) => (
-                <li key={item.label}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <b>{item.label}</b>
-                  <strong>{formatNumber(item.count)}</strong>
-                </li>
-              ))}
-            </ol>
             <p className="mobile-figure-chart-note">
-              Regional and source concentrations describe corpus coverage and collection structure.
+              Each row pairs the same rank across two archive fields; it does not imply a direct relationship between that region and source.
             </p>
           </MobileExpandableCard>
 
@@ -557,7 +720,7 @@ function MobileFigureEncyclopedia({
                           .filter(Boolean)
                           .join(" · ")}
                       </small>
-                      <i aria-hidden="true">↗</i>
+                      <MobileLinkArrowIcon />
                     </Link>
                   </li>
                 ))}
@@ -601,7 +764,7 @@ function MobileFigureEncyclopedia({
                   <Link key={item.href} href={item.href}>
                     <span>{item.label}</span>
                     <b>{formatNumber(item.recordCount)}</b>
-                    <i aria-hidden="true">↗</i>
+                    <MobileLinkArrowIcon />
                   </Link>
                 ))}
               </nav>

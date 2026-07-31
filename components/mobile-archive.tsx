@@ -42,6 +42,7 @@ type MobileNavName = "theme" | "about" | "source" | "density" | "map" | "figures
 const MOBILE_ARCHIVE_QUERY = "(max-width: 720px)";
 const THEME_STORAGE_KEY = "aus-archive-theme";
 const MOBILE_NAV_STORAGE_KEY = "aus-mobile-nav-view";
+const MOBILE_MOTION_STORAGE_KEY = "aus-mobile-motion-seen";
 const MOBILE_NAV_ITEMS: Array<{
   view: Exclude<MobileControlView, "dashboard">;
   href: string;
@@ -652,9 +653,11 @@ export function MobileArchiveRoute({ view, data }: { view: MobileControlView; da
 export function MobileTopBar({
   view,
   figures,
+  routeLabel,
 }: {
   view: MobileRouteView;
   figures: MobileFigureSearchEntry[];
+  routeLabel?: string;
 }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -725,9 +728,9 @@ export function MobileTopBar({
       <header className="mobile-topbar" aria-label="Mobile page controls">
         <MobileThemeControl />
         <span className="mobile-top-route" aria-hidden="true">
-          {view === "figures"
+          {routeLabel ?? (view === "figures"
             ? `FIGURES · ${figures.length}`
-            : view.toUpperCase()}
+            : view.toUpperCase())}
         </span>
         <button
           type="button"
@@ -795,7 +798,7 @@ export function MobileTopBar({
                     <small>{mobileSearchSupportingText(entry)}</small>
                   </span>
                   <strong>{formatNumber(entry.recordCount)}</strong>
-                  <i aria-hidden="true">↗</i>
+                  <MobileLinkArrowIcon />
                 </Link>
               ))}
               {results.length === 0 ? (
@@ -806,6 +809,20 @@ export function MobileTopBar({
         </div>
       ) : null}
     </>
+  );
+}
+
+export function MobileLinkArrowIcon() {
+  return (
+    <svg
+      className="mobile-link-arrow"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M8 16 16 8" />
+      <path d="M9 8h7v7" />
+    </svg>
   );
 }
 
@@ -942,6 +959,33 @@ function useMobilePageAmbientMotion(
       return;
     }
 
+    let motionSeen = false;
+    try {
+      motionSeen = window.sessionStorage.getItem(MOBILE_MOTION_STORAGE_KEY) === "true";
+      window.sessionStorage.setItem(MOBILE_MOTION_STORAGE_KEY, "true");
+    } catch {
+      motionSeen = false;
+    }
+
+    if (motionSeen) {
+      const routeTimeline = createTimeline({
+        defaults: {
+          ease: "outQuint",
+          composition: "replace",
+        },
+      });
+      routeTimeline.add(root, {
+        opacity: [0.88, 1],
+        translateY: [10, 0],
+        duration: 760,
+      }, 0);
+      return () => {
+        routeTimeline.cancel();
+        root.style.opacity = "";
+        root.style.transform = "";
+      };
+    }
+
     const redrawTargets = Array.from(
       root.querySelectorAll<SVGGeometryElement>(".mobile-map-canvas .state-shape, .mobile-map-canvas .coast-outline"),
     );
@@ -985,8 +1029,8 @@ function useMobilePageAmbientMotion(
       target.style.transform = "scale(0.22)";
     });
     revealTargets.forEach((target) => {
-      target.style.opacity = "0";
-      target.style.transform = "translateY(24px) scale(0.985)";
+      target.style.opacity = "0.76";
+      target.style.transform = "translateY(18px) scale(0.992)";
       target.style.transformOrigin = "50% 50%";
       target.style.willChange = "transform, opacity";
     });
@@ -1006,10 +1050,10 @@ function useMobilePageAmbientMotion(
         },
       });
       timeline.add(target, {
-        opacity: [0, 1],
-        translateY: [24, 0],
-        scale: [0.985, 1],
-        duration: 620,
+        opacity: [0.76, 1],
+        translateY: [18, 0],
+        scale: [0.992, 1],
+        duration: 820,
       }, 0);
       const directChildren = target.querySelectorAll(":scope > header, :scope > strong, :scope > p");
       if (directChildren.length) {
@@ -1017,8 +1061,8 @@ function useMobilePageAmbientMotion(
           opacity: [0.35, 1],
           translateY: [10, 0],
           delay: stagger(36),
-          duration: 420,
-        }, 80);
+        duration: 560,
+      }, 120);
       }
       revealTimelines.add(timeline);
       const cleanupTimer = window.setTimeout(() => {
@@ -1027,7 +1071,7 @@ function useMobilePageAmbientMotion(
         target.style.transformOrigin = "";
         target.style.willChange = "";
         revealTimers.delete(cleanupTimer);
-      }, 680);
+      }, 900);
       revealTimers.add(cleanupTimer);
     };
     const revealFrame = window.requestAnimationFrame(() => {
@@ -1132,6 +1176,23 @@ function MobileMapView({ data }: { data: MobileArchiveData }) {
   const maxStateCount = Math.max(1, ...stateCounts.map((row) => row.count));
   const leadingMapPeriod = [...data.density.periods]
     .sort((left, right) => right.records - left.records)[0];
+  const unmappedRecordCount = Math.max(
+    0,
+    data.summary.recordCount - data.summary.mappedRecordCount,
+  );
+  const leadingStates = [...stateCounts]
+    .sort((left, right) => right.count - left.count)
+    .slice(0, 3);
+  const leadingStateTotal = leadingStates.reduce(
+    (total, state) => total + state.count,
+    0,
+  );
+  const maxMappedPeriod = Math.max(
+    1,
+    ...data.density.periods.map((period) => period.mapped),
+  );
+  const leadingMappedPeriod = [...data.density.periods]
+    .sort((left, right) => right.mapped - left.mapped)[0];
   const toggleSelectedState = useCallback((stateCode: string) => {
     setSelectedState((current) => (current === stateCode ? null : stateCode));
   }, []);
@@ -1391,6 +1452,83 @@ function MobileMapView({ data }: { data: MobileArchiveData }) {
           <p>Schematic display volumes, not incidence or one marker per record.</p>
         </section>
       </article>
+      <section
+        className="mobile-map-secondary"
+        aria-label="Additional map coverage analysis"
+      >
+        <article className="mobile-map-coverage-card">
+          <header>
+            <span>LOCATION COVERAGE</span>
+            <strong>{(nationalMappedCoverage * 100).toFixed(1)}%</strong>
+          </header>
+          <div
+            className="mobile-map-coverage-band"
+            role="img"
+            aria-label={`${formatNumber(data.summary.mappedRecordCount)} mapped records and ${formatNumber(unmappedRecordCount)} text-only records`}
+          >
+            <i style={{ "--mapped-share": nationalMappedCoverage } as CSSProperties} />
+          </div>
+          <dl>
+            <div>
+              <dt>MAPPED</dt>
+              <dd>{formatNumber(data.summary.mappedRecordCount)}</dd>
+            </div>
+            <div>
+              <dt>TEXT ONLY</dt>
+              <dd>{formatNumber(unmappedRecordCount)}</dd>
+            </div>
+          </dl>
+        </article>
+        <article className="mobile-map-concentration-card">
+          <header>
+            <span>REGIONAL CONCENTRATION</span>
+            <strong>{formatNumber(leadingStateTotal)}</strong>
+            <small>mapped records in the three largest regional fields</small>
+          </header>
+          <div className="mobile-map-concentration-field">
+            {leadingStates.map((state, index) => (
+              <button
+                type="button"
+                key={state.code}
+                className={selectedState === state.code ? "is-active" : ""}
+                onClick={() => toggleSelectedState(state.code)}
+                aria-pressed={selectedState === state.code}
+                aria-label={`${STATE_NAMES[state.code] ?? state.code}, ${formatNumber(state.count)} mapped records`}
+              >
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <b>{state.code}</b>
+                <strong>{formatNumber(state.count)}</strong>
+                <i
+                  aria-hidden="true"
+                  style={{ "--state-share": state.count / maxStateCount } as CSSProperties}
+                />
+              </button>
+            ))}
+          </div>
+        </article>
+        <article className="mobile-map-period-coverage-card">
+          <header>
+            <span>MAPPED LAYER BY PERIOD</span>
+            <strong>{formatNumber(leadingMappedPeriod?.mapped ?? 0)}</strong>
+            <small>{leadingMappedPeriod?.label ?? "No dated mapped period"}</small>
+          </header>
+          <div
+            className="mobile-map-period-coverage"
+            role="img"
+            aria-label="Mapped public record volume across seven research periods"
+          >
+            {data.density.periods.map((period, index) => (
+              <span key={period.id}>
+                <i
+                  style={{ "--mapped-period-share": period.mapped / maxMappedPeriod } as CSSProperties}
+                />
+                <b>{String(index + 1).padStart(2, "0")}</b>
+              </span>
+            ))}
+          </div>
+          <p>Period volume in the public display layer; figures remain archive counts, not incidence.</p>
+        </article>
+      </section>
     </div>
   );
 }
@@ -1550,14 +1688,7 @@ function MobileDensityView({ data }: { data: MobileArchiveData }) {
         </div>
         <small className="density-header-note">Archive coverage, not real-world incidence.</small>
       </header>
-      <section className="mobile-density-overview-card" aria-label="Annual dated-record overview">
-        <header>
-          <span>ANNUAL SERIES</span>
-          <strong>{formatNumber(peakYear.count)}</strong>
-          <small>{peakYear.year} peak year</small>
-        </header>
-        <MobileAnnualSparkline series={data.density.annualSeries} />
-      </section>
+      <MobileAnnualSeriesCard series={data.density.annualSeries} peakYear={peakYear} />
       <section className="mobile-density-minor-grid" aria-label="Smaller archive period volumes">
         {compactPeriods.map((period, compactIndex) => {
           const archiveIndex = data.density.periods.findIndex((candidate) => candidate.id === period.id);
@@ -1614,7 +1745,14 @@ function MobileDensityBand({
       eyebrow={`ARCHIVE PERIOD ${String(index + 1).padStart(2, "0")}`}
       title={period.label}
       metric={`${formatNumber(period.records)} records`}
-      preview={<MobileDensityPeriodPreview period={period} index={visualIndex} />}
+      preview={(
+        <MobileDensityPeriodPreview
+          period={period}
+          index={visualIndex}
+          rank={rank}
+          totalPeriods={totalPeriods}
+        />
+      )}
     >
       <dl className="mobile-card-stats">
         <div><dt>MAPPED</dt><dd>{formatNumber(period.mapped)} / {Math.round(period.mappedShare * 100)}%</dd></div>
@@ -1629,19 +1767,46 @@ function MobileDensityBand({
 function MobileDensityPeriodPreview({
   period,
   index,
+  rank,
+  totalPeriods,
 }: {
   period: MobilePeriod;
   index: number;
+  rank: number;
+  totalPeriods: number;
 }) {
-  const volume = Math.min(1, Math.max(0.06, period.maxShare));
-  const mapped = Math.min(1, Math.max(0.04, period.mappedShare));
-  const volumePercent = Math.round(volume * 100);
+  const mapped = Math.min(1, Math.max(0, period.mappedShare));
+  const corpusShare = Math.min(1, Math.max(0, period.recordShare));
   const mappedPercent = Math.round(mapped * 100);
-  const variant = index % 5;
+  const corpusPercent = Number((corpusShare * 100).toFixed(1));
+  const textOnly = Math.max(0, period.records - period.mapped);
+  const variant = index % 4;
 
   if (variant === 0) {
     return (
-      <span className="mobile-density-period-viz is-orbit" aria-hidden="true">
+      <span
+        className="mobile-density-period-viz is-composition"
+        role="img"
+        aria-label={`${formatNumber(period.mapped)} mapped and ${formatNumber(textOnly)} text-only records`}
+      >
+        <span>
+          <i style={{ "--density-mapped": mapped } as CSSProperties} />
+        </span>
+        <small>
+          <b>{formatNumber(period.mapped)}</b> mapped
+          <b>{formatNumber(textOnly)}</b> text only
+        </small>
+      </span>
+    );
+  }
+
+  if (variant === 1) {
+    return (
+      <span
+        className="mobile-density-period-viz is-corpus-ring"
+        role="img"
+        aria-label={`${corpusPercent} percent of the public corpus`}
+      >
         <svg viewBox="0 0 150 62">
           <circle className="density-viz-base" cx="116" cy="31" r="24" pathLength="100" />
           <circle
@@ -1650,85 +1815,130 @@ function MobileDensityPeriodPreview({
             cy="31"
             r="24"
             pathLength="100"
-            strokeDasharray={`${volumePercent} 100`}
+            strokeDasharray={`${corpusPercent} 100`}
           />
-          <circle className="density-viz-base is-inner" cx="116" cy="31" r="15" pathLength="100" />
-          <circle
-            className="density-viz-mapped is-inner"
-            cx="116"
-            cy="31"
-            r="15"
-            pathLength="100"
-            strokeDasharray={`${mappedPercent} 100`}
-          />
-          <path className="density-viz-rule" d="M4 48h64M4 36h42M4 24h54" />
+          <text x="116" y="35" textAnchor="middle">{corpusPercent}%</text>
+          <path className="density-viz-rule" d="M4 40h58M4 27h42" />
         </svg>
-      </span>
-    );
-  }
-
-  if (variant === 1) {
-    const levels = [0.42, 0.72, 0.55, 1, 0.68];
-    return (
-      <span className="mobile-density-period-viz is-columns" aria-hidden="true">
-        {levels.map((level, columnIndex) => (
-          <i
-            key={`${period.id}-column-${columnIndex}`}
-            style={{ "--density-level": Math.max(0.16, level * volume) } as CSSProperties}
-          >
-            <em style={{ "--density-mapped": mapped } as CSSProperties} />
-          </i>
-        ))}
       </span>
     );
   }
 
   if (variant === 2) {
     return (
-      <span className="mobile-density-period-viz is-steps" aria-hidden="true">
-        <i style={{ "--density-step": Math.max(0.28, volume * 0.58) } as CSSProperties} />
-        <i style={{ "--density-step": Math.max(0.42, volume * 0.78) } as CSSProperties} />
-        <i style={{ "--density-step": Math.max(0.56, volume) } as CSSProperties} />
-        <em style={{ "--density-mapped": mapped } as CSSProperties} />
-      </span>
-    );
-  }
-
-  if (variant === 3) {
-    return (
-      <span className="mobile-density-period-viz is-arc" aria-hidden="true">
-        <svg viewBox="0 0 150 62">
-          <path className="density-viz-base" pathLength="100" d="M12 53A63 63 0 0 1 138 53" />
-          <path
-            className="density-viz-volume"
-            pathLength="100"
-            strokeDasharray={`${volumePercent} 100`}
-            d="M12 53A63 63 0 0 1 138 53"
-          />
-          <path className="density-viz-base is-inner" pathLength="100" d="M31 53a44 44 0 0 1 88 0" />
-          <path
-            className="density-viz-mapped is-inner"
-            pathLength="100"
-            strokeDasharray={`${mappedPercent} 100`}
-            d="M31 53a44 44 0 0 1 88 0"
-          />
-        </svg>
+      <span
+        className="mobile-density-period-viz is-rank"
+        role="img"
+        aria-label={`Volume rank ${rank} of ${totalPeriods}`}
+      >
+        <strong>#{rank}</strong>
+        <span>
+          {Array.from({ length: totalPeriods }, (_, rankIndex) => (
+            <i
+              className={rankIndex === rank - 1 ? "is-active" : ""}
+              key={`${period.id}-rank-${rankIndex}`}
+            />
+          ))}
+        </span>
+        <small>VOLUME RANK / {totalPeriods}</small>
       </span>
     );
   }
 
   return (
-    <span className="mobile-density-period-viz is-range" aria-hidden="true">
-      <svg viewBox="0 0 150 62" preserveAspectRatio="none">
-        <path className="density-viz-rule" d="M4 50h142" />
+    <span
+      className="mobile-density-period-viz is-mapped-arc"
+      role="img"
+      aria-label={`${mappedPercent} percent of records in this period are mapped`}
+    >
+      <svg viewBox="0 0 150 62">
+        <path className="density-viz-base" pathLength="100" d="M12 53A63 63 0 0 1 138 53" />
         <path
-          className="density-viz-range"
-          d={`M5 46 L35 ${46 - (volume * 21)} L67 ${42 - (mapped * 24)} L98 ${48 - (volume * 34)} L145 ${40 - (mapped * 22)}`}
+          className="density-viz-volume"
+          pathLength="100"
+          strokeDasharray={`${mappedPercent} 100`}
+          d="M12 53A63 63 0 0 1 138 53"
         />
-        <circle className="density-viz-node" cx="35" cy={46 - (volume * 21)} r="4" />
-        <circle className="density-viz-node" cx="98" cy={48 - (volume * 34)} r="4" />
+        <text x="75" y="51" textAnchor="middle">{mappedPercent}% mapped</text>
       </svg>
     </span>
+  );
+}
+
+function MobileAnnualSeriesCard({
+  series,
+  peakYear,
+}: {
+  series: Array<{ year: number; count: number }>;
+  peakYear: { year: number; count: number };
+}) {
+  const [flipped, setFlipped] = useState(false);
+  const minYear = Math.min(...series.map((row) => row.year));
+  const maxYear = Math.max(...series.map((row) => row.year));
+  const datedTotal = series.reduce((total, row) => total + row.count, 0);
+  const peakPosition = ((peakYear.year - minYear) / Math.max(1, maxYear - minYear)) * 100;
+
+  return (
+    <section
+      className={`mobile-density-overview-card ${flipped ? "is-flipped" : ""}`.trim()}
+      aria-label="Annual dated-record overview"
+    >
+      <button
+        type="button"
+        className="mobile-annual-flip"
+        aria-pressed={flipped}
+        aria-label={flipped ? "Show annual series chart" : "Show how to read the annual series"}
+        onClick={() => setFlipped((current) => !current)}
+      >
+        <span className="mobile-annual-flip-inner">
+          <span className="mobile-annual-face mobile-annual-face-front" aria-hidden={flipped}>
+            <span className="mobile-annual-header">
+              <span>
+                <small>ANNUAL SERIES</small>
+                <b>{peakYear.year} peak year</b>
+              </span>
+              <strong>{formatNumber(peakYear.count)}</strong>
+            </span>
+            <MobileAnnualSparkline series={series} />
+            <span className="mobile-annual-axis" style={{ "--annual-peak": `${peakPosition}%` } as CSSProperties}>
+              <span className="is-start"><small>START</small><b>{minYear}</b></span>
+              <span className="is-peak"><small>PEAK</small><b>{peakYear.year}</b></span>
+              <span className="is-end"><small>END</small><b>{maxYear}</b></span>
+            </span>
+            <span className="mobile-annual-flip-cue">
+              <small>Tap for interpretation</small>
+              <MobileFlipIcon />
+            </span>
+          </span>
+          <span className="mobile-annual-face mobile-annual-face-back" aria-hidden={!flipped}>
+            <span className="mobile-annual-back-eyebrow">HOW TO READ THIS SERIES</span>
+            <strong>{formatNumber(peakYear.count)} in {peakYear.year}</strong>
+            <p>
+              This trace contains {formatNumber(datedTotal)} dated public-text records from {minYear} to {maxYear}.
+              The peak and gaps describe archive coverage and collection history, not a continuous measure of reported phenomena.
+            </p>
+            <span className="mobile-annual-back-axis">
+              <b>{minYear}</b><i aria-hidden="true" /><b>{peakYear.year}</b><i aria-hidden="true" /><b>{maxYear}</b>
+            </span>
+            <span className="mobile-annual-flip-cue">
+              <small>Tap to return to chart</small>
+              <MobileFlipIcon />
+            </span>
+          </span>
+        </span>
+      </button>
+    </section>
+  );
+}
+
+function MobileFlipIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M7 7.5A7 7 0 0 1 18.1 9" />
+      <path d="m18 5.5.2 3.8-3.8.2" />
+      <path d="M17 16.5A7 7 0 0 1 5.9 15" />
+      <path d="m6 18.5-.2-3.8 3.8-.2" />
+    </svg>
   );
 }
 
@@ -1789,8 +1999,6 @@ function MobileAnnualSparkline({ series }: { series: Array<{ year: number; count
       <line className="density-peak-guide" x1={peakX} x2={peakX} y1={peakY} y2={height - 14} />
       <polyline ref={lineRef} className="density-line-public density-chart-path" points={points} fill="none" />
       <circle className="density-peak-dot" cx={peakX} cy={peakY} r="4.5" />
-      <text className="density-chart-axis" x="12" y={height - 2}>{minYear}</text>
-      <text className="density-chart-axis" x={width - 12} y={height - 2} textAnchor="end">{maxYear}</text>
     </svg>
   );
 }
@@ -2073,7 +2281,8 @@ function MobileAboutView({ data }: { data: MobileArchiveData }) {
             target="_blank"
             rel="noreferrer"
           >
-            View GitHub repository <span aria-hidden="true">↗</span>
+            <span>View GitHub repository</span>
+            <MobileLinkArrowIcon />
           </a>
         </MobileAboutModule>
       </MobileCardDeck>
@@ -2193,14 +2402,14 @@ export function MobileExpandableCard({
     const timeline = createTimeline({
       defaults: {
         ease: "inOutCubic",
-        duration: 520,
+        duration: 700,
         composition: "replace",
       },
     });
     if (cardRef.current) {
       timeline.add(cardRef.current, {
         scale: open ? [0.988, 1] : [1, 0.994, 1],
-        duration: open ? 420 : 320,
+        duration: open ? 620 : 500,
       }, 0);
     }
     timeline.add(panel, {
@@ -2213,9 +2422,9 @@ export function MobileExpandableCard({
       timeline.add(contentItems, {
         opacity: [0, 1],
         translateY: [12, 0],
-        delay: stagger(34),
-        duration: 360,
-      }, 90);
+        delay: stagger(48),
+        duration: 520,
+      }, 130);
     }
     const completionTimer = window.setTimeout(() => {
       panel.style.height = open ? "auto" : "0px";
@@ -2228,7 +2437,7 @@ export function MobileExpandableCard({
           inline: "nearest",
         });
       }
-    }, 560);
+    }, 760);
 
     return () => {
       window.clearTimeout(completionTimer);
@@ -2366,7 +2575,7 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
       timeline = createTimeline({
         defaults: {
           ease: "outQuint",
-          duration: 560,
+          duration: 720,
           composition: "replace",
         },
       });
@@ -2382,8 +2591,8 @@ export function MobileArchiveControls({ view }: { view: MobileControlView }) {
           translateY: [5, -2],
           scale: [0.76, 1.12],
           rotate: [-5, 0],
-          duration: 460,
-        }, 40);
+          duration: 620,
+        }, 60);
       }
     };
 

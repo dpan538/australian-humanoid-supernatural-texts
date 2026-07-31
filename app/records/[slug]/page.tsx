@@ -8,6 +8,7 @@ import {
   RecordDefinitionList,
   compactText,
 } from "@/components/archive-publication";
+import { MobileRecordPublication } from "@/components/mobile-record-publication";
 import {
   archiveRecordPolicy,
   loadArchiveData,
@@ -25,7 +26,8 @@ import {
   sourcePath,
 } from "@/lib/archive-routing";
 import { figureProfileFor } from "@/lib/figure-profiles";
-import { SITE, absoluteUrl, siteConfig, socialImageMetadata } from "@/lib/site";
+import { buildFigureDictionaryEntries } from "@/lib/figure-dictionary";
+import { SITE, absoluteUrl, siteConfig, socialCardImageMetadata } from "@/lib/site";
 
 type RecordPageProps = {
   params: Promise<{ slug: string }>;
@@ -48,7 +50,7 @@ export async function generateMetadata({ params }: RecordPageProps): Promise<Met
     return {};
   }
   const policy = archiveRecordPolicy(record);
-  const title = `${record.title} — Public-Text Record`;
+  const title = `${record.title} — Public-Text Record #${record.record_id}`;
   const description = compactText(
     record.snippet ||
       `${record.title} is a source-grounded public-text record in the AusFigures Australian supernatural humanoid archive.`,
@@ -66,6 +68,11 @@ export async function generateMetadata({ params }: RecordPageProps): Promise<Met
     path: recordPath(record),
     index: policy.indexEligible,
     keywords,
+    social: {
+      eyebrow: "PUBLIC-TEXT RECORD",
+      metric: `#${record.record_id}`,
+      tone: "paper",
+    },
   });
   return {
     ...metadata,
@@ -81,7 +88,7 @@ export async function generateMetadata({ params }: RecordPageProps): Promise<Met
       authors: record.author ? [record.author] : undefined,
       section: narrativeTypeName(record.ontology_code || record.genre || "unspecified"),
       tags: keywords,
-      images: [socialImageMetadata()],
+      images: metadata.openGraph?.images,
     },
   };
 }
@@ -114,6 +121,13 @@ export default async function RecordPage({ params }: RecordPageProps) {
     record.state_territory,
     record.source_name,
   ].filter(Boolean);
+  const socialImage = socialCardImageMetadata({
+    title: `${record.title} — Public-Text Record #${record.record_id}`,
+    description,
+    eyebrow: "PUBLIC-TEXT RECORD",
+    metric: `#${record.record_id}`,
+    tone: "paper",
+  });
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -127,6 +141,13 @@ export default async function RecordPage({ params }: RecordPageProps) {
         dateModified: data.generated_at,
         isPartOf: {
           "@id": `${siteConfig.siteUrl}/#website`,
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: socialImage.url,
+          width: socialImage.width,
+          height: socialImage.height,
+          caption: socialImage.alt,
         },
         mainEntity: {
           "@id": `${pageUrl}#record`,
@@ -172,69 +193,95 @@ export default async function RecordPage({ params }: RecordPageProps) {
       ]),
     ],
   };
+  const mobileFigures = buildFigureDictionaryEntries(data)
+    .filter((entry) => entry.recordCount > 0)
+    .map((entry) => {
+      const years = entry.dateSpan.match(/\d{4}/g)?.map(Number) ?? [];
+      return {
+        name: entry.label,
+        slug: entry.slug,
+        description: entry.description,
+        aliases: entry.aliases,
+        recordCount: entry.recordCount,
+        earliestYear: years[0] ?? null,
+        latestYear: years.length ? years[years.length - 1] : null,
+      };
+    });
 
   return (
-    <ArchivePublicationPage
-      eyebrow="PUBLIC-TEXT RECORD"
-      title={record.title || `Record ${record.record_id}`}
-      intro={description}
-      breadcrumbs={[
-        { href: "/", label: SITE.name },
-        { href: "/records", label: "Records" },
-        { href: recordPath(record), label: `#${record.record_id}` },
-      ]}
-      stats={[
-        { label: "Record ID", value: record.record_id },
-        { label: "Year", value: record.year ?? "Undated" },
-        { label: "Source", value: record.source_name || "Unspecified" },
-        { label: "Index status", value: policy.indexEligible ? "Public search-ready" : "Review-only" },
-      ]}
-      notice={
-        policy.indexEligible
-          ? "This page records what a public source contains. It is not verification of the supernatural claim described by that source."
-          : "This accepted public record remains outside the search sitemap while its indexing or cultural-sensitivity review is incomplete."
-      }
-    >
-      <script
-        id={`record-${record.record_id}-structured-data`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+    <>
+      <MobileRecordPublication
+        record={record}
+        related={related}
+        figures={mobileFigures}
+        description={description}
+        figureLabel={figure?.label ?? label ?? null}
+        figureHref={figure ? figurePath(figure.slug) : null}
+        indexEligible={policy.indexEligible}
       />
+      <ArchivePublicationPage
+        className="record-publication-desktop"
+        eyebrow="PUBLIC-TEXT RECORD"
+        title={record.title || `Record ${record.record_id}`}
+        intro={description}
+        breadcrumbs={[
+          { href: "/", label: SITE.name },
+          { href: "/records", label: "Records" },
+          { href: recordPath(record), label: `#${record.record_id}` },
+        ]}
+        stats={[
+          { label: "Record ID", value: record.record_id },
+          { label: "Year", value: record.year ?? "Undated" },
+          { label: "Source", value: record.source_name || "Unspecified" },
+          { label: "Index status", value: policy.indexEligible ? "Public search-ready" : "Review-only" },
+        ]}
+        notice={
+          policy.indexEligible
+            ? "This page records what a public source contains. It is not verification of the supernatural claim described by that source."
+            : "This accepted public record remains outside the search sitemap while its indexing or cultural-sensitivity review is incomplete."
+        }
+      >
+        <script
+          id={`record-${record.record_id}-structured-data`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+        />
 
-      <PublicationSection title="Record context">
-        <RecordDefinitionList record={record} />
-      </PublicationSection>
-
-      {record.snippet ? (
-        <PublicationSection title="Source-grounded excerpt">
-          <blockquote className="publication-excerpt">{record.snippet}</blockquote>
-          <p className="publication-caveat">
-            The excerpt is presented as public-source context. Terminology belongs to the cited source and may be historical,
-            contested, culturally specific, or outdated.
-          </p>
+        <PublicationSection title="Record context">
+          <RecordDefinitionList record={record} />
         </PublicationSection>
-      ) : null}
 
-      <PublicationSection title="Browse this record">
-        <div className="publication-link-row">
-          {narrativeCode ? (
-            <Link href={narrativeTypePath(narrativeCode)}>
-              Narrative type: {narrativeTypeName(narrativeCode)}
-            </Link>
-          ) : null}
-          {figure ? <Link href={figurePath(figure.slug)}>Encyclopedia profile: {figure.label}</Link> : null}
-          {record.source_name ? (
-            <Link href={sourcePath(record.source_id, record.source_name)}>Source: {record.source_name}</Link>
-          ) : null}
-          <a href={record.url || "#"} rel="noopener noreferrer" target="_blank">
-            Open original public source
-          </a>
-        </div>
-      </PublicationSection>
+        {record.snippet ? (
+          <PublicationSection title="Source-grounded excerpt">
+            <blockquote className="publication-excerpt">{record.snippet}</blockquote>
+            <p className="publication-caveat">
+              The excerpt is presented as public-source context. Terminology belongs to the cited source and may be historical,
+              contested, culturally specific, or outdated.
+            </p>
+          </PublicationSection>
+        ) : null}
 
-      <PublicationSection title="Related public records">
-        <ArchiveRecordList records={related} />
-      </PublicationSection>
-    </ArchivePublicationPage>
+        <PublicationSection title="Browse this record">
+          <div className="publication-link-row">
+            {narrativeCode ? (
+              <Link href={narrativeTypePath(narrativeCode)}>
+                Narrative type: {narrativeTypeName(narrativeCode)}
+              </Link>
+            ) : null}
+            {figure ? <Link href={figurePath(figure.slug)}>Encyclopedia profile: {figure.label}</Link> : null}
+            {record.source_name ? (
+              <Link href={sourcePath(record.source_id, record.source_name)}>Source: {record.source_name}</Link>
+            ) : null}
+            <a href={record.url || "#"} rel="noopener noreferrer" target="_blank">
+              Open original public source
+            </a>
+          </div>
+        </PublicationSection>
+
+        <PublicationSection title="Related public records">
+          <ArchiveRecordList records={related} />
+        </PublicationSection>
+      </ArchivePublicationPage>
+    </>
   );
 }

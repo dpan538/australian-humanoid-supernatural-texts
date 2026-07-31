@@ -244,8 +244,21 @@ function inspectHtml(route, html) {
       twitter.image &&
       twitter.imageAlt
     ),
+    hasOpenSearchDiscovery: /<link\b[^>]*rel=["']search["'][^>]*type=["']application\/opensearchdescription\+xml["'][^>]*>/i.test(html),
     visibleTextLength: visibleText.length,
   };
+}
+
+function duplicatePageValues(pages, valueFor) {
+  const groups = new Map();
+  for (const page of pages) {
+    const value = valueFor(page);
+    if (!value) continue;
+    const routes = groups.get(value) || [];
+    routes.push(page.route);
+    groups.set(value, routes);
+  }
+  return [...groups.values()].filter((routes) => routes.length > 1).flat();
 }
 
 async function auditBuildOutput() {
@@ -258,11 +271,13 @@ async function auditBuildOutput() {
   const contentPages = pages.filter((page) => !frameworkErrorRoutes.has(page.route));
   const sitemapXml = await readFile(path.join(buildRoot, "sitemap.xml.body"), "utf8");
   const robotsText = await readFile(path.join(buildRoot, "robots.txt.body"), "utf8");
+  const openSearchText = await readFile(path.join(buildRoot, "opensearch.xml.body"), "utf8");
   const sitemapUrls = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => decodeText(match[1]));
+  const sitemapImages = [...sitemapXml.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map((match) => decodeText(match[1]));
   const sitemapPaths = new Set(sitemapUrls.map((url) => new URL(url).pathname.replace(/\/$/, "") || "/"));
   const pageByRoute = new Map(contentPages.map((page) => [page.route, page]));
   const sitemapMissingHtml = [...sitemapPaths].filter((route) => !pageByRoute.has(route));
-  const indexablePages = contentPages.filter((page) => !page.noindex && page.route !== "/map");
+  const indexablePages = contentPages.filter((page) => !page.noindex);
   const indexableMissingSitemap = indexablePages
     .filter((page) => !sitemapPaths.has(page.route))
     .map((page) => page.route);
@@ -275,6 +290,10 @@ async function auditBuildOutput() {
     .filter(Boolean)
     .map((url) => new URL(url).pathname.replace(/\/$/, "") || "/");
   const missingCanonicalTargets = canonicalTargets.filter((route) => !pageByRoute.has(route));
+  const openSearchValid =
+    /<OpenSearchDescription\b[^>]*xmlns="http:\/\/a9\.com\/-\/spec\/opensearch\/1\.1\/"/i.test(openSearchText) &&
+    /<Url\b[^>]*type="text\/html"[^>]*\{searchTerms\}/i.test(openSearchText) &&
+    /<Url\b[^>]*type="application\/x-suggestions\+json"[^>]*\{searchTerms\}/i.test(openSearchText);
   const failures = {
     missing_title: contentPages.filter((page) => !page.title).map((page) => page.route),
     missing_description: contentPages.filter((page) => !page.description).map((page) => page.route),
@@ -284,6 +303,12 @@ async function auditBuildOutput() {
     invalid_structured_data: contentPages.filter((page) => !page.structuredDataValid).map((page) => page.route),
     incomplete_open_graph: contentPages.filter((page) => !page.completeOpenGraph).map((page) => page.route),
     incomplete_twitter_card: contentPages.filter((page) => !page.completeTwitterCard).map((page) => page.route),
+    missing_opensearch_discovery: contentPages.filter((page) => !page.hasOpenSearchDiscovery).map((page) => page.route),
+    non_content_specific_social_image: contentPages
+      .filter((page) => !page.openGraph.image.includes("/social-card?"))
+      .map((page) => page.route),
+    duplicate_indexable_titles: duplicatePageValues(indexablePages, (page) => page.title),
+    duplicate_indexable_canonicals: duplicatePageValues(indexablePages, (page) => page.canonical),
     open_graph_canonical_mismatch: contentPages
       .filter((page) => page.canonical && page.openGraph.url !== page.canonical)
       .map((page) => page.route),
@@ -301,6 +326,9 @@ async function auditBuildOutput() {
     sitemap_contains_noindex: sitemapNoindexPages,
     sitemap_contains_legacy_taxonomy: legacySitemapPaths,
     missing_canonical_targets: [...new Set(missingCanonicalTargets)],
+    invalid_opensearch_document: openSearchValid ? [] : ["/opensearch.xml"],
+    sitemap_entries_without_social_image:
+      sitemapImages.length === sitemapUrls.length ? [] : [`${sitemapUrls.length - sitemapImages.length} entries`],
   };
   const failureCount = Object.values(failures).reduce((total, routes) => total + routes.length, 0);
   return {
@@ -314,6 +342,9 @@ async function auditBuildOutput() {
     pages_with_complete_twitter_cards: contentPages.filter((page) => page.completeTwitterCard).length,
     sitemap_urls: sitemapUrls.length,
     sitemap_unique_urls: new Set(sitemapUrls).size,
+    sitemap_images: sitemapImages.length,
+    sitemap_unique_images: new Set(sitemapImages).size,
+    opensearch_valid: openSearchValid,
     robots_allows_root: /User-agent:\s*\*[\s\S]*?Allow:\s*\/(?:\s|$)/i.test(robotsText),
     robots_has_disallow: /^Disallow:/im.test(robotsText),
     robots_declares_sitemap: /Sitemap:\s*https:\/\/ausfigures\.com\/sitemap\.xml/i.test(robotsText),

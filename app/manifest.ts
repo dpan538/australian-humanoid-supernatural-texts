@@ -14,6 +14,29 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["education", "reference", "research"],
     lang: siteConfig.locale.replace("_", "-"),
     dir: "ltr",
+    shortcuts: [
+      {
+        name: "Search figures",
+        short_name: "Figures",
+        description: "Search the AusFigures supernatural humanoid encyclopedia.",
+        url: "/figures",
+        icons: [{ src: SITE.pngIconPath, sizes: "192x192", type: "image/png" }],
+      },
+      {
+        name: "Explore the public map",
+        short_name: "Map",
+        description: "Open the schematic public-record map.",
+        url: "/map",
+        icons: [{ src: SITE.pngIconPath, sizes: "192x192", type: "image/png" }],
+      },
+      {
+        name: "Browse public records",
+        short_name: "Records",
+        description: "Browse search-ready source-grounded public-text records.",
+        url: "/records",
+        icons: [{ src: SITE.pngIconPath, sizes: "192x192", type: "image/png" }],
+      },
+    ],
     icons: [
       {
         src: SITE.iconPath,

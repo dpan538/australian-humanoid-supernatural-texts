@@ -1,11 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { SITE, absoluteUrl, siteConfig, socialImageMetadata } from "@/lib/site";
+import { SITE, absoluteUrl, siteConfig, socialCardImageMetadata } from "@/lib/site";
 import "./globals.css";
 import "./mobile.css";
 
-const socialImage = socialImageMetadata();
-const twitterImage = socialImageMetadata(SITE.twitterImagePath);
+const socialImage = socialCardImageMetadata({
+  title: "Australian Supernatural Humanoid Public-Text Archive",
+  description: SITE.description,
+  eyebrow: "AUSTRALIAN PUBLIC ARCHIVE",
+  metric: "4,265 records",
+  tone: "paper",
+});
+const twitterImage = socialImage;
 const logoUrl = absoluteUrl(SITE.logoPath);
 const licenseUrl = `${siteConfig.repositoryUrl}/blob/main/LICENSE.md`;
 const datasetDownloadUrl = absoluteUrl("/data/frontend-data.json");
@@ -49,6 +55,14 @@ const structuredData = {
         name: siteConfig.creator,
       },
       isAccessibleForFree: true,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${absoluteUrl("/figures")}?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
       hasPart: [
         {
           "@type": "CollectionPage",
@@ -191,6 +205,7 @@ export const metadata: Metadata = {
   description: siteConfig.shortDescription,
   keywords: [...siteConfig.keywords],
   category: "research",
+  referrer: "origin-when-cross-origin",
   alternates: {
     types: {
       "application/rss+xml": absoluteUrl("/feed.xml"),
@@ -251,6 +266,13 @@ export default function RootLayout({
   return (
     <html lang="en-AU" suppressHydrationWarning>
       <head>
+        <link
+          rel="search"
+          type="application/opensearchdescription+xml"
+          title={SITE.name}
+          href={SITE.openSearchPath}
+        />
+        <link rel="me" href={SITE.repositoryUrl} />
         <Script
           id="ausfigures-theme-bootstrap"
           strategy="beforeInteractive"

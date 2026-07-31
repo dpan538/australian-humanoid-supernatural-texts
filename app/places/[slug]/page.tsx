@@ -28,6 +28,11 @@ export async function generateMetadata({ params }: PlacePageProps): Promise<Meta
     description: `Browse ${group.records.length} source-grounded AusFigures public-text records associated with ${group.label}.`,
     path: placePath(group.key),
     keywords: [`${group.label} supernatural folklore`, `${group.label} ghost and humanoid records`],
+    social: {
+      eyebrow: "NARRATIVE GEOGRAPHY",
+      metric: `${group.records.length.toLocaleString("en-AU")} records`,
+      tone: "clay",
+    },
   });
 }
 

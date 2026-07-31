@@ -9,7 +9,7 @@ import {
 import { archivePageMetadata } from "@/lib/archive-metadata";
 import { figurePath } from "@/lib/archive-routing";
 import { buildFigureDictionaryEntries } from "@/lib/figure-dictionary";
-import { SITE, absoluteUrl, siteConfig } from "@/lib/site";
+import { SITE, absoluteUrl, siteConfig, socialCardImageMetadata } from "@/lib/site";
 
 type FigurePageProps = {
   params: Promise<{ slug: string }>;
@@ -50,6 +50,11 @@ export async function generateMetadata({ params }: FigurePageProps): Promise<Met
         figure.ontology_default ?? "",
       ]),
     ].filter(Boolean),
+    social: {
+      eyebrow: "FIGURE ENCYCLOPEDIA",
+      metric: `${group.records.length.toLocaleString("en-AU")} records`,
+      tone: "blue",
+    },
   });
 }
 
@@ -61,6 +66,14 @@ export default async function FigurePage({ params }: FigurePageProps) {
   if (!entry || entry.recordCount === 0) {
     notFound();
   }
+
+  const socialImage = socialCardImageMetadata({
+    title: `${entry.label} — Australian Supernatural Humanoid Encyclopedia`,
+    description: entry.description,
+    eyebrow: "FIGURE ENCYCLOPEDIA",
+    metric: `${entry.recordCount.toLocaleString("en-AU")} records`,
+    tone: "blue",
+  });
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -75,8 +88,15 @@ export default async function FigurePage({ params }: FigurePageProps) {
         dateModified: siteConfig.contentUpdatedDate,
         isPartOf: { "@id": `${siteConfig.siteUrl}/#website` },
         publisher: { "@id": `${siteConfig.siteUrl}/#organization` },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: socialImage.url,
+          width: socialImage.width,
+          height: socialImage.height,
+          caption: socialImage.alt,
+        },
         mainEntity: { "@id": `${absoluteUrl(figurePath(entry.slug))}#term` },
-        hasPart: entry.records.map((record) => ({
+        hasPart: entry.records.slice(0, 100).map((record) => ({
           "@type": "WebPage",
           name: record.title,
           url: absoluteUrl(record.href),
@@ -93,7 +113,7 @@ export default async function FigurePage({ params }: FigurePageProps) {
         subjectOf: {
           "@type": "ItemList",
           numberOfItems: entry.recordCount,
-          itemListElement: entry.records.map((record, index) => ({
+          itemListElement: entry.records.slice(0, 100).map((record, index) => ({
             "@type": "ListItem",
             position: index + 1,
             name: record.title,
