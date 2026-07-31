@@ -34,6 +34,13 @@ function animateSettledSurfaces(originX: number, originY: number) {
     ".density-chart-card",
     ".figure-dictionary-profile",
     ".map-readout",
+    ".mobile-map-dashboard-card",
+    ".mobile-density-overview-card",
+    ".mobile-dashboard-hero",
+    ".mobile-analysis-card",
+    ".mobile-source-visual-card",
+    ".mobile-expand-card",
+    ".about-status-panel",
   ].join(",");
   const surfaces = [...document.querySelectorAll<HTMLElement>(selectors)]
     .filter((element) => {

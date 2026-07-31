@@ -1037,6 +1037,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
   const [showArchive, setShowArchive] = useState(Boolean(frontendDataCache));
   const [error, setError] = useState<string | null>(null);
   const loadingRef = useRef<HTMLDivElement | null>(null);
+  const preflightLoadingRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!mobileMode.ready) {
@@ -1083,6 +1084,63 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
     }
 
     loadingRoot.classList.add("loading-is-complete");
+
+    if (mobileMode.ready && mobileMode.isMobile) {
+      const mobileTimeline = createTimeline({
+        defaults: {
+          ease: "outQuint",
+          composition: "replace",
+        },
+        onComplete: finishLoading,
+      });
+
+      addIfTargets(mobileTimeline, loadingRoot.querySelectorAll(".mobile-loading-phase-map"), {
+        opacity: [1, 0],
+        scale: [1, 0.94],
+        translateY: [0, -12],
+        duration: 260,
+      }, 240);
+      addIfTargets(mobileTimeline, loadingRoot.querySelectorAll(".mobile-loading-phase-data"), {
+        opacity: [0, 1],
+        scale: [0.94, 1],
+        translateY: [18, 0],
+        duration: 320,
+      }, 540);
+      addIfTargets(mobileTimeline, loadingRoot.querySelectorAll(".mobile-loading-stat"), {
+        opacity: [0, 1],
+        translateY: [14, 0],
+        delay: stagger(55),
+        duration: 300,
+      }, 580);
+      addIfTargets(mobileTimeline, loadingRoot.querySelectorAll(".mobile-loading-phase-data"), {
+        opacity: [1, 0],
+        scale: [1, 0.96],
+        translateY: [0, -12],
+        duration: 260,
+      }, 1220);
+      addIfTargets(mobileTimeline, loadingRoot.querySelectorAll(".mobile-loading-phase-ring"), {
+        opacity: [0, 1],
+        scale: [0.78, 1],
+        rotate: [-10, 0],
+        duration: 440,
+      }, 1500);
+      addIfTargets(mobileTimeline, loadingRoot.querySelectorAll(".mobile-loading-ring-value"), {
+        strokeDashoffset: [100, 12],
+        duration: 620,
+        ease: "inOutCubic",
+      }, 1560);
+      mobileTimeline.add(loadingRoot, {
+        opacity: [1, 0],
+        scale: [1, 0.985],
+        duration: 240,
+      }, 2260);
+
+      return () => {
+        cancelled = true;
+        mobileTimeline.cancel();
+      };
+    }
+
     const timeline = createTimeline({
       defaults: {
         ease: "linear",
@@ -1116,16 +1174,39 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
       cancelled = true;
       timeline.cancel();
     };
-  }, [data, showArchive]);
+  }, [data, mobileMode.isMobile, mobileMode.ready, showArchive]);
 
-  if (mobileMode.ready && mobileMode.isMobile) {
-    if (data) {
+  if (!mobileMode.ready) {
+    return (
+      <>
+        <div className="mobile-loader-preflight">
+          <MobileArchiveLoadingState
+            view={view}
+            data={data}
+            error={error}
+            loadingRef={loadingRef}
+          />
+        </div>
+        <div className="desktop-loader-preflight">
+          <ArchiveTerminalShell view={view}>
+            <ArchiveLoadingState view={view} error={error} loadingRef={preflightLoadingRef} />
+          </ArchiveTerminalShell>
+        </div>
+      </>
+    );
+  }
+
+  if (mobileMode.isMobile) {
+    if (data && showArchive) {
       return <MobileArchiveRoute view={view} data={data} />;
     }
     return (
-      <ArchiveTerminalShell view={view === "dashboard" ? "map" : view}>
-        <ArchiveLoadingState view={view === "dashboard" ? "map" : view} error={error} loadingRef={loadingRef} />
-      </ArchiveTerminalShell>
+      <MobileArchiveLoadingState
+        view={view}
+        data={data}
+        error={error}
+        loadingRef={loadingRef}
+      />
     );
   }
 
@@ -1149,6 +1230,93 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
     <ArchiveTerminalShell view={view}>
       <ArchiveLoadingState view={view} error={error} loadingRef={loadingRef} />
     </ArchiveTerminalShell>
+  );
+}
+
+function MobileArchiveLoadingState({
+  view,
+  data,
+  error,
+  loadingRef,
+}: {
+  view: ViewMode;
+  data: FrontendData | null;
+  error: string | null;
+  loadingRef: RefObject<HTMLDivElement | null>;
+}) {
+  const publicCount = data ? new Intl.NumberFormat("en-AU").format(data.summary.record_count) : "—";
+  const mappedCount = data ? new Intl.NumberFormat("en-AU").format(data.summary.mapped_record_count) : "—";
+  const dateSpan = data
+    ? `${data.summary.earliest_year ?? "—"}–${data.summary.latest_year ?? "—"}`
+    : "—";
+
+  return (
+    <main
+      ref={loadingRef}
+      className={`mobile-archive-loading ${error ? "is-error" : ""}`.trim()}
+      role={error ? "alert" : "status"}
+      aria-live="polite"
+    >
+      <h1 className="visually-hidden">
+        {error ? "AusFigures archive unavailable" : "AusFigures archive loading"}
+      </h1>
+      <section className="mobile-loading-window" aria-label="Australian public-text archive loading">
+        {error ? (
+          <div className="mobile-loading-error-copy">
+            <span>ARCHIVE PAUSED</span>
+            <strong>Data unavailable</strong>
+            <p>Refresh the page or try again shortly.</p>
+          </div>
+        ) : (
+          <>
+            <div className="mobile-loading-phase mobile-loading-phase-map" aria-hidden="true">
+              <svg
+                className="mobile-loading-australia"
+                viewBox="24 18 930 682"
+                focusable="false"
+              >
+                <path d={STATE_SHAPES.map((state) => state.d).join(" ")} />
+              </svg>
+              <strong>Australia</strong>
+            </div>
+
+            <div className="mobile-loading-phase mobile-loading-phase-data" aria-hidden="true">
+              <dl>
+                <div className="mobile-loading-stat is-public">
+                  <dt>PUBLIC</dt>
+                  <dd>{publicCount}</dd>
+                </div>
+                <div className="mobile-loading-stat is-mapped">
+                  <dt>MAPPED</dt>
+                  <dd>{mappedCount}</dd>
+                </div>
+                <div className="mobile-loading-stat is-span">
+                  <dt>SPAN</dt>
+                  <dd>{dateSpan}</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="mobile-loading-phase mobile-loading-phase-ring" aria-hidden="true">
+              <div className="mobile-loading-ring">
+                <svg viewBox="0 0 220 220" focusable="false">
+                  <circle className="mobile-loading-ring-track" cx="110" cy="110" r="97" pathLength="100" />
+                  <circle className="mobile-loading-ring-value" cx="110" cy="110" r="97" pathLength="100" />
+                  <circle className="mobile-loading-ring-inner" cx="110" cy="110" r="66" pathLength="100" />
+                </svg>
+                <span>
+                  <small>ARCHIVE</small>
+                  <b>{data ? "READY" : "READING"}</b>
+                </span>
+              </div>
+            </div>
+          </>
+        )}
+      </section>
+      <span className="visually-hidden">
+        {error ? "Public interface paused" : `${VIEW_LABELS[view]} indexing public records`}
+      </span>
+    </main>
   );
 }
 

@@ -19,7 +19,9 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const data = await loadArchiveData();
-  return encyclopediaFigureGroups(data).map((group) => ({ slug: group.slug }));
+  return encyclopediaFigureGroups(data)
+    .filter((group) => group.records.length > 0)
+    .map((group) => ({ slug: group.slug }));
 }
 
 export async function generateMetadata({ params }: FigurePageProps): Promise<Metadata> {
@@ -56,7 +58,7 @@ export default async function FigurePage({ params }: FigurePageProps) {
   const data = await loadArchiveData();
   const entries = buildFigureDictionaryEntries(data);
   const entry = entries.find((item) => item.slug === slug);
-  if (!entry) {
+  if (!entry || entry.recordCount === 0) {
     notFound();
   }
 

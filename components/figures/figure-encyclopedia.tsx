@@ -1,10 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useDeferredValue, useId, useMemo, useRef, useState } from "react";
+import { useDeferredValue, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { CSSProperties, FocusEvent } from "react";
 import { DisplayControls } from "@/components/display-controls";
 import { useFigureDictionaryMotion } from "@/components/figures/use-figure-dictionary-motion";
+import {
+  MobileArchiveControls,
+  MobileCardDeck,
+  MobileExpandableCard,
+  MobileTopBar,
+  type MobileFigureSearchEntry,
+} from "@/components/mobile-archive";
 import type {
   FigureDictionaryEntry,
   FigureDictionaryFrequency,
@@ -23,180 +30,607 @@ export function FigureEncyclopedia({
   const [query, setQuery] = useState("");
   const [searchFocused, setSearchFocused] = useState(false);
   const deferredQuery = useDeferredValue(query);
-  const routeEntry = entries.find((entry) => entry.slug === initialSlug) ?? null;
+  const availableEntries = useMemo(
+    () => entries.filter((entry) => entry.recordCount > 0),
+    [entries],
+  );
+  const routeEntry = availableEntries.find((entry) => entry.slug === initialSlug) ?? null;
   const rankedResults = useMemo(
-    () => rankEntries(entries, deferredQuery),
-    [deferredQuery, entries],
+    () => rankEntries(availableEntries, deferredQuery),
+    [availableEntries, deferredQuery],
   );
   const results = rankedResults.map((result) => result.entry);
   const suggestions = deferredQuery.trim() ? rankedResults.slice(0, 6) : [];
   const isSearching = deferredQuery.trim().length > 0;
   const termEntries = isSearching
     ? results.slice(0, 30)
-    : entries.filter((entry) => entry.indexEligible).slice(0, 30);
+    : availableEntries.filter((entry) => entry.indexEligible).slice(0, 30);
   const activeEntry = isSearching
-    ? results[0] ?? routeEntry ?? entries[0] ?? null
-    : routeEntry ?? entries[0] ?? null;
+    ? results[0] ?? routeEntry ?? availableEntries[0] ?? null
+    : routeEntry ?? availableEntries[0] ?? null;
+  const mobileSearchEntries = useMemo(
+    () => availableEntries.map(toMobileFigureSearchEntry),
+    [availableEntries],
+  );
   useFigureDictionaryMotion(rootRef, activeEntry?.slug ?? null);
 
   return (
-    <main ref={rootRef} className="terminal-shell figure-dictionary-shell">
-      <div className="noise-layer" aria-hidden="true" />
-      <div className="terminal-stage figure-dictionary-stage">
-        <section className="view-area figure-dictionary-view" aria-label="Supernatural humanoid figure dictionary">
-          <header className="figure-dictionary-header">
-            <Link className="figure-dictionary-brand" href="/">
-              <strong>AUSFIGURES</strong>
-              <span>SUPERNATURAL HUMANOID DICTIONARY</span>
-            </Link>
-            <nav aria-label="Archive view sequence">
-              <Link href="/map">Map</Link>
-              <Link href="/density">Density</Link>
-              <Link href="/dashboard">Dashboard</Link>
-            </nav>
-          </header>
-
-          <div className="figure-dictionary-grid">
-            <aside className="figure-dictionary-browser">
-              <div
-                className={searchFocused ? "figure-dictionary-search-zone is-focused" : "figure-dictionary-search-zone"}
-                onFocusCapture={() => setSearchFocused(true)}
-                onBlurCapture={(event: FocusEvent<HTMLDivElement>) => {
-                  const next = event.relatedTarget;
-                  if (!(next instanceof Node) || !event.currentTarget.contains(next)) {
-                    setSearchFocused(false);
-                  }
-                }}
-              >
-                {searchFocused && suggestions.length ? (
-                  <button
-                    className="figure-dictionary-mobile-search-backdrop"
-                    type="button"
-                    aria-label="Close fuzzy search suggestions"
-                    onClick={() => {
-                      setSearchFocused(false);
-                      inputRef.current?.blur();
-                    }}
-                  />
-                ) : null}
-                <label className="figure-dictionary-search" htmlFor={inputId}>
-                  <span>FUZZY SEARCH / FIGURE / ALIAS / TYPE</span>
-                  <div>
-                    <i aria-hidden="true">⌕</i>
-                    <input
-                      ref={inputRef}
-                      id={inputId}
-                      type="search"
-                      value={query}
-                      onFocus={() => setSearchFocused(true)}
-                      onChange={(event) => {
-                        setQuery(event.target.value);
-                        setSearchFocused(true);
-                      }}
-                      placeholder="yowie, ghost, hairy man…"
-                      autoComplete="off"
-                      spellCheck={false}
-                      aria-controls={`${inputId}-suggestions`}
-                      aria-expanded={searchFocused && suggestions.length > 0}
-                    />
-                    {query ? (
-                      <button type="button" onClick={() => setQuery("")} aria-label="Clear figure search">
-                        CLEAR
-                      </button>
-                    ) : null}
-                  </div>
-                </label>
-                {searchFocused && suggestions.length ? (
-                  <div
-                    className="figure-dictionary-suggestions"
-                    id={`${inputId}-suggestions`}
-                    role="listbox"
-                    aria-label="Highest probability fuzzy matches"
-                  >
-                    <header>
-                      <span>HIGHEST PROBABILITY</span>
-                      <b>FUZZY MATCH</b>
-                    </header>
-                    <ol>
-                      {suggestions.map(({ entry, score, matchedLabel }) => (
-                        <li key={entry.slug}>
-                          <Link
-                            href={`/figures/${entry.slug}`}
-                            role="option"
-                            prefetch={false}
-                            onMouseDown={(event) => event.preventDefault()}
-                          >
-                            <span>
-                              <strong>{entry.label}</strong>
-                              <small>
-                                {matchedLabel === entry.label ? "PRIMARY LABEL" : `MATCHED: ${matchedLabel}`}
-                              </small>
-                            </span>
-                            <b>{Math.round(score * 100)}%</b>
-                          </Link>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                ) : null}
-              </div>
-
-              <nav className="figure-dictionary-term-field" aria-label="Figure search terms">
-                <header>
-                  <span>{isSearching ? "FUZZY MATCH TERMS" : "HIGH-FREQUENCY TERMS"}</span>
-                  <b>{isSearching ? "SELECT A MATCH" : "DIRECT ACCESS"}</b>
-                </header>
-                {termEntries.length ? (
-                  <div>
-                    {termEntries.map((entry) => (
-                      <Link
-                        href={`/figures/${entry.slug}`}
-                        key={entry.slug}
-                        className={activeEntry?.slug === entry.slug ? "is-active" : undefined}
-                        prefetch={false}
-                      >
-                        {entry.label}
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <p>NO MATCH — TRY ANOTHER SPELLING OR ALIAS</p>
-                )}
+    <>
+      {activeEntry ? (
+        <MobileFigureEncyclopedia
+          entry={activeEntry}
+          figures={mobileSearchEntries}
+        />
+      ) : null}
+      <main
+        ref={rootRef}
+        className="terminal-shell figure-dictionary-shell desktop-figure-dictionary-shell"
+      >
+        <div className="noise-layer" aria-hidden="true" />
+        <div className="terminal-stage figure-dictionary-stage">
+          <section className="view-area figure-dictionary-view" aria-label="Supernatural humanoid figure dictionary">
+            <header className="figure-dictionary-header">
+              <Link className="figure-dictionary-brand" href="/">
+                <strong>AUSFIGURES</strong>
+                <span>SUPERNATURAL HUMANOID DICTIONARY</span>
+              </Link>
+              <nav aria-label="Archive view sequence">
+                <Link href="/map">Map</Link>
+                <Link href="/density">Density</Link>
+                <Link href="/dashboard">Dashboard</Link>
               </nav>
-            </aside>
+            </header>
 
-            <section className="figure-dictionary-results" aria-live="polite">
-              {activeEntry ? (
-                <FigureDictionaryDashboard entry={activeEntry} />
-              ) : (
-                <div className="figure-dictionary-empty">
-                  <span>NO MATCH</span>
-                  <p>Try a broader public-text term, alias, narrative type, or switch the index scope.</p>
+            <div className="figure-dictionary-grid">
+              <aside className="figure-dictionary-browser">
+                <div
+                  className={searchFocused ? "figure-dictionary-search-zone is-focused" : "figure-dictionary-search-zone"}
+                  onFocusCapture={() => setSearchFocused(true)}
+                  onBlurCapture={(event: FocusEvent<HTMLDivElement>) => {
+                    const next = event.relatedTarget;
+                    if (!(next instanceof Node) || !event.currentTarget.contains(next)) {
+                      setSearchFocused(false);
+                    }
+                  }}
+                >
+                  {searchFocused && suggestions.length ? (
+                    <button
+                      className="figure-dictionary-mobile-search-backdrop"
+                      type="button"
+                      aria-label="Close fuzzy search suggestions"
+                      onClick={() => {
+                        setSearchFocused(false);
+                        inputRef.current?.blur();
+                      }}
+                    />
+                  ) : null}
+                  <label className="figure-dictionary-search" htmlFor={inputId}>
+                    <span>FUZZY SEARCH / FIGURE / ALIAS / TYPE</span>
+                    <div>
+                      <i aria-hidden="true">⌕</i>
+                      <input
+                        ref={inputRef}
+                        id={inputId}
+                        type="search"
+                        value={query}
+                        onFocus={() => setSearchFocused(true)}
+                        onChange={(event) => {
+                          setQuery(event.target.value);
+                          setSearchFocused(true);
+                        }}
+                        placeholder="yowie, ghost, hairy man…"
+                        autoComplete="off"
+                        spellCheck={false}
+                        aria-controls={`${inputId}-suggestions`}
+                        aria-expanded={searchFocused && suggestions.length > 0}
+                      />
+                      {query ? (
+                        <button type="button" onClick={() => setQuery("")} aria-label="Clear figure search">
+                          CLEAR
+                        </button>
+                      ) : null}
+                    </div>
+                  </label>
+                  {searchFocused && suggestions.length ? (
+                    <div
+                      className="figure-dictionary-suggestions"
+                      id={`${inputId}-suggestions`}
+                      role="listbox"
+                      aria-label="Highest probability fuzzy matches"
+                    >
+                      <header>
+                        <span>HIGHEST PROBABILITY</span>
+                        <b>FUZZY MATCH</b>
+                      </header>
+                      <ol>
+                        {suggestions.map(({ entry, score, matchedLabel }) => (
+                          <li key={entry.slug}>
+                            <Link
+                              href={`/figures/${entry.slug}`}
+                              role="option"
+                              prefetch={false}
+                              onMouseDown={(event) => event.preventDefault()}
+                            >
+                              <span>
+                                <strong>{entry.label}</strong>
+                                <small>
+                                  {matchedLabel === entry.label ? "PRIMARY LABEL" : `MATCHED: ${matchedLabel}`}
+                                </small>
+                              </span>
+                              <b>{Math.round(score * 100)}%</b>
+                            </Link>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  ) : null}
                 </div>
-              )}
-            </section>
-          </div>
-        </section>
 
-        <div className="terminal-footer-controls figure-dictionary-footer">
-          <DisplayControls />
-          <div className="external-control-dock" aria-label="Fixed external controls">
-            <Link className="dock-button about-button" href="/about">About</Link>
-            <Link className="dock-button source-button" href="/source">Source</Link>
-            <Link
-              className="dock-button view-cycle-button active"
-              href="/map"
-              aria-label="Current view Figures; switch to Map"
-              title="Switch to Map"
-            >
-              <span className="view-label-current">Figures</span>
-              <span className="view-label-next">Map</span>
-            </Link>
+                <nav className="figure-dictionary-term-field" aria-label="Figure search terms">
+                  <header>
+                    <span>{isSearching ? "FUZZY MATCH TERMS" : "HIGH-FREQUENCY TERMS"}</span>
+                    <b>{isSearching ? "SELECT A MATCH" : "DIRECT ACCESS"}</b>
+                  </header>
+                  {termEntries.length ? (
+                    <div>
+                      {termEntries.map((entry) => (
+                        <Link
+                          href={`/figures/${entry.slug}`}
+                          key={entry.slug}
+                          className={activeEntry?.slug === entry.slug ? "is-active" : undefined}
+                          prefetch={false}
+                        >
+                          {entry.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <p>NO MATCH — TRY ANOTHER SPELLING OR ALIAS</p>
+                  )}
+                </nav>
+              </aside>
+
+              <section className="figure-dictionary-results" aria-live="polite">
+                {activeEntry ? (
+                  <FigureDictionaryDashboard entry={activeEntry} />
+                ) : (
+                  <div className="figure-dictionary-empty">
+                    <span>NO MATCH</span>
+                    <p>Try a broader public-text term, alias, narrative type, or switch the index scope.</p>
+                  </div>
+                )}
+              </section>
+            </div>
+          </section>
+
+          <div className="terminal-footer-controls figure-dictionary-footer">
+            <DisplayControls />
+            <div className="external-control-dock" aria-label="Fixed external controls">
+              <Link className="dock-button about-button" href="/about">About</Link>
+              <Link className="dock-button source-button" href="/source">Source</Link>
+              <Link
+                className="dock-button view-cycle-button active"
+                href="/map"
+                aria-label="Current view Figures; switch to Map"
+                title="Switch to Map"
+              >
+                <span className="view-label-current">Figures</span>
+                <span className="view-label-next">Map</span>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
+    </>
+  );
+}
+
+function MobileFigureEncyclopedia({
+  entry,
+  figures,
+}: {
+  entry: FigureDictionaryEntry;
+  figures: MobileFigureSearchEntry[];
+}) {
+  const summaryId = useId();
+  const [summaryExpanded, setSummaryExpanded] = useState(false);
+  const hasPublicRecords = entry.recordCount > 0;
+  const mappedShare = entry.recordCount
+    ? (entry.mappedCount / entry.recordCount) * 100
+    : 0;
+  const filledPresenceDots = Math.min(
+    40,
+    Math.round((entry.corpusShare / 100) * 40),
+  );
+  const timelineMax = Math.max(
+    1,
+    ...entry.timeline.map((item) => item.count),
+  );
+  const regionMax = Math.max(
+    1,
+    ...entry.regionFrequency.map((item) => item.count),
+  );
+  const timelineTotal = entry.timeline.reduce(
+    (total, item) => total + item.count,
+    0,
+  );
+  const peakPeriod = entry.timeline.reduce(
+    (peak, item) => (item.count > peak.count ? item : peak),
+    entry.timeline[0] ?? { label: "—", count: 0 },
+  );
+  const codedRegionTotal = entry.regionFrequency.reduce(
+    (total, item) => total + item.count,
+    0,
+  );
+  const leadingRegion = entry.regionFrequency[0];
+  const sourceFrequencyTotal = entry.sourceFrequency.reduce(
+    (total, item) => total + item.count,
+    0,
+  );
+  const leadingSource = entry.sourceFrequency[0];
+
+  useEffect(() => {
+    setSummaryExpanded(false);
+  }, [entry.slug]);
+
+  return (
+    <main className="terminal-shell mobile-archive-shell mobile-view-figures mobile-figures-shell">
+      <h1 className="visually-hidden">
+        {entry.label} — AusFigures supernatural humanoid dictionary
+      </h1>
+      <div className="noise-layer" aria-hidden="true" />
+      <MobileTopBar view="figures" figures={figures} />
+      <section
+        className="mobile-archive-page mobile-figures-page"
+        aria-label={`${entry.label} mobile dictionary entry`}
+      >
+        <header className="mobile-figures-intro">
+          <span>
+            ENTRY {String(entry.rank).padStart(3, "0")} / {entry.indexEligible ? "PUBLIC" : "REVIEW"}
+          </span>
+          <div className="mobile-figures-intro-heading">
+            <h2>{entry.label}</h2>
+            <strong
+              className={hasPublicRecords ? undefined : "is-empty"}
+              aria-label={hasPublicRecords
+                ? `${formatNumber(entry.recordCount)} public records`
+                : "No public records currently indexed"}
+            >
+              {hasPublicRecords ? formatNumber(entry.recordCount) : "—"}
+            </strong>
+          </div>
+          <button
+            type="button"
+            className={`mobile-figures-summary-toggle ${summaryExpanded ? "is-expanded" : ""}`.trim()}
+            aria-expanded={summaryExpanded}
+            aria-controls={summaryId}
+            aria-label={`${summaryExpanded ? "Collapse" : "Expand"} archive summary for ${entry.label}`}
+            onClick={() => setSummaryExpanded((current) => !current)}
+          >
+            <span className="mobile-figures-summary-copy" id={summaryId}>
+              {entry.editorialSummary}
+            </span>
+            <span className="mobile-figures-summary-action">
+              {summaryExpanded ? "Show less" : "Read full archive summary"}
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="m7.5 9.5 4.5 4.5 4.5-4.5" />
+              </svg>
+            </span>
+          </button>
+          <dl className="mobile-figures-intro-stats">
+            <div>
+              <dt>SPAN</dt>
+              <dd>{hasPublicRecords ? entry.dateSpan : "Unlisted"}</dd>
+            </div>
+            <div>
+              <dt>MAPPED</dt>
+              <dd>{hasPublicRecords ? formatNumber(entry.mappedCount) : "—"}</dd>
+            </div>
+            <div>
+              <dt>SOURCES</dt>
+              <dd>{hasPublicRecords ? formatNumber(entry.sourceCount) : "—"}</dd>
+            </div>
+          </dl>
+        </header>
+
+        <MobileCardDeck className="mobile-figure-card-deck">
+          <MobileExpandableCard
+            cardId="figure-presence"
+            className="mobile-figure-card"
+            tone="yellow"
+            eyebrow="ARCHIVE SIGNAL"
+            title="Corpus Presence"
+            metric={hasPublicRecords
+              ? `${entry.corpusShare.toFixed(2)}%`
+              : "Not indexed"}
+            preview={(
+              <span
+                className={`mobile-preview-bar ${hasPublicRecords ? "" : "is-empty"}`.trim()}
+                aria-hidden="true"
+              >
+                <i style={{ "--preview-progress": Math.min(1, entry.corpusShare / 100) } as CSSProperties} />
+              </span>
+            )}
+          >
+            <dl className="mobile-analysis-strip">
+              <div>
+                <dt>ARCHIVE RANK</dt>
+                <dd>#{entry.rank}</dd>
+              </div>
+              <div>
+                <dt>MAPPED COVERAGE</dt>
+                <dd>{mappedShare.toFixed(1)}%</dd>
+              </div>
+              <div>
+                <dt>SOURCE BREADTH</dt>
+                <dd>{formatNumber(entry.sourceCount)}</dd>
+              </div>
+            </dl>
+            <div
+              className="mobile-figure-presence-dots"
+              role="img"
+              aria-label={hasPublicRecords
+                ? `${entry.label} accounts for ${entry.corpusShare.toFixed(2)} percent of the accepted public-text corpus`
+                : `${entry.label} has no accepted public-text records currently indexed`}
+            >
+              {Array.from({ length: 40 }, (_, index) => (
+                <i
+                  key={index}
+                  className={index < filledPresenceDots ? "is-filled" : undefined}
+                />
+              ))}
+            </div>
+            <p className="mobile-figure-chart-note">
+              {hasPublicRecords
+                ? `${formatNumber(entry.recordCount)} of ${formatNumber(entry.corpusTotal)} accepted public-text records. This measures archive frequency, not real-world prevalence.`
+                : "No accepted public-text record is currently indexed for this taxonomy entry."}
+            </p>
+          </MobileExpandableCard>
+
+          <MobileExpandableCard
+            cardId="figure-timeline"
+            className="mobile-figure-card"
+            tone="coral"
+            eyebrow="DATED RECORDS"
+            title="Timeline"
+            metric={`${formatNumber(timelineTotal)} dated records`}
+            preview={(
+              <span className="mobile-preview-bars" aria-hidden="true">
+                {entry.timeline.slice(-8).map((item) => (
+                  <i
+                    key={item.label}
+                    style={{ "--preview-progress": item.count / timelineMax } as CSSProperties}
+                  />
+                ))}
+              </span>
+            )}
+          >
+            {entry.timeline.length ? (
+              <>
+                <dl className="mobile-analysis-strip">
+                  <div>
+                    <dt>DATED TOTAL</dt>
+                    <dd>{formatNumber(timelineTotal)}</dd>
+                  </div>
+                  <div>
+                    <dt>PEAK PERIOD</dt>
+                    <dd>{peakPeriod.label}</dd>
+                  </div>
+                  <div>
+                    <dt>PEAK SHARE</dt>
+                    <dd>
+                      {timelineTotal
+                        ? `${((peakPeriod.count / timelineTotal) * 100).toFixed(1)}%`
+                        : "—"}
+                    </dd>
+                  </div>
+                </dl>
+                <div
+                  className="mobile-figure-timeline"
+                  role="img"
+                  aria-label={`${entry.label} accepted records by decade`}
+                >
+                  {entry.timeline.map((item) => (
+                    <div key={item.label}>
+                      <span>{formatNumber(item.count)}</span>
+                      <i
+                        style={{
+                          "--timeline-ratio": Math.max(0.08, item.count / timelineMax),
+                        } as CSSProperties}
+                      />
+                      <small>{item.label}</small>
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className="mobile-figure-empty-state">
+                No dated distribution is available for this entry.
+              </p>
+            )}
+            <p className="mobile-figure-chart-note">
+              Bar height shows accepted records in each coded period; it does not infer an uninterrupted historical trend.
+            </p>
+          </MobileExpandableCard>
+
+          <MobileExpandableCard
+            cardId="figure-distribution"
+            className="mobile-figure-card"
+            tone="blue"
+            eyebrow="ARCHIVE DISTRIBUTION"
+            title="Regions And Sources"
+            metric={hasPublicRecords
+              ? `${leadingRegion?.label ?? "Regional field"} · ${formatNumber(leadingRegion?.count ?? 0)}`
+              : "No coded field"}
+            preview={(
+              <span className="mobile-preview-bars" aria-hidden="true">
+                {entry.regionFrequency.slice(0, 6).map((item) => (
+                  <i
+                    key={item.label}
+                    style={{ "--preview-progress": item.count / regionMax } as CSSProperties}
+                  />
+                ))}
+              </span>
+            )}
+          >
+            {entry.regionFrequency.length ? (
+              <>
+                <dl className="mobile-analysis-strip">
+                  <div>
+                    <dt>LEADING REGION</dt>
+                    <dd>{leadingRegion?.label ?? "—"}</dd>
+                  </div>
+                  <div>
+                    <dt>REGION SHARE</dt>
+                    <dd>
+                      {leadingRegion && codedRegionTotal
+                        ? `${((leadingRegion.count / codedRegionTotal) * 100).toFixed(1)}%`
+                        : "—"}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>TOP SOURCE SHARE</dt>
+                    <dd>
+                      {leadingSource && sourceFrequencyTotal
+                        ? `${((leadingSource.count / sourceFrequencyTotal) * 100).toFixed(1)}%`
+                        : "—"}
+                    </dd>
+                  </div>
+                </dl>
+                <div className="mobile-figure-region-field">
+                  {entry.regionFrequency.slice(0, 6).map((item, index) => (
+                    <div
+                      key={item.label}
+                      style={{
+                        "--bubble-size": `${Math.round(
+                          34 + Math.max(0.34, Math.sqrt(item.count / regionMax)) * 30,
+                        )}px`,
+                      } as CSSProperties}
+                    >
+                      <i>{String(index + 1).padStart(2, "0")}</i>
+                      <span>
+                        <b>{item.label}</b>
+                        <small>{formatNumber(item.count)} coded</small>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className="mobile-figure-empty-state">
+                No coded regional concentration is available.
+              </p>
+            )}
+            <ol className="mobile-figure-source-list">
+              {entry.sourceFrequency.slice(0, 5).map((item, index) => (
+                <li key={item.label}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <b>{item.label}</b>
+                  <strong>{formatNumber(item.count)}</strong>
+                </li>
+              ))}
+            </ol>
+            <p className="mobile-figure-chart-note">
+              Regional and source concentrations describe corpus coverage and collection structure.
+            </p>
+          </MobileExpandableCard>
+
+          <MobileExpandableCard
+            cardId="figure-records"
+            className="mobile-figure-card"
+            tone="lavender"
+            eyebrow="PUBLIC TEXT"
+            title="Selected Records"
+            metric={hasPublicRecords
+              ? `${entry.records.length} shown`
+              : "No public text"}
+          >
+            {entry.records.length ? (
+              <ol className="mobile-figure-record-list">
+                {entry.records.slice(0, 8).map((record, index) => (
+                  <li key={`${record.href}-${index}`}>
+                    <Link href={record.href}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <b>{record.title}</b>
+                      <small>
+                        {[record.year, record.source, record.place]
+                          .filter(Boolean)
+                          .join(" · ")}
+                      </small>
+                      <i aria-hidden="true">↗</i>
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p className="mobile-figure-empty-state">
+                No selected public record is attached to this entry.
+              </p>
+            )}
+          </MobileExpandableCard>
+
+          <MobileExpandableCard
+            cardId="figure-related"
+            className="mobile-figure-card"
+            tone="mint"
+            eyebrow="SHARED ARCHIVE FIELDS"
+            title="Related Figures"
+            metric={`${entry.related.length} paths`}
+            preview={(
+              <span className="mobile-preview-bars" aria-hidden="true">
+                {entry.related.slice(0, 8).map((item) => (
+                  <i
+                    key={item.href}
+                    style={{
+                      "--preview-progress": item.recordCount / Math.max(
+                        1,
+                        ...entry.related.map((related) => related.recordCount),
+                      ),
+                    } as CSSProperties}
+                  />
+                ))}
+              </span>
+            )}
+          >
+            {entry.related.length ? (
+              <nav
+                className="mobile-figure-related"
+                aria-label={`Figures related to ${entry.label}`}
+              >
+                {entry.related.slice(0, 8).map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    <span>{item.label}</span>
+                    <b>{formatNumber(item.recordCount)}</b>
+                    <i aria-hidden="true">↗</i>
+                  </Link>
+                ))}
+              </nav>
+            ) : (
+              <p className="mobile-figure-empty-state">
+                No related figure path is currently indexed.
+              </p>
+            )}
+          </MobileExpandableCard>
+        </MobileCardDeck>
+      </section>
+      <MobileArchiveControls view="figures" />
     </main>
   );
+}
+
+function toMobileFigureSearchEntry(
+  entry: FigureDictionaryEntry,
+): MobileFigureSearchEntry {
+  const years = entry.dateSpan.match(/\d{4}/g)?.map(Number) ?? [];
+  return {
+    name: entry.label,
+    slug: entry.slug,
+    description: entry.description,
+    aliases: entry.aliases,
+    recordCount: entry.recordCount,
+    earliestYear: years[0] ?? null,
+    latestYear: years.length ? years[years.length - 1] : null,
+  };
 }
 
 function FigureDictionaryDashboard({ entry }: { entry: FigureDictionaryEntry }) {

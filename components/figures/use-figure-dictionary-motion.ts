@@ -43,7 +43,7 @@ export function useFigureDictionaryMotion(
     timelineRef.current = null;
     resetFigureDictionaryMotion(root);
 
-    if (reducedMotion) {
+    if (reducedMotion || window.matchMedia("(max-width: 720px)").matches) {
       return;
     }
 

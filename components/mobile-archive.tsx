@@ -1,23 +1,62 @@
 "use client";
 
-import type { CSSProperties, FocusEvent, KeyboardEvent, PointerEvent, ReactNode, RefObject, SyntheticEvent } from "react";
+import type {
+  CSSProperties,
+  Dispatch,
+  KeyboardEvent,
+  PointerEvent,
+  ReactNode,
+  RefObject,
+  SetStateAction,
+} from "react";
 import Link from "next/link";
-import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useDeferredValue,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { createTimeline, stagger } from "animejs";
 import type { AnimationParams, Timeline } from "animejs";
 import { STATE_SHAPES } from "@/lib/au-map-data";
+import { figurePath } from "@/lib/archive-routing";
+import { figureProfileFor, normalizeFigureLabel } from "@/lib/figure-profiles";
 import type { FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
 import { SOURCE_FAMILY_STYLES, buildSourceRegistryData, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
 import { runThemeTransition } from "@/lib/theme-transition";
 
-type MobileControlView = "about" | "map" | "density" | "dashboard" | "source";
+export type MobileControlView =
+  | "about"
+  | "map"
+  | "density"
+  | "dashboard"
+  | "source"
+  | "figures";
 type DisplayTheme = "dark" | "light";
-type MobileNavName = "theme" | "about" | "source" | "density" | "map";
-const MOBILE_ARCHIVE_QUERY = "(max-width: 980px), (pointer: coarse)";
-const MOBILE_NAV_IDLE_MS = 4600;
+type MobileNavName = "theme" | "about" | "source" | "density" | "map" | "figures";
+const MOBILE_ARCHIVE_QUERY = "(max-width: 720px)";
 const THEME_STORAGE_KEY = "aus-archive-theme";
+const MOBILE_NAV_STORAGE_KEY = "aus-mobile-nav-view";
+const MOBILE_NAV_ITEMS: Array<{
+  view: Exclude<MobileControlView, "dashboard">;
+  href: string;
+  label: string;
+  icon: Exclude<MobileNavName, "theme">;
+}> = [
+  { view: "about", href: "/about", label: "About AusFigures", icon: "about" },
+  { view: "map", href: "/map", label: "map", icon: "map" },
+  { view: "density", href: "/density", label: "density", icon: "density" },
+  { view: "source", href: "/source", label: "source", icon: "source" },
+  { view: "figures", href: "/figures", label: "figures dictionary", icon: "figures" },
+];
 const MOBILE_MAP_VIEWBOX = { x: 24, y: 18, width: 930, height: 682 } as const;
+const MOBILE_CARD_TONES = ["mint", "coral", "yellow", "blue", "lavender", "mint"] as const;
+export type MobileCardTone = (typeof MOBILE_CARD_TONES)[number];
 const MOBILE_SOURCE_CLASS_BY_FAMILY: Record<SourceFamilyId, string> = {
   repository: "source-tone-archive",
   modern_web: "source-tone-web",
@@ -55,7 +94,13 @@ const LAMBERT_AU = {
   lon0: 134,
 } as const;
 
-type MobileRouteView = "about" | "map" | "density" | "source";
+export type MobileRouteView =
+  | "about"
+  | "map"
+  | "density"
+  | "dashboard"
+  | "source"
+  | "figures";
 
 type MobileArchiveData = {
   schema_version: string;
@@ -102,6 +147,17 @@ type MobileArchiveData = {
       ethicsNotes: string | null;
     }>;
   };
+  figures: MobileFigureSearchEntry[];
+};
+
+export type MobileFigureSearchEntry = {
+  name: string;
+  slug: string;
+  description: string;
+  aliases: string[];
+  recordCount: number;
+  earliestYear: number | null;
+  latestYear: number | null;
 };
 
 type MobileMapFlag = {
@@ -137,7 +193,7 @@ const STATE_LABEL_OVERRIDES: Partial<Record<string, [number, number]>> = {
   NSW: [733, 479],
   VIC: [688, 552],
   TAS: [714, 654],
-  ACT: [784, 512],
+  ACT: [812, 526],
 };
 const STATE_NAMES: Record<string, string> = {
   WA: "Western Australia",
@@ -182,7 +238,7 @@ function buildMobileArchiveData(data: FrontendData): MobileArchiveData {
     summary: {
       recordCount,
       mappedRecordCount,
-      sourceCount: data.summary.source_count || data.sources.length,
+      sourceCount: sourceData.metrics.sourceOrgs,
       sourceTypeCount: sourceData.metrics.sourceTypes,
       earliestYear: data.summary.earliest_year ?? (datedYears.length ? Math.min(...datedYears) : 0),
       latestYear: data.summary.latest_year ?? (datedYears.length ? Math.max(...datedYears) : 0),
@@ -245,7 +301,95 @@ function buildMobileArchiveData(data: FrontendData): MobileArchiveData {
         ethicsNotes: row.source.ethics_notes,
       })),
     },
+    figures: buildMobileFigureSearchEntries(data),
   };
+}
+
+function buildMobileFigureSearchEntries(data: FrontendData): MobileFigureSearchEntry[] {
+  const groups = new Map<
+    string,
+    {
+      name: string;
+      description: string;
+      aliases: Set<string>;
+      recordCount: number;
+      years: number[];
+    }
+  >();
+
+  for (const record of data.records) {
+    if (!mobileRecordSearchEligible(record)) {
+      continue;
+    }
+    const printedLabel = (record.canonical_figure_guess || record.canonical_figure || "").trim();
+    if (!printedLabel) {
+      continue;
+    }
+    const profile = figureProfileFor(printedLabel);
+    const group = groups.get(profile.slug) ?? {
+      name: profile.label,
+      description: profile.shortDescription,
+      aliases: new Set(profile.aliases ?? []),
+      recordCount: 0,
+      years: [],
+    };
+    group.recordCount += 1;
+    group.aliases.add(printedLabel);
+    if (typeof record.year === "number" && Number.isFinite(record.year)) {
+      group.years.push(record.year);
+    }
+    groups.set(profile.slug, group);
+  }
+
+  for (const figure of data.figures) {
+    if (
+      figure.include_status === "control_only" ||
+      figure.include_status === "exclude_core" ||
+      figure.humanoid_degree === "non_humanoid"
+    ) {
+      continue;
+    }
+    const profile = figureProfileFor(figure.canonical_name);
+    const group = groups.get(profile.slug) ?? {
+      name: profile.label,
+      description: profile.shortDescription,
+      aliases: new Set(profile.aliases ?? []),
+      recordCount: 0,
+      years: [],
+    };
+    group.aliases.add(figure.canonical_name);
+    for (const alias of figure.aliases ?? []) {
+      group.aliases.add(alias.alias);
+    }
+    groups.set(profile.slug, group);
+  }
+
+  return [...groups.entries()]
+    .map(([slug, group]) => ({
+      name: group.name,
+      slug,
+      description: group.description,
+      aliases: [...group.aliases]
+        .filter((alias) => normalizeFigureLabel(alias) !== normalizeFigureLabel(group.name))
+        .sort((left, right) => left.localeCompare(right)),
+      recordCount: group.recordCount,
+      earliestYear: group.years.length ? Math.min(...group.years) : null,
+      latestYear: group.years.length ? Math.max(...group.years) : null,
+    }))
+    .filter((entry) => entry.recordCount > 0)
+    .sort((left, right) => right.recordCount - left.recordCount || left.name.localeCompare(right.name));
+}
+
+function mobileRecordSearchEligible(record: RecordItem) {
+  const includeStatus = record.include_status ?? "";
+  const ethicsFlag = record.ethics_flag ?? "";
+  return (
+    includeStatus !== "control_only" &&
+    includeStatus !== "exclude_core" &&
+    record.ontology_code !== "non_humanoid_control" &&
+    Boolean(record.title && record.url && record.source_name) &&
+    (ethicsFlag === "ok_public" || ethicsFlag.startsWith("public_"))
+  );
 }
 
 function buildMobileAnnualSeries(data: FrontendData) {
@@ -456,14 +600,6 @@ function titleize(value: string) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-function isMobileArchiveViewport() {
-  return typeof window !== "undefined" && window.matchMedia(MOBILE_ARCHIVE_QUERY).matches;
-}
-
-function isFineHoverPointer() {
-  return typeof window !== "undefined" && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-}
-
 export function MobileArchiveView({ children }: { children: ReactNode }) {
   return <>{children}</>;
 }
@@ -484,34 +620,12 @@ export function useMobileArchiveMode() {
 }
 
 export function useMobileArchiveRouteGuard(view: MobileControlView) {
-  const router = useRouter();
-  const [blockedDashboard, setBlockedDashboard] = useState(() => view === "dashboard" && isMobileArchiveViewport());
-
-  useEffect(() => {
-    if (view !== "dashboard") {
-      setBlockedDashboard(false);
-      return;
-    }
-
-    const mediaQuery = window.matchMedia(MOBILE_ARCHIVE_QUERY);
-    const syncRoute = () => {
-      const shouldBlock = mediaQuery.matches;
-      setBlockedDashboard(shouldBlock);
-      if (shouldBlock) {
-        router.replace("/map");
-      }
-    };
-
-    syncRoute();
-    mediaQuery.addEventListener("change", syncRoute);
-    return () => mediaQuery.removeEventListener("change", syncRoute);
-  }, [router, view]);
-
-  return { blockedDashboard };
+  void view;
+  return { blockedDashboard: false };
 }
 
 export function MobileArchiveRoute({ view, data }: { view: MobileControlView; data: FrontendData }) {
-  const routeView: MobileRouteView = view === "dashboard" ? "map" : view;
+  const routeView: MobileRouteView = view;
   const mobileData = useMemo(() => buildMobileArchiveData(data), [data]);
   const pageRef = useRef<HTMLElement | null>(null);
   const reducedMotion = useMobilePrefersReducedMotion();
@@ -522,15 +636,300 @@ export function MobileArchiveRoute({ view, data }: { view: MobileControlView; da
     <main className={`terminal-shell mobile-archive-shell mobile-view-${routeView}`}>
       <h1 className="visually-hidden">{mobileRouteHeading(routeView)}</h1>
       <div className="noise-layer" aria-hidden="true" />
+      <MobileTopBar view={routeView} figures={mobileData.figures} />
       <section ref={pageRef} className="mobile-archive-page" aria-label={`AusFigures ${routeView} mobile view`}>
         {routeView === "map" ? <MobileMapView data={mobileData} /> : null}
         {routeView === "density" ? <MobileDensityView data={mobileData} /> : null}
+        {routeView === "dashboard" ? <MobileDashboardView data={mobileData} /> : null}
         {routeView === "source" ? <MobileSourceView data={mobileData} /> : null}
         {routeView === "about" ? <MobileAboutView data={mobileData} /> : null}
       </section>
       <MobileArchiveControls view={routeView} />
     </main>
   );
+}
+
+export function MobileTopBar({
+  view,
+  figures,
+}: {
+  view: MobileRouteView;
+  figures: MobileFigureSearchEntry[];
+}) {
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
+  const reducedMotion = useMobilePrefersReducedMotion();
+  const results = useMemo(
+    () => rankMobileFigureSearch(figures, deferredQuery).slice(0, 8),
+    [deferredQuery, figures],
+  );
+
+  useEffect(() => {
+    if (!searchOpen) {
+      return;
+    }
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.requestAnimationFrame(() => inputRef.current?.focus());
+    const onKeyDown = (event: globalThis.KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSearchOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [searchOpen]);
+
+  useEffect(() => {
+    const overlay = overlayRef.current;
+    if (!overlay || !searchOpen || reducedMotion) {
+      return;
+    }
+    const panel = overlay.querySelector(".mobile-search-panel");
+    const rows = overlay.querySelectorAll(".mobile-search-result");
+    const timeline = createTimeline({
+      defaults: {
+        ease: "outQuint",
+        composition: "replace",
+      },
+    });
+    if (panel) {
+      timeline.add(panel, {
+        opacity: [0, 1],
+        translateY: [26, 0],
+        scale: [0.975, 1],
+        duration: 460,
+      }, 0);
+    }
+    if (rows.length) {
+      timeline.add(rows, {
+        opacity: [0, 1],
+        translateY: [18, 0],
+        delay: stagger(42),
+        duration: 360,
+      }, 90);
+    }
+    return () => {
+      timeline.cancel();
+    };
+  }, [reducedMotion, searchOpen]);
+
+  return (
+    <>
+      <header className="mobile-topbar" aria-label="Mobile page controls">
+        <MobileThemeControl />
+        <span className="mobile-top-route" aria-hidden="true">
+          {view === "figures"
+            ? `FIGURES · ${figures.length}`
+            : view.toUpperCase()}
+        </span>
+        <button
+          type="button"
+          className="mobile-top-action mobile-top-search"
+          aria-label="Search the supernatural humanoid dictionary"
+          aria-expanded={searchOpen}
+          onClick={() => setSearchOpen(true)}
+        >
+          <MobileTopIcon name="search" />
+        </button>
+      </header>
+      {searchOpen ? (
+        <div
+          ref={overlayRef}
+          className="mobile-search-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Search supernatural humanoid figures"
+          onPointerDown={(event) => {
+            if (event.target === event.currentTarget) {
+              setSearchOpen(false);
+            }
+          }}
+        >
+          <section className="mobile-search-panel">
+            <header>
+              <span>FIND A FIGURE</span>
+              <button type="button" onClick={() => setSearchOpen(false)} aria-label="Close search">
+                <MobileTopIcon name="close" />
+              </button>
+            </header>
+            <label className="mobile-search-input">
+              <MobileTopIcon name="search" />
+              <input
+                ref={inputRef}
+                type="search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="yowie, ghost, hairy man…"
+                autoComplete="off"
+                spellCheck={false}
+              />
+              {query ? (
+                <button type="button" onClick={() => setQuery("")} aria-label="Clear search">
+                  Clear
+                </button>
+              ) : null}
+            </label>
+            <div className="mobile-search-meta">
+              <span>{deferredQuery ? "BEST FUZZY MATCHES" : "HIGH-FREQUENCY FIGURES"}</span>
+              <b>{formatNumber(figures.length)} entries</b>
+            </div>
+            <div className="mobile-search-results">
+              {results.map((entry, index) => (
+                <Link
+                  key={entry.slug}
+                  className="mobile-search-result"
+                  data-tone={MOBILE_CARD_TONES[index % MOBILE_CARD_TONES.length]}
+                  href={figurePath(entry.slug)}
+                  onClick={() => setSearchOpen(false)}
+                >
+                  <span className="mobile-search-rank">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="mobile-search-copy">
+                    <b>{entry.name}</b>
+                    <small>{mobileSearchSupportingText(entry)}</small>
+                  </span>
+                  <strong>{formatNumber(entry.recordCount)}</strong>
+                  <i aria-hidden="true">↗</i>
+                </Link>
+              ))}
+              {results.length === 0 ? (
+                <p className="mobile-search-empty">No close figure or alias match was found. Try a broader term.</p>
+              ) : null}
+            </div>
+          </section>
+        </div>
+      ) : null}
+    </>
+  );
+}
+
+function MobileTopIcon({ name }: { name: "about" | "search" | "close" }) {
+  if (name === "search") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.4" />
+        <path d="m14.4 14.4 4.1 4.1" />
+      </svg>
+    );
+  }
+  if (name === "close") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="m6.5 6.5 11 11" />
+        <path d="m17.5 6.5-11 11" />
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="7.2" />
+      <path d="M12 10.6v5" />
+      <circle cx="12" cy="7.5" r=".7" className="mobile-icon-fill" />
+    </svg>
+  );
+}
+
+function rankMobileFigureSearch(
+  figures: MobileFigureSearchEntry[],
+  query: string,
+) {
+  const normalisedQuery = normaliseMobileSearch(query);
+  if (!normalisedQuery) {
+    return figures;
+  }
+  return figures
+    .map((entry) => ({
+      entry,
+      score: Math.max(
+        mobileFuzzyScore(normalisedQuery, normaliseMobileSearch(entry.name)),
+        ...entry.aliases.map((alias) => mobileFuzzyScore(normalisedQuery, normaliseMobileSearch(alias))),
+        mobileFuzzyScore(normalisedQuery, normaliseMobileSearch(entry.description)) - 16,
+      ),
+    }))
+    .filter((row) => row.score > 0)
+    .sort((left, right) => right.score - left.score || right.entry.recordCount - left.entry.recordCount)
+    .map((row) => row.entry);
+}
+
+function normaliseMobileSearch(value: string) {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function mobileFuzzyScore(query: string, target: string) {
+  if (!query || !target) {
+    return 0;
+  }
+  if (target === query) {
+    return 120;
+  }
+  if (target.startsWith(query)) {
+    return 104 - Math.min(20, target.length - query.length);
+  }
+  const targetWords = target.split(" ");
+  if (targetWords.some((word) => word.startsWith(query))) {
+    return 92;
+  }
+  if (target.includes(query)) {
+    return 82 - Math.min(24, target.indexOf(query));
+  }
+  if (isMobileSearchSubsequence(query, target)) {
+    return 60 - Math.min(28, target.length - query.length);
+  }
+  const nearestWordDistance = Math.min(
+    ...targetWords.map((word) => mobileLevenshtein(query, word)),
+  );
+  const tolerance = Math.max(1, Math.floor(query.length * 0.34));
+  return nearestWordDistance <= tolerance ? 46 - nearestWordDistance * 6 : 0;
+}
+
+function isMobileSearchSubsequence(query: string, target: string) {
+  let queryIndex = 0;
+  for (const character of target) {
+    if (character === query[queryIndex]) {
+      queryIndex += 1;
+      if (queryIndex === query.length) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+function mobileLevenshtein(left: string, right: string) {
+  const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+  for (let leftIndex = 1; leftIndex <= left.length; leftIndex += 1) {
+    let diagonal = previous[0];
+    previous[0] = leftIndex;
+    for (let rightIndex = 1; rightIndex <= right.length; rightIndex += 1) {
+      const above = previous[rightIndex];
+      previous[rightIndex] = Math.min(
+        previous[rightIndex] + 1,
+        previous[rightIndex - 1] + 1,
+        diagonal + (left[leftIndex - 1] === right[rightIndex - 1] ? 0 : 1),
+      );
+      diagonal = above;
+    }
+  }
+  return previous[right.length];
+}
+
+function mobileSearchSupportingText(entry: MobileFigureSearchEntry) {
+  const span = entry.earliestYear && entry.latestYear
+    ? `${entry.earliestYear}–${entry.latestYear}`
+    : "undated span";
+  const aliases = entry.aliases.slice(0, 2).join(", ");
+  return aliases ? `${span} / ${aliases}` : `${span} / public-text figure`;
 }
 
 function useMobilePageAmbientMotion(
@@ -546,7 +945,23 @@ function useMobilePageAmbientMotion(
     const redrawTargets = Array.from(
       root.querySelectorAll<SVGGeometryElement>(".mobile-map-canvas .state-shape, .mobile-map-canvas .coast-outline"),
     );
-    const mapDots = Array.from(root.querySelectorAll<SVGCircleElement>(".mobile-map-canvas .record-flag-dot"));
+    const mapDots = Array.from(root.querySelectorAll<SVGCircleElement>(".mobile-map-canvas .mobile-map-dot"));
+    const revealTargets = Array.from(root.querySelectorAll<HTMLElement>([
+      ".mobile-map-heading",
+      ".mobile-map-dashboard-card",
+      ".density-header",
+      ".mobile-density-overview-card",
+      ".mobile-card-deck > .mobile-expand-card",
+      ".mobile-dashboard-hero",
+      ".mobile-analysis-card",
+      ".source-terminal-header",
+      ".mobile-source-visual-card",
+      ".mobile-about-heading",
+      ".about-status-panel",
+      ".mobile-about-repository-link",
+    ].join(",")));
+    const revealTimelines = new Set<Timeline>();
+    const revealTimers = new Set<number>();
     const resetRedrawTargets = () => {
       redrawTargets.forEach((target) => {
         target.style.strokeDasharray = "";
@@ -569,8 +984,69 @@ function useMobilePageAmbientMotion(
       target.style.opacity = "0";
       target.style.transform = "scale(0.22)";
     });
+    revealTargets.forEach((target) => {
+      target.style.opacity = "0";
+      target.style.transform = "translateY(24px) scale(0.985)";
+      target.style.transformOrigin = "50% 50%";
+      target.style.willChange = "transform, opacity";
+    });
 
     let redrawTimeline: Timeline | null = null;
+    let revealObserver: IntersectionObserver | null = null;
+    const revealTarget = (target: HTMLElement) => {
+      if (target.dataset.mobileRevealed === "true") {
+        return;
+      }
+      target.dataset.mobileRevealed = "true";
+      revealObserver?.unobserve(target);
+      const timeline = createTimeline({
+        defaults: {
+          ease: "outQuint",
+          composition: "replace",
+        },
+      });
+      timeline.add(target, {
+        opacity: [0, 1],
+        translateY: [24, 0],
+        scale: [0.985, 1],
+        duration: 620,
+      }, 0);
+      const directChildren = target.querySelectorAll(":scope > header, :scope > strong, :scope > p");
+      if (directChildren.length) {
+        timeline.add(directChildren, {
+          opacity: [0.35, 1],
+          translateY: [10, 0],
+          delay: stagger(36),
+          duration: 420,
+        }, 80);
+      }
+      revealTimelines.add(timeline);
+      const cleanupTimer = window.setTimeout(() => {
+        target.style.opacity = "";
+        target.style.transform = "";
+        target.style.transformOrigin = "";
+        target.style.willChange = "";
+        revealTimers.delete(cleanupTimer);
+      }, 680);
+      revealTimers.add(cleanupTimer);
+    };
+    const revealFrame = window.requestAnimationFrame(() => {
+      if (!("IntersectionObserver" in window)) {
+        revealTargets.forEach(revealTarget);
+        return;
+      }
+      revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            revealTarget(entry.target as HTMLElement);
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: "0px 0px -6% 0px",
+      });
+      revealTargets.forEach((target) => revealObserver?.observe(target));
+    });
     const redrawFrame = window.requestAnimationFrame(() => {
       redrawTimeline = createTimeline({
         defaults: {
@@ -579,18 +1055,6 @@ function useMobilePageAmbientMotion(
           composition: "replace",
         },
       });
-      addMobileTimelineTargets(
-        redrawTimeline,
-        root.querySelectorAll(".mobile-map-heading, .density-header, .source-terminal-header, .mobile-about-heading"),
-        { opacity: [0.74, 1] },
-        0,
-      );
-      addMobileTimelineTargets(
-        redrawTimeline,
-        root.querySelectorAll(".readout-block, .state-mini, .density-band, .density-chart-card, .source-mobile-accordion, .about-status-panel, .about-module"),
-        { opacity: [0.76, 1], delay: stagger(28) },
-        80,
-      );
       addMobileTimelineTargets(
         redrawTimeline,
         redrawTargets,
@@ -606,10 +1070,21 @@ function useMobilePageAmbientMotion(
     });
 
     return () => {
+      window.cancelAnimationFrame(revealFrame);
       window.cancelAnimationFrame(redrawFrame);
+      revealObserver?.disconnect();
+      revealTimelines.forEach((timeline) => timeline.cancel());
+      revealTimers.forEach((timer) => window.clearTimeout(timer));
       redrawTimeline?.cancel();
       resetRedrawTargets();
       resetMapDots();
+      revealTargets.forEach((target) => {
+        delete target.dataset.mobileRevealed;
+        target.style.opacity = "";
+        target.style.transform = "";
+        target.style.transformOrigin = "";
+        target.style.willChange = "";
+      });
     };
   }, [reducedMotion, rootRef]);
 }
@@ -621,21 +1096,42 @@ function mobileRouteHeading(view: MobileRouteView) {
   if (view === "source") {
     return "AusFigures source register";
   }
+  if (view === "dashboard") {
+    return "AusFigures research dashboard";
+  }
   if (view === "about") {
     return "About AusFigures";
+  }
+  if (view === "figures") {
+    return "AusFigures supernatural humanoid dictionary";
   }
   return "AusFigures public map";
 }
 
 function MobileMapView({ data }: { data: MobileArchiveData }) {
   const [selectedState, setSelectedState] = useState<string | null>(null);
+  const [activeSignal, setActiveSignal] = useState<0 | 1>(0);
   const titleId = useId();
   const descId = useId();
+  const clipBaseId = useId().replace(/:/g, "");
   const touchStateHandled = useRef(false);
+  const signalTrackRef = useRef<HTMLDivElement | null>(null);
+  const signalTimelineRef = useRef<Timeline | null>(null);
+  const previousSignalRef = useRef<0 | 1>(0);
+  const reducedMotion = useMobilePrefersReducedMotion();
   const stateCounts = data.map.stateCounts;
   const stateCountMap = new Map(stateCounts.map((row) => [row.code, row.count]));
   const activeState = selectedState ? STATE_NAMES[selectedState] ?? selectedState : "Australia";
   const activeCount = selectedState ? stateCountMap.get(selectedState) ?? 0 : data.summary.mappedRecordCount;
+  const activeMappedShare = data.summary.mappedRecordCount
+    ? activeCount / data.summary.mappedRecordCount
+    : 0;
+  const nationalMappedCoverage = data.summary.recordCount
+    ? data.summary.mappedRecordCount / data.summary.recordCount
+    : 0;
+  const maxStateCount = Math.max(1, ...stateCounts.map((row) => row.count));
+  const leadingMapPeriod = [...data.density.periods]
+    .sort((left, right) => right.records - left.records)[0];
   const toggleSelectedState = useCallback((stateCode: string) => {
     setSelectedState((current) => (current === stateCode ? null : stateCode));
   }, []);
@@ -661,6 +1157,57 @@ function MobileMapView({ data }: { data: MobileArchiveData }) {
     event.preventDefault();
     toggleSelectedState(stateCode);
   }, [toggleSelectedState]);
+  const syncMapSignal = useCallback(() => {
+    const track = signalTrackRef.current;
+    if (!track || track.clientWidth <= 0) {
+      return;
+    }
+    const nextIndex: 0 | 1 = Math.round(track.scrollLeft / track.clientWidth) <= 0 ? 0 : 1;
+    setActiveSignal((current) => current === nextIndex ? current : nextIndex);
+  }, []);
+
+  useEffect(() => {
+    const track = signalTrackRef.current;
+    const slide = track?.querySelector<HTMLElement>(`[data-map-signal="${activeSignal}"]`);
+    if (!slide || reducedMotion) {
+      previousSignalRef.current = activeSignal;
+      return;
+    }
+    const direction = activeSignal >= previousSignalRef.current ? 1 : -1;
+    previousSignalRef.current = activeSignal;
+    signalTimelineRef.current?.cancel();
+    const timeline = createTimeline({
+      defaults: {
+        ease: "outQuint",
+        composition: "replace",
+      },
+    });
+    const copy = track?.parentElement?.querySelectorAll(
+      ".mobile-map-signal-swipe-head > div > *, .mobile-map-swipe-cue",
+    ) ?? [];
+    const marks = slide.querySelectorAll(".mobile-map-region-bars i, .mobile-map-period-bars i");
+    if (copy.length) {
+      timeline.add(copy, {
+        opacity: [0.46, 1],
+        translateX: [direction * 20, 0],
+        duration: 420,
+        delay: stagger(34),
+      }, 0);
+    }
+    if (marks.length) {
+      timeline.add(marks, {
+        opacity: [0.5, 1],
+        scaleY: [0.42, 1],
+        transformOrigin: "50% 100%",
+        duration: 520,
+        delay: stagger(28),
+      }, 40);
+    }
+    signalTimelineRef.current = timeline;
+    return () => {
+      timeline.cancel();
+    };
+  }, [activeSignal, reducedMotion]);
 
   return (
     <div className="map-view mobile-map-view">
@@ -668,147 +1215,520 @@ function MobileMapView({ data }: { data: MobileArchiveData }) {
         <span>PUBLIC MAP</span>
         <b>Public display locations</b>
       </header>
-      <div className="map-canvas mobile-map-canvas">
-        <svg
-          className="australia-map"
-          viewBox={`${MOBILE_MAP_VIEWBOX.x} ${MOBILE_MAP_VIEWBOX.y} ${MOBILE_MAP_VIEWBOX.width} ${MOBILE_MAP_VIEWBOX.height}`}
-          preserveAspectRatio="xMidYMid meet"
-          role="img"
-          aria-labelledby={titleId}
-          aria-describedby={descId}
-        >
-          <title id={titleId}>Public record display locations across Australia</title>
-          <desc id={descId}>
-            Australia map with state and territory outlines, summarising {formatNumber(data.summary.mappedRecordCount)} mapped public records.
-          </desc>
-          {STATE_SHAPES.map((state) => {
-            const count = stateCountMap.get(state.code) ?? 0;
-            return (
-              <path
-                key={state.code}
-                className={selectedState === state.code ? "state-shape selected" : "state-shape"}
-                d={state.d}
-                role="button"
-                tabIndex={0}
-                aria-label={`${STATE_NAMES[state.code] ?? state.code}, ${formatNumber(count)} mapped records`}
-                aria-pressed={selectedState === state.code}
-                onClick={() => handleStateClick(state.code)}
-                onPointerUp={(event) => handleStatePointerUp(event, state.code)}
-                onKeyDown={(event) => handleStateKeyDown(event, state.code)}
-              />
-            );
-          })}
-          <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
-          <g className={`record-flag-layer ${selectedState ? "has-state-selected" : ""}`} aria-hidden="true">
-            {data.map.flags.map((flag) => (
-              <MobileMapFlagMarker key={flag.id} flag={flag} stateLinked={selectedState === flag.state} />
-            ))}
-          </g>
-          <g className="state-label-layer" aria-hidden="true">
+      <article className="mobile-map-dashboard-card">
+        <div className="map-canvas mobile-map-canvas">
+          <svg
+            className="australia-map"
+            viewBox={`${MOBILE_MAP_VIEWBOX.x} ${MOBILE_MAP_VIEWBOX.y} ${MOBILE_MAP_VIEWBOX.width} ${MOBILE_MAP_VIEWBOX.height}`}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            aria-labelledby={titleId}
+            aria-describedby={descId}
+          >
+            <title id={titleId}>Public record display locations across Australia</title>
+            <desc id={descId}>
+              Schematic dot map clipped to the Australian state and territory shapes, summarising {formatNumber(data.summary.mappedRecordCount)} mapped public records.
+            </desc>
+            <defs>
+              <clipPath id={`${clipBaseId}-australia`}>
+                {STATE_SHAPES.map((state) => <path key={`mobile-country-clip-${state.code}`} d={state.d} />)}
+              </clipPath>
+              <pattern id={`${clipBaseId}-dots`} width="22" height="22" patternUnits="userSpaceOnUse">
+                <circle className="mobile-map-dot" cx="4" cy="4" r="3.2" />
+              </pattern>
+              <pattern id={`${clipBaseId}-selected-dots`} width="22" height="22" patternUnits="userSpaceOnUse">
+                <circle className="mobile-map-dot selected" cx="4" cy="4" r="4.1" />
+              </pattern>
+              {STATE_SHAPES.map((state) => (
+                <clipPath id={`${clipBaseId}-${state.code.toLowerCase()}`} key={`mobile-state-clip-${state.code}`}>
+                  <path d={state.d} />
+                </clipPath>
+              ))}
+            </defs>
             {STATE_SHAPES.map((state) => {
-              const label = STATE_LABEL_OVERRIDES[state.code] ?? state.label;
+              const count = stateCountMap.get(state.code) ?? 0;
               return (
-                <text
-                  key={`mobile-label-${state.code}`}
-                  className={`state-label state-label-${state.code.toLowerCase()}`}
-                  x={label[0]}
-                  y={label[1]}
-                >
-                  {state.code}
-                </text>
+                <path
+                  key={state.code}
+                  className={selectedState === state.code ? "state-shape selected" : "state-shape"}
+                  d={state.d}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`${STATE_NAMES[state.code] ?? state.code}, ${formatNumber(count)} mapped records`}
+                  aria-pressed={selectedState === state.code}
+                  onClick={() => handleStateClick(state.code)}
+                  onPointerUp={(event) => handleStatePointerUp(event, state.code)}
+                  onKeyDown={(event) => handleStateKeyDown(event, state.code)}
+                />
               );
             })}
-          </g>
-        </svg>
-      </div>
-      <p className="mobile-map-note">{data.map.interpretation}</p>
-      <aside className="map-readout">
-        <div className="readout-block">
-          <i className="map-readout-led" aria-hidden="true" />
-          <span className="tiny-label">REGION</span>
-          <strong>{activeState}</strong>
-          <span className="readout-number">{formatNumber(activeCount)}</span>
-          <span className="readout-tail">mapped records</span>
+            <rect
+              className="mobile-map-dot-field"
+              x={MOBILE_MAP_VIEWBOX.x}
+              y={MOBILE_MAP_VIEWBOX.y}
+              width={MOBILE_MAP_VIEWBOX.width}
+              height={MOBILE_MAP_VIEWBOX.height}
+              fill={`url(#${clipBaseId}-dots)`}
+              clipPath={`url(#${clipBaseId}-australia)`}
+              aria-hidden="true"
+            />
+            {selectedState ? (
+              <rect
+                className="mobile-map-dot-field is-selected"
+                x={MOBILE_MAP_VIEWBOX.x}
+                y={MOBILE_MAP_VIEWBOX.y}
+                width={MOBILE_MAP_VIEWBOX.width}
+                height={MOBILE_MAP_VIEWBOX.height}
+                fill={`url(#${clipBaseId}-selected-dots)`}
+                clipPath={`url(#${clipBaseId}-${selectedState.toLowerCase()})`}
+                aria-hidden="true"
+              />
+            ) : null}
+            <g className="state-label-layer" aria-hidden="true">
+              {STATE_SHAPES.map((state) => {
+                const label = STATE_LABEL_OVERRIDES[state.code] ?? state.label;
+                return (
+                  <g key={`mobile-label-${state.code}`} className={selectedState === state.code ? "mobile-state-marker is-selected" : "mobile-state-marker"}>
+                    <text
+                      className={`state-label state-label-${state.code.toLowerCase()}`}
+                      x={label[0]}
+                      y={label[1]}
+                    >
+                      {state.code}
+                    </text>
+                  </g>
+                );
+              })}
+            </g>
+          </svg>
         </div>
-        <div className="readout-grid">
-          {stateCounts.map((row) => (
-            <button
-              type="button"
-              className={selectedState === row.code ? "state-mini active" : "state-mini"}
-              key={row.code}
-              onClick={() => toggleSelectedState(row.code)}
-              aria-pressed={selectedState === row.code}
-              aria-label={`${STATE_NAMES[row.code] ?? row.code}, ${formatNumber(row.count)} mapped records`}
+        <section className="mobile-map-analysis" aria-label="Regional mapped-record analysis">
+          <header className="mobile-map-active">
+            <div>
+              <span>{activeState}</span>
+              <strong>{formatNumber(activeCount)}</strong>
+              <small>mapped records</small>
+            </div>
+            <div>
+              <b>{selectedState ? `${(activeMappedShare * 100).toFixed(1)}%` : `${(nationalMappedCoverage * 100).toFixed(1)}%`}</b>
+              <small>{selectedState ? "of mapped layer" : "mapped of public"}</small>
+            </div>
+          </header>
+          <div className="mobile-map-signal-carousel" data-active-signal={activeSignal}>
+            <header className="mobile-map-signal-swipe-head" aria-live="polite">
+              <div>
+                <span>{activeSignal === 0 ? "REGION VOLUME" : "TIME DENSITY"}</span>
+                <b>
+                  {activeSignal === 0
+                    ? `${stateCounts.length} regions`
+                    : leadingMapPeriod
+                      ? `${formatNumber(leadingMapPeriod.records)} · ${leadingMapPeriod.label}`
+                      : "—"}
+                </b>
+              </div>
+              <span className="mobile-map-swipe-cue" aria-hidden="true">
+                <svg viewBox="0 0 32 20">
+                  <path d="m8 4-5 6 5 6M24 4l5 6-5 6M4 10h24" />
+                </svg>
+                <small>{activeSignal + 1}/2</small>
+              </span>
+            </header>
+            <div
+              ref={signalTrackRef}
+              className="mobile-map-signal-track"
+              onScroll={syncMapSignal}
+              data-testid="mobile-map-signal-track"
+              role="region"
+              aria-label="Swipe between region volume and time density charts"
+              tabIndex={0}
             >
-              <span>{row.code}</span>
-              <b>{formatNumber(row.count)}</b>
-            </button>
-          ))}
-        </div>
-        <div className="map-health-note">
-          <span>MAPPED RECORDS</span>
-          <b>{formatNumber(data.summary.mappedRecordCount)}</b>
-          <small>{formatNumber(data.summary.mappedRecordCount)} mapped / {formatNumber(data.summary.recordCount)} public records</small>
-          <em>one display marker per mapped public record</em>
-        </div>
-      </aside>
-    </div>
-  );
-}
-
-function MobileMapFlagMarker({ flag, stateLinked }: { flag: MobileMapFlag; stateLinked: boolean }) {
-  const className = ["record-flag", "precise", flag.toneClass, stateLinked ? "state-linked" : ""].filter(Boolean).join(" ");
-
-  return (
-    <g className={className} aria-hidden="true">
-      <circle className="record-flag-dot" cx={flag.displayX} cy={flag.displayY} r={stateLinked ? 4.1 : 3.25} />
-    </g>
-  );
-}
-
-function MobileDensityView({ data }: { data: MobileArchiveData }) {
-  return (
-    <div className="density-view mobile-density-view">
-      <header className="density-header">
-        <div>
-          <span>TIME DENSITY</span>
-          <p>Density shows public-text record distribution and source coverage. It is not a claim about real-world frequency.</p>
-        </div>
-        <b>
-          {data.summary.earliestYear}-{data.summary.latestYear} / {formatNumber(data.summary.recordCount)} PUBLIC RECORDS / {formatNumber(data.summary.mappedRecordCount)} MAPPED
-        </b>
-      </header>
-      <div className="density-bands">
-        {data.density.periods.map((period) => (
-          <MobileDensityBand key={period.id} period={period} />
-        ))}
-      </div>
-      <article className="density-chart-card mobile-density-trend">
-        <header>
-          <span>ANNUAL TREND</span>
-          <b>Dated public records by year</b>
-        </header>
-        <MobileAnnualSparkline series={data.density.annualSeries} />
-        <p>Use the desktop view for the full analytical density console.</p>
+              <section
+                className="mobile-map-signal-slide"
+                data-map-signal="0"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="Region volume, 1 of 2"
+              >
+                <div className="mobile-map-region-bars" aria-label="Mapped record volume by state and territory">
+                  {stateCounts.map((row) => (
+                    <button
+                      type="button"
+                      className={selectedState === row.code ? "is-active" : ""}
+                      key={row.code}
+                      onClick={() => toggleSelectedState(row.code)}
+                      aria-pressed={selectedState === row.code}
+                      aria-label={`${STATE_NAMES[row.code] ?? row.code}, ${formatNumber(row.count)} mapped records`}
+                    >
+                      <span aria-hidden="true">
+                        <i style={{ "--map-volume": row.count / maxStateCount } as CSSProperties} />
+                      </span>
+                      <b aria-hidden="true">{row.code}</b>
+                    </button>
+                  ))}
+                </div>
+              </section>
+              <section
+                className="mobile-map-signal-slide"
+                data-map-signal="1"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="Time density, 2 of 2"
+              >
+                <div className="mobile-map-period-bars" aria-label="Archive density across seven research periods">
+                  {data.density.periods.map((period, index) => (
+                    <span key={period.id}>
+                      <i style={{ "--map-period-volume": period.maxShare } as CSSProperties} />
+                      <b>{index + 1}</b>
+                    </span>
+                  ))}
+                </div>
+              </section>
+            </div>
+            <div className="mobile-map-signal-progress" aria-hidden="true">
+              <i />
+            </div>
+          </div>
+          <p>Schematic display volumes, not incidence or one marker per record.</p>
+        </section>
       </article>
     </div>
   );
 }
 
-function MobileDensityBand({ period }: { period: MobilePeriod }) {
+function MobileDashboardView({ data }: { data: MobileArchiveData }) {
+  const mappedShare = data.summary.recordCount
+    ? data.summary.mappedRecordCount / data.summary.recordCount
+    : 0;
+  const leadingFamily = data.sources.rollup[0];
+  const leadingPeriod = [...data.density.periods]
+    .sort((left, right) => right.records - left.records)[0];
+  const leadingFamilyShare = leadingFamily
+    ? leadingFamily.records / Math.max(1, data.summary.recordCount)
+    : 0;
+  const leadingThreeFamilyShare = data.sources.rollup
+    .slice(0, 3)
+    .reduce((total, row) => total + row.records, 0)
+    / Math.max(1, data.summary.recordCount);
+  const leadingFigures = [...data.figures]
+    .sort((left, right) => right.recordCount - left.recordCount)
+    .slice(0, 4);
+  const leadingFigure = leadingFigures[0];
+  const mappedAnalysisCells = Math.round(mappedShare * 20);
+
   return (
-    <article className="density-band">
-      <div className="band-meta">
-        <span>{period.label}</span>
-        <b>{formatNumber(period.records)}</b>
-        <small>{formatNumber(period.mapped)} mapped / {Math.round(period.mappedShare * 100)}%</small>
-      </div>
-      <div className="density-band-bars" aria-hidden="true">
-        <i className="density-bar-fill" style={{ "--bar-width": `${Math.round(period.maxShare * 100)}%` } as CSSProperties} />
-        <em className="density-bar-fill" style={{ "--bar-width": `${Math.round(period.mappedShare * 100)}%` } as CSSProperties} />
-      </div>
-      <span className="density-band-action">{formatNumber(period.plannedQueries)} planned queries</span>
-    </article>
+    <div className="mobile-dashboard-view">
+      <header className="mobile-dashboard-hero">
+        <span>ARCHIVE OVERVIEW</span>
+        <div>
+          <h2>Public data</h2>
+          <strong>{formatNumber(data.summary.recordCount)}</strong>
+        </div>
+        <p>
+          Accepted public-text records across supernatural humanoid and adjacent figures;
+          counts describe archive coverage, not incidence.
+        </p>
+      </header>
+
+      <section className="mobile-dashboard-analysis-grid" aria-label="Mobile archive analysis">
+        <article
+          className="mobile-analysis-card is-concrete"
+          aria-label={`${formatNumber(data.summary.mappedRecordCount)} public records have a mapped display location`}
+        >
+          <strong>{formatNumber(data.summary.mappedRecordCount)}</strong>
+          <p>Mapped records</p>
+          <div className="mobile-analysis-matrix" aria-hidden="true">
+            {Array.from({ length: 20 }, (_, index) => (
+              <i className={index < mappedAnalysisCells ? "is-filled" : ""} key={`mapped-cell-${index}`} />
+            ))}
+          </div>
+        </article>
+
+        <article
+          className="mobile-analysis-card is-sand"
+          aria-label={`${leadingPeriod?.label ?? "Largest period"} contains ${formatNumber(leadingPeriod?.records ?? 0)} public records`}
+        >
+          <strong>{leadingPeriod ? formatNumber(leadingPeriod.records) : "—"}</strong>
+          <p>{leadingPeriod?.label ?? "No dated period"}</p>
+          <div className="mobile-analysis-columns" aria-hidden="true">
+            {data.density.periods.map((period) => (
+              <span
+                key={period.id}
+                style={{
+                  "--analysis-volume": period.maxShare,
+                  "--analysis-mapped": period.mappedShare,
+                } as CSSProperties}
+              >
+                <i><em /></i>
+              </span>
+            ))}
+          </div>
+        </article>
+
+        <article
+          className="mobile-analysis-card is-orange"
+          aria-label={`${formatNumber(leadingFamily?.records ?? 0)} public records belong to the largest source family`}
+        >
+          <strong>{leadingFamily ? formatNumber(leadingFamily.records) : "—"}</strong>
+          <p>{leadingFamily?.label ?? "Public sources"}</p>
+          <div className="mobile-analysis-rings" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <circle className="ring-track ring-outer" cx="60" cy="60" r="44" pathLength="100" />
+              <circle
+                className="ring-value ring-outer"
+                cx="60"
+                cy="60"
+                r="44"
+                pathLength="100"
+                strokeDasharray={`${leadingFamilyShare * 100} ${100 - (leadingFamilyShare * 100)}`}
+              />
+              <circle className="ring-track ring-inner" cx="60" cy="60" r="29" pathLength="100" />
+              <circle
+                className="ring-value ring-inner"
+                cx="60"
+                cy="60"
+                r="29"
+                pathLength="100"
+                strokeDasharray={`${leadingThreeFamilyShare * 100} ${100 - (leadingThreeFamilyShare * 100)}`}
+              />
+            </svg>
+          </div>
+        </article>
+
+        <article
+          className="mobile-analysis-card is-olive"
+          aria-label={`${leadingFigure?.name ?? "Leading figure"} has ${formatNumber(leadingFigure?.recordCount ?? 0)} public records`}
+        >
+          <strong>{leadingFigure ? formatNumber(leadingFigure.recordCount) : "—"}</strong>
+          <p>{leadingFigure?.name ?? "No indexed figure"}</p>
+          <div className="mobile-analysis-treemap" aria-hidden="true">
+            {leadingFigures.map((figure) => {
+              const relativeWeight = leadingFigure
+                ? figure.recordCount / Math.max(1, leadingFigure.recordCount)
+                : 0;
+              return (
+                <span
+                  key={figure.slug}
+                  style={{
+                    "--analysis-height": `${Math.round(32 + (relativeWeight * 68))}%`,
+                    "--analysis-weight": Math.max(0.18, relativeWeight),
+                  } as CSSProperties}
+                />
+              );
+            })}
+          </div>
+        </article>
+      </section>
+    </div>
+  );
+}
+
+function MobileDensityView({ data }: { data: MobileArchiveData }) {
+  const compactPeriods = data.density.periods.filter((period) => period.records < 100);
+  const chartPeriods = data.density.periods.filter((period) => period.records >= 100);
+  const periodRanks = new Map(
+    [...data.density.periods]
+      .sort((left, right) => right.records - left.records)
+      .map((period, index) => [period.id, index + 1]),
+  );
+  const peakYear = data.density.annualSeries.reduce(
+    (best, row) => (row.count > best.count ? row : best),
+    data.density.annualSeries[0] ?? { year: data.summary.earliestYear, count: 0 },
+  );
+
+  return (
+    <div className="density-view mobile-density-view">
+      <header className="density-header">
+        <div className="density-header-title">
+          <span>TIME DENSITY</span>
+          <strong>{formatNumber(data.summary.recordCount)}</strong>
+          <p>public records by year and archive period</p>
+        </div>
+        <div className="density-header-stats" aria-label="Density summary">
+          <span><b>{formatNumber(data.summary.mappedRecordCount)}</b><small>MAPPED</small></span>
+          <span><b>{data.density.periods.length}</b><small>PERIODS</small></span>
+          <span><b>{data.summary.earliestYear}–{data.summary.latestYear}</b><small>SPAN</small></span>
+        </div>
+        <small className="density-header-note">Archive coverage, not real-world incidence.</small>
+      </header>
+      <section className="mobile-density-overview-card" aria-label="Annual dated-record overview">
+        <header>
+          <span>ANNUAL SERIES</span>
+          <strong>{formatNumber(peakYear.count)}</strong>
+          <small>{peakYear.year} peak year</small>
+        </header>
+        <MobileAnnualSparkline series={data.density.annualSeries} />
+      </section>
+      <section className="mobile-density-minor-grid" aria-label="Smaller archive period volumes">
+        {compactPeriods.map((period, compactIndex) => {
+          const archiveIndex = data.density.periods.findIndex((candidate) => candidate.id === period.id);
+          return (
+            <article
+              key={period.id}
+              data-tone={MOBILE_CARD_TONES[compactIndex % 3]}
+              aria-label={`${period.label}, ${formatNumber(period.records)} records`}
+            >
+              <span>PERIOD {String(archiveIndex + 1).padStart(2, "0")}</span>
+              <strong>{formatNumber(period.records)}</strong>
+              <p>{period.label}</p>
+            </article>
+          );
+        })}
+      </section>
+      <MobileCardDeck className="density-bands">
+        {chartPeriods.map((period, visualIndex) => {
+          const archiveIndex = data.density.periods.findIndex((candidate) => candidate.id === period.id);
+          return (
+          <MobileDensityBand
+            key={period.id}
+            period={period}
+            index={archiveIndex}
+            visualIndex={visualIndex}
+            rank={periodRanks.get(period.id) ?? data.density.periods.length}
+            totalPeriods={data.density.periods.length}
+          />
+          );
+        })}
+      </MobileCardDeck>
+    </div>
+  );
+}
+
+function MobileDensityBand({
+  period,
+  index,
+  visualIndex,
+  rank,
+  totalPeriods,
+}: {
+  period: MobilePeriod;
+  index: number;
+  visualIndex: number;
+  rank: number;
+  totalPeriods: number;
+}) {
+  return (
+    <MobileExpandableCard
+      cardId={`density-${period.id}`}
+      className="density-band"
+      tone={MOBILE_CARD_TONES[index % MOBILE_CARD_TONES.length]}
+      eyebrow={`ARCHIVE PERIOD ${String(index + 1).padStart(2, "0")}`}
+      title={period.label}
+      metric={`${formatNumber(period.records)} records`}
+      preview={<MobileDensityPeriodPreview period={period} index={visualIndex} />}
+    >
+      <dl className="mobile-card-stats">
+        <div><dt>MAPPED</dt><dd>{formatNumber(period.mapped)} / {Math.round(period.mappedShare * 100)}%</dd></div>
+        <div><dt>CORPUS SHARE</dt><dd>{(period.recordShare * 100).toFixed(1)}%</dd></div>
+        <div><dt>VOLUME RANK</dt><dd>#{rank} / {totalPeriods}</dd></div>
+        <div><dt>SEARCH LEADS</dt><dd>{formatNumber(period.plannedQueries)}</dd></div>
+      </dl>
+    </MobileExpandableCard>
+  );
+}
+
+function MobileDensityPeriodPreview({
+  period,
+  index,
+}: {
+  period: MobilePeriod;
+  index: number;
+}) {
+  const volume = Math.min(1, Math.max(0.06, period.maxShare));
+  const mapped = Math.min(1, Math.max(0.04, period.mappedShare));
+  const volumePercent = Math.round(volume * 100);
+  const mappedPercent = Math.round(mapped * 100);
+  const variant = index % 5;
+
+  if (variant === 0) {
+    return (
+      <span className="mobile-density-period-viz is-orbit" aria-hidden="true">
+        <svg viewBox="0 0 150 62">
+          <circle className="density-viz-base" cx="116" cy="31" r="24" pathLength="100" />
+          <circle
+            className="density-viz-volume"
+            cx="116"
+            cy="31"
+            r="24"
+            pathLength="100"
+            strokeDasharray={`${volumePercent} 100`}
+          />
+          <circle className="density-viz-base is-inner" cx="116" cy="31" r="15" pathLength="100" />
+          <circle
+            className="density-viz-mapped is-inner"
+            cx="116"
+            cy="31"
+            r="15"
+            pathLength="100"
+            strokeDasharray={`${mappedPercent} 100`}
+          />
+          <path className="density-viz-rule" d="M4 48h64M4 36h42M4 24h54" />
+        </svg>
+      </span>
+    );
+  }
+
+  if (variant === 1) {
+    const levels = [0.42, 0.72, 0.55, 1, 0.68];
+    return (
+      <span className="mobile-density-period-viz is-columns" aria-hidden="true">
+        {levels.map((level, columnIndex) => (
+          <i
+            key={`${period.id}-column-${columnIndex}`}
+            style={{ "--density-level": Math.max(0.16, level * volume) } as CSSProperties}
+          >
+            <em style={{ "--density-mapped": mapped } as CSSProperties} />
+          </i>
+        ))}
+      </span>
+    );
+  }
+
+  if (variant === 2) {
+    return (
+      <span className="mobile-density-period-viz is-steps" aria-hidden="true">
+        <i style={{ "--density-step": Math.max(0.28, volume * 0.58) } as CSSProperties} />
+        <i style={{ "--density-step": Math.max(0.42, volume * 0.78) } as CSSProperties} />
+        <i style={{ "--density-step": Math.max(0.56, volume) } as CSSProperties} />
+        <em style={{ "--density-mapped": mapped } as CSSProperties} />
+      </span>
+    );
+  }
+
+  if (variant === 3) {
+    return (
+      <span className="mobile-density-period-viz is-arc" aria-hidden="true">
+        <svg viewBox="0 0 150 62">
+          <path className="density-viz-base" pathLength="100" d="M12 53A63 63 0 0 1 138 53" />
+          <path
+            className="density-viz-volume"
+            pathLength="100"
+            strokeDasharray={`${volumePercent} 100`}
+            d="M12 53A63 63 0 0 1 138 53"
+          />
+          <path className="density-viz-base is-inner" pathLength="100" d="M31 53a44 44 0 0 1 88 0" />
+          <path
+            className="density-viz-mapped is-inner"
+            pathLength="100"
+            strokeDasharray={`${mappedPercent} 100`}
+            d="M31 53a44 44 0 0 1 88 0"
+          />
+        </svg>
+      </span>
+    );
+  }
+
+  return (
+    <span className="mobile-density-period-viz is-range" aria-hidden="true">
+      <svg viewBox="0 0 150 62" preserveAspectRatio="none">
+        <path className="density-viz-rule" d="M4 50h142" />
+        <path
+          className="density-viz-range"
+          d={`M5 46 L35 ${46 - (volume * 21)} L67 ${42 - (mapped * 24)} L98 ${48 - (volume * 34)} L145 ${40 - (mapped * 22)}`}
+        />
+        <circle className="density-viz-node" cx="35" cy={46 - (volume * 21)} r="4" />
+        <circle className="density-viz-node" cx="98" cy={48 - (volume * 34)} r="4" />
+      </svg>
+    </span>
   );
 }
 
@@ -818,7 +1738,7 @@ function MobileAnnualSparkline({ series }: { series: Array<{ year: number; count
   const lineRef = useRef<SVGPolylineElement | null>(null);
   const reducedMotion = useMobilePrefersReducedMotion();
   const width = 340;
-  const height = 112;
+  const height = 150;
   const max = Math.max(1, ...series.map((row) => row.count));
   const minYear = Math.min(...series.map((row) => row.year));
   const maxYear = Math.max(...series.map((row) => row.year));
@@ -828,6 +1748,9 @@ function MobileAnnualSparkline({ series }: { series: Array<{ year: number; count
     const y = height - 14 - (row.count / max) * (height - 28);
     return `${x.toFixed(1)},${y.toFixed(1)}`;
   }).join(" ");
+  const areaPoints = `12,${height - 14} ${points} ${width - 12},${height - 14}`;
+  const peakX = ((peak.year - minYear) / Math.max(1, maxYear - minYear)) * (width - 24) + 12;
+  const peakY = height - 14 - (peak.count / max) * (height - 28);
 
   useEffect(() => {
     const line = lineRef.current;
@@ -862,7 +1785,10 @@ function MobileAnnualSparkline({ series }: { series: Array<{ year: number; count
         Dated public records from {minYear} to {maxYear}; highest annual count is {formatNumber(peak.count)} in {peak.year}.
       </desc>
       <line className="density-chart-grid" x1="12" x2={width - 12} y1={height - 14} y2={height - 14} />
+      <polygon className="density-area-public" points={areaPoints} />
+      <line className="density-peak-guide" x1={peakX} x2={peakX} y1={peakY} y2={height - 14} />
       <polyline ref={lineRef} className="density-line-public density-chart-path" points={points} fill="none" />
+      <circle className="density-peak-dot" cx={peakX} cy={peakY} r="4.5" />
       <text className="density-chart-axis" x="12" y={height - 2}>{minYear}</text>
       <text className="density-chart-axis" x={width - 12} y={height - 2} textAnchor="end">{maxYear}</text>
     </svg>
@@ -870,10 +1796,18 @@ function MobileAnnualSparkline({ series }: { series: Array<{ year: number; count
 }
 
 function MobileSourceView({ data }: { data: MobileArchiveData }) {
-  const reducedMotion = useMobilePrefersReducedMotion();
-  const handleDetailsToggle = useCallback((event: SyntheticEvent<HTMLDetailsElement>) => {
-    animateMobileDetails(event.currentTarget, reducedMotion);
-  }, [reducedMotion]);
+  const leadingFamily = data.sources.rollup[0];
+  const maxFamilyRecords = Math.max(1, ...data.sources.rollup.map((row) => row.records));
+  const leadingRegistry = [...data.sources.registry]
+    .sort((left, right) => right.recordCount - left.recordCount)
+    .slice(0, 5);
+  const maxRegistryRecords = Math.max(1, ...leadingRegistry.map((row) => row.recordCount));
+  const sourceOrgCells = data.sources.rollup.flatMap((row) => (
+    Array.from({ length: row.orgs }, (_, index) => ({
+      id: `${row.id}-${index}`,
+      color: row.color,
+    }))
+  ));
 
   return (
     <div className="source-view mobile-source-view">
@@ -883,62 +1817,150 @@ function MobileSourceView({ data }: { data: MobileArchiveData }) {
             <span>SOURCE REGISTER</span>
             <h2>Public Source Field</h2>
             <p className="source-mobile-intro">
-              AusFigures organises public source organisations and public metadata signals used by the archive. These rows describe source context, not permission to extract restricted cultural knowledge.
+              Public organisations and metadata roles represented in the archive.
+              Restricted cultural knowledge remains outside scope.
             </p>
           </div>
-          <div className="source-header-status" aria-label="Source metrics">
-            <i className="source-terminal-led is-live" aria-hidden="true" />
-            <div className="source-metric-cell"><span>SOURCE ORGS</span><b>{formatNumber(data.sources.metrics.sourceOrgs)}</b></div>
-            <div className="source-metric-cell"><span>PUBLIC RECORDS</span><b>{formatNumber(data.sources.metrics.publicRecords)}</b></div>
-            <div className="source-metric-cell"><span>SOURCE TYPES</span><b>{formatNumber(data.sources.metrics.sourceTypes)}</b></div>
-          </div>
         </header>
-        <div className="source-mobile-accordions">
-          <details className="source-mobile-accordion" open onToggle={handleDetailsToggle}>
-            <summary>
-              <span>ROLLUP</span>
-              <small>SOURCE FAMILY / RECORDS / ORGS</small>
-            </summary>
-            <div className="source-pane-scroll">
+        <section className="mobile-source-visual-grid" aria-label="Source field analysis">
+          <article className="mobile-source-visual-card is-family">
+            <header>
+              <span>FAMILY VOLUME</span>
+              <strong>{formatNumber(leadingFamily?.records ?? 0)}</strong>
+              <small>{leadingFamily?.label ?? "Public sources"}</small>
+            </header>
+            <div className="mobile-source-family-chart" aria-hidden="true">
               {data.sources.rollup.map((row) => (
-                <div className="source-rollup-row" key={row.id}>
-                  <i style={{ "--source-color": row.color } as CSSProperties} />
-                  <span>{row.label}</span>
-                  <strong>{formatNumber(row.records)}</strong>
-                </div>
+                <span key={row.id}>
+                  <i
+                    style={{
+                      "--source-volume": row.records / maxFamilyRecords,
+                      "--source-color": row.color,
+                    } as CSSProperties}
+                  />
+                  <b>{row.orgs}</b>
+                </span>
               ))}
             </div>
-          </details>
-          <details className="source-mobile-accordion" onToggle={handleDetailsToggle}>
-            <summary>
-              <span>REGISTERED SOURCES</span>
-              <small>SOURCE ORGANISATION / PUBLIC ROLE / RECORDS</small>
-            </summary>
-            <div className="source-registry-scroll">
-              {data.sources.registry.map((row) => (
-                <div className="source-registry-row" key={row.id}>
-                  <span>
-                    <b>{row.name}</b>
-                    <small>{row.publicRole} / {row.displayType}</small>
-                  </span>
-                  <strong>{formatNumber(row.recordCount)}</strong>
-                </div>
+            <p>{data.sources.rollup.length} source families · numbers show organisations per family</p>
+          </article>
+
+          <article className="mobile-source-visual-card is-orgs">
+            <header>
+              <span>ORGANISATION FIELD</span>
+              <strong>{formatNumber(data.sources.metrics.sourceOrgs)}</strong>
+              <small>registered public sources</small>
+            </header>
+            <div className="mobile-source-org-matrix" aria-hidden="true">
+              {sourceOrgCells.map((cell) => (
+                <i key={cell.id} style={{ "--source-color": cell.color } as CSSProperties} />
               ))}
             </div>
-          </details>
-        </div>
+          </article>
+
+          <article className="mobile-source-visual-card is-register">
+            <header>
+              <span>LEADING REGISTER</span>
+              <strong>{formatNumber(leadingRegistry[0]?.recordCount ?? 0)}</strong>
+              <small>{leadingRegistry[0]?.name ?? "Registered source"}</small>
+            </header>
+            <div className="mobile-source-register-chart" aria-hidden="true">
+              {leadingRegistry.map((row, index) => (
+                <span key={row.id}>
+                  <i style={{ "--source-volume": row.recordCount / maxRegistryRecords } as CSSProperties} />
+                  <b>{String(index + 1).padStart(2, "0")}</b>
+                </span>
+              ))}
+            </div>
+          </article>
+        </section>
+        <MobileCardDeck className="source-mobile-accordions">
+          <MobileExpandableCard
+            cardId="source-lists"
+            className="source-mobile-accordion"
+            tone="blue"
+            eyebrow="SOURCE DETAIL"
+            title="Source Lists"
+            metric={`${data.sources.rollup.length} families · ${data.sources.metrics.sourceTypes} types`}
+            preview={(
+              <span className="mobile-preview-bars" aria-hidden="true">
+                {data.sources.rollup.map((row) => (
+                  <i
+                    key={row.id}
+                    style={{ "--preview-progress": row.records / maxFamilyRecords } as CSSProperties}
+                  />
+                ))}
+              </span>
+            )}
+          >
+            <section className="mobile-source-list-group">
+              <h3>Source Families</h3>
+              <div className="source-pane-scroll">
+                {data.sources.rollup.map((row) => (
+                  <div className="source-rollup-row" key={row.id}>
+                    <i style={{ "--source-color": row.color } as CSSProperties} />
+                    <span>
+                      <b>{row.label}</b>
+                      <small>{formatNumber(row.orgs)} organisations</small>
+                    </span>
+                    <strong>{formatNumber(row.records)}</strong>
+                  </div>
+                ))}
+              </div>
+            </section>
+            <section className="mobile-source-list-group">
+              <h3>Public Roles</h3>
+              <div className="source-pane-scroll">
+                {data.sources.typeRows.slice(0, 12).map((row) => (
+                  <div className="source-rollup-row" key={row.id}>
+                    <i style={{ "--source-color": row.color } as CSSProperties} />
+                    <span>
+                      <b>{row.label}</b>
+                      <small>{row.familyLabel} · {formatNumber(row.orgs)} organisations</small>
+                    </span>
+                    <strong>{formatNumber(row.records)}</strong>
+                  </div>
+                ))}
+              </div>
+            </section>
+            <section className="mobile-source-list-group">
+              <h3>Registered Sources</h3>
+              <div className="source-registry-scroll">
+                {data.sources.registry.slice(0, 12).map((row) => (
+                  <div className="source-registry-row" key={row.id}>
+                    <span>
+                      <b>{row.name}</b>
+                      <small>{row.publicRole} · {row.familyLabel} · {row.displayType}</small>
+                    </span>
+                    <strong>{formatNumber(row.recordCount)}</strong>
+                  </div>
+                ))}
+              </div>
+            </section>
+            <p className="mobile-card-note">The desktop register retains the full inspector and detailed source metadata.</p>
+          </MobileExpandableCard>
+        </MobileCardDeck>
       </section>
     </div>
   );
 }
 
 function MobileAboutView({ data }: { data: MobileArchiveData }) {
+  const mappedShare = data.summary.mappedRecordCount / Math.max(1, data.summary.recordCount);
+  const mappedCells = Math.round(mappedShare * 10);
+  const maxSourceOrgs = Math.max(1, ...data.sources.rollup.map((row) => row.orgs));
+
   return (
     <div className="about-view mobile-about-view">
       <header className="mobile-about-heading">
         <span>ABOUT</span>
         <h1>About AusFigures</h1>
         <p>AusFigures is a source-grounded public-text archive for tracing how humanoid or humanoid-adjacent supernatural figures appear in Australian public sources.</p>
+        <div className="mobile-hero-badges" aria-label="Project qualities">
+          <span><i aria-hidden="true" />public text</span>
+          <span><i aria-hidden="true" />auditable</span>
+          <span><i aria-hidden="true" />Australia</span>
+        </div>
       </header>
       <section className="about-status-panel">
         <header className="about-status-head">
@@ -946,61 +1968,318 @@ function MobileAboutView({ data }: { data: MobileArchiveData }) {
           <span>DATA STATUS / PUBLIC CORPUS</span>
         </header>
         <div className="about-status-grid">
-          <div><span>PUBLIC RECORDS</span><b>{formatNumber(data.summary.recordCount)}</b></div>
-          <div><span>MAPPED RECORDS</span><b>{formatNumber(data.summary.mappedRecordCount)}</b></div>
-          <div><span>SOURCE ORGS</span><b>{formatNumber(data.summary.sourceCount)}</b></div>
+          <div className="is-public">
+            <span>PUBLIC RECORDS</span>
+            <b>{formatNumber(data.summary.recordCount)}</b>
+            <i className="about-status-register" aria-hidden="true">
+              {Array.from({ length: 10 }, (_, index) => <em key={index} />)}
+            </i>
+          </div>
+          <div className="is-mapped">
+            <span>MAPPED RECORDS</span>
+            <b>{formatNumber(data.summary.mappedRecordCount)}</b>
+            <i className="about-status-register" aria-hidden="true">
+              {Array.from({ length: 10 }, (_, index) => (
+                <em className={index < mappedCells ? "is-active" : ""} key={index} />
+              ))}
+            </i>
+          </div>
+          <div className="is-source">
+            <span>SOURCE ORGS</span>
+            <b>{formatNumber(data.summary.sourceCount)}</b>
+            <i className="about-status-source-bars" aria-hidden="true">
+              {data.sources.rollup.map((row) => (
+                <em
+                  key={row.id}
+                  style={{ "--about-source-share": row.orgs / maxSourceOrgs } as CSSProperties}
+                />
+              ))}
+            </i>
+          </div>
         </div>
       </section>
-      <section className="about-grid">
-        <MobileAboutModule title="Scope">
-          It records published accounts, apparition narratives, local legends, traditional and spirit-person narratives, retellings, and related public discourse as source-grounded public records.
+      <MobileCardDeck className="about-grid">
+        <MobileAboutModule
+          cardId="about-scope"
+          title="Scope"
+          tone="mint"
+          preview={(
+            <span className="mobile-about-scope-preview" aria-label={`${data.figures.length} figures, ${data.density.periods.length} periods and 8 regions`}>
+              <span>
+                <b>{formatNumber(data.figures.length)}</b>
+                <small>FIGURES</small>
+                <i className="about-scope-figure-grid" aria-hidden="true">
+                  {Array.from({ length: 14 }, (_, index) => <em key={index} />)}
+                </i>
+              </span>
+              <span>
+                <b>{formatNumber(data.density.periods.length)}</b>
+                <small>PERIODS</small>
+                <i className="about-scope-period-bars" aria-hidden="true">
+                  {data.density.periods.map((period) => (
+                    <em
+                      key={period.id}
+                      style={{ "--about-period-share": period.maxShare } as CSSProperties}
+                    />
+                  ))}
+                </i>
+              </span>
+              <span>
+                <b>8</b>
+                <small>REGIONS</small>
+                <i className="about-scope-region-grid" aria-hidden="true">
+                  {Array.from({ length: 8 }, (_, index) => <em key={index} />)}
+                </i>
+              </span>
+            </span>
+          )}
+        >
+          <p>
+            It records published encounters, apparition accounts, ghost and local legends,
+            traditional and spirit-person narratives, retellings, and related public discourse
+            as source-grounded public records.
+          </p>
         </MobileAboutModule>
-        <MobileAboutModule title="Map Limits">
-          Public source exists does not mean a supernatural claim is verified. Map markers are public display locations for records, not habitats, populations, or proof.
+        <MobileAboutModule cardId="about-method" title="Method And Rigour" tone="coral">
+          <ol className="mobile-about-sequence">
+            <li><b>01</b><span>Discover a stable public trace.</span></li>
+            <li><b>02</b><span>Preserve source, date, role and publicness.</span></li>
+            <li><b>03</b><span>Classify figure, narrative, period and place separately.</span></li>
+            <li><b>04</b><span>Publish a map flag only after location review.</span></li>
+          </ol>
+          <dl className="mobile-about-checks">
+            <div><dt>LAYER SEPARATION</dt><dd>Public records, map flags, metadata-only items and leads remain distinct.</dd></div>
+            <div><dt>REVISION</dt><dd>The corpus is auditable and revisable, not a complete authority.</dd></div>
+          </dl>
         </MobileAboutModule>
-        <MobileAboutModule title="Source And Ethics">
-          Indigenous-related records require careful handling of terminology, source voice, publicness, cultural sensitivity, and display mode. Restricted or private knowledge is outside the public archive scope.
+        <MobileAboutModule cardId="about-limits" title="Limits And Ethics" tone="yellow">
+          <p>
+            Public source exists does not mean a supernatural claim is verified. Map markers are
+            reviewed display locations for records, not habitats, populations, or proof.
+          </p>
+          <p>
+            Indigenous-related records require careful handling of terminology, source voice,
+            publicness, cultural sensitivity and display mode. Restricted or private knowledge is
+            outside the public archive scope.
+          </p>
         </MobileAboutModule>
-      </section>
+        <MobileAboutModule cardId="about-repository" title="Open Project" tone="blue">
+          <p>
+            Source code, data policies and revision history are available in the public repository.
+          </p>
+          <a
+            className="mobile-about-repository-link"
+            href="https://github.com/dpan538/australian-humanoid-supernatural-texts"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View GitHub repository <span aria-hidden="true">↗</span>
+          </a>
+        </MobileAboutModule>
+      </MobileCardDeck>
     </div>
   );
 }
 
-function MobileAboutModule({ title, children }: { title: string; children: ReactNode }) {
-  const reducedMotion = useMobilePrefersReducedMotion();
-  const handleDetailsToggle = useCallback((event: SyntheticEvent<HTMLDetailsElement>) => {
-    animateMobileDetails(event.currentTarget, reducedMotion);
-  }, [reducedMotion]);
-
+function MobileAboutModule({
+  cardId,
+  title,
+  tone,
+  preview,
+  defaultOpen = false,
+  children,
+}: {
+  cardId: string;
+  title: string;
+  tone: (typeof MOBILE_CARD_TONES)[number];
+  preview?: ReactNode;
+  defaultOpen?: boolean;
+  children: ReactNode;
+}) {
   return (
-    <details className="about-module about-accordion-module" open onToggle={handleDetailsToggle}>
-      <summary className="about-module-head">
-        <i aria-hidden="true" />
-        <span>{title}</span>
-      </summary>
-      <p>{children}</p>
-    </details>
+    <MobileExpandableCard
+      cardId={cardId}
+      className="about-module about-accordion-module"
+      tone={tone}
+      eyebrow="RESEARCH NOTE"
+      title={title}
+      preview={preview}
+      defaultOpen={defaultOpen}
+    >
+      <div className="mobile-about-copy">{children}</div>
+    </MobileExpandableCard>
   );
 }
 
-function animateMobileDetails(details: HTMLDetailsElement, reducedMotion: boolean) {
-  if (!details.open || reducedMotion) {
-    return;
-  }
+type MobileCardDeckValue = {
+  activeId: string | null;
+  setActiveId: Dispatch<SetStateAction<string | null>>;
+};
 
-  const content = Array.from(details.children).filter((child) => child.tagName !== "SUMMARY");
-  if (content.length === 0) {
-    return;
-  }
+const MobileCardDeckContext = createContext<MobileCardDeckValue | null>(null);
 
-  const timeline = createTimeline({
-    defaults: {
-      ease: "outCubic",
-      duration: 280,
-      composition: "replace",
-    },
-  });
-  timeline.add(content, { opacity: [0.7, 1], translateY: [6, 0], delay: stagger(24) }, 0);
+export function MobileCardDeck({
+  children,
+  className = "",
+  defaultOpenId = null,
+}: {
+  children: ReactNode;
+  className?: string;
+  defaultOpenId?: string | null;
+}) {
+  const [activeId, setActiveId] = useState<string | null>(defaultOpenId);
+  const value = useMemo(() => ({ activeId, setActiveId }), [activeId]);
+
+  return (
+    <MobileCardDeckContext.Provider value={value}>
+      <div className={`mobile-card-deck ${className}`.trim()}>{children}</div>
+    </MobileCardDeckContext.Provider>
+  );
+}
+
+export function MobileExpandableCard({
+  cardId,
+  className = "",
+  tone,
+  eyebrow,
+  title,
+  metric,
+  preview,
+  defaultOpen = false,
+  children,
+}: {
+  cardId: string;
+  className?: string;
+  tone: MobileCardTone;
+  eyebrow: string;
+  title: string;
+  metric?: string;
+  preview?: ReactNode;
+  defaultOpen?: boolean;
+  children: ReactNode;
+}) {
+  const cardDeck = useContext(MobileCardDeckContext);
+  const [localOpen, setLocalOpen] = useState(defaultOpen);
+  const open = cardDeck ? cardDeck.activeId === cardId : localOpen;
+  const reducedMotion = useMobilePrefersReducedMotion();
+  const cardRef = useRef<HTMLElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  const mounted = useRef(false);
+  const panelId = useId();
+
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!panel) {
+      return;
+    }
+
+    if (!mounted.current) {
+      panel.style.height = open ? "auto" : "0px";
+      panel.style.opacity = open ? "1" : "0";
+      mounted.current = true;
+      return;
+    }
+
+    const from = panel.getBoundingClientRect().height;
+    const to = open ? panel.scrollHeight : 0;
+    if (reducedMotion) {
+      panel.style.height = open ? "auto" : "0px";
+      panel.style.opacity = open ? "1" : "0";
+      return;
+    }
+
+    panel.style.height = `${from}px`;
+    panel.style.overflow = "hidden";
+    const timeline = createTimeline({
+      defaults: {
+        ease: "inOutCubic",
+        duration: 520,
+        composition: "replace",
+      },
+    });
+    if (cardRef.current) {
+      timeline.add(cardRef.current, {
+        scale: open ? [0.988, 1] : [1, 0.994, 1],
+        duration: open ? 420 : 320,
+      }, 0);
+    }
+    timeline.add(panel, {
+      height: [from, to],
+      opacity: open ? [0.48, 1] : [1, 0],
+      translateY: open ? [8, 0] : [0, -4],
+    }, 0);
+    const contentItems = panel.querySelectorAll(".mobile-expand-content > *");
+    if (open && contentItems.length) {
+      timeline.add(contentItems, {
+        opacity: [0, 1],
+        translateY: [12, 0],
+        delay: stagger(34),
+        duration: 360,
+      }, 90);
+    }
+    const completionTimer = window.setTimeout(() => {
+      panel.style.height = open ? "auto" : "0px";
+      panel.style.overflow = "hidden";
+      panel.style.transform = "";
+      if (open) {
+        cardRef.current?.scrollIntoView({
+          behavior: reducedMotion ? "auto" : "smooth",
+          block: "nearest",
+          inline: "nearest",
+        });
+      }
+    }, 560);
+
+    return () => {
+      window.clearTimeout(completionTimer);
+      timeline.cancel();
+    };
+  }, [open, reducedMotion]);
+
+  return (
+    <article
+      ref={cardRef}
+      className={`mobile-expand-card ${className} ${preview ? "has-preview" : ""} ${open ? "is-open" : ""}`.trim()}
+      data-tone={tone}
+      data-card-id={cardId}
+    >
+      <button
+        type="button"
+        className="mobile-expand-trigger"
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={() => {
+          if (cardDeck) {
+            cardDeck.setActiveId((current) => current === cardId ? null : cardId);
+            return;
+          }
+          setLocalOpen((current) => !current);
+        }}
+      >
+        <span className="mobile-expand-title">
+          <small>{eyebrow}</small>
+          <b>{title}</b>
+        </span>
+        {metric ? <strong>{metric}</strong> : null}
+        {preview ? <span className="mobile-expand-preview">{preview}</span> : null}
+        <i className="mobile-expand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="m6.5 9 5.5 5.5L17.5 9" />
+          </svg>
+        </i>
+      </button>
+      <div
+        ref={panelRef}
+        id={panelId}
+        className="mobile-expand-panel"
+        role="region"
+        aria-hidden={!open}
+        inert={!open}
+      >
+        <div className="mobile-expand-content">{children}</div>
+      </div>
+    </article>
+  );
 }
 
 function addMobileTimelineTargets(
@@ -1015,135 +2294,130 @@ function addMobileTimelineTargets(
 }
 
 export function MobileArchiveControls({ view }: { view: MobileControlView }) {
-  const [collapsed, setCollapsed] = useState(true);
   const controlsRef = useRef<HTMLDivElement | null>(null);
-  const idleTimer = useRef<number | null>(null);
-  const keyboardInteraction = useRef(false);
-
-  const clearIdleTimer = useCallback(() => {
-    if (idleTimer.current) {
-      window.clearTimeout(idleTimer.current);
-      idleTimer.current = null;
-    }
-  }, []);
-
-  const scheduleCollapse = useCallback(() => {
-    clearIdleTimer();
-    idleTimer.current = window.setTimeout(() => {
-      const activeElement = document.activeElement;
-      const keyboardFocus = keyboardInteraction.current && activeElement && controlsRef.current?.contains(activeElement);
-      if (keyboardFocus) {
-        idleTimer.current = null;
-        return;
-      }
-      setCollapsed(true);
-    }, MOBILE_NAV_IDLE_MS);
-  }, [clearIdleTimer]);
-
-  const expandAndSchedule = useCallback(() => {
-    setCollapsed(false);
-    scheduleCollapse();
-  }, [scheduleCollapse]);
-
-  useEffect(() => {
-    return clearIdleTimer;
-  }, [clearIdleTimer, view]);
-
-  const handleNavigate = useCallback(() => {
-    clearIdleTimer();
-    setCollapsed(true);
-  }, [clearIdleTimer]);
-
-  const handleFocusCapture = useCallback(() => {
-    clearIdleTimer();
-    setCollapsed(false);
-  }, [clearIdleTimer]);
-
-  const handleBlurCapture = useCallback((event: FocusEvent<HTMLDivElement>) => {
-    const nextTarget = event.relatedTarget;
-    if (nextTarget instanceof Node && event.currentTarget.contains(nextTarget)) {
+  const spotlightRef = useRef<HTMLSpanElement | null>(null);
+  const previousSpotlightX = useRef<number | null>(null);
+  const reducedMotion = useMobilePrefersReducedMotion();
+  const handleNavPress = useCallback((event: PointerEvent<HTMLAnchorElement>) => {
+    if (reducedMotion) {
       return;
     }
-    scheduleCollapse();
-  }, [scheduleCollapse]);
+    const target = event.currentTarget;
+    target.classList.remove("is-pressing");
+    void target.offsetWidth;
+    target.classList.add("is-pressing");
+    window.setTimeout(() => target.classList.remove("is-pressing"), 420);
+  }, [reducedMotion]);
+
+  useEffect(() => {
+    const controls = controlsRef.current;
+    const spotlight = spotlightRef.current;
+    if (!controls || !spotlight) {
+      return;
+    }
+
+    let timeline: Timeline | null = null;
+    const positionSpotlight = () => {
+      const active = controls.querySelector<HTMLElement>(".mobile-archive-link.is-active");
+      if (!active) {
+        spotlight.style.opacity = "0";
+        previousSpotlightX.current = null;
+        return;
+      }
+      spotlight.style.opacity = "1";
+      const controlsBox = controls.getBoundingClientRect();
+      const activeBox = active.getBoundingClientRect();
+      const controlsInnerOffset = controls.clientLeft;
+      const nextX = activeBox.left
+        - controlsBox.left
+        - controlsInnerOffset
+        + activeBox.width / 2
+        - spotlight.offsetWidth / 2;
+      let storedView: string | null = null;
+      try {
+        storedView = window.sessionStorage.getItem(MOBILE_NAV_STORAGE_KEY);
+      } catch {
+        storedView = null;
+      }
+      const previousLink = storedView
+        ? Array.from(controls.querySelectorAll<HTMLElement>(".mobile-archive-link"))
+          .find((link) => link.dataset.navView === storedView)
+        : null;
+      const previousBox = previousLink?.getBoundingClientRect();
+      const storedX = previousBox
+        ? previousBox.left
+          - controlsBox.left
+          - controlsInnerOffset
+          + previousBox.width / 2
+          - spotlight.offsetWidth / 2
+        : nextX;
+      const fromX = previousSpotlightX.current ?? storedX;
+      previousSpotlightX.current = nextX;
+      try {
+        window.sessionStorage.setItem(MOBILE_NAV_STORAGE_KEY, view);
+      } catch {
+        // Session storage is optional; visual navigation remains functional without it.
+      }
+      if (reducedMotion) {
+        spotlight.style.transform = `translate3d(${nextX}px, 0, 0)`;
+        return;
+      }
+      timeline?.cancel();
+      timeline = createTimeline({
+        defaults: {
+          ease: "outQuint",
+          duration: 560,
+          composition: "replace",
+        },
+      });
+      timeline.add(spotlight, {
+        translateX: [fromX, nextX],
+        scaleX: [0.62, 1],
+        opacity: [0.42, 1],
+      }, 0);
+      const activeIcon = active.querySelector(".mobile-nav-icon");
+      if (activeIcon) {
+        timeline.add(activeIcon, {
+          opacity: [0.46, 1],
+          translateY: [5, -2],
+          scale: [0.76, 1.12],
+          rotate: [-5, 0],
+          duration: 460,
+        }, 40);
+      }
+    };
+
+    positionSpotlight();
+    window.addEventListener("resize", positionSpotlight);
+    return () => {
+      window.removeEventListener("resize", positionSpotlight);
+      timeline?.cancel();
+    };
+  }, [reducedMotion, view]);
 
   return (
     <div
       ref={controlsRef}
-      className={collapsed ? "mobile-archive-controls is-collapsed" : "mobile-archive-controls"}
+      className="mobile-archive-controls"
       aria-label="Mobile archive controls"
-      onFocusCapture={handleFocusCapture}
-      onBlurCapture={handleBlurCapture}
-      onPointerDownCapture={() => {
-        keyboardInteraction.current = false;
-      }}
-      onKeyDownCapture={() => {
-        keyboardInteraction.current = true;
-      }}
-      onPointerEnter={() => {
-        if (isFineHoverPointer()) {
-          clearIdleTimer();
-        }
-      }}
-      onPointerLeave={() => {
-        if (isFineHoverPointer()) {
-          scheduleCollapse();
-        }
-      }}
     >
-      <button
-        type="button"
-        className="mobile-nav-collapse-toggle"
-        aria-label="Open mobile navigation"
-        aria-expanded={!collapsed}
-        onClick={expandAndSchedule}
-      >
-        <b className="mobile-nav-pill-label" aria-hidden="true">NAV</b>
-        <span>AusFigures navigation</span>
-      </button>
+      <span ref={spotlightRef} className="mobile-nav-spotlight" aria-hidden="true" />
       <div className="mobile-archive-expanded">
-        <MobileThemeControl />
         <nav className="mobile-archive-nav" aria-label="Mobile archive navigation">
-          <Link
-            className={view === "about" ? "mobile-archive-link is-active" : "mobile-archive-link"}
-            href="/about"
-            aria-label="Open about"
-            aria-current={view === "about" ? "page" : undefined}
-            onClick={handleNavigate}
-          >
-            <MobileNavIcon name="about" />
-            <span>About</span>
-          </Link>
-          <Link
-            className={view === "source" ? "mobile-archive-link is-active" : "mobile-archive-link"}
-            href="/source"
-            aria-label="Open source"
-            aria-current={view === "source" ? "page" : undefined}
-            onClick={handleNavigate}
-          >
-            <MobileNavIcon name="source" />
-            <span>Source</span>
-          </Link>
-          <Link
-            className={view === "density" ? "mobile-archive-link is-active" : "mobile-archive-link"}
-            href="/density"
-            aria-label="Open density"
-            aria-current={view === "density" ? "page" : undefined}
-            onClick={handleNavigate}
-          >
-            <MobileNavIcon name="density" />
-            <span>Density</span>
-          </Link>
-          <Link
-            className={view === "map" ? "mobile-archive-link is-active" : "mobile-archive-link"}
-            href="/map"
-            aria-label="Open map"
-            aria-current={view === "map" ? "page" : undefined}
-            onClick={handleNavigate}
-          >
-            <MobileNavIcon name="map" />
-            <span>Map</span>
-          </Link>
+          {MOBILE_NAV_ITEMS.map((item) => (
+            <Link
+              key={item.view}
+              className={view === item.view ? "mobile-archive-link is-active" : "mobile-archive-link"}
+              href={item.href}
+              data-nav-view={item.view}
+              aria-label={`Open ${item.label}`}
+              aria-current={view === item.view ? "page" : undefined}
+              onPointerDown={handleNavPress}
+            >
+              <MobileNavIcon name={item.icon} />
+              <span>{item.label}</span>
+            </Link>
+          ))}
         </nav>
       </div>
     </div>
@@ -1186,6 +2460,9 @@ function readStoredTheme(): DisplayTheme {
 function MobileThemeControl() {
   const [theme, setTheme] = useState<DisplayTheme>("dark");
   const [hydrated, setHydrated] = useState(false);
+  const [switching, setSwitching] = useState(false);
+  const completionTimerRef = useRef<number | null>(null);
+  const reducedMotion = useMobilePrefersReducedMotion();
 
   useEffect(() => {
     const storedTheme = readStoredTheme();
@@ -1203,18 +2480,47 @@ function MobileThemeControl() {
     window.dispatchEvent(new CustomEvent("archive-display-change", { detail: { theme } }));
   }, [theme, hydrated]);
 
+  useEffect(() => () => {
+    if (completionTimerRef.current !== null) {
+      window.clearTimeout(completionTimerRef.current);
+    }
+  }, []);
+
   return (
     <button
       type="button"
-      className="mobile-archive-link mobile-theme-button"
+      className={`mobile-top-action mobile-top-theme mobile-theme-button ${switching ? "is-switching" : ""}`.trim()}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       aria-pressed={theme === "light"}
       onClick={(event) => {
+        if (switching) {
+          return;
+        }
         const nextTheme = theme === "dark" ? "light" : "dark";
+        const icon = event.currentTarget.querySelector(".mobile-theme-icon");
+        setSwitching(true);
+        if (!reducedMotion && icon) {
+          const iconTimeline = createTimeline({
+            defaults: {
+              ease: "outQuint",
+              composition: "replace",
+            },
+          });
+          iconTimeline.add(icon, {
+            rotate: nextTheme === "light" ? [-26, 0] : [24, 0],
+            scale: [0.72, 1],
+            opacity: [0.52, 1],
+            duration: 460,
+          }, 0);
+        }
         runThemeTransition(event.currentTarget, nextTheme, () => {
           document.documentElement.dataset.theme = nextTheme;
           setTheme(nextTheme);
         });
+        completionTimerRef.current = window.setTimeout(() => {
+          setSwitching(false);
+          completionTimerRef.current = null;
+        }, 720);
       }}
     >
       <MobileNavIcon name="theme" theme={theme} />
@@ -1225,25 +2531,48 @@ function MobileThemeControl() {
 
 function MobileNavIcon({ name, theme }: { name: MobileNavName; theme?: DisplayTheme }) {
   if (name === "theme") {
-    if (theme === "dark") {
+    if (theme === "light") {
       return (
-        <svg className="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <circle cx="12" cy="12" r="4.4" />
-          <path d="M12 3.6v2" />
-          <path d="M12 18.4v2" />
-          <path d="M3.6 12h2" />
-          <path d="M18.4 12h2" />
-          <path d="m6.1 6.1 1.4 1.4" />
-          <path d="m16.5 16.5 1.4 1.4" />
-          <path d="m17.9 6.1-1.4 1.4" />
-          <path d="m7.5 16.5-1.4 1.4" />
+        <svg
+          className="mobile-nav-icon mobile-theme-icon"
+          data-theme-icon="sun"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <circle className="mobile-theme-core" cx="12" cy="12" r="3.6" />
+          <g className="mobile-theme-rays">
+            <path d="M12 2.7v2.2" />
+            <path d="M12 19.1v2.2" />
+            <path d="M2.7 12h2.2" />
+            <path d="M19.1 12h2.2" />
+            <path d="m5.4 5.4 1.6 1.6" />
+            <path d="m17 17 1.6 1.6" />
+            <path d="m18.6 5.4-1.6 1.6" />
+            <path d="m7 17-1.6 1.6" />
+          </g>
         </svg>
       );
     }
-
     return (
-      <svg className="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M18.7 15.3A7.2 7.2 0 0 1 8.7 5.3 7.5 7.5 0 1 0 18.7 15.3Z" />
+      <svg
+        className="mobile-nav-icon mobile-theme-icon"
+        data-theme-icon="moon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <g className="mobile-theme-rays">
+          <path d="M12 2.7v2.2" />
+          <path d="M12 19.1v2.2" />
+          <path d="M2.7 12h2.2" />
+          <path d="M19.1 12h2.2" />
+          <path d="m5.4 5.4 1.6 1.6" />
+          <path d="m17 17 1.6 1.6" />
+          <path d="m18.6 5.4-1.6 1.6" />
+          <path d="m7 17-1.6 1.6" />
+        </g>
+        <path className="mobile-theme-core" d="M18.2 15.8A7.6 7.6 0 0 1 8.2 5.2 7.7 7.7 0 1 0 18.2 15.8Z" />
       </svg>
     );
   }
@@ -1251,8 +2580,16 @@ function MobileNavIcon({ name, theme }: { name: MobileNavName; theme?: DisplayTh
   if (name === "about") {
     return (
       <svg className="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M8.4 18.2 12 6.4l3.6 11.8" />
-        <path d="M9.7 14.2h4.6" />
+        <path d="m6.5 18.5 4.7-13h1.6l4.7 13M8.5 13.2h7" />
+      </svg>
+    );
+  }
+
+  if (name === "figures") {
+    return (
+      <svg className="mobile-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7.4 3.8h9.8c1 0 1.8.8 1.8 1.8v13.1c0 .9-.7 1.6-1.6 1.6H7.8A2.8 2.8 0 0 1 5 17.5V6.6a2.8 2.8 0 0 1 2.4-2.8Z" />
+        <path d="M5 17.5c0-1.4 1.1-2.5 2.5-2.5H19M8.9 12.5l2.1-5.7h1.4l2.1 5.7M9.7 10.4h4" />
       </svg>
     );
   }

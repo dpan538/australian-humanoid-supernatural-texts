@@ -4,7 +4,7 @@ import Link from "next/link";
 import { AboutAmbientMotion } from "@/components/about/about-ambient-motion";
 import { CitationSamples } from "@/components/citation-samples";
 import { DisplayControls } from "@/components/display-controls";
-import { MobileArchiveControls } from "@/components/mobile-archive";
+import { MobileArchiveRoute } from "@/components/mobile-archive";
 import { RouteStructuredData } from "@/components/route-structured-data";
 import { FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { metadataForRoute, siteConfig } from "@/lib/site";
@@ -71,7 +71,9 @@ export default async function AboutPage() {
   const citationSamples = buildProjectCitations(data.generated_at.slice(0, 10));
 
   return (
-    <main className="terminal-shell">
+    <>
+      <MobileArchiveRoute view="about" data={data} />
+      <main className="terminal-shell desktop-about-shell">
       <div className="noise-layer" aria-hidden="true" />
       <RouteStructuredData path="/about" />
       <div className="terminal-stage">
@@ -245,9 +247,9 @@ export default async function AboutPage() {
             </Link>
           </div>
         </div>
-        <MobileArchiveControls view="about" />
       </div>
-    </main>
+      </main>
+    </>
   );
 }
 
