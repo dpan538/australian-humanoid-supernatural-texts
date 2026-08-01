@@ -9,7 +9,8 @@ import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/type
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { figureProfileFor } from "@/lib/figure-profiles";
 import type { FigureProfile } from "@/lib/figure-profiles";
-import { FRONTEND_DATA_URL } from "@/lib/frontend-data";
+import { FRONTEND_DATA_URL, MOBILE_ARCHIVE_DATA_URL } from "@/lib/frontend-data";
+import type { MobileArchiveData } from "@/lib/mobile-archive-data";
 import { SourceView } from "@/components/source/source-view";
 import { DisplayControls } from "@/components/display-controls";
 import {
@@ -442,6 +443,8 @@ const LAMBERT_AU = {
 
 let frontendDataCache: FrontendData | null = null;
 let frontendDataPromise: Promise<FrontendData> | null = null;
+let mobileArchiveDataCache: MobileArchiveData | null = null;
+let mobileArchiveDataPromise: Promise<MobileArchiveData> | null = null;
 
 type MapFlagRenderItem = {
   flag_id: string;
@@ -504,6 +507,30 @@ function loadFrontendData() {
       });
   }
   return frontendDataPromise;
+}
+
+function loadMobileArchiveData() {
+  if (mobileArchiveDataCache) {
+    return Promise.resolve(mobileArchiveDataCache);
+  }
+  if (!mobileArchiveDataPromise) {
+    mobileArchiveDataPromise = fetch(MOBILE_ARCHIVE_DATA_URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Mobile archive data request failed: ${response.status}`);
+        }
+        return response.json() as Promise<MobileArchiveData>;
+      })
+      .then((payload) => {
+        mobileArchiveDataCache = payload;
+        return payload;
+      })
+      .catch((error) => {
+        mobileArchiveDataPromise = null;
+        throw error;
+      });
+  }
+  return mobileArchiveDataPromise;
 }
 
 function numberFormat(value: number | null | undefined) {
@@ -1034,10 +1061,12 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
   const mobileMode = useMobileArchiveMode();
   const mobileRoute = useMobileArchiveRouteGuard(view);
   const [data, setData] = useState<FrontendData | null>(frontendDataCache);
-  const [showArchive, setShowArchive] = useState(Boolean(frontendDataCache));
+  const [mobileData, setMobileData] = useState<MobileArchiveData | null>(mobileArchiveDataCache);
+  const [showArchive, setShowArchive] = useState(Boolean(frontendDataCache || mobileArchiveDataCache));
   const [error, setError] = useState<string | null>(null);
   const loadingRef = useRef<HTMLDivElement | null>(null);
   const preflightLoadingRef = useRef<HTMLDivElement | null>(null);
+  const activeData = mobileMode.isMobile ? mobileData : data;
 
   useEffect(() => {
     if (!mobileMode.ready) {
@@ -1045,10 +1074,15 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
     }
 
     let cancelled = false;
-    loadFrontendData()
+    const request = mobileMode.isMobile ? loadMobileArchiveData() : loadFrontendData();
+    request
       .then((payload) => {
         if (!cancelled) {
-          setData(payload);
+          if (mobileMode.isMobile) {
+            setMobileData(payload as MobileArchiveData);
+          } else {
+            setData(payload as FrontendData);
+          }
           setError(null);
         }
       })
@@ -1061,10 +1095,10 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
     return () => {
       cancelled = true;
     };
-  }, [mobileMode.ready]);
+  }, [mobileMode.isMobile, mobileMode.ready]);
 
   useEffect(() => {
-    if (!data || showArchive) {
+    if (!activeData || showArchive) {
       return;
     }
 
@@ -1076,7 +1110,10 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
       }
     };
 
-    if (!loadingRoot || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      !loadingRoot ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
       finishLoading();
       return () => {
         cancelled = true;
@@ -1174,7 +1211,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
       cancelled = true;
       timeline.cancel();
     };
-  }, [data, mobileMode.isMobile, mobileMode.ready, showArchive]);
+  }, [activeData, mobileMode.isMobile, mobileMode.ready, showArchive]);
 
   if (!mobileMode.ready) {
     return (
@@ -1182,7 +1219,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
         <div className="mobile-loader-preflight">
           <MobileArchiveLoadingState
             view={view}
-            data={data}
+            data={mobileData}
             error={error}
             loadingRef={loadingRef}
           />
@@ -1197,13 +1234,13 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
   }
 
   if (mobileMode.isMobile) {
-    if (data && showArchive) {
-      return <MobileArchiveRoute view={view} data={data} />;
+    if (mobileData && showArchive) {
+      return <MobileArchiveRoute view={view} data={mobileData} />;
     }
     return (
       <MobileArchiveLoadingState
         view={view}
-        data={data}
+        data={mobileData}
         error={error}
         loadingRef={loadingRef}
       />
@@ -1240,14 +1277,14 @@ function MobileArchiveLoadingState({
   loadingRef,
 }: {
   view: ViewMode;
-  data: FrontendData | null;
+  data: MobileArchiveData | null;
   error: string | null;
   loadingRef: RefObject<HTMLDivElement | null>;
 }) {
-  const publicCount = data ? new Intl.NumberFormat("en-AU").format(data.summary.record_count) : "—";
-  const mappedCount = data ? new Intl.NumberFormat("en-AU").format(data.summary.mapped_record_count) : "—";
+  const publicCount = data ? new Intl.NumberFormat("en-AU").format(data.summary.recordCount) : "—";
+  const mappedCount = data ? new Intl.NumberFormat("en-AU").format(data.summary.mappedRecordCount) : "—";
   const dateSpan = data
-    ? `${data.summary.earliest_year ?? "—"}–${data.summary.latest_year ?? "—"}`
+    ? `${data.summary.earliestYear || "—"}–${data.summary.latestYear || "—"}`
     : "—";
 
   return (

@@ -9,6 +9,7 @@ import { RouteStructuredData } from "@/components/route-structured-data";
 import { FRONTEND_DATA_URL } from "@/lib/frontend-data";
 import { metadataForRoute, siteConfig } from "@/lib/site";
 import { buildProjectCitations } from "@/lib/citations";
+import { buildMobileArchiveData } from "@/lib/mobile-archive-data";
 import { buildSourceRegistryData } from "@/lib/source-view-data";
 import type { FrontendData } from "@/lib/types";
 
@@ -66,13 +67,14 @@ const RIGOUR_CHECKS = [
 
 export default async function AboutPage() {
   const data = await loadAboutData();
+  const mobileData = buildMobileArchiveData(data);
   const statusCells = buildStatusCells(data);
   const recordTypeRows = buildRecordTypeRows(data);
   const citationSamples = buildProjectCitations(data.generated_at.slice(0, 10));
 
   return (
     <>
-      <MobileArchiveRoute view="about" data={data} />
+      <MobileArchiveRoute view="about" data={mobileData} />
       <main className="terminal-shell desktop-about-shell">
       <div className="noise-layer" aria-hidden="true" />
       <RouteStructuredData path="/about" />

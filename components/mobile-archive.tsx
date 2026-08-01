@@ -25,10 +25,15 @@ import { createTimeline, stagger } from "animejs";
 import type { AnimationParams, Timeline } from "animejs";
 import { STATE_SHAPES } from "@/lib/au-map-data";
 import { figurePath } from "@/lib/archive-routing";
-import { figureProfileFor, normalizeFigureLabel } from "@/lib/figure-profiles";
-import type { FrontendData, MapFlagItem, RecordItem } from "@/lib/types";
-import { SOURCE_FAMILY_STYLES, buildSourceRegistryData, displaySourceType, sourceFamilyId, type SourceFamilyId } from "@/lib/source-view-data";
+import { MOBILE_ARCHIVE_DATA_URL } from "@/lib/frontend-data";
+import type {
+  MobileArchiveData,
+  MobileFigureSearchEntry,
+  MobilePeriod,
+} from "@/lib/mobile-archive-data";
 import { runThemeTransition } from "@/lib/theme-transition";
+
+export type { MobileFigureSearchEntry } from "@/lib/mobile-archive-data";
 
 export type MobileControlView =
   | "about"
@@ -42,6 +47,9 @@ type MobileNavName = "theme" | "about" | "source" | "density" | "map" | "figures
 const MOBILE_ARCHIVE_QUERY = "(max-width: 720px)";
 const THEME_STORAGE_KEY = "aus-archive-theme";
 const MOBILE_MOTION_STORAGE_KEY = "aus-mobile-motion-seen";
+const MOBILE_RECORD_CACHE_PREFIX = "ausfigures-mobile-records";
+let mobileRecordWarmupPromise: Promise<void> | null = null;
+let mobileArchiveManifestPromise: Promise<MobileArchiveData> | null = null;
 const MOBILE_NAV_ITEMS: Array<{
   view: Exclude<MobileControlView, "dashboard">;
   href: string;
@@ -57,42 +65,6 @@ const MOBILE_NAV_ITEMS: Array<{
 const MOBILE_MAP_VIEWBOX = { x: 24, y: 18, width: 930, height: 682 } as const;
 const MOBILE_CARD_TONES = ["mint", "coral", "yellow", "blue", "lavender", "mint"] as const;
 export type MobileCardTone = (typeof MOBILE_CARD_TONES)[number];
-const MOBILE_SOURCE_CLASS_BY_FAMILY: Record<SourceFamilyId, string> = {
-  repository: "source-tone-archive",
-  modern_web: "source-tone-web",
-  public_domain: "source-tone-candidate",
-  institutions: "source-tone-institutional",
-  academic: "source-tone-academic",
-  community: "source-tone-community",
-  other: "source-tone-default",
-};
-const JSON_BOUNDS = {
-  minX: -999,
-  maxX: 8821,
-  minY: 649,
-  maxY: 9851,
-} as const;
-const SVG_BOUNDS = {
-  minX: 54,
-  maxX: 914,
-  minY: 36,
-  maxY: 676,
-} as const;
-const HICHARTS_AU_TRANSFORM = {
-  scale: 0.000158093982027,
-  jsonres: 15.5,
-  jsonmarginX: -999,
-  jsonmarginY: 9851,
-  xoffset: -2082021.85219,
-  yoffset: -1210304.51735,
-} as const;
-const LAMBERT_AU = {
-  radius: 6378137,
-  lat1: -18,
-  lat2: -36,
-  lat0: 0,
-  lon0: 134,
-} as const;
 
 export type MobileRouteView =
   | "about"
@@ -101,92 +73,6 @@ export type MobileRouteView =
   | "dashboard"
   | "source"
   | "figures";
-
-type MobileArchiveData = {
-  schema_version: string;
-  generated_from: string;
-  generated_at: string;
-  summary: {
-    recordCount: number;
-    mappedRecordCount: number;
-    sourceCount: number;
-    sourceTypeCount: number;
-    earliestYear: number;
-    latestYear: number;
-    ethicalNote: string;
-  };
-  map: {
-    stateCounts: Array<{ code: string; count: number }>;
-    flags: MobileMapFlag[];
-    interpretation: string;
-  };
-  density: {
-    periods: MobilePeriod[];
-    annualSeries: Array<{ year: number; count: number }>;
-  };
-  sources: {
-    metrics: {
-      sourceOrgs: number;
-      publicRecords: number;
-      sourceTypes: number;
-    };
-    rollup: Array<{ id: string; label: string; color: string; records: number; orgs: number }>;
-    typeRows: Array<{ id: string; label: string; familyLabel: string; color: string; records: number; orgs: number }>;
-    registry: Array<{
-      id: number;
-      name: string;
-      sourceType: string;
-      displayType: string;
-      familyId: string;
-      familyLabel: string;
-      color: string;
-      publicRole: string;
-      recordCount: number;
-      publicness: string | null;
-      baseUrl: string | null;
-      ethicsNotes: string | null;
-    }>;
-  };
-  figures: MobileFigureSearchEntry[];
-};
-
-export type MobileFigureSearchEntry = {
-  name: string;
-  slug: string;
-  description: string;
-  aliases: string[];
-  recordCount: number;
-  earliestYear: number | null;
-  latestYear: number | null;
-};
-
-type MobileMapFlag = {
-  id: string;
-  recordId: number;
-  state: string;
-  x: number;
-  y: number;
-  displayX: number;
-  displayY: number;
-  toneClass: string;
-  title: string | null;
-  year: number | null;
-  figure: string | null;
-  sourceFamily: string;
-  sourceType: string;
-  narrativeType: string;
-};
-
-type MobilePeriod = {
-  id: string;
-  label: string;
-  records: number;
-  mapped: number;
-  mappedShare: number;
-  plannedQueries: number;
-  recordShare: number;
-  maxShare: number;
-};
 
 const STATE_LABEL_OVERRIDES: Partial<Record<string, [number, number]>> = {
   SA: [520, 402],
@@ -205,400 +91,6 @@ const STATE_NAMES: Record<string, string> = {
   TAS: "Tasmania",
   ACT: "Australian Capital Territory",
 };
-
-const MOBILE_NARRATIVE_LABELS: Record<string, string> = {
-  apparition_account: "Apparition Account",
-  cryptid_style_apeman: "Cryptid Style Apeman",
-  ghost_legend: "Ghost Legend",
-  local_legend: "Local Legend",
-  retelling_or_adaptation: "Retelling / Adaptation",
-  spirit_person_narrative: "Spirit Person Narrative",
-  traditional_narrative: "Traditional Narrative",
-  giant_or_ogre_narrative: "Giant Or Ogre Narrative",
-};
-
-function buildMobileArchiveData(data: FrontendData): MobileArchiveData {
-  const sourceData = buildSourceRegistryData(data);
-  const mapFlags = buildMobileMapFlags(data);
-  const mappedStateCounts = mapFlags.reduce<Record<string, number>>((acc, flag) => {
-    acc[flag.state] = (acc[flag.state] ?? 0) + 1;
-    return acc;
-  }, {});
-  const datedYears = data.records
-    .map((record) => record.year)
-    .filter((year): year is number => typeof year === "number" && Number.isFinite(year));
-  const recordCount = data.summary.record_count || data.records.length;
-  const mappedRecordCount = data.summary.mapped_record_count || mapFlags.length;
-  const maxPeriodRecords = Math.max(1, ...data.date_bands.map((period) => period.record_count || 0));
-
-  return {
-    schema_version: "mobile-archive/v1",
-    generated_from: data.schema_version,
-    generated_at: data.generated_at,
-    summary: {
-      recordCount,
-      mappedRecordCount,
-      sourceCount: sourceData.metrics.sourceOrgs,
-      sourceTypeCount: sourceData.metrics.sourceTypes,
-      earliestYear: data.summary.earliest_year ?? (datedYears.length ? Math.min(...datedYears) : 0),
-      latestYear: data.summary.latest_year ?? (datedYears.length ? Math.max(...datedYears) : 0),
-      ethicalNote: data.scope.ethical_note,
-    },
-    map: {
-      stateCounts: Object.keys(STATE_NAMES).map((code) => ({
-        code,
-        count: mappedStateCounts[code] ?? data.summary.mapped_state_counts?.[code] ?? 0,
-      })),
-      flags: mapFlags,
-      interpretation: "Markers are public display locations for records, not proof, habitats, or populations.",
-    },
-    density: {
-      periods: data.date_bands.map((period) => {
-        const records = period.record_count || 0;
-        const mapped = period.mapped_count || 0;
-        return {
-          id: period.id,
-          label: period.short_label || period.label,
-          records,
-          mapped,
-          mappedShare: records ? mapped / records : 0,
-          plannedQueries: period.planned_query_count || 0,
-          recordShare: recordCount ? records / recordCount : 0,
-          maxShare: records / maxPeriodRecords,
-        };
-      }),
-      annualSeries: buildMobileAnnualSeries(data),
-    },
-    sources: {
-      metrics: sourceData.metrics,
-      rollup: sourceData.rollupRows.map((row) => ({
-        id: row.id,
-        label: row.label,
-        color: row.color,
-        records: row.records,
-        orgs: row.orgs,
-      })),
-      typeRows: sourceData.typeRows.map((row) => ({
-        id: row.id,
-        label: row.label,
-        familyLabel: row.familyLabel,
-        color: row.color,
-        records: row.records,
-        orgs: row.orgs,
-      })),
-      registry: sourceData.registryRows.map((row) => ({
-        id: row.source.source_id,
-        name: row.source.source_name,
-        sourceType: row.source.source_type,
-        displayType: row.displayType,
-        familyId: row.familyId,
-        familyLabel: row.familyLabel,
-        color: row.color,
-        publicRole: row.publicRole,
-        recordCount: row.recordCount,
-        publicness: row.source.publicness_level,
-        baseUrl: row.source.base_url,
-        ethicsNotes: row.source.ethics_notes,
-      })),
-    },
-    figures: buildMobileFigureSearchEntries(data),
-  };
-}
-
-function buildMobileFigureSearchEntries(data: FrontendData): MobileFigureSearchEntry[] {
-  const groups = new Map<
-    string,
-    {
-      name: string;
-      description: string;
-      aliases: Set<string>;
-      recordCount: number;
-      years: number[];
-    }
-  >();
-
-  for (const record of data.records) {
-    if (!mobileRecordSearchEligible(record)) {
-      continue;
-    }
-    const printedLabel = (record.canonical_figure_guess || record.canonical_figure || "").trim();
-    if (!printedLabel) {
-      continue;
-    }
-    const profile = figureProfileFor(printedLabel);
-    const group = groups.get(profile.slug) ?? {
-      name: profile.label,
-      description: profile.shortDescription,
-      aliases: new Set(profile.aliases ?? []),
-      recordCount: 0,
-      years: [],
-    };
-    group.recordCount += 1;
-    group.aliases.add(printedLabel);
-    if (typeof record.year === "number" && Number.isFinite(record.year)) {
-      group.years.push(record.year);
-    }
-    groups.set(profile.slug, group);
-  }
-
-  for (const figure of data.figures) {
-    if (
-      figure.include_status === "control_only" ||
-      figure.include_status === "exclude_core" ||
-      figure.humanoid_degree === "non_humanoid"
-    ) {
-      continue;
-    }
-    const profile = figureProfileFor(figure.canonical_name);
-    const group = groups.get(profile.slug) ?? {
-      name: profile.label,
-      description: profile.shortDescription,
-      aliases: new Set(profile.aliases ?? []),
-      recordCount: 0,
-      years: [],
-    };
-    group.aliases.add(figure.canonical_name);
-    for (const alias of figure.aliases ?? []) {
-      group.aliases.add(alias.alias);
-    }
-    groups.set(profile.slug, group);
-  }
-
-  return [...groups.entries()]
-    .map(([slug, group]) => ({
-      name: group.name,
-      slug,
-      description: group.description,
-      aliases: [...group.aliases]
-        .filter((alias) => normalizeFigureLabel(alias) !== normalizeFigureLabel(group.name))
-        .sort((left, right) => left.localeCompare(right)),
-      recordCount: group.recordCount,
-      earliestYear: group.years.length ? Math.min(...group.years) : null,
-      latestYear: group.years.length ? Math.max(...group.years) : null,
-    }))
-    .filter((entry) => entry.recordCount > 0)
-    .sort((left, right) => right.recordCount - left.recordCount || left.name.localeCompare(right.name));
-}
-
-function mobileRecordSearchEligible(record: RecordItem) {
-  const includeStatus = record.include_status ?? "";
-  const ethicsFlag = record.ethics_flag ?? "";
-  return (
-    includeStatus !== "control_only" &&
-    includeStatus !== "exclude_core" &&
-    record.ontology_code !== "non_humanoid_control" &&
-    Boolean(record.title && record.url && record.source_name) &&
-    (ethicsFlag === "ok_public" || ethicsFlag.startsWith("public_"))
-  );
-}
-
-function buildMobileAnnualSeries(data: FrontendData) {
-  const fromSummary = Object.entries(data.summary.records_by_year || {})
-    .map(([year, count]) => ({ year: Number(year), count: Number(count) }))
-    .filter((row) => Number.isFinite(row.year) && Number.isFinite(row.count))
-    .sort((a, b) => a.year - b.year);
-
-  if (fromSummary.length) {
-    return fromSummary;
-  }
-
-  const counts = new Map<number, number>();
-  for (const record of data.records) {
-    if (typeof record.year !== "number" || !Number.isFinite(record.year)) {
-      continue;
-    }
-    counts.set(record.year, (counts.get(record.year) ?? 0) + 1);
-  }
-  return [...counts.entries()].sort((a, b) => a[0] - b[0]).map(([year, count]) => ({ year, count }));
-}
-
-function buildMobileMapFlags(data: FrontendData): MobileMapFlag[] {
-  const recordsById = new Map(data.records.map((record) => [record.record_id, record]));
-  const sourceFlags = data.map_flags?.length ? data.map_flags : createMobileFallbackMapFlags(data.records);
-  const seenRecordIds = new Set<number>();
-  const flags: MobileMapFlag[] = [];
-
-  for (const flag of sourceFlags) {
-    const record = recordsById.get(flag.record_id);
-    if (!record || seenRecordIds.has(flag.record_id)) {
-      continue;
-    }
-    const coordinates = mobileFlagCoordinates(flag, record);
-    if (!coordinates) {
-      continue;
-    }
-    const familyId = sourceFamilyId(record.source_type);
-    const family = SOURCE_FAMILY_STYLES[familyId];
-    seenRecordIds.add(flag.record_id);
-    flags.push({
-      id: String(flag.flag_id || `mapped:${flag.record_id}`),
-      recordId: flag.record_id,
-      state: flag.state_territory || record.state_territory || "AU",
-      x: coordinates.x,
-      y: coordinates.y,
-      displayX: coordinates.x,
-      displayY: coordinates.y,
-      toneClass: MOBILE_SOURCE_CLASS_BY_FAMILY[familyId],
-      title: flag.title ?? record.title,
-      year: flag.year ?? record.year,
-      figure: flag.canonical_figure ?? record.canonical_figure_guess ?? record.canonical_figure,
-      sourceFamily: family.label,
-      sourceType: displaySourceType(record.source_type),
-      narrativeType: mobileNarrativeType(record),
-    });
-  }
-
-  return prepareMobileMapFlagPresentation(flags);
-}
-
-function createMobileFallbackMapFlags(records: RecordItem[]): MapFlagItem[] {
-  return records.flatMap((record, index) => {
-    if (!record.has_strict_map_point || record.map_latitude == null || record.map_longitude == null) {
-      return [];
-    }
-    const projected = projectPoint(record.map_latitude, record.map_longitude);
-    return [{
-      flag_id: `record-${record.record_id}-${index}`,
-      record_id: record.record_id,
-      state_territory: record.state_territory ?? "AU",
-      x: projected.x,
-      y: projected.y,
-      stem_dx: 0,
-      stem_dy: 0,
-      display_precision: record.location_precision_status ?? "strict",
-      source_location_type: record.map_location_type ?? null,
-      confidence: record.map_confidence ?? null,
-      title: record.title,
-      year: record.year,
-      canonical_figure: record.canonical_figure_guess ?? record.canonical_figure,
-    }];
-  });
-}
-
-function mobileFlagCoordinates(flag: MapFlagItem, record: RecordItem) {
-  if (Number.isFinite(flag.x) && Number.isFinite(flag.y)) {
-    if (flag.x >= 110 && flag.x <= 160 && flag.y >= -45 && flag.y <= -8) {
-      const projected = projectPoint(flag.y, flag.x);
-      return { x: svgCoord(projected.x), y: svgCoord(projected.y) };
-    }
-    if (flag.x >= 0 && flag.x <= MOBILE_MAP_VIEWBOX.width && flag.y >= 0 && flag.y <= MOBILE_MAP_VIEWBOX.height) {
-      return { x: svgCoord(flag.x), y: svgCoord(flag.y) };
-    }
-  }
-  if (record.map_latitude != null && record.map_longitude != null) {
-    const projected = projectPoint(record.map_latitude, record.map_longitude);
-    return { x: svgCoord(projected.x), y: svgCoord(projected.y) };
-  }
-  return null;
-}
-
-function prepareMobileMapFlagPresentation(flags: MobileMapFlag[]) {
-  const groups = new Map<string, MobileMapFlag[]>();
-  for (const flag of flags) {
-    const key = `${flag.x.toFixed(3)}:${flag.y.toFixed(3)}`;
-    const group = groups.get(key) ?? [];
-    group.push(flag);
-    groups.set(key, group);
-  }
-  for (const group of groups.values()) {
-    if (group.length < 2) {
-      continue;
-    }
-    [...group].sort((a, b) => a.recordId - b.recordId).forEach((flag, index) => {
-      const offset = mobileCollisionMicroJitter(flag.recordId, index);
-      flag.displayX = svgCoord(flag.x + offset.x);
-      flag.displayY = svgCoord(flag.y + offset.y);
-    });
-  }
-  return flags.sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.recordId - b.recordId);
-}
-
-function mobileNarrativeType(record: RecordItem) {
-  const key = record.ontology_code || record.genre || record.canonical_figure_guess || record.canonical_figure || "other";
-  return MOBILE_NARRATIVE_LABELS[key] ?? titleize(key);
-}
-
-function mobileCollisionMicroJitter(recordId: number, collisionIndex: number) {
-  if (collisionIndex === 0) {
-    return { x: 0, y: 0 };
-  }
-  const xUnit = stableUnit(recordId + collisionIndex * 97);
-  const yUnit = stableUnit(recordId * 3 + collisionIndex * 193);
-  return {
-    x: clamp((xUnit - 0.5) * 4.2, -2.1, 2.1),
-    y: clamp((yUnit - 0.5) * 3.8, -1.9, 1.9),
-  };
-}
-
-function projectPoint(latitude: number, longitude: number) {
-  const projected = projectLambertConformalConic(latitude, longitude);
-  const jsonX =
-    (projected.x - HICHARTS_AU_TRANSFORM.xoffset) *
-      HICHARTS_AU_TRANSFORM.scale *
-      HICHARTS_AU_TRANSFORM.jsonres +
-    HICHARTS_AU_TRANSFORM.jsonmarginX;
-  const jsonY =
-    (projected.y - HICHARTS_AU_TRANSFORM.yoffset) *
-      HICHARTS_AU_TRANSFORM.scale *
-      HICHARTS_AU_TRANSFORM.jsonres +
-    HICHARTS_AU_TRANSFORM.jsonmarginY;
-  const x =
-    SVG_BOUNDS.minX +
-    ((jsonX - JSON_BOUNDS.minX) / (JSON_BOUNDS.maxX - JSON_BOUNDS.minX)) *
-      (SVG_BOUNDS.maxX - SVG_BOUNDS.minX);
-  const y =
-    SVG_BOUNDS.minY +
-    ((JSON_BOUNDS.maxY - jsonY) / (JSON_BOUNDS.maxY - JSON_BOUNDS.minY)) *
-      (SVG_BOUNDS.maxY - SVG_BOUNDS.minY);
-
-  return {
-    x: clamp(x, SVG_BOUNDS.minX + 4, SVG_BOUNDS.maxX - 4),
-    y: clamp(y, SVG_BOUNDS.minY + 4, SVG_BOUNDS.maxY - 4),
-  };
-}
-
-function projectLambertConformalConic(latitude: number, longitude: number) {
-  const deg = Math.PI / 180;
-  const lat = latitude * deg;
-  const lon = longitude * deg;
-  const lat1 = LAMBERT_AU.lat1 * deg;
-  const lat2 = LAMBERT_AU.lat2 * deg;
-  const lat0 = LAMBERT_AU.lat0 * deg;
-  const lon0 = LAMBERT_AU.lon0 * deg;
-  const n =
-    Math.log(Math.cos(lat1) / Math.cos(lat2)) /
-    Math.log(Math.tan(Math.PI / 4 + lat2 / 2) / Math.tan(Math.PI / 4 + lat1 / 2));
-  const f = (Math.cos(lat1) * Math.pow(Math.tan(Math.PI / 4 + lat1 / 2), n)) / n;
-  const rho = (LAMBERT_AU.radius * f) / Math.pow(Math.tan(Math.PI / 4 + lat / 2), n);
-  const rho0 = (LAMBERT_AU.radius * f) / Math.pow(Math.tan(Math.PI / 4 + lat0 / 2), n);
-  const theta = n * (lon - lon0);
-
-  return {
-    x: rho * Math.sin(theta),
-    y: rho0 - rho * Math.cos(theta),
-  };
-}
-
-function stableUnit(seed: number) {
-  const value = Math.sin(seed * 12.9898) * 43758.5453;
-  return value - Math.floor(value);
-}
-
-function clamp(value: number, min: number, max: number) {
-  return Math.max(min, Math.min(max, value));
-}
-
-function svgCoord(value: number) {
-  return Number(value.toFixed(3));
-}
-
-function titleize(value: string) {
-  return value
-    .replace(/[_-]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/\b\w/g, (letter) => letter.toUpperCase());
-}
 
 export function MobileArchiveView({ children }: { children: ReactNode }) {
   return <>{children}</>;
@@ -624,9 +116,8 @@ export function useMobileArchiveRouteGuard(view: MobileControlView) {
   return { blockedDashboard: false };
 }
 
-export function MobileArchiveRoute({ view, data }: { view: MobileControlView; data: FrontendData }) {
+export function MobileArchiveRoute({ view, data }: { view: MobileControlView; data: MobileArchiveData }) {
   const routeView: MobileRouteView = view;
-  const mobileData = useMemo(() => buildMobileArchiveData(data), [data]);
   const pageRef = useRef<HTMLElement | null>(null);
   const reducedMotion = useMobilePrefersReducedMotion();
 
@@ -636,17 +127,166 @@ export function MobileArchiveRoute({ view, data }: { view: MobileControlView; da
     <main className={`terminal-shell mobile-archive-shell mobile-view-${routeView}`}>
       <h1 className="visually-hidden">{mobileRouteHeading(routeView)}</h1>
       <div className="noise-layer" aria-hidden="true" />
-      <MobileTopBar view={routeView} figures={mobileData.figures} />
+      <MobileTopBar view={routeView} figures={data.figures} />
       <section ref={pageRef} className="mobile-archive-page" aria-label={`AusFigures ${routeView} mobile view`}>
-        {routeView === "map" ? <MobileMapView data={mobileData} /> : null}
-        {routeView === "density" ? <MobileDensityView data={mobileData} /> : null}
-        {routeView === "dashboard" ? <MobileDashboardView data={mobileData} /> : null}
-        {routeView === "source" ? <MobileSourceView data={mobileData} /> : null}
-        {routeView === "about" ? <MobileAboutView data={mobileData} /> : null}
+          {routeView === "map" ? <MobileMapView data={data} /> : null}
+          {routeView === "density" ? <MobileDensityView data={data} /> : null}
+          {routeView === "dashboard" ? <MobileDashboardView data={data} /> : null}
+          {routeView === "source" ? <MobileSourceView data={data} /> : null}
+          {routeView === "about" ? <MobileAboutView data={data} /> : null}
       </section>
       <MobileArchiveControls view={routeView} />
     </main>
   );
+}
+
+function useMobileRecordArchiveWarmup() {
+  useEffect(() => {
+    if (!window.matchMedia(MOBILE_ARCHIVE_QUERY).matches) {
+      return;
+    }
+    let cancelled = false;
+    let idleHandle: number | null = null;
+    const startTimer = window.setTimeout(() => {
+      if (cancelled) {
+        return;
+      }
+      const idleWindow = window as Window & {
+        requestIdleCallback?: (
+          callback: () => void,
+          options?: { timeout: number },
+        ) => number;
+      };
+      const start = () => {
+        if (cancelled) {
+          return;
+        }
+        if (!mobileRecordWarmupPromise) {
+          document.documentElement.dataset.mobileRecordArchive = "loading";
+          mobileRecordWarmupPromise = loadMobileArchiveManifest()
+            .then(warmMobileRecordArchive)
+            .then(() => {
+              document.documentElement.dataset.mobileRecordArchive = "ready";
+            })
+            .catch(() => {
+              document.documentElement.dataset.mobileRecordArchive = "retry";
+              mobileRecordWarmupPromise = null;
+            });
+        }
+      };
+      idleHandle = idleWindow.requestIdleCallback
+        ? idleWindow.requestIdleCallback(start, { timeout: 4000 })
+        : window.setTimeout(start, 240);
+    }, 2200);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(startTimer);
+      if (idleHandle !== null) {
+        const idleWindow = window as Window & {
+          cancelIdleCallback?: (handle: number) => void;
+        };
+        if (idleWindow.cancelIdleCallback) {
+          idleWindow.cancelIdleCallback(idleHandle);
+        } else {
+          window.clearTimeout(idleHandle);
+        }
+      }
+    };
+  }, []);
+}
+
+function loadMobileArchiveManifest() {
+  if (!mobileArchiveManifestPromise) {
+    mobileArchiveManifestPromise = fetch(MOBILE_ARCHIVE_DATA_URL, { cache: "force-cache" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Mobile archive manifest request failed: ${response.status}`);
+        }
+        return response.json() as Promise<MobileArchiveData>;
+      })
+      .catch((error) => {
+        mobileArchiveManifestPromise = null;
+        throw error;
+      });
+  }
+  return mobileArchiveManifestPromise;
+}
+
+async function warmMobileRecordArchive(data: MobileArchiveData) {
+  const archive = data.recordArchive;
+  const cacheName = `${MOBILE_RECORD_CACHE_PREFIX}-${archive.version}`;
+  let responseCache: Cache | null = null;
+
+  if ("caches" in window) {
+    try {
+      responseCache = await window.caches.open(cacheName);
+      const cacheNames = await window.caches.keys();
+      await Promise.all(
+        cacheNames
+          .filter((name) => name.startsWith(MOBILE_RECORD_CACHE_PREFIX) && name !== cacheName)
+          .map((name) => window.caches.delete(name)),
+      );
+    } catch {
+      responseCache = null;
+    }
+  }
+
+  let nextChunk = 0;
+  const connection = (navigator as Navigator & {
+    connection?: { effectiveType?: string; saveData?: boolean };
+  }).connection;
+  const constrainedConnection =
+    connection?.saveData === true ||
+    connection?.effectiveType === "slow-2g" ||
+    connection?.effectiveType === "2g" ||
+    connection?.effectiveType === "3g";
+  const parallelDownloads = constrainedConnection
+    ? 1
+    : navigator.hardwareConcurrency >= 8
+      ? 3
+      : 2;
+
+  const worker = async () => {
+    while (nextChunk < archive.chunkCount) {
+      const chunk = nextChunk;
+      nextChunk += 1;
+      const url = `${archive.baseUrl}/${chunk}?v=${encodeURIComponent(archive.version)}`;
+
+      if (responseCache) {
+        const cached = await responseCache.match(url);
+        if (cached) {
+          continue;
+        }
+      }
+
+      const response = await fetch(url, { cache: "force-cache" });
+      if (!response.ok) {
+        throw new Error(`Mobile record archive chunk ${chunk} failed: ${response.status}`);
+      }
+      if (responseCache) {
+        await responseCache.put(url, response);
+      } else {
+        await response.blob();
+      }
+      await yieldMobileRecordDownload();
+    }
+  };
+
+  await Promise.all(Array.from({ length: parallelDownloads }, () => worker()));
+  window.dispatchEvent(new CustomEvent("ausfigures-mobile-records-ready", {
+    detail: {
+      version: archive.version,
+      recordCount: archive.recordCount,
+      chunkCount: archive.chunkCount,
+    },
+  }));
+}
+
+function yieldMobileRecordDownload() {
+  return new Promise<void>((resolve) => {
+    window.setTimeout(resolve, 80);
+  });
 }
 
 export function MobileTopBar({
@@ -2391,6 +2031,7 @@ function addMobileTimelineTargets(
 
 export function MobileArchiveControls({ view }: { view: MobileControlView }) {
   const reducedMotion = useMobilePrefersReducedMotion();
+  useMobileRecordArchiveWarmup();
   const handleNavPress = useCallback((event: PointerEvent<HTMLAnchorElement>) => {
     if (reducedMotion) {
       return;
