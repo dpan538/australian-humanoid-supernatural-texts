@@ -35,7 +35,9 @@ function animateSettledSurfaces(originX: number, originY: number) {
     ".figure-dictionary-profile",
     ".map-readout",
     ".mobile-map-dashboard-card",
-    ".mobile-density-overview-card",
+    // Keep the 3D annual-series flip card out of this second transform pass.
+    // WebKit can briefly expose its rotated back face when an ancestor in the
+    // perspective context is transformed during the theme transition.
     ".mobile-dashboard-hero",
     ".mobile-analysis-card",
     ".mobile-source-visual-card",

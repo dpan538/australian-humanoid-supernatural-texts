@@ -2918,6 +2918,7 @@
   .source-pane-scroll,
   .source-registry-scroll {
     display: grid;
+    grid-auto-rows: max-content;
     gap: 7px;
   }
 
@@ -2957,6 +2958,13 @@
 
   .source-registry-row {
     grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    min-height: 0;
+    padding-block: 12px;
+  }
+
+  .source-registry-row > strong {
+    align-self: center;
   }
 
   .source-rollup-row > i {

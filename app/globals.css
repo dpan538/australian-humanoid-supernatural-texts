@@ -16490,7 +16490,7 @@ body {
 .source-terminal .source-metric-cell span,
 .source-terminal .source-mobile-accordion summary span,
 .source-terminal .source-mobile-accordion summary small,
-.source-terminal .source-registry-row small,
+.terminal-stage .source-terminal .source-registry-row small,
 .density-view .density-header span,
 .density-view .band-meta small,
 .density-view .density-band-action,
