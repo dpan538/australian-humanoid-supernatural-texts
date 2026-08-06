@@ -295,6 +295,9 @@ async function auditBuildOutput() {
     /<Url\b[^>]*type="text\/html"[^>]*\{searchTerms\}/i.test(openSearchText) &&
     /<Url\b[^>]*type="application\/x-suggestions\+json"[^>]*\{searchTerms\}/i.test(openSearchText);
   const failures = {
+    malformed_sitemap_xml_entities: /&(?!(?:amp|lt|gt|quot|apos);|#\d+;|#x[\da-f]+;)/i.test(sitemapXml)
+      ? ["/sitemap.xml"]
+      : [],
     missing_title: contentPages.filter((page) => !page.title).map((page) => page.route),
     missing_description: contentPages.filter((page) => !page.description).map((page) => page.route),
     missing_canonical: contentPages.filter((page) => !page.canonical).map((page) => page.route),

@@ -126,7 +126,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified,
     changeFrequency,
     priority,
-    ...(image ? { images: [image] } : {}),
+    // Next's sitemap serializer writes image URLs verbatim. Query-string
+    // separators therefore need XML escaping or they make the whole sitemap
+    // malformed (for example, a bare `&description=` in <image:loc>).
+    ...(image ? { images: [escapeXmlUrl(image)] } : {}),
   });
 
   const staticRoutes = STATIC_INDEX_PATHS.map((path) => {
@@ -259,4 +262,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 function compactText(value: string, limit: number) {
   const text = value.replace(/\s+/g, " ").trim();
   return text.length > limit ? `${text.slice(0, limit - 1).trimEnd()}…` : text;
+}
+
+function escapeXmlUrl(value: string) {
+  return value.replaceAll("&", "&amp;");
 }
