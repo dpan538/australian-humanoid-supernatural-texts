@@ -9,6 +9,7 @@ import {
 import { archivePageMetadata } from "@/lib/archive-metadata";
 import { figurePath } from "@/lib/archive-routing";
 import { buildFigureDictionaryEntries } from "@/lib/figure-dictionary";
+import { isIndexedFigureSlug } from "@/lib/search-index-policy";
 import { SITE, absoluteUrl, siteConfig, socialCardImageMetadata } from "@/lib/site";
 
 type FigurePageProps = {
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: FigurePageProps): Promise<Met
       `${group.label} in the AusFigures supernatural humanoid dictionary. Search aliases and browse ${group.records.length} connected public records, sources, narrative types, places, periods, and related figures.`,
     ),
     path: figurePath(group.slug),
-    index: group.indexEligible,
+    index: group.indexEligible && isIndexedFigureSlug(group.slug),
     keywords: [
       group.label,
       `${group.label} Australia`,

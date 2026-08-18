@@ -94,7 +94,7 @@ export function FigureEncyclopedia({
                 <span>SUPERNATURAL HUMANOID DICTIONARY</span>
               </Link>
               <nav aria-label="Archive view sequence">
-                <Link href="/map">Map</Link>
+                <Link href="/">Map</Link>
                 <Link href="/density">Density</Link>
                 <Link href="/dashboard">Dashboard</Link>
               </nav>
@@ -229,7 +229,7 @@ export function FigureEncyclopedia({
               <Link className="dock-button source-button" href="/source">Source</Link>
               <Link
                 className="dock-button view-cycle-button active"
-                href="/map"
+                href="/"
                 aria-label="Current view Figures; switch to Map"
                 title="Switch to Map"
               >

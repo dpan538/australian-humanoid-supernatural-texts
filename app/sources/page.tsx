@@ -14,6 +14,7 @@ export const metadata = archivePageMetadata({
   description:
     "Browse public source organisations, repositories, institutional pages, books, archives, and metadata collections represented in the AusFigures public-text archive.",
   path: "/sources",
+  index: false,
   keywords: ["Australian supernatural sources", "public archive source register", "digital humanities sources"],
 });
 

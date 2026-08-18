@@ -120,10 +120,10 @@ export function ArchivePublicationPage({
           </Link>
           <span>ARCHIVE INDEX MODE</span>
           <nav aria-label="Archive index navigation">
-            <Link href="/map">MAP</Link>
+            <Link href="/">MAP</Link>
             <Link href="/records">RECORDS</Link>
             <Link href="/narrative-types">TYPES</Link>
-            <Link href="/sources">SOURCES</Link>
+            <Link href="/source">SOURCES</Link>
             <Link href="/about">METHOD</Link>
           </nav>
         </header>

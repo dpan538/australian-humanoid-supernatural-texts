@@ -37,7 +37,7 @@ const VIEW_LABELS: Record<ViewMode | CycleView, string> = {
 
 const VIEW_PATHS: Record<ViewMode | CycleView, string> = {
   dashboard: "/dashboard",
-  map: "/map",
+  map: "/",
   density: "/density",
   source: "/source",
   figures: "/figures",

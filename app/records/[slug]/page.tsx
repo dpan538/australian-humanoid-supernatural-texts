@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: RecordPageProps): Promise<Met
     title,
     description,
     path: recordPath(record),
-    index: policy.indexEligible,
+    index: false,
     keywords,
     social: {
       eyebrow: "PUBLIC-TEXT RECORD",
@@ -217,7 +217,7 @@ export default async function RecordPage({ params }: RecordPageProps) {
         description={description}
         figureLabel={figure?.label ?? label ?? null}
         figureHref={figure ? figurePath(figure.slug) : null}
-        indexEligible={policy.indexEligible}
+        searchIndexed={false}
       />
       <ArchivePublicationPage
         className="record-publication-desktop"
@@ -233,12 +233,12 @@ export default async function RecordPage({ params }: RecordPageProps) {
           { label: "Record ID", value: record.record_id },
           { label: "Year", value: record.year ?? "Undated" },
           { label: "Source", value: record.source_name || "Unspecified" },
-          { label: "Index status", value: policy.indexEligible ? "Public search-ready" : "Review-only" },
+          { label: "Index status", value: "Archive detail (not indexed)" },
         ]}
         notice={
           policy.indexEligible
-            ? "This page records what a public source contains. It is not verification of the supernatural claim described by that source."
-            : "This accepted public record remains outside the search sitemap while its indexing or cultural-sensitivity review is incomplete."
+            ? "This reviewed public record supports the curated archive pages but intentionally remains outside the search sitemap."
+            : "This accepted public record remains outside the search sitemap while its public or cultural-sensitivity review is incomplete."
         }
       >
         <script

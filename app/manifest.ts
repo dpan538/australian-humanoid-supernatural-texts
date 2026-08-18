@@ -26,7 +26,7 @@ export default function manifest(): MetadataRoute.Manifest {
         name: "Explore the public map",
         short_name: "Map",
         description: "Open the schematic public-record map.",
-        url: "/map",
+        url: "/",
         icons: [{ src: SITE.pngIconPath, sizes: "192x192", type: "image/png" }],
       },
       {

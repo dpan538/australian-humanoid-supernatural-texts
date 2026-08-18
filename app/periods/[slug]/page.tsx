@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: PeriodPageProps): Promise<Met
     title: `${group.label} Australian Supernatural Public Texts`,
     description: `Browse ${group.records.length} search-ready AusFigures supernatural humanoid public-text records from ${group.label}.`,
     path: periodPath(group.key),
+    index: false,
     keywords: [`Australian supernatural records ${group.label}`, `${group.label} folklore public texts`],
     social: {
       eyebrow: "SOURCE PERIOD",

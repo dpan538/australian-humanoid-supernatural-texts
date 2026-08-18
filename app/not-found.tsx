@@ -10,7 +10,7 @@ export default function NotFound() {
           <h1>NO PUBLIC RECORD AT THIS ADDRESS</h1>
           <p>The requested route is outside the current archive interface.</p>
           <div className="status-actions">
-            <Link href="/map">RETURN MAP</Link>
+            <Link href="/">RETURN MAP</Link>
             <Link href="/dashboard">DASHBOARD</Link>
           </div>
         </div>

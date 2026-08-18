@@ -57,7 +57,7 @@ const MOBILE_NAV_ITEMS: Array<{
   icon: Exclude<MobileNavName, "theme">;
 }> = [
   { view: "about", href: "/about", label: "About AusFigures", icon: "about" },
-  { view: "map", href: "/map", label: "map", icon: "map" },
+  { view: "map", href: "/", label: "map", icon: "map" },
   { view: "density", href: "/density", label: "density", icon: "density" },
   { view: "source", href: "/source", label: "source", icon: "source" },
   { view: "figures", href: "/figures", label: "figures dictionary", icon: "figures" },

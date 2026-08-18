@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: RecordsPaginationPageProps): 
     title: `Australian Supernatural Humanoid Public-Text Records — Page ${page}`,
     description: `Browse page ${page} of the search-ready AusFigures public-text record index.`,
     path: recordsPagePath(page),
+    index: false,
   });
 }
 

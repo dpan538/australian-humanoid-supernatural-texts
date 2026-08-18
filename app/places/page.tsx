@@ -14,6 +14,7 @@ export const metadata = archivePageMetadata({
   description:
     "Browse source-grounded supernatural humanoid public-text records by Australian state and territory.",
   path: "/places",
+  index: false,
   keywords: ["Australian supernatural places", "Australian folklore by state", "public-text narrative geography"],
 });
 

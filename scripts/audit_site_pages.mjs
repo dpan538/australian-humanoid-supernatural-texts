@@ -55,6 +55,12 @@ const figureAliases = new Map([
   ["bunyips", "bunyip"],
   ["medicine-men", "medicine-man"],
 ]);
+const promotedFigureSlugs = new Set([
+  "yowie",
+  "hairy-man",
+  "fishers-ghost",
+  "bunyip",
+]);
 const figureSlug = (value) => {
   const normalized = normalizeFigureLabel(value) || "uncoded-figure";
   return figureAliases.get(normalized) || normalized;
@@ -87,7 +93,9 @@ const figurePageSlugs = new Set([
     .filter(Boolean),
 ]);
 const staticContentPaths = 14;
-const staticIndexPaths = 13;
+const staticIndexPaths = 8;
+const promotedFigurePages = [...indexedFigureSlugs]
+  .filter((slug) => promotedFigureSlugs.has(slug)).length;
 
 const inventory = {
   data_generated_at: data.generated_at,
@@ -100,6 +108,7 @@ const inventory = {
   label_vocabulary_groups: labelVocabularyGroups,
   figure_encyclopedia_pages: figurePageSlugs.size,
   indexed_figure_encyclopedia_pages: indexedFigureSlugs.size,
+  promoted_figure_pages: promotedFigurePages,
   taxonomy_only_figure_pages: figurePageSlugs.size - indexedFigureSlugs.size,
   source_pages: sourcePages,
   indexed_source_pages: indexedSourcePages,
@@ -114,15 +123,8 @@ const inventory = {
     sourcePages +
     placePages +
     periodPages,
-  intended_sitemap_urls:
-    staticIndexPaths +
-    Math.max(0, recordIndexPages - 1) +
-    narrativeTypePages +
-    indexedFigureSlugs.size +
-    indexedSourcePages +
-    placePages +
-    periodPages +
-    indexRecords.length,
+  indexed_static_pages: staticIndexPaths,
+  intended_sitemap_urls: staticIndexPaths + promotedFigurePages,
 };
 
 const textMatch = (html, pattern) => html.match(pattern)?.[1]?.trim() || "";

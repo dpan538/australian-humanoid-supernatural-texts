@@ -14,6 +14,7 @@ export const metadata = archivePageMetadata({
   description:
     "Browse the AusFigures source-grounded public-text archive by historical period from 1825 to the present, including undated public records.",
   path: "/periods",
+  index: false,
   keywords: ["Australian supernatural history", "historical ghost records Australia", "supernatural humanoid public texts by period"],
 });
 

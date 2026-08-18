@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: SourcePageProps): Promise<Met
     title: `${group.label} — ${sourceType} Records`,
     description: `Browse ${group.records.length} search-ready AusFigures public-text records connected to ${group.label}.`,
     path: sourcePath(group.sourceId, group.label),
-    index: group.records.length >= 2,
+    index: false,
     keywords: [group.label, sourceType],
     social: {
       eyebrow: "PUBLIC SOURCE COLLECTION",

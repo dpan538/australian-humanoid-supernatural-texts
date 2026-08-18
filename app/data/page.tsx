@@ -31,10 +31,10 @@ export default async function DataPage() {
       stats={[
         { label: "Accepted public records", value: inventory.publicDataRecords },
         { label: "Record pages", value: inventory.recordPages },
-        { label: "Search-ready record pages", value: inventory.indexableRecordPages },
+        { label: "Public reviewed records", value: inventory.indexableRecordPages },
         { label: "Review-only record pages", value: inventory.reviewOnlyRecordPages },
       ]}
-      notice="Search indexing is intentionally narrower than public-data availability. Control records and records awaiting search or sensitivity review do not enter the sitemap."
+      notice="Search indexing is intentionally limited to the main research tools and selected figure pages. Record details remain available as supporting archive evidence without entering the sitemap."
     >
       <ArchiveIndexStructuredData
         path="/data"
@@ -42,12 +42,10 @@ export default async function DataPage() {
         description="Public data scope, page inventory, search-index eligibility, provenance boundaries, and machine-readable access for AusFigures."
         schemaType="DataCatalog"
         items={[
-          { href: "/records", title: "Public records" },
           { href: "/figures", title: "Supernatural humanoid dictionary" },
-          { href: "/narrative-types", title: "Narrative types" },
-          { href: "/sources", title: "Source collections" },
-          { href: "/places", title: "Place collections" },
-          { href: "/periods", title: "Period collections" },
+          { href: "/dashboard", title: "Research dashboard" },
+          { href: "/density", title: "Density explorer" },
+          { href: "/source", title: "Source register" },
         ]}
       />
       <PublicationSection title="Generated page inventory">
@@ -56,7 +54,7 @@ export default async function DataPage() {
           <div><dt>Narrative-type pages</dt><dd>{inventory.narrativeTypePages}</dd></div>
           <div><dt>Recurring label pages</dt><dd>{inventory.labelPages}</dd></div>
           <div><dt>Encyclopedia figure pages</dt><dd>{inventory.figurePages}</dd></div>
-          <div><dt>Search-ready figure pages</dt><dd>{inventory.indexableFigurePages}</dd></div>
+          <div><dt>Public figure pages</dt><dd>{inventory.indexableFigurePages}</dd></div>
           <div><dt>Review-only figure pages</dt><dd>{inventory.reviewOnlyFigurePages}</dd></div>
           <div><dt>Source pages</dt><dd>{inventory.sourcePages}</dd></div>
           <div><dt>State and territory pages</dt><dd>{inventory.placePages}</dd></div>

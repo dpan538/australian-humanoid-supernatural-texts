@@ -35,7 +35,7 @@ export default async function CitePage() {
       ]}
       stats={[
         { label: "Public record pages", value: inventory.recordPages },
-        { label: "Search-ready records", value: inventory.indexableRecordPages },
+        { label: "Public reviewed records", value: inventory.indexableRecordPages },
         { label: "Data generated", value: generatedDate },
         { label: "Maintainer", value: siteConfig.creator },
       ]}

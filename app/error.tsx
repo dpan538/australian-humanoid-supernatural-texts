@@ -15,7 +15,7 @@ export default function ErrorPage({ reset }: { error: Error & { digest?: string 
             <button type="button" onClick={reset}>
               RETRY
             </button>
-            <Link href="/map">MAP</Link>
+            <Link href="/">MAP</Link>
             <Link href="/dashboard">DASHBOARD</Link>
           </div>
         </div>

@@ -26,7 +26,7 @@ export function MobileRecordPublication({
   description,
   figureLabel,
   figureHref,
-  indexEligible,
+  searchIndexed,
 }: {
   record: RecordItem;
   related: RecordItem[];
@@ -34,7 +34,7 @@ export function MobileRecordPublication({
   description: string;
   figureLabel: string | null;
   figureHref: string | null;
-  indexEligible: boolean;
+  searchIndexed: boolean;
 }) {
   const summaryId = useId();
   const [summaryExpanded, setSummaryExpanded] = useState(false);
@@ -54,7 +54,7 @@ export function MobileRecordPublication({
       />
       <section className="mobile-archive-page mobile-record-page">
         <header className="mobile-record-hero">
-          <span>PUBLIC-TEXT RECORD / {indexEligible ? "INDEXED" : "REVIEW"}</span>
+          <span>PUBLIC-TEXT RECORD / {searchIndexed ? "INDEXED" : "ARCHIVE"}</span>
           <h2>{title}</h2>
           <button
             type="button"

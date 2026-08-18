@@ -65,6 +65,18 @@ const structuredData = {
       },
       hasPart: [
         {
+          "@type": "WebPage",
+          name: "AusFigures Research Dashboard",
+          url: absoluteUrl("/dashboard"),
+          about: "Archive coverage across records, figures, sources, periods, and mapped locations",
+        },
+        {
+          "@type": "WebPage",
+          name: "AusFigures Density Explorer",
+          url: absoluteUrl("/density"),
+          about: "Time, source, figure, and mapped-location signals in the public-text archive",
+        },
+        {
           "@type": "CollectionPage",
           name: "Australian Supernatural Humanoid Encyclopedia",
           url: absoluteUrl("/figures"),
@@ -76,33 +88,9 @@ const structuredData = {
         },
         {
           "@type": "CollectionPage",
-          name: "AusFigures Public Records",
-          url: absoluteUrl("/records"),
-          about: "Source-grounded Australian supernatural humanoid public records",
-        },
-        {
-          "@type": "DefinedTermSet",
-          name: "AusFigures Narrative Types",
-          url: absoluteUrl("/narrative-types"),
-          about: "Research classifications for public-text narrative forms",
-        },
-        {
-          "@type": "CollectionPage",
-          name: "AusFigures Source Collections",
-          url: absoluteUrl("/sources"),
-          about: "Public source organisations and archive source collections",
-        },
-        {
-          "@type": "CollectionPage",
-          name: "AusFigures Place Collections",
-          url: absoluteUrl("/places"),
-          about: "Australian state, territory, and public-place archive groupings",
-        },
-        {
-          "@type": "CollectionPage",
-          name: "AusFigures Period Collections",
-          url: absoluteUrl("/periods"),
-          about: "Historical and contemporary archive period groupings",
+          name: "AusFigures Source Register",
+          url: absoluteUrl("/source"),
+          about: "Public source organisations, source families, and archive provenance",
         },
         {
           "@type": "AboutPage",

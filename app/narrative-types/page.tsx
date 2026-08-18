@@ -14,6 +14,7 @@ export const metadata = archivePageMetadata({
   description:
     "Browse the AusFigures public-text archive by narrative type, including hairy humanoid accounts, apparitions, spirit-person narratives, giants, legends, encounters, belief records, and retellings.",
   path: "/narrative-types",
+  index: false,
   keywords: ["supernatural humanoid narrative types", "Australian apparition accounts", "spirit-person narratives"],
 });
 

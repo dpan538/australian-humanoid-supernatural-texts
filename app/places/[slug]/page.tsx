@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: PlacePageProps): Promise<Meta
     title: `${group.label} Supernatural Humanoid Public-Text Records`,
     description: `Browse ${group.records.length} source-grounded AusFigures public-text records associated with ${group.label}.`,
     path: placePath(group.key),
+    index: false,
     keywords: [`${group.label} supernatural folklore`, `${group.label} ghost and humanoid records`],
     social: {
       eyebrow: "NARRATIVE GEOGRAPHY",

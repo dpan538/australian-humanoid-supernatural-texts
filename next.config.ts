@@ -21,6 +21,21 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/map",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/sources",
+        destination: "/source",
+        permanent: true,
+      },
+      {
+        source: "/sources/:path*",
+        destination: "/source",
+        permanent: true,
+      },
+      {
         source: "/topics/australian-supernatural",
         destination: "/figures",
         permanent: true,

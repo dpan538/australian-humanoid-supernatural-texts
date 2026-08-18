@@ -2,6 +2,7 @@ import { FigureEncyclopedia } from "@/components/figures/figure-encyclopedia";
 import { loadArchiveData } from "@/lib/archive-catalog";
 import { archivePageMetadata } from "@/lib/archive-metadata";
 import { buildFigureDictionaryEntries } from "@/lib/figure-dictionary";
+import { isIndexedFigureSlug } from "@/lib/search-index-policy";
 import { SITE, absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata = archivePageMetadata({
@@ -22,7 +23,9 @@ export const metadata = archivePageMetadata({
 export default async function FiguresPage() {
   const data = await loadArchiveData();
   const entries = buildFigureDictionaryEntries(data);
-  const indexed = entries.filter((entry) => entry.indexEligible);
+  const indexed = entries.filter(
+    (entry) => entry.indexEligible && isIndexedFigureSlug(entry.slug),
+  );
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [

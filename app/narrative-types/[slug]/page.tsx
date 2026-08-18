@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: NarrativeTypePageProps): Prom
     title: `${group.label} in Australian Public Texts`,
     description: `Browse ${group.records.length} source-grounded ${group.label.toLowerCase()} in the AusFigures Australian supernatural humanoid public-text archive.`,
     path: narrativeTypePath(group.key),
+    index: false,
     keywords: [group.label, `${group.label} Australia`, "Australian public-text archive"],
     social: {
       eyebrow: "NARRATIVE TYPE",
