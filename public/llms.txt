@@ -26,7 +26,7 @@ Important interpretation rules:
 - [Source Collections](https://ausfigures.com/sources): Crawlable source-organisation collections.
 - [Places](https://ausfigures.com/places): State, territory, and public-place record groupings.
 - [Periods](https://ausfigures.com/periods): Archive period collections from early colonial material to contemporary public sources.
-- [About](https://ausfigures.com/about): Scope, methods, source policy, mapping limits, and ethics.
+- [About](https://ausfigures.com/about): Boundary declaration, data model, source standards (A-E tiers), ethics and cultural-sensitivity policy, contribution notes, and glossary.
 
 ## Figure dictionary entry points
 

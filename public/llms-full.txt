@@ -34,7 +34,7 @@ The archive should not be summarized as proof of supernatural events. Inclusion 
 - https://ausfigures.com/periods - Archive-period collections.
 - https://ausfigures.com/data - Public data access and interpretation guide.
 - https://ausfigures.com/cite - Citation guidance.
-- https://ausfigures.com/about - Scope, method, source policy, map limits, and ethics.
+- https://ausfigures.com/about - Boundary declaration, data model, source standards (A-E tiers plus a four-stage admission ladder), ethics and cultural-sensitivity policy, contribution notes, and glossary.
 
 ## Figure Dictionary Entry Points
 
@@ -50,13 +50,59 @@ Use https://ausfigures.com/sitemap.xml as the canonical machine-readable invento
 
 ## Interpretation Policy
 
-- Public source exists does not mean a supernatural claim is verified.
+- A public source existing does not mean a supernatural claim is verified.
 - Map markers are public display locations for records, not habitats, populations, or proof.
 - Place associations should not be used as haunted tourism guidance.
 - Figure labels are public-text categories and search/discovery language, not biological or population claims.
 - The archive is not a complete folklore census.
 - The archive is not an official Indigenous knowledge repository.
 - Indigenous-related records require careful handling of terminology, source voice, publicness, cultural sensitivity, and display mode.
+
+## Data Model
+
+The archive uses an object-oriented, source-chain data model, not a flat sightings log:
+
+- entity_concepts are analytical classes, not biological species. The schema enforces this directly: every concept record carries a fixed field reading "Analytical organization concept only; not a biological species."
+- entity_labels preserve the literal wording a source used, independent of classification. A label does not need to be resolved to a concept before it can be stored.
+- narrative_source_links tie a narrative to its sources through one of eighteen tracked relationship types (first known attestation, syndicated reprint, later retelling, tourism retelling, and others), keeping discovery separate from evidentiary weight.
+- narrative_locations tags each place with a role. Only narrative-internal roles (an alleged event or apparition location) are eligible for a public map flag; a source's collection address or a broad cultural region is not.
+- Most narrative units carry no bounded encounter event. encounter_events is an optional subtype of a narrative unit, not the base model the archive is built around.
+
+## Source Standards
+
+Sources are graded A through E before a record is admitted:
+
+- Tier A: primary or near-primary public source (Trove newspapers and magazines, NLA digitised items, public-domain books, diaries and memoirs, Internet Archive public-domain texts).
+- Tier B: public institutional or community-controlled source (AIATSIS public material, state libraries and archives, public museums and galleries, heritage authorities).
+- Tier C: public circulation and reputable retelling (ABC, SBS, reputable journalism, local-history organisations).
+- Tier D: scholarly secondary study, accepted when accessible content carries substantive relevant material; metadata alone is a pointer, not evidence.
+- Tier E: discovery-only or specialist aggregator, accepted only when a stable page carries substantive narrative and the source's mediation stays visible on the record.
+
+Separately, a four-stage admission ladder governs whether something counts as evidence at all: accepted -> secondary/context -> discovery-only -> excluded. Tourism pages, Wikipedia, and paranormal aggregators can point to a lead; they are not evidence on their own.
+
+## Ethics And Cultural Sensitivity
+
+- Public discoverability does not by itself authorise reproduction. A public catalogue record is a signal that something exists, not permission to extract restricted cultural knowledge from it.
+- Restricted, secret/sacred, unpublished, or community-controlled material is not collected. Where a source uses its own community's terminology, that terminology and its original context are preserved rather than rewritten.
+- Every narrative record carries a display state set at review time: full (neutral summary and short excerpt), summary only (neutral summary and metadata, sensitive substance withheld), metadata only (source metadata, no narrative content), or suppressed (withheld entirely from the public export). Sensitivity is assessed per record, not assumed from a source's origin.
+- Some concepts are not merely handled with caution -- they are excluded from the archive outright. Where a narrative concept functions as sacred or creation knowledge rather than a locally circulating legend, it falls outside this project's scope entirely and is not catalogued, labelled, or cross-referenced.
+- A smaller set of traditional narrative concepts carry an elevated sensitivity setting by default, set before any individual record is reviewed. This raises the bar for what can be shown in full and keeps source-community terminology intact rather than replaced with an analytical label.
+
+## What This Archive Contributes
+
+- Narrative-first modelling: most records carry no bounded encounter event; the base research object is a documented narrative, not a claimed sighting.
+- An active exclusion policy: certain sacred/creation concepts are excluded outright, not merely flagged as sensitive.
+- Export-derived numbers: public counts on the site are read from a generated data export, not maintained by hand.
+
+## Glossary
+
+- narrative_unit: the archive's core research object -- one documented narrative, legend, or account.
+- source_item: one cited public source -- a newspaper article, book, catalogue entry, or page.
+- source_tier: A-E grading of how strong a source is as evidence.
+- display_mode: how much of a record is shown publicly -- full, summary only, metadata only, or suppressed.
+- location_role: what a place means to a narrative; an event site, a source's address, and a cultural region are not treated the same.
+- lead: an unresolved pointer to a possible source, not yet an accepted record.
+- publicness: whether a source is publicly accessible and citable, tracked independently of how strong it is as evidence.
 
 ## Recommended Search Language
 

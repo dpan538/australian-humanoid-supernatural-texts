@@ -45,7 +45,7 @@ export const siteConfig = {
   creator: "Dai Pan",
   locale: "en_AU",
   releaseDate: "2026-06-30",
-  contentUpdatedDate: "2026-07-31",
+  contentUpdatedDate: "2026-09-01",
   searchTopics: [
     "Australian supernatural",
     "Australian supernatural folklore",
