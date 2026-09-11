@@ -207,8 +207,11 @@ function SourceRollupPane({ rows, typeRows, totalRecords }: { rows: SourceRollup
               <span>TYPE MIX</span>
               <small>TOP PUBLIC DISPLAY TYPES</small>
             </div>
+            {/* No dot train on type rows: most display types hold a handful
+                of records against a 1,600-record family peak, so the meter
+                read as one lit dot on every row and said nothing. */}
             {typeRows.map((row) => (
-              <div className="source-type-rollup-row" key={row.id} style={{ "--source-color": row.color, "--source-meter": `${Math.max(5, (row.records / maxRecords) * 100)}%` } as CSSProperties}>
+              <div className="source-type-rollup-row" key={row.id} style={{ "--source-color": row.color } as CSSProperties}>
                 <span className="source-family-marker source-family-marker-hollow" aria-hidden="true" />
                 <div className="source-rollup-name">
                   <b title={`${row.label} / ${row.familyLabel}`}>{row.label}</b>
@@ -216,12 +219,29 @@ function SourceRollupPane({ rows, typeRows, totalRecords }: { rows: SourceRollup
                 </div>
                 <strong>{numberFormat(row.records)}</strong>
                 <small>{String(row.orgs).padStart(2, "0")}</small>
-                <SourceDotTrain value={row.records} max={maxRecords} />
               </div>
             ))}
           </>
         ) : null}
       </div>
+      <footer className="source-pane-footer" aria-label="Rollup legend">
+        <span>
+          <i className="source-family-marker source-family-marker-square" aria-hidden="true" />
+          FAMILY
+        </span>
+        <span>
+          <i className="source-family-marker source-family-marker-hollow" aria-hidden="true" />
+          TYPE
+        </span>
+        <span>
+          <SourceDotTrain value={4} max={10} />
+          SHARE VS LARGEST
+        </span>
+        <span>
+          <b>01</b>
+          ORGS
+        </span>
+      </footer>
     </section>
   );
 }
