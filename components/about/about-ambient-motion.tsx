@@ -8,7 +8,10 @@ export function AboutAmbientMotion() {
   const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const root = document.querySelector<HTMLElement>(".about-view");
+    // Scope to the desktop shell: the hidden mobile tree also carries
+    // .about-view and comes first in the DOM, so a bare query matched it and
+    // found no .about-flow-line targets.
+    const root = document.querySelector<HTMLElement>(".desktop-about-shell .about-view");
     if (!root || reducedMotion) {
       return;
     }

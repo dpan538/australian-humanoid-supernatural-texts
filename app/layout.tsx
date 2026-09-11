@@ -1,8 +1,19 @@
 import type { Metadata, Viewport } from "next";
+import { VT323 } from "next/font/google";
 import Script from "next/script";
 import { SITE, absoluteUrl, siteConfig, socialCardImageMetadata } from "@/lib/site";
 import "./globals.css";
 import "./mobile.css";
+
+// Terminal bitmap display face, used only at page-title size (self-hosted at
+// build time by next/font; only consumed by dark-theme rules in globals.css).
+// Numerals and reading text stay in the archive typewriter for legibility.
+const terminalDisplay = VT323({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-terminal-display",
+});
 
 const socialImage = socialCardImageMetadata({
   title: "Australian Supernatural Humanoid Public-Text Archive",
@@ -252,7 +263,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-AU" suppressHydrationWarning>
+    <html lang="en-AU" suppressHydrationWarning className={terminalDisplay.variable}>
       <head>
         <link
           rel="search"

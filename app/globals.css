@@ -4580,6 +4580,16 @@ a {
   scrollbar-gutter: stable;
 }
 
+/* About redesign 2026-09: About now holds far more content than the
+   fixed-viewport terminal frame (map/dashboard/density) was tuned for.
+   Without this, flexbox silently shrinks sections below their content
+   height once the column exceeds the 100%-height box, and any section
+   with an explicit min-height (e.g. about-repository-panel) overflows
+   its own border instead of the column just growing and scrolling. */
+.about-view > * {
+  flex-shrink: 0;
+}
+
 .about-view::before {
   content: "";
   position: absolute;
@@ -18285,6 +18295,142 @@ body {
   text-align: right;
 }
 
+/* About redesign 2026-09: hero title trimmed ~10%, plus the prose block
+   used by the Ethics section and the flexible glossary/version dl reused
+   for the Data Model, Source Standards, and Reference sections. Kept
+   deliberately close to the existing about-repository-meta / about-hero-copy
+   treatment rather than introducing a new visual language this pass. */
+.about-desktop-title {
+  font-size: clamp(2.1rem, 4.5vw, 5.05rem);
+}
+
+.about-prose {
+  display: grid;
+  gap: 14px;
+  max-width: 760px;
+}
+
+.about-prose p {
+  margin: 0;
+  color: rgba(244, 241, 232, 0.86);
+  font-size: var(--type-body-small-size);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+}
+
+:root[data-theme="light"] .about-prose p {
+  color: #14313d;
+}
+
+.about-glossary-list {
+  margin: 0;
+  display: grid;
+  border-left: 1px solid var(--terminal-line);
+}
+
+.about-glossary-list div {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--terminal-line);
+}
+
+.about-glossary-list div:last-child {
+  border-bottom: 0;
+}
+
+.about-glossary-list dt {
+  margin: 0;
+  color: var(--blue);
+  font-size: var(--type-micro-size);
+  font-weight: var(--weight-bold);
+}
+
+.about-glossary-list dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-size: var(--type-meta-size);
+  font-weight: var(--weight-medium);
+  line-height: 1.35;
+}
+
+:root[data-theme="light"] .about-glossary-list {
+  border-color: rgba(4, 58, 78, 0.42);
+}
+
+:root[data-theme="light"] .about-glossary-list div {
+  border-color: rgba(4, 58, 78, 0.42);
+}
+
+/* About redesign 2026-09: four reference-heavy sections (Data Model,
+   Source Standards, Contribution, Glossary & Data Version) default to
+   collapsed via native <details>/<summary> — no client JS needed, and it
+   breaks up the run of visually identical open card-grid sections that
+   made the page read as repetitive. Boundary Declaration, Approach, and
+   Ethics stay as plain always-open sections. */
+.about-collapsible > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.about-collapsible > summary::-webkit-details-marker {
+  display: none;
+}
+
+.about-collapsible > summary::marker {
+  content: "";
+}
+
+.about-collapsible-head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.about-collapsible-toggle {
+  flex-shrink: 0;
+  color: var(--terminal-soft);
+  font-size: var(--type-micro-size);
+  font-weight: var(--weight-bold);
+}
+
+.about-collapsible > summary:hover .about-collapsible-toggle,
+.about-collapsible > summary:focus-visible .about-collapsible-toggle {
+  color: var(--blue);
+}
+
+.about-collapsible:not([open]) .about-collapsible-toggle .is-open-label {
+  display: none;
+}
+
+.about-collapsible[open] .about-collapsible-toggle .is-closed-label {
+  display: none;
+}
+
+/* Glow prototype, variant 1 (subtle) — scoped to About only while we test
+   direction. Accent glow stays on labels/indicators, never on body text. */
+.about-view .tiny-label {
+  text-shadow: 0 0 8px rgba(124, 195, 255, 0.4);
+}
+
+.about-status-led {
+  box-shadow: 0 0 6px 1px rgba(168, 255, 106, 0.65);
+}
+
+/* Glow prototype, variant 2 (stronger) — adds index numerals and the
+   collapse toggle on top of variant 1's labels/LED. */
+.about-method-index {
+  text-shadow: 0 0 16px rgba(124, 195, 255, 0.3);
+}
+
+.about-collapsible-toggle {
+  text-shadow: 0 0 8px rgba(142, 216, 255, 0.35);
+}
+
 .about-repository-panel {
   min-height: 236px;
   display: grid;
@@ -18732,3 +18878,219 @@ body {
     grid-column: 1;
   }
 }
+
+/* ==========================================================================
+   TERMINAL PASS / ROUND 2 — dark theme only.
+   Direction: pure CLI terminal (prompts, dotted leaders, block bars, a
+   blinking caret), not sci-fi HUD line art. Light mode is untouched: every
+   visual rule is scoped to :root:not([data-theme="light"]) and the one new
+   DOM hook (.about-typology-bar) is hidden under the light theme.
+   Performance: cursor-lit text is a viewport-fixed gradient painted into
+   the glyphs (background-clip: text) and driven by two custom properties on
+   <html> from a single rAF-coalesced listener; the only animations touch
+   opacity/transform.
+   ========================================================================== */
+
+/* --- Desk vs. screen: the canvas must read as a lit panel on a darker desk. */
+:root:not([data-theme="light"]) body,
+:root:not([data-theme="light"]) .terminal-shell {
+  background: #0a0b0a;
+}
+
+/* --- Numerals stay in the archive typewriter (legibility first), but
+   heavier and wider so they carry an archive's weight. */
+:root:not([data-theme="light"]) .about-status-cell strong {
+  font-size: clamp(1.3rem, 2.3vw, 1.78rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* --- Cursor-lit text. Reading text never changes with the pointer: section
+   headings, list terms, index digits and prose keep one stable colour so a
+   reader is never chased by a moving highlight. Only interface chrome takes
+   the sheen — the two page titles, prompt labels and the status readouts —
+   and the lit colour stays inside the element's own hue (blue lifts to a
+   lighter blue, ink to white), so contrast only ever rises. The centre is
+   parked off-screen until the pointer moves and under reduced motion. */
+:root {
+  --cursor-x: -9999px;
+  --cursor-y: -9999px;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  :root:not([data-theme="light"]) :is(.desktop-about-shell, .source-view) :is(
+    .about-desktop-title,
+    .source-header-title h2,
+    .tiny-label,
+    .about-status-cell strong,
+    .about-rigour-panel header span,
+    .about-typology header span,
+    .about-command-strip b,
+    .about-command-strip span,
+    .source-filter-line b,
+    .source-terminal-divider b,
+    .source-inspector header span
+  ) {
+    background-image: radial-gradient(
+      circle 180px at var(--cursor-x) var(--cursor-y),
+      var(--glow-hot) 0%,
+      var(--glow-mid) 42%,
+      var(--glow-base) 100%
+    );
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+  }
+
+  :root:not([data-theme="light"]) :is(.desktop-about-shell, .source-view) :is(
+    .about-desktop-title,
+    .source-header-title h2,
+    .about-status-cell strong,
+    .about-command-strip b
+  ) {
+    --glow-base: var(--ink-strong);
+    --glow-mid: #e9f8ff;
+    --glow-hot: #ffffff;
+  }
+
+  :root:not([data-theme="light"]) :is(.desktop-about-shell, .source-view) :is(
+    .tiny-label,
+    .about-rigour-panel header span,
+    .about-typology header span,
+    .about-command-strip span,
+    .source-filter-line b,
+    .source-terminal-divider b,
+    .source-inspector header span
+  ) {
+    --glow-base: var(--blue);
+    --glow-mid: #a9d7ff;
+    --glow-hot: #d2eaff;
+  }
+}
+
+/* --- LEDs: a static halo on a pseudo-element; the breath is a scale pulse
+   only — no opacity or shadow values change over time. */
+:root:not([data-theme="light"]) :is(.about-status-led, .source-divider-led.is-live, .source-result-marker) {
+  position: relative;
+  box-shadow: none;
+  animation: none;
+}
+
+:root:not([data-theme="light"]) :is(.about-status-led, .source-divider-led.is-live, .source-result-marker)::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  box-shadow:
+    0 0 0 2px rgba(168, 255, 106, 0.16),
+    0 0 12px 3px rgba(168, 255, 106, 0.5);
+  animation: terminal-led-halo 4200ms ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes terminal-led-halo {
+  0%,
+  100% {
+    transform: scale(0.78);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* --- CLI grammar: prompt glyphs, bracketed counters, a blinking block caret. */
+:root:not([data-theme="light"]) :is(.tiny-label, .about-rigour-panel header span, .about-typology header span)::before {
+  content: "> ";
+}
+
+:root:not([data-theme="light"]) .about-rigour-panel header strong::before {
+  content: "[ ";
+}
+
+:root:not([data-theme="light"]) .about-rigour-panel header strong::after {
+  content: " ]";
+}
+
+:root:not([data-theme="light"]) .about-typology header small::before {
+  content: "// ";
+}
+
+:root:not([data-theme="light"]) .about-command-strip b::after,
+:root:not([data-theme="light"]) .source-filter-line:has(input:placeholder-shown) > b::after {
+  content: "\2588";
+  display: inline-block;
+  margin-left: 0.35em;
+  animation: terminal-caret 1100ms steps(2, start) infinite;
+}
+
+@keyframes terminal-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- Record Typology as a CLI table: dotted leader between label and count,
+   then a block bar on a dim track (like `[████░░░░]`). --share is computed
+   server-side; zero client JavaScript. */
+:root:not([data-theme="light"]) .about-typology-grid article {
+  grid-template-rows: auto 5px;
+  row-gap: 7px;
+}
+
+:root:not([data-theme="light"]) .about-typology-grid b {
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
+}
+
+:root:not([data-theme="light"]) .about-typology-grid b::after {
+  content: "";
+  flex: 1 1 auto;
+  min-width: 10px;
+  margin: 0 8px;
+  border-bottom: 1px dotted rgba(242, 242, 237, 0.34);
+  transform: translateY(-0.28em);
+}
+
+.about-typology-bar {
+  grid-column: 1 / -1;
+  height: 5px;
+  width: 100%;
+  background-image:
+    repeating-linear-gradient(90deg, var(--green) 0 6px, transparent 6px 9px),
+    repeating-linear-gradient(90deg, rgba(242, 242, 237, 0.13) 0 6px, transparent 6px 9px);
+  background-size:
+    calc(var(--share, 0) * 100%) 100%,
+    100% 100%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+:root[data-theme="light"] .about-typology-bar {
+  display: none;
+}
+
+/* --- Display face (VT323): the classic terminal bitmap face, used only at
+   page-title size where its narrow pixel forms stay legible and read as a
+   banner. Sized ~1.2× the typewriter titles they replace, because the face
+   sets visibly smaller at equal px. Numerals, index digits and every reading
+   element stay in the archive typewriter. */
+:root:not([data-theme="light"]) .about-desktop-title,
+:root:not([data-theme="light"]) .source-terminal-header .source-header-title h2 {
+  font-family: var(--font-terminal-display), var(--font-ui-mono);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+:root:not([data-theme="light"]) .about-desktop-title {
+  font-size: clamp(2.55rem, 5.5vw, 6.15rem);
+  line-height: 0.92;
+}
+
+:root:not([data-theme="light"]) .source-terminal-header .source-header-title h2 {
+  font-size: clamp(2.2rem, 2.6vw, 2.5rem);
+  line-height: 0.95;
+}
+
