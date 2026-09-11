@@ -17,6 +17,7 @@ import {
   useDeferredValue,
   useEffect,
   useId,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -25,6 +26,8 @@ import { createTimeline, stagger } from "animejs";
 import type { AnimationParams, Timeline } from "animejs";
 import { STATE_SHAPES } from "@/lib/au-map-data";
 import { figurePath } from "@/lib/archive-routing";
+import { buildProjectCitations } from "@/lib/citations";
+import { CitationSamples } from "@/components/citation-samples";
 import { MOBILE_ARCHIVE_DATA_URL } from "@/lib/frontend-data";
 import type {
   MobileArchiveData,
@@ -63,7 +66,7 @@ const MOBILE_NAV_ITEMS: Array<{
   { view: "figures", href: "/figures", label: "figures dictionary", icon: "figures" },
 ];
 const MOBILE_MAP_VIEWBOX = { x: 24, y: 18, width: 930, height: 682 } as const;
-const MOBILE_CARD_TONES = ["mint", "coral", "yellow", "blue", "lavender", "mint"] as const;
+const MOBILE_CARD_TONES = ["mint", "coral", "sky", "lime", "lavender", "yellow"] as const;
 export type MobileCardTone = (typeof MOBILE_CARD_TONES)[number];
 
 export type MobileRouteView =
@@ -933,11 +936,14 @@ function MobileMapView({ data }: { data: MobileArchiveData }) {
               <clipPath id={`${clipBaseId}-australia`}>
                 {STATE_SHAPES.map((state) => <path key={`mobile-country-clip-${state.code}`} d={state.d} />)}
               </clipPath>
-              <pattern id={`${clipBaseId}-dots`} width="22" height="22" patternUnits="userSpaceOnUse">
-                <circle className="mobile-map-dot" cx="4" cy="4" r="3.2" />
+              <pattern id={`${clipBaseId}-dots`} width="30" height="30" patternUnits="userSpaceOnUse">
+                <circle className="mobile-map-dot is-a" cx="6" cy="7" r="2.8" />
+                <circle className="mobile-map-dot is-b" cx="21" cy="11" r="2.8" />
+                <circle className="mobile-map-dot is-c" cx="13" cy="23" r="2.8" />
               </pattern>
-              <pattern id={`${clipBaseId}-selected-dots`} width="22" height="22" patternUnits="userSpaceOnUse">
-                <circle className="mobile-map-dot selected" cx="4" cy="4" r="4.1" />
+              <pattern id={`${clipBaseId}-selected-dots`} width="26" height="26" patternUnits="userSpaceOnUse">
+                <circle className="mobile-map-dot selected" cx="6" cy="7" r="3.6" />
+                <circle className="mobile-map-dot selected is-b" cx="19" cy="18" r="3.6" />
               </pattern>
               {STATE_SHAPES.map((state) => (
                 <clipPath id={`${clipBaseId}-${state.code.toLowerCase()}`} key={`mobile-state-clip-${state.code}`}>
@@ -1458,6 +1464,54 @@ function MobileAnnualSeriesCard({
   );
 }
 
+const MOBILE_METER_COLORS = [
+  "var(--m-analysis-sky)",
+  "var(--m-analysis-lime)",
+  "var(--m-analysis-coral)",
+  "var(--m-analysis-violet)",
+  "var(--m-lime)",
+] as const;
+
+function MobileDotMeter({
+  values,
+  labels,
+  rows = 6,
+  colors = MOBILE_METER_COLORS,
+}: {
+  values: number[];
+  labels?: string[];
+  rows?: number;
+  colors?: readonly string[];
+}) {
+  const peak = Math.max(1, ...values);
+  return (
+    <div className="mobile-dot-meter" role="img" aria-label={labels ? labels.map((label, index) => `${label}: ${values[index]}`).join(", ") : undefined}>
+      {values.map((value, index) => {
+        const lit = value > 0 ? Math.max(1, Math.round((value / peak) * rows)) : 0;
+        const color = colors[index % colors.length];
+        return (
+          <div className="mobile-dot-meter-col" key={labels?.[index] ?? index}>
+            <div className="mobile-dot-meter-dots" aria-hidden="true">
+              {Array.from({ length: rows }, (_, rowIndex) => {
+                const fromBottom = rows - 1 - rowIndex;
+                const isLit = fromBottom < lit;
+                return (
+                  <em
+                    key={rowIndex}
+                    className={isLit ? "is-lit" : ""}
+                    style={isLit ? ({ "--dot-meter-color": color } as CSSProperties) : undefined}
+                  />
+                );
+              })}
+            </div>
+            {labels ? <small aria-hidden="true">{labels[index]}</small> : null}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function MobileFlipIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -1613,7 +1667,7 @@ function MobileSourceView({ data }: { data: MobileArchiveData }) {
           <MobileExpandableCard
             cardId="source-lists"
             className="source-mobile-accordion"
-            tone="blue"
+            tone="sky"
             eyebrow="SOURCE DETAIL"
             title="Source Lists"
             metric={`${data.sources.rollup.length} families · ${data.sources.metrics.sourceTypes} types`}
@@ -1683,7 +1737,9 @@ function MobileSourceView({ data }: { data: MobileArchiveData }) {
 function MobileAboutView({ data }: { data: MobileArchiveData }) {
   const mappedShare = data.summary.mappedRecordCount / Math.max(1, data.summary.recordCount);
   const mappedCells = Math.round(mappedShare * 10);
-  const maxSourceOrgs = Math.max(1, ...data.sources.rollup.map((row) => row.orgs));
+  const regionCount = data.map.stateCounts.length;
+  const exportDate = data.generated_at.slice(0, 10);
+  const citationSamples = buildProjectCitations(exportDate);
 
   return (
     <div className="about-view mobile-about-view">
@@ -1694,7 +1750,7 @@ function MobileAboutView({ data }: { data: MobileArchiveData }) {
         <div className="mobile-hero-badges" aria-label="Project qualities">
           <span><i aria-hidden="true" />public text</span>
           <span><i aria-hidden="true" />auditable</span>
-          <span><i aria-hidden="true" />Australia</span>
+          <span><i aria-hidden="true" />Australia-only</span>
         </div>
       </header>
       <section className="about-status-panel">
@@ -1722,14 +1778,10 @@ function MobileAboutView({ data }: { data: MobileArchiveData }) {
           <div className="is-source">
             <span>SOURCE ORGS</span>
             <b>{formatNumber(data.summary.sourceCount)}</b>
-            <i className="about-status-source-bars" aria-hidden="true">
-              {data.sources.rollup.map((row) => (
-                <em
-                  key={row.id}
-                  style={{ "--about-source-share": row.orgs / maxSourceOrgs } as CSSProperties}
-                />
-              ))}
-            </i>
+            <MobileDotMeter
+              values={data.sources.rollup.map((row) => row.orgs)}
+              rows={5}
+            />
           </div>
         </div>
       </section>
@@ -1739,7 +1791,7 @@ function MobileAboutView({ data }: { data: MobileArchiveData }) {
           title="Scope"
           tone="mint"
           preview={(
-            <span className="mobile-about-scope-preview" aria-label={`${data.figures.length} figures, ${data.density.periods.length} periods and 8 regions`}>
+            <span className="mobile-about-scope-preview" aria-label={`${data.figures.length} figures, ${data.density.periods.length} periods and ${regionCount} regions`}>
               <span>
                 <b>{formatNumber(data.figures.length)}</b>
                 <small>FIGURES</small>
@@ -1760,10 +1812,10 @@ function MobileAboutView({ data }: { data: MobileArchiveData }) {
                 </i>
               </span>
               <span>
-                <b>8</b>
+                <b>{regionCount}</b>
                 <small>REGIONS</small>
                 <i className="about-scope-region-grid" aria-hidden="true">
-                  {Array.from({ length: 8 }, (_, index) => <em key={index} />)}
+                  {Array.from({ length: regionCount }, (_, index) => <em key={index} />)}
                 </i>
               </span>
             </span>
@@ -1775,30 +1827,128 @@ function MobileAboutView({ data }: { data: MobileArchiveData }) {
             as source-grounded public records.
           </p>
         </MobileAboutModule>
-        <MobileAboutModule cardId="about-method" title="Method And Rigour" tone="coral">
+      </MobileCardDeck>
+
+      <div className="mobile-card-deck about-grid">
+        <MobileAboutModule cardId="about-boundary" title="What This Archive Is" tone="lavender">
+          <p>
+            Australia only, based on public records and public metadata, typed by narrative role,
+            source family, publicness, date, and location evidence. A map flag is a reviewed
+            display location for one record — never proof of an event, a habitat, or a population.
+          </p>
+          <dl className="mobile-about-checks">
+            <div><dt>NOT 01</dt><dd>Proof that any supernatural entity exists</dd></div>
+            <div><dt>NOT 02</dt><dd>A complete census of Australian folklore</dd></div>
+            <div><dt>NOT 03</dt><dd>A habitat or population map</dd></div>
+            <div><dt>NOT 04</dt><dd>An authoritative Indigenous knowledge repository</dd></div>
+            <div><dt>NOT 05</dt><dd>Permission to reproduce restricted cultural material</dd></div>
+            <div><dt>NOT 06</dt><dd>A tourism or haunted-place directory</dd></div>
+          </dl>
+        </MobileAboutModule>
+        <MobileAboutModule cardId="about-method" title="Approach" tone="coral">
           <ol className="mobile-about-sequence">
-            <li><b>01</b><span>Discover a stable public trace.</span></li>
-            <li><b>02</b><span>Preserve source, date, role and publicness.</span></li>
-            <li><b>03</b><span>Classify figure, narrative, period and place separately.</span></li>
-            <li><b>04</b><span>Publish a map flag only after location review.</span></li>
+            <li><b>01</b><span>Discovery — Find a public trace.</span></li>
+            <li><b>02</b><span>Admission — Preserve provenance.</span></li>
+            <li><b>03</b><span>Classification — Keep research layers separate.</span></li>
+            <li><b>04</b><span>Location review — Map only reviewed evidence.</span></li>
           </ol>
           <dl className="mobile-about-checks">
-            <div><dt>LAYER SEPARATION</dt><dd>Public records, map flags, metadata-only items and leads remain distinct.</dd></div>
+            <div><dt>LAYER SEPARATION</dt><dd>Public records, mapped records, metadata-only items, and research leads are counted separately and never summed as one total.</dd></div>
             <div><dt>REVISION</dt><dd>The corpus is auditable and revisable, not a complete authority.</dd></div>
           </dl>
         </MobileAboutModule>
-        <MobileAboutModule cardId="about-limits" title="Limits And Ethics" tone="yellow">
+        <MobileAboutModule cardId="about-ethics" title="Ethics & Cultural Sensitivity" tone="yellow">
           <p>
-            Public source exists does not mean a supernatural claim is verified. Map markers are
-            reviewed display locations for records, not habitats, populations, or proof.
+            Public discoverability does not by itself authorise reproduction. A public catalogue
+            record is a signal that something exists, not permission to extract restricted cultural
+            knowledge from it. Restricted, secret/sacred, unpublished, or community-controlled
+            material is not collected. Where a source uses its own community&apos;s terminology, that
+            terminology and its original context are preserved rather than rewritten.
           </p>
           <p>
-            Indigenous-related records require careful handling of terminology, source voice,
-            publicness, cultural sensitivity and display mode. Restricted or private knowledge is
-            outside the public archive scope.
+            Every narrative record carries a display state, set at review time: shown in full with a
+            neutral summary and short excerpt; shown as a neutral summary only, with sensitive
+            substance not reproduced; shown as source metadata only, with no narrative content; or
+            withheld entirely from public display. This state is a review decision, not a default —
+            sensitivity is assessed per record, not assumed from a source&apos;s origin.
+          </p>
+          <p>
+            Some concepts are not merely handled with caution — they are excluded from the archive
+            outright. Where a narrative concept functions as sacred or creation knowledge rather than
+            a locally circulating legend, it falls outside this project&apos;s scope entirely and is not
+            catalogued, labelled, or cross-referenced here.
+          </p>
+          <p>
+            A smaller set of traditional narrative concepts carry an elevated sensitivity setting by
+            default, set before any individual record is reviewed. This does not suppress them from
+            the archive, but it raises the bar for what can be shown in full and keeps
+            source-community terminology intact rather than replaced with an analytical label.
+          </p>
+          <dl className="mobile-about-checks">
+            <div><dt>FULL</dt><dd>Neutral summary and short excerpt shown.</dd></div>
+            <div><dt>SUMMARY ONLY</dt><dd>Neutral summary and metadata shown; sensitive substance is not reproduced.</dd></div>
+            <div><dt>METADATA ONLY</dt><dd>Source metadata shown; no narrative content.</dd></div>
+            <div><dt>SUPPRESSED</dt><dd>Withheld entirely from the public export.</dd></div>
+          </dl>
+        </MobileAboutModule>
+      </div>
+
+      <MobileCardDeck className="about-grid">
+        <MobileAboutModule cardId="about-structure" title="How The Archive Is Structured" tone="sky">
+          <p>
+            The archive separates what a source literally says from how it is analytically
+            classified, then grades the source itself before a record is admitted.
+          </p>
+          <ol className="mobile-about-sequence">
+            <li><b>01</b><span>Concept — entity_concepts group related figures for analysis, an analytical class, not a species.</span></li>
+            <li><b>02</b><span>Label — entity_labels preserve the literal wording a source used.</span></li>
+            <li><b>03</b><span>Source chain — narrative_source_links tie a narrative to its sources through eighteen tracked relationship types.</span></li>
+            <li><b>04</b><span>Location role — narrative_locations tags each place with a role; only narrative-internal roles are eligible for a map flag.</span></li>
+          </ol>
+          <dl className="mobile-about-checks">
+            <div><dt>TIER A–B</dt><dd>Primary/near-primary and public institutional sources — Trove, NLA, AIATSIS, state libraries and archives.</dd></div>
+            <div><dt>TIER C–D</dt><dd>Public circulation/reputable retelling and scholarly secondary study — ABC, SBS, accepted academic sources.</dd></div>
+            <div><dt>TIER E</dt><dd>Discovery-only or specialist aggregator — accepted only with substantive narrative and visible source mediation.</dd></div>
+            <div><dt>ADMISSION LADDER</dt><dd>Accepted → secondary/context → discovery-only → excluded. Tourism pages and aggregators can point to a lead; they are not evidence on their own.</dd></div>
+          </dl>
+        </MobileAboutModule>
+        <MobileAboutModule cardId="about-contribution" title="What This Archive Adds" tone="mint">
+          <ol className="mobile-about-sequence">
+            <li><b>01</b><span>Narrative-first — built around narratives, not sightings.</span></li>
+            <li><b>02</b><span>Exclusion as policy — some concepts are excluded outright, not just flagged.</span></li>
+            <li><b>03</b><span>Export-derived numbers — every count traces to one generated file.</span></li>
+          </ol>
+          <dl className="mobile-about-checks">
+            <div><dt>RESEARCH THREAD</dt><dd>These points are the empirical basis for a methods paper in development, on how archives like this one should separate discovery from evidence.</dd></div>
+          </dl>
+        </MobileAboutModule>
+        <MobileAboutModule cardId="about-citation" title="Citation" tone="coral">
+          <p>
+            Use one project citation for the aggregation and coding layer. When discussing an
+            individual record, also cite its permanent AusFigures URL and the original public source
+            shown on that record page.
+          </p>
+          <CitationSamples samples={citationSamples} compact />
+          <p>
+            No DOI is assigned to this live export. Original-source rights, access conditions, and
+            culturally specific context continue to apply.
           </p>
         </MobileAboutModule>
-        <MobileAboutModule cardId="about-repository" title="Open Project" tone="blue">
+        <MobileAboutModule cardId="about-glossary" title="Glossary & Data Version" tone="lavender">
+          <dl className="mobile-about-checks">
+            <div><dt>narrative_unit</dt><dd>The archive&apos;s core research object: one documented narrative, legend, or account.</dd></div>
+            <div><dt>source_item</dt><dd>One cited public source — a newspaper article, book, catalogue entry, or page.</dd></div>
+            <div><dt>source_tier</dt><dd>A–E grading of how strong a source is as evidence.</dd></div>
+            <div><dt>display_mode</dt><dd>How much of a record is shown publicly: full, summary only, metadata only, or suppressed.</dd></div>
+            <div><dt>location_role</dt><dd>What a place means to a narrative — an event site, a source&apos;s address, and a cultural region are not treated the same.</dd></div>
+            <div><dt>lead</dt><dd>An unresolved pointer to a possible source, not yet an accepted record.</dd></div>
+            <div><dt>publicness</dt><dd>Whether a source is publicly accessible and citable, tracked independently of evidentiary strength.</dd></div>
+            <div><dt>EXPORT CONTRACT</dt><dd>{data.generated_from}</dd></div>
+            <div><dt>EXPORT GENERATED</dt><dd>{exportDate}</dd></div>
+            <div><dt>MOBILE PAYLOAD</dt><dd>{data.schema_version}</dd></div>
+          </dl>
+        </MobileAboutModule>
+        <MobileAboutModule cardId="about-repository" title="Open Project" tone="sky">
           <p>
             Source code, data policies and revision history are available in the public repository.
           </p>
@@ -1903,7 +2053,7 @@ export function MobileExpandableCard({
   const mounted = useRef(false);
   const panelId = useId();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const panel = panelRef.current;
     if (!panel) {
       return;

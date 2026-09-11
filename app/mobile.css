@@ -935,22 +935,32 @@
   }
 
   :root .mobile-archive-shell .mobile-expand-card[data-tone="coral"] {
-    --m-card-bg: var(--m-coral);
+    --m-card-bg: var(--m-analysis-coral);
     --m-card-ink: var(--m-black);
   }
 
   :root .mobile-archive-shell .mobile-expand-card[data-tone="yellow"] {
-    --m-card-bg: var(--m-yellow);
+    --m-card-bg: var(--m-lime);
     --m-card-ink: var(--m-black);
   }
 
   :root .mobile-archive-shell .mobile-expand-card[data-tone="blue"] {
-    --m-card-bg: var(--m-blue);
+    --m-card-bg: var(--m-analysis-sky);
     --m-card-ink: var(--m-black);
   }
 
   :root .mobile-archive-shell .mobile-expand-card[data-tone="lavender"] {
-    --m-card-bg: var(--m-pink);
+    --m-card-bg: var(--m-analysis-violet);
+    --m-card-ink: var(--m-black);
+  }
+
+  :root .mobile-archive-shell .mobile-expand-card[data-tone="sky"] {
+    --m-card-bg: var(--m-analysis-sky);
+    --m-card-ink: var(--m-black);
+  }
+
+  :root .mobile-archive-shell .mobile-expand-card[data-tone="lime"] {
+    --m-card-bg: var(--m-analysis-lime);
     --m-card-ink: var(--m-black);
   }
 
@@ -1375,13 +1385,26 @@
   }
 
   .mobile-map-canvas .mobile-map-dot {
-    fill: rgba(248, 242, 228, 0.38);
+    fill: var(--m-analysis-sky);
+    opacity: 0.55;
     stroke: none;
   }
 
+  .mobile-map-canvas .mobile-map-dot.is-b {
+    fill: var(--m-analysis-lime);
+  }
+
+  .mobile-map-canvas .mobile-map-dot.is-c {
+    fill: var(--m-analysis-violet);
+  }
+
   .mobile-map-canvas .mobile-map-dot.selected {
-    fill: #f2c977;
-    opacity: 0.92;
+    fill: var(--m-analysis-coral);
+    opacity: 0.95;
+  }
+
+  .mobile-map-canvas .mobile-map-dot.selected.is-b {
+    fill: var(--m-lime);
   }
 
   :root .mobile-archive-shell .mobile-map-canvas .state-shape {
@@ -1399,7 +1422,15 @@
   :root .mobile-archive-shell .mobile-map-canvas .state-shape:focus-visible {
     fill: #8b7561;
     stroke: var(--m-map-card);
+  }
+
+  :root .mobile-archive-shell .mobile-map-canvas .state-shape:focus {
     outline: none;
+  }
+
+  :root .mobile-archive-shell .mobile-map-canvas .state-shape:focus-visible {
+    outline: 2px solid var(--m-analysis-coral);
+    outline-offset: 2px;
   }
 
   .mobile-map-canvas .state-label {
@@ -1483,6 +1514,23 @@
     font-size: 1.35rem;
     font-weight: 620;
     letter-spacing: -0.04em;
+  }
+
+  .mobile-map-active-ratio {
+    display: flex !important;
+    align-items: center;
+    justify-self: end;
+    gap: 10px;
+  }
+
+  .mobile-map-active-ratio span {
+    display: grid;
+    gap: 2px;
+    text-align: right;
+  }
+
+  .mobile-ratio-ring-track {
+    stroke: rgba(13, 14, 16, 0.14);
   }
 
   .mobile-map-signal-carousel {
@@ -2244,10 +2292,11 @@
   }
 
   .mobile-annual-header > strong {
+    padding-top: 0.15em;
     font-size: clamp(2.3rem, 11vw, 3.35rem);
     font-weight: 500;
     letter-spacing: -0.045em;
-    line-height: 0.88;
+    line-height: 1;
   }
 
   .mobile-density-overview-card .mobile-sparkline {
@@ -3152,7 +3201,22 @@
 
   .about-status-grid .is-public .about-status-register em,
   .about-status-register em.is-active {
-    background: var(--m-black);
+    background: var(--m-analysis-sky);
+  }
+
+  .about-status-register em:nth-child(5n + 2).is-active,
+  .about-status-grid .is-public .about-status-register em:nth-child(5n + 2) {
+    background: var(--m-analysis-lime);
+  }
+
+  .about-status-register em:nth-child(5n + 3).is-active,
+  .about-status-grid .is-public .about-status-register em:nth-child(5n + 3) {
+    background: var(--m-analysis-coral);
+  }
+
+  .about-status-register em:nth-child(5n + 4).is-active,
+  .about-status-grid .is-public .about-status-register em:nth-child(5n + 4) {
+    background: var(--m-analysis-violet);
   }
 
   .about-status-source-bars {
@@ -3163,7 +3227,71 @@
 
   .about-status-source-bars em {
     height: calc(5px + (var(--about-source-share) * 25px));
-    background: var(--m-black);
+    background: var(--m-analysis-sky);
+  }
+
+  .about-status-source-bars em:nth-child(6n + 2) {
+    background: var(--m-analysis-lime);
+  }
+
+  .about-status-source-bars em:nth-child(6n + 3) {
+    background: var(--m-analysis-coral);
+  }
+
+  .about-status-source-bars em:nth-child(6n + 4) {
+    background: var(--m-analysis-violet);
+  }
+
+  .about-status-source-bars em:nth-child(6n + 5) {
+    background: var(--m-lime);
+  }
+
+  /* Dot-matrix level meter -- a genuinely new visualisation shape, not a
+     recoloured bar chart. Columns of small squares light up bottom-first,
+     like a retro equaliser display, instead of one solid rectangle per
+     value. */
+  .mobile-dot-meter {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 3px;
+  }
+
+  .mobile-dot-meter-col {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .mobile-dot-meter-dots {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .mobile-dot-meter-dots em {
+    flex: 1;
+    min-height: 0;
+    border-radius: 1.5px;
+    background: rgba(13, 14, 16, 0.16);
+  }
+
+  .mobile-dot-meter-dots em.is-lit {
+    background: var(--dot-meter-color, var(--m-black));
+  }
+
+  .mobile-dot-meter-col small {
+    overflow: hidden;
+    color: inherit;
+    font-size: 0.56rem;
+    font-weight: 700;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .about-grid {
@@ -3284,7 +3412,22 @@
   .about-scope-region-grid em {
     display: block;
     border-radius: 999px;
-    background: currentColor;
+    background: var(--m-analysis-sky);
+  }
+
+  .about-scope-figure-grid em:nth-child(4n + 2),
+  .about-scope-region-grid em:nth-child(4n + 2) {
+    background: var(--m-analysis-coral);
+  }
+
+  .about-scope-figure-grid em:nth-child(4n + 3),
+  .about-scope-region-grid em:nth-child(4n + 3) {
+    background: var(--m-analysis-lime);
+  }
+
+  .about-scope-figure-grid em:nth-child(4n),
+  .about-scope-region-grid em:nth-child(4n) {
+    background: var(--m-analysis-violet);
   }
 
   .about-scope-period-bars {
@@ -3296,7 +3439,15 @@
     display: block;
     height: calc(6px + (var(--about-period-share) * 34px));
     border-radius: 999px;
-    background: currentColor;
+    background: var(--m-analysis-sky);
+  }
+
+  .about-scope-period-bars em:nth-child(3n + 2) {
+    background: var(--m-analysis-coral);
+  }
+
+  .about-scope-period-bars em:nth-child(3n) {
+    background: var(--m-analysis-lime);
   }
 
   .about-scope-region-grid {
@@ -3305,7 +3456,7 @@
   }
 
   .mobile-about-copy {
-    color: var(--m-ink);
+    color: var(--m-card-ink, var(--m-black));
   }
 
   .mobile-about-copy p {
@@ -3340,7 +3491,12 @@
     font-size: 0.72rem;
   }
 
+  :root[data-theme="light"] .mobile-about-sequence b {
+    color: #b8501a;
+  }
+
   .mobile-about-sequence span {
+    color: var(--m-ink);
     font-size: 0.9rem;
   }
 
@@ -3365,6 +3521,10 @@
     letter-spacing: 0.05em;
   }
 
+  :root[data-theme="light"] .mobile-about-checks dt {
+    color: var(--m-soft);
+  }
+
   .mobile-about-checks dd {
     margin: 0;
     color: var(--m-ink);
@@ -3376,6 +3536,45 @@
     padding: 12px;
     border-radius: var(--m-radius-sm);
     background: var(--m-surface);
+  }
+
+  /* CitationSamples is shared with desktop and ships with desktop terminal
+     tokens (--ink/--blue/--terminal-soft). Remap to the mobile card system
+     so it reads correctly against the bright mobile card backgrounds. */
+  .mobile-archive-shell .citation-sample {
+    border-color: var(--m-line);
+    background: var(--m-surface);
+  }
+
+  .mobile-archive-shell .citation-sample > header {
+    border-bottom-color: var(--m-line);
+  }
+
+  .mobile-archive-shell .citation-sample > header span {
+    color: var(--m-soft);
+  }
+
+  .mobile-archive-shell .citation-sample > header strong {
+    color: var(--m-coral);
+  }
+
+  :root[data-theme="light"] .mobile-archive-shell .citation-sample > header strong {
+    color: #b8501a;
+  }
+
+  .mobile-archive-shell .citation-sample button {
+    border-color: var(--m-line);
+    color: var(--m-ink);
+  }
+
+  .mobile-archive-shell .citation-sample button:hover,
+  .mobile-archive-shell .citation-sample button:focus-visible {
+    color: var(--m-black);
+    background: var(--m-ink);
+  }
+
+  .mobile-archive-shell .citation-sample pre {
+    color: var(--m-ink);
   }
 
   .mobile-about-repository-link {

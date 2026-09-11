@@ -19,7 +19,7 @@ import type {
   FigureDictionaryFrequency,
 } from "@/lib/figure-dictionary-types";
 
-const MOBILE_DIRECTORY_TONES = ["mint", "coral", "yellow", "blue", "lavender"] as const;
+const MOBILE_DIRECTORY_TONES = ["mint", "coral", "yellow", "sky", "lavender"] as const;
 
 export function FigureEncyclopedia({
   entries,
@@ -637,7 +637,7 @@ function MobileFigureEncyclopedia({
           <MobileExpandableCard
             cardId="figure-distribution"
             className="mobile-figure-card"
-            tone="blue"
+            tone="sky"
             eyebrow="ARCHIVE DISTRIBUTION"
             title="Archive Coverage"
             metric={hasPublicRecords
