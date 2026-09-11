@@ -93,11 +93,6 @@ export function FigureEncyclopedia({
                 <strong>AUSFIGURES</strong>
                 <span>SUPERNATURAL HUMANOID DICTIONARY</span>
               </Link>
-              <nav aria-label="Archive view sequence">
-                <Link href="/">Map</Link>
-                <Link href="/density">Density</Link>
-                <Link href="/dashboard">Dashboard</Link>
-              </nav>
             </header>
 
             <div className="figure-dictionary-grid">

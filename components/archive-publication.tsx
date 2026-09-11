@@ -113,19 +113,13 @@ export function ArchivePublicationPage({
     <main className={`terminal-shell publication-shell${className ? ` ${className}` : ""}`}>
       <div className="noise-layer" aria-hidden="true" />
       <div className="terminal-stage publication-frame">
+        <div className="publication-canvas">
         <header className="publication-console-bar">
           <Link href="/">
             <strong>AUSFIGURES</strong>
             <span>PUBLIC-TEXT ARCHIVE</span>
           </Link>
-          <span>ARCHIVE INDEX MODE</span>
-          <nav aria-label="Archive index navigation">
-            <Link href="/">MAP</Link>
-            <Link href="/records">RECORDS</Link>
-            <Link href="/narrative-types">TYPES</Link>
-            <Link href="/source">SOURCES</Link>
-            <Link href="/about">METHOD</Link>
-          </nav>
+          <span>ARCHIVE INDEX</span>
         </header>
         <nav className="publication-breadcrumbs" aria-label="Breadcrumb">
           {breadcrumbs.map((item, index) => (
@@ -161,15 +155,40 @@ export function ArchivePublicationPage({
         {notice ? <p className="publication-notice">{notice}</p> : null}
         <div className="publication-content">{children}</div>
         <footer className="publication-footer">
-          <p>Public source exists does not mean a supernatural claim is verified.</p>
-          <nav aria-label="Archive footer navigation">
+          <p>A public source existing does not mean a supernatural claim is verified.</p>
+          <nav aria-label="Archive index navigation">
             <Link href="/records">Records</Link>
+            <Link href="/narrative-types">Types</Link>
+            <Link href="/sources">Sources</Link>
+            <Link href="/places">Places</Link>
+            <Link href="/periods">Periods</Link>
             <Link href="/data">Data</Link>
             <Link href="/cite">Cite</Link>
           </nav>
         </footer>
+        </div>
+        {/* Same bottom dock as every other desktop view: theme control on the
+            left, About / Source / view-cycle on the right. The index pages are
+            one "view" in that cycle, so the cycle button returns to the map. */}
         <div className="terminal-footer-controls publication-display-controls">
           <DisplayControls />
+          <div className="external-control-dock" aria-label="Fixed external controls">
+            <Link className="dock-button about-button" href="/about">
+              About
+            </Link>
+            <Link className="dock-button source-button" href="/source">
+              Source
+            </Link>
+            <Link
+              className="dock-button view-cycle-button active"
+              href="/"
+              aria-label="Current view Archive index; switch to Map"
+              title="Switch to Map"
+            >
+              <span className="view-label-current">Index</span>
+              <span className="view-label-next">Map</span>
+            </Link>
+          </div>
         </div>
       </div>
     </main>

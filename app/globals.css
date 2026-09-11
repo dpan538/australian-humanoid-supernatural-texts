@@ -11411,7 +11411,7 @@ body {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr);
   min-width: 0;
   border-bottom: 1px solid var(--terminal-line-strong);
   background: var(--terminal-panel);
@@ -11461,21 +11461,6 @@ body {
   background: color-mix(in srgb, var(--terminal-green) 30%, transparent);
   transform-origin: center;
   animation: archive-visible-signal-breathe 5600ms ease-in-out infinite;
-}
-
-.figure-dictionary-header nav {
-  display: flex;
-  align-items: stretch;
-}
-
-.figure-dictionary-header nav a {
-  min-width: 72px;
-  display: grid;
-  place-items: center;
-  padding: 0 10px;
-  border-left: 1px solid var(--terminal-line);
-  color: var(--terminal-muted);
-  text-decoration: none;
 }
 
 .figure-dictionary-header a:hover,
@@ -15233,9 +15218,7 @@ body {
 }
 
 .figure-dictionary-viz-card:hover .figure-dictionary-viz-header h2,
-.figure-dictionary-viz-card:focus-within .figure-dictionary-viz-header h2,
-.figure-dictionary-header nav a:hover,
-.figure-dictionary-header nav a:focus-visible {
+.figure-dictionary-viz-card:focus-within .figure-dictionary-viz-header h2 {
   color: var(--figure-hover-neon, var(--terminal-green));
 }
 
@@ -15689,7 +15672,7 @@ body {
   max-width: 1440px;
   min-height: 100svh;
   margin: 0 auto;
-  padding: var(--stage-edge) 0 calc(var(--stage-edge) + var(--dock-height));
+  padding: var(--stage-edge) 0;
   display: block;
 }
 
@@ -16145,7 +16128,7 @@ body {
 }
 
 .publication-display-controls {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 :root[data-theme="light"] .publication-shell {
@@ -17736,7 +17719,7 @@ body {
 }
 
 .figure-dictionary-header {
-  grid-template-columns: minmax(260px, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 :root[data-theme="light"] .figure-overlay {
@@ -18802,11 +18785,6 @@ body {
   --archive-scroll-end-space: clamp(72px, 9svh, 118px);
 }
 
-.publication-frame {
-  padding-bottom: calc(var(--stage-edge) + var(--dock-height) + var(--archive-scroll-end-space));
-  scroll-padding-bottom: calc(var(--dock-height) + var(--archive-scroll-end-space));
-}
-
 .about-view {
   padding-bottom: calc(86px + var(--archive-scroll-end-space));
   scroll-padding-bottom: var(--archive-scroll-end-space);
@@ -18941,6 +18919,26 @@ body {
 :root:not([data-theme="light"]) .source-display {
   width: 100%;
   height: 100%;
+}
+
+/* --- Figures page: drop the green-tinted panel tokens and the lime neon so
+   it sits in the same ink/blue register as the rest of the dark terminal.
+   Green survives only as the small LED/accent colour. */
+:root:not([data-theme="light"]) .figure-dictionary-shell {
+  background: #0a0b0a;
+}
+
+:root:not([data-theme="light"]) .figure-dictionary-view {
+  --terminal-bg: #121312;
+  --terminal-panel: #181918;
+  --terminal-panel-strong: #202220;
+  --terminal-line: rgba(196, 199, 196, 0.18);
+  --terminal-line-strong: rgba(159, 224, 255, 0.36);
+  --terminal-green: #a8ff6a;
+  --terminal-cyan: #7cc3ff;
+  --figure-hover-neon: #8ec5ff;
+  --figure-card-accent: #8ec5ff;
+  --figure-frequency-color: #7cc3ff;
 }
 
 /* --- Numerals stay in the archive typewriter (legibility first), but
@@ -19372,3 +19370,242 @@ body {
   letter-spacing: 0.08em;
 }
 
+/* ==========================================================================
+   ARCHIVE INDEX PAGES (/records, /data, /cite, /sources, /places, /periods,
+   /narrative-types and every record page) — dark theme only.
+   These pages had kept the first-generation box-in-box treatment and their
+   own top navigation. They now sit on the same desk as every other view:
+   one bordered canvas, flat sections separated by rules, the VT323 page
+   title, CLI prompts on labels, and the shared bottom dock (theme control,
+   About / Source / view cycle) as the only navigation chrome. The index
+   family's own links live on one "> INDEX" line at the foot of the canvas.
+   ========================================================================== */
+:root:not([data-theme="light"]) .publication-canvas {
+  border: 1px solid rgba(196, 199, 196, 0.14);
+  background: var(--panel);
+  padding: clamp(16px, 2.4svh, 26px) clamp(18px, 2.4vw, 34px) clamp(18px, 2.6svh, 30px);
+}
+
+:root:not([data-theme="light"]) .publication-console-bar {
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  padding-bottom: 10px;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 242, 237, 0.14);
+  background: transparent;
+}
+
+:root:not([data-theme="light"]) .publication-console-bar > a {
+  padding: 0;
+}
+
+:root:not([data-theme="light"]) .publication-console-bar > span {
+  display: block;
+  padding: 0;
+  border: 0;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+:root:not([data-theme="light"]) .publication-console-bar > span::before {
+  content: "> ";
+}
+
+:root:not([data-theme="light"]) .publication-breadcrumbs {
+  min-height: 0;
+  margin: 12px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+}
+
+:root:not([data-theme="light"]) .publication-breadcrumbs::before {
+  content: "> ";
+}
+
+:root:not([data-theme="light"]) .publication-breadcrumbs a {
+  color: inherit;
+}
+
+:root:not([data-theme="light"]) .publication-breadcrumbs i {
+  color: rgba(242, 242, 237, 0.3);
+}
+
+:root:not([data-theme="light"]) .publication-hero {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding: clamp(22px, 3.4svh, 40px) 0 clamp(18px, 2.6svh, 28px);
+  border: 0;
+  border-bottom: 1px solid rgba(242, 242, 237, 0.14);
+  background: transparent;
+}
+
+:root:not([data-theme="light"]) .publication-hero > span {
+  grid-row: auto;
+  padding: 0;
+  color: var(--blue);
+}
+
+:root:not([data-theme="light"]) .publication-hero > span::before {
+  content: "> ";
+}
+
+:root:not([data-theme="light"]) .publication-hero h1 {
+  max-width: none;
+  font-family: var(--font-terminal-display), var(--font-ui-mono);
+  font-size: clamp(2.5rem, 4.8vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 0.92;
+}
+
+:root:not([data-theme="light"]) .publication-hero p {
+  color: rgba(244, 241, 232, 0.86);
+}
+
+:root:not([data-theme="light"]) .publication-stats {
+  gap: 12px 28px;
+  margin: 0;
+  padding: 16px 0 18px;
+  border-bottom: 1px solid rgba(242, 242, 237, 0.14);
+  background: transparent;
+}
+
+:root:not([data-theme="light"]) .publication-stats div {
+  padding: 0;
+  background: transparent;
+}
+
+:root:not([data-theme="light"]) .publication-stats dt {
+  color: var(--blue);
+}
+
+:root:not([data-theme="light"]) .publication-stats dt::before {
+  content: "> ";
+}
+
+:root:not([data-theme="light"]) .publication-stats dd {
+  margin-top: 8px;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+:root:not([data-theme="light"]) .publication-notice {
+  margin: 16px 0 0;
+  padding: 4px 0 4px 14px;
+  background: transparent;
+  color: rgba(244, 241, 232, 0.8);
+}
+
+:root:not([data-theme="light"]) .publication-content {
+  gap: 0;
+  margin-top: 6px;
+}
+
+:root:not([data-theme="light"]) .publication-section {
+  padding: 20px 0 24px;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 242, 237, 0.14);
+  background: transparent;
+}
+
+:root:not([data-theme="light"]) .publication-section h2 {
+  padding: 0 0 14px;
+  border: 0;
+}
+
+:root:not([data-theme="light"]) .publication-section h2::before {
+  content: "[ ";
+  color: var(--blue);
+}
+
+:root:not([data-theme="light"]) .publication-section h2::after {
+  content: " ]";
+  color: var(--blue);
+}
+
+:root:not([data-theme="light"]) .publication-section p,
+:root:not([data-theme="light"]) .publication-prose-list {
+  margin-inline: 0;
+  color: rgba(244, 241, 232, 0.86);
+}
+
+:root:not([data-theme="light"]) .publication-section > p + .publication-link-row,
+:root:not([data-theme="light"]) .publication-section > p + .citation-samples,
+:root:not([data-theme="light"]) .publication-section > .publication-prose-list + .publication-link-row {
+  margin-top: 16px;
+}
+
+:root:not([data-theme="light"]) .publication-definition-list {
+  gap: 0 32px;
+  background: transparent;
+}
+
+:root:not([data-theme="light"]) .publication-definition-list div {
+  padding: 10px 0;
+  border-bottom: 1px dotted rgba(242, 242, 237, 0.24);
+  background: transparent;
+}
+
+:root:not([data-theme="light"]) .publication-definition-list dt {
+  color: var(--blue);
+}
+
+:root:not([data-theme="light"]) .publication-definition-list dd {
+  font-weight: 700;
+}
+
+:root:not([data-theme="light"]) .publication-link-row a,
+:root:not([data-theme="light"]) .publication-pagination a {
+  border-color: rgba(242, 242, 237, 0.22);
+}
+
+:root:not([data-theme="light"]) .publication-footer {
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 0;
+  padding: 16px 0 0;
+  border: 0;
+  background: transparent;
+  color: rgba(242, 242, 237, 0.62);
+}
+
+:root:not([data-theme="light"]) .publication-footer nav {
+  gap: 0;
+}
+
+:root:not([data-theme="light"]) .publication-footer nav::before {
+  content: "> INDEX";
+  margin-right: 12px;
+  color: var(--blue);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+:root:not([data-theme="light"]) .publication-footer nav a {
+  color: var(--ink);
+}
+
+:root:not([data-theme="light"]) .publication-footer nav a + a::before {
+  content: "/";
+  margin: 0 9px;
+  color: rgba(242, 242, 237, 0.3);
+}
+
+/* The dock stays on screen while the document scrolls, exactly where it sits
+   on the fixed-height views; it carries the desk colour so content passes
+   behind it cleanly. */
+:root:not([data-theme="light"]) .publication-display-controls {
+  position: sticky;
+  bottom: 0;
+  margin-top: 0;
+  padding: var(--dock-gap) 0 var(--stage-edge);
+  background: #0a0b0a;
+}
+
+:root:not([data-theme="light"]) .publication-frame {
+  padding-bottom: 0;
+}
