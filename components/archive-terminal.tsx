@@ -1867,6 +1867,15 @@ function MapView({
           preserveAspectRatio="xMidYMid meet"
           aria-label="Mapped public records"
         >
+          {hoverShape ? <path className="state-hover-outline" d={hoverShape.d} aria-hidden="true" /> : null}
+          <MapFlagPlane
+            flags={mapFlags}
+            lookup={derived.mapFlagRecordLookup}
+            onHoverState={setHoverState}
+            onSelectRecord={onSelectRecord}
+          />
+          {/* State labels last so they sit above the flags (they take no
+              pointer events, so hover/click still reach the dots). */}
           <g className="state-label-layer" aria-hidden="true">
             {STATE_SHAPES.map((state) => {
               const label = STATE_LABEL_OVERRIDES[state.code as keyof typeof STATE_NAMES] ?? state.label;
@@ -1882,13 +1891,6 @@ function MapView({
               );
             })}
           </g>
-          {hoverShape ? <path className="state-hover-outline" d={hoverShape.d} aria-hidden="true" /> : null}
-          <MapFlagPlane
-            flags={mapFlags}
-            lookup={derived.mapFlagRecordLookup}
-            onHoverState={setHoverState}
-            onSelectRecord={onSelectRecord}
-          />
         </svg>
         <MapTerrainKey />
       </div>
