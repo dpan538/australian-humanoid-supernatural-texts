@@ -1,6 +1,6 @@
 "use client";
 
-import { CSSProperties, memo, useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { CSSProperties, memo, useCallback, useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import type { KeyboardEvent as ReactKeyboardEvent, RefObject } from "react";
 import Link from "next/link";
 import { createTimeline, stagger } from "animejs";
@@ -9,7 +9,7 @@ import type { DateBand, FrontendData, MapFlagItem, RecordItem } from "@/lib/type
 import { MAP_BOUNDARY_SOURCE, MAP_VIEWBOX, STATE_SHAPES, TERRAIN_TILES } from "@/lib/au-map-data";
 import { figureProfileFor } from "@/lib/figure-profiles";
 import type { FigureProfile } from "@/lib/figure-profiles";
-import { FRONTEND_DATA_URL, MOBILE_ARCHIVE_DATA_URL } from "@/lib/frontend-data";
+import { FRONTEND_DATA_EXPECTED_BYTES, FRONTEND_DATA_URL, MOBILE_ARCHIVE_DATA_URL } from "@/lib/frontend-data";
 import type { MobileArchiveData } from "@/lib/mobile-archive-data";
 import { SourceView } from "@/components/source/source-view";
 import { DisplayControls } from "@/components/display-controls";
@@ -44,12 +44,6 @@ const VIEW_PATHS: Record<ViewMode | CycleView, string> = {
 };
 const LOADING_TITLE = "AusFigures";
 const LOADING_INTRO = "A source-grounded archive of Australian supernatural humanoid narratives.";
-const LOADING_BOOT_LINES = [
-  "Reading static public archive export",
-  "Indexing mapped display records",
-  "Separating source text from claim",
-] as const;
-
 const STATE_NAMES: Record<string, string> = {
   WA: "Western Australia",
   NT: "Northern Territory",
@@ -104,13 +98,15 @@ const NARRATIVE_TYPE_LABELS: Record<string, string> = {
 };
 
 const DENSITY_CHARS = [" ", ".", ":", "+", "#"];
+// Glyphs double as the tile texture: each needs enough ink to read at
+// pattern size, which is why desert and plain are not "." and "_".
 const TERRAIN_SYMBOLS = {
   range: "+",
   plateau: "@",
   upland: "#",
   lowland: "o",
-  desert: ".",
-  plain: "_",
+  desert: ":",
+  plain: "-",
   basin: "$",
 } as const;
 
@@ -489,21 +485,95 @@ type FrontendDerivedData = {
   undatedRecordCount: number;
 };
 
+type FrontendLoadProgress = {
+  received: number;
+  total: number | null;
+  done: boolean;
+};
+
+const INITIAL_LOAD_PROGRESS: FrontendLoadProgress = { received: 0, total: null, done: false };
+let frontendLoadProgress: FrontendLoadProgress = INITIAL_LOAD_PROGRESS;
+const frontendLoadListeners = new Set<() => void>();
+
+function publishLoadProgress(next: FrontendLoadProgress) {
+  frontendLoadProgress = next;
+  frontendLoadListeners.forEach((listener) => listener());
+}
+
+function subscribeLoadProgress(listener: () => void) {
+  frontendLoadListeners.add(listener);
+  return () => {
+    frontendLoadListeners.delete(listener);
+  };
+}
+
+function getLoadProgress() {
+  return frontendLoadProgress;
+}
+
+function getInitialLoadProgress() {
+  return INITIAL_LOAD_PROGRESS;
+}
+
+/**
+ * Streams the interactive export so the boot screen can show real bytes
+ * received. Content-Length is only trusted as the total when the body is not
+ * content-encoded (otherwise it is the compressed size); the decoded size
+ * constant paces the figure in that case. Progress is published at most
+ * ~12 times a second.
+ */
 function loadFrontendData() {
   if (frontendDataCache) {
     return Promise.resolve(frontendDataCache);
   }
   if (!frontendDataPromise) {
     frontendDataPromise = fetch(FRONTEND_DATA_URL)
-      .then((response) => {
+      .then(async (response) => {
         if (!response.ok) {
           throw new Error(`Frontend data request failed: ${response.status}`);
         }
-        return response.json() as Promise<FrontendData>;
+        const encoded = response.headers.get("content-encoding");
+        const lengthHeader = Number(response.headers.get("content-length"));
+        const total = !encoded && Number.isFinite(lengthHeader) && lengthHeader > 0 ? lengthHeader : null;
+        if (!response.body) {
+          const payload = (await response.json()) as FrontendData;
+          publishLoadProgress({ received: total ?? 0, total, done: true });
+          return payload;
+        }
+        const reader = response.body.getReader();
+        const chunks: Uint8Array[] = [];
+        let received = 0;
+        let lastPublish = 0;
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) {
+            break;
+          }
+          chunks.push(value);
+          received += value.byteLength;
+          const now = performance.now();
+          if (now - lastPublish > 80) {
+            lastPublish = now;
+            publishLoadProgress({ received, total, done: false });
+          }
+        }
+        const bytes = new Uint8Array(received);
+        let offset = 0;
+        for (const chunk of chunks) {
+          bytes.set(chunk, offset);
+          offset += chunk.byteLength;
+        }
+        const payload = JSON.parse(new TextDecoder().decode(bytes)) as FrontendData;
+        publishLoadProgress({ received, total: total ?? received, done: true });
+        return payload;
       })
       .then((payload) => {
         frontendDataCache = payload;
         return payload;
+      })
+      .catch((error) => {
+        frontendDataPromise = null;
+        throw error;
       });
   }
   return frontendDataPromise;
@@ -1186,26 +1256,29 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
       onComplete: finishLoading,
     });
 
+    // Checkpoints tick in sequence, the completion line draws, the figure
+    // walks off the right edge (CSS transition on .loading-is-complete), and
+    // only then does the panel yield to the map's own growth animation.
+    addIfTargets(timeline, loadingRoot.querySelectorAll(".loading-checkpoint-mark"), {
+      opacity: 1,
+      duration: 1,
+      delay: stagger(170),
+    }, 0);
     addIfTargets(timeline, loadingRoot.querySelectorAll(".loading-complete-line"), {
       opacity: [0.35, 1],
       scaleX: [0, 1],
-      duration: 320,
-    }, 0);
-    addIfTargets(timeline, loadingRoot.querySelectorAll(".loading-pixel-figure"), {
-      opacity: [1, 0],
-      translateY: [0, -3],
-      duration: 220,
-    }, 220);
+      duration: 420,
+    }, 340);
     addIfTargets(timeline, loadingRoot.querySelectorAll(".loading-typewriter-line, .loading-runner-label, .loading-mobile-detail"), {
       opacity: [1, 0],
       translateY: [0, -6],
       duration: 220,
       delay: stagger(24),
-    }, 260);
+    }, 900);
     timeline.add(loadingRoot, {
       opacity: [1, 0],
       duration: 180,
-    }, 460);
+    }, 1080);
 
     return () => {
       cancelled = true;
@@ -1265,7 +1338,7 @@ export function ArchiveTerminalRoute({ view }: { view: ViewMode }) {
 
   return (
     <ArchiveTerminalShell view={view}>
-      <ArchiveLoadingState view={view} error={error} loadingRef={loadingRef} />
+      <ArchiveLoadingState view={view} error={error} loadingRef={loadingRef} data={data} />
     </ArchiveTerminalShell>
   );
 }
@@ -1357,21 +1430,39 @@ function MobileArchiveLoadingState({
   );
 }
 
+function formatMegabytes(bytes: number) {
+  return (bytes / 1_000_000).toFixed(1);
+}
+
 function ArchiveLoadingState({
   view,
   error,
   loadingRef,
+  data = null,
 }: {
   view: ViewMode;
   error: string | null;
   loadingRef: RefObject<HTMLDivElement | null>;
+  data?: FrontendData | null;
 }) {
+  const progress = useSyncExternalStore(subscribeLoadProgress, getLoadProgress, getInitialLoadProgress);
   const isMap = view === "map";
-  const runnerLabel = error
+  const paceTotal = progress.total ?? FRONTEND_DATA_EXPECTED_BYTES;
+  const ratio = progress.done ? 1 : Math.min(1, progress.received / Math.max(1, paceTotal));
+  const progressLabel = error
     ? `${VIEW_LABELS[view]} view paused`
-    : isMap
-      ? "Map view initializing"
-      : `${VIEW_LABELS[view]} view initializing`;
+    : progress.done
+      ? `EXPORT READ ${formatMegabytes(progress.received)} MB`
+      : progress.total
+        ? `READING EXPORT ${formatMegabytes(progress.received)} / ${formatMegabytes(progress.total)} MB`
+        : `READING EXPORT ${formatMegabytes(progress.received)} MB`;
+  const recordCount = data ? numberFormat(data.summary.record_count) : null;
+  const flagCount = data ? numberFormat(data.summary.map_flag_count ?? data.summary.mapped_record_count) : null;
+  const checkpoints: Array<{ label: string; detail: string | null; done: boolean }> = [
+    { label: "READ PUBLIC EXPORT", detail: recordCount ? `${recordCount} records` : null, done: progress.done },
+    { label: "INDEX MAPPED RECORDS", detail: flagCount ? `${flagCount} flags` : null, done: false },
+    { label: "SEPARATE SOURCE FROM CLAIM", detail: null, done: false },
+  ];
   const loadingStatusItems = error
     ? [
         ["Archive state", "Data unavailable"],
@@ -1413,21 +1504,47 @@ function ArchiveLoadingState({
             </>
           )}
         </div>
-        <div className="loading-runner" aria-hidden="true">
+        {/* The figure's position on the track is the real download ratio
+            (--boot-progress drives a CSS transform); its walk cycle is a
+            three-frame sprite toggled by CSS steps(). */}
+        <div className="loading-runner" aria-hidden="true" style={{ "--boot-progress": ratio } as CSSProperties}>
           <span className="loading-track" />
           <span className="loading-complete-line" />
           <svg className="loading-pixel-figure" viewBox="0 0 16 16" focusable="false">
-            <rect x="6" y="1" width="4" height="4" />
-            <rect x="5" y="5" width="6" height="5" />
-            <rect x="3" y="6" width="2" height="4" />
-            <rect x="11" y="6" width="2" height="4" />
-            <rect x="5" y="10" width="2" height="5" />
-            <rect x="9" y="10" width="2" height="5" />
-            <rect x="4" y="14" width="3" height="1" />
-            <rect x="9" y="14" width="3" height="1" />
+            <g className="loading-sprite-frame loading-sprite-frame-a">
+              <rect x="6" y="1" width="4" height="4" />
+              <rect x="5" y="5" width="6" height="5" />
+              <rect x="3" y="6" width="2" height="4" />
+              <rect x="11" y="6" width="2" height="4" />
+              <rect x="5" y="10" width="2" height="5" />
+              <rect x="9" y="10" width="2" height="5" />
+              <rect x="4" y="14" width="3" height="1" />
+              <rect x="9" y="14" width="3" height="1" />
+            </g>
+            <g className="loading-sprite-frame loading-sprite-frame-b">
+              <rect x="6" y="1" width="4" height="4" />
+              <rect x="5" y="5" width="6" height="5" />
+              <rect x="2" y="7" width="3" height="2" />
+              <rect x="11" y="5" width="3" height="2" />
+              <rect x="4" y="10" width="2" height="4" />
+              <rect x="10" y="10" width="2" height="4" />
+              <rect x="2" y="13" width="3" height="1" />
+              <rect x="11" y="13" width="3" height="1" />
+            </g>
+            <g className="loading-sprite-frame loading-sprite-frame-c">
+              <rect x="6" y="1" width="4" height="4" />
+              <rect x="10" y="2" width="1" height="1" />
+              <rect x="5" y="5" width="6" height="5" />
+              <rect x="3" y="6" width="2" height="4" />
+              <rect x="11" y="6" width="2" height="4" />
+              <rect x="6" y="10" width="2" height="5" />
+              <rect x="8" y="10" width="2" height="5" />
+              <rect x="5" y="14" width="3" height="1" />
+              <rect x="8" y="14" width="3" height="1" />
+            </g>
           </svg>
         </div>
-        <span className="loading-runner-label">{runnerLabel}</span>
+        <span className="loading-runner-label">{progressLabel}</span>
         <div className="loading-mobile-detail" aria-hidden={error ? undefined : "true"}>
           <div className="loading-status-grid">
             {loadingStatusItems.map(([label, value]) => (
@@ -1437,15 +1554,17 @@ function ArchiveLoadingState({
               </span>
             ))}
           </div>
-          <div className="loading-boot-log">
-            {LOADING_BOOT_LINES.map((line, index) => (
-              <span className="loading-boot-line" key={line} style={{ "--boot-line-index": index } as CSSProperties}>
-                {line}
+          <div className="loading-checkpoints">
+            {checkpoints.map((checkpoint) => (
+              <span className={checkpoint.done ? "loading-checkpoint is-done" : "loading-checkpoint"} key={checkpoint.label}>
+                <b className="loading-checkpoint-mark">■</b>
+                <span>{checkpoint.label}</span>
+                {checkpoint.detail ? <small>{checkpoint.detail}</small> : null}
               </span>
             ))}
           </div>
           <p className="loading-interpretation-note">
-            Public source exists does not mean a supernatural claim is verified.
+            A public source existing does not mean a supernatural claim is verified.
           </p>
         </div>
       </div>
@@ -1712,64 +1831,14 @@ function MapView({
   derived: FrontendDerivedData;
   onSelectRecord: (record: RecordItem) => void;
 }) {
-  const mapLayerRef = useRef<SVGGElement | null>(null);
   const [hoverState, setHoverState] = useState<string | null>(null);
-  const [hoverRecordId, setHoverRecordId] = useState<number | null>(null);
-  const [selectedRecordId, setSelectedRecordId] = useState<number | null>(null);
   const stateCounts = data.summary.corpus_state_counts ?? data.summary.state_record_counts;
   const mapFlags = derived.mapFlags;
   const preciseStateCounts = derived.mappedStateCounts;
   const activeState = hoverState ? STATE_NAMES[hoverState] : "Australia";
   const activeCount = hoverState ? preciseStateCounts[hoverState] ?? 0 : mapFlags.length;
-  const flagSignature = `${mapFlags.length}:${mapFlags[0]?.flag_id ?? "none"}:${mapFlags.at(-1)?.flag_id ?? "none"}`;
   const sourceLegend = useMemo(() => buildMapSourceLegend(mapFlags), [mapFlags]);
-
-  useMapFlagGrowth(mapLayerRef, flagSignature);
-
-  const hoverFlagFromEvent = useCallback((event: React.SyntheticEvent<SVGGElement>) => {
-    const element = flagTargetFromEvent(event);
-    const recordId = Number(element?.getAttribute("data-record-id"));
-    const flag = Number.isFinite(recordId) ? derived.mapFlagRecordLookup.get(recordId) : null;
-    if (!flag) {
-      return;
-    }
-    setHoverRecordId(flag.record_id);
-    setHoverState(flag.state_territory);
-  }, [derived.mapFlagRecordLookup]);
-
-  const clearFlagHover = useCallback(() => {
-    setHoverRecordId(null);
-    setHoverState(null);
-  }, []);
-
-  const clearFlagFocus = useCallback((event: React.FocusEvent<SVGGElement>) => {
-    if (event.relatedTarget instanceof Node && event.currentTarget.contains(event.relatedTarget)) {
-      return;
-    }
-    clearFlagHover();
-  }, [clearFlagHover]);
-
-  const selectFlagFromEvent = useCallback((event: React.SyntheticEvent<SVGGElement>) => {
-    const element = flagTargetFromEvent(event);
-    const recordId = Number(element?.getAttribute("data-record-id"));
-    const flag = Number.isFinite(recordId) ? derived.mapFlagRecordLookup.get(recordId) : null;
-    if (flag) {
-      setSelectedRecordId(flag.record_id);
-      onSelectRecord(flag.record);
-    }
-  }, [derived.mapFlagRecordLookup, onSelectRecord]);
-
-  const handleFlagKeyDown = useCallback((event: React.KeyboardEvent<SVGGElement>) => {
-    if (event.key !== "Enter" && event.key !== " ") {
-      return;
-    }
-    const element = flagTargetFromEvent(event);
-    if (!element) {
-      return;
-    }
-    event.preventDefault();
-    selectFlagFromEvent(event);
-  }, [selectFlagFromEvent]);
+  const hoverShape = hoverState ? STATE_SHAPES.find((state) => state.code === hoverState) ?? null : null;
 
   return (
     <div className="map-view">
@@ -1782,53 +1851,22 @@ function MapView({
         <span>MAP</span>
         <b>Public records by display location</b>
       </header>
+      {/* Three stacked SVG planes share one viewBox. The base plane (state
+          fills, coast) and the terrain planes are memoised with props that
+          never change, so they render once at load. Hovering a state only
+          swaps one outline path in the flag plane and updates the readout;
+          hovering a flag moves one label imperatively. The terrain planes
+          breathe in rotation through a CSS opacity animation on each plane
+          (compositor work only). */}
       <div className="map-canvas">
+        <MapBasePlane stateCounts={stateCounts} onHoverState={setHoverState} />
+        <MapTerrainPlanes />
         <svg
-          className="australia-map"
+          className="australia-map map-flag-plane"
           viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
           preserveAspectRatio="xMidYMid meet"
-          role="img"
-          aria-label="Public record map of Australia by state and territory"
+          aria-label="Mapped public records"
         >
-          <MapPatternDefs />
-          <TerrainSurfaceLayer hoverState={hoverState} />
-          {STATE_SHAPES.map((state) => {
-            const count = stateCounts[state.code] ?? 0;
-            const intensity = count > 1 ? "hot" : count === 1 ? "warm" : "cold";
-            return (
-              <g key={state.code}>
-                <path
-                  className={`state-shape ${hoverState === state.code ? "hovered" : ""} ${intensity}`}
-                  d={state.d}
-                  onMouseEnter={() => setHoverState(state.code)}
-                  onPointerEnter={() => setHoverState(state.code)}
-                  onMouseLeave={() => setHoverState(null)}
-                  onPointerLeave={() => setHoverState(null)}
-                />
-              </g>
-            );
-          })}
-          <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
-          <g
-            ref={mapLayerRef}
-            className={`record-flag-layer ${hoverState ? "has-state-hover" : ""} ${hoverRecordId ? "has-hover" : ""}`}
-            aria-label="Strict geocoded public record flags"
-            onPointerOver={hoverFlagFromEvent}
-            onPointerLeave={clearFlagHover}
-            onFocus={hoverFlagFromEvent}
-            onBlur={clearFlagFocus}
-            onClick={selectFlagFromEvent}
-            onKeyDown={handleFlagKeyDown}
-          >
-            {mapFlags.map((flag) => (
-              <MapFlagMarker
-                key={flag.flag_id}
-                flag={flag}
-                active={hoverRecordId === flag.record_id || selectedRecordId === flag.record_id}
-                stateLinked={hoverState === flag.state_territory}
-              />
-            ))}
-          </g>
           <g className="state-label-layer" aria-hidden="true">
             {STATE_SHAPES.map((state) => {
               const label = STATE_LABEL_OVERRIDES[state.code as keyof typeof STATE_NAMES] ?? state.label;
@@ -1844,8 +1882,15 @@ function MapView({
               );
             })}
           </g>
-          <TerrainLegend />
+          {hoverShape ? <path className="state-hover-outline" d={hoverShape.d} aria-hidden="true" /> : null}
+          <MapFlagPlane
+            flags={mapFlags}
+            lookup={derived.mapFlagRecordLookup}
+            onHoverState={setHoverState}
+            onSelectRecord={onSelectRecord}
+          />
         </svg>
+        <MapTerrainKey />
       </div>
       <p className="mobile-map-note">
         Markers are public display locations for records, not proof, habitats, or populations.
@@ -1865,9 +1910,7 @@ function MapView({
               type="button"
               className={hoverState === code ? "state-mini active" : "state-mini"}
               key={code}
-              onMouseEnter={() => setHoverState(code)}
               onPointerEnter={() => setHoverState(code)}
-              onMouseLeave={() => setHoverState(null)}
               onPointerLeave={() => setHoverState(null)}
               onFocus={() => setHoverState(code)}
               onBlur={() => setHoverState(null)}
@@ -1890,51 +1933,248 @@ function MapView({
   );
 }
 
-const MapFlagMarker = memo(function MapFlagMarker({
-  flag,
-  active,
-  stateLinked,
+const MapBasePlane = memo(function MapBasePlane({
+  stateCounts,
+  onHoverState,
 }: {
-  flag: MapFlagRenderItem;
-  active: boolean;
-  stateLinked: boolean;
+  stateCounts: Record<string, number>;
+  onHoverState: (code: string | null) => void;
 }) {
-  const className = ["record-flag", "precise", flag.toneClass, active ? "active" : "", stateLinked ? "state-linked" : ""]
-    .filter(Boolean)
-    .join(" ");
-  const label = flag.title || flag.canonical_figure || `Record ${flag.record_id}`;
-  const dotRadius = active ? 5.2 : stateLinked ? 3.8 : 3.6;
+  return (
+    <svg
+      className="australia-map map-base-plane"
+      viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
+      preserveAspectRatio="xMidYMid meet"
+      role="img"
+      aria-label="Public record map of Australia by state and territory"
+    >
+      {STATE_SHAPES.map((state) => {
+        const count = stateCounts[state.code] ?? 0;
+        const intensity = count > 1 ? "hot" : count === 1 ? "warm" : "cold";
+        return (
+          <path
+            key={state.code}
+            className={`state-shape ${intensity}`}
+            d={state.d}
+            onPointerEnter={() => onHoverState(state.code)}
+            onPointerLeave={() => onHoverState(null)}
+          />
+        );
+      })}
+      <path className="coast-outline" d={STATE_SHAPES.map((state) => state.d).join(" ")} />
+    </svg>
+  );
+});
+
+/* One SVG per landform kind: its pattern, the clip paths of the states that
+   use it, and one clipped rect per state. Each plane is a separate element so
+   the breathing (CSS opacity on the plane) is applied at composite time and
+   never re-rasterises the text-glyph patterns. */
+const MapTerrainPlanes = memo(function MapTerrainPlanes() {
+  return (
+    <>
+      {TERRAIN_KINDS.map((kind, index) => {
+        const states = STATE_SHAPES.filter((state) => (STATE_TERRAIN_KINDS[state.code] ?? ["plain"]).slice(0, 3).includes(kind));
+        if (!states.length) {
+          return null;
+        }
+        return (
+          <svg
+            key={kind}
+            className={`australia-map terrain-surface-layer terrain-surface-layer-${kind}`}
+            viewBox={`0 0 ${MAP_VIEWBOX.width} ${MAP_VIEWBOX.height}`}
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden="true"
+            focusable="false"
+            style={{ "--kind-index": index } as CSSProperties}
+          >
+            <defs>
+              <pattern
+                id={`terrain-pattern-${kind}`}
+                width={kind === "plain" ? 36 : 42}
+                height={kind === "plain" ? 30 : 38}
+                patternUnits="userSpaceOnUse"
+                patternTransform={`translate(${index * 7} ${index * 5})`}
+              >
+                <text className={`terrain-pattern-symbol terrain-pattern-${kind}`} x="5" y="13">
+                  {TERRAIN_SYMBOLS[kind]}
+                </text>
+                <text className={`terrain-pattern-symbol terrain-pattern-${kind}`} x="22" y="28">
+                  {TERRAIN_SYMBOLS[kind]}
+                </text>
+                <text className={`terrain-pattern-symbol terrain-pattern-${kind}`} x="31" y="11">
+                  {TERRAIN_SYMBOLS[kind]}
+                </text>
+              </pattern>
+              {states.map((state) => (
+                <clipPath key={state.code} id={`terrain-${kind}-clip-${state.code}`}>
+                  <path d={state.d} />
+                </clipPath>
+              ))}
+            </defs>
+            {states.map((state) => (
+              <rect
+                key={state.code}
+                className={`terrain-surface terrain-surface-${kind}`}
+                style={{ "--terrain-rank": (STATE_TERRAIN_KINDS[state.code] ?? ["plain"]).indexOf(kind) } as CSSProperties}
+                clipPath={`url(#terrain-${kind}-clip-${state.code})`}
+                x="0"
+                y="0"
+                width={MAP_VIEWBOX.width}
+                height={MAP_VIEWBOX.height}
+                fill={`url(#terrain-pattern-${kind})`}
+              />
+            ))}
+          </svg>
+        );
+      })}
+    </>
+  );
+});
+
+/* Flags render once; hover and selection are handled imperatively on two
+   floating elements so no flag ever re-renders after the growth animation. */
+const MapFlagPlane = memo(function MapFlagPlane({
+  flags,
+  lookup,
+  onHoverState,
+  onSelectRecord,
+}: {
+  flags: MapFlagRenderItem[];
+  lookup: Map<number, MapFlagRenderItem>;
+  onHoverState: (code: string | null) => void;
+  onSelectRecord: (record: RecordItem) => void;
+}) {
+  const layerRef = useRef<SVGGElement | null>(null);
+  const labelRef = useRef<SVGGElement | null>(null);
+  const labelTextRef = useRef<SVGTextElement | null>(null);
+  const selectedRef = useRef<SVGCircleElement | null>(null);
+  const flagSignature = `${flags.length}:${flags[0]?.flag_id ?? "none"}:${flags.at(-1)?.flag_id ?? "none"}`;
+
+  useMapFlagGrowth(layerRef, flagSignature);
+
+  const flagFromEvent = useCallback((event: React.SyntheticEvent<SVGGElement>) => {
+    const element = flagTargetFromEvent(event);
+    const recordId = Number(element?.getAttribute("data-record-id"));
+    return Number.isFinite(recordId) ? lookup.get(recordId) ?? null : null;
+  }, [lookup]);
+
+  const showLabel = useCallback((flag: MapFlagRenderItem) => {
+    const label = labelRef.current;
+    const text = labelTextRef.current;
+    if (!label || !text) {
+      return;
+    }
+    // Put the label on the side with more room: left of the point in the
+    // eastern third, below it near the top edge, otherwise above-right.
+    const right = flag.displayX < MAP_VIEWBOX.width * 0.62;
+    const below = flag.displayY < 72;
+    text.textContent = `${flag.year ?? "--"} / ${truncate(flag.canonical_figure ?? flag.title ?? `Record ${flag.record_id}`, 28)}`;
+    text.setAttribute("text-anchor", right ? "start" : "end");
+    label.setAttribute(
+      "transform",
+      `translate(${(flag.displayX + (right ? 11 : -11)).toFixed(1)} ${(flag.displayY + (below ? 20 : -10)).toFixed(1)})`,
+    );
+    label.style.visibility = "visible";
+    onHoverState(flag.state_territory);
+  }, [onHoverState]);
+
+  const hideLabel = useCallback(() => {
+    if (labelRef.current) {
+      labelRef.current.style.visibility = "hidden";
+    }
+    onHoverState(null);
+  }, [onHoverState]);
+
+  const select = useCallback((flag: MapFlagRenderItem) => {
+    const ring = selectedRef.current;
+    if (ring) {
+      ring.setAttribute("cx", String(flag.displayX));
+      ring.setAttribute("cy", String(flag.displayY));
+      ring.style.visibility = "visible";
+    }
+    onSelectRecord(flag.record);
+  }, [onSelectRecord]);
+
+  const handlePointerOver = useCallback((event: React.PointerEvent<SVGGElement>) => {
+    const flag = flagFromEvent(event);
+    if (flag) {
+      showLabel(flag);
+    }
+  }, [flagFromEvent, showLabel]);
+
+  const handleFocus = useCallback((event: React.FocusEvent<SVGGElement>) => {
+    const flag = flagFromEvent(event);
+    if (flag) {
+      showLabel(flag);
+    }
+  }, [flagFromEvent, showLabel]);
+
+  const handleBlur = useCallback((event: React.FocusEvent<SVGGElement>) => {
+    if (event.relatedTarget instanceof Node && event.currentTarget.contains(event.relatedTarget)) {
+      return;
+    }
+    hideLabel();
+  }, [hideLabel]);
+
+  const handleClick = useCallback((event: React.MouseEvent<SVGGElement>) => {
+    const flag = flagFromEvent(event);
+    if (flag) {
+      select(flag);
+    }
+  }, [flagFromEvent, select]);
+
+  const handleKeyDown = useCallback((event: ReactKeyboardEvent<SVGGElement>) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+    const flag = flagFromEvent(event);
+    if (!flag) {
+      return;
+    }
+    event.preventDefault();
+    select(flag);
+  }, [flagFromEvent, select]);
 
   return (
-    <g
-      className={className}
-      data-record-id={flag.record_id}
-      role="button"
-      tabIndex={0}
-      aria-label={`Open mapped record ${label}`}
-    >
-      <circle className="record-flag-hit" cx={flag.displayX} cy={flag.displayY} r="10" />
-      <circle
-        className="record-flag-dot"
-        cx={flag.displayX}
-        cy={flag.displayY}
-        r={dotRadius}
-        data-growth-bucket={flag.growthBucket}
-        data-growth-order={flag.growthOrder}
-      />
-      {active ? <circle className="record-flag-active-ring" cx={flag.displayX} cy={flag.displayY} r="8.1" /> : null}
-      {active ? (
-        <text className="record-flag-label" x={Math.min(flag.displayX + 12, MAP_VIEWBOX.width - 150)} y={Math.max(flag.displayY - 10, 26)}>
-          {flag.year ?? "--"} / {truncate(flag.canonical_figure ?? label, 24)}
-        </text>
-      ) : null}
-    </g>
+    <>
+      <g
+        ref={layerRef}
+        className="record-flag-layer"
+        aria-label="Strict geocoded public record flags"
+        onPointerOver={handlePointerOver}
+        onPointerLeave={hideLabel}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+      >
+        {flags.map((flag) => {
+          const label = flag.title || flag.canonical_figure || `Record ${flag.record_id}`;
+          return (
+            <circle
+              key={flag.flag_id}
+              className={`record-flag record-flag-dot ${flag.toneClass}`}
+              cx={flag.displayX}
+              cy={flag.displayY}
+              r="3.6"
+              data-record-id={flag.record_id}
+              data-growth-bucket={flag.growthBucket}
+              data-growth-order={flag.growthOrder}
+              role="button"
+              tabIndex={0}
+              aria-label={`Open mapped record ${label}`}
+            />
+          );
+        })}
+      </g>
+      <circle ref={selectedRef} className="map-selected-ring" cx="0" cy="0" r="7.4" style={{ visibility: "hidden" }} aria-hidden="true" />
+      <g ref={labelRef} className="map-hover-label" style={{ visibility: "hidden" }} aria-hidden="true">
+        <text ref={labelTextRef} className="record-flag-label" x="0" y="0" />
+      </g>
+    </>
   );
-}, (prev, next) => (
-  prev.flag === next.flag &&
-  prev.active === next.active &&
-  prev.stateLinked === next.stateLinked
-));
+});
 
 function MapSourceLegend({ items }: { items: MapSourceLegendItem[] }) {
   return (
@@ -1953,97 +2193,31 @@ function MapSourceLegend({ items }: { items: MapSourceLegendItem[] }) {
   );
 }
 
-function TerrainLegend() {
-  const frameWidth = 242;
-  const frameHeight = 84;
-  const inset = 14;
-  const columnGap = 124;
-
+/* Bottom-left key, in HTML so it can be set at a readable size. Each row runs
+   the same 25s clock as its terrain plane, so the row that is lit is the
+   landform currently breathing on the map. */
+const MapTerrainKey = memo(function MapTerrainKey() {
   return (
-    <g className="terrain-legend" transform={`translate(8 ${MAP_VIEWBOX.height - 118})`} aria-label="Terrain tile key">
-      <rect className="terrain-legend-back" x="0" y="0" width={frameWidth} height={frameHeight} />
-      {TERRAIN_KINDS.map((kind, index) => {
-        const column = index > 3 ? 1 : 0;
-        const row = column ? index - 4 : index;
-        const x = inset + column * columnGap;
-        const y = 20 + row * 17;
-        return (
-          <g key={kind} transform={`translate(${x} ${y})`}>
-            <text className={`terrain-legend-symbol terrain-pattern-${kind}`} x="0" y="0">
+    <div className="map-terrain-key" aria-label="Terrain tile key">
+      <span className="map-terrain-key-title">TERRAIN KEY</span>
+      <div className="map-terrain-key-rows">
+        {TERRAIN_KINDS.map((kind, index) => (
+          <span
+            className={`map-terrain-key-row terrain-key-${kind}`}
+            style={{ "--kind-index": index } as CSSProperties}
+            key={kind}
+          >
+            <b>
               {TERRAIN_SYMBOLS[kind]}
               {TERRAIN_SYMBOLS[kind]}
-            </text>
-            <text className="terrain-legend-label" x="24" y="0">
-              {TERRAIN_LABELS[kind]}
-            </text>
-          </g>
-        );
-      })}
-    </g>
+            </b>
+            <i>{TERRAIN_LABELS[kind]}</i>
+          </span>
+        ))}
+      </div>
+    </div>
   );
-}
-
-function MapPatternDefs() {
-  return (
-    <defs>
-      {TERRAIN_KINDS.map((kind, index) => (
-        <pattern
-          key={kind}
-          id={`terrain-pattern-${kind}`}
-          width={kind === "plain" ? 36 : 42}
-          height={kind === "plain" ? 30 : 38}
-          patternUnits="userSpaceOnUse"
-          patternTransform={`translate(${index * 7} ${index * 5})`}
-        >
-          <text className={`terrain-pattern-symbol terrain-pattern-${kind}`} x="5" y="13">
-            {TERRAIN_SYMBOLS[kind]}
-          </text>
-          <text className={`terrain-pattern-symbol terrain-pattern-${kind}`} x="22" y="28">
-            {TERRAIN_SYMBOLS[kind]}
-          </text>
-          <text className={`terrain-pattern-symbol terrain-pattern-${kind}`} x="31" y="11">
-            {TERRAIN_SYMBOLS[kind]}
-          </text>
-        </pattern>
-      ))}
-      {STATE_SHAPES.map((state) => (
-        <clipPath key={state.code} id={`clip-state-${state.code}`}>
-          <path d={state.d} />
-        </clipPath>
-      ))}
-    </defs>
-  );
-}
-
-function TerrainSurfaceLayer({ hoverState }: { hoverState: string | null }) {
-  return (
-    <g className="terrain-surface-layer" aria-label="State-clipped landform texture layer">
-      {STATE_SHAPES.flatMap((state) => {
-        const kinds = STATE_TERRAIN_KINDS[state.code] ?? ["plain"];
-        return kinds.slice(0, 3).map((kind, index) => (
-          <rect
-            key={`${state.code}-${kind}`}
-            className={`terrain-surface terrain-surface-${kind} ${
-              hoverState === state.code ? "emphasized" : hoverState ? "dimmed" : "idle"
-            }`}
-            style={
-              {
-                "--terrain-idle": String(Math.max(0.08, 0.22 - index * 0.05)),
-                "--terrain-active": String(Math.max(0.32, 0.72 - index * 0.1)),
-              } as CSSProperties
-            }
-            clipPath={`url(#clip-state-${state.code})`}
-            x="0"
-            y="0"
-            width={MAP_VIEWBOX.width}
-            height={MAP_VIEWBOX.height}
-            fill={`url(#terrain-pattern-${kind})`}
-          />
-        ));
-      })}
-    </g>
-  );
-}
+});
 
 function DensityView({
   data,

@@ -624,6 +624,7 @@ a {
   position: relative;
   height: 42px;
   margin-top: 2px;
+  container-type: inline-size;
 }
 
 .loading-track,
@@ -644,9 +645,10 @@ a {
   opacity: 0;
   transform: scaleX(0);
   transform-origin: left center;
-  box-shadow: 0 0 16px rgba(120, 228, 220, 0.26);
 }
 
+/* The figure's position is the real download ratio (--boot-progress, set by
+   the loading state); its walk is a three-frame sprite toggled by steps(). */
 .loading-pixel-figure {
   position: absolute;
   left: 0;
@@ -654,8 +656,37 @@ a {
   width: 24px;
   height: 24px;
   color: var(--terminal-cyan);
-  filter: drop-shadow(0 0 8px rgba(120, 228, 220, 0.32));
-  animation: loading-pixel-walk 1800ms steps(18, end) infinite alternate;
+  transform: translateX(calc(var(--boot-progress, 0) * (100cqw - 24px)));
+  transition: transform 160ms linear;
+}
+
+.loading-sprite-frame {
+  opacity: 0;
+}
+
+.loading-sprite-frame-a {
+  animation: loading-sprite-a 1200ms steps(1, end) infinite;
+}
+
+.loading-sprite-frame-b {
+  animation: loading-sprite-b 1200ms steps(1, end) infinite;
+}
+
+.loading-sprite-frame-c {
+  animation: loading-sprite-c 1200ms steps(1, end) infinite;
+}
+
+.loading-is-complete .loading-pixel-figure {
+  transform: translateX(calc(100cqw + 40px));
+  transition: transform 520ms cubic-bezier(0.4, 0, 0.8, 1) 420ms;
+}
+
+.loading-error-state .loading-sprite-frame {
+  animation: none;
+}
+
+.loading-error-state .loading-sprite-frame-c {
+  opacity: 1;
 }
 
 .loading-pixel-figure rect {
@@ -709,27 +740,51 @@ a {
   line-height: 1.25;
 }
 
-.loading-boot-log {
+/* Checkpoints: `[■] LABEL · detail`. The mark is lit by the loading state
+   once the export is read, and by the completion timeline for the rest. */
+.loading-checkpoints {
   display: grid;
-  gap: 5px;
+  gap: 7px;
   padding: 12px 14px;
   border-left: 1px solid rgba(120, 228, 220, 0.36);
   background: linear-gradient(90deg, rgba(120, 228, 220, 0.08), transparent 72%);
 }
 
-.loading-boot-line {
+.loading-checkpoint {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
   color: var(--terminal-muted);
   font-size: var(--type-micro-size);
   line-height: 1.25;
   text-transform: uppercase;
-  opacity: 0;
-  animation: loading-boot-line 2400ms steps(1, end) infinite;
-  animation-delay: calc(var(--boot-line-index, 0) * 420ms);
 }
 
-.loading-boot-line::before {
-  content: "> ";
+.loading-checkpoint::before {
+  content: "[";
   color: var(--blue);
+}
+
+.loading-checkpoint-mark {
+  width: 1ch;
+  color: var(--terminal-cyan);
+  font-weight: 700;
+  opacity: 0;
+}
+
+.loading-checkpoint.is-done .loading-checkpoint-mark {
+  opacity: 1;
+}
+
+.loading-checkpoint > span::before {
+  content: "] ";
+  color: var(--blue);
+}
+
+.loading-checkpoint small {
+  margin-left: 6px;
+  color: var(--terminal-ink);
+  font-size: inherit;
 }
 
 .loading-interpretation-note {
@@ -754,31 +809,50 @@ a {
   background: transparent;
 }
 
-@keyframes loading-typewriter-reveal {
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes loading-pixel-walk {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: calc(100% - 24px);
-  }
-}
-
-@keyframes loading-boot-line {
+@keyframes loading-sprite-a {
   0%,
-  18% {
+  33.33%,
+  66.66% {
+    opacity: 1;
+  }
+
+  16.66%,
+  50%,
+  83.33%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loading-sprite-b {
+  0%,
+  33.33%,
+  66.66%,
+  100% {
     opacity: 0;
   }
 
-  22%,
+  16.66%,
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes loading-sprite-c {
+  0%,
+  83.32% {
+    opacity: 0;
+  }
+
+  83.33%,
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes loading-typewriter-reveal {
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -852,7 +926,7 @@ a {
     font-size: clamp(0.78rem, 3.4vw, 0.92rem);
   }
 
-  .loading-boot-log {
+  .loading-checkpoints {
     padding: 11px 12px;
   }
 
@@ -916,7 +990,7 @@ a {
   fill: rgba(255, 255, 255, 0.018);
   stroke: rgba(242, 242, 237, 0.24);
   stroke-width: 0.8;
-  transition: fill 160ms ease, stroke 160ms ease, filter 160ms ease;
+  transition: fill 160ms ease, stroke 160ms ease;
 }
 
 .state-shape.warm {
@@ -927,29 +1001,69 @@ a {
   fill: rgba(167, 255, 99, 0.055);
 }
 
-.state-shape.hovered {
+/* Hovered state: one path in the flag plane, drawn above the terrain. */
+.state-hover-outline {
   fill: rgba(242, 242, 237, 0.12);
   stroke: rgba(255, 255, 255, 0.95);
-  filter: none;
+  stroke-width: 1.2;
+  pointer-events: none;
 }
 
+/* Map planes: the base plane sits in flow and sizes the canvas; the seven
+   terrain planes and the flag plane are stacked over it with the same
+   viewBox, so their geometry is identical. Only the flag plane's circles take
+   pointer events; everything else passes through to the state paths. */
+.map-base-plane {
+  position: relative;
+  z-index: 0;
+}
+
+.terrain-surface-layer,
+.map-flag-plane {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.map-flag-plane {
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Terrain planes: one SVG per landform kind. In the dark theme each plane is
+   a compositor layer whose opacity breathes on a 25s cycle, offset per kind so
+   the seven kinds take turns (about 3.5s each); the key rows at the bottom-left
+   run the same clock. The plane content is static and never repaints. */
 .terrain-surface-layer {
   pointer-events: none;
-  mix-blend-mode: screen;
 }
 
 .terrain-surface {
-  opacity: var(--terrain-idle);
-  transition: opacity 130ms ease, filter 130ms ease;
+  opacity: calc(0.92 - var(--terrain-rank, 0) * 0.28);
 }
 
-.terrain-surface.emphasized {
-  opacity: 0.045;
-  filter: none;
+:root:not([data-theme="light"]) .terrain-surface-layer {
+  --terrain-layer-idle: 0.18;
+  --terrain-layer-peak: 0.6;
+  opacity: var(--terrain-layer-idle);
+  will-change: opacity;
+  animation: terrain-breathe 25s linear infinite;
+  animation-delay: calc(var(--kind-index, 0) * -3.57s);
 }
 
-.terrain-surface.dimmed {
-  opacity: 0.006;
+@keyframes terrain-breathe {
+  0%,
+  100% {
+    opacity: var(--terrain-layer-idle, 0.18);
+  }
+
+  7% {
+    opacity: var(--terrain-layer-peak, 0.6);
+  }
+
+  14% {
+    opacity: var(--terrain-layer-idle, 0.18);
+  }
 }
 
 .terrain-pattern-symbol {
@@ -975,28 +1089,99 @@ a {
   fill: rgba(167, 255, 99, 0.68);
 }
 
-.terrain-legend {
+/* Desert and plain glyphs carry the least ink; lift their planes so they
+   read at the same weight as the others. */
+.terrain-surface-layer-desert,
+.terrain-surface-layer-plain {
+  --terrain-layer-idle: 0.28;
+  --terrain-layer-peak: 0.82;
+}
+
+/* Bottom-left terrain key (HTML overlay on the canvas). */
+.map-terrain-key {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  z-index: 3;
+  display: grid;
+  gap: 9px;
+  padding: 11px 14px 11px;
+  border: 1px solid rgba(242, 242, 237, 0.18);
+  background: rgba(5, 6, 6, 0.76);
+  color: rgba(242, 242, 237, 0.92);
+  font-size: 0.86rem;
+  line-height: 1;
+  text-transform: uppercase;
   pointer-events: none;
-  opacity: 0.98;
 }
 
-.terrain-legend-back {
-  fill: rgba(5, 6, 6, 0.78);
-  stroke: rgba(196, 199, 196, 0.18);
-  stroke-width: 1;
-}
-
-.terrain-legend-symbol {
-  font-size: 13.2px;
+.map-terrain-key-title {
+  color: var(--blue);
+  font-size: 0.72rem;
   font-weight: 700;
-  dominant-baseline: middle;
-  text-anchor: start;
+  letter-spacing: 0.06em;
 }
 
-.terrain-legend-label {
-  fill: rgba(196, 199, 196, 0.9);
-  font-size: 13.2px;
-  dominant-baseline: middle;
+.map-terrain-key-rows {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 7px 22px;
+}
+
+.map-terrain-key-row {
+  display: grid;
+  grid-template-columns: 2.2ch auto;
+  gap: 9px;
+  align-items: baseline;
+  opacity: 0.5;
+}
+
+.map-terrain-key-row b {
+  font-weight: 700;
+}
+
+.map-terrain-key-row i {
+  font-style: normal;
+}
+
+.terrain-key-range b,
+.terrain-key-upland b {
+  color: rgba(242, 242, 237, 0.96);
+}
+
+.terrain-key-lowland b,
+.terrain-key-plain b,
+.terrain-key-basin b {
+  color: rgba(142, 216, 255, 0.96);
+}
+
+.terrain-key-desert b,
+.terrain-key-plateau b {
+  color: rgba(167, 255, 99, 0.94);
+}
+
+:root:not([data-theme="light"]) .map-terrain-key-title::before {
+  content: "> ";
+}
+
+:root:not([data-theme="light"]) .map-terrain-key-row {
+  animation: terrain-key-breathe 25s linear infinite;
+  animation-delay: calc(var(--kind-index, 0) * -3.57s);
+}
+
+@keyframes terrain-key-breathe {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  7% {
+    opacity: 1;
+  }
+
+  14% {
+    opacity: 0.5;
+  }
 }
 
 .state-label,
@@ -1052,18 +1237,9 @@ a {
   isolation: isolate;
 }
 
-.record-flag-layer.has-state-hover .record-flag {
-  opacity: 0.42;
-}
-
-.record-flag-layer.has-hover .record-flag {
-  opacity: 0.48;
-}
-
 .record-flag {
   cursor: pointer;
   opacity: 0.92;
-  transition: opacity 120ms ease;
 }
 
 .record-flag-connector {
@@ -1075,50 +1251,35 @@ a {
   vector-effect: non-scaling-stroke;
 }
 
+/* One circle per record. The invisible 6px stroke band is the hit area
+   (pointer-events: all counts stroke geometry regardless of paint), which
+   replaces the former per-flag hit circle. No transitions: nothing on a flag
+   changes after the growth animation. */
 .record-flag-dot {
   fill: var(--flag-tone, rgba(168, 255, 106, 0.94));
   stroke: none;
-  stroke-width: 0;
+  stroke-width: 6px;
   opacity: 1;
   transform-box: fill-box;
   transform-origin: center;
   vector-effect: non-scaling-stroke;
-  transition: fill 120ms ease, r 120ms ease;
+  pointer-events: all;
 }
 
-.record-flag-hit {
-  fill: transparent;
-  stroke: transparent;
-}
-
-.record-flag.state-linked {
-  opacity: 1;
-}
-
-.record-flag.state-linked .record-flag-dot {
-  opacity: 1;
-  stroke-width: 0;
-}
-
-.record-flag.active {
-  opacity: 1;
-}
-
-.record-flag.active .record-flag-dot {
-  fill: color-mix(in srgb, var(--flag-tone, rgba(244, 241, 232, 0.98)) 70%, rgba(244, 241, 232, 0.98));
-  stroke: none;
-  stroke-width: 0;
-  opacity: 1;
-}
-
-.record-flag-active-ring {
+.map-selected-ring {
   fill: none;
-  stroke: color-mix(in srgb, var(--flag-tone, rgba(244, 241, 232, 0.96)) 72%, rgba(244, 241, 232, 0.96));
-  stroke-width: 0.8;
-  opacity: 0.86;
+  stroke: rgba(244, 241, 232, 0.9);
+  stroke-width: 1px;
   pointer-events: none;
   vector-effect: non-scaling-stroke;
-  animation: record-flag-active-bloom 520ms ease-out 1;
+}
+
+.map-hover-label {
+  pointer-events: none;
+}
+
+.map-hover-label .record-flag-label {
+  font-size: 0.82rem;
 }
 
 .record-flag.unplaced {
@@ -1128,21 +1289,6 @@ a {
 .record-flag.unplaced .record-flag-dot {
   fill: rgba(176, 183, 188, 0.58);
   stroke: none;
-}
-
-@keyframes record-flag-active-bloom {
-  0% {
-    opacity: 0.2;
-    stroke-width: 0.45;
-  }
-  45% {
-    opacity: 0.9;
-    stroke-width: 1.25;
-  }
-  100% {
-    opacity: 0.86;
-    stroke-width: 0.8;
-  }
 }
 
 .record-flag.source-tone-newspaper {
@@ -11220,30 +11366,9 @@ body {
   fill: rgba(35, 160, 146, 0.075);
 }
 
-:root:not([data-theme="light"]) .map-view .state-shape.hovered {
+:root:not([data-theme="light"]) .map-view .state-hover-outline {
   fill: rgba(255, 250, 240, 0.14);
   stroke: rgba(255, 250, 240, 0.98);
-}
-
-:root:not([data-theme="light"]) .map-view .terrain-surface {
-  opacity: calc(var(--terrain-idle) + 0.035);
-}
-
-:root:not([data-theme="light"]) .map-view .terrain-surface.emphasized {
-  opacity: 0.085;
-}
-
-:root:not([data-theme="light"]) .map-view .terrain-surface.dimmed {
-  opacity: 0.012;
-}
-
-:root:not([data-theme="light"]) .map-view .terrain-legend-back {
-  fill: rgba(2, 4, 4, 0.82);
-  stroke: rgba(255, 250, 240, 0.24);
-}
-
-:root:not([data-theme="light"]) .map-view .terrain-legend-label {
-  fill: rgba(255, 250, 240, 0.84);
 }
 
 :root:not([data-theme="light"]) .map-view .state-label {
@@ -16521,8 +16646,6 @@ body {
 .about-view .about-status-head span,
 .about-view .about-module-head span,
 .about-view .about-command-strip b,
-.map-view .terrain-legend-symbol,
-.map-view .terrain-legend-label,
 .map-view .mobile-map-heading span,
 .publication-shell .publication-notice,
 .publication-shell .publication-definition-list dd,
@@ -19608,4 +19731,61 @@ body {
 
 :root:not([data-theme="light"]) .publication-frame {
   padding-bottom: 0;
+}
+
+/* Light-theme parity for elements introduced by the map rewrite: the hover
+   outline replaces .state-shape.hovered, the flag hit band must survive the
+   light stroke reset, and the terrain key needs light colours. */
+:root[data-theme="light"] .state-hover-outline {
+  fill: rgba(20, 49, 61, 0.12);
+  stroke: rgba(20, 49, 61, 0.95);
+}
+
+:root[data-theme="light"] .map-flag-plane .record-flag-dot {
+  stroke-width: 6px;
+}
+
+:root[data-theme="light"] .map-selected-ring {
+  stroke: rgba(20, 49, 61, 0.9);
+}
+
+:root[data-theme="light"] .map-terrain-key {
+  border-color: rgba(20, 49, 61, 0.28);
+  background: rgba(255, 255, 255, 0.8);
+  color: #14313d;
+}
+
+:root[data-theme="light"] .map-terrain-key-row {
+  opacity: 1;
+}
+
+:root[data-theme="light"] .terrain-key-range b,
+:root[data-theme="light"] .terrain-key-upland b {
+  color: #14313d;
+}
+
+:root[data-theme="light"] .terrain-key-lowland b,
+:root[data-theme="light"] .terrain-key-plain b,
+:root[data-theme="light"] .terrain-key-basin b {
+  color: #1d5f8a;
+}
+
+:root[data-theme="light"] .terrain-key-desert b,
+:root[data-theme="light"] .terrain-key-plateau b {
+  color: #3f6d1c;
+}
+
+/* Terrain key on smaller canvases: keep it out of the coastline. */
+@media (max-width: 1180px) {
+  .map-terrain-key {
+    left: 8px;
+    bottom: 6px;
+    gap: 7px;
+    padding: 8px 10px;
+    font-size: 0.72rem;
+  }
+
+  .map-terrain-key-rows {
+    gap: 5px 14px;
+  }
 }
